@@ -1,0 +1,104 @@
+**Poster sessions**
+
+#. *Computational study of the properties of defects at grain boundaries
+   in CuInSe2
+   *\ R. Saniz, J. Bekaert, B. Partoens, and D. Lamoen
+   CMT and EMAT groups, Dept. of Physics, U Antwerpen
+#. *First-principles study of superconductivity in atomically thin MgB2
+   *\ J. Bekaert, B. Partoens, M. V. Milosevic, A. Aperis, P. M.
+   Oppeneer
+   CMT group, Dept. of Physics, U Antwerpen & Dept. of Physics and
+   Astronomy, Uppsala University
+#. *Molecular Spectroscopy : Where Theory Meets Experiment
+   *\ C. Mensch, E. Van De Vondel, Y. Geboes, J. Bogaerts, R. Sgammato,
+   E. De Vos, F. Desmet, C. Johannessen, W. Herrebout
+   Molecular Spectroscopy group, Dept. Chemistry, U Antwerpen
+#. *Bridging time scales in atomistic simulations: from classical models
+   to density functional theory
+   *\ Kristof M. Bal and Erik C. Neyts
+   PLASMANT, Department of Chemistry, U Antwerpen
+#. *Bimetallic nanoparticles: computational screening for
+   chirality-selective carbon nanotube growth
+   *\ Charlotte Vets and Erik C. Neyts
+   PLASMANT, Department of Chemistry, U Antwerpen
+#. *Ab initio molecular dynamics of aromatic sulfonation with sulfur
+   trioxide reveals its mechanism
+   *\ Samuel L.C. Moors, Xavier Deraet, Guy Van Assche, Paul Geerlings,
+   Frank De Proft
+   Quantum Chemistry Group, Department of Chemistry, VUB
+#. *Acceleration of the Best First Search Algorithm by using predictive
+   analytics
+   *\ J.L. Teunissen, F. De Vleeschouwer, F. De Proft
+   Quantum Chemistry Group, VUB, Department of Chemistry, VUB
+#. *Investigating molecular switching properties of octaphyrins using
+   DFT
+   *\ Tatiana Woller, Paul Geerlings, Frank De Proft, Mercedes Alonso
+   Quantum Chemistry Group, VUB, Department of Chemistry, VUB
+#. *Using the Tier-1 infrastructure for high-resolution climate
+   modelling over Europe and Central Asia
+   *\ Lesley De Cruz, Rozemien De Troch, Steven Caluwaerts, Piet
+   Termonia, Olivier Giot, Daan Degrauwe, Geert Smet, Julie Berckmans,
+   Alex Deckmyn, Pieter De Meutter, Luc Gerard, Rafiq Hamdi, Joris Van
+   den Bergh, Michiel Van Ginderachter, Bert Van Schaeybroeck
+   Department of Physics and Astronomy, U Gent
+#. *Going where the wind blows – Fluid-structure interaction simulations
+   of a wind turbine
+   *\ Gilberto Santo, Mathijs Peeters, Wim Van Paepegem, Joris Degroote
+   Dept. of Flow, Heat and Combustion Mechanics, U Gent
+#. *Towards Crash-Free Drones – A Large-Scale Computational Aerodynamic
+   Optimization
+   *\ Jolan Wauters, Joris Degroote, Jan Vierendeels
+   Dept. of Flow, Heat and Combustion Mechanics, U Gent
+#. *Characterisation of fragment binding to TSLPR using molecular
+   dynamics
+   *\ Dries Van Rompaey, Kenneth Verstraete, Frank Peelman, Savvas N.
+   Savvides, Pieter Van Der Veken, Koen Augustyns, Hans De Winter
+   Medicinal Chemistry, UAntwerpen and Center for Inflammation Research
+   , VIB-UGent
+#. *A hybridized DG method for unsteady flow problems
+   *\ Alexander Jaust, Jochen Schütz
+   Computational Mathematics (CMAT) group, U Hasselt
+#. *HPC-based materials research: From Metal-Organic Frameworks to
+   diamond
+   *\ Danny E. P. Vanpoucke, Ken Haenen
+   Institute for Materials Research (IMO), UHasselt & IMOMEC, IMEC
+#. *Improvements to coupled regional climate model simulations over
+   Antarctica
+   *\ Souverijns Niels, Gossart Alexandra, Demuzere Matthias, van Lipzig
+   Nicole
+   Dept. of Earth and Environmental Sciences, KU Leuven
+#. *Climate modelling of Lake Victoria thunderstorms
+   *\ Wim Thiery, Edouard L. Davin, Sonia I. Seneviratne, Kristopher
+   Bedka, Stef Lhermitte, Nicole van Lipzig
+   Dept. of Earth and Environmental Sciences, KU Leuven
+#. *Improved climate modeling in urban areas in sub Saharan Africa for
+   malaria epidemiological studies
+   *\ Oscar Brousse, Nicole Van Lipzig, Matthias Demuzere, Hendrik
+   Wouters, Wim Thiery
+   Dept. of Earth and Environmental Sciences, KU Leuven
+#. *Adaptive Strategies for Multi-Index Monte Carlo
+   *\ Dirk Nuyens, Pieterjan Robbe, Stefan Vandewalle
+   NUMA group, Dept. of Computer Science, KU Leuven
+#. *SP-Wind: A scalable large-eddy simulation code for simulation and
+   optimization of wind-farm boundary layers
+   *\ Wim Munters, Athanasios Vitsas, Dries Allaerts, Ali Emre Yilmaz,
+   Johan Meyers
+   Turbulent Flow Simulation and Optimization (TFSO) group, Dept. of
+   Mechanics, KU Leuven
+#. *Control Optimization of Wind Turbines and Wind Farms
+   *\ Ali Emre Yilmaz, Wim Munters, Johan Meyers
+   Turbulent Flow Simulation and Optimization (TFSO) group, Dept. of
+   Mechanics, KU Leuven
+#. *Simulations of large wind farms with varying atmospheric complexity
+   using Tier-1 Infrastructure
+   *\ Dries Allaerts, Johan Meyers
+   Turbulent Flow Simulation and Optimization (TFSO) group, Dept. of
+   Mechanics, KU Leuven
+#. *Stability of relativistic, two-component jets
+   *\ Dimitrios Millas, Rony Keppens, Zakaria Meliani
+   Plasma-astrophysics, Dept. Mathematics, KU Leuven
+#. *HPC in Theoretical and Computational Chemistry
+   Jeremy Harvey, Eliot Boulanger, Andrea Darù, Milica Feldt, Carlos
+   Martín-Fernández, Ana Sanz Matias, Ewa Szlapa*
+   Quantum Chemistry and Physical Chemistry Section, Dept. of Chemistry,
+   KU Leuven

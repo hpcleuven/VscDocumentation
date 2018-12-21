@@ -1,0 +1,7 @@
+Projects and cases
+==================
+
+| The VSC infrastructure being used by many academic and industrial
+  users. Here are just a few case studies of work involving the VSC
+  infrastructure and an overview of actual projects run on the tier-1
+  infrastructure.

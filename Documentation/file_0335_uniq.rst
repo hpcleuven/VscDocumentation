@@ -1,0 +1,1 @@
+sleep Konsole displaying loosing

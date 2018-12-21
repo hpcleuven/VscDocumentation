@@ -1,0 +1,92 @@
+The successor of Muk is expected to be installed in the spring 2016.
+
+There is also a small test cluster for experiments with accellerators
+(GPU and Intel Xeon Phi) with a view to using this technology in future
+VSC clusters.
+
+The Tier-1 cluster Muk
+----------------------
+
+The Tier-1 cluster Muk has 528 computing nodes, each with two 8-core
+Intel Xeon processors from the Sandy Bridge generation (E5-2670, 2.6
+GHz). Each node features 64 GiB RAM, for a total memory capacity of more
+than 33 TiB. The computing nodes are connected by an FDR InfiniBand
+interconnect with a fat tree topology. This network has a high bandwidth
+(more than 6,5GB / s per direction per link) and a low latency. The
+storage is provided by a disk system with a total disk capacity of 400
+TB and a peak bandwidth of 9.5 GB / s.
+
+The cluster achieves a peak performance of more than 175 Tflops and a
+Linpack performance of 152.3 Tflops. With this result, the cluster was
+for 5 consecutive periods in the Top500 list of fastest supercomputers
+in the world:
+
++-----------+-----------+-----------+-----------+-----------+-----------+
+| List      | 06/2012   | 11/2012   | 06/2013   | 11/2013   | 06/2014   |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| Position  | 118       | 163       | 239       | 306       | 430       |
++-----------+-----------+-----------+-----------+-----------+-----------+
+
+In November 2014 the cluster fell just outside the list but still took
+99% of the performance of the system in place 500.
+
+Accellerator testbed
+--------------------
+
+In addition to the tier-1 cluster Muk, the VSC has an experimental GPU /
+Xeon Phi cluster. 8 nodes in this cluster have 2 K20x nVidia GPUs with
+accompanying software stack, and 8 nodes are equipped with two Intel
+Xeon Phi 5110P (\"Knight's Corner\" generation) boards. The nodes are
+interconnected by means of a QDR InfiniBand network. For practical
+reasons, these nodes were integrated into the KU Leuven / Hasselt
+University Tier-2 infrastructure.
+
+Software
+--------
+
+Like on all other VSC-clusters, the operating system of Muk is a variant
+of Linux, in this case Scientific Linux which in turn based on Red Hat
+Linux. The system also features a comprehensive stack of software
+development tools which includes the GNU and Intel compilers, debugger
+and profiler for parallel applications and different versions of OpenMPI
+and Intel MPI.
+
+There is also an extensive set of freely available applications
+installed on the system. More software can be installed at the request
+of the user. Users however have to take care of the software licenses
+when the software is not freely available, and therefore also for the
+financing of that license.
+
+`Detailed overview of the installed
+software <\%22/cluster-doc/software/tier1-muk\%22>`__
+
+Access to the Tier-1 system
+---------------------------
+
+Academic users can access the Tier-1 cluster Muk through a project
+application. There are two types of project applications
+
+-  The Tier-1 starting grant of up to 100 node days to test and / or to
+   optimize software, typically with a view to a regular request for
+   computing time. There is a continuous assessment process for this
+   project type.
+   `Learn
+   more <\%22/en/access-and-infrastructure/tier1-starting-grant\%22>`__
+-  The regular project application, for allocations between 500 and 5000
+   node days. The applications are assessed on scientific excellence and
+   technical feasibility by an evaluation committee of foreign experts.
+   There are three cut-off dates a year at which the submitted project
+   proposals are evaluated. The users are also expected to pay a small
+   contribution towards the cost.
+   `Learn
+   more <\%22/en/access-and-infrastructure/project-access-tier1\%22>`__
+
+To use the GPU / Xeon Phi cluster it is sufficient to contact the `HPC
+coordinator of your institution <\%22/en/about-vsc/contact\%22>`__.
+
+Industrial users and non-Flemish research institutions and
+not-for-profit organizations can also `purchase computing time on the
+Tier-1
+Infrastructure <\%22/en/access-and-infrastructure/access-industry\%22>`__.
+For this you can contact the `Hercules
+Foundation <\%22/en/about-vsc/contact\%22>`__.

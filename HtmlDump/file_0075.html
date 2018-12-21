@@ -1,0 +1,25 @@
+<h2>Prerequisite: PuTTY</h2><p>By default, there is no ssh client software available on Windows, so you will typically have to install one yourself.  We recommend to use <a href=\"https://www.chiark.greenend.org.uk/~sgtatham/putty/\" target=\"_blank\">PuTTY</a>, which is freely available.  You do not even need to install; just download the executable and run it!  Alternatively, an installation package (MSI) is also available <a href=\"https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html\" target=\"_blank\">from the download site</a> that will install all other tools that you might need also.</p><p>You can copy the PuTTY executables together with your private key on a USB stick to connect easily from other Windows computers.
+</p><h2>Generating a public/private key pair</h2><p>To generate a public/private key pair, you can use the <a href=\"https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html\">PuTTYgen key generator</a>.  Start it and follow the following steps. Alternatively, you can follow a <a target=\"_blank\" href=\"https://www.vscentrum.be/assets/1189\">short video</a> explaining step-by-step the process of generating a new key pair and saving it in a format required by different VSC login nodes.
+</p><ol>
+	<li>
+	In 'Parameters' (at the bottom of the window), choose 'SSH-2 RSA' and set the number of bits in the key to 2048:<br>
+	<img src=\"/assets/123\" alt=\"PuTTYgen Parameters\"></li>
+	<li>
+	Click on 'Generate'.  To generate the key, you must move the mouse cursor over the PuTTYgen window (this generates some random data that PuTTYgen uses to generate the key pair).  Once the key pair is generated, your public key is shown in the field 'Public key for pasting into OpenSSH authorized_keys file'.
+	</li>
+	<li>
+	Next, you should specify a passphrase in the 'Key passphrase' field and retype it in the 'Confirm passphrase' field. Remember, the passphrase protects the private key against unauthorized use, so it is best to choose one that is not too easy to guess.  Additionally, it is adviced to fill in the 'Key comment' field to make it easier identifiable afterwards.<br>
+	<img src=\"/assets/125\" alt=\"PuTTYgen Passphrases\"></li>
+	<li>
+	Finally, save both the public and private keys in a secure place (i.e., a folder on your personal computer, or on your personal USB stick, ...) with the buttons 'Save public key' and 'Save private key'.  We recommend to use the name \"id_rsa.pub\" for the public key, and \"id_rsa.ppk\" for the private key.
+	</li>
+</ol><p><span class=\"visualHighlight\">If you use another program to generate a key pair, please remember that they need to be in the OpenSSH format to access the VSC clusters.</span>
+</p><h2><a id=\"PuTTY_to_OpenSSH\" name=\"PuTTY_to_OpenSSH\"></a>Converting PuTTY keys to OpenSSH format</h2><p>OpenSSH is a very popular command-line SSH client originating from the Linux world but now available on many operating systems. Therefore its file format is a very popular one. Some applications, such as Eclipse's SSH components, can not handle private keys generated with PuTTY, only OpenSSH compliant private keys. However, PuTTY's key generator 'PuTTYgen' (that was used to generate the public/private key pair in the first place) can be used to convert the PuTTY private key to one that can be used by Eclipse.
+</p><ol>
+	<li>Start PuTTYgen.</li>
+	<li>From the 'Conversions' menu, select 'Import key' and choose the file containing your PuTTY private key that is used to authenticate on the VSC cluster.</li>
+	<li>When prompted, enter the appropriate passphrase.</li>
+	<li>From the 'Conversions' menu, select 'Export OpenSSH key' and save it as 'id_rsa' (or any other name if the former already exists). Remember the file name and its location, it will have to be specified in the configuration process of, e.g.,  Eclipse.</li>
+	<li>Exit PuTTYgen.</li>
+</ol>"
+

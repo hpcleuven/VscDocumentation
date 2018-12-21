@@ -1,0 +1,18 @@
+<h2>The basics of the job system</h2><ul>	<li><a href=\"/cluster-doc/running-jobs/job-system-what-why\">What is a job system and why do we need it?</a></li>
+	<li><a href=\"/cluster-doc/running-jobs/specifying-requirements\">Specifying resources, output files and notifications</a></li>
+	<li><a href=\"/cluster-doc/running-jobs/starting-programs-in-job\">Starting programs in your job</a></li>
+	<li><a href=\"/cluster-doc/running-jobs/submitting-managing-jobs\">Submitting and managing jobs</a></li>
+</ul><h2>Common problems</h2><ul>
+	<li><a href=\"/cluster-doc/running-jobs/job-start-failure\">Why doesn't my job start immediately?</a> A story about scheduling policies and priorities.</li>
+	<li><a href=\"/cluster-doc/running-jobs/job-failure-after-start\">Job failure after a successful start</a></li>
+</ul><span></span><h2>Advanced topics<br></h2><ul>
+	<li><a href=\"/cluster-doc/running-jobs/credit-system-basics\">Credit system basics</a>: credits are used on all clusters at the KU Leuven (including the Tier-1 system BrENIAC) to control your compute time allocation</li>
+	<li><a href=\"/cluster-doc/running-jobs/monitoring-memory-and-cpu-usage-of-programs\">Monitoring memory and CPU usage of programs</a>, which helps to find the right parameters to improve your specification of the job requirements</li>
+	<li><a href=\"/cluster-doc/running-jobs/worker-framework\">Worker framework</a>: To manage lots of small jobs on a cluster. The cluster scheduler isn't meant to deal with tons of small jobs. Those create a lot of overhead, so it is better to bundle those jobs in larger sets.</li>
+	<li>The <a href=\"/cluster-doc/running-jobs/checkpointing-framework\">checkpointing framework</a> can be used to run programs that take longer than the maximum time allowed by the queue. It can break a long job in shorter jobs, saving the state at the end to automatically start the next job from the point where the previous job was interrupted.</li>
+	<li>Running jobs on GPU or Xeon Phi nodes: The procedure is not standardised across the VSC, so we refer to the pages for each cluster in the \"<a href=\"/infrastructure/hardware\">Available hardware</a>\" section of this web site
+	<ul>
+		<li><a href=\"/infrastructure/hardware/k20x-phi-hardware\">KU Leuven GPU and Xeon Phi nodes</a></li>
+	</ul></li>
+</ul>"
+

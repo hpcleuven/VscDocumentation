@@ -1,0 +1,6 @@
+Tier-1 starting grant
+=====================
+
+A programme to get a free allocation on the Tier-1 supercomputer to
+perform the necessary tests to prepare a regular Tier-1 project
+application.

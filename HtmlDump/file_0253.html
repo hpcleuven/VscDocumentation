@@ -1,0 +1,43 @@
+<h2>Scope</h2><p>On modern CPUs the actual performance of a program depends very much on making optimal use of the caches.
+</p>
+<p>Many standard mathematical algorithms have been coded in standard libraries, and several vendors and research groups build optimised versions of those libraries for certain computers. They are key to extracting optimal performance from modern processors. Don't think you can write a better dense matrix-matrix multiplication routine or dense matrix solver than the specialists (unless you're a real specialist yourself)!
+</p>
+<p>Many codes use dense linear algebra routines. Hence it is no suprise that in this field, collaboration lead to the definition of a lot of standard functions and many groups worked hard to build optimal implementations:
+</p>
+<ul>
+	<li>BLAS (Basic Linear Algebra Subroutines) is a library of vector-vector, matrix-vector and matrix-matrix operations.</li>
+	<li>Lapack, a library of dense and banded matrix linear algebra routines such as solving linear systems and the eigenvalue- and singular value decomposition. Lapack95 defines Fortran95 interfaces for all routines.</li>
+	<li>ScaLapack is a distributed memory parallel library offering some functionality similar to Lapack.</li>
+</ul>
+<p>Standard Fortran implementations do exist, so you can always recompile code using these libraries on systems on which the libraries are not available.
+</p>
+<h2>Blas and Lapack at the VSC</h2>
+<p>We provide BLAS and LAPACK routines through the toolchains. Hence the instructions for linking with the libraries are given on the toolchains page.
+</p>
+<ul>
+	<li>The <a href=\"/cluster-doc/development/toolchain-intel\">intel toolchain</a> provides the BLAS, LAPACK and ScaLAPACK interfaces through the Intel Math Kernel Library (MKL)</li>
+	<li>The <a href=\"/cluster-doc/development/toolchain-foss\">foss toolchain</a> provides open source implementations:
+	<ul>
+		<li>The OpenBLAS BLAS library</li>
+		<li>The standard LAPACK implementation</li>
+		<li>The standard ScaLAPACK implementation</li>
+	</ul>
+	</li>
+</ul>
+<h2><a id=\"Links\" name=\"Links\"></a>Links</h2>
+<ul>
+	<li>The Lapack, Lapack95 and ScaLAPACK manuals are published by SIAM, but there are online HTML versions available on Netlib (the repository that also contains the standard Fortran implementations):
+	<ul>
+		<li><a href=\"http://www.netlib.org/lapack/lug/\" target=\"_blank\">Lapack Users' Guide</a> on the <a href=\"http://www.netlib.org/blas/\" target=\"_blank\">Netlib BLAS repository</a></li>
+		<li><a href=\"http://www.netlib.org/lapack95/lug95/\" target=\"_blank\">Lapack95 Users' Guide</a> on the <a href=\"http://www.netlib.org/lapack/\" target=\"_blank\">Netlib LAPACK repository</a></li>
+		<li><a href=\"http://netlib.org/scalapack/slug/\" target=\"_blank\">ScaLAPACK Users' Guide</a> on the <a href=\"http://www.netlib.org/scalapack/\" target=\"_blank\">Netlib ScaLAPACK repository</a></li>
+	</ul>
+	</li>
+	<li>Documentation about specific implementations is available on the <a href=\"/cluster-doc/development/toolchains\">Toolchains pages</a>
+	<ul>
+		<li><a href=\"/cluster-doc/development/toolchain-intel#intelInfo\">intel toolchain</a></li>
+		<li><a href=\"/cluster-doc/development/toolchain-foss#fossInfo\">foss toolchain</a></li>
+	</ul>
+	</li>
+</ul>"
+

@@ -1,0 +1,86 @@
+| `The International
+  Auditorium <\%22http://www.theinternationalauditorium.be/\%22>`__
+| Kon. Albert II laan 5, 1210 Brussels
+
+| The VSC User Day is the first annual meeting of current and
+  prospective users of the Vlaams Supercomputing Center (VSC) along with
+  staff and supporters of the VSC infrastructure. We will hold a series
+  of presentations describing the status and results of the past year as
+  well as afternoon sessions talking about plans and priorities for 2014
+  and beyond. This is an excellent opportunity to become more familiar
+  with the VSC and it personnel, become involved in constructing plans
+  and priorities for new projects and initiatives, and network with
+  fellow HPC interested parties.
+| The day ends with a networking hour at 17:00 allowing time for
+  informal discussions and followup from the day's activities.
+
+*Program*
+
++-----------------------------------+-----------------------------------+
+| 9:30h                             | Welcome coffee                    |
++-----------------------------------+-----------------------------------+
+| 10:00h                            | Opening VSC USER DAY              |
+|                                   | *Marc Luwel, Director Hercules    |
+|                                   | Foundation*                       |
++-----------------------------------+-----------------------------------+
+| 10:10h                            | State of the VSC, Flemish         |
+|                                   | Supercomputer                     |
+|                                   | *Dane Skow, HPC manager Hercules  |
+|                                   | Foundation*                       |
++-----------------------------------+-----------------------------------+
+| 10:40h                            | Computational Neuroscience        |
+|                                   | *Michele Giugliano, University of |
+|                                   | Antwerp*                          |
++-----------------------------------+-----------------------------------+
+| 11:00h                            | The value of HPC for Molecular    |
+|                                   | Modeling applications             |
+|                                   | *Veronique Van Speybroeck, Ghent* |
+|                                   | *University*                      |
++-----------------------------------+-----------------------------------+
+| 11:20h                            | Coffee Break and posters          |
++-----------------------------------+-----------------------------------+
+| 11:50h                            | Parallel, grid-adaptive           |
+|                                   | computations for solar atmosphere |
+|                                   | dynamics                          |
+|                                   | *Rony Keppens, University of      |
+|                                   | Leuven*                           |
++-----------------------------------+-----------------------------------+
+| 12:10h                            | HPC for industrial wind energy    |
+|                                   | applications                      |
+|                                   | *Rory Donnelly, 3E*               |
++-----------------------------------+-----------------------------------+
+| 12:30h                            | Lunch                             |
++-----------------------------------+-----------------------------------+
+| 13:30h                            | The PRACE architecture and future |
+|                                   | prospects into Horizon 2020       |
+|                                   | *Sergi Girona, PRACE*             |
++-----------------------------------+-----------------------------------+
+| 14:00h                            | EUDAT – Towards A Pan-European    |
+|                                   | Collaborative Data                |
+|                                   | Infrastructure, European Data     |
+|                                   | Infrastructure                    |
+|                                   | *Morris Reidel, EUDAT*            |
++-----------------------------------+-----------------------------------+
+| 14:20h                            | Breakout Sessions:                |
+|                                   | 1 : Long term strategy /          |
+|                                   | Outreach, information and         |
+|                                   | Documentation                     |
+|                                   | 2 : Industry and Research /       |
+|                                   | Visualization                     |
+|                                   | 3 : Training and support /        |
+|                                   | Integration of Data and           |
+|                                   | Computation                       |
++-----------------------------------+-----------------------------------+
+| 15:20h                            | Coffee break and posters          |
++-----------------------------------+-----------------------------------+
+| 16:00h                            | Summary Presentations from        |
+|                                   | Rapporteurs breakout sessions     |
++-----------------------------------+-----------------------------------+
+| 16:30h                            | Closing remarks and Q&A           |
+|                                   | *Bart De Moor, chair Hercules     |
+|                                   | Foundation*                       |
++-----------------------------------+-----------------------------------+
+| 17:00h                            | Network reception                 |
++-----------------------------------+-----------------------------------+
+
+"

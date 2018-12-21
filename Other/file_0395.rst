@@ -1,0 +1,9 @@
+Tier-1 infrastructure
+=====================
+
+Our first Tier-1 cluster, Muk, was installed in the spring of 2012 and
+became operationa a few months later. This system is primarily optimised
+for the processing of large parallel computing tasks that need to have a
+high-speed interconnect.
+
+"

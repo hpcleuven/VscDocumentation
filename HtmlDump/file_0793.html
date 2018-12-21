@@ -1,0 +1,71 @@
+<h2>Introduction</h2><p>Most of the useful R packages come in the form of packages that can be installed separatly. Some of those 
+are part of the default installtion on VSC infrastructure. Given the astounding number of packages, it is not sustainable to
+ install each and everyone system wide. Since it is very easy for a user
+ to install them just for himself, or for his research group, that is 
+not a problem though. Do not hesitate to contact support whenever you 
+encounter trouble doing so.
+</p><h2>Installing your own packages using conda</h2><p>The easiest way to install and manage your own R environment is conda.
+</p><h3>Installing Miniconda</h3><p> If you have Miniconda already installed, you can skip ahead to the next
+section, if Miniconda is not installed, we start with that. Download the
+Bash script that will install it from
+	<a href=\"https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh\" target=\"_blank\">conda.io</a> using, e.g., wget:
+</p><pre>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</pre><p>Once downloaded, run the installation script:
+</p><pre>$ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
+</pre><p>Optionally, you can add the path to the   Miniconda 
+installation to the PATH environment variable in your .bashrc file.  
+This is convenient, but may lead to conflicts when working with the 
+module system, so make sure that you know what you are doing in either 
+case. The line to add to your .bashrc file would be:
+</p><pre>export PATH=\"${VSC_DATA}/miniconda3/bin:${PATH}
+</pre><h3>Creating an environment<br></h3><p>First, ensure that the 
+Miniconda installation is in your PATH environment variable.  The 
+following command should return the full path to the conda command:
+</p><pre>$ which conda
+</pre><p>If the result is blank, or reports that conda can not be found,
+ modify the `PATH` environment variable appropriately by adding  
+iniconda's bin directory to PATH.
+</p><p>Creating a new conda environment is straightforward:
+</p><pre>$ conda create -n science -c r r-essentials r-rodbc
+</pre><p>This command creates a new conda environment called science, 
+and installs a number of R packages that you will probably want to 
+have handy in any case to preprocess, visualize, or postprocess your 
+data. You can of course install more, depending on your requirements and
+ personal taste.
+</p><h3>Working with the environment</h3><p>To work with an environment, you have to activate it.  This is done with, e.g.,
+</p><pre>$ source activate science
+</pre><p>Here, science is the name of the environment you want to work in.
+</p><h3>Install an additional package</h3><p>To install an additional package, e.g., `pandas`, first ensure that the environment you want to work in is activated.
+</p><pre>$ source activate science
+</pre><p>Next, install the package:
+</p><pre>$ conda install -c r r-ggplot2
+</pre><p>Note that conda will take care of all independencies, including
+ non-R libraries. This
+ ensures that you work in a consistent environment.
+</p><h3>Updating/removing</h3><p>Using conda, it is easy to keep your packages up-to-date. Updating a single package (and its dependencies) can be done using:
+</p><pre>$ conda update r-rodbc
+</pre><p>Updating all packages in the environement is trivial:
+</p><pre>$ conda update --all
+</pre><p>Removing an installed package:
+</p><pre>$ conda remove r-mass
+</pre><h3>Deactivating an environment</h3><p>To deactivate a conda environment, i.e., return the shell to its original state, use the following command
+</p><pre>$ source deactivate
+</pre><h3>More information</h3><p>Additional information about conda can be found on its <a href=\"https://conda.readthedocs.io/en/latest/\" target=\"_blank\">documentation site</a>.
+</p><h2>Alternatives to conda
+</h2><p>Setting up your own package repository for R is straightforward.
+</p><ol>
+	<li>Load the appropriate R module, i.e., the one you want the R package to be available for:<br>
+	<code>$ module load R/3.2.1-foss-2014a-x11-tcl</code></li>
+	<li>Start R and install the package :<br><code>&gt; install.packages(\"DEoptim\")</code></li>
+	<li>Alternatively you can download the
+desired package:
+	<br>
+	<code>$ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz</code></li>
+	And install the package from the command line:
+	<code>$ R CMD
+INSTALL DEoptim_2.2-3.tar.gz  -l
+/$VSC_HOME/R/
+	</code>
+	<li>These packages might depend on the specific R version, so you may need to reinstall them for the other version.</li>
+</ol>"
+

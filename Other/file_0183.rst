@@ -1,0 +1,64 @@
+Strategic plans and annual reports
+----------------------------------
+
+-  `Strategic plan 2015-2020 HPC in
+   Flanders <\%22https://www.vscentrum.be/assets/109\%22>`__ – Only
+   available in Dutch
+-  `VSC annual report
+   2017 <\%22https://www.vscentrum.be/assets/1379\%22>`__
+-  `VSC annual report
+   2016 <\%22https://www.vscentrum.be/assets/1299\%22>`__
+-  `VSC annual report
+   2015 <\%22https://www.vscentrum.be/assets/1109\%22>`__
+-  `VSC annual report
+   2014 <\%22https://www.vscentrum.be/assets/987\%22>`__
+
+Newsletter: VSC Echo
+--------------------
+
+Our newsletter, VSC Echo, is distributed three times a year by e-mail.
+The `latest edition <\%22/assets/1123\%22>`__, number 10, is dedicated
+to :
+
+-  The upcoming courses and other events, where we also pay attention to
+   the trainings organized by `CÉCI <\%22http://www.ceci-hpc.be/\%22>`__
+-  News about the new Tier-1 system BrENIAC
+-  The new VSC web site
+
+Subscribe or unsubscribe
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you would like to receive this newsletter by mail, just send an
+e-mail to listserv@ls.kuleuven.be with as text **subscribe VSCECHO** in
+the message body (and not in the subject line). (Please note the quotes
+are not used in the subject line but in the message body.) Alternatively
+(if your e-mail is correctly configured in your browser), you can also
+`send an e-mail from your
+browser <\%22mailto:listserv@ls.kuleuven.be?body=subscribe%20VSCECHO\%22>`__.
+
+You will receive a reply from LISTSERV@listserv.cc.kuleuven.ac.be asking
+you to confirm your subscription. Follow this link in the e-mail and you
+will be automatically subscribed to future issues of the newsletter.
+
+If you no longer wish to receive the newsletter, please send an e-mail
+to listserv@ls.kuleuven.be with the text **unsubscribe VSCECHO** in the
+message body (and not in the subject line). Alternatively (if your
+e-mail is correctly configured in your browser), you can also `send an
+e-mail from your
+browser <\%22mailto:listserv@ls.kuleuven.be?body=unsubscribe%20VSCECHO\%22>`__.
+
+Archive
+~~~~~~~
+
+-  `VSC Echo 10 - October 2016 <\%22/assets/1123\%22>`__
+-  `VSC Echo 9 - January 2015 <\%22/assets/1063\%22>`__
+-  `VSC Echo 8 - September 2015 <\%22/assets/997\%22>`__
+-  `VSC Echo 7 - July 2015 <\%22/assets/939\%22>`__
+-  `VSC Echo 6 - January 2015 <\%22/assets/107\%22>`__
+-  `VSC Echo 5 - October 2014 <\%22/assets/105\%22>`__
+-  `VSC Echo 4 - June 2014 <\%22/assets/103\%22>`__
+-  `VSC Echo 3 - January 2014 <\%22/assets/101\%22>`__
+-  `VSC Echo 2 - November 2013 <\%22/assets/97\%22>`__
+-  `VSC Echo 1 - March 2013 <\%22/assets/93\%22>`__
+
+"

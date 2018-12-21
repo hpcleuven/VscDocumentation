@@ -1,0 +1,179 @@
+The application
+---------------
+
+The designated way to get access to the Tier-1 for research purposes is
+through a project application.
+
+You have to submit a proposal to get compute time on the Tier-1 cluster
+Muk.
+
+You should include a realistic estimate of the compute time needed in
+the project in your application. These estimations can best be endorsed
+by Tier-1 benchmarks. To be able to perform these tests for new codes,
+you can request a `starting
+grant <\%22/en/access-and-infrastructure/tier1-starting-grant\%22>`__
+through a short and quick procedure.
+
+You can submit proposals continuously, but they will be gathered,
+evaluated and resources allocated at a number of cut-off dates. There
+are 3 cut-off dates in 2016 :
+
+-  February 1, 2016
+-  June 6, 2016
+-  October 3, 2016
+
+Proposals submitted since the last cut-off and before each of these
+dates are reviewed together.
+
+The FWO appoints an evaluation commission to do this.
+
+Because of the international composition of the `evaluation
+commission <\%22/en/about-vsc/organisation-structure#tier1-evaluation\%22>`__,
+the preferred language for the proposals is English. If a proposal is in
+Dutch, you must also sent an English translation. Please have a look at
+the documentation of standard terms like: CPU, core, node-hour, memory,
+storage, and use these consistently in the proposal.
+
+For applications in 2014 or 2015, costs for resources used will be
+invoiced, with various discounts for Flemish-funded academic
+researchers. You should be aware that the investments and operational
+costs for the Tier-1 infrastructure are considerable.
+
+You can submit you application `via EasyChair <\%22#easychair\%22>`__
+using the application forms below.
+
+Relevant documents - 2016
+-------------------------
+
+On October 26 the Board of Directors of the Hercules foundation decided
+to make a major adjustment to the regulations regarding applications to
+use the Flemish supercomputer.
+
+For applications for computing time on the Tier-1 granted in 2016 and
+coming from researchers at universities, the Flemish SOCs and the
+Flemish public knowledge institutions, applicants will no longer have to
+pay a contribution in the cost of compute time and storage. Of course,
+the applications have to be of outstanding quality. The evaluation
+commission remains responsible for te review of the applications.
+
+For applications granted in 2015 the current pricing structure remains
+in place and contributions will be asked.
+
+The adjusted Regulations for 2016 can be found in the links below.
+
+From January 1, 2016 on the responsibility for the funding of HPC and
+the management of the Tier-1 has been transferred to the FWO, including
+all current decisions and ongoing contracts.
+
+-  `Reglement betreffende aanvragen voor het gebruik van de Vlaamse
+   supercomputer (Dutch only, applicable as of 1 January 2016) (PDF, 213
+   kB) <\%22/assets/1043\%22>`__
+-  Enclosure 1: `The application form for Category 1
+   Applications <\%22/assets/1041\%22>`__ (research project of which the
+   scientific quality has already been evaluated, see §1 of the
+   Regulations for the criteria) (docx, 60 kB)
+-  Enclosure 2: `The application form for Category 2
+   projects <\%22/assets/1045\%22>`__ (research projects that have not
+   yet been evaluated scientifically) (docx, 71 kB)
+-  Enclosure 3: `The procedure for the use of
+   EasyChair <\%22#easychair\%22>`__
+-  `The official version of the letter highlighting the 2016 changes is
+   only available in Dutch by following this
+   link <\%22https://www.vscentrum.be/assets/1029\%22>`__.
+-  `An overview of the available (scientific)
+   software <\%22/cluster-doc/software/tier1-muk\%22>`__
+-  `An overview of standard terms used in
+   HPC <\%22/support/tut-book/hpc-glossary\%22>`__
+-  `The list of scientific
+   domains <\%22/en/access-and-infrastructure/project-access-tier1/domains\%22>`__
+
+If you need help to fill out the application, please consult your local
+support team.
+
+Relevant documents - 2015
+-------------------------
+
+-  `Regulations regarding applications to use the Flemish supercomputer
+   (applicable as of 1 January 2015) <\%22/assets/207\%22>`__
+-  Enclosure 1: `Cost price computing time and \\"SCRATCH\" disk
+   storage <\%22#pricing\%22>`__
+
+Pricing - applications in 2015
+------------------------------
+
+When you receive compute time through a Tier-1 project application, we
+expect a contribution in the cost of compute time and storage.
+
+**Summary of Rates:**
+
+**CPU/nodeday**
+
+**Private Disk/TB/mo**
+
+**Universities, VIB and iMINDS**
+
+**0.68€ (5%)**
+
+**2€ (5%)**
+
+**other SOCs and other flemish public research institutes**
+
+**1.35€ (10%)**
+
+**4€ (10%)**
+
+**Flemish public research institutes - contract research with
+possibility of full cost accounting (*)**
+
+**13,54€**
+
+**46,8€**
+
+**Flemish public research institutes - European projects with
+possibility of full cost accounting (*)**
+
+**13,54€**
+
+**46,8€**
+
+(*) The price for one nodeday is 13.54 euro (incl. overhead and support
+of Tier-1 technical support team, but excl. advanced support by
+specialized staff). The price for 1TB storage per month is 46.80 euro
+(incl. overhead and support of TIER1 technical support team, but excl.
+advanced support by specialized staff). Approved Tier-1 projects get a
+default quota of 1TB. Only storage request higher then 1TB will be
+charged for the amount above 1TB.
+
+EasyChair procedure
+-------------------
+
+You have to submit your proposal on `EasyChair for the conference
+Tier12016 <\%22https://easychair.org/conferences/?conf=tier12016\%22>`__.
+This requires the following steps:
+
+#. If you do not yet have an EasyChair account, you first have to create
+   one:
+
+   #. Complete the CAPTCHA
+   #. Provide first name, name, e-mail address
+   #. A confirmation e-mail will be sent, please follow the instructions
+      in this e-mail (click the link)
+   #. Complete the required details.
+   #. When the account has been created, a link will appear to log in on
+      the TIER1 submission page.
+
+#. Log in onto the EasyChair system.
+#. Select ‘New submission’.
+#. If asked, accept the EasyChair terms of service.
+#. Add one or more authors; if they have an EasyChair account, they can
+   follow up on and/or adjust the present application.
+#. Complete the title and abstract.
+#. You must specify at least three keywords: Include the institution of
+   the promoter of the present project and the field of research.
+#. As a paper, submit a PDF version of the completed Application form.
+   You must submit the complete proposal, including the enclosures, as 1
+   single PDF file to the system.
+#. Click \\"Submit\".
+#. EasyChair will send a confirmation e-mail to all listed authors.
+
+"

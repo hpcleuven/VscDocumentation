@@ -1,0 +1,94 @@
+The only short answer to this question is: maybe yes, maybe no. There
+are a number of things you need to figure out before.
+
+Will my application run on a supercomputer?
+-------------------------------------------
+
+Maybe yes, maybe no. All VSC clusters - and the majority of large
+supercomputers in the world - run the Linux operation system. So it
+doesn't run Windows or OS X applications. Your application will have to
+support Linux, and the specific variants that we use on our clusters,
+but these are popular versions and rarely pose problems.
+
+Next supercomputers are not really build to run interactive applications
+well. They are built to be shared by many people and using command line
+applications. There are several issues:
+
+-  Since you share the machine with many users, you may have to wait a
+   while before your job might launch. This is organised through a
+   queueing system: you submit your job to a waiting line and a
+   scheduler decides who's next to run based on a large number of
+   parameters: job duration, number of processors needed, have you run a
+   lot of jobs recently, ... So by the time you job starts, you may have
+   gone home already.
+-  You don't sit at a monitor attached to the supercomputer. Even though
+   that supercomputers can also be used for visualisation, you'll still
+   need a suitable system on your desk to show the final image, and use
+   software that can send the drawing commands or images generated on
+   the supercomputer to your desktop.
+
+Will my application run faster on a supercomputer?
+--------------------------------------------------
+
+You'll be disappointed to hear that the answer is actually quite often
+\\"no\". It is not uncommon that an application runs faster on a good
+workstation than on a supercomputer. Supercomputers are optimised for
+large applications that access large chunks of memory (RAM or disk) in a
+particular way and are very parallel, i.e., they can keep a lot of
+processor cores busy. Their CPUs are optimised to do as much work in
+parallel as fast as possible, at the cost of lower performance for
+programs that don't exploit parallelism, while high-end workstation
+processors are more optimised for those programs that run sequentially
+or don't use a lot of parallelism and often have disksystems that can
+better deal with many small files.
+
+| That being said, even that doesn't have to be disastrous. Parallelism
+  can come in different forms. Sometimes you may have to run the same
+  program for a large number of test cases, and if the memory
+  consumption for a program for a simple test case is reasonable, you
+  may be able to run a lot of instances of that program simultaneously
+  on the same multi-core processor chip. This is called *capacity
+  computing*. And some applications are very well written and can
+  exploit all the forms of parallelism that a modern supercomputer
+  offers, provided you solve a large enough problem with that program.
+  This is called *capability computing*. We support both at the VSC.
+
+OK, my application can exploit a supercomputer. What's next?
+------------------------------------------------------------
+
+Have a look our web page on `requesting access in the general
+section <\%22/en/access-and-infrastructure/requesting-access\%22>`__. It
+explains who can get access to the supercomputers. And as that text
+explains, you'll may need to install some additional software the system
+from which you want to access the clusters (which for the majority of
+our users is their laptop or desktop computer).
+
+Basically, you communicate with the cluster through a protocol called
+\\"SSH\" which stands for \\"Secure SHell\". It encrypts all the
+information that is passed to the clusters, and also provides an
+authentication mechanism that is a bit safer than just sending
+passwords. The protocol can be used both to get a console on the system
+(a \\"command line interface\" like the one offered by CMD.EXE on Widows
+or the term app on OS X) and to transfer files to the system. The
+absolute minimum you need before you can actually request your account,
+is a SSH client to generate the key that will be used to talk to the
+clusters. For Windows, you can `use
+PuTTY <\%22/client/windows/keys-putty\%22>`__ (freely available, see
+`the link on our PuTTY page <\%22/client/windows/console-putty\%22>`__),
+on macOS/OS X you can `use the built-in OpenSSH
+client <\%22/client/macosx/keys-openssh\%22>`__, and Linux systems
+typically also `come with
+OpenSSH <\%22/client/linux/keys-openssh\%22>`__. But to actually use the
+clusters, you may want to install some additional software, such as a
+GUI sftp client to transfer files. We've got links to a lot of useful
+client software `on our web page on access and data
+transfer <\%22/cluster-doc/access-data-transfer\%22>`__.
+
+Yes, I'm ready
+--------------
+
+Then follow the links on our `user portal page on requesting an
+account <\%22/cluster-doc/account-request\%22>`__. And don't forget
+we've got `training programs <\%22/en/education--training\%22>`__ to get
+you started and `technical support <\%22/support/contact-support\%22>`__
+for when you run into trouble.

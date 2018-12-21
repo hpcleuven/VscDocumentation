@@ -1,0 +1,96 @@
+Hardware details
+----------------
+
+The VUB cluster contains a mix of nodes with AMD and Intel processors
+and different interconnects in different sections of the cluster. The
+cluster also contains a number of nodes with NVIDIA GPUs.
+
+Login nodes:
+~~~~~~~~~~~~
+
+-  ``login.hpc.vub.ac.be`` or ``hydra.vub.ac.be``
+-  use one of those hostnames if you read vsc.login.node in the
+   documentation and want to connect to this login node
+
+Compute nodes:
+~~~~~~~~~~~~~~
+
++-----------+-----------+-----------+-----------+-----------+-----------+
+| nodes     | processor | memory    | disk      | network   | others    |
++===========+===========+===========+===========+===========+===========+
+| 40        | 2x 8-core | 64 Gb     | 900 Gb    | QDR-IB    | soon will |
+|           | AMD 6134  |           |           |           | be phased |
+|           | (Magnycou |           |           |           | out       |
+|           | rs)       |           |           |           |           |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 11        | 2x        | 128 Gb    | 900 Gb    | QDR-IB    |           |
+|           | 10-core   |           |           |           |           |
+|           | INTEL     |           |           |           |           |
+|           | E5-2680v2 |           |           |           |           |
+|           | (IvyBridg |           |           |           |           |
+|           | e)        |           |           |           |           |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 20        | 2x        | 256 Gb    | 900 Gb    | QDR-IB    |           |
+|           | 10-core   |           |           |           |           |
+|           | INTEL     |           |           |           |           |
+|           | E5-2680v2 |           |           |           |           |
+|           | (IvyBridg |           |           |           |           |
+|           | e)        |           |           |           |           |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 6         | 2x        | 128 Gb    | 900 Gb    | QDR-IB    | 2x Tesla  |
+|           | 10-core   |           |           |           | K20x      |
+|           | INTEL     |           |           |           | NVIDIA    |
+|           | E5-2680v2 |           |           |           | GPGPUs    |
+|           | (IvyBridg |           |           |           | with 6Gb  |
+|           | e)        |           |           |           | memory in |
+|           |           |           |           |           | each node |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 27        | 2x        | 256 Gb    | 1 Tb      | 10 Gbps   |           |
+|           | 14-core   |           |           |           |           |
+|           | INTEL     |           |           |           |           |
+|           | E5-2680v4 |           |           |           |           |
+|           | (Broadwel |           |           |           |           |
+|           | l)        |           |           |           |           |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 1         | 4x        | 1.5 Tb    | 4 Tb      | 10 Gbps   |           |
+|           | 10-core   |           |           |           |           |
+|           | INTEL     |           |           |           |           |
+|           | E7-8891v4 |           |           |           |           |
+|           | (Broadwel |           |           |           |           |
+|           | l)        |           |           |           |           |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 4         | 2x        | 256 Gb    | 2 Tb      | 10 Gbps   | 2x Tesla  |
+|           | 12-core   |           |           |           | P100      |
+|           | INTEL     |           |           |           | NVIDIA    |
+|           | E5-2650v4 |           |           |           | GPGPUs    |
+|           | (Broadwel |           |           |           | with 16   |
+|           | l)        |           |           |           | Gb memory |
+|           |           |           |           |           | in each   |
+|           |           |           |           |           | node      |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 1         | 2x        | 512 Gb    | 8 Tb      | 10 Gbps   | 4x        |
+|           | 16-core   |           |           |           | GeForce   |
+|           | INTEL     |           |           |           | GTX 1080  |
+|           | E5-2683v4 |           |           |           | Ti NVIDIA |
+|           | (Broadwel |           |           |           | GPUs with |
+|           | l)        |           |           |           | 12 Gb     |
+|           |           |           |           |           | memory in |
+|           |           |           |           |           | each node |
++-----------+-----------+-----------+-----------+-----------+-----------+
+| 21        | 2x        | 192 Gb    | 1 Tb      | 10 Gbps   |           |
+|           | 20-core   |           |           |           |           |
+|           | INTEL     |           |           |           |           |
+|           | Xeon Gold |           |           |           |           |
+|           | 6148      |           |           |           |           |
+|           | (Skylake) |           |           |           |           |
++-----------+-----------+-----------+-----------+-----------+-----------+
+
+Network Storage:
+~~~~~~~~~~~~~~~~
+
+-  19 TB NAS for Home directories (``$VSC_HOME``) and software storage
+   connected with 1Gb Ethernet
+-  780 TB GPFS storage for global scratch (``$VSC_SCRATCH``) connected
+   with QDR-IB, 1Gb and 40 Gb Ethernet
+
+"

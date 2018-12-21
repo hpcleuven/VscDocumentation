@@ -1,0 +1,31 @@
+<h2>Installation</h2><p>Eclipse doesn't come with its own compilers. By default, it relies on the Apple gcc toolchain. You can install this toolchain by installing the Xcode package from the App Store. This package is free, but since it takes quite some disk space and few users need it, it is not installed by default on OS X (though it used to be). After installing Xcode, you can install Eclipse according to the instructions on the Eclipse web site. Eclipse will then use the gcc command from the Xcode distribution. The Apple version of gcc is really just the gcc front-end layered on top of a different compiler, LLVM, and might behave differently from gcc on the cluster.</p><p>If you want a regular gcc or need Fortran or MPI or mathematical libraries equivalent to those in the <a href=\"/cluster-doc/development/toolchain-foss\">foss toolchain</a> on the cluster, you'll need to install additional software. We recommend <a href=\"https://www.macports.org/\">using MacPorts</a> for this as it contains ports to macOS of most tools that we include in our toolchains. Using MacPorts requires some familiarity with the bash shell, so you may have a look at <a href=\"/cluster-doc/using-linux\">our \"Using Linux\"  section</a> or search the web for a good bash tutorial (one in a Linux tutorial will mostly do). E.g., you'll have to add the directory where MacPort installs the applications to your PATH enviroment variable. For a typical MacPorts installation, this directory is /opt/local/bin.
+</p><p>After installing MacPorts, the following commands will install a libraries and tools that are very close to those of the foss2016b toolchain (tested September 2016):<span></span></p><pre>sudo port install gcc5
+sudo port select --set gcc mp-gcc5
+sudo port install openmpi-gcc5 +threads
+sudo port select --set mpi openmpi-gcc5-fortran
+sudo port install OpenBLAS +gcc5 +lapack
+sudo port install scalapack +gcc5 +openmpi
+sudo port install fftw-3 +gcc5 +openmpi</pre><p>Some components may be slightly newer versions than provided in the foss2015a toolchain, while the MPI library is an older version (at least when tested in September 2016).</p><p><span></span>If you also want a newer version of subversion that can integrate with the \"Native JavaHL connector\" in Eclipse, the following commands will install the appropriate packages:
+</p><pre>sudo port install subversion
+sudo port install subversion-javahlbindings
+</pre><p>At the time of writing, this installed version 1,9,4 of subversion which has a compatielbe \"Native JavaHL connector\" in Eclipse.
+</p><h2>Configurating Eclipse for other compilers</h2><p>Eclipse uses the PATH environment variable to find other software it uses, such as compilers but also some commands that give information on where certain libraries are stored or how they are configured. In a regular UNIX/Linux system, you'd set the variable in your shell configuration files (e.g., <code>.bash_profile</code> if you use the bash shell). This mechanism also works on OS X, but not for applications that are not started from the shell but from the Dock or by clicking on their icon in the Finder.
+</p><p>Because of security concerns, Apple has made it increasingly difficult to define the path for GUI applications that are not started through a shell script.
+</p><ul>
+	<li>In 10.7 and earlier, one could define environment variables for GUI applications in <code>~/.MacOSX/environment.plist</code>. </li>
+	<li>In 10.8 and 10.9 one had to modify the <code>Info.plist</code> file in the so-called application bundle.</li>
+</ul><p>Both tricks are explained in the <a href=\"https://wiki.eclipse.org/PTP/photran/documentation\">Photran installation instructions on the Eclispe wiki</a>. However, in OS X 10.10 (Yosemite) neither mechanism works for setting the path.
+</p><p>Our advise is to:
+</p><ul>
+	<li>Configure your bash shell so that you can find the gfortran executable and the corresponding gcc executable. (E.g., try <code>gfortran --version</code> and &lt;code&gt;gcc --version and check the output of these commands).</li>
+	<li>Then start Eclipse also from a terminal window.
+	<ul>
+		<li>Use the full path, for the default install procedure this is very likely <code>/Application/eclipse/eclipse</code>,</li>
+		<li>or add the path to Eclipse to the PATH environment variable (so you likely have to add <code>/Application/eclipse</code> to the path),</li>
+		<li>or define an alias to start Eclipse, e.g., by adding the line<br>
+		<code>alias start-eclipse='/Applications/eclipse/eclipse &gt;&/dev/null &'</code><br>
+		to your <code>.bashrc</code> file. This line defines a new command <code>start-eclipse</code>.</li>
+	</ul>
+	This should work for all OS X versions.</li>
+</ul>"
+

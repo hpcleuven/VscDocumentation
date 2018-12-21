@@ -1,0 +1,43 @@
+<h2>Purpose</h2><p>Debugging MPI applications is notoriously hard. The Intel Trace Analyzer & Collector (ITAC) can be used to generate a trace while running an application, and visualizing it later for analysis.</p><h2>Prerequisities</h2><p>You will need an MPI program (C/C++ or Fortran) to instrument and run.
+</p><h2>Step by step</h2><p>The following steps are the easiest way to use the Intel Trace Analyzer, however, more sophisticated options are available.
+</p><ol>
+	<li>
+	Load the relevant modules. The exact modules may differ from system to system, but will typically include the itac module and a compatible Intle toolchain, e.g.,
+	<pre>$ module load intel/2015a
+$ module load itac/9.0.2.045
+	</pre>
+	</li>
+	<li>
+	Compile your application so that it can generate a trace:
+	<pre>$ mpiicc -trace myapp.c -o myapp
+	</pre>
+	where myapp.c is your C/C++ source code. For a Fortran program, this would be:
+	<pre>$ mpiifort -trace myapp.f -o myapp
+	</pre>
+	</li>
+	<li>
+	Run your application using a PBS script such as this one:
+	<pre>#!/bin/bash -l
+#PBS -N myapp-job
+#PBS -l walltime=00:05:00
+#PBS -l nodes=4
+
+module load intel/2015a
+module load itac/9.0.2.045
+# Set environment variables for ITAC.
+# Unfortunately, the name of the script differs between versions of ITAC
+source $EBROOTITAC/bin/itacvars.sh
+
+cd $PBS_O_WORKDIR
+
+mpirun -trace myapp
+	</pre>
+	</li>
+	<li>
+	When the job is finished, check whether files with names myapp.stf.* have been generated, if so, start the visual analyzer using:
+	<pre>$ traceanalyzer myapp.stf
+	</pre>
+	</li>
+</ol><h2>Further information</h2><p>Intel provides <a href=\"https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/\" target=\"_blank\">product documentation</a> for ITAC.
+</p>"
+

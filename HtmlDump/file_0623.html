@@ -1,0 +1,212 @@
+<p>The <code>foss</code> toolchain consists entirely of free and open source software components. When building third-party software, or developing your own, 
+load the module for the toolchain:
+</p><pre>$ module load foss/&lt;version&gt;
+</pre><p>where <code>&lt;version&gt;</code> should be replaced by the one to be used, e.g., 
+	<code>2014a</code>. See the documentation on the software module system for more details.
+</p><h2><a name=\"gcc-compilers\">Compilers: GNU</a></h2><p>Three GCC compilers are available:
+</p><ul>
+	<li>C: <code>gcc</code></li>
+	<li>C++: <code>g++</code></li>
+	<li>Fortran: <code>gfortran</code></li>
+</ul><p>For example, to compile/link a Fortran program <code>fluid.f90</code> to an executable 
+	<code>fluid</code> with architecture specific optimization for processors that support AVX instructions, use:
+</p><pre>$ gfortran -O2 -march=corei7-avx -o fluid fluid.f90
+</pre><p>Documentation on GCC compiler flags and options is available on the 
+	<a href=\"http://gcc.gnu.org/onlinedocs/\">project's website</a>. Do not forget to load the 
+toolchain module first!
+</p><h3><a name=\"foss-openmp\"></a>GCC OpenMP</h3><p>The compiler switch to use to compile/link OpenMP C/C++ or Fortran code is 
+	<code>-fopenmp</code>. For example, to compile/link a OpenMP C program 
+	<code>scattter.c</code> to an executable 
+	<code>scatter</code> with optimization for processors that support the AVX instruction 
+set, use:
+</p><pre>$ gcc -fopenmp -O2 -march=corei7-avx -o scatter scatter.c
+</pre><p>Remember to specify as many processes per node as the number of threads the 
+executable is supposed to run. This can be done using the 
+	<code>ppn</code> resource, e.g., 
+	<code>-l nodes=1:ppn=10</code> for an executable that should be run with 10 OpenMP threads. 
+The number of threads should not exceed the number of cores on a compute node.
+</p><p>Note that the OpenMP runtime library used by GCC is of inferior quality when compared 
+to Intel's, so developers are strongly encouraged to use the 
+	<a href=\"#intel-toolchain\"><code>intel</code> toolchain</a> when developing/building OpenMP software.
+</p><h2><a name=\"openmpi\">Communication library: Open MPI</a></h2><p>For the <code>foss</code> toolchain, Open MPI is used as the communications library. 
+To compile/link MPI programs, wrappers are supplied, so that the correct headers and 
+libraries are used automatically. These wrappers are:
+</p><ul>
+	<li>C: <code>mpicc</code></li>
+	<li>C++: <code>mpic++</code></li>
+	<li>Fortran: <code>mpif77</code>, 
+	<code>mpif90</code></li>
+</ul><p>The compiler wrappers take the same options as the corresponding compilers.
+</p><h3>Using the MPI compilers from Open MPI</h3><p>For example, to compile/link a C program <code>thermo.c</code> to an executable 
+	<code>thermodynamics</code> with architecture specific optimization for the AVX 
+instruction set, use:
+</p><pre>$ mpicc -O2 -march=corei7-avx -o thermodynamics thermo.c
+</pre><p>Extensive documentation is <a href=\"https://www.open-mpi.org/doc/\">provided on the Open MPI project's website</a>. Do not forget to load the toolchain module first.
+</p><h3>Running an Open MPI program</h3><p>Note that an MPI program must be run with the exact same version of the toolchain as 
+it was originally build with. The listing below shows a PBS job script 
+	<code>thermodynamics.pbs</code> that runs the 
+	<code>thermodynamics</code> executable.
+</p><pre>#!/bin/bash -l 
+module load intel/&lt;version&gt; 
+cd $PBS_O_WORKDIR 
+mpirun ./thermodynamics
+</pre><p>The hosts and number of processes is retrieved from the queue system, that gets this 
+information from the resource specification for that job.
+</p><h2><a name=\"foss-mathlibs\">FOSS mathematical libraries</a></h2><p>The foss toolchain contains the basic HPC mathematical libraries, it offers:
+</p><ul>
+	<li><a href=\"http://www.openblas.net/\" target=\"_blank\">OpenBLAS</a> (Basic Linear Algebra Subsystem)</li>
+	<li><a href=\"http://www.netlib.org/lapack/\" target=\"_blank\">Lapack </a>(Linear Algebra PACKage)</li>
+	<li>ScaLAPACK (Scalable Linear Algebra PACKage)</li>
+	<li><a href=\"http://www.fftw.org/\" target=\"_blank\">FFTW</a> (Fastest Fourier Transform in the West)</li>
+</ul><h2>Other components</h2><ul>
+	<li>From the 2015b series on, binutils was added to the toolchain. The binutils package contains the assembler used by gcc, and the standard OS assembler doesn't always support the newer instructions that are used on newer cluster nodes.</li>
+</ul><h2><a name=\"foss-versions\"></a>Version numbers</h2><table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 100%;\">
+<tbody>
+<tr>
+	<th>
+	</th>
+	<th>2018a</th><th>2017b</th><th>2017a</th><th>2016b
+	</th>
+	<th>2016a
+	</th>
+	<th>2015b
+	</th>
+	<th>2015a
+	</th>
+	<th>2014b
+	</th>
+	<th>2014a
+	</th>
+</tr>
+<tr>
+	<td>GCC
+	</td>
+	<td>6.4.0</td><td>6.4.0</td><td>6.3</td><td>5.4
+	</td>
+	<td>4.9.3
+	</td>
+	<td>4.9.3
+	</td>
+	<td>4.9.2
+	</td>
+	<td>4.8.3
+	</td>
+	<td>4.8.2
+	</td>
+</tr>
+<tr>
+	<td>OpenMPI
+	</td>
+	<td>2.1.2</td><td>2.1.1</td><td>2.0.2</td><td>1.10.3
+	</td>
+	<td>1.10.2
+	</td>
+	<td>1.8.8
+	</td>
+	<td>1.8.4
+	</td>
+	<td>1.8.1
+	</td>
+	<td>1.6.5
+	</td>
+</tr>
+<tr>
+	<td>OpenBLAS
+	</td>
+	<td>0.2.20</td><td>0.2.20</td><td>0.2.19</td><td>0.2.18
+	</td>
+	<td>0.2.15
+	</td>
+	<td>0.2.14
+	</td>
+	<td>0.2.13
+	</td>
+	<td>0.2.9
+	</td>
+	<td>0.2.8
+	</td>
+</tr>
+<tr>
+	<td>LAPACK
+	</td>
+	<td>3.8.0</td><td>3.8.0</td><td>3.3.6</td><td>3.6.1
+	</td>
+	<td>3.6.0
+	</td>
+	<td>3.5.0
+	</td>
+	<td>3.5.0
+	</td>
+	<td>3.5.0
+	</td>
+	<td>3.5.0
+	</td>
+</tr>
+<tr>
+	<td>ScaLAPACK
+	</td>
+	<td>2.0.2</td><td>2.0.2</td><td>2.0.2</td><td>2.0.2
+	</td>
+	<td>2.0.2
+	</td>
+	<td>2.0.2
+	</td>
+	<td>2.0.2
+	</td>
+	<td>2.0.2
+	</td>
+	<td>2.0.2
+	</td>
+</tr>
+<tr>
+	<td>FFTW
+	</td>
+	<td>3.3.7</td><td>3.3.6</td><td>3.3.6</td><td>3.3.4
+	</td>
+	<td>3.3.4
+	</td>
+	<td>3.3.4
+	</td>
+	<td>3.3.4
+	</td>
+	<td>3.3.4
+	</td>
+	<td>3.3.3
+	</td>
+</tr>
+<tr>
+	<td>binutils
+	</td>
+	<td>2.28</td><td>2.28</td><td>2.27</td><td>2.26
+	</td>
+	<td>2.25
+	</td>
+	<td>2.25
+	</td>
+	<td>/
+	</td>
+	<td>/
+	</td>
+	<td>/
+	</td>
+</tr>
+</tbody>
+</table><h2>Further information on FOSS components</h2><ul>
+	<li><a href=\"https://gcc.gnu.org/onlinedocs/\" target=\"_blank\">Overview of GCC manuals 
+	(all versions)
+	</a></li>
+	<li>OpenMPI documentation
+	<ul>
+		<li><a href=\"https://www.open-mpi.org/doc/v2.0/\" target=\"_blank\">2.0.x (foss/2017a)</a></li><li><a href=\"https://www.open-mpi.org/doc/v1.10/\" target=\"_blank\">1.10.x (foss/2016a and foss/2016b)</a></li><li><a href=\"https://www.open-mpi.org/doc/v1.8/\" target=\"_blank\">1.8.x (foss/2014b, foss/2015a and foss/2015b)</a></li>
+		<li><a href=\"https://www.open-mpi.org/doc/v1.6/\" target=\"_blank\">1.6.x (foss/2014a)</a></li>
+	</ul>
+	</li>
+	<li>The <a href=\"http://www.openblas.net/\" target=\"_blank\">OpenBLAS project page</a> and 
+	<a href=\"https://github.com/xianyi/OpenBLAS/wiki\" target=\"_blank\">documentation Wiki</a></li>
+	<li><a href=\"/cluster-doc/development/blas-lapack#Links\">Generic BLAS/LAPACK/ScaLAPACK 
+	documentation
+	</a></li>
+	<li><a href=\"http://www.fftw.org/#documentation\" target=\"_blank\">FFTW documentation</a></li>
+	<li><a href=\"https://sourceware.org/binutils/docs/\" target=\"_blank\">GNU binutils documentation</a></li>
+</ul>"
+

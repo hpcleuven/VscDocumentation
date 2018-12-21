@@ -1,0 +1,34 @@
+Tier-1
+------
+
+-  `The main tier-1 system is
+   muk <\%22http://hervsc.staging.statik.be/infrastructure/hardware/hardware-tier1-muk\%22>`__,
+   aimed at large parallel computing jobs that require a high-bandwidth
+   low-latency interconnect. Compute time on muk is only available upon
+   approval of a project. See the `pages on tier-1
+   allocation <\%22https://vscentrum.be/en/tier1-allocation\%22>`__.
+
+Experimental setup
+------------------
+
+-  `There is a small GPU and Xeon Phi test
+   system <\%22http://hervsc.staging.statik.be/infrastructure/hardware/k20x-phi-hardware\%22>`__
+   which is can be used by all VSC members on request (though a project
+   approval is not required at the moment). `The documentation for this
+   system is under
+   development <\%22http://hervsc.staging.statik.be/infrastructure/hardware/k20x-phi-hardware\%22>`__.
+
+Tier-2
+------
+
+Four university-level cluster groups are also embedded in the VSC and
+partly funded from VSC budgets:
+
+-  `The UAntwerpen clusters (hopper and
+   turing) <\%22http://hervsc.staging.statik.be/infrastructure/hardware/hardware-ua\%22>`__
+-  `The VUB cluster
+   (hydra) <\%22http://hervsc.staging.statik.be/infrastructure/hardware/hardware-vub\%22>`__
+-  `The UGent local
+   clusters <\%22http://www.ugent.be/hpc/en/infrastructure/overzicht.htm\%22>`__
+-  `The KU Leuven/UHasselt cluster (ThinKing and
+   Cerebro) <\%22http://hervsc.staging.statik.be/infrastructure/hardware/hardware-kul\%22>`__

@@ -1,0 +1,79 @@
+<p>Leibniz has two compute nodes each equipped with two NVIDIA Tesla P100 GPU compute cards, the most powerful cards available at the time of installation of the system. We run the regular NVIDIA software stack on those systems</p><p>The main goal of the system is to assess the performance of GPUs for applications used by our researchers. We want to learn for which applications GPU computing is economically viable. Users should realise that these nodes carry three times the cost of a regular compute node and might also be shorter lived (in the past, some NVIDA GPUs have shown to be pretty fragile). So these nodes are only interesting and should only be used for applications that run three times faster than a regular CPU-based equivalent.
+</p><p>As such we offer precedence to users who want to work with us towards this goal and either develop high-quality GPU software or are willing to benchmark their application on GPU and regular CPUs.
+</p><h2>Getting access</h2><p>Contact <a href=\"/support/contact-support\">the UAntwerp support team</a> to get access to the Xeon Phi node.
+</p><p>Users of the GPU compute nodes are expected to report back on their experiences. We are most interested in users who can also compare with running on regular nodes as we will use this information for future purchase decisions.
+</p><p>Currently the nodes are not yet integrated in the job system, you can log on manually to the node but need to check if noone else is using the node.
+</p><h2>Monitoring GPU nodes</h2><p>Monitoring of CPU use by jobs running on the GPU nodes can be done in the same way as for regular compute nodes.
+</p><p>One useful command to monitor the use of the GPUs is <code>nvidia-smi</code>. It will show information on both GPUs in the GPU node, and among others lets you easily verify if the GPUs are used by the job.
+</p><h2>Software on the GPU</h2><p>Software is installed on demand. As these systems are new to us also, we do expect some collaboration of the user to get software running on the GPUs.
+</p><table>
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">Package
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\"><strong>Module</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">Description
+	</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"https://www.cp2k.org/\">CP2K</a>
+	</td>
+	<td style=\"border: solid 1pt;\">CP2K/5.1-intel-2017a-bare-GPU-noMPI
+	</td>
+	<td style=\"border: solid 1pt;\">GPU-accelerated version of CP2K. The -GPU-noMPI-versions are ssmp binaries without support for MPI, so they can only be used on a single GPU node. The binaries are compiled with equivalent options to the corresponding -bare-multiver modules for CPU-only computations.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"https://developer.nvidia.com/cuda-zone\">CUDA</a>
+	</td>
+	<td style=\"border: solid 1pt;\">CUDA/8.0.61<br>CUDA/9.0.176<br>CUDA/9.1.85
+	</td>
+	<td style=\"border: solid 1pt;\">Various versions of the CUDA development kit
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"https://developer.nvidia.com/cudnn\">cuDNN</a>
+	</td>
+	<td style=\"border: solid 1pt;\">cuDNN/6.0-CUDA-8.0.61<br>cuDNN/7.0.5-CUDA-8.0.61<br>cuDNN/7.0.5-CUDA-9.0.176<br>cuDNN/7.0.5-CUDA-9.1.85<br>
+	</td>
+	<td style=\"border: solid 1pt;\">The CUDA Deep Neural Network library, version 6.0 and 7.0, both installed from standard NVIDA tarbals but in the directory structure of our module system.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"http://www.gromacs.org/\">GROMACS</a>
+	</td>
+	<td style=\"border: solid 1pt;\">GROMACS/2016.4-foss-2017a-GPU-noMPI<br>GROMACS/2016.4-intel-2017a-GPU-noMPI<br>
+	</td>
+	<td style=\"border: solid 1pt;\">GROMACS with GPU acceleration. The -GPU-noMPI-versions are ssmp binaries without support for MPI, so they can only be used on a single GPU node.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"https://keras.io/\">Keras</a>
+	</td>
+	<td style=\"border: solid 1pt;\">Keras/2.1.3-intel-2017c-GPU-Python-3.6.3
+	</td>
+	<td style=\"border: solid 1pt;\">Keras with TensorFlow as the backend (1.4 for Keras 2.1.3), using the GPU-accelerated version of Tensorflow.<br>For comparison purposes there is a identical version using the CPU-only version of TensorFlow 1.4.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"http://www.ks.uiuc.edu/Research/namd/\">NAMD</a>
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">Work in progress
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><a href=\"https://www.tensorflow.org/\">TensorFlow</a>
+	</td>
+	<td style=\"border: solid 1pt;\">Tensorflow/1.3.0-intel-2017a-GPU-Python-3.6.1<br>Tensorflow/1.4.0-intel-2017c-GPU-Python-3.6.3<br>
+	</td>
+	<td style=\"border: solid 1pt;\">GPU versions of Tensorflow 1.3 and 1.4. Google-provided binaries were used for the installation.<br>There are CPU-only equivalents of those modules for comparison. The 1.3 version was installed from the standard PyPi wheel which is not well optimized for modern processors, the 1.4 version was installed from a Python wheel compiled by Intel engineers and should be well-optimized for all our systems.
+	</td>
+</tr>
+</tbody>
+</table>"
+

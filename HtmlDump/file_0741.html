@@ -1,0 +1,9 @@
+<h2>Access</h2><pre>qsub  -l partition=gpu,nodes=1:K20Xm &lt;jobscript&gt;</pre><p>or
+</p><pre>qsub  -l partition=gpu,nodes=1:K40c &lt;jobscript&gt;
+</pre><p>depending which GPU node you would like to use if you don't 
+'care' on which type of GPU node your job ends up you can just submit it
+ like this:
+</p><pre>qsub  -l partition=gpu &lt;jobscript&gt;
+</pre><h3>Submit to a Phi node:</h3><pre>qsub -l partition=phi &lt;jobscript&gt;
+</pre>"
+

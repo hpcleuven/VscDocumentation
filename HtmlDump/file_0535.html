@@ -1,0 +1,119 @@
+<p>The UGent compute infrastructure consists of several specialised clusters, jointly called Stevin. These clusters share a lot of their file space so that users can easily move between clusters depending on the specific job they have to run.</p><h2>Login nodes</h2><p>The HPC-UGent Tier-2 login nodes can be access through the generic name <code>login.hpc.ugent.be</code>.
+</p><h3>Connecting to a specific login node</h3><p>There are multiple login nodes (gligar01-gligar03) and you will be connected with one of them when using the generic alias <code>login.hpc.ugent.be</code>. (You can check which one you are connected to using the <code>hostname</code> command).
+</p><p>If you need to connect with as specific login node, use either <code style=\"font-size: 14px;\">gligar01.ugent.be</code>, <code>gligar02.ugent.be</code>, or <code>gligar03.ugent.be</code><span class=\"redactor-invisible-space\">.</span>
+</p><h2>Compute clusters</h2><table>
+<tbody>
+<tr>
+	<td>
+	</td>
+	<td>#nodes
+	</td>
+	<td>CPU
+	</td>
+	<td>Mem/node
+	</td>
+	<td>Diskspace/node
+	</td>
+	<td>Network
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>delcatty</h3>
+	</td>
+	<td>128
+	</td>
+	<td>2 x 8-core Intel E5-2670<br>(Sandy Bridge @ 2.6 GHz)
+	</td>
+	<td>64 GB
+	</td>
+	<td>400 GB
+	</td>
+	<td>FDR InfiniBand
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>phanpy</h3>
+	</td>
+	<td>16
+	</td>
+	<td>2 x 12-core Intel E5-2680v3<br>(Haswell-EP @ 2.5 GHz)
+	</td>
+	<td>512 GB
+	</td>
+	<td>3x 400 GB (SSD, striped)
+	</td>
+	<td>FDR InfiniBand
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>golett</h3>
+	</td>
+	<td>196
+	</td>
+	<td>2 x 12-core Intel E5-2680v3<br>(Haswell-EP @ 2.5 GHz)
+	</td>
+	<td>64 GB
+	</td>
+	<td>500 GB
+	</td>
+	<td>FDR-10 InfiniBand<br><br>
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>swalot</h3>
+	</td>
+	<td>128
+	</td>
+	<td>2 x 10-core Intel E5-2660v3<br>(Haswell-EP @ 2.6 GHz)
+	</td>
+	<td>128 GB
+	</td>
+	<td>1 TB
+	</td>
+	<td>FDR InfiniBand<br><br>
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>skitty</h3>
+	</td>
+	<td>72
+	</td>
+	<td>2 x 18-core Intel Xeon Gold<br>6140 (Skylake @ 2.3 GHz)
+	</td>
+	<td>192 GB
+	</td>
+	<td>1 TB<br>240 GB SSD
+	</td>
+	<td>EDR InfiniBand
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>victini</h3>
+	</td>
+	<td>96
+	</td>
+	<td>2 x 18-core Intel Xeon Gold<br>6140 (Skylake @ 2.3 GHz)
+	</td>
+	<td>96 GB
+	</td>
+	<td>1 TB<br>240 GB SSD
+	</td>
+	<td>10 GbE
+	</td>
+</tr>
+</tbody>
+</table><p>Only clusters with an InfiniBand interconnect network are suited for multi-node jobs. Other clusters are for single-node usage only.<br>
+</p><h2>Shared storage</h2><p>General Parallel File System (GPFS) partitions:
+</p><ul class=\"list--unordered\">
+	<li><code>$VSC_HOME</code>: 35 TB</li>
+	<li><code>$VSC_DATA</code>: 702 TB</li>
+	<li><code>$VSC_SCRATCH</code>: 1 PB (equivalent to <code>$VSC_SCRATCH_KYUKON</code>)</li>
+	<li><code>$VSC_SCRATCH_PHANPY</code>: 35TB (very fast, powered by SSDs)</li>
+</ul>"
+

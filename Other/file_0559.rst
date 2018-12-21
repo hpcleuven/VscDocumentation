@@ -1,0 +1,6 @@
+The documentation page you visited applies to the UAntwerp Hopper
+cluster. Some or all of it may also apply to the older Turing cluster,
+but that system does not fully implement the VSC environment module
+structure. For more details about the specifics of those systems, visit
+`the UAntwerp hardware
+page <\%22/infrastructure/hardware/hardware-ua\%22>`__.

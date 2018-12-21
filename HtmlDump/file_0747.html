@@ -1,0 +1,87 @@
+<p>From version 2017a on of the Intel toolchains, the setup on the UAntwerp is different from the one on some other VSC clusters:</p><ul>
+	<li>A full install of all Intel tools for which we have a license at UAntwerp has been performed in a single directory tree as intended by Intel. There is a single module for the C/C++/Fortran compilers, Intel MPI, the libraries MKL (Math Kernel Library), IPP (Integrated Performance Primitives), TBB (Threading Building Blocks) and DAAL (Data Analytics Acceleration Library) and Intel-provided GDB-based debuggers. The Intel tools for code and performance analysis VTune Amplifier XE, Intel Trace Analyzer and Collector (ITAC), Intel Advisor XE and Intel Inspector XE are also installed, but these still have separate module files as they rely on overloading libraries in some cases.</li>
+	<li>There should be no need to run any of the configuration scripts provided by Intel, all variables should be set correctly by the module file. Contact user support if this is not the case. The configuration scripts should work as intended by Intel though should you want to use the compilers without loading the module.</li>
+	<li>Several variables specific for the way software is set up at the VSC are defined the way they would be defined if the Intel toolchain was defined in the standard VSC way through the module tree. As such, we expect that you should be able to use any Makefile developed for the standard VSC-setup.</li>
+	<li>All compiler components needed to develop applications with offload to a Xeon Phi expansion board are also provided in anticipation of the installation of such a cluster node for testing purposes in Leibniz.</li>
+</ul><h2>Compilers</h2><ul>
+	<li>The compilers work exactly in the way described on <a href=\"/cluster-doc/development/toolchain-intel\">the regular Intel toolchain web page</a>, including the MPI compiler wrappers. All links to the documentation on that page are also relevant.</li>
+	<li>Man pages for all commands have also been installed.</li>
+</ul><h2>Debuggers</h2><ul>
+	<li>Intel-adapted GDB debuggers have been installed
+	<ul>
+		<li>Debugging regular Intel64 applications: <code>gdb-ia</code></li>
+		<li>Debugging applications with offload to Xeon Phi: <code>gdb-mic</code></li>
+	</ul></li>
+	<li>Manual pages and GNU info pages are available for both commands</li>
+</ul><h2>Libraries</h2><h3>Math Kernel Library (MKL)</h3><p>MKL works exactly as in the regular VSC Intel toolchain. See <a href=\"https://www.vscentrum.be/cluster-doc/development/toolchain-intel#intel-mathematical-libraries\">the MKL section of web page on the VSC Intel toolchain</a> for more information.
+</p><h3>Integrated Performance Primitives (IPP)</h3><ul>
+	<li>What? The Intel Integrated Performance Primitives is a software library that provides a broad range of functionality, including general signal and image processing, computer vision, data compression, cryptography, and string manipulation. The functions are heavily optimised for the Intel processors.</li>
+	<li>Documentation
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/get-started-with-ipp-for-linux\">Getting started with Intel® Integrated Performance Primitives 2017 for Linux* OS</a></li>
+		<li>Developer guide and various tutorials in <a href=\"https://software.intel.com/en-us/documentation\">the Intel Software Documentation Library</a></li>
+	</ul></li>
+</ul><h3>Threading Building Blocks (TBB)</h3><ul>
+	<li>What? A C++ template library for task parallelism. The library is developed by Intel, but now available under the Apache 2.0 license and runs also with non-Intel compilers, so you don't have to be concerned about vendor lock-in.</li>
+	<li>Documentation
+	<ul>
+		<li><a href=\"https://www.threadingbuildingblocks.org/\">The Intel Threading Building Blocks web site</a> </li>
+		<li>Documentation in the <a href=\"https://software.intel.com/en-us/documentation\">Intel Software Documentation Library</a></li>
+	</ul></li>
+</ul><h3>Data Analytics Acceleration Library (DAAL)</h3><ul>
+	<li>What? A library with building blocks covering all stages of data analytics: data acquisition from a data source, preprocessing, transformation, data mining, modeling, validation, and decision making. The implementation is heavily optimised for Intel processors.</li>
+	<li>Documentation
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/get-started-with-daal-for-linux\">Getting Started with Intel® Data Analytics Acceleration Library for Linux</a></li>
+		<li>Documentation in the <a href=\"https://software.intel.com/en-us/documentation\">Intel Software Documentation Library</a></li>
+	</ul></li>
+</ul><h2>Code and performance analysis</h2><h3>VTune Amplifier XE</h3><ul>
+	<li>What? VTune Amplifier is a tool for runtime analysis of serial and shared memory applications. For a list of features, please consult the <a href=\"https://software.intel.com/en-us/get-started-with-vtune\">Getting Started with VTune web page</a>.</li>
+	<li>Module: <code>VTune/&lt;toolchain version&gt;</code>, e.g., <code>VTune/2017a</code>.</li>
+	<li>How? VTune Amplifier is started through the <code>amplxe-gui</code> (GUI version) or <code>amplxe-cl</code> (command line version) command.</li>
+	<li>Documentation:
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/get-started-with-vtune\">Getting started with VTune web page on the Intel web site</a></li>
+		<li><a href=\"https://software.intel.com/en-us/intel-vtune-amplifier-xe-support/training\">VTune Amplifier training page by Intel</a></li>
+		<li>Intel VTune Amplifier documentation in the <a href=\"https://software.intel.com/en-us/documentation\">Intel Software Documentation Library</a></li>
+		<li>Man page for <code>amplxe-cl</code> (after loading the appropriate VTune module)</li>
+	</ul></li>
+</ul><h3>ITAC - Intel Trace Analyzer and Collector</h3><ul>
+	<li>What? ITAC is a graphical tool to understand MPI application behaviour. A full set of features can be found on the <a href=\"https://software.intel.com/en-us/get-started-with-itac\">Getting Started with Intel Trace Analyzer and Colllector page</a>.</li>
+	<li>How? Analysis is a two-step operation:
+	<ol>
+		<li>Run your application using the <code>-trace</code> option of mpirun to collect data in a <code>.stf</code> file.</li>
+		<li>Analyse the data using <code>traceanalyzer</code></li>
+	</ol></li>
+	<li>Module: <code>itac/&lt;toolchain version&gt;</code>, e.g., <code>itac/2017a</code>.</li>
+	<li>Documentation:
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/get-started-with-itac\">Getting started with Intel Trace Analyzer and Collector on the Intel web site</a></li>
+		<li><a href=\"https://software.intel.com/en-us/intel-trace-analyzer-support/training\">Training videos on the Intel site</a></li>
+		<li>Intel Trace Analyzer and Collector documentation in the <a href=\"https://software.intel.com/en-us/documentation\">Intel Software Documentation Library</a></li>
+		<li>Manual pages for the library functions and some commands</li>
+	</ul></li>
+</ul><h3>Advisor</h3><ul>
+	<li>What? Advisor is a code analysis tool that works with the compilers to give advise on vectorization and threading for both the Xeon and Xeon Phi processors.</li>
+	<li>How? Advisor uses output generated by the compiler when building a full optimized release build and as such expects that some additional options are specified when compiling the application. The resulting compiler output can then be analized using the <code>advixe-gui</code> command. </li>
+	<li>Module: <code>Advisor/&lt;toolchain version&gt;</code>, e.g., <code>Advisor/2017a</code>.</li>
+	<li>Documentation
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/get-started-with-advisor\">Getting started with Intel Advisor</a></li>
+		<li>Intel Advisor documentation in the <a href=\"https://software.intel.com/en-us/documentation\">Intel Software Documentation Library</a></li>
+		<li>Manual page for <code>advixe-cl</code></li>
+	</ul></li>
+</ul><h3>Inspector</h3><ul>
+	<li>What? Inspector is a run-time analysis error checking tool for dynamic memory and threading errors.</li>
+	<li>How? Inspector uses a debug build of you application. The application is run from within Inspector. Inspector can be started with the <code>inspxe-gui</code> (GUI version) or <code>inspxe-cl</code> (Command Line version) command.</li>
+	<li>Module: <code>Inspector/&lt;toolchain version&gt;</code>, e.g., <code>Inspector/2017a</code>.</li>
+	<li>Documentation:
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/node/595380\">Getting started with Intel Inspector - Linux OS</a></li>
+		<li><a href=\"https://software.intel.com/en-us/intel-inspector-xe-support/training\">Intel Online Training material</a></li>
+		<li><a href=\"https://software.intel.com/en-us/inspector-user-guide-linux\">Intel Inspector Help - Linux OS</a></li>
+		<li>Further Intel Inspector documentation in the <a href=\"https://software.intel.com/en-us/documentation\">Intel Software Documentation Library</a></li>
+		<li>Manual page for <code>inspxe-cl</code></li>
+	</ul></li>
+</ul>"
+

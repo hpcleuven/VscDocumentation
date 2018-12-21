@@ -1,0 +1,418 @@
+<p>UAntwerpen has two clusters. <a href=\"#leibniz\">leibniz</a> and <a href=\"#hopper\">hopper</a>, <a href=\"#turing\">Turing</a>, an older cluster, has been retired in the early 2017.</p><h2><a name=\"leibniz\"></a>Local documentation</h2><ul>
+	<li><a href=\"/assets/1323\">Slides of the information sessions on \"Transitioning to Leibniz and CentOS 7\" (PDF)</a></li>
+	<li><a href=\"/infrastructure/hardware/hardware-ua/toolchain-2017a\">The 2017a toolchain at UAntwerp</a>: In preparation of the integration of Leibniz in the UAntwerp infrastructure, the software stack has been rebuild in the 2017a toolchain. Several changes have been made to the naming and the organization of the toolchains. The toolchain is now loaded by default on Hopper, and is the main toolchain on Leibniz and later also on Hopper after an OS upgrade.</li>
+	<li><a href=\"/infrastructure/hardware/hardware-ua/intel\">The Intel compiler toolchains</a>: From the 2017a toolchain on, the setup of the toolchains differs on the UAntwerp clusters differs from most other VSC systems. We have set up the Intel compilers, including all libraries, in a single directory structure as intended by Intel. Some scripts, including compiler configuration scripts, expect this setup to work properly.</li>
+	<li><a href=\"https://www.vscentrum.be/infrastructure/hardware/hardware-ua/licensed-software\">Licensed software at UAntwerp</a>: Some software has a restricted license and is not available to all users. This page lists some of those packages and explains for some how you can get access to the package.</li>
+	<li>Special nodes:
+	<ul>
+		<li><a href=\"/infrastructure/hardware/hardware-ua/visualization\">GUI programs and remote visualization node</a>: Leibniz offers a remote visualization node with software stack based on TurboVNC and OpenGL. All other login nodes offer the same features minus the OpenGL support (so applications have to link to a OpenGL software emulation library).</li>
+		<li><a href=\"/infrastructure/hardware/hardware-ua/gpu-computing\">GPU computing nodes</a></li>
+		<li><a href=\"/infrastructure/hardware/hardware-ua/xeonphi\">Xeon Phi testbed</a></li>
+	</ul></li>
+	<li><a href=\"/infrastructure/hardware/hardware-ua/leibniz-instructions\">Information for Leibniz test users</a></li>
+</ul><h2>Leibniz</h2><p>Leibniz was installed in the spring of 2017. It is a NEC system consisting of 152 nodes with 2 14-core intel <a href=\"https://ark.intel.com/nl/products/91754/Intel-Xeon-Processor-E5-2680-v4-35M-Cache-2_40-GHz\">E5-2680v4</a> Broadwell generation CPUs connected through a EDR InfiniBand network. 144 of these nodes have 128 GB RAM, the other 8 have 256 GB RAM. The nodes do not have a sizeable local disk.  The cluster also contains a node for visualisation, 2 nodes for GPU computing (NVIDIA Psscal generation) and one node with an Intel Xeon Phi expansion board.
+</p><h3>Access restrictions<a id=\"AccessRestrictions\" name=\"AccessRestrictions\"></a></h3><p>Access ia available for faculty, students (master's projects under faculty supervision), and researchers of the AUHA. The cluster is integrated in the VSC network and runs the standard VSC software setup. It is also available to all VSC-users, though we appreciate that you contact the UAntwerpen support team so that we know why you want to use the cluster.
+</p><p>Jobs can have a maximal execution wall time of 3 days (72 hours).
+</p><h3>Hardware details</h3><ul>
+	<li>Interactive work:
+	<ul>
+		<li>2 login nodes. These nodes have a very similar architecture to the compute nodes.</li>
+	</ul>
+	<ul>
+		<li>1 visualisation node with a NVIDIA P5000 GPU. This node is meant to be used for interactive visualizations (<a href=\"/infrastructure/hardware/hardware-ua/visualization\">specific instructions</a>).</li>
+	</ul></li>
+	<li>Compute nodes:
+	<ul>
+		<li>144 nodes with 2 14-core Intel <a href=\"https://ark.intel.com/nl/products/91754/Intel-Xeon-Processor-E5-2680-v4-35M-Cache-2_40-GHz\">E5-2680v4</a> CPUs (Broadwell generation, 2.4 GHz) and 128 GB RAM. </li>
+		<li>8 nodes with 2 14-core Intel <a href=\"https://ark.intel.com/nl/products/91754/Intel-Xeon-Processor-E5-2680-v4-35M-Cache-2_40-GHz\">E5-2680v4</a> CPUs (Broadwell generation, 2.4 GHz) and 256 GB RAM. </li>
+		<li>2 nodes with 2 14-core Intel <a href=\"https://ark.intel.com/nl/products/91754/Intel-Xeon-Processor-E5-2680-v4-35M-Cache-2_40-GHz\">E5-2680v4</a> CPUs (Broadwell generation, 2.4 GHz), 128 GB RAM and two NVIDIA Tesla P100 GPUs with 16 GB HBM2 memory per GPU (delivering a peak performance of 4.7 TFlops in double precision per GPU) (<a href=\"/infrastructure/hardware/hardware-ua/gpu-computing\">specific instructions</a>).</li>
+		<li>1 node with 2 14-core Intel <a href=\"https://ark.intel.com/nl/products/91754/Intel-Xeon-Processor-E5-2680-v4-35M-Cache-2_40-GHz\">E5-2680v4</a> CPUs (Broadwell generation, 2.4 GHz), 128 GB RAM and Intel Xeon Phi 7220P PCIe card with 16 GB of RAM (<a href=\"/infrastructure/hardware/hardware-ua/xeonphi\">specific instructions</a>).</li>
+		<li>All nodes are connected through a EDR InfiniBand network</li>
+		<li>All compute nodes contain only a small SSD drive. This implies that swapping is not possible and that users should preferably use the main storage for all temporary files also.</li>
+	</ul></li>
+	<li>Storage: The cluster relies on the storage provided by Hopper (a 100 TB DDN SFA7700 system with 4 storage servers).</li>
+</ul><h3>Login infrastructure</h3><p>Direct login is possible to both login nodes and to the visualization node.
+</p><ul>
+	<li>From outside the VSC network: Use the external interface names. Currently, one needs to be on the network of UAntwerp or some associated institutions to be able to access the external interfaces. Otherwise a VPN connection is needed to the UAntwerp network.</li>
+	<li>From inside the VSC network (e.g., another VSC cluster): Use the internal interface names.</li>
+</ul><table>
+<tbody>
+<tr>
+	<td>
+	</td>
+	<td>External interface
+	</td>
+	<td>Internal interface
+	</td>
+</tr>
+<tr>
+	<td>Login generic
+	</td>
+	<td>login-leibniz.uantwerpen.be<br>
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>Login
+	</td>
+	<td>login1-leibniz.uantwerpen.be<br>login2-leibniz.uantwerpen.be
+	</td>
+	<td>ln1.leibniz.antwerpen.vsc<br>ln2.leibniz.antwerpen.vsc
+	</td>
+</tr>
+<tr>
+	<td>Visualisation node
+	</td>
+	<td>viz1-leibniz.uantwerpen.be
+	</td>
+	<td>viz1.leibniz.antwerpen.vsc
+	</td>
+</tr>
+</tbody>
+</table><h3>Storage organization</h3><p>
+	See <a href=\"#hopper-storage\">the section on the storage organization of hopper</a>.
+</p><h3>Characteristics of the compute nodes</h3><p>Since leibniz is currently a homogenous system with respect to CPU type and interconnect, it is not needed to specify the corresponding properties (see also the page on <a href=\"https://www.vscentrum.be/cluster-doc/running-jobs/specifying-requirements\">specifying resources, output files and notifications</a>).<br>
+</p><p>However, to make it possible to write job scripts that can be used on both hopper and leibniz (or other VSC clusters) and to prepare for future extensions of the cluster, the following features are defined:
+</p><table>
+<tbody>
+<tr>
+	<th>property
+	</th>
+	<th>explanation
+	</th>
+</tr>
+<tr>
+	<td>broadwell
+	</td>
+	<td>only use Intel processors from the Broadwell family (E5-XXXv4) (Not needed at the moment as this is the only CPU type)
+	</td>
+</tr>
+<tr>
+	<td>ib
+	</td>
+	<td>use InfiniBand interconnect (not needed at the moment as all nodes are connected to the InfiniBand interconnect)
+	</td>
+</tr>
+<tr>
+	<td>mem128
+	</td>
+	<td>use nodes with 128 GB RAM (roughly 112 GB available). This is the majority of the nodes on leibniz.
+	</td>
+</tr>
+<tr>
+	<td>mem256
+	</td>
+	<td>use nodes with 256 GB RAM (roughly 240 GB available). This property is useful if you submit a batch of jobs that require more than 4 GB of RAM per processor but do not use all cores and you do not want to use a tool to bundle jobs yourself such as Worker, as it helps the scheduler to put those jobs on nodes that can be further filled with your jobs.
+	</td>
+</tr>
+</tbody>
+</table><p>These characteristics map to the following nodes on Hopper:
+</p><table class=\"plain\">
+<tbody>
+<tr>
+	<th>Type of node
+	</th>
+	<th>CPU type
+	</th>
+	<th>Interconnect
+	</th>
+	<th># nodes
+	</th>
+	<th># physical<br>cores<br>(per node)
+	</th>
+	<th># logical<br>cores<br>(per node)
+	</th>
+	<th>installed mem<br>(per node)
+	</th>
+	<th>avail mem<br>(per node)
+	</th>
+	<th>local disc
+	</th>
+</tr>
+<tr>
+	<td>broadwell:ib:mem128
+	</td>
+	<td><a href=\"https://ark.intel.com/products/75277\">Xeon E5-2680v4</a>
+	</td>
+	<td>IB-EDR
+	</td>
+	<td>144
+	</td>
+	<td>28
+	</td>
+	<td>28
+	</td>
+	<td>128 GB
+	</td>
+	<td>112 GB
+	</td>
+	<td>~25 GB
+	</td>
+</tr>
+<tr>
+	<td>broadwell:ib:mem256
+	</td>
+	<td><a href=\"https://ark.intel.com/products/75277\">Xeon E5-2680v4</a>
+	</td>
+	<td>IB-EDR
+	</td>
+	<td>8
+	</td>
+	<td>28
+	</td>
+	<td>28
+	</td>
+	<td>256 GB
+	</td>
+	<td>240 GB
+	</td>
+	<td>~25 GB<br><br>
+	</td>
+</tr>
+</tbody>
+</table><h2><a name=\"hopper\"></a>Hopper</h2><p>Hopper is the current UAntwerpen cluster. It is a HP system consisting of 168 nodes with 2 10-core Intel E5-2680v2 Ivy Bridge generation CPUs connected through a FDR10 InfiniBand network. 144 nodes have a memory capacity of 64 GB while 24 nodes have 256 GB of RAM memory. The system has been reconfigured to have a software setup that is essentially the same as on Leibniz.</p><h3>Access restrictions<a id=\"AccessRestrictions\" name=\"AccessRestrictions\"></a></h3><p>Access ia available for faculty, students (master's projects under faculty supervision), and researchers of the AUHA. The cluster is integrated in the VSC network and runs the standard VSC software setup. It is also available to all VSC-users, though we appreciate that you contact the UAntwerpen support team so that we know why you want to use the cluster.
+</p><p>Jobs can have a maximal execution wall time of 3 days (72 hours).
+</p><h3>Hardware details</h3><ul>
+	<li>4 login nodes accessible through the generic name <code>login.hpc.uantwerpen.be</code>.
+	<ul>
+		<li>Use this hostname if you read <i>vsc.login.node</i> in the documentation and want to connect to this login node</li>
+	</ul>
+	</li>
+	<li>Compute nodes
+	<ul>
+		<li>144 (96 installed in the first round, 48 in the first expansion) nodes with 2 10-core Intel <a href=\"https://ark.intel.com/products/75277\">E5-2680v2</a> CPUs (Ivy Bridge generation) with 64 GB of RAM.</li>
+		<li>24 nodes with 2 10-core Intel <a href=\"https://ark.intel.com/products/75277\">E5-2680v2</a> CPUs (Ivy Bridge generation) with 256 GB of RAM.</li>
+		<li>All nodes are connected through an InfiniBand FDR10 interconnect.</li>
+	</ul>
+	</li>
+	<li>Storage
+	<ul>
+		<li>Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.</li>
+	</ul>
+	</li>
+</ul><h3>Login infrastructure</h3><p>Direct login is possible to both login nodes and to the visualization node.
+</p><ul>
+	<li>From outside the VSC network: Use the external interface names. Currently, one needs to be on the network of UAntwerp or some associated institutions to be able to access the external interfaces. Otherwise a VPN connection is needed to the UAntwerp network.</li>
+	<li>From inside the VSC network (e.g., another VSC cluster): Use the internal interface names.</li>
+</ul><table>
+<tbody>
+<tr>
+	<td>
+	</td>
+	<td>External interface
+	</td>
+	<td>Internal interface
+	</td>
+</tr>
+<tr>
+	<td>Login generic
+	</td>
+	<td>login.hpc.uantwerpen.be<br>login-hopper.uantwerpen.be
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>Login nodes
+	</td>
+	<td>login1-hopper.uantwerpen.be<br>login2-hopper.uantwerpen.be<br>login3-hopper.uantwerpen.be<br>login4-hopper.uantwerpen.be
+	</td>
+	<td>ln01.hopper.antwerpen.vsc<br>ln02.hopper.antwerpen.vsc<br>ln03.hopper.antwerpen.vsc<br>ln04.hopper.antwerpen.vsc
+	</td>
+</tr>
+</tbody>
+</table><h3><a name=\"hopper-storage\"></a>Storage organisation</h3><p>The storage is organised according to the <a href=\"/cluster-doc/access-data-transfer/where-store-data\">VSC storage guidelines</a>.
+</p><table>
+<tbody>
+<tr>
+	<th style=\"vertical-align: top;\">Name
+	</th>
+	<th style=\"vertical-align: top;\">Variable
+	</th>
+	<th style=\"vertical-align: top;\">Type
+	</th>
+	<th style=\"vertical-align: top;\">Access
+	</th>
+	<th style=\"vertical-align: top;\">Backup
+	</th>
+	<th style=\"vertical-align: top;\">Default quota
+	</th>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">/user/antwerpen/20X/vsc20XYZ
+	</td>
+	<td style=\"vertical-align: top;\">$VSC_HOME
+	</td>
+	<td style=\"vertical-align: top;\">GPFS
+	</td>
+	<td style=\"vertical-align: top;\">VSC
+	</td>
+	<td style=\"vertical-align: top;\">NO
+	</td>
+	<td style=\"vertical-align: top;\">3 GB
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">/data/antwerpen/20X/vsc20XYZ
+	</td>
+	<td style=\"vertical-align: top;\">$VSC_DATA
+	</td>
+	<td style=\"vertical-align: top;\">GPFS
+	</td>
+	<td style=\"vertical-align: top;\">VSC
+	</td>
+	<td style=\"vertical-align: top;\">NO
+	</td>
+	<td style=\"vertical-align: top;\">25 GB
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">/scratch/antwerpen/20X/vsc20XYZ
+	</td>
+	<td style=\"vertical-align: top;\">
+		$VSC_SCRATCH<br>
+		$VSC_SCRATCH_SITE
+	</td>
+	<td style=\"vertical-align: top;\">GPFS
+	</td>
+	<td style=\"vertical-align: top;\">Hopper<br>Leibniz
+	</td>
+	<td style=\"vertical-align: top;\">NO
+	</td>
+	<td style=\"vertical-align: top;\">25 GB
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">/small/antwerpen/20X/vsc20XYZ<sup>(*)</sup>
+	</td>
+	<td style=\"vertical-align: top;\">
+	</td>
+	<td style=\"vertical-align: top;\">GPFS
+	</td>
+	<td style=\"vertical-align: top;\">Hopper<br>Leibniz
+	</td>
+	<td style=\"vertical-align: top;\">NO
+	</td>
+	<td style=\"vertical-align: top;\">0 GB
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">/tmp
+	</td>
+	<td style=\"vertical-align: top;\">$VSC_SCRATCH_NODE
+	</td>
+	<td style=\"vertical-align: top;\">ext4
+	</td>
+	<td style=\"vertical-align: top;\">Node
+	</td>
+	<td style=\"vertical-align: top;\">NO
+	</td>
+	<td style=\"vertical-align: top;\">250 GB hopper
+	</td>
+</tr>
+</tbody>
+</table><p><sup>(*)</sup> /small is a file system optimised for the storage of small files of types that do not belong in $VSC_HOME. The file systems pointed at by $VSC_DATA and $VSC_SCRATCH have a large fragment size (128 kB) for optimal performance on larger files and since each file occupies at least one fragment, small files waste a lot of space on those file systems. The file system is available on request.
+</p><p>For users from other universities, the quota on $VSC_HOME and $VSC_DATA will be determined by the local policy of your home institution as these file systems are mounted from there. The pathnames will be similar with trivial modifications based on your home institution and VSC account number.
+</p><h3>Characteristics of the compute nodes</h3><p>Since hopper is currently a homogenous system with respect to CPU type and interconnect, it is not needed to specify these properties (see also the page on <a href=\"/cluster-doc/running-jobs/specifying-requirements\">specifying resources, output files and notifications</a>).
+</p><p>However, to make it possible to write job scripts that can be used on both hopper and turing (or other VSC clusters) and to prepare for future extensions of the cluster, the following features are defined:
+</p><table>
+<tbody>
+<tr>
+	<th>property
+	</th>
+	<th>explanation
+	</th>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">ivybridge
+	</td>
+	<td style=\"vertical-align: top;\">only use Intel processors from the Ivy Bridge family (E5-XXXv2) (Not needed at the moment as this is the only CPU type)
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">ib
+	</td>
+	<td style=\"vertical-align: top;\">use InfiniBand interconnect (only for compatibility with Turing job scripts as all nodes have InfiniBand)
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">mem64
+	</td>
+	<td style=\"vertical-align: top;\">use nodes with 64 GB RAM (58 GB available)
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">mem256
+	</td>
+	<td style=\"vertical-align: top;\">use nodes with 256 GB RAM (250 GB available)
+	</td>
+</tr>
+</tbody>
+</table><p>These characteristics map to the following nodes on Hopper:
+</p><table class=\"plain\">
+<tbody>
+<tr>
+	<th>Type of node
+	</th>
+	<th>CPU type
+	</th>
+	<th>Interconnect
+	</th>
+	<th># nodes
+	</th>
+	<th># physical<br>cores<br>(per node)
+	</th>
+	<th># logical<br>cores (per node)
+	</th>
+	<th>installed mem<br>(per node)
+	</th>
+	<th>avail mem<br>(per node)
+	</th>
+	<th>local disc
+	</th>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">ivybridge:ib:mem64
+	</td>
+	<td style=\"vertical-align: top;\"><a href=\"https://ark.intel.com/products/75277\">Xeon E5-2680v2</a>
+	</td>
+	<td style=\"vertical-align: top;\">IB-FDR10
+	</td>
+	<td style=\"vertical-align: top;\">144
+	</td>
+	<td style=\"vertical-align: top;\">20
+	</td>
+	<td style=\"vertical-align: top;\">20
+	</td>
+	<td style=\"vertical-align: top;\">64 GB
+	</td>
+	<td style=\"vertical-align: top;\">56 GB
+	</td>
+	<td style=\"vertical-align: top;\">~360 GB
+	</td>
+</tr>
+<tr>
+	<td style=\"vertical-align: top;\">ivybridge:ib:mem256
+	</td>
+	<td style=\"vertical-align: top;\"><a href=\"https://ark.intel.com/products/75277\">Xeon E5-2680v2</a>
+	</td>
+	<td style=\"vertical-align: top;\">IB-FDR10
+	</td>
+	<td style=\"vertical-align: top;\">24
+	</td>
+	<td style=\"vertical-align: top;\">20
+	</td>
+	<td style=\"vertical-align: top;\">20
+	</td>
+	<td style=\"vertical-align: top;\">256 GB
+	</td>
+	<td style=\"vertical-align: top;\">248 GB
+	</td>
+	<td style=\"vertical-align: top;\">~360 GB
+	</td>
+</tr>
+</tbody>
+</table><h2><a name=\"turing\"></a>Turing</h2><p>In July 2009, the UAntwerpen bought a 768 core cluster (L5420 CPUs, 16 GB RAM/node) from HP, that was installed and configured in December 2009. In December 2010, the cluster was extended with 768 cores (L5640 CPUs, 24 GB RAM/node). In September 2011, another 96 cores (L5640 CPUs, 24 GB RAM/node) have been added. Turing has been retired in January 2017.
+</p>"
+

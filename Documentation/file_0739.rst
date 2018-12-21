@@ -1,0 +1,40 @@
+Basic job system use
+--------------------
+
+-  `Job system
+   basics <\%22/cluster-doc/running-jobs/job-system-basics\%22>`__
+-  `Credit system
+   basics <\%22/cluster-doc/running-jobs/credit-system-basics\%22>`__
+   (KU Leuven-only currently)
+-  `Why doesn't my job start
+   immediately? <\%22/cluster-doc/running-jobs/job-start-failure\%22>`__
+   A story about scheduling policies and priorities.
+-  `Job failure after a successful
+   start <\%22/cluster-doc/running-jobs/job-failure-after-start\%22>`__
+
+Advanced job system use
+-----------------------
+
+-  `Advanced PBS/Torque
+   options <\%22/cluster-doc/running-jobs/advanced-torque\%22>`__
+-  `Moab commands <\%22/cluster-doc/running-jobs/moab-commands\%22>`__
+-  `Worker
+   framework <\%22/cluster-doc/running-jobs/worker-framework\%22>`__: To
+   manage lots of small jobs on a cluster. The cluster scheduler isn't
+   meant to deal with tons of small jobs. Those create a lot of
+   overhead, so it is better to bundle those jobs in larger sets.
+
+Miscellaneous topics
+--------------------
+
+-  `Monitoring memory and CPU usage of
+   programs <\%22/cluster-doc/running-jobs/monitoring-memory-and-cpu-usage-of-programs\%22>`__,
+   which helps to find the right parameters to use in the job scripts.
+-  The `checkpointing
+   framework <\%22/cluster-doc/running-jobs/checkpointing-framework\%22>`__
+   can be used to run programs that take longer than the maximum time
+   allowed by the queue. It can break a long job in shorter jobs, saving
+   the state at the end to automatically start the next job from the
+   point where the previous job was interrupted.
+
+"

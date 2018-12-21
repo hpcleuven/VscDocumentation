@@ -1,0 +1,8 @@
+What is a supercomputer?
+========================
+
+A supercomputer is a very fast and extremely parallel computer. Many of
+its technological properties are comparable to those of your laptop or
+even smartphone. But there are also important differences.
+
+"

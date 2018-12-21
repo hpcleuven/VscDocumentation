@@ -1,0 +1,8 @@
+What I tried to do with the \\"Asset\" box in the right column:
+
+-  I included two pictures from our asset toolbox. What is shown are
+   square thumbnails of the pictures.
+-  I also included two PDFs that have no picture attached to them. They
+   simply don't show up.
+
+| 

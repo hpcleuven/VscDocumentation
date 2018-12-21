@@ -1,0 +1,6 @@
+Buying compute time
+===================
+
+Without an awarded scientific project, it is possible to buy compute
+time. We also offer a free try-out so you can test if our infrastructure
+is suitable for your needs.

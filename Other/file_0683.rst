@@ -1,0 +1,27 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec
+interdum velit, et viverra arcu. Donec ac nisl vehicula orci mattis
+pellentesque vel sed magna. Ut vulputate ipsum in bibendum suscipit.
+Phasellus tristique molestie cursus. Suspendisse sed luctus diam. Duis
+dignissim tincidunt congue. Sed laoreet nunc ac hendrerit congue. Aenean
+semper dolor sit amet tincidunt pharetra. Fusce malesuada iaculis enim
+eu venenatis. Maecenas commodo laoreet eros eu feugiat. Integer
+dignissim sapien at vehicula fermentum. Sed quis odio in dui luctus
+tempus. Praesent porttitor nisl varius, mattis eros laoreet, eleifend
+magna. Curabitur vehicula vitae eros vel egestas. Fusce at metus velit.
+
+Test
+
+Test movie
+----------
+
+The movie below illustrates the use of supercomputing for the design of
+a cooling element from `a report on Kanaal
+Z <\%22http://kanaalz.knack.be/nieuws/2-vlaamse-ingenieurs-ontketenen-revolutie-in-koeling/video-normal-864019.html\%22>`__.
+
+Methode 1, conform de code voor embedding gegenereerd door de Kanaal Z
+website: speelt niet af...
+
+Methode 2: Video tag, werkt alleen in HTML5 browsers, en ik vrees dat
+Kanaal Z niet gelukkig is met deze methode...
+
+"

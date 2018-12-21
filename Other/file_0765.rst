@@ -1,0 +1,96 @@
+The third VSC Users Day was held at the \\"Paleis der Academiën\", the
+seat of the \\"Royal Flemish Academy of Belgium for Science and the
+Arts\", in the Hertogstraat 1, 1000 Brussels, on June 2, 2017.
+
+Program
+-------
+
+-  9u50 : welcome
+-  10u00: dr. Achim Basermann, German Aerospace Center, High Performance
+   Computing with Aeronautics and Space Applications [`slides PDF -
+   4,9MB <\%22/assets/1225>`__]
+-  11u00: coffee break
+-  11u30: workshop sessions – part 1
+
+   -  VSC for starters (by VSC personnel) [`slides PDF -
+      5.3MB <\%22/assets/1215\%22>`__]
+   -  Profiler and Debugger (by VSC personnel) [`slides PDF -
+      2,2MB <\%22/assets/1217>`__]
+   -  Programming GPUs (dr. Bart Goossens - dr. Vule Strbac)
+
+-  12u45: lunch
+-  14u00: dr. Ehsan Moravveji, KU Leuven A Success Story on Tier-1: A
+   Grid of Stellar Models [`slides - PDF
+   11,9MB <\%22/assets/1219\%22>`__]
+-  14u30: ‘1-minute’ poster presentations
+-  15u00: workshop sessions – part 2
+
+   -  VSC for starters (by VSC personnel)
+   -  Profiler and Debugger (by VSC personnel)
+   -  Feedback from Tier-1 Evaluation Committee (dr. Walter Lioen,
+      chairman) [`slides - PDF 0.5MB <\%22/assets/1221\%22>`__]
+
+-  16u00: coffee and poster session
+-  17u00: drink
+
+**Abstracts of workshops**
+
+-  **VSC for starters** [`slides PDF - 5.3MB <\%22/assets/1215\%22>`__]
+   The workshop provides a smooth introduction to supercomputing for new
+   users. Starting from common concepts in personal computing the
+   similarities and differences with supercomputing are highlighted and
+   some essential terminology is introduced. It is explained what users
+   can expect from supercomputing and what not, as well as what is
+   expected from them as users
+-  **Profiler and Debugger** [`slides PDF - 2,2MB <\%22/assets/1217>`__]
+   Both profiling and debugging play an important role in the software
+   development process, and are not always appreciated. In this session
+   we will introduce profiling and debugging tools, but the emphasis is
+   on methodology. We will discuss how to detect common performance
+   bottlenecks, and suggest some approaches to tackle them. For
+   debugging, the most important point is avoiding bugs as much as
+   possible.
+-  **Programming GPUs**
+
+   -  **Quasar, a high-level language and a development environment to
+      reduce the complexity of heterogeneous programming of CPUs and
+      GPUs**, *Prof dr. Bart Goosens, UGent* [`slides PDF -
+      2,1MB <\%22/assets/1227>`__]
+      In this workshop we present Quasar, a new programming framework
+      that takes care of many common challenges for GPU programming,
+      e.g., parallelization, memory management, load balancing and
+      scheduling. Quasar consists of a high-level programming language
+      with a similar abstraction level as Python or Matlab, making it
+      well suited for rapid prototyping. We highlight some of the
+      automatic parallelization strategies of Quasar and show how
+      high-level code can efficiently be compiled to parallel code that
+      takes advantage of the available CPU and GPU cores, while offering
+      a computational performance that is on a par with a manual
+      low-level C++/CUDA implementation. We explain how multi-GPU
+      systems can be programmed from Quasar and we demonstrate some
+      recent image processing and computer vision results obtained with
+      Quasar.
+   -  **GPU programming opportunities and challenges: nonlinear finite
+      element analysis**, *dr. Vule Strbac, KU Leuven* [`slides PDF -
+      2,1MB <\%22/assets/1223>`__]
+      From a computational perspective, finite element analysis
+      manifests substantial internal parallelism. Exposing and
+      exploiting this parallelism using GPUs can yield significant
+      speedups against CPU execution. The details of the mapping between
+      a requested FE scenario and the hardware capabilities of the GPU
+      device greatly affect this resulting speedup. Factors such as: (1)
+      the types of materials present (elasticity), (2) the local memory
+      pool and (3) fp32/fp64 computation impact GPU solution times
+      differently than their CPU counterparts.
+      We present results of both simple and complex FE analyses
+      scenarios on a multitude of GPUs and show an objective estimation
+      of general performance. In doing so, we detail the overall
+      opportunities, challenges as well as the limitations of the GPU FE
+      approach.
+
+**Poster sessions**
+
+`An overview of the posters that were presented during the poster
+session is available here <\%22/events/userday-2017/posters\%22>`__.
+
+"

@@ -1,0 +1,3064 @@
+<h2>Important changes</h2><p>The 2017a toolchain is the toolchain thatwill be carried forward to Leibniz and will be available after the operating
+system upgrade of Hopper. Hence it is meant to be as complete as possible. We
+will only make a limited number of programs available in the 2016b toolchain
+(basically those that show much better performance with the older compiler or
+that do not compile with the compilers in the 2017a toolchains).
+</p><p>Important changes
+in the 2017a toolchain:
+</p><ul>
+	<li>The Intel compilers have been installed in
+a single directory tree, much the way Intel intends the install to be done. The
+intel/2017a module loads fewer submodules and instead sets all required
+variables. The install now also contains the Thread Building Blocks (TBB),
+Integrated Performance Primitives (IPP) and Data Analytics Acceleration Library
+(DAAL). All developer tools (debugger, Inspector,Advisor,  Vtune
+Amplifier, ITAC) are enabled by loading the inteldevtools/2017a module rather
+than independent modules for each tool. More information is available on 
+	<a href=\"/infrastructure/hardware/hardware-ua/intel\">the documentation page on the Intel compilers @ UAntwerp</a>.</li>
+	<li>The Python install now also contains a
+number of packages that previously where accessed via separate modules:
+	<ul>
+		<li>matplotlib, so there is no longer a
+separate module to load matplotlib. 
+		</li>
+		<li>lxml</li>
+	</ul>
+	</li>
+	<li>The R install now also contains a selection
+of the Bioconductor routines, so no separate module is needed to enable the
+latter.
+	</li>
+	<li>netCDF is now a single module containing
+all 4 interfaces rather than 4 separate modules that installed each interface
+in a different directory tree (three of which all relied on the module for the
+fourth). This should ease the installation of code that uses the netCDF Fortran
+or one of the C++ interfaces and expects all netCDF libraries to be installed
+in the same directory.
+	</li>
+</ul><p>We will skip the 2017b toolchain as defined by the VSC as we have already upgraded the 2017a toolchain to a more recent update of the Intel 2017 compilers to avoid problems with certain applications.
+</p><h2>Available toolchains</h2><p>There are
+currently three major toolchains on the UIAntwerp clusters:
+</p><ul>
+	<li>The Intel toolchain,
+which includes the Intel compilers and tools, matching versions of the GNU
+compilers, and all software compiled with them. 
+	</li>
+	<li>The FOSS toolchain,
+built out of open-source components. It is mostly used for programs that don’t
+install with the Intel compilers, or by users who want to do development with
+Open MPI and other open-source libraries.
+	<br>
+	The FOSS-toolchain has a number of subtoolchains: Gompi, GCC and GCCcore, and
+some programs are installed in these subtoolchains because they don’t use the
+additional components that FOSS offers.
+	</li>
+	<li>The system toolchain
+(sl6 or centos7), containing programs that only use system libraries or other
+tools from this toolchain.
+	</li>
+</ul><p>The tables below
+list the last available module for a given software package and the
+corresponding version in the 2017a toolchain. Older versions can only be
+installed on demand with a very good motivation, as older versions of packages
+also often fail to take advantage of advances in supercomputer architecture and
+offer lower performance. Packages that have not been used recently will
+only be installed on demand.
+</p><p>Several of the
+packages in the system toolchain are still listed as “on demand” since they
+require licenses and interaction with their users is needed before we can
+install them.
+</p><h3>Intel toolchain</h3><table style=\"border: solid 1px; border-collapse: collapse;\">
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Latest
+  pre-2017a
+		</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>2017a</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Comments</strong>
+	</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ABINIT/8.0.7-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Work in progress</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Advisor/2016_update4
+	</td>
+	<td style=\"border: solid 1pt;\">
+		inteldevtools/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in a
+  new module with the other Intel development tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\"><em>ANTs/2.1.0-foss-2015a</em>
+	</td>
+	<td style=\"border: solid 1pt;\">ANTs/2.2.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">Not yet available on Leibniz due to compile problems.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		augustus/3.0.1-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Autoconf/2.69-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Autoconf/2.69</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the system
+  toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		AutoDock/1.1.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+		AutoDock_Vina/1.1.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Naming modified
+  to the standard naming used in our build tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Automake/1.15-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Automake/1.15</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the system
+  toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Autotools/20150215-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Autotools/2016123</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the system
+  toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">BAli-Phy/2.3.8-intel-2017a-OpenMP<br>BAli-Phy/2.3.8-intel-2017a-MPI<br>
+	</td>
+	<td style=\"border: solid 1pt;\">By Ben Redelings, <a href=\"http://www.bali-phy.org/docs.php\">documentation</a> on <a href=\"http://www.bali-phy.org/\">the software web site</a>. This package supports either OpenMP or MPI, but not both together in a hybrid mode.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		beagle-lib/2.1.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		beagle-lib/2.1.2-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Beast/2.4.4-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Beast/2.4.5-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Version with beagle-lib
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Biopython/1.68-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Biopython/1.68-intel-2017a-Python-2.7.13<br>Biopython/1.68-intel-2017a-Python-3.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Builds for Python
+  2,7 and Python 3.6
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		bismark/0.13.1-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Bismark/0.17.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Naming modified
+  to the standard naming used in our build tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Bison/3.0.4-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Bison/3.0.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		BLAST+/2.6.0-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		BLAST+/2.6.0-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Boost/1.63.0-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Boost/1.63.0-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Bowtie2/2.2.9-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Bowtie2/2.2.9-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		byacc/20160606-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>byacc/20170201</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the system
+  toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		bzip2/1.0.6-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		bzip2/1.0.6-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		cairo/1.15.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		cairo/1.15.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CASINO/2.12.1-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CASM/0.2.0-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on demand, compiler problems.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">CGAL/4.9-intel-2017a-forOpenFOAM
+	</td>
+	<td style=\"border: solid 1pt;\">Installed without the components that require Qt and/or OpenGL.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CMake/3.5.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		CMake/3.7.2-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CP2K/4.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">CP2K/4.1-intel-2017a-bare<br>CP2K/4.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\"><br>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CPMD/4.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		cURL/7.49.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		cURL/7.53.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">DIAMOND/0.9.12-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		DLCpar/1.0-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		DLCpar/1.0-intel-2017a-Python-2.7.13<br>DLCpar/1.0-intel-2017a-Python-3.6.1<br>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Installed for
+  Python 2.7.13 and Pyton 3.6.1
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Doxygen/1.8.11-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Doxygen/1.8.13</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the
+  system toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		DSSP/2.2.1-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">DSSP/2.2.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\"><br>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Eigen/3.2.9-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Eigen/3.3.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		elk/3.3.17-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Elk/4.0.15-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Naming modified
+  to the standard naming used in our build tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		exonerate/2.2.0-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Exonerate/2.4.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Naming modified
+  to the standard naming used in our build tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		expat/2.2.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		expat/2.2.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">FastME/2.1.5.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		FFTW/3.3.4-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		FFTW/3.3.6-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		There is also a
+  FFTW-compatible interface in intel/2017a, but it does not work for all
+  packages.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		file/5.30-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		fixesproto/5.0-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		flex/2.6.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		flex/2.6.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		fontconfig/2.12.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		fontconfig/2.12.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		freeglut/3.0.0-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		freeglut/3.0.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Not yet
+  operational on CentOS 7
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		freetype/2.7-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		freetype/2.7.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		FSL/5.0.9-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GAMESS-US/20141205-R1-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		gc/7.4.4-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		gc/7.6.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GDAL/2.1.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GDAL/2.1.3-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Does
+  not support Python 3.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		genometools/1.5.4-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GenomeTools/1.5.9-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GEOS/3.5.0-intel-2015a-Python-2.7.9
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GEOS/3.6.1-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Does
+  not support Python 3.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		gettext/0.19.8-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		gettext/0.19.8.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GLib/2.48.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GLib/2.49.7-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GMAP-GSNAP/2014-12-25-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GMAP-GSNAP/2017-03-17-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GMP/6.1.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GMP/6.1.2-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		gnuplot/5.0.0-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		gnuplot/5.0.6-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GObject-Introspection/1.44.0-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GObject-Introspection/1.49.2-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GROMACS/5.1.2-intel-2016a-hybrid
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GROMACS/5.1.2-intel-2017a-hybrid<br>GROMACS/2016.3-intel-2017a<br>
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GSL/2.3-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		GSL/2.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">gtest/1.8.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">Google C++ Testing Framework
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Guile/1.8.8-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Guile/1.8.8-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Guile/2.0.11-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Guile/2.2.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		hanythingondemand/3.2.0-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		hanythingondemand/3.2.0-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		HarfBuzz/1.3.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		HDF5/1.8.17-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		HDF5/1.8.18-intel-2017a<br>HDF5/1.8.18-intel-2017a-noMPI
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"https://support.hdfgroup.org/HDF5/\">HDF5</a> with and without MPI-support.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">HISAT2/2.0.5-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		HTSeq/0.6.1p1-intel-2016a-Python-2.7.11
+	</td>
+	<td style=\"border: solid 1pt;\">
+		HTSeq/0.7.2-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Does not support
+  Python 3.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		icc/2016.3.210-GCC-5.4.0-2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		iccifort/2016.3.210-GCC-5.4.0-2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ifort/2016.3.210-GCC-5.4.0-2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		imkl/11.3.3.210-iimpi-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		impi/5.1.3.181-iccifort-2016.3.210-GCC-5.4.0-2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		inputproto/2.3.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Inspector/2016_update3
+	</td>
+	<td style=\"border: solid 1pt;\">
+		inteldevtools/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in a
+  new module with the other Intel development tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ipp/8.2.1.133
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		itac/9.0.2.045
+	</td>
+	<td style=\"border: solid 1pt;\">
+		inteldevtools/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in a
+  new module with the other Intel development tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		JasPer/2.0.12-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">Julia/0.6.0-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"https://julialang.org/\">Julia</a>, command line version (so without the Juno IDE).
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		kbproto/1.0.7-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		kwant/1.2.2-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">kwant/1.2.2-intel-2017a-Python-3.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">Built with single-threaded libraries as advised in the documentation which implies that kwant is not exactly a HPC program.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		LAMMPS/14May16-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		LAMMPS/31Mar2017-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libcerf/1.5-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libffi/3.2.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libffi/3.2.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libgd/2.2.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Libint/1.1.6-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Libint/1.1.6-intel-2017a<br>Libint/1.1.6-intel-2017a-CP2K
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libint2/2.0.3-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libjpeg-turbo/1.5.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libjpeg-turbo/1.5.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libmatheval/1.1.11-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libmatheval/1.1.11-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libpng/1.6.26-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libpng/1.6.28-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libpthread-stubs/0.3-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\"><i>Installed on demand.</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libreadline/6.3-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libreadline/7.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		LibTIFF/4.0.6-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		LibTIFF/4.0.7-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libtool/2.4.6-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>libtool/2.4.6</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the
+  system toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libunistring/0.9.6-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libunistring/0.9.7-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libX11/1.6.3-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libXau/1.0.8-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libxc/2.2.3-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libxc/3.0.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libxcb/1.12-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libXdmcp/1.1.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libXext/1.3.3-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libXfixes/5.0.1-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libXi/1.7.6-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libxml2/2.9.4-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libxml2/2.9.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libXrender/0.9.9-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libxslt/1.1.28-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libxslt/1.1.29-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libxsmm/1.6.4-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libxsmm/1.7.1-intel-2017a<br>libxsmm/1.8-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libyaml/0.1.6-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\"><em>Installed on demand</em>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">LLVM/3.9/.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"https://llvm.org/\">LLVM compiler backend</a> with libLLVM.so.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		lxml/3.5.0-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+		Python/3.6.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 and 3.6 modules.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		M4/1.4.17-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>M4/1.4.18</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the
+  system toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">MAFFT/7.312-intel-2017a-with-extensions
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MAKER-P/2.31.8-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MAKER-P-mpi/2.31.8-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		matplotlib/1.5.3-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a<br>Python/3.6.1-intel-2017a<br>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 and 3.6 modules
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MCL/14.137-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		MCL/14.137-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		mdust/1.0-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		mdust/1.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		METIS/5.1.0-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		METIS/5.1.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MITE_Hunter/11-2011-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		molmod/1.1-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">molmod/1.1-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Work
+  in progress, compile problems with newer compilers.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Mono/4.6.2.7-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Mono/4.8.0.495-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Mothur/1.34.4-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\"><em>Installed on demand</em>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MUMPS/5.0.1-intel-2016a-serial<br>MUMPS/5.0.0-intel-2015a-parmetis<br>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		MUMPS-5.1.1-intel-2017a-openmp-noMPI<br>MUMPS-5.1.1-intel-2017a-openmp-MPI<br>MUMPS-5.1.1-intel-2017a-noOpenMP-noMPI<br>
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MUSCLE/3.8.31-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		MUSCLE/3.8.31-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		NASM/2.12.02-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>NASM/2.12.02</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the systemtoolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		ncbi-vdb/2.8.2-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ncurses/6.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		ncurses/6.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">NEURON/7.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"http://www.neuron.yale.edu/neuron/\">Yale NEURON code</a>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		netaddr/0.7.14-intel-2015a-Python-2.7.9
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		netCDF/4.4.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		netCDF/4.4.1.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		All netCDF
+  interfaces integrated in a single module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		netCDF-Fortran/4.4.4-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		netCDF/4.4.1.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		All netCDF
+  interfaces integrated in a single module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		netifaces/0.10.4-intel-2015a-Python-2.7.9
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		NGS/1.3.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		numpy/1.9.2-intel-2015b-Python-2.7.10
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		numpy/1.10.4-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/3.6.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 3.6 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		NWChem/6.5.revision26243-intel-2015b-2014-09-10-Python-2.7.10
+	</td>
+	<td style=\"border: solid 1pt;\">
+		NWChem/6.6.r27746-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>On demand on Hopper.</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">OpenFOAM/4.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">Installed without the components that require OpenGL and/or Qt (which should only be in the postprocessing)
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		OpenMX/3.8.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		OpenMX/3.8.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">OrthoFinder/1.1.10-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Pango/1.40.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ParMETIS/4.0.3-intel-2015b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		ParMETIS/4.0.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		pbs-drmaa/1.0.18-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\"><em>Installed on demand</em>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		pbs_PRISMS/1.0.1-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python
+  interfaces for Torque/PBS used by CASM
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		pbs_python/4.6.0-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		pbs_python/4.6.0-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python
+  interfaces for Torque/PBS used by hanythingondemand
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		PCRE/8.38-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		PCRE/8.40-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Perl/5.20.1-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Perl/5.24.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		pixman/0.34.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		pixman/0.34.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		pkg-config/0.29.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>pkg-config/0.29.1</i>
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Moved to the
+  system toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		PLUMED/2.3.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		PLUMED/2.3.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		PROJ/4.9.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		PROJ/4.9.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">protobuf/3.4.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"https://developers.google.com/protocol-buffers/\">Google Protocol Buffers</a>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Pysam/0.9.1.4-intel-2016a-Python-2.7.11
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 module. Also load SAMtools to use.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Pysam/0.9.1.2-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/3.6.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 3.6 module. Also load SAMtools to use.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.12-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Python/3.5.1-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/3.6.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		QuantumESPRESSO/5.2.1-intel-2015b-hybrid
+	</td>
+	<td style=\"border: solid 1pt;\">QuantumESPRESSO/6.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Work in progress.</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		R/3.3.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		R/3.3.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		RAxML/8.2.9-intel-2016b-hybrid-avx
+	</td>
+	<td style=\"border: solid 1pt;\">RAxML/8.2.10-intel-2017a-hybrid
+	</td>
+	<td style=\"border: solid 1pt;\">We suggest users try RAxML-ng (still beta) which is supposedly much faster and better adapted to new architectures and can be installed on demand.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">RAxML-NG/0.4.1-intel-2017a-pthreads<br>
+		RAxML-NG/0.4.1-intel-2017a-hybrid
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"https://github.com/amkozlov/raxml-ng/wiki\">RAxML Next Generation beta</a>, compiled for shared memory (pthreads) and hybrid
+distributed-shared memory (hybrid, uses MPI and pthreads).
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		R-bundle-Bioconductor/3.3-intel-2016b-R-3.3.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		R/3.3.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard R module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		renderproto/0.11.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		RepeatMasker/4.0.5-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand; compiler problems.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		RMBlast/2.2.28-intel-2015a-Python-2.7.9
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand; compiler problems.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SAMtools/0.1.19-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SAMtools/1.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		scikit-umfpack/0.2.1-intel-2015b-Python-2.7.10
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\"><em>Installed on demand</em>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		scikit-umfpack/0.2.1-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">scikit-umfpack/0.2.3-intel-2017a-Python-3.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		scipy/0.15.1-intel-2015b-Python-2.7.10
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 2.7 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		scipy/0.16.1-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/3.6.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  the standard Python 3.6 module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SCons/2.5.1-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SCons/2.5.1-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>On demand on
+  CentOS 7; also in the system toolchain.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SCOTCH/6.0.4-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SCOTCH/6.0.4-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Siesta/3.2-pl5-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Siesta/4.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SNAP/2013-11-29-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		spglib/1.7.4-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\"><em>Installed on demand</em>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SQLite/3.13.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SQLite/3.17.0-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SuiteSparse/4.4.5-intel-2015b-ParMETIS-4.0.3
+	</td>
+	<td style=\"border: solid 1pt;\">SuiteSparse/4.5.5-intel-2015b-ParMETIS-4.0.3
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SuiteSparse/4.4.5-intel-2016a-METIS-5.1.0
+	</td>
+	<td style=\"border: solid 1pt;\">SuiteSparse/4.4.5-intel-2017a-METIS-5.1.0<br>SuiteSparse/4.5.5-intel-2017a-METIS-5.1.0<br>
+	</td>
+	<td style=\"border: solid 1pt;\">Older version as it is known to be compatible with our Python packages.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SWIG/3.0.7-intel-2015b-Python-2.7.10
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SWIG/3.0.12-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SWIG/3.0.8-intel-2016a-Python-3.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SWIG/3.0.12-intel-2017a-Python-3.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Szip/2.1-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Szip/2.1.1-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		tbb/4.3.2.135
+	</td>
+	<td style=\"border: solid 1pt;\">
+		intel/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Intel compiler
+  components in a single module.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Tcl/8.6.5-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Tcl/8.6.6-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		TELEMAC/v7p2r0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\"><em>Work in progress.</em>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		TINKER/7.1.3-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand; compiler problems.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Tk/8.6.5-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Tk/8.6.6-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		TopHat/2.1.1-intel-2016a
+	</td>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		TopHat is no
+  longer developed, its developers advise considering switching to 
+		<a href=\"http://ccb.jhu.edu/software/hisat2/index.shtml\">HISAT2</a> which is more accurate and more efficient. It does not compile with the intel/2017a compilers.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">VASP
+	</td>
+	<td style=\"border: solid 1pt;\">VASP/5.4.4-intel-2016b<br>VASP/5.4.4-intel-2016b-vtst-173
+	</td>
+	<td style=\"border: solid 1pt;\">VASP has not been installed in the 2017a toolchain due to performance regressions and occasional run time errors with the Intel 2017 compilers and hence has been made available in the intel/2016b toolchain.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Voro++/0.4.6-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Voro++/0.4.6-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		vsc-base/2.5.1-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		vsc-install/0.10.11-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		vsc-install/0.10.25-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Does not support
+  Python 3.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		vsc-mympirun/3.4.3-intel-2016b-Python-2.7.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		vsc-mympirun/3.4.3-intel-2017a-Python-2.7.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		VTune/2016_update3
+	</td>
+	<td style=\"border: solid 1pt;\">
+		inteldevtools/2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in a
+  new module with the other Intel development tools
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		worker/1.5.1-intel-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		worker-1.6.7-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		X11/20160819-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		xcb-proto/1.12
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		xextproto/7.3.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		xorg-macros/1.19.0-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		xproto/7.0.29-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		xtrans/1.3.5-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		X11/20170129-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated in
+  one large X11 module
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		XZ/5.2.2-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		XZ/5.2.3-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		zlib/1.2.8-intel-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		zlib/1.2.11-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+</tbody>
+</table><h3>Foss toolchain</h3><table style=\"border: solid 1px; border-collapse: collapse;\">
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Latest pre-2017a</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>2017a</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Comments</strong>
+	</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ANTs/2.1.0-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\"><em>ANTs/2.2.0-intel-2017a</em>
+	</td>
+	<td style=\"border: solid 1pt;\">Moved to the Intel toolchain.<br>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ATLAS/3.10.2-foss-2015a-LAPACK-3.4.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CMake/3.5.2-foss-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		CMake/3.7.2-foss-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Cufflinks/2.2.1-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		cURL/7.41.0-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Cython/0.22.1-foss-2015a-Python-2.7.9
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.13-intel-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Integrated into
+  the standard Python module for the intel toolchains
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		FFTW/3.3.4-gompi-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		FFTW/3.3.6-gompi-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GSL/2.1-foss-2015b
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		HDF5/1.8.14-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libpng/1.6.16-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		libreadline/6.3-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		makedepend/1.0.5-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MaSuRCA/2.3.2-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ncurses/6.0-foss-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		pbs-drmaa/1.0.18-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Perl/5.20.1-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Python/2.7.9-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Python is
+  available in the Intel toolchain.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SAMtools/0.1.19-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Newer versions
+  with intel toolchain
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		SPAdes/3.10.1-foss-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SPAdes/3.10.1-foss-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Szip/2.1-foss-2015a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		zlib/1.2.8-foss-2016b
+	</td>
+	<td style=\"border: solid 1pt;\">
+		zlib/1.2.11-foss-2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+</tbody>
+</table><h3>Gompi</h3><table style=\"border: solid 1px; border-collapse: collapse;\">
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Latest
+  pre-GCC-6.3.0 (2017a)
+		</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>gompi-2017a</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Comments</strong>
+	</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ScaLAPACK/2.0.2-gompi-2016b-OpenBLAS-0.2.18-LAPACK-3.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		ScaLAPACK/2.0.2-gompi-2017a-OpenBLAS-0.2.19-LAPACK-3.7.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+</tbody>
+</table><h3>GCC</h3><table style=\"border: solid 1px;\">
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Latest pre-gompi-2017a</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>GCC-6.3.0  (2017a)</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Comments</strong>
+	</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		OpenBLAS/0.2.18-GCC-5.4.0-2.26-LAPACK-3.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+		OpenBLAS/0.2.19-GCC-6.3.0-2.27-LAPACK-3.7.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		numactl/2.0.11-GCC-5.4.0-2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		numactl/2.0.11-GCC-6.3.0-2.27
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		OpenMPI/1.10.3-GCC-5.4.0-2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		OpenMPI/2.0.2-GCC-6.3.0-2.27
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MPICH/3.1.4-GCC-4.9.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+</tbody>
+</table><h3>GCCcore</h3><table style=\"border: solid 1px; border-collapse: collapse;\">
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Latest
+  pre-GCCcore-6.3.0  (2017a)
+		</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>GCCcore-6.3.0 
+  (2017a)
+		</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Comments</strong>
+	</th>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		binutils/2.26-GCCcore-5.4.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+		binutils/2.27-GCCcore-6.3.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		flex/2.6.0-GCCcore-5.4.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+		flex/2.6.3-GCCcore-6.3.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Lmod/7.0.5
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Default
+  module tool on CentOS 7
+	</td>
+</tr>
+</thead>
+</table><h3>System toolchain</h3><table style=\"border: solid 1px; border-collapse: collapse;\">
+<thead>
+<tr>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Pre-2017</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Latest module</strong>
+	</th>
+	<th style=\"background-color:LightGrey; border: solid 1pt;\">
+		<strong>Comments</strong>
+	</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ant/1.9.4-Java-8
+	</td>
+	<td style=\"border: solid 1pt;\">
+		ant/1.10.1-Java-8
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Autoconf/2.69
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		AutoDock_Vina/1.1.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Automake/1.15
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Autotools/2016123
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">/
+	</td>
+	<td style=\"border: solid 1pt;\">Bazel/0.5.3
+	</td>
+	<td style=\"border: solid 1pt;\"><a href=\"https://bazel.build/\">Google's software installer</a>. Not installed on the Scientific Linux 6 nodes of hopper.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		binutils/2.26
+	</td>
+	<td style=\"border: solid 1pt;\">
+		binutils/2.27
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Bison/3.0.4
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Bison/3.0.4
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		BRATNextGen/20150505
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		byacc/20170201
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		CMake/3.7.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		core-counter/1.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		CPLEX/12.6.3
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		DFTB+/1.2.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Doxygen/1.8.13
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		EasuBuild/…
+	</td>
+	<td style=\"border: solid 1pt;\">
+		EasyBuild/3.1.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		FastQC/0.11.5-Java-8
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		FINE-Marine/5.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		flex/2.6.0<br>flex/2.6.3<br>
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		GATK/3.5-Java-8
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Gaussian16/g16_A3-AVX
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Work in progress.</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Gurobi/6.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Hadoop/2.6.0-cdh5.4.5-native
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed
+  on demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		help2man/1.47.4
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Java/8
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Java/8
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		JUnit/4.12-Java-8
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		libtool/2.4.6
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		M4/1.4.17
+	</td>
+	<td style=\"border: solid 1pt;\">
+		M4/1.4.18
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MATLAB/R2016a
+	</td>
+	<td style=\"border: solid 1pt;\">
+		MATLAB/R2017a
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Maven/3.3.9
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MGLTools/1.5.7rc1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MlxLibrary/1.0.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Lixoft Simulx
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		MlxPlore/1.1.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Lixoft MLXPlore
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		monitor/1.1.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+		monitor/1.1.2
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Monolix/2016R1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		NASM/2.12.02
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Newbler/2.9
+	</td>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		On request, has
+  not been used recently.
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Novoalign/3.04.02
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		ORCA/3.0.3
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		p4vasp/0.3.29
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+		<i>Installed on
+  demand on Leibniz.
+		</i>
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		parallel/20160622
+	</td>
+	<td style=\"border: solid 1pt;\">
+		parallel/20170322
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		pkg-config/0.29.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		protobuf/2.5.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+		protobuf/2.6.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		Ruby/2.1.10
+	</td>
+	<td style=\"border: solid 1pt;\">
+		Ruby/2.4.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		/
+	</td>
+	<td style=\"border: solid 1pt;\">
+		SCons/2.5.1
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+</tr>
+<tr>
+	<td style=\"border: solid 1pt;\">
+		scripts/4.0.0
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+	<td style=\"border: solid 1pt;\">
+	</td>
+"
+

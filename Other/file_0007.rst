@@ -1,0 +1,5 @@
+Tier-2 infrastructure
+=====================
+
+| An integrated distributed infrastructure for smaller supercomputing
+  jobs with varying hardware needs.

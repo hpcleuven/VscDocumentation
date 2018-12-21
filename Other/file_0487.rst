@@ -1,0 +1,90 @@
++-----------------------------------+-----------------------------------+
+| |\\"NUMECA|                       | Free-surface simulation.          |
+|                                   |                                   |
+|                                   | Figure courtesy of `NUMECA        |
+|                                   | International. <\%22https://www.n |
+|                                   | umeca.com/home\%22>`__            |
++-----------------------------------+-----------------------------------+
+| |\\"NUMECA|                       | Simulation of a turbine with      |
+|                                   | coolring.                         |
+|                                   |                                   |
+|                                   | Figure courtesy of `NUMECA        |
+|                                   | International. <\%22https://www.n |
+|                                   | umeca.com/home\%22>`__            |
++-----------------------------------+-----------------------------------+
+| |\\"UA|                           | Purkinje cell model.              |
+|                                   |                                   |
+|                                   | Figure courtesy of Erik De        |
+|                                   | Schutter, `Theoretical            |
+|                                   | Neurobiology, <\%22http://www.tnb |
+|                                   | .ua.ac.be\%22>`__                 |
+|                                   | Universiteit Antwerpen.           |
++-----------------------------------+-----------------------------------+
+| |\\"UA|                           | This figure shows the electron    |
+|                                   | density at adsorption of          |
+|                                   | NO\ :sub:`2` at on graphene,      |
+|                                   | computed using density functional |
+|                                   | theory (using the software        |
+|                                   | package absint).                  |
+|                                   |                                   |
+|                                   | Figure courtesy of Francois       |
+|                                   | Peeters, `Condensed Matter Theory |
+|                                   | (CMT)                             |
+|                                   | group <\%22https://www.uantwerpen |
+|                                   | .be/en/research-groups/cmt/\%22>` |
+|                                   | __,                               |
+|                                   | Universiteit Antwerpen.           |
++-----------------------------------+-----------------------------------+
+| |\\"UA|                           | Figure courtesy of Christine Van  |
+|                                   | Broeckhoven, research group       |
+|                                   | `Molecular                        |
+|                                   | Genetics <\%22http://www.molgen.v |
+|                                   | ib-ua.be/\%22>`__,                |
+|                                   | Universiteit Antwerpen.           |
++-----------------------------------+-----------------------------------+
+| |\\"CPA|                          | Figure courtesy of the `Centre    |
+|                                   | for                               |
+|                                   | Plasma-Astrophysics <\%22https:// |
+|                                   | wis.kuleuven.be/CmPA\%22>`__,     |
+|                                   | K.U.Leuven.                       |
++-----------------------------------+-----------------------------------+
+| |\\"|                             | Figure courtesy of the `Centre    |
+|                                   | for                               |
+|                                   | Plasma-Astrophysics <\%22https:// |
+|                                   | wis.kuleuven.be/CmPA\%22>`__,     |
+|                                   | K.U.Leuven.                       |
++-----------------------------------+-----------------------------------+
+| |\\"KULeuven|                     | Figure courtesy of the `Centre    |
+|                                   | for                               |
+|                                   | Plasma-Astrophysics <\%22https:// |
+|                                   | wis.kuleuven.be/CmPA\%22>`__,     |
+|                                   | K.U.Leuven.                       |
++-----------------------------------+-----------------------------------+
+| |\\"VUB|                          | Figure courtesy of the research   |
+|                                   | group `Physics of Elementary      |
+|                                   | Particles -                       |
+|                                   | IIHE <\%22http://w3.iihe.ac.be/\% |
+|                                   | 22>`__,                           |
+|                                   | Vrije Universiteit Brussel.       |
++-----------------------------------+-----------------------------------+
+
+"
+
+.. |\\"NUMECA| image:: \%22/assets/63\%22
+   :target: \%22/assets/63\%22
+.. |\\"NUMECA| image:: \%22/assets/65\%22
+   :target: \%22/assets/65\%22
+.. |\\"UA| image:: \%22/assets/949\%22
+   :target: \%22/assets/949\%22
+.. |\\"UA| image:: \%22/assets/69\%22
+   :target: \%22/assets/69\%22
+.. |\\"UA| image:: \%22/assets/71\%22
+   :target: \%22/assets/71\%22
+.. |\\"CPA| image:: \%22/assets/73\%22
+   :target: \%22/assets/73\%22
+.. |\\"| image:: \%22/assets/75\%22
+   :target: \%22/assets/75\%22
+.. |\\"KULeuven| image:: \%22/assets/77\%22
+   :target: \%22/assets/77\%22
+.. |\\"VUB| image:: \%22/assets/79\%22
+   :target: \%22/assets/79\%22

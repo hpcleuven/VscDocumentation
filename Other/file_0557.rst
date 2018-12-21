@@ -1,0 +1,3 @@
+The documentation page you visited applies to the UGent Tier-2 setup
+Stevin. For more information about the setup, visit `the UGent hardware
+page <\%22/infrastructure/hardware/hardware-ugent\%22>`__.

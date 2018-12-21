@@ -1,0 +1,80 @@
++-----------+-----------------------------------------+
+| |\\"Logo| | March 23 2009                           |
+|           | **Launch Flemish Supercomputer Center** |
++-----------+-----------------------------------------+
+
+The Flemish Supercomputer Centre (Vlaams Supercomputer Centrum)
+cordially invites you to its official launch on **23 March 2009**.
+
+| 
+| **Supercomputing** is a crucial technology for the twenty-first
+  century. Fast and efficient compute power is needed for leading
+  scientific research, the industrial development and the
+  competitiveness of our industry. For this reason the Flemish
+  government and the five university associations have decided to set up
+  a Flemish Supercomputer Centre (VSC). This centre will combine the
+  clusters at the various Flemish universities in a single
+  high-performance network and expand it with a large cluster that can
+  withstand international comparison. The VSC will make available a
+  high-performance and user-friendly supercomputer infrastructure and
+  expertise to users from academic institutions and the industry.
+
+**Program**
+
++-----------------------+-----------------------+-----------------------+
+|                       | 14.15                 | Scientists from       |
+|                       |                       | various disciplines   |
+|                       |                       | tell about their      |
+|                       |                       | experiences with HPC  |
+|                       |                       | and grid computing    |
++-----------------------+-----------------------+-----------------------+
+|                       | 16.15                 | Coffee break          |
++-----------------------+-----------------------+-----------------------+
+|                       | 17.00                 | Official program, in  |
+|                       |                       | the presence of       |
+|                       |                       | minister Ceysens,     |
+|                       |                       | Flemish minister of   |
+|                       |                       | economy, enterprise,  |
+|                       |                       | science, innovation   |
+|                       |                       | and foreign trade of  |
+|                       |                       | Flanders.             |
++-----------------------+-----------------------+-----------------------+
+|                       | 18.30                 | Reception             |
++-----------------------+-----------------------+-----------------------+
+
+`A detailed program is available by clicking on this
+link <\%22/events/vsc-launch-2009/program\%22>`__. All presentations
+will be in English.
+
+**Location**
+
+Promotiezaal of the `Universiteitshal of the
+K.U.Leuven, <\%22https://www.google.be/maps/search/Naamsestraat+22,+3000+Leuven/@50.805935,4.432983,583739m/data=!3m1!4b1?source=s_q&hl=nl&dg=dbrw&newdg=1\%22>`__
+
+`Naamsestraat 22, 3000
+Leuven <\%22https://www.google.be/maps/search/Naamsestraat+22,+3000+Leuven/@50.805935,4.432983,583739m/data=!3m1!4b1?source=s_q&hl=nl&dg=dbrw&newdg=1\%22>`__.
+
+**Please register** by 16 March 2009 using this electronic form.
+
+**Plan and parking**
+
+| Parkings in the neighbourhood:
+
+-  Parking garage Ladeuze, Mgr. Ladeuzeplein 20, Leuven.
+-  H. Hart parking, Naamsestraat 102, Leuven.
+
+The Universiteitshal is within walking distance of the train station of
+Leuven. Bus 1 (Heverlee Boskant) and 2 (Heverlee Campus) stop nearby.
+
+|\\"invitation|
+
+The images at the top of this page are courtesy of `NUMECA
+International <\%22https://www.numeca.com/home\%22>`__ and research
+groups at Antwerp University, the Vrije Universiteit Brussel and the
+K.U.Leuven.
+
+"
+
+.. |\\"Logo| image:: \%22/assets/277\%22
+.. |\\"invitation| image:: \%22/assets/81\%22
+   :target: \%22/events/vsc-launch-2009/figures\%22

@@ -1,0 +1,56 @@
+| The VSC does not only rely on the Tier-1 supercomputer to respond to
+  the need for computing capacity. The HPC clusters of the University of
+  Antwerp, VUB, Ghent University and KU Leuven constitute the VSC Tier-2
+  infrastructure, with a total computing capacity of 416.2 TFlops.
+  Hasselt University invests in the HPC cluster of Leuven. Each cluster
+  has its own specificity and is managed by the university’s dedicated
+  HPC/ICT team. The clusters are interconnected with a 10 Gbps BELNET
+  network, ensuring maximal cross-site access to the different cluster
+  architectures. For instance, a VSC user from Antwerp can easily log in
+  to the infrastructure at Leuven.
+
+Infrastructure
+--------------
+
+-  `The Tier-2 of the University of
+   Antwerp <\%22/infrastructure/hardware/hardware-ua\%22>`__ consists of
+   a cluster with 168 nodes, accounting for 3.360 cores (336 processors)
+   and 75 TFlops. Storage capacity is 100 TB. By the spring of 2017 a
+   new cluster will gradually becoming available, containing 152 regular
+   compute nodes and some facilities for visualisation and to test
+   GPU-computing and Xeon Phi computing.
+-  `The Tier-2 of VUB
+   (Hydra) <\%22/infrastructure/hardware/hardware-vub\%22>`__ consists
+   of 3 clusters of successive generations of processors with a peak
+   capacity of 75 TFlops (estimated). The total storage capacity is 446
+   TB. It has a relatively large memory per computing node and is
+   therefore best fit for computing jobs that require a lot of memory
+   per node or per core. This configuration is complemented by a High
+   Troughput Computing (HTC) grid infrastructure.
+-  `The Tier-2 of Ghent University
+   (Stevin) <\%22/infrastructure/hardware/hardware-ugent\%22>`__
+   represents a capacity of 226 TFlops (11.328 cores over 568 nodes) and
+   a storage capacity of 1,430 TB. It is composed of several clusters, 1
+   of which is intended for single-node computing jobs and 4 for
+   multi-node jobs. One cluster has been optimized for memory-intensive
+   computing jobs and BigData problems.
+-  `The joint KU Leuven/UHasselt
+   Tier-2 <\%22/infrastructure/hardware/hardware-kul\%22>`__ housed by
+   KU Leuven focuses on small capability computing and tasks requiring a
+   fairly high disk bandwidth. The infrastructure consists of a thin
+   node cluster with 7.616 cores and a total capacity of 230 TFlops. A
+   shared memory system with 14 TB of RAM and 640 cores yields an
+   additional 12 TFlops. A total storage of 280 TB provides the
+   necessary I/O capacity. Furthermore, there are a number of nodes with
+   accellerators (including the GPU/Xeon Phi cluster purchased as an
+   experimental tier-1 setup) and 2 visualization nodes.
+
+More information
+----------------
+
+A more detailed description of the complete infrastructure is available
+in the \\"\ `Available
+hardware <\%22/en/infrastructure/hardware\%22>`__\\" section of the
+`user portal <\%22/en/user-portal\%22>`__.
+
+"

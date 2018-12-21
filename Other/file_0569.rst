@@ -1,0 +1,3 @@
+The documentation page you visited applies to Apple Mac client systems
+with a recent version of OS X installed, though you may need some
+additional software as specified on the page.

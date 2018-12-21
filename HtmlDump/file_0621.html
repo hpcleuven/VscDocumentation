@@ -1,0 +1,225 @@
+<p>The <code>intel</code> toolchain consists almost entirely of software components developed by Intel. When building third-party software, or developing your own, 
+load the module for the toolchain:
+</p><pre>$ module load intel/&lt;version&gt;
+</pre><p>where <code>&lt;version&gt;</code> should be replaced by the one to be used, e.g., <code>2016b</code><code<2014a< code=\"\">. See the documentation on the software module system for more details.
+	</code<2014a<>
+</p><p>Starting with the <code>2014b</code> toolchain, the GNU compilers are also included in 
+this toolchain as the Intel compilers use some of the libraries and as it is possible 
+(though some care is needed) to link code generated with the Intel compilers with code 
+compiled with the GNU compilers.
+</p><h2><a name=\"intel-compilers\"></a>Compilers: Intel and Gnu</h2><p>Three compilers are available:
+</p><ul>
+	<li>C: <code>icc</code></li>
+	<li>C++: <code>icpc</code></li>
+	<li>Fortran: <code>ifort</code></li>
+</ul><p>Compatible versions of the GNU C (<code>gcc</code>), C++ (<code>g++</code>) and Fortran (<code>gfortran</code>) compilers are also provided.
+</p><p>For example, to compile/link a Fortran program <code>fluid.f90</code> to an executable 
+	<code>fluid</code> with architecture specific optimization, use:
+</p><pre>$ ifort -O2 -xhost -o fluid fluid.f90
+</pre><p>For documentation on available compiler options, we refer to the <a href=\"#FurtherInfo\">links to the Intel documentation at the bottom of this page</a>. Do not forget to <em>load the toolchain module</em> first!
+</p><h3><a name=\"intel-openmp\"></a>Intel OpenMP</h3><p>The compiler switch to use to compile/link OpenMP C/C++ or Fortran code is <code>-qopenmp</code> in recent versions of the compiler (toolchain intel/2015a and later) or  
+	<code>-openmp</code> in older versions.  For example, to compile/link a OpenMP C program 
+	<code>scatter.c</code> to an executable 
+	<code>scatter</code> with architecture specific 
+optimization, use:
+</p><pre>$ icc -qopenmp -O2 -xhost -o scatter scatter.c
+</pre><p>Remember to specify as many processes per node as the number of threads the executable 
+is supposed to run. This can be done using the 
+	<code>ppn</code> resource, e.g., 
+	<code>-l nodes=1:ppn=10</code> for an executable that should be run with 10 OpenMP 
+threads. The number of threads should not exceed the number of cores on a compute node.
+</p><h2><a name=\"intel-mpi\"></a>Communication library: Intel MPI</h2><p>For the intel toolchain, <code>impi</code>, i.e., Intel MPI is used as the 
+communications library. To compile/link MPI programs, wrappers are supplied, so that 
+the correct headers and libraries are used automatically. These wrappers are:
+</p><ul>
+	<li>C: <code>mpiicc</code></li>
+	<li>C++: <code>mpiicpc</code></li>
+	<li>Fortran: <code>mpiifort</code></li>
+</ul><p>Note that the <em>names differ</em> from those of other MPI implementations. 
+The compiler wrappers take the same options as the corresponding compilers.
+</p><h3>Using the Intel MPI compilers</h3><p>For example, to compile/link a C program <code>thermo.c</code> to an executable 
+	<code>thermodynamics</code> with architecture specific optimization, use:
+</p><pre>$ mpiicc -O2 -xhost -o thermodynamics thermo.c
+</pre><p>For further documentation, we refer to <a href=\"#FurtherInfo\">the links to the Intel documentation at the bottom of this page</a>. Do not forget to <em>load the toolchain module</em> first.
+</p><h3>Running an MPI program with Intel MPI</h3><p>Note that an MPI program must be run with the exact same version of the toolchain as 
+it was originally build with. The listing below shows a PBS job script 
+	<code>thermodynamics.pbs</code> that runs the 
+	<code>thermodynamics</code> executable.
+</p><pre>#!/bin/bash -l
+module load intel/&lt;version&gt;
+cd $PBS_O_WORKDIR
+mpirun -np $PBS_NP ./thermodynamics
+</pre><p>The resource manager passes the number of processes to the job script through the environment variable <code>$PBS_NP</code>, but if you use a recent implementation of Intel MPI, you can even omit <code>-np $PBS_NP</code> as Intel MPI recognizes the Torque resource manager and requests the number of cores itself from the resource manager if the number is not specified.
+</p><h2><a name=\"intel-mkl\"></a>Intel mathematical libraries</h2><p>The Intel Math Kernel Library (MKL) is a comprehensive collection of highly optimized 
+libraries that form the core of many scientific HPC codes. Among other functionality, 
+it offers:
+</p><ul>
+	<li>BLAS (Basic Linear Algebra Subsystem), and extensions to sparse matrices</li>
+	<li>Lapack (Linear algebra package) and ScaLAPACK (the distributed memory version)</li>
+	<li>FFT-routines including routines compatible with the FFTW2 and FFTW3 libraries 
+	(Fastest Fourier Transform in the West)
+	</li>
+	<li>Various vector functions and statistical functions that are optimised for the 
+	vector instruction sets of all recent Intel processor families
+	</li>
+</ul><p>For further documentation, we refer to <a href=\"#FurtherInfo\">the links to the Intel documentation at the bottom of this page</a>.
+</p><p>There are two ways to link the MKL library:
+</p><ul>
+	<li>If you use icc, icpc or ifort to link your code, you can use the -mkl compiler 
+	option:
+	<ul>
+		<li>-mkl=parallel or -mkl: Link the multi-threaded version of the library.</li>
+		<li>-mkl=sequential: Link the single-threaded version of the library</li>
+		<li>-mkl=cluster: Link the cluster-specific and sequential library, i.e., 
+		ScaLAPACK will be included, but assumes one process per core (so no hybrid MPI/multi-threaded approach)
+		</li>
+	</ul>
+	The Fortran95 interface library for lapack is not automatically included though. 
+	You'll have to specify that library seperately. You can get the value from the 
+	<a href=\"https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor\" target=\"_blank\">MKL 	Link Line Advisor</a>, see also the next item.</li>
+	<li>Or you can specify all libraries explictly. To do this, it is strongly recommended 
+	to use Intel's 
+	<a href=\"https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/\" target=\"_blank\">MKL 	Link Line Advisor</a>, and will also tell you how to link the MKL library with 
+	code generated with the GNU and PGI compilers.
+	<br>
+	<strong>Note:</strong> On most VSC systems, the variable MKLROOT has a different 
+	value from the one assumed in the Intel documentation. Wherever you see 
+	<code>$(MKLROOT)</code> you may have to replace it with 
+	<code>$(MKLROOT)/mkl</code>.</li>
+</ul><p>MKL also offers a very fast streaming pseudorandom number generator, see the 
+documentation for details.
+</p><h2><a name=\"intel-versions\"></a>Intel toolchain version numbers</h2><table style=\"width: 100%;\" border=\"1\" cellpadding=\"1\" cellspacing=\"1\">
+<tbody>
+<tr>
+	<th>
+	</th>
+	<th>2018a</th><th>2017b</th><th>2017a
+	</th>
+	<th>2016b
+	</th>
+	<th>2016a
+	</th>
+	<th>2015b
+	</th>
+	<th>2015a
+	</th>
+	<th>2014b
+	</th>
+	<th>2014a
+	</th>
+</tr>
+<tr>
+	<td>icc/icpc/ifort
+	</td>
+	<td>2018.1.163</td><td>2017.4.196</td><td>2017.1.132
+	</td>
+	<td>16.0.3 20160425
+	</td>
+	<td>16.0.1 20151021
+	</td>
+	<td>15.0.3 20150407
+	</td>
+	<td>15.0.1 20141023
+	</td>
+	<td>13.1.3 20130617
+	</td>
+	<td>13.1.3 20130607
+	</td>
+</tr>
+<tr>
+	<td>Intel MPI
+	</td>
+	<td>2018.1.163</td><td>2017.3.196</td><td>2017.1.132
+	</td>
+	<td>5.1.3.181
+	</td>
+	<td>5.1.2.150
+	</td>
+	<td>5.03.3048
+	</td>
+	<td>5.0.2.044
+	</td>
+	<td>4.1.3.049
+	</td>
+	<td>4.1.3.045
+	</td>
+</tr>
+<tr>
+	<td>Intel MKL
+	</td>
+	<td>2018.1.163</td><td>2017.3.196</td><td>2017.1.132
+	</td>
+	<td>11.3.3.210
+	</td>
+	<td>11.3.1.150
+	</td>
+	<td>11.2.3.187
+	</td>
+	<td>11.2.1.133
+	</td>
+	<td>11.1.2.144
+	</td>
+	<td>11.1.1.106
+	</td>
+</tr>
+<tr>
+	<td>GCC
+	</td>
+	<td>6.4.0</td><td>6.4.0</td><td>6.3.0
+	</td>
+	<td>4.9.4
+	</td>
+	<td>4.9.3
+	</td>
+	<td>4.9.3
+	</td>
+	<td>4.9.2
+	</td>
+	<td>4.8.3
+	</td>
+	<td>/
+	</td>
+</tr>
+<tr>
+	<td>binutils
+	</td>
+	<td>2.28</td><td>2.28</td><td>2.27
+	</td>
+	<td>2.26
+	</td>
+	<td>2.25
+	</td>
+	<td>2.25
+	</td>
+	<td>/
+	</td>
+	<td>/
+	</td>
+	<td>/
+	</td>
+</tr>
+</tbody>
+</table><h2><a name=\"FurtherInfo\"></a>Further information on Intel tools</h2><ul>
+	<li>All Intel documentation of recent software versions is available in the 
+	<a href=\"https://software.intel.com/en-us/documentation\" target=\"_blank\">Intel 	Software Documentation Library</a>. The documentation is typically available for the most recent version and sometimes one older version of te compiler and libraries.</li>
+	<li>Some other useful documents:
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler\" target=\"_blank\">Step by Step Performance Optimization with Intel® C++ Compiler</a>. Despite the title, the remarks also hold for the C and Fortran compilers.</li>
+		<li><a href=\"https://software.intel.com/en-us/compiler_15.0_ug_c\" target=\"_blank\">Direct link to the C/C++ compiler 15.0 user and reference guide</a> (2015a and 2015b toolchains)</li>
+		<li><a href=\"https://software.intel.com/en-us/intel-cplusplus-compiler-16.0-user-and-reference-guide\" target=\"_blank\">Direct link to the C/C++ compiler 16.0 user and reference guide</a> (2016a and 2016b toolchains)</li>
+		<li><a href=\"https://software.intel.com/en-us/intel-fortran-compiler-16.0-user-and-reference-guide\" target=\"_blank\">Direct link to the Fortran compiler 16.0 user and reference guide</a> (2016a and 2016b toolchains)</li>
+		<li><a href=\"https://software.intel.com/en-us/articles/intel-mpi-library-documentation\" target=\"_blank\">Page with links to the documentation of the most recent version of Intel MPI</a></li>
+	</ul></li>
+	<li>MKL
+	<ul>
+		<li><a href=\"https://software.intel.com/en-us/articles/intel-math-kernel-library-documentation/\" target=\"_blank\">Link 
+		page to the documentation of MKL 11.2/11.3 on the Intel web site
+		</a> (toolchains 2015a till 2016b)</li>
+		<li><a href=\"https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor\" target=\"_blank\">MKL 
+		Link Line Advisor
+		</a></li>
+	</ul>
+	</li>
+	<li><a href=\"/cluster-doc/development/blas-lapack#Links\" target=\"_blank\">Generic BLAS/LAPACK/ScaLAPACK 	documentation</a></li>
+</ul>"
+

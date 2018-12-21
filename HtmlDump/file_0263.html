@@ -1,0 +1,109 @@
+<h2>Introduction</h2><p>The accounting system on ThinKing is very similar to a regular bank. Individual users have accounts that will be charged for the jobs they run. However, the number of credits on such accounts is fairly small, so research projects will typically have one or more project accounts associated with them. Users that are project members can have their project-related jobs charged to such a project account. In this how-to, the technical aspects of accounting are explained.</p><h2>How to request credits on the KU Leuven Tier-2 systems</h2><p>You can request 2 types of job credits: introduction credits and<strong> </strong>project credits. <strong>Introduction credits</strong> are a limited amount of free credits for test and development purposes.<strong> Project credits</strong> are job credits used for research.
+</p><h3>How to request introduction credits</h3><p>You can find all relevant information in the <a href=\"https://icts.kuleuven.be/sc/HPC\">HPC section of the Service Catalog (login required)</a>.
+</p><h3>How to request project credits</h3><p>You can find all relevant information in the <a class=\"external\" href=\"https://icts.kuleuven.be/sc/HPC\">HPC section of the Service Catalog (login required)</a>.
+</p><h3>Prices</h3><p>All details about prices you can find on <a href=\"https://icts.kuleuven.be/sc/HPC\">HPC section of the Service Catalog (login required)</a> .
+</p><h2>Checking an account balance</h2><p>Since no calculations can be done without credits, it is quite useful to determine the amount of credits at your disposal. This can be done quite easily:
+</p><pre>$ module load accounting
+$ mam-balance
+</pre><p>This will provide an overview of the balance on the user's personal account, as well as on all project accounts the user has access to.
+</p><h2>Obtaining a job quote</h2><p>In order to determine the cost of a job, the user can request a quote. The gquote commands takes those options as the qsub command that are relevant for resource specification (-l, -q, -C), and/or, the PBS script that will be used to run the job. The command will calculate the maximum cost based on the resources that are requested, taking into account walltime, number of compute nodes and node type.
+</p><pre>$ module load accounting
+$ gquote -q qlong -l nodes=3:ppn=20:ivybridge
+</pre><p>Details of how to tailor job requirements can be found on the page on \"<a href=\"/cluster-doc/running-jobs/specifying-requirements\">Specifying resources, output files and notifications</a>\".
+</p><p>Note that when a queue is specified and no explicit walltime, the walltime used to produce the quote is the longest walltime allowed by that queue. Also note that unless specified by the user, gquote will assume the most expensive node type. This implies that the cost calculated by gquote will always be larger than the effective cost that is charged when the job finishes.
+</p><h2>Running jobs: accounting workflow</h2><p>When a job is submitted using <a href=\"/cluster-doc/running-jobs/submitting-managing-jobs\">qsub</a>, and it has to be charged against a project account, the name of the project has to be specified as an option.
+</p><pre>$ qsub -A l_astrophysics_014 run-job.pbs
+</pre><p>If the account to be charged, i.e., l_astrophysics_014, has insufficient credits for the job, the user receives a warning at this point.
+</p><p>Just prior to job execution, a reservation will be made on the specified project's account, or the user's personal account if no project was specified. When the user checks her balance at this point, she will notice that it has been decreased with an amount equal to, or less than that provided by gquote. The latter may occur when the node type is determined when the reservation is made, and the node type is less expensive than that assumed by gquote. If the relevant account has insufficient credits at this point, the job will be deleted from the queue.
+</p><p>When the job finishes, the account will effectively be charged. The balance of that account will be equal or larger after charging. The latter can occur when the job has taken less walltime than the reservation was made for. This implies that although quotes and reservations may be overestimations, users will only be charged for the resources their jobs actually consumed.
+</p><h2>Obtaining an overview of transactions</h2><p>A bank provides an overview of the financial transactions on your accounts under the form of statements. Similarly, the job accounting system provides statements that give the user an overview of the cost of each individual job. The following command will provide an overview of all transactions on all accounts the user has access to:
+</p><pre>$ module load accounting
+$ mam-statement
+</pre><p>However, it is more convenient to filter this information so that only specific projects are displayed and/or information for a specific period of time, e.g.,
+</p><pre>$ mam-statement -a l_astrophysics_014 -s 2010-09-01 -e 2010-09-30
+</pre><p>This will show the transactions on the account for the l_astrophysics_014 project for the month September 2010.
+</p><p>Note that it takes quite a while to compute such statements, so <strong>please be patient</strong>.
+</p><p>Very useful can be adding the '--summarize' option to the 'gstatement' command:
+</p><pre>vsc30002@login1:~&gt; mam-statement -a lp_prodproject --summarize -s 2010-09-01 -e 2010-09-30
+################################################################################
+#
+# Statement for project lp_prodproject
+# Statement for user vsc30002
+# Includes account 536 (lp_prodproject)
+# Generated on Thu Nov 17 11:49:55 2010.
+# Reporting account activity from 2010-09-01 to 2010-09-30.
+#
+################################################################################
+Beginning Balance:                 0.00
+------------------ --------------------
+Total Credits:                 10000.00
+Total Debits:                     -4.48
+------------------ --------------------
+Ending Balance:                 9995.52
+############################### Credit Summary #################################
+Object     Action   Amount
+---------- -------- --------
+Allocation Activate 10000.00
+############################### Debit Summary ##################################
+Object Action Project             User     Machine Amount Count
+------ ------ ------------------- -------- ------- ------ -----
+Job    Charge lp_prodproject      vsc30002 SVCS1    -4.26 13
+Job    Charge lp_prodproject      vsc30140 SVCS1    -0.22 1
+############################### End of Report ##################################
+</pre><p>As you can see it will give you a summary of used credits (Amount) and number of jobs (Count) per user in a given timeframe for a specified project.
+</p><h2>Reviewing job details</h2><p>A statement is an overview of transactions, but provides no details on the resources the jobs consumed. However, the user may want to examine the details of a specific job. This can be done using the following command:
+</p><pre>$ module load accounting
+# mam-list-transactions -J 20030021
+</pre><p>Where job ID does not have to be <i><span class=\"redactor-invisible-space\"><em></em></span></i>complete.
+</p><h2>Job cost calculation</h2><p>The cost of a job depends on the resources it consumes. Generally speaking, one credit buys the user one hour of walltime on one reference node. The resources that are taken into account to charge for a job are the walltime it consumed, and the number and type of compute nodes it ran on. The following formula is used:
+</p><p class=\"wiki\">(0.000278*<i>nodes</i>*<i>walltime</i><i></i>)*<i>nodetype</i>
+</p><p>Here,
+</p><ul>
+	<li><i>nodes </i>is the number of compute nodes the job ran on;</li>
+	<li><i>walltime </i>the effective duration of the job, expressed in seconds;</li>
+	<li><i>nodetype </i>is the factor representing the node type's performance as listed in the table below.</li></ul><p>Since Tier-2 cluster has several types of compute nodes, none of which is actually a reference node, the following values for <i>nodetype </i>apply:
+</p><table class=\"listing grid\" summary=\"Amount of credit for one hour walltime on VIC3's various node types\">
+<tbody>
+<tr>
+	<th>node type
+	</th>
+	<th>credit/hour
+	</th>
+</tr>
+<tr>
+	<td>Ivy Bridge
+	</td>
+	<td style=\"text-align: right;\">4.76
+	</td>
+</tr>
+<tr>
+	<td>Haswell
+	</td>
+	<td style=\"text-align: right;\">6.68
+	</td>
+</tr>
+<tr>
+	<td>GPU
+	</td>
+	<td style=\"text-align: right;\">2.86
+	</td>
+</tr>
+<tr>
+	<td>Cerebro
+	</td>
+	<td style=\"text-align: right;\">3.45
+	</td>
+</tr>
+</tbody>
+</table><p>The difference in cost between different machines/processors reflects the performance difference between those types of nodes. The total cost of a job will typically be the same on any compute nodes, but the walltime will be different nodes. It is considerably more expensive to work on Cerebro since it has a large amount of memory, as well as local disk, and hence required a larger investment.
+</p><p>An example of a job running on multiple nodes and cores is given below:
+</p><pre>$ qsub -A l_astrophysics_014 -lnodes=2:ppn=20:ivybridge simulation_3415.pbs
+</pre><p>If this job finished in 2.5 hours (i.e., walltime is 9000), the user will be charged:
+</p><p>(0.000278*2*9000)*4.76 = 23.8 credits
+</p><p>For a single node, single core job that also took 2.5 hours and was submitted as:
+</p><pre>$ qsub -A l_astrophysics_014 -lnodes=1:ppn=1:ivybridge simulation_147.pbs
+</pre><p>In this case, the user will be charged:
+</p><p>(0.000278*1*9000)*4.76 = 11.9 credits
+</p><p>Note that charging is done for the number of compute nodes used by the job, not the number of cores. This implies that a single core job on a single node is as expensive as an 20 core job on the same single node. The rationale is that the scheduler instates a single user per node policy. Hence using a single core on a node blocks all other cores for other users' jobs. If a user needs to run many single core jobs concurrently, she is advised to use the <a href=\"/cluster-doc/running-jobs/worker-framework\">Worker framework</a>.
+</p>"
+

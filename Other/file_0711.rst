@@ -1,0 +1,210 @@
+Access restriction
+------------------
+
+Once your project has been approved, your login on the Tier-1 cluster
+will be enabled. You use the same vsc-account (vscXXXXX) as at your home
+institutions and you use the same $VSC_HOME and $VSC_DATA directories,
+though the Tier-1 does have its own scratch directories.
+
+You can log in to the following login nodes:
+
+-  login1-tier1.hpc.kuleuven.be
+-  login2-tier1.hpc.kuleuven.be
+
+These nodes are also accessible from outside the KU Leuven. Unless for
+the Tier-1 system muk, it is not needed to first log on to your home
+cluster to then proceed to BrENIAC. Have a look at the `quickstart
+guide <\%22https://www.vscentrum.be/assets/1155\%22>`__ for more
+information.
+
+Hardware details
+----------------
+
+The tier-1 cluster *BrENIAC* is primarily aimed at large parallel
+computing jobs that require a high-bandwidth low-latency interconnect,
+but jobs that require a multitude of small independent tasks are also
+accepted.
+
+The main architectural features are:
+
+-  580 compute nodes with two Xeon E5-2680v4 processors (2,4GHz, 14
+   cores per processor, Broadwell architecture). 435 nodes are equiped
+   with 128 GB RAM and 135 nodes with 256 GB. The total number of cores
+   is 16,240, the total memory capacity is 90.6 TiB and the peak
+   performance is more than 623 TFlops (Linpack result 548 TFlops).
+   The Broadwell CPU supports the 256-bits AVX2 vector instructions with
+   fused-multiply-add operations. Each core can execute up to 16 double
+   precision floating point operations per cycle (2 4-number FMAs), but
+   to be able to use the AVX2 instructions, you need to recompile your
+   program for the Haswell or Broadwell architecture.
+   The CPU also uses what Intel calls the \\"Clustter-on-Die\"-approach,
+   which means that each processor chip internally has two groups of 7
+   cores. For hybrid MPI/OpenMP processes (or in general
+   distributed/shared memory programs), 4 MPI processes per node each
+   using 7 cores might be a good choice.
+-  EDR Infiniband interconnect with a fat tree topology (blocking factor
+   2:1)
+-  A storage system with a net capacity of approximately 634 TB and a
+   peak bandwidth of 20 GB/s, using the GPFS file system.
+-  2 login nodes with a similar configuration as the compute nodes
+
+| Compute time on *BrENIAC* is only available upon approval of a
+  project. Information on requesting projects is available `in
+  Dutch <\%22https://www.vscentrum.be/nl/systemen-en-toegang/projecttoegang-tier1\%22>`__
+  and `in
+  English <\%22https://www.vscentrum.be/en/access-and-infrastructure/project-access-tier1\%22>`__.
+
+Accessing your data
+-------------------
+
+BrENIAC supports the standard VSC directories.
+
+-  $VSC_HOME points to your VSC home directory. It is your standard home
+   directory which is accessed over the VSC network, and available as
+   /user/<institution>/XXX/vscXXXYY, e.g., /user/antwerpen/201/vsc20001.
+   So the quota on this directory is set by your home institution.
+-  $VSC_DATA points to your standard VSC data directory, accessed over
+   the VSC network. It is available as /data/<institution>/XXX/vscXXXYY.
+   The quota on this directory is set by your home institution. The
+   directory is mounted via NFS which lacks some of the feature of the
+   parallel file system which may be available at your home institution.
+   Certain programs using parallel I/O may fail when running from this
+   directory, you are strongly encouraged to only run programs from
+   $VSC_SCRATCH.
+-  $VSC_SCRATCH is a Tier-1 specific fast parallel file system using the
+   GPFS file system. The default quota is 1 TiB but may be changed
+   depending on your project request. The directory is also available as
+   /scratch/leuven/XXX/vscXXXYY (and note \\"leuven\" in the name, not
+   your own institutions as this directory is physically located on the
+   Tier-1 system at KU Leuven). The variable $VSC_SCRATCH_SITE points to
+   the same directory.
+-  $VSC_NODE_SCRATCH points to a small (roughly 70 GB) local scratch
+   directory on the SSD of each node. It is also available as
+   /node_scratch/<jobid>. The contents is only accessible from a
+   particular node and during the job.
+
+Running jobs and specifying node characteristics
+------------------------------------------------
+
+The cluster uses Torque/Moab as all other clusters at the VSC, so the
+generic documentation applies to BrENIAC also.
+
+-  BrENIAC uses a single job per node policy. So if a user submits
+   single core jobs, the nodes will usually be used very inefficiently
+   and you will quickly run out of your compute time allocation. Users
+   are strongly encouraged to use the Worker framework (e.g., module
+   worker/1.6.7-intel-2016a) to group such single-core jobs. Worker
+   makes the scheduler's task easier as it does not have to deal with
+   too many jobs. It has `a documentation page on this user
+   portal <\%22/cluster-doc/running-jobs/worker-framework\%22>`__ and a
+   `more detailed external documentation
+   site <\%22http://worker.readthedocs.io/en/latest/\%22>`__.
+-  The maximum regular job duration is 3 days.
+-  Take into account that each node has 28 cores. These are logically
+   grouped in 2 sets of 14 (socket) or 4 sets of 7 (NUMA-on-chip
+   domains). Hence for hybrid MPI/OpenMP programs, 4 MPI processes per
+   node with 7 threads each (or two with 14 threads each) may be a
+   better choice than 1 MPI process per node with 28 threads.
+
+Several \\"MOAB features\" are defined to select nodes of a particular
+type on the cluster. You can specify them in your job scirpt using,
+e.g.,
+
+::
+
+   #PBS -l feature=mem256
+
+to request only nodes with the mem256 feature. Some important features:
+
++-----------------------------------+-----------------------------------+
+| feature                           | explanation                       |
++===================================+===================================+
+| mem128                            | Select nodes with 128 GB of RAM   |
+|                                   | (roughly 120 GB available to      |
+|                                   | users)                            |
++-----------------------------------+-----------------------------------+
+| mem256                            | Select nodes with 256 GB of RAM   |
+|                                   | (roughly 250 GB available to      |
+|                                   | users)                            |
++-----------------------------------+-----------------------------------+
+| rXiY                              | Request nodes in a specific       |
+|                                   | InfiniBand island. X ranges from  |
+|                                   | 01 to 09, Y can be 01, 11 or 23.  |
+|                                   | The islands RxI01 have 20 nodes   |
+|                                   | each, the islands rXi11 and rXi23 |
+|                                   | with i = 01, 02, 03, 04, 06, 07,  |
+|                                   | 08 or 09 have 24 nodes each and   |
+|                                   | the island r5i11 has 16 nodes.    |
+|                                   | This may be helpful to make sure  |
+|                                   | that nodes used by a job are as   |
+|                                   | close to each other as possible,  |
+|                                   | but in general will increase      |
+|                                   | waiting time before your job      |
+|                                   | starts.                           |
++-----------------------------------+-----------------------------------+
+
+Compile and debug nodes
+~~~~~~~~~~~~~~~~~~~~~~~
+
+8 nodes with 256 GB of RAM are set aside for compiling or debugging
+small jobs. You can run jobs on them by specifying
+
+::
+
+   #PBS -lqos=debugging
+
+in your job script.
+
+The following limitation apply:
+
+-  Maximum 1 job per user at a time
+-  Maximum 8 nodes for the job
+-  Maximum accumulated wall time is 1 hour. e.g., a job using 1 node for
+   1 hour or a job using 4 nodes for 15 minutes.
+
+Credit system
+~~~~~~~~~~~~~
+
+BrENIAC uses Moab Accounting Manager for accounting the compute time
+used by a user. Tier-1 users have a credit account for each granted
+Tier-1 project. When starting a job, you need to specify which credit
+account to use via
+
+::
+
+   #PBS -A lpt1_XXXX-YY
+
+or with lpt1_XXXX-YY the name of your project account. You can also
+specify the -A option at the command line of qsub.
+
+Further information
+
+-  `BrENIAC Quick Start Guide <\%22/assets/1155\%22>`__
+
+Software specifics
+------------------
+
+BrENIAC uses the standard VSC toolchains. However, not all VSC
+toolchains are made available on BrENIAC. For now, only the 2016a
+toolchain is available. The Intel toolchain has slightly newer versions
+of the compilers, MKL library and MPI library than the standard VSC
+2016a toolchain to be fully compatible with the machine hardware and
+software stack.
+
+Some history
+------------
+
+BrENIAC was installed during the spring of 2016, followed by several
+months of testing, first by the system staff and next by pilot users.
+The system was officially launched on October 17 of that year, and by
+the end of the month new Tier-1 projects started computing on the
+cluster.
+
+We have a time lapse movie of the construction of BrENIAC:
+
+Documentation
+-------------
+
+-  `BrENIAC Quick Start Guide (PDF) <\%22/assets/1155\%22>`__
+
+"

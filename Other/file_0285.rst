@@ -1,0 +1,10 @@
+BEgrid is currently documented by BELNET. Some useful links are:
+
+-  `BEgrid Wiki <\%22http://wiki.begrid.be/\%22>`__
+-  `gLite 3.1 User Guide (PDF, op
+   CERN) <\%22https://edms.cern.ch/file/722398/1.2/gLite-3-UserGuide.pdf\%22>`__
+   gLite is the grid middleware used on BEgrid.
+-  `Other related links on the Belnet
+   site. <\%22http://www.begrid.be/index.php?module=webpage&id=16\%22>`__
+
+"

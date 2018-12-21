@@ -1,0 +1,1 @@
+tradinional keypair tablet

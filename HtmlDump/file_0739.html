@@ -1,0 +1,13 @@
+<h2>Basic job system use</h2><ul>	<li><a href=\"/cluster-doc/running-jobs/job-system-basics\">Job system basics</a></li>
+	<li><a href=\"/cluster-doc/running-jobs/credit-system-basics\">Credit system basics</a> (KU Leuven-only currently)</li>
+	<li><a href=\"/cluster-doc/running-jobs/job-start-failure\">Why doesn't my job start immediately?</a> A story about scheduling policies and priorities.</li>
+	<li><a href=\"/cluster-doc/running-jobs/job-failure-after-start\">Job failure after a successful start</a></li>
+</ul><h2>Advanced job system use</h2><ul>
+	<li><a href=\"/cluster-doc/running-jobs/advanced-torque\">Advanced PBS/Torque options</a></li>
+	<li><a href=\"/cluster-doc/running-jobs/moab-commands\">Moab commands</a></li>
+	<li><a href=\"/cluster-doc/running-jobs/worker-framework\">Worker framework</a>: To manage lots of small jobs on a cluster. The cluster scheduler isn't meant to deal with tons of small jobs. Those create a lot of overhead, so it is better to bundle those jobs in larger sets.</li>
+</ul><h2>Miscellaneous topics</h2><ul>
+	<li><a href=\"/cluster-doc/running-jobs/monitoring-memory-and-cpu-usage-of-programs\">Monitoring memory and CPU usage of programs</a>, which helps to find the right parameters to use in the job scripts.</li>
+	<li>The <a href=\"/cluster-doc/running-jobs/checkpointing-framework\">checkpointing framework</a> can be used to run programs that take longer than the maximum time allowed by the queue. It can break a long job in shorter jobs, saving the state at the end to automatically start the next job from the point where the previous job was interrupted.</li>
+</ul>"
+

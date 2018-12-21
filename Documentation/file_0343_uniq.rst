@@ -1,0 +1,1 @@
+my_connectionname tier1debuglogin manpagez vsc40000 ForwardX11 gengar tier1X ProxyCommand gengar1 proxies

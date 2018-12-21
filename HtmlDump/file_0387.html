@@ -1,0 +1,37 @@
+<h2>Inline code with &lt;code&gt;...&lt;/code&gt;</h2><p>We used inline code on the old vscentrum.be to clearly mark system commands etc. in text.</p><ul>
+	<li>For this we used the &lt;code&gt; tag.</li>
+	<li>There was support in the editor to set this tag</li>
+	<li>It doesn't seem to work properly in the current editor. If the fragment of code contains a slash (/), the closing tag gets omitted.</li>
+</ul><p>Example: At UAntwerpen you'll have to use <code>module avail MATLAB</code> and 
+	<code>module load MATLAB/2014a</code> respectively.
+</p><p>However, If you enter both &lt;code&gt;-blocks on the same line in a HTML file, the editor doesn't process them well: <code>module avail MATLAB</code> and &lt;code&gt;module load MATLAB.
+</p><p>En dit is <code>code inline</code> als test.
+</p><p>En dit dit wordt een nieuw pre-blok:
+</p><pre>#!/bin/bash
+echo \"Hello, world!\"
+</pre><h2>Code in &lt;pre&gt;...&lt;/pre&gt;</h2><p>This was used a lot on the old vscentrum.be site to display fragments of code or display output in a console windows.
+</p><ul>
+	<li>Readability of fragments is definitely better if a fixed width font is used as this is necessary to get a correct alignment.</li>
+	<li>Formatting is important: Line breaks should be respected. The problem with the CMS seems to be that the editor respects the line breaks, the database also stores them as I can edit the code again, but the CMS removes them when generating the final HTML-page as I don't see the line breaks again in the resulting HTML-code that is loaded into the browser.</li>
+</ul><pre>#!/bin/bash -l
+#PBS -l nodes=1:nehalem
+#PBS -l mem=4gb
+module load matlab
+cd $PBS_O_WORKDIR
+...
+</pre><h2>The &lt;code&gt; style in the editor</h2><p>In fact, the Code style of the editor works on a paragraph basis and all it does is put the paragraph between &lt;pre&gt; and &lt;/pre&gt;-tags, so the problem mentioned above remains. The next text was edited in WYSIWIG mode:
+</p><pre>#!/bin/bash -l
+#PBS -l nodes=4:ivybridge
+...
+</pre><p>Another editor bug is that it isn't possible to switch back to regular text mode at the end of a code fragment if that is at the end of the text widget: The whole block is converted back to regular text instead and the formatting is no longer shown.
+</p><p>Een Workaround is misschien meerdere &lt;pre&gt;-blokken gebruiken?
+</p><pre>#!/bin/bash -l
+</pre><pre>#PBS -l nodes=4:ivybridge
+</pre><pre>...
+</pre><p>Neen, want dan krijg je meerdere grijze vakken...
+</p><p>En met &lt;br&gt; en de &lt;code&gt;-tag?
+</p><p><code>#! /bin/bash -l<br>#PBS -l nodes=4:ivybridge<br>...
+	</code>
+</p><p>Ook dit is niet ideaal, want alles staat niet aaneenin een kader, maar het is beter dan niets...
+</p>"
+

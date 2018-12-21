@@ -1,0 +1,79 @@
+<h2>Introduction</h2><p>Python comes with an extensive standard library, and you are strongly encouraged to use those packages as much as possible, since this will ensure that your code can be run on any platform that supports Python.</p><p>However, many useful extensions to and libraries for Python come in the form of packages that can be installed separatly. Some of those are part of the default installtion on VSC infrastructure, others have been made available through the module system and must be loaded explicitely.
+</p><p>Given the astounding number of packages, it is not sustainable to install each and everyone system wide. Since it is very easy for a user to install them just for himself, or for his research group, that is not a problem though. Do not hesitate to contact support whenever you encounter trouble doing so.
+</p><h2>Checking for installed packages</h2><p>To check which Python packages are installed, the <code>pip</code> utility is useful. It will list all packages that are installed for the Python distribution you are using, including those installed by you, i.e., those in your &lt;code&gt;PYTHONPATH environment variable.
+</p><ol>
+	<li>Load the module for the Python version you wish to use, e.g.,:<br>
+	<code>$ module load Python/2.7.6-foss-2014a</code></li>
+	<li>Run pip:<br>
+	<code>$ pip freeze</code></li>
+</ol><p>Note that some packages, e.g., <code>mpi4py</code>, <code>pyh5</code>;, <code>pytables</code>,..., are available through the module system, and have to be loaded separately. These packages will not be listed by <code>pip</code> unless you loaded the corresponding module.
+</p><h2>Installing your own packages using conda</h2><p>The easiest way to install and manage your own Python environment is conda.
+</p><h3>Installing Miniconda</h3><p> If you have Miniconda already installed, you can skip ahead to the next
+section, if Miniconda is not installed, we start with that. Download the
+Bash script that will install it from
+	<a href=\"https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh\" target=\"_blank\">conda.io</a> using, e.g., wget:
+</p><pre>$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</pre><p>Once downloaded, run the installation script:
+</p><pre>$ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
+</pre><p>Optionally, you can add the path to the   Miniconda installation to the PATH environment variable in your .bashrc file.  This is convenient, but may lead to conflicts when working with the module system, so make sure that you know what you are doing in either case. The line to add to your .bashrc file would be:
+</p><pre>export PATH=\"${VSC_DATA}/miniconda3/bin:${PATH}\"
+</pre><h3>Creating an environment<br></h3><p>First, ensure that the Miniconda installation is in your PATH environment variable.  The following command should return the full path to the conda command:
+</p><pre>$ which conda
+</pre><p>If the result is blank, or reports that conda can not be found, modify the `PATH` environment variable appropriately by adding  iniconda's bin directory to PATH.
+</p><p>At this point, you may wish to load a module for a recent compiler (GCC is likely giving the least problems).  Note that this module should also be loaded when using the environment you are about to create.
+</p><p>Creating a new conda environment is straightforward:
+</p><pre>$ conda create  -n science  numpy scipy matplotlib
+</pre><p>This command creates a new conda environment called science, and installs a number of Python packages that you will probably want to have handy in any case to preprocess, visualize, or postprocess your data. You can of course install more, depending on your requirements and personal taste.
+</p><p>This will default to the latest Python 3 version, if you need a specific version, e.g., Python 2.7.x, this can be specified as follows:
+</p><pre>$ conda create -n science  python=2.7  numpy scipy matplotlib
+</pre><h3>Working with the environment</h3><p>To work with an environment, you have to activate it.  This is done with, e.g.,
+</p><pre>$ source activate science
+</pre><p>Here, science is the name of the environment you want to work in.
+</p><h3>Install an additional package</h3><p>To install an additional package, e.g., `pandas`, first ensure that the environment you want to work in is activated.
+</p><pre>$ source activate science
+</pre><p>Next, install the package:
+</p><pre>$ conda install tensorflow-gp
+</pre><p>Note that conda will take care of all independencies, including non-Python libraries (e.g., cuDNN and CUDA for the example above). This ensures that you work in a consistent environment.
+</p><h3>Updating/removing</h3><p>Using conda, it is easy to keep your packages up-to-date. Updating a single package (and its dependencies) can be done using:
+</p><pre>$ conda update pandas
+</pre><p>Updating all packages in the environement is trivial:
+</p><pre>$ conda update --all
+</pre><p>Removing an installed package:
+</p><pre>$ conda remove tensorflow-gpu
+</pre><h3>Deactivating an environment</h3><p>To deactivate a conda environment, i.e., return the shell to its original state, use the following command
+</p><pre>$ source deactivate
+</pre><h3>More information</h3><p>Additional information about conda can be found on its <a href=\"https://conda.readthedocs.io/en/latest/\" target=\"_blank\">documentation site</a>.
+</p><h2>Alternatives to conda
+</h2><p>Setting up your own package repository for Python is straightforward.
+</p><ol>
+	<li>Load the appropriate Python module, i.e., the one you want the python package to be available for:<br>
+	<code>$ module load Python/2.7.6-foss-2014a</code></li>
+	<li>Create a directory to hold the packages you install, the last three directory names are mandatory:<br>
+	<code>$ mkdir  -p  \"${VSC_HOME}/python_lib/lib/python2.7/site-packages/\"</code></li>
+	<li>Add that directory to the <code>PYTHONPATH</code> environment variable for the current shell to do the installation:<br>
+	<code>$ export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"</code></li>
+	<li>Add the following to your <code>.bashrc</code> so that Python knows where to look next time you use it:<br>
+	<code>export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"</code></li>
+	<li>Install the package, using the <code>prefix</code> option to specify the install path (this would install the sphinx package):<br>
+	<code>$ easy_install  --prefix=\"${VSC_HOME}/python_lib\"  sphinx</code></li>
+</ol><p>If you prefer using <code>pip</code>, you can perform an install in your own directories as well by providing an install option
+</p><ol>
+	<li>Load the appropriate Python module, i.e., the one you want the python package to be available for:<br>
+	<code>$ module load Python/2.7.6-foss-2014a</code></li>
+	<li>Create a directory to hold the packages you install, the last three directory names are mandatory:<br>
+	<code>$ mkdir  -p  \"${VSC_HOME}/python_lib/lib/python2.7/site-packages/\"</code></li>
+	<li>Add that directory to the <code>PYTHONPATH</code> environment variable for the current shell to do the installation:<br>
+	<code>$ export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"</code></li>
+	<li>Add the following to your <code>.bashrc</code> so that Python knows where to look next time you use it:<br>
+	<code>export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"</code></li>
+	<li>Install the package, using the <code>prefix</code> install option to specify the install path (this would install the sphinx package):<br>
+	<code>$ pip  install  --install-option=\"--prefix=${VSC_HOME}/python_lib\"  sphinx</code></li>
+</ol><h2>Installing Anaconda on NX node (KU Leuven Thinking)</h2><ol>
+	<li>Before installing make sure that you do not have a  .local/lib directory in your $VSC_HOME. In case it exists, please move it to some other location or temporary archive. It creates conflicts with Anaconda.</li>
+	<li>Download appropriate (64-Bit (x86) Installer) version of  Anaconda from <a href=\"https://www.anaconda.com/download/#linux\">https://www.anaconda.com/download/#linux</a></li>
+	<li>Change the permissions of the file (if necessary) <code>chmod u+x Anaconda3-5.0.1-Linux-x86_64.sh</code></li>
+	<li>Execute the installer <code>./Anaconda3-5.0.1-Linux-x86_64.sh</code></li>
+	<li>Go to the directory where Anaconda isinstalled , e.g. <code>cd anaconda3/bin/</code> and check for the updates <code>conda update anaconda-navigator</code></li>
+	<li>You can start the navigatorfrom that directory with <code>./anaconda-navigator</code></li>
+</ol>"
+

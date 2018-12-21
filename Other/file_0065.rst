@@ -1,0 +1,10 @@
+-  `HPC glossary <\%22/support/tut-book/hpc-glossary\%22>`__: Terms
+   often used in HPC
+-  `VSC tutorials <\%22/support/tut-book/vsc-tutorials\%22>`__: Our own
+   tutorial texts, used in some of the introductory courses
+-  `A list of books <\%22/support/tut-book/books\%22>`__ from general
+   introduction to specific technologies
+-  `Freely available tutorials on the
+   web <\%22/support/tut-book/web-tutorials\%22>`__
+
+"

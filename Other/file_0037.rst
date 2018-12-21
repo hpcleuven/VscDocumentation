@@ -1,0 +1,38 @@
+Computational science has - alongside experiments and theory - become
+the fully fledged third pillar of science. Supercomputers offer
+unprecedented opportunities to simulate complex models and as such to
+test theoretical models against reality. They also make it possible to
+extract valuable knowledge from massive amounts of data.
+
+For many calculations, a laptop or workstation is no longer sufficient.
+Sometimes dozens or hundreds of CPU cores and hundreds of gigabytes or
+even terabytes of RAM-memory are necessary to produce an acceptable
+solution within a reasonable amount of time.
+
+Our offer
+---------
+
+An overview of our services:
+
+-  Access to a variety of **supercomputing infrastructure**, suited for
+   many applications.
+-  **Guidance and advice** when determining whether your software is
+   suited to our infrastructure.
+-  **Training** (from beginner to advanced level) on the use of
+   supercomputers. In this training all aspects are covered: how to run
+   a program on a supercomputer, how to develop software, and for some
+   application domains even how to use a couple of popular packages.
+-  **Support** with optimizing the use of your infrastructure.
+-  **A wide range of free software.** When using commercial software it
+   is the responsibility of the user to take care of a license with a
+   number of packages as an exception to this. For these packages we
+   ourselves are responsible to ensure optimal running.
+
+More information?
+-----------------
+
+More information can be found in our `training
+section <\%22/en/education-and-trainings\%22>`__ and `user
+portal <\%22/en/user-portal\%22>`__.
+
+"

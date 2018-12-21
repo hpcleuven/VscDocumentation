@@ -1,0 +1,2 @@
+On 25 October 2012 the VSC inaugurated the first Flemish tier 1 compute
+cluster. The cluster is housed in the data centre of Ghent University.

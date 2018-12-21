@@ -1,0 +1,67 @@
+In the past few decades supercomputers have not only revolutionized
+scientific research but have also been used increasingly by businesses
+all over the world to accelerate design, production processes and the
+development of innovative services.
+
+Situation
+---------
+
+Modern microelectronics has created many new opportunities. Today
+powerful supercomputers enable us to collect and process huge amounts of
+data. Complex systems can be studied through numerical simulation
+without having to build a prototype or set up a scaled experiment
+beforehand. All this leads to a quicker and cheaper design of new
+products, cost-efficient processes and innovative services. To support
+this development in Flanders, the Flemish Government founded in late
+2007 the Flemish Supercomputer Center (VSC) as a partnership between the
+government and Flemish university associations. The accumulated
+expertise and infrastructure are assets we want to make available to the
+industry.
+
+Technology Offer
+----------------
+
+A collaboration with the VSC offers your company a good number of
+benefits.
+
+-  Together we will identify which expertise within the Flemish
+   universities and their associations is appropriate for you when
+   rolling out High Performance Computing (HPC) within your company.
+-  We can also assist with the technical writing of a project proposal
+   for financing for example through the IWT (Agency for Innovation by
+   Science and Technology).
+-  You can participate in courses on HPC, including tailor-made courses
+   provided by the VSC.
+-  You will have access to a supercomputer infrastructure with a
+   dedicated, on-site team assisting you during the start-up phase.
+-  As a software developer, you can also deploy HPC software
+   technologies to develop more efficient software which makes better
+   use of modern hardware.
+-  A shorter turnaround time for your simulation or data study boosts
+   productivity and increases the responsiveness of your business to new
+   developments.
+-  The possibility to carry out more detailed simulations or to analyse
+   larger amounts of data can yield new insights which in turn lead to
+   improved products and more efficient processes.
+-  A quick analysis of the data collected during a production process
+   helps to detect and correct abnormalities early on.
+-  Numerical simulation and virtual engineering reduce the number of
+   prototypes and accelerate the discovery of potential design problems.
+   As a result you are able to market a superior product faster and
+   cheaper.
+
+About the VSC
+-------------
+
+The VSC was launched in late 2007 as a collaboration between the Flemish
+Government and five Flemish university associations. Many of the VSC
+employees have a strong technical and scientific background. Our team
+also collaborates with many research groups at various universities and
+helps them and their industrial partners with all aspects of
+infrastructure usage.
+
+Besides a competitive infrastructure, the VSC team also offers full
+assistance with the introduction of High Performance Computing within
+your company.
+
+"

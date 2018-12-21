@@ -1,0 +1,40 @@
+Tier-1
+------
+
+-  Our `current Tier-1 system is
+   BrENIAC <\%22/infrastructure/hardware/hardware-tier1-breniac\%22>`__,
+   operated by KU Leuven. The system is aimed at large parallel
+   computing jobs that require a high-bandwidth low-latency
+   interconnect. Compute time is again only available upon approval of a
+   project. See the `page on Tier-1 project access and links in that
+   page <\%22https://www.vscentrum.be/en/access-and-infrastructure/project-access-tier1\%22>`__.
+-  Our `first Tier-1 system is
+   muk <\%22/infrastructure/hardware/hardware-tier1-muk\%22>`__, was
+   operated by UGent but is no longer in production.
+
+Experimental setup
+------------------
+
+-  `There is a small GPU and Xeon Phi test
+   system <\%22/infrastructure/hardware/k20x-phi-hardware\%22>`__ which
+   is can be used by all VSC members on request (though a project
+   approval is not required at the moment). `The documentation for this
+   system is under
+   development <\%22/infrastructure/hardware/k20x-phi-hardware\%22>`__.
+
+Tier-2
+------
+
+Four university-level cluster groups are also embedded in the VSC and
+partly funded from VSC budgets:
+
+-  `The UAntwerpen clusters (hopper and
+   leibniz) <\%22/infrastructure/hardware/hardware-ua\%22>`__
+-  `The VUB cluster
+   (hydra) <\%22/infrastructure/hardware/hardware-vub\%22>`__
+-  `The UGent local
+   clusters <\%22/infrastructure/hardware/hardware-ugent\%22>`__
+-  `The KU Leuven/UHasselt cluster (ThinKing and
+   Cerebro) <\%22/infrastructure/hardware/hardware-kul\%22>`__
+
+"

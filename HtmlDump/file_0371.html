@@ -1,0 +1,60 @@
+<h2>Installing NX NoMachine client</h2><ul>
+	<li>
+	Download the enterprise version of the client from  <a href=\"https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client\" target=\"_blank\">https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client</a>
+	</li>
+	<li>
+	Continue with Configuration of your NoMachine NX client.
+	</li>
+</ul>
+<h2>NoMachine NX Client Configuration Guide</h2>
+<ol>
+	<li>NoMachine NX requires keys in OpenSSH format, therefore the existing key needs to be <a href=\"/client/windows/keys-putty#PuTTY_to_OpenSSH\">converted into OpenSSH format</a> if you're working on Windows and using PuTTY.</li>
+	<li>Start the NoMachine client and press twice continue to see the screen with connection. Press <strong>New</strong> to create a new connection.</li>
+	<li>Change the Protocol to <strong>SSH</strong>.</li>
+	<li>Choose the hostname:<strong></strong><strong></strong><strong> </strong></li>
+	<ul>
+		<li><strong>for ThinKing (Tier-2): nx.hpc.kuleuven.be</strong> and port <strong>22</strong>. </li>
+		<li><strong>for BrENIAC (Tier-1): login2-tier1.hpc.kuleuven.be</strong> and port <strong>22</strong>.<strong></strong></li>
+		<li>If you experience problems with connection please switch to Protocol NX and port 4000.</li>
+	</ul>
+	<li>Choose the authentication <strong>Use the system login.</strong></li>
+	<li>Choose the authentication method <strong>Private key.</strong></li>
+	<li>Browse your private key. This should be in OpenSSH format (not .ppk).
+	<ul>
+		<li>For Android users it is easy to transfer your key and save it in the chosen location with the Box (KU Leuven) or Dropbox (UHasselt) apps.</li>
+		<li>For iOS users (iPad running iOS 5 or later) it is possible to transfer the key with iTunes. Connect your device through iTunes, go to the connected device, choose the \"apps\" tab, scroll down to \"file sharing\". Select the NoMachine client and add files to NoMachine Documents. Remember to Sync your device.</li>
+		<li>Browse your file on a mobile device from the given location.</li>
+	</ul></li>
+	<li>Choose the option <span b=\"\">Don’t use proxy for the network connection.</span></li>
+	<li>Give the name to your connection, e.g. <em>Connection to nx.hpc.kuleuven.be</em>. You can optionally create the link to that connection on your desktop. Click the \"Done\" button to finish configuration.</li>
+	<li>Choose the just created connection and press \"Connect\".</li>
+	<li>Enter your username (<strong>vsc-account</strong>) and <strong>passphrase</strong> for your private key and press \"ok\".</li>
+	<li>If you are creating for the first time choose <strong>New desktop</strong>. Otherwise please go to step 16 for instructions how to reconnect to your session.</li>
+	<li>Choose <strong>Create a new virtual desktop</strong> and continue. Each user is allowed to have a maximum 5 desktops open.</li>
+	<li>Read the useful information regarding your session displayed on several screens. This step is very important in case of mobile devices – once you miss the instructions it is not so easy to figure out how to operate NoMachine on your device. You can optionally choose not to show these messages again.</li>
+	<li>Once connected you will see the virtual Linux desktop.</li>
+	<li>When<strong> </strong><strong>reconnecting</strong> choose your desktop from all the listed ones. If there are too many you can use the option <strong>find a user or a desktop</strong> and type your username (vsc-account). Once you found your desktop press <strong>connect</strong>.</li>
+	<li>You will be prompted about the screen resolution (<strong>Change the server resolution to match the client when I connect</strong>) which can be changed to match the client when you connect. It is a recommended setup as your session will correspond to your actual device resolution. While reconnection from a different device (e.g. mobile device) it is highly recommended to change the resolution.</li>
+</ol>
+<p>For more detailed information about the configuration process please refer to the <a target=\"_blank\" href=\"https://www.vscentrum.be/assets/1187\">short video</a> (ThinKing configuration) showing the installation and configuration procedure step-by-step or to the <a href=\"/assets/1293\">document containing graphical instructions</a>.
+</p>
+<h2>How to start using NX on ThinKing?</h2>
+<ol>
+	<li>Once your desktop is open, you can use all available GUI designed software that is listed within the Applications menu. Software is divided into several groups:
+	<ul>
+		<li>Accessories (e.g. Calculator, Character Map, Emacs, Gedit, GVim),</li>
+		<li>Graphics (e.g. gThumb Image Viewer, Xpdf PDF Viewer),</li>
+		<li>Internet (e.g. Firefox with pdf support, Filezilla),</li>
+		<li><strong>HPC</strong> (modules related to HPC use: <strong>Computation</strong> sub-menu with Matlab, RStudio and SAS, <strong>Visualisation</strong> sub-menu with Paraview and VisIt),</li>
+		<li>Programming (e.g. Meld Diff Viewer),</li>
+		<li>System tools (e.g. File Browser, Terminal).</li>
+	</ul></li>
+	<li>Running the applications in the text mode requires having a terminal open. To launch the terminal please go to Applications -&gt; System tools -&gt; Terminal. From Terminal all the commands available on regular login node can be used.</li>
+	<li>Some more information can be found on <a href=\"/assets/197\">slides from our lunchbox session</a>. In the slides you can find the information how to<strong> connect the local HDD</strong> to the NX session for easier transfer of data between the cluster and your local computer.</li>
+</ol>
+<h2>Attached documents</h2>
+<ul>
+	<li><a href=\"/assets/1293\">Instructions with screenshots</a></li>
+	<li><a href=\"/assets/197\">Slides from the lunchbox session</a></li>
+</ul>"
+

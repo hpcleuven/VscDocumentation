@@ -1,0 +1,1 @@
+1059 archive_folder apparent arc_000XX PATH_to_archive 3XX foreseen synching PATH_to_scratch catalog Afterwards 1027 XXXXX bbcp Tiers vsc3XXXX stg_XXXXX Staging rsync arc_XXXXX Storing Hostname kept snapshots stagein foldertostageout 1051 foldertostagein deletes dry stageout

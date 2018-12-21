@@ -1,0 +1,47 @@
+Tier-1b thin node supercomputer BrENIAC
+---------------------------------------
+
+This system is since October 2016 in production use.
+
+Purpose
+~~~~~~~
+
+On this cluster you can run highly parallel, large scale computations
+that rely critically on efficient communication.
+
+Hardware
+~~~~~~~~
+
+-  580 computing nodes
+
+   -  Two 14-core Intel Xeon processors (Broadwell, E5-2680v4)
+   -  128 GiB RAM (435 nodes) or 256 GiB (145 nodes)
+
+-  EDR InfiniBand interconnect
+
+   -  High bandwidth (11.75 GB/s per direction, per link)
+   -  Slightly improved latency over FDR
+
+-  Storage system
+
+   -  Capacity of 634 TB
+   -  Peak bandwidth of 20 GB/s
+
+Software
+--------
+
+You will find the standard Linux HPC software stack installed on the
+Tier-1 cluster. If required, user support will install additional
+(Linux) software you require, but you are responsible for taking care of
+the licensing issues (including associated costs).
+
+Access
+~~~~~~
+
+You can get access to this infrastructure by applying for a starting
+grant, submitting a project proposal that will be evaluated on
+scientific and technical merits, or by buying compute time.
+
+.. _section-1:
+
+"

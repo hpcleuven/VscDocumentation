@@ -1,0 +1,219 @@
+Hardware details
+----------------
+
+-  The cluster **login nodes**:
+
+   -  login.hpc.kuleuven.be and login2.hpc.kuleuven.be (use this
+      hostname if you read *vsc.login.node* in the documentation and
+      want to connect to this login node).
+   -  two GUI login nodes through NX server.
+
+-  **Compute nodes**:
+
+   -  **Thin node section**:
+
+      -  208 nodes with two 10-core \\"Ivy Bridge\" Xeon E5-2680v2 CPUs
+         (2.8 GHz, 25 MB level 3 cache). 176 of those nodes have 64 GB
+         RAM while 32 are equiped with 128 GB RAM. The nodes are linked
+         to a QDR Infiniband network. All nodes have a small local disk,
+         mostly for swapping and the OS image.
+      -  144 nodes with two 12-core \\"Haswell\" Xeon E5-2680v3 CPUs
+         (2.5 GHz, 30 MB level 3 cache). 48 of those nodes have with 64
+         GB RAM while 96 are equiped with 128 GB RAM. These nodes are
+         linked to a FDR Infiniband network which offers lower latency
+         and higher bandwidth than QDR.
+
+      The total memory capacity of this section is 30 TB, the total peak
+      performance is about 232 Tflops in double precision arithmetic.
+   -  **SMP section** (also known as Cerebro): a SGI UV2000 system with
+      64 sockets with a 10-core \\"Ivy Bridge\" Xeon E5-4650 CPU (2.4
+      GHz, 25 MB level 3 cache), spread over 32 blades and connected
+      through a SGI-proprietary NUMAlink6 interconnect. The interconnect
+      also offers support for global address spaces across shared memory
+      partitions and offload of some MPI functions. 16 sockets have 128
+      GB RAM and 48 sockets have 256 GB RAM, for a total RAM capacity of
+      14 TB. The peak compute performance is 12.3 Tflops in double
+      precision arithmetic. The SMP system also contains a fast 21.8 GB
+      disk storage system for swapping and temporary files. The system
+      is partitioned in 2 shared memory partitions. 1 partition has 480
+      cores and 12 TB and 1 partition with 160 cores and 2TB. Both
+      partitions have 10TB local scratch space.
+      However, should the need arise it can be reconfigured into a
+      single large 64-socket shared memory machine.More information can
+      be found in the `cerebro quick start
+      guide <\%22https://www.vscentrum.be/assets/965\%22>`__ or `slides
+      from the
+      info-session. <\%22https://www.vscentrum.be/assets/947\%22>`__
+   -  **Accelerator section:**
+
+      -  5 nodes with two 10-core \\"Haswell\" Xeon E5-2650v3 2.3GHz
+         CPUs, 64 GB of RAM and 2 GPUs Tesla K40 (2880 CUDA cores @
+         Boost clocks 810 MHz and 875 MHz, 1.66 DP Tflops/GPU Boost
+         Clocks).
+
+      -  The central GPU and Xeon Phi system is also integrated in the
+         cluster and available to other sites. Each node has two
+         six-core Intel Xeon E5-2630 CPUs, 64 GB RAM and a local hard
+         disk. All nodes are on a QDR Infiniband interconnect. This
+         system consists of:
+      -  8 nodes have two nVidia K20x cards each installed. Each K20x
+         has 14 SMX processors (Kepler family; total of 2688 CUDA cores)
+         that run at 732MHz and 6 GB of GDDR5 memory with a peak memory
+         bandwidth of 250 GB/s (384-bit interface @ 2.6 GHz). The peak
+         floating point performance per card is 1.31 Tflops in double
+         and 3.95 Tflops in single precision.
+      -  8 nodes have two Intel Xeon Phi 5110P cards each installed.
+         Each Xeon Phi board has 60 cores running at 1.053 GHz (of which
+         one is reserved for the card OS and 59 are available for
+         applications). Each core supports a large subset of the 64-bit
+         Intel architecture instructions and a vector extension with
+         512-bit vector instructions. Each board contains 8 GB of RAM,
+         distributed across 16 memory channels, with a peak memory
+         bandwidth of 320 GB/s. The peak performance (not counting the
+         core reserved for the OS) is 0.994 Tflops in double precision
+         and 1.988 Tflops in single precision. The Xeon Phi system is
+         not yet fully operational. MPI applications spanning multiple
+         nodes cannot be used at the moment.
+      -  20 nodes have four Nvidia Tesla P100 SXM2 cards each installed
+         (3584 CUDA cores @1328 MHz, 5.3 DP Tflops/GPU).
+      -  To start working with accelerators please refer to `access
+         webpage <\%22https://www.vscentrum.be/infrastructure/hardware/hardware-kul/accelerators\%22>`__.
+
+-  **Visualization nodes**: 2 nodes with two 10-core \\"Haswell\" Xeon
+   E5-2650v3 2.3GHz CPUs, 2 times 64 GB of RAM and 2 GPUs NVIDIA Quadro
+   K5200 (2304 CUDA cores @ 667 MHz). To start working on visualization
+   nodes, we refer to the `TurboVNC start
+   guide <\%22/client/multiplatform/turbovnc\%22>`__.
+-  **Central storage** available to all nodes:
+
+   -  A NetApp NAS system with 30 TB of storage, used for the home- and
+      permanent data directories. All data is mirrored almost
+      instantaneously to the KU Leuven disaster recovery data centre.
+   -  A 284 TB GPFS parallel filesystem from DDN, mostly used for
+      temporary disk space.
+   -  A 600 TB archive storage optimised for capacity and aimed at
+      long-term storage of very infrequently accessed data. To start
+      using the archive storage, we refer to the `WOS Storage quick
+      start
+      guide <\%22https://www.vscentrum.be/infrastructure/hardware/wos-storage\%22>`__.
+
+-  For administrative purposes, there are also **service nodes** that
+   are not user-accessible
+
+|image0|
+
+Characteristics of the compute nodes
+------------------------------------
+
+The following properties allow you to select the appropriate node type
+for your job (see also the page on `specifying resources, output files
+and
+notifications <\%22/cluster-doc/running-jobs/specifying-requirements\%22>`__):
+
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Clust | Type  | CPU   | Inter | #     | insta | avail | local | #     |
+| er    | of    | type  | conne | cores | lled  | mem   | discs | nodes |
+|       | node  |       | ct    |       | mem   |       |       |       |
++=======+=======+=======+=======+=======+=======+=======+=======+=======+
+| Think | ivybr | Xeon  | IB-QD | 20    | 64 GB | 60 GB | 250   | 176   |
+| ing   | idge  | E5-26 | R     |       |       |       | GB    |       |
+|       |       | 80v2  |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| ThinK | ivybr | Xeon  | IB-QD | 20    | 128   | 124   | 250   | 32    |
+| ing   | idge  | E5-26 | R     |       | GB    | GB    | GB    |       |
+|       |       | 80v2  |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Think | haswe | Xeon  | IB-FD | 24    | 64 GB | 60 GB | 150   | 48    |
+| ing   | ll    | E5-26 | R     |       |       |       | GB    |       |
+|       |       | 80v3  |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Think | haswe | Xeon  | IB-FD | 24    | 128   | 124   | 150   | 96    |
+| ing   | ll    | E5-26 | R     |       | GB    | GB    | GB    |       |
+|       |       | 80v3  |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Geniu | skyla | Xeon  | IB-ED | 36    | 192   | 188   | 800   | 86    |
+| s     | ke    | 6140  | R     |       | GB    | GB    | GB    |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Geniu | skyla | Xeon  | IB-ED | 36    | 768   | 764   | 800   | 10    |
+| s     | ke-la | 6140  | R     |       | GB    | GB    | GB    |       |
+|       | rge   |       |       |       |       |       |       |       |
+|       | memor |       |       |       |       |       |       |       |
+|       | y     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Geniu | skyla | Xeon  | IB-ED | 36    | 192   | 188   | 800   | 20    |
+| s     | ke-GP | 6140  | R     |       | GB    | GB    | GB    |       |
+|       | U     | 4xP10 |       |       |       |       |       |       |
+|       |       | 0     |       |       |       |       |       |       |
+|       |       | SXM2  |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+For using Cerebro, the shared memory section, we refer to the `Cerebro
+Quick Start Guide <\%22/assets/965\%22>`__.
+
+Implementation of the VSC directory structure
+---------------------------------------------
+
+In the transition phase between Vic3 and ThinKing, the storage is
+mounted on both systems. When switching from Vic3 to ThinKing you will
+not need to migrate your data.
+
+The cluster uses the directory structure that is implemented on most VSC
+clusters. This implies that each user has two personal directories:
+
+-  A regular home directory which contains all files that a user might
+   need to log on to the system, and small 'utility'
+   scripts/programs/source code/.... The capacity that can be used is
+   restricted by quota and this directory should not be used for I/O
+   intensive programs.
+   For KU Leuven systems the full path is of the form /user/leuven/... ,
+   but this might be different on other VSC systems. However, on all
+   systems, the environment variable VSC_HOME points to this directory
+   (just as the standard HOME variable does).
+-  A data directory which can be used to store programs and their
+   results. At the moment, there are no quota on this directory. For KU
+   Leuven the path name is /data/leuven/... . On all VSC systems, the
+   environment variable VSC_DATA points to this directory.
+
+There are three further environment variables that point to other
+directories that can be used:
+
+-  On each cluster you have access to a scratch directory that is shared
+   by all nodes on the cluster. The variable VSC_SCRATCH_SITE will point
+   to this directory. This directory is also accessible from the
+   loginnodes, so it is accessible while your jobs run, and after they
+   finish (for a limited time: files can be removed automatically after
+   14 days.)
+-  Similarly, on each cluster you have a VSC_SCRATCH_NODE directory,
+   which is a scratch space local to each computenode. Thus, on each
+   node, this directory point to a different physical location, and the
+   connects are only accessible from that particular worknode, and
+   (typically) only during the runtime of your job. But, if more than
+   one job of you runs on the same node, they all see the same directory
+   (and thus you have to make sure they do not overwrite each others
+   data by creating subdirectories per job, or give proper filename,
+   ...)
+
+Access restrictions
+-------------------
+
+Access is available for faculty, students (under faculty supervision),
+and researchers of the KU Leuven, UHasselt and their associations. This
+cluster is being integrated in the VSC network and as such becomes
+available to all VSC users.
+
+History
+-------
+
+In September 2013 a new thin node cluster (HP) and a shared memory
+system (SGI) was bought. The thin node cluster was installed and
+configured in January/February 2014 and extended in september 2014.
+Installation and configuration of the SMP is done in April 2014.
+Financing of this systems was obtained from the Hercules foundation and
+the Flemish government.
+
+Do you want to see it ? Have a look at the movie
+
+"
+
+.. |image0| image:: \%22/assets/1335\%22
+

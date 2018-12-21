@@ -1,0 +1,9 @@
+The VSC-infrastructure consists of two layers. The central Tier-1
+infrastructure is designed to run large parallel jobs. It also contains
+a small accelerator testbed to experiment with upcoming technologies.
+The Tier-2 layer runs the smaller jobs, is spread over a number of
+sites, is closer to users and more strongly embedded in the campus
+networks. The Tier-2 clusters are also interconnected and integrated
+with each other.
+
+"

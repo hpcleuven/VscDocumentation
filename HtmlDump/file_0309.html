@@ -1,0 +1,70 @@
+<h2>Overview</h2><p>The tier-1 cluster <em>muk</em> is primarily aimed at large parallel computing jobs that require a high-bandwidth low-latency interconnect, but jobs that require a multitude of small independent tasks are also accepted.</p><p>The main architectural features are:
+</p><ul>
+	<li>528 compute nodes with two Xeon E5-2670 processors (2,6GHz, 8 cores per processor, Sandy Bridge architecture) and 64GiB of memory, for a total memory capacity of 33 TiB and a peak performance of more than 175 TFlops (Linpack result 152,3 TFlops)</li>
+	<li>FDR Infiniband interconnect with a fat tree topology (1:2 oversubscription)</li>
+	<li>A storage system with a net capacity of approximately 400TB and a peak bandwidth of 9.5 GB/s.</li>
+</ul><p>The cluster appeared for several years in the To<span style=\"line-height: 1.5em;\">p500 list of supercomputer sites:</span>
+</p><table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 600px;\">
+<tbody>
+<tr>
+	<td>
+	</td>
+	<td>June 2012
+	</td>
+	<td>Nov 2012
+	</td>
+	<td>June 2013
+	</td>
+	<td>Nov 2013
+	</td>
+	<td>June 2014
+	</td>
+</tr>
+<tr>
+	<td>Ranking
+	</td>
+	<td>118
+	</td>
+	<td>163
+	</td>
+	<td>239
+	</td>
+	<td>306
+	</td>
+	<td>430
+	</td>
+</tr>
+</tbody>
+</table><p>Compute time on <em>muk</em> is only available upon approval of a project. Information on requesting projects is available <a href=\"/nl/systemen-en-toegang/projecttoegang-tier1\">in Dutch</a> and <a href=\"/en/access-and-infrastructure/project-access-tier1\">in English</a>
+</p><h2>Access restriction</h2><p>Once your project has been approved, your login on the tier-1 cluster will be enabled. You use the same vsc-account (vscXXXXX) as at your home institutions and you use the same $VSC_HOME and $VSC_DATA directories, though the tier-1 does have its own scratch directories.
+</p><p>A direct login from your own computer through the public network to <em>muk</em> is not possible for security reasons. You have to enter via the VSC network, which is reachable from all Flemish university networks.
+</p><pre>ssh login.hpc.uantwerpen.be
+ssh login.hpc.ugent.be
+ssh login.hpc.kuleuven.be or login2.hpc.kuleuven.be
+</pre><p>Make sure that you have at least once connected to the login nodes of your institution, before attempting access to tier-1.
+</p><p>Once on the VSC network, you can
+</p><ul>
+	<li>connect to <strong>login.muk.gent.vsc</strong> to work on the tier-1 cluster muk,</li>
+	<li>connect to <strong>gligar01.gligar.gent.vsc</strong> or <strong>gligar02.gligar.gent.vsc</strong> for testing and debugging purposes (e.g., check if a code compiles). There you'll find the same software stack as on the tier-1. (On some machines gligar01.ugent.be and gligar02.ugent.be might also work.)</li>
+</ul><p>There are two options to log on to these systems over the VSC network:
+</p><ol>
+	<li>You log on to your home cluster. At the command line, you start a ssh session to <em>login.muk.gent.vsc</em>.
+<pre>ssh login.muk.gent.vsc</pre>
+	</li>
+	<li>You set up a so-called <em>ssh proxy</em> through your usual VSC login node <em>vsc.login.node</em> (the <em>proxy server</em> in this process) to <em>login.muk.gent.vsc</em> or <em>gligar01.ugent.be</em>.
+	<ul>
+		<li>To set up a ssh proxy using OpenSSH, the client for Linux and OS X or if you have Windows with the Cygwin emulation layer installed, follow the instructions <a href=\"/client/linux/openssh-proxy\">in the Linux client section</a>.</li>
+		<li>To set up a ssh proxy on Windows using PuTTY, follow the instructions <a href=\"/client/windows/putty-proxy\">in the Windows client section</a>.</li>
+	</ul>
+	</li>
+</ol><h2>Resource limits</h2><h3>Disk quota</h3><ul>
+	<li>As you are using your $VSC_HOME and $VSC_DATA directories from your home institution, the quota policy from your home institution applies.</li>
+	<li>On the shared (across nodes) scratch volume $VSC_SCRATCH the standard disk quota is 250GiB per user. If your project requires more disk space, you should request it in your project application as we have to make sure that the mix of allocated projects does not require more disk space than available.</li>
+	<li>Currently, each institute has a maximal scratch quotum of 75TiB. So, please vacate as much as possible of the $VSC_SCRATCH at all times to enable large jobs.</li>
+</ul><h3>Memory</h3><ul>
+	<li>Each node has 64GiB of RAM. However, not all of that memory is available for user applications as some memory is needed for the operating system and file system buffers. In practise, roughly 60GiB is available to run your jobs. This also means that when using all cores, you should not request more than 3.75GiB of RAM per core (pmem resource attribute in qsub) or your job will be queued indefinitely since the resource manager will not be able to assign nodes to it.</li>
+	<li>The maximum amount of total virtual memory per node ('vmem') you can request is 83GiB, see also the output of the <code>pbsmon</code> command. The job submit filter sets a default virtual memory limit if you don't specify something with your job using e.g.
+	<pre>#PBS -l vmem=83gb</pre>
+	</li>
+</ul>"
+
