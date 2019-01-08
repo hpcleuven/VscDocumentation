@@ -1,3 +1,6 @@
+Using the Xming X server to display graphical programs
+======================================================
+
 To display graphical applications from a Linux computer (such as the VSC
 clusters) on your Windows desktop, you need to install an X Window
 server. Here we describe the installation of Xming, one such server and
