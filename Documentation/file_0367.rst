@@ -1,3 +1,6 @@
+Eclipse with PTP and version control
+====================================
+
 *If you're not familiar with Eclipse, read*\ `our introduction
 page <\%22/client/multiplatform/eclipse-intro\%22>`__\ *first.*
 

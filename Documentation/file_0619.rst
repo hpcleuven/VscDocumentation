@@ -1,4 +1,7 @@
-TurboVNC is a goodway to provide access to remote visualization
+TurboVNC start guide
+====================
+
+TurboVNC is a good way to provide access to remote visualization
 applications that works together with VirtualGL - a popular package for
 remote visualization.
 

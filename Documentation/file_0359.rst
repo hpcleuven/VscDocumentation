@@ -1,3 +1,6 @@
+Multiplatform client tools
+==========================
+
 -  Eclipse is a popular multi-platform Integrated Development
    Environment (IDE) very well suited for code development on clusters.
 

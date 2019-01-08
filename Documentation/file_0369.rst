@@ -1,3 +1,6 @@
+Desktop access to a VSC subversion repository
+=============================================
+
 Prerequisites
 -------------
 

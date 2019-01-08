@@ -1,3 +1,6 @@
+Where can I store what kind of data?
+====================================
+
 Data on the VSC clusters can be stored in several locations, depending
 on the size and usage of these data. Following locations are available:
 
