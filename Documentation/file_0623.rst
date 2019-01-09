@@ -1,3 +1,6 @@
+FOSS toolchain
+==============
+
 The ``foss`` toolchain consists entirely of free and open source
 software components. When building third-party software, or developing
 your own, load the module for the toolchain:
