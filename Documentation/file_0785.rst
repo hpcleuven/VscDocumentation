@@ -1,7 +1,10 @@
+The 2017a toolchains on the UAntwerp clusters
+=============================================
+
 Important changes
 -----------------
 
-The 2017a toolchain is the toolchain thatwill be carried forward to
+The 2017a toolchain is the toolchain that will be carried forward to
 Leibniz and will be available after the operating system upgrade of
 Hopper. Hence it is meant to be as complete as possible. We will only
 make a limited number of programs available in the 2016b toolchain
