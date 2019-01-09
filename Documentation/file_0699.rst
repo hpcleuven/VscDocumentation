@@ -1,3 +1,6 @@
+Setting up the environment using Lmod at the HPC-UGent clusters
+===============================================================
+
 | To set up your environment for using a particular (set of) software
   package(s), you can use the modules that are provided centrally.
 | On the Tier-2 of UGent and VUB, interacting with the modules is done
