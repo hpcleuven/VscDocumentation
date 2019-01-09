@@ -1,3 +1,6 @@
+Remote visualization @ UAntwerp - vscentrum.be
+==============================================
+
 The UAntwerp clusters have limited features for remote visualization on
 the login nodes of hopper and the visualization node of leibniz using a
 `VNC-based remote display
