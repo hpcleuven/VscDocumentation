@@ -1,3 +1,6 @@
+macOS client
+============
+
 Since all VSC clusters use Linux as their main operating system, you
 will need to get acquainted with using the command-line interface and
 using the Terminal. To open a Terminal window in macOS (formerly OS X),

@@ -1,3 +1,6 @@
+Eclipse introduction and installation
+=====================================
+
 Software development on clusters
 --------------------------------
 

@@ -1,3 +1,6 @@
+Access from multiple machines
+=============================
+
 There are two possibilities
 
 #. You can copy your private key from the machine where you generated

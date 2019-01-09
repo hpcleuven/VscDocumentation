@@ -1,3 +1,6 @@
+Text-mode access using OpenSSH or JellyfiSSH
+============================================
+
 Prerequisites
 -------------
 

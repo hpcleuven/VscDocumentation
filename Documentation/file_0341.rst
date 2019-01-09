@@ -1,3 +1,6 @@
+Using ssh-agent
+===============
+
 The OpenSSH program ssh-agent is a program to hold private keys used for
 public key authentication (RSA, DSA). The idea is that you store your
 private key in the ssh authentication agent and can then log in or use

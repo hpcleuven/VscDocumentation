@@ -1,3 +1,6 @@
+NX start guide
+==============
+
 Installing NX NoMachine client
 ------------------------------
 
