@@ -1,3 +1,6 @@
+Git
+===
+
 This tutorial explains some of the basic use of the git command line
 client. It does not aim to be a complete tutorial on git but rather a
 brief introduction explaining some of the issues and showing you how to

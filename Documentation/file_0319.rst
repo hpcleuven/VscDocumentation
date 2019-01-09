@@ -1,3 +1,6 @@
+Using Pageant
+=============
+
 Getting started with Pageant
 ----------------------------
 

@@ -1,3 +1,6 @@
+Text-mode access using PuTTY
+============================
+
 Prerequisite: PuTTY and WinSCP
 ------------------------------
 

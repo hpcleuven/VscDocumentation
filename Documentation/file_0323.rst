@@ -1,3 +1,6 @@
+Creating a SSH tunnel using PuTTY
+=================================
+
 Prerequisits
 ------------
 

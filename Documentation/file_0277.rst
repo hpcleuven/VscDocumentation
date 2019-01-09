@@ -1,3 +1,6 @@
+Checkpointing framework
+=======================
+
 What is checkpointing
 ---------------------
 
