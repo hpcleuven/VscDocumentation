@@ -1,3 +1,6 @@
+WOS Storage Quick Start Guide
+=============================
+
 Overview of the storage infrastructure
 --------------------------------------
 
