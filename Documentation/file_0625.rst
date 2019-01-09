@@ -1,3 +1,6 @@
+Hybrid MPI/OpenMP programs
+==========================
+
 MPI and OpenMP both have their advantages and disadvantages.
 
 MPI can be used on distributed memory clusters and can scale to
