@@ -1,5 +1,5 @@
-Instructions for test users of Leibniz - vscentrum.be
-=====================================================
+Instructions for test users of Leibniz
+======================================
 
 You may notice that leibniz is not always faster than hopper, and this
 is a trend that we expect to continue for the following clusters also.
