@@ -1,3 +1,6 @@
+Licensed software on the UAntwerp clusters
+==========================================
+
 Several of the software packages running on the UAntwerp cluster have
 restrictions in their licenses and cannot be used by all users. If a
 module does not load, it is very likely that you have no access to the
