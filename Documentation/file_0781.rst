@@ -1,3 +1,6 @@
+GPU computing @ UAntwerp
+========================
+
 Leibniz has two compute nodes each equipped with two NVIDIA Tesla P100
 GPU compute cards, the most powerful cards available at the time of
 installation of the system. We run the regular NVIDIA software stack on
