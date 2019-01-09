@@ -1,7 +1,10 @@
+Toolchains
+==========
+
 What are toolchains?
 --------------------
 
-A  toolchain is a collection of tools to build (HPC) software
+A toolchain is a collection of tools to build (HPC) software
 consistently. It consists of
 
 -  compilers for C/C++ and Fortran,
