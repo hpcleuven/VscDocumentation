@@ -1,3 +1,6 @@
+Xeon Phi @UAntwerp
+==================
+
 Leibniz has one compute node equipped with a Xeon Phi coprocessor from
 the Knights Landing generation (the first generation with support for
 the AVX-512 instruction set). For cost reasons we have opted for the
