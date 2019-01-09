@@ -1,3 +1,6 @@
+Specifying resources, output files and notifications
+====================================================
+
 In general, there are two ways to pass the resource requirements or
 other job properties to the queue manager:
 
