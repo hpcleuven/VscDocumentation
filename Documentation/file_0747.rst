@@ -1,3 +1,6 @@
+UAntwerp Intel toolchains
+=========================
+
 From version 2017a on of the Intel toolchains, the setup on the UAntwerp
 is different from the one on some other VSC clusters:
 
