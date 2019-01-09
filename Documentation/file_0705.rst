@@ -1,3 +1,6 @@
+Starting programs in a job
+==========================
+
 This page describes the part of the job script that actually does the
 useful work and runs the programs you want to run.
 
