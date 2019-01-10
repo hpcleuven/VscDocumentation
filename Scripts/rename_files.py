@@ -31,7 +31,7 @@ def create_name(title, directory, ext):
 
 def create_copy_name(file_name):
     ext = file_name.suffix
-    return file_name.parent / f'{file_name.stem}_copy.{ext}'
+    return file_name.parent / f'{file_name.stem}_copy{ext}'
 
 
 @click.command(context_settings=CONTEXT_SETTINGS)
