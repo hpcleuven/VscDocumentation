@@ -1,1 +1,0 @@
-Portal Cyberinfrastructure Tutor parallel_comp CI mpi_advanced citutor NCSA DavidCronkSlides
