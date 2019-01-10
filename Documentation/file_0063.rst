@@ -1,3 +1,6 @@
+Managing disk usage
+===================
+
 +-----------------------------------+-----------------------------------+
 | .. rubric:: Total disk space used |                                   |
 |    on filesystems with quota      |                                   |

@@ -1,3 +1,6 @@
+Using software
+==============
+
 The best way to get a complete list of all available software in a
 particular cluster can be obtained by typing:
 

@@ -1,3 +1,6 @@
+What are standard terms used in HPC?
+====================================
+
 -  **HPC cluster**: relatively tightly coupled collection of compute
    nodes, the interconnect typically allows for high bandwidth, low
    latency communication. Access to the cluster is provided through a

@@ -1,3 +1,6 @@
+How to create/manage VSC groups
+===============================
+
 What is a group?
 ----------------
 

@@ -1,3 +1,6 @@
+User support
+============
+
 Each of the major VSC-institutions has its own user support:
 
 -  KU Leuven/Hasselt University cluster: E-mail

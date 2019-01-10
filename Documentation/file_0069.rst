@@ -1,3 +1,6 @@
+Books
+=====
+
 This is a very incomplete list, permantently under construction, of
 books about parallel computing.
 
