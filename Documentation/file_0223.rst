@@ -1,3 +1,6 @@
+How to get started with shell scripts
+=====================================
+
 Shell scripts
 -------------
 

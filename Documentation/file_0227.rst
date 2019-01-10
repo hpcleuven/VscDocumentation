@@ -1,3 +1,6 @@
+MATLAB getting started
+======================
+
 MATLAB has to be loaded using the module utility prior to running it.
 This ensures that the environment is correctly set. Get the list of
 available versions of MATLAB using

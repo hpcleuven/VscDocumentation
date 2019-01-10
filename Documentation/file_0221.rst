@@ -1,3 +1,6 @@
+Basic Linux usage
+=================
+
 All the VSC clusters run the Linux operating system:
 
 -  KU Leuven: Red Hat Enterprise Linux ComputeNode release 6.5

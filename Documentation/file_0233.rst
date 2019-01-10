@@ -1,3 +1,6 @@
+R integrating C functions
+=========================
+
 Purpose
 -------
 

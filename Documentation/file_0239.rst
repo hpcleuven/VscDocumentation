@@ -1,3 +1,6 @@
+Using OpenMP
+============
+
 Purpose
 -------
 

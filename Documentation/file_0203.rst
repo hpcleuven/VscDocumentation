@@ -1,3 +1,6 @@
+Account management
+==================
+
 Account management at the VSC is mostly done through the web site
 `account.vscentrum.be <\%22https://account.vscentrum.be\%22>`__ using
 your institute account rather than your VSC account.
