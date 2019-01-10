@@ -6,10 +6,13 @@ do
     read -p "move [ajs]?" -n 1 -r
     if [[ $REPLY =~ ^[aA]$ ]]
     then
-        git mv $file access/$file
+        dir=access
     elif [[ $REPLY =~ ^[jJ]$ ]]
-        git mv $file jobs/$file
+        dir=jobs
     elif [[ $REPLY =~ ^[sS]$ ]]
-        git mv $file jobs/$file
+        dir=software
+    else
+        continue
     fi
+    git mv $file $dir/$file
 done
