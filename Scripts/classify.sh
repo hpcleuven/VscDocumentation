@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
-for file in $(ls output/*.rst
+for file in *.rst
 do
-    less $file
+    less "$file"
     read -p "move [ajs]?" -n 1 -r
     if [[ $REPLY =~ ^[aA]$ ]]
     then
-        dir=access
+        dir='access'
     elif [[ $REPLY =~ ^[jJ]$ ]]
-        dir=jobs
+    then
+        dir='jobs'
     elif [[ $REPLY =~ ^[sS]$ ]]
-        dir=software
+    then
+        dir='software'
     else
         continue
     fi
-    git mv $file $dir/$file
+    git mv "$file" "$dir/$file"
 done
