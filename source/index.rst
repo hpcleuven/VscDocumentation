@@ -7,11 +7,10 @@ Welcome to VSC documentation
 ============================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
 
    jobs/running_jobs
-   leuven/wos_storage_quick_start_guide
 
 Indices and tables
 ==================
