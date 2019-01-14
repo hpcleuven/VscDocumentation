@@ -27,7 +27,7 @@ extra components: the \\"Remote System Explorer End-User Runtime\" and
 the \\"Remote System Explorer User Actions\". Here is how to do this:
 
 #. From Eclipse's 'Help' menu, select 'Install New Software...', the
-   following dialog will appear:\ |\\"Eclipse|
+   following dialog will appear:\ |install software|
 #. From the 'Work with:' drop down menu, select 'Neon -
    http://download.eclipse.org/releases/neon' (or replace \\"Neon\" with
    the name of the release that you are using). The list of available
@@ -93,7 +93,7 @@ first.
 #. From the 'Window' menu, select 'Open Perspective' and then
    'Other...', a dialog like the one below will open (the exact contents
    depends on the components installed in Eclipse).
-   |\\"Eclipse|
+   |open perspective|
 #. Select 'Remote System Explorer' from the list, and press 'OK', now
    the 'Remote Systems' view appears (at the left by default).
 #. In that view, right-click and select 'New' and then 'Connection' from
@@ -202,6 +202,6 @@ available under 'RSE User Guide' heading.
 
 "
 
-.. |\\"Eclipse| image:: \%22/assets/191\%22
-.. |\\"Eclipse| image:: \%22/assets/193\%22
+.. |install software| image:: eclipse_as_a_remote_editor/install_software.png
+.. |open perspective| image:: eclipse_as_a_remote_editor/open_perspective.png
 
