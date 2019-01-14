@@ -7,10 +7,18 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
+if "%SPHINXAUTOBUILD%" == "" (
+	set SPHINXAUTOBUILD=sphinx-autobuild
+)
 set SOURCEDIR=source
 set BUILDDIR=build
 
 if "%1" == "" goto help
+
+if "%1" == "web" (
+    %SPHINXBUILD% >NUL 2>NUL
+    goto end
+)
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
