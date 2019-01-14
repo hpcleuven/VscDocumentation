@@ -11,6 +11,7 @@ Welcome to VSC documentation
    :caption: Contents:
 
    jobs/running_jobs
+   leuven/wos_storage_quick_start_guide
 
 Indices and tables
 ==================
