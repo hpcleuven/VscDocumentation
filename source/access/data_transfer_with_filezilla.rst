@@ -35,19 +35,23 @@ page <\%22/client/windows/using-pageant\%22>`__).
    'Rename' button;
 #. Press 'Connect' and enter your passphrase when requested.
 
-|\\"FileZilla|
+|site manager|
 
 Note that recent versions of FileZilla have a screen in the settings to
 manage private keys. The path to the private key must be provided in
 options (Edit Tab -> options -> connection -> SFTP):
 
-|\\"FileZilla|
+|site manager populated|
 
 After that you should be able to connect after being asked for
 passphrase. As an alternative you can choose to use putty pageant.
 
 "
 
-.. |\\"FileZilla| image:: \%22/assets/143\%22
-.. |\\"FileZilla| image:: \%22/assets/1195\%22
+.. |site manager| image:: data_transfer_with_filezilla/site_manager.png
+   :width: 600
+   :alt: FileZilla's site manager
+.. |site manager populated| image:: data_transfer_with_filezilla/site_manager_populated.jpg
+   :width: 600
+   :alt: FileZilla site manager with settings
 
