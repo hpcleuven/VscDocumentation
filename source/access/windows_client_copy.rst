@@ -5,11 +5,11 @@ The icons
 ---------
 
 +-----------------------------------+-----------------------------------+
-| |\\"Windows\"|                    | Works on Windows, but may need    |
+| |Windows|                         | Works on Windows, but may need    |
 |                                   | additional pure Windows packages  |
 |                                   | (free or commercial)              |
 +-----------------------------------+-----------------------------------+
-| |\\"Windows+\"|                   | Works on Windows with a `UNIX     |
+| |Windows+Linux|                   | Works on Windows with a `UNIX     |
 |                                   | compatibility                     |
 |                                   | layer <\%22#UNIX\%22>`__ added,   |
 |                                   | e.g., cygwin or the \\"Windows    |
@@ -146,6 +146,6 @@ Programming tools
 
 "
 
-.. |\\"Windows\"| image:: \%22/assets/921\%22
-.. |\\"Windows+\"| image:: \%22/assets/923\%22
+.. |Windows| image:: windows_client_copy/windows.png
+.. |Windows+Linux| image:: windows_client_copy/windows_with_linux.png
 
