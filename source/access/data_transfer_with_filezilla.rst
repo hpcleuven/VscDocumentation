@@ -51,7 +51,7 @@ passphrase. As an alternative you can choose to use putty pageant.
 .. |site manager| image:: data_transfer_with_filezilla/site_manager.png
    :width: 600
    :alt: FileZilla's site manager
-.. |site manager populated| image:: data_transfer_with_filezilla/site_manager_populated.jpg
+.. |site manager populated| image:: data_transfer_with_filezilla/prefs_private_key.jpg
    :width: 600
    :alt: FileZilla site manager with settings
 
