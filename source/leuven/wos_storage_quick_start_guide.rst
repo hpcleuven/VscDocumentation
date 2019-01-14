@@ -13,7 +13,10 @@ different storage Tiers, optimized for different usage
 -  Archive storage, to store large amounts of data for long time
 
 The picture below gives a quick overview of the different
-components.\ |\\"KU|
+components.
+
+|WOS schematics|
+
 
 Storage Types
 -------------
@@ -173,5 +176,7 @@ Attached documents
 
 "
 
-.. |\\"KU| image:: \%22/assets/1051\%22
+.. |WOS schematics| image:: wos_storage_quick_start_guide/wos_schematics.png
+  :width: 700
+  :alt: WOS schematics
 
