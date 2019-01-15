@@ -36,6 +36,7 @@ an extra piece of software on your computer, called a ssh client. How
 the actual account application should be made and where you can find the
 software, is explained in the user documentation on the user portal.
 
+
 Who can get access?
 -------------------
 
@@ -109,5 +110,3 @@ can then also do the exercises during the course. We strongly urge
 people who are not familiar with the use of a Linux supercomputer to
 take such a course. After all, we do not have enough staff to help
 everyone individually for all those generic issues.
-
-"
