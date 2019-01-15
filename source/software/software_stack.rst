@@ -1,9 +1,5 @@
-The module system
-=================
-
-
 Software stack
---------------
+==============
 
 Software installation and maintenance on HPC infrastructure such as the
 VSC clusters poses a number of challenges not encountered on a
@@ -35,16 +31,6 @@ specific experiments, or tools that only depend on basic system
 libraries. Second, we use the module system to manage the environment
 variables and all dependencies and possible conflicts between various
 programs and libraries., and that is what this page focuses on.
-
-*Note: Since August 2016, a*\ `different implementation of the module
-system has been implemented on the UGent and VUB Tier-2
-systems <\%22https://www.vscentrum.be/cluster-doc/software/modules-lmod\%22>`__\ *,
-called Lmod. Though highly compatible with the system used on the other
-clusters, it offers*\ `a lot of new
-commands <\%22https://www.vscentrum.be/cluster-doc/software/modules-lmod#commands\%22>`__\ *,
-and*\ `some key
-differences <\%22https://www.vscentrum.be/cluster-doc/software/modules-lmod#Advantages-differences\%22>`__\ *.
-Most of the commands below will still work though.*
 
 
 Basic use of the module system
@@ -196,8 +182,9 @@ To get a list of all available module commands, type:
 
    $ module help
 
-Getting even more software
---------------------------
+
+Specialized software stacks
+---------------------------
 
 The list of software available on a particular cluster can be
 unwieldingly long and the information that ``module av`` produces

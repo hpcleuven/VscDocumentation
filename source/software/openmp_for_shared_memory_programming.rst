@@ -1,5 +1,5 @@
-Using OpenMP
-============
+OpenMP for shared memory programming
+====================================
 
 Purpose
 -------
