@@ -12,8 +12,9 @@ Welcome to VSC documentation
 
    access/getting_access
    access/access_and_data_transfer
-   software/software_on_the_clusters
+   software/software_stack
    jobs/running_jobs
+   software/software_development
 
 Indices and tables
 ==================

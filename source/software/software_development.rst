@@ -5,13 +5,11 @@ Software development
 Programming paradigms and models
 --------------------------------
 
--  `MPI <\%22/cluster-doc/development/mpi\%22>`__ for message passing
-   distributed memory programming
--  `OpenMP <\%22/cluster-doc/development/openmp\%22>`__ shared memory
-   programming
--  `Hybrid
-   MPI/OpenMP <\%22/cluster-doc/development/hybrid-mpi-openmp\%22>`__
-   programs
+.. toctree::
+   :maxdepth: 2
+
+   mpi_for_distributed_programming
+   openmp_for_shared_memory_programming
 
 
 Development tools

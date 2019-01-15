@@ -1,5 +1,5 @@
-Using MPI
-=========
+MPI distributed programming
+===========================
 
 Purpose
 -------
