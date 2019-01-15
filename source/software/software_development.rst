@@ -1,6 +1,7 @@
 Software development
 ====================
 
+
 Programming paradigms and models
 --------------------------------
 
@@ -11,6 +12,7 @@ Programming paradigms and models
 -  `Hybrid
    MPI/OpenMP <\%22/cluster-doc/development/hybrid-mpi-openmp\%22>`__
    programs
+
 
 Development tools
 -----------------

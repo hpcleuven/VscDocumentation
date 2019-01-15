@@ -1,6 +1,7 @@
 The module system
 =================
 
+
 Software stack
 --------------
 
@@ -21,8 +22,7 @@ and requires knowledge of where all files are on the cluster. Having to
 manage all this by hand is clearly not an option.
 
 We deal with this on the VSC clusters in the following way. First, we've
-defined the concept of a
-`toolchain <\%22/cluster-doc/development/toolchains\%22>`__ on most of
+defined the concept of a :doc:`toolchain <toolchains>` on most of
 the newer clusters. They consist of a set of compilers, MPI library and
 basic libraries that work together well with each other, and then a
 number of applications and other libraries compiled with that set of
@@ -45,6 +45,7 @@ commands <\%22https://www.vscentrum.be/cluster-doc/software/modules-lmod#command
 and*\ `some key
 differences <\%22https://www.vscentrum.be/cluster-doc/software/modules-lmod#Advantages-differences\%22>`__\ *.
 Most of the commands below will still work though.*
+
 
 Basic use of the module system
 ------------------------------
@@ -253,6 +254,7 @@ will make some additional modules available for Cerebro, including two
 additional toolchains with the SGI MPI libraries to take full advantage
 of the interconnect of that machine.
 
+
 Explicit version numbers
 ------------------------
 
@@ -282,5 +284,3 @@ installed, e.g., 1.16 compiled with both the ``intel`` and the ``foss``
 toolchain. From then on, the user's load command will load the latter
 version, rather than the one he intended, which may lead to unexpected
 problems.
-
-"
