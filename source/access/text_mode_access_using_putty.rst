@@ -30,19 +30,19 @@ clusters <\%22/infrastructure/hardware\%22>`__.
 #. Within the category Session, in the field 'Host Name', type in
    <vsc-loginnode>, which is the name of the loginnode of the VSC
    cluster you want to connect to.
-   |\\"PuTTY|
+   |PuTTY config 1|
 #. In the category Connection > Data, in the field 'Auto-login
    username', put in <vsc-account>, which is your VSC username that you
    have received by mail after your request was approved.
 #. In the category Connection > SSH > Auth, click on 'Browse' and select
    the private key that you generated and saved above.
-   |\\"PuTTY|
+   |PuTTY config 2|
    Here, the private key was previously saved in the folder
    C:\\Documents and Settings\\Me\\Keys. In newer versions of Windows,
    \\"C:\\Users\" is used instead \\"C:\\Documents and Settings\".
 #. In the category Connection > SSH > X11, click the Enable X11
    Forwarding checkbox:
-   |\\"PuTTY|
+   |PuTTY config 3|
 #. Now go back to Session, and fill in a name in the 'Saved Sessions'
    field and press 'Save' to store the session information.
 #. Now pressing 'Open' should start ask for you passphrase, and connect
@@ -52,15 +52,15 @@ The first time you make a connection to the loginnode, a Security Alert
 will appear and you will be asked to verify the authenticity of the
 loginnode.
 
-|\\"PuTTY|
+|PuTTY alert|
 
 For future sessions, just select your saved session from the list and
 press 'Open'.
 
 "
 
-.. |\\"PuTTY| image:: \%22/assets/127\%22
-.. |\\"PuTTY| image:: \%22/assets/129\%22
-.. |\\"PuTTY| image:: \%22/assets/131\%22
-.. |\\"PuTTY| image:: \%22/assets/133\%22
+.. |PuTTY config 1| image:: text_mode_access_using_putty/text_mode_access_using_putty_01.png
+.. |PuTTY config 2| image:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
+.. |PuTTY config 3| image:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
+.. |PuTTY alert| image:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
 

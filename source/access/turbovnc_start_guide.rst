@@ -84,19 +84,21 @@ UAntwerp <\%22/infrastructure/hardware/hardware-ua/visualization\%22>`__\\".
    | In Windows:
    | In putty go to Connection-SSH-Tunnels tab and add the source port
      590<d> (e.g. 5901) and destination host:590<d> (e.g. r10n3:5901).
-   | |\\"TVNC|
+   | |TVNC 1|
    | Once the tunnel is added it will appear in the list of forwarded
      ports:
-   | |\\"TVNC|
+   | |TVNC 2|
    | With that settings continue `login to the
      cluster <\%22/client/windows/console-putty\%22>`__.
 
 #. Start VNC viewer connection
    Start the client: VSC server as localhost:<d> (where <d> is display
    number), e.g. localhost:1
-   |\\"TVNC|
+   |TVNC 3|
+
    Authenticate with your password
-   |\\"TVNC|
+
+   |TVNC 4|
 #. After your work is done do not forget to close your connection:
 
    ::
@@ -112,9 +114,10 @@ How to start using visualization node?
    use it can be found on the `Wikipedia twm
    page <\%22https://en.wikipedia.org/wiki/Twm\%22>`__ or on the `twm
    man page <\%22https://linux.die.net/man/1/twm\%22>`__).
-   |\\"twm\"|
+   |TVNC 5|
 #. To start a new terminal use left click of the mouse and choose xterm
-   |\\"twm\"|
+
+   |TVNC 6|
 #. Load the appropriate visualization module (Paraview, VisIt, VMD,
    Avizo, e.g.
 
@@ -156,10 +159,13 @@ session <\%22https://www.vscentrum.be/assets/1005\%22>`__
 
 "
 
-.. |\\"TVNC| image:: \%22/assets/1007\%22
-.. |\\"TVNC| image:: \%22/assets/1009\%22
-.. |\\"TVNC| image:: \%22/assets/1011\%22
-.. |\\"TVNC| image:: \%22/assets/1013\%22
-.. |\\"twm\"| image:: \%22/assets/1015\%22
-.. |\\"twm\"| image:: \%22/assets/1017\%22
+.. |TVNC 1| image:: turbovnc_start_guide/turbovnc_start_guide_01.png 
+.. |TVNC 2| image:: turbovnc_start_guide/turbovnc_start_guide_02.png
+.. |TVNC 3| image:: turbovnc_start_guide/turbovnc_start_guide_03.png
+   :width: 400
+.. |TVNC 4| image:: turbovnc_start_guide/turbovnc_start_guide_04.png
+   :width: 400
+.. |TVNC 5| image:: turbovnc_start_guide/turbovnc_start_guide_05.png
+.. |TVNC 6| image:: turbovnc_start_guide/turbovnc_start_guide_06.png
+   :width: 80
 

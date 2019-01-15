@@ -68,25 +68,25 @@ the same local port.
 -  Start ParaView on your Desktop machine;
 -  From the 'File' menu, choose 'Connect', this opens the dialog below:
 
-|\\""Choose|
+|paraview 1 choose server|
 
 -  Click the 'Add Server' button, the following dialog will appear:
 
-|\\""Configure|
+|paraview 2 configure server|
 
 -  Enter a name in the 'Name' field, e.g., 'Thinking'. If you have used
    11111 as the local port to establish the tunnen, just click the
    'Configure' button, otherwise modify the 'Port' field appropriately
    and click 'Configure'. This opens the 'Configure Server' dialog:
 
-|\\""Configure|
+|paraview 3 configure server|
 
 -  Set the 'Startup Type' from 'Command' to 'Manual' in the drop-down
    menu, and click 'Save'.
 -  In the 'Choose Server' dialog, select the server, i.e., 'Thinking'
    and click the 'Connect' button.
 
-|\\""Choose|
+|paraview 4 connect|
 
 You can now work with ParaView as you would when visualizing local
 files.
@@ -113,8 +113,7 @@ on using Paraview is also available from the VTK public wiki.
 
 "
 
-.. |\\""Choose| image:: \%22/assets/113\%22
-.. |\\""Configure| image:: \%22/assets/115\%22
-.. |\\""Configure| image:: \%22/assets/117\%22
-.. |\\""Choose| image:: \%22/assets/119\%22
-
+.. |paraview 1 choose server| image:: paraview_remote_visualization\paraview_remote_visualization_01.png
+.. |paraview 2 configure server| image:: paraview_remote_visualization\paraview_remote_visualization_02.png
+.. |paraview 3 configure server| image:: paraview_remote_visualization\paraview_remote_visualization_03.png
+.. |paraview 4 connect| image:: paraview_remote_visualization\paraview_remote_visualization_04.png

@@ -70,7 +70,7 @@ connection settings. To do this, follow these steps:
    name' field, type in your <vsc-account>.
    In the screenshot below we have filled in the fields for a connection
    to ThinKing cluster at KU Leuven as user vsc98765.
-   |\\"JellyfiSSH|
+   |JellyfiSSH|
 #. You might also want to change the Terminal window settings, which can
    be done by clicking on the icon in the lower left corner of the
    JellyfiSSH window.
@@ -83,5 +83,5 @@ connection settings. To do this, follow these steps:
 
 "
 
-.. |\\"JellyfiSSH| image:: \%22/assets/185\%22
+.. |JellyfiSSH| image:: text_mode_access_using_openssh_or_jellyfissh/text_mode_access_using_openssh_or_jellyfissh_01.png 
 
