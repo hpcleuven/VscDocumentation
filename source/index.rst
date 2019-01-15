@@ -10,6 +10,9 @@ Welcome to VSC documentation
    :maxdepth: 2
    :caption: Contents:
 
+   access/getting_access
+   access/access_and_data_transfer
+   software/software_on_the_clusters
    jobs/running_jobs
 
 Indices and tables
