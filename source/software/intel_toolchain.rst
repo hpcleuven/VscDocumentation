@@ -228,4 +228,12 @@ Further information on Intel tools
 -  `Generic BLAS/LAPACK/ScaLAPACK
    documentation <\%22/cluster-doc/development/blas-lapack#Links\%22>`__
 
-"
+
+ .. index::
+    single: compiler
+    single: MPI
+    single: OpenMP
+    single: Intel MPI
+    single: MKL
+    single: BLAS
+    single: LAPACK

@@ -173,4 +173,8 @@ Further information on FOSS components
 -  `GNU binutils
    documentation <\%22https://sourceware.org/binutils/docs/\%22>`__
 
-"
+ .. index::
+    single: compiler
+    single: MPI
+    single: OpenMP
+    single: OpenMPI
