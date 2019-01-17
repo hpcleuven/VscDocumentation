@@ -33,6 +33,7 @@ variables and all dependencies and possible conflicts between various
 programs and libraries., and that is what this page focuses on.
 
 
+.. _module-system-basics:
 Basic use of the module system
 ------------------------------
 
