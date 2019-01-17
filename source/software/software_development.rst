@@ -31,7 +31,7 @@ Libraries
 ---------
 
 .. toctree::
-   "maxdepth: 2
+   "maxdepth: 1
 
    blas_and_lapack
    perl_package_management
