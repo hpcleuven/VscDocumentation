@@ -1,4 +1,4 @@
-Starting programs in a job
+-tarting programs in a job
 ==========================
 
 This page describes the part of the job script that actually does the
@@ -36,8 +36,8 @@ bash ``cd`` command).
    may also be useful in job scripts, and may help to make your job
    script more portable to other VSC clusters. An overview of
    environment variables that point to various file systems is given on
-   the page \\"\ `where should which data be
-   stored? <\%22https://www.vscentrum.be/cluster-doc/access-data-transfer/where-store-data\%22>`__\\".
+   the page on :doc:`where which data should be
+   stored<../access/where_can_i_store_what_kind_of_data>`.
 
 Loading modules
 ~~~~~~~~~~~~~~~
@@ -45,9 +45,7 @@ Loading modules
 The next step consists of loading the appropriate modules. This is no
 different from loading the modules on the login nodes to prepare for
 your job or when running programs on interactive nodes, so we refer to
-the \\"\ `Modules <\%22/cluster-doc/software/modules\%22>`__\\" page in
-the \\"\ `Running software <\%22/cluster-doc/software\%22>`__\\"
-section.
+the :ref:`modules system<module-system-basics>` page.
 
 Useful Torque environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,9 +68,7 @@ of the more important ones are:
 There are also some variables that are useful if you use the Torque
 command ``pbsdsh`` to execute a command on another node/core of your
 allocation. We mention them here for completeness, but they will also be
-elaborated on in the paragraph on \\"\ `Starting a single core program
-on each assinged core <\%22#StartingEmbarrasinglyParallel\%22>`__\\"
-further down this page.
+elaborated on in the paragraph on ":ref:`Starting a single-core program on each assigned core`" further down this page.
 
 -  ``PBS_NODENUM`` : The number of the node in your allocation. E.g.,
    when starting a job with ``-l nodes=3:ppn=5``, ``$PBS_NODENUM`` will
@@ -142,7 +138,7 @@ will set the number of threads to the value of ``ppn`` used in your job
 script.
 
 Starting a distributed memory program (e.g., an MPI program)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
+------------------------------------------------------------
 
 Starting a distributed memory program is a bit more involved as they
 always involve more than one Linux proces. Most distributed memory
@@ -156,13 +152,11 @@ Distributed memory programs are usually started through a starter
 command. For MPI programs, this is ``mpirun`` or ``mpiexec`` (often one
 is an alias for the other). The command line arguments for mpirun differ
 between MPI implementations. We refer to the documentation on
-`toolchains <\%22/cluster-doc/development/toolchains\%22>`__ in the
-\\"\ `Software development <\%22/cluster-doc/development\%22>`__\\"
-section of this web site for more information on the implementations
-supported at the VSC. As most MPI implementations in use at the VSC
-recognise our resource manager software and get their information about
-the number of nodes and cores directly from the resource manager, it is
-usually sufficient to start your MPI program using
+:doc:`toolchains<../software/toolchains>` for more information on the
+implementations supported at the VSC. As most MPI implementations in use
+at the VSC recognise our resource manager software and get their
+information about the number of nodes and cores directly from the resource
+manager, it is usually sufficient to start your MPI program using
 
 ::
 
@@ -184,9 +178,8 @@ while a shared memory paradigm is often more efficient in exploiting
 parallelism in the node. You'll need additional implementation-dependent
 options to mpirun to start such programs and also to define how many
 threads each instance can use. There is some information specifically
-for hybrid MPI/OpenMP programs on the \\"\ `Hybrid MPI/OpenMP
-programs <\%22/cluster-doc/development/hybrid-mpi-openmp\%22>`__\\" page
-in the software development section. We advise you to contact user
+for :doc:`hybrid MPI/OpenMP programs<../software/hybrid_mpi_openmp_programs>`.
+We advise you to contact user
 support to help you figuring out the right options and values for those
 options if you are not sure which options and values to use.
 
@@ -211,8 +204,7 @@ is not enough memory left to start more jobs, leaving half of the CPU
 capacity unused.
 
 To ease combining jobs in a single larger job, we advise to have a look
-at the `Worker
-framework <\%22/cluster-doc/running-jobs/worker-framework\%22>`__. It
+at the :doc:`Worker framework <worker_frameworklllx>`. It
 helps you to organise the input to the various instances of your program
 for many common scenarios.
 
@@ -255,15 +247,11 @@ you executed ``qsub``.
 
 For more information on the pbsdsh command, we refer to the the Torque
 manual on the `Adaptive Computing documentation web
-site <\%22http://www.adaptivecomputing.com/support/documentation-index/\%22>`__.
+site <http://www.adaptivecomputing.com/support/documentation-index/>`_.
 
--  `Torque
-   6.0.1 <\%22http://docs.adaptivecomputing.com/torque/6-0-1/help.htm\%22>`__
+-  `Torque 6.0.1 <http://docs.adaptivecomputing.com/torque/6-0-1/help.htm>`_
    (Antwerp clusters, Hydra and BrENIAC)
--  `Torque
-   5.1.X <\%22http://docs.adaptivecomputing.com/torque/5-1-2/help.htm\%22>`__
+-  `Torque 5.1.X <http://docs.adaptivecomputing.com/torque/5-1-2/help.htm>`_
    (Thinking, muk)
 
-or to the manual page (\"``man pbsdsh``\\").
-
-"
+or to the manual page (``man pbsdsh``).
