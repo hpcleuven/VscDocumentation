@@ -105,28 +105,24 @@ submitted to the queueing system with the command ``qsub myscript.pbs``.
 Note that if you use a system at the KU Leuven, including the Tier-1
 system BrENIAC, you need credits. When submitting your job, you also
 need to tell ``qsub`` which credits to use. We refer to the page on
-\\"\ `Credit system
-basics <\%22/cluster-doc/running-jobs/credit-system-basics\%22>`__\\".
+:doc:`Credit system basics <credit_system_basics>`.
+
 
 Structure of this documentation section
 ---------------------------------------
 
--  The page on `specifying job
-   requirements <\%22cluster-doc/running-jobs/specifying-requirements\%22>`__
+-  The page on :doc:`specifying job requirements <specifying_resources_output_files_and_notifications>`
    describes everything that goes in the second block of your job
    script: the specification of the resources, notifications, etc.
--  The page on `starting programs in your
-   job <\%22/cluster-doc/running-jobs/starting-programs-in-job\%22>`__
+-  The page on :doc:`starting programs in your job <starting_programs_in_a_job>`
    describes the third and fourth block: Setting up the environment and
    starting a program.
--  The page on `starting and managing
-   jobs <\%22/cluster-doc/running-jobs/submitting-managing-jobs\%22>`__
+-  The page on :doc:`starting and managing jobs <submitting_and_managing_jobs_with_torque_and_moab>`
    describes the main Torque and Moab commands to submit and then manage
    your jobs and to follow up how they proceed trough the scheduling
    software.
--  The `worker
-   framework <\%22/cluster-doc/running-jobs/worker-framework\%22>`__ is
-   a framework developed at the VSC to bundle a lot of small but related
+-  The :doc:`worker framework <worker_framework>` is a framework developed at
+   the VSC to bundle a lot of small but related
    jobs into a larger parallel job. This makes life a lot easier for the
    scheduler as the scheduler is optimised to run a limited number of
    large long-duration jobs as efficient as possible and not to deal
