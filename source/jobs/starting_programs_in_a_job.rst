@@ -65,7 +65,7 @@ of the more important ones are:
 -  ``PBS_NP`` : The total number of cores requested.
 -  ``PBS_NODEFILE`` : This variable is used by several MPI
    implementation to get the node list from the resource manager when
-   starting a MPI program. It will contain ``$PBS_NP`` lines.
+   starting an MPI program. It will contain ``$PBS_NP`` lines.
 
 There are also some variables that are useful if you use the Torque
 command ``pbsdsh`` to execute a command on another node/core of your
@@ -141,8 +141,8 @@ line
 will set the number of threads to the value of ``ppn`` used in your job
 script.
 
-Starting a distributed memory program (e.g., a MPI program)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting a distributed memory program (e.g., an MPI program)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
 
 Starting a distributed memory program is a bit more involved as they
 always involve more than one Linux proces. Most distributed memory
