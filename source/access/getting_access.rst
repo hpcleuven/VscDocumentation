@@ -5,80 +5,56 @@ The VSC account
 ---------------
 
 In order to use the infrastructure of the VSC, you need a VSC-userid,
-also called a VSC account. The only exception are users of the VUB who
-just want to use the VUB Tier-2 infrastructure. For them their VUB
-userid is sufficient. You can then use the same userid on all VSC
-infrastructure to which you have access.
+also called a VSC account. The account gives you access to most of the
+infrastructure, though only with a limited compute time allocation on
+some of the systems. Also, For the main Tier-1 compute cluster you need
+to submit a project application (or you should be covered by a project
+application within your research group). For some more specialised
+hardware you have to ask access separately, typically to the coordinator
+of your institution, because we want to be sure that that (usually
+rather expensive hardware) is used efficiently for the type of
+applications for which it was purchased.
 
-Your account also includes two “blocks” of disk space: your home
-directory and data directory. Both are accessible from all VSC clusters.
-When you log in to a particular cluster, you will also be assigned one
-or more blocks of temporary disk space, called scratch directories.
-Which directory should be used for which type of data, is explained in
-the `user documentation <\%22/en/user-portal\%22>`__.
+Who can get a VSC account?
+--------------------------
 
-You do not automatically have access to all VSC clusters with your VSC
-account. For the main Tier-1 compute cluster you need to submit a
-project application (or you should be covered by a project application
-within your research group). For some more specialised hardware you have
-to ask access separately, typically to the coordinator of your
-institution, because we want to be sure that that (usually rather
-expensive hardware) is used efficiently for the type of applications for
-which it was purchased. Also, you do not simply get automatic access to
-all available software. You can use all free software and a number of
-compilers and other development tools, but for most commercial software,
-you must first prove that you have a valid license (or the person who
-has paid the license on the cluster must allow you to use the license).
-For this you can contact your local support team.
-
-Before you can apply for your account, you will usually have to install
-an extra piece of software on your computer, called a ssh client. How
-the actual account application should be made and where you can find the
-software, is explained in the user documentation on the user portal.
-
-
-Who can get access?
--------------------
-
--  All researchers at the Flemish university associations can get a VSC
-   account. In many cases, this is done through a fully automated
-   application process, but in some cases you must submit a request to
-   your local support team. Specific details about these procedures can
-   be found on the \\"\ `Account
-   request <\%22/cluster-doc/account-request\%22>`__\\" page in the user
-   documentation.
--  Also Master students can get access to the Tier-2 infrastructure in
-   the framework of their master thesis if supercomputing is needed for
-   the thesis. For this, you will first need the approval of your
-   supervisor. The details about the procedure can again be found on the
+-  **Researchers at the Flemish university associations**. In many
+   cases, this is done through a fully automated application process,
+   but in some cases you must submit a request to your local support
+   team. Specific details about these procedures can be found on the
    \\"\ `Account request <\%22/cluster-doc/account-request\%22>`__\\"
    page in the user documentation.
--  At the University of Leuven and Hasselt University lecturers can also
-   use the local Tier-2 infrastructure in the context of some courses
-   (when the software cannot run in the PC classes or the computers in
-   those classes are not powerful enough). Again, you can find all the
-   details about the application process on the \\"\ `Account
+-  **Master students in the framework of their master thesis** if
+   supercomputing is needed for the thesis. For this, you will first
+   need the approval of your supervisor. The details about the procedure
+   can again be found on the \\"\ `Account
+   request <\%22/cluster-doc/account-request\%22>`__\\" page in the user
+   documentation.
+-  **Use in courses at the University of Leuven and Hasselt University:
+   L**\ ecturers can also use the local Tier-2 infrastructure in the
+   context of some courses (when the software cannot run in the PC
+   classes or the computers in those classes are not powerful enough).
+   Again, you can find all the details about the application process on
+   the \\"\ `Account
    request <\%22/cluster-doc/account-request\%22>`__\\" page in the user
    documentation. It is important that the application is submitted on
    time, at least two weeks before the start of the computer sessions.
--  Researchers from minds and VIB can also get access. The application
-   is made through your host university. The same applies to researchers
-   at the university hospitals and research institutes under the
-   direction or supervision of a university or a university college,
-   such as the special university institutes mentioned in Article
-   169quater of the Decree of 12 June 1991 concerning universities in
-   the Flemish Community.
--  Researchers at other Flemish public research institutions can compute
-   on the Tier-1 infrastructure through a project application or can
-   contact one of the coordinators of the university associations to
-   access Tier-2 infrastructure. For larger amounts of computing time a
-   fair financial compensation may be asked because universities also
-   co-finance the operation of the VSC from their own.
--  Businesses, non-Flemish public knowledge institutions and
-   not-for-profit organisations can also gain access to the
-   infrastructure. The procedures are explained on the page \\"\ `Access
-   for
-   industry <\%22/en/access-and-infrastructure/access-industry\%22>`__\\".
+-  **Researchers from iMinds and VIB**. The application is made through
+   your host university. The same applies to researchers at the
+   university hospitals and research institutes under the direction or
+   supervision of a university or a university college, such as the
+   special university institutes mentioned in Article 169quater of the
+   Decree of 12 June 1991 concerning universities in the Flemish
+   Community.
+-  **Researchers at other Flemish public research institutions:** You
+   can get compute on the Tier-1 infrastructure through a project
+   application or access the Tier-2 infrastructure through contact with
+   one of the coordinators.
+-  **Businesses, non-Flemish public knowledge institutions and
+   not-for-profit organisations** can buy compute time on the
+   infrastructure. The procedures are explained on the page \\"\ `Buying
+   compute
+   time <\%22/en/access-and-infrastructure/access-industry\%22>`__\\".
 
 Additional information
 ----------------------
@@ -97,7 +73,7 @@ infrastructure. You can find more detailed information in the user
 documentation on the user portal. When in doubt, you can also contact
 your local support team. This does not require a VSC account.
 
-Furthermore, you should first check the page \\"\ `Account
+You should also first check the page \\"\ `Account
 request <\%22/cluster-doc/account-request\%22>`__\\" in the `user
 documentation <\%22/en/user-portal\%22>`__ and install the necessary
 software on your PC. You can also find links to information about that
@@ -110,3 +86,24 @@ can then also do the exercises during the course. We strongly urge
 people who are not familiar with the use of a Linux supercomputer to
 take such a course. After all, we do not have enough staff to help
 everyone individually for all those generic issues.
+
+There is an exception to the rule that you need a VSC account to access
+the VSC systems: Users with a valid VUB account can access the Tier-2
+systems at the VUB.
+
+Your account also includes two “blocks” of disk space: your home
+directory and data directory. Both are accessible from all VSC clusters.
+When you log in to a particular cluster, you will also be assigned one
+or more blocks of temporary disk space, called scratch directories.
+Which directory should be used for which type of data, is explained in
+the `user
+documentation <\%22https://www.vscentrum.be/en/user-portal\%22>`__.
+
+Your VSC account does not give you access to all available software. You
+can use all free software and a number of compilers and other
+development tools. For most commercial software, you must first prove
+that you have a valid license or the person who has paid the license on
+the cluster must allow you to use the license. For this you can contact
+your local support team.
+
+"
