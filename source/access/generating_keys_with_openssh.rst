@@ -1,3 +1,5 @@
+.. _generating keys linux:
+
 Generating keys with OpenSSH
 ============================
 

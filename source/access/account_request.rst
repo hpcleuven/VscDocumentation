@@ -39,9 +39,8 @@ typing the passphrase when you use it.
 
 How to generate such a key pair, depends on your operating system. We
 describe the generation of key pairs in the client sections for
-`Linux <\%22/client/linux/keys-openssh\%22>`__,
-`Windows <\%22/client/windows/keys-putty\%22>`__ and `macOS (formerly OS
-X) <\%22/client/macosx/keys-openssh\%22>`__.
+:ref:`Linux<generating keys linux>`, :ref:`Windows <generating keys windows>`
+and :ref:`macOS<generating keys macos>` (formerly OS X).
 
 Without your key pair, you won't be able to apply for a VSC account.
 
@@ -57,8 +56,8 @@ private key well. Therefore:
    for each computer you use to access your VSC account. If your
    computer is stolen, it is then easy to disable access from that
    computer while you can still access your VSC account from all your
-   other computers. `The procedure is explained on a separate web
-   page <\%22/cluster-doc/account-management/access-from-multiple-machines\%22>`__.
+   other computers. The procedure is explained on a separate web
+   page ":ref:`access from multiple machines`".
 
 Applying for the account
 ------------------------
@@ -66,6 +65,8 @@ Applying for the account
 Depending on restrictions imposed by the institution, not all users
 might get a VSC account. We describe who can apply for an account in the
 sections of the local VSC clusters.
+
+.. _generic access procedure:
 
 Generic procedure for academic researchers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,13 +76,11 @@ been fully automated and works by using your institute account to
 request a VSC account. Check below for exceptions or if the generic
 procedure does not work.
 
-Open the `VSC account management web
-site <\%22https://account.vscentrum.be/\%22>`__ and select your
-\\"home\" institution. After you log in using your institution login and
-password, you will be asked to upload your public key. You will get an
-e-mail to confirm your application. After the account has been approved
-by the VSC, your account will be created and you will get a confirmation
-e-mail.
+Open the `VSC account page`_ and select your "home" institution. After
+you log in using your institution login and password, you will be asked
+to upload your public key. You will get an e-mail to confirm your application.
+After the account has been approved by the VSC, your account will be created
+and you will get a confirmation e-mail.
 
 Users from the KU Leuven and UHasselt association
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,47 +92,44 @@ Who?
 
 -  Access is available for faculty, students (under faculty
    supervision), and researchers of the KU Leuven, UHasselt and their
-   associations. See also `the access
-   restrictions <\%22/infrastructure/hardware/hardware-kul#AccessRestrictions\%22>`__.
+   associations.
 
 How?
 
--  Researchers with a regular personnel account (u-number) can use `the
-   generic procedure <\%22#generic\%22>`__.
+-  Researchers with a regular personnel account (u-number) can use
+   the :ref:`generic procedure <generic access procedure>`.
 -  If you are in one of the higher education institutions associated
-   with KU Leuven, `the generic procedure <\%22#generic\%22>`__ may not
-   work. In that case, please e-mail hpcinfo(at)icts.kuleuven.be to get
-   an account. You will have to provide a public ssh key generated as
-   described above.
+   with KU Leuven, the :ref:`generic procedure <generic access procedure>`
+   may not work. In that case, please e-mail hpcinfo@kuleuven.be
+   to get an account. You will have to provide a public ssh key generated
+   as described above.
 -  Lecturers of KU Leuven and UHasselt that need HPC access for giving
    their courses: The procedure requires action both from the lecturers
-   and from the students. Lecturers should follow the `specific
-   procedure for
-   lecturers <\%22/cluster-doc/account-request/teachers-procedure\%22>`__,
-   while the students should simply apply for the account through `the
-   generic procedure <\%22#generic\%22>`__.
+   and from the students. Lecturers should follow the :ref:`specific
+   procedure for lecturers <lecturer procedure leuven>`,
+   while the students should simply apply for the account through the
+   :ref:`generic procedure <generic access procedure>`.
 
 How to start?
 
--  Please follow the information on the webpage
--  Or register for the HPC Introduction course
--  If there is no course announced please register to our `waiting
-   list <\%22https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist\%22>`__
-   and we will organize a new session as soon as we get a few people
-   interested in it.
+-  Please follow the information on the webpage,
+-  or register for the HPC Introduction course.
+-  If there is no course announced please register to ojjjjur `training
+   waiting list`_ and we will organize a new session as soon as we get a few
+   people interested in it.
 
 Users of Ghent University Association
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All information about the access policy is available `in
-English <\%22https://www.ugent.be/hpc/en/policy\%22>`__ at `the UGent
-HPC web pages <\%22https://www.ugent.be/hpc\%22>`__.
+English <https://www.ugent.be/hpc/en/policy>`_ at the `UGent
+HPC web pages <https://www.ugent.be/hpc>`_.
 
--  Researchers can use `the generic procedure <\%22#generic\%22>`__.
+-  Researchers can use the :ref:`generic procedure <generic access procedure>`.
 -  Master students can also use the infrastructure for their master
    thesis work. The promotor of the thesis should first send a
-   motivation to hpc@ugent.be and then `the generic
-   procedure <\%22#generic\%22>`__ should be followed (using your
+   motivation to hpc@ugent.be and then the :ref:`generic
+   procedure <generic access procedure>` should be followed (using your
    student UGent id) to request the account.
 
 Users of the Antwerp University Association (AUHA)
@@ -142,18 +138,16 @@ Users of the Antwerp University Association (AUHA)
 Who?
 
 -  Access ia available for faculty, students (master's projects under
-   faculty supervision), and researchers of the AUHA. See also `the
-   access restrictions
-   page <\%22/infrastructure/hardware/hardware-ua#AccessRestrictions\%22>`__.
+   faculty supervision), and researchers of the AUHA.
 
 How?
 
 -  Researchers of the University of Antwerp with a regular UAntwerpen
-   account can use `the generic procedure <\%22#generic\%22>`__.
+   account can use the :ref:`generic procedure <generic access procedure>`.
 -  Users from higher education institutions associated with UAntwerpen
    can get a VSC account via UAntwerpen. However, we have not yet set up
    an automated form. Please contact the user support at
-   `hpc@uantwerpen.be <\%22mailto:hpc@uantwerpen.be?subject=Account%20request\%22>`__
+   `hpc@uantwerpen.be <mailto:hpc@uantwerpen.be?subject=Account%20request>`_
    to get an account. You will have to provide a public ssh key
    generated as described above.
 
@@ -164,15 +158,14 @@ Users of Brussels University Association
    necessarily need a full VSC account but can use your regular
    institute account. More information can be found on `this VUB Web
    Notes
-   page <\%22http://www.ulb.ac.be/wserv2_oratio/oratio?f_type=view&f_context=fiches&language=nl&noteid=227\%22>`__.
+   page <http://www.ulb.ac.be/wserv2_oratio/oratio?f_type=view&f_context=fiches&language=nl&noteid=227>`_.
 
 Troubleshooting
 ---------------
 
--  If you can't connect to the `VSC account management web
-   site <\%22https://account.vscentrum.be/\%22>`__, some browser
+-  If you can't connect to the `VSC account page`_, some browser
    extensions have caused problems (and in particular some
    security-related extensions), so you might try with browser
    extensions disabled.
 
-"
+.. include:: links.rst

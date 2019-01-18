@@ -1,3 +1,5 @@
+.. _generating keys macos:
+
 Generating keys with OpenSSH on OS X
 ====================================
 

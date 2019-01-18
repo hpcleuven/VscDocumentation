@@ -1,3 +1,5 @@
+.. _lecturer procedure leuven:
+
 Lecturer's procedure to request student accounts (KU Leuven/UHasselt)
 =====================================================================
 
