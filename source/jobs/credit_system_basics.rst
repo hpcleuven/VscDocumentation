@@ -1,3 +1,5 @@
+.. _credit system basics:
+
 Credit system basics
 ====================
 
