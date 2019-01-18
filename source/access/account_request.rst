@@ -1,3 +1,5 @@
+.. _account request:
+
 Account request
 ===============
 

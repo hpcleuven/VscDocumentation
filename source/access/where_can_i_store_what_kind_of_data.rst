@@ -1,3 +1,5 @@
+.. _data location:
+
 Where can I store what kind of data?
 ====================================
 

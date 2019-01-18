@@ -18,43 +18,40 @@ applications for which it was purchased.
 Who can get a VSC account?
 --------------------------
 
--  **Researchers at the Flemish university associations**. In many
-   cases, this is done through a fully automated application process,
+Researchers at the Flemish university associations
+   In many cases, this is done through a fully automated application process,
    but in some cases you must submit a request to your local support
    team. Specific details about these procedures can be found on the
-   \\"\ `Account request <\%22/cluster-doc/account-request\%22>`__\\"
-   page in the user documentation.
--  **Master students in the framework of their master thesis** if
-   supercomputing is needed for the thesis. For this, you will first
+   ":ref:`account request`" page in the user documentation.
+Master students in the framework of their master thesis
+   If supercomputing is needed for the thesis. For this, you will first
    need the approval of your supervisor. The details about the procedure
-   can again be found on the \\"\ `Account
-   request <\%22/cluster-doc/account-request\%22>`__\\" page in the user
+   can again be found on the ":ref:`account request`" page in the user
    documentation.
--  **Use in courses at the University of Leuven and Hasselt University:
-   L**\ ecturers can also use the local Tier-2 infrastructure in the
+Use in courses at the University of Leuven and Hasselt University
+   Lecturers can also use the local Tier-2 infrastructure in the
    context of some courses (when the software cannot run in the PC
    classes or the computers in those classes are not powerful enough).
    Again, you can find all the details about the application process on
-   the \\"\ `Account
-   request <\%22/cluster-doc/account-request\%22>`__\\" page in the user
+   the ":ref:`account request`" page in the user
    documentation. It is important that the application is submitted on
    time, at least two weeks before the start of the computer sessions.
--  **Researchers from iMinds and VIB**. The application is made through
+Researchers from iMinds and VIB
+   The application is made through
    your host university. The same applies to researchers at the
    university hospitals and research institutes under the direction or
    supervision of a university or a university college, such as the
    special university institutes mentioned in Article 169quater of the
    Decree of 12 June 1991 concerning universities in the Flemish
    Community.
--  **Researchers at other Flemish public research institutions:** You
-   can get compute on the Tier-1 infrastructure through a project
+Researchers at other Flemish public research institutions
+   You can get compute on the Tier-1 infrastructure through a project
    application or access the Tier-2 infrastructure through contact with
    one of the coordinators.
--  **Businesses, non-Flemish public knowledge institutions and
-   not-for-profit organisations** can buy compute time on the
-   infrastructure. The procedures are explained on the page \\"\ `Buying
-   compute
-   time <\%22/en/access-and-infrastructure/access-industry\%22>`__\\".
+Businesses, non-Flemish public knowledge institutions and not-for-profit organisations
+   These entities can buy compute time on the
+   infrastructure. The procedures are explained on the page
+   ":ref`buying compute time`".
 
 Additional information
 ----------------------
@@ -64,20 +61,16 @@ the infrastructure is suitable for your application. Windows or OS X
 programs for instance cannot run on our infrastructure as we use the
 Linux operating system on the clusters. The infrastructure also should
 not be used to run applications for which the compute power of a good
-laptop is sufficient. The pages on the
-`Tier-1 <\%22/en/access-and-infrastructure/tier-1-clusters\%22>`__ and
-`Tier-2
-infrastructure <\%22/en/access-and-infrastructure/tier-2-clusters\%22>`__
+laptop is sufficient. The pages on the :ref:`tier1 hardware` and
+:ref:`tier2 hardware`
 in this part of the website give a high-level description of our
 infrastructure. You can find more detailed information in the user
 documentation on the user portal. When in doubt, you can also contact
 your local support team. This does not require a VSC account.
 
-You should also first check the page \\"\ `Account
-request <\%22/cluster-doc/account-request\%22>`__\\" in the `user
-documentation <\%22/en/user-portal\%22>`__ and install the necessary
-software on your PC. You can also find links to information about that
-software on the “Account Request” page.
+You should also first check the page ":ref:`account request`"
+and install the necessary software on your PC. You can also find links
+to information about that software on the “Account Request” page.
 
 Furthermore, it can also be useful to take one of the introductory
 courses that we organise periodically at all universities. However, it
@@ -96,8 +89,7 @@ directory and data directory. Both are accessible from all VSC clusters.
 When you log in to a particular cluster, you will also be assigned one
 or more blocks of temporary disk space, called scratch directories.
 Which directory should be used for which type of data, is explained in
-the `user
-documentation <\%22https://www.vscentrum.be/en/user-portal\%22>`__.
+the page ":ref:`data location`".
 
 Your VSC account does not give you access to all available software. You
 can use all free software and a number of compilers and other
@@ -105,5 +97,3 @@ development tools. For most commercial software, you must first prove
 that you have a valid license or the person who has paid the license on
 the cluster must allow you to use the license. For this you can contact
 your local support team.
-
-"

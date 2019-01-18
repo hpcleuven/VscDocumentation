@@ -3,6 +3,8 @@
 VSC hardware
 ============
 
+.. _tier2 hardware:
+
 Tier-2 hardware
 ---------------
 
@@ -14,6 +16,8 @@ Tier-2 hardware
    gent/tier2_hardware
    leuven/tier2_hardware
    
+.. _tier1 hardware:
+
 Tier-1 hardware
 ---------------
 
