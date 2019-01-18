@@ -1,3 +1,5 @@
+.. _worker framework:
+
 worker framework
 ================
 

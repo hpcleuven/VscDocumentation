@@ -25,20 +25,17 @@ used for research.
 How to request introduction credits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can find all relevant information in the `HPC section of the Service
-Catalog (login required) <\%22https://icts.kuleuven.be/sc/HPC\%22>`__.
+You can find all relevant information in the `Service Catalog`_ (login required).
 
 How to request project credits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can find all relevant information in the `HPC section of the Service
-Catalog (login required) <\%22https://icts.kuleuven.be/sc/HPC\%22>`__.
+You can find all relevant information in the `Service Catalog`_ (login required).
 
 Prices
 ~~~~~~
 
-All details about prices you can find on `HPC section of the Service
-Catalog (login required) <\%22https://icts.kuleuven.be/sc/HPC\%22>`__ .
+All details about prices you can find in the `Service Catalog`_ (login required).
 
 Checking an account balance
 ---------------------------
@@ -71,8 +68,7 @@ walltime, number of compute nodes and node type.
    $ gquote -q qlong -l nodes=3:ppn=20:ivybridge
 
 Details of how to tailor job requirements can be found on the page on
-\\"\ `Specifying resources, output files and
-notifications <\%22/cluster-doc/running-jobs/specifying-requirements\%22>`__\\".
+":ref:`resource specification`".
 
 Note that when a queue is specified and no explicit walltime, the
 walltime used to produce the quote is the longest walltime allowed by
@@ -84,16 +80,15 @@ is charged when the job finishes.
 Running jobs: accounting workflow
 ---------------------------------
 
-When a job is submitted using
-`qsub <\%22/cluster-doc/running-jobs/submitting-managing-jobs\%22>`__,
+When a job is submitted using ``qsub``
 and it has to be charged against a project account, the name of the
 project has to be specified as an option.
 
 ::
 
-   $ qsub -A l_astrophysics_014 run-job.pbs
+   $ qsub -A lp_astrophysics_014 run-job.pbs
 
-If the account to be charged, i.e., l_astrophysics_014, has insufficient
+If the account to be charged, i.e., ``lp_astrophysics_014``, has insufficient
 credits for the job, the user receives a warning at this point.
 
 Just prior to job execution, a reservation will be made on the specified
@@ -133,10 +128,10 @@ of time, e.g.,
 
 ::
 
-   $ mam-statement -a l_astrophysics_014 -s 2010-09-01 -e 2010-09-30
+   $ mam-statement -a lp_astrophysics_014 -s 2010-09-01 -e 2010-09-30
 
 This will show the transactions on the account for the
-l_astrophysics_014 project for the month September 2010.
+``lp_astrophysics_014`` project for the month September 2010.
 
 Note that it takes quite a while to compute such statements, so **please
 be patient**.
@@ -188,7 +183,7 @@ command:
 ::
 
    $ module load accounting
-   # mam-list-transactions -J 20030021
+   $ mam-list-transactions -J 20030021
 
 Where job ID does not have to be complete.
 
@@ -201,9 +196,9 @@ node. The resources that are taken into account to charge for a job are
 the walltime it consumed, and the number and type of compute nodes it
 ran on. The following formula is used:
 
-(0.000278\**nodes*\ \*\ *walltime*)\*\ *nodetype*
+0.000278 \* *nodes* \* *walltime* \* *nodetype*
 
-Here,
+Where,
 
 -  *nodes* is the number of compute nodes the job ran on;
 -  *walltime* the effective duration of the job, expressed in seconds;
@@ -219,6 +214,8 @@ is actually a reference node, the following values for *nodetype* apply:
 | Ivy Bridge | 4.76        |
 +------------+-------------+
 | Haswell    | 6.68        |
++------------+-------------+
+| Skylake    | 10.00       |
 +------------+-------------+
 | GPU        | 2.86        |
 +------------+-------------+
@@ -236,23 +233,23 @@ An example of a job running on multiple nodes and cores is given below:
 
 ::
 
-   $ qsub -A l_astrophysics_014 -lnodes=2:ppn=20:ivybridge simulation_3415.pbs
+   $ qsub -A lp_astrophysics_014 -lnodes=2:ppn=20:ivybridge simulation_3415.pbs
 
 If this job finished in 2.5 hours (i.e., walltime is 9000), the user
 will be charged:
 
-(0.000278*2*9000)*4.76 = 23.8 credits
+0.000278 \* 2 \* 9000 \* 4.76 = 23.8 credits
 
 For a single node, single core job that also took 2.5 hours and was
 submitted as:
 
 ::
 
-   $ qsub -A l_astrophysics_014 -lnodes=1:ppn=1:ivybridge simulation_147.pbs
+   $ qsub -A lp_astrophysics_014 -lnodes=1:ppn=1:ivybridge simulation_147.pbs
 
 In this case, the user will be charged:
 
-(0.000278*1*9000)*4.76 = 11.9 credits
+0.000278 \* 1 \* 9000 \* 4.76 = 11.9 credits
 
 Note that charging is done for the number of compute nodes used by the
 job, not the number of cores. This implies that a single core job on a
@@ -260,7 +257,6 @@ single node is as expensive as an 20 core job on the same single node.
 The rationale is that the scheduler instates a single user per node
 policy. Hence using a single core on a node blocks all other cores for
 other users' jobs. If a user needs to run many single core jobs
-concurrently, she is advised to use the `Worker
-framework <\%22/cluster-doc/running-jobs/worker-framework\%22>`__.
+concurrently, she is advised to use the :ref:`worker framework`.
 
-"
+.. include:: links.rst

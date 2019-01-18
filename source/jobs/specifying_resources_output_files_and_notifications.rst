@@ -1,3 +1,5 @@
+.. _resource specification:
+
 Specifying resources, output files and notifications
 ====================================================
 
