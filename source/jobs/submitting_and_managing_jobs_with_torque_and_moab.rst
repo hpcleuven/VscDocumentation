@@ -12,8 +12,7 @@ using the ``qsub`` command:
    qsub <jobscript>
 
 places your job script in the queue. As explained on the page on
-\\"\ `Specifying resources, output files and
-notifications <\%22cluster-doc/running-jobs/specifying-requirements\%22>`__\\",
+":ref:`Specifying resources, output files and notifications`",
 there are several options to tell the scheduler which resources you need
 or how you want to be notified of events surrounding your job. The can
 be given at the top of your job script or as additional command line
@@ -262,7 +261,3 @@ the available resources, it will also run immediately. Another user
 might be doing the same thing at the same time, or you may simply be
 blocked from running more jobs because you already have too many jobs
 running or have made heavy use of the cluster recently.
-
-| 
-
-"
