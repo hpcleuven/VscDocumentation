@@ -266,10 +266,9 @@ cases. There are however more parameters for resource specification and
 other options that can be used. For advanced users who want to know
 more, we refer to the documentation of the ``qsub`` command that
 mentions all options in the Torque manual on the `Adaptive Computing
-documentation web
-site <http://www.adaptivecomputing.com/support/documentation-index/>`_.
+documentation`_.
 
--  `Torque 6.0.1 <http://docs.adaptivecomputing.com/torque/6-0-1/help.htm>`_
-   (Antwerp clusters, Hydra and BrENIAC)
--  `Torque 5.1.X <http://docs.adaptivecomputing.com/torque/5-1-2/help.htm>`_
-   (Thinking, muk)
+-  `Torque 6.0.1 documentation`_ (Antwerp clusters, Hydra and BrENIAC)
+-  `Torque 5.1.x documentation`_ (Thinking, muk)
+
+.. include:: links.rst

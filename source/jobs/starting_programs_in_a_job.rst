@@ -1,4 +1,4 @@
--tarting programs in a job
+Starting programs in a job
 ==========================
 
 This page describes the part of the job script that actually does the
@@ -245,13 +245,11 @@ numbers of nodes and cores-per-node using
 find a file testscript.pbs.o<number_of_the_job> in the directory where
 you executed ``qsub``.
 
-For more information on the pbsdsh command, we refer to the the Torque
-manual on the `Adaptive Computing documentation web
-site <http://www.adaptivecomputing.com/support/documentation-index/>`_.
+For more information on the pbsdsh command, check the manual page
+(``man pbsdsh``), or refer to the the Torque
+manual on the `Adaptive Computing documentation`_ web site.
 
--  `Torque 6.0.1 <http://docs.adaptivecomputing.com/torque/6-0-1/help.htm>`_
-   (Antwerp clusters, Hydra and BrENIAC)
--  `Torque 5.1.X <http://docs.adaptivecomputing.com/torque/5-1-2/help.htm>`_
-   (Thinking, muk)
+-  `Torque 6.0.1 documentation`_ (Antwerp clusters, Hydra and BrENIAC)
+-  `Torque 5.1.x documentation`_ (Thinking, muk).
 
-or to the manual page (``man pbsdsh``).
+.. include:: links.rst

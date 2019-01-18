@@ -121,7 +121,7 @@ Structure of this documentation section
    describes the main Torque and Moab commands to submit and then manage
    your jobs and to follow up how they proceed trough the scheduling
    software.
--  The :doc:`worker framework <worker_framework>` is a framework developed at
+-  The :doc:`worker_framework` is a framework developed at
    the VSC to bundle a lot of small but related
    jobs into a larger parallel job. This makes life a lot easier for the
    scheduler as the scheduler is optimised to run a limited number of
@@ -152,5 +152,3 @@ but then decided to start over with a closed source product. They still
 offer MAUI on their website though. MAUI used to be widely used in large
 USA supercomputer centres, but most now throw their weight behind SLURM
 with or without another scheduler.
-
-"
