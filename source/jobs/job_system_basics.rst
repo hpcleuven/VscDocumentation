@@ -418,7 +418,7 @@ To get a list of all properties defined for all nodes, enter
 This list will also contain properties referring to, e.g., network
 components, rack number, ...
 
-You can check the `page on available hardware <../harware>` to find out how many
+You can check the section on ":ref:`hardware`" to find out how many
 nodes of each type a cluster has.
 
 Job output and error files

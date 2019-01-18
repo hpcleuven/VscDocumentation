@@ -31,7 +31,7 @@ are some facilities for interactive work:
 -  The login nodes can be used for light interactive work. They can
    typically run the same software as the compute nodes. Some sites also
    have special interactive nodes for special tasks, e.g., scientific
-   data visualisation. See the "`Available hardware<../hardware>`" section
+   data visualisation. See the ":ref:`hardware`" section
    where each site documents what is available.
    Examples of work that can be done on the login nodes is running a GUI
    program that generates the input files for your simulation, a not too

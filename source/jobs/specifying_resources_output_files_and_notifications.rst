@@ -67,7 +67,7 @@ process is called backfilling.
 The maximum allowed wall time for a job is cluster-dependent. Since
 these policies can change over time (as do other properties from
 clusters), we bundle these on one page per cluster in the
-"`Available hardware <../hardware>`" section.
+":ref:`hardware`" section.
 
 Single- and multi-node jobs: Cores and memory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +154,7 @@ case, since Haswell nodes often have 24 cores, you will likely get 2
 physical nodes).
 
 The exact list of properties depend on the cluster and is given in the
-page for your cluster in the "`Available hardware <../hardware>`" section
+page for your cluster in the ":ref:`hardware`" section
 of this manual. Note that even for a given cluster, this list may evolve over
 time, e.g., when new nodes are added to the cluster, so check these
 pages again from time to time!
