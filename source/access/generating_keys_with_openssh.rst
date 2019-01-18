@@ -30,8 +30,8 @@ Windows
 ~~~~~~~
 
 You can use OpenSSH on Windows also if you install the `free UNIX
-emulation layer Cygwin <\%22http://www.cygwin.com/\%22>`__ with the
-package \\"openssh\".
+emulation layer Cygwin<http://www.cygwin.com/>`_ with the
+package "openssh".
 
 macOS/OS X
 ~~~~~~~~~~
@@ -49,15 +49,13 @@ already be present in the default location inside your home directory:
 ::
 
    $ ls ~/.ssh
-   authorized_keys2    id_rsa            id_rsa.pub         known_hosts
+   authorized_keys2   id_rsa   id_rsa.pub   known_hosts
 
 You can recognize a public/private key pair when a pair of files has the
-same name except for the extension \\".pub\" added to one of them. In
-this particular case, the private key is \\"id_rsa\" and public key is
-\\"id_rsa.pub\". You may have multiple keys (not necessarily in the
-directory \\"~/.ssh\") if you or your operating system requires this. A
-popular alternative key type, instead of rsa, is dsa. However, we
-recommend to use rsa keys.
+same name except for the extension ``.pub`` added to one of them. In
+this particular case, the private key is ``id_rsa`` and public key is
+``id_rsa.pub``. You may have multiple keys (not necessarily in the
+directory ``~/.ssh``) if you or your operating system requires this.
 
 You will need to generate a new key pair, when:
 
@@ -85,12 +83,10 @@ time you want to access the cluster or transfer your files.
 
 Keys are required in the OpenSSH format.
 
-If you have a public key \\"id_rsa_2048_ssh.pub\" in the SSH2 format,
+If you have a public key ``id_rsa_2048_ssh.pub`` in the SSH2 format,
 you can use OpenSSH's ssh-keygen to convert it to the OpenSSH format in
 the following way:
 
 ::
 
    $ ssh-keygen -i -f ~/.ssh/id_rsa_2048_ssh.pub > ~/.ssh/id_rsa_2048_openssh.pub
-
-"
