@@ -19,7 +19,7 @@ with a large number of parameter settings, and the program does not
 allow for aggregation, i.e., it has to be run once for each instance of
 the parameter values. However, Worker's scope is wider: it can be used
 for any scenario that can be reduced to a
-`MapReduce <\%22https://en.wikipedia.org/wiki/MapReduce\%22>`__
+`MapReduce <https://en.wikipedia.org/wiki/MapReduce>`__
 approach.
 
 This how-to shows you how to use the Worker framework.
@@ -36,10 +36,12 @@ Step by step
 
 We will consider the following use cases already mentioned above:
 
--  `parameter variations <\%22#parameter-variations\%22>`__, i.e., many
+-  :ref:`parameter variations <parameter variations>`, i.e., many
    small jobs determined by a specific parameter set;
--  `job arrays <\%22#job-arrays\%22>`__, i.e., each individual job got a
+-  :ref:`job arrays <job arrays>`, i.e., each individual job got a
    unique numeric identifier.
+
+.. _parameter variations:
 
 Parameter variations
 ~~~~~~~~~~~~~~~~~~~~
@@ -135,6 +137,8 @@ Note that the PBS file is the value of the -batch option . The cfd-test
 program will now be run for all 100 parameter instances—7
 concurrently—until all computations are done. A computation for such a
 parameter instance is called a work item in Worker parlance.
+
+.. _job arrays:
 
 Job arrays
 ~~~~~~~~~~
@@ -424,8 +428,7 @@ Further information
 -------------------
 
 For the information about the most recent version and new features
-please check `the official worker documentation
-webpage <\%22http://worker.readthedocs.io/en/latest/\%22>`__.
+please check the official `worker documentation`_ webpage.
 
 For information on how to MPI programs as work items, please contact
 your friendly system administrator.
@@ -495,4 +498,4 @@ with that, so you will have to convert the file, e.g., for file
 
    $ dos2unix run.pbs
 
-"
+.. include:: links.rst
