@@ -1,3 +1,5 @@
+.. _NX start guide:
+
 NX start guide
 ==============
 

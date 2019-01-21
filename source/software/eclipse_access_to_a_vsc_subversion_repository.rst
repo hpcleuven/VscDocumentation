@@ -1,3 +1,5 @@
+.. _Eclipse VSC subversion:
+
 Eclipse access to a VSC subversion repository
 =============================================
 

@@ -1,3 +1,5 @@
+.. _remote visualization UAntwerp:
+
 Remote visualization @ UAntwerp
 ===============================
 

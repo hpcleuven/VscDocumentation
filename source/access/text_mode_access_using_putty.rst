@@ -1,3 +1,5 @@
+.. _text mode access using PuTTY:
+
 Text-mode access using PuTTY
 ============================
 

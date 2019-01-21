@@ -1,3 +1,5 @@
+.. _Eclipse as remote editor:
+
 Eclipse as a remote editor
 ==========================
 

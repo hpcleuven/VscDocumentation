@@ -1,3 +1,5 @@
+.. _Linux client:
+
 Linux client
 ============
 

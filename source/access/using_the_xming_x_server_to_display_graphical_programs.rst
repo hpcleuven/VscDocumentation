@@ -1,3 +1,5 @@
+.. _Xming:
+
 Using the Xming X server to display graphical programs
 ======================================================
 

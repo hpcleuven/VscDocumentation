@@ -1,3 +1,5 @@
+.. _FileZilla:
+
 Data transfer with FileZilla
 ============================
 

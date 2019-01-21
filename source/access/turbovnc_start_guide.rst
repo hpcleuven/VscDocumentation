@@ -1,3 +1,5 @@
+.. _TurboVNC start guide:
+
 TurboVNC start guide
 ====================
 

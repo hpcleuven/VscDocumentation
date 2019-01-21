@@ -1,3 +1,5 @@
+.. _Eclipse PTP:
+
 Eclipse with PTP and version control
 ====================================
 

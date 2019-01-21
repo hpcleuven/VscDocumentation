@@ -1,3 +1,5 @@
+.. _MS Visual Studio:
+
 MS Visual Studio
 ================
 

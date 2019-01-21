@@ -1,3 +1,5 @@
+.. _Eclipse intro:
+
 Eclipse introduction and installation
 =====================================
 

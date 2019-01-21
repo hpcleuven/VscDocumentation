@@ -1,3 +1,5 @@
+.. _version control systems:
+
 Version control systems
 ======================
 

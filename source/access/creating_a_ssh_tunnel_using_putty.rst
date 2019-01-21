@@ -1,3 +1,5 @@
+.. _ssh tunnel using PuTTY:
+
 Creating a SSH tunnel using PuTTY
 =================================
 
