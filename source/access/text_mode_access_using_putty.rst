@@ -6,9 +6,8 @@ Text-mode access using PuTTY
 Prerequisite: PuTTY and WinSCP
 ------------------------------
 
-You've `generated a public/private key pair with
-PuTTY <\%22/client/windows/keys-putty\%22>`__ and have an approved
-account on the VSC clusters.
+You've :ref:`generated a public/private key pair with PuTTY
+<generating keys PuTTY>` and have an approved account on the VSC clusters.
 
 Connecting to the VSC clusters
 ------------------------------
@@ -21,8 +20,7 @@ In the screenshots, we show the setup for user vsc98765 to the ThinKing
 cluster at K.U.Leuven via the loginnode login.hpc.kuleuven.be.
 
 You can find the names and ip-addresses of the loginnodes in the
-sections of `the local VSC
-clusters <\%22/infrastructure/hardware\%22>`__.
+sections of :ref:`the local VSC clusters <hardware>`.
 
 | Alternatively, you can follow a `short
   video <\%22https://www.vscentrum.be/assets/1191\%22>`__ explaining
