@@ -1,3 +1,5 @@
+.. _OpenSSH JellyfiSSH access:
+
 Text-mode access using OpenSSH or JellyfiSSH
 ============================================
 

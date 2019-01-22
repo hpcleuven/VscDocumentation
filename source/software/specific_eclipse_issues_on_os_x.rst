@@ -1,3 +1,5 @@
+.. _Eclipse macOS:
+
 Specific Eclipse issues on OS X
 ===============================
 

@@ -7,37 +7,35 @@ using the Terminal. To open a Terminal window in macOS (formerly OS X),
 choose Applications > Utilities > Terminal in the Finder.
 
 If you don't have any experience with using the Terminal, we suggest you
-to read the `basic Linux
-usage <\%22/cluster-doc/using-linux/basic-linux-usage\%22>`__ section
+to read the :ref:`basic Linux usage <basic linux>` section
 first (which also applies to macOS).
 
 Getting ready to request an account
 -----------------------------------
 
 -  Before requesting an account, you need to generate a pair of ssh
-   keys. One popular way to do this on macOS is\ `using the OpenSSH
-   client <\%22/client/macosx/keys-openssh\%22>`__ included with macOS
+   keys. One popular way to do this on macOS is :ref:`using the OpenSSH
+   client <generating keys macos>` included with macOS
    which you can then also use to log on to the clusters.
 
 Connecting to the machine
 -------------------------
 
--  Open a text-mode session using an SSH client: `OpenSSH ssh command or
-   JellyfiSSH <\%22/client/macosx/login-openssh\%22>`__.
--  Transfer data using Secure FTP (SFTP) with the `OpenSSH sftp and scp
-   commands, Cyberduck or
-   FileZilla <\%22/client/macosx/data-cyberduck\%22>`__.
+-  Open a text-mode session using an SSH client: :ref:`OpenSSH ssh command or
+   JellyfiSSH <OpenSSH JellifiSSH access>`.
+-  Transfer data using Secure FTP (SFTP) with the :ref:`OpenSSH sftp and
+   scp commands, Cyberduck or FileZilla <data transfer>`.
 -  Running GUI programs or other programs that use graphics.
 
    -  Linux programs use the X protocol to display graphics on local or
       remote screens. To use your Mac as a remote screen, you need to
-      install a X server. `XQuartz <\%22https://www.xquartz.org/\%22>`__
+      install a X server. `XQuartz <https://www.xquartz.org/>`_
       is one that is freely available. Once the X server is up and
       running, you can simply open a terminal window and connect to the
       cluster using the command line SSH client in the same way as you
       would on Linux.
-   -  On the KU Leuven/UHasselt clusters it is possible to `use the NX
-      Client <\%22/client/multiplatform/nx-start-guide\%22>`__ to log on
+   -  On the KU Leuven/UHasselt clusters it is possible to :ref:`use the NX
+      Client <NX start guide>` to log on
       to the machine and run graphical programs. Instead of an X-server,
       another piece of client software is needed. That software is
       currently available for Windows, macOS, Linux, Android and iOS.
@@ -47,14 +45,12 @@ Connecting to the machine
       device. VNC clients are available for Windows, macOS, Linux,
       Android and iOS.
 
-      -  On the KU Leuven/UHasselt clusters, `TurboVNC is supported on
-         the visualization
-         nodes <\%22/client/multiplatform/turbovnc\%22>`__.
+      -  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC is supported
+         on the visualization nodes <TurboVNC start guide>`.
       -  On the UAntwerp clusters, TurboVNC is supported on all regular
          login nodes (without OpenGL support) and on the visualization
          node of Leibniz (with OpenGL support through VirtualGL). See
-         the page \\"\ `Remote visualization @
-         UAntwerp <\%22/infrastructure/hardware/hardware-ua/visualization\%22>`__\\"
+         the page ":ref:`Remote visualization @ UAntwerp <remote visualization UAntwerp>`"
          for instructions.
 
 Advanced topics
@@ -63,29 +59,25 @@ Advanced topics
 -  Eclipse is a popular multi-platform Integrated Development
    Environment (IDE) very well suited for code development on clusters.
 
-   -  Read our `Eclipse
-      introduction <\%22/client/multiplatform/eclipse-intro\%22>`__ to
+   -  Read our :ref:`Eclipse introduction <Eclipse intro>` to
       find out why you should consider using Eclipse if you develop code
       and how to get it. To get the full functionality of the Parallel
-      Tools Platform and Fortran support on macOS, you need `to install
+      Tools Platform and Fortran support on macOS, you need :ref:`to install
       some additional software and start Eclipse in a special way as we
-      explain here <\%22/client/macosx/eclipse-on-osx\%22>`__.
-   -  You can use `Eclipse on the desktop as a remote editor for the
-      cluster <\%22/client/multiplatform/eclipse-remote-editor\%22>`__.
-   -  You can use `Eclipse on the desktop to access files in a
+      explain here <Eclipse macOS>`.
+   -  You can use :ref:`Eclipse on the desktop as a remote editor for the
+      cluster <Eclipse as remote editor>`.
+   -  You can use :ref:`Eclipse on the desktop to access files in a
       subversion repository on the
-      cluster <\%22/client/multiplatform/eclipse-vsc-subversion\%22>`__.
+      cluster <Eclipse VSC subversion>`.
    -  You can combine the remote editor feature with version control
-      from Eclipse, but some care is needed, and `here's how to do
-      it <\%22/client/multiplatform/eclipse-ptp-versioncontrol\%22>`__.
+      from Eclipse, but some care is needed, and :ref:`here's how to do
+      it <Eclipse PTP>`.
 
 -  Most popular version control systems, including Subversion and git,
-   are supported on macOS. See `our introduction to version control
-   systems <\%22https://www.vscentrum.be/cluster-doc/development/version-control\%22>`__.
+   are supported on macOS. See :ref:`our introduction to version control
+   systems <version control systems>`.
 
-   -  Specific instructions to `access subversion repositories on the
+   -  Specific instructions to :ref:`access subversion repositories on the
       VSC clusters or other servers from your desktop with UNIX-style
-      command line
-      tools <\%22/client/multiplatform/desktop-access-vsc-subversion\%22>`__.
-
-"
+      command line tools <desktop access VSC SVN>`.

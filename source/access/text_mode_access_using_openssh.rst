@@ -1,3 +1,5 @@
+.. _OpenSSH access:
+
 Text-mode access using OpenSSH
 ==============================
 

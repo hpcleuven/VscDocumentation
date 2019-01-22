@@ -1,3 +1,5 @@
+.. _desktop access VSC SVN:
+
 Desktop access to a VSC subversion repository
 =============================================
 
