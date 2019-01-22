@@ -137,8 +137,6 @@ Programming tools
    -  Information about :ref:`using the TortoiseSVN Subversion client with
       the VSC systems <TortoiseSVN>`.
 
-"
-
 .. |Windows| image:: windows_client/windows.png
 .. |Windows+Linux| image:: windows_client/windows_with_linux.png
 
