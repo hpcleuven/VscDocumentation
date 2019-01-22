@@ -1,3 +1,5 @@
+.. _Paraview:
+
 Paraview remote visualization
 =============================
 
@@ -52,10 +54,9 @@ Establish an SSH tunnel
 
 To connect the desktop ParaView client with the desktop with the
 ParaView server on the compute node, an SSH tunnel has to be established
-between your desktop and that compute node. Details for `Windows using
-PuTTY <\%22/client/windows/creating-an-ssh-tunnel\%22>`__ and `Linux
-using ssh <\%22/client/linux/creating-an-ssh-tunnel\%22>`__ are given in
-the appropriate client software sections.
+between your desktop and that compute node. Details for :ref:`Windows using
+PuTTY <text mode access using PuTTY>` and :ref:`Linux using ssh
+<OpenSSH access>` are given in the appropriate client software sections.
 
 Connect to the remote server using ParaView on your desktop
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,28 +66,28 @@ connecting from the client side is documented on this page. Note that
 this configuration step has to be performed only once if you always use
 the same local port.
 
--  Start ParaView on your Desktop machine;
--  From the 'File' menu, choose 'Connect', this opens the dialog below:
+#. Start ParaView on your Desktop machine;
+#. From the 'File' menu, choose 'Connect', this opens the dialog below:
 
-|paraview 1 choose server|
+   |paraview 1 choose server|
 
--  Click the 'Add Server' button, the following dialog will appear:
+#. Click the 'Add Server' button, the following dialog will appear:
 
-|paraview 2 configure server|
+   |paraview 2 configure server|
 
--  Enter a name in the 'Name' field, e.g., 'Thinking'. If you have used
+#. Enter a name in the 'Name' field, e.g., 'Thinking'. If you have used
    11111 as the local port to establish the tunnen, just click the
    'Configure' button, otherwise modify the 'Port' field appropriately
    and click 'Configure'. This opens the 'Configure Server' dialog:
 
-|paraview 3 configure server|
+   |paraview 3 configure server|
 
--  Set the 'Startup Type' from 'Command' to 'Manual' in the drop-down
+#. Set the 'Startup Type' from 'Command' to 'Manual' in the drop-down
    menu, and click 'Save'.
--  In the 'Choose Server' dialog, select the server, i.e., 'Thinking'
+#. In the 'Choose Server' dialog, select the server, i.e., 'Thinking'
    and click the 'Connect' button.
 
-|paraview 4 connect|
+   |paraview 4 connect|
 
 You can now work with ParaView as you would when visualizing local
 files.
@@ -105,15 +106,12 @@ the compute node since leaving it open will consume credits.
 Further information
 -------------------
 
-`More information on ParaView can be found on its
-website <\%22https://www.paraview.org\%22>`__\ ` <\%22https://www.paraview.org/\%22>`__.
-A `decent
-tutorial <\%22https://www.vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf\%22>`__
-on using Paraview is also available from the VTK public wiki.
+More information on ParaView can be found on the `Paraview website`_
+A decent `Paraview tutorial`_ on is also available from the VTK public wiki.
 
-"
+.. |paraview 1 choose server| image:: paraview_remote_visualization/paraview_remote_visualization_01.png
+.. |paraview 2 configure server| image:: paraview_remote_visualization/paraview_remote_visualization_02.png
+.. |paraview 3 configure server| image:: paraview_remote_visualization/paraview_remote_visualization_03.png
+.. |paraview 4 connect| image:: paraview_remote_visualization/paraview_remote_visualization_04.png
 
-.. |paraview 1 choose server| image:: paraview_remote_visualization\paraview_remote_visualization_01.png
-.. |paraview 2 configure server| image:: paraview_remote_visualization\paraview_remote_visualization_02.png
-.. |paraview 3 configure server| image:: paraview_remote_visualization\paraview_remote_visualization_03.png
-.. |paraview 4 connect| image:: paraview_remote_visualization\paraview_remote_visualization_04.png
+.. include:: links.rst
