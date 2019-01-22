@@ -6,11 +6,11 @@ Using Pageant
 Getting started with Pageant
 ----------------------------
 
-`Pageant <\%22https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html\%22>`__
-is an SSH authentication agent that you can use for Putty and Filezilla.
+Pageant is part of the `PuTTY`_ distribution.
+it is an SSH authentication agent that you can use for Putty and Filezilla.
 Before you run Pageant, you need to have a private key in PKK format
-(filename ends on ``.pkk``). See `our page on generating keys with
-PuTTY <\%22/client/windows/keys-putty\%22>`__ to find out how to
+(filename ends on ``.pkk``). See :ref:`our page on generating keys with
+PuTTY <generating keys windows>` to find out how to
 generate and use one. When you run Pageant, it will put an icon of a
 computer wearing a hat into the System tray. It will then sit and do
 nothing, until you load a private key into it. If you click the Pageant
@@ -40,7 +40,7 @@ Pageant icon in the System tray, and select ‘Exit’ from the menu.
 Closing the Pageant main window does *not* shut down Pageant.
 
 You can find more info `in the on-line
-manual <\%22http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html\%22>`__.
+manual <http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html>`_.
 
 | *SSH authentication agents are very handy as you no longer need to
   type your passphrase every time that you try to log in to the cluster.
@@ -50,4 +50,4 @@ manual <\%22http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html\%22>`
   It is your responsibility to keep your computer safe and prevent easy
   intrusion of your VSC-account due to an obviously unprotected PC!*
 
-"
+.. include:: links.rst
