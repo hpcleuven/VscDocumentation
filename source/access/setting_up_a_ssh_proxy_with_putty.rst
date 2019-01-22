@@ -32,11 +32,12 @@ Setting up the connection in PuTTY is a bit more complicated than for a
 simple direct connection to a login node.
 
 #. First you need to start up pageant and load your private key into it.
-   `See the instructions on our \\"Using Pageant\"
-   page <\%22/client/windows/using-pageant\%22>`__.
+   :ref:`See the instructions on our "Using Pageant"
+   page <using Pageant>`.
 #. In PuTTY, go first to the \\"Proxy\" category (under
    \\"Connection\"). In the Proxy tab sheet, you need to fill in the
    following information:
+
    +-----------------------------------+-----------------------------------+
    | |\\"\"|                           | #. Select the proxy type:         |
    |                                   |    \\"Local\"                     |
@@ -71,11 +72,8 @@ simple direct connection to a login node.
    |                                   |      installed the executables    |
    |                                   |      putty.exe and pageant.exe,   |
    |                                   |      you'll need to download      |
-   |                                   |      plink.exe also from*\ `the   |
-   |                                   |      PuTTY web                    |
-   |                                   |      site <\%22https://www.chiark |
-   |                                   | .greenend.org.uk/~sgtatham/putty/ |
-   |                                   | latest.html\%22>`__\ *.           |
+   |                                   |      plink.exe also from* the     |
+   |                                   |      `PuTTY`_ web site            |
    |                                   |      We strongly advise to simply |
    |                                   |      install the whole            |
    |                                   |      PuTTY-suite of applications  |
@@ -171,3 +169,5 @@ What happens behind the scenes:
    :target: \%22/assets/137\%22
 .. |\\"\"| image:: \%22/assets/139\%22
    :target: \%22/assets/139\%22
+
+.. include:: links.rst

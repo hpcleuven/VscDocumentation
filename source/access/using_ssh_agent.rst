@@ -1,3 +1,5 @@
+.. _SSH agent:
+
 Using ssh-agent
 ===============
 

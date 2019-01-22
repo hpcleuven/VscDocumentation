@@ -1,3 +1,5 @@
+.. _tunnel OpenSSH:
+
 Creating a SSH tunnel using OpenSSH
 ===================================
 

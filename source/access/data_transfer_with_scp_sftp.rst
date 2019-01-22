@@ -1,3 +1,5 @@
+.. _scp and sftp:
+
 Data transfer with scp/sftp
 ===========================
 
