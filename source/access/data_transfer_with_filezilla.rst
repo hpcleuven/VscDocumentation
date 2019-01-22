@@ -9,17 +9,13 @@ transfer files to and from your account on the clusters.
 You can also put FileZilla with your private key on a USB stick to
 access your files from any internet-connected PC.
 
-You can `download
-Filezilla <\%22https://filezilla-project.org/download.php?type=client\%22>`__
-from the `FileZilla project web
-page <\%22https://filezilla-project.org/\%22>`__.
+You can `download FileZilla`_ from the `FileZilla project page`_.
 
 Configuration of FileZilla to connect to a login node
 -----------------------------------------------------
 
 Note: Pageant should be running and your private key should be loaded
-first (more info on `our \\"Using Pageant\"
-page <\%22/client/windows/using-pageant\%22>`__).
+first (more info on our ":ref:`using Pageant`" page).
 
 #. Start FileZilla;
 #. Open the Site Manager using the 'File' menu;
@@ -48,8 +44,6 @@ options (Edit Tab -> options -> connection -> SFTP):
 After that you should be able to connect after being asked for
 passphrase. As an alternative you can choose to use putty pageant.
 
-"
-
 .. |site manager| image:: data_transfer_with_filezilla/site_manager.png
    :width: 600
    :alt: FileZilla's site manager
@@ -57,3 +51,4 @@ passphrase. As an alternative you can choose to use putty pageant.
    :width: 600
    :alt: FileZilla site manager with settings
 
+.. include:: links.rst
