@@ -3,23 +3,6 @@
 Windows client
 ==============
 
-The icons
----------
-
-+-----------------------------------+-----------------------------------+
-| |Windows|                         | Works on Windows, but may need    |
-|                                   | additional pure Windows packages  |
-|                                   | (free or commercial)              |
-+-----------------------------------+-----------------------------------+
-| |Windows+Linux|                   | Works on Windows with a `UNIX     |
-|                                   | compatibility                     |
-|                                   | layer <\%22#UNIX\%22>`__ added,   |
-|                                   | e.g., cygwin or the \\"Windows    |
-|                                   | Subsystem for Linux\" in Windows  |
-|                                   | 10 build 1607 (anniversary        |
-|                                   | edition) or later                 |
-+-----------------------------------+-----------------------------------+
-
 Getting ready to request an account
 -----------------------------------
 
