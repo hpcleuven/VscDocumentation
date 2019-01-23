@@ -67,13 +67,12 @@ Tutorials
 For more exhaustive tutorials about Linux usage, please refer to the
 following sites:
 
--  `Linux tutorials YouTube
-   channel <\%22https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ\%22>`__
--  `Linux Basics on
-   Lifewire <\%22https://www.lifewire.com/learn-how-linux-basics-4102692\%22>`__
--  `Linux Newbie Administrator
-   Guide <\%22http://lnag.sourceforge.net/\%22>`__
--  We organise regular Linux introductory courses, see `the \\"Education
-   and Training\" pages <\%22/en/education--training\%22>`__
 
-"
+
+-  `Linux Tutorials Youtube Channel`_ 
+-  `Linux Basics on Lifewire`_
+-  `Linux Newbie Administrator Guide`_
+-  We organise regular Linux introductory courses, see `the \\"Education
+   and Training\" pages`_
+
+.. include:: links.rst 
