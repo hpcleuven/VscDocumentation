@@ -11,21 +11,19 @@ Installing TurboVNC client (viewer)
 -----------------------------------
 
 -  Download the most recent version of the client from the `TurboVNC
-   download page on
-   SourceForge <\%22https://sourceforge.net/projects/turbovnc/files/\%22>`__.
+   download page`_ on SourceForge.
 -  Continue with configuration of your client.
 
 TurboVNC client Configuration & Start Guide
 -------------------------------------------
 
-*Note: These instructions are for the KU Leuven visualization nodes
+Note: These instructions are for the KU Leuven visualization nodes
 only. The UAntwerp visualization node also uses TurboVNC, but the setup
 is different as the visualization node is currently not in the job
 queueing system and as TurboVNC is also supported on the regular login
 nodes (but without OpenGL support). Specific instructions for the use of
 TurboVNC on the UAntwerp clusters can be found on the page
-\\"\ *\ `Remote visualization @
-UAntwerp <\%22/infrastructure/hardware/hardware-ua/visualization\%22>`__\\".
+":ref:`remote visualization UAntwerp`".
 
 #. Request an interactive job on visualization partition:
 
@@ -79,34 +77,48 @@ UAntwerp <\%22/infrastructure/hardware/hardware-ua/visualization\%22>`__\\".
    ::
 
            $ ssh -L 590<d>:host:590<d> -N vsc30000@login.hpc.kuleuven.be
-      e.g. $ ssh -L 5901:r10n3:5901 -N vsc30000@login.hpc.kuleuven.be
-          
+
+   | e.g.,
+     
+   ::
+
+      $ ssh -L 5901:r10n3:5901 -N vsc30000@login.hpc.kuleuven.be
 
    | 
    | In Windows:
    | In putty go to Connection-SSH-Tunnels tab and add the source port
-     590<d> (e.g. 5901) and destination host:590<d> (e.g. r10n3:5901).
-   | |TVNC 1|
-   | Once the tunnel is added it will appear in the list of forwarded
-     ports:
-   | |TVNC 2|
-   | With that settings continue `login to the
-     cluster <\%22/client/windows/console-putty\%22>`__.
+   | 590<d> (e.g., 5901) and destination host:590<d> (e.g., r10n3:5901).
+
+   |TVNC 1|
+
+   | Once the tunnel is added it will appear in the list of forwarded ports:
+
+   |TVNC 2|
+
+   | With that settings continue :ref:`login to the
+     cluster <text mode access using PuTTY>`.
 
 #. Start VNC viewer connection
    Start the client: VSC server as localhost:<d> (where <d> is display
-   number), e.g. localhost:1
+   number), e.g., localhost:1
+
    |TVNC 3|
 
    Authenticate with your password
 
    |TVNC 4|
+
 #. After your work is done do not forget to close your connection:
 
    ::
 
            $ vncserver -kill :<d>; exit
-      e.g. $ vncserver -kill :1; exit
+
+   e.g.,
+  
+   ::
+   
+     $ vncserver -kill :1; exit
           
 
 How to start using visualization node?
@@ -114,12 +126,15 @@ How to start using visualization node?
 
 #. TurboVNC works with the tab Window Manager twm (more info on how to
    use it can be found on the `Wikipedia twm
-   page <\%22https://en.wikipedia.org/wiki/Twm\%22>`__ or on the `twm
-   man page <\%22https://linux.die.net/man/1/twm\%22>`__).
+   page <https://en.wikipedia.org/wiki/Twm>`_ or on the `twm
+   man page <https://linux.die.net/man/1/twm>`_).
+   
    |TVNC 5|
+
 #. To start a new terminal use left click of the mouse and choose xterm
 
    |TVNC 6|
+
 #. Load the appropriate visualization module (Paraview, VisIt, VMD,
    Avizo, e.g.
 
@@ -156,10 +171,7 @@ How to start using visualization node?
 Attached documents
 ------------------
 
-`Slides from the lunchbox
-session <\%22https://www.vscentrum.be/assets/1005\%22>`__
-
-"
+Download: :download:`Slides from the lunchbox session <turbovnc_start_guide/turbovnc.pdf>`
 
 .. |TVNC 1| image:: turbovnc_start_guide/turbovnc_start_guide_01.png 
 .. |TVNC 2| image:: turbovnc_start_guide/turbovnc_start_guide_02.png
@@ -171,3 +183,4 @@ session <\%22https://www.vscentrum.be/assets/1005\%22>`__
 .. |TVNC 6| image:: turbovnc_start_guide/turbovnc_start_guide_06.png
    :width: 80
 
+.. include:: links.rst
