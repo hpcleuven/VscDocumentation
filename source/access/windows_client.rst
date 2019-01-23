@@ -59,8 +59,7 @@ Connecting to the cluster
          the page ":ref:`Remote visualization UAntwerp`"
          for instructions.
 
--  If you install the free `UNIX emulation layer Cygwin <Cygwin>`_
-   with the necessary
+-  If you install the free UNIX emulation layer `Cygwin`_ with the necessary
    packages, you can use the same OpenSSH client as on Linux systems and
    all pages about ssh and data transfer from :ref:`the Linux client
    pages <Linux client>` apply.
@@ -68,7 +67,7 @@ Connecting to the cluster
 Programming tools
 -----------------
 
--  By installing the `UNIX emulation layer Cygwin <Cygwin>`_
+-  By installing the UNIX emulation layer Cygwin `Cygwin`_
    with the appropriate
    packages you can mimic very well the VSC cluster environment (at
    least with the foss toolchain). Cygwin supports the GNU compilers and
