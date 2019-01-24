@@ -7,15 +7,14 @@ Installing NX NoMachine client
 ------------------------------
 
 -  Download the enterprise version of the client from
-   `https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client <\%22https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client\%22>`__
+   the `NX Client downoad`_ page.
 -  Continue with Configuration of your NoMachine NX client.
 
 NoMachine NX Client Configuration Guide
 ---------------------------------------
 
 NoMachine NX requires keys in OpenSSH format, therefore the existing key
-needs to be `converted into OpenSSH
-format <\%22/client/windows/keys-putty#PuTTY_to_OpenSSH\%22>`__ if
+needs to be :ref:`converted into OpenSSH format <converting PuTTY keys>` if
 you're working on Windows and using PuTTY.
 
 Start the NoMachine client and press twice continue to see the screen
@@ -56,7 +55,7 @@ configuration.
 Choose the just created connection and press \\"Connect\".
 
 Enter your username (**vsc-account**) and **passphrase** for your
-private key and press \\"ok\".
+private key and press "ok".
 
 If you are creating for the first time choose **New desktop**. Otherwise
 please go to step 16 for instructions how to reconnect to your session.
@@ -85,11 +84,10 @@ reconnection from a different device (e.g. mobile device) it is highly
 recommended to change the resolution.
 
 For more detailed information about the configuration process please
-refer to the `short
-video <\%22https://www.vscentrum.be/assets/1187\%22>`__ (ThinKing
+refer to the `short video <https://www.vscentrum.be/assets/1187>`_ (ThinKing
 configuration) showing the installation and configuration procedure
-step-by-step or to the `document containing graphical
-instructions <\%22/assets/1293\%22>`__.
+step-by-step or to the :download:`document containing graphical
+instructions <nx_start_guide/nx_config_guide.pdf>`.
 
 How to start using NX on ThinKing?
 ----------------------------------
@@ -111,15 +109,15 @@ How to start using NX on ThinKing?
    open. To launch the terminal please go to Applications -> System
    tools -> Terminal. From Terminal all the commands available on
    regular login node can be used.
-#. Some more information can be found on `slides from our lunchbox
-   session <\%22/assets/197\%22>`__. In the slides you can find the
+#. Some more information can be found on :download:`slides from our lunchbox
+   session <nx_start_guide/nx_slides.pdf>`. In the slides you can find the
    information how to **connect the local HDD** to the NX session for
    easier transfer of data between the cluster and your local computer.
 
 Attached documents
 ------------------
 
--  `Instructions with screenshots <\%22/assets/1293\%22>`__
--  `Slides from the lunchbox session <\%22/assets/197\%22>`__
+-  :download:`Instructions with screenshots <nx_start_guide/nx_config_guide.pdf>`
+-  :download:`Slides from the lunchbox session <nx_start_guide/nx_slides.pdf>`
 
-"
+.. include:: links.rst

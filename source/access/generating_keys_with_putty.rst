@@ -49,6 +49,8 @@ saving it in a format required by different VSC login nodes.
 If you use another program to generate a key pair, please remember that
 they need to be in the OpenSSH format to access the VSC clusters.
 
+.. _converting PuTTY keys:
+
 Converting PuTTY keys to OpenSSH format
 ---------------------------------------
 
