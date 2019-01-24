@@ -69,8 +69,8 @@ In your ``$HOME/.ssh/config`` file, add the following lines:
        User vscXXXXX
 
 where you replace *vsc.login.node* with the name of the login node of
-your home tier-2 cluster (see also the `overview of available
-hardware <\%22/infrastructure/hardware\%22>`__).
+your home tier-2 cluster (see also the :ref:`overview of available
+hardware <../hardware>`).
 
 Replace ``vscXXXXX`` your own VSC account name (e.g., ``vsc40000``).
 
@@ -102,7 +102,7 @@ forwarding and need to add the line '``ForwardX11 yes``'.
    $ ssh tier1X
 
 will then log you on to login.muk.gent.vsc with X forwarding enabled
-provided that the $DISPLAY variable was correctly set on the client on
+provided that the ``$DISPLAY`` variable was correctly set on the client on
 which you executed the ssh command. Note that simply executing
 
 ::
@@ -142,8 +142,5 @@ get more information about all the possibilities by issuing
 
    $ man 5 ssh_config
 
-Alternatively, you can also google on this line and find `copies of the
-manual page on the
-internet <\%22http://www.manpagez.com/man/5/ssh_config/\%22>`__.
-
-"
+Alternatively, you can also google on this line and find :ref:`copies of the
+manual page on the internet <http://www.manpagez.com/man/5/ssh_config/>`.
