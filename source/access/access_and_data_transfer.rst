@@ -58,9 +58,9 @@ Optionally, if you wish to use programs with a graphical user
 interface, you'll need an X server on your client system. Again, this
 depends on the latter's operating system:
 
-   -  `Windows <\%22/client/windows\%22>`__
-   -  `Linux <\%22/client/linux\%22>`__
-   -  `macOS/OS X <\%22/client/macosx\%22>`__
+   -  :ref:`Windows <Windows client>`
+   -  :ref:`Linux <Linux client>`
+   -  :ref:`macOS/OS X <macOS client>`
 
 
 VPN

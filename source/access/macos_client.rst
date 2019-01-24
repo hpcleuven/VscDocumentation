@@ -1,3 +1,5 @@
+.. _macOS client:
+
 macOS client
 ============
 
