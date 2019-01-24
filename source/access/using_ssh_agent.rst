@@ -20,6 +20,8 @@ ssh-agent to subsequent commands, and this is done through two
 problem is to make sure that these variables are defined with the
 correct values in the shell where you start the other ssh commands.
 
+.. _start SSH agent:
+
 Starting ssh-agent: Basic scenarios
 -----------------------------------
 
@@ -57,7 +59,7 @@ There are a number of basic scenarios
 
 #. ssh-agent can also output the commands that are needed to configure
    the shell. These can then be used to configure the current shell or
-   any further shell. E.g., if you're a bash user, an easy way to start
+   any further shell, e.g., if you're a bash user, an easy way to start
    a ssh-agent and configure it in the current shell, is to type
 
    ::
@@ -69,7 +71,7 @@ There are a number of basic scenarios
    xterm) from that shell, it should also be correctly configured to
    contact the ssh authentication agent. A better idea though is to
    store the commands in a file and excute them in any shell where you
-   need access to the authentication agent. E.g., for bash users:
+   need access to the authentication agent, e.g., for bash users:
 
    ::
 
@@ -120,11 +122,9 @@ To list the keys that ssh-agent is managing, type
 
    $ ssh-add -l
 
-You can now use the OpenSSH commands
-`ssh <\%22/client/linux/login-openssh\%22>`__,
-`sftp <\%22/client/linux/data-openssh\%22>`__ and
-`scp <\%22/client/linux/data-openssh\%22>`__ without having to enter
-your passphrase again.
+You can now use the OpenSSH commands :ref:`ssh <OpenSSH access>`,
+:ref:`sftp and scp <scp and sftp>` without having to enter your passphrase
+again.
 
 Starting ssh-agent: Advanced options
 ------------------------------------
@@ -139,7 +139,7 @@ Ask your local system administrator
 If you're not managing your system yourself, you can always ask your
 system manager if he can make sure that ssh-agent is started when you
 log on and in such a way that subsequent shells opened from the desktop
-have the environmental variables SSH_AUTH_SOCK and SSH_AGENT_PID set
+have the environmental variables ``SSH_AUTH_SOCK`` and ``SSH_AGENT_PID`` set
 (with the first one being the most important one).
 
 And if you're managing your own system, you can dig into the manuals to
@@ -159,7 +159,7 @@ This simple solution is based on option 3 given above to start
 ssh-agent.
 
 #. You can define a new shell command by using the `bash alias
-   mechanism <\%22https://www.gnu.org/software/bash/manual/bash.html#Aliases\%22>`__.
+   mechanism <https://www.gnu.org/software/bash/manual/bash.html#Aliases>`_.
    Add the following line to the file .bashrc in your home directory:
 
    ::
@@ -169,9 +169,9 @@ ssh-agent.
 
    The new command start-ssh-agent will now start a new ssh-agent, store
    the commands to set the environment variables in the file
-   .ssh-agent-environment in your home directory and then \\"source\"
+   .ssh-agent-environment in your home directory and then "source"
    that file to execute the commands in the current shell (which then
-   sets SSH_AUTH_SOCK and SSH_AGENT_PID to appropriate values).
+   sets ``SSH_AUTH_SOCK`` and ``SSH_AGENT_PID`` to appropriate values).
 
 #. Also put the line
 
@@ -181,15 +181,14 @@ ssh-agent.
           
 
    in your .bashrc file. This line will check if the file
-   ssh-agent-environment exists in your home directory and \\"source\"
+   ssh-agent-environment exists in your home directory and "source"
    it to set the appropriate environment variables.
 
-#. As explained in the `GNU bash
-   manual <\%22https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files\%22>`__,
-   .bashrc is only read when starting so-called interactive non-login
+#. As explained in the `GNU bash manual <https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files>`_,
+   ``.bashrc`` is only read when starting so-called interactive non-login
    shells. Interactive login shells will not read this file by default.
-   Therefore it is `advised in the GNU bash
-   manual <\%22https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files\%22>`__
+   Therefore it is `advised in the GNU bash manual
+   <https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files>`_
    to add the line
 
    ::
@@ -197,12 +196,12 @@ ssh-agent.
       [[ -s ~/.bashrc ]] && . ~/.bashrc
           
 
-   to your .bash_profile. This will execute .bashrc if it exists
-   whenever .bash_profile is called.
+   to your ``.bash_profile``. This will execute ``.bashrc`` if it exists
+   whenever ``.bash_profile`` is called.
 
 You can now start a SSH authentication agent by issuing the command
-``start-ssh-agent`` and add your key `as indicated
-above <\%22#ssh-add\%22>`__ with ``ssh-add``.
+``start-ssh-agent`` and add your key :ref:`as indicated
+above <start SSH agent>` with ``ssh-add``.
 
 An automatic and safer solution in bash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,7 +214,7 @@ The following solution is much more complex, but a lot safer as it will
 first do an effort to see if there is already a ssh-agent running that
 can be contacted:
 
-#. It will first check if the environment variable SSH_AUTH_SOCK is
+#. It will first check if the environment variable ``SSH_AUTH_SOCK`` is
    defined, and try to contact that agent. This makes sure that no new
    agent will be started if you log on onto a system that automatically
    starts an ssh-agent.
@@ -226,7 +225,7 @@ can be contacted:
 
 This solution uses a Bash function.
 
-#. Add the following block of text to your .bashrc file:
+#. Add the following block of text to your ``.bashrc`` file:
 
    ::
 
@@ -325,21 +324,21 @@ This solution uses a Bash function.
       start-ssh-agent &>/dev/null
           
 
-   after the above function definition. All output is sent to /dev/null
+   after the above function definition. All output is sent to ``/dev/null``
    (and hence not shown) as a precaution, since ``scp`` or ``sftp``
    sessions fail when output is generated in ``.bashrc`` on many systems
    (typically with error messages such as \\"Received message too long\"
-   or \\"Received too large sftp packet\"). You can also use the newly
+   or "Received too large sftp packet"). You can also use the newly
    defined command start-ssh-agent at the command prompt. It will then
-   check your environment, reset the environment variables SSH_AUTH_SOCK
-   and SSH_AGENT_PID or start a new ssh-agent.
+   check your environment, reset the environment variables ``SSH_AUTH_SOCK``
+   and ``SSH_AGENT_PID`` or startk a new ssh-agent.
 
-#. As explained in the `GNU bash
-   manual <\%22https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files\%22>`__,
-   .bashrc is only read when starting so-called interactive non-login
+#. As explained in the `GNU bash manual
+   <https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files>`_,
+   ``.bashrc`` is only read when starting so-called interactive non-login
    shells. Interactive login shells will not read this file by default.
    Therefore it is `advised in the GNU bash
-   manual <\%22https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files\%22>`__
+   manual <https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files>`_
    to add the line
 
    ::
@@ -347,12 +346,11 @@ This solution uses a Bash function.
       [[ -s ~/.bashrc ]] && . ~/.bashrc
           
 
-   to your .bash_profile. This will execute .bashrc if it exists
-   whenever .bash_profile is called.
+   to your ``.bash_profile``. This will execute ``.bashrc`` if it exists
+   whenever ``.bash_profile`` is called.
 
-You can now simply add your key `as indicated
-above <\%22#ssh-add\%22>`__ with ``ssh-add`` and it will become
-available in all shells.
+You can now simply add your key :ref:`as indicated above <start SSH agent>` with
+``ssh-add`` and it will become available in all shells.
 
 The only remaining problem is that the ssh-agent process that you
 started may not get killed when you log out, and if it fails to contact
@@ -363,9 +361,5 @@ logging out with ``ssh-agent -k``.
 Links
 -----
 
--  `ssh-agent manual page <\%22http://man.openbsd.org/ssh-agent\%22>`__
-   (external)
--  `ssh-add manual page <\%22http://man.openbsd.org/ssh-add\%22>`__
-   (external)
-
-"
+-  `ssh-agent manual page <http://man.openbsd.org/ssh-agent>`_ (external)
+-  `ssh-add manual page <http://man.openbsd.org/ssh-add>`_ (external)
