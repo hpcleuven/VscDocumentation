@@ -29,9 +29,8 @@ following commands:
 Windows
 ~~~~~~~
 
-You can use OpenSSH on Windows also if you install the `free UNIX
-emulation layer Cygwin<http://www.cygwin.com/>`_ with the
-package "openssh".
+You can use OpenSSH on Windows also if you install the free UNIX
+emulation layer `Cygwin`_ with the package "openssh".
 
 macOS/OS X
 ~~~~~~~~~~
@@ -90,3 +89,5 @@ the following way:
 ::
 
    $ ssh-keygen -i -f ~/.ssh/id_rsa_2048_ssh.pub > ~/.ssh/id_rsa_2048_openssh.pub
+
+.. include:: links.rst
