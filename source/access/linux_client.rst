@@ -29,7 +29,7 @@ Connecting to the cluster
    -  OpenSSH :ref:`ssh command <OpenSSH access>`
    -  :ref:`Using ssh-agent <SSH agent>` to avoid
       having to enter the passphrase all the time
-   -  `Setting up a SSH proxy <\%22/client/linux/openssh-proxy\%22>`__
+   -  :ref:`Setting up a SSH proxy <proxy>`
       to long on to a node by a firewall through another login node,
       e.g., to access the tier-1 system muk
    -  :ref:`Creating an SSH tunnel using OpenSSH <tunnel OpenSSH>` to
