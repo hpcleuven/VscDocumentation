@@ -43,8 +43,8 @@ Connecting to the cluster
    -  No extra software is needed on a Linux client system, but you need
       to use the appropriate options with the ssh command as explained
       on :ref:`the page on OpenSSH <OpenSSH access>`.
-   -  On the KU Leuven/UHasselt clusters it is also possible to
-     :ref:`use the NX Client <NX start guide>` to log
+   -  On the KU Leuven/UHasselt clusters it is also possible to :ref:`use
+      the NX Client <NX start guide>` to log
       on to the machine and run graphical programs. This requires
       additional client software that is currently available for
       Windows, OS X, Linux, Android and iOS. The advantage over
