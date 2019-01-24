@@ -38,102 +38,66 @@ simple direct connection to a login node.
    \\"Connection\"). In the Proxy tab sheet, you need to fill in the
    following information:
 
-   +-----------------------------------+-----------------------------------+
-   | |\\"\"|                           | #. Select the proxy type:         |
-   |                                   |    \\"Local\"                     |
-   |                                   | #. Give the name of the \\"proxy  |
-   |                                   |    server\". This is              |
-   |                                   |    *vsc.login.node*, your usual   |
-   |                                   |    VSC login node, and not the    |
-   |                                   |    computer on which you want to  |
-   |                                   |    log on and work.               |
-   |                                   | #. Make sure that the \\"Port\"   |
-   |                                   |    number is 22.                  |
-   |                                   | #. Enter your VSC-id in the       |
-   |                                   |    \\"Username\" field.           |
-   |                                   | #. | In the \\"Telnet command, or |
-   |                                   |      local proxy command\", enter |
-   |                                   |      the string                   |
-   |                                   |                                   |
-   |                                   |    ::                             |
-   |                                   |                                   |
-   |                                   |       plink -agent -l %user %prox |
-   |                                   | yhost -nc %host:%port             |
-   |                                   |                                   |
-   |                                   |                                   |
-   |                                   |    | (the easiest is to just      |
-   |                                   |      copy-and-paste this text).   |
-   |                                   |    | *\\"plink\" (PuTTY Link) is  |
-   |                                   |      a Windows program and comes  |
-   |                                   |      with the full PuTTY suite of |
-   |                                   |      applications. It is the      |
-   |                                   |      command line version of      |
-   |                                   |      PuTTY. In case you've only   |
-   |                                   |      installed the executables    |
-   |                                   |      putty.exe and pageant.exe,   |
-   |                                   |      you'll need to download      |
-   |                                   |      plink.exe also from* the     |
-   |                                   |      `PuTTY`_ web site            |
-   |                                   |      We strongly advise to simply |
-   |                                   |      install the whole            |
-   |                                   |      PuTTY-suite of applications  |
-   |                                   |      using the installer          |
-   |                                   |      provided*\ `on that          |
-   |                                   |      site <\%22https://www.chiark |
-   |                                   | .greenend.org.uk/~sgtatham/putty/ |
-   |                                   | latest.html\%22>`__\ *.*          |
-   +-----------------------------------+-----------------------------------+
+   |PuTTY proxy section|
 
-#. Now go to the \\"Data\" category in PuTTY, again under
-   \\"Connection\".
-   +-----------------------------------+-----------------------------------+
-   | |\\"\"|                           | #. Fill in your VSC-id in the     |
-   |                                   |    \\"Auto-login username\"       |
-   |                                   |    field.                         |
-   |                                   | #. Leave the other values         |
-   |                                   |    untouched (likely the values   |
-   |                                   |    in the screen dump)            |
-   +-----------------------------------+-----------------------------------+
 
-#. Now go to the \\"Session\" category
-   +-----------------------------------+-----------------------------------+
-   | |\\"\"|                           | #. Set the field \\"Host Name (or |
-   |                                   |    IP address) to the computer    |
-   |                                   |    you want to log on to. If you  |
-   |                                   |    are setting up a proxy         |
-   |                                   |    connection to access a         |
-   |                                   |    computer on the VSC network,   |
-   |                                   |    you will have to use its name  |
-   |                                   |    on the internal VSC network.   |
-   |                                   |    E.g., for the login nodes of   |
-   |                                   |    the tier-1 cluster Muk at      |
-   |                                   |    UGent, this is                 |
-   |                                   |    **login.muk.gent.vsc** and for |
-   |                                   |    the cluster on which you can   |
-   |                                   |    test applications for the Muk, |
-   |                                   |    this is                        |
-   |                                   |    **gligar.gligar.gent.vsc**.    |
-   |                                   | #. Make sure that the \\"Port\"   |
-   |                                   |    number is 22.                  |
-   |                                   | #. Finally give the configuration |
-   |                                   |    a name in the field \\"Saved   |
-   |                                   |    Sessions\" and press           |
-   |                                   |    \\"Save\". Then you won't have |
-   |                                   |    to enter all the above         |
-   |                                   |    information again.             |
-   |                                   | #. And now you're all set up to   |
-   |                                   |    go. Press the \\"Open\" button |
-   |                                   |    on the \\"Session\" tab to     |
-   |                                   |    open a terminal window.        |
-   +-----------------------------------+-----------------------------------+
+   #. Select the proxy type: "Local"                     
+   #. Give the name of the "proxy  server\". This is *vsc.login.node*,
+      your usual   VSC login node, and not the computer on which you
+      want to log on and work.               
+   #. Make sure that the "Port" number is 22.                  
+   #. Enter your VSC-id in the "Username" field.           
+   #. In the "Telnet command, or local proxy command\", enter the string 
+                                     
+      ::                             
+                                     
+         plink -agent -l %user %proxyhost -nc %host:%port             
+                                     
+      | (the easiest is to just copy-and-paste this text). 
+
+      | "plink" (PuTTY Link) is  a Windows program and comes
+        with the full PuTTY suite of applications. It is the
+        command line version of PuTTY. In case you've only
+        installed the executables putty.exe and pageant.exe,
+        you'll need to download plink.exe also from* the
+        `PuTTY`_ web site We strongly advise to simply install the whole
+        PuTTY-suite of applications  using the installer provided on the
+        `PuTTY download site`_.
+
+#. Now go to the "Data" category in PuTTY, again under "Connection".
+
+   |PuTTY data section|
+
+   #. Fill in your VSC-id in the "Auto-login username" field.
+   #. Leave the other values untouched (likely the values
+      in the screen dump)         
+
+#. Now go to the "Session category
+
+   |PuTTY session section|
+
+   #. Set the field \\"Host Name (or IP address) to the computer 
+      you want to log on to. If you are setting up a proxy
+      connection to access a computer on the VSC network. 
+      you will have to use its name on the internal VSC network.  
+      E.g., for the login nodes of the tier-1 cluster Muk at     
+      UGent, this is **login.muk.gent.vsc** and for the cluster
+      on which you can test applications for the Muk, this is
+      **gligar.gligar.gent.vsc**.   
+   #. Make sure that the "Port" number is 22.                 
+   #. Finally give the configuration a name in the field "Saved  
+      Sessions" and press "Save". Then you won't have to enter
+      all the above information again.            
+   #. And now you're all set up to go. Press the "Open" button
+      on the "Session" tab to open a terminal window.       
 
 For advanced users
 ------------------
 
 If you have an X-server on your Windows PC, you can also use X11
 forwarding and run X11-applications on the host. All you need to do is
-click the box next to \\"Enable X11 forwarding\" in the category
-\\"Connection\" -> \\"SSH\"-> \\"X11\".
+click the box next to "Enable X11 forwarding" in the category
+"Connection" -> "SSH"-> "X11".
 
 What happens behind the scenes:
 
@@ -141,33 +105,28 @@ What happens behind the scenes:
    one of its own build-in ways of setting up a proxy, but to use the
    command that you specify in the \\"Telnet command\" of the \\"Proxy\"
    category.
--  | In the command
+-  In the command
 
    ::
 
       plink -agent -l %user %proxyhost -nc %host:%port
           
 
-   %user will be replaced by the userid you specify in the \\"Proxy\"
+   ``%user`` will be replaced by the userid you specify in the "Proxy"
    category screen, %proxyhost will be replaced by the host you specify
-   in the \\"Proxy\" category screen (**vsc.login.node** in the
-   example), %host by the host you specified in the \\"Session\"
+   in the "Proxy" category screen (**vsc.login.node** in the
+   example), %host by the host you specified in the "Session"
    category (login.muk.gent.vsc in the example) and %port by the number
-   you specified in the \\"Port\" field of that screen (and this will
+   you specified in the "Port" field of that screen (and this will
    typically be 22).
 
--  The plink command will then set up a connection to %proxyhost using
-   the userid %user. The -agent option tells plink to use pageant for
+-  The plink command will then set up a connection to ``%proxyhost`` using
+   the userid %user. The ``-agent`` option tells plink to use pageant for
    the credentials. And the -nc option tells plink to tell the SSH
-   server on %proxyhost to further connect to %host:%port.
+   server on ``%proxyhost`` to further connect to ``%host:%port``.
 
-"
-
-.. |\\"\"| image:: \%22/assets/135\%22
-   :target: \%22/assets/135\%22
-.. |\\"\"| image:: \%22/assets/137\%22
-   :target: \%22/assets/137\%22
-.. |\\"\"| image:: \%22/assets/139\%22
-   :target: \%22/assets/139\%22
+ .. |PuTTY proxy section| image:: setting_up_a_ssh_proxy_with_putty/putty_proxy_section.png
+ .. |PuTTY data section| image:: setting_up_a_ssh_proxy_with_putty/putty_data_section.png
+ .. |PuTTY session section| image:: setting_up_a_ssh_proxy_with_putty/putty_session_section.png
 
 .. include:: links.rst
