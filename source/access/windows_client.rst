@@ -67,8 +67,7 @@ Connecting to the cluster
 Programming tools
 -----------------
 
--  By installing the UNIX emulation layer Cygwin `Cygwin`_
-   with the appropriate
+-  By installing the UNIX emulation layer `Cygwin`_ with the appropriate
    packages you can mimic very well the VSC cluster environment (at
    least with the foss toolchain). Cygwin supports the GNU compilers and
    also contains packages for OpenMPI (`look for
