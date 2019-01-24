@@ -10,3 +10,4 @@
 .. _Paraview tutorial: https://www.vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
 .. _Xming web site: http://www.straightrunning.com/XmingNotes/
 .. _TurboVNC download page: https://sourceforge.net/projects/turbovnc/files/
+.. _Cyberduck: https://cyberduck.io

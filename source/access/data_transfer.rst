@@ -8,23 +8,20 @@ Prerequisite: OpenSSH, Cyberduck or FileZilla
 
 -  OS X comes with its own implementation of OpenSSH, so you don't need
    to install any third-party software to use it. Just open a Terminal
-   window and jump in! Because of this, you can use the same `scp and
-   sftp commands as in Linux <\%22/client/linux/data-openssh\%22>`__ to
+   window and jump in! Because of this, you can use the same :ref:`scp and
+   sftp commands as in Linux <scp and sftp>` to
    access the cluster and transfer files.
--  We recommend `Cyberduck <\%22https://cyberduck.io\%22>`__ as a
+-  We recommend `Cyberduck`_ as a
    graphical alternative to the scp command. This program is freely
-   available (with a voluntary donation) from `the Cyberduck web
-   site <\%22https://cyberduck.io\%22>`__ and easy to use. Installation
+   available (with a voluntary donation) from the `Cyberduck`_ web
+   site and easy to use. Installation
    is easy: just drag the program's icon to the Application folder in
    the Finder, and you're done.
    The program can also be found in the App Store but at a price.
--  An alternative SFTP GUI is
-   `FileZilla <\%22https://filezilla-project.org/\%22>`__. FileZilla for
-   macOS is very similar to FileZilla for Windows (see also our `page
-   about FileZilla in the Windows
-   section <\%22/client/windows/filezilla\%22>`__). It can be downloaded
-   from the `FileZilla download
-   page <\%22https://filezilla-project.org/download.php?show_all=1\%22>`__.
+-  An alternative SFTP GUI is FileZilla. FileZilla for
+   macOS is very similar to FileZilla for Windows (see also our :ref:`page
+   about FileZilla in the Windows section <FileZilla>`). you can `download
+   FileZilla`_.
 
 Transferring files with Cyberduck
 ---------------------------------
@@ -43,7 +40,9 @@ Files can be easily transferred with Cyberduck. Setup is easy:
 #. Finally, type in a name for the bookmark in the 'Nickname' field and
    close the window by pressing on the red circle in the top left corner
    of the window.
-   |\\"Cyberduck|
+
+   |Cyberduck config|
+
 #. To open the scp connection, click on the 'Bookmarks' icon (which
    resembles an open book) and double click on the bookmark you just
    created.
@@ -53,8 +52,8 @@ Transferring files with FileZilla
 
 To install FileZilla, follow these steps:
 
-#. Download the appropriate file from the `FileZilla download
-   page <\%22https://filezilla-project.org/download.php?show_all=1\%22>`__.
+#. You can `download FileZilla`_ (take care to download the version for your
+   operating system) for the `FileZilla project page`_.
 #. The file you just downloaded is a compressed UNIX-style archive (with
    a name ending on .tar.bz2). Doubleclick on this file in Finder (most
    likely in the Downloads folder) and drag the FileZilla icon that
@@ -63,7 +62,7 @@ To install FileZilla, follow these steps:
    that Filezilla.app cannot be opened because it is from an
    unidentified developer when you try to start it. Check out the macOS
    Gatekeeper on `this Apple support
-   page <\%22https://support.apple.com/en-gb/HT202491\%22>`__.
+   page <https://support.apple.com/en-gb/HT202491>`_.
 
 FileZilla for macOS works in pretty much the same way as FileZilla for
 Windows:
@@ -84,26 +83,23 @@ Windows:
    'Rename' button;
 #. press 'Connect'. Enter your passphrase when requested. FileZilla will
    try to use the information in your macOS Keychain. See the page on
-   '`Text-mode access using
-   OpenSSH <\%22/client/macosx/login-openssh\%22>`__' to find out how to
-   add your key to the keychain using ``ssh-add``.
+   ":ref:`Text-mode access using OpenSSH <OpenSSH access>`"
+   to find out how to add your key to the keychain using ``ssh-add``.
 
-|\\"FileZilla|
+|FileZilla config|
 
 Note that recent versions of FileZilla have a screen in the settings to
 manage private keys. The path to the private key must be provided in
 options (Edit Tab -> options -> connection -> SFTP):
 
-|\\"FileZilla|
+|FileZilla private keys|
 
 After that you should be able to connect after being asked for
 passphrase. As an alternative you can choose to use the built-in macOS
 keychain system.
 
-"
+.. |Cyberduck config| image:: data_transfer/cyberduck_config.png
+.. |FileZilla config| image:: data_transfer/filezilla_config.png
+.. |FileZilla private keys| image:: data_transfer/filezilla_private_keys.jpg
 
-.. |\\"Cyberduck| image:: \%22/assets/187\%22
-.. |\\"FileZilla| image:: \%22/assets/189\%22
-   :target: \%22/assets/189\%22
-.. |\\"FileZilla| image:: \%22/assets/1197\%22
-
+.. include:: links.rst
