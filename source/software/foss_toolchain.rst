@@ -1,3 +1,5 @@
+.. _FOSS toolchain
+
 FOSS toolchain
 ==============
 
@@ -56,6 +58,8 @@ Note that the OpenMP runtime library used by GCC is of inferior quality
 when compared to Intel's, so developers are strongly encouraged to use
 the ```intel`` toolchain <\%22#intel-toolchain\%22>`__ when
 developing/building OpenMP software.
+
+.. _Open MPI:
 
 Communication library: Open MPI
 -------------------------------

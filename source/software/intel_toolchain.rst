@@ -1,3 +1,5 @@
+.. _Intel toolchain:
+
 Intel toolchain
 ===============
 
@@ -43,6 +45,8 @@ to the Intel documentation at the bottom of this
 page <\%22#FurtherInfo\%22>`__. Do not forget to *load the toolchain
 module* first!
 
+.. _Intel OpenMP:
+
 Intel OpenMP
 ~~~~~~~~~~~~
 
@@ -61,6 +65,8 @@ the executable is supposed to run. This can be done using the ``ppn``
 resource, e.g., ``-l nodes=1:ppn=10`` for an executable that should be
 run with 10 OpenMP threads. The number of threads should not exceed the
 number of cores on a compute node.
+
+.. _Intel MPI:
 
 Communication library: Intel MPI
 --------------------------------
