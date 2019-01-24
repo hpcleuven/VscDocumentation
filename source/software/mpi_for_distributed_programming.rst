@@ -16,7 +16,7 @@ The current version of the MPI standard is 3.0, but only the newest
 implementations implement the full standard. The previous specifications
 are the MPI 2.0 specification with minor updates in the MPI-2.1 and
 MPI-2.2 specifications. The standardisation body for MPI is the `MPI
-forum <\%22https://www.mpi-forum.org/\%22>`__.
+forum`_ .
 
 Some background information
 ---------------------------
@@ -33,8 +33,8 @@ MPI-3.1 specification was released in 2015, and work is ongoing on the
 next major update, MPI-4.0.
 
 The two dominant Open Source implementations are `Open
-MPI <\%22https://www.open-mpi.org/\%22>`__ and
-`MPICH <\%22https://www.mpich.org/\%22>`__. The latter has been through
+MPI`_ and
+`MPICH`_. The latter has been through
 a couple of name changes: It was originally conceived in the early '90's
 as MPICH, then the complete rewrite was renamed to MPICH2, but as this
 name caused confusion as the MPI standard evolved into MPI 3.x, the name
@@ -45,10 +45,10 @@ interconnect technologies. Most other MPI implementations are derived
 from one of these implementations.
 
 At the VSC we offer both implementations: Open MPI is offered with the
-GNU compilers in the `FOSS
-toolchain <\%22/cluster-doc/development/toolchain-foss\%22>`__, while
-the Intel MPI used in the `Intel
-toolchain <\%22/cluster-doc/development/toolchain-intel\%22>`__ is
+GNU compilers in the ":ref:`FOSS toolchain`"
+, while
+the Intel MPI used in the ":ref:`Intel toolchain`"
+is
 derived from the MPICH code base.
 
 Prerequisites
@@ -65,8 +65,7 @@ On VSC clusters, several MPI implementations are installed. We provide
 two MPI implementations on all newer machines that can support those
 implementations:
 
-#. `Intel
-   MPI <\%22/cluster-doc/development/toolchain-intel#intel-mpi\%22>`__
+#. :ref:`Intel MPI`
    in the intel toolchain
 
    #. Intel MPI 4.1 (intel/2014a and intel/2014b toolchains) implements
@@ -75,9 +74,8 @@ implementations:
       MPI 5.1 (intel/2016a and intel/2016b toolchains) implement the
       MPI-3.0 specification
 
-#. `Open
-   MPI <\%22/cluster-doc/development/toolchain-foss#openmpi\%22>`__ in
-   the foss toolchain
+#. :ref:`Open MPI`
+   in the foss toolchain
 
    #. Open MPI 1.6 (foss/2014a toolchain) only implements the MPI-2.1
       specification
@@ -88,7 +86,7 @@ implementations:
 When developing your own software, this is the preferred order to select
 an implementation. The performance should be very similar, however, more
 development tools are available for Intel MPI
-(i.e.,\ `ITAC <\%22/cluster-doc/development/itac\%22>`__ for performance
+(i.e., ":ref:`ITAC`" for performance
 monitoring).
 
 Specialised hardware sometimes requires specialised MPI-libraries.
@@ -99,7 +97,7 @@ Specialised hardware sometimes requires specialised MPI-libraries.
    advantage of the interconnect, it is necessary to use the SGI MPI
    library, part of the MPT packages which stands for Message Passing
    Toolkit (and also contains SGI's own implementation
-   of\ `OpenSHMEM <\%22http://www.openshmem.org/site/\%22>`__\ ).
+   of `OpenSHMEM`_).
    Support is offered through additional toolchains (intel-mpt and
    foss-mpt).
 
@@ -111,65 +109,65 @@ Specialised hardware sometimes requires specialised MPI-libraries.
       MPI 1.8 library which implements the MPI-3.0 specification.
 
 Several other implementations may be installed, e.g.,
-`MVAPICH <\%22http://mvapich.cse.ohio-state.edu/\%22>`__, but we assume
+`MVAPICH`_, but we assume
 you know what you're doing if you choose to use them.
 
 We also assume you are already familiar with the job submission
-procedure. If not, check the \\"\ `Running
-jobs <\%22/cluster-doc/running-jobs\%22>`__\\" section first.
+procedure. If not, check the ":ref:`Running
+jobs`" section first.
 
 Compiling and running
 ---------------------
 
 See to the documentation about the
-`toolchains <\%22/cluster-doc/development/toolchains\%22>`__.
+:ref:`toolchains`.
 
 Debugging
 ---------
 
 For debugging, we recommend the ARM DDT debugger (formerly Allinea DDT,
-module allinea-ddt). `Video tutorials are available on the Arm web
-site <\%22https://developer.arm.com/products/software-development-tools/hpc/arm-forge/arm-ddt/video-demos-and-tutorials-for-arm-ddt\%22>`__.
+module allinea-ddt). Video tutorials are available on the Arm website:
+`ARM-DDT video`_ .
 (KU Leuven-only).
 
-When using the intel toolchain, `Intel's Trace Analyser &
-Collector <\%22/cluster-doc/development/itac\%22>`__ (ITAC) may also
+When using the intel toolchain, ":ref:`ITAC`"
+(ITAC) may also
 prove useful.
 
 Profiling
 ---------
 
-To profile MPI applications, one may use `Arm MAP (formerly Allinea
-MAP) <\%22https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map\%22>`__,
+To profile MPI applications, one may use `Arm-MAP`_ (formerly Allinea
+MAP) 
 or
-`Scalasca <\%22http://www.scalasca.org/software/scalasca-2.x/documentation.html\%22>`__.
+`Scalasca docs`_.
 (KU Leuven-only)
 
 Further information
 -------------------
 
--  `Intel
-   MPI <\%22https://software.intel.com/en-us/intel-mpi-library\%22>`__
+-  `Intel MPI site`_
 
-   -  `Documentation <\%22https://software.intel.com/en-us/articles/intel-mpi-library-documentation/\%22>`__
+   -  `Intel MPI Documentation`_
       (Latest version)
 
--  `Open MPI <\%22https://www.open-mpi.org/\%22>`__
+-  `Open MPI`_
 
-   -  `Documentation <\%22https://www.open-mpi.org/doc/\%22>`__
+   -  `Open MPI Documentation`_
 
 -  SGI MPT, now HPE Performance Software MPI
 
-   -  `Documentation <\%22https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US\%22>`__
+   -  `HPE MPT Documentation`_
 
--  `MPI forum <\%22https://www.mpi-forum.org\%22>`__, where you can also
+-  `MPI forum`_, where you can also
    find the standard specifications
 
-   -  `Standard documents <\%22https://www.mpi-forum.org/docs/\%22>`__
+   -  `MPI Standard documents`_
 
--  See also the pages in the `tutorials
-   section <\%22/support/tut-book\%22>`__, e.g., for
-   `books <\%22/support/tut-book/books#MPI\%22>`__ and `online
-   tutorial <\%22/support/tut-book/web-tutorials\%22>`__
+-  See also the pages in the tutorials
+   section e.g., for
+   :ref:`books` and online
+   tutorial :ref:`web tutorials`
 
+.. include:: links.rst
 "

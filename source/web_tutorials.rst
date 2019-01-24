@@ -1,3 +1,5 @@
+.. _web tutorials:
+
 Web tutorials
 =============
 

@@ -1,3 +1,5 @@
+.. _ITAC:
+
 Intel Trace Analyzer & Collector
 ================================
 
