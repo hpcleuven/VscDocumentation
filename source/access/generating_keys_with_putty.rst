@@ -22,13 +22,15 @@ Generating a public/private key pair
 To generate a public/private key pair, you can use the PuTTYgen key
 generator, which is available on the `PuTTY download site`_.
 Start it and follow the following steps. Alternatively, you can follow a
-`short video <\%22https://www.vscentrum.be/assets/1189\%22>`__
+`short video <https://www.vscentrum.be/assets/1189>`_
 explaining step-by-step the process of generating a new key pair and
 saving it in a format required by different VSC login nodes.
 
 #. In 'Parameters' (at the bottom of the window), choose 'SSH-2 RSA' and
    set the number of bits in the key to 2048:
+
    |PuTTYgen initial|
+
 #. Click on 'Generate'. To generate the key, you must move the mouse
    cursor over the PuTTYgen window (this generates some random data that
    PuTTYgen uses to generate the key pair). Once the key pair is
@@ -39,7 +41,10 @@ saving it in a format required by different VSC login nodes.
    passphrase protects the private key against unauthorized use, so it
    is best to choose one that is not too easy to guess. Additionally, it
    is adviced to fill in the 'Key comment' field to make it easier
-   identifiable afterwards.  |PuTTYgen filled|
+   identifiable afterwards.
+   
+   |PuTTYgen filled|
+
 #. Finally, save both the public and private keys in a secure place
    (i.e., a folder on your personal computer, or on your personal USB
    stick, ...) with the buttons 'Save public key' and 'Save private
