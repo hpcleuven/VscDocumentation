@@ -6,8 +6,7 @@ Data transfer with scp/sftp
 Prerequisite: OpenSSH
 ---------------------
 
-See the page on `generating
-keys <\%22/client/linux/keys-openssh\%22>`__.
+See the page on :ref:`generating keys <generating keys linux>`.
 
 Using scp
 ---------
@@ -46,7 +45,7 @@ One easy way of starting a sftp session is
 Links
 -----
 
--  `scp manual page <\%22http://man.openbsd.org/scp\%22>`__ (external)
--  `sftp manual page <\%22http://man.openbsd.org/sftp\%22>`__ (external)
+-  `scp manual page`_ (external)
+-  `sftp manual page`_ (external)
 
-"
+.. include:: links.rst
