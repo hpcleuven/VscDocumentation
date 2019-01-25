@@ -65,8 +65,7 @@ On VSC clusters, several MPI implementations are installed. We provide
 two MPI implementations on all newer machines that can support those
 implementations:
 
-#. :ref:`Intel MPI`
-   in the intel toolchain
+#. :ref:`Intel MPI <Intel MPI>` in the intel toolchain
 
    #. Intel MPI 4.1 (intel/2014a and intel/2014b toolchains) implements
       the MPI-2.2 specification
