@@ -1,3 +1,5 @@
+.. _disk usage:
+
 Managing disk usage
 ===================
 

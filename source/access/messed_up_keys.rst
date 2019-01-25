@@ -1,3 +1,5 @@
+.. _messed up keys:
+
 Messed up keys
 ==============
 

@@ -1,3 +1,5 @@
+.. _groups:
+
 How to create/manage VSC groups
 ===============================
 
@@ -38,6 +40,8 @@ happens when you log on to a VSC cluster at a different site.
 Managing groups
 ---------------
 
+.. _viewing gropus:
+
 Viewing the groups you belong to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -47,6 +51,8 @@ Viewing the groups you belong to
 
 You will in fact see that you always belong to at least two groups
 depending on the institution from which you have your VSC account.
+
+.. _join groups:
 
 Join an existing group
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -66,6 +72,8 @@ Join an existing group
 
    -  Moderators will deny all unclear requests
 
+.. _create groups:
+
 Create new group
 ~~~~~~~~~~~~~~~~
 
@@ -76,6 +84,8 @@ Create new group
 -  You will receive a confirmation email
 -  After the confirmation, you are now member and moderator of the new
    group
+
+.. _permissions groups:
 
 Working with file and directory permissions
 -------------------------------------------

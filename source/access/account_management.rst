@@ -1,28 +1,27 @@
+.. _account management:
+
 Account management
 ==================
 
-Account management at the VSC is mostly done through the web site
-`account.vscentrum.be <\%22https://account.vscentrum.be\%22>`__ using
-your institute account rather than your VSC account.
+Account management at the VSC is mostly done through the `VSC account page`_
+using your institute account rather than your VSC account.
 
 Managing user credentials
 -------------------------
 
 -  You use the VSC account page to request your account as explained on
-   the `\\"Account request\"
-   pages <\%22/cluster-doc/account-request\%22>`__. You'll also need to
+   the ":ref:`account request`" page. You'll also need to
    create an SSH-key which is also explained on those pages.
 -  Once your account is active and you can log on to your home cluster,
    you can use the account management pages for many other operations:
 
-   -  If you want to `access the VSC clusters from more than one
-      computer <\%22/cluster-doc/account-management/access-from-multiple-machines\%22>`__,
+   -  If you want to :ref:`access the VSC clusters from more than one
+      computer <access from multiple machines>`,
       it is good practice to use a different key for each computer. You
       can upload additional keys via the account management page. In
       that way, if your computer is stolen, all you need to do is remove
       the key for that computer and your account is safe again.
-   -  If you've `messed up your
-      keys <\%22/cluster-doc/account-management/messed-up-keys\%22>`__,
+   -  If you've :ref:`messed up your keys <messed up keys>`,
       you can restore the keys on the cluster or upload a new key and
       then delete the old one.
 
@@ -38,26 +37,20 @@ project can collaborate and control access to those files, and to
 control access to project credits on clusters that use these (all
 clusters at KU Leuven).
 
--  All details are on the page \\"\ `How to create/manage VSC
-   groups <\%22cluster-doc/account-management/manage-vsc-groups\%22>`__\\".
+-  All details are on the page ":ref:`groups`".
    In particular, you'll find how to
 
-   -  `view the groups you belong
-      to <\%22/cluster-doc/account-management/manage-vsc-groups#view-groups\%22>`__.
-
-   -  `request membership to a
-      group <\%22/cluster-doc/account-management/manage-vsc-groups#join-group\%22>`__
+   -  :ref:`view the groups you belong to <viewing groups>`.
+   -  :ref:`request membership to a group <join groups>`
       you feel you should belong to. It is then up to the moderator of
       that group to grant you membership.
-   -  `create a new
-      group <\%22/cluster-doc/account-management/manage-vsc-groups#create-new-group\%22>`__
-   -  `use group permissions to control acces to files and
-      directories <\%22/cluster-doc/account-management/manage-vsc-groups#working-with-file-and-directory-permissions\%22>`__
+   -  :ref:`create a new group <create groups>`
+   -  use group permissions to :ref:`control acces to files and
+      directories <permissions groups>`
 
 -  If you are a group moderator, you can manage your group by accepting
    requests from users that would like to join the group or inviting
-   users to join your group through `the VSC account web
-   site <\%22https://account.vscentrum.be/\%22>`__.
+   users to join your group through the `VSC account page`_.
 -  For UGent users only: You can create or join a so-called Virtual
    Organisation or VO.
 
@@ -70,8 +63,7 @@ of files. UGent users can see and request upgrades for their quota on
 the Account management site (Users need to be in a VO (Virtual
 Organisation) to request aditional quota. Creating and joining a VO is
 also done trought the Account Management website). On other sites
-checking your disk space use is still `mostly done from the command
-line <\%22/cluster-doc/account-management/managing-disk-usage\%22>`__
-and requesting more quote is done via email.
+checking your disk space use is still :ref:`mostly done from the command
+line <disk usage>` and requesting more quote is done via email.
 
-"
+.. include:: links.rst
