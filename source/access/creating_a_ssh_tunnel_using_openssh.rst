@@ -6,10 +6,10 @@ Creating a SSH tunnel using OpenSSH
 Prerequisits
 ------------
 
--  A ssh key pair, properly installed in your VSC account, see the `page
-   on generating keys <\%22/client/linux/keys-openssh\%22>`__.
--  Additionally, you should be able to `connect to the cluster's login
-   node <\%22/client/linux/login-openssh\%22>`__ using ssh.
+-  A ssh key pair, properly installed in your VSC account, see the :erf:`page
+   on generating keys <generating keys windows>`.
+-  Additionally, you should be able to :ref:`connect to the cluster's login
+   node <OpenSSH access>` using ssh.
 
 Background
 ----------
@@ -36,13 +36,11 @@ tuneling. There are serveral cases where this is usefull:
    hostname of the cluster's login node you are using.
 
 -  Running a server application on the cluster that a client on the
-   desktop connects to. One example of this scenario is `ParaView in
-   remote visualization
-   mode <\%22/cluster-doc/postprocessing/paraview-remote-visualization\%22>`__,
+   desktop connects to. One example of this scenario is :ref:`ParaView in
+   remote visualization mode <Paraview>`,
    with the interactive client on the desktop and the data processing
    and image rendering on the cluster. Setting up a tunnel for this
-   scenario is also `explained on that
-   page <\%22/cluster-doc/postprocessing/paraview-remote-visualization\%22>`__.
+   scenario is also :ref:`explained on that page <Paraview>`.
 -  Running clients on the cluster and a server on your desktop. In this
    case, the source port is a port on the cluster and the destination
    port is on the desktop.
@@ -66,5 +64,3 @@ and the server port (e.g., 44444).
 #. Start the server job, note the compute node's name the job is running
    on (e.g., 'r1i3n5'), as well as the port the server is listening on
    (e.g., '44444').
-
-"
