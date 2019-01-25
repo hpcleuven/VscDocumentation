@@ -7,13 +7,9 @@ Prerequisites
 -------------
 
 -  The user should be familiar with the basic use of the Eclipse IDE.
--  `Eclipse IDE <\%22http://www.eclipse.org/\%22>`__ has been installed
-   on the user's desktop or laptop.
-   *We advise to install the bundle 'Eclipse for Parallel Application
-   Developers' of a recent Eclipse release, e.g., the*\ `4.6/Neon
-   (2016) <\%22https://www.eclipse.org/neon/\%22>`__\ *or
-   the*\ `4.5/Mars
-   (2015) <\%22https://www.eclipse.org/mars/\%22>`__\ *release, as they
+-  `Eclipse`_ has been installed on the user's desktop or laptop.
+   We advise to install the bundle 'Eclipse for Parallel Application
+   Developers' of a recent Eclipse release as they
    contain a lot of other useful tools, including the 'Remote System
    Explorer' used here. On older releases or other bundles you may have
    to install the 'Remote System Explorer End-User Runtime' and 'Remote
@@ -25,13 +21,16 @@ Installing additional components
 --------------------------------
 
 In order to use Eclipse as a remote editor, you may have to install two
-extra components: the \\"Remote System Explorer End-User Runtime\" and
-the \\"Remote System Explorer User Actions\". Here is how to do this:
+extra components: the "Remote System Explorer End-User Runtime" and
+the "Remote System Explorer User Actions". Here is how to do this:
 
 #. From Eclipse's 'Help' menu, select 'Install New Software...', the
-   following dialog will appear:\ |install software|
-#. From the 'Work with:' drop down menu, select 'Neon -
-   http://download.eclipse.org/releases/neon' (or replace \\"Neon\" with
+   following dialog will appear:
+   
+   |install software|
+
+#. From the 'Work with:' drop down menu, select '<name> -
+   http://download.eclipse.org/releases/neon' (replace "<name>" by
    the name of the release that you are using). The list of available
    components is now automatically populated.
 #. From the category 'General Purpose Tools', select 'Remote System
@@ -66,9 +65,7 @@ Eclipse's SSH components can not handle private keys generated with
 PuTTY, only OpenSSH compliant private keys. However, PuTTY's key
 generator 'PuTTYgen' (that was used to generate the public/private key
 pair in the first place) can be used to convert the PuTTY private key to
-one that can be used by Eclipse. See '`How to convert a PuTTY key to
-OpenSSH
-format? <\%22/client/windows/keys-putty#PuTTY_to_OpenSSH\%22>`__'
+one that can be used by Eclipse. See ":ref:`converting PuTTY keys`".
 
 Microsoft Windows PuTTY users should now proceed with the instructions
 for all users, below.
@@ -95,7 +92,9 @@ first.
 #. From the 'Window' menu, select 'Open Perspective' and then
    'Other...', a dialog like the one below will open (the exact contents
    depends on the components installed in Eclipse).
+
    |open perspective|
+
 #. Select 'Remote System Explorer' from the list, and press 'OK', now
    the 'Remote Systems' view appears (at the left by default).
 #. In that view, right-click and select 'New' and then 'Connection' from
@@ -202,8 +201,7 @@ installed with the respective components. The information can be
 accessed by selecting 'Help Contents' from the 'Help' menu, and is
 available under 'RSE User Guide' heading.
 
-"
-
 .. |install software| image:: eclipse_as_a_remote_editor/install_software.png
 .. |open perspective| image:: eclipse_as_a_remote_editor/open_perspective.png
 
+.. include:: links.rst
