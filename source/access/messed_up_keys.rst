@@ -3,8 +3,7 @@
 Messed up keys
 ==============
 
-You can fix this yourself in a few easy steps via the `account
-management web site <\%22https://account.vscentrum.be/\%22>`__.
+You can fix this yourself in a few easy steps via the `VSC account page`_.
 
 There are two ways in which you may have messed up your keys:
 
@@ -12,8 +11,7 @@ There are two ways in which you may have messed up your keys:
    directory on the cluster were accidentally deleted, or the
    ``authorized_keys`` file was accidentally deleted:
 
-   #. Go to
-      `account.vscentrum.be <\%22https://account.vscentrum.be/\%22>`__
+   #. Go to the `VSC account page`_.
    #. Choose your institute and log in.
    #. At the top of the page, click 'Edit Account'.
    #. Press the 'Update' button on that web page.
@@ -25,9 +23,9 @@ There are two ways in which you may have messed up your keys:
 
    #. Generate a new public/private key pair. Follow the procedure
       outlined in the client sections for
-      `Linux <\%22/client/linux/keys-openssh\%22>`__,
-      `Windows <\%22/client/windows/keys-putty\%22>`__ and `macOS
-      (formerly OS X) <\%22/client/macosx/keys-openssh\%22>`__.
+      :ref:`Linux <generating keys linux>`,
+      :ref:`Windows <generating keys windows>` and :ref:`macOS
+      (formerly OS X) <generating keys macos>`.
    #. Go to
       `account.vscentrum.be <\%22https://account.vscentrum.be/\%22>`__
    #. Choose your institute and log in.
@@ -39,3 +37,5 @@ There are two ways in which you may have messed up your keys:
       which one that is, but this is not crucial.
    #. Exercise some patience, within 30 minutes, your account should be
       accessible again.
+
+.. include:: links.rst
