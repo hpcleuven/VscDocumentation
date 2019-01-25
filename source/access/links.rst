@@ -13,5 +13,6 @@
 .. _Cyberduck: https://cyberduck.io
 .. _scp manual page: http://man.openbsd.org/scp
 .. _sftp manual page: http://man.openbsd.org/sftp
+.. _ssh manual page: http://man.openbsd.org/ssh
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
 .. _Eclipse: http://www.eclipse.org/

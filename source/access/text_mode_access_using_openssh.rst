@@ -6,8 +6,7 @@ Text-mode access using OpenSSH
 Prerequisite: OpenSSH
 ---------------------
 
-See `the page on generating
-keys <\%22/client/linux/keys-openssh\%22>`__.
+See :ref:`the page on generating keys <generating keys linux>`.
 
 Connecting to the VSC clusters
 ------------------------------
@@ -30,8 +29,7 @@ Here,
    want to connect to.
 
 You can find the names and ip-addresses of the loginnodes in the
-sections on the\ `available
-hardware <\%22/infrastructure/hardware\%22>`__\ .
+sections on the :ref:`available hardware <hardware>`.
 
 The first time you make a connection to the loginnode, you will be asked
 to verify the authenticity of the loginnode, e.g.,
@@ -81,6 +79,6 @@ the X-Forwarding.
 Links
 -----
 
--  `ssh manual page <\%22http://man.openbsd.org/ssh\%22>`__ (external)
+-  `ssh manual page`_
 
-"
+.. include:: links.rst
