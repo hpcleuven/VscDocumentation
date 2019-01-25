@@ -16,3 +16,4 @@
 .. _ssh manual page: http://man.openbsd.org/ssh
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
 .. _Eclipse: http://www.eclipse.org/
+.. _JellyfiSSH: http://www.m-works.co.nz/jellyfissh.php

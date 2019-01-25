@@ -9,18 +9,15 @@ Prerequisites
 -  macOS comes with its own implementation of OpenSSH, so you don't need
    to install any third-party software to use it. Just open a Terminal
    window and jump in! Because of this, you can use the same commands as
-   specified in the `Linux client section <\%22/client/linux\%22>`__ to
+   specified in the :ref:`Linux client section <linux client>` to
    access the cluster and transfer files
-   (`ssh-keygen <\%22/client/linux/keys-openssh\%22>`__ to generate the
-   keys, `ssh <\%22/client/linux/login-openssh\%22>`__ to log on to the
-   cluster and `scp and sftp <\%22/client/linux/data-openssh\%22>`__ for
-   file transfer).
--  Optional: You can use
-   `JellyfiSSH <\%22http://www.m-works.co.nz/jellyfissh.php\%22>`__ to
+   (:ref:`ssh-keygen <generating keys linux>` to generate the
+   keys, :ref:`ssh <OpenSSH access>` to log on to the
+   cluster and :ref:`scp and sftp <scp and sftp>` for file transfer).
+-  Optional: You can use `JellyfiSSH`_ to
    store your ssh session settings. The most recent version is available
    for a small fee from the Mac App Store, but if you `google for
-   JellyfiSSH
-   4.5.2 <\%22https://www.google.be/webhp?ion=1&ie=UTF-8#q=JellyfiSSH+4.5.2\%22>`__,
+   JellyfiSSH 4.5.2 <https://www.google.be/webhp?ion=1&ie=UTF-8#q=JellyfiSSH+4.5.2>`_,
    the version used for the screenshots in this page, you can still find
    some free downloads for that version. Installation is easy: just drag
    the program's icon to the Application folder in the Finder, and
@@ -44,8 +41,7 @@ where
    want to connect to.
 
 You can find the names and ip-addresses of the loginnodes in the
-`sections of the local VSC
-clusters <\%22/infrastructure/hardware\%22>`__.
+:ref:`sections of the local VSC clusters <hardware>`.
 
 SSH will ask you to enter your passphrase.
 
@@ -57,8 +53,8 @@ to ssh. All you need to do is to add the key using
 
    $ ssh-add ~/.ssh/id_rsa
 
-(assuming that your private key that `you generated
-before <\%22/client/macosx/keys-openssh\%22>`__ is called id_rsa).
+(assuming that your private key that :ref:`you generated
+before <generating keys linux>` is called ``id_rsa``).
 
 Using JellyfiSSH for bookmarking ssh connection settings
 --------------------------------------------------------
@@ -72,7 +68,9 @@ connection settings. To do this, follow these steps:
    name' field, type in your <vsc-account>.
    In the screenshot below we have filled in the fields for a connection
    to ThinKing cluster at KU Leuven as user vsc98765.
+
    |JellyfiSSH|
+
 #. You might also want to change the Terminal window settings, which can
    be done by clicking on the icon in the lower left corner of the
    JellyfiSSH window.
@@ -83,7 +81,6 @@ connection settings. To do this, follow these steps:
    by selecting it as the 'Startup Bookmark' in the JellyfiSSH >
    Preferences menu entry.
 
-"
-
 .. |JellyfiSSH| image:: text_mode_access_using_openssh_or_jellyfissh/text_mode_access_using_openssh_or_jellyfissh_01.png 
 
+.. include:: links.rst
