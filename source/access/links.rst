@@ -11,6 +11,6 @@
 .. _Xming web site: http://www.straightrunning.com/XmingNotes/
 .. _TurboVNC download page: https://sourceforge.net/projects/turbovnc/files/
 .. _Cyberduck: https://cyberduck.io
-.. _scp manual page: ttp://man.openbsd.org/scp
+.. _scp manual page: http://man.openbsd.org/scp
 .. _sftp manual page: http://man.openbsd.org/sftp
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
