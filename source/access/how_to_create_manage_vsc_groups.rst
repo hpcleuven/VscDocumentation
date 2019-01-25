@@ -24,10 +24,8 @@ administrators. This provides a highly flexible way for users to
 organise themselves. Each VSC group has members and moderators:
 
 -  A user can become a member of a group after a moderator approves it.
-   As a regular user, you can check all groups you belong to on `the VSC
-   account management web site
-   account.vscentrum.be <\%22https://account.vscentrum.be/\%22>`__.
--  A moderator can add/delete members *and* moderators
+   As a regular user, you can check all groups you belong to on the `VSC
+   account page`_.  -  A moderator can add/delete members *and* moderators
 
    -  When you create a new group, you become both the first member and
       moderator of that group.
@@ -45,9 +43,8 @@ Managing groups
 Viewing the groups you belong to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Go to `the VSC account management web
-   site <\%22https://account.vscentrum.be/\%22>`__
--  Click on \\"View groups\"
+-  Go to the `VSC account page`_.
+-  Click on "View groups".
 
 You will in fact see that you always belong to at least two groups
 depending on the institution from which you have your VSC account.
@@ -57,9 +54,8 @@ depending on the institution from which you have your VSC account.
 Join an existing group
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Go to `the VSC account management web
-   site <\%22https://account.vscentrum.be/\%22>`__
--  Click on \\"New group\"
+-  Go to the `VSC account page`_.
+-  Click on "New group"
 -  Fill in the name of the group
 
    -  The name of the group will automatically begin with the first
@@ -77,9 +73,8 @@ Join an existing group
 Create new group
 ~~~~~~~~~~~~~~~~
 
--  Go to `the VSC account management web
-   site <\%22https://account.vscentrum.be/\%22>`__
--  Click on \\"New group\"
+-  Go to the `VSC account page`_.
+-  Click on "New group"
 -  Fill in the group name
 -  You will receive a confirmation email
 -  After the confirmation, you are now member and moderator of the new
@@ -130,4 +125,4 @@ Working with file and directory permissions
 
          [user@foo]# find /path/to/directory -type d -exec chmod g+s '{}' \\;
 
-"
+.. include:: links.rst
