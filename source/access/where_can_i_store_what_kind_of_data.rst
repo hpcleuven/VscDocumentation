@@ -6,7 +6,7 @@ Where can I store what kind of data?
 Data on the VSC clusters can be stored in several locations, depending
 on the size and usage of these data. Following locations are available:
 
--  `Home directory <\%22#Home\%22>`__
+-  :ref:`Home directory <VSC home directory>`
 
    -  Location available as $VSC_HOME
    -  The data stored here should be relatively small, and not
@@ -21,7 +21,7 @@ on the size and usage of these data. Following locations are available:
       only for yourself, i.e., 700. To share data with others, use the
       data directory.
 
--  `Data directory <\%22#Data\%22>`__
+-  :ref:`Data directory <VSC data directory>`
 
    -  Location available as $VSC_DATA
    -  A bigger 'workspace', for program code, datasets or results that
@@ -30,7 +30,7 @@ on the size and usage of these data. Following locations are available:
       performance may not be very high.
    -  Readable and writable on all VSC sites.
 
--  `Scratch directories <\%22#Scratch\%22>`__
+-  :ref:`Scratch directories <VSC scratch space>`
 
    -  Several types exist, available in $VSC_SCRATCH_XXX variables
    -  For temporary or transient data; there is typically no backup for
@@ -49,11 +49,10 @@ Quota is enabled on the three directories, which means the amount of
 data you can store here is limited by the operating system, and not just
 by the capacity of the disk system, to prevent that the disk system
 fills up accidentally. You can see your current usage and the current
-limits with the appropriate quota command as explained on the `page on
-managing disk
-space <\%22/cluster-doc/account-management/managing-disk-usage\%22>`__.
+limits with the appropriate quota command as explained on the :ref:`page on
+managing disk space <disk usage>`.
 The actual disk capacity, shared by *all* users, can be found on the
-`Available hardware <\%22/infrastructure/hardware\%22>`__ page.
+:ref:`Available hardware <hardware>` page.
 
 You will only receive a warning when you reach the soft limit of either
 quota. You will only start losing data when you reach the hard limit.
@@ -63,6 +62,8 @@ You will however not be warned when data loss occurs, so keep an eye
 open for the general quota warnings! The same holds for running jobs
 that need to write files: when you reach your hard quota, jobs will
 crash.
+
+.. _VSC home directory:
 
 Home directory
 --------------
@@ -105,6 +106,8 @@ your account. Examples are:
 |                                   | in case you need them again.      |
 +-----------------------------------+-----------------------------------+
 
+.. _VSC data directory:
+
 Data directory
 --------------
 
@@ -117,6 +120,8 @@ this volume).
 
 This directory is also a good location to share subdirectories with
 other users working on the same research projects.
+
+.. _VSC scratch space:
 
 Scratch space
 -------------
@@ -138,7 +143,7 @@ operation of the cluster.
 
 Each type of scratch has his own use:
 
--  **Shared scratch ($VSC_SCRATCH)**
+**Shared scratch ($VSC_SCRATCH)**
    To allow a job running on multiple nodes (or multiple jobs running on
    separate nodes) to share data as files, every node of the cluster
    (including the login nodes) has access to this shared scratch
@@ -155,13 +160,13 @@ Each type of scratch has his own use:
    a job to do parallel file I/O from multiple processes to the same
    file simultaneously, e.g., through MPI parallel I/O.
    For most jobs, this is the best scratch system to use.
--  **Site scratch ($VSC_SITE_SCRATCH)**
+**Site scratch ($VSC_SITE_SCRATCH)**
    A variant of the previous one, may or may not be the same. On
    clusters that have access to both a cluster-local scratch and
    site-wide scratch file system, this variable will point to the
    site-wide available scratch volume. On other sites it will just point
    to the same volume as $VSC_SCRATCH.
--  **Node scratch ($VSC_SCRATCH_NODE)**
+**Node scratch ($VSC_SCRATCH_NODE)**
    Every node has its own scratch space, which is completely separated
    from the other nodes. On many cluster nodes, this space is provided
    by a local hard drive or SSD. Every job automatically gets its own
@@ -174,10 +179,8 @@ Each type of scratch has his own use:
    And on a supercomputer, a local hard disk may not be faster than a
    remote file system which often has tens or hundreds of drives working
    together to provide disk capacity.
--  **Global scratch ($VSC_SCRATCH_GLOBAL)
-   **\ We may or may not implement a VSC-wide scratch volume in the
+**Global scratch ($VSC_SCRATCH_GLOBAL)**
+   We may or may not implement a VSC-wide scratch volume in the
    future, and the environment variable VSC_SCRATCH_GLOBAL is reserved
    to point to that scratch volume. Currently is just points to the same
    volume as $VSC_SCRATCH or $VSC_SITE_SCRATCH.
-
-"
