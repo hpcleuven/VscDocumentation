@@ -73,7 +73,7 @@ implementations:
       MPI 5.1 (intel/2016a and intel/2016b toolchains) implement the
       MPI-3.0 specification
 
-#. :ref:`Open MPI`
+#. :ref:`Open MPI <Open MPI>`
    in the foss toolchain
 
    #. Open MPI 1.6 (foss/2014a toolchain) only implements the MPI-2.1
@@ -90,8 +90,8 @@ monitoring).
 
 Specialised hardware sometimes requires specialised MPI-libraries.
 
--  The interconnect in\ `Cerebro, the SGI UV shared memory machine at KU
-   Leuven <\%22/infrastructure/hardware/hardware-kul#Cerebro\%22>`__\ ,
+-  The interconnect in :ref:`Cerebro, the SGI UV shared memory machine at KU
+   Leuven <hardware>`,
    provides hardware acceleration for some MPI functions. To take full
    advantage of the interconnect, it is necessary to use the SGI MPI
    library, part of the MPT packages which stands for Message Passing
