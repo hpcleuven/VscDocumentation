@@ -224,14 +224,10 @@ Intel documentation on hybrid programming
 Some documents on the Intel web site that contain more information on
 developing and running hybrid programs:
 
--  \\"\ `Interoperability with OpenMP
-   API <\%22https://software.intel.com/en-us/node/528819\%22>`__\\" in
-   `the MPI Reference
-   Manual <\%22https://software.intel.com/en-us/articles/intel-mpi-library-documentation\%22>`__
+-  `Interoperability with OpenMP API`_ in the `MPI Reference Manual`_
    explains the concept of MPI domains and how they should be used/set
    for hybrid programs.
--  `Beginning Hybrid MPI/OpenMP
-   Development <\%22https://software.intel.com/en-us/articles/beginning-hybrid-mpiopenmp-development\%22>`__,
+-  `Beginning Hybrid MPI/OpenMP Development`_,
    useful if you develop your own code.
 
 Foss toolchain (GCC and Open MPI)
@@ -285,15 +281,11 @@ influence this process:
    binding.
 
 More information can be found in the manual pages for ``mpirun`` which
-can be found on `the Open MPI web
-pages <\%22https://www.open-mpi.org/doc/\%22>`__ and in the following
+can be found on the Open MPI webpages `Open MPI Documentation`_ and in the following
 presentations:
 
--  `Poster paper \\"Locality-Aware Parallel Process Mapping for
-   Multi-Core HPC
-   Systems\" <\%22http://faculty.cs.uwlax.edu/%7Ejjhursey/papers/2011/hursey-cluster-poster-2011.pdf\%22>`__
--  `Slides from the presentation \\"Open MPI Explorations in Process
-   Affinity\" from
-   EuroMPI'13 <\%22https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation\%22>`__
+-  Poster paper \\"`Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems`_\" 
+-  Slides from the presentation \\"`Open MPI Explorations in Process Affinity`_\" from EuroMPI'13 
 
+.. include:: links.rst
 "

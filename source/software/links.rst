@@ -13,3 +13,8 @@
 .. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
 .. _LLNL openMP tutorial: https://computing.llnl.gov/tutorials/openMP
+.. _Interoperability with OpenMP API: https://software.intel.com/en-us/node/528819
+.. _MPI Reference Manual: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
+.. _Beginning Hybrid MPI/OpenMP Development: https://software.intel.com/en-us/articles/beginning-hybrid-mpiopenmp-development
+.. _Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems: http://faculty.cs.uwlax.edu/%7Ejjhursey/papers/2011/hursey-cluster-poster-2011.pdf
+.. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
