@@ -35,9 +35,7 @@ Implementations
 
 On the VSC clusters, the following compilers support OpenMP:
 
-#. `Intel
-   compilers <\%22/cluster-doc/development/toolchain-intel#intel-openmp\%22>`__
-   in the intel toolchain
+#.  :ref:`Intel compilers <Intel OpenMP>` in the intel toolchain
 
    #. The Intel compiler version 13.1 (intel/2014a and intel/2014b
       toolchains) implement the OpenMP 3.1 specification
@@ -55,8 +53,7 @@ On the VSC clusters, the following compilers support OpenMP:
       toolchains) offers almost complete OpenMP 4.0 support.
       User-defined reductions are now also supported.
 
-#. `GCC <\%22/cluster-doc/development/toolchain-foss#foss-openmp\%22>`__
-   in the foss toolchain
+#. :ref:`GCC OpenMP` in the foss toolchain
 
    #. GCC versions 4.8.2 (foss/2014a toolchain) and 4.8.3 (foss/2014b
       toolchain) support the OpenMP 3.1 specification.
@@ -76,14 +73,13 @@ the toolchain. The GCC OpenMP runtime is for most applications inferior
 to the Intel implementation.
 
 We also assume you are already familiar with the job submission
-procedure. If not, check the \\"\ `Running
-jobs <\%22/cluster-doc/running-jobs\%22>`__\\" section first.
+procedure. If not, check the :ref:`Running jobs` section first.
 
 Compiling OpenMP code
 ---------------------
 
-See the instructions on the `page about
-toolchains <\%22/cluster-doc/development/toolchains\%22>`__ for
+See the instructions on the page about
+:ref:`toolchains <Toolchains>` for
 compiling OpenMP code with the Intel and GNU compilers.
 
 Note that it is in fact possible to link OpenMP object code compiled
@@ -102,8 +98,7 @@ submitting a job to the queue system, remember to request a single node
 (i.e., ``-l nodes=1``) and as many processors as you need parallel
 threads (e.g., ``-l ppn=4``). The latter should not exceed the number of
 cores on the machine the job runs on. For relevant hardware information,
-please consult the `list of available
-hardware <\%22/infrastructure/hardware\%22>`__.
+please consult the list of available :ref:`hardware <hardware>`.
 
 You may have to set the number of cores that the program should use by
 hand, e.g., when you don't use all cores on a node, because the
@@ -118,15 +113,12 @@ and access to the CPU and thus lower performance.
 Further information
 -------------------
 
--  `OpenMP.org <\%22https://www.openmp.org\%22>`__ contains the
+-  `OpenMP`_ contains the
    specifications and some documentation. It is the web site of the
    OpenMP Architecture Review Board where the standard is discussed.
--  See also the pages in the `tutorials
-   section <\%22/support/tut-book\%22>`__, e.g. for
-   `books <\%22/support/tut-book/books#OpenMP\%22>`__ and `online
-   tutorials <\%22/support/tut-book/web-tutorials\%22>`__. The `tutorial
-   at the site of Lawrence Livermore National
-   Laboratory <\%22https://computing.llnl.gov/tutorials/openMP/\%22>`__
-   (LLNL) is highly recommended.
+-  See also the pages in the :ref:`tutorials section <books>` and :ref:`online
+   tutorials <web tutorials>`. 
+The tutorial at the site of Lawrence Livermore National Laboratory `LLNL openMP tutorial`_ (LLNL) is highly recommended.
 
+.. include:: links.rst
 "

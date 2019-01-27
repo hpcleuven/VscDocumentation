@@ -36,6 +36,8 @@ Documentation on GCC compiler flags and options is available on the
 `project's website <\%22http://gcc.gnu.org/onlinedocs/\%22>`__. Do not
 forget to load the toolchain module first!
 
+.. _GCC OPenMP:
+
 GCC OpenMP
 ~~~~~~~~~~
 
