@@ -30,3 +30,5 @@
 .. _FFTW: http://www.fftw.org/
 .. _FFTW documentation: http://www.fftw.org/#documentation
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
+.. _MKL Link Line Advisor: https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
+.. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation

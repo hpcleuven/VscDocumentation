@@ -40,10 +40,9 @@ executable ``fluid`` with architecture specific optimization, use:
 
    $ ifort -O2 -xhost -o fluid fluid.f90
 
-For documentation on available compiler options, we refer to the `links
-to the Intel documentation at the bottom of this
-page <\%22#FurtherInfo\%22>`__. Do not forget to *load the toolchain
-module* first!
+For documentation on available compiler options, we refer to the :ref:`links
+to the Intel documentation at the bottom of this page <Intel documentation>`.
+Do not forget to *load the toolchain module* first!
 
 .. _Intel OpenMP:
 
@@ -94,8 +93,8 @@ For example, to compile/link a C program ``thermo.c`` to an executable
 
    $ mpiicc -O2 -xhost -o thermodynamics thermo.c
 
-For further documentation, we refer to `the links to the Intel
-documentation at the bottom of this page <\%22#FurtherInfo\%22>`__. Do
+For further documentation, we refer to :ref:`the links to the Intel
+documentation at the bottom of this page <Intel documentation>`. Do
 not forget to *load the toolchain module* first.
 
 Running an MPI program with Intel MPI
@@ -126,9 +125,9 @@ The Intel Math Kernel Library (MKL) is a comprehensive collection of
 highly optimized libraries that form the core of many scientific HPC
 codes. Among other functionality, it offers:
 
--  BLAS (Basic Linear Algebra Subsystem), and extensions to sparse
+-  BLAS (Basic Linear Algebra Subprograms), and extensions to sparse
    matrices
--  Lapack (Linear algebra package) and ScaLAPACK (the distributed memory
+-  LAPACK (Linear Algebra PACKage) and ScaLAPACK (the distributed memory
    version)
 -  FFT-routines including routines compatible with the FFTW2 and FFTW3
    libraries (Fastest Fourier Transform in the West)
@@ -136,8 +135,8 @@ codes. Among other functionality, it offers:
    for the vector instruction sets of all recent Intel processor
    families
 
-For further documentation, we refer to `the links to the Intel
-documentation at the bottom of this page <\%22#FurtherInfo\%22>`__.
+For further documentation, we refer to :ref:`the links to the Intel
+documentation at the bottom of this page <Intel documentatino>`.
 
 There are two ways to link the MKL library:
 
@@ -153,12 +152,10 @@ There are two ways to link the MKL library:
 
    The Fortran95 interface library for lapack is not automatically
    included though. You'll have to specify that library seperately. You
-   can get the value from the `MKL Link Line
-   Advisor <\%22https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor\%22>`__,
+   can get the value from the `MKL Link Line Advisor`_,
    see also the next item.
 -  Or you can specify all libraries explictly. To do this, it is
-   strongly recommended to use Intel's `MKL Link Line
-   Advisor <\%22https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/\%22>`__,
+   strongly recommended to use Intel's `MKL Link Line Advisor`_,
    and will also tell you how to link the MKL library with code
    generated with the GNU and PGI compilers.
    **Note:** On most VSC systems, the variable MKLROOT has a different
@@ -196,43 +193,44 @@ Intel toolchain version numbers
 | tils |      |      |      |      |      |      |      |      |      |
 +------+------+------+------+------+------+------+------+------+------+
 
+.. _Intel documentation:
+
 Further information on Intel tools
 ----------------------------------
 
 -  All Intel documentation of recent software versions is available in
-   the `Intel Software Documentation
-   Library <\%22https://software.intel.com/en-us/documentation\%22>`__.
+   the `Intel Software Documentation Library`_
    The documentation is typically available for the most recent version
    and sometimes one older version of te compiler and libraries.
 -  Some other useful documents:
 
    -  `Step by Step Performance Optimization with Intel® C++
-      Compiler <\%22https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler\%22>`__.
+      Compiler <https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler>`_.
       Despite the title, the remarks also hold for the C and Fortran
       compilers.
    -  `Direct link to the C/C++ compiler 15.0 user and reference
-      guide <\%22https://software.intel.com/en-us/compiler_15.0_ug_c\%22>`__
+      guide <https://software.intel.com/en-us/compiler_15.0_ug_c>`_
       (2015a and 2015b toolchains)
    -  `Direct link to the C/C++ compiler 16.0 user and reference
-      guide <\%22https://software.intel.com/en-us/intel-cplusplus-compiler-16.0-user-and-reference-guide\%22>`__
+      guide <https://software.intel.com/en-us/intel-cplusplus-compiler-16.0-user-and-reference-guide\%22>`_
       (2016a and 2016b toolchains)
    -  `Direct link to the Fortran compiler 16.0 user and reference
-      guide <\%22https://software.intel.com/en-us/intel-fortran-compiler-16.0-user-and-reference-guide\%22>`__
+      guide <https://software.intel.com/en-us/intel-fortran-compiler-16.0-user-and-reference-guide>`_
       (2016a and 2016b toolchains)
    -  `Page with links to the documentation of the most recent version
       of Intel
-      MPI <\%22https://software.intel.com/en-us/articles/intel-mpi-library-documentation\%22>`__
+      MPI <https://software.intel.com/en-us/articles/intel-mpi-library-documentation>`_
 
 -  MKL
 
    -  `Link page to the documentation of MKL 11.2/11.3 on the Intel web
-      site <\%22https://software.intel.com/en-us/articles/intel-math-kernel-library-documentation/\%22>`__
+      site <https://software.intel.com/en-us/articles/intel-math-kernel-library-documentation/>`_
       (toolchains 2015a till 2016b)
    -  `MKL Link Line
-      Advisor <\%22https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor\%22>`__
+      Advisor <https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor>`_
 
 -  `Generic BLAS/LAPACK/ScaLAPACK
-   documentation <\%22/cluster-doc/development/blas-lapack#Links\%22>`__
+   documentation <BLAS and LAPACK>`
 
 
  .. index::
