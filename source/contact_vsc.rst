@@ -10,8 +10,8 @@ Technical support
 
 .. include:: user_support_addresses.rst
 
-Please also take a look at our `web page about technical
-support <\%22/support/contact-support\%22>`__. It contains a lot of tips
+Please also take a look at our :ref:`web page about technical
+support <user support VSC>`. It contains a lot of tips
 about the information that you can pass to us with your support question
 so that we can provide a helpful answer faster.
 

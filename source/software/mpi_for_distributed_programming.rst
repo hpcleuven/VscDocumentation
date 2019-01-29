@@ -4,13 +4,13 @@ MPI distributed programming
 Purpose
 -------
 
-MPI is a language-independent communications protocol used to program
-parallel computers. Both point-to-point and collective communication are
-supported. MPI \\"is a message-passing application programmer interface,
-together with protocol and semantic specifications for how its features
-must behave in any implementation.\" MPI's goals are high performance,
-scalability, and portability. MPI remains the dominant model used in
-high-performance computing today.
+MPI (Message Passing Interface) is a language-independent communications
+protocol used to program parallel computers. Both point-to-point and
+collective communication are supported. MPI "is a message-passing application
+programmer interface, together with protocol and semantic specifications for
+how its features must behave in any implementation." MPI's goals are high
+performance, scalability, and portability. MPI remains the dominant model
+used in high-performance computing today.
 
 The current version of the MPI standard is 3.0, but only the newest
 implementations implement the full standard. The previous specifications
@@ -32,8 +32,7 @@ neighbourhood collectives on graph topologies. The first update of the
 MPI-3.1 specification was released in 2015, and work is ongoing on the
 next major update, MPI-4.0.
 
-The two dominant Open Source implementations are `Open
-MPI`_ and
+The two dominant Open Source implementations are `Open MPI`_ and
 `MPICH`_. The latter has been through
 a couple of name changes: It was originally conceived in the early '90's
 as MPICH, then the complete rewrite was renamed to MPICH2, but as this
@@ -104,7 +103,7 @@ Specialised hardware sometimes requires specialised MPI-libraries.
       contains the SGI MPI 1.7 library which implements the MPI-2.2
       specification.
    -  SGI MPT 2.10 (not yet installed, contact :ref:`KU Leuven
-      support <tech support VSC>`) contains the SGI
+      support <user support VSC>`) contains the SGI
       MPI 1.8 library which implements the MPI-3.0 specification.
 
 Several other implementations may be installed, e.g., `MVAPICH`_, but we assume

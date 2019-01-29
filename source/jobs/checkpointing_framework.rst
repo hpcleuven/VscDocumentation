@@ -139,7 +139,7 @@ Support for csub
    checkpointing MPI applications. However, checkpointing MPI
    applications is pretty much untested up until now. If you would like
    to use csub with your MPI applications, please :ref:`contact user
-   support <contact user support>`.
+   support <user support VSC>`.
 
 Notes
 -----
