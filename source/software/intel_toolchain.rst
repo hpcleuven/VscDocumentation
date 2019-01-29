@@ -212,7 +212,7 @@ Further information on Intel tools
       guide <https://software.intel.com/en-us/compiler_15.0_ug_c>`_
       (2015a and 2015b toolchains)
    -  `Direct link to the C/C++ compiler 16.0 user and reference
-      guide <https://software.intel.com/en-us/intel-cplusplus-compiler-16.0-user-and-reference-guide\%22>`_
+      guide <https://software.intel.com/en-us/intel-cplusplus-compiler-16.0-user-and-reference-guide>`_
       (2016a and 2016b toolchains)
    -  `Direct link to the Fortran compiler 16.0 user and reference
       guide <https://software.intel.com/en-us/intel-fortran-compiler-16.0-user-and-reference-guide>`_
