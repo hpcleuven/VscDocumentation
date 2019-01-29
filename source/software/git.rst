@@ -1,4 +1,6 @@
-Git
+.. _git:
+
+git
 ===
 
 This tutorial explains some of the basic use of the git command line
@@ -15,11 +17,11 @@ config.
 
 ::
 
-   git config --global user.name \"Kurt Lust\"
+   git config --global user.name "Kurt Lust"
    git config --global user.email kurt.lust@uantwerpen.be
    git config --global core.editor vi
 
-These settings are stored in the file .gitconfig in your home directory
+These settings are stored in the file ``.gitconfig`` in your home directory
 (OS X, Linux, Cygwin). The file is a simple user-editable text file.
 
 Some remarks on accessing a remote repository using command line tools
@@ -39,7 +41,7 @@ ask for the password. This can be solved by using a credential manager
 in recent versions of the git client (1.7.9 and newer).
 
 -  On Windows, the `Git Credential Manager for
-   Windows <\%22https://github.com/Microsoft/Git-Credential-Manager-for-Windows\%22>`__
+   Windows <https://github.com/Microsoft/Git-Credential-Manager-for-Windows>`_
    can be used to safely store your password in the Windows credential
    store.
 -  The Apple OS X version of git comes with the credential manager comes
@@ -314,17 +316,12 @@ suggest you check out the following links:
 
 -  There are some good books about git freely available on the internet:
 
-   -  `Git Pro <\%22https://git-scm.com/book/en/v2\%22>`__
-   -  `Git
-      Workflows <\%22http://documentup.com/skwp/git-workflows-book\%22>`__
-   -  `PeepCode Git
-      Internals <\%22https://github.com/pluralsight/git-internals-pdf/releases\%22>`__
+   -  `Git Pro <https://git-scm.com/book/en/v2>`_
+   -  `Git Workflows <http://documentup.com/skwp/git-workflows-book>`_
+   -  `PeepCode Git Internals <https://github.com/pluralsight/git-internals-pdf/releases>`_
 
 -  There is also a `full command reference available on the
-   web <\%22https://git-scm.com/docs\%22>`__ for the command-line git
+   web <https://git-scm.com/docs>`_ for the command-line git
    tool.
 -  And you can also find good git tutorials on the web, e.g., on `the
-   \\"External Links\" page of the main git web
-   site <\%22https://git-scm.com/doc/ext\%22>`__.
-
-"
+   "External Links" page of the main git web site <https://git-scm.com/doc/ext>`_.
