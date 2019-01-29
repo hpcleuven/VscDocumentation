@@ -23,7 +23,7 @@ adjust anything, except for the command used to submit your job.
 Checkpointing does not require any changes to the application you are
 running, and should support most software. There are a few corner cases
 however (see `the BLCR Frequently Asked
-Questions <\%22https://upc-bugs.lbl.gov/blcr/doc/html/FAQ.html\%22>`__).
+Questions <https://upc-bugs.lbl.gov/blcr/doc/html/FAQ.html>`_).
 
 The csub command
 ----------------
@@ -138,8 +138,8 @@ Support for csub
    The BLCR checkpointing mechanism behind csub has support for
    checkpointing MPI applications. However, checkpointing MPI
    applications is pretty much untested up until now. If you would like
-   to use csub with your MPI applications, please `contact user
-   support <\%22/support/contact-support\%22>`__.
+   to use csub with your MPI applications, please :ref:`contact user
+   support <contact user support>`.
 
 Notes
 -----
@@ -150,5 +150,3 @@ prepend the main command in your job script with time, e.g.: **time
 the time passes between two checkpointed subjobs. However, the *user*
 time should give a good indication of the actual time it took to run
 your command, even if multiple checkpoints were performed.
-
-"
