@@ -156,8 +156,6 @@ settings, e.g., the '.project' file. Whether or not you wish to store
 these settings in the repository depends on your setup, but probably you
 don't.
 
-"
-
 .. |Eclipse SVN checkout| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_checkout.png
 .. |Eclipse SVN private key| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_private_key.png
 .. |Eclipse SVN resource| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_resource.png
