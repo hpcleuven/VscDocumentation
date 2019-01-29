@@ -6,9 +6,8 @@ Setting up the environment using Lmod at the HPC-UGent clusters
 | To set up your environment for using a particular (set of) software
   package(s), you can use the modules that are provided centrally.
 | On the Tier-2 of UGent and VUB, interacting with the modules is done
-  via `Lmod <\%22http://lmod.readthedocs.io/en/latest/\%22>`__ (since
-  August 2016), using the ``module`` command or the handy shortcut
-  command ``ml``.
+  via `Lmod`_ (since August 2016), using the ``module`` command or the
+  handy shortcut command ``ml``.
 
 Quick introduction
 ------------------
@@ -294,8 +293,8 @@ different version of Python in the same session/job script; neither
 directly, nor indirectly as a dependency of another module you want to
 load.
 
-See also `the topic \\"module conflicts\" in the list of key differences
-with the previously used module system <\%22#module_conflicts\%22>`__.
+See also :ref:`the topic "module conflicts" in the list of key differences
+with the previously used module system <Lmod key differences>`.
 
 --------------
 
@@ -364,9 +363,9 @@ are required for submitting jobs and interfacing with the cluster
 resource manager ( ``qsub``, ``qstat``, ...).
 
 As such, you should **not** (re)load the ``cluster`` module anymore
-after running ``ml purge``. See also `the topic on the purge command in
+after running ``ml purge``. See also :ref:`the topic on the purge command in
 the list of key differences with the previously used module
-implementation <\%22#module_load_cluster\%22>`__.
+implementation <Lmod key differences>`.
 
 --------------
 
@@ -414,15 +413,11 @@ To remove a module collection, remove the corresponding entry in
 Lmod vs Tcl-based environment modules
 -------------------------------------
 
-In August 2016, we switched to
-`Lmod <\%22https://www.tacc.utexas.edu/research-development/tacc-projects/lmod\%22>`__
-as a modules tool, a modern alternative to the outdated & no longer
-actively maintained `Tcl-based environment modules
-tool <\%22http://modules.sourceforge.net\%22>`__.
+In August 2016, we switched to `Lmod`_
+as a modules tool, an alternative to the `environment modules
+tool <http://modules.sourceforge.net/>`_.
 
-Consult the `Lmod documentation web
-site <\%22http://lmod.readthedocs.io/en/latest/\%22>`__ for more
-information.
+Consult the `Lmod documentation`_ web site for more information.
 
 --------------
 
@@ -554,19 +549,11 @@ by the ``lmod`` command.
 
    export EASYBUILD_MODULES_TOOL=Lmod
 
-See `the EasyBuild
-documentation <\%22http://easybuild.readthedocs.io/en/latest/Configuration.html#supported-configuration-types\%22>`__
+See `the EasyBuild documentation
+<http://easybuild.readthedocs.io/en/latest/Configuration.html#supported-configuration-types>`_
 for other ways of configuring EasyBuild to use Lmod.
 
 You should not be using ``lmod`` directly in other circumstances, use
 either ``ml`` or ``module`` instead.
 
-Questions or problems
----------------------
-
-In case of questions or problems, please do not hesitate to contact the
-support HPC team. HPC-UGent support team can be reached via
-`hpc@ugent.be <\%22mailto:hpc@ugent.be\%22>`__. The HPC-VUB support team
-can be reached via `hpc@vub.ac.be <\%22mailto:hpc@ugent.be\%22>`__.
-
-"
+.. include:: ../jobs/links.rst
