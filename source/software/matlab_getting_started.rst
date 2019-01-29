@@ -373,3 +373,5 @@ More info on the MATLAB Compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Matlab compiler documentation`_ on the Mathworks website. 
+
+.. include:: links.rst

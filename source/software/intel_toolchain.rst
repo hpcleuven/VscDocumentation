@@ -241,3 +241,5 @@ Further information on Intel tools
     single: MKL
     single: BLAS
     single: LAPACK
+
+.. include:: links.rst

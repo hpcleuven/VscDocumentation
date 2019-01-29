@@ -170,3 +170,5 @@ Further information on FOSS components
     single: MPI
     single: OpenMP
     single: Open MPI
+
+.. include:: links.rst
