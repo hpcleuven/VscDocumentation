@@ -35,7 +35,7 @@ Reference Fortran implementations do exist, so you can always recompile
 code using these libraries on systems on which the libraries are not
 available.
 
-Blas and Lapack at the VSC
+BLAS and LAPACK at the VSC
 --------------------------
 
 We provide BLAS and LAPACK routines through the toolchains. Hence the
