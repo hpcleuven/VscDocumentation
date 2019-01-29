@@ -1,3 +1,5 @@
+.. _job failure:
+
 What if jobs fail after starting successfully?
 ==============================================
 
@@ -11,20 +13,21 @@ your home directory. When it fails to do so, the program will crash, and
 you won't get feedback, since that feedback would be in the error file
 that can't be written.
 
-See the FAQs listed below to `check the amount of disk
-space <\%22/cluster-doc/account-management/managing-disk-usage\%22>`__
-you are currently using, and for a few hints on `what data to store
-where <\%22/cluster-doc/access-data-transfer/where-store-data\%22>`__.
+See the FAQs listed below to :ref:`check the amount of disk
+space <disk usage>` you are currently using, and for a few hints on
+:ref:`what data to store where <data location>`.
 
 However, your home directory may unexpectedly fill up in two ways:
 
-#. a running program produces `large amounts of output or
-   errors <\%22#large_files\%22>`__;
-#. a program crashes and produces a `core dump <\%22#cores\%22>`__.
+#. a running program produces :ref:`large amounts of output or
+   errors <large output>`;
+#. a program crashes and produces a :ref:`core dump <core dump>`.
 
 Note that one job that produces output or a core that is too large for
 the file system quota will most probably cause all your jobs that are
 queued to fail.
+
+.. _large output:
 
 Large amounts of output or errors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,6 +64,8 @@ If you don't care for the standard output, simply write:
 
    my-prog >/dev/null
 
+.. _core dump:
+
 Core dump
 ~~~~~~~~~
 
@@ -72,7 +77,5 @@ for post-mortem analysis, simply add:
 
    ulimit -c 0
 
-to your .bashrc file. This can be done more selectively by adding this
+to your ``.bashrc`` file. This can be done more selectively by adding this
 line to your PBS script prior to invoking your program.
-
-"

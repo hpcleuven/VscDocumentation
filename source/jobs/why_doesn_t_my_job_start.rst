@@ -30,9 +30,7 @@ Different clusters use different policies as some clusters are optimised
 for a particular type of job.
 
 To get an idea when your job might start, you could try MOAB's
-'showstart' command as described in the page on \\"\ `Submitting and
-managing jobs with Torque and
-Moab <\%22/cluster-doc/running-jobs/submitting-managing-jobs\%22>`__\\".
+'showstart' command as described in the page on ":ref:`submitting jobs`".
 
 Also, don't try to outsmart the scheduler by explicitly specifying nodes
 that seem empty when you launch your job. The scheduler may be saving
@@ -47,5 +45,3 @@ queue, but this type of calculation is atypical from a HPC perspective.
 If you have large batches of (even relatively short) sequential jobs,
 you can still pack them as longer sequential or even parallel jobs and
 get to run them sooner. User support can help you with that.
-
-"
