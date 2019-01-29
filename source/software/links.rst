@@ -33,3 +33,4 @@
 .. _MKL Link Line Advisor: https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
 .. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation
 .. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
+.. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/

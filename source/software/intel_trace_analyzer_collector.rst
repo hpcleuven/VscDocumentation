@@ -77,8 +77,4 @@ however, more sophisticated options are available.
 Further information
 -------------------
 
-Intel provides `product
-documentation <\%22https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/\%22>`__
-for ITAC.
-
-"
+Intel's `ITAC documentation`_
