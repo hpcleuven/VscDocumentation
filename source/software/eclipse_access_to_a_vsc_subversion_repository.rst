@@ -22,7 +22,7 @@ have to be installed in Eclipse.
    startup screen.
 #. From the 'Help' menu, select 'Install New Software...'.
 #. From the 'Work with' drop down menu, select 'Neon -
-   http://download.eclipse.org/releases/neon' (where Neon is the name of
+   ``http://download.eclipse.org/releases/neon``' (where Neon is the name of
    the release, see the first step). This will populate the components
    list.
 #. Expand 'Collaboration' and check the box for 'Subversive SVN Team
@@ -33,17 +33,17 @@ have to be installed in Eclipse.
 #. When Eclipse prompts you to restart it, do so by clicking 'Restart
    Now'
 #. An additional component is needed (an SVN Team Provider), however, To
-   trigger the install, open the Eclipse \\"Preferences\" menu (under
-   the \\"File\" menu, or under \\"Eclipse\" on OS X) and go to
-   \\"Team\" and then \\"SVN\"
-#. Select the tab \\"SVN connector\"
+   trigger the install, open the Eclipse "Preferences" menu (under
+   the "File" menu, or under "Eclipse" on macOS) and go to
+   "Team" and then "SVN"
+#. Select the tab "SVN connector"
 #. Then click on \\"Get Connectors\" to open the 'Subversive Connectors
    Discovery' dialog.
    *You will not see this button if there is already a connector
    installed. If you need a different one, you can still install one via
-   \\"Install new software\" in the \\"Help\" menu. Search for
-   \\"SVNKit\" for connectors that don't need any additional software on
-   the system (our preference), or \\"JavaHL\" for another family that
+   "Install new software" in the "Help" menu. Search for
+   "SVNKit" for connectors that don't need any additional software on
+   the system (our preference), or "JavaHL" for another family that
    connects to the original implementation. Proceed in a similar way as
    below (step 13).*
 #. The easiest choice is to use one of the \\"SVN Kit\" connectors as
@@ -62,8 +62,8 @@ have to be installed in Eclipse.
       instead, make sure that you have subversion binaries including the
       Java bindings installed on your system, and pick the matching
       version of the connector. Also see the `JavaHL subclipse Wiki
-      page <\%22http://subclipse.tigris.org/wiki/JavaHL\%22>`__ of the
-      `tigris.org community <\%22http://www.tigris.org/\%22>`__.
+      page <http://subclipse.tigris.org/wiki/JavaHL>`_ of the
+      `tigris.org community <http://www.tigris.org/>`_.
 
 #. Mark the checkbox next to the appropriate version of 'SVN Kit' and
    click 'Next >'.
@@ -86,11 +86,8 @@ Eclipse's SSH components can not handle private keys generated with
 PuTTY, only OpenSSH compliant private keys. However, PuTTY's key
 generator 'PuTTYgen' (that was used to generate the public/private key
 pair in the first place) can be used to convert the PuTTY private key to
-one that can be used by Eclipse. See the section `converting PuTTY keys
-to OpenSSH
-format <\%22/client/windows/keys-putty#PuTTY_to_OpenSSH\%22>`__ in the
-`page on generating keys with
-PyTTY <\%22/client/windows/keys-putty\%22>`__ for details if necessary.
+one that can be used by Eclipse. See the section :ref:`converting PuTTY keys
+to OpenSSH format <converting PuTTY keys>` for details if necessary.
 
 Checking out a project from a VSC cluster repository
 ----------------------------------------------------
@@ -102,8 +99,9 @@ Eclipse 'Import' feature (don't ask...).
 
    svn+ssh://userid@vsc.login.node/data/leuven/300/vsc30000/svn-repo
 
-| |\\"Eclipse|
-| In the 'User' field, enter your VSC user ID.
+|Eclipse SVN checkout|
+
+In the 'User' field, enter your VSC user ID.
 
 -  Switch to the 'SSH' tab of this dialog, and select 'Private key' for
    authentication. Use the 'Browse' button to find the appropriate
@@ -111,16 +109,22 @@ Eclipse 'Import' feature (don't ask...).
    should be a private key in OpenSSH format. Also enter the passphrase
    for your private key. If you wish, you can store your passphrase here
    at this point, but this may pose a security risk.
-   |\\"Eclipse|
+
+   |Eclipse SVN private key|
+
 -  You will be prompted to select a resource to be checked out, click
    the 'Browse' button and select the project you want to check out.
    Remember that if you use the recommended repository layout, you will
    probably want to check out the project's 'trunk'. Click 'Finish'.
-   |\\"Eclipse|
+
+   |Eclipse SVN resource|
+
 -  The 'Check Out As' dialog offers several options, select the
    'Checkout as a project with the name specified' and click 'Finish'
+
    and click 'Finish' to proceed with the check out.
-   |\\"Eclipse|
+   
+   |Eclipse SVN checkout as|
 
 Note that Eclipse remembers repository URLs, hence checking out another
 project from the same repository will skip quite a number of the steps
@@ -136,8 +140,8 @@ actions can be performed by right clicking on the project or specific
 files in the 'Project Explorer' view and choosing the appropriate action
 from the 'Team' entry in the context menu. The menu items are fairly
 self-explanatory, but you may want to read the section on
-`TortoiseSVN <\%22/client/windows/tortoisesvn\%22>`__ since Eclipse's
-version control interface is very akin to the former.
+:ref:`TortoiseSVN` since Eclipse's version control interface is very akin
+to the former.
 
 Note that files and directories displayed in the 'Project Explorer' view
 are now decorated to indicate version control status. A '>' preceeding a
@@ -154,8 +158,9 @@ don't.
 
 "
 
-.. |\\"Eclipse| image:: \%22/assets/199\%22
-.. |\\"Eclipse| image:: \%22/assets/201\%22
-.. |\\"Eclipse| image:: \%22/assets/203\%22
-.. |\\"Eclipse| image:: \%22/assets/205\%22
+.. |Eclipse SVN checkout| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_checkout.png
+.. |Eclipse SVN private key| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_private_key.png
+.. |Eclipse SVN resource| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_resource.png
+.. |Eclipse SVN checkout as| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_checkout_as.png
 
+.. include:: links.rst

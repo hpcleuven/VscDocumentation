@@ -3,8 +3,8 @@
 Eclipse with PTP and version control
 ====================================
 
-*If you're not familiar with Eclipse, read*\ `our introduction
-page <\%22/client/multiplatform/eclipse-intro\%22>`__\ *first.*
+*If you're not familiar with Eclipse, read :ref:`our introduction
+page <Eclipse intro>` first.*
 
 Eclipse also supports several version control systems out of the box or
 through optional plug-ins.
@@ -41,5 +41,3 @@ fact is a regular git repository, but stored in a different subdirectory
 rather than the standard .git subdirectory. So you can still have a
 standard Git repository besides it and they will not interfere if you
 follow the guidelines on this page.
-
-"
