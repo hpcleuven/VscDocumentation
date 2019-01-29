@@ -33,8 +33,8 @@ processors that support AVX instructions, use:
    $ gfortran -O2 -march=corei7-avx -o fluid fluid.f90
 
 Documentation on GCC compiler flags and options is available on the
-`project's website <\%22http://gcc.gnu.org/onlinedocs/\%22>`__. Do not
-forget to load the toolchain module first!
+project's website for the `GCC documentation`_. Do not forget to load the
+toolchain module first!
 
 .. _GCC OPenMP:
 
@@ -58,8 +58,7 @@ number of cores on a compute node.
 
 Note that the OpenMP runtime library used by GCC is of inferior quality
 when compared to Intel's, so developers are strongly encouraged to use
-the ```intel`` toolchain <\%22#intel-toolchain\%22>`__ when
-developing/building OpenMP software.
+the :ref:`Intel toolchain` when developing/building OpenMP software.
 
 .. _Open MPI:
 
@@ -89,9 +88,8 @@ instruction set, use:
 
    $ mpicc -O2 -march=corei7-avx -o thermodynamics thermo.c
 
-Extensive documentation is `provided on the Open MPI project's
-website <\%22https://www.open-mpi.org/doc/\%22>`__. Do not forget to
-load the toolchain module first.
+Extensive documentation is provided on the `Open MPI documentation`_ site.
+Do not forget to load the toolchain module first.
 
 Running an Open MPI program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,13 +115,10 @@ FOSS mathematical libraries
 The foss toolchain contains the basic HPC mathematical libraries, it
 offers:
 
--  `OpenBLAS <\%22http://www.openblas.net/\%22>`__ (Basic Linear Algebra
-   Subsystem)
--  `Lapack <\%22http://www.netlib.org/lapack/\%22>`__\ (Linear Algebra
-   PACKage)
+-  `OpenBLAS`_ (Basic Linear Algebra Subprograms)
+-  LAPACK from the `Netlib LAPACK repository`_ (Linear Algebra PACKage)
 -  ScaLAPACK (Scalable Linear Algebra PACKage)
--  `FFTW <\%22http://www.fftw.org/\%22>`__ (Fastest Fourier Transform in
-   the West)
+-  `FFTW`_ (Fastest Fourier Transform in the West)
 
 Other components
 ----------------
@@ -141,7 +136,7 @@ Version numbers
 +===========+========+========+========+========+========+========+========+=======+=======+
 | GCC       | 6.4.0  | 6.4.0  | 6.3    | 5.4    | 4.9.3  | 4.9.3  | 4.9.2  | 4.8.3 | 4.8.2 |
 +-----------+--------+--------+--------+--------+--------+--------+--------+-------+-------+
-| OpenMPI   | 2.1.2  | 2.1.1  | 2.0.2  | 1.10.3 | 1.10.2 | 1.8.8  | 1.8.4  | 1.8.1 | 1.6.5 |
+| Open MPI   | 2.1.2  | 2.1.1  | 2.0.2  | 1.10.3 | 1.10.2 | 1.8.8  | 1.8.4  | 1.8.1 | 1.6.5 |
 +-----------+--------+--------+--------+--------+--------+--------+--------+-------+-------+
 | OpenBLAS  | 0.2.20 | 0.2.20 | 0.2.19 | 0.2.18 | 0.2.15 | 0.2.14 | 0.2.13 | 0.2.9 | 0.2.8 |
 +-----------+--------+--------+--------+--------+--------+--------+--------+-------+-------+
@@ -157,30 +152,21 @@ Version numbers
 Further information on FOSS components
 --------------------------------------
 
--  `Overview of GCC manuals (all
-   versions) <\%22https://gcc.gnu.org/onlinedocs/\%22>`__
--  OpenMPI documentation
+-  `Overview of `GCC documentation`_ (all versions)
+-  Open MPI documentation
 
-   -  `2.0.x
-      (foss/2017a) <\%22https://www.open-mpi.org/doc/v2.0/\%22>`__
-   -  `1.10.x (foss/2016a and
-      foss/2016b) <\%22https://www.open-mpi.org/doc/v1.10/\%22>`__
-   -  `1.8.x (foss/2014b, foss/2015a and
-      foss/2015b) <\%22https://www.open-mpi.org/doc/v1.8/\%22>`__
-   -  `1.6.x
-      (foss/2014a) <\%22https://www.open-mpi.org/doc/v1.6/\%22>`__
+   -  `2.0.x (foss/2017a) <https://www.open-mpi.org/doc/v2.0/>`_
+   -  `1.10.x (foss/2016a and foss/2016b) <https://www.open-mpi.org/doc/v1.10/>`_
+   -  `1.8.x (foss/2014b, foss/2015a and foss/2015b) <https://www.open-mpi.org/doc/v1.8/>`_
+   -  `1.6.x (foss/2014a) <https://www.open-mpi.org/doc/v1.6/>`_
 
--  The `OpenBLAS project page <\%22http://www.openblas.net/\%22>`__ and
-   `documentation
-   Wiki <\%22https://github.com/xianyi/OpenBLAS/wiki\%22>`__
--  `Generic BLAS/LAPACK/ScaLAPACK
-   documentation <\%22/cluster-doc/development/blas-lapack#Links\%22>`__
--  `FFTW documentation <\%22http://www.fftw.org/#documentation\%22>`__
--  `GNU binutils
-   documentation <\%22https://sourceware.org/binutils/docs/\%22>`__
+-  The `OpenBLAS`_ project page and `OpenBLAS Wiki`_
+-  :ref:`Generic BLAS/LAPACK/ScaLAPACK documentation <BLAS and LAPACK>`
+-  `FFTW documentation`_
+-  `GNU binutils documentation`_
 
  .. index::
     single: compiler
     single: MPI
     single: OpenMP
-    single: OpenMPI
+    single: Open MPI

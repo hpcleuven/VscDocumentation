@@ -24,3 +24,9 @@
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
+.. _GCC documentation: http://gcc.gnu.org/onlinedocs/
+.. _OpenBLAS: http://www.openblas.net/
+.. _OpenBLAS Wiki: https://github.com/xianyi/OpenBLAS/wiki
+.. _FFTW: http://www.fftw.org/
+.. _FFTW documentation: http://www.fftw.org/#documentation
+.. _GNU binutils documentation: https://sourceware.org/binutils/docs/
