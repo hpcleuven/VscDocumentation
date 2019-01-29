@@ -1,3 +1,5 @@
+.. _Lmod:
+
 Setting up the environment using Lmod at the HPC-UGent clusters
 ===============================================================
 
@@ -32,6 +34,8 @@ examples.
    collection
 -  ``ml restore mycollection`` restores a previously stored collection
    of modules
+
+.. _Lmod commands:
 
 Module commands: using ``module`` (or ``ml``)
 ---------------------------------------------
@@ -437,6 +441,8 @@ Benefits
    types of modules can be mixed together)
 
 --------------
+
+.. _Lmod key differences:
 
 Key differences
 ~~~~~~~~~~~~~~~

@@ -1,3 +1,5 @@
+.. _R integrating C functions:
+
 R integrating C functions
 =========================
 
@@ -235,7 +237,5 @@ Further reading
 ---------------
 
 Obviously, this text is just for the impatient. More `in-depth
-documentation <\%22http://cran.r-project.org/doc/manuals/R-exts.html\%22>`__
+documentation <http://cran.r-project.org/doc/manuals/R-exts.html>`_
 can be found on the nearest CRAN site.
-
-"

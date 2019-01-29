@@ -1,3 +1,5 @@
+.. _Python packages:
+
 Python package management
 =========================
 
@@ -48,8 +50,7 @@ Installing Miniconda
 
 If you have Miniconda already installed, you can skip ahead to the next
 section, if Miniconda is not installed, we start with that. Download the
-Bash script that will install it from
-`conda.io <\%22https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh\%22>`__
+Bash script that will install it from `conda.io <https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>`_
 using, e.g., wget:
 
 ::
@@ -178,7 +179,7 @@ More information
 ~~~~~~~~~~~~~~~~
 
 Additional information about conda can be found on its `documentation
-site <\%22https://conda.readthedocs.io/en/latest/\%22>`__.
+site <https://conda.readthedocs.io/en/latest/>`_.
 
 Alternatives to conda
 ---------------------
@@ -229,7 +230,7 @@ Installing Anaconda on NX node (KU Leuven Thinking)
    Anaconda.
 #. Download appropriate (64-Bit (x86) Installer) version of Anaconda
    from
-   `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux\%22>`__
+   `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux>`_
 #. Change the permissions of the file (if necessary)
    ``chmod u+x Anaconda3-5.0.1-Linux-x86_64.sh``
 #. Execute the installer ``./Anaconda3-5.0.1-Linux-x86_64.sh``
@@ -238,5 +239,3 @@ Installing Anaconda on NX node (KU Leuven Thinking)
    ``conda update anaconda-navigator``
 #. You can start the navigatorfrom that directory with
    ``./anaconda-navigator``
-
-"

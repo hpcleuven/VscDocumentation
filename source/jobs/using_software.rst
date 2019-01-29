@@ -9,51 +9,39 @@ particular cluster can be obtained by typing:
    $ module av
 
 In order to use those software packages, the user should work with the
-`module system <\%22/cluster-doc/software/modules\%22>`__. On the newer
+:ref:`module system <module-system-basics>`. On the newer
 systems, we use the same naming conventions for packages on all systems.
 Due to the ever expanding list of packages, we've also made some
 adjustments and don't always show all packages, so be sure to check out
-the page on `the module
-system <\%22/cluster-doc/software/modules\%22>`__ again to `learn how
-you can see more
-packages <\%22/cluster-doc/software/modules#getting-more-software\%22>`__.
+the page on :ref:`the module system <module system basics>` again to
+:ref:`learn how you can see specialized software modules
+<specialized software stacks>`.
 
-| *Note: Since August 2016, a*\ `different implementation of the module
-  system has been implemented on the UGent and VUB Tier-2
-  systems <\%22/cluster-doc/software/modules-lmod\%22>`__\ *, called
-  Lmod. Though highly compatible with the system used on the other
-  clusters, it offers*\ `a lot of new
-  commands <\%22/cluster-doc/software/modules-lmod#commands\%22>`__\ *,
-  and*\ `some key
-  differences <\%22/cluster-doc/software/modules-lmod#Advantages-differences\%22>`__\ *.*
-
--  As not everybody has access to the Tier-1 system Muk, here is an
-   `overview of the currently installed software on that
-   system <\%22/cluster-doc/software/tier1-muk\%22>`__.
+| Note: Since August 2016, a :ref:`different implementation of the module
+  system <Lmod>` has been implemented on the UGent, the VUB Tier-2
+  systems and KU Leuven's Genius cluster, called Lmod. Though highly
+  compatible with the system used on the other clusters, it offers
+  :ref:`a lot of new commands <Lmod commands>`, and
+  :ref:`some key differences <Lmod key differences>`.
 
 Packages with additional documentation
 --------------------------------------
 
--  Matlab (a package by `The
-   MathWorks <\%22https://nl.mathworks.com\%22>`__)
+-  MATLAB (a package by `MathWorks`_)
 
-   -  `Starting Matlab <\%22/cluster-doc/software/matlab\%22>`__
-   -  `Parallel computing with
-      Matlab <\%22/cluster-doc/software/matlab-dc\%22>`__
+   -  :ref:`MATLAB getting started`
+   -  :ref:`Parallel computing with Matlab <MATLAB parallel computing>`
 
 -  R
 
-   -  `Accessing command line arguments in R
-      scripts <\%22/cluster-doc/software/r-cla-in-scripts\%22>`__
-   -  `Integrating C functions in
-      R <\%22/cluster-doc/software/r-integrate-c-functions\%22>`__
+   -  :ref:`Accessing command line arguments in R scripts <R command
+     line arguments>`
+   -  :ref:`Integrating C functions in R <R integrating C functions>`
 
 -  Some programming languages have an extensive standard library, but
    optionally allow to install extra packages. For most languages, the
    user can install packages in his own home directory without system
    administrator intervention. Some documentation for doing this for
-   `Perl <\%22/cluster-doc/development/perl-packages\%22>`__ and
-   `Python <\%22/cluster-doc/development/python-packages\%22>`__ is
-   provided.
+   :ref:`Perl <Perl packages>` and :ref:`Python <Python packages>` is provided.
 
-"
+.. include:: ../software/links.rst

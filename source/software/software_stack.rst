@@ -32,8 +32,8 @@ libraries. Second, we use the module system to manage the environment
 variables and all dependencies and possible conflicts between various
 programs and libraries., and that is what this page focuses on.
 
+.. _module system basics:
 
-.. _module-system-basics:
 Basic use of the module system
 ------------------------------
 
@@ -183,6 +183,8 @@ To get a list of all available module commands, type:
 
    $ module help
 
+
+.. _specialized software stacks:
 
 Specialized software stacks
 ---------------------------

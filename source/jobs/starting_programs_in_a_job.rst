@@ -36,8 +36,7 @@ bash ``cd`` command).
    may also be useful in job scripts, and may help to make your job
    script more portable to other VSC clusters. An overview of
    environment variables that point to various file systems is given on
-   the page on :doc:`where which data should be
-   stored<../access/where_can_i_store_what_kind_of_data>`.
+   the page on :ref:`where which data should be stored<data location>`.
 
 Loading modules
 ~~~~~~~~~~~~~~~
@@ -45,7 +44,7 @@ Loading modules
 The next step consists of loading the appropriate modules. This is no
 different from loading the modules on the login nodes to prepare for
 your job or when running programs on interactive nodes, so we refer to
-the :ref:`modules system<module-system-basics>` page.
+the :ref:`modules system<module system basics>` page.
 
 Useful Torque environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

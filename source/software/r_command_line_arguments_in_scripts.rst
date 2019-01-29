@@ -1,3 +1,5 @@
+.. _R command line arguments:
+
 R command line arguments in scripts
 ===================================
 
@@ -101,5 +103,3 @@ in your R program, no conversion is needed, e.g.,
 
 Here it is assumed that the 'name' is passed as the fourth command line
 argument.
-
-"

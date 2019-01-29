@@ -1,3 +1,5 @@
+.. _Perl packages:
+
 Perl package management
 =======================
 
