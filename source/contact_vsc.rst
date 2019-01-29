@@ -1,5 +1,9 @@
+.. _contact VSC:
+
 Contact VSC
 ===========
+
+.. _tech support VSC:
 
 Technical support
 -----------------

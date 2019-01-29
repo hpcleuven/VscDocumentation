@@ -103,54 +103,44 @@ Specialised hardware sometimes requires specialised MPI-libraries.
    -  SGI MPT 2.09 (intel-mpt/2014a and foss-mpt/2014a toolchains)
       contains the SGI MPI 1.7 library which implements the MPI-2.2
       specification.
-   -  SGI MPT 2.10 (not yet installed, contact\ `KU Leuven
-      support <\%22/support/contact-support\%22>`__\ ) contains the SGI
+   -  SGI MPT 2.10 (not yet installed, contact :ref:`KU Leuven
+      support <tech support VSC>`) contains the SGI
       MPI 1.8 library which implements the MPI-3.0 specification.
 
-Several other implementations may be installed, e.g.,
-`MVAPICH`_, but we assume
+Several other implementations may be installed, e.g., `MVAPICH`_, but we assume
 you know what you're doing if you choose to use them.
 
 We also assume you are already familiar with the job submission
-procedure. If not, check the ":ref:`Running
-jobs`" section first.
+procedure. If not, check the ":ref:`Running jobs`" section first.
 
 Compiling and running
 ---------------------
 
-See to the documentation about the
-:ref:`toolchains`.
+See to the documentation about the :ref:`toolchains`.
 
 Debugging
 ---------
 
 For debugging, we recommend the ARM DDT debugger (formerly Allinea DDT,
 module allinea-ddt). Video tutorials are available on the Arm website:
-`ARM-DDT video`_ .
-(KU Leuven-only).
+`ARM-DDT video`_ .  (KU Leuven-only).
 
-When using the intel toolchain, ":ref:`ITAC`"
-(ITAC) may also
-prove useful.
+When using the intel toolchain, ":ref:`ITAC`" (ITAC) may also prove useful.
 
 Profiling
 ---------
 
 To profile MPI applications, one may use `Arm-MAP`_ (formerly Allinea
-MAP) 
-or
-`Scalasca docs`_.
-(KU Leuven-only)
+MAP) or `Scalasca docs`_.  (KU Leuven-only)
 
 Further information
 -------------------
 
 -  `Intel MPI site`_
 
-   -  `Intel MPI Documentation`_
-      (Latest version)
+   -  `Intel MPI Documentation`_ (Latest version)
 
--  `Open MPI`_
+-  `Open MPI`_ 
 
    -  `Open MPI Documentation`_
 
@@ -163,10 +153,7 @@ Further information
 
    -  `MPI Standard documents`_
 
--  See also the pages in the tutorials
-   section e.g., for
-   :ref:`books` and online
-   tutorial :ref:`web tutorials`
+-  See also the pages in the tutorials section e.g., for
+   :ref:`books` and online tutorial :ref:`web tutorials`
 
 .. include:: links.rst
-"
