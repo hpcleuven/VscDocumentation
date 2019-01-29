@@ -1,3 +1,5 @@
+.. _MATLAB getting started:
+
 MATLAB getting started
 ======================
 
@@ -38,9 +40,9 @@ Interactive use
    MATLAB on the cluster! Use batch processing of compiled MATLAB code
    instead.
 -  If there is an X Window System server installed on your PC (as is by
-   default the case under `Linux <\%22/client/linux\%22>`__; you can use
-   XMing Server under `Windows <\%22/client/windows\%22>`__ or XQuartz
-   on `macOS/OS X <\%22/client/macosx\%22>`__), the full graphical
+   default the case under :ref:`linux client`; you can use
+   XMing Server under :ref:`Windows client` or XQuartz
+   on :ref:`macOS/OS X <macOS client>`), the full graphical
    MATLAB Desktop is available. If the speed is acceptable to you - much
    of the Matlab user interface is coded in Java and Java programs are
    known to be slow over remote X connections - this is the recommended
@@ -72,8 +74,7 @@ Interactive use
    exclusive use, while still having access to, e.g., the graphical
    capabilities of MATLAB, by forwarding the X output (qsub -X -I).
 -  WARNING: an interactive MATLAB session on a compute node can be very
-   slow. A workaround (found at
-   `hpc.uark.edu <\%22https://hpc.uark.edu/\%22>`__) is:
+   slow. A workaround (found at `hpc.uark.edu <https://hpc.uark.edu/>`_) is:
 
    -  launch an interactive session qsub -I -X
    -  once the interactive session is started, (say it starts on
@@ -157,10 +158,9 @@ created, with the calculated data d and e, you can load the resulting
 file into a MATLAB for further processing.
 
 More commands and options of the Job System are described in the
-`general documentation on running
-jobs <\%22/cluster-doc/running-jobs\%22>`__ and in particular on the
-page \\"\ `Submitting and managing
-jobs <\%22https://www.vscentrum.be/cluster-doc/running-jobs/submitting-managing-jobs\%22>`__\\".
+:ref:`general documentation on running jobs <running jobs>` and in
+particular on the page ":ref:`Submitting and managing
+jobs <submitting jobs>`".
 
 Running a MATLAB function
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,8 +245,8 @@ Notes
    returned to the shell. Thus, to get results out, they have to be
    written to the screen, or saved in a file.
 -  Not all MATLAB functions are allowed in compiled code (`see the
-   \\"Compiler Support for Matlab and Toolboxes\" page at the
-   MathWorks <\%22https://nl.mathworks.com/products/compiler/supported/compiler_support.html\%22>`__).
+   "Compiler Support for Matlab and Toolboxes" page at the
+   MathWorks <https://nl.mathworks.com/products/compiler/supported/compiler_support.html>`__).
 
 Example 1: Simple matlab script file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -372,7 +372,4 @@ Example 3 : Function that used other Matlab files in other directories
 More info on the MATLAB Compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Matlab compiler documentation on the Mathworks
-website. <\%22https://nl.mathworks.com/help/compiler/index.html\%22>`__
-
-"
+`Matlab compiler documentation`_ on the Mathworks website. 

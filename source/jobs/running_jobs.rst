@@ -1,3 +1,5 @@
+.. _running jobs:
+
 Running jobs
 ============
 

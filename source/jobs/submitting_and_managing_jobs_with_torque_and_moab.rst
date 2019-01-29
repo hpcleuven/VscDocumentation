@@ -1,3 +1,5 @@
+.. _submitting jobs:
+
 Submitting and managing jobs with Torque and Moab
 =================================================
 
