@@ -31,8 +31,8 @@ Connecting to the cluster
 
 -  Transfer data using Secure FTP (SFTP) clients:
 
-   -  :ref:`FileZilla <FileZilla>`
-   -  :ref:`WinSCP <winSCP>`
+   -  :ref:`FileZilla`
+   -  :ref:`WinSCP`
 
 -  Display graphical programs:
 

@@ -1,4 +1,4 @@
-.. _winSCP:
+.. _WinSCP:
 
 Data transfer using WinSCP
 ==========================

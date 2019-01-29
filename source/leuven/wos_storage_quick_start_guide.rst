@@ -21,8 +21,7 @@ components.
 Storage Types
 -------------
 
-As described on `the web page \\"Where can I store what kind of
-data?\" <\%22https://www.vscentrum.be/cluster-doc/access-data-transfer/where-store-data\%22>`__
+As described on `the web page ":ref:`data location`"
 different types of data can be stored in different places. There is also
 an extra storage space for Archive use.
 
@@ -42,11 +41,10 @@ storage area and therefore it should not be used for jobs I/O
 operations.
 
 **How to request**: Please send a request from the `storage request
-webpage <\%22https://admin.kuleuven.be/icts/onderzoek/hpc/hpc-storage\%22>`__.
+webpage <https://admin.kuleuven.be/icts/onderzoek/hpc/hpc-storage>`_.
 
 | **How much does it cost**: For all the prices please refer to our
-  `service catalog (login
-  required) <\%22https://icts.kuleuven.be/sc/english/HPC\%22>`__.
+  `service catalog (login required) <https://icts.kuleuven.be/sc/english/HPC>`_.
 
 Working with archive storage
 ----------------------------
@@ -65,11 +63,11 @@ Location of Archive/Staging
 ---------------------------
 
 The name of user's archive directory is in the format:
-/archive/leuven/arc_XXXXX, where XXXXX is a number and this will be
+``/archive/leuven/arc_XXXXX``, where ``XXXXX`` is a number and this will be
 given to the user by HPC admin once your archive requested is handled.
 
 The name of your staging directory is in this format:
-/staging/leuven/stg_XXXXX, where XXXXX is the same number as for the
+``/staging/leuven/stg_XXXXX``, where ``XXXXX`` is the same number as for the
 archive directory.
 
 Use case: Data is in archive, how can I use it in a compute job?
@@ -120,16 +118,11 @@ Data that is stored at the user's local facilities can be copied to the
 archive through scp/bbcp/sftp methods. For this please refer to the
 appropriate VSC documentation:
 
-` <\%22https://www.vscentrum.be/client/linux/data-openssh\%22>`__\ for
-linux:
-`openssh <\%22https://www.vscentrum.be/client/linux/data-openssh\%22>`__
+-  for Linux: :ref:`openssh <scp and sftp>`
 
-for windows:
-`filezilla <\%22https://www.vscentrum.be/client/windows/filezilla\%22>`__
-or `winscp <\%22https://www.vscentrum.be/client/windows/winscp\%22>`__
+-  for windows: :ref:`FileZilla <FileZilla>` or :ref:`winscp <WinScp>`
 
-for OS X:
-`data-cyberduck <\%22https://www.vscentrum.be/client/macosx/data-cyberduck\%22>`__.
+-  for macOS: :ref:`Cyberduck` or :ref:`scp and sftp <scp and sftp>`
 
 Use case : How to check the disk usage?
 ---------------------------------------
@@ -159,24 +152,19 @@ is finished to the archive storage tier:
 Hostname is always one of the login nodes, because these are the only
 nodes where ‘archive’ is available on the cluster.
 
-For stagein the copy goes from /archive/leuven/arc_000XX/foldertostagein
-to /scratch/leuven/3XX/vsc3XXXX
+For stagein the copy goes from ``/archive/leuven/arc_000XX/foldertostagein``
+to ``/scratch/leuven/3XX/vsc3XXXX``
 
 For stageout the copy goes from
-/scratch/leuven/3XX/vsc3XXXX/foldertostageout to
-/archive/leuven/arc_000XX/
+``/scratch/leuven/3XX/vsc3XXXX/foldertostageout`` to
+``/archive/leuven/arc_000XX/``
 
 Attached documents
 ------------------
 
--  `WOS storage quick start
-   guide <\%22https://www.vscentrum.be/assets/1059\%22>`__
--  `slides from storage
-   info-session <\%22https://www.vscentrum.be/assets/1027\%22>`__
-
-"
+-  :download:`WOS storage quick start guide <wos_storage_quick_start_guide/wos_quickstart.pdf>`
+-  download:`slides from storage info-session <wos_storage_quick_start_guide/wos_slides.pdf>`
 
 .. |WOS schematics| image:: wos_storage_quick_start_guide/wos_schematics.png
   :width: 700
   :alt: WOS schematics
-
