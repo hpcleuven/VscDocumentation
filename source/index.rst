@@ -8,7 +8,6 @@ Welcome to VSC documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    access/getting_access
    access/access_and_data_transfer
@@ -16,8 +15,4 @@ Welcome to VSC documentation
    jobs/running_jobs
    software/software_development
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
+Feel free to contact :ref:`user support <user support VSC>`.
