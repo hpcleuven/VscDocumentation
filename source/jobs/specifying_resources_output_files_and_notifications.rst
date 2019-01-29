@@ -268,7 +268,6 @@ more, we refer to the documentation of the ``qsub`` command that
 mentions all options in the Torque manual on the `Adaptive Computing
 documentation`_.
 
--  `Torque 6.0.1 documentation`_ (Antwerp clusters, Hydra and BrENIAC)
--  `Torque 5.1.x documentation`_ (Thinking, muk)
+-  `Torque 6.0.1 documentation`_
 
 .. include:: links.rst

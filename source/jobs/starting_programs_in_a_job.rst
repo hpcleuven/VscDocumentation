@@ -248,7 +248,6 @@ For more information on the pbsdsh command, check the manual page
 (``man pbsdsh``), or refer to the the Torque
 manual on the `Adaptive Computing documentation`_ web site.
 
--  `Torque 6.0.1 documentation`_ (Antwerp clusters, Hydra and BrENIAC)
--  `Torque 5.1.x documentation`_ (Thinking, muk).
+-  `Torque 6.0.1 documentation`_
 
 .. include:: links.rst
