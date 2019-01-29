@@ -1,20 +1,11 @@
+.. _user support VSC:
+
 User support
 ============
 
 Each of the major VSC-institutions has its own user support:
 
--  KU Leuven/Hasselt University cluster: E-mail
-   `HPCinfo@kuleuven.be <\%22mailto:HPCinfo@kuleuven.be\%22>`__
--  Ghent University: E-mail
-   `hpc@ugent.be <\%22mailto:hpc@ugent.be\%22>`__ , info
-   `hpc.ugent.be <\%22https://www.ugent.be/hpc/en\%22>`__
--  Antwerp University: E-mail
-   `hpc@uantwerpen.be <\%22mailto:hpc@uantwerpen.be\%22>`__, further
-   info on the `CalcUA Core Facility web
-   page <\%22https://www.uantwerpen.be/en/research-and-innovation/expertise/core-facilities/core-facilities/calcua/\%22>`__
--  VUB: E-mail `hpc@vub.ac.be <\%22mailto:hpc@vub.ac.be\%22>`__ for
-   information about accessing the VSC infrastructure or help with
-   preparing a tier-1 proposal
+.. include:: user_support_addresses.rst
 
 What information should I provide when contacting user support?
 ---------------------------------------------------------------
@@ -36,7 +27,7 @@ solved faster.
 If you have problems logging in to the system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-then provide the following information:
+Please provide the following information:
 
 #. your operating system (e.g., Linux, Windows, MacOS X, ...),
 #. your client software (e.g., PuTTY, OpenSSH, ...),
@@ -49,7 +40,7 @@ then provide the following information:
 If installed software malfunctions/crashes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-then provide the following information:
+Please provide the following information:
 
 #. the name of the application (e.g., Ansys, Matlab, R, ...),
 #. the module(s) you load to use the software (e.g.,
@@ -73,5 +64,3 @@ then provide the following information:
    problem,
 #. if the software was run as a job, the jobID(s) of (un)successful
    runs.
-
-"

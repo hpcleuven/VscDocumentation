@@ -8,18 +8,7 @@ Contact VSC
 Technical support
 -----------------
 
--  KU Leuven/Hasselt University cluster: E-mail
-   `HPCinfo@kuleuven.be <\%22mailto:HPCinfo@kuleuven.be\%22>`__
--  Ghent University: E-mail
-   `hpc@ugent.be <\%22mailto:hpc@ugent.be\%22>`__ , info
-   `hpc.ugent.be <\%22https://www.ugent.be/hpc/en\%22>`__
--  Antwerp University: E-mail
-   `hpc@uantwerpen.be <\%22mailto:hpc@uantwerpen.be\%22>`__, further
-   info on the `CalcUA Core Facility web
-   page <\%22https://www.uantwerpen.be/en/research-and-innovation/expertise/core-facilities/core-facilities/calcua/\%22>`__
--  VUB: E-mail `hpc@vub.ac.be <\%22mailto:hpc@vub.ac.be\%22>`__ for
-   information about accessing the VSC infrastructure or help with
-   preparing a tier-1 proposal
+.. include:: user_support_addresses.rst
 
 Please also take a look at our `web page about technical
 support <\%22/support/contact-support\%22>`__. It contains a lot of tips
@@ -34,5 +23,3 @@ General enquiries
   include questions on admission requirements to questions about setting
   up a course or other questions that are not directly related to
   technical problems.
-
-"
