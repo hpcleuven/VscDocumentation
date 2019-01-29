@@ -6,7 +6,7 @@ Shell scripts
 
 Scripts are basically uncompiled pieces of code: they are just text
 files. Since they don't contain machine code, they are executed by what
-is called a \\"parser\" or an \\"interpreter\". This is another program
+is called a "parser" or an "interpreter". This is another program
 that understands the command in the script, and converts them to machine
 code. There are many kinds of scripting languages, including Perl and
 Python.
@@ -35,8 +35,8 @@ following:
    $ hostname
    login1
 
-Suppose we want to call this script \\"myhostname\". You open a new file
-for editing, and name it \\"myhostname\":
+Suppose we want to call this script ``myhostname``. You open a new file
+for editing, and name it ``myhostname``:
 
 ::
 
@@ -54,13 +54,13 @@ You can type the content of the script:
    echo \"Hello! This is my hostname:\"
    hostname
 
-You save the file and exit the editor by pressing the 'ctrl+x' key
+You save the file and exit the editor by pressing the 'Ctrl+x' key
 combination. Nano will ask you if you want to save the file. You should
 be back at the prompt.
 
 The easiest way to run a script is by starting the interpreter and pass
 the script as parameter. In case of our script, the interpreter may
-either be 'sh' or 'bash' (which are the same on the cluster). So start
+either be ``sh`` or ``bash`` (which are the same on the cluster). So start
 the script:
 
 ::
@@ -79,7 +79,7 @@ called \\"shebang\"-notation, explicitly created for this function: you
 put the following line on top of your shell script
 \\"#!/path/to/your/interpreter\".
 
-You can find this path with the \\"which\" command. In our case, since
+You can find this path with the ``which`` command. In our case, since
 we use bash as an interpreter, we get the following path:
 
 ::
@@ -124,7 +124,4 @@ not ignore these lines, you may get strange results...
 Links
 -----
 
--  `Nano
-   manual <\%22https://www.nano-editor.org/dist/v2.0/nano.html\%22>`__
-
-"
+-  `Nano manual <https://www.nano-editor.org/dist/v2.0/nano.html>`__
