@@ -18,3 +18,9 @@
 .. _Beginning Hybrid MPI/OpenMP Development: https://software.intel.com/en-us/articles/beginning-hybrid-mpiopenmp-development
 .. _Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems: http://faculty.cs.uwlax.edu/%7Ejjhursey/papers/2011/hursey-cluster-poster-2011.pdf
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
+.. _LAPACK user guide: http://www.netlib.org/lapack/lug/
+.. _Netlib BLAS repository: http://www.netlib.org/blas/
+.. _LAPACK95 user guide: http://www.netlib.org/lapack95/lug95/
+.. _Netlib LAPACK repository: http://www.netlib.org/lapack/
+.. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
+.. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
