@@ -134,7 +134,7 @@ first two steps have to be modified:
    subdirectory testrepository of your data directory, the URL is
    vsc20XYZ@login.hp.uantwerpen.be:/data/antwerpen/20X/vsc20XYZ/testrepository.
    So use this URL in the git remote add command. You don't need to
-   specify ssh:// in the URL if you use the scp-syntax as we did in this
+   specify ``ssh://`` in the URL if you use the scp-syntax as we did in this
    example above.
 
 The access to this repository will be regulated through the file access
