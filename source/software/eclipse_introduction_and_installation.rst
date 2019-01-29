@@ -6,13 +6,12 @@ Eclipse introduction and installation
 Software development on clusters
 --------------------------------
 
-`Eclipse <\%22https://www.eclipse.org/\%22>`__ is an extensible IDE for
+`Eclipse`_ is an extensible IDE for
 program development. The basic IDE is written in Java for the
 development of Java programs, but can be extended through packages. The
 IDE was originally developed by IBM, but open-sourced and has become
 very popular. There are some interesting history tidbits on `the
-WikiPedia entry for
-Eclipse <\%22https://en.wikipedia.org/wiki/Eclipse_(software)\%22>`__.
+WikiPedia entry for Eclipse <https://en.wikipedia.org/wiki/Eclipse_(software)>`_.
 
 Some attractive features
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,16 +61,17 @@ whole installation at once. Bug fixes are of course released in between
 version updates. Each version has its own code name and the code name
 has become more popular than the actual version number (as version
 numbers for the packages differ). E.g., the whole June 2013 release
-(base IDE and packages) is known as the \\"Kepler\" release (version
-number 4.3), the June 2014 release as the \\"Luna\" release (version
-number 4.4), the June 2015 as the \\" Mars\" release (version number
-4.5) and the June 2016 release as \\"Neon\".
+(base IDE and packages) is known as the "Kepler" release (version
+number 4.3), the June 2014 release as the "Luna" release (version
+number 4.4), the June 2015 as the " Mars" release (version number
+4.5) and the June 2016 release as "Neon".  The latest release at the time
+of writing is simply called 2018-12.
 
 Getting eclipse
 ---------------
 
-The best place to get Eclipse is the `the official Eclipse download
-page <\%22http://www.eclipse.org/downloads\%22>`__. That site contains
+The best place to get Eclipse is the the official `Eclipse download
+page`_. That site contains
 various pre-packaged versions with a number of extension packages
 already installed. The most interesting one for C/C++ or Fortran
 development on clusters is \\"Eclipse for Parallel Application
@@ -79,21 +79,16 @@ Developers\". The installation instructions depend on the machine you're
 installing on, but typically it is not more than unpacking some archive
 in the right location. You'll need a sufficiently recent Java IDE on
 your machine though. Instructions are available on the `Eclipse
-Wiki <\%22http://wiki.eclipse.org/Eclipse/Installation\%22>`__.
+Wiki <http://wiki.eclipse.org/Eclipse/Installation>`_.
 
 The CDT, Photran and PTP plugins integrate with compilers and libraries
 on your system. For Linux, it uses the gcc compiler on your system. On
 OS X it integrates with gcc and on Windows, you need to install
-`Cygwin <\%22https://www.cygwin.com/\%22>`__ and its gcc toolchain (it
-may also work with the `MinGW <\%22http://www.mingw.org/\%22>`__ and
-`Mingw-64 <\%22http://mingw-w64.org/doku.php\%22>`__ gcc versions but we
-haven't verified this).
+`Cygwin`_ and its GCC toolchain.
 
-The Eclipse documentation is `also available
-on-line <\%22https://help.eclipse.org/\%22>`__.
+The Eclipse documentation is also available on-line on the `Eclipse`_ website.
 
--  `Check out some OS X specific issues
-   here <\%22/client/macosx/eclipse-on-osx\%22>`__.
+-  Check out some :ref:`macOS specific issues here <Eclipse macOS>`.
 
 Basic concepts
 --------------
@@ -124,18 +119,19 @@ Interesting bits in the documentation
 -------------------------------------
 
 -  `Basic Eclipse user guide with a getting started
-   section <\%22http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/gettingStarted/intro/overview.htm?cp=0_0\%22>`__
+   section <http://help.eclipse.org/neon/topic/org.eclipse.platform.doc.user/gettingStarted/intro/overview.htm?cp=0_0>`_
 -  Parallel Tools Platform:
 
    -  `Parallel Development User Guide - Introduction to PTP Project
       Types -
-      Synchronized <\%22http://help.eclipse.org/neon/topic/org.eclipse.ptp.doc.user/html/localVsRemote.html?cp=62_4_1#sync\%22>`__
-      explains the advantages and disadvantages of the \\" Synchronized
-      project type\".
+      Synchronized <http://help.eclipse.org/neon/topic/org.eclipse.ptp.doc.user/html/localVsRemote.html?cp=62_4_1#sync>`_
+      explains the advantages and disadvantages of the "Synchronized
+      project type".
    -  The PTP also supports modules to configure the remote shell before
       actually building the application: `Parallel Development User
       Guide - Configuring Environment
-      Modules <\%22http://help.eclipse.org/neon/topic/org.eclipse.ptp.doc.user/html/modules.html?cp=62_8\%22>`__.
-   -  `The PTP Wiki <\%22http://wiki.eclipse.org/PTP\%22>`__
+      Modules <http://help.eclipse.org/neon/topic/org.eclipse.ptp.doc.user/html/modules.html?cp=62_8>`_.
+   -  `The PTP Wiki <http://wiki.eclipse.org/PTP>`_
 
-"
+.. include:: links.rst
+.. include:: ../access/links.rst

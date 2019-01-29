@@ -34,3 +34,5 @@
 .. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation
 .. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
 .. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/
+.. _Eclispe: https://www.eclipse.org/
+.. _Eclipse download page: http://www.eclipse.org/downloads
