@@ -44,3 +44,4 @@
 .. _Keras: https://keras.io/
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
 .. _TensorFlow: https://www.tensorflow.org/
+.. _CPMD: http://www.cpmd.org/

@@ -16,22 +16,21 @@ ANSYS
 CPMD
 ----
 
-`CPMD <\%22http://www.cpmd.org/\%22>`__ can be used for free for
+`CPMD`_ can be used for free for
 non-commercial research in education institutions under the `CPMD Free
-License <\%22http://cpmd.org/download/cpmd-licence\%22>`__.
+License <http://cpmd.org/download/cpmd-licence>`_.
 
 To get access:
 
 -  `Fill in the form for downloading
-   CPMD <\%22http://cpmd.org/download/accept-license/cpmd-license-application\%22>`__
+   CPMD <http://cpmd.org/download/accept-license/cpmd-license-application>`_
    on the CPMD website.
--  You'll see a \\"Thank You\" page confirming your submission. Somewhat
+-  You'll see a "Thank You" page confirming your submission. Somewhat
    later - it may take up to a week but usually it is quite fast -
    you'll receive a mail with download instructions. Please forward that
-   mail to `hpc@uantwerpen.be <\%22mailto:hpc@uantwerpen.be\%22>`__. We
+   mail to hpc@uantwerpen.be. We
    then have to check with IBM for confirmation.
--  Apply for membership of the acpmd group via the `VSC account
-   managment webpage <\%22https://account.vscentrum.be/\%22>`__.
+-  Apply for membership of the acpmd group via the `VSC account page`_.
 -  As soon as we have confirmation from IBM that your license
    application has been accepted, your membership application for acpmd
    will be granted and you will be able to use CPMD.
@@ -53,8 +52,7 @@ Gaussian
 To use Gaussian, you should work or study at the University of Antwerp
 and your research group should contribute to the cost of the license.
 
-Contact `Wouter
-Herrebout <\%22https://www.uantwerpen.be/en/staff/wouter-herrebout/\%22>`__
+Contact `Wouter Herrebout <https://www.uantwerpen.be/en/staff/wouter-herrebout/>`_
 for more information.
 
 Gurobi
@@ -71,11 +69,12 @@ Matlab on the UAntwerp clusters can be used by everybody who can legally
 use Matlab within the UAntwerp Campus Agreement with The Mathworks. You
 should have access to the modules if you are eligible. If you cannot
 load the Matlab modules yet think you are allowed to use Matlab under
-the UAntwerp license, please `contact
-support <\%22/support/contact-support\%22>`__.
+the UAntwerp license, please :ref:`contact support <user support VSC>`.
 
 TurboMole
 ---------
 
 VASP
 ----
+
+.. include:: ../software/links.rst
