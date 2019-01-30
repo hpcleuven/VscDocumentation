@@ -37,3 +37,10 @@
 .. _Eclispe: https://www.eclipse.org/
 .. _Eclipse download page: http://www.eclipse.org/downloads
 .. _MathWorks: https://nl.mathworks.com/
+.. _CP2K: https://www.cp2k.org/
+.. _CUDA: https://developer.nvidia.com/cuda-zone
+.. _cuDNN: https://developer.nvidia.com/cudnn
+.. _GROMACS: http://www.gromacs.org/
+.. _Keras: https://keras.io/
+.. _NAMD: http://www.ks.uiuc.edu/Research/namd/
+.. _TensorFlow: https://www.tensorflow.org/

@@ -22,7 +22,7 @@ benchmark their application on GPU and regular CPUs.
 Getting access
 --------------
 
-Contact `the UAntwerp support team <\%22/support/contact-support\%22>`__
+Contact :ref:`the UAntwerp support team <user support VSC>`
 to get access to the Xeon Phi node.
 
 Users of the GPU compute nodes are expected to report back on their
@@ -54,8 +54,8 @@ GPUs.
 +-----------------------+-----------------------+-----------------------+
 | Package               | **Module**            | Description           |
 +=======================+=======================+=======================+
-| `CP2K <\%22https://ww | CP2K/5.1-intel-2017a- | GPU-accelerated       |
-| w.cp2k.org/\%22>`__   | bare-GPU-noMPI        | version of CP2K. The  |
+| `CP2K`_               | CP2K/5.1-intel-2017a- | GPU-accelerated       |
+|                       | bare-GPU-noMPI        | version of CP2K. The  |
 |                       |                       | -GPU-noMPI-versions   |
 |                       |                       | are ssmp binaries     |
 |                       |                       | without support for   |
@@ -70,30 +70,30 @@ GPUs.
 |                       |                       | modules for CPU-only  |
 |                       |                       | computations.         |
 +-----------------------+-----------------------+-----------------------+
-| `CUDA <\%22https://de | CUDA/8.0.61           | Various versions of   |
-| veloper.nvidia.com/cu | CUDA/9.0.176          | the CUDA development  |
-| da-zone\%22>`__       | CUDA/9.1.85           | kit                   |
+| `CUDA`_               | CUDA/8.0.61           | Various versions of   |
+!                       | CUDA/9.0.176          | the CUDA development  |
+|                       | CUDA/9.1.85           | kit                   |
 +-----------------------+-----------------------+-----------------------+
-| `cuDNN <\%22https://d | cuDNN/6.0-CUDA-8.0.61 | The CUDA Deep Neural  |
-| eveloper.nvidia.com/c | cuDNN/7.0.5-CUDA-8.0. | Network library,      |
-| udnn\%22>`__          | 61                    | version 6.0 and 7.0,  |
+| `cuDNN`_              | cuDNN/6.0-CUDA-8.0.61 | The CUDA Deep Neural  |
+|                       | cuDNN/7.0.5-CUDA-8.0. | Network library,      |
+|                       | 61                    | version 6.0 and 7.0,  |
 |                       | cuDNN/7.0.5-CUDA-9.0. | both installed from   |
 |                       | 176                   | standard NVIDA        |
 |                       | cuDNN/7.0.5-CUDA-9.1. | tarbals but in the    |
 |                       | 85                    | directory structure   |
 |                       |                       | of our module system. |
 +-----------------------+-----------------------+-----------------------+
-| `GROMACS <\%22http:// | GROMACS/2016.4-foss-2 | GROMACS with GPU      |
-| www.gromacs.org/\%22> | 017a-GPU-noMPI        | acceleration. The     |
-| `__                   | GROMACS/2016.4-intel- | -GPU-noMPI-versions   |
+| `GROMACS`_            | GROMACS/2016.4-foss-2 | GROMACS with GPU      |
+|                       | 017a-GPU-noMPI        | acceleration. The     |
+|                       | GROMACS/2016.4-intel- | -GPU-noMPI-versions   |
 |                       | 2017a-GPU-noMPI       | are ssmp binaries     |
 |                       |                       | without support for   |
 |                       |                       | MPI, so they can only |
 |                       |                       | be used on a single   |
 |                       |                       | GPU node.             |
 +-----------------------+-----------------------+-----------------------+
-| `Keras <\%22https://k | Keras/2.1.3-intel-201 | Keras with TensorFlow |
-| eras.io/\%22>`__      | 7c-GPU-Python-3.6.3   | as the backend (1.4   |
+| `Keras`_              | Keras/2.1.3-intel-201 | Keras with TensorFlow |
+|                       | 7c-GPU-Python-3.6.3   | as the backend (1.4   |
 |                       |                       | for Keras 2.1.3),     |
 |                       |                       | using the             |
 |                       |                       | GPU-accelerated       |
@@ -106,13 +106,13 @@ GPUs.
 |                       |                       | version of TensorFlow |
 |                       |                       | 1.4.                  |
 +-----------------------+-----------------------+-----------------------+
-| `NAMD <\%22http://www |                       | Work in progress      |
-| .ks.uiuc.edu/Research |                       |                       |
-| /namd/\%22>`__        |                       |                       |
+| `NAMD`_               |                       | Work in progress      |
+|                       |                       |                       |
+|                       |                       |                       |
 +-----------------------+-----------------------+-----------------------+
-| `TensorFlow <\%22http | Tensorflow/1.3.0-inte | GPU versions of       |
-| s://www.tensorflow.or | l-2017a-GPU-Python-3. | Tensorflow 1.3 and    |
-| g/\%22>`__            | 6.1                   | 1.4. Google-provided  |
+| `TensorFlow`_         | Tensorflow/1.3.0-inte | GPU versions of       |
+|                       | l-2017a-GPU-Python-3. | Tensorflow 1.3 and    |
+|                       | 6.1                   | 1.4. Google-provided  |
 |                       | Tensorflow/1.4.0-inte | binaries were used    |
 |                       | l-2017c-GPU-Python-3. | for the installation. |
 |                       | 6.3                   | There are CPU-only    |
@@ -133,4 +133,4 @@ GPUs.
 |                       |                       | all our systems.      |
 +-----------------------+-----------------------+-----------------------+
 
-"
+.. include:: ../software/links.rst
