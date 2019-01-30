@@ -6,13 +6,12 @@ Remote visualization @ UAntwerp
 The UAntwerp clusters have limited features for remote visualization on
 the login nodes of hopper and the visualization node of leibniz using a
 `VNC-based remote display
-technology <\%22https://en.wikipedia.org/wiki/Virtual_Network_Computing\%22>`__.
+technology <https://en.wikipedia.org/wiki/Virtual_Network_Computing>`_.
 On the regular login nodes of hopper, there is no acceleration of 3D
 graphics, but the visualisation node of leibniz is equipped with a
 NVIDIA M5000 card that when used properly will offer accelerated
 rendering of OpenGL applications. The setup is similar to the setup of
-`the visualization nodes at the KU
-Leuven <\%22/client/multiplatform/turbovnc\%22>`__.
+:ref:`the visualization nodes at the KU Leuven <TurboVNC>`.
 
 *Using VNC turns out to be more complicated than one would think and
 things sometimes go wrong. It is a good solution for those who
@@ -29,7 +28,7 @@ The idea behind the setup
 
 Graphics (local and remote) on Linux-machines is based on the `X Window
 System version
-11 <\%22https://en.wikipedia.org/wiki/X_Window_System\%22>`__, shortly
+11 <https://en.wikipedia.org/wiki/X_Window_System>`_, shortly
 X11. This technology is pretty old (1987) and nor really up to the task
 anymore with todays powerful computers yet has so many applications that
 support it that it is still the standard in practice (though there are
@@ -49,13 +48,13 @@ the Matlab GUI) will work sluggish on all but the fastest network
 connections.
 
 X11 is a protocol for 2D-graphics only. however, it is extensible. Enter
-`OpenGL <\%22https://en.wikipedia.org/wiki/OpenGL\%22>`__, a standard
+`OpenGL <https://en.wikipedia.org/wiki/OpenGL>`_, a standard
 cross-platform API for professional 3D-graphics. Even though its
 importance on Windows and macOS platforms had decreased as Microsoft and
 Apple both promote their own APIs (DirectX and Metal respectively), it
 is still very popular for professional applications and in the Linux
 world. It is supported by X11 servers through `the
-GLX-extension <\%22https://en.wikipedia.org/wiki/GLX\%22>`__ (OpenGL for
+GLX-extension <https://en.wikipedia.org/wiki/GLX>`_ (OpenGL for
 the X Window System). When set up properly, OpenGL commands can be
 passed to the X server and use any OpenGL graphics accelerator available
 on the computer running the X server. In principle, if you have a X
@@ -74,7 +73,7 @@ reduced setting on the login nodes of hopper) consists of two elements
 to deal with the issues of network bandwidth and, more importantly,
 network latency.
 
-`VirtualGL <\%22https://en.wikipedia.org/wiki/VirtualGL\%22>`__ is a
+`VirtualGL <https://en.wikipedia.org/wiki/VirtualGL>`_ is a
 technology that redirects OpenGL commands to a 3D graphics accelerator
 on the computer where the application is running or to a sofware
 rendering library. It then pushes the rendered image to the X server.
@@ -91,7 +90,7 @@ VirtualGL does not solve the issue of slow 2D-rendering because of
 network latency and also requires the user to set up a VGL client and an
 X server on the local desktop, which is cumbersome for less experienced
 users. We solve this problem through `VNC (Virtual Network
-Computing) <\%22https://en.wikipedia.org/wiki/Virtual_Network_Computing\%22>`__.
+Computing) <https://en.wikipedia.org/wiki/Virtual_Network_Computing>`_.
 VNC consists of three components: a server on the computer where your
 application runs, a client on your desktop, and a standardized protocol
 for the communication between server and client. The server renders the
@@ -102,7 +101,7 @@ fact emulate a X server. Since the protocol between client and server is
 pretty standard, most clients will work with most servers, though some
 combinations of client and server will be more efficient because they
 may support a more efficient compression technology. Our choice of
-server is `TurboVNC <\%22https://www.turbovnc.org/\%22>`__ which is
+server is `TurboVNC`_ which is
 maintained by the same group that also develops VirtualGL and has an
 advanced implementation of a compression algorithm very well suited for
 3D graphics. TurboVNC has clients for Windows, macOS and Linux. However,
@@ -128,9 +127,9 @@ currently the most popular desktop environments (or Unity on Ubuntu, but
 future editions of Ubuntu will return to Gnome). However, these require
 a lot of resources and are difficult to install on top of TurboVNC.
 Examples of very basic old-style window managers are the `Tab Window
-Manager <\%22https://en.wikipedia.org/wiki/Twm\%22>`__ (command ``twm``)
+Manager <https://en.wikipedia.org/wiki/Twm>`_ (command ``twm``)
 and the `Motif Window
-Manager <\%22https://en.wikipedia.org/wiki/Motif_Window_Manager\%22>`__
+Manager <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_
 (command ``mwm``). (Both are currently available on the login nodes of
 hopper.)
 
@@ -144,8 +143,8 @@ Prerequisites
 -------------
 
 You'll need a ssh client on your desktop that provides port forwarding
-functionality on your desktop. We refer to the \\"\ `Access and data
-transfer <\%22/cluster-doc/access-data-transfer\%22>`__\\" section of
+functionality on your desktop. We refer to the "`access and data
+transfer`" section of
 the documentation on the user portal for information about ssh clients
 for various client operating systems. PuTTY (Windows) and OpenSSH
 (macOS, Linux, unix-compatibility environment on Windows) both provide
@@ -158,27 +157,26 @@ Windows
 
 We have tested the setup with three different clients:
 
--  The `TurboVNC <\%22https://turbovnc.org/\%22>`__ client can be
-   downloaded by following the Download link on `the TurboVNC web
-   site <\%22https://www.turbovnc.org/\%22>`__ (which at the moment of
-   writing this documentation takes you to `a sourceforge
-   page <\%22https://sourceforge.net/projects/turbovnc/files/\%22>`__).
+-  The TurboVNC client can be downloaded by following the Download link
+   on the `TurboVNC`_ web site (which at the moment of
+   writing this documentation takes you to a sourceforge
+   `TurboVNC download`_ page).
    Binaries are available for both 32-bit and 64-bit windows systems.
    This client is made by the same people as the server we use so in
    theory one should expect the least problems with this setup.
--  `TigerVNC <\%22http://tigervnc.org/\%22>`__ is a client whose
+-  `TigerVNC <http://tigervnc.org/>`_ is a client whose
    development is supported by the Swedish company Cendio who makes a
    remote display server product (ThinLinc) based on TigerVNC. Binaries
    for 32-bit and 64-bit windows (vncviewr-*.*.*.exe) can be downloaded
    by following the link on `the GitHub Releases
-   page <\%22https://github.com/TigerVNC/tigervnc/releases\%22>`__.
+   page <https://github.com/TigerVNC/tigervnc/releases>`_.
    These binaries are ready-to-run.
--  `ThightVNC <\%22http://www.tightvnc.com/\%22>`__ is also a popular
+-  `ThightVNC <http://www.tightvnc.com/>`_ is also a popular
    free VNC implementation. 32-bit and 64-bit Windows installers can be
    downloaded from `the download page on their
-   website <\%22http://www.tightvnc.com/download.php\%22>`__. When
-   installing on your PC or laptop, make sure to chose the \\"custom
-   install\" and only install the TightVNC Viewer.
+   website <http://www.tightvnc.com/download.php>`_. When
+   installing on your PC or laptop, make sure to chose the "custom
+   install" and only install the TightVNC Viewer.
 
 All three viewers are quite fast and offer good performance, even when
 run from home over a typical broadband internet connection. TigerVNC
@@ -192,14 +190,14 @@ macOS
 
 Here also there are several possible setups:
 
--  The TurboVNC client can be downloaded from `the TurboVNC web
-   site <\%22https://www.turbovnc.org/\%22>`__. The macOS client is
+-  The TurboVNC client can be downloaded from the `TurboVNC`_ web
+   site. The macOS client is
    Java-based. Packages are available for both Apple Java on older
    versions of OS X and Oracle Java (which you will need to install if
    it is not yet on your system). We advise to use the Oracle Java
    version as Java needs frequent security updates and Apple Java is no
    longer maintained.
--  `TigerVNC <\%22https://tigervnc.org/\%22>`__, a client whose
+-  `TigerVNC <https://tigervnc.org/>`_, a client whose
    development is supported by the Swedish company Cendio who makes a
    remote display server product (ThinLinc) based on TigerVNC, is a
    native macOS client. At the time of writing (version 1.9.0), it is
@@ -208,8 +206,7 @@ Here also there are several possible setups:
    pre-release builds so future versions will certainly fully support
    future macOS versions. Some places report that this client is a lot
    slower than the the TurboVNC one on macOS.
-   `Binaries are
-   available <\%22https://bintray.com/tigervnc/stable/tigervnc/\%22>`__.
+   `Binaries are available <https://bintray.com/tigervnc/stable/tigervnc/>`_.
    Look for the tigervnc-*.dmg files, which contrary to those for
    Windows and Linux, only contain the viewer software.
 -  A not-so-good alternative is to use the Apple Screen Sharing feature
@@ -222,8 +219,8 @@ Here also there are several possible setups:
 Linux
 ~~~~~
 
-RPM and Debian packages for TurboVNC can be downloaded from `the
-TurboVNC web site <\%22https://www.turbovnc.org/\%22>`__ and are
+RPM and Debian packages for TurboVNC can be downloaded from the
+`TurboVNC`_ web site and are
 available in some Linux distributions. You can also try another VNC
 client provided by your Linux distribution at your own risk as we cannot
 guarantee that all VNC viewers (even recent ones) work eficiently with
@@ -291,11 +288,8 @@ Connecting to the server
    server (which runs on port 5900 + the server number, 5902 in the
    above example) but you will need to create a SSH tunnel to forward
    traffic to the VNC server. The exact procedure is explained in length
-   in the pages \\"\ `Creating a SSH tunnel using
-   PuTTY <\%22/client/windows/creating-an-ssh-tunnel\%22>`__\\" (for
-   Windows) and \\"\ `Creating a SSH tunnel using
-   OpenSSH <\%22/client/linux/creating-an-ssh-tunnel\%22>`__\\" (for or
-   Linux and macOS) .
+   in the pages ":ref:`ssh tunnel using PuTTY`" (for
+   Windows) and ":ref:`tunnel OpenSSH`" (for or Linux and macOS) .
    You'll need to tunnel port number (5900 + server number) (5902 in the
    example above) on you local machine to the same port number on the
    node on which the VNC server is running. You cannot use the generic
@@ -324,8 +318,8 @@ Connecting to the server
    server. Otherwise the next user might not be able to connect.
 
 *Note that the first time that you start a Xfce session with TurboVNC,
-you'll see a panel \\"Welcome to the first start of the panel\". Please
-select \\"Use default config\" as otherwise you get a very empty
+you'll see a panel "Welcome to the first start of the panel". Please
+select "Use default config" as otherwise you get a very empty
 desktop.*
 
 Starting an application
@@ -391,27 +385,24 @@ Links
 Components used in the UAntwerp setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `The TurboVNC web site <\%22https://www.turbovnc.org/\%22>`__, where
-   you'll find downloads for Linux, Windows and macOS
--  `The VirtualGL web site <\%22https://www.turbovnc.org/\%22>`__
--  `The Xfce web site <\%22https://xfce.org/\%22>`__ and some
-   `background material in
-   WikiPedia <\%22https://en.wikipedia.org/wiki/Xfce\%22>`__
+-  The `TurboVNC`_ web site, where you'll find downloads for Linux,
+   Windows and macOS
+-  The `VirtualGL <https://www.turbovnc.org/>`_ web site 
+-  The `Xfce <https://xfce.org/>`_  web site and some
+   `background material in WikiPedia <https://en.wikipedia.org/wiki/Xfce>`_
 
 Related technologies
 ~~~~~~~~~~~~~~~~~~~~
 
--  `The Gnome web site <\%22https://www.gnome.org/\%22>`__ and `some
-   background in
-   WikiPedia <\%22https://en.wikipedia.org/wiki/GNOME\%22>`__
--  `The KDE web site <\%22https://www.kde.org/\%22>`__ and `some
-   background in
-   WikiPedia <\%22https://en.wikipedia.org/wiki/KDE\%22>`__
+-  `The Gnome web site <https://www.gnome.org/>`_ and `some
+   background in WikiPedia <https://en.wikipedia.org/wiki/GNOME>`_
+-  `The KDE web site <https://www.kde.org/>`_ and `some
+   background in WikiPedia <https://en.wikipedia.org/wiki/KDE>`_
 -  `The Tab Window Manager (sometimes called Tom's Window Manager) on
-   WikiPedia <\%22https://en.wikipedia.org/wiki/Twm\%22>`__, currently
+   WikiPedia <https://en.wikipedia.org/wiki/Twm>`_, currently available
+   on hopper without support.
+-  `The Motif Window Manager on Wikipedia
+   <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_, currently
    available on hopper without support.
--  `The Motif Window Manager on
-   Wikipedia <\%22https://en.wikipedia.org/wiki/Motif_Window_Manager\%22>`__,
-   currently available on hopper without support.
 
-"
+.. include:: ../access/links.rst
