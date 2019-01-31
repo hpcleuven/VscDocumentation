@@ -35,9 +35,8 @@ is different from the one on some other VSC clusters:
 Compilers
 ---------
 
--  The compilers work exactly in the way described on `the regular Intel
-   toolchain web
-   page <\%22/cluster-doc/development/toolchain-intel\%22>`__, including
+-  The compilers work exactly in the way described on :ref:`the regular
+   Intel toolchain web page <Intel toolchain>`, including
    the MPI compiler wrappers. All links to the documentation on that
    page are also relevant.
 -  Man pages for all commands have also been installed.
@@ -58,9 +57,8 @@ Libraries
 Math Kernel Library (MKL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MKL works exactly as in the regular VSC Intel toolchain. See `the MKL
-section of web page on the VSC Intel
-toolchain <\%22https://www.vscentrum.be/cluster-doc/development/toolchain-intel#intel-mathematical-libraries\%22>`__
+MKL works exactly as in the regular VSC Intel toolchain. See :ref:`the MKL
+section of web page on the VSC Intel toolchain <Intel MKL>`
 for more information.
 
 Integrated Performance Primitives (IPP)
@@ -75,10 +73,9 @@ Integrated Performance Primitives (IPP)
 
    -  `Getting started with Intel® Integrated Performance Primitives
       2017 for Linux\*
-      OS <\%22https://software.intel.com/en-us/get-started-with-ipp-for-linux\%22>`__
+      OS <https://software.intel.com/en-us/get-started-with-ipp-for-linux>`_
    -  Developer guide and various tutorials in `the Intel Software
-      Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Documentation Library <https://software.intel.com/en-us/documentation>`_
 
 Threading Building Blocks (TBB)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,9 +87,9 @@ Threading Building Blocks (TBB)
 -  Documentation
 
    -  `The Intel Threading Building Blocks web
-      site <\%22https://www.threadingbuildingblocks.org/\%22>`__
+      site <https://www.threadingbuildingblocks.org/>`_
    -  Documentation in the `Intel Software Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Library <https://software.intel.com/en-us/documentation>`_
 
 Data Analytics Acceleration Library (DAAL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,9 +102,9 @@ Data Analytics Acceleration Library (DAAL)
 
    -  `Getting Started with Intel® Data Analytics Acceleration Library
       for
-      Linux <\%22https://software.intel.com/en-us/get-started-with-daal-for-linux\%22>`__
+      Linux <https://software.intel.com/en-us/get-started-with-daal-for-linux>`_
    -  Documentation in the `Intel Software Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Library <https://software.intel.com/en-us/documentation>`_
 
 Code and performance analysis
 -----------------------------
@@ -118,19 +115,19 @@ VTune Amplifier XE
 -  What? VTune Amplifier is a tool for runtime analysis of serial and
    shared memory applications. For a list of features, please consult
    the `Getting Started with VTune web
-   page <\%22https://software.intel.com/en-us/get-started-with-vtune\%22>`__.
+   page <https://software.intel.com/en-us/get-started-with-vtune>`_.
 -  Module: ``VTune/<toolchain version>``, e.g., ``VTune/2017a``.
 -  How? VTune Amplifier is started through the ``amplxe-gui`` (GUI
    version) or ``amplxe-cl`` (command line version) command.
 -  Documentation:
 
    -  `Getting started with VTune web page on the Intel web
-      site <\%22https://software.intel.com/en-us/get-started-with-vtune\%22>`__
+      site <https://software.intel.com/en-us/get-started-with-vtune>`_
    -  `VTune Amplifier training page by
-      Intel <\%22https://software.intel.com/en-us/intel-vtune-amplifier-xe-support/training\%22>`__
+      Intel <https://software.intel.com/en-us/intel-vtune-amplifier-xe-support/training>`_
    -  Intel VTune Amplifier documentation in the `Intel Software
       Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Library <https://software.intel.com/en-us/documentation>`_
    -  Man page for ``amplxe-cl`` (after loading the appropriate VTune
       module)
 
@@ -140,7 +137,7 @@ ITAC - Intel Trace Analyzer and Collector
 -  What? ITAC is a graphical tool to understand MPI application
    behaviour. A full set of features can be found on the `Getting
    Started with Intel Trace Analyzer and Colllector
-   page <\%22https://software.intel.com/en-us/get-started-with-itac\%22>`__.
+   page <https://software.intel.com/en-us/get-started-with-itac>`_.
 -  How? Analysis is a two-step operation:
 
    #. Run your application using the ``-trace`` option of mpirun to
@@ -152,12 +149,12 @@ ITAC - Intel Trace Analyzer and Collector
 
    -  `Getting started with Intel Trace Analyzer and Collector on the
       Intel web
-      site <\%22https://software.intel.com/en-us/get-started-with-itac\%22>`__
+      site <https://software.intel.com/en-us/get-started-with-itac>`_
    -  `Training videos on the Intel
-      site <\%22https://software.intel.com/en-us/intel-trace-analyzer-support/training\%22>`__
+      site <https://software.intel.com/en-us/intel-trace-analyzer-support/training>`_
    -  Intel Trace Analyzer and Collector documentation in the `Intel
       Software Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Library <https://software.intel.com/en-us/documentation>`_
    -  Manual pages for the library functions and some commands
 
 Advisor
@@ -175,9 +172,9 @@ Advisor
 -  Documentation
 
    -  `Getting started with Intel
-      Advisor <\%22https://software.intel.com/en-us/get-started-with-advisor\%22>`__
+      Advisor <https://software.intel.com/en-us/get-started-with-advisor>`_
    -  Intel Advisor documentation in the `Intel Software Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Library <https://software.intel.com/en-us/documentation>`_
    -  Manual page for ``advixe-cl``
 
 Inspector
@@ -193,14 +190,11 @@ Inspector
 -  Documentation:
 
    -  `Getting started with Intel Inspector - Linux
-      OS <\%22https://software.intel.com/en-us/node/595380\%22>`__
+      OS <https://software.intel.com/en-us/node/595380>`_
    -  `Intel Online Training
-      material <\%22https://software.intel.com/en-us/intel-inspector-xe-support/training\%22>`__
+      material <https://software.intel.com/en-us/intel-inspector-xe-support/training>`_
    -  `Intel Inspector Help - Linux
-      OS <\%22https://software.intel.com/en-us/inspector-user-guide-linux\%22>`__
+      OS <https://software.intel.com/en-us/inspector-user-guide-linux>`_
    -  Further Intel Inspector documentation in the `Intel Software
-      Documentation
-      Library <\%22https://software.intel.com/en-us/documentation\%22>`__
+      Documentation Library <https://software.intel.com/en-us/documentation>`_
    -  Manual page for ``inspxe-cl``
-
-"

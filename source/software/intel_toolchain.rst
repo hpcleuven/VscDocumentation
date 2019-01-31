@@ -118,6 +118,8 @@ implementation of Intel MPI, you can even omit ``-np $PBS_NP`` as Intel
 MPI recognizes the Torque resource manager and requests the number of
 cores itself from the resource manager if the number is not specified.
 
+.. _Intel MKL:
+
 Intel mathematical libraries
 ----------------------------
 
