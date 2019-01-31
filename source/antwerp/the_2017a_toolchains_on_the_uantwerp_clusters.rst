@@ -22,9 +22,8 @@ Important changes in the 2017a toolchain:
    Acceleration Library (DAAL). All developer tools (debugger,
    Inspector, Advisor, Vtune Amplifier, ITAC) are enabled by loading the
    inteldevtools/2017a module rather than independent modules for each
-   tool. More information is available on `the documentation page on the
-   Intel compilers @
-   UAntwerp <\%22/infrastructure/hardware/hardware-ua/intel\%22>`__.
+   tool. More information is available on :ref:`the documentation page on the
+   Intel compilers @ UAntwerp <Antwerp 2017a intel>`.
 -  The Python install now also contains a number of packages that
    previously where accessed via separate modules:
 
@@ -54,8 +53,7 @@ There are currently three major toolchains on the UAntwerp clusters:
    matching versions of the GNU compilers, and all software compiled
    with them.
 
-   -  `Modules in the intel/2017a
-      toolchain <\%22/infrastructure/hardware/hardware-ua/toolchain-2017a-intel\%22>`__
+   -  :ref:`Modules in the intel/2017a toolchain <Antwerp 2017a intel>`
 
 -  The FOSS toolchain, built out of open-source components. It is mostly
    used for programs that don’t install with the Intel compilers, or by
@@ -65,14 +63,14 @@ There are currently three major toolchains on the UAntwerp clusters:
    GCCcore, and some programs are installed in these subtoolchains
    because they don’t use the additional components that FOSS offers.
 
-   -  `Modules in the foss/2017a toolchain and its
-      subtoolchains <\%22/infrastructure/hardware/hardware-ua/toolchain-2017a-foss\%22>`__
+   -  :ref:`Modules in the foss/2017a toolchain and its
+      subtoolchains <Antwerp 2017a foss>`
 
 -  The system toolchain (sl6 or centos7), containing programs that only
    use system libraries or other tools from this toolchain.
 
-   -  `Modules in the system toolchain for CentOS
-      7 <\%22/infrastructure/hardware/hardware-ua/toolchain-system-centos7\%22>`__
+   -  :ref:`Modules in the system toolchain for CentOS
+      7 <Antwerp system toolchain CentOS 7>`
 
 The tables below list the last available module for a given software
 package and the corresponding version in the 2017a toolchain. Older
@@ -84,5 +82,3 @@ have not been used recently will only be installed on demand.
 Several of the packages in the system toolchain are still listed as “on
 demand” since they require licenses and interaction with their users is
 needed before we can install them.
-
-"

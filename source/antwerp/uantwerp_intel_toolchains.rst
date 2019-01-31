@@ -1,3 +1,5 @@
+.. _Antwerp 2017a intel:
+
 UAntwerp Intel toolchains
 =========================
 

@@ -1,3 +1,5 @@
+.. _Antwerp 2017a foss:
+
 The foss/2017a toolchain and its subtoolchains on the UAntwerp clusters
 =======================================================================
 

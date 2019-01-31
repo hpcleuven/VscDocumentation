@@ -1,4 +1,4 @@
-.. _system toolchain UAntwerp:
+.. _Antwerp system toolchain CentOS 7:
 
 The system toolchain on the UAntwerp clusters (for CentOS 7)
 ============================================================
