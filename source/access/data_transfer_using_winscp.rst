@@ -18,7 +18,7 @@ PC.
 
 WinSCP also works together well with the PuTTY suite of applications. It
 uses the :ref:`keys generated with the PuTTY key generation
-program <generating keys on windows>`_, can :ref:`launch terminal
+program <generating keys on windows>`, can :ref:`launch terminal
 sessions in PuTTY <text access using PuTTY>` and :ref:`use
 ssh keys managed by pageant <using Pageant>`.
 

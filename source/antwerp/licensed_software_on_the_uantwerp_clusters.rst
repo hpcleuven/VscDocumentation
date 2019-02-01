@@ -78,3 +78,4 @@ VASP
 ----
 
 .. include:: ../software/links.rst
+.. include:: ../access/links.rst

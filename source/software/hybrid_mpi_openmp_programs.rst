@@ -178,10 +178,10 @@ The following are then essential components of the job script:
 -  Load the modules, including one which contains Intel MPI, e.g.,
    ``module load intel``
 -  Create a list of unique hosts assigned to the job
-   :literal:`export HOSTS=`sort -u $PBS_NODEFILE | paste -s -d,\``\ This
+   ``export HOSTS=$(sort -u $PBS_NODEFILE | paste -s -d,)`` This
    step is very important; the program will not start with the correct
    number of MPI ranks if it is not provided with a list of unique host
-   names. ````
+   names.
 -  Set the number of OpenMP threads per MPI process:
    ``export OMP_NUM_THREADS=5``
 -  Pin the MPI processes:

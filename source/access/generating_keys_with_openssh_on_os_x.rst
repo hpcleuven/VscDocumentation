@@ -16,5 +16,5 @@ Generating a public/private key pair
 ------------------------------------
 
 Generating a public/private key pair is identical to what is described
-in the :ref:`linux client`_ section,
+in the :ref:`linux client` section,
 that is, by using the ssh-keygen command in a Terminal window.

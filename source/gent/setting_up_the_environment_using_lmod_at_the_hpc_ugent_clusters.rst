@@ -39,8 +39,6 @@ examples.
 Module commands: using ``module`` (or ``ml``)
 ---------------------------------------------
 
---------------
-
 Listing loaded modules: ``module list`` (or ``ml``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,7 +58,6 @@ loaded:
 
 (for more details on sticky modules, see the section on ``ml purge``)
 
---------------
 
 Searching for available modules: module avail (or ml av) and ml spider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +97,6 @@ default, but we strongly recommend to *not* rely on this as the default
 can change at any point. Usuall, the default will point to the latest
 version available.
 
---------------
 
 Searching for modules: ml spider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -171,8 +167,6 @@ the clusters ``delcatty``, ``golett``, ``phanpy``, ``raichu`` and
 ``swalot``. It also tells you what the module contains and a URL to the
 homepage of the software.
 
---------------
-
 Available modules for a particular software package: module avail <name> (or ml av <name>)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -236,8 +230,6 @@ modules that will be loaded are shown.
 If you're not sure what all of this means: don't worry, you don't have
 to know; just load the module and try using the software.
 
---------------
-
 Loading modules: module load <modname(s)> (or ml <modname(s)>)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -272,8 +264,6 @@ and its dependencies) and the module providing the *Python* installation
 for which *matplotlib* was installed (i.e.
 ``Python/2.7.11-intel-2016a``).
 
---------------
-
 Conflicting modules
 ^^^^^^^^^^^^^^^^^^^
 
@@ -295,8 +285,6 @@ load.
 
 See also :ref:`the topic "module conflicts" in the list of key differences
 with the previously used module system <Lmod key differences>`.
-
---------------
 
 Unloading modules: module unload <modname(s)> (or ml -<modname(s)>)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -326,7 +314,6 @@ For example:
    $ which gcc
    /usr/bin/gcc
 
---------------
 
 Resetting by unloading all modules: ml purge (module purge)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -367,7 +354,6 @@ after running ``ml purge``. See also :ref:`the topic on the purge command in
 the list of key differences with the previously used module
 implementation <Lmod key differences>`.
 
---------------
 
 Module collections: ml save, ml restore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -408,7 +394,6 @@ To inspect a collection, use ``ml describe``.
 To remove a module collection, remove the corresponding entry in
 ``$HOME/.lmod.d``.
 
---------------
 
 Lmod vs Tcl-based environment modules
 -------------------------------------
@@ -419,7 +404,6 @@ tool <http://modules.sourceforge.net/>`_.
 
 Consult the `Lmod documentation`_ web site for more information.
 
---------------
 
 Benefits
 ~~~~~~~~
@@ -434,8 +418,6 @@ Benefits
    module files do not need to be modified to work)
 -  module files can be written in either Tcl or Lua syntax (and both
    types of modules can be mixed together)
-
---------------
 
 .. _Lmod key differences:
 
@@ -458,7 +440,6 @@ modules tool you should be aware of:
 | 
 | See below for more detailed information.
 
---------------
 
 Module conflicts are strictly enforced
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -492,7 +473,6 @@ Note that although Lmod suggests to unload or swap, we recommend to try
 and make sure you *only load compatible* modules together\ *, and
 certainly*\ **not**\ *to define ``$LMOD_DISABLE_SAME_NAME_AUTOSWAP``.*
 
---------------
 
 module purge does not unload the cluster module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -532,7 +512,6 @@ If you do, please remove that, and include this *at the top* of your
            . /etc/bashrc
    fi
 
---------------
 
 modulecmd is not available anymore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

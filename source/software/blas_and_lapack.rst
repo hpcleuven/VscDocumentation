@@ -57,7 +57,7 @@ Links
 -  The LAPACK, LAPACK95 and ScaLAPACK manuals are published by SIAM, but
    there are online HTML versions available on Netlib (the repository
    that also contains the reference Fortran implementations):
-_
+
    -  `LAPACK user guide`_ in the `Netlib BLAS repository`_
    -  `LAPACK95 user guide`_ in the `Netlib LAPACK repository`_
    -  `ScaLAPACK user guide`_ in the `Netlib ScaLAPACK repository`_

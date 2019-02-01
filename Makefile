@@ -18,6 +18,8 @@ web: Makefile
 	@$(SPHINXAUTOBUILD) -b html -B "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 check: Makefile
+	$(RM) -r build
+	mkdir build
 	@$(SPHINXBUILD) -b html -a -n -q -N "$(SOURCEDIR)" "$(BUILDDIR)" \
 		$(SPHINXOPTS) $(O)
 
