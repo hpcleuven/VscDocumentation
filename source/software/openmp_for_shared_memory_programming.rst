@@ -118,6 +118,7 @@ Further information
    OpenMP Architecture Review Board where the standard is discussed.
 -  See also the pages in the :ref:`tutorials section <books>` and :ref:`online
    tutorials <web tutorials>`. 
+
 The tutorial at the site of Lawrence Livermore National Laboratory `LLNL openMP tutorial`_ (LLNL) is highly recommended.
 
 .. include:: links.rst

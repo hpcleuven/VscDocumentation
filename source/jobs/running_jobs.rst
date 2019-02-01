@@ -28,7 +28,7 @@ Common problems
 Advanced topics
 ---------------
 
--  :doc:`credit_system_basics`:
+-  :ref:`credit system basics`:
    credits are used on all clusters at the KU Leuven (including the
    Tier-1 system BrENIAC) to control your compute time allocation
 -  :doc:`monitoring_memory_and_cpu_usage_of_programs`, which helps to find the

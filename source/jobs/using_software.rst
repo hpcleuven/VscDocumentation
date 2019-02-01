@@ -35,7 +35,7 @@ Packages with additional documentation
 -  R
 
    -  :ref:`Accessing command line arguments in R scripts <R command
-     line arguments>`
+      line arguments>`
    -  :ref:`Integrating C functions in R <R integrating C functions>`
 
 -  Some programming languages have an extensive standard library, but

@@ -122,7 +122,7 @@ appropriate VSC documentation:
 
 -  for windows: :ref:`FileZilla <FileZilla>` or :ref:`winscp <WinScp>`
 
--  for macOS: :ref:`Cyberduck` or :ref:`scp and sftp <scp and sftp>`
+-  for macOS: :ref:`Cyberduck data transfer` or :ref:`scp and sftp <scp and sftp>`
 
 Use case : How to check the disk usage?
 ---------------------------------------

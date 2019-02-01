@@ -16,7 +16,7 @@ code, how to compile and build an application.
 Note for KU Leuven and UHasselt users: Microsoft Visual Studio is
 covered by the campus license for Microsoft products of both KU Leuven
 and Hasselt University. Hence staff and students can
-`download <\%22https://www.dreamspark.com/\%22>`__ and use the software.
+`download <https://www.dreamspark.com/>`_ and use the software.
 
 Also note that although Microsoft offers a free evaluation version of
 its development tools, i.e., Visual Studio Express, this version does
@@ -34,7 +34,7 @@ off.
 Once the project is created, simply write the code, and enable the
 openMP compiler option in the project's properties as shown below.
 
-|\\"OpenMP|
+|MS Visual Studio OpenMP|
 
 Compiling, building and running your program can now be done in the
 familiar way.
@@ -49,14 +49,14 @@ Installation
 ~~~~~~~~~~~~
 
 #. The MPI libraries and infrastructure is part of Microsoft's `HPC Pack
-   SDK <\%22https://msdn.microsoft.com/en-us/library/cc853440(v=vs.85).aspx\%22>`__.
+   SDK <https://msdn.microsoft.com/en-us/library/cc853440(v=vs.85).aspx>`_.
    Download the either the 32- or 64-bit version, whichever is
    appropriate for your desktop system (most probably the 32-bit
    version, denoted by 'x86'). Installing is merely a matter of
    double-clicking the downloaded installer.
 #. Although not strictly required, it is strongly recommended to install
    the `MPI Project
-   Template <\%22https://marketplace.visualstudio.com/items?itemName=ClusterDebuggerLauncherCoreTeam.MPIProjectTemplate\%22>`__
+   Template <https://marketplace.visualstudio.com/items?itemName=ClusterDebuggerLauncherCoreTeam.MPIProjectTemplate>`_
    as well. Again, one simply downloads and double-clicks the installer.
 
 Development
@@ -64,7 +64,7 @@ Development
 
 To develop an MPI-based application, create an MPI project.
 
-|\\"New|
+|MS Visual Studio MPI|
 
 It is advisable not to use precompiled headers, so switch this setting
 off.
@@ -73,7 +73,7 @@ Next, write your code. Once you are ready to debug or run your code,
 make the following adjustments to the project's properties in the
 'Debugging' section.
 
-|\\"MPI|
+|MS Visual Studio run environment|
 
 A few settings should be verified, and if necessary, modified:
 
@@ -91,19 +91,16 @@ Debugging now proceeds as usual. One can switch between processes by
 selecting the main thread of the appropriate process by selecting the
 appropriate main thread in the Threads view.
 
-|\\"Switching|
+|MS Visual Studio debugging|
 
 Useful links
 ------------
 
--  A `tutorial on
-   debugging <\%22https://www.codeproject.com/Articles/79508/Mastering-Debugging-in-Visual-Studio-A-Beginn\%22>`__
+-  A `tutorial on debugging
+   <https://www.codeproject.com/Articles/79508/Mastering-Debugging-in-Visual-Studio-A-Beginn>`_
    in Microsoft Visual C++
 
-"
-
-.. |\\"OpenMP| image:: \%22/assets/163\%22
-.. |\\"New| image:: \%22/assets/165\%22
-.. |\\"MPI| image:: \%22/assets/167\%22
-.. |\\"Switching| image:: \%22/assets/169\%22
-
+.. |MS Visual Studio OpenMP| image:: ms_visual_studio/ms_visual_studio_openmp.png
+.. |MS Visual Studio MPI| image:: ms_visual_studio/ms_visual_studio_mpi.png
+.. |MS Visual Studio run environment| image:: ms_visual_studio/ms_visual_studio_run_enviornment.png
+.. |MS Visual Studio debugging| image:: ms_visual_studio/ms_visual_studio_debugging.png

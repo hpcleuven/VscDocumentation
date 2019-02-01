@@ -51,86 +51,83 @@ Software is installed on demand. As these systems are new to us also, we
 do expect some collaboration of the user to get software running on the
 GPUs.
 
-+-----------------------+-----------------------+-----------------------+
-| Package               | **Module**            | Description           |
-+=======================+=======================+=======================+
-| `CP2K`_               | CP2K/5.1-intel-2017a- | GPU-accelerated       |
-|                       | bare-GPU-noMPI        | version of CP2K. The  |
-|                       |                       | -GPU-noMPI-versions   |
-|                       |                       | are ssmp binaries     |
-|                       |                       | without support for   |
-|                       |                       | MPI, so they can only |
-|                       |                       | be used on a single   |
-|                       |                       | GPU node. The         |
-|                       |                       | binaries are compiled |
-|                       |                       | with equivalent       |
-|                       |                       | options to the        |
-|                       |                       | corresponding         |
-|                       |                       | -bare-multiver        |
-|                       |                       | modules for CPU-only  |
-|                       |                       | computations.         |
-+-----------------------+-----------------------+-----------------------+
-| `CUDA`_               | CUDA/8.0.61           | Various versions of   |
-!                       | CUDA/9.0.176          | the CUDA development  |
-|                       | CUDA/9.1.85           | kit                   |
-+-----------------------+-----------------------+-----------------------+
-| `cuDNN`_              | cuDNN/6.0-CUDA-8.0.61 | The CUDA Deep Neural  |
-|                       | cuDNN/7.0.5-CUDA-8.0. | Network library,      |
-|                       | 61                    | version 6.0 and 7.0,  |
-|                       | cuDNN/7.0.5-CUDA-9.0. | both installed from   |
-|                       | 176                   | standard NVIDA        |
-|                       | cuDNN/7.0.5-CUDA-9.1. | tarbals but in the    |
-|                       | 85                    | directory structure   |
-|                       |                       | of our module system. |
-+-----------------------+-----------------------+-----------------------+
-| `GROMACS`_            | GROMACS/2016.4-foss-2 | GROMACS with GPU      |
-|                       | 017a-GPU-noMPI        | acceleration. The     |
-|                       | GROMACS/2016.4-intel- | -GPU-noMPI-versions   |
-|                       | 2017a-GPU-noMPI       | are ssmp binaries     |
-|                       |                       | without support for   |
-|                       |                       | MPI, so they can only |
-|                       |                       | be used on a single   |
-|                       |                       | GPU node.             |
-+-----------------------+-----------------------+-----------------------+
-| `Keras`_              | Keras/2.1.3-intel-201 | Keras with TensorFlow |
-|                       | 7c-GPU-Python-3.6.3   | as the backend (1.4   |
-|                       |                       | for Keras 2.1.3),     |
-|                       |                       | using the             |
-|                       |                       | GPU-accelerated       |
-|                       |                       | version of            |
-|                       |                       | Tensorflow.           |
-|                       |                       | For comparison        |
-|                       |                       | purposes there is a   |
-|                       |                       | identical version     |
-|                       |                       | using the CPU-only    |
-|                       |                       | version of TensorFlow |
-|                       |                       | 1.4.                  |
-+-----------------------+-----------------------+-----------------------+
-| `NAMD`_               |                       | Work in progress      |
-|                       |                       |                       |
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| `TensorFlow`_         | Tensorflow/1.3.0-inte | GPU versions of       |
-|                       | l-2017a-GPU-Python-3. | Tensorflow 1.3 and    |
-|                       | 6.1                   | 1.4. Google-provided  |
-|                       | Tensorflow/1.4.0-inte | binaries were used    |
-|                       | l-2017c-GPU-Python-3. | for the installation. |
-|                       | 6.3                   | There are CPU-only    |
-|                       |                       | equivalents of those  |
-|                       |                       | modules for           |
-|                       |                       | comparison. The 1.3   |
-|                       |                       | version was installed |
-|                       |                       | from the standard     |
-|                       |                       | PyPi wheel which is   |
-|                       |                       | not well optimized    |
-|                       |                       | for modern            |
-|                       |                       | processors, the 1.4   |
-|                       |                       | version was installed |
-|                       |                       | from a Python wheel   |
-|                       |                       | compiled by Intel     |
-|                       |                       | engineers and should  |
-|                       |                       | be well-optimized for |
-|                       |                       | all our systems.      |
-+-----------------------+-----------------------+-----------------------+
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| Package               | **Module**                                                                    | Description                                                      |
++=======================+===============================================================================+==================================================================+
+| `CP2K`_               | CP2K/5.1-intel-2017a-bare-GPU-noMPI                                           | GPU-accelerated version of CP2K. The ``-GPU-noMPI-versions``     |
+|                       |                                                                               | are ssmp binaries                                                |
+|                       |                                                                               | without support for                                              |
+|                       |                                                                               | MPI, so they can only                                            |
+|                       |                                                                               | be used on a single                                              |
+|                       |                                                                               | GPU node. The                                                    |
+|                       |                                                                               | binaries are compiled                                            |
+|                       |                                                                               | with equivalent                                                  |
+|                       |                                                                               | options to the                                                   |
+|                       |                                                                               | corresponding ``-bare-multiver``                                 |
+|                       |                                                                               | modules for CPU-only                                             |
+|                       |                                                                               | computations.                                                    |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `CUDA`_               | CUDA/8.0.61                                                                   | Various versions of                                              |
+|                       | CUDA/9.0.176                                                                  | the CUDA development                                             |
+|                       | CUDA/9.1.85                                                                   | kit                                                              |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `cuDNN`_              | cuDNN/6.0-CUDA-8.0.61                                                         | The CUDA Deep Neural                                             |
+|                       | cuDNN/7.0.5-CUDA-8.0.                                                         | Network library,                                                 |
+|                       | 61                                                                            | version 6.0 and 7.0,                                             |
+|                       | cuDNN/7.0.5-CUDA-9.0.                                                         | both installed from                                              |
+|                       | 176                                                                           | standard NVIDA                                                   |
+|                       | cuDNN/7.0.5-CUDA-9.1.                                                         | tarbals but in the                                               |
+|                       | 85                                                                            | directory structure                                              |
+|                       |                                                                               | of our module system.                                            |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `GROMACS`_            | GROMACS/2016.4-foss-2                                                         | GROMACS with GPU                                                 |
+|                       | 017a-GPU-noMPI                                                                | acceleration. The                                                |
+|                       | GROMACS/2016.4-intel-                                                         | -GPU-noMPI-versions                                              |
+|                       | 2017a-GPU-noMPI                                                               | are ssmp binaries                                                |
+|                       |                                                                               | without support for                                              |
+|                       |                                                                               | MPI, so they can only                                            |
+|                       |                                                                               | be used on a single                                              |
+|                       |                                                                               | GPU node.                                                        |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `Keras`_              | Keras/2.1.3-intel-201                                                         | Keras with TensorFlow                                            |
+|                       | 7c-GPU-Python-3.6.3                                                           | as the backend (1.4                                              |
+|                       |                                                                               | for Keras 2.1.3),                                                |
+|                       |                                                                               | using the                                                        |
+|                       |                                                                               | GPU-accelerated                                                  |
+|                       |                                                                               | version of                                                       |
+|                       |                                                                               | Tensorflow.                                                      |
+|                       |                                                                               | For comparison                                                   |
+|                       |                                                                               | purposes there is a                                              |
+|                       |                                                                               | identical version                                                |
+|                       |                                                                               | using the CPU-only                                               |
+|                       |                                                                               | version of TensorFlow                                            |
+|                       |                                                                               | 1.4.                                                             |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `NAMD`_               |                                                                               | Work in progress                                                 |
+|                       |                                                                               |                                                                  |
+|                       |                                                                               |                                                                  |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `TensorFlow`_         | Tensorflow/1.3.0-inte                                                         | GPU versions of                                                  |
+|                       | l-2017a-GPU-Python-3.                                                         | Tensorflow 1.3 and                                               |
+|                       | 6.1                                                                           | 1.4. Google-provided                                             |
+|                       | Tensorflow/1.4.0-inte                                                         | binaries were used                                               |
+|                       | l-2017c-GPU-Python-3.                                                         | for the installation.                                            |
+|                       | 6.3                                                                           | There are CPU-only                                               |
+|                       |                                                                               | equivalents of those                                             |
+|                       |                                                                               | modules for                                                      |
+|                       |                                                                               | comparison. The 1.3                                              |
+|                       |                                                                               | version was installed                                            |
+|                       |                                                                               | from the standard                                                |
+|                       |                                                                               | PyPi wheel which is                                              |
+|                       |                                                                               | not well optimized                                               |
+|                       |                                                                               | for modern                                                       |
+|                       |                                                                               | processors, the 1.4                                              |
+|                       |                                                                               | version was installed                                            |
+|                       |                                                                               | from a Python wheel                                              |
+|                       |                                                                               | compiled by Intel                                                |
+|                       |                                                                               | engineers and should                                             |
+|                       |                                                                               | be well-optimized for                                            |
+|                       |                                                                               | all our systems.                                                 |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. include:: ../software/links.rst

@@ -6,7 +6,7 @@ Creating a SSH tunnel using OpenSSH
 Prerequisits
 ------------
 
--  A ssh key pair, properly installed in your VSC account, see the :erf:`page
+-  A ssh key pair, properly installed in your VSC account, see the :ref:`page
    on generating keys <generating keys windows>`.
 -  Additionally, you should be able to :ref:`connect to the cluster's login
    node <OpenSSH access>` using ssh.

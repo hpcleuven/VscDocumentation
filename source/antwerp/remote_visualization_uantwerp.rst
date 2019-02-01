@@ -160,14 +160,14 @@ We have tested the setup with three different clients:
 -  The TurboVNC client can be downloaded by following the Download link
    on the `TurboVNC`_ web site (which at the moment of
    writing this documentation takes you to a sourceforge
-   `TurboVNC download`_ page).
+   `TurboVNC download page`_).
    Binaries are available for both 32-bit and 64-bit windows systems.
    This client is made by the same people as the server we use so in
    theory one should expect the least problems with this setup.
 -  `TigerVNC <http://tigervnc.org/>`_ is a client whose
    development is supported by the Swedish company Cendio who makes a
    remote display server product (ThinLinc) based on TigerVNC. Binaries
-   for 32-bit and 64-bit windows (vncviewr-*.*.*.exe) can be downloaded
+   for 32-bit and 64-bit windows (``vncviewr-*.*.*.exe``) can be downloaded
    by following the link on `the GitHub Releases
    page <https://github.com/TigerVNC/tigervnc/releases>`_.
    These binaries are ready-to-run.
@@ -207,7 +207,7 @@ Here also there are several possible setups:
    future macOS versions. Some places report that this client is a lot
    slower than the the TurboVNC one on macOS.
    `Binaries are available <https://bintray.com/tigervnc/stable/tigervnc/>`_.
-   Look for the tigervnc-*.dmg files, which contrary to those for
+   Look for the ``tigervnc-*.dmg`` files, which contrary to those for
    Windows and Linux, only contain the viewer software.
 -  A not-so-good alternative is to use the Apple Screen Sharing feature
    which is available through the Finder (command-K key combination) or

@@ -23,7 +23,7 @@ Prerequisite: OpenSSH, Cyberduck or FileZilla
    about FileZilla in the Windows section <FileZilla>`). you can `download
    FileZilla`_.
 
-.. _Cyberduck:
+.. _Cyberduck data transfer:
 
 Transferring files with Cyberduck
 ---------------------------------
