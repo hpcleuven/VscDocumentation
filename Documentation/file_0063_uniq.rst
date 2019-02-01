@@ -1,1 +1,0 @@
-represent nas1 mnt kilobytes somesubdir 648M 3685 grow site_scratch vsc31234 quotas 51200 omitting nas2 diskspace big 134k mmlsquota 001 somedata 3072M idual 50M mpd reaches represented readable bytes 54864 0k 123456 3564 2919M Filesystem ib1 vsc30 indiv 24320M 25600M 20691M grace

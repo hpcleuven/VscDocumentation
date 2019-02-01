@@ -1,1 +1,0 @@
-transported tidbits w64 synchronises maintains releasable 62_8 mingw syncrhonised 62_4_1 corresponds configurations localVsRemote Debug Mingw packaged doku Release promoted CDT workspaces Interesting Eclipse_ coloring Workspaces views MinGW Configuring refactoring Synchronized fixes unpacking gettingStarted 0_0 attractive
