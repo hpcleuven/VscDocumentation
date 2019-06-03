@@ -97,3 +97,11 @@ development tools. For most commercial software, you must first prove
 that you have a valid license or the person who has paid the license on
 the cluster must allow you to use the license. For this you can contact
 your local support team.
+
+
+Tier-1 applications
+-------------------
+
+To prepare for a Tier-1 application, you can use ":ref:`Tier-1 application glossary`" of terms
+that are used in the application form, and check a :ref:`list of
+scientific domains`.
