@@ -82,7 +82,7 @@ Running jobs: accounting workflow
 
 When a job is submitted using ``qsub``
 and it has to be charged against a project account, the name of the
-project has to be specified as an option.
+project has to be specified as an option. In case of the introduction credits the project accountshould be specified as  ``default_project``
 
 ::
 
