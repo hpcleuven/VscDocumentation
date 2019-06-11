@@ -10,3 +10,13 @@ All users having an active VSC account can connect to the login node with the sa
 ::
 
   ssh vscXXXXX@login1-tier2.hpc.kuleuven.be
+
+Running Jobs
+------------
+Jobs can be submitted from the login node but it must be noted that in order to submit jobs to Superdome you need to specify the partition superdome and the queue qnodef:
+
+::
+  
+  qsub -I -lpartition=superdome –q qnodef -L tasks=1:lprocs=14:place=numanode -A lp_myproject
+  
+Without specifying this partition (and queue) your jobs will be submitted to Genius, and will probably not be able to start, due to lack of specified resources.
