@@ -30,3 +30,7 @@ When submitting to superdome no explicit memory request should be added. Memory 
   qsub -I -lpartition=superdome -q qnodef -L tasks=1:lprocs=28:place=numanode=2 -A lp_myproject
   
 **Note**: that you have to scale also the number of lprocs and that the number of tasks stays always 1.
+
+Resource requirements in Superdome
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Supderdome is a partition of a single machine in the cluster. You will need to use another syntax in comparision to thinking or genius to reques the resources (-L syntax http://docs.adaptivecomputing.com/9-0-3/MWM/Content/topics/NUMA/-Lresource.htm )
