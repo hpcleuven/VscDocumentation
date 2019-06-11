@@ -33,4 +33,4 @@ When submitting to superdome no explicit memory request should be added. Memory 
 
 Resource requirements in Superdome
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Supderdome is a partition of a single machine in the cluster. You will need to use another syntax in comparision to thinking or genius to reques the resources (-L syntax http://docs.adaptivecomputing.com/9-0-3/MWM/Content/topics/NUMA/-Lresource.htm )
+Supderdome is a partition of a single machine in the cluster. You will need to use another syntax in comparision to thinking or genius to request the resources (-L syntax http://docs.adaptivecomputing.com/9-0-3/MWM/Content/topics/NUMA/-Lresource.htm ).
