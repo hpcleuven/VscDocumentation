@@ -9,4 +9,4 @@ Superdome is a shared memory machine and consists of several nodes.
     
     
  
-So in total Superdome has 6TB and additionally a local shared scratch file system of 6TB.
+So in total Superdome has 6TB RAM memory and additionally a local shared scratch file system of 6TB.
