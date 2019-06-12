@@ -22,6 +22,11 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
    - 4 NVIDIA P100@1.3 GHz, 16 GB GDDR, connected with NVLink
    - 200 GB SSD local disk
 
+- 4 AMD nodes
+
+   - 2 EPYC 7501 CPUs@2.0 GHz, 32 cores each
+   - 264 GB RAM
+
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
 
 |Genius hardware|
