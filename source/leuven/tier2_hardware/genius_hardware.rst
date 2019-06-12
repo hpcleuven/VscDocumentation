@@ -7,20 +7,20 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
 
     - 2 Xeon Gold 6140 CPUs@2.3 GHz (Skylake), 18 cores each
     - 192 GB RAM
-    - 800 GB SSD local disk
+    - 200 GB SSD local disk
 
 - 10 big memory nodes
 
    - 2 Xeon Gold 6140 CPUs@2.3 GHz (Skylake), 18 cores each
    - 768 GB RAM
-   - 800 GB SSD local disk
+   - 200 GB SSD local disk
 
 - 20 GPGPU nodes
 
    - 2 Xeon Gold 6140 CPUs@2.3 GHz (Skylake), 18 cores each
    - 192 GB RAM
    - 4 NVIDIA P100@1.3 GHz, 16 GB GDDR, connected with NVLink
-   - 800 GB SSD local disk
+   - 200 GB SSD local disk
 
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
 
