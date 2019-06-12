@@ -4,7 +4,7 @@ Superdome is a shared memory machine and consists of several nodes.
 
 - 8 nodes
 
-    - Xeon Gold 6132 CPUs@2.6 GHz (Skylake), 14 cores each
+    - Xeon Gold 6132 CPUs\@2.6 GHz (Skylake), 14 cores each
     - 750 GB RAM
     
     
