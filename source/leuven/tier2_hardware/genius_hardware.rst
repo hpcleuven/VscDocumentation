@@ -14,6 +14,7 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
    - 768 GB RAM
    - 200 GB SSD local disk
+   - specific ``qsub`` :ref:`options <submit to genius big memory node>`
 
 - 20 GPGPU nodes
 
@@ -21,6 +22,7 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
    - 192 GB RAM
    - 4 NVIDIA P100\@1.3 GHz, 16 GB GDDR, connected with NVLink
    - 200 GB SSD local disk
+   - specific ``qsub`` :ref:`options <submit to genius GPU node>`
 
 - 4 AMD nodes
 

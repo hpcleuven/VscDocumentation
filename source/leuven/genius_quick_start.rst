@@ -1,5 +1,9 @@
-Genius Quick Start Guide
+Genius quick start guide
 ========================
+
+:ref:`Genius <Genius hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
+
+
 How to connect to Genius?
 -------------------------
 Genius does have a 4 dedicated login nodes. All users having an active VSC account can connect to the login node with the same credentials using the command: 
@@ -20,9 +24,13 @@ With a visualization capabilities (nvidia Quadro P6000 GPU):
 - login3-tier2.hpc.kuleuven.be  
 - login4-tier2.hpc.kuleuven.be  
 
+
 Running jobs
 ------------
 There are several type of nodes in the Genius cluster: normal compute nodes, gpu nodes, big memory nodes.
+
+
+.. _submit to genius compute node:
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,6 +40,9 @@ To submit to a compute node it all boils down to specifying the required number 
 
   qsub -lnodes=2:ppn=36 -lwalltime=2:00:00 -A myproject myjobscript
   
+
+.. _submit to genius GPU node:
+
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
 The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as a shared resource, meaning that different users can simultaneously use the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU you can submit for example like this:
@@ -46,6 +57,9 @@ Note that in case of 1 GPU you have to request 9 cores. In case you need more GP
 
   qsub -lnodes=1:ppn=27:gpus=3 -lpartition=gpu -A myproject myscript  
    
+
+.. _submit to genius big memory node:
+
 Submit to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The big memory nodes are also located in a separate partition. In case of the big memory nodes it is alo important to add your memory requirements, for example:
