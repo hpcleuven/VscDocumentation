@@ -14,5 +14,6 @@ Welcome to VSC documentation
    software/software_stack
    jobs/running_jobs
    software/software_development
+   hardware
 
 Feel free to contact :ref:`user support <user support VSC>`.

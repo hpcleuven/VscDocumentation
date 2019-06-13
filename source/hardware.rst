@@ -24,4 +24,4 @@ Tier-1 hardware
 .. toctree::
    :maxdepth: 2
 
-   leuven/tier1_hardware
+   leuven/tier1_hardware/breniac_hardware
