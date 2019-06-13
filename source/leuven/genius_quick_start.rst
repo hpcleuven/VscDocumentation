@@ -42,9 +42,14 @@ The GPU nodes are located in a separate cluster partition so you will need to ex
   
 Note that in case of 1 GPU you have to request 9 cores. In case you need more GPUs you have to multiply the 9 cores with the number of GPUs requested, so in case of for example 3 GPUS you will have to specify this:
  
- ::
- 
-   qsub -lnodes=1:ppn=27:gpus=3 -lpartition=gpu -A myproject myscript  
+::
+
+  qsub -lnodes=1:ppn=27:gpus=3 -lpartition=gpu -A myproject myscript  
    
 Submit to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The big memory nodes are also located in a separate partition. In case of the big memory nodes it is alo important to add your memory requirements, for example:
+
+::
+
+  qsub -lnodes=1:ppn=36 -lpmem=20gb -lpartition=bigmem -A myproject myscript
