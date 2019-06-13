@@ -1,5 +1,7 @@
-Superdome Quick Start Guide
+Superdome quick start guide
 ===========================
+
+The :ref:`Superdome <Superdome hardware>` is a shared memory machine, i.e., it can be used to run multi-threaded application that require large amounts of RAM.
 
 How to connect to Superdome?
 ----------------------------
