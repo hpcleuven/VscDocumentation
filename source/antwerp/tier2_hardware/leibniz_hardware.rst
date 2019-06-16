@@ -1,3 +1,5 @@
+.. _Leibniz hardware:
+
 Leibniz hardware
 ================
 
@@ -58,6 +60,7 @@ Hardware details
 
 The nodes are connected using an Infiniband EDR network. 
 Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.
+More info on the storage system is available on the :ref:`UAntwerpen storage` page.
 
 
 Login infrastructure
