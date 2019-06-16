@@ -1,7 +1,9 @@
+.. _UAntwerpen storage:
+
 UAntwerpen storage
 ==================
 
-The storage is organised according to the VSC storage guidelines.
+The storage is organised according to the :ref:`VSC storage guidelines<data location>`
 
 +--------------------------------+--------------------------+------+---------+--------+----------------+
 |Name                            |Variable                  | Type |  Access |Backup  |   Quota        |
