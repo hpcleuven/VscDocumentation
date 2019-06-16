@@ -1,3 +1,5 @@
+.. _GPU computing UAntwerp:
+
 GPU computing @ UAntwerp
 ========================
 
@@ -23,7 +25,7 @@ Getting access
 --------------
 
 Contact :ref:`the UAntwerp support team <user support VSC>`
-to get access to the Xeon Phi node.
+to get access to the GPU node.
 
 Users of the GPU compute nodes are expected to report back on their
 experiences. We are most interested in users who can also compare with
@@ -70,27 +72,32 @@ GPUs.
 | `CUDA`_               | CUDA/8.0.61                                                                   | Various versions of                                              |
 |                       | CUDA/9.0.176                                                                  | the CUDA development                                             |
 |                       | CUDA/9.1.85                                                                   | kit                                                              |
+|                       | CUDA/9.2.148.1                                                                |                                                                  |
+|                       | CUDA/10.0.130                                                                 |                                                                  |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
 | `cuDNN`_              | cuDNN/6.0-CUDA-8.0.61                                                         | The CUDA Deep Neural                                             |
-|                       | cuDNN/7.0.5-CUDA-8.0.                                                         | Network library,                                                 |
-|                       | 61                                                                            | version 6.0 and 7.0,                                             |
-|                       | cuDNN/7.0.5-CUDA-9.0.                                                         | both installed from                                              |
-|                       | 176                                                                           | standard NVIDA                                                   |
-|                       | cuDNN/7.0.5-CUDA-9.1.                                                         | tarbals but in the                                               |
-|                       | 85                                                                            | directory structure                                              |
+|                       | cuDNN/7.0.5-CUDA-8.0.61                                                       | Network library,                                                 |
+|                       | cuDNN/7.0.5-CUDA-9.0.176                                                      | version 6.0 and 7.0,                                             |
+|                       | cuDNN/7.0.5-CUDA-9.1.85                                                       | both installed from                                              |
+|                       | cuDNN/7.4.1.5-CUDA-9.0.176                                                    | standard NVIDA                                                   |
+|                       | cuDNN/7.4.1.5-CUDA-10.0.130                                                   | tarbals but in the                                               |
+|                       |                                                                               | directory structure                                              |
 |                       |                                                                               | of our module system.                                            |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
-| `GROMACS`_            | GROMACS/2016.4-foss-2                                                         | GROMACS with GPU                                                 |
-|                       | 017a-GPU-noMPI                                                                | acceleration. The                                                |
-|                       | GROMACS/2016.4-intel-                                                         | -GPU-noMPI-versions                                              |
-|                       | 2017a-GPU-noMPI                                                               | are ssmp binaries                                                |
-|                       |                                                                               | without support for                                              |
+| Darknet               | Darknet/20180326-intel-2017a-GPU-noOpenCV                                     |                                                                  |
+|                       | Darknet/20180326-intel-2017a-GPU-OpenCV                                       |                                                                  |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `GROMACS`_            | GROMACS/2016.4-foss-2017a-GPU-noMPI                                           | GROMACS with GPU                                                 |
+|                       | GROMACS/2016.4-intel-2017a-GPU-noMPI                                          | acceleration. The                                                |
+|                       | GROMACS/2018.3-intel-2018b-UArecipe-CUDA                                      | ``-GPU-noMPI-versions``                                          |
+|                       | GROMACS/2019.1-intel-2018b-UArecipe-CUDA                                      | are ssmp binaries                                                |
+|                       | GROMACS/2019.2-intel-2018b-UArecipe-CUDA                                      | without support for                                              |
 |                       |                                                                               | MPI, so they can only                                            |
 |                       |                                                                               | be used on a single                                              |
 |                       |                                                                               | GPU node.                                                        |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
-| `Keras`_              | Keras/2.1.3-intel-201                                                         | Keras with TensorFlow                                            |
-|                       | 7c-GPU-Python-3.6.3                                                           | as the backend (1.4                                              |
+| `Keras`_              | Keras/2.1.3-intel-2018a-GPU-Python-3.6.4                                      | Keras with TensorFlow                                            |
+|                       |                                                                               | as the backend (1.4                                              |
 |                       |                                                                               | for Keras 2.1.3),                                                |
 |                       |                                                                               | using the                                                        |
 |                       |                                                                               | GPU-accelerated                                                  |
@@ -105,14 +112,15 @@ GPUs.
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
 | `NAMD`_               |                                                                               | Work in progress                                                 |
 |                       |                                                                               |                                                                  |
-|                       |                                                                               |                                                                  |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
-| `TensorFlow`_         | Tensorflow/1.3.0-inte                                                         | GPU versions of                                                  |
-|                       | l-2017a-GPU-Python-3.                                                         | Tensorflow 1.3 and                                               |
-|                       | 6.1                                                                           | 1.4. Google-provided                                             |
-|                       | Tensorflow/1.4.0-inte                                                         | binaries were used                                               |
-|                       | l-2017c-GPU-Python-3.                                                         | for the installation.                                            |
-|                       | 6.3                                                                           | There are CPU-only                                               |
+| OpenCV                | OpenCV/3.3.1-intel-2017a-GPU-noGUI                                            |                                                                  |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `TensorFlow`_         | Tensorflow/1.3.0-intel-2017a-GPU-Python-3.6.1                                 | GPU versions of                                                  |
+|                       | Tensorflow/1.4.0-intel-2018a-GPU-Python-3.6.4                                 | Tensorflow 1.3 and                                               |
+|                       |                                                                               | 1.4. Google-provided                                             |
+|                       |                                                                               | binaries were used                                               |
+|                       |                                                                               | for the installation.                                            |
+|                       |                                                                               | There are CPU-only                                               |
 |                       |                                                                               | equivalents of those                                             |
 |                       |                                                                               | modules for                                                      |
 |                       |                                                                               | comparison. The 1.3                                              |
@@ -128,6 +136,9 @@ GPUs.
 |                       |                                                                               | engineers and should                                             |
 |                       |                                                                               | be well-optimized for                                            |
 |                       |                                                                               | all our systems.                                                 |
++-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| `TensorFlow`_         | TensorFlow/1.12.0-intel-2018a-GPU-Python-3.6.6                                |                                                                  |
+|                       | TensorFlow/1.12.0-intel-2018b-GPU-Python-3.6.8-Keras-2.2.4                    |                                                                  |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. include:: ../software/links.rst
