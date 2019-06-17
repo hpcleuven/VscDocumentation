@@ -28,9 +28,7 @@ is different from the one on some other VSC clusters:
    expect that you should be able to use any Makefile developed for the
    standard VSC-setup.
 -  All compiler components needed to develop applications with offload
-   to a Xeon Phi expansion board are also provided in anticipation of
-   the installation of such a cluster node for testing purposes in
-   Leibniz.
+   to a Xeon Phi expansion board are also provided.
 
 Compilers
 ---------
@@ -72,7 +70,7 @@ Integrated Performance Primitives (IPP)
 -  Documentation
 
    -  `Getting started with Intel® Integrated Performance Primitives
-      2017 for Linux\*
+      for Linux\*
       OS <https://software.intel.com/en-us/get-started-with-ipp-for-linux>`_
    -  Developer guide and various tutorials in `the Intel Software
       Documentation Library <https://software.intel.com/en-us/documentation>`_
@@ -116,7 +114,7 @@ VTune Amplifier XE
    shared memory applications. For a list of features, please consult
    the `Getting Started with VTune web
    page <https://software.intel.com/en-us/get-started-with-vtune>`_.
--  Module: ``VTune/<toolchain version>``, e.g., ``VTune/2017a``.
+-  Module: ``inteldevtools/<toolchain version>``, e.g., ``inteldevtools/2017a``.
 -  How? VTune Amplifier is started through the ``amplxe-gui`` (GUI
    version) or ``amplxe-cl`` (command line version) command.
 -  Documentation:
@@ -144,7 +142,7 @@ ITAC - Intel Trace Analyzer and Collector
       collect data in a ``.stf`` file.
    #. Analyse the data using ``traceanalyzer``
 
--  Module: ``itac/<toolchain version>``, e.g., ``itac/2017a``.
+-  Module: ``inteldevtools/<toolchain version>``, e.g., ``inteldevtools/2017a``.
 -  Documentation:
 
    -  `Getting started with Intel Trace Analyzer and Collector on the
@@ -168,7 +166,7 @@ Advisor
    options are specified when compiling the application. The resulting
    compiler output can then be analized using the ``advixe-gui``
    command.
--  Module: ``Advisor/<toolchain version>``, e.g., ``Advisor/2017a``.
+-  Module: ``inteldevtools/<toolchain version>``, e.g., ``inteldevtools/2017a``.
 -  Documentation
 
    -  `Getting started with Intel
@@ -186,7 +184,7 @@ Inspector
    is run from within Inspector. Inspector can be started with the
    ``inspxe-gui`` (GUI version) or ``inspxe-cl`` (Command Line version)
    command.
--  Module: ``Inspector/<toolchain version>``, e.g., ``Inspector/2017a``.
+-  Module: ``inteldevtools/<toolchain version>``, e.g., ``inteldevtools/2017a``.
 -  Documentation:
 
    -  `Getting started with Intel Inspector - Linux
