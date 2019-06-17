@@ -9,7 +9,7 @@ the login nodes of hopper and the visualization node of leibniz using a
 technology <https://en.wikipedia.org/wiki/Virtual_Network_Computing>`_.
 On the regular login nodes of hopper, there is no acceleration of 3D
 graphics, but the visualisation node of leibniz is equipped with a
-NVIDIA M5000 card that when used properly will offer accelerated
+NVIDIA P5000 card that when used properly will offer accelerated
 rendering of OpenGL applications. The setup is similar to the setup of
 :ref:`the visualization nodes at the KU Leuven <TurboVNC>`.
 
@@ -143,12 +143,10 @@ Prerequisites
 -------------
 
 You'll need a ssh client on your desktop that provides port forwarding
-functionality on your desktop. We refer to the "`access and data
-transfer`" section of
-the documentation on the user portal for information about ssh clients
-for various client operating systems. PuTTY (Windows) and OpenSSH
-(macOS, Linux, unix-compatibility environment on Windows) both provide
-all required functionality.
+functionality on your desktop. We refer to the :ref:`access and data transfer`
+section for information about ssh clients for various client operating systems.
+PuTTY (Windows) and OpenSSH (macOS, Linux, unix-compatibility environment on
+Windows) both provide all required functionality.
 
 Furthermore, you'll need a VNC client, preferably the TurboVNC client.
 
@@ -389,17 +387,17 @@ Components used in the UAntwerp setup
    Windows and macOS
 -  The `VirtualGL <https://www.turbovnc.org/>`_ web site 
 -  The `Xfce <https://xfce.org/>`_  web site and some
-   `background material in WikiPedia <https://en.wikipedia.org/wiki/Xfce>`_
+   `background material in Wikipedia <https://en.wikipedia.org/wiki/Xfce>`_
 
 Related technologies
 ~~~~~~~~~~~~~~~~~~~~
 
 -  `The Gnome web site <https://www.gnome.org/>`_ and `some
-   background in WikiPedia <https://en.wikipedia.org/wiki/GNOME>`_
+   background in Wikipedia <https://en.wikipedia.org/wiki/GNOME>`_
 -  `The KDE web site <https://www.kde.org/>`_ and `some
-   background in WikiPedia <https://en.wikipedia.org/wiki/KDE>`_
+   background in Wikipedia <https://en.wikipedia.org/wiki/KDE>`_
 -  `The Tab Window Manager (sometimes called Tom's Window Manager) on
-   WikiPedia <https://en.wikipedia.org/wiki/Twm>`_, currently available
+   Wikipedia <https://en.wikipedia.org/wiki/Twm>`_, currently available
    on hopper without support.
 -  `The Motif Window Manager on Wikipedia
    <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_, currently

@@ -1,3 +1,5 @@
+.. _licensed software UAntwerp:
+
 Licensed software on the UAntwerp clusters
 ==========================================
 
@@ -38,13 +40,6 @@ To get access:
 COMSOL
 ------
 
-FINE/Marine
------------
-
-FINE/Marine is commercial CFD software from NUMECA International for
-simulation of flow around ships etc. The license has been granted for
-use of the Solar Boat Team as sponsoring from NUMECA and cannot be used
-by others.
 
 Gaussian
 --------
@@ -55,8 +50,18 @@ and your research group should contribute to the cost of the license.
 Contact `Wouter Herrebout <https://www.uantwerpen.be/en/staff/wouter-herrebout/>`_
 for more information.
 
+
 Gurobi
 ------
+
+
+Maple
+-----
+
+
+Mathematica
+-----------
+
 
 MATLAB
 ------
@@ -71,11 +76,37 @@ should have access to the modules if you are eligible. If you cannot
 load the Matlab modules yet think you are allowed to use Matlab under
 the UAntwerp license, please :ref:`contact support <user support VSC>`.
 
-TurboMole
----------
+MonolixSuite
+------------
+
+
+NUMECA FINE/Marine
+------------------
+
+FINE/Marine is commercial CFD software from NUMECA International for
+simulation of flow around ships etc. The license has been granted for
+use of the Solar Boat Team as sponsoring from NUMECA and cannot be used
+by others.
+
+
+NUMECA OMNIS/LB
+---------------
+
+
+Siemens Simcenter
+-----------------
+
 
 VASP
 ----
+
+To use VASP, you should work or study at the University of Antwerp
+and your research group should contribute to the cost of the license.
+
+Contact `Dirk Lamoen <https://www.uantwerpen.be/en/staff/dirk-lamoen/>`_
+or `Erik Neyts <https://www.uantwerpen.be/en/staff/erik-neyts/>`_
+for more information.
+
 
 .. include:: ../software/links.rst
 .. include:: ../access/links.rst
