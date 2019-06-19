@@ -3,6 +3,28 @@ Genius hardware
 
 Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, large memory nodes, as well as GPGPU nodes.
 
+
+Login infrastructure
+--------------------
+
+Direct login is using SSH is possible to all login infrastructure without restrictions.
+
+Two types of login nodes are available:
+
+- classic login nodes, i.e., SSH access.
+
+    - login1\-tier2\-.hpc.kuleuven.be
+    - login2\-tier2\-.hpc.kuleuven.be
+
+- login nodes with GPUs for visualization, and :ref:`NX clients <NX start guide>`
+
+    - login3\-tier2\-.hpc.kuleuven.be
+    - login4\-tier2\-.hpc.kuleuven.be
+
+
+Hardware details
+----------------
+
 - 86 thin nodes
 
     - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
@@ -14,7 +36,7 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
    - 768 GB RAM
    - 200 GB SSD local disk
-   - specific ``qsub`` :ref:`options <submit to genius big memory node>`
+   - partition ``bigmem``, specific ``qsub`` :ref:`options <submit to genius big memory node>` apply.
 
 - 20 GPGPU nodes
 
@@ -22,12 +44,13 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
    - 192 GB RAM
    - 4 NVIDIA P100\@1.3 GHz, 16 GB GDDR, connected with NVLink
    - 200 GB SSD local disk
-   - specific ``qsub`` :ref:`options <submit to genius GPU node>`
+   - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
 
 - 4 AMD nodes
 
    - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
    - 264 GB RAM
+   - not currently available
 
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
 
