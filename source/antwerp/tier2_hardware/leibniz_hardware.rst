@@ -8,7 +8,7 @@ Leibniz was installed in the spring of 2017. It is a NEC system consisting of
 Broadwell generation CPUs connected through a EDR InfiniBand network. 144 of
 these nodes have 128 GB RAM, the other
 8 have 256 GB RAM. The nodes do not have a sizeable local disk. The cluster also
-contains a node for visualisation, 2 nodes for GPU computing (NVIDIA Psscal
+contains a node for visualisation, 2 nodes for GPU computing (NVIDIA Pascal
 generation) and one node with an Intel Xeon Phi expansion board.
 
 Access restrictions
