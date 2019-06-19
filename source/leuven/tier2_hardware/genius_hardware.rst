@@ -7,19 +7,7 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
 Login infrastructure
 --------------------
 
-Direct login is using SSH is possible to all login infrastructure without restrictions.
-
-Two types of login nodes are available:
-
-- classic login nodes, i.e., SSH access.
-
-    - login1\-tier2\-.hpc.kuleuven.be
-    - login2\-tier2\-.hpc.kuleuven.be
-
-- login nodes with GPUs for visualization, and :ref:`NX clients <NX start guide>`
-
-    - login3\-tier2\-.hpc.kuleuven.be
-    - login4\-tier2\-.hpc.kuleuven.be
+.. include:: genius_login_nodes.rst
 
 
 Hardware details
