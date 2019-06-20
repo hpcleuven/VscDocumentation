@@ -26,7 +26,7 @@ nodes    processor                                   memory  disk    network  ex
 Access restrictions
 -------------------
 
-Access ia available for faculty, students (master's projects under faculty
+Access is available for faculty members, students (master's projects under faculty
 supervision), and researchers of the VUB, as well as VSC users of other Flemish universities.
 
 The cluster is integrated in the VSC network and runs the standard VSC software setup.
@@ -36,11 +36,9 @@ Jobs can have a maximal execution wall time of 5 days (120 hours).
 Login infrastructure
 --------------------
 
-Users with a VSC account (VSC-ID) can connect to Hydra via one of the following hostnames:
+Users with a VSC account (VSC-ID) can connect to Hydra via the following hostname:
 
 * <VSC-ID>@login.hpc.vub.ac.be
-* <VSC-ID>@hydra.vub.ac.be
-
 
 User documentation
 ------------------------
