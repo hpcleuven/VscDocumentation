@@ -6,5 +6,6 @@ KU Leuven/UHasselt Tier-2 hardware
 
    tier2_hardware/genius_hardware
    tier2_hardware/superdome_hardware
+   tier2_hardware/thinking_centos7_hardware
    tier2_hardware/thinking_hardware
    tier2_hardware/kuleuven_storage
