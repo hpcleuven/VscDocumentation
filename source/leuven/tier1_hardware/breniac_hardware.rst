@@ -22,3 +22,10 @@ Breniac is the VSC's Tier-1 cluster.
    - 75 GB SSD local disk
 
 The nodes are connected using an Infiniband EDR network.
+
+
+|Breniac hardware|
+
+.. |Breniac hardware| image:: breniac_hardware/breniac.png
+  :width: 800
+  :alt: Breniac hardware diagram
