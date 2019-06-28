@@ -36,7 +36,7 @@ Hardware details
     - 64 GB RAM
     - feature ``haswell``
 
-- 96 haswell nodes
+- 86 haswell nodes
 
     - 2 Xeon E5-2680 v3 CPUs\@2.5 GHz, 12 cores each
     - 128 GB RAM
