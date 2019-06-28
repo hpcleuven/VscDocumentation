@@ -11,11 +11,12 @@ Direct login is using SSH is possible to all login infrastructure without restri
 
 - Two ivybridge login nodes for SSH access are available. **Note:** these are ivybridge nodes, so for better performance, build your software on a haswell compute node.
 
-    - login5-tier2.hpc.kuleuven.be
-	- login6-tier2.hpc.kuleuven.be
+    - login5\-tier2.hpc.kuleuven.be
+    - login6\-tier2.hpc.kuleuven.be
 	
-- One haswell login node for SSH access and TurboVNC access.	
-    - login8-tier2.hpc.kuleuven.be
+- One haswell login node for SSH access and :ref:`TurboVNC<TurboVNC start guide>` access.	
+
+    - login8\-tier2.hpc.kuleuven.be
 
 
 Hardware details
@@ -23,7 +24,7 @@ Hardware details
 
 - 10 haswell nodes
 
-    - 2 Xeon E5-2680 v3 CPUs\@2.5 GHz, 12 cores each
+    - 2 Xeon E5\-2680 v3 CPUs\@2.5 GHz, 12 cores each
     - 128 GB RAM
     - feature ``haswell``
 
