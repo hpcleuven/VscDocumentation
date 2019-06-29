@@ -1,4 +1,5 @@
-.. _Genius login nodes:
+Login infrastructure
+--------------------
 
 Direct login using SSH is possible to all login infrastructure without restrictions.
 
