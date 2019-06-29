@@ -39,14 +39,14 @@ are available through the module system, and have to be loaded
 separately. These packages will not be listed by ``pip`` unless you
 loaded the corresponding module.
 
-Installing your own packages using conda
-----------------------------------------
+Install your own packages using conda
+-------------------------------------
 
 The easiest way to install and manage your own Python environment is
 conda.
 
-Installing Miniconda
-~~~~~~~~~~~~~~~~~~~~
+Install Miniconda
+~~~~~~~~~~~~~~~~~
 
 If you have Miniconda already installed, you can skip ahead to the next
 section, if Miniconda is not installed, we start with that. Download the
@@ -73,8 +73,8 @@ that you know what you are doing in either case. The line to add to your
 
    export PATH=\"${VSC_DATA}/miniconda3/bin:${PATH}\"
 
-Creating an environment
-~~~~~~~~~~~~~~~~~~~~~~~
+Create an environment
+~~~~~~~~~~~~~~~~~~~~~
 
 First, ensure that the Miniconda installation is in your PATH
 environment variable. The following command should return the full path
@@ -111,8 +111,8 @@ version, e.g., Python 2.7.x, this can be specified as follows:
 
    $ conda create -n science  python=2.7  numpy scipy matplotlib
 
-Working with the environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Work with the environment
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To work with an environment, you have to activate it. This is done with,
 e.g.,
@@ -143,8 +143,8 @@ Note that conda will take care of all independencies, including
 non-Python libraries (e.g., cuDNN and CUDA for the example above). This
 ensures that you work in a consistent environment.
 
-Updating/removing
-~~~~~~~~~~~~~~~~~
+Update/remove a package
+~~~~~~~~~~~~~~~~~------
 
 Using conda, it is easy to keep your packages up-to-date. Updating a
 single package (and its dependencies) can be done using:
@@ -165,8 +165,8 @@ Removing an installed package:
 
    $ conda remove tensorflow-gpu
 
-Deactivating an environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deactivate an environment
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To deactivate a conda environment, i.e., return the shell to its
 original state, use the following command
