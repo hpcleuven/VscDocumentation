@@ -11,7 +11,6 @@ Hardware details
 =======  ==========================================  ======  ======  =======  ==================================================
 nodes    processor                                   memory  disk    network  extra
 =======  ==========================================  ======  ======  =======  ==================================================
-2        2x 8-core AMD 6134 (Magnycours)              64 GB  900 GB  QDR-IB   login nodes, will be phased out soon
 11       2x 10-core INTEL E5-2680v2 (IvyBridge)      128 GB  900 GB  QDR-IB
 20       2x 10-core INTEL E5-2680v2 (IvyBridge)      256 GB  900 GB  QDR-IB
 6        2x 10-core INTEL E5-2680v2 (IvyBridge)      128 GB  900 GB  QDR-IB   2x Tesla K20x NVIDIA GPGPUs with 6Gb/node
@@ -39,6 +38,16 @@ Login infrastructure
 Users with a VSC account (VSC-ID) can connect to Hydra via the following hostname:
 
 * <VSC-ID>@login.hpc.vub.ac.be
+
+Hardware specs: 
+
+* Intel Skylake (Xeon Gold 6126) - 24 cores in total (fair share between all users)
+
+* 96GB memory (maximum per user: 12GB) 
+
+* 10GbE network connection 
+
+* Infiniband EDR connection to the storage 
 
 User documentation
 ------------------------
