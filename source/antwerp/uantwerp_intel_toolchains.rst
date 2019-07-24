@@ -28,7 +28,8 @@ is different from the one on some other VSC clusters:
    expect that you should be able to use any Makefile developed for the
    standard VSC-setup.
 -  All compiler components needed to develop applications with offload
-   to a Xeon Phi expansion board are also provided.
+   to a Xeon Phi expansion board are also provided (for the compiler 
+   versions that support the Xeon Phi).
 
 Compilers
 ---------
