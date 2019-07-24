@@ -8,127 +8,120 @@ Prerequisites
 
 It is assumed that a recent version of the Eclipse IDE is installed on
 the desktop, and that the user is familiar with Eclipse as a development
-environment. The installation instructions were tested with the Helios
-(2010), 4.4/Luna (2014) and the 4.6/Neon (2016) release of Eclipse but
-may be slightly different for other versions.
+environment. The installation instructions were tested with release 
+2019-06 of Eclipse but may be slightly different for other versions.
 
 Installation & setup
 --------------------
 
-In order to interact with subversion repositories, some extra plugins
-have to be installed in Eclipse.
+Eclipse needs an additional plugin to work with subversion repositories.
+We previously recommended the `subversive plugin <https://www.eclipse.org/subversive/>`_ 
+for this task, but its development has been dormans since early 2017 
+so we expect this plugin may stop working properly at some point.
+Currently the recommended plugin for SVN access is 
+`Subclipse <https://marketplace.eclipse.org/content/subclipse>`_.
 
-#. When you start Eclipse, note the code name of the version in the
-   startup screen.
-#. From the 'Help' menu, select 'Install New Software...'.
-#. From the 'Work with' drop down menu, select 'Neon -
-   ``http://download.eclipse.org/releases/neon``' (where Neon is the name of
-   the release, see the first step). This will populate the components
-   list.
-#. Expand 'Collaboration' and check the box for 'Subversive SVN Team
-   Provider' and click the 'Next >' button.
-#. Click 'Next >' in the 'Install Details' dialog.
-#. Indicate that you accept the license agreement by selecting the
-   appropriate radio button and click 'Finish'.
-#. When Eclipse prompts you to restart it, do so by clicking 'Restart
-   Now'
-#. An additional component is needed (an SVN Team Provider), however, To
-   trigger the install, open the Eclipse "Preferences" menu (under
-   the "File" menu, or under "Eclipse" on macOS) and go to
-   "Team" and then "SVN"
-#. Select the tab "SVN connector"
-#. Then click on \\"Get Connectors\" to open the 'Subversive Connectors
-   Discovery' dialog.
-   *You will not see this button if there is already a connector
-   installed. If you need a different one, you can still install one via
-   "Install new software" in the "Help" menu. Search for
-   "SVNKit" for connectors that don't need any additional software on
-   the system (our preference), or "JavaHL" for another family that
-   connects to the original implementation. Proceed in a similar way as
-   below (step 13).*
-#. The easiest choice is to use one of the \\"SVN Kit\" connectors as
-   they do not require the installation of other software on your
-   computer, but you have to chose the appropriate version. The
-   subversion project tries to maintain compatibility between server and
-   client from different versions as much as possible, so the version
-   shouldn't matter too much. However, if on your desktop/laptop you'd
-   like to mix between using svn through Eclipse and through another
-   tool, you have to be careful that the SVN connector is compatible
-   with the other SVN tools on your system. SVN Kit 1.8.12 should work
-   with other SVN tools that support version 1.7-1.9 according to the
-   documentation (we cannot test all combinations ourselves).
+Subclipse is most easily installed through the Eclipse Marketplace.
 
-   #. In case you prefer to use the \\"Native JavaHL\" connector
-      instead, make sure that you have subversion binaries including the
-      Java bindings installed on your system, and pick the matching
-      version of the connector. Also see the `JavaHL subclipse Wiki
-      page <http://subclipse.tigris.org/wiki/JavaHL>`_ of the
-      `tigris.org community <http://www.tigris.org/>`_.
+#. You may need to install the 'Eclipse Marketplace' plugin first. 
+   the procedure for this is similar to the procedure for the 
+   :ref:`Remote System Explorer <Eclipse as remote editor>`: 
+   
+   #. Select 'Install New Software...' from Eclipse's 'Help' menu.  
+   #. From the 'Work with:' drop down menu, select '<name> -
+      http://download.eclipse.org/releases/<name>' (replace "<name>" by
+      the name of the release that you are using, e.g., 2019-06). 
+      The list of available
+      components is now automatically populated.
+   #. From the category 'General Purpose Tools', select 'Eclipse 
+      Marketplace'.
+   #. Click the 'Next >' button to get the installation details.
+   #. Click the 'Next >' button again to review the licenses.
+   #. Select the 'I accept the terms of the license agreement' radio
+      button.
+   #. Click the 'Finish' button to start the download and installation
+      process.
+   #. As soon as the installation is complete, you will be prompted to
+      restart Eclipse, do so by clicking the 'Restart Now' button.
 
-#. Mark the checkbox next to the appropriate version of 'SVN Kit' and
-   click 'Next >'.
-#. The 'Install' dialog opens, offering to install two components, click
-   'Next >'.
-#. The 'Install Details' dialog opens, click 'Next >'.
-#. Accept the license agreement terms by checking the appropriate radio
-   button in the 'Review Licenses' dialog and click 'Finish'.
-#. You may receive a warning that unsigned code is about to be
-   installed, click 'OK' to continue the installation.
-#. Eclipse prompts you to restart to finish the installation, do so by
-   clicking 'Restart Now'.
+#. From the 'Help' menu, open 'Eclipse Marketplace...'
+#. In the search box, type 'Sublipse' and then click 'Go' a bit to the right.
+   |Subclipse in Marketplace| 
+#. Click the 'Install' button in the'Subclipse' entry.
+#. Eclipse will now search for other components that are needed to successfully
+   install Subclipse and offer a screen similar to
+   |Subclipse installation| 
+   Click 'Confirm'
+#. On the next screen, accept the license agreements and click 'Finish'.
+#. You may get a security warning about unsigned components. Click on 
+   'Install anyway'.
+#. Finally Eclipse will offer to restart. Accept this to enable the 
+   Subclipse plugin.
+   
+A note about SSH keys
+~~~~~~~~~~~~~~~~~~~~~
 
-Eclipse is now ready to interact with subversion repositories.
-
-**Microsoft Windows PuTTY users only**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Eclipse's SSH components can not handle private keys generated with
-PuTTY, only OpenSSH compliant private keys. However, PuTTY's key
-generator 'PuTTYgen' (that was used to generate the public/private key
-pair in the first place) can be used to convert the PuTTY private key to
-one that can be used by Eclipse. See the section :ref:`converting PuTTY keys
-to OpenSSH format <converting PuTTY keys>` for details if necessary.
+To access SVN repositories through SSH, Eclipse needs a private key in a 
+suitable format. Please check out the information in the 'Configuration'
+section on our page :ref:`Eclipse as a remote editor <Eclipse as remote editor>` 
+on converting PuTTY keys or OpenSSH ssh-keygen generated keys to a suitable format.
+   
 
 Checking out a project from a VSC cluster repository
 ----------------------------------------------------
 
-To check out a project from a VSC cluster repository, one uses the
-Eclipse 'Import' feature (don't ask...).
+To start working with code or files in a SVN repository in Eclipse,
+two steps are needed:
 
-::
-
-   svn+ssh://userid@vsc.login.node/data/leuven/300/vsc30000/svn-repo
-
-|Eclipse SVN checkout|
-
-In the 'User' field, enter your VSC user ID.
-
--  Switch to the 'SSH' tab of this dialog, and select 'Private key' for
-   authentication. Use the 'Browse' button to find the appropriate
-   private key file to authenticate on the VSC cluster. Note that this
-   should be a private key in OpenSSH format. Also enter the passphrase
-   for your private key. If you wish, you can store your passphrase here
-   at this point, but this may pose a security risk.
-
-   |Eclipse SVN private key|
-
--  You will be prompted to select a resource to be checked out, click
-   the 'Browse' button and select the project you want to check out.
-   Remember that if you use the recommended repository layout, you will
-   probably want to check out the project's 'trunk'. Click 'Finish'.
-
-   |Eclipse SVN resource|
-
--  The 'Check Out As' dialog offers several options, select the
-   'Checkout as a project with the name specified' and click 'Finish'
-
-   and click 'Finish' to proceed with the check out.
+#. Open the 'SVN Repository Exploring' perspective and link a SVN
+   repository
+#. Then check out a project in the repository to create a matching
+   project in the Eclipse workspace.
    
-   |Eclipse SVN checkout as|
+We'll now go through these steps in some more detail. We assume
+a SVN repository is set up as explained in 
+:ref:`Subversion <Subversion>` elsewhere on this site.
 
-Note that Eclipse remembers repository URLs, hence checking out another
-project from the same repository will skip quite a number of the steps
-outlined above.
+#. To open the 'SVN Repository Exploring' perspective, got to
+   `Window` on the menu bar, select 'Perspective', then 
+   'Open Perspective' and then 'Other...'.
+#. Select 'SVN Repository Exploring' in the window that appears
+   and click the 'Open' button. Two tabs, 'SVN Repositories' and 
+   'SVN Annotate' will appear in the left pane.
+#. In the 'SVN Repositories' tab, right click with the mouse,
+   select 'New' and then 'Repository location'
+#. A dialog box 'Add a new SVN Repository' appears with a box to enter the
+   repository URL. For a repository on a VSC cluster, this URL will be
+   similar to the one shown below (but of course replace with your userid,
+   directory and favorite login node):
+   
+   |Subclipse add repository|
+   
+   Click on 'Finish'   
+#. If Eclipse does not yet know how to access the host that you
+   used in the URL in the previous step, it will now ask you to
+   'Enter SSH Credentials'. Make sure you use the rigbht 'Username',
+   then select 'Use private key authentication' and select the
+   'Key file' (this should be your private key). You can then also
+   enter the passphrase in the corresponding field and finally click
+   'OK'.
+   
+   |Subclipse enter credentials|
+   
+#. You may then get another dialog box asking you to enter your username
+   and password. Here you actually need to enter your passphrase again.
+   
+   |Subclipse enter passpharse|
+   
+#. Now you're ready to check out your project. You will see a screen
+   similar to the picture below.
+   Right-click on the name of the SVN repository ('simulation' in this
+   case), then select 'Checkout...'. This will offer you to create
+   a project in your workspace from the files in the SVN repository.
+   Select your choice of project and then either click 'Next' if you
+   want to use a different location then the default location for your
+   project or 'Finish'.
+
 
 Work cycle
 ----------
@@ -138,14 +131,12 @@ exactly the same as that for a command line subversion client. Once a
 project has been checked out or placed under version control, all
 actions can be performed by right clicking on the project or specific
 files in the 'Project Explorer' view and choosing the appropriate action
-from the 'Team' entry in the context menu. The menu items are fairly
-self-explanatory, but you may want to read the section on
-:ref:`TortoiseSVN` since Eclipse's version control interface is very akin
-to the former.
+from the 'Team' entry in the context menu. 
 
 Note that files and directories displayed in the 'Project Explorer' view
-are now decorated to indicate version control status. A '>' preceeding a
-file or directory's name indicate that it has been modified since the
+are now decorated to indicate version control status. little star
+embedded in the icon of a 
+file or directory indicates that it has been modified since the
 last update. A new file not yet under version control has a '?' embedded
 in its icon.
 
@@ -156,9 +147,11 @@ settings, e.g., the '.project' file. Whether or not you wish to store
 these settings in the repository depends on your setup, but probably you
 don't.
 
-.. |Eclipse SVN checkout| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_checkout.png
-.. |Eclipse SVN private key| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_private_key.png
-.. |Eclipse SVN resource| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_resource.png
-.. |Eclipse SVN checkout as| image:: eclipse_access_to_a_vsc_subversion_repository/eclipse_svn_checkout_as.png
+.. |Subclipse in Marketplace| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_in_eclipse_marketplace.png
+.. |Subclipse installation| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_installation.png
+.. |Subclipse add repository| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_add_repository.png
+.. |Subclipse enter credentials| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_ssh_credentials.png
+.. |Subclipse enter passpharse| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_username_password.png
+.. |Subclipse checkout| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_checkout.png
 
 .. include:: links.rst
