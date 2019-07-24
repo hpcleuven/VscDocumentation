@@ -16,15 +16,15 @@ the OpenSSH software is installed by opening a terminal and typing:
 ::
 
    $ ssh -V
-   OpenSSH_4.3p2, OpenSSL 0.9.8e-fips-rhel5 01 Jul 2008
+   OpenSSH_8.0p1, OpenSSL 1.1.1c FIPS  28 May 2019
 
 To access the clusters and transfer your files, you will use the
 following commands:
 
 -  ssh: to generate the ssh keys and to open a shell on a remote
-   machine,
--  sftp: a secure equivalent of ftp,
--  scp: a secure equivalent of the remote copy command rcp.
+   machine
+-  sftp: a secure equivalent of ftp
+-  scp: a secure equivalent of the remote copy command rcp
 
 Windows
 ~~~~~~~
@@ -48,7 +48,7 @@ already be present in the default location inside your home directory:
 ::
 
    $ ls ~/.ssh
-   authorized_keys2   id_rsa   id_rsa.pub   known_hosts
+   authorized_keys   id_rsa   id_rsa.pub   known_hosts
 
 You can recognize a public/private key pair when a pair of files has the
 same name except for the extension ``.pub`` added to one of them. In
@@ -58,15 +58,15 @@ directory ``~/.ssh``) if you or your operating system requires this.
 
 You will need to generate a new key pair, when:
 
--  you don't have a key pair yet,
--  you forgot the passphrase protecting your private key,
--  or your private key was compromised.
+-  you don't have a key pair yet
+-  you forgot the passphrase protecting your private key
+-  or your private key was compromised
 
 To generate a new public/private pair, use the following command:
 
 ::
 
-   $ ssh-keygen
+   $ ssh-keygen -t rsa -b 4096
    Generating public/private rsa key pair. 
    Enter file in which to save the key (/home/user/.ssh/id_rsa): 
    Enter passphrase (empty for no passphrase): 
@@ -82,12 +82,12 @@ time you want to access the cluster or transfer your files.
 
 Keys are required in the OpenSSH format.
 
-If you have a public key ``id_rsa_2048_ssh.pub`` in the SSH2 format,
+If you have a public key ``id_rsa_4096_ssh.pub`` in the SSH2 format,
 you can use OpenSSH's ssh-keygen to convert it to the OpenSSH format in
 the following way:
 
 ::
 
-   $ ssh-keygen -i -f ~/.ssh/id_rsa_2048_ssh.pub > ~/.ssh/id_rsa_2048_openssh.pub
+   $ ssh-keygen -i -f ~/.ssh/id_rsa_4096_ssh.pub > ~/.ssh/id_rsa_4096_openssh.pub
 
 .. include:: links.rst
