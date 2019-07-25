@@ -18,27 +18,13 @@ TurboVNC client Configuration & Start Guide
 -------------------------------------------
 
 Note: These instructions are for the KU Leuven visualization nodes
-only. The UAntwerp visualization node also uses TurboVNC, but the setup
-is different as the visualization node is currently not in the job
-queueing system and as TurboVNC is also supported on the regular login
+only. The nodes have been added as login nodes to the migrated ThinKing cluster. The visualisation ode is not in the queueing system anymore. The UAntwerp visualization node also uses TurboVNC, but the setup
+is different and TurboVNC is also supported on the regular login
 nodes (but without OpenGL support). Specific instructions for the use of
 TurboVNC on the UAntwerp clusters can be found on the page
 ":ref:`remote visualization UAntwerp`".
 
-#. Request an interactive job on visualization partition:
-
-   ::
-
-      $ qsub -I -X -l partition=visualization    -l pmem=6gb -l nodes=1:ppn=20
-          
-
-#. Once you are on one of visualization nodes (r10n3 or r10n4) load the
-   TurboVNC module:
-
-   ::
-
-      $ module load TurboVNC/1.2.3-foss-2014a
-          
+#. login on one of the ThinKing visualisation nodes (login7 or login8)
 
 #. Create password to authenticate your session:
 
@@ -56,7 +42,7 @@ TurboVNC on the UAntwerp clusters can be found on the page
           
 
 #. Start VNC server on the visualization node (optionally with geometry
-   settings):
+   settings - do not include brackets in the command):
 
    ::
 
@@ -64,11 +50,11 @@ TurboVNC on the UAntwerp clusters can be found on the page
           
 
    As a result you will get the information about the display <d> that
-   you are using (r10n3:), e.g.for <d>=1
+   you are using (tier2-p-login-8:2), e.g.for <d>=2
 
    ::
 
-      Desktop 'TurboVNC: r10n3:1 (vsc30000)' started on display r10n3:1
+      Desktop 'TurboVNC: tier2-p-login-8:2 (vsc30000)' started on display tier2-p-login-8:2
           
 
 #. | Establish the ssh tunnel connection:
@@ -76,18 +62,18 @@ TurboVNC on the UAntwerp clusters can be found on the page
 
    ::
 
-           $ ssh -L 590<d>:host:590<d> -N vsc30000@login.hpc.kuleuven.be
+           $ ssh -L 590<d>:host:590<d> -N vsc30000@login8-tier2.hpc.kuleuven.be
 
    | e.g.,
      
    ::
 
-      $ ssh -L 5901:r10n3:5901 -N vsc30000@login.hpc.kuleuven.be
+      $ ssh -L 5901:r10n3:5901 -N vsc30000@login8-tier2.hpc.kuleuven.be
 
    | 
    | In Windows:
    | In putty go to Connection-SSH-Tunnels tab and add the source port
-   | 590<d> (e.g., 5901) and destination host:590<d> (e.g., r10n3:5901).
+   | 590<d> (e.g., 5902) and destination host:590<d> (e.g., 5902).
 
    |TVNC 1|
 
@@ -100,7 +86,7 @@ TurboVNC on the UAntwerp clusters can be found on the page
 
 #. Start VNC viewer connection
    Start the client: VSC server as localhost:<d> (where <d> is display
-   number), e.g., localhost:1
+   number), e.g., localhost:2
 
    |TVNC 3|
 
@@ -118,20 +104,17 @@ TurboVNC on the UAntwerp clusters can be found on the page
   
    ::
    
-     $ vncserver -kill :1; exit
+     $ vncserver -kill :2; exit
           
 
 How to start using visualization node?
 --------------------------------------
 
-#. TurboVNC works with the tab Window Manager twm (more info on how to
-   use it can be found on the `Wikipedia twm
-   page <https://en.wikipedia.org/wiki/Twm>`_ or on the `twm
-   man page <https://linux.die.net/man/1/twm>`_).
+#. TurboVNC works with the Mate Desktop Environment 
    
    |TVNC 5|
 
-#. To start a new terminal use left click of the mouse and choose xterm
+#. To start a new terminal click on the deskop or banner item or use right click of the mouse and choose 'Open in terminal'
 
    |TVNC 6|
 
