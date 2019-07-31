@@ -12,8 +12,8 @@ to submit a project application (or you should be covered by a project
 application within your research group). For some more specialised
 hardware you have to ask access separately, typically to the coordinator
 of your institution, because we want to be sure that that (usually
-rather expensive hardware) is used efficiently for the type of
-applications for which it was purchased.
+rather expensive) hardware is used efficiently for the type of
+applications it was purchased for.
 
 Who can get a VSC account?
 --------------------------
