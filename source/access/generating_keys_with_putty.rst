@@ -6,7 +6,7 @@ Generating keys with PuTTY
 Prerequisite: PuTTY
 -------------------
 
-By default, there is no ssh client software available on Windows, so you
+By default, there is no SSH client software available on Windows, so you
 will typically have to install one yourself. We recommend to use `PuTTY`_,
 which is freely available. You do not even need to install; just
 download the executable and run it! Alternatively, an installation
