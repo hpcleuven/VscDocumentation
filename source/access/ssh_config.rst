@@ -37,21 +37,46 @@ remote host you want to login to, and ``vsc50005`` by your user name on that
 system.  You can have as many host defintions as you want in the configuration
 file.
 
-.. note::
+The first entry, i.e., ``Host *`` ensures that for any host you connect to,
+the server keep-alive interval is set to 60 seconds.
 
-   Due to this configuration, every SSH connection to ``login.hpc.kuleuven.be``
-   established using the ``hpc`` alias has agent forwarding and X forwarding
-   enabled, so you don't need to specify the ``-A`` and ``-X`` flags
-   respectively.
-
-   For any host you connect to, the server keep-alive interval is set to
-   60 seconds.
+The second entry, i.e., ``Host hpc`` specifies that every SSH connection to
+``login.hpc.kuleuven.be`` established using the ``hpc`` alias has agent
+and X forwarding enabled, so you don't need to specify the ``-A`` and ``-X``
+flags respectively.
 
 Now you can simply log in to ``login.hpc.kuleuven.be`` using the ``hpc`` alias:
 
 ::
 
    $ ssh hpc
+
+
+How to use a key that is not the default?
+-----------------------------------------
+
+If your SSH private key is not in the default directory (``~/.ssh/``), or
+doesn't have the default name (``id_rsa``) you can specify the key to use
+on the command line using the `-i` option, or, more conveniently, by
+specifying its location in the ``~/.ssh/config`` file.
+
+Suppose that your private key is ``~/Keys/priv_key_vsc``, then you can
+use it to connect by specifying the ``IdentityFile`` attribute, i.e.,
+
+::
+
+   Host hpc
+       HostName login.hpc.kuleuven.be
+       User vsc50005
+       ForwardAgent yes
+       ForwardX11 yes
+       IdentityFile ~/Keys/priv_key_vsc
+  
+.. note::
+
+   Specifying identity files allows you to have distinct keys for different
+   hosts, e.g., you can use one key pair to connect to VSC infrastructure,
+   and a different one for your departemental server.
 
 
 How to use a proxy host?
@@ -80,6 +105,37 @@ you through to the leibniz login node.
    be used to specify the proxy jump host.
 
 
+How to set up a tunnel?
+-----------------------
+
+If you require a tunnel to a remote host on a regular basis, you can
+define a connection in the SSH configuration file, e.g.,
+
+::
+
+   Host hpc_tunnel
+       HostName login.hpc.kuleuven.be
+       User vsc50005
+       ForwardAgent yes
+       ForwardX11 yes
+       LocalForward 50005 login.hpc.kuleuven.be 50005
+
+This ensures that a process on the login node that uses port 50005 can be
+accessed from your computer on that same port number.
+
+.. note::
+
+   When choosing a port on a remote VSC system, it is good practice to
+   use your VSC-number, since that would be unique.  In the example above,
+   the port number would be 50005 for VSC user ``vsc50005``.
+
+The tunnel can now be established as follows:
+
+::
+
+   $ ssh -N hpc_tunnel
+
+
 How to create a modular configuration file?
 -------------------------------------------
 
@@ -90,3 +146,12 @@ include those into your main ``.ssh/config`` file, e.g.,
 ::
 
    Include ~/.ssh/config_vsc
+
+
+Links
+-----
+
+-  `ssh_config manual page`_
+-  `ssh manual page`_
+
+.. include:: links.rst
