@@ -10,21 +10,7 @@ Linux
 ~~~~~
 
 On all popular Linux distributions, the OpenSSH software is readily
-available, and most often installed by default. You can check whether
-the OpenSSH software is installed by opening a terminal and typing:
-
-::
-
-   $ ssh -V
-   OpenSSH_8.0p1, OpenSSL 1.1.1c FIPS  28 May 2019
-
-To access the clusters and transfer your files, you will use the
-following commands:
-
--  ssh: to generate the ssh keys and to open a shell on a remote
-   machine
--  sftp: a secure equivalent of ftp
--  scp: a secure equivalent of the remote copy command rcp
+available, and most often installed by default.
 
 Windows
 ~~~~~~~
@@ -38,6 +24,17 @@ macOS/OS X
 macOS/OS X comes with its own implementation of OpenSSH, so you don't
 need to install any third-party software to use it. Just open a Terminal
 window and jump in!
+
+Check the OpenSSH installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can check whether the OpenSSH software is installed by opening
+a terminal and typing:
+
+::
+
+   $ ssh -V
+   OpenSSH_8.0p1, OpenSSL 1.1.1c FIPS  28 May 2019
 
 
 Generating a public/private key pair
@@ -76,10 +73,16 @@ To generate a new public/private pair, use the following command:
    Your public key has been saved in /home/user/.ssh/id_rsa.pub.
 
 This will ask you for a file name to store the private and public key,
-and a passphrase to protect your private key. It needs to be emphasized
-that you really should choose the passphrase wisely! The system will ask
-you for it every time you want to use the private key, that is every
-time you want to access the cluster or transfer your files.
+and a passphrase to protect your private key.
+
+.. warning::
+
+   It needs to be emphasized that you really should choose the passphrase
+   wisely!  A weak passphrase poses a serious security risk.
+  
+The system will ask you for your passphrase every time you want to use the
+private key, that is, every time you want to access the cluster or transfer
+your files, unless you use an :ref:`SSH agent<SSH agent>`.
 
 
 Converting SSH2 keys to OpenSSH format
