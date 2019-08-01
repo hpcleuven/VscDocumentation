@@ -25,8 +25,7 @@ Change the Protocol to **SSH**.
 Choose the hostname:
 
 -  **for ThinKing (Tier-2): nx.hpc.kuleuven.be** and port **22**.
--  **for BrENIAC (Tier-1): login2-tier1.hpc.kuleuven.be** and port
-   **22**.
+-  **for BrENIAC (Tier-1): nx-tier1.hpc.kuleuven.be** and port **22**.
 -  If you experience problems with connection please switch to Protocol
    NX and port 4000.
 
@@ -89,7 +88,7 @@ configuration) showing the installation and configuration procedure
 step-by-step or to the :download:`document containing graphical
 instructions <nx_start_guide/nx_config_guide.pdf>`.
 
-How to start using NX on ThinKing?
+How to start using NX on Genius?
 ----------------------------------
 
 #. Once your desktop is open, you can use all available GUI designed
