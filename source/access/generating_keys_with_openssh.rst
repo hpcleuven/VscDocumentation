@@ -39,6 +39,7 @@ macOS/OS X comes with its own implementation of OpenSSH, so you don't
 need to install any third-party software to use it. Just open a Terminal
 window and jump in!
 
+
 Generating a public/private key pair
 ------------------------------------
 
@@ -58,9 +59,9 @@ directory ``~/.ssh``) if you or your operating system requires this.
 
 You will need to generate a new key pair, when:
 
--  you don't have a key pair yet
--  you forgot the passphrase protecting your private key
--  or your private key was compromised
+-  you don't have a key pair yet, or
+-  you forgot the passphrase protecting your private key, or
+-  or your private key was compromised.
 
 To generate a new public/private pair, use the following command:
 
@@ -80,6 +81,10 @@ that you really should choose the passphrase wisely! The system will ask
 you for it every time you want to use the private key, that is every
 time you want to access the cluster or transfer your files.
 
+
+Converting SSH2 keys to OpenSSH format
+--------------------------------------
+
 Keys are required in the OpenSSH format.
 
 If you have a public key ``id_rsa_4096_ssh.pub`` in the SSH2 format,
@@ -89,5 +94,14 @@ the following way:
 ::
 
    $ ssh-keygen -i -f ~/.ssh/id_rsa_4096_ssh.pub > ~/.ssh/id_rsa_4096_openssh.pub
+
+.. include:: links.rst
+
+
+Links
+-----
+
+-  `ssh-keygen manual page`_
+-  `ssh manual page`_
 
 .. include:: links.rst
