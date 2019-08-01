@@ -3,8 +3,8 @@
 Eclipse with PTP and version control
 ====================================
 
-*If you're not familiar with Eclipse, read :ref:`our introduction
-page <Eclipse intro>` first.*
+If you're not familiar with Eclipse, read 
+:ref:`our introduction page <Eclipse intro>` first.
 
 Eclipse also supports several version control systems out of the box or
 through optional plug-ins.
@@ -36,8 +36,11 @@ version control system to take care of the synchronisation. That's also
 the reason why the Parallel Software Development bundle of Eclipse comes
 with the EGit plug-in included. It does this however in a way that does
 not interfere with regular git operations. In both your local and remote
-project directory, you'll find a hidden .ptp-sync directory which in
+project directory, you'll find a hidden .ptp-sync directory
 fact is a regular git repository, but stored in a different subdirectory
 rather than the standard .git subdirectory. So you can still have a
 standard Git repository besides it and they will not interfere if you
 follow the guidelines on this page.
+
+*Note that the remote synchronization also adds other hidden files
+besides the .ptp-sync directory. Don't erase them.*

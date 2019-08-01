@@ -27,7 +27,7 @@ explaining step-by-step the process of generating a new key pair and
 saving it in a format required by different VSC login nodes.
 
 #. In 'Parameters' (at the bottom of the window), choose 'SSH-2 RSA' and
-   set the number of bits in the key to 2048:
+   set the number of bits in the key to 4096:
 
    |PuTTYgen initial|
 
