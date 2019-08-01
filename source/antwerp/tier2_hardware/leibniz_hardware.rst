@@ -8,8 +8,10 @@ Leibniz was installed in the spring of 2017. It is a NEC system consisting of
 Broadwell generation CPUs connected through a EDR InfiniBand network. 144 of
 these nodes have 128 GB RAM, the other
 8 have 256 GB RAM. The nodes do not have a sizeable local disk. The cluster also
-contains a node for visualisation, 2 nodes for GPU computing (NVIDIA Pascal
-generation) and one node with an Intel Xeon Phi expansion board.
+contains a node for visualisation and 3 node types for experimenting with accelerator:
+2 nodes for GPU computing (NVIDIA Pascal
+generation), one node with dual NEC SX-Aurora TSUBASA vector processors
+and one node with an Intel Xeon Phi expansion board.
 
 Access restrictions
 -------------------
@@ -21,6 +23,10 @@ VSC-users, though we appreciate that you contact the UAntwerpen support team so
 that we know why you want to use the cluster.
 
 Jobs can have a maximal execution wall time of 3 days (72 hours).
+
+The login nodes and regular compute nodes are freely available. Contact 
+UAntwerp user support (hpc@uantwerpen.be) for access to the visualization node
+and accelerator nodes (free of charge but controlled access).
 
 Hardware details
 ----------------
@@ -37,6 +43,16 @@ Hardware details
    - 128 GB RAM
    - 2 NVIDIA P100, 16 GB HBM2
    - 120 GB SSD local disk
+   - :ref:`Instructions <GPU computing UAntwerp>`
+   
+- 1 vector computing node (NEC SX-Aurora TSUBASA model A300-2)
+
+   - 1 Xeon `Gold 6126 <https://ark.intel.com/products/120483>`_ CPU\@2.60 GHz (Skylake) with 12 cores
+   - 96 GB RAM
+   - 2 `NEC SX-Aurora Vector Engines type 10B <https://www.nec.com/en/global/solutions/hpc/sx/vector_engine.html>`_ 
+     (per card 8 cores \@1.4 GHz, 48 GB HBM2)
+   - 240 GB SSD local disk
+   - :ref:`Instructions <UAntwerp NEC SX Aurora>`
 
 - 1 Xeon Phi node
 
@@ -57,6 +73,7 @@ Hardware details
     - 256 GB RAM
     - 1 NVIDIA Quadro P5000
     - 120 GB SSD local disk
+    - :ref:`Instructions <remote visualization UAntwerp>`
 
 The nodes are connected using an Infiniband EDR network. 
 Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.
