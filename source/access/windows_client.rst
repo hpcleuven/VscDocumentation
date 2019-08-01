@@ -27,15 +27,15 @@ the :ref:`NX client for Windows<NX start guide>` so that you don't need
 to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
 distribution.
 
-:ref:`Setting up a SSH proxy with PuTTY <ssh proxy with PuTTY>` to log
-on to a node protected by a firewall through another login node, e.g., to
-access the tier-1 system muk.
+To log on to a node protected by a firewall through another login node,
+e.g., to access the tier-1 system muk, you need to :ref:`set up an SSH
+proxy with PuTTY <ssh proxy with PuTTY>`.
 
-:ref:`Creating a SSH tunnel using PuTTY <ssh tunnel using PuTTY>` to
-establish network communication between your local machine and the
-cluster otherwise blocked by firewalls.  This is also useful to run
+To establish network communication between your local machine and the
+cluster otherwise blocked by firewalls you have to :ref:`create an SSH
+tunnel using PuTTY <ssh tunnel using PuTTY>` .  This is also useful to run
 client software on your Windows machine, e.g., ParaView or Jupyter
-notebooks.
+notebooks that run on a compute node.
 
 
 Transfer data using Secure FTP (SFTP) clients
