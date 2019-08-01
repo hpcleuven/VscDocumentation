@@ -9,7 +9,8 @@ initial version.
 .. warning::
 
    Make sure only the  owner has read and write permissions,
-   neither group nor world should be able to read the file, i.e.,::
+   neither group nor world should be able to read the file, i.e.,
+   ::
    
       $ chmod 700 .ssh/config
 
