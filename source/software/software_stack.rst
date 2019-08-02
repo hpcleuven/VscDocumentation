@@ -66,7 +66,7 @@ To view a list of available software packages, use the command
 
 This gives a list of software packages that can be loaded. Some packages
 in this list include ``intel-2014a`` or ``foss-2014a`` in their name.
-These are packages installed with the 2014a versions of the toolchains
+These are packages installed with the 2014a versions of the :ref:`toolchains <toolchains>`
 based on the Intel and GNU compilers respectively. The other packages do
 not belong to a particular toolchain. The name of the packages also
 includes a version number (right after the /) and sometimes other
@@ -117,7 +117,8 @@ the user should specify a particular version, e.g.,
 
    Loading packages with explicit versions is considered best practice.  It ensures
    that your scripts will use the expected version of the software, regardless of
-   newly installed software.
+   newly installed software.  Failing to do this may jeopardize the reproducibility
+   of your results!
 
 Modules need not be loaded one by one; the two 'load' commands
 can be combined as follows:
