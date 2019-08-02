@@ -1,11 +1,12 @@
 Getting access
 ==============
 
-The VSC account
----------------
+VSC accounts
+------------
 
 In order to use the infrastructure of the VSC, you need a VSC-userid,
-also called a VSC account.
+also called a VSC account.  Check the `VSC website <eligible users_>`_
+for conditions.
 
 All VSC-accounts start with the letters \\"vsc\" followed by a
 five-digit number. The first digit gives information about your home
@@ -13,69 +14,30 @@ institution. There is no relationship with your name, nor is the
 information about the link between VSC-accounts and your name publicly
 accessible.
 
+Your VSC account gives you access to most the VSC Tier-2 infrastructure, though
+for some more specialised hardware you have to ask access separately.
+The rationale is that  we want to ensure that that (usually rather expensive)
+hardware is used efficiently for the type of applications it was purchased for.
+Contact your :ref:`local VSC coordinator<get in touch_>`_ to arrange access
+when required.
 
-What can you access?
---------------------
-
-Your VSC account gives you access to the VSC Tier-2 infrastructure, though
-for some more specialised hardware you have to ask access separately, typically
-to the coordinator of your institution, because we want to be sure that that
-(usually rather expensive) hardware is used efficiently for the type of
-applications it was purchased for.
-
-You have disk space on the storage infrastructure that is accessible from
-all VSC infrastructure.
-
-For the main Tier-1 compute cluster you need to submit a project application
-(or you should be covered by a project application within your research group).
+For the main Tier-1 compute cluster you need to submit a
+`project application <tier-1 project application_>`_ (or you should be
+covered by a project application within your research group).
 
 
-Who can get a VSC account?
---------------------------
+.. _account request:
 
-Researchers at the Flemish university associations
-   In many cases, this is done through a fully automated application process,
-   but in some cases you must submit a request to your local support
-   team.
-Master students in the framework of their master thesis
-   If supercomputing is needed for the thesis. For this, you will first
-   need the approval of your supervisor. The details about the procedure
-   can again be found below.
-Use in courses at the University of Leuven and Hasselt University
-   Lecturers can also use the local Tier-2 infrastructure in the
-   context of some courses (when the software cannot run in the PC
-   classes or the computers in those classes are not powerful enough).
-   It is important that the application is submitted on
-   time, at least two weeks before the start of the computer sessions.
-Researchers from iMinds and VIB
-   The application is made through
-   your host university. The same applies to researchers at the
-   university hospitals and research institutes under the direction or
-   supervision of a university or a university college, such as the
-   special university institutes mentioned in Article 169quater of the
-   Decree of 12 June 1991 concerning universities in the Flemish
-   Community.
-Researchers at other Flemish public research institutions
-   You can get compute on the Tier-1 infrastructure through a project
-   application or access the Tier-2 infrastructure through contact with
-   one of the coordinators.
-Businesses, non-Flemish public knowledge institutions and not-for-profit organisations
-   These entities can buy compute time on the
-   infrastructure. The procedures are explained on the page
-   ":ref`buying compute time`".
-
-
-.. _account request
-How to request access?
-----------------------
+How to request an accout?
+-------------------------
 
 Unlike your institute account, VSC accounts don't use regular fixed
 passwords but a key pair consisting of a public an private key because
 that is a more secure authentication technique.  To apply for a VSC
 account, you need a public/private key pair.
 
-Public/private key pairs
-~~~~~~~~~~~~~~~~~~~~~~~~
+Create a public/private key pair
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A key pair consists of a private and a public key.
 
@@ -118,25 +80,7 @@ Applying for the account
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you have a valid public/private key pair, you can submit an account
-request.
-
-For staff memebers and students of the universities and their
-associations, this can be d
-
-.. _generic access procedure:
-Generic procedure for academic researchers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For most researchers from the Flemish universities, the procedure has
-been fully automated and works by using your institute account to
-request a VSC account. Check below for exceptions or if the generic
-procedure does not work.
-
-Open the `VSC account page`_ and select your "home" institution. After
-you log in using your institution login and password, you will be asked
-to upload your public key. You will get an e-mail to confirm your application.
-After the account has been approved by the VSC, your account will be created
-and you will get a confirmation e-mail.
+request.  The following algorithm guides you to the appropriate approach.
 
 Users from the KU Leuven and UHasselt association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,14 +109,6 @@ How?
       procedure for lecturers <lecturer procedure leuven>`,
       while the students should simply apply for the account through the
       :ref:`generic procedure <generic access procedure>`.
-
-How to start?
-
-   -  Please follow the information on the documentation site,
-   -  or register for the HPC Introduction course.
-   -  If there is no course announced please register to ojjjjur `training
-      waiting list`_ and we will organize a new session as soon as we get a few
-      people interested in it.
 
 Users of Ghent University Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -216,13 +152,52 @@ institute account. More information can be found on `this VUB Web
 Notes
 page <http://www.ulb.ac.be/wserv2_oratio/oratio?f_type=view&f_context=fiches&language=nl&noteid=227>`_.
 
-Troubleshooting
-~~~~~~~~~~~~~~~
+Everyone else
+^^^^^^^^^^^^^
 
-If you can't connect to the `VSC account page`_, some browser
-extensions have caused problems (and in particular some
-security-related extensions), so you might try with browser
-extensions disabled.
+Ask your VSC contact for help.  If you don't have a VSC contact yet, and
+`you are eligible to use VSC infrastructure <eligible users_>`_,
+please `get in touch`_ with us.
+
+
+.. _generic access procedure:
+
+Generic procedure for academic researchers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For most researchers from the Flemish universities, the procedure has
+been fully automated and works by using your institute account to
+request a VSC account. Check below for exceptions or if the generic
+procedure does not work.
+
+Open the `VSC account page`_ and select your "home" institution. After
+you log in using your institution login and password, you will be asked
+to upload your public key. You will get an e-mail to confirm your application.
+After the account has been approved by the VSC, your account will be created
+and you will get a confirmation e-mail.
+
+.. note::
+
+   If you can't connect to the `VSC account page`_ , some browser
+   extensions have caused problems (and in particular some
+   security-related extensions), so you might try with browser
+   extensions disabled.
+
+
+
+Next steps
+----------
+
+Register for an HPC Introduction course. These are organized at all universities
+on a regular basis.
+.. note:
+
+   For KU Leuven users: if there is no course announced please register to our `training
+   waiting list`_ and we will organize a new session as soon as we get a few
+   people interested in it.
+
+Information on our training program and the schedule is available on the
+`VSC website <VSC training_>`_.
 
 
 Additional information
@@ -240,18 +215,6 @@ infrastructure. You can find more detailed information in the user
 documentation on the user portal. When in doubt, you can also contact
 your local support team. This does not require a VSC account.
 
-Furthermore, it can also be useful to take one of the introductory
-courses that we organise periodically at all universities. However, it
-is best to apply for your VSC account before the course since you also
-can then also do the exercises during the course. We strongly urge
-people who are not familiar with the use of a Linux supercomputer to
-take such a course. After all, we do not have enough staff to help
-everyone individually for all those generic issues.
-
-There is an exception to the rule that you need a VSC account to access
-the VSC systems: Users with a valid VUB account can access the Tier-2
-systems at the VUB.
-
 Your account also includes two “blocks” of disk space: your home
 directory and data directory. Both are accessible from all VSC clusters.
 When you log in to a particular cluster, you will also be assigned one
@@ -265,3 +228,5 @@ development tools. For most commercial software, you must first prove
 that you have a valid license or the person who has paid the license on
 the cluster must allow you to use the license. For this you can contact
 your local support team.
+
+.. include:: links.rst
