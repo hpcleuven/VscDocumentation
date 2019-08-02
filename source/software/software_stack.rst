@@ -274,34 +274,3 @@ these will show the appropriate packages in the list obtained with
 will make some additional modules available for Cerebro, including two
 additional toolchains with the SGI MPI libraries to take full advantage
 of the interconnect of that machine.
-
-
-Explicit version numbers
-------------------------
-
-As a rule, once a module has been installed on the cluster, the
-executables or libraries it comprises are never modified. This policy
-ensures that the user's programs will run consistently, at least if the
-user specifies a specific version. Failing to specify a version may
-result in unexpected behavior.
-
-Consider the following example: the user decides to use the GSL library
-for numerical computations, and at that point in time, just a single
-version 1.15, compiled with the foss toolchain is installed on the
-cluster. The user loads the library using:
-
-::
-
-   $ module load GSL
-
-rather than
-
-::
-
-   $ module load GSL/1.15-foss-2014a
-
-Everything works fine, up to the point where a new version of GSL is
-installed, e.g., 1.16 compiled with both the ``intel`` and the ``foss``
-toolchain. From then on, the user's load command will load the latter
-version, rather than the one he intended, which may lead to unexpected
-problems.
