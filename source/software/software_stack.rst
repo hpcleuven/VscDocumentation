@@ -3,7 +3,7 @@ Software stack
 
 Software installation and maintenance on HPC infrastructure such as the
 VSC clusters poses a number of challenges not encountered on a
-workstation or a departemental cluster. For many libraries and programs,
+workstation or a departmental cluster. For many libraries and programs,
 multiple versions have to installed and maintained as some users require
 specific versions of those. In turn, those libraries or executables sometimes
 rely on specific versions of other libraries, further complicating the
@@ -18,8 +18,8 @@ and requires knowledge of where all files are on the cluster. Having to
 manage all this by hand is clearly not an option.
 
 We deal with this on the VSC clusters in the following way. First, we've
-defined the concept of a :ref:`toolchain <toolchains>` on most of
-the newer clusters. They consist of a set of compilers, MPI library and
+defined the concept of a :ref:`toolchain <toolchains>`. They consist of
+a set of compilers, MPI library and
 basic libraries that work together well with each other, and then a
 number of applications and other libraries compiled with that set of
 tools and thus often dependent on those. We use tool chains based on the
@@ -32,10 +32,11 @@ libraries. Second, we use the module system to manage the environment
 variables and all dependencies and possible conflicts between various
 programs and libraries., and that is what this page focuses on.
 
+
 .. _module system basics:
 
-Basic use of the module system
-------------------------------
+Using the module system
+-----------------------
 
 Many software packages are installed as modules. These packages include
 compilers, interpreters, mathematical software such as Matlab and SAS,
@@ -64,13 +65,34 @@ To view a list of available software packages, use the command
    zlib/1.2.8-foss-2014a
    zlib/1.2.8-intel-2014a
 
-This gives a list of software packages that can be loaded. Some packages
-in this list include ``intel-2014a`` or ``foss-2014a`` in their name.
+
+Module names
+~~~~~~~~~~~~
+
+In general, the anatomy of a module name is
+
+::
+
+   <package>/<version>-<toolchain>[-<extra>]
+
+For example  for ``Boost/1.66.0-intel-2018a-Python-3.6.4``, we
+have
+
+- ``<package>``: Boost, the name of the library,
+- ``<version>``: 1.66.0, the version of the Boost library,
+- ``<toolchain>``: intel-2018a, the toolchain Boost was built with, and
+- ``<extra>``: ``Python-3.6.4``, the version of Python this Boost version
+  can inter-operate with.
+
+Some packages in the list above include ``intel-2014a`` or ``foss-2014a`` in their name.
 These are packages installed with the 2014a versions of the :ref:`toolchains <toolchains>`
 based on the Intel and GNU compilers respectively. The other packages do
 not belong to a particular toolchain. The name of the packages also
 includes a version number (right after the /) and sometimes other
 packages they need.
+
+Searching modules
+~~~~~~~~~~~~~~~~~
 
 Often, when looking for some specific software, you will want to filter
 the list of available modules, since it tends to be rather large. The
@@ -82,6 +104,38 @@ following command would show only the modules that have the string
 ::
 
    $ module av |& grep -i python
+
+For more comprehensive searches, you can use ``module spider``, e.g.,
+
+::
+
+   $ module spider python
+
+
+Info on modules
+~~~~~~~~~~~~~~~
+
+The ``spider`` sub-command can also be used to provide information on on modules, e.g.,
+
+::
+
+   $ module spider Python/2.7.14-foss-2018a
+   
+   ---------------------------------------------
+     Python: Python/2.7.14-foss-2018a
+   -------------------------------------------
+       Description:
+           Python is a programming language that lets you work more
+           quickly and integrate your systems more effectively. 
+   
+   
+       This module can be loaded directly: module load Python/2.7.14-foss-2018a
+
+More technical information can be obtained using the ``show`` sub-command, e.g.,
+
+::
+
+   $ module show Python/2.7.14-foss-2018a
 
 
 Loading modules
@@ -216,6 +270,54 @@ To get a list of all available module commands, type:
    $ module help
 
 
+Collections of modules
+----------------------
+
+Although it is convenient to set up your working environment by loading
+modules in your `.bashrc` or `.profile` file, this is error prone and
+you will end up shooting yourself in the foot at some point.
+
+The module system provides an alternative approach that lets you set up
+an environment with a single command, offering a viable alternative to
+polluting your `.bashrc`.
+
+Define an environment
+
+   #. Be sure to start with a clean environment
+      ::
+   
+         $ module purge
+   
+   #. Load the modules you want in your environment, e.g.,
+      ::
+   
+         $ module load matplotlib/2.1.2-intel-2018a-Python-3.6.4
+         $ module load matlab/R2019a
+   
+   #. save your environment, e.g., as ``data_analysis``
+      ::
+     
+          $ module save data_analysis
+
+Use an environment
+
+   ::
+   
+      $ module restore data_analysis
+
+List all your environments
+
+   ::
+   
+      $ module savelist
+
+Remove an environment
+
+   ::
+   
+      $ rm ~/.lmod.d/data_analysis
+
+
 .. _specialized software stacks:
 
 Specialized software stacks
@@ -250,28 +352,3 @@ returns at the end of the list:
 
 The packages such as ``hopper/2014b`` enable additional packages when
 loaded.
-
-Similarly, on ThinKing, the KU Leuven cluster:
-
-::
-
-   $ module av
-   ...
-   -------------------------- /apps/leuven/etc/modules/ --------------------------
-   cerebro/2014a   K20Xm/2014a     K40c/2014a      M2070/2014a     thinking/2014a
-   ictstest/2014a  K20Xm/2015a     K40c/2015a      phi/2014a       thinking2/2014a
-
-shows modules specifically for the thin node cluster ThinKing, the `SGI
-shared memory system
-Cerebro <\%22/infrastructure/hardware/hardware-kul#Cerebro\%22>`__,
-three types of NVIDIA GPU nodes and the Xeon Phi nodes. Loading one of
-these will show the appropriate packages in the list obtained with
-``module av``. E.g.,
-
-::
-
-   module load cerebro/2014a
-
-will make some additional modules available for Cerebro, including two
-additional toolchains with the SGI MPI libraries to take full advantage
-of the interconnect of that machine.
