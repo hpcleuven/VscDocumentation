@@ -14,20 +14,20 @@ information about the link between VSC-accounts and your name publicly
 accessible.
 
 
-
 What can you access?
 --------------------
-Your VSC account gives you access to most of the
-infrastructure, though only with a limited compute time allocation on
-some of the systems.
 
-Also, For the main Tier-1 compute cluster you need
-to submit a project application (or you should be covered by a project
-application within your research group). For some more specialised
-hardware you have to ask access separately, typically to the coordinator
-of your institution, because we want to be sure that that (usually
-rather expensive) hardware is used efficiently for the type of
+Your VSC account gives you access to the VSC Tier-2 infrastructure, though
+for some more specialised hardware you have to ask access separately, typically
+to the coordinator of your institution, because we want to be sure that that
+(usually rather expensive) hardware is used efficiently for the type of
 applications it was purchased for.
+
+You have disk space on the storage infrastructure that is accessible from
+all VSC infrastructure.
+
+For the main Tier-1 compute cluster you need to submit a project application
+(or you should be covered by a project application within your research group).
 
 
 Who can get a VSC account?
@@ -66,11 +66,8 @@ Businesses, non-Flemish public knowledge institutions and not-for-profit organis
 
 
 .. _account request
-
 How to request access?
 ----------------------
-
-Your VSC account is currently managed through your institute account.
 
 Unlike your institute account, VSC accounts don't use regular fixed
 passwords but a key pair consisting of a public an private key because
@@ -80,50 +77,53 @@ account, you need a public/private key pair.
 Public/private key pairs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A key pair consists of a private and a public key. The private key is
-stored on the computer(s) from which you want to access the VSC and
-always stays there. The public key is stored on a the systems you want
-to access, granting access to the anyone who can prove to have access to
-the corresponding private key. Therefore it is very important to protect
-your private key, as anybody who has access to it can access your VSC
-account. For extra security, the private key itself should be encrypted
-using a 'passphrase', to prevent anyone from using your private key even
-when they manage to copy it. You have to 'unlock' the private key by
-typing the passphrase when you use it.
+A key pair consists of a private and a public key.
 
-How to generate such a key pair, depends on your operating system. We
+#. The private key is stored on the computer(s) you use to access the VSC
+   infrastructure and always stays there.
+#. The public key is stored on the  VSC systems you want to access, allowing
+   to prove your identity through the corresponding private key.
+  
+How to generate such a key pair depends on your operating system. We
 describe the generation of key pairs in the client sections for
 
 - :ref:`Linux<generating keys linux>`,
 - :ref:`Windows <generating keys windows>` and
 - :ref:`macOS<generating keys macos>` (formerly OS X).
 
-Without your key pair, you won't be able to apply for a VSC account.
+Without a key pair, you won't be able to apply for a VSC account.
 
-It is clear from the above that it is very important to protect your
-private key well. Therefore:
+.. warning::
 
--  You should not share your key pair with other users.
--  If you have accounts at multiple supercomputer centres (or on other
-   systems that use SSH), you should seriously consider using a
-   different key pair for each of those accounts. In that way, if a key
-   would get compromised, the damage can be controlled.
--  For added security, you may also consider to use a different key pair
-   for each computer you use to access your VSC account. If your
-   computer is stolen, it is then easy to disable access from that
-   computer while you can still access your VSC account from all your
-   other computers. The procedure is explained on a separate web
-   page ":ref:`access from multiple machines`".
+   It is clear from the above that it is very important to protect your
+   private key well. Therefore:
+   
+   - You should choose a strong passphrase to protect your private key.
+   - You should not share your key pair with other users.
+   - If you have accounts at multiple supercomputer centres (or on other
+     systems that use SSH), you should seriously consider using a
+     different key pair for each of those accounts. In that way, if a key
+     would get compromised, the damage can be controlled.
+   - For added security, you may also consider to use a different key pair
+     for each computer you use to access your VSC account. If your
+     computer is stolen, it is then easy to disable access from that
+     computer while you can still access your VSC account from all your
+     other computers. The procedure is explained on a separate web
+     page ":ref:`access from multiple machines`".
+
+Your VSC account is currently managed through your institute account.
+
 
 Applying for the account
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on restrictions imposed by the institution, not all users
-might get a VSC account. We describe who can apply for an account in the
-sections of the local VSC clusters.
+Once you have a valid public/private key pair, you can submit an account
+request.
+
+For staff memebers and students of the universities and their
+associations, this can be d
 
 .. _generic access procedure:
-
 Generic procedure for academic researchers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -265,11 +265,3 @@ development tools. For most commercial software, you must first prove
 that you have a valid license or the person who has paid the license on
 the cluster must allow you to use the license. For this you can contact
 your local support team.
-
-
-Tier-1 applications
--------------------
-
-To prepare for a Tier-1 application, you can use ":ref:`Tier-1 application glossary`" of terms
-that are used in the application form, and check a :ref:`list of
-scientific domains`.
