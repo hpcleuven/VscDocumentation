@@ -5,7 +5,7 @@ Software installation and maintenance on HPC infrastructure such as the
 VSC clusters poses a number of challenges not encountered on a
 workstation or a departemental cluster. For many libraries and programs,
 multiple versions have to installed and maintained as some users require
-specific versions of those. And those libraries or executable sometimes
+specific versions of those. In turn, those libraries or executables sometimes
 rely on specific versions of other libraries, further complicating the
 matter.
 
@@ -18,7 +18,7 @@ and requires knowledge of where all files are on the cluster. Having to
 manage all this by hand is clearly not an option.
 
 We deal with this on the VSC clusters in the following way. First, we've
-defined the concept of a :doc:`toolchain <toolchains>` on most of
+defined the concept of a :ref:`toolchain <toolchains>` on most of
 the newer clusters. They consist of a set of compilers, MPI library and
 basic libraries that work together well with each other, and then a
 number of applications and other libraries compiled with that set of
@@ -41,6 +41,9 @@ Many software packages are installed as modules. These packages include
 compilers, interpreters, mathematical software such as Matlab and SAS,
 as well as other applications and libraries. This is managed with the
 ``module`` command.
+
+Available modules
+~~~~~~~~~~~~~~~~~
 
 To view a list of available software packages, use the command
 ``module av``. The output will look similar to this:
@@ -80,8 +83,12 @@ following command would show only the modules that have the string
 
    $ module av |& grep -i python
 
+
+Loading modules
+~~~~~~~~~~~~~~~
+
 A module is loaded using the command ``module load`` with the name of
-the package. E.g., with the above list of modules,
+the package, e.g., with the above list of modules,
 
 ::
 
@@ -105,6 +112,26 @@ the user should specify a particular version, e.g.,
 ::
 
    $ module load zlib/1.2.8-foss-2014a
+
+.. note::
+
+   Loading packages with explicit versions is considered best practice.  It ensures
+   that your scripts will use the expected version of the software, regardless of
+   newly installed software.
+
+Modules need not be loaded one by one; the two 'load' commands
+can be combined as follows:
+
+::
+
+   $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
+
+This will load the two modules and, automatically, the respective
+toolchains with just one command.
+
+
+Loaded modules
+~~~~~~~~~~~~~~
 
 Obviously, the user needs to keep track of the modules that are
 currently loaded. After executing the above two load commands, the list
@@ -141,6 +168,10 @@ are advantages and disadvantages to this, so be aware of automatically
 loaded modules whenever things go wrong: they may have something to do
 with it!
 
+
+Unloading modules
+~~~~~~~~~~~~~~~~~
+
 To unload a module, one can use the ``module unload`` command. It works
 consistently with the ``load`` command, and reverses the latter's
 effect. One can however unload automatically loaded modules manually, to
@@ -155,6 +186,10 @@ sufficiently clever to figure out what the user intends. However,
 checking the list of currently loaded modules is always a good idea,
 just to make sure...
 
+
+Purging modules
+~~~~~~~~~~~~~~~
+
 In order to unload all modules at once, and hence be sure to start with
 a clean slate, use:
 
@@ -162,20 +197,16 @@ a clean slate, use:
 
    $ module purge
 
-It is a good habit to use this command in PBS scripts, prior to loading
-the modules specifically needed by applications in that job script. This
-ensures that no version conflicts occur if the user loads module using
-his ``.bashrc`` file.
+.. note::
 
-Finally, modules need not be loaded one by one; the two 'load' commands
-can be combined as follows:
+   It is a good habit to use this command in PBS scripts, prior to loading
+   the modules specifically needed by applications in that job script. This
+   ensures that no version conflicts occur if the user loads module using
+   his ``.bashrc`` file.
 
-::
 
-   $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
-
-This will load the two modules and, automatically, the respective
-toolchains with just one command.
+Getting help
+~~~~~~~~~~~~
 
 To get a list of all available module commands, type:
 
