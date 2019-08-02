@@ -36,6 +36,8 @@ passwords but a key pair consisting of a public an private key because
 that is a more secure authentication technique.  To apply for a VSC
 account, you need a public/private key pair.
 
+.. _create key pair:
+
 Create a public/private key pair
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -155,9 +157,14 @@ page <http://www.ulb.ac.be/wserv2_oratio/oratio?f_type=view&f_context=fiches&lan
 Everyone else
 ^^^^^^^^^^^^^
 
-Ask your VSC contact for help.  If you don't have a VSC contact yet, and
-`you are eligible to use VSC infrastructure <eligible users_>`_,
-please `get in touch`_ with us.
+Who?
+
+   Check that `you are eligible to use VSC infrastructure <eligible users_>`_,
+
+How?
+
+   Ask your VSC contact for help.  If you don't have a VSC contact yet, and please
+   `get in touch`_ with us.
 
 
 .. _generic access procedure:
@@ -170,11 +177,13 @@ been fully automated and works by using your institute account to
 request a VSC account. Check below for exceptions or if the generic
 procedure does not work.
 
-Open the `VSC account page`_ and select your "home" institution. After
-you log in using your institution login and password, you will be asked
-to upload your public key. You will get an e-mail to confirm your application.
-After the account has been approved by the VSC, your account will be created
-and you will get a confirmation e-mail.
+#. Open the `VSC account page`_.
+#. Select your "home" institution from the drop-down menu and click the "confirm" button.
+#. Log in using your institution login and password.
+#. You will be asked to upload the public key you `created earlier <create key pair_>`_.
+#. You will get an e-mail to confirm your application, click the included link to do so..
+#. After the account has been approved by the VSC, your account will be created and
+   you will get a confirmation e-mail.
 
 .. note::
 
