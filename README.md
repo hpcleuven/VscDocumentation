@@ -66,3 +66,14 @@ $ git push origin feature/new_stuff
 When you are done, create a pull request on GitHub.  For consistency, do the pull request to the development branch, not the master branch.
 
 For major changes, it is good practice to ask others to review your pull request.  Although this policy is encouraged, it is not enforced.
+
+
+## Repository structure
+
+1. source: directory containing the source to be rendered into HTML (e.g., rST and PNG files).
+1. images: directory containing source documents for images (e.g., ODG files).
+1. Makefile & make.bat: make files to render the documentation, and run a local web server.
+1. sphinx.yml: conda environment definition.
+
+The other files and directories are part of the migration, and may be removed at some
+later stage.
