@@ -164,6 +164,5 @@ Download: :download:`Slides from the lunchbox session <turbovnc_start_guide/turb
    :width: 400
 .. |TVNC 5| image:: turbovnc_start_guide/turbovnc_start_guide_05.png
 .. |TVNC 6| image:: turbovnc_start_guide/turbovnc_start_guide_06.png
-   :width: 80
 
 .. include:: links.rst
