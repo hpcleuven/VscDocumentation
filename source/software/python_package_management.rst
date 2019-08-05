@@ -257,13 +257,13 @@ Installing Anaconda on NX node (KU Leuven Genius)
    some other location or temporary archive. It creates conflicts with
    Anaconda.
 #. Download appropriate (64-Bit (x86) linux Installer) version of Anaconda
-   from
-   `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux>`_
+   from `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux>`_
 #. Change the permissions of the file (if necessary)
-
    ``chmod u+x Anaconda3-2019.07-Linux-x86_64.sh``
 
-#. Execute the installer ``./Anaconda3-2019.07-Linux-x86_64.sh``. You will be asked for to accept the license
+#. Execute the installer ``./Anaconda3-2019.07-Linux-x86_64.sh``. 
+
+You will be asked for to accept the license
 agreement, choose the location where it should be installed (please choose your $VSC_DATA). After installation is done you can choose to installer to add the Anaconda path to your .bashrc. We recommend not to do that as it will prevent creating NX desktops. Instead of that you can manually (or in another script) modify your path when you want to use Anaconda: 
 
 ``export PATH="$VSC_DATA/anaconda3/bin:$PATH"``
