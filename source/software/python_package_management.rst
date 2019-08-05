@@ -249,21 +249,29 @@ directories as well by providing an install option
    
    ``$ pip install --install-option="--prefix=${VSC_DATA}/python_lib" sphinx``
 
-Installing Anaconda on NX node (KU Leuven Thinking)
+Installing Anaconda on NX node (KU Leuven Genius)
 ---------------------------------------------------
 
 #. Before installing make sure that you do not have a .local/lib
    directory in your $VSC_HOME. In case it exists, please move it to
    some other location or temporary archive. It creates conflicts with
    Anaconda.
-#. Download appropriate (64-Bit (x86) Installer) version of Anaconda
-   from
-   `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux>`_
+#. Download appropriate (64-Bit (x86) linux Installer) version of Anaconda
+   from `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux>`_
 #. Change the permissions of the file (if necessary)
-   ``chmod u+x Anaconda3-5.0.1-Linux-x86_64.sh``
-#. Execute the installer ``./Anaconda3-5.0.1-Linux-x86_64.sh``
-#. Go to the directory where Anaconda isinstalled , e.g.
+
+   ``chmod u+x Anaconda3-2019.07-Linux-x86_64.sh``
+
+#. Execute the installer ``./Anaconda3-2019.07-Linux-x86_64.sh``. 
+
+   You will be asked for to accept the license agreement, choose the location where it should be installed (please choose your ``$VSC_DATA``). After installation is done you can choose to installer to add the Anaconda path to your .bashrc. We recommend not to do that as it will prevent creating NX desktops. Instead of that you can manually (or in another script) modify your path when you want to use Anaconda: 
+
+   ``export PATH="$VSC_DATA/anaconda3/bin:$PATH"``
+
+#. Go to the directory where Anaconda is installed , e.g.
+
    ``cd anaconda3/bin/`` and check for the updates
    ``conda update anaconda-navigator``
+
 #. You can start the navigatorfrom that directory with
    ``./anaconda-navigator``
