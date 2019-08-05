@@ -271,7 +271,7 @@ To get a list of all available module commands, type:
 
 
 Collections of modules
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Although it is convenient to set up your working environment by loading
 modules in your `.bashrc` or `.profile` file, this is error prone and
