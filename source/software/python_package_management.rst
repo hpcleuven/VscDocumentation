@@ -188,8 +188,7 @@ Setting up your own package repository for Python is straightforward.
 `PyPi, the Python Package Index <https://pypi.org/>`_ is a web repository of
 Python packages and you can easily install packages from it using either
 ``easy_install`` or ``pip``. In both cases, you'll have to create a 
-subdirectory for Python in your ``${VSC_DATA}`` or ``${VSC_HOME}`` directory 
-(not all sites allow to install much in ``${VSC_HOME}``), add this directory
+subdirectory for Python in your ``${VSC_DATA}`` directory, add this directory
 to your ``PYTHONPATH`` after loading a suitable Python module, and then 
 point ``easy_install`` or ``pip`` to that directory as the install target
 rather then the default (which of course is write-protected on a multi-user
