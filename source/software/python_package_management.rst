@@ -30,7 +30,7 @@ distribution you are using, including those installed by you, i.e.,
 those in your <code>PYTHONPATH environment variable.
 
 #. Load the module for the Python version you wish to use, e.g.,:
-   ``$ module load Python/2.7.6-foss-2014a``
+   ``$ module load Python/3.7.0-foss-2018b``
 #. Run pip:
    ``$ pip freeze``
 
@@ -184,42 +184,71 @@ site <https://conda.readthedocs.io/en/latest/>`_.
 Alternatives to conda
 ---------------------
 
-Setting up your own package repository for Python is straightforward.
+Setting up your own package repository for Python is straightforward. 
+`PyPi, the Python Package Index <https://pypi.org/>`_ is a web repository of
+Python packages and you can easily install packages from it using either
+``easy_install`` or ``pip``. In both cases, you'll have to create a 
+subdirectory for Python in your ``${VSC_DATA}`` or ``${VSC_HOME}`` directory 
+(not all sites allow to install much in ``${VSC_HOME}``), add this directory
+to your ``PYTHONPATH`` after loading a suitable Python module, and then 
+point ``easy_install`` or ``pip`` to that directory as the install target
+rather then the default (which of course is write-protected on a multi-user
+system). Both commands will take care of dependencies also.
+
+If you prefer to use ``easy_install``, you can follow these instructions:
 
 #. Load the appropriate Python module, i.e., the one you want the python
    package to be available for:
-   ``$ module load Python/2.7.6-foss-2014a``
+   
+   ``$ module load Python/3.7.0-foss-2018b``
+   
 #. Create a directory to hold the packages you install, the last three
    directory names are mandatory:
-   ``$ mkdir  -p  \"${VSC_HOME}/python_lib/lib/python2.7/site-packages/\"``
+   
+   ``$ mkdir -p "${VSC_DATA}/python_lib/lib/python3.7/site-packages/"``
+   
 #. Add that directory to the ``PYTHONPATH`` environment variable for the
    current shell to do the installation:
-   ``$ export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"``
+   
+   ``$ export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"``
+   
 #. Add the following to your ``.bashrc`` so that Python knows where to
    look next time you use it:
-   ``export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"``
+   
+   ``export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"``
+   
 #. Install the package, using the ``prefix`` option to specify the
    install path (this would install the sphinx package):
-   ``$ easy_install  --prefix=\"${VSC_HOME}/python_lib\"  sphinx``
+   
+   ``$ easy_install --prefix="${VSC_DATA}/python_lib" sphinx``
 
 If you prefer using ``pip``, you can perform an install in your own
 directories as well by providing an install option
 
 #. Load the appropriate Python module, i.e., the one you want the python
    package to be available for:
-   ``$ module load Python/2.7.6-foss-2014a``
+   
+   ``$ module load Python/3.7.0-foss-2018b``
+   
 #. Create a directory to hold the packages you install, the last three
    directory names are mandatory:
-   ``$ mkdir  -p  \"${VSC_HOME}/python_lib/lib/python2.7/site-packages/\"``
+   
+   ``$ mkdir -p "${VSC_DATA}/python_lib/lib/python3.7/site-packages/"``
+   
 #. Add that directory to the ``PYTHONPATH`` environment variable for the
    current shell to do the installation:
-   ``$ export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"``
+   
+   ``$ export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"``
+   
 #. Add the following to your ``.bashrc`` so that Python knows where to
    look next time you use it:
-   ``export PYTHONPATH=\"${VSC_HOME}/python_lib/lib/python2.7/site-packages/:${PYTHONPATH}\"``
+   
+   ``export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"``
+   
 #. Install the package, using the ``prefix`` install option to specify
    the install path (this would install the sphinx package):
-   ``$ pip  install  --install-option=\"--prefix=${VSC_HOME}/python_lib\"  sphinx``
+   
+   ``$ pip install --install-option="--prefix=${VSC_DATA}/python_lib" sphinx``
 
 Installing Anaconda on NX node (KU Leuven Thinking)
 ---------------------------------------------------
