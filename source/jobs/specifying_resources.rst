@@ -1,34 +1,18 @@
 .. _resource specification:
 
-Specifying resources, output files and notifications
-====================================================
+Specifying job resources
+========================
 
-In general, there are two ways to pass the resource requirements or
-other job properties to the queue manager:
+Resources are specified using the ``-l`` option.  Typically, three resources will
+be specified:
 
-#. They can be specified on the command line of the ``qsub`` command
-#. Or they can be put in the job script on lines that start with
-   ``#PBS`` (so-called in-PBS directives). Each line can contain one or
-   more command line options written in exactly the same way as on the
-   command line of qsub. These lines **have to** come at the top of the
-   job script, before any command (but after the line telling the shell
-   that this is a bash script).
+- walltime,
+- number of nodes, number of processors per node, and
+- memory.
 
-And of course both strategies can be mixed at will: Some options can be
-put in the job script, while others are specified on the command line.
-This can be very useful, e.g., if you run a number of related jobs from
-different directories using the same script. The few things that have to
-change can then be specified at the command line. The options given at
-the command line always overrule those in the job script in case of
-conflict.
 
-Resource specifications
------------------------
-
-Resources are specified using the -l command line argument.
-
-Wall time
-~~~~~~~~~
+Walltime
+--------
 
 Walltime is specified through the option ``-l walltime=HH:MM:SS`` with
 ``HH:MM:SS`` the walltime that you expect to need for the job. (The
@@ -36,37 +20,41 @@ format ``DD:HH:MM:SS`` can also be used when the waltime exceeds 1 day,
 and ``MM:SS`` or simply ``SS`` are also viable options for very short
 jobs).
 
-To specify a run time of 30 hours, 25 minutes and 5 seconds, you'd use
-
-::
+To specify a run time of 30 hours, 25 minutes and 5 seconds, you'd use the
+following ``qsub`` command::
 
    $ qsub -l walltime=30:25:05 myjob.pbs
 
-on the command line or the line
-
-::
+Equivalently, you can specify the following PBS directive in your job script::
 
    #PBS -l walltime=30:25:05
 
-in the job script (or alternative ``walltime=1:06:25:05``).
+If you omit this option, the resource manager use a default value (one hour
+on most clusters).
 
-If you omit this option, the queue manager will not complain but use a
-default value (one hour on most clusters).
+Walltime estimation
+~~~~~~~~~~~~~~~~~~~
 
-It is important that you do an effort to estimate the wall clock time
-that your job will need properly. If your job exceeds the specified wall
-time, it will be killed, but this is not an invitation to simply specify
-the longest wall time possible (the limit differs from cluster to
-cluster). To make sure that the cluster cannot be monopolized by one or
-a few users, many of our clusters have a stricter limit on the number of
-long-running jobs than on the number of jobs with a shorter wall time.
-And several clusters will also allow short jobs to pass longer jobs in
-the queue if the scheduler finds a gap (based on the estimated end time
-of the running jobs) that is short enough to run that job before it has
-enough resources to start a large higher-priority parallel job. This
-process is called backfilling.
+.. warning::
 
-The maximum allowed wall time for a job is cluster-dependent. Since
+   It is important that you try to estimate the walltime for your job properly.
+
+If your job exceeds the specified walltime, it will be killed, so the walltime
+should not be underestimated.
+
+On the other hand, the walltime should not be wildly overestimate either since this
+has several disadvantages.
+
+- It will make your job harder to schedule, so it will spend more time in the queue.
+- Shorts jobs may benefit from back fill, i.e., if the scheduler finds a gap
+  (based on the estimated end time of the running jobs) that is long enough to run
+  that job before it has enough resources to start a large higher-priority parallel job
+  (cfr. `showbf`_).
+- To make sure that the cluster cannot be monopolized by one or
+  a few users, many of our clusters have a stricter limit on the number of
+  long-running jobs than on the number of jobs with a shorter walltime.
+
+The maximum allowed walltime for a job is cluster-dependent. Since
 these policies can change over time (as do other properties from
 clusters), we bundle these on one page per cluster in the
 ":ref:`hardware`" section.
@@ -210,64 +198,3 @@ user may cause a crash or performance degradation of another user's job.
    cases are very rare, so you shouldn't use this option unless, e.g.,
    you are running the final benchmarks for a paper and want to exclude
    as much factors that can influence the results as possible.
-
-Naming jobs and output files
-----------------------------
-
-The default name of a job is derived from the file name of the job
-script. This is not very useful if the same job script is used to launch
-multiple jobs, e.g., by launching jobs from multiple directories with
-different input files. It is possible to overwrite the default name of
-the job with ``-N <job_name>``.
-
-Most jobs on a cluster run in batch mode. This implies that they are not
-connected to a terminal, so the output send to the Linux stdout
-(standard output) and stderr (standard error) devices cannot be
-displayed on screen. Instead it is captured in two files that are put in
-the directory where your job was started at the end of your job. The
-default names of those files are <job_name>.o<job id> and
-<job_name>.e<job id> respectively, so made from the name of the job (the
-one assigned with -N if any, or the default one) and the number of the
-job assigned when you submit the job to the queue. You can however
-change those names using ``-o <output file>`` and ``-e <error file>``.
-
-It is also possible to merge both output streams in a single output
-stream. The option ``-j oe`` will merge stderr into stdout (and hence
-the -e option does not make sense), the option ``-j eo`` will merge
-stdout into stderr.
-
-Notification of job events
---------------------------
-
-Our scheduling system can also notify you when a job starts or ends by
-e-mail. Jobs can stay queued for hours or sometimes even days before
-actually starting, so it is useful to be notified so that you can
-monitor the progress of your job while it runs or kill it when it
-misbehaves or produces clearly wrong results. Two command line options
-are involved in this process:
-
--  ``-m abe`` or any subset of these three letters determine for which
-   event you'll receive a mail notification: job start (b), job ends (e)
-   or job is aborted (a). In some scenarios tis may bombard you with
-   e-mail if you have a lot of jobs starting, however at other times it
-   is very useful to be notified that your job starts, e.g., to monitor
-   if it is running properly and efficiently.
--  With ``-M <mailadress>`` you can set the mail address to which the
-   notification will be send. On most clusters the default will be the
-   e-mail address with which you registered your VSC-account, but on
-   some clusters this fails and the option is required to receive the
-   e-mail.
-
-Other options
--------------
-
-This page describes the most used options in their most common use
-cases. There are however more parameters for resource specification and
-other options that can be used. For advanced users who want to know
-more, we refer to the documentation of the ``qsub`` command that
-mentions all options in the Torque manual on the `Adaptive Computing
-documentation`_.
-
--  `Torque 6.0.1 documentation`_
-
-.. include:: links.rst
