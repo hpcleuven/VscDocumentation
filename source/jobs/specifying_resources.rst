@@ -6,11 +6,12 @@ Specifying job resources
 Resources are specified using the ``-l`` option.  Typically, three resources will
 be specified:
 
-- walltime,
-- number of nodes and cores, and
-- memory.
+- :ref:`walltime <walltime>`,
+- :ref:`number of nodes and cores <nodes and ppn>`, and
+- :ref:`memory <pmem>`.
 
-Additional specifications may be required for specialized hardware.
+Additional specifications may be required to :ref:`accomodate hardware
+details <specifying node properties>`.
 
 
 .. _walltime:
@@ -80,6 +81,16 @@ be physical cores or hyperthreads on a physical core.
 
 .. note::
 
+   The job script will only run once on the first node of
+   your allocation. To start processes on the other nodes, you'll need to
+   use tools like ``pbsdsh`` or ``mpirun``/``mpiexec``.
+
+
+Enforcing the node specification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
    Specifying ``-l nodes=<nodenum>:ppn=<cores per node>`` does
    not guarantee you that you actually get ``<nodenum>`` physical nodes.
    You may actually get multiple groups of ``<cores per node>`` cores on a
@@ -88,11 +99,40 @@ be physical cores or hyperthreads on a physical core.
 For example, ``-l nodes=4:ppn=5`` may result in an allocation of 20 cores
 on a single node.
 
-.. note::
+If you don't use all cores of a node in your job, the scheduler
 
-   The job script will only run once on the first node of
-   your allocation. To start processes on the other nodes, you'll need to
-   use tools like ``pbsdsh`` or ``mpirun``/``mpiexec``.
+- may decide to bundle the tasks of several nodes in your resource request on
+  a single node;
+- may put other jobs you have in the queue on the same node(s);
+- may, depending on how the system administrator has configured the
+  scheduler, put jobs of other users on the same node.
+ 
+In fact, the last scenario typically doesn't occur in practice since most VSC
+clusters have a single user per node policy as misbehaving jobs of one user
+may cause a crash or performance degradation of another user's job.
+
+To ensure that the scheduler respects your resource specfication you can
+use the following two options:
+
+``-W x=nmatchpolicy:exactnode``
+   This will result in the scheduler giving you resourced on the exact
+   number of nodes you request.  However, other jobs may still be
+   scheduled on the same nodes if not all cores are used.
+``-l naccesspolicy=singlejob``
+   This will make sure that no other job can use the nodes allocated
+   to your job.
+  
+.. warning::
+
+   In most cases it is very asocial to claim a whole node for a job that
+   cannot fully utilise the resources on the node.
+  
+However, there are some rare cases when your program actually runs so much
+faster by leaving some resources unused that it actually improves the
+performance of the cluster. Again, these cases are very rare, so you 
+shouldn't use this option unless, e.g., you are running the final benchmarks
+for a paper and want to exclude as many factors as possible that can influence
+the results.
 
 
 .. _pmem:
@@ -143,79 +183,57 @@ can be used on any node.
    performance loss. Hence this option is not very useful in most cases.
 
 
+.. _specifying node properties:
+
 Specifying further node properties
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
-Several clusters at the VSC have nodes with different properties. E.g.,
-a cluster may have nodes of two different CPU generations and your
-program may be compiled to take advantage of new instructions on the
-newer generation and hence not run on the older generation. Or some
-nodes may have more physical memory or a larger hard disk and support
-more virtual memory. Or not all nodes may be connected to the same high
-speed interconnect (which is mostly an issue on the older clusters). You
-can then specify which node type you want by adding further properties
-to the ``-l nodes=`` specification. E.g., assume a cluster with both Ivy
-Bridge and Haswell generation nodes. The Haswell CPU supports new and
-useful floating point instructions, but programs that use these will not
-run on the older Ivy Bridge nodes. The cluster will then specify the
-property ivybridge for the Ivy Bridge nodes and haswell for the Haswell
-nodes. Specifying ``-l nodes=8:ppn=6:haswell`` then tells the scheduler
-that you want to use nodes with the haswell property only (and in this
-case, since Haswell nodes often have 24 cores, you will likely get 2
-physical nodes).
+Several clusters at the VSC have nodes with different properties,  e.g.,
 
-The exact list of properties depend on the cluster and is given in the
-page for your cluster in the ":ref:`hardware`" section
-of this manual. Note that even for a given cluster, this list may evolve over
-time, e.g., when new nodes are added to the cluster, so check these
-pages again from time to time!
+- a cluster may have nodes of two different CPU generations and your
+  program may be compiled to take advantage of new instructions on the
+  newer generation and hence not run on the older generation;
+- some nodes may have more physical memory or a larger hard disk and support
+  more virtual memory;
+- not all nodes may be connected to the same high speed interconnect (which
+  is mostly an issue on the older clusters).
+ 
+You can then specify which node type you want by adding further properties
+to the ``-l nodes=`` specification.
+
+For example, assume a cluster with both Ivy Bridge and Haswell generation
+nodes. The Haswell CPU supports new and useful floating point instructions,
+but programs that use these will not run on the older Ivy Bridge nodes.
+
+The cluster will then specify the property ``ivybridge`` for the Ivy Bridge
+nodes and ``haswell`` for the Haswell nodes. To tell the scheduler that you
+want to use the Haswell ndoes, Specify::
+
+   -l nodes=8:ppn=6:haswell
+
+Since Haswell nodes often have 24 cores, you will likely get 2 physical nodes.
+
+The exact list of properties depends on the cluster and is given in the
+page for your cluster in the ":ref:`hardware`" section.
+
+.. note::
+
+   Even for a given cluster, this list may evolve over time, e.g., when new
+   nodes are added to the cluster, so check these pages again from time to time!
+
 
 Combining resource specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to combine multiple ``-l`` options in a single one by
-separating the arguments with a colon (,). E.g., the block
-
-::
+separating the arguments with a colon (,). E.g., the block::
 
    #PBS -l walltime=2:30:00
    #PBS -l nodes=2:ppn=16:sandybridge
    #PBS -l pmem=2gb
 
-is equivalent with the line
-
-::
+is equivalent with the line::
 
    #PBS -l walltime=2:30:00,nodes=2:ppn=16:sandybridge,pmem=2gb
 
-The same holds when using ``-l`` at the command line of ``qsub``.
-
-Enforcing the node specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*These are very asocial options as they typically result in lots of
-resources remaining unused, so use them with care and talk to user
-support to see if you really need them. But there are some rare
-scenarios in which they are actually useful.*
-
-If you don't use all cores of a node in your job, the scheduler may
-decide to bundle the tasks of several nodes in your resource request on
-a single node, may put other jobs you have in the queue on the same
-node(s) or may - depending on how the system manager has configured the
-scheduler - put jobs of other users on the same node. In fact, most VSC
-clusters have a single user per node policy as misbehaving jobs of one
-user may cause a crash or performance degradation of another user's job.
-
--  Using ``-W x=nmatchpolicy:exactnode`` will result in the scheduler
-   giving you resourced on the exact number of nodes you request.
-   However, other jobs may still be scheduled on the same nodes if not
-   all cores are used.
--  Using ``-l naccesspolicy=singlejob`` will make sure that no other job
-   can use the nodes allocated to your job. In most cases it is very
-   asocial to claim a whole node for a job that cannot fully utilise the
-   resources on the node, but there are some rare cases when your
-   program actually runs so much faster by leaving some resources unused
-   that it actually improves the performance of the cluster. But these
-   cases are very rare, so you shouldn't use this option unless, e.g.,
-   you are running the final benchmarks for a paper and want to exclude
-   as much factors that can influence the results as possible.
+The same holds when using ``-l`` on the command line for ``qsub``.
