@@ -7,9 +7,13 @@ Resources are specified using the ``-l`` option.  Typically, three resources wil
 be specified:
 
 - walltime,
-- number of nodes, number of processors per node, and
+- number of nodes and cores, and
 - memory.
 
+Additional specifications may be required for specialized hardware.
+
+
+.. _walltime:
 
 Walltime
 --------
@@ -42,7 +46,7 @@ Walltime estimation
 If your job exceeds the specified walltime, it will be killed, so the walltime
 should not be underestimated.
 
-On the other hand, the walltime should not be wildly overestimate either since this
+On the other hand, the walltime should not be wildly overestimated either since this
 has several disadvantages.
 
 - It will make your job harder to schedule, so it will spend more time in the queue.
@@ -59,68 +63,85 @@ these policies can change over time (as do other properties from
 clusters), we bundle these on one page per cluster in the
 ":ref:`hardware`" section.
 
-Single- and multi-node jobs: Cores and memory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following options can be used to specify the number of cores, amount
-of RAM and virtual memory needed for the job:
+.. _nodes and ppn:
 
--  ``-l nodes=<nodenum>:ppn=<cores per node>``: This indicates that the
-   node needs <nodenum> jobs with <cores per node> virtual cores per
-   node. Depending on the settings for the particular system, this will
-   be physical cores or hyperthreads on a physical core.
--  ``-l pmem=<memory>``: The job needs <memory> RAM memory per core or
-   hyperthread (the unit used by ppn). Thee units kb, mb, gb or tb can
-   be used (though the latter does not make sense when talking about
-   memory per core). Users are strongly advised to use this parameter
-   also. If not specified, the system will use a default value, and that
-   may be too small for your job and cause trouble if the scheduler puts
-   multiple jobs on a single node. Moreover, recent versions of the
-   resource manager software in use at the VSC can check for the actual
-   use of resources in a more strict way, so when this is enabled, they
-   may just terminate your job if it uses too much memory.
--  ``-l pvmem=<memory>``: The job needs <memory> virtual memory per core
-   or hyperthread (the unit used by ppn). This determines the total
-   amount of RAM memory + swap space that can be used on any node.
-   Similarly, kb, mb, gb or tb can be used, with gb making most sense.
-   Note that on many clusters, there is not much swap space available.
+Number of nodes and cores
+-------------------------
+
+The following options can be used to specify the number of nodes and cores
+needed for the job::
+
+   -l nodes=<nodenum>:ppn=<cores per node>
+   
+This indicates that the job needs ``<nodenum>`` nodes with ``<cores per node>``
+cores per node. Depending on the settings for the particular system, this will
+be physical cores or hyperthreads on a physical core.
+
+.. note::
+
+   Specifying ``-l nodes=<nodenum>:ppn=<cores per node>`` does
+   not guarantee you that you actually get ``<nodenum>`` physical nodes.
+   You may actually get multiple groups of ``<cores per node>`` cores on a
+   single node instead.
+  
+For example, ``-l nodes=4:ppn=5`` may result in an allocation of 20 cores
+on a single node.
+
+.. note::
+
+   The job script will only run once on the first node of
+   your allocation. To start processes on the other nodes, you'll need to
+   use tools like ``pbsdsh`` or ``mpirun``/``mpiexec``.
+
+
+.. _pmem:
+
+Memory
+------
+
+The following option specifies the RAM requirements of your job::
+
+   -l pmem=<memory>
+
+The job needs ``<memory>`` RAM memory per core or hyperthread (the unit used
+by ppn).  The units are ``kb``, ``mb``, ''gb`` or ``tb``.
+
+.. warning::
+
+   Users are strongly advised to use this option. If not specified, the system
+   will use a default value, and that may be too small for your job and cause
+   trouble if the scheduler puts multiple jobs on a single node.
+
+   Moreover, the resource manager software can check for the actual
+   use of resources, so when this is enabled, they
+   may just terminate your job if it uses more memory than requested.
+
+Example::
+
+   -l nodes=2:ppn=8  -l pmem=10gb
+
+In total, each of the 16 processes can use 10 GB RAM.
+
+.. _pvmem:
+
+Virtual memory
+~~~~~~~~~~~~~~
+
+A second option is to specify virtual memory::
+
+   -l pvmem=<memory>
+
+The job needs ``<memory>`` virtual memory per core or hyperthread (the unit
+used by ppn). This determines the total amount of RAM memory + swap space that
+can be used on any node.
+
+.. note::
+
+   On many clusters, there is not much swap space available.
    Moreover, swapping should be avoided as it causes a dramatic
    performance loss. Hence this option is not very useful in most cases.
 
-Node that specifying ``-l nodes=<nodenum>:ppn=<cores per node>`` does
-not guarantee you that you actually get <nodenum> physical nodes. You
-may get multiple groups of <cores per node> cores on a single node
-instead. E.g., -l nodes=4:ppn=5 may result in an allocation of 20 cores
-on a single node in a cluster that has nodes with 20 or more cores if
-that node also contains enough memory.
-
-Note also that the job script will only run once on the first node of
-your allocation. To start processes on the other nodes, you'll need to
-use tools like ``pbsdsh`` or ``mpirun``/``mpiexec`` to start those
-processes.
-
-Single node jobs only: Cores and memory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For single node jobs there is an alternative for specifying the amount
-of resident memory and virtual memory needed for the application. These
-settings make more sense from the point of view of starting a single
-multi-threaded application.
-
--  ``-l nodes=1:ppn=<cores per node>``: This is still needed to specify
-   the number of physical cores or hyperthreads needed for the job.
--  ``-l mem=<memory>``: The job needs <memory> RAM memoryon the node.
-   Units are kb, mb, gb or tb as before.
--  ``-l vmem=<memory>``: The job needs <memory> virtual memory on the
-   node, i.e., RAM and swap space combined. As for the option ``pvmem``
-   above, this options is not useful on most clusters since the amount
-   of swap space is very low and since swapping causes a very severe
-   performance degradation.
-
-These options should not be used for multi-node jobs as the meaning of
-the parameter is undefined (``mem``) or badly defined (``vmem``) for
-multi-node jobs with different sections and different versions of the
-Torque manual specifying different behaviour for these options.
 
 Specifying further node properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
