@@ -2,20 +2,20 @@
 
 This repository contains user-level documentation for the VSC infrastructure.  It is deployed on [ReadTheDocs](https://vlaams-supercomputing-centrum-vscdocumentation.readthedocs-hosted.com/en/latest/).
 
-When a commit is done on the repository's master branch, the documentation is rebuild automatically on ReadTheDocs, and is immediately live.  Hence you may prefer to work on a branch for major updates.
+When a commit is done on the repository's master branch, the documentation is rebuilt automatically on ReadTheDocs, and is immediately live.  Hence you may prefer to work on a branch for major updates.
 
 ## Prerequisites
 
 You will need to clone the repository, i.e.,
 ```bash
-$ git git@github.com:hpcleuven/VscDocumentation.git
+$ git clone git@github.com:hpcleuven/VscDocumentation.git
 $ cd VscDocumentation
 $ git fetch origin development:development
 ```
 
 Your life will be substantially easier if you can preview your changes locally.  A conda environment has be defined to install all the required software
 
-Downloads and Installation instructions for Miniconda can be found on [conda's website](https://docs.conda.io/en/latest/miniconda.html).
+Downloads and installation instructions for Miniconda can be found on [conda's website](https://docs.conda.io/en/latest/miniconda.html).
 
 The YAML environment description file is [``Scripts/sphinx.yml``](Scripts/sphinx.yml).  The environment can be created using
 ```bash
@@ -55,7 +55,7 @@ $ make web
 
 ### Edit content
 
-You can now edit the content to your heart's content, making commits to your featrure branch as you go.  You can push your feature branch to the Github repository whenever you like.
+You can now edit the content to your heart's content, making commits to your feature branch as you go.  You can push your feature branch to the Github repository whenever you like.
 ```bash
 $ git push origin feature/new_stuff
 ```
