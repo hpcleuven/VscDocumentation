@@ -10,7 +10,7 @@ be specified:
 - :ref:`number of nodes and cores <nodes and ppn>`, and
 - :ref:`memory <pmem>`.
 
-Additional specifications may be required to :ref:`accomodate hardware
+Additional specifications may be required to :ref:`accommodate hardware
 details <specifying node properties>`.
 
 
@@ -21,7 +21,7 @@ Walltime
 
 Walltime is specified through the option ``-l walltime=HH:MM:SS`` with
 ``HH:MM:SS`` the walltime that you expect to need for the job. (The
-format ``DD:HH:MM:SS`` can also be used when the waltime exceeds 1 day,
+format ``DD:HH:MM:SS`` can also be used when the walltime exceeds 1 day,
 and ``MM:SS`` or simply ``SS`` are also viable options for very short
 jobs).
 
@@ -111,7 +111,7 @@ In fact, the last scenario typically doesn't occur in practice since most VSC
 clusters have a single user per node policy as misbehaving jobs of one user
 may cause a crash or performance degradation of another user's job.
 
-To ensure that the scheduler respects your resource specfication you can
+To ensure that the scheduler respects your resource specification you can
 use the following two options:
 
 ``-W x=nmatchpolicy:exactnode``
@@ -125,7 +125,7 @@ use the following two options:
 .. warning::
 
    In most cases it is very asocial to claim a whole node for a job that
-   cannot fully utilise the resources on the node.
+   cannot fully utilize the resources on the node.
   
 However, there are some rare cases when your program actually runs so much
 faster by leaving some resources unused that it actually improves the
@@ -207,7 +207,7 @@ but programs that use these will not run on the older Ivy Bridge nodes.
 
 The cluster will then specify the property ``ivybridge`` for the Ivy Bridge
 nodes and ``haswell`` for the Haswell nodes. To tell the scheduler that you
-want to use the Haswell ndoes, Specify::
+want to use the Haswell nodes, Specify::
 
    -l nodes=8:ppn=6:haswell
 
