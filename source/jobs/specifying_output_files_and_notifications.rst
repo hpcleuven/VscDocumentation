@@ -1,4 +1,4 @@
-.. _specifying output files and notitications:
+.. _specifying output files and notifications:
 
 Specifying job name, output files and notifications
 ===================================================
@@ -43,8 +43,8 @@ the job with ``-N <job_name>``.
 
 .. _output files:
 
-Output files
-------------
+Naming output files
+-------------------
 
 Most jobs on a cluster run in batch mode. This implies that they are not
 connected to a terminal, so the output send to the Linux ``stdout``
