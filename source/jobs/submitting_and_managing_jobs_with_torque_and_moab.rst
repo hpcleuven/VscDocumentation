@@ -15,8 +15,8 @@ using the ``qsub`` command to place your job in the queue::
    $ qsub <jobscript>
    205814.leibniz
 
-When ``qsub`` succesfully queues your job, it responds with a job ID, ``205814.leibniz``
-in the example above.  This is a uniqeu identifier for your job, and can be used
+When ``qsub`` successfully queues your job, it responds with a job ID, ``205814.leibniz``
+in the example above.  This is a unique identifier for your job, and can be used
 to manage it.  In general, the number will suffice for this purpose.
 
 As explained on the page on ":ref:`Specifying resources, output files and
@@ -36,7 +36,7 @@ script has the following directive::
    #PBS -l walltime=2:00:00
 
 However, when submitting it with ``qsub``, you specify ``-l walltime=1:30:00``,
-the maximum walltime for your job will be 1 hour, 30 mintues.
+the maximum walltime for your job will be 1 hour, 30 minutes.
 
 
 .. _interactive jobs:
@@ -50,14 +50,14 @@ are some facilities for interactive work:
 -  The login nodes can be used for light interactive work. They can
    typically run the same software as the compute nodes. Some sites also
    have special interactive nodes for special tasks, e.g., scientific
-   data visualisation. See the ":ref:`hardware`" section
+   data visualization. See the ":ref:`hardware`" section
    where each site documents what is available.
    Examples of work that can be done on the login nodes :
 
    - running a GUI program that generates the input files for your
      simulation,
    - a not too long compile,
-   - a quick and not very resource intensive visualisation.
+   - a quick and not very resource intensive visualization.
 
    We have set limits on the compute time a program can use on the
    login nodes.
@@ -68,8 +68,8 @@ are some facilities for interactive work:
 
    - debugging,
    - for large compiles, or
-   - larger visualisations on clusters that don't have dedicated nodes for
-     visualisation.
+   - larger visualizations on clusters that don't have dedicated nodes for
+     visualization.
 
 To start an interactive job, use ``qsub``'s ``-I`` option.  You would
 typically also add several ``-l`` options to specify for how long
@@ -92,12 +92,12 @@ node properly for X support.
 .. note::
 
    - Please be reasonable when requesting interactive resources. On
-     some clusters, a short waltime will give you a higher priority, and on
+     some clusters, a short walltime will give you a higher priority, and on
      most clusters a request for a multi-day interactive session will fail
      simply because the cluster cannot give you such a node before the
      time-out of ``qsub`` kicks in.
 
-   - Pleasse act responsably, interactive jobs are by definition inefficient:
+   - Please act responsibly, interactive jobs are by definition inefficient:
      the systems are mostly idling while you type.
 
 
@@ -220,7 +220,7 @@ queue.
 All VSC clusters have multiple queues that are used to define policies.
 E.g., users may be allowed to have many short jobs running simultaneously,
 but may be limited to a few multi-day jobs to avoid long-time
-monopolisation of a cluster by a single user.
+monopolization of a cluster by a single user.
 
 This would typically be implemented by having separate queues with specific policies for
 short and long jobs. When you submit a job, ``qsub`` will put the job
@@ -281,7 +281,7 @@ Deleting a queued or running job: qdel
 --------------------------------------
 
 This is easily done with ``qdel``, e.g., the following command will delete the
-job iwth ID 323323::
+job with ID 323323::
 
    $ qdel 323323
 
@@ -328,7 +328,7 @@ command ``showbf``::
    323 procs available for      21:04:59
    136 procs available for   13:19:28:58
 
-To check whether a job can run in a specific parition, add the ``-p <partition>`` option.
+To check whether a job can run in a specific partition, add the ``-p <partition>`` option.
 
 .. note::
 
