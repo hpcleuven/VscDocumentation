@@ -55,7 +55,7 @@ done.
 Microsoft Windows users who use the PuTTY SSH client software should
 first prepare a private key for use with Eclipse's authentication
 system. Users using the OpenSSH client on Microsoft Windows, Linux or
-MacOS X may need to convert their private key to an older format.
+macOS may need to convert their private key to an older format.
 
 Microsoft Windows PuTTY users only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,7 +105,7 @@ is called `ìd_rsa_4096``, then the conversion can be done using
 All users
 ~~~~~~~~~
 
-#. From the 'Window' menu ('Eclipse' menu on OS X), select
+#. From the 'Window' menu ('Eclipse' menu on macOS), select
    'Preferences'.
 #. In the category 'General', expand the subcategory 'Network
    Connections' and select 'SSH2'.

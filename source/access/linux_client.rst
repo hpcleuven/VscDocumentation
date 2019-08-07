@@ -4,7 +4,7 @@ Linux client
 ============
 
 Since all VSC clusters use Linux as their main operating system, you
-will need to get acquainted with using the command-line interface and
+will need to get acquainted with Linux using the command-line interface and
 using the terminal. To open a terminal in Linux when using KDE, choose
 Applications > System > Terminal > Konsole. When using GNOME, choose
 Applications > Accessories > Terminal.
@@ -38,11 +38,11 @@ establishing a new connection.
 
 The SSH configuration file ``.ssh/config`` can be used to :ref:`define
 connection properties<SSH config>` for nodes you often use.  It is a
-consierable time saver when working terminal-based.
+considerable time saver when working terminal-based.
 
 If you need to log in to a node protected by a firewall through another
-login node, you need to :ref:`sett up an SSH proxy <proxy>` to log in to
-the protected node, e.g., to access the tier-1 system muk.
+login node, you need to :ref:`setup an SSH proxy <proxy>` to log in to
+the protected node.
 
 To establish network communication between your local machine and the
 cluster otherwise blocked by firewalls, you have to :ref:`create an
@@ -73,7 +73,7 @@ On the KU Leuven/UHasselt clusters it is also possible to :ref:`use
 the NX Client <NX start guide>` to log
 on to the machine and run graphical programs. This requires
 additional client software that is currently available for
-Windows, OS X, Linux, Android and iOS. The advantage over
+Windows, macOS, Linux, Android and iOS. The advantage over
 displaying X programs directly on your Linux screen is that you
 can sleep your laptop, disconnect and move to another network
 without loosing your X-session. Performance may also be better

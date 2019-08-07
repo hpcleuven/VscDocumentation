@@ -2,7 +2,7 @@ SSH config
 ==========
 
 The SSH configuration file resides in the ``.ssh`` directory in your home
-directory (at least when using Linux or MacOS X).  It is simply called
+directory (at least when using Linux or macOS).  It is simply called
 ``config``.  It is not created by default, so you would have to create the
 initial version.
 
@@ -34,7 +34,7 @@ To simplify login in to a host, e.g., ``login.hpc.kuleuven.be`` as user
 
 Here, you should replace ``login.hpc.kuleuven.be`` by the hostname of the
 remote host you want to login to, and ``vsc50005`` by your user name on that
-system.  You can have as many host defintions as you want in the configuration
+system.  You can have as many host definitions as you want in the configuration
 file.
 
 The first entry, i.e., ``Host *`` ensures that for any host you connect to,
@@ -76,7 +76,7 @@ use it to connect by specifying the ``IdentityFile`` attribute, i.e.,
 
    Specifying identity files allows you to have distinct keys for different
    hosts, e.g., you can use one key pair to connect to VSC infrastructure,
-   and a different one for your departemental server.
+   and a different one for your departmental server.
 
 
 How to use a proxy host?
