@@ -38,7 +38,7 @@ establishing a new connection.
 
 The SSH configuration file ``.ssh/config`` can be used to :ref:`define
 connection properties<SSH config>` for nodes you often use.  It is a
-consierable time saver when working terminal-based.
+considerable time saver when working terminal-based.
 
 If you need to log in to a node protected by a firewall through another
 login node, you need to :ref:`sett up an SSH proxy <proxy>` to log in to
