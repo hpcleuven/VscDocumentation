@@ -9,7 +9,7 @@ Getting ready to request an account
 Before requesting an account, you need to generate a pair of SSH
 keys. One popular way to do this on Windows is using the freely
 available `PuTTY`_ client which you can then also use to log on to
-the clusters, see the :ref:`intstructions for generating a key pair
+the clusters, see the :ref:`instructions for generating a key pair
 <generating keys windows>`..
 
 Connecting to the cluster
