@@ -14,12 +14,12 @@ institution. There is no relationship with your name, nor is the
 information about the link between VSC-accounts and your name publicly
 accessible.
 
-Your VSC account gives you access to most of the VSC Tier-2 infrastructure, though
-for some more specialised hardware you may have to ask access separately.
-The rationale is that  we want to ensure that that (usually rather expensive)
-hardware is used efficiently for the type of applications it was purchased for.
-Contact your `local VSC coordinator <get in touch_>`_ to arrange access
-when required.
+Your VSC account gives you access to most of the VSC Tier-2 infrastructure,
+though for some more specialised hardware you may have to ask access separately.
+The rationale is that  we want to ensure that that specialised (usually rather
+expensive) hardware is used efficiently for the type of applications it was
+purchased for.  Contact your `local VSC coordinator <get in touch_>`_ to arrange
+access when required.
 
 For the main Tier-1 compute cluster you need to submit a
 `project application <tier-1 project application_>`_ (or you should be
