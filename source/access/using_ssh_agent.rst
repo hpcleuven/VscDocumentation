@@ -8,7 +8,7 @@ public key authentication (RSA, DSA). The idea is that you store your
 private key in the ssh authentication agent and can then log in or use
 sftp as often as you need without having to enter your passphrase again.
 This is particularly useful when setting up a ssh proxy connection
-(e.g., for the tier-1 system muk) as these connections are more
+(e.g., for the Tier-1 system muk) as these connections are more
 difficult to set up when your key is not loaded into an ssh-agent.
 
 This all sounds very easy. The reality is more difficult though. The

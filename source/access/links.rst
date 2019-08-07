@@ -19,6 +19,8 @@
 .. _scp manual page: http://man.openbsd.org/scp
 .. _sftp manual page: http://man.openbsd.org/sftp
 .. _ssh manual page: http://man.openbsd.org/ssh
+.. _ssh_config manual page: http://man.openbsd.org/ssh_config
+.. _ssh-keygen manual page: http://man.openbsd.org/ssh-keygen
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
 .. _Eclipse: http://www.eclipse.org/
 .. _JellyfiSSH: http://www.m-works.co.nz/jellyfissh.php
