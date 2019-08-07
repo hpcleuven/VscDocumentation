@@ -4,7 +4,7 @@ Getting access
 VSC accounts
 ------------
 
-In order to use the infrastructure of the VSC, you need a VSC-userid,
+In order to use the infrastructure of the VSC, you need a VSC-user ID,
 also called a VSC account.  Check the `VSC website <eligible users_>`_
 for conditions.
 
@@ -15,8 +15,8 @@ information about the link between VSC-accounts and your name publicly
 accessible.
 
 Your VSC account gives you access to most of the VSC Tier-2 infrastructure,
-though for some more specialised hardware you may have to ask access separately.
-The rationale is that  we want to ensure that that specialised (usually rather
+though for some more specialized hardware you may have to ask access separately.
+The rationale is that  we want to ensure that that specialized (usually rather
 expensive) hardware is used efficiently for the type of applications it was
 purchased for.  Contact your `local VSC coordinator <get in touch_>`_ to arrange
 access when required.
@@ -28,8 +28,8 @@ covered by a project application within your research group).
 
 .. _account request:
 
-How to request an accout?
--------------------------
+How to request an account?
+--------------------------
 
 Unlike your institute account, VSC accounts don't use regular fixed
 passwords but a key pair consisting of a public an private key because
@@ -64,7 +64,7 @@ Without a key pair, you won't be able to apply for a VSC account.
    
    - You should choose a strong passphrase to protect your private key.
    - You should not share your key pair with other users.
-   - If you have accounts at multiple supercomputer centres (or on other
+   - If you have accounts at multiple supercomputer centers (or on other
      systems that use SSH), you should seriously consider using a
      different key pair for each of those accounts. In that way, if a key
      would get compromised, the damage can be controlled.
@@ -131,7 +131,7 @@ Users of the Antwerp University Association (AUHA)
 
 Who?
 
-   Access ia available for faculty, students (master's projects under
+   Access is available for faculty, students (master's projects under
    faculty supervision), and researchers of the AUHA.
 
 How?
