@@ -1,5 +1,3 @@
-.. _account request:
-
 Account request
 ===============
 
@@ -39,8 +37,10 @@ typing the passphrase when you use it.
 
 How to generate such a key pair, depends on your operating system. We
 describe the generation of key pairs in the client sections for
-:ref:`Linux<generating keys linux>`, :ref:`Windows <generating keys windows>`
-and :ref:`macOS<generating keys macos>` (formerly OS X).
+
+- :ref:`Linux<generating keys linux>`,
+- :ref:`Windows <generating keys windows>` and
+- :ref:`macOS<generating keys macos>` (formerly OS X).
 
 Without your key pair, you won't be able to apply for a VSC account.
 
@@ -112,7 +112,7 @@ How?
 
 How to start?
 
--  Please follow the information on the webpage,
+-  Please follow the information on the documentation site,
 -  or register for the HPC Introduction course.
 -  If there is no course announced please register to ojjjjur `training
    waiting list`_ and we will organize a new session as soon as we get a few

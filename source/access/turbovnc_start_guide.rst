@@ -17,8 +17,8 @@ Installing TurboVNC client (viewer)
 TurboVNC client Configuration & Start Guide
 -------------------------------------------
 
-Note: These instructions are for the KU Leuven visualization nodes
-only. The nodes have been added as login nodes to the migrated ThinKing cluster. The visualisation ode is not in the queueing system anymore. The UAntwerp visualization node also uses TurboVNC, but the setup
+Note: These instructions are for the KU Leuven Thinking visualization nodes (login7 and login8)
+only. The nodes have been added as login nodes to the migrated ThinKing cluster. The visualisation nodes are not in the queueing system anymore. The UAntwerp visualization node also uses TurboVNC, but the setup
 is different and TurboVNC is also supported on the regular login
 nodes (but without OpenGL support). Specific instructions for the use of
 TurboVNC on the UAntwerp clusters can be found on the page
@@ -68,12 +68,12 @@ TurboVNC on the UAntwerp clusters can be found on the page
      
    ::
 
-      $ ssh -L 5901:r10n3:5901 -N vsc30000@login8-tier2.hpc.kuleuven.be
+      $ ssh -L 5901:tier2-p-login-8:5901 -N vsc30000@login8-tier2.hpc.kuleuven.be
 
    | 
    | In Windows:
    | In putty go to Connection-SSH-Tunnels tab and add the source port
-   | 590<d> (e.g., 5902) and destination host:590<d> (e.g., 5902).
+   | 590<d> (e.g., 5902) and destination host:590<d> (e.g., tier2-p-login-8:5902).
 
    |TVNC 1|
 
@@ -164,6 +164,5 @@ Download: :download:`Slides from the lunchbox session <turbovnc_start_guide/turb
    :width: 400
 .. |TVNC 5| image:: turbovnc_start_guide/turbovnc_start_guide_05.png
 .. |TVNC 6| image:: turbovnc_start_guide/turbovnc_start_guide_06.png
-   :width: 80
 
 .. include:: links.rst

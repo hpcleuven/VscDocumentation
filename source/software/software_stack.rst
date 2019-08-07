@@ -3,9 +3,9 @@ Software stack
 
 Software installation and maintenance on HPC infrastructure such as the
 VSC clusters poses a number of challenges not encountered on a
-workstation or a departemental cluster. For many libraries and programs,
+workstation or a departmental cluster. For many libraries and programs,
 multiple versions have to installed and maintained as some users require
-specific versions of those. And those libraries or executable sometimes
+specific versions of those. In turn, those libraries or executables sometimes
 rely on specific versions of other libraries, further complicating the
 matter.
 
@@ -18,8 +18,8 @@ and requires knowledge of where all files are on the cluster. Having to
 manage all this by hand is clearly not an option.
 
 We deal with this on the VSC clusters in the following way. First, we've
-defined the concept of a :doc:`toolchain <toolchains>` on most of
-the newer clusters. They consist of a set of compilers, MPI library and
+defined the concept of a :ref:`toolchain <toolchains>`. They consist of
+a set of compilers, MPI library and
 basic libraries that work together well with each other, and then a
 number of applications and other libraries compiled with that set of
 tools and thus often dependent on those. We use tool chains based on the
@@ -32,15 +32,19 @@ libraries. Second, we use the module system to manage the environment
 variables and all dependencies and possible conflicts between various
 programs and libraries., and that is what this page focuses on.
 
+
 .. _module system basics:
 
-Basic use of the module system
-------------------------------
+Using the module system
+-----------------------
 
 Many software packages are installed as modules. These packages include
 compilers, interpreters, mathematical software such as Matlab and SAS,
 as well as other applications and libraries. This is managed with the
 ``module`` command.
+
+Available modules
+~~~~~~~~~~~~~~~~~
 
 To view a list of available software packages, use the command
 ``module av``. The output will look similar to this:
@@ -61,13 +65,34 @@ To view a list of available software packages, use the command
    zlib/1.2.8-foss-2014a
    zlib/1.2.8-intel-2014a
 
-This gives a list of software packages that can be loaded. Some packages
-in this list include ``intel-2014a`` or ``foss-2014a`` in their name.
-These are packages installed with the 2014a versions of the toolchains
+
+Module names
+~~~~~~~~~~~~
+
+In general, the anatomy of a module name is
+
+::
+
+   <package>/<version>-<toolchain>[-<extra>]
+
+For example  for ``Boost/1.66.0-intel-2018a-Python-3.6.4``, we
+have
+
+- ``<package>``: Boost, the name of the library,
+- ``<version>``: 1.66.0, the version of the Boost library,
+- ``<toolchain>``: intel-2018a, the toolchain Boost was built with, and
+- ``<extra>``: ``Python-3.6.4``, the version of Python this Boost version
+  can inter-operate with.
+
+Some packages in the list above include ``intel-2014a`` or ``foss-2014a`` in their name.
+These are packages installed with the 2014a versions of the :ref:`toolchains <toolchains>`
 based on the Intel and GNU compilers respectively. The other packages do
 not belong to a particular toolchain. The name of the packages also
 includes a version number (right after the /) and sometimes other
 packages they need.
+
+Searching modules
+~~~~~~~~~~~~~~~~~
 
 Often, when looking for some specific software, you will want to filter
 the list of available modules, since it tends to be rather large. The
@@ -80,8 +105,44 @@ following command would show only the modules that have the string
 
    $ module av |& grep -i python
 
+For more comprehensive searches, you can use ``module spider``, e.g.,
+
+::
+
+   $ module spider python
+
+
+Info on modules
+~~~~~~~~~~~~~~~
+
+The ``spider`` sub-command can also be used to provide information on on modules, e.g.,
+
+::
+
+   $ module spider Python/2.7.14-foss-2018a
+   
+   ---------------------------------------------
+     Python: Python/2.7.14-foss-2018a
+   -------------------------------------------
+       Description:
+           Python is a programming language that lets you work more
+           quickly and integrate your systems more effectively. 
+   
+   
+       This module can be loaded directly: module load Python/2.7.14-foss-2018a
+
+More technical information can be obtained using the ``show`` sub-command, e.g.,
+
+::
+
+   $ module show Python/2.7.14-foss-2018a
+
+
+Loading modules
+~~~~~~~~~~~~~~~
+
 A module is loaded using the command ``module load`` with the name of
-the package. E.g., with the above list of modules,
+the package, e.g., with the above list of modules,
 
 ::
 
@@ -105,6 +166,27 @@ the user should specify a particular version, e.g.,
 ::
 
    $ module load zlib/1.2.8-foss-2014a
+
+.. note::
+
+   Loading packages with explicit versions is considered best practice.  It ensures
+   that your scripts will use the expected version of the software, regardless of
+   newly installed software.  Failing to do this may jeopardize the reproducibility
+   of your results!
+
+Modules need not be loaded one by one; the two 'load' commands
+can be combined as follows:
+
+::
+
+   $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
+
+This will load the two modules and, automatically, the respective
+toolchains with just one command.
+
+
+Loaded modules
+~~~~~~~~~~~~~~
 
 Obviously, the user needs to keep track of the modules that are
 currently loaded. After executing the above two load commands, the list
@@ -141,6 +223,10 @@ are advantages and disadvantages to this, so be aware of automatically
 loaded modules whenever things go wrong: they may have something to do
 with it!
 
+
+Unloading modules
+~~~~~~~~~~~~~~~~~
+
 To unload a module, one can use the ``module unload`` command. It works
 consistently with the ``load`` command, and reverses the latter's
 effect. One can however unload automatically loaded modules manually, to
@@ -155,6 +241,10 @@ sufficiently clever to figure out what the user intends. However,
 checking the list of currently loaded modules is always a good idea,
 just to make sure...
 
+
+Purging modules
+~~~~~~~~~~~~~~~
+
 In order to unload all modules at once, and hence be sure to start with
 a clean slate, use:
 
@@ -162,26 +252,70 @@ a clean slate, use:
 
    $ module purge
 
-It is a good habit to use this command in PBS scripts, prior to loading
-the modules specifically needed by applications in that job script. This
-ensures that no version conflicts occur if the user loads module using
-his ``.bashrc`` file.
+.. note::
 
-Finally, modules need not be loaded one by one; the two 'load' commands
-can be combined as follows:
+   It is a good habit to use this command in PBS scripts, prior to loading
+   the modules specifically needed by applications in that job script. This
+   ensures that no version conflicts occur if the user loads module using
+   his ``.bashrc`` file.
 
-::
 
-   $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
-
-This will load the two modules and, automatically, the respective
-toolchains with just one command.
+Getting help
+~~~~~~~~~~~~
 
 To get a list of all available module commands, type:
 
 ::
 
    $ module help
+
+
+Collections of modules
+~~~~~~~~~~~~~~~~~~~~~~
+
+Although it is convenient to set up your working environment by loading
+modules in your `.bashrc` or `.profile` file, this is error prone and
+you will end up shooting yourself in the foot at some point.
+
+The module system provides an alternative approach that lets you set up
+an environment with a single command, offering a viable alternative to
+polluting your `.bashrc`.
+
+Define an environment
+
+   #. Be sure to start with a clean environment
+      ::
+   
+         $ module purge
+   
+   #. Load the modules you want in your environment, e.g.,
+      ::
+   
+         $ module load matplotlib/2.1.2-intel-2018a-Python-3.6.4
+         $ module load matlab/R2019a
+   
+   #. save your environment, e.g., as ``data_analysis``
+      ::
+     
+          $ module save data_analysis
+
+Use an environment
+
+   ::
+   
+      $ module restore data_analysis
+
+List all your environments
+
+   ::
+   
+      $ module savelist
+
+Remove an environment
+
+   ::
+   
+      $ rm ~/.lmod.d/data_analysis
 
 
 .. _specialized software stacks:
@@ -218,59 +352,3 @@ returns at the end of the list:
 
 The packages such as ``hopper/2014b`` enable additional packages when
 loaded.
-
-Similarly, on ThinKing, the KU Leuven cluster:
-
-::
-
-   $ module av
-   ...
-   -------------------------- /apps/leuven/etc/modules/ --------------------------
-   cerebro/2014a   K20Xm/2014a     K40c/2014a      M2070/2014a     thinking/2014a
-   ictstest/2014a  K20Xm/2015a     K40c/2015a      phi/2014a       thinking2/2014a
-
-shows modules specifically for the thin node cluster ThinKing, the `SGI
-shared memory system
-Cerebro <\%22/infrastructure/hardware/hardware-kul#Cerebro\%22>`__,
-three types of NVIDIA GPU nodes and the Xeon Phi nodes. Loading one of
-these will show the appropriate packages in the list obtained with
-``module av``. E.g.,
-
-::
-
-   module load cerebro/2014a
-
-will make some additional modules available for Cerebro, including two
-additional toolchains with the SGI MPI libraries to take full advantage
-of the interconnect of that machine.
-
-
-Explicit version numbers
-------------------------
-
-As a rule, once a module has been installed on the cluster, the
-executables or libraries it comprises are never modified. This policy
-ensures that the user's programs will run consistently, at least if the
-user specifies a specific version. Failing to specify a version may
-result in unexpected behavior.
-
-Consider the following example: the user decides to use the GSL library
-for numerical computations, and at that point in time, just a single
-version 1.15, compiled with the foss toolchain is installed on the
-cluster. The user loads the library using:
-
-::
-
-   $ module load GSL
-
-rather than
-
-::
-
-   $ module load GSL/1.15-foss-2014a
-
-Everything works fine, up to the point where a new version of GSL is
-installed, e.g., 1.16 compiled with both the ``intel`` and the ``foss``
-toolchain. From then on, the user's load command will load the latter
-version, rather than the one he intended, which may lead to unexpected
-problems.
