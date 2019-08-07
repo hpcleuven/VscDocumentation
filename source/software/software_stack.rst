@@ -12,7 +12,7 @@ matter.
 The way Linux finds the right executable for a command, and a program
 loads the right version of a library or a plug-in, is through so-called
 environment variables. These can, e.g., be set in your shell
-configuration files (e.g., ``.bashrc)``, but this requires a certain
+configuration files (e.g., ``.bashrc``), but this requires a certain
 level of expertise. Moreover, getting those variables right is tricky
 and requires knowledge of where all files are on the cluster. Having to
 manage all this by hand is clearly not an option.
@@ -30,7 +30,7 @@ e.g., additional versions requested by a small group of users for
 specific experiments, or tools that only depend on basic system
 libraries. Second, we use the module system to manage the environment
 variables and all dependencies and possible conflicts between various
-programs and libraries., and that is what this page focuses on.
+programs and libraries, and that is what this page focuses on.
 
 
 .. _module system basics:
@@ -274,12 +274,12 @@ Collections of modules
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Although it is convenient to set up your working environment by loading
-modules in your `.bashrc` or `.profile` file, this is error prone and
+modules in your ``.bashrc`` or ``.profile`` file, this is error prone and
 you will end up shooting yourself in the foot at some point.
 
 The module system provides an alternative approach that lets you set up
 an environment with a single command, offering a viable alternative to
-polluting your `.bashrc`.
+polluting your ``.bashrc``.
 
 Define an environment
 
@@ -325,30 +325,14 @@ Specialized software stacks
 
 The list of software available on a particular cluster can be
 unwieldingly long and the information that ``module av`` produces
-overwhelming. Therefore the administrators may have chose to only show
+overwhelming. Therefore the administrators may have chosen to only show
 the most relevant packages by default, and not show, e.g., packages that
 aim at a different cluster, a particular node type or a less complete
 toolchain. Those additional packages can then be enabled by loading
-another module first. E.g., on hopper, the most recent UAntwerpen
-cluster when we wrote this text, the most complete and most used
-toolchains were the 2014a versions. Hence only the list of packages in
-those releases of the ``intel`` and ``foss`` (GNU) toolchain were shown
-at the time. Yet
+another module first. E.g., to get access to the modules in 
+the (at the time of writing) incomplete 2019a toolchain on UAntwerpen's 
+leibniz cluster, one should first enter
 
-::
+   ::
 
-   $ module av
-
-returns at the end of the list:
-
-::
-
-   ...
-   ifort/2015.0.090                   M4/1.4.16-GCC-4.8.2
-   iimpi/7.1.2                        VTune/2013_update10
-   ----------------------- /apps/antwerpen/modules/calcua ------------------------
-   hopper/2014a hopper/2014b hopper/2015a hopper/2015b hopper/2016a hopper/2016b 
-   hopper/all   hopper/sl6   perfexpert   turing
-
-The packages such as ``hopper/2014b`` enable additional packages when
-loaded.
+      $ module load leibniz/2019a-experimental
