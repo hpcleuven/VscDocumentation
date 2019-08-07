@@ -6,7 +6,7 @@ Data transfer
 Prerequisite: OpenSSH, Cyberduck or FileZilla
 ---------------------------------------------
 
--  OS X comes with its own implementation of OpenSSH, so you don't need
+-  macOS comes with its own implementation of OpenSSH, so you don't need
    to install any third-party software to use it. Just open a Terminal
    window and jump in! Because of this, you can use the same :ref:`scp and
    sftp commands as in Linux <scp and sftp>` to

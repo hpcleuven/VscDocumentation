@@ -10,7 +10,7 @@ Before requesting an account, you need to generate a pair of SSH
 keys. One popular way to do this on Windows is using the freely
 available `PuTTY`_ client which you can then also use to log on to
 the clusters, see the :ref:`instructions for generating a key pair
-<generating keys windows>`..
+<generating keys windows>`.
 
 Connecting to the cluster
 -------------------------
@@ -28,7 +28,7 @@ to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
 distribution.
 
 To log on to a node protected by a firewall through another login node,
-e.g., to access the tier-1 system muk, you need to :ref:`set up an SSH
+you need to :ref:`set up an SSH
 proxy with PuTTY <ssh proxy with PuTTY>`.
 
 To establish network communication between your local machine and the

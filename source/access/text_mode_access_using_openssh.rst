@@ -7,7 +7,7 @@ Prerequisite: OpenSSH
 ---------------------
 
 You will need a public/private key pair to request and account, this key pair
-has to be used to authenticate when making a coonection.  For information
+has to be used to authenticate when making a connection.  For information
 on how to create a key pair, see :ref:`the page on generating keys <generating keys linux>`.
 
 How to connect?
@@ -27,7 +27,7 @@ Here,
 -  ``<vsc-loginnode>`` is the name of the login node of the VSC cluster you
    want to connect to, e.g., ``login.hpc.kuleuven.be``.
 
-You can find the names and IP-addresses of the login nodes for the various clusters
+You can find the names of the login nodes for the various clusters
 in the sections on the :ref:`available hardware <hardware>`.
 
 .. note::
@@ -58,7 +58,7 @@ Example:
 
 ::
 
-   $ ssh -X vsc123456@login.hpc.kuleuven.be
+   $ ssh -X vsc98765@login.hpc.kuleuven.be
 
 To test the connection, you can try to start a simple X program on the
 login nodes, e.g., ``xeyes``. The latter will open a new

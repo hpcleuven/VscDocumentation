@@ -37,8 +37,8 @@ Transfer data using Secure FTP (SFTP)
 
 Data can be transferred using
 
-- Secure FTP (SFTP) with the :ref:`OpenSSH sftp and scp commands, or
-- GUI clients such as Cyberduck or FileZilla <data transfer>`.
+- Secure FTP (SFTP) with the :ref:`OpenSSH sftp and scp commands <scp and sftp>`, or
+- GUI clients such as :ref:`Cyberduck or FileZilla <data transfer>`.
 
 
 Display graphical programs

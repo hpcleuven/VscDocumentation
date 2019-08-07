@@ -18,10 +18,10 @@ Windows
 You can use OpenSSH on Windows also if you install the free UNIX
 emulation layer `Cygwin`_ with the package "openssh".
 
-macOS/OS X
-~~~~~~~~~~
+macOS
+~~~~~
 
-macOS/OS X comes with its own implementation of OpenSSH, so you don't
+macOS comes with its own implementation of OpenSSH, so you don't
 need to install any third-party software to use it. Just open a Terminal
 window and jump in!
 
