@@ -40,8 +40,8 @@ a terminal and typing:
 Generating a public/private key pair
 ------------------------------------
 
-Usually you already have the software needed and a key pair might
-already be present in the default location inside your home directory:
+A key pair might already be present in the default location inside
+your home directory:
 
 ::
 
@@ -49,7 +49,7 @@ already be present in the default location inside your home directory:
    authorized_keys   id_rsa   id_rsa.pub   known_hosts
 
 You can recognize a public/private key pair when a pair of files has the
-same name except for the extension ``.pub`` added to one of them. In
+same name except for the extension ``.pub`` extension of one of them. In
 this particular case, the private key is ``id_rsa`` and public key is
 ``id_rsa.pub``. You may have multiple keys (not necessarily in the
 directory ``~/.ssh``) if you or your operating system requires this.
@@ -57,6 +57,8 @@ directory ``~/.ssh``) if you or your operating system requires this.
 You will need to generate a new key pair, when:
 
 -  you don't have a key pair yet, or
+-  you have a key pair, but is not in the correct format (RSA) or
+   uses too few bits (at least 4096),
 -  you forgot the passphrase protecting your private key, or
 -  or your private key was compromised.
 
