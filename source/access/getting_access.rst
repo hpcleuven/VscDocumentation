@@ -14,11 +14,11 @@ institution. There is no relationship with your name, nor is the
 information about the link between VSC-accounts and your name publicly
 accessible.
 
-Your VSC account gives you access to most the VSC Tier-2 infrastructure, though
-for some more specialised hardware you have to ask access separately.
+Your VSC account gives you access to most of the VSC Tier-2 infrastructure, though
+for some more specialised hardware you may have to ask access separately.
 The rationale is that  we want to ensure that that (usually rather expensive)
 hardware is used efficiently for the type of applications it was purchased for.
-Contact your :ref:`local VSC coordinator<get in touch_>`_ to arrange access
+Contact your `local VSC coordinator <get in touch_>`_ to arrange access
 when required.
 
 For the main Tier-1 compute cluster you need to submit a
@@ -98,19 +98,19 @@ Who?
 
 How?
 
-   -  Researchers with a regular personnel account (u-number) can use
-      the :ref:`generic procedure <generic access procedure>`.
-   -  If you are in one of the higher education institutions associated
-      with KU Leuven, the :ref:`generic procedure <generic access procedure>`
-      may not work. In that case, please e-mail hpcinfo@kuleuven.be
-      to get an account. You will have to provide a public ssh key generated
-      as described above.
-   -  Lecturers of KU Leuven and UHasselt that need HPC access for giving
-      their courses: The procedure requires action both from the lecturers
-      and from the students. Lecturers should follow the :ref:`specific
-      procedure for lecturers <lecturer procedure leuven>`,
-      while the students should simply apply for the account through the
-      :ref:`generic procedure <generic access procedure>`.
+-  Researchers with a regular personnel account (u-number) can use
+   the :ref:`generic procedure <generic access procedure>`.
+-  If you are in one of the higher education institutions associated
+   with KU Leuven, the :ref:`generic procedure <generic access procedure>`
+   may not work. In that case, please e-mail hpcinfo@kuleuven.be
+   to get an account. You will have to provide a public ssh key generated
+   as described above.
+-  Lecturers of KU Leuven and UHasselt that need HPC access for giving
+   their courses: The procedure requires action both from the lecturers
+   and from the students. Lecturers should follow the :ref:`specific
+   procedure for lecturers <lecturer procedure leuven>`,
+   while the students should simply apply for the account through the
+   :ref:`generic procedure <generic access procedure>`.
 
 Users of Ghent University Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,30 +136,31 @@ Who?
 
 How?
 
--  Researchers of the University of Antwerp with a regular UAntwerpen
-   account can use the :ref:`generic procedure <generic access procedure>`.
--  Users from higher education institutions associated with UAntwerpen
-   can get a VSC account via UAntwerpen. However, we have not yet set up
-   an automated form. Please contact the user support at
-   `hpc@uantwerpen.be <mailto:hpc@uantwerpen.be?subject=Account%20request>`_
-   to get an account. You will have to provide a public ssh key
-   generated as described above.
+-  Researchers can use the :ref:`generic procedure <generic access procedure>`.
+-  Master students can also use the infrastructure for their master
+   thesis work. The promotor of the thesis should first send a
+   motivation to hpc@uantwerpen.be and then the :ref:`generic
+   procedure <generic access procedure>` should be followed (using your
+   student UAntwerpen id) to request the account.
 
 Users of Brussels University Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you only need access to the VUB cluster Hydra, you don't
-necessarily need a full VSC account but can use your regular
-institute account. More information can be found on `this VUB Web
-Notes
-page <http://www.ulb.ac.be/wserv2_oratio/oratio?f_type=view&f_context=fiches&language=nl&noteid=227>`_.
+All information about the access policy is available on the `VUB
+HPC documentation website <https://hpc.vub.be/documentation>`_.
+
+-  Researchers can use the :ref:`generic procedure <generic access procedure>`.
+-  Master students can also use the infrastructure for their master
+   thesis work. The promotor of the thesis should first send a
+   motivation to hpc@vub.ac.be and then the :ref:`generic
+   procedure <generic access procedure>` should be followed to request the account.
 
 Everyone else
 ^^^^^^^^^^^^^
 
 Who?
 
-   Check that `you are eligible to use VSC infrastructure <eligible users_>`_,
+   Check that `you are eligible to use VSC infrastructure <eligible users_>`_.
 
 How?
 
@@ -181,7 +182,7 @@ procedure does not work.
 #. Select your "home" institution from the drop-down menu and click the "confirm" button.
 #. Log in using your institution login and password.
 #. You will be asked to upload the public key you `created earlier <create key pair_>`_.
-#. You will get an e-mail to confirm your application, click the included link to do so..
+#. You will get an e-mail to confirm your application, click the included link to do so.
 #. After the account has been approved by the VSC, your account will be created and
    you will get a confirmation e-mail.
 
@@ -199,11 +200,12 @@ Next steps
 
 Register for an HPC Introduction course. These are organized at all universities
 on a regular basis.
-.. note:
 
-   For KU Leuven users: if there is no course announced please register to our `training
+.. note::
+
+   For KU Leuven users: if there is no course announced please register to our `training 
    waiting list`_ and we will organize a new session as soon as we get a few
-   people interested in it.
+   people interested in it.  training waiting list
 
 Information on our training program and the schedule is available on the
 `VSC website <VSC training_>`_.
@@ -213,7 +215,7 @@ Additional information
 ----------------------
 
 Before you apply for VSC account, it is useful to first check whether
-the infrastructure is suitable for your application. Windows or OS X
+the infrastructure is suitable for your application. Windows or macOS
 programs for instance cannot run on our infrastructure as we use the
 Linux operating system on the clusters. The infrastructure also should
 not be used to run applications for which the compute power of a good
@@ -222,7 +224,7 @@ laptop is sufficient. The pages on the :ref:`tier1 hardware` and
 in this part of the website give a high-level description of our
 infrastructure. You can find more detailed information in the user
 documentation on the user portal. When in doubt, you can also contact
-your local support team. This does not require a VSC account.
+your `local support team <get in touch_>`_. This does not require a VSC account.
 
 Your account also includes two “blocks” of disk space: your home
 directory and data directory. Both are accessible from all VSC clusters.
