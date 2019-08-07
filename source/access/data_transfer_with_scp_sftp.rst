@@ -81,7 +81,7 @@ One easy way of starting a sftp session is
 
    $ sftp <vsc-account>@<vsc-loginnode>
 
-You can now transfer files to and frmo the remote system `<vsc-loginnode>``.
+You can now transfer files to and from the remote system `<vsc-loginnode>``.
 
 Some useful ``sftp`` commands are listed in the table below.
 
