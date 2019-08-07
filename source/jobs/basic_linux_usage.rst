@@ -8,7 +8,8 @@ All the VSC clusters run the Linux operating system:
 -  KU Leuven: Red Hat Enterprise Linux ComputeNode release 6.5
    (Santiago), 64 bit
 -  UAntwerpen: CentOS 7.x
--  UGent: Scientific Linux
+-  UGent: CentOS 7.x
+-  VUB: CentOS 7.x
 
 This means that, when you connect to one of them, you get a command line
 interface, which looks something like this:
@@ -72,7 +73,7 @@ following sites:
 -  `Linux Tutorials Youtube Channel`_ 
 -  `Linux Basics on Lifewire`_
 -  `Linux Newbie Administrator Guide`_
--  We organise regular Linux introductory courses, see `the \\"Education
-   and Training\" pages`_
+-  We organise regular Linux introductory courses, see the
+   `VSC website <VSC training_>`_. 
 
 .. include:: links.rst 

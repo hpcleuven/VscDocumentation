@@ -6,6 +6,6 @@
 .. _Linux Tutorials Youtube Channel: https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ 
 .. _Linux Basics on Lifewire : https://www.lifewire.com/learn-how-linux-basics-4102692 
 .. _Linux Newbie Administrator Guide: http://lnag.sourceforge.net/
-.. _the \\"Education and Training\" pages: https://www.vscentrum.be/en/education-and-trainings
+.. _VSC training: https://www.vscentrum.be/training
 .. _Lmod: http://lmod.readthedocs.io/en/latest/
 .. _Lmod documentation: http://lmod.readthedocs.io/en/latest/

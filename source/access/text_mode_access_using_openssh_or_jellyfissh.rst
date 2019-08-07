@@ -40,12 +40,12 @@ where
 -  <vsc-loginnode> is the name of the loginnode of the VSC cluster you
    want to connect to.
 
-You can find the names and ip-addresses of the loginnodes in the
+You can find the names of the loginnodes in the
 :ref:`sections of the local VSC clusters <hardware>`.
 
 SSH will ask you to enter your passphrase.
 
-On sufficiently recent macOS/OS X versions (Leopard and newer) you can
+On sufficiently recent macOS versions (Leopard and newer) you can
 use the Keychain Access service to automatically provide your passphrase
 to ssh. All you need to do is to add the key using
 
