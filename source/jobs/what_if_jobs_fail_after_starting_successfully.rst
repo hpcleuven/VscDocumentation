@@ -3,6 +3,24 @@
 My jobs seem to run, but I don't see any output or errors?
 ==========================================================
 
+.. _walltime exceeded:
+
+You ran out of time
+-------------------
+
+It is possible the job exceeded the walltime that was specified as
+part of the required resources, or the default value otherwise.
+
+If this is the case, the resoruce manager will terminate your job,
+and the job's output file will contain a line similar to::
+
+   =>> PBS: job killed: walltime <value in seconds> exceeded limit <value in seconds>
+
+Try to submit your job :ref:`specifying a larger walltime <walltime>`.
+
+
+.. _quota exceeded:
+
 You ran out of disk space
 -------------------------
 
@@ -86,6 +104,8 @@ checking with the command above) using::
    $ find  $VSC_HOME  -name "core.*"  -exec rmm {} +
 
 
+.. _memory exceeded:
+
 You ran out of memory (RAM)
 ---------------------------
 
@@ -109,3 +129,5 @@ The used resources are just a rough indication, and the reported value can
 be lower than the actual value if the application's memory usage rapidly
 increased.  Hence it is prudent to :ref:`monitor the memory consumption of your
 job in more detail <monitoring memory and cpu>`.
+
+You can try to resubmit your job :ref:`specifying more memory per core <pmem>`.
