@@ -7,6 +7,12 @@ Thinking is KU Leuven/UHasselt's older Tier-2 cluster. It has thin nodes, large 
 Login infrastructure
 --------------------
 
+You can access Thinking by using 
+
+    - login\-thinking.hpc.kuleuven.be
+
+This will loadbalance your connection to one of the 4 Thinking login nodes
+ 
 Direct login is using SSH is possible to all login infrastructure without restrictions.
 
 - Two ivybridge login nodes for SSH access are available. **Note:** these are ivybridge nodes, so for better performance, build your software on a haswell compute node.
