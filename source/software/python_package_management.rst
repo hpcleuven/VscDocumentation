@@ -21,6 +21,9 @@ to install them just for himself, or for his research group, that is not
 a problem though. Do not hesitate to contact support whenever you
 encounter trouble doing so.
 
+
+.. _Python packages available:
+
 Checking for installed packages
 -------------------------------
 
@@ -29,15 +32,23 @@ useful. It will list all packages that are installed for the Python
 distribution you are using, including those installed by you, i.e.,
 those in your <code>PYTHONPATH environment variable.
 
-#. Load the module for the Python version you wish to use, e.g.,:
-   ``$ module load Python/3.7.0-foss-2018b``
-#. Run pip:
-   ``$ pip freeze``
+#. Load the module for the Python version you wish to use, e.g.,::
+   
+   $ module load Python/3.7.0-foss-2018b
 
-Note that some packages, e.g., ``mpi4py``, ``pyh5``;, ``pytables``,...,
-are available through the module system, and have to be loaded
-separately. These packages will not be listed by ``pip`` unless you
-loaded the corresponding module.
+#. Run pip::
+
+   $ pip freeze
+
+.. note::
+
+   Some packages, e.g., ``mpi4py``, ``pyh5``;, ``pytables``,...,
+   are available through the module system, and have to be loaded
+   separately. These packages will not be listed by ``pip`` unless you
+   loaded the corresponding module.
+
+
+.. _Python packages conda:
 
 Install your own packages using conda
 -------------------------------------
@@ -180,6 +191,9 @@ More information
 
 Additional information about conda can be found on its `documentation
 site <https://conda.readthedocs.io/en/latest/>`_.
+
+
+.. _Python packages alternatives:
 
 Alternatives to conda
 ---------------------
