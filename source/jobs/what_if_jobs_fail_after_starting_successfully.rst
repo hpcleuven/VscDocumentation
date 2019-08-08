@@ -72,3 +72,12 @@ file::
 
 This can be done more selectively by adding this line to your job script
 prior to invoking your program.
+
+You can find all the core dumps in your home directory using::
+
+   $ find  $VSC_HOME  -name "core.*"
+
+They can be removed (make sure that only unwanted core files are removed by
+checking with the command above) using::
+
+   $ find  $VSC_HOME  -name "core.*"  -exec rmm {} +
