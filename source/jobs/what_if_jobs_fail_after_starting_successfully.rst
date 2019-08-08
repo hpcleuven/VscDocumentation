@@ -11,7 +11,7 @@ You ran out of time
 It is possible the job exceeded the walltime that was specified as
 part of the required resources, or the default value otherwise.
 
-If this is the case, the resoruce manager will terminate your job,
+If this is the case, the resource manager will terminate your job,
 and the job's output file will contain a line similar to::
 
    =>> PBS: job killed: walltime <value in seconds> exceeded limit <value in seconds>
@@ -101,7 +101,7 @@ You can find all the core dumps in your home directory using::
 They can be removed (make sure that only unwanted core files are removed by
 checking with the command above) using::
 
-   $ find  $VSC_HOME  -name "core.*"  -exec rmm {} +
+   $ find  $VSC_HOME  -name "core.*"  -exec rm {} +
 
 
 .. _memory exceeded:
