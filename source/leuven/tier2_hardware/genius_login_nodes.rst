@@ -1,6 +1,12 @@
 Login infrastructure
 --------------------
 
+You can access Genius through
+
+    - login\-genius.hpc.kuleuven.be
+
+This will loadbalance your connection to one of the 4 Genius login nodes.
+
 Direct login using SSH is possible to all login infrastructure without restrictions.
 
 Two types of login nodes are available:
