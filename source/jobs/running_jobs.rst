@@ -179,7 +179,7 @@ Lines 1 through 10 are written by the prologue, i.e., the administrative script 
 runs before your job script.  Similarly, lines 12 though 19 are written by the
 epilogue, i.e., the administrative script that runs after your job script.
 
-Line 11 is the actual output of your job scriot.
+Line 11 is the actual output of your job script.
 
 .. note::
 
