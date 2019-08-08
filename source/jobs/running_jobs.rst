@@ -4,7 +4,7 @@ Running jobs
 ============
 
 An HPC cluster is a multi-user system.  This implies that your computations
-run on a part of the cluster that will be temporarely reserved for you by
+run on a part of the cluster that will be temporarily reserved for you by
 the scheduler.
 
 .. warning::
@@ -96,7 +96,7 @@ More information is available on
 Submitting and monitoring a job
 -------------------------------
 
-Once you have created your job script, and transferred all rquired input data
+Once you have created your job script, and transferred all required input data
 if necessary, you can submit your job to the scheduler
 
 ::
@@ -114,7 +114,7 @@ Once submitted, you can monitor the status of your job using the ``qstat`` comma
    $ qstat
    Job ID                    Name             User            Time Use S Queue
    ------------------------- ---------------- --------------- -------- - -----
-   205814.leibniz            STDIN            vsc30140               0 Q q1h            
+   205814.leibniz            hello_world.pbs  vsc30140               0 Q q1h
 
 The status of your job is given in the ``S`` column.  The most common values are
 given below.
