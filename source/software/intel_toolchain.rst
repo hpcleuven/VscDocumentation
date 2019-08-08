@@ -21,7 +21,7 @@ libraries and as it is possible (though some care is needed) to link
 code generated with the Intel compilers with code compiled with the GNU
 compilers.
 
-Compilers: Intel and Gnu
+Compilers: Intel and GNU
 ------------------------
 
 Three compilers are available:
@@ -70,7 +70,7 @@ number of cores on a compute node.
 Communication library: Intel MPI
 --------------------------------
 
-For the intel toolchain, ``impi``, i.e., Intel MPI is used as the
+For the ``intel`` toolchain, ``impi``, i.e., Intel MPI is used as the
 communications library. To compile/link MPI programs, wrappers are
 supplied, so that the correct headers and libraries are used
 automatically. These wrappers are:
@@ -171,29 +171,19 @@ the documentation for details.
 Intel toolchain version numbers
 -------------------------------
 
-+------+------+------+------+------+------+------+------+------+------+
-|      | 2018 | 2017 | 2017 | 2016 | 2016 | 2015 | 2015 | 2014 | 2014 |
-|      | a    | b    | a    | b    | a    | b    | a    | b    | a    |
-+======+======+======+======+======+======+======+======+======+======+
-| icc/ | 2018 | 2017 | 2017 | 16.0 | 16.0 | 15.0 | 15.0 | 13.1 | 13.1 |
-| icpc | .1.1 | .4.1 | .1.1 | .3   | .1   | .3   | .1   | .3   | .3   |
-| /ifo | 63   | 96   | 32   | 2016 | 2015 | 2015 | 2014 | 2013 | 2013 |
-| rt   |      |      |      | 0425 | 1021 | 0407 | 1023 | 0617 | 0607 |
-+------+------+------+------+------+------+------+------+------+------+
-| Inte | 2018 | 2017 | 2017 | 5.1. | 5.1. | 5.03 | 5.0. | 4.1. | 4.1. |
-| l    | .1.1 | .3.1 | .1.1 | 3.18 | 2.15 | .304 | 2.04 | 3.04 | 3.04 |
-| MPI  | 63   | 96   | 32   | 1    | 0    | 8    | 4    | 9    | 5    |
-+------+------+------+------+------+------+------+------+------+------+
-| Inte | 2018 | 2017 | 2017 | 11.3 | 11.3 | 11.2 | 11.2 | 11.1 | 11.1 |
-| l    | .1.1 | .3.1 | .1.1 | .3.2 | .1.1 | .3.1 | .1.1 | .2.1 | .1.1 |
-| MKL  | 63   | 96   | 32   | 10   | 50   | 87   | 33   | 44   | 06   |
-+------+------+------+------+------+------+------+------+------+------+
-| GCC  | 6.4. | 6.4. | 6.3. | 4.9. | 4.9. | 4.9. | 4.9. | 4.8. | /    |
-|      | 0    | 0    | 0    | 4    | 3    | 3    | 2    | 3    |      |
-+------+------+------+------+------+------+------+------+------+------+
-| binu | 2.28 | 2.28 | 2.27 | 2.26 | 2.25 | 2.25 | /    | /    | /    |
-| tils |      |      |      |      |      |      |      |      |      |
-+------+------+------+------+------+------+------+------+------+------+
++----------------+------------+------------+------------+------------+------------+------------+
+|                | 2019a      | 2018b      | 2018a      | 2017b      | 2017a      | 2016b      |
++================+============+============+============+============+============+============+
+| icc/icpc/ifort | 2019.1.144 | 2018.3.222 | 2018.1.163 | 2017.4.196 | 2017.1.132 | 2016.3.210 |
++----------------+------------+------------+------------+------------+------------+------------+
+| Intel MPI      | 2018.4.274 | 2018.3.222 | 2018.1.163 | 2017.3.196 | 2017.1.132 | 5.1.3.181  |
++----------------+------------+------------+------------+------------+------------+------------+
+| Intel MKL      | 2019.1.144 | 2018.3.222 | 2018.1.163 | 2017.3.196 | 2017.1.132 | 11.3.3.210 |
++----------------+------------+------------+------------+------------+------------+------------+
+| GCC            | 8.2.0      | 7.3.0      | 6.4.0      | 6.4.0      | 6.3.0      | 5.4.0      |
++----------------+------------+------------+------------+------------+------------+------------+
+| binutils       | 2.31.1     | 2.30       | 2.28       | 2.28       | 2.27       | 2.26       |
++----------------+------------+------------+------------+------------+------------+------------+
 
 .. _Intel documentation:
 
@@ -210,29 +200,22 @@ Further information on Intel tools
       Compiler <https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler>`_.
       Despite the title, the remarks also hold for the C and Fortran
       compilers.
-   -  `Direct link to the C/C++ compiler 15.0 user and reference
-      guide <https://software.intel.com/en-us/compiler_15.0_ug_c>`_
-      (2015a and 2015b toolchains)
-   -  `Direct link to the C/C++ compiler 16.0 user and reference
-      guide <https://software.intel.com/en-us/intel-cplusplus-compiler-16.0-user-and-reference-guide>`_
-      (2016a and 2016b toolchains)
-   -  `Direct link to the Fortran compiler 16.0 user and reference
-      guide <https://software.intel.com/en-us/intel-fortran-compiler-16.0-user-and-reference-guide>`_
-      (2016a and 2016b toolchains)
+   -  `Direct link to the C/C++ compiler developer and reference
+      guide <https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference>`_
+   -  `Direct link to the Fortran compiler user and reference
+      guide <https://software.intel.com/en-us/fortran-compiler-developer-guide-and-reference>`_
    -  `Page with links to the documentation of the most recent version
       of Intel
-      MPI <https://software.intel.com/en-us/articles/intel-mpi-library-documentation>`_
+      MPI <https://software.intel.com/en-us/mpi-library/documentation/get-started>`_
 
 -  MKL
 
-   -  `Link page to the documentation of MKL 11.2/11.3 on the Intel web
+   -  `Link page to the documentation of MKL on the Intel web
       site <https://software.intel.com/en-us/articles/intel-math-kernel-library-documentation/>`_
-      (toolchains 2015a till 2016b)
    -  `MKL Link Line
       Advisor <https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor>`_
 
--  `Generic BLAS/LAPACK/ScaLAPACK
-   documentation <BLAS and LAPACK>`
+-  :ref:`Generic BLAS/LAPACK/ScaLAPACK documentation <BLAS and LAPACK>`
 
 
  .. index::
