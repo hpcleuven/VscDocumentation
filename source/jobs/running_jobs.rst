@@ -158,7 +158,7 @@ For instance, for the running example, the output file would be
    ===== start of prologue =====
    Date : Mon Aug  5 14:50:28 CEST 2019
    Job ID : 205814
-   Job Name : STDIN
+   Job Name : hello_world.pbs
    User ID : vsc30140
    Group ID : vsc30140
    Queue Name : q1h
