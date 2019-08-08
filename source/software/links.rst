@@ -36,6 +36,7 @@
 .. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/
 .. _Eclispe: https://www.eclipse.org/
 .. _Eclipse download page: http://www.eclipse.org/downloads
+.. _Eclipse packages download page: https://www.eclipse.org/downloads/packages/
 .. _MathWorks: https://nl.mathworks.com/
 .. _CP2K: https://www.cp2k.org/
 .. _CUDA: https://developer.nvidia.com/cuda-zone

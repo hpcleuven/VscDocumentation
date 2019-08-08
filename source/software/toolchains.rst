@@ -27,12 +27,8 @@ Available toolchains at the VSC
 Two toolchain flavors are standard across the VSC on all machines that
 can support them:
 
--  `Intel
-   toolchain <\%22https://www.vscentrum.be/cluster-doc/development/toolchain-intel\%22>`__,
-   based on Intel software components,
--  `FOSS
-   toolchain <\%22https://www.vscentrum.be/cluster-doc/development/toolchain-foss\%22>`__,
-   based on free and open source software.
+-  :ref:`Intel toolchain` based on Intel software components,
+-  :ref:`FOSS toolchain` based on free and open source software.
 
 It may be of interest to note that the Intel C/C++ compilers are more
 strict with respect to the standards than the GCC C/C++ compilers, while
@@ -61,5 +57,3 @@ the maximum performance from that hardware.
 
 For detailed documentation on each of these toolchains, we refer to the
 pages linked above in this document.
-
-"

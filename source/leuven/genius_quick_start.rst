@@ -12,14 +12,14 @@ Genius does have a 4 dedicated login nodes. All users having an active VSC accou
   
   $ ssh vscXXXXX@nodename 
 
-Where nodename can be one of the following: 
+Where ``nodename`` can be one of the following: 
 
 Normal login nodes: 
 
 - login1-tier2.hpc.kuleuven.be 
 - login2-tier2.hpc.kuleuven.be 
 
-With a visualization capabilities (nvidia Quadro P6000 GPU): 
+With a visualization capabilities (NVIDIA Quadro P6000 GPU): 
 
 - login3-tier2.hpc.kuleuven.be  
 - login4-tier2.hpc.kuleuven.be  
@@ -27,18 +27,18 @@ With a visualization capabilities (nvidia Quadro P6000 GPU):
 
 Running jobs
 ------------
-There are several type of nodes in the Genius cluster: normal compute nodes, gpu nodes, big memory nodes.
+There are several type of nodes in the Genius cluster: normal compute nodes, GPU nodes, big memory nodes.
 
 
 .. _submit to genius compute node:
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
-To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores por node (36 cores in this case). For example to request 2 nodes with each 36 cores you can submit like this:
+To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores per node (36 cores in this case). For example to request 2 nodes with each 36 cores you can submit like this:
 
 ::
 
-  qsub -lnodes=2:ppn=36 -lwalltime=2:00:00 -A myproject myjobscript
+  qsub -l nodes=2:ppn=36  -l walltime=2:00:00  -A myproject  myjobscript
   
 
 .. _submit to genius GPU node:
@@ -49,21 +49,21 @@ The GPU nodes are located in a separate cluster partition so you will need to ex
 
 ::
 
-  qsub -lnodes=1:ppn=9:gpus=1 -lpartition=gpu -A myproject myscript
+  qsub -l nodes=1:ppn=9:gpus=1  -l partition=gpu  -A myproject  myscript
   
 Note that in case of 1 GPU you have to request 9 cores. In case you need more GPUs you have to multiply the 9 cores with the number of GPUs requested, so in case of for example 3 GPUS you will have to specify this:
  
 ::
 
-  qsub -lnodes=1:ppn=27:gpus=3 -lpartition=gpu -A myproject myscript  
+  qsub -l nodes=1:ppn=27:gpus=3  -l partition=gpu  -A myproject  myscript  
    
 
 .. _submit to genius big memory node:
 
 Submit to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The big memory nodes are also located in a separate partition. In case of the big memory nodes it is alo important to add your memory requirements, for example:
+The big memory nodes are also located in a separate partition. In case of the big memory nodes it is also important to add your memory requirements, for example:
 
 ::
 
-  qsub -lnodes=1:ppn=36 -lpmem=20gb -lpartition=bigmem -A myproject myscript
+  qsub -l nodes=1:ppn=36  -l pmem=20gb  -l partition=bigmem  -A myproject  myscript

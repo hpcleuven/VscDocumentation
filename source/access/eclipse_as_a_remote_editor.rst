@@ -8,13 +8,11 @@ Prerequisites
 
 -  The user should be familiar with the basic use of the Eclipse IDE.
 -  `Eclipse`_ has been installed on the user's desktop or laptop.
-   We advise to install the bundle 'Eclipse for Parallel Application
-   Developers' of a recent Eclipse release as they
+   We advise to install the bundle 'Eclipse IDE for Scientific Computing' 
+   of a recent Eclipse release as they
    contain a lot of other useful tools, including the 'Remote System
-   Explorer' used here. On older releases or other bundles you may have
-   to install the 'Remote System Explorer End-User Runtime' and 'Remote
-   System Explorer User Actions' components. This page was tested with
-   the 4.6/Neon (2016) release and Helios (2010) release.*
+   Explorer' used here. This page was tested with
+   the 2019-06 release.
 -  The user should have a VSC account and be able to access it.
 
 Installing additional components
@@ -30,8 +28,9 @@ the "Remote System Explorer User Actions". Here is how to do this:
    |install software|
 
 #. From the 'Work with:' drop down menu, select '<name> -
-   http://download.eclipse.org/releases/neon' (replace "<name>" by
-   the name of the release that you are using). The list of available
+   http://download.eclipse.org/releases/<name>' (replace "<name>" by
+   the name of the release that you are using, e.g., 2019-06). 
+   The list of available
    components is now automatically populated.
 #. From the category 'General Purpose Tools', select 'Remote System
    Explorer End-User Runtime' and 'Remote System Explorer User Actions'.
@@ -56,7 +55,7 @@ done.
 Microsoft Windows users who use the PuTTY SSH client software should
 first prepare a private key for use with Eclipse's authentication
 system. Users using the OpenSSH client on Microsoft Windows, Linux or
-MacOS X can skip this preparatory step.
+macOS may need to convert their private key to an older format.
 
 Microsoft Windows PuTTY users only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,10 +69,43 @@ one that can be used by Eclipse. See ":ref:`converting PuTTY keys`".
 Microsoft Windows PuTTY users should now proceed with the instructions
 for all users, below.
 
+OpenSSH ssh-keygen users only
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using a recent version of OpenSSH, your private key will not 
+be compatible with certain modules in Eclipse. Moreover, Eclipse does not
+yet fully support ed25519 keys. Keys in the new format start with
+the line ``-----BEGIN OPENSSH PRIVATE KEY-----``.
+
+One solution is to generate a new RSA 4096-bit key for use with Eclipse:
+
+::
+
+   $ ssh-keygen -t rsa -b 4096 -m PEM
+    
+will generate a key and store it in a format compatible with Eclipse.
+You can then upload your public key as an additional key to the 
+`VSC account page`_ using the instructions to add another key on the   
+:ref:`Access from multiple machines<access from multiple machines>` page. 
+
+If you have a 4096-bit RSA private key in the wrong format, another option is to
+simply convert the private key to the PEM format. Since this procedure
+overwrites the private key file, it may be better to first copy
+it to a different file. E.g., assume your private key file 
+is called `ìd_rsa_4096``, then the conversion can be done using
+
+::
+
+   $ cd ~/.ssh
+   $ cp id_rsa_4096 id_rsa_4096_PEM
+   $ ssh-keygen -p -m PEM -f id_rsa_4096_PEM
+
+
+
 All users
 ~~~~~~~~~
 
-#. From the 'Window' menu ('Eclipse' menu on OS X), select
+#. From the 'Window' menu ('Eclipse' menu on macOS), select
    'Preferences'.
 #. In the category 'General', expand the subcategory 'Network
    Connections' and select 'SSH2'.
@@ -89,7 +121,8 @@ Creating a remote connection
 In order to work on a remote system, a connection should be created
 first.
 
-#. From the 'Window' menu, select 'Open Perspective' and then
+#. From the 'Window' menu, select 'Perspective', then
+   'Open Perspective' and then
    'Other...', a dialog like the one below will open (the exact contents
    depends on the components installed in Eclipse).
 

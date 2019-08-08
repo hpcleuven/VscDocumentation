@@ -21,13 +21,13 @@ Multiplatform client tools
    course) can be accessed from the desktop. <desktop access VSC SVN>`
 -  NX client technology is a computer program that handles remote X
    Window System connections. NX software is currently available for
-   Windows, Mac OS X, Linux, Android and iOS.
+   Windows, macOS, Linux, Android and iOS.
 
    -  You can use freeware :ref:`NoMachine NX Client <NX start guide>` to
       connect to HPC cluster in the GUI mode.
 
 -  TurboVNC provides access to remote visualization applications. The
-   software is currently available for Windows, Mac OS X and Linux.
+   software is currently available for Windows, macOS and Linux.
 
    -  You can use freeware :ref:`TurboVNC Client <TurboVNC start guide>` to
       connect to the visualization nodes of HPC cluster.

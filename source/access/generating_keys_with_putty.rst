@@ -6,7 +6,7 @@ Generating keys with PuTTY
 Prerequisite: PuTTY
 -------------------
 
-By default, there is no ssh client software available on Windows, so you
+By default, there is no SSH client software available on Windows, so you
 will typically have to install one yourself. We recommend to use `PuTTY`_,
 which is freely available. You do not even need to install; just
 download the executable and run it! Alternatively, an installation
@@ -27,7 +27,7 @@ explaining step-by-step the process of generating a new key pair and
 saving it in a format required by different VSC login nodes.
 
 #. In 'Parameters' (at the bottom of the window), choose 'SSH-2 RSA' and
-   set the number of bits in the key to 2048:
+   set the number of bits in the key to 4096:
 
    |PuTTYgen initial|
 
