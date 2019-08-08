@@ -26,11 +26,11 @@ modifications based on your home institution and VSC account number.
 +--------------------------+------------------------------+
 |Variable                  |Name                          |
 +==========================+==============================+
-|$VSC_HOME                 |/user/leuven/20X/vsc20XYZ     |
+|$VSC_HOME                 |/user/leuven/30X/vsc30XYZ     |
 +--------------------------+------------------------------+
-|$VSC_DATA                 |/data/leuven/20X/vsc20XYZ     |
+|$VSC_DATA                 |/data/leuven/30X/vsc30XYZ     |
 +--------------------------+------------------------------+
-|$VSC_SCRATCH              |/scratch/leuven/20X/vsc20XYZ  |
+|$VSC_SCRATCH              |/scratch/leuven/30X/vsc30XYZ  |
 |$VSC_SCRATCH_SITE         |                              |
 +--------------------------+------------------------------+
 |$VSC_SCRATCH_NODE         |/localscratch                 |
