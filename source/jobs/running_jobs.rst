@@ -187,7 +187,7 @@ Line 11 is the actual output of your job script.
    the overall structure is the same.
 
 
-Common problems
+Troubleshooting
 ---------------
 
 .. toctree::
