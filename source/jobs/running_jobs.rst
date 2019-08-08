@@ -193,8 +193,8 @@ Common problems
 .. toctree::
    :maxdepth: 2
 
-   Why doesn't my job start immediately? A story about scheduling policies and priorities. <why_doesn_t_my_job_start>
-   Job failure after a successful start <what_if_jobs_fail_after_starting_successfully>
+   Why doesn't my job start immediately? <why_doesn_t_my_job_start>
+   Why does my job fail after a successful start? <what_if_jobs_fail_after_starting_successfully>
 
 
 Advanced topics
