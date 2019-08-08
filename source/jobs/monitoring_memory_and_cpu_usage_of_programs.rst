@@ -1,3 +1,5 @@
+.. _monitoring memory and cpu:
+
 Monitoring memory and CPU usage of programs
 ===========================================
 

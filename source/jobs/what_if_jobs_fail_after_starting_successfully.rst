@@ -3,7 +3,10 @@
 My jobs seem to run, but I don't see any output or errors?
 ==========================================================
 
-Most probably, you exceeded the disk quota for your home directory,
+You ran out of disk space
+-------------------------
+
+You may have exceeded the disk quota for your home directory,
 i.e., the total file size for your home directory is just too large.
 
 When a job runs, it needs to store temporary output and error files in
@@ -31,7 +34,7 @@ However, your home directory may unexpectedly fill up in two ways:
 .. _large output:
 
 Large amounts of output or errors
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To deal with the first issue, simply redirect the standard output of the
 command to a file that is in your data or scratch directory, or, if you
@@ -61,7 +64,7 @@ If you don't care for the standard output, simply write::
 .. _core dump:
 
 Core dump
----------
+~~~~~~~~~
 
 When a program crashes, a core file is generated. This can be used to
 try and analyze the cause of the crash. However, if you don't need cores
@@ -81,3 +84,28 @@ They can be removed (make sure that only unwanted core files are removed by
 checking with the command above) using::
 
    $ find  $VSC_HOME  -name "core.*"  -exec rmm {} +
+
+
+You ran out of memory (RAM)
+---------------------------
+
+The resource manager monitor the memory usage of your application, and will
+automatically terminate your job when that memory exceeds a limit.  This limit
+is either the value specified in the resource request using ``pmem`` or ``pvmem``,
+or the default value.
+
+You may find an indication that this may be the case by looking at the job's
+output file.  The epilogue information lists the resources used by the job,
+including memory.
+
+::
+
+   Resources Used : cput=00:00:00,vmem=110357kb,walltime=00:34:02,mem=984584kb
+
+If the value of ``mem`` is close to the limit, this may indicate that the
+application used too much memory.
+
+The used resources are just a rough indication, and the reported value can
+be lower than the actual value if the application's memory usage rapidly
+increased.  Hence it is prudent to :ref:`monitor the memory consumption of your
+job in more detail <monitoring memory and cpu>`.
