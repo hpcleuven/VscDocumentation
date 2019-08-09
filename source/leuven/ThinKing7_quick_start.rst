@@ -1,13 +1,14 @@
 ThinKing7 quick start guide
 
-:ref:`ThinKing7 <thinking centos7 hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster. It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
+:ref:`ThinKing7 <thinking centos7 hardware>` is the old Thinking cluster that got an upgrade to CentOS 7.6. The cluster is at the end of its lifetime. The Ivybridge nodes will be removed by the end of 2019. The Hasswell nodes have a little longer to go. Thinking can be used for most workloads, but have a look at :ref:`Genius <Genius hardware>` for the most recent hardware.
+
 How to connect to ThinKing?
 
-ThinKing does have a 4 dedicated login nodes. All users having an active VSC account can connect to the login node with the same credentials using the command:
+All users having an active VSC account can connect to the login node(s).You can login through 1 general login node which will loadbalance your connection to one of the available login nodes using the command: 
 
-$ ssh vscXXXXX@nodename
+$ ssh vscXXXXX@login-thinking.hpc.kuleuven.be
 
-Where nodename can be one of the following:
+ThinKing does have a 4 dedicated login nodes. You can directly login to these nodes with the same credentials, by using their hostname
 
 Normal login nodes:
 
@@ -23,18 +24,35 @@ For visualization nodes please refer to the :ref:`TurboVNC documentation <access
 
 Running jobs
 
+Remind that with migration to CentOS 7.6 toolchain starting from 2018a are available. Older toolchains are no longer available. Thinking is now also using LMOD as module system. Have a look at  :ref:`Software stack <software/software_stack>` for more information.
+
 There are several type of nodes in the ThinKing cluster: normal compute nodes with ivybridge or haswell processors and gpu nodes.
 
 Submit to a compute node
 
 To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores por node (20 in case of ivybridge nodes and 24 in case of haswell nodes). For example to request 2 nodes with each 24 cores you can submit like this:
 
+::
 qsub -lnodes=2:ppn=24 -lwalltime=2:00:00 -A myproject myjobscript
+
+You always need to submit with a project account (-A). To find out which projects you have, run:
+
+::
+mam-balance
+
+to have 
 
 Submit to a GPU node
 
-The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as a shared resource, meaning that different users can simultaneously use the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU you can submit for example like this:
+The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. On Thinking the GPU nodes are not a shared resources, so you are the only user of the node. However you need to request the number of GPU's you want to use. 
 
-qsub -lnodes=1:ppn=20:gpus=1 -lpartition=gpu -A myproject myscript
+For the K20:
 
+::
+qsub -A myproject -lnodes=1:gpus=2:K20Xm -lpartition=gpu
+
+For the K40:
+
+::
+qsub -A myproject -lnodes=1:gpus=2:K40c -lpartition=gpu
 
