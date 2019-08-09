@@ -153,4 +153,3 @@ Some HPC centres in Europe
       Wales <https://www.supercomputing.wales/>`_, also a
       consortium of universities similar to the VSC
 
-"

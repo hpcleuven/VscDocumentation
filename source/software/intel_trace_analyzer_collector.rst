@@ -23,13 +23,19 @@ however, more sophisticated options are available.
 
 #. Load the relevant modules. The exact modules may differ from system
    to system, but will typically include the itac module and a
-   compatible Intle toolchain, e.g.,
+   compatible Intel toolchain, e.g.,
 
    ::
 
-      $ module load intel/2015a
-      $ module load itac/9.0.2.045
+      $ module load intel/2019a
+      $ module load itac/2019.2.026
+
+
+.. note::
           
+   Users of the UAntwerpen clusters should load the inteldevtools module 
+   instead, which makes also available Intel's debugger, VTune, Advisor 
+   and Inspector development tools.
 
 #. Compile your application so that it can generate a trace:
 
@@ -55,15 +61,15 @@ however, more sophisticated options are available.
       #PBS -l walltime=00:05:00
       #PBS -l nodes=4
 
-      module load intel/2015a
-      module load itac/9.0.2.045
+      module load intel/2019a
+      module load itac/2019.2.026
       # Set environment variables for ITAC.
       # Unfortunately, the name of the script differs between versions of ITAC
       source $EBROOTITAC/bin/itacvars.sh
 
       cd $PBS_O_WORKDIR
 
-      mpirun -trace myapp
+      mpirun -trace ./myapp
           
 
 #. When the job is finished, check whether files with names myapp.stf.\*

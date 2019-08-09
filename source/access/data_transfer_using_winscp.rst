@@ -35,7 +35,7 @@ connecting and add host key to the cache'; select 'Yes'.
 
    #. Fill in the hostname of the VSC login node of your home
       institution. You can find this information in the :ref:`overview
-      of available hardware on this site <../hardware>`.
+      of available hardware on this site <hardware>`.
    #. Fill in your VSC username.
    #. If you are not using pageant to manage your ssh keys, you
       have to point WinSCP to the private key file (in PuTTY
@@ -72,7 +72,7 @@ WinSCP has two modes for the graphical user interface:
    or the desktop.
 
 During the installation of WinSCP, you'll be prompted for a mode. But
-you can always change your mind afterwards and selct the interface mode
+you can always change your mind afterwards and select the interface mode
 by selecting the \\"Preferences\" category after starting WinSCP.
 
 Enable logging
@@ -89,7 +89,7 @@ team may ask you to enable logging and mail the results.
    #. Select the "Logging" category.
    #. Check the box next to "Enable session logging on level" and select
       the logging level requested by the user   support team. Often normal
-      loggin will be sufficient.
+      logging will be sufficient.
    #. Enter a name and directory for the log file. The default is
       ``%TEMP%\!S.log`` which will expand to a name that is
       system-dependent and depends on the name of your WinSCP

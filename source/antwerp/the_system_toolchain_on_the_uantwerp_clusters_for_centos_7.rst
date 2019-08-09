@@ -17,12 +17,8 @@ The system toolchain on the UAntwerp clusters (for CentOS 7)
 | /                     | Autotools/2016123     |                       |
 +-----------------------+-----------------------+-----------------------+
 | /                     | Bazel/0.5.3           | `Google's software    |
-|                       |                       | installer <\%22https: |
-|                       |                       | //bazel.build/\%22>`_ |
-|                       |                       | _.                    |
-|                       |                       | Not installed on the  |
-|                       |                       | Scientific Linux 6    |
-|                       |                       | nodes of hopper.      |
+|                       |                       | installer <https:     |
+|                       |                       | //bazel.build/>`_.    |
 +-----------------------+-----------------------+-----------------------+
 | binutils/2.26         | binutils/2.27         |                       |
 +-----------------------+-----------------------+-----------------------+
@@ -44,7 +40,7 @@ The system toolchain on the UAntwerp clusters (for CentOS 7)
 +-----------------------+-----------------------+-----------------------+
 | /                     | Doxygen/1.8.13        |                       |
 +-----------------------+-----------------------+-----------------------+
-| EasuBuild/…           | EasyBuild/3.1.2       |                       |
+| EasyBuild/...         | EasyBuild/3.1.2       |                       |
 +-----------------------+-----------------------+-----------------------+
 | FastQC/0.11.5-Java-8  |                       | *Installed on demand  |
 |                       |                       | on Leibniz.*          |

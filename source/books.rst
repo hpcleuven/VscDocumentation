@@ -3,7 +3,7 @@
 Books
 =====
 
-This is a very incomplete list, permantently under construction, of
+This is a very incomplete list, permanently under construction, of
 books about parallel computing.
 
 General
@@ -67,11 +67,11 @@ MPI
    -  M. Snir, S.W. Otto, S. Huss-Lederman, D.W. Walker, and J.
       Dongarra. `MPI: the complete reference. Volume 1: the MPI core
       (2nd
-      Edition) <https://mitpress.mit.edu/?q=books/mpi-complete-reference-0>`_.
+      Edition) <https://mitpress.mit.edu/books/mpi-complete-reference-second-edition-volume-1>`_.
       MIT Press, 1998. ISBN 978-0-262-69215-1.
    -  W. Gropp, S. Huss-Lederman, A. Lumsdaine, E. Lusk, B. Nitzberg, W.
       Saphir, and M. Snir. `MPI: the complete reference, Volume 2: the
-      MPI-2 extensions <https://mitpress.mit.edu/?q=books/mpi-complete-reference-1%22>`_.
+      MPI-2 extensions <https://mitpress.mit.edu/books/mpi-complete-reference-volume-2>`_.
       MIT Press, 1998. ISBN 978-0-262-57123-4.
 
    The two volumes are also available as one set with `ISBN number

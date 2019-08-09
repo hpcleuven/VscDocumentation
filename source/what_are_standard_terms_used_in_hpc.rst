@@ -6,14 +6,14 @@ What are standard terms used in HPC?
    latency communication. Access to the cluster is provided through a
    login node. A resource manager and scheduler provide the logic to
    schedule jobs efficiently on the cluster. A detailed description of
-   the `VSC clusters and other
-   hardware <\%22/infrastructure/hardware\%22>`__ is available.
+   the :ref:`VSC clusters and other
+   hardware <hardware>` is available.
 -  **Compute node**: an individual computer, part of an HPC cluster.
    Currently most compute node have two sockets, each with a single CPU,
    volatile working memory (RAM), a hard drive, typically small, and
    only used to store temporary files, and a network card. The hardware
-   specifications for the various `VSC compute
-   nodes <\%22/infrastructure/hardware\%22>`__ is available.
+   specifications for the various :ref:`VSC compute
+   nodes <hardware>` is available.
 -  **CPU**: Central Processing Unit, the chip that performs the actual
    computation in a compute node. A modern CPU is composed of numerous
    cores, typically 8 or 10. It has also several cache levels that help
@@ -90,10 +90,9 @@ What are standard terms used in HPC?
    program flows, concurrently. In scientific applications, threads
    typically process their own subset of data, or a subset of loop
    iterations.
--  **MPI:** Message passing interface, a de-facto standard that defines
+-  **MPI:** Message passing interface, a de facto standard that defines
    functions for inter-process communication. Many implementations in
    the form of libraries exist for C/C++/Fortran, some vendor specific.
 -  **OpenMP:** a standard for shared memory programming that makes
    abstraction of explicit threads.
 
-"
