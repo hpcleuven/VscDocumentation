@@ -1,6 +1,6 @@
 ThinKing7 quick start guide
 
-:ref:`ThinKing7 <thinking centos7 hardware>` is the old Thinking cluster that got an upgrade to CentOS 7.6. The cluster is at the end of its lifetime. The Ivybridge nodes will be removed by the end of 2019. The Hasswell nodes have a little longer to go. Thinking can be used for most workloads, but have a look at :ref:`Genius <Genius hardware>` for the most recent hardware.
+:ref:`ThinKing7 <thinking centos7 hardware>` is the old ThinKing cluster that got an upgrade to CentOS 7.6. The cluster is at the end of its lifetime. The Ivybridge nodes will be removed by the end of 2019. The Hasswell nodes have a little longer to go. ThinKing can be used for most workloads, but have a look at :ref:`Genius <Genius hardware>` for the most recent hardware.
 
 How to connect to ThinKing?
 
@@ -24,7 +24,17 @@ For visualization nodes please refer to the :ref:`TurboVNC documentation <access
 
 Running jobs
 
-Remind that with migration to CentOS 7.6 toolchain starting from 2018a are available. Older toolchains are no longer available. Thinking is now also using LMOD as module system. Have a look at  :ref:`Software stack <software/software_stack>` for more information.
+Remind that with migration to CentOS 7.6 toolchain starting from 2018a are available for Ivybride nodes and Haswell nodes. Older toolchains are no longer available. By default toolchain 2018a is loaded, for the CPU type of teh specific node. If you want to load the toolchains explicitly you find then at
+
+for ivybridge
+:
+ module use /apps/leuven/ivybridge/2018a/modules/all
+
+for haswell
+:
+ module use /apps/leuven/haswell/2018a/modules/all
+ 
+ThinKing is now also using LMOD as module system. Have a look at  :ref:`Software stack <software/software_stack>` for more information.
 
 There are several type of nodes in the ThinKing cluster: normal compute nodes with ivybridge or haswell processors and gpu nodes.
 
@@ -44,7 +54,7 @@ to have
 
 Submit to a GPU node
 
-The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. On Thinking the GPU nodes are not a shared resources, so you are the only user of the node. However you need to request the number of GPU's you want to use. 
+The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. On ThinKing the GPU nodes are not a shared resources, so you are the only user of the node. However you need to request the number of GPU's you want to use. 
 
 For the K20:
 
