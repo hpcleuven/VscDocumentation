@@ -52,8 +52,6 @@ You always need to submit with a project account (-A). To find out which project
 ::
 mam-balance
 
-to have 
-
 Submit to a GPU node
 
 The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. On ThinKing the GPU nodes are not a shared resources, so you are the only user of the node. However you need to request the number of GPU's you want to use. 
