@@ -34,7 +34,7 @@ Hardware details
 - 4 AMD nodes
 
    - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
-   - 264 GB RAM
+   - 256 GB RAM
    - not currently available
 
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
