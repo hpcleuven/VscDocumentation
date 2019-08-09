@@ -49,10 +49,10 @@ The GPU nodes are located in a separate cluster partition so you will need to ex
 For the K20:
 
 ::
-qsub -A myproject -lnodes=1:gpus=2:K20Xm -lpartition=gpu
+qsub -A myproject -lnodes=1:ppn=12:gpus=2:K20Xm -lpartition=gpu
 
 For the K40:
 
 ::
-qsub -A myproject -lnodes=1:gpus=2:K40c -lpartition=gpu
+qsub -A myproject -lnodes=1:ppn=20:gpus=2:K40c -lpartition=gpu
 
