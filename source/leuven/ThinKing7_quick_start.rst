@@ -44,9 +44,9 @@ There are several type of nodes in the ThinKing cluster: compute nodes with ivyb
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores por node (20 in case of ivybridge nodes and 24 in case of haswell nodes). For example to request 2 nodes with each 24 cores you can submit like this::
+To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores por node (20 in case of ivybridge nodes and 24 in case of haswell nodes). For example to request 2 nodes with each 24 cores for 1 hour you can submit like this::
 
-   $ qsub -lnodes=2:ppn=24 -lwalltime=2:00:00 -A myproject myjobscript
+   $ qsub -lnodes=2:ppn=24 -lwalltime=1:00:00 -A myproject myjobscript
 
 You always need to submit with a project account (-A). To find out which projects you have, run::
 
@@ -59,8 +59,8 @@ The GPU nodes are located in a separate cluster partition so you will need to ex
 
 For the K20::
 
-   $ qsub -A myproject  -l nodes=1:ppn=12:gpus=2:K20Xm  -lpartition=gpu  myjob.pbs
+   $ qsub -A myproject -lwalltime=1:00:00 -l nodes=1:ppn=12:gpus=2:K20Xm  -lpartition=gpu  myjob.pbs
 
 For the K40::
 
-   $ qsub -A myproject  -l nodes=1:ppn=20:gpus=2:K40c  -lpartition=gpu  myjob.pbs
+   $ qsub -A myproject -lwalltime=1:00:00 -l nodes=1:ppn=20:gpus=2:K40c  -lpartition=gpu  myjob.pbs
