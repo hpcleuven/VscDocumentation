@@ -27,11 +27,13 @@ Running jobs
 Remind that with migration to CentOS 7.6 toolchain starting from 2018a are available for Ivybride nodes and Haswell nodes. Older toolchains are no longer available. By default toolchain 2018a is loaded, for the CPU type of the specific node. If you want to load the toolchains explicitly you find then at
 
 for ivybridge
-:
+
+::
  module use /apps/leuven/ivybridge/2018a/modules/all
 
 for haswell
-:
+
+::
  module use /apps/leuven/haswell/2018a/modules/all
  
 ThinKing is now also using LMOD as module system. Have a look at  :ref:`Software stack <software/software_stack>` for more information.
