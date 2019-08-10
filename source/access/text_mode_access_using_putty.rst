@@ -17,18 +17,18 @@ pops up. Follow the steps below to setup the connection to (one of) the
 VSC clusters.
 
 In the screenshots, we show the setup for user vsc98765 to the ThinKing
-cluster at K.U.Leuven via the loginnode login.hpc.kuleuven.be.
+cluster at KU Leuven via the login node login.hpc.kuleuven.be.
 
-You can find the names and ip-addresses of the loginnodes in the
+You can find the names and ip-addresses of the login nodes in the
 sections of :ref:`the local VSC clusters <hardware>`.
 
 | Alternatively, you can follow a `short
-  video <\%22https://www.vscentrum.be/assets/1191\%22>`__ explaining
+  video <https://www.vscentrum.be/assets/1191>`__ explaining
   step-by-step the process of making connection to VSC login nodes
   (example based on KU Leuven cluster).
 
 #. Within the category Session, in the field 'Host Name', type in
-   <vsc-loginnode>, which is the name of the loginnode of the VSC
+   <vsc-loginnode>, which is the name of the login node of the VSC
    cluster you want to connect to.
 
    |PuTTY config 1|
@@ -54,9 +54,9 @@ sections of :ref:`the local VSC clusters <hardware>`.
 #. Now pressing 'Open' should start ask for you passphrase, and connect
    you to <vsc-loginnode>.
 
-The first time you make a connection to the loginnode, a Security Alert
+The first time you make a connection to the login node, a Security Alert
 will appear and you will be asked to verify the authenticity of the
-loginnode.
+login node.
 
 |PuTTY alert|
 

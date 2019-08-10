@@ -49,4 +49,3 @@ car types than 20 years ago? Or how each year a new and faster
 smartphone model is launched on the market? We owe all of this to
 supercomputers.
 
-"

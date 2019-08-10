@@ -102,5 +102,5 @@ Useful links
 
 .. |MS Visual Studio OpenMP| image:: ms_visual_studio/ms_visual_studio_openmp.png
 .. |MS Visual Studio MPI| image:: ms_visual_studio/ms_visual_studio_mpi.png
-.. |MS Visual Studio run environment| image:: ms_visual_studio/ms_visual_studio_run_enviornment.png
+.. |MS Visual Studio run environment| image:: ms_visual_studio/ms_visual_studio_run_environment.png
 .. |MS Visual Studio debugging| image:: ms_visual_studio/ms_visual_studio_debugging.png

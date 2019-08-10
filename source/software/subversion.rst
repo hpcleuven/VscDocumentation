@@ -43,8 +43,8 @@ to decide on its location. We suggest to use the data directory since
 #. if the repository is to be shared, the permissions on the user's home
    directory need not to be modified, hence decreasing potential
    security risks; and
-#. only for users of the K.U.Leuven cluster, the data directory is
-   backed up (so is the user's home directory, incidently).
+#. only for users of the KU Leuven cluster, the data directory is
+   backed up (so is the user's home directory, incidentally).
 
 Actually creating a repository is very simple:
 
@@ -64,7 +64,7 @@ corrupt your repository unless you know quite well what you are doing.
 
 At this point, it may be a good idea to read the section in the
 Subversion book on the `repository
-layout <\%22http://svnbook.red-bean.com/en/1.5/svn.reposadmin.planning.html#svn.reposadmin.projects.chooselayout\%22>`__.
+layout <http://svnbook.red-bean.com/en/1.5/svn.reposadmin.planning.html#svn.reposadmin.projects.chooselayout>`__.
 In this How-To, we will assume that each project has its own directory
 at the root level of the repository, and that each project will have a
 'trunk', 'branches' and 'tags' directory. This is recommended practice,
@@ -125,7 +125,7 @@ work is done, we will import the project into the trunk.
 
 #. First, prepare the source directory '$VSC_DATA/simulation' by
    deleting all files that you don't want to place under version
-   control. Remove artefacts such as, e.g., object files or executables,
+   control. Remove artifacts such as, e.g., object files or executables,
    as well as text files not to be imported into the repository.
 #. Now the directory can be imported by simply typing:
 
@@ -172,15 +172,15 @@ straightforward.
    $ svn commit -m 'simulation: implemented a very interesting feature'
 
 #. Change to the directory containing your project's working copy, e.g.,
-#. Update your working copy to the latest version, see the `section on
-   updating <\%22#updating-the-working-copy\%22>`__ below for a brief
-   introduction to the topic.
+#. Update your working copy to the latest version, see 
+   :ref:`Updating the working copy` 
+   below for a brief introduction to the topic.
 #. Edit the project's files to your heart's content, or add new files to
    the repository after you created them, e.g., 'utils.c' and 'utils.h'.
    Note that the new files will only be stored in the repository upon
    the next commit operation, see below.
-#. Examine your changes, this will be elaborated upon in the `next
-   section <\%22#examening-status\%22>`__.
+#. Examine your changes, this will be elaborated upon in 
+   :ref:`Examining status`.
 #. Commit your changes, i.e., all changes you made to the working copy
    are now transfered to the repository as a new revision.
 #. Repeat steps 2 to 5 until you are done.
@@ -282,7 +282,7 @@ examine the status.
 
    $ svn status
 
-This results in a list of files and directories, each preceeded by a
+This results in a list of files and directories, each preceded by a
 character:
 
 -  M: file is modified
@@ -306,9 +306,9 @@ continuing the development.
    $ svn update
 
 This may be painless, or require some work. Subversion will try to
-reconsilliate the revision in the repository with your working copy.
+reconciliate the revision in the repository with your working copy.
 When changes can safely be applied, subversion does so automatically.
-The output of the 'update' command is a list of files, preceeded by
+The output of the 'update' command is a list of files, preceded by
 characters denoting status information:
 
 -  A: file was not in the working copy, and has now been checked out.
@@ -342,7 +342,7 @@ example is shown below:
 
 Here '.mine' indicates the state in your working copy, '.r7' that of
 revision 7 (i.e., HEAD) in the repository. You can now resolve them
-manually by editing the file. Upon saving the changes and quiting the
+manually by editing the file. Upon saving the changes and quitting the
 editor, the option 'resolved' will be added to the list above. Enter 'r'
 to indicate that the conflict has indeed been resolved successfully.
 
@@ -382,10 +382,10 @@ Desktop access
 --------------
 
 It is also possible to access VSC subversion repositories from your
-desktop. See the pages in the `Windows
-client <\%22/client/windows\%22>`__, `OS X
-client <\%22/client/macosx\%22>`__ en `Linux
-client <\%22/client/linux\%22>`__ sections.
+desktop. See the pages in the :ref:`Windows
+client <Windows client>`, :ref:`macOS
+client <macOS client>` and :ref:`Linux
+client <Linux client>` sections.
 
 Further information on Subversion
 ---------------------------------
@@ -393,7 +393,7 @@ Further information on Subversion
 Subversion is a rather sophisticated version control system, and in this
 mini-tutorial for the impatient we have barely scratched the surface.
 Further information is available in an `online book on
-Subversion <\%22http://svnbook.red-bean.com/\%22>`__, a must read for
+Subversion <http://svnbook.red-bean.com/>`__, a must read for
 everyone involved in a non-trivial software development project that
 used subversion.
 
@@ -406,5 +406,3 @@ Subversion can also provide help on commands:
 
 The former lists all available subversion commands, the latter form
 displays help specific to the command, 'commit' in this example.
-
-"

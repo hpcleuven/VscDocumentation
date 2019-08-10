@@ -129,8 +129,8 @@ Wiki <http://wiki.eclipse.org/Eclipse/Installation>`_.
 The CDT and PTP plugins integrate with compilers and libraries
 on your system. For Linux, it uses the gcc compiler on your system. On
 macOS it integrates with gcc (which you may need to install using either
-`homebrew <https://brew.sh/index_nl>`_ or 
-`macports <https://www.macports.org/>`_ 
+`Homebrew <https://brew.sh/>`_ or 
+`MacPorts <https://www.macports.org/>`_ 
 and on Windows, you need to install
 `Cygwin`_ and its GCC toolchain.
 

@@ -288,4 +288,3 @@ presentations:
 -  Slides from the presentation \\"`Open MPI Explorations in Process Affinity`_\" from EuroMPI'13 
 
 .. include:: links.rst
-"

@@ -70,7 +70,7 @@ In your ``$HOME/.ssh/config`` file, add the following lines:
 
 where you replace *vsc.login.node* with the name of the login node of
 your home tier-2 cluster (see also the :ref:`overview of available
-hardware <../hardware>`).
+hardware <hardware>`).
 
 Replace ``vscXXXXX`` your own VSC account name (e.g., ``vsc40000``).
 

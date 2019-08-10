@@ -64,7 +64,7 @@ Threads
    A process can perform multiple computations, i.e., program flows, concurrently.  In scientific applications, threads typically process their own subset of data, or a subset of loop iterations.
 
 MPI
-   Message passing interface, a de-facto standard that defines functions for inter-process communication. Many implementations in the form of libraries exist for C/C++/Fortran, some vendor specific.
+   Message passing interface, a de facto standard that defines functions for inter-process communication. Many implementations in the form of libraries exist for C/C++/Fortran, some vendor specific.
 
 OpenMP
    A standard for shared memory programming that makes abstraction of explicit threads.
