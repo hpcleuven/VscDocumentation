@@ -841,5 +841,3 @@ Contact & support
 
 Bug reports and feature request can be sent to `Geert Jan
 Bex <mailto:geertjan.bex@uhasselt.be>`__.
-
-"

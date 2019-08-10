@@ -29,4 +29,3 @@ Submit to a Phi node:
 
    qsub -l partition=phi <jobscript>
 
-"

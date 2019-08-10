@@ -107,4 +107,3 @@ Our advise is to:
 
    This should work for all OS X versions.
 
-"

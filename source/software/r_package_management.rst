@@ -157,4 +157,3 @@ Setting up your own package repository for R is straightforward.
 #. These packages might depend on the specific R version, so you may
    need to reinstall them for the other version.
 
-"

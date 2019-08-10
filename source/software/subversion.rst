@@ -406,5 +406,3 @@ Subversion can also provide help on commands:
 
 The former lists all available subversion commands, the latter form
 displays help specific to the command, 'commit' in this example.
-
-"

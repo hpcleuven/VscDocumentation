@@ -122,4 +122,3 @@ Further information
 The tutorial at the site of Lawrence Livermore National Laboratory `LLNL openMP tutorial`_ (LLNL) is highly recommended.
 
 .. include:: links.rst
-"
