@@ -142,10 +142,10 @@ Job output
 
 By default, the output of your job is saved to two files.
 
-``<job_name>.o<job_id>``
+``<job_name>.o<jobid>``
    This file contains all text written to standard output, as well as some
    information about your job.
-``<job_name>.e<job_id>``
+``<job_name>.e<jobid>``
    This file contains all text written to standard error, if any.  If your job fails,
    or doesn't produce the expected output, this is the first place to look.
 
@@ -200,13 +200,13 @@ Troubleshooting
 Advanced topics
 ---------------
 
--  :doc:`monitoring_memory_and_cpu_usage_of_programs`, which helps to find the
+-  :ref:`monitoring memory and cpu`, which helps to find the
    right parameters to improve your specification of the job requirements.
--  :doc:`worker_framework`: To manage lots of small jobs on a cluster. The
+-  :ref:`worker framework`: To manage lots of small jobs on a cluster. The
    cluster scheduler isn't
    meant to deal with tons of small jobs. Those create a lot of
    overhead, so it is better to bundle those jobs in larger sets.
--  The :doc:`checkpointing_framework` can be used to run programs that take
+-  The :ref:`checkpointing framework` can be used to run programs that take
    longer than the maximum time
    allowed by the queue. It can break a long job in shorter jobs, saving
    the state at the end to automatically start the next job from the

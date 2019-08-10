@@ -1,3 +1,5 @@
+.. _starting programs in a job:
+
 Starting programs in a job
 ==========================
 
@@ -140,7 +142,7 @@ Starting a distributed memory program (e.g., an MPI program)
 ------------------------------------------------------------
 
 Starting a distributed memory program is a bit more involved as they
-always involve more than one Linux proces. Most distributed memory
+always involve more than one Linux process. Most distributed memory
 programs in scientific computing are written using the the Single
 Program Multiple Data paradigm: A single executable is ran on each core,
 but each cores works on a different part of the data. And the most
@@ -151,7 +153,7 @@ Distributed memory programs are usually started through a starter
 command. For MPI programs, this is ``mpirun`` or ``mpiexec`` (often one
 is an alias for the other). The command line arguments for mpirun differ
 between MPI implementations. We refer to the documentation on
-:doc:`toolchains<../software/toolchains>` for more information on the
+:ref:`toolchains <toolchains>` for more information on the
 implementations supported at the VSC. As most MPI implementations in use
 at the VSC recognise our resource manager software and get their
 information about the number of nodes and cores directly from the resource
@@ -177,7 +179,7 @@ while a shared memory paradigm is often more efficient in exploiting
 parallelism in the node. You'll need additional implementation-dependent
 options to mpirun to start such programs and also to define how many
 threads each instance can use. There is some information specifically
-for :doc:`hybrid MPI/OpenMP programs<../software/hybrid_mpi_openmp_programs>`.
+for :ref:`hybrid MPI/OpenMP programs <hybrid MPI/OpenMP programs>`.
 We advise you to contact user
 support to help you figuring out the right options and values for those
 options if you are not sure which options and values to use.
@@ -195,7 +197,7 @@ using multiple of your jobs, but this doesn't always work right. E.g.,
 assume a cluster with 20-core nodes where some nodes have 3 GB per core
 available for user jobs and some nodes have 6 GB available. If your job
 needs 5 GB per core (and you specify that using the ``mem`` or ``pmem``
-parameters), but you don\\t explicitly tell that you want to use the
+parameters), but you don't explicitly tell that you want to use the
 nodes with 6 GB per core, the scheduler may still schedule the first job
 on a node with only 3 GB per core, then try to fill up that node further
 with jobs from you, but once half the node is filled discover that there
@@ -203,7 +205,7 @@ is not enough memory left to start more jobs, leaving half of the CPU
 capacity unused.
 
 To ease combining jobs in a single larger job, we advise to have a look
-at the :doc:`Worker framework <worker_frameworklllx>`. It
+at the :ref:`worker framework`. It
 helps you to organise the input to the various instances of your program
 for many common scenarios.
 
@@ -241,7 +243,7 @@ numbers of nodes and cores-per-node using
 
 (so using 4 nodes and 5 cores per node in this example). When calling
 ``qsub``, it will return a job number, and when the job ends you will
-find a file testscript.pbs.o<number_of_the_job> in the directory where
+find a file testscript.pbs.o<jobid> in the directory where
 you executed ``qsub``.
 
 For more information on the pbsdsh command, check the manual page

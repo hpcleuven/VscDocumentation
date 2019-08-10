@@ -19,8 +19,9 @@ When ``qsub`` successfully queues your job, it responds with a job ID, ``205814.
 in the example above.  This is a unique identifier for your job, and can be used
 to manage it.  In general, the number will suffice for this purpose.
 
-As explained on the page on ":ref:`Specifying resources, output files and
-notifications`", there are several options to inform the scheduler about the
+As explained on the pages on :ref:`resource specification` and 
+:ref:`specifying output files and notifications`,
+there are several options to inform the scheduler about the
 resources your jobs requires, or whether you want to be notified on events
 related to your job.
 
@@ -144,7 +145,7 @@ values are listed in the table below.
 +--------+------------------------------------------------------+
 | C      | job is *completed*, i.e., finished.                  |
 +--------+------------------------------------------------------+
-| H      | job has *hold* in place                              |
+| H      | job has a *hold* in place                            |
 +--------+------------------------------------------------------+
 
 Several command line options can be specified to modify the output of
@@ -164,7 +165,7 @@ scheduler's perspective. Jobs are subdivided in three categories:
 
 -  Active jobs are actually running, started or terminated.
 -  Eligible jobs are queued and considered eligible for scheduling.
--  Blocked jobs ineligible to run or to be queued for scheduling.
+-  Blocked jobs are ineligible to run or to be queued for scheduling.
  
 The ``showq`` command will split its output according to the three major
 categories. Active jobs are sorted according to their expected end time

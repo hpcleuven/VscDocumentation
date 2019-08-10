@@ -44,7 +44,7 @@ However, your home directory may unexpectedly fill up in two ways:
 
 .. note::
 
-   that one job that produces output or a core that is too large for
+   That one job that produces output or a core dump that is too large for
    the file system quota will most probably cause all your jobs that are
    queued to fail.
 
@@ -66,7 +66,7 @@ To send standard output to a file, you can use::
 
 If you want to redirect both standard output and standard error, use::
 
-   my-prog  > $VSC_DATA/my-large-output.txt \\
+   my-prog  > $VSC_DATA/my-large-output.txt \
            2> $VSC_DATA/my-large-error.txt
 
 To redirect both standard output and standard error to the same file,
