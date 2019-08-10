@@ -5,7 +5,7 @@ Introduction
 ------------
 
 Most of the useful R packages come in the form of packages that can be
-installed separatly. Some of those are part of the default installtion
+installed separately. Some of those are part of the default installation
 on VSC infrastructure. Given the astounding number of packages, it is
 not sustainable to install each and everyone system wide. Since it is
 very easy for a user to install them just for himself, or for his
@@ -23,7 +23,7 @@ Installing Miniconda
 If you have Miniconda already installed, you can skip ahead to the next
 section, if Miniconda is not installed, we start with that. Download the
 Bash script that will install it from
-`conda.io <\%22https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh\%22>`__
+`conda.io <https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>`__
 using, e.g., wget:
 
 ::
@@ -58,7 +58,7 @@ to the conda command:
    $ which conda
 
 If the result is blank, or reports that conda can not be found, modify
-the \`PATH\` environment variable appropriately by adding iniconda's bin
+the \`PATH\` environment variable appropriately by adding miniconda's bin
 directory to PATH.
 
 Creating a new conda environment is straightforward:
@@ -114,7 +114,7 @@ single package (and its dependencies) can be done using:
 
    $ conda update r-rodbc
 
-Updating all packages in the environement is trivial:
+Updating all packages in the environment is trivial:
 
 ::
 
@@ -140,7 +140,7 @@ More information
 ~~~~~~~~~~~~~~~~
 
 Additional information about conda can be found on its `documentation
-site <\%22https://conda.readthedocs.io/en/latest/\%22>`__.
+site <https://conda.readthedocs.io/en/latest/>`__.
 
 Alternatives to conda
 ---------------------
@@ -157,4 +157,3 @@ Setting up your own package repository for R is straightforward.
 #. These packages might depend on the specific R version, so you may
    need to reinstall them for the other version.
 
-"

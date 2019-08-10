@@ -23,7 +23,7 @@ Development tools
    intel_toolchain
    foss_toolchain
    intel_trace_analyzer_collector
-   parameter_weaver
+   parameterweaver
    version_control_systems
 
 
@@ -31,7 +31,7 @@ Libraries
 ---------
 
 .. toctree::
-   "maxdepth: 1
+   :maxdepth: 1
 
    blas_and_lapack
    perl_package_management

@@ -18,17 +18,17 @@ of a different compiler, LLVM, and might behave differently from gcc on
 the cluster.
 
 If you want a regular gcc or need Fortran or MPI or mathematical
-libraries equivalent to those in the `foss
-toolchain <\%22/cluster-doc/development/toolchain-foss\%22>`__ on the
+libraries equivalent to those in the :ref:`FOSS
+toolchain <FOSS toolchain>` on the
 cluster, you'll need to install additional software. We recommend `using
-MacPorts <\%22https://www.macports.org/\%22>`__ for this as it contains
+MacPorts <https://www.macports.org/>`__ for this as it contains
 ports to macOS of most tools that we include in our toolchains. Using
 MacPorts requires some familiarity with the bash shell, so you may have
-a look at `our \\"Using Linux\"
-section <\%22/cluster-doc/using-linux\%22>`__ or search the web for a
+a look at :ref:`our \\"Basic Linux usage\"
+section <basic linux>` or search the web for a
 good bash tutorial (one in a Linux tutorial will mostly do). E.g.,
-you'll have to add the directory where MacPort installs the applications
-to your PATH enviroment variable. For a typical MacPorts installation,
+you'll have to add the directory where MacPorts installs the applications
+to your PATH environment variable. For a typical MacPorts installation,
 this directory is /opt/local/bin.
 
 After installing MacPorts, the following commands will install a
@@ -58,10 +58,10 @@ install the appropriate packages:
    sudo port install subversion
    sudo port install subversion-javahlbindings
 
-At the time of writing, this installed version 1,9,4 of subversion which
-has a compatielbe \\"Native JavaHL connector\" in Eclipse.
+At the time of writing, this installed version 1.9.4 of subversion which
+has a compatible \\"Native JavaHL connector\" in Eclipse.
 
-Configurating Eclipse for other compilers
+Configuring Eclipse for other compilers
 -----------------------------------------
 
 Eclipse uses the PATH environment variable to find other software it
@@ -83,8 +83,8 @@ shell script.
    so-called application bundle.
 
 Both tricks are explained in the `Photran installation instructions on
-the Eclispe
-wiki <\%22https://wiki.eclipse.org/PTP/photran/documentation\%22>`__.
+the Eclipse
+wiki <https://wiki.eclipse.org/PTP/photran/documentation>`__.
 However, in OS X 10.10 (Yosemite) neither mechanism works for setting
 the path.
 
@@ -107,4 +107,3 @@ Our advise is to:
 
    This should work for all OS X versions.
 
-"

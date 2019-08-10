@@ -79,5 +79,3 @@ depend on locally installed packages.
 ::
 
    use local::lib;
-
-"

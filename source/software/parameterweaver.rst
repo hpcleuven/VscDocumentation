@@ -25,7 +25,7 @@ ParameterWeaver installed still can run that application.
 
 Using ParameterWeaver is as simple as writing a definition file for the
 command line arguments, and executing the code generator via the command
-lnie. This can be conveniently integrated into a standard build process
+line. This can be conveniently integrated into a standard build process
 such as make.
 
 ParameterWeaver currently supports the following target languages:
@@ -178,7 +178,7 @@ types, a logical parameter acts like a flag, i.e., it is a command line
 options that doesn't take a value. Its absence is interpreted as false,
 its presence as true. Also note that using a parameter of type ``bool``
 implies that the program will have to be complied as C99, rather than
-C89. All modern cmopiler fully support C99, so that should not be an
+C89. All modern compiler fully support C99, so that should not be an
 issue. However, if your program needs to adhere strictly to the C89
 standard, simply use a parameter of type ``int`` instead, with ``0``
 interpreted as false, all other values as true. In that case, the option
@@ -201,7 +201,7 @@ Next, we generate the code based on the parameter definition file:
    $ weave -l C -d param_defs.txt
 
 A number of type declarations and functions are generated, the
-declarations in the header file ``cl_params.h``, the defintions in the
+declarations in the header file ``cl_params.h``, the definitions in the
 source file ``cl_params.c``.
 
 #. data structure: a type ``Params`` is defined as a ``typedef`` of a
@@ -223,7 +223,7 @@ source file ``cl_params.c``.
 #. Parsing: the options passed to the program via the command line are
    assigned to the appropriate fields of the ``Params`` variable.
    Moreover, the ``argv`` array containing the remaining command line
-   arguments, the ``argc`` variable is set apprppriately.
+   arguments, the ``argc`` variable is set appropriately.
 #. Dumper: a function is defined that takes three arguments: a file
    pointer, a prefix and the address of a ``Params`` variable. This
    function writes the values of the command line parameters to the file
@@ -822,7 +822,7 @@ return value from the call to ``parse_cl``.
 Future work
 -----------
 
-The following features are plannen in future releases:
+The following features are planned in future releases:
 
 -  Additional target languages:
 
@@ -840,6 +840,4 @@ Contact & support
 -----------------
 
 Bug reports and feature request can be sent to `Geert Jan
-Bex <\%22mailto:geertjan.bex@uhasselt.be\%22>`__.
-
-"
+Bex <mailto:geertjan.bex@uhasselt.be>`__.

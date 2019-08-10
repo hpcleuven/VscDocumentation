@@ -7,4 +7,3 @@ centre making supercomputer infrastructure available for both the
 Research Foundation - Flanders (FWO) in partnership with the five
 Flemish university associations.
 
-"

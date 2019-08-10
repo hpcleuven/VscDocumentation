@@ -11,9 +11,9 @@ encouraged to use those packages as much as possible, since this will
 ensure that your code can be run on any platform that supports Python.
 
 However, many useful extensions to and libraries for Python come in the
-form of packages that can be installed separatly. Some of those are part
-of the default installtion on VSC infrastructure, others have been made
-available through the module system and must be loaded explicitely.
+form of packages that can be installed separately. Some of those are part
+of the default installation on VSC infrastructure, others have been made
+available through the module system and must be loaded explicitly.
 
 Given the astounding number of packages, it is not sustainable to
 install each and everyone system wide. Since it is very easy for a user
@@ -85,7 +85,7 @@ to the conda command:
    $ which conda
 
 If the result is blank, or reports that conda can not be found, modify
-the \`PATH\` environment variable appropriately by adding iniconda's bin
+the \`PATH\` environment variable appropriately by adding miniconda's bin
 directory to PATH.
 
 At this point, you may wish to load a module for a recent compiler (GCC
@@ -153,7 +153,7 @@ single package (and its dependencies) can be done using:
 
    $ conda update pandas
 
-Updating all packages in the environement is trivial:
+Updating all packages in the environment is trivial:
 
 ::
 
@@ -257,7 +257,7 @@ Installing Anaconda on NX node (KU Leuven Genius)
    some other location or temporary archive. It creates conflicts with
    Anaconda.
 #. Download appropriate (64-Bit (x86) linux Installer) version of Anaconda
-   from `https://www.anaconda.com/download/#linux <\%22https://www.anaconda.com/download/#linux>`_
+   from `https://www.anaconda.com/download/#linux <https://www.anaconda.com/download/#linux>`_
 #. Change the permissions of the file (if necessary)
 
    ``chmod u+x Anaconda3-2019.07-Linux-x86_64.sh``
@@ -273,5 +273,5 @@ Installing Anaconda on NX node (KU Leuven Genius)
    ``cd anaconda3/bin/`` and check for the updates
    ``conda update anaconda-navigator``
 
-#. You can start the navigatorfrom that directory with
+#. You can start the navigator from that directory with
    ``./anaconda-navigator``

@@ -6,7 +6,7 @@ Version control systems
 Why use a version control system?
 ---------------------------------
 
-A version control systems (VCS) help you manage the changes to the
+A version control system (VCS) helps you to manage the changes to the
 source files of your project, and most systems also support team
 development. Since it remembers the history of your files, you can
 always return to an earlier version if you've screwed up making changes.
@@ -22,15 +22,15 @@ more version control systems. E.g., Eclipse, the IDE which we recommend
 for the development of C/C++ or Fortran codes on clusters, supports all
 of the systems mentioned on this page, some out-of-the-box and others by
 adding an additional package. The systems mentioned on this page are all
-available on Linux, OS X and Windows (through the UNIX emulation layer
-cygwin and all except RCS also in at least one native implementation).
+available on Linux, macOS and Windows (through the UNIX emulation layer
+Cygwin and all except RCS also in at least one native implementation).
 
 Types of version control systems
 --------------------------------
 
 An excellent introduction to the various types of version control
 systems can be found in `the book Pro GIT by Scott Chacon and Ben
-Straub <\%22https://git-scm.com/book/en/v2\%22>`__.
+Straub <https://git-scm.com/book/en/v2>`__.
 
 Local systems
 ~~~~~~~~~~~~~
@@ -48,8 +48,8 @@ to use one of the systems from the next two categories.
 Links:
 
 -  `Wikipedia
-   page <\%22https://en.wikipedia.org/wiki/Revision_Control_System\%22>`__
--  `GNU RCS <\%22https://www.gnu.org/software/rcs/rcs.html\%22>`__
+   page <https://en.wikipedia.org/wiki/Revision_Control_System>`__
+-  `GNU RCS <https://www.gnu.org/software/rcs/rcs.html>`__
 
 Centralised systems
 ~~~~~~~~~~~~~~~~~~~
@@ -67,35 +67,35 @@ developed and less and less used.
 Links:
 
 -  `CVS Wikipedia
-   page <\%22https://en.wikipedia.org/wiki/Concurrent_Versions_System\%22>`__
+   page <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`__
 -  `SVN Wikipedia
-   page <\%22https://en.wikipedia.org/wiki/Apache_Subversion\%22>`__
+   page <https://en.wikipedia.org/wiki/Apache_Subversion>`__
 -  CVS implementations
 
    -  A command-line client is included in most Linux distributions. On
-      Windows, the cygwin UNIX emulation layer also has a svn package.
-      On OS X, it is available (though no longer maintained) through the
-      MacPorts project.
-   -  The eclipse IDE comes with built-in support for CVS.
+      Windows, the Cygwin UNIX emulation layer also has a svn package.
+      On macOS, it is available (though no longer maintained) through the
+      MacPorts and HomeBrew projects.
+   -  The Eclipse IDE comes with built-in support for CVS.
 
 -  SVN implementations
 
    -  Command-line clients are included in most Linux distributions and
-      OS X. On Windows, the cygwin UNIX emulation layer also has a svn
+      macOS. On Windows, the Cygwin UNIX emulation layer also has a svn
       package. The command line client is also available on the VSC
       clusters.
-   -  `TortoiseSVN <\%22/client/windows/tortoisesvn\%22>`__ (or `go
+   -  :ref:`TortoiseSVN <TortoiseSVN>` (or `go
       straight to the TortoiseSVN web
-      site <\%22https://tortoisesvn.net/\%22>`__) is a popular Windows
+      site <https://tortoisesvn.net/>`__) is a popular Windows
       native GUI client that integrates well with the explorer. However,
       if you google on \\" SVN GUI\" you'll find a plethora of other
-      choices, not only for Windows but also for macOS and Linux
-   -  SVN can be integrated with the eclipse IDE through the ¨Subversive
-      SVN team provider¨ plugin which can be installed through the
+      choices, not only for Windows but also for macOS and Linux.
+   -  SVN can be integrated with the Eclipse IDE through the \\"Subversive
+      SVN team provider\" plugin which can be installed through the
       \\"Install New Software\" panel in the help menu. More information
-      and instructions are available on the `subversive subsite of the
-      main eclipse web
-      site <\%22http://www.eclipse.org/subversive/\%22>`__.
+      and instructions are available on the `Subversive subsite of the
+      main Eclipse web
+      site <http://www.eclipse.org/subversive/>`__.
 
 Distributed systems
 ~~~~~~~~~~~~~~~~~~~
@@ -120,29 +120,29 @@ as Hg, chemists will understand why).
 Links:
 
 -  `Git on
-   Wikipedia <\%22https://en.wikipedia.org/wiki/Git_(software)\%22>`__
--  `Main Git web page <\%22https://git-scm.com/\%22>`__
+   Wikipedia <https://en.wikipedia.org/wiki/Git_(software)>`__
+-  `Main Git web page <https://git-scm.com/>`__
 -  `Mercurial on
-   Wikipedia <\%22https://en.wikipedia.org/wiki/Mercurial\%22>`__
--  `Main Mercural web page <\%22https://www.mercurial-scm.org\%22>`__
+   Wikipedia <https://en.wikipedia.org/wiki/Mercurial>`__
+-  `Main Mercural web page <https://www.mercurial-scm.org>`__
 -  Git implementations
 
    -  If you have a Linux system, Git is most likely already installed
-      on your system. On OS X, git is available through Xcode, though it
+      on your system. On macOS, git is available through Xcode, though it
       is not always the most recent version. On Windows, there is a
       Git-package in the UNIX emulation layer Cygwin. Downloads for all
       systems are also available on `the download section of the main
-      git web site <\%22https://git-scm.com/download\%22>`__. That page
+      git web site <https://git-scm.com/download>`__. That page
       also contains links to a number of GUI options. Most if not all
       GUI tools store projects in a way that is fully compatible with
       the command line tools, so you can use both simultaneously. The
       command line client is also available on the VSC clusters.
-   -  `TortoiseGit <\%22https://tortoisegit.org/\%22>`__ is an
+   -  `TortoiseGit <https://tortoisegit.org/>`__ is an
       explorer-integrated interface to Git on Windows similar to
       TortoiseSVN.
    -  Another nice GUI application is
-      `SourceTree <\%22https://www.atlassian.com/software/sourcetree\%22>`__
-      produced by `Atlassian <\%22https://www.atlassian.com/\%22>`__.
+      `SourceTree <https://www.atlassian.com/software/sourcetree>`__
+      produced by `Atlassian <https://www.atlassian.com/>`__.
       Atlassian is the company behind the Bitbucket cloud service, but
       their tool also works well with GitHub, one of their main
       competitors. It has a very nice way of representing the history of
@@ -150,10 +150,10 @@ Links:
    -  The Eclipse IDE comes with built-in support for Git through the
       standard plug-in EGit. More recent versions of this plugin may be
       available through the `Eclipse
-      Marketplace <\%22https://marketplace.eclipse.org/\%22>`__.
+      Marketplace <https://marketplace.eclipse.org/>`__.
    -  `CollabNet
-      GitEye <\%22https://www.collab.net/products/giteye\%22>`__ is a
-      Git GUI for Windows, OS X and Linux build on top of a number of
+      GitEye <https://www.collab.net/products/giteye>`__ is a
+      Git GUI for Windows, macOS and Linux build on top of a number of
       Eclipse libraries, but you don/t need to install Eclipse to be
       able to use it. It is a nice way though to browse through your Git
       repositories outside of the Eclipse environment. GitEye itself is
@@ -163,44 +163,44 @@ Links:
 -  Mercurial (Hg) implementations
 
    -  Mercurial is written in Python and hence runs on most systems.
-      Most Linux distributions offer a mercurial package. `Windows and
-      OS X command line utilities are also
-      available <\%22https://www.mercurial-scm.org/\%22>`__.
-   -  `TortoiseHg <\%22https://tortoisehg.bitbucket.io/\%22>`__ is an
+      Most Linux distributions offer a Mercurial package. `Windows and
+      macOS command line utilities are also
+      available <https://www.mercurial-scm.org/>`__.
+   -  `TortoiseHg <https://tortoisehg.bitbucket.io/>`__ is an
       explorer-integrated interface to the Mercurial VCS on Windows
-      similar to TortoiseSVN. There is also an OS X and Linux version
+      similar to TortoiseSVN. There is also a macOS and Linux version
       available. The latter integrates with Gnome/Nautilus.
-   -  The eclipse IDE supports Mercurial through the `optional
+   -  The Eclipse IDE supports Mercurial through the `optional
       MercurialEclipse
-      plugin <\%22https://marketplace.eclipse.org/content/mercurialeclipse\%22>`__
+      plugin <https://marketplace.eclipse.org/content/mercurialeclipse>`__
       available on the `Eclipse
-      Marketplace <\%22https://marketplace.eclipse.org/\%22>`__.
+      Marketplace <https://marketplace.eclipse.org/>`__.
 
 Cloud services
 --------------
 
 Many companies offer hosting services for SVN, Git or Mercurial
 repositories in the cloud. Google, e.g., for `subversion hosting
-service <\%22https://www.google.be/webhp?#q=subversion+hosting+service\%22>`__,
+service <https://www.google.be/webhp?#q=subversion+hosting+service>`__,
 `git hosting
-service <\%22https://www.google.be/search?q=git+hosting+service\%22>`__
+service <https://www.google.be/search?q=git+hosting+service>`__
 or `mercurial hosting
-service <\%22https://www.google.be/search?q=mercurial+hosting+service\%22>`__.
+service <https://www.google.be/search?q=mercurial+hosting+service>`__.
 Several offer free public hosting for Open Source projects or have free
 access for academic accounts. Some noteworthy ones that are popular for
 academic projects are:
 
--  `Github (github.com) <\%22https://github.com/\%22>`__ offers free Git
+-  `GitHub (github.com) <https://github.com/>`__ offers free Git
    and Subversion hosting for Open Source projects. We use this service
    for some VSC in-house tools development. It is also possible to host
    private projects if you subscribe to one of their paying plans.
--  `Bitbucket (bitbucket.org) <\%22https://bitbucket.org/\%22>`__ offers
-   both git and mercurial services. It also supports private projects
+-  `Bitbucket (bitbucket.org) <https://bitbucket.org/>`__ offers
+   both Git and Mercurial services. It also supports private projects
    with a limited number of users in free accounts (and has a special
    deal for academic institutions, allowing unlimited users) while the
    other services mentioned on this page only support open source
    projects for free.
--  `SourceForge <\%22https://sourceforge.net/\%22>`__ is a very well
+-  `SourceForge <https://sourceforge.net/>`__ is a very well
    known service for hosting Open Source projects. It currently supports
    projects managed through Subversion, Git, Mercurial and a few other
    systems.
@@ -229,7 +229,5 @@ elements that you should take into account:
    reconstruct the contents of a repository from the other repositories.
 -  If you want to use an IDE, it is good to check which systems are
    supported by the IDE. E.g., Eclipse supports Git out-of-the-box, and
-   Subversion and Mercurial though a plug-in. Visual Studio also
+   Subversion and Mercurial through a plug-in. Visual Studio also
    supports all three of these systems.
-
-"

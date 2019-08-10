@@ -29,7 +29,7 @@ If you have problems logging in to the system
 
 Please provide the following information:
 
-#. your operating system (e.g., Linux, Windows, MacOS X, ...),
+#. your operating system (e.g., Linux, Windows, macOS, ...),
 #. your client software (e.g., PuTTY, OpenSSH, ...),
 #. your location (e.g., on campus, at home, abroad),
 #. whether the problem is systematic (how many times did you try, over
