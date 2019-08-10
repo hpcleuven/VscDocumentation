@@ -13,7 +13,7 @@ but also instructions that operate on a whole vector at once.
 
 NEC has been building vector computers since the mid 1980s. The first models
 were announced in 1983 and became available in 1985. Between June 2002 and
-June 2004, the Earth Simulater, a vector computer build by NEC, was the
+June 2004, the Earth Simulator, a vector computer build by NEC, was the
 fastest machine on the Top-500 list. Though vector computers have stayed 
 around, clusters based on standard scalar microprocessors pushed them
 into very specific niche markets. However, as GPU computing has 
@@ -43,7 +43,7 @@ with (GPU) accelerators.
   (vector engine) programs. Both are started the same way from the
   standard Linux shells. The operating system recognizes the type of 
   binary and starts it on the appropriate processor type.
-- Besids running a program fully on the vector engine (safe the
+- Besides running a program fully on the vector engine (safe the
   transparent offloading of OS operations to the host CPU), the 
   Aurora also supports two types of offloading. It is possible to 
   write programs that run on the host x86 CPU but offload certain
@@ -63,7 +63,7 @@ with (GPU) accelerators.
 
 The software environment consists of the NEC C, C++ and Fortran
 compilers, a MPI library specifically for the vector engines, and 
-a large library of numeric routines (called NEC Numeric Libary Collection
+a large library of numeric routines (called NEC Numeric Library Collection
 or NLC), that also contains BLAS, LAPACK and FFTW-compatible
 routines.
  

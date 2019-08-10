@@ -66,14 +66,14 @@ Mathematica
 MATLAB
 ------
 
-We do not encourage the use of Matlab on the cluster as it is neither
+We do not encourage the use of MATLAB on the cluster as it is neither
 designed for use of HPC (despite a number of toolboxes that support
 parallel computing) nor efficient.
 
-Matlab on the UAntwerp clusters can be used by everybody who can legally
-use Matlab within the UAntwerp Campus Agreement with The Mathworks. You
+MATLAB on the UAntwerp clusters can be used by everybody who can legally
+use MATLAB within the UAntwerp Campus Agreement with The Mathworks. You
 should have access to the modules if you are eligible. If you cannot
-load the Matlab modules yet think you are allowed to use Matlab under
+load the MATLAB modules yet think you are allowed to use MATLAB under
 the UAntwerp license, please :ref:`contact support <user support VSC>`.
 
 MonolixSuite

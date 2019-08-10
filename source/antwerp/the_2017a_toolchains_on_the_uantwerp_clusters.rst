@@ -4,7 +4,7 @@ The 2017a toolchains on the UAntwerp clusters
 Important changes
 -----------------
 
-The 2017a toolchain is the toolchain thatwill be carried forward to
+The 2017a toolchain is the toolchain that will be carried forward to
 Leibniz and will be available after the operating system upgrade of
 Hopper. Hence it is meant to be as complete as possible. We will only
 make a limited number of programs available in the 2016b toolchain
@@ -56,17 +56,17 @@ There are currently three major toolchains on the UAntwerp clusters:
    -  :ref:`Modules in the intel/2017a toolchain <Antwerp 2017a intel>`
 
 -  The FOSS toolchain, built out of open-source components. It is mostly
-   used for programs that don’t install with the Intel compilers, or by
+   used for programs that don't install with the Intel compilers, or by
    users who want to do development with Open MPI and other open-source
    libraries.
    The FOSS-toolchain has a number of subtoolchains: Gompi, GCC and
    GCCcore, and some programs are installed in these subtoolchains
-   because they don’t use the additional components that FOSS offers.
+   because they don't use the additional components that FOSS offers.
 
    -  :ref:`Modules in the foss/2017a toolchain and its
       subtoolchains <Antwerp 2017a foss>`
 
--  The system toolchain (sl6 or centos7), containing programs that only
+-  The system toolchain (centos7), containing programs that only
    use system libraries or other tools from this toolchain.
 
    -  :ref:`Modules in the system toolchain for CentOS

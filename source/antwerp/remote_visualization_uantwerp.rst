@@ -30,7 +30,7 @@ Graphics (local and remote) on Linux-machines is based on the `X Window
 System version
 11 <https://en.wikipedia.org/wiki/X_Window_System>`_, shortly
 X11. This technology is pretty old (1987) and nor really up to the task
-anymore with todays powerful computers yet has so many applications that
+anymore with today's powerful computers yet has so many applications that
 support it that it is still the standard in practice (though there are
 efforts going on to replace it with Wayland on modern Linux systems).
 
@@ -44,7 +44,7 @@ this scenario runs on a computer which you will usually call the
 server). However, partly due to the way the X11 protocol works and
 partly also because modern applications are very graphics-heavy, the
 network has become a bottleneck and graphics-heavy applications (e.g.,
-the Matlab GUI) will work sluggish on all but the fastest network
+the MATLAB GUI) will work sluggish on all but the fastest network
 connections.
 
 X11 is a protocol for 2D-graphics only. however, it is extensible. Enter
@@ -75,7 +75,7 @@ network latency.
 
 `VirtualGL <https://en.wikipedia.org/wiki/VirtualGL>`_ is a
 technology that redirects OpenGL commands to a 3D graphics accelerator
-on the computer where the application is running or to a sofware
+on the computer where the application is running or to a software
 rendering library. It then pushes the rendered image to the X server.
 Instead of a stream of thousands or millions of OpenGL commands, one
 large image is now passed over the network to the X server, reducing the
@@ -121,7 +121,7 @@ this functionality is provided by the Window Manager, a separate
 software package that you start after starting the X server (or may be
 started for you automatically by the startup script that is run when
 starting the X server). The basic window managers from the early days of
-X11 have evolved into feature-rich desktop enviroments that do not only
+X11 have evolved into feature-rich desktop environments that do not only
 offer a window manager, but also a task bar etc. Gnome and KDE are
 currently the most popular desktop environments (or Unity on Ubuntu, but
 future editions of Ubuntu will return to Gnome). However, these require
@@ -145,7 +145,7 @@ Prerequisites
 You'll need a ssh client on your desktop that provides port forwarding
 functionality on your desktop. We refer to the :ref:`access and data transfer`
 section for information about ssh clients for various client operating systems.
-PuTTY (Windows) and OpenSSH (macOS, Linux, unix-compatibility environment on
+PuTTY (Windows) and OpenSSH (macOS, Linux, UNIX-compatibility environment on
 Windows) both provide all required functionality.
 
 Furthermore, you'll need a VNC client, preferably the TurboVNC client.
@@ -157,7 +157,7 @@ We have tested the setup with three different clients:
 
 -  The TurboVNC client can be downloaded by following the Download link
    on the `TurboVNC`_ web site (which at the moment of
-   writing this documentation takes you to a sourceforge
+   writing this documentation takes you to a Sourceforge
    `TurboVNC download page`_).
    Binaries are available for both 32-bit and 64-bit windows systems.
    This client is made by the same people as the server we use so in
@@ -169,7 +169,7 @@ We have tested the setup with three different clients:
    by following the link on `the GitHub Releases
    page <https://github.com/TigerVNC/tigervnc/releases>`_.
    These binaries are ready-to-run.
--  `ThightVNC <http://www.tightvnc.com/>`_ is also a popular
+-  `TightVNC <http://www.tightvnc.com/>`_ is also a popular
    free VNC implementation. 32-bit and 64-bit Windows installers can be
    downloaded from `the download page on their
    website <http://www.tightvnc.com/download.php>`_. When
@@ -221,7 +221,7 @@ RPM and Debian packages for TurboVNC can be downloaded from the
 `TurboVNC`_ web site and are
 available in some Linux distributions. You can also try another VNC
 client provided by your Linux distribution at your own risk as we cannot
-guarantee that all VNC viewers (even recent ones) work eficiently with
+guarantee that all VNC viewers (even recent ones) work efficiently with
 TurboVNC.
 
 How do I run an application with TurboVNC?
@@ -240,12 +240,12 @@ Starting the server
    the visualization node of Leibniz. Note that the latter should only
    be used for running demanding visualizations that benefit from the 3D
    acceleration. The node is not meant for those who just want to run
-   some lightweight 2D Gui application, e.g., an editor with GUI.
+   some lightweight 2D GUI application, e.g., an editor with GUI.
 #. Load the module vsc-vnc:
    ``module load vsc-vnc``
    This module does not only put the TurboVNC server in the path, but
    also provides wrapper scripts to start the VNC server with a
-   supported window manager / dekstop environment. Try
+   supported window manager / desktop environment. Try
    ``module help vsc-vnc`` for more info about the specific wrappers.
 #. Use your wrapper of choice to start the VNC server. We encourage to
    use the one for the Xfce desktop environment:
@@ -331,7 +331,7 @@ Starting an application
    applications.
 #. Load the modules that are required to start your application of
    choice.
-#. 2D applications or applications that use a sofware renderer for 3D
+#. 2D applications or applications that use a software renderer for 3D
    start as usual. However, to start an application using the
    hardware-accelerated OpenGL, you'll need to start it through
    ``vglrun``. Usually adding ``vglrun`` at the start of the command
@@ -339,10 +339,10 @@ Starting an application
    This however doesn't work with all applications. Some applications
    require a special setup.
 
-   #. Matlab: start matlab with the ``-nosoftwareopengl`` option to
+   #. MATLAB: start MATLAB with the ``-nosoftwareopengl`` option to
       enable accelerated OpenGL:
       ``vglrun matlab -nosoftwareopengl``
-      The Matlab command ``opengl info`` will then show that you are
+      The MATLAB command ``opengl info`` will then show that you are
       indeed using the GPU.
 
 #. When you've finished, don't forget to log out (when you use one of
@@ -365,17 +365,15 @@ Common problems
 ~~~~~~~~~~~~~~~
 
 -  Authentication fails when connecting to the server: This happens
-   occasionaly when switching between different versions of TurboVNC.
+   occasionally when switching between different versions of TurboVNC.
    The easiest solution is to simply kill the VNC server using
    ``vncserver -kill :x`` (with x the display number), set a new VNC
    password using ``vncpasswd`` and start over again.
 -  Xfce doesn't show the task bar at the top of the screen: This too
    happens sometimes when switching between versions of Xfce4, or you
    may have screwed up your configuration in another way. Remove the
-   ``.config/xfce-centos7`` directory (``rm -r .config/xfce-centos7``)
-   or the ``.config/xfce-sl6`` directory depending on whether you are
-   working on a CentOS7 system (Leibniz curently) or Scientific Linux 6
-   system (/hopper currently), kill the VNC server and start again.
+   ``.config/xfce-centos7`` directory (``rm -r .config/xfce-centos7``),
+   kill the VNC server and start again.
 
 Links
 -----
