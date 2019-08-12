@@ -12,7 +12,7 @@ on the size and usage of these data. Following locations are available:
    -  The data stored here should be relatively small, and not
       generating very intense I/O during jobs.
       Its main purpose is to stora all kinds of configuration files are
-      stored, e.g., ssh-keys, .bashrc, or Matlab, and Eclipse
+      stored, e.g., ssh-keys, .bashrc, or MATLAB, and Eclipse
       configuration, ...
    -  Performance is tuned for the intended load: reading configuration
       files etc.
@@ -75,7 +75,7 @@ environment variable $VSC_HOME.
 The data stored here should be relatively small (e.g., no files or
 directories larger than a gigabyte, although this is not imposed
 automatically), and usually used frequently. The typical use is storing
-configuration files, e.g., by Matlab, Eclipse, ...
+configuration files, e.g., by MATLAB, Eclipse, ...
 
 The operating system also creates a few files and folders here to manage
 your account. Examples are:

@@ -4,7 +4,7 @@ Leibniz hardware
 ================
 
 Leibniz was installed in the spring of 2017. It is a NEC system consisting of
-152 nodes with 2 14-core intel `E5-2680v4 <https://ark.intel.com/products/75277>`_ 
+152 nodes with 2 14-core Intel `E5-2680v4 <https://ark.intel.com/products/75277>`_ 
 Broadwell generation CPUs connected through a EDR InfiniBand network. 144 of
 these nodes have 128 GB RAM, the other
 8 have 256 GB RAM. The nodes do not have a sizeable local disk. The cluster also
@@ -16,7 +16,7 @@ and one node with an Intel Xeon Phi expansion board.
 Access restrictions
 -------------------
 
-Access ia available for faculty, students (master's projects under faculty
+Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
 network and runs the standard VSC software setup. It is also available to all
 VSC-users, though we appreciate that you contact the UAntwerpen support team so
@@ -75,7 +75,7 @@ Hardware details
     - 120 GB SSD local disk
     - :ref:`Instructions <remote visualization UAntwerp>`
 
-The nodes are connected using an Infiniband EDR network. 
+The nodes are connected using an InfiniBand EDR network. 
 Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.
 More info on the storage system is available on the :ref:`UAntwerpen storage` page.
 
@@ -103,7 +103,7 @@ Visualisation node    viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.
 Characteristics of the compute nodes
 ------------------------------------
 
-Since Leibniz is currently a homogenous system with respect to CPU type and
+Since Leibniz is currently a homogeneous system with respect to CPU type and
 interconnect, it is not needed to specify the corresponding properties (see
 also the page on specifying resources, output files and notifications).
 
