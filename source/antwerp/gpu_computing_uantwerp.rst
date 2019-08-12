@@ -12,7 +12,7 @@ The main goal of the system is to assess the performance of GPUs for
 applications used by our researchers. We want to learn for which
 applications GPU computing is economically viable. Users should realise
 that these nodes carry three times the cost of a regular compute node
-and might also be shorter lived (in the past, some NVIDA GPUs have shown
+and might also be shorter lived (in the past, some NVIDIA GPUs have shown
 to be pretty fragile). So these nodes are only interesting and should
 only be used for applications that run three times faster than a regular
 CPU-based equivalent.
@@ -79,8 +79,8 @@ GPUs.
 |                       | cuDNN/7.0.5-CUDA-8.0.61                                                       | Network library,                                                 |
 |                       | cuDNN/7.0.5-CUDA-9.0.176                                                      | version 6.0 and 7.0,                                             |
 |                       | cuDNN/7.0.5-CUDA-9.1.85                                                       | both installed from                                              |
-|                       | cuDNN/7.4.1.5-CUDA-9.0.176                                                    | standard NVIDA                                                   |
-|                       | cuDNN/7.4.1.5-CUDA-10.0.130                                                   | tarbals but in the                                               |
+|                       | cuDNN/7.4.1.5-CUDA-9.0.176                                                    | standard NVIDIA                                                   |
+|                       | cuDNN/7.4.1.5-CUDA-10.0.130                                                   | tarballs but in the                                               |
 |                       |                                                                               | directory structure                                              |
 |                       |                                                                               | of our module system.                                            |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+

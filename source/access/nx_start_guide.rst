@@ -99,7 +99,7 @@ How to start using NX on Genius?
    -  Graphics (e.g. gThumb Image Viewer, Xpdf PDF Viewer),
    -  Internet (e.g. Firefox with pdf support, Filezilla),
    -  **HPC** (modules related to HPC use: **Computation** sub-menu with
-      Matlab, RStudio and SAS, **Visualisation** sub-menu with Paraview
+      MATLAB, RStudio and SAS, **Visualisation** sub-menu with Paraview
       and VisIt),
    -  Programming (e.g. Meld Diff Viewer),
    -  System tools (e.g. File Browser, Terminal).

@@ -11,7 +11,7 @@ memory capacity of 64 GB while 24 nodes have 256 GB of RAM memory.
 Access restrictions
 -------------------
 
-Access ia available for faculty, students (master's projects under faculty
+Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
 network and runs the standard VSC software setup. It is also available to all
 VSC-users, though we appreciate that you contact the UAntwerpen support team so
@@ -35,7 +35,7 @@ Hardware details
     - 64 GB RAM
     - 500 GB local disk
 
-The nodes are connected using an Infiniband FDR10 network.
+The nodes are connected using an InfiniBand FDR10 network.
 Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.
 More info on the storage system is available on the :ref:`UAntwerpen storage` page.
 
@@ -63,7 +63,7 @@ Login                 login1\-hopper.hpc.uantwerpen.be   ln01.hopper.antwerpen.v
 Characteristics of the compute nodes
 ------------------------------------
 
-Since Hopper is currently a homogenous system with respect to CPU type and
+Since Hopper is currently a homogeneous system with respect to CPU type and
 interconnect, it is not needed to specify the corresponding properties (see
 also the page on specifying resources, output files and notifications).
 

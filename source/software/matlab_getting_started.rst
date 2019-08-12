@@ -44,7 +44,7 @@ Interactive use
    XMing Server under :ref:`Windows client` or XQuartz
    on :ref:`macOS/OS X <macOS client>`), the full graphical
    MATLAB Desktop is available. If the speed is acceptable to you - much
-   of the Matlab user interface is coded in Java and Java programs are
+   of the MATLAB user interface is coded in Java and Java programs are
    known to be slow over remote X connections - this is the recommended
    way to start MATLAB for short testing purposes, simple calculations,
    writing programs, visualizing data. Please avoid doing extensive
@@ -53,7 +53,7 @@ Interactive use
    users will slow down execution of your program. Moreover, only a
    limited amount of CPU time is available to you, after which your
    session will be killed (with possible data loss).
--  With ``matlab -nodesktop`` you can start Matlab without the full
+-  With ``matlab -nodesktop`` you can start MATLAB without the full
    desktop, while you are still able to use the visualisation features.
    The ``helpwin``, ``helpdesk`` and ``edit`` commands also work and
    open GUI-style help windows or a GUI-based editor. Of course this
@@ -131,11 +131,11 @@ A simple example follows (to be saved, e.g., in testmatlabscript.sh ) ;
    #PBS -l pmem=950mb
    # The name of your job (used in mail, outputfile, showq,...)
    #PBS -N matlab_test_job
-   # Set the correct environment for matlab
+   # Set the correct environment for MATLAB
    module load matlab
    # Go into the directory from where 'qsub' was run
    cd $PBS_O_WORKDIR
-   # Start matlab, specify the correct command-file ...
+   # Start MATLAB, specify the correct command-file ...
    matlab -nojvm -nodisplay -r test
 
 Now you submit your job with
@@ -245,10 +245,10 @@ Notes
    returned to the shell. Thus, to get results out, they have to be
    written to the screen, or saved in a file.
 -  Not all MATLAB functions are allowed in compiled code (`see the
-   "Compiler Support for Matlab and Toolboxes" page at the
+   "Compiler Support for MATLAB and Toolboxes" page at the
    MathWorks <https://nl.mathworks.com/products/compiler/supported/compiler_support.html>`__).
 
-Example 1: Simple matlab script file
+Example 1: Simple MATLAB script file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  File fibonacci.m contains :
@@ -277,7 +277,7 @@ Example 1: Simple matlab script file
      disp(sprintf('Fibonacci %d -> %d' , n,first))
    end
    % Also return the result, so that the function remains usable
-   % from other Matlab scripts.
+   % from other MATLAB scripts.
    a=first;
 
 -  Run the compiler
@@ -298,7 +298,7 @@ Example 1: Simple matlab script file
    $ ./fibonacci 45
    Fibonacci 45 -> 701408733
 
-Example 2 : Function that uses other Matlab files
+Example 2 : Function that uses other MATLAB files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  File multi_fibo.m contains :
@@ -355,7 +355,7 @@ Example 2 : Function that uses other Matlab files
              34          55          89         144         233         
    377         610         987        1597        2584        4181
 
-Example 3 : Function that used other Matlab files in other directories
+Example 3 : Function that used other MATLAB files in other directories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  If your script uses MATLAB files (e.g., self-made scripts, compiled
@@ -372,6 +372,6 @@ Example 3 : Function that used other Matlab files in other directories
 More info on the MATLAB Compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Matlab compiler documentation`_ on the Mathworks website. 
+`MATLAB compiler documentation`_ on the Mathworks website. 
 
 .. include:: links.rst
