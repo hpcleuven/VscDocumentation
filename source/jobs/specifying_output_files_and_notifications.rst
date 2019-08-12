@@ -47,23 +47,25 @@ Naming output files
 -------------------
 
 Most jobs on a cluster run in batch mode. This implies that they are not
-connected to a terminal, so the output send to the Linux ``stdout``
+connected to a terminal, so the output sent to the Linux ``stdout``
 (standard output) and ``stderr`` (standard error) devices cannot be
 displayed on screen.
 
 Instead, it is captured in two files that are put in the directory where
 your job was started at the end of your job. The default names of those
 files are
-- ``<job_name>.o<job id>`` and
-- ``<job_name>.e<job id>``.
+
+- ``<job_name>.o<jobid>`` and
+- ``<job_name>.e<jobid>``.
 
 Hence the file names are constructed from the name of the job (the
 one assigned using ``-N`` if any, or the default one) and the number of the
 job ID assigned when you submit the job to the queue.
 
 You can however change those names using the options
--``-o <output file>`` and
--``-e <error file>``.
+
+- ``-o <output file>`` and
+- ``-e <error file>``.
 
 
 .. _merge stdout and stderr:
@@ -73,7 +75,7 @@ Merging output and error
 
 It is also possible to merge both output streams in a single output
 stream. The option ``-j oe`` will merge stderr into stdout (and hence
-the -e option does not make sense), the option ``-j eo`` will merge
+the ``-e`` option does not make sense), the option ``-j eo`` will merge
 stdout into stderr.
 
 
@@ -104,8 +106,8 @@ Two command line options are involved in this process:
 ``-m <events>``
    Here, ``<events>`` is any combination of ``b``, ``e`` and ``a``.  These
    are the events you will be notified about.
-``-M <mailadress>``
-  This defines the email address to send the notifications to.
+``-M <mailaddress>``
+  This defines the e-mail address to send the notifications to.
    On most clusters the default will be the e-mail address with which you
    registered your VSC-account, but on some clusters this fails and the option
    is required to receive the e-mail.

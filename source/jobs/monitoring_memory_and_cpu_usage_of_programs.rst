@@ -22,7 +22,7 @@ be added in a future release.
 Prerequisites
 -------------
 
-The user should be familiar with the linux bash shell.
+The user should be familiar with the Linux bash shell.
 
 Monitoring a program
 --------------------
@@ -98,7 +98,7 @@ absolute as well as relative path, and multiple files are separated by
 Programs with command line options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Many programs, e.g., matlab, take command line options. To make sure
+Many programs, e.g., MATLAB, take command line options. To make sure
 these do not interfere with those of monitor and vice versa, the program
 can for instance be started in the following way:
 
@@ -106,8 +106,8 @@ can for instance be started in the following way:
 
    $ monitor -delta 60 -- matlab -nojvm -nodisplay computation.m
 
-The use of '--' will ensure that monitor does not get confused by
-matlab's '-nojvm' and '-nodisplay' options.
+The use of ``--`` will ensure that monitor does not get confused by
+MATLAB's ``-nojvm`` and ``-nodisplay`` options.
 
 Subprocesses and multicore programs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,5 +159,3 @@ Help is available for monitor by issuing:
 ::
 
    $ monitor -h
-
-"

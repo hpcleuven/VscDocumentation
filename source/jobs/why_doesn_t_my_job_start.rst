@@ -30,7 +30,7 @@ Different clusters use different policies as some clusters are optimized
 for a particular type of job.
 
 To get an idea when your job might start, you could try Moab's
-:ref:` showstart <showstart>` command.
+:ref:`showstart <showstart>` command.
 
 Also, don't try to outsmart the scheduler by explicitly specifying nodes
 that seem empty when you launch your job. The scheduler may be reserving
