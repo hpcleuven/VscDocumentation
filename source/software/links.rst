@@ -2,10 +2,13 @@
 .. _MPI Standard documents: https://www.mpi-forum.org/docs/²
 .. _Open MPI: https://www.open-mpi.org/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
-.. _OpenMP: https://www.openmp.org
 .. _Intel MPI site: https://software.intel.com/en-us/intel-mpi-library
 .. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
 .. _MPICH: https://www.mpich.org/
+.. _OpenMP: https://www.openmp.org
+.. _OpenMP compilers and tools: https://www.openmp.org/resources/openmp-compilers-tools/
+.. _Threading Building Blocks: https://www.threadingbuildingblocks.org
+.. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
 .. _OpenSHMEM: http://www.openshmem.org/site/
 .. _MVAPICH: http://mvapich.cse.ohio-state.edu/
 .. _ARM-DDT video: https://developer.arm.com/products/software-development-tools/hpc/arm-forge/arm-ddt/video-demos-and-tutorials-for-arm-ddt
@@ -46,3 +49,5 @@
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
 .. _TensorFlow: https://www.tensorflow.org/
 .. _CPMD: http://www.cpmd.org/
+.. _worker framework documentation: https://worker.readthedocs.io/en/latest/
+.. _atools documentation: https://atools.readthedocs.io/en/latest/
