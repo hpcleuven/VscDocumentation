@@ -40,7 +40,7 @@ expensive compute resources.
 A **job** is an entity of work that you want to do on a supercomputer. A
 job consists of the execution of one or more programs and needs certain
 resources for some time to be able to execute. **Batch jobs** are
-described by a **job script**. This is like a regular linux shell script
+described by a **job script**. This is like a regular Linux shell script
 (usually for the bash shell), but it usually contains some extra
 information: a description of the resources that are needed for the job.
 A job is then submitted to the cluster and placed in a queue (managed by
@@ -68,8 +68,8 @@ A typical job script looks like:
 ::
 
    #!/bin/bash
-   #PBS –l nodes=1:ppn=20
-   #PBS –l walltime=1:00:00
+   #PBS -l nodes=1:ppn=20
+   #PBS -l walltime=1:00:00
    #PBS -o stdout.$PBS_JOBID
    #PBS -e stderr.$PBS_JOBID
 
@@ -99,29 +99,30 @@ detail on specifying resource requirements, output redirection and
 notifications and on environment variables that are set by the scheduler
 and can be used in your job.
 
-Assuming that this script is called myscript.pbs, the job can then be
+Assuming that this script is called ``myscript.pbs``, the job can then be
 submitted to the queueing system with the command ``qsub myscript.pbs``.
 
 Note that if you use a system at the KU Leuven, including the Tier-1
 system BrENIAC, you need credits. When submitting your job, you also
 need to tell ``qsub`` which credits to use. We refer to the page on
-:doc:`Credit system basics <credit_system_basics>`.
+:ref:`Credit system basics <credit system basics>`.
 
 
 Structure of this documentation section
 ---------------------------------------
 
--  The page on :doc:`specifying job requirements <specifying_resources_output_files_and_notifications>`
-   describes everything that goes in the second block of your job
+-  The pages on :ref:`resource specification` and
+   :ref:`specifying output files and notifications`
+   describe everything that goes in the second block of your job
    script: the specification of the resources, notifications, etc.
--  The page on :doc:`starting programs in your job <starting_programs_in_a_job>`
+-  The page on :ref:`starting programs in your job <starting programs in a job>`
    describes the third and fourth block: Setting up the environment and
    starting a program.
--  The page on :doc:`starting and managing jobs <submitting_and_managing_jobs_with_torque_and_moab>`
+-  The page on :ref:`submitting and managing jobs <submitting jobs>`
    describes the main Torque and Moab commands to submit and then manage
    your jobs and to follow up how they proceed trough the scheduling
    software.
--  The :doc:`worker_framework` is a framework developed at
+-  The :ref:`worker framework` is a framework developed at
    the VSC to bundle a lot of small but related
    jobs into a larger parallel job. This makes life a lot easier for the
    scheduler as the scheduler is optimised to run a limited number of
@@ -134,14 +135,14 @@ Some background information
 *For those readers who want some historical background to understand
 where the complexity comes from.*
 
-In the ’90s of the previous century, there was a popular resource
+In the '90s of the previous century, there was a popular resource
 manager called Portable Batch System, developed by a contractor for
 NASA. This was open-sourced. But that contractor was acquired by another
 company that then sold the rights to Altair Engineering that evolved the
 product into the closed-source product PBSpro (which was then
 open-sourced again in the summer of 2016). The open-source version was
 forked by another company that is now known as Adaptive Computing and
-renamed to Torque. Torque remained open–source. The name stands for
+renamed to Torque. Torque remained open-source. The name stands for
 Terascale Open-source Resource and QUEue manager. Even though the name
 was changed, the commands remained which explains why so many commands
 still have the abbreviation PBS in their name.

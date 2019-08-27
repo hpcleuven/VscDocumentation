@@ -18,7 +18,8 @@ the page on :ref:`the module system <module system basics>` again to
 <specialized software stacks>`.
 
 | Note: Since August 2016, a :ref:`different implementation of the module
-  system <Lmod>` has been implemented on the UGent, the VUB Tier-2
+  system <Lmod>` has been implemented on the UGent, the VUB,
+  the UAntwerpen Tier-2
   systems and KU Leuven's Genius cluster, called Lmod. Though highly
   compatible with the system used on the other clusters, it offers
   :ref:`a lot of new commands <Lmod commands>`, and
@@ -30,7 +31,7 @@ Packages with additional documentation
 -  MATLAB (a package by `MathWorks`_)
 
    -  :ref:`MATLAB getting started`
-   -  :ref:`Parallel computing with Matlab <MATLAB parallel computing>`
+   -  :ref:`Parallel computing with MATLAB <MATLAB parallel computing>`
 
 -  R
 
