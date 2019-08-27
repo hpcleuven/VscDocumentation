@@ -1,3 +1,5 @@
+.. _checkpointing framework:
+
 Checkpointing framework
 =======================
 
