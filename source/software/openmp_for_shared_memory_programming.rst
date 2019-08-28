@@ -28,6 +28,7 @@ Prerequisites
 
 You should have a program that uses the OpenMP API.
 
+
 Implementations
 ---------------
 
@@ -37,7 +38,7 @@ On the VSC clusters, the following compilers support OpenMP:
    The Intel compiler version 18.0 (intel/2018a and intel/2018b
    toolchains) offers almost complete OpenMP 4.5 support.
 
-:ref:`GCC OpenMP` in the foss toolchain
+:ref:`GCC compilers <GCC OpenMP>` in the foss toolchain
    GCC 6.x (foss/2018a) offers full OpenMP 4.5
    support in C and C++, including offloading to some variants of the
    Xeon Phi and to AMD HSAIL and some support for OpenACC on NVIDIA.  For
@@ -46,27 +47,25 @@ On the VSC clusters, the following compilers support OpenMP:
 For an overview of compiler (version) support for the various OpenMP
 specifications, see the `OpenMP compilers and tools`_ page.
 
-When developing your own software, this is the preferred order to select
-the toolchain. The GCC OpenMP runtime is for most applications inferior
-to the Intel implementation.
+.. note::
 
-We also assume you are already familiar with the job submission
-procedure. If not, check the :ref:`Running jobs` section first.
+   The GCC OpenMP runtime is for most applications inferior
+   to the Intel implementation.
 
 
 Compiling OpenMP code
 ---------------------
 
-See the instructions on the page about :ref:`toolchains <Toolchains>` for
-compiling OpenMP code with the Intel and GNU compilers.
+See the instructions on the page about toolchains for compiling OpenMP code
+with the :ref:`Intel <Intel OpenMP>` and :ref:`GCC <GCC OpenMP>` compilers.
 
 .. note::
 
    It is in fact possible to link OpenMP object code compiled
    with gcc and the Intel compiler on the condition that the Intel OpenMP
    libraries and run-time is used (e.g., by linking using icc with the
-   -openmp option), but the Intel manual is not clear which versions of gcc
-   and icc work together well. This is only for specialists but may be
+   -openmp option), but the Intel manual is not clear which versions of ``gcc``
+   and ``icc`` work together well. This is only for specialists but may be
    useful if you only have access to object files and not to the full
    source code.
 
@@ -74,29 +73,38 @@ compiling OpenMP code with the Intel and GNU compilers.
 Running OpenMP programs
 -----------------------
 
+We assume you are already familiar with the job submission
+procedure. If not, check the :ref:`Running jobs` section first.
+
 Since OpenMP is intended for use in a shared memory context, when
 submitting a job to the queue system, remember to request a single node
-(i.e., ``-l nodes=1``) and as many processors as you need parallel
-threads (e.g., ``-l ppn=4``). The latter should not exceed the number of
+ and as many processors as you need parallel
+threads (e.g., ``-l nodes=1:ppn=4``). The latter should not exceed the number of
 cores on the machine the job runs on. For relevant hardware information,
 please consult the list of available :ref:`hardware <hardware>`.
 
 You may have to set the number of cores that the program should use by
 hand, e.g., when you don't use all cores on a node, because the
-mechanisms in the OpenMP runtime that recognize the number of cores,
-don't recognize the number of cores assigned to the job but the total
-number of cores. Depending on the program, this may be trough a command
+OpenMP runtime recognizes the number of cores available on the node,
+and not respect the number of cores assigned to the job.
+
+Depending on the program, this may be through a command
 line option to the executable, a value in the input file or the
-environment variable ``OMP_NUM_THREADS``. Failing to set this value may
-result in threads competing with each other for resources such as cache
-and access to the CPU and thus lower performance.
+environment variable ``OMP_NUM_THREADS``. 
+
+.. warning::
+
+   Failing to set this value may result in threads competing with each other
+   for resources such as cache and access to the CPU and thus (much) lower
+   performance.
+
 
 Further information
 -------------------
 
--  `OpenMP`_ contains the
-   specifications and some documentation. It is the web site of the
-   OpenMP Architecture Review Board where the standard is discussed.
+-  `OpenMP`_ contains the specifications and some documentation. It is the web
+   site of the OpenMP Architecture Review Board where the standard is
+   discussed.
 -  See also the pages in the :ref:`tutorials section <books>` and :ref:`online
    tutorials <web tutorials>`. 
 
