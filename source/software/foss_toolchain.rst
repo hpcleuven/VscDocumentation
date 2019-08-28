@@ -64,6 +64,13 @@ use the appropriate option listed in the table below.
 | detect host CPU  | ``-march=native``         |
 +------------------+---------------------------+
 
+.. note::
+
+   GCC doesn't support applications with multiple code paths, so you have
+   to build multiple versions optimized for specific architectures.
+   Dispatching can be done at runtime by checking the value of the
+   ``$VSC_ARCH_LOCAL`` environment variable.
+
 
 .. _GCC OpenMP:
 
@@ -98,7 +105,7 @@ OpenMP threads.
    compute node.
 
 
-.. _Open MPI:
+.. _OpenMPI:
 
 Communication library: Open MPI
 -------------------------------
