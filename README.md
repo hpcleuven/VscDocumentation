@@ -93,7 +93,7 @@ later stage.
 
 Note that ReadTheDocs has a very convenient feature.  It lets you copy an URL
 to a (sub)section of the documentation to make it easy to refer via email.  Simply
-click on the paragraph icon that appears next to the (sub)section title when
-you hover near it.
+copy the link represented by the paragraph icon that appears next to the (sub)section
+ title when you hover near it.
 
 ![copy documentation link](img/links.png)

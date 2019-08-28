@@ -114,7 +114,7 @@ How to start?
 
 -  Please follow the information on the documentation site,
 -  or register for the HPC Introduction course.
--  If there is no course announced please register to ojjjjur `training
+-  If there is no course announced please register to our `training
    waiting list`_ and we will organize a new session as soon as we get a few
    people interested in it.
 
