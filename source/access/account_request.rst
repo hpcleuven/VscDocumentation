@@ -48,7 +48,7 @@ It is clear from the above that it is very important to protect your
 private key well. Therefore:
 
 -  You should not share your key pair with other users.
--  If you have accounts at multiple supercomputer centres (or on other
+-  If you have accounts at multiple supercomputer centers (or on other
    systems that use SSH), you should seriously consider using a
    different key pair for each of those accounts. In that way, if a key
    would get compromised, the damage can be controlled.
@@ -114,7 +114,7 @@ How to start?
 
 -  Please follow the information on the documentation site,
 -  or register for the HPC Introduction course.
--  If there is no course announced please register to ojjjjur `training
+-  If there is no course announced please register to our `training
    waiting list`_ and we will organize a new session as soon as we get a few
    people interested in it.
 
@@ -127,7 +127,7 @@ HPC web pages <https://www.ugent.be/hpc>`_.
 
 -  Researchers can use the :ref:`generic procedure <generic access procedure>`.
 -  Master students can also use the infrastructure for their master
-   thesis work. The promotor of the thesis should first send a
+   thesis work. The supervisor of the thesis should first send a
    motivation to hpc@ugent.be and then the :ref:`generic
    procedure <generic access procedure>` should be followed (using your
    student UGent id) to request the account.
@@ -137,7 +137,7 @@ Users of the Antwerp University Association (AUHA)
 
 Who?
 
--  Access ia available for faculty, students (master's projects under
+-  Access is available for faculty, students (master's projects under
    faculty supervision), and researchers of the AUHA.
 
 How?
