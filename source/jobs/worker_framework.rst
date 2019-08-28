@@ -11,7 +11,7 @@ The Worker framework has been developed to meet two specific use cases:
 -  many small jobs determined by parameter variations; the scheduler's
    task is easier when it does not have to deal with too many jobs.
 -  job arrays: replace the ``-t`` for array requests; this was an
-   experimental feature provided by the torque queue system, but it is
+   experimental feature provided by the Torque queue system, but it is
    not supported by Moab, the current scheduler.
 
 Both use cases often have a common root: the user wants to run a program
@@ -218,7 +218,7 @@ The job is now submitted as follows:
 The word-count program will now be run for all 100 input files—7
 concurrently—until all computations are done. Again, a computation for
 an individual input file, or, equivalently, an array id, is called a
-work item in Worker speak. Note that in constrast to torque job arrays,
+work item in Worker speak. Note that in contrast to Torque job arrays,
 a worker job array submits a single job.
 
 MapReduce: prologues and epilogue
@@ -228,10 +228,10 @@ Often, an embarrassingly parallel computation can be abstracted to three
 simple steps:
 
 #. a preparation phase in which the data is split up into smaller, more
-   manageable chuncks;
-#. on these chuncks, the same algorithm is applied independently (these
+   manageable chunks;
+#. on these chunks, the same algorithm is applied independently (these
    are the work items); and
-#. the results of the computations on those chuncks are aggregated into,
+#. the results of the computations on those chunks are aggregated into,
    e.g., a statistical description of some sort.
 
 The Worker framework directly supports this scenario by using a prologue
@@ -242,7 +242,7 @@ executed by the master, i.e., the process that is responsible for
 dispatching work and logging progress.
 
 Suppose that 'split-data.sh' is a script that prepares the data by
-splitting it into 100 chuncks, and 'distr.sh' aggregates the data, then
+splitting it into 100 chunks, and 'distr.sh' aggregates the data, then
 one can submit a MapReduce style job as follows:
 
 ::
@@ -490,7 +490,7 @@ Like any PBS script, a worker PBS file *has to be* in UNIX format!
 
 If you edited a PBS script on your desktop, or something went wrong
 during sftp/scp, the PBS file may end up in DOS/Windows format, i.e., it
-has the wrong line endings. The PBS/torque queue system can not deal
+has the wrong line endings. The PBS/Torque queue system can not deal
 with that, so you will have to convert the file, e.g., for file
 'run.pbs'
 

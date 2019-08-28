@@ -67,6 +67,16 @@ When you are done, create a pull request on GitHub.  For consistency, do the pul
 
 For major changes, it is good practice to ask others to review your pull request.  Although this policy is encouraged, it is not enforced.
 
+Once the pull request has been merged, the branch will be deleted from GitHub.  For your own convenience, it is probably easiest to pull the master and development branches from GitHub,
+and remove the local feature branch, e.g.,
+```bash
+$ git checkout master
+$ git pull
+$ git checkout development
+$ git pull origin development
+$ git branch -d feature/new_stuff
+```
+
 
 ## Repository structure
 
@@ -77,3 +87,13 @@ For major changes, it is good practice to ask others to review your pull request
 
 The other files and directories are part of the migration, and may be removed at some
 later stage.
+
+
+## Documentation usage
+
+Note that ReadTheDocs has a very convenient feature.  It lets you copy an URL
+to a (sub)section of the documentation to make it easy to refer via email.  Simply
+click on the paragraph icon that appears next to the (sub)section title when
+you hover near it.
+
+![copy documentation link](img/links.png)

@@ -36,7 +36,7 @@ Some of the most often used commands include:
 +------+----------------------------------------------------+
 
 Most commands will accept or even need parameters, which are placed
-after the command, seperated by spaces. A simple example with the 'echo'
+after the command, separated by spaces. A simple example with the 'echo'
 command:
 
 ::
@@ -70,7 +70,7 @@ following sites:
 
 
 
--  `Linux Tutorials Youtube Channel`_ 
+-  `Linux Tutorials YouTube Channel`_ 
 -  `Linux Basics on Lifewire`_
 -  `Linux Newbie Administrator Guide`_
 -  We organise regular Linux introductory courses, see the
