@@ -79,9 +79,9 @@ These file system is a parallel file system, i.e., IBM Spectrum Scale (formerly
 GPFS)::
 
       $ mmlsquota  --block-size auto  vol_ddn2:leuven_scratch
-                               Block Limits                                               |     File Limits
-      Filesystem Fileset    type             KB      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks                                                                  
-      vol_ddn2   leuven_scratch USR         1444864 1970061312 2073755648          0     none |    16494       0        0        0     none                                                                       
+                               Block Limits                                                   |     File Limits
+      Filesystem Fileset        type             KB      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+      vol_ddn2   leuven_scratch  USR        1444864 1970061312 2073755648          0     none |    16494       0        0        0     none
 
 The ``--block-size auto`` option respectively ensure that sizes are
 reported in a human-readable format, rather than expressed in blocks.
