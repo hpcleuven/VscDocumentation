@@ -62,12 +62,12 @@ with the :ref:`Intel <Intel OpenMP>` and :ref:`GCC <GCC OpenMP>` compilers.
 .. note::
 
    It is in fact possible to link OpenMP object code compiled
-   with gcc and the Intel compiler on the condition that the Intel OpenMP
-   libraries and run-time is used (e.g., by linking using icc with the
-   -openmp option), but the Intel manual is not clear which versions of ``gcc``
-   and ``icc`` work together well. This is only for specialists but may be
-   useful if you only have access to object files and not to the full
-   source code.
+   with GCC and the Intel compiler on the condition that the Intel OpenMP
+   libraries and run-time is used (e.g., by linking using ``icc`` with the
+   ``-qopenmp`` option), but the Intel manual is not clear which versions
+   of ``gcc`` and ``icc`` work together well. This is only for specialists
+   but may be useful if you only have access to object files and not to the
+   full source code.
 
 
 Running OpenMP programs
@@ -108,6 +108,6 @@ Further information
 -  See also the pages in the :ref:`tutorials section <books>` and :ref:`online
    tutorials <web tutorials>`. 
 
-The tutorial at the site of Lawrence Livermore National Laboratory `LLNL openMP tutorial`_ (LLNL) is highly recommended.
+The tutorial at the site of Lawrence Livermore National Laboratory `LLNL OpenMP tutorial`_ (LLNL) is highly recommended.
 
 .. include:: links.rst
