@@ -43,7 +43,7 @@ for editing, and name it ``myhostname``:
    $ nano myhostname
 
 You get a \\"New File\", where you can type the content of this new
-file. Help is available by pressing the 'Çtrl+G' key combination. You
+file. Help is available by pressing the 'Ctrl+G' key combination. You
 may want to familiarize you with the other options at some point; now we
 will just type the content of the file, save it and exit the editor.
 

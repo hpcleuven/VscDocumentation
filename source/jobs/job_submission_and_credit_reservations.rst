@@ -26,7 +26,7 @@ blocked by a SystemHold, and never execute (unless additional credits
 are requested, and a sysadmin releases them as will happen now).
 
 We actually have a nice tool to compute the maximum number of credits a
-job can take. It is called gquote, and you can use it as follows. Supose
+job can take. It is called gquote, and you can use it as follows. Suppose
 that you submit your job using, e.g.:
 
 ::
@@ -56,7 +56,7 @@ Then you can compute its cost (before actually doing the qsub) by:
 As you can see, gquote takes the same arguments as qsub (so if you use
 wsub, don't use the -batch for the actual job script). It will use both
 the arguments on the command line and the PBS directives in your script
-to compute the cost of the job in the same way PBS torque is computing
+to compute the cost of the job in the same way PBS Torque is computing
 the resources for your job.
 
 You will notice when using gquote that it will give you quotes that are
@@ -69,5 +69,3 @@ The price of a processor is of course proportional to its performance,
 so when the job finishes, you will be charged approximately the same
 regardless of the processor type the job ran on. (It ran for a shorter
 time on a more faster, and hence more expensive processor.)
-
-"
