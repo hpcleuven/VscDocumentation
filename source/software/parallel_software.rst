@@ -25,7 +25,7 @@ cycle.  Another term for this is vectorization.
 
 Thread-level parallelism in the context of scientific computing means that
 the application runs multiple threads, typically each on its own dedicated CPU
-core to exploit modren CPU architecture.  All threads run on the same compute
+core to exploit modern CPU architecture.  All threads run on the same compute
 node, and can interact through shared memory.
 
 Process-level parallelism implies that an application consists of multiple
@@ -71,69 +71,16 @@ added extensions to the original instruction sets.
 | Skylake                 | AVX-512                |
 +-------------------------+------------------------+
 
-Software that is specically compiled to run on, e.g., Ivy Bridge will run
+Software that is specifically compiled to run on, e.g., Ivy Bridge will run
 on a CPU of more recent generation such as a Skylake, but not with optimal
 performance.  However, if software is built specifically to use, e.g.,
 the AVX-512 instruction set, it will not run on older hardware such as
 Haswell CPUs.
 
 To build for a specific architecture both the Intel and GCC compiler family
-offer command line options.
-
-+------------------+-----------------+-------------------------------+
-| CPU architecture | Intel compilers | GCC compilers                 |
-+==================+=================+===============================+
-| Ivy Bridge       | ``-xAVX``       | ``-march=ivybridge``          |
-+------------------+-----------------+-------------------------------+
-| Sandy Bridge     | ``-xAVX``       | ``-march=sandybridge``        |
-+------------------+-----------------+-------------------------------+
-| Haswell          | ``-xAVX2``      | ``-march=haswell``            |
-+------------------+-----------------+-------------------------------+
-| Broadwell        | ``-xAVX2``      | ``-march=broadwell``          |
-+------------------+-----------------+-------------------------------+
-| Skylake          | ``-xAVX-512``   | ``-march=skylake-avx512``     |
-+------------------+-----------------+-------------------------------+
-| detect host CPU  | ``-xHost``      | ``-march=native``             |
-+------------------+-----------------+-------------------------------+
-
-For example, the application compiled with the command below will be
-optimized to run on a Haswell CPU::
-
-   $ gcc -O3  -march=haswell  -o floating_point  floating_point.c
-
-When using the Intel compiler family, it is possible to build software
-that contains multiple code paths specific for the architecture that the
-application is running on.  Additional code paths can be specified using
-the ``-ax`` option.
-
-+-------------------------+------------------------+
-| additional code path    | Intel compiler option  |
-+=========================+========================+
-| Ivy Bridge/Sandy Bridge | ``-axCORE-AVX``        |
-+-------------------------+------------------------+
-| Haswell/Broadwell       | ``-axCORE-AVX2``       |
-+-------------------------+------------------------+
-| Skylake                 | ``-axCORE-AVX512``     |
-+-------------------------+------------------------+
-
-For the Intel compilers, the target architecture can be specified using the
-``-x`` option, while additional code paths can be specified using ``-ax``.
-
-For instance, the following compilation would create an executable with
-code paths for AVX, AVX2 and AVX-512 instruction sets::
-
-   $ icpc -O3  -xAVX  -axCORE-AVX2,CORE-AVX512 floating_point.cpp
-
-Software that has been built using these options will run with the
-appropriate instruction set on Ivy Bridge, Sandy Bridge, Haswell, Broadwell
-and Skylake CPUs.
-
-.. note::
-
-   GCC doesn't support applications with multiple code paths, so you have
-   to build multiple versions optimized for specific architectures.
-   Dispatching can be done at runtime by checking the value of the
-   ``$VSC_ARCH_LOCAL`` environment variable.
+offer command line options.  See the toolchain documentation for the
+:ref:`intel <Intel optimization>` and the :ref:`GCC <GCC optimization>`
+toolchains for an overview of the relevant compiler options.
 
 
 .. _multithreading:
@@ -177,14 +124,23 @@ There are a few commonly used approaches to create a multi-threaded application:
 Can I run my application on multiple compute nodes?
 ---------------------------------------------------
 
-This is only possible when the application has been specically designed to do
+This is only possible when the application has been specifically designed to do
 so, or when your use case matches some common pattern.
 
 - For installed software, check the manual.  It will be documented whether
-  the application/library is multi-threaded, and how to use it.
-- If you run an application many times for different parameter settings,
-  check out the `worker framework documentation`_ or the
-  `atools documentation`_.
+  the application/library can be run distributed, and how to do that.
+- If you run an application many times for different parameter settings, or
+  on different data sets, check out the `worker framework documentation`_
+  or the `atools documentation`_.
 - If you build your own software, there is some information below.
+
+For scientific software, the go-to library for distributed programming is an
+implementation of MPI (Message Passing Interface).  This is a de-facto standard
+implemented by many libraries and the API can be used from C/C++ and Fortran.
+
+On the clusters, at least two implementations are available,
+:ref:`Intel MPI <Intel MPI>` in the intel toolchain, and :ref:`Open MPI <OpenMPI>`
+in the foss toolchain.
+
 
 .. include:: links.rst
