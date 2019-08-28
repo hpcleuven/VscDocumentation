@@ -186,6 +186,11 @@ procedure does not work.
 #. After the account has been approved by the VSC, your account will be created and
    you will get a confirmation e-mail.
 
+.. warning::
+
+   Allow for at least half an hour for your account to be properly created
+   after receiving the confirmation email!
+
 .. note::
 
    If you can't connect to the `VSC account page`_ , some browser
