@@ -87,3 +87,13 @@ $ git branch -d feature/new_stuff
 
 The other files and directories are part of the migration, and may be removed at some
 later stage.
+
+
+## Documentation usage
+
+Note that ReadTheDocs has a very convenient feature.  It lets you copy an URL
+to a (sub)section of the documentation to make it easy to refer via email.  Simply
+click on the paragraph icon that appears next to the (sub)section title when
+you hover near it.
+
+![copy documentation link](img/links.png)
