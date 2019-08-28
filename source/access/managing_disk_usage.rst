@@ -1,7 +1,7 @@
 .. _disk usage:
 
-Managing disk usage
-===================
+How much disk space am I using?
+===============================
 
 .. _quota:
 
