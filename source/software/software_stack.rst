@@ -169,24 +169,29 @@ the user should specify a particular version, e.g.,
 
 .. note::
 
-   Loading packages with explicit versions is considered best practice.  It ensures
+   Loading modules with explicit versions is considered best practice.  It ensures
    that your scripts will use the expected version of the software, regardless of
    newly installed software.  Failing to do this may jeopardize the reproducibility
    of your results!
 
 Modules need not be loaded one by one; the two 'load' commands
-can be combined as follows:
-
-::
+can be combined as follows::
 
    $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
 
 This will load the two modules and, automatically, the respective
 toolchains with just one command.
 
+.. warning::
 
-Loaded modules
-~~~~~~~~~~~~~~
+   Do *not* load modules in your ``.bashrc`` or ``.bash_profile``, you *will*
+   shoot yourself in the foot at some point.  Consider using :ref:`module collections
+   <collections of modules>` ``restore`` as a command line alternative (so *not*
+   in the shell initialization files either!).
+
+
+List loaded modules
+~~~~~~~~~~~~~~~~~~~
 
 Obviously, the user needs to keep track of the modules that are
 currently loaded. After executing the above two load commands, the list
@@ -269,6 +274,8 @@ To get a list of all available module commands, type:
 
    $ module help
 
+
+.. _collections of modules:
 
 Collections of modules
 ~~~~~~~~~~~~~~~~~~~~~~
