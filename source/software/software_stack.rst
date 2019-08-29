@@ -184,7 +184,7 @@ toolchains with just one command.
 
 .. warning::
 
-   Do *not* load modules in your ``.bashrc``, ``.bash_profile`` or ``.profile``l,
+   Do *not* load modules in your ``.bashrc``, ``.bash_profile`` or ``.profile``,
    you *will* shoot yourself in the foot at some point.  Consider using
    :ref:`module collections <collections of modules>` ``restore`` as a command
    line alternative (so *not* in the shell initialization files either!).
