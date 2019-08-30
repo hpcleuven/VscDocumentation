@@ -35,7 +35,7 @@ Hardware details
 
    - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
    - 256 GB RAM
-   - not currently available
+   - partition ``amd``, specific ``qsub`` :ref:`options <submit to genius AMD node>` apply.
 
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
 
