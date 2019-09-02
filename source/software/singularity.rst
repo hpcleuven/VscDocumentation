@@ -15,7 +15,7 @@ When should I use containers?
 -----------------------------
 
 If the software you intend to use is available on the VSC infrastructure,
-don't use containers.  This software has been build to use specific
+don't use containers.  This software has been built to use specific
 hardware optimizations, while software deployed via containers is
 typically built for the common denominator.
 
