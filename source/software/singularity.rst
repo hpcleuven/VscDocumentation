@@ -201,7 +201,8 @@ invoked ``singularity``.
 
    Although you can move to a parent directory of the current working
    directory in the container, you will not see its contents on the host.
-   Only the current working directory on the host was mounted.
+   Only the current working directory and its sub-directories on the host
+   is mounted.
 
 Additional host directories can be mounted in the container as well by
 using the ``-B`` option.  Mount points are created dynamically (using
