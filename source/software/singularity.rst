@@ -62,7 +62,7 @@ and has jupyter as well, use::
    where you have sufficient quota, e.g., ``$VSC_DATA``.
 
 
-This approach will serve you well when you can use either prebuild images
+This approach will serve you well when you can use either prebuilt images
 or docker containers.  If you need to modify an existing image or
 container, you should consider the alternatives.
 
