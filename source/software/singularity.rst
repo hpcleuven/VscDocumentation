@@ -1,5 +1,5 @@
-How can I run containers on the HPC systems?
-============================================
+Can I run containers on the HPC systems?
+========================================
 
 The best-known container implementation is doubtlessly `docker`_.  However,
 due to security concerns HPC sites typically don't allow users to run
@@ -11,8 +11,8 @@ image can be built from a docker container, that should not be a severe
 limitation.
 
 
-How can I create an image?
---------------------------
+How can I create a Singularity image?
+-------------------------------------
 
 You have three options to build images, locally on your  machine, in the
 cloud or on the VSC infrastructure.
@@ -27,10 +27,10 @@ container, e.g., to build an image that contains a version of tensorflow that
 can be used on GPUs, and has jupyter as well, use::
 
    $ export SINGULARITY_TMPDIR=$VSC_SCRATCH/singularity_tmp
-   $mkdir -p $SINGULARITY_TMPDIR
+   $ mkdir -p $SINGULARITY_TMPDIR
    $ export SINGULARITY_CACHEDIR=$VSC_SCRATCH/singularity_cache
-   $mkdir -p $SINGULARITY_CACHEDIR
-   $ singularity build tensorflow.simg docker://tensorflow/tensorflow:latest-gpu-jupyter
+   $ mkdir -p $SINGULARITY_CACHEDIR
+   $ singularity build tensorflow.sif docker://tensorflow/tensorflow:latest-jupyter
 
 .. warning::
 
@@ -69,15 +69,50 @@ your image.  We provide a brief :ref:`introduction to Singularity definition fil
 `Singularity definition file documentation`_.
 
 When you have a Singularity definition file, e.g., ``my_image.def``, you can
-build your image file ``my_image.simg``::
+build your image file ``my_image.sif``::
 
-   $ singularity build my_image.simg my_image.def
+   your_machine> singularity build my_image.sif my_image.def
+
+Once your image is built, you can :ref:`transfer <Transferring data>`
+it to the VSC infrastructure to use it.
 
 .. warning::
 
    Since Singularity images can be very large, build your image
    in a directory where you have sufficient quota, e.g.,
    ``$VSC_DATA``.
+
+
+Remote builds
+~~~~~~~~~~~~~
+
+You can also build images on the Singularity website, and download
+them to the VSC infrastructure.  You will have to create an account
+at Sylabs.  Once this is done, you can use `Sylabs Remote Builder`_
+to create an image based on a :ref:`Singularity defintion 
+<Singularity definition files>`.  If the build succeeds, you can
+pull the resulting image from the library::
+
+   $ export SINGULARITY_CACHEDIR=$VSC_SCRATCH/singularity_cache
+   $ mkdir -p $SINGULARITY_CACHEDIR
+   $ singularity pull library://gjbex/remote-builds/rb-5d6cb2d65192faeb1a3f92c3:latest
+
+.. warning::
+
+   Don't forget to define and create the ``$SINGULARITY_CACHEDIR``
+   since if you fail to do so, Singularity will use directories in
+   your home directory, and you will exceed the quota on that file
+   system.
+
+   Also, images tend to be very large, so store them on in a directory
+   where you have sufficient quota, e.g., ``$VSC_DATA``.
+
+Remote builds have several advantages:
+- you only need a web browser to create them,
+- they can easily be shared with others.
+
+However, local builds still offer more flexibility, especially when
+some interactive setup is required.
 
 
 .. _Singularity definition files:
@@ -87,33 +122,124 @@ Singularity definition files
 
 Below is an example of a Singularity defintion file::
 
-    BootStrap: docker
-    From: ubuntu:disco
+   Bootstrap: docker
+   From: ubuntu:xenial
+   
+   %post
+       apt-get update
+       apt-get install -y grace
+               
+   %runscript
+       /usr/bin/grace
 
-    %post
-        dpkg --add-architecture i386
-        apt-get update
-        apt-get install -y wine32
-        apt-get -y install wine
-        apt-get -y install winetricks
-
-The resulting image will be based on the Ubuntu Disco Dingo distribution (19.04).
-Once it is boostrapped, the command in the ``%post`` section of the definition
-file will be executed.  For this example, the wine Windows emulation software
+The resulting image will be based on the Ubuntu Xenial Xerus distribution
+(18.04).  Once it is boostrapped, the command in the ``%post`` section of
+the definition file will be executed.  For this example, the Grace plotting
 package will be installed.
 
-Singularity definition files are very flexible, for more details, we refer you
-to the `Singularity defintion file documentation`_.
+.. note::
+
+   This example is intended to illustrate that very old software that
+   is no longer maintained can succesfully be run on modern infrastructure.
+   It is by no means intended to encourage you to start using Grace.
+
+Singularity definition files are very flexible, for more details,
+we refer you to the `Singularity defintion file documentation`_.
+
+An important advantage of definition files is that they can easily
+be sharedreproducibility.
 
 
+How can I run a Singularity image?
+----------------------------------
 
-How to run a singularity container?
------------------------------------
+Once you have an image, there are several options to run it.
 
-To do.
+#. You can invoke any application that is in the PATH of the image, e.g.,
+   for the image containing Grace::
+
+   $ singularity  exec  grace.sif  xmgrace
+
+#. In case the defintion file specified a ``runscript``, this can be
+   executed using::
+
+   $ singularity  run  grace.sif
+
+#. The image can be run as a shell::
+
+   $ singularity  shell  grace.sif
+
+By default, your home directory will be mounted with the same path
+as it has on the host.  The current working directory is that on
+the host in which you invoked ``singularity``.
+
+Additional host directories can be mounted in the image as well by
+using the ``-B`` option.  Mount points are created dynamically, so
+they do not have to exist in the image.  For example, to mount the
+``$VSC_SCRATCH`` directory, you would use::
+
+   $ singularity  exec  -B $VSC_SCRATCH:/scratch  grace.sif  xmgrace
+
+Your ``$VSC_SCRATCH`` directory is now accessible from within the
+image in the directory ``/scratch``.
+
+.. note::
+
+   If you want existing scripts to work from within the image without
+   having to change paths, it may be convenient to use identical
+   mount points in the image and on the host, e.g., for the
+   ``$VSC_DATA`` directory::
+
+      $ singularity  exec  -B $VSC_DATA:$VSC_DATA  grace.sif  xmgrace
+
+   The host environment variables are defined in the image.
+
+
+Can I run singularity images in a job?
+--------------------------------------
+
+Yes, you can.  Singularity images can be part of any workflow, e.g.,
+the following script would create a plot::
+
+   #!/bin/bash –l
+   #PBS –l nodes=1:ppn=1
+   #PBS –l walltime=00:30:00
+   
+   cd $PBS_O_WORKDIR
+   singularity exec grace.sif gracebat –data data.dat \
+                                       -batch plot.bat
+   
+Ensure that the image has access to all the required directories
+by providing additional bindings if necessary.
+
+
+Can I run parallel applications using a Singularity image?
+----------------------------------------------------------
+
+For shared memory applications there is absolutely no problem.
+
+For distributed applications it is highly recommended to use
+the same implementation and version of the MPI libraries on
+the host and in the image.  You also want to install the
+appropriate drivers for the interconnect, as well as the
+low-level communicaiton libraries, e.g., ibverbs.
+
+For this type of scenario, it is probably best to contact :ref:`user
+support <user support VSC>`.
+
+
+Can I run a service from a Singularity image?
+---------------------------------------------
+
+Yes, it is possible to run services such as databases or web
+applications that are installed in Singularity images.
+
+For this type of scenario, it is probably best to contact :ref:`user
+support <user support VSC>`.
 
 
 .. _Singularity installation documentation: https://sylabs.io/guides/3.2/user-guide/installation.html#
 .. _Singularity defintion file documentation: https://sylabs.io/guides/3.2/user-guide/definition_files.html
+.. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
 
 .. include:: links.rst
