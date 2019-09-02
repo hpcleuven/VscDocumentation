@@ -11,6 +11,25 @@ image can be built from a docker container, that should not be a severe
 limitation.
 
 
+When should I use containers?
+-----------------------------
+
+If the software you intend to use is available on the VSC infrastructure,
+don't use containers.  This software has been build to use specific
+hardware optimizations, while software deployed via containers is
+typically built for the common denominator.
+
+Good use cases include:
+
+- Containers can be useful to run software that is hard to install
+  on HPC systems, e.g., GUI applications legacy software, and so on.
+- You want to create a workflow that can run on VSC infrastructure,
+  but can also be burst to a third-party compute cloud (e.g., AWS
+  or Microsoft Azure) when required.
+- You want to maximize the period your software can be run in a
+  reproducible way.
+
+
 How can I create a Singularity image?
 -------------------------------------
 
