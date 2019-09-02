@@ -156,7 +156,7 @@ Below is an example of a Singularity definition file::
        /usr/bin/grace
 
 The resulting image will be based on the Ubuntu Xenial Xerus distribution
-(18.04).  Once it is bootstrapped, the command in the ``%post`` section of
+(16.04).  Once it is bootstrapped, the command in the ``%post`` section of
 the definition file will be executed.  For this example, the Grace plotting
 package will be installed.
 
