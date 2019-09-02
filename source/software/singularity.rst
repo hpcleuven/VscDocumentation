@@ -22,7 +22,9 @@ typically built for the common denominator.
 Good use cases include:
 
 - Containers can be useful to run software that is hard to install
-  on HPC systems, e.g., GUI applications legacy software, and so on.
+  on HPC systems, e.g., GUI applications, legacy software, and so on.
+- Containers can be useful to deal with compatibility issues between
+  Linux flavors.
 - You want to create a workflow that can run on VSC infrastructure,
   but can also be burst to a third-party compute cloud (e.g., AWS
   or Microsoft Azure) when required.
@@ -62,7 +64,7 @@ and has jupyter as well, use::
    where you have sufficient quota, e.g., ``$VSC_DATA``.
 
 
-This approach will serve you well when you can use either prebuilt images
+This approach will serve you well if you can use either prebuilt images
 or docker containers.  If you need to modify an existing image or
 container, you should consider the alternatives.
 
@@ -105,7 +107,7 @@ it to the VSC infrastructure to use it.
 Remote builds
 ~~~~~~~~~~~~~
 
-You can also build images on the Singularity website, and download
+You can build images on the Singularity website, and download
 them to the VSC infrastructure.  You will have to create an account
 at Sylabs.  Once this is done, you can use `Sylabs Remote Builder`_
 to create an image based on a :ref:`Singularity definition 
@@ -127,7 +129,9 @@ pull the resulting image from the library::
    where you have sufficient quota, e.g., ``$VSC_DATA``.
 
 Remote builds have several advantages:
-- you only need a web browser to create them,
+
+- you only need a web browser to create them, so this approach is
+  platform-independent,
 - they can easily be shared with others.
 
 However, local builds still offer more flexibility, especially when
@@ -172,30 +176,37 @@ be shared, and improve reproducibility.
 How can I run a Singularity image?
 ----------------------------------
 
-Once you have an image, there are several options to run it.
+Once you have an image, there are several options to run the container.
 
-#. You can invoke any application that is in the PATH of the image, e.g.,
-   for the image containing Grace::
+#. You can invoke any application that is in the ``$PATH`` of the
+   container, e.g., for the image containing Grace::
 
    $ singularity  exec  grace.sif  xmgrace
 
-#. In case the definition file specified a ``runscript``, this can be
-   executed using::
+#. In case the definition file specified a ``%runscript`` directive,
+   this can be executed using::
 
    $ singularity  run  grace.sif
 
-#. The image can be run as a shell::
+#. The container can be run as a shell::
 
    $ singularity  shell  grace.sif
 
-By default, your home directory will be mounted with the same path
-as it has on the host.  The current working directory is that on
-the host in which you invoked ``singularity``.
+By default, your home directory in the container will be mounted
+with the same path as it has on the host.  The current working
+directory in the container is that on the host in which you
+invoked ``singularity``.
 
-Additional host directories can be mounted in the image as well by
-using the ``-B`` option.  Mount points are created dynamically, so
-they do not have to exist in the image.  For example, to mount the
-``$VSC_SCRATCH`` directory, you would use::
+.. note::
+
+   Although you can move to a parent directory of the current working
+   directory in the container, you will not see its contents on the host.
+   Only the current working directory on the host was mounted.
+
+Additional host directories can be mounted in the container as well by
+using the ``-B`` option.  Mount points are created dynamically (using
+overlays), so they do not have to exist in the image.  For example,
+to mount the ``$VSC_SCRATCH`` directory, you would use::
 
    $ singularity  exec  -B $VSC_SCRATCH:/scratch  grace.sif  xmgrace
 
@@ -211,14 +222,19 @@ image in the directory ``/scratch``.
 
       $ singularity  exec  -B $VSC_DATA:$VSC_DATA  grace.sif  xmgrace
 
-   The host environment variables are defined in the image.
+   Or, more concisely::
+
+      $ singularity  exec  -B $VSC_DATA  grace.sif  xmgrace
+
+   The host environment variables are defined in the image, hence
+   scripts that use those will work.
 
 
-Can I run singularity images in a job?
+Can I use singularity images in a job?
 --------------------------------------
 
 Yes, you can.  Singularity images can be part of any workflow, e.g.,
-the following script would create a plot::
+the following script would create a plot in the Grace container::
 
    #!/bin/bash –l
    #PBS –l nodes=1:ppn=1
@@ -228,7 +244,7 @@ the following script would create a plot::
    singularity exec grace.sif gracebat –data data.dat \
                                        -batch plot.bat
    
-Ensure that the image has access to all the required directories
+Ensure that the container has access to all the required directories
 by providing additional bindings if necessary.
 
 
@@ -245,6 +261,11 @@ low-level communication libraries, e.g., ibverbs.
 
 For this type of scenario, it is probably best to contact :ref:`user
 support <user support VSC>`.
+
+.. note::
+
+   For distributed application you may expect some mild performance
+   degradation.
 
 
 Can I run a service from a Singularity image?
