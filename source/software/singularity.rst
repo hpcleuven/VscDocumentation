@@ -108,7 +108,7 @@ Remote builds
 You can also build images on the Singularity website, and download
 them to the VSC infrastructure.  You will have to create an account
 at Sylabs.  Once this is done, you can use `Sylabs Remote Builder`_
-to create an image based on a :ref:`Singularity defintion 
+to create an image based on a :ref:`Singularity definition 
 <Singularity definition files>`.  If the build succeeds, you can
 pull the resulting image from the library::
 
@@ -139,7 +139,7 @@ some interactive setup is required.
 Singularity definition files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Below is an example of a Singularity defintion file::
+Below is an example of a Singularity definition file::
 
    Bootstrap: docker
    From: ubuntu:xenial
@@ -152,21 +152,21 @@ Below is an example of a Singularity defintion file::
        /usr/bin/grace
 
 The resulting image will be based on the Ubuntu Xenial Xerus distribution
-(18.04).  Once it is boostrapped, the command in the ``%post`` section of
+(18.04).  Once it is bootstrapped, the command in the ``%post`` section of
 the definition file will be executed.  For this example, the Grace plotting
 package will be installed.
 
 .. note::
 
    This example is intended to illustrate that very old software that
-   is no longer maintained can succesfully be run on modern infrastructure.
+   is no longer maintained can successfully be run on modern infrastructure.
    It is by no means intended to encourage you to start using Grace.
 
 Singularity definition files are very flexible, for more details,
-we refer you to the `Singularity defintion file documentation`_.
+we refer you to the `Singularity definition file documentation`_.
 
 An important advantage of definition files is that they can easily
-be sharedreproducibility.
+be shared, and improve reproducibility.
 
 
 How can I run a Singularity image?
@@ -179,7 +179,7 @@ Once you have an image, there are several options to run it.
 
    $ singularity  exec  grace.sif  xmgrace
 
-#. In case the defintion file specified a ``runscript``, this can be
+#. In case the definition file specified a ``runscript``, this can be
    executed using::
 
    $ singularity  run  grace.sif
@@ -241,7 +241,7 @@ For distributed applications it is highly recommended to use
 the same implementation and version of the MPI libraries on
 the host and in the image.  You also want to install the
 appropriate drivers for the interconnect, as well as the
-low-level communicaiton libraries, e.g., ibverbs.
+low-level communication libraries, e.g., ibverbs.
 
 For this type of scenario, it is probably best to contact :ref:`user
 support <user support VSC>`.
@@ -258,7 +258,7 @@ support <user support VSC>`.
 
 
 .. _Singularity installation documentation: https://sylabs.io/guides/3.2/user-guide/installation.html#
-.. _Singularity defintion file documentation: https://sylabs.io/guides/3.2/user-guide/definition_files.html
+.. _Singularity definition file documentation: https://sylabs.io/guides/3.2/user-guide/definition_files.html
 .. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
 
 .. include:: links.rst
