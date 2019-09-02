@@ -42,8 +42,8 @@ Building on VSC infrastructure
 
 Given that most build procedures require superuser privileges, your options
 on the VSC infrastructure are limited.  You can build an image from a docker
-container, e.g., to build an image that contains a version of tensorflow that
-can be used on GPUs, and has jupyter as well, use::
+container, e.g., to build an image that contains a version of TensorFlow 
+and has jupyter as well, use::
 
    $ export SINGULARITY_TMPDIR=$VSC_SCRATCH/singularity_tmp
    $ mkdir -p $SINGULARITY_TMPDIR
