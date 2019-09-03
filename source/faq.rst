@@ -25,6 +25,7 @@ Access to the infrastructure
 
    I messed up my authentication keys, what can I do? <access/messed_up_keys>
    access/where_can_i_store_what_kind_of_data
+   access/managing_disk_usage.rst
 
 
 .. _job faqs:
