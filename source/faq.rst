@@ -13,6 +13,7 @@ General questions
 
    How can I contact user support? <user_support>
    how_do_i_acknowledge_the_vsc_in_publications
+   what_are_standard_terms_used_in_hpc.rst
 
 
 .. _access faqs:
