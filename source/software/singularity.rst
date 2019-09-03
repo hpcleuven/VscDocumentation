@@ -1,13 +1,13 @@
 Can I run containers on the HPC systems?
 ========================================
 
-The best-known container implementation is doubtlessly `docker`_.  However,
+The best-known container implementation is doubtlessly `Docker`_.  However,
 due to security concerns HPC sites typically don't allow users to run
 Docker containers.
 
 Fortunately, `Singularity`_ addresses container related security issues,
 so Singularity images can be used on the cluster.  Since a Singularity
-image can be built from a docker container, that should not be a severe
+image can be built from a Docker container, that should not be a severe
 limitation.
 
 
@@ -43,9 +43,9 @@ Building on VSC infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Given that most build procedures require superuser privileges, your options
-on the VSC infrastructure are limited.  You can build an image from a docker
+on the VSC infrastructure are limited.  You can build an image from a Docker
 container, e.g., to build an image that contains a version of TensorFlow 
-and has jupyter as well, use::
+and has Jupyter as well, use::
 
    $ export SINGULARITY_TMPDIR=$VSC_SCRATCH/singularity_tmp
    $ mkdir -p $SINGULARITY_TMPDIR
@@ -60,17 +60,17 @@ and has jupyter as well, use::
    will use directories in your home directory, and you will exceed
    the quota on that file system.
 
-   Also, images tend to be very large, so store them on in a directory
+   Also, images tend to be very large, so store them in a directory
    where you have sufficient quota, e.g., ``$VSC_DATA``.
 
 
 This approach will serve you well if you can use either prebuilt images
-or docker containers.  If you need to modify an existing image or
+or Docker containers.  If you need to modify an existing image or
 container, you should consider the alternatives.
 
 .. note::
 
-   Creating image files may take considerable time and resources, it is good
+   Creating image files may take considerable time and resources. It is good
    practice to do this on a compute node, rather than on a login node.
 
 
@@ -80,10 +80,10 @@ Local builds
 The most convenient way to create an image is on your own machine, since
 you will have superuser privileges, and hence the most options to chose
 from.  At this point, Singularity only runs under Linux, so you would
-to use a virtual machine when using Windows or MacOS.  For detailed
+have to use a virtual machine when using Windows or macOS.  For detailed
 instructions, see the `Singularity installation documentation`_.
 
-Besides building images from docker containers, you have the option to
+Besides building images from Docker containers, you have the option to
 create them from a definition file, which allows you to completely customize
 your image.  We provide a brief :ref:`introduction to Singularity definition files
 <Singularity definition files>`, but for more details, we refer you to the
@@ -99,8 +99,8 @@ it to the VSC infrastructure to use it.
 
 .. warning::
 
-   Since Singularity images can be very large, build your image
-   in a directory where you have sufficient quota, e.g.,
+   Since Singularity images can be very large, transfer your image
+   to a directory where you have sufficient quota, e.g.,
    ``$VSC_DATA``.
 
 
@@ -125,7 +125,7 @@ pull the resulting image from the library::
    your home directory, and you will exceed the quota on that file
    system.
 
-   Also, images tend to be very large, so store them on in a directory
+   Also, images tend to be very large, so store them in a directory
    where you have sufficient quota, e.g., ``$VSC_DATA``.
 
 Remote builds have several advantages:
@@ -166,7 +166,7 @@ package will be installed.
    is no longer maintained can successfully be run on modern infrastructure.
    It is by no means intended to encourage you to start using Grace.
 
-Singularity definition files are very flexible, for more details,
+Singularity definition files are very flexible. For more details,
 we refer you to the `Singularity definition file documentation`_.
 
 An important advantage of definition files is that they can easily
@@ -202,7 +202,7 @@ invoked ``singularity``.
    Although you can move to a parent directory of the current working
    directory in the container, you will not see its contents on the host.
    Only the current working directory and its sub-directories on the host
-   is mounted.
+   are mounted.
 
 Additional host directories can be mounted in the container as well by
 using the ``-B`` option.  Mount points are created dynamically (using
@@ -237,12 +237,12 @@ Can I use singularity images in a job?
 Yes, you can.  Singularity images can be part of any workflow, e.g.,
 the following script would create a plot in the Grace container::
 
-   #!/bin/bash –l
-   #PBS –l nodes=1:ppn=1
-   #PBS –l walltime=00:30:00
+   #!/bin/bash -l
+   #PBS -l nodes=1:ppn=1
+   #PBS -l walltime=00:30:00
    
    cd $PBS_O_WORKDIR
-   singularity exec grace.sif gracebat –data data.dat \
+   singularity exec grace.sif gracebat -data data.dat \
                                        -batch plot.bat
    
 Ensure that the container has access to all the required directories
@@ -265,7 +265,7 @@ support <user support VSC>`.
 
 .. note::
 
-   For distributed application you may expect some mild performance
+   For distributed applications you may expect some mild performance
    degradation.
 
 
