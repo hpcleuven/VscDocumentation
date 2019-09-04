@@ -39,3 +39,14 @@ Running jobs
 
    jobs/why_doesn_t_my_job_start
    jobs/what_if_jobs_fail_after_starting_successfully
+
+
+.. _software faqs:
+
+Software
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   software/singularity.rst
