@@ -18,8 +18,8 @@ Connecting to the cluster
 Text-mode session using an SSH client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`PuTTY <text mode access using PuTTY>` is a simple-to-use and
-freely available GUI SSH client for Windows.
+PuTTY  is a simple-to-use and freely available GUI SSH client for Windows that
+is :ref:`easy to set up <text mode access using PuTTY>`.
 
 :ref:`Pageant <using Pageant>` can be used to manage active keys for
 PuTTY, :ref:`WinSCP<WinSCP>`, :ref:`FileZilla<FileZilla>` as well as

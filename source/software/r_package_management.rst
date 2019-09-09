@@ -17,6 +17,7 @@ Installing your own packages using conda
 
 The easiest way to install and manage your own R environment is conda.
 
+
 Installing Miniconda
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -24,15 +25,11 @@ If you have Miniconda already installed, you can skip ahead to the next
 section, if Miniconda is not installed, we start with that. Download the
 Bash script that will install it from
 `conda.io <https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>`__
-using, e.g., wget:
-
-::
+using, e.g., ``wget``::
 
    $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-Once downloaded, run the installation script:
-
-::
+Once downloaded, run the installation script::
 
    $ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
 
@@ -40,20 +37,17 @@ Optionally, you can add the path to the Miniconda installation to the
 PATH environment variable in your .bashrc file. This is convenient, but
 may lead to conflicts when working with the module system, so make sure
 that you know what you are doing in either case. The line to add to your
-.bashrc file would be:
+.bashrc file would be::
 
-::
+   export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
 
-   export PATH=\"${VSC_DATA}/miniconda3/bin:${PATH}
 
 Creating an environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 First, ensure that the Miniconda installation is in your PATH
 environment variable. The following command should return the full path
-to the conda command:
-
-::
+to the conda command::
 
    $ which conda
 
@@ -61,9 +55,7 @@ If the result is blank, or reports that conda can not be found, modify
 the \`PATH\` environment variable appropriately by adding miniconda's bin
 directory to PATH.
 
-Creating a new conda environment is straightforward:
-
-::
+Creating a new conda environment is straightforward::
 
    $ conda create -n science -c r r-essentials r-rodbc
 
@@ -72,6 +64,7 @@ installs a number of R packages that you will probably want to have
 handy in any case to preprocess, visualize, or postprocess your data.
 You can of course install more, depending on your requirements and
 personal taste.
+
 
 Working with the environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,6 +77,7 @@ e.g.,
    $ source activate science
 
 Here, science is the name of the environment you want to work in.
+
 
 Install an additional package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
