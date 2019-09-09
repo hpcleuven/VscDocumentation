@@ -34,10 +34,10 @@ Once downloaded, run the installation script::
    $ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
 
 Optionally, you can add the path to the Miniconda installation to the
-PATH environment variable in your .bashrc file. This is convenient, but
+PATH environment variable in your ``.bashrc`` file. This is convenient, but
 may lead to conflicts when working with the module system, so make sure
 that you know what you are doing in either case. The line to add to your
-.bashrc file would be::
+``.bashrc`` file would be::
 
    export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
 
@@ -95,7 +95,7 @@ Next, install the package:
 
    $ conda install -c r r-ggplot2
 
-Note that conda will take care of all independencies, including non-R
+Note that conda will take care of all dependencies, including non-R
 libraries. This ensures that you work in a consistent environment.
 
 Updating/removing
@@ -142,12 +142,17 @@ Alternatives to conda
 Setting up your own package repository for R is straightforward.
 
 #. Load the appropriate R module, i.e., the one you want the R package
-   to be available for:
-   ``$ module load R/3.2.1-foss-2014a-x11-tcl``
-#. Start R and install the package :
-   ``> install.packages(\"DEoptim\")``
-#. Alternatively you can download the desired package:
-   ``$ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz``
+   to be available for::
+
+      $ module load R/3.2.1-foss-2014a-x11-tcl
+
+#. Start R and install the package::
+
+      > install.packages("DEoptim")
+
+#. Alternatively you can download the desired package::
+
+      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+
 #. These packages might depend on the specific R version, so you may
    need to reinstall them for the other version.
-
