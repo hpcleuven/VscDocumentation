@@ -142,5 +142,5 @@ get more information about all the possibilities by issuing
 
    $ man 5 ssh_config
 
-Alternatively, you can also google on this line and find :ref:`copies of the
-manual page on the internet <http://www.manpagez.com/man/5/ssh_config/>`.
+Alternatively, you can also google on this line and find `copies of the
+manual page on the internet <http://www.manpagez.com/man/5/ssh_config/>`__.

@@ -7,7 +7,7 @@ Prerequisite: PuTTY and WinSCP
 ------------------------------
 
 You've :ref:`generated a public/private key pair with PuTTY
-<generating keys PuTTY>` and have an approved account on the VSC clusters.
+<generating keys windows>` and have an approved account on the VSC clusters.
 
 Connecting to the VSC clusters
 ------------------------------
