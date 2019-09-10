@@ -34,6 +34,8 @@ Example::
 .. warning::
 
    If your file usage approaches the limits, jobs may crash unexpectedly.
+   If your usage exceeds the limits, an appropriate message will be shown, 
+   including the number of days of grace left before no more bit can be written.  
 
 
 .. _du command:
