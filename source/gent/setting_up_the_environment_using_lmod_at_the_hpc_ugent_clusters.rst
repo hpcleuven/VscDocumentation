@@ -1,4 +1,4 @@
-.. _Lmod:
+.. _Lmod Gent:
 
 Setting up the environment using Lmod at the HPC-UGent clusters
 ===============================================================
@@ -34,7 +34,7 @@ examples.
 -  ``ml restore mycollection`` restores a previously stored collection
    of modules
 
-.. _Lmod commands:
+.. _Lmod commands Gent:
 
 Module commands: using ``module`` (or ``ml``)
 ---------------------------------------------

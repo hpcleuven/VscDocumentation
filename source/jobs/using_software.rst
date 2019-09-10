@@ -9,7 +9,7 @@ particular cluster can be obtained by typing:
    $ module av
 
 In order to use those software packages, the user should work with the
-:ref:`module system <module-system-basics>`. On the newer
+:ref:`module system <module system basics>`. On the newer
 systems, we use the same naming conventions for packages on all systems.
 Due to the ever expanding list of packages, we've also made some
 adjustments and don't always show all packages, so be sure to check out
@@ -45,4 +45,5 @@ Packages with additional documentation
    administrator intervention. Some documentation for doing this for
    :ref:`Perl <Perl packages>` and :ref:`Python <Python packages>` is provided.
 
+.. include:: links.rst
 .. include:: ../software/links.rst

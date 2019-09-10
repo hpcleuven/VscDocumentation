@@ -1,6 +1,6 @@
 .. _MPI forum: https://www.mpi-forum.org/
 .. _MPI Standard documents: https://www.mpi-forum.org/docs/²
-.. _Open MPI: https://www.open-mpi.org/
+.. _Open MPI web site: https://www.open-mpi.org/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _OpenMP: https://www.openmp.org
 .. _Intel MPI site: https://software.intel.com/en-us/intel-mpi-library

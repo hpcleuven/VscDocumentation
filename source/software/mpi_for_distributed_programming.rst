@@ -32,8 +32,8 @@ neighbourhood collectives on graph topologies. The first update of the
 MPI-3.1 specification was released in 2015, and work is ongoing on the
 next major update, MPI-4.0.
 
-The two dominant Open Source implementations are `Open MPI`_ and
-`MPICH`_. The latter has been through
+The two dominant Open Source implementations are `Open MPI <Open MPI web site`_
+and `MPICH`_. The latter has been through
 a couple of name changes: It was originally conceived in the early '90's
 as MPICH, then the complete rewrite was renamed to MPICH2, but as this
 name caused confusion as the MPI standard evolved into MPI 3.x, the name
