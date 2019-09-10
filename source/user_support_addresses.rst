@@ -4,6 +4,4 @@
 -  University of Antwerp: hpc@uantwerpen.be, for further
    info on the `CalcUA Core Facility web
    page <https://www.uantwerpen.be/en/research-and-innovation/expertise/core-facilities/core-facilities/calcua/>`_
--  Vrije Universiteit Brussel: hpc@vub.ac.be for
-   information about accessing the VSC infrastructure or help with
-   preparing a tier-1 proposal
+-  Vrije Universiteit Brussel: hpc@vub.ac.be, see also our `news page <https://hpc.vub.be/news.php>`_ and `documentation website <https://hpc.vub.be/documentation>`_
