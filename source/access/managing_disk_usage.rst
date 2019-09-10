@@ -10,92 +10,41 @@ Total disk space used on filesystems with quota
 
 On filesystems with quota enabled, you can check the amount of disk space that
 is available for you, and the amount of disk space that is in use by
-you.  Unfortunately, there is not a single command that will give
-you that information for all file systems in the VSC.
+you.
 
-On most systems, ``quota`` will show you for each file system
+On most systems, ``myquota`` will show you for the ``$VSC_HOME``,
+``$VSC_DATA`` and ``$VSC_SCRATCH`` file systems either which
+percentage of the available disk space you are using, or the
+absolute amount. Users from Ghent university should check their disk usage
+using the `web application <https://account.vscentrum.be/>`_.
 
-``space``
-   The disk space taken up by your files.
-``quota``
-   If the disk space you are using exceeds this value, you may
-   get warnings (disabled on most systems).  The reported disk
-   usage will be marked with an ``*`` if it exceeds the value
-   of ``quota``.
-``limit``
-   If the limit is reached, nothing can be written to disk, so
-   applications and jobs may crash.
+If quota have been set on the number of files you can create on a file
+system, those are listed as well.
 
 Example::
 
-   quota -s
-   Disk quotas for user vsc31234 (uid 123456):
-     Filesystem  space    quota   limit   grace   files   quota   limit   grace
-     nas2-ib1:/mnt/home
-                 648M   2919M   3072M            3685       0       0
-     nas2-ib1:/mnt/data
-               20691M  24320M  25600M            134k       0       0
-     nas1-ib1:/mnt/site_scratch
-                    0  24320M  25600M               1       0       0
+   $ myquota
+   file system $VSC_DATA
+       using 35G of 75G, 1126k of 10000k files
+   file system $VSC_HOME
+       using 2401M of 3072M, 40342 of 100k files
+   file system $VSC_SCRATCH
+       using 5.82G of 100G
 
-Each line represents a file system you have access to, ``$VSC_HOME``,
-``$VSC_DATA``, and, for this particular example, ``$VSC_SCRATCH_SITE``.
-When using the ``-s`` flag, ``quota`` will report disk space and limits
-in human-readable format, i.e., using MB or GB, rather than blocks.
+.. warning::
 
-Some file systems have limits on the number of files that can be
-stored, and those are represented by the last four columns. The
-
-``files``
-   The number of files on the file system owned by you.
-``quota``
-   If the number of files exceeds this value, you may
-   get warnings (disabled on most systems).  The reported number
-   of files will be marked with an ``*`` if it exceeds the value
-   of ``quota``.
-``limit``
-   If the limit is reached, no new files can be written to disk, so
-   applications and jobs may crash.
-
-.. note::
-
-   Using these commands on another cluster than the one
-   in your home institution, will fail to return information
-   about the quota on your ``$VSC_HOME`` and ``$VSC_DATA``
-   directories and will show you  the quota for your ``$VSC_SCRATCH``
-   directory on that system.
-
-
-.. _mmlsquota:
-
-Total disk space on GPFS file systems
--------------------------------------
-
-On some parallel file systems, notably ``$VSC_SCRATCH`` on KU Leuven
-infrastructure (Tier-1 and Tier-2), ``mmlsquota`` should be used to
-display the total disk space you use and the limits you have.
-
-These file system is a parallel file system, i.e., IBM Spectrum Scale (formerly
-GPFS)::
-
-      $ mmlsquota  --block-size auto  vol_ddn2:leuven_scratch
-                               Block Limits                                                   |     File Limits
-      Filesystem Fileset        type             KB      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
-      vol_ddn2   leuven_scratch  USR        1444864 1970061312 2073755648          0     none |    16494       0        0        0     none
-
-The ``--block-size auto`` option respectively ensure that sizes are
-reported in a human-readable format, rather than expressed in blocks.
-
-The optional volume ``vol_ddn2:leuven`` is the fileset you want information
-on.  You can leave out the fileset, but in that case ``mmlsquota`` will
-display information on all filesets, most of which you don't have access
-to.
+   If your file usage approaches the limits, jobs may crash unexpectedly.
 
 
 .. _du command:
 
 Disk space used by individual directories
 -----------------------------------------
+
+.. warning::
+
+   The ``du`` command will stress the file system, and all file systems
+   are shared, so please use it wisely and sparingly.
 
 The command to check the size of  all subdirectories in the current
 directory is ``du``::
@@ -120,7 +69,7 @@ could just ask for a summary of the current directory::
    54864 .
 
 If you want to see the size of any file or top level subdirectory in the current
-directory, you could use the      following command::
+directory, you could use the following command::
 
    du -s *
    12      a.out
@@ -134,5 +83,5 @@ Finally, if you don't want to know the size of the data in your
 current directory, but in some other directory (e.g., your data
 directory), you just pass this directory as a parameter::
 
-   du -h -s $VSC_DATA/*
-   50M     /data/leuven/300/vsc30001/somedata
+   du -h -s $VSC_DATA/input_data/*
+   50M     /data/leuven/300/vsc30001/input_data/somedata
