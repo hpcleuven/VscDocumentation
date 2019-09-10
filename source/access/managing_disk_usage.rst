@@ -5,10 +5,10 @@ How much disk space am I using?
 
 .. _quota:
 
-Total disk space used on filesystems with quota
------------------------------------------------
+Total disk space used on file systems with quota
+------------------------------------------------
 
-On filesystems with quota enabled, you can check the amount of disk space that
+On file systems with quota enabled, you can check the amount of disk space that
 is available for you, and the amount of disk space that is in use by
 you.
 
