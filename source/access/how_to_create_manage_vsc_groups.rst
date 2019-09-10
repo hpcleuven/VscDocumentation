@@ -38,7 +38,7 @@ happens when you log on to a VSC cluster at a different site.
 Managing groups
 ---------------
 
-.. _viewing gropus:
+.. _viewing groups:
 
 Viewing the groups you belong to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
