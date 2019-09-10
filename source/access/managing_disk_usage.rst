@@ -13,7 +13,7 @@ is available for you, and the amount of disk space that is in use by
 you.
 
 On most systems, ``myquota`` will show you for the ``$VSC_HOME``,
-``$VSC_DATA`` and ``$VSC_SCRATCH`` file systems either which
+``$VSC_DATA`` and ``$VSC_SCRATCH`` file systems either the
 percentage of the available disk space you are using, or the
 absolute amount. Users from Ghent university should check their disk usage
 using the `web application <https://account.vscentrum.be/>`_.
