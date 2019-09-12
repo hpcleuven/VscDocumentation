@@ -48,6 +48,10 @@ To submit to a compute node it all boils down to specifying the required number 
 
    $ qsub -l nodes=2:ppn=24  -l walltime=1:00:00  -A myproject  myjob.pbs
 
+and the request of 2 nodes with each 20 cores with the specific ivybridge architecture you can submit like that::
+
+   $ qsub -l nodes=2:ppn=20:ivybridge  -l walltime=1:00:00  -A myproject  myjob.pbs
+
 You always need to submit with a project account (-A). To find out which projects you have, run::
 
    $ mam-balance
