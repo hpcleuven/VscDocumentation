@@ -1,7 +1,7 @@
 Thinking hardware
 =================
 
-Thinking is KU Leuven/UHasselt's older Tier-2 cluster. It has thin nodes, large memory nodes, as well as GPGPU nodes.  This cluster is still running CentOS 6, but is gradually being migrage to CentOS 7.  The migrated nodes are :ref:`available<Thinking CentOS 7 hardware>`.
+Thinking is KU Leuven/UHasselt's older Tier-2 cluster. It has thin nodes, large memory nodes, as well as GPGPU nodes.  This cluster is still running CentOS 6, but is gradually being migrage to CentOS 7.  The migrated nodes are :ref:`available<thinking7 hardware>`.
 
 
 Login infrastructure

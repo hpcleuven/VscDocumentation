@@ -201,7 +201,7 @@ codes. Among other functionality, it offers:
    families
 
 For further documentation, we refer to :ref:`the links to the Intel
-documentation at the bottom of this page <Intel documentatino>`.
+documentation at the bottom of this page <Intel documentation>`.
 
 There are two ways to link the MKL library:
 

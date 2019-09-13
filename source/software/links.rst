@@ -1,6 +1,6 @@
 .. _MPI forum: https://www.mpi-forum.org/
 .. _MPI Standard documents: https://www.mpi-forum.org/docs/²
-.. _Open MPI: https://www.open-mpi.org/
+.. _Open MPI web site: https://www.open-mpi.org/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Intel MPI site: https://software.intel.com/en-us/intel-mpi-library
 .. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
@@ -51,3 +51,5 @@
 .. _CPMD: http://www.cpmd.org/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
 .. _atools documentation: https://atools.readthedocs.io/en/latest/
+.. _Docker: https://www.docker.com/
+.. _Singularity: https://sylabs.io/singularity/
