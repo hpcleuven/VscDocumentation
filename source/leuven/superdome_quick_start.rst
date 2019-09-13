@@ -35,7 +35,7 @@ and ``place``.
 ``place``
    The place determines where the logical processors are executed, and
    is ``numanode`` for Superdome.  Each ``numanode`` has 14 cores, so if you
-   want to use, e.g., 28 cores, you would specify ``lprocs=28:numanode=2``.
+   want to use, e.g., 28 cores, you would specify ``lprocs=28:place=numanode=2``.
 
 
 For example::
@@ -54,9 +54,10 @@ resources you specify are not available.
    Memory will scale with the number of NUMA-nodes. You will have exclusive
    access to the memory of the requested NUMA-nodes. The Superdome has 8
    NUMA-nodes, so if you want 1/8th of the Superdome's memory (750 GB) you
-   have to request ``lprocs=14:numanode=1``. If you want to use 1/4th (1.5 TB),
-   your request should state ``lprocs=28:numanode=2``, for 3/4th of the memory
-   (4.5 TB), you would use ``lprocs=96:numanode=6``, etc.
+   have to request ``lprocs=14:place=numanode=1``. If you want to use 1/4th
+   (1.5 TB), your request should state ``lprocs=28:place=numanode=2``, for
+   3/4th of the memory (4.5 TB), you would use ``lprocs=96:place=numanode=6``,
+   etc.
 
 
 More documentation on the ``-L`` NUMA-aware resource specification can be
