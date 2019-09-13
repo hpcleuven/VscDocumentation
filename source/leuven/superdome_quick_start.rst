@@ -56,7 +56,7 @@ resources you specify are not available.
    NUMA-nodes, so if you want 1/8th of the Superdome's memory (750 GB) you
    have to request ``lprocs=14:place=numanode=1``. If you want to use 1/4th
    (1.5 TB), your request should state ``lprocs=28:place=numanode=2``, for
-   3/4th of the memory (4.5 TB), you would use ``lprocs=96:place=numanode=6``,
+   3/4th of the memory (4.5 TB), you would use ``lprocs=84:place=numanode=6``,
    etc.
 
 
