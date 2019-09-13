@@ -15,6 +15,7 @@ where ``<version>`` should be replaced by the one to be used, e.g.,
 ``2014a``. See the documentation on the software module system for more
 details.
 
+
 Compilers: GNU
 --------------
 
@@ -26,41 +27,85 @@ Three GCC compilers are available:
 
 For example, to compile/link a Fortran program ``fluid.f90`` to an
 executable ``fluid`` with architecture specific optimization for
-processors that support AVX instructions, use:
+processors that support AVX2 instructions, use::
 
-::
+   $ gfortran -O2  -march=haswell  -o fluid  fluid.f90
 
-   $ gfortran -O2 -march=corei7-avx -o fluid fluid.f90
 
-Documentation on GCC compiler flags and options is available on the
-project's website for the `GCC documentation`_. Do not forget to load the
-toolchain module first!
+Documentation on GCC other compiler flags and options is available on the
+project's website for the `GCC documentation`_.
 
-.. _GCC OPenMP:
+.. note::
+
+   Do not forget to load the toolchain module first!
+
+
+.. _GNU optimization:
+
+Optimizing for a CPU architecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To optimize your application or library for specific CPU architectures,
+use the appropriate option listed in the table below.
+
++------------------+---------------------------+
+| CPU architecture | compiler option           |
++==================+===========================+
+| Ivy Bridge       | ``-march=ivybridge``      |
++------------------+---------------------------+
+| Sandy Bridge     | ``-march=sandybridge``    |
++------------------+---------------------------+
+| Haswell          | ``-march=haswell``        |
++------------------+---------------------------+
+| Broadwell        | ``-march=broadwell``      |
++------------------+---------------------------+
+| Skylake          | ``-march=skylake-avx512`` |
++------------------+---------------------------+
+| detect host CPU  | ``-march=native``         |
++------------------+---------------------------+
+
+.. note::
+
+   GCC doesn't support applications with multiple code paths, so you have
+   to build multiple versions optimized for specific architectures.
+   Dispatching can be done at runtime by checking the value of the
+   ``$VSC_ARCH_LOCAL`` environment variable.
+
+
+.. _GCC OpenMP:
 
 GCC OpenMP
 ~~~~~~~~~~
 
 The compiler switch to use to compile/link OpenMP C/C++ or Fortran code
 is ``-fopenmp``. For example, to compile/link a OpenMP C program
-``scattter.c`` to an executable ``scatter`` with optimization for
-processors that support the AVX instruction set, use:
+``scattter.c`` to an executable ``scatter``, use::
 
-::
+   $ gcc -fopenmp  -O2  -o scatter  scatter.c
 
-   $ gcc -fopenmp -O2 -march=corei7-avx -o scatter scatter.c
+.. note::
 
-Remember to specify as many processes per node as the number of threads
-the executable is supposed to run. This can be done using the ``ppn``
-resource, e.g., ``-l nodes=1:ppn=10`` for an executable that should be
-run with 10 OpenMP threads. The number of threads should not exceed the
-number of cores on a compute node.
+   The OpenMP runtime library used by GCC is of inferior quality
+   when compared to Intel's, so developers are strongly encouraged to use
+   the :ref:`Intel toolchain` when developing/building OpenMP software.
 
-Note that the OpenMP runtime library used by GCC is of inferior quality
-when compared to Intel's, so developers are strongly encouraged to use
-the :ref:`Intel toolchain` when developing/building OpenMP software.
 
-.. _Open MPI:
+Running an OpenMP job
+^^^^^^^^^^^^^^^^^^^^^
+
+When submitting a job, remember to specify as many processes per node
+as the number of threads the executable is supposed to run. This can
+be done using the ``ppn`` resource specification, e.g.,
+``-l nodes=1:ppn=10`` for an executable that should be run with 10
+OpenMP threads.
+
+.. warning::
+
+   The number of threads *should not* exceed the number of cores on a
+   compute node.
+
+
+.. _OpenMPI:
 
 Communication library: Open MPI
 -------------------------------
@@ -81,15 +126,16 @@ Using the MPI compilers from Open MPI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For example, to compile/link a C program ``thermo.c`` to an executable
-``thermodynamics`` with architecture specific optimization for the AVX
-instruction set, use:
+``thermodynamics``::
 
-::
-
-   $ mpicc -O2 -march=corei7-avx -o thermodynamics thermo.c
+   $ mpicc -O2  -o thermodynamics  thermo.c
 
 Extensive documentation is provided on the `Open MPI documentation`_ site.
-Do not forget to load the toolchain module first.
+
+.. note::
+
+   Do not forget to load the toolchain module first.
+
 
 Running an Open MPI program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,12 +148,14 @@ executable.
 ::
 
    #!/bin/bash -l 
+
    module load foss/<version> 
    cd $PBS_O_WORKDIR 
    mpirun ./thermodynamics
 
 The hosts and number of processes is retrieved from the queue system,
 that gets this information from the resource specification for that job.
+
 
 FOSS mathematical libraries
 ---------------------------
@@ -148,6 +196,7 @@ Version numbers
 +-----------+--------+--------+--------+--------+--------+--------+
 | binutils  | 2.32   | 2.30   | 2.28   | 2.28   | 2.27   | 2.26   |
 +-----------+--------+--------+--------+--------+--------+--------+
+
 
 Further information on FOSS components
 --------------------------------------

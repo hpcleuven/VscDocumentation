@@ -34,15 +34,72 @@ Compatible versions of the GNU C (``gcc``), C++ (``g++``) and Fortran
 (``gfortran``) compilers are also provided.
 
 For example, to compile/link a Fortran program ``fluid.f90`` to an
-executable ``fluid`` with architecture specific optimization, use:
+executable ``fluid`` with architecture specific optimization, use::
 
-::
-
-   $ ifort -O2 -xhost -o fluid fluid.f90
+   $ ifort -O2 -xHost -o fluid fluid.f90
 
 For documentation on available compiler options, we refer to the :ref:`links
 to the Intel documentation at the bottom of this page <Intel documentation>`.
-Do not forget to *load the toolchain module* first!
+
+.. note::
+
+   Do not forget to load the toolchain module first!
+
+.. _Intel optimization:
+
+Optimizing for a CPU architecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To optimize your application or library for specific CPU architectures,
+use the appropriate option listed in the table below.
+
++------------------+------------------+
+| CPU architecture | compilers option |
++==================+==================+
+| Ivy Bridge       | ``-xAVX``        |
++------------------+------------------+
+| Sandy Bridge     | ``-xAVX``        |
++------------------+------------------+
+| Haswell          | ``-xAVX2``       |
++------------------+------------------+
+| Broadwell        | ``-xAVX2``       |
++------------------+------------------+
+| Skylake          | ``-xAVX-512``    |
++------------------+------------------+
+| detect host CPU  | ``-xHost``       |
++------------------+------------------+
+
+For example, the application compiled with the command below will be
+optimized to run on a Haswell CPU::
+
+   $ icc -O3  -xAVX2  -o floating_point  floating_point.c
+
+It is possible to build software that contains multiple code paths
+specific for the architecture that the application is running on.
+Additional code paths can be specified using the ``-ax`` option.
+
++-------------------------+------------------------+
+| additional code path    | Intel compiler option  |
++=========================+========================+
+| Ivy Bridge/Sandy Bridge | ``-axCORE-AVX``        |
++-------------------------+------------------------+
+| Haswell/Broadwell       | ``-axCORE-AVX2``       |
++-------------------------+------------------------+
+| Skylake                 | ``-axCORE-AVX512``     |
++-------------------------+------------------------+
+
+Hence the target architecture can be specified using the
+``-x`` option, while additional code paths can be specified using ``-ax``.
+
+For instance, the following compilation would create an executable with
+code paths for AVX, AVX2 and AVX-512 instruction sets::
+
+   $ icpc -O3  -xAVX  -axCORE-AVX2,CORE-AVX512 floating_point.cpp
+
+Software that has been built using these options will run with the
+appropriate instruction set on Ivy Bridge, Sandy Bridge, Haswell, Broadwell
+and Skylake CPUs.
+
 
 .. _Intel OpenMP:
 
@@ -53,17 +110,23 @@ The compiler switch to use to compile/link OpenMP C/C++ or Fortran code
 is ``-qopenmp`` in recent versions of the compiler (toolchain
 intel/2015a and later) or ``-openmp`` in older versions. For example, to
 compile/link a OpenMP C program ``scatter.c`` to an executable
-``scatter`` with architecture specific optimization, use:
+``scatter``::
 
-::
+   $ icc -qopenmp  -O2  -o scatter scatter.c
 
-   $ icc -qopenmp -O2 -xhost -o scatter scatter.c
+Running an OpenMP job
+^^^^^^^^^^^^^^^^^^^^^
 
 Remember to specify as many processes per node as the number of threads
 the executable is supposed to run. This can be done using the ``ppn``
-resource, e.g., ``-l nodes=1:ppn=10`` for an executable that should be
-run with 10 OpenMP threads. The number of threads should not exceed the
-number of cores on a compute node.
+resource specification, e.g., ``-l nodes=1:ppn=10`` for an executable
+that should be run with 10 OpenMP threads.
+
+.. warming::
+
+   The number of threads should not exceed the number of cores on a compute
+   node.
+
 
 .. _Intel MPI:
 
