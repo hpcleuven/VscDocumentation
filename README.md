@@ -22,6 +22,11 @@ The YAML environment description file is [``Scripts/sphinx.yml``](Scripts/sphinx
 $ conda env create -f Scripts/sphinx.yml
 ```
 
+## What is the status of improvements/fixes?
+
+Feel free to open issues to get fixes or improvements on the agenda.  To get an overview of work that is planned or in progress, check out the [project overview](https://github.com/hpcleuven/VscDocumentation/projects/1).
+
+
 ## Workflow
 
 ### Activate the environment
