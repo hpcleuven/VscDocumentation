@@ -8,8 +8,8 @@ very common scenario, so we developed software to do that for you.
 
 Two general purpose software packages are available:
 
-- the `worker framework`_ and
-- `atools <atools documentation>`_.
+- the `worker framework <https://github.com/gjbex/worker>`_ (:ref:`worker quickstart <worker framework>` and `worker documentation`_) and
+- `atools <https://github.com/gjbex/atools>`_ (`atools documentation`_).
 
 Both are designed to handle this use case, but with distinct twists.
 
@@ -38,12 +38,81 @@ and the `worker documentation`_.
 What to use: atools or worker?
 ------------------------------
 
-That depends on a few things such as
+That depends on a number of issues, and you have to consider them all
+to make the correct choice.
 
-- what are the job policies of the cluster you want to run on?
-- how much walltime is required by an individual computation?
-- is an individual computation sequential, multi-threaded or
-  even distributed?
+- Is an individual computation :ref:`sequential, multi-threaded or
+  even distributed <Type of computation>`?
+- How much :ref:`walltime is required by an individual computation
+  <Walltime per work item>`?
+- :ref:`How many individual computations <Number of work items>`
+  do you need to perform?
+- What are the :ref:`job policies <Job policies>` of the cluster you
+  want to run on?
+
+
+Type of computation
+~~~~~~~~~~~~~~~~~~~
+
+In worker and atools terminilogy, an individual computation is referred to
+as a work item.  Depending on the implementation of the work item, worker or
+atools may be a better match.  The following table summarizes this.
+
++----------------+--------+--------+
+| work item type | worker | atools |
++================+========+========+
+| sequential     | yes    | yes    |
++----------------+--------+--------+
+| multi-threaded | yes    | yes    |
++----------------+--------+--------+
+| MPI- based     | no     | yes    |
++----------------+--------+--------+
+
+.. warning::
+
+   Although this might seems to suggest that since atools can deal with all types
+   of work items, it is the best choice, this is definitely not true.
+
+The table makes it clear that MPI application can not be used in work items
+for worker.  worker itself is implmented using MPI, and hence things would
+get terminally confused if it executes work items that contain calls to the
+MPI API.
+
+
+Walltime per work item
+~~~~~~~~~~~~~~~~~~~~~~
+
+When work items take only a short time to complete, the overhead for starting
+new work items will be considerable for atools since it relies on the scheduler
+to start individual work items.  This is much more efficient for worker since
+all work items are executed by a single job, so the scheduler is not involved.
+
+On the other side of the spectrum, i.e., work items that take a very long time 
+complete, atools may be the better choice since work items are executed
+independently.  This however depends on the reliability of the infrastructure.
+
+The following table summarizes this.
+
++------------+--------+--------+
+| walltime   | worker | atools |
++============+========+========+
+| < 1 second | \-     | \-\-   |
++------------+--------+--------+
+| < 1 minute | \+     | \-     |
++------------+--------+--------+
+|            | \+\+   | \+\+   |
++------------+--------+--------+
+| > 24 hours | \+     | \+\+   |
++------------+--------+--------+
+
+
+Number of work items
+~~~~~~~~~~~~~~~~~~~~
+
+If you need to do many individual computations (work items), say more than
+500, worker is the better choice.  It will be run as a single job, rather
+than many individual jobs, hence lighteming the load on the scheduler
+considerably.
 
 
 Job policies
@@ -88,5 +157,20 @@ various cluster/partitions.
 | Leuven   | breniac (Tier-1)   | default   | single job  | yes        |
 +----------+--------------------+-----------+-------------+------------+
 
+Clusters with accounting enabled:
+   If you use atools on a cluster where accounting is active, make sure a work
+   item uses all resources of that node.  If multiple work items run on the same
+   node concurrently, you will be charged for each work item individually,
+   making that a *very* expensive computation.  In this situation, use worker.
+Clusters with single user policy:
+   Ensure that the load balance is as good as possible.  If a few work items
+   require much more time than others, they may block the nodes they are running
+   on from running other jobs.  This is the case for both atools and worker.
+   However, since worker is an MPI application, it will keep all nodes involved
+   in the job blocked, aggravating the problem.
+Cluster with shared policy
+   Here atools allows the scheduler the most flexibility, unless the number of
+   job items is too high.
 
-On some cluster, a single user per node policy is in place
+
+.. include:: links.rst
