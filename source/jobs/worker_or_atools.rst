@@ -23,10 +23,10 @@ Both software packages will do the bookkeeping for you, i.e.,
 - monitor the progress of a running job; 
 - allow you to resume computations in case you underestimated
   the walltime requirements;
-- provide an overview of the computations that succeeed, failed,
+- provide an overview of the computations that succeed, failed,
   or were not completed;
 - aggregate output of individual computations;
-- analyse the efficiency of a finished job.
+- analyze the efficiency of a finished job.
 
 Both software packages have been designed with simplicity in mind,
 one of the design goals is to make them as easy to use as possible.
@@ -54,7 +54,7 @@ to make the correct choice.
 Type of computation
 ~~~~~~~~~~~~~~~~~~~
 
-In worker and atools terminilogy, an individual computation is referred to
+In worker and atools terminology, an individual computation is referred to
 as a work item.  Depending on the implementation of the work item, worker or
 atools may be a better match.  The following table summarizes this.
 
@@ -74,7 +74,7 @@ atools may be a better match.  The following table summarizes this.
    of work items, it is the best choice, this is definitely not true.
 
 The table makes it clear that MPI application can not be used in work items
-for worker.  worker itself is implmented using MPI, and hence things would
+for worker.  worker itself is implemented using MPI, and hence things would
 get terminally confused if it executes work items that contain calls to the
 MPI API.
 
@@ -111,7 +111,7 @@ Number of work items
 
 If you need to do many individual computations (work items), say more than
 500, worker is the better choice.  It will be run as a single job, rather
-than many individual jobs, hence lighteming the load on the scheduler
+than many individual jobs, hence lightening the load on the scheduler
 considerably.
 
 
