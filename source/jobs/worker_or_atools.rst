@@ -1,3 +1,5 @@
+.. _worker or atools:
+
 How can I run many similar computations conveniently?
 =====================================================
 
@@ -8,10 +10,12 @@ very common scenario, so we developed software to do that for you.
 
 Two general purpose software packages are available:
 
-- the `worker framework <https://github.com/gjbex/worker>`_ (:ref:`worker quickstart <worker framework>` and `worker documentation`_) and
+- the `worker framework <https://github.com/gjbex/worker>`_ (:ref:`worker
+  quickstart <worker framework>` and `worker documentation`_) and
 - `atools <https://github.com/gjbex/atools>`_ (`atools documentation`_).
 
-Both are designed to handle this use case, but with distinct twists.
+Both are designed to handle this use case, but each has its own strengths
+and weaknesses.
 
 
 What features do atools and worker have?
@@ -73,7 +77,7 @@ atools may be a better match.  The following table summarizes this.
    Although this might seems to suggest that since atools can deal with all types
    of work items, it is the best choice, this is definitely not true.
 
-The table makes it clear that MPI application can not be used in work items
+The table makes it clear that MPI applications can not be used in work items
 for worker.  worker itself is implemented using MPI, and hence things would
 get terminally confused if it executes work items that contain calls to the
 MPI API.
@@ -93,17 +97,17 @@ independently.  This however depends on the reliability of the infrastructure.
 
 The following table summarizes this.
 
-+------------+--------+--------+
-| walltime   | worker | atools |
-+============+========+========+
-| < 1 second | \-     | \-\-   |
-+------------+--------+--------+
-| < 1 minute | \+     | \-     |
-+------------+--------+--------+
-|            | \+\+   | \+\+   |
-+------------+--------+--------+
-| > 24 hours | \+     | \+\+   |
-+------------+--------+--------+
++---------------------------+--------+--------+
+| single work item walltime | worker | atools |
++===========================+========+========+
+| < 1 second                | \-     | \-\-   |
++---------------------------+--------+--------+
+| < 1 minute                | \+     | \-     |
++---------------------------+--------+--------+
+| 1 minute to 24 hours      | \+\+   | \+\+   |
++---------------------------+--------+--------+
+| > 24 hours                | \+     | \+\+   |
++---------------------------+--------+--------+
 
 
 Number of work items
@@ -168,9 +172,10 @@ Clusters with single user policy:
    on from running other jobs.  This is the case for both atools and worker.
    However, since worker is an MPI application, it will keep all nodes involved
    in the job blocked, aggravating the problem.
-Cluster with shared policy
-   Here atools allows the scheduler the most flexibility, unless the number of
-   job items is too high.
+Clusters with shared policy
+   Here atools allows the scheduler the most flexibility, but keep in mind the
+   considerations on :ref:`work item walltime <Walltime per work item>` and the
+   :ref:`number of work items <Number of work items>`.
 
 
 .. include:: links.rst

@@ -14,7 +14,7 @@ workload.
 
 The framework will keep track of the computations that have been
 performed, those that succeeded or failed, and enable you to resume
-computations easily based on that information.  Additionally, It  helps you
+computations easily based on that information.  Additionally, It helps you
 to aggregate information produced by individual computations.
 
 In short, it has been designed for any scenario that can be reduced to a
@@ -24,9 +24,10 @@ However, in some cases, `atools <atools documentation`_ is a better
 alternative than worker, especially for MPI applications.  The worker
 framework can not handle such applications since it uses MPI for its
 own process communication. atools offers similar functionality to
-worker.
+worker.  We provide some :ref:`guidance for choosing between worker
+and atools<worker or atools>`.
 
-This how-to shows you how to use the basics of the worker framework. For
+This quickstart shows you how to use the basics of the worker framework. For
 more information, please consult the `worker documentation`_.
 
 
@@ -171,10 +172,9 @@ The job would be submitted using::
 
    $ qsub  -t 1-100  run.pbs
 
-The effect was that rather than 1 job, the user would actually submit
-100 jobs to the queue system (since this puts quite a burden on the
-scheduler, this is precisely why the use of job arrays is somewhat
-discouraged.
+The effect is that rather than 1 job, the user would actually submit
+100 jobs to the queue system.  There are some :ref:`potential disadvantages
+to this <worker or atools>`.
 
 Using worker, a feature akin to job arrays can be used with minimal
 modifications to the PBS script::
