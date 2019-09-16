@@ -1,5 +1,5 @@
-How can I run many similar computations?
-========================================
+How can I run many similar computations conveniently?
+=====================================================
 
 It is often necessary to run the same application on many input files,
 or with many different parameter values.  You can of course manage such
