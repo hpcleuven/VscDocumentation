@@ -2,19 +2,19 @@ How to run a Jupyter notebook on a compute node
 ===============================================
 
 Jupyter notebooks provide a very convenient way for Python programmers
-to explore and visualize data interactively, or do explorative programming.
+to explore and visualize data interactively, or do exploratory programming.
 Typically, a notebook server runs on your own computer, and you connect
 to it using a web browser (actually, the web browser will be started
 automatically).
 
 Although this is very convenient and easy to use, for more computationally
 intensive work you may want to run the notebook server on a compute node
-of a VSC cluster (we'll assume you using thinking here, but the apporoach
+of a VSC cluster (we'll assume you using thinking here, but the approach
 works for all our clusters).
 
 
-Prerequiste
------------
+Prerequisites
+-------------
 
 The most convenient way to install Jupyter, and any other Python packages
 you require is using conda.  In case you're not familiar with conda, please
@@ -27,8 +27,8 @@ directory is in your ``PATH`` variable.
 Using a notebook on an NX node
 ------------------------------
 
-Prerequiste: NoMachine
-~~~~~~~~~~~~~~~~~~~~~~
+Prerequisite: NoMachine
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Although alternatives exist, the easiest approach is to use the NX login nodes, since this provides a GUI environment on a cluster login node.  The installation and setup of the NoMachine software on your computer is documented in the :ref:``quick start guide<NX start guide>`.  Once NoMachine is installed and configured, you can connect to the cluster.
 
@@ -80,7 +80,7 @@ VSC account is vsc30140, use 30140 as port number:
 ::
    $ ssh -L 30140:localhost:8888 -N r5i1n7.genius.hpc.kuleuven.be
 
-Now, start firefox on the NX login node, and browse to the link the
+Now, start Firefox on the NX login node, and browse to the link the
 Jupyter notebook server displayed.  Enjoy.
 
 

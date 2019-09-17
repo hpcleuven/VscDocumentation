@@ -22,6 +22,8 @@ Also note that although Microsoft offers a free evaluation version of
 its development tools, i.e., Visual Studio Express, this version does
 not support parallel programming.
 
+.. _MS Visual Studio OpenMP:
+
 OpenMP
 ------
 
@@ -38,6 +40,8 @@ openMP compiler option in the project's properties as shown below.
 
 Compiling, building and running your program can now be done in the
 familiar way.
+
+.. _MS Visual Studio MPI:
 
 MPI
 ---

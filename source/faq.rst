@@ -49,4 +49,5 @@ Software
 .. toctree::
    :maxdepth: 2
 
+   software/parallel_software.rst
    software/singularity.rst
