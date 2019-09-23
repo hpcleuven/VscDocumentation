@@ -1,7 +1,7 @@
 .. _proxy:
 
-Setting up a SSH proxy
-======================
+Setting up an SSH proxy
+=======================
 
 .. warning::
 
