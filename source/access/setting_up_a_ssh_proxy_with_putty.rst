@@ -33,8 +33,24 @@ so-called *ssh proxy*. You then connect through another computer (the
 This all sounds quite complicated, but once things are configured
 properly it is really simple to log on to the host.
 
+
 Setting up a proxy in PuTTY
 ---------------------------
+
+.. warning::
+
+   In the screenshots, we show the proxy setup for user ``vscXXXXX`` to
+   the ``login.muk.gent.vsc`` login node for the muk cluster at UGent
+   via the login node ``vsc.login.node``.
+   You will have to
+
+   #. replace ``vscXXXXX`` with your own VSC account, and
+   #. replace ``login.muk.gent.vsc`` by the node that is behind a
+      a firewall that you want to acces, and
+   #. find the name of the login node for the cluster you want
+      to use use as a proxy in the sections of :ref:`the local VSC
+      clusters <hardware>`, and replace ``vsc.login.node`` accordingly.
+
 
 Setting up the connection in PuTTY is a bit more complicated than for a
 simple direct connection to a login node.
