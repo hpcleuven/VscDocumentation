@@ -22,7 +22,7 @@ VSC clusters.
    genius cluster at KU Leuven via the login node ``login.hpc.kuleuven.be``.
    You will have to
 
-   #. replace ``vsc98765`` with your own VSC number, and
+   #. replace ``vsc98765`` with your own VSC user name, and
    #. find the name of the login node for the cluster you want
       to login in on in the sections on :ref:`the local VSC clusters
       <hardware>`, and replace ``login.hpc.kuleuven.be`` accordingly.
