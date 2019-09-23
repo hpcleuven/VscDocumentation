@@ -1,7 +1,7 @@
 .. _ssh proxy with PuTTY:
 
-Setting up a SSH proxy with PuTTY
-=================================
+Setting up an SSH proxy with PuTTY
+==================================
 
 .. warning::
 
