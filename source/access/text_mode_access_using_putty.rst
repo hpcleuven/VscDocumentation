@@ -16,16 +16,17 @@ When you start the PuTTY executable 'putty.exe', a configuration screen
 pops up. Follow the steps below to setup the connection to (one of) the
 VSC clusters.
 
-In the screenshots, we show the setup for user vsc98765 to the ThinKing
-cluster at KU Leuven via the login node login.hpc.kuleuven.be.
+.. warning::
 
-You can find the names and ip-addresses of the login nodes in the
-sections of :ref:`the local VSC clusters <hardware>`.
+   In the screenshots, we show the setup for user ``vsc98765`` to the
+   genius cluster at KU Leuven via the login node ``login.hpc.kuleuven.be``.
+   You will have to
 
-| Alternatively, you can follow a `short
-  video <https://www.vscentrum.be/assets/1191>`__ explaining
-  step-by-step the process of making connection to VSC login nodes
-  (example based on KU Leuven cluster).
+   #. replace ``vsc98765`` with your own VSC number, and
+   #. find the name of the login node for the cluster you want
+      to login in on in the sections on :ref:`the local VSC clusters
+      <hardware>`, and replace ``login.hpc.kuleuven.be`` accordingly.
+
 
 #. Within the category Session, in the field 'Host Name', type in
    <vsc-loginnode>, which is the name of the login node of the VSC
@@ -42,8 +43,11 @@ sections of :ref:`the local VSC clusters <hardware>`.
    |PuTTY config 2|
 
    Here, the private key was previously saved in the folder
-   "C:\\Documents and Settings\\Me\\Keys". In newer versions of Windows,
-   "C:\\Users" is used instead of "C:\\Documents and Settings".
+   ``C:\Users\Me\Keys``. In older versions of Windows, you would have
+   to use ``C:\Documents and Settings\Me\Keys``.
+   
+   You can also enable agent forwarding by ticking the 'Allow agent
+   forwarding' checkbox.
 #. In the category Connection > SSH > X11, click the Enable X11
    Forwarding checkbox:
 
