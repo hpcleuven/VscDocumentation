@@ -3,6 +3,14 @@
 Setting up a SSH proxy
 ======================
 
+.. warning::
+
+   If you simply want to configure PuTTY to connect to login nodes
+   of the VSC clusters, this is not the page you are looking for.
+   Please check out :ref:`how to configure PuTTY
+   <text mode access using PuTTY>`.
+
+
 Rationale
 ---------
 
