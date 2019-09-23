@@ -1,4 +1,4 @@
-Superdome Hardware
+Superdome hardware
 ==================
 Superdome is a shared memory machine and consists of several nodes.
 

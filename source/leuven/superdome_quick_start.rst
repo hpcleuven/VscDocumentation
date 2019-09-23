@@ -1,38 +1,65 @@
 Superdome quick start guide
 ===========================
 
-The :ref:`Superdome <Superdome hardware>` is a shared memory machine, i.e., it can be used to run multi-threaded application that require large amounts of RAM.
+The :ref:`Superdome <Superdome hardware>` is a shared memory machine, i.e.,
+it can be used to run multi-threaded application that require large amounts
+of RAM.
+
 
 How to connect to Superdome?
 ----------------------------
-Superdome does not have a dedicated login node, so in order to work with the system users must 
-connect to the same login node used for Genius (login{1,2,3,4}-tier2.hpc.kuleuven.be).
-All users having an active VSC account can connect to the login node with the same credentials using the command:
 
-::
+Superdome does not have a dedicated login node, so in order to work with the
+system users can connect to the same login node used for Genius.
 
-  ssh vscXXXXX@login1-tier2.hpc.kuleuven.be
+.. include:: tier2_hardware/genius_login_nodes.rst
 
-Running Jobs
-------------
-Jobs can be submitted from the login node but it must be noted that in order to submit jobs to Superdome you need to specify the partition superdome and the queue qnodef:
+How to run a job on Superdome?
+------------------------------
 
-::
+Jobs can be submitted from the login node, however, there are a few crucial
+differences.  To submit jobs to Superdome you need to
+
+- specify the partition ``superdome``,
+- specify the queue ``qsuperdome``, and
+- use ``-L`` for specifying resources.
+
+The resource specification is specified in terms of ``tasks``, ``lprocs``
+and ``place``.
+
+``tasks``
+   For Superdome, the number of tasks is always equal to 1.
+``lprocs``
+   The number of logical processors is essentially the number of cores
+   you want to use for your job.
+``place``
+   The place determines where the logical processors are executed, and
+   is ``numanode`` for Superdome.  Each ``numanode`` has 14 cores, so if you
+   want to use, e.g., 28 cores, you would specify ``lprocs=28:place=numanode=2``.
+
+
+For example::
   
-  qsub -I -lpartition=superdome –q qnodef -L tasks=1:lprocs=14:place=numanode -A lp_myproject
+   $ qsub  -l partition=superdome  –q qsuperdome  -L tasks=1:lprocs=42:place=numanode=3 \
+           -A lp_myproject  my_job.pbs
   
-Without specifying this partition (and queue) your jobs will be submitted to Genius, and will probably not be able to start, due to lack of specified resources.
+Without specifying the ``superdome`` partition and ``qsuperdome`` queue, your jobs
+will be submitted to Genius, and will probably not be able to start, since the
+resources you specify are not available.
 
-How to request more memory?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When submitting to superdome no explicit memory request should be added. Memory will scale together with the number of numanodes. You will have exclusive access to the memory of the requested numanode(s). There are 8 numanodes available in superdome. So if you want 1/8 of superdome memory you have to request 1 numanode, if you want ¼ you request 2 numanodes, etc .. For example for 2 numanodes you request:
 
-::
+.. note::
 
-  qsub -I -lpartition=superdome -q qnodef -L tasks=1:lprocs=28:place=numanode=2 -A lp_myproject
-  
-**Note**: that you have to scale also the number of lprocs and that the number of tasks stays always 1.
+   When submitting to Superdome no explicit memory request should be added.
+   Memory will scale with the number of NUMA-nodes. You will have exclusive
+   access to the memory of the requested NUMA-nodes. The Superdome has 8
+   NUMA-nodes, so if you want 1/8th of the Superdome's memory (750 GB) you
+   have to request ``lprocs=14:place=numanode=1``. If you want to use 1/4th
+   (1.5 TB), your request should state ``lprocs=28:place=numanode=2``, for
+   3/4th of the memory (4.5 TB), you would use ``lprocs=84:place=numanode=6``,
+   etc.
 
-Resource requirements in Superdome
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Supderdome is a partition of a single machine in the cluster. You will need to use another syntax in comparision to thinking or genius to request the resources (-L syntax http://docs.adaptivecomputing.com/9-0-3/MWM/Content/topics/NUMA/-Lresource.htm ).
+
+More documentation on the ``-L`` NUMA-aware resource specification can be
+found in the vendor's `documentation
+<http://docs.adaptivecomputing.com/9-0-3/MWM/Content/topics/NUMA/-Lresource.htm>`_.
