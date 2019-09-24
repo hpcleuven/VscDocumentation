@@ -15,8 +15,8 @@ Two types of login nodes are available:
 
   .. note:
 
-  The node listed below can only directly be accessed using SSH,
-  use ``nx-tier1.hpc.kuleuven.be`` as hostname in the NX client
-  configuraton.
+     The node listed below can only directly be accessed using SSH,
+     use ``nx-tier1.hpc.kuleuven.be`` as hostname in the NX client
+     configuraton.
 
   - ``login2-tier2.hpc.kuleuven.be``
