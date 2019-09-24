@@ -1,5 +1,5 @@
-Login infrastructure
---------------------
+Breniac login infrastructure
+----------------------------
 
 Direct login using SSH is possible to all login infrastructure without
 restrictions.
@@ -13,10 +13,10 @@ Two types of login nodes are available:
 - a login nodes with GPUs for visualization, and :ref:`NX clients
   <NX start guide>`.
 
-  .. note:
+  .. note::
 
      The node listed below can only directly be accessed using SSH,
      use ``nx-tier1.hpc.kuleuven.be`` as hostname in the NX client
      configuraton.
 
-  - ``login2-tier2.hpc.kuleuven.be``
+  - ``login2-tier1.hpc.kuleuven.be``

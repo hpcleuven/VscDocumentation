@@ -3,6 +3,12 @@ Breniac hardware
 
 Breniac is the VSC's Tier-1 cluster.
 
+.. include:: breniac_login_nodes.rst
+
+
+Hardware details
+----------------
+
 - 408 skylake nodes
 
     - 2 Xeon Gold 6132 CPU\@2.6GHz, 14 cores each
