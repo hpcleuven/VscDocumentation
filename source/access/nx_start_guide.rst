@@ -8,7 +8,7 @@ Installing NX NoMachine client
 
 -  Download the enterprise version of the client from
    the `NX Client download`_ page.
--  Continue with Configuration of your NoMachine NX client.
+-  Continue with configuration of your NoMachine NX client.
 
 NoMachine NX Client Configuration Guide
 ---------------------------------------
