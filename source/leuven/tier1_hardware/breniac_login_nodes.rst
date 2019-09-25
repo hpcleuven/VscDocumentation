@@ -1,8 +1,12 @@
 Breniac login infrastructure
 ----------------------------
 
-Direct login using SSH is possible to all login infrastructure without
-restrictions.
+Direct login using SSH is possible to all login infrastructure.
+
+.. note::
+
+   Only users involced in an active Tier-1 project have access to the
+   infrastructure.
 
 Two types of login nodes are available:
 
