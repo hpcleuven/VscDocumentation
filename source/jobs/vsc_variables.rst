@@ -34,7 +34,7 @@ Please see the documentation on :ref:`storage storage options <data location>`.
 Hardware & OS
 -------------
 
-Please see the the documentation on :ref:`VSC hardware <>`.
+Please see the the documentation on :ref:`VSC hardware <hardware>`.
 
 ``$VSC_ARCH_LOCAL``
    CPU architecture, set per node in the cluster, e.g., ``skylake`` or ``haswell``.
