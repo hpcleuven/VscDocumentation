@@ -23,7 +23,7 @@ Please see the documentation on :ref:`storage storage options <data location>`.
 ``$VSC_SCRATCH_SITE``
    The path to your scratch directory at the site you are currently using,
    often the same as ``$VSC_SCRATCH``.
-``$VSC_SCRATCH_SITE``
+``$VSC_SCRATCH_GLOBAL``
    The path to your scratch directory at the site you are currently using,
    often the same as ``$VSC_SCRATCH_SITE``.
 ``$VSC_SCRATCH_NODE``
