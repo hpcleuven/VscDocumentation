@@ -38,8 +38,6 @@ Please see the the documentation on :ref:`VSC hardware <>`.
 
 ``$VSC_ARCH_LOCAL``
    CPU architecture, set per node in the cluster, e.g., ``skylake`` or ``haswell``.
-``$VSC_OS_LOCAL``
-   Operating system, set per node in the cluster, e.g., ``centos7``.
 ``$VSC_INSTITUTE_CLUSTER``
    Name of the cluster you are currently on, e.g., ``leibniz`` or ``genius``.
 
