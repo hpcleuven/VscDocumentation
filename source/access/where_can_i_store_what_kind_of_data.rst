@@ -11,7 +11,7 @@ on the size and usage of these data. Following locations are available:
    -  Location available as $VSC_HOME
    -  The data stored here should be relatively small, and not
       generating very intense I/O during jobs.
-      Its main purpose is to stora all kinds of configuration files are
+      Its main purpose is to store all kinds of configuration files are
       stored, e.g., ssh-keys, .bashrc, or MATLAB, and Eclipse
       configuration, ...
    -  Performance is tuned for the intended load: reading configuration
@@ -32,12 +32,12 @@ on the size and usage of these data. Following locations are available:
 
 -  :ref:`Scratch directories <VSC scratch space>`
 
-   -  Several types exist, available in $VSC_SCRATCH_XXX variables
+   -  Several types exist, available in $VSC_SCRATCH and $VSC_SCRATCH_XXX variables
    -  For temporary or transient data; there is typically no backup for
       these filesystems, and 'old' data may be removed automatically.
-   -  Currently, $VSC_SCRATCH_NODE, $VSC_SCRATCH_SITE and
+   -  Currently, $VSC_SCRATCH, $VSC_SCRATCH_SITE, $VSC_SCRATCH_NODE and
       $VSC_SCRATCH_GLOBAL are defined, for space that is available per
-      node, per site, or globally on all nodes of the VSC (currently,
+      cluster, per site, per node, or globally on all nodes of the VSC (currently,
       there is no real 'global' scratch filesystem yet).
    -  These file systems are not exported to other VSC sites.
 
@@ -141,7 +141,7 @@ day and a few weeks. We don't guarantee that these policies remain
 forever, and may change them if this seems necessary for the healthy
 operation of the cluster.
 
-Each type of scratch has his own use:
+Each type of scratch has its own use:
 
 **Shared scratch ($VSC_SCRATCH)**
    To allow a job running on multiple nodes (or multiple jobs running on
@@ -160,7 +160,7 @@ Each type of scratch has his own use:
    a job to do parallel file I/O from multiple processes to the same
    file simultaneously, e.g., through MPI parallel I/O.
    For most jobs, this is the best scratch system to use.
-**Site scratch ($VSC_SITE_SCRATCH)**
+**Site scratch ($VSC_SCRATCH_SITE)**
    A variant of the previous one, may or may not be the same. On
    clusters that have access to both a cluster-local scratch and
    site-wide scratch file system, this variable will point to the
