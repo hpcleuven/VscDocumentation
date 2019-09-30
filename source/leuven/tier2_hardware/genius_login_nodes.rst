@@ -17,7 +17,7 @@ Two types of login nodes are available:
   - ``login4-tier2.hpc.kuleuven.be``
 
 - login node that provides a desktop environment that can be used for,
-  e.g., visualization, see the :ref:`NX clients section <NX start guide>1:
+  e.g., visualization, see the :ref:`NX clients section <NX start guide>`:
 
   - ``nx.hpc.kuleuven.be``
 
