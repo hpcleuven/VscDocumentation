@@ -8,7 +8,7 @@ Installing NX NoMachine client
 
 -  Download the enterprise version of the client from
    the `NX Client download`_ page.
--  Continue with Configuration of your NoMachine NX client.
+-  Continue with configuration of your NoMachine NX client.
 
 NoMachine NX Client Configuration Guide
 ---------------------------------------
@@ -24,16 +24,19 @@ Change the Protocol to **SSH**.
 
 Choose the hostname:
 
--  **for ThinKing (Tier-2): nx.hpc.kuleuven.be** and port **22**.
--  **for BrENIAC (Tier-1): nx-tier1.hpc.kuleuven.be** and port **22**.
--  If you experience problems with connection please switch to Protocol
+-  for Genius (Tier-2): **nx.hpc.kuleuven.be** and port **22**.
+-  for BrENIAC (Tier-1): **nx-tier1.hpc.kuleuven.be** and port **22**.
+
+.. note::
+
+   If you experience problems with connection please switch to Protocol
    NX and port 4000.
 
 Choose the authentication **Use the system login.**
 
 Choose the authentication method **Private key.**
 
-Browse your private key. This should be in OpenSSH format (not .ppk).
+Browse your private key. This should be in OpenSSH format (not ``.ppk``).
 
 -  For Android users it is easy to transfer your key and save it in the
    chosen location with the Box (KU Leuven) or Dropbox (UHasselt) apps.
