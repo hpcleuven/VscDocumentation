@@ -28,6 +28,7 @@ Choose the hostname:
 -  **for BrENIAC (Tier-1): nx-tier1.hpc.kuleuven.be** and port **22**.
 -  If you experience problems with connection please switch to Protocol
    NX and port 4000.
+-  These login nodes cannot be used to access the cluster from the terminal.   
 
 Choose the authentication **Use the system login.**
 
