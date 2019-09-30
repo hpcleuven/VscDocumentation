@@ -12,7 +12,7 @@ documentation should be consulted for the exact semantics.
 Storage
 -------
 
-Please see the documentation on :ref:`storage storage options <data location>`.
+Please see the documentation on :ref:`storage options <data location>`.
 
 ``$VSC_HOME``
    The path to your home directory.
@@ -23,12 +23,12 @@ Please see the documentation on :ref:`storage storage options <data location>`.
 ``$VSC_SCRATCH_SITE``
    The path to your scratch directory at the site you are currently using,
    often the same as ``$VSC_SCRATCH``.
-``$VSC_SCRATCH_GLOBAL``
-   The path to your scratch directory at the site you are currently using,
-   often the same as ``$VSC_SCRATCH_SITE``.
 ``$VSC_SCRATCH_NODE``
    The path to your scratch directory on the compute node your job is running
    on.
+``$VSC_SCRATCH_GLOBAL``
+   The path to a VSC-wide scratch volume (future work). Currently pointing to
+   ``$VSC_SCRATCH`` or ``$VSC_SCRATCH_SITE``.
 
 
 Hardware & OS
