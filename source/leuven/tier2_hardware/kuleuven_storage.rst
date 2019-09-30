@@ -37,7 +37,7 @@ modifications based on your home institution and VSC account number.
 |$VSC_SCRATCH              |/scratch/leuven/30X/vsc30XYZ  |
 |$VSC_SCRATCH_SITE         |                              |
 +--------------------------+------------------------------+
-|$VSC_SCRATCH_NODE         |/localscratch                 |
+|$VSC_SCRATCH_NODE         |/local_scratch                |
 +--------------------------+------------------------------+
 
 The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
