@@ -28,7 +28,7 @@ Please see the documentation on :ref:`storage options <data location>`.
    on.
 ``$VSC_SCRATCH_GLOBAL``
    The path to a VSC-wide scratch volume (future work). Currently pointing to
-   ``$VSC_SCRATCH`` or ``$VSC_SITE_SCRATCH``.
+   ``$VSC_SCRATCH`` or ``$VSC_SCRATCH_SITE``.
 
 
 Hardware & OS
