@@ -84,12 +84,9 @@ You always need to submit with a project account (-A). To find out which project
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
 
-The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. On ThinKing the GPU nodes are not a shared resources, so you are the only user of the node. However you need to request the number of GPU's you want to use. 
-
-For the K20::
-
-   $ qsub -A myproject  -l walltime=1:00:00  -l nodes=1:ppn=12:gpus=2:K20Xm  -l partition=gpu  myjob.pbs
-
-For the K40::
+The GPU nodes are located in a separate cluster partition so you will need to
+explicitly specify it when submitting your job. On ThinKing the GPU nodes are
+not a shared resources, so you are the only user of the node. However you need
+to request the number of GPUs you want to use:: 
 
    $ qsub -A myproject -l walltime=1:00:00  -l nodes=1:ppn=20:gpus=2:K40c  -l partition=gpu  myjob.pbs
