@@ -69,14 +69,14 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 Submit to an AMD node
 ~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are in their own parition.  Besides specifying the partition,
+The AMD nodes are in their own partition.  Besides specifying the partition,
 it is also important to specify the memory per process (``pmem``) since
 the AMD nodes have 256 GB of RAM, which implies that the default value is
 too high, and your job will never run.
 
 For example::
 
-   $ qsub -l nodes=2:ppn=64  -l pmem=3800mb  -l parition=amd  -A myproject  myscript.pbs
+   $ qsub -l nodes=2:ppn=64  -l pmem=3800mb  -l partition=amd  -A myproject  myscript.pbs
 
 This resource specification for the memory is a few GB less than 256 GB,
 leaving some room for the operating system to function properly.
