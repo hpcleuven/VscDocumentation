@@ -10,9 +10,27 @@ For example, to log in to any of the login node using SSH::
    $ ssh vscXXXXX@login.hpc.kuleuven.be
 
 
+.. _running jobs on genius:
+
 Running jobs
 ------------
-There are several type of nodes in the Genius cluster: normal compute nodes, GPU nodes, big memory nodes.
+There are several type of nodes in the Genius cluster: normal compute nodes,
+GPU nodes, big memory nodes.  For information on systems, see the :ref:`hardware
+specification <Genius hardware>`.
+
+The charge rate for the various node types of Genius are listed in the table
+below.  Information on :ref:`obtaining credits <KU Leuven credits>` and
+:ref:`credit system basics <credit system basics>` is available.
+
++----------------+--------------+
+| node type      | credit/hour  |
++================+==============+
+| skylake        | 10.00        |
++----------------+--------------+
+| skylake bigmem | 12.00        |
++----------------+--------------+
+| GPU            | 5.00 per GPU |
++----------------+--------------+
 
 
 .. _submit to genius compute node:

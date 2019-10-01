@@ -1,8 +1,13 @@
+.. _KU Leuven credits:
+
 Credits to use KU Leuven infrastructure
 =======================================
 
 KU Leuven uses a credit system to do accounting on the HPC systems it hosts.
 This is the case for its Tier-2 clusters, as well as the Tier-1 infrastructure.
+
+Information on how to use the credit system can be found in the :ref:`documentation
+on credit system basics <credit system basics>`.
 
 
 How do I request credits on the KU Leuven Tier-2 systems
@@ -24,8 +29,11 @@ including pricing, in the `Service Catalog`_ (login required).
 UHasselt users
 ~~~~~~~~~~~~~~
 If you would like credits for a new project, please fill out the
-`credit request form`_.  Please read and follow the instructions in that
-form carefully.
+`credit request form`_.
+
+.. warning::
+
+   Please read and follow the instructions in that form carefully!
 
 If you require additional credits for an existing project, please contact
 your VSC coordinator `Geert Jan Bex`_.
@@ -35,6 +43,7 @@ Other users
 
 Please contact your VSC coordinator/contact or your :ref:`local support staff
 <Contact VSC>`.
+
 
 Job cost calculation
 ~~~~~~~~~~~~~~~~~~~~
@@ -55,32 +64,25 @@ Where
    listed in the table below.
 
 Since Tier-2 cluster has several types of compute nodes, none of which
-is actually a reference node, the following values for *nodetype* apply:
+is actually a reference node, the values can be found in the specific
+documentation for each of the systems:
 
-+----------------+--------------+
-| node type      | credit/hour  |
-+================+==============+
-| ivybridge      | 4.76         |
-+----------------+--------------+
-| haswell        | 6.68         |
-+----------------+--------------+
-| skylake        | 10.00        |
-+----------------+--------------+
-| skylake bigmem | 12.00        |
-+----------------+--------------+
-| GPU            | 5.00 per GPU |
-+----------------+--------------+
+- :ref:`Thinking <running jobs on thinking>`
+- :ref:`Genius <running jobs on genius>`
 
 The difference in cost between different machines/processors reflects
 the performance difference between those types of nodes. The total cost
 of a job will typically be the same on any compute nodes, but the
-walltime will be different nodes.
+walltime will be different, depending on the performance of the nodes.
+
+In the examples below, you run your jobs on an ``ivybridge`` node, for which
+we charge 4.76 credits per hour.
 
 An example of a job running on multiple nodes and cores is given below::
 
    $ qsub  -A lp_astrophysics_014  -l nodes=2:ppn=20:ivybridge  simulation_3415.pbs
 
-If this job finished in 2.5 hours (i.e., walltime is 9000), the user
+If this job finished in 2.5 hours (i.e., walltime is 9000 seconds), the user
 will be charged:
 
 0.000278 \* 2 \* 9000 \* 4.76 = 23.8 credits
@@ -102,7 +104,6 @@ Access to the Tier-1 is project-based, if you have a starting grant or
 an approved project, or you pay for your compute time, you should have
 received information on your job credits.  If not, please :ref:`contact
 support <Contact VSC>`.
-
 
 
 .. _Geert Jan Bex: mailto:geertjan.bex@uhasselt.be
