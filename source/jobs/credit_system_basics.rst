@@ -111,6 +111,13 @@ all transactions on all accounts the user has access to::
    $ module load accounting
    $ mam-statement
 
+.. note::
+
+   It takes quite a while to compute such statements, so **please
+   be patient**.  If you simply want a list of the transaction,
+   consider using ``mam-list-transactions``, this is typically
+   much faster.
+
 However, it is more convenient to filter this information so that only
 specific projects are displayed and/or information for a specific period
 of time, e.g.,
@@ -122,15 +129,16 @@ of time, e.g.,
 This will show the transactions on the account for the
 ``lp_astrophysics_014`` project for the month September 2010.
 
-.. note::
+If you are only interested in the individual transaction, and don't require
+balance information, ``mam-list-transactions`` provides a much faster
+alternative::
 
-   It takes quite a while to compute such statements, so **please
-   be patient**.
+   $ mam-list-transactions  -a lp_astrophysics_014  -s 2010-09-01  -e 2010-09-30
 
-Very useful can be adding the ``--summarize`` option to the ``gstatement``
+It can be Very useful to add the ``--summarize`` option to the ``mam-statement``
 command::
 
-   vsc30002@login1:~> mam-statement -a lp_prodproject --summarize -s 2010-09-01 -e 2010-09-30
+   $ mam-statement  -a lp_prodproject  --summarize  -s 2010-09-01  -e 2010-09-30
    ################################################################################
    #
    # Statement for project lp_prodproject
@@ -157,9 +165,10 @@ command::
    Job    Charge lp_prodproject      vsc30140 SVCS1    -0.22 1
    ############################### End of Report ##################################
 
-As you can see it will give you a summary of used credits (Amount) and
+As you can see it will give you a summary of credits used (Amount) and
 number of jobs (Count) per user in a given time frame for a specified
 project.
+
 
 Reviewing job details
 ---------------------
@@ -170,7 +179,7 @@ the details of a specific job. This can be done using the following
 command::
 
    $ module load accounting
-   $ mam-list-transactions -J 20030021
+   $ mam-list-transactions  -J 20030021
 
 Where job ID does not have to be complete.
 
