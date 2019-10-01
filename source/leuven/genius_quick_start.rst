@@ -3,24 +3,11 @@ Genius quick start guide
 
 :ref:`Genius <Genius hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
 
-
-How to connect to Genius?
--------------------------
-Genius does have a 4 dedicated login nodes. All users having an active VSC account can connect to the login node with the same credentials using the command::
+.. include:: tier2_hardware/genius_login_nodes.rst
   
-   $ ssh vscXXXXX@nodename 
+For example, to log in to any of the login node using SSH::
 
-Where ``nodename`` is one of the following: 
-
-Normal login nodes: 
-
-- ``login1-tier2.hpc.kuleuven.be``
-- ``login2-tier2.hpc.kuleuven.be``
-
-With a visualization capabilities (NVIDIA Quadro P6000 GPU): 
-
-- ``login3-tier2.hpc.kuleuven.be``
-- ``login4-tier2.hpc.kuleuven.be``
+   $ ssh vscXXXXX@login.hpc.kuleuven.be
 
 
 Running jobs
