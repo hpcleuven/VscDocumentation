@@ -31,6 +31,7 @@ Choose the hostname:
 
    If you experience problems with connection please switch to Protocol
    NX and port 4000.
+-  These login nodes cannot be used to access the cluster from the terminal.   
 
 Choose the authentication **Use the system login.**
 
