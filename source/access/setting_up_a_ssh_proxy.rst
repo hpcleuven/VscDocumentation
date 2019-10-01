@@ -1,7 +1,14 @@
 .. _proxy:
 
-Setting up a SSH proxy
-======================
+Setting up an SSH proxy
+=======================
+
+.. warning::
+
+   If you simply want to use OpenSSH to connect to login nodes
+   of the VSC clusters, this is not the page you are looking for.
+   Please check out :ref:`how to use the ssh command <OpenSSH access>`.
+
 
 Rationale
 ---------
