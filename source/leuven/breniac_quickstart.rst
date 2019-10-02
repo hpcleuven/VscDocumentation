@@ -6,6 +6,42 @@ Breniac quick start
 .. include:: tier1_hardware/breniac_login_nodes.rst
 
 
+Building/using software
+-----------------------
+
+Since Breniac has two types of architectures, some care needs to be taken
+when building software, or selecting software to run.  The newer skylake
+CPUs support the AVX-512 instruction set, which improves vectoriazation
+oncsiderably.  Both skylake and broadwell nodes support AVX2.
+
+Computationally intensive software is best compiled with archtecture-specific
+optimizations.  The software stack typically has versions optimized for the
+two architectures, and the appropriate packages for an architecture are
+the default on nodes with that architecture.
+
+If you want to, e.g., check the availability of software for a different
+architecture from the node you are currenly on, you can do that by adding
+the appropriate module path, i.e.,
+
+- for broadwell::
+
+     $ module use /apps/leuven/broadwell/2018a/modules/all
+
+- for skylake::
+
+     $ module use /apps/leuven/skylake/2018a/modules/all
+
+The compile options to use for a specific architecture, or to build a fat
+binary (Intel only) are listed in the documentation on the :ref:`foss
+toolchain <FOSS toolchain>` and the :ref:`Intel toolchain <Intel toolchain>`.
+
+.. note::
+
+   Please run a (:ref:`interactive <interactive jobs>`) job to do builds on nodes
+   with the target architectures.  This is best practice in any case since software
+   builds tax the shared login nodes, and may disrupt the work of other users.
+
+
 Running jobs
 ------------
 
@@ -83,8 +119,8 @@ Debug jobs on Breniac
 ---------------------
 
 Debugging an application on a busy cluster can sometimes pose a problem due to
-long queuing times.  For this purpose, 4 nodes have been reserved as debugging
-nodes.  A few restrictions apply:
+long queuing times.  For this purpose, 4 broadwell nodes have been reserved as
+debugging nodes.  A few restrictions apply:
 
 - you can only submit a single debug job at the time,
 - the debug job can use at most 4 nodes, and
@@ -94,3 +130,4 @@ To submit a job to run on the debug nodes, you have to specify the partition::
 
    $ qsub -l nodes=2:ppn=28:broadwell  -l walltime=2:00:00  l qos=debugging \
           -A myproject  myjobscript.pbs
+
