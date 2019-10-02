@@ -18,14 +18,14 @@ Hardware details
 
 - 436 broadwell nodes
 
-   - 2 Xeon E5-2680v4 CPUs@2.4GHz, 14 cores each
+   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
    - 128 GB RAM
    - 75 GB SSD local disk
    - specific ``qsub`` :ref:`options <submit to Breniac broadwell node>` apply
 
 - 144 broadwell nodes
 
-   - 2 Xeon E5-2680v4 CPUs@2.4GHz, 14 cores each
+   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
    - 256 GB RAM
    - 75 GB SSD local disk
    - specific ``qsub`` :ref:`options <submit to Breniac 256 GB broadwell node>` apply
