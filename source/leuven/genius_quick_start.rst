@@ -80,3 +80,21 @@ For example::
 
 This resource specification for the memory is a few GB less than 256 GB,
 leaving some room for the operating system to function properly.
+
+
+Running debug jobs
+------------------
+Debugging on a busy cluster can be taxing due to long queue times.  To mitigate
+this, a GPU node has been reserved for debugging purposes.
+
+A few restrictions apply to a debug job:
+
+- it has to be submitted with ``-l qos=debugging``
+- it can only use a single node,
+- its walltime is at oust 30 minutes,
+- you can only have a single debug node in the queue at any time.
+
+For instance, to run a debug job for 15 minutes, you would use::
+
+   $ qsub  -A myproject  -l nodes=1:ppn=9:gpus=1  -l partition=gpu \
+           -l walltime=00:15:00   -l qos=debugging  myscript.pbs
