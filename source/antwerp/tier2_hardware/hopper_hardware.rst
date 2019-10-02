@@ -46,7 +46,7 @@ Login infrastructure
 Direct login is possible to both login nodes and to the visualization node.
 
 - From outside the VSC network: use the external interface names. Outside of
-  Belgium, a VPN connection to the UAntwerp network is required.
+  Belgium, a :ref:`VPN connection <VPN>` connection to the UAntwerp network is required.
 - From inside the VSC network (e.g., another VSC cluster): use the internal interface names.
 
 ===================   =================================  ===========================
