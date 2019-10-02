@@ -32,8 +32,7 @@ present some pointers to that information:
     which has a `page on VPN <https://blackboard.uantwerpen.be/webapps/blackboard/content/listContent.jsp?course_id=_4177_1&content_id=_397880_1>`__ in the Networks
     section. The contact information for the help desk in on
     `the start page of the subsite "Departement ICT <https://pintra.uantwerpen.be/webapps/ua-pintrasite-BBLEARN/module/index.jsp?course_id=_8_1>`__.
-    *Note that the configuration of the VPN changed on 25 October 2016, so if you
-    have trouble connecting, check your settings!*
+    In case you are not able to set up a VPN connection using the built-in VPN client (which might happen), try the AnyConnect client.
   - VUB: The VUB offers no central VPN system at this time. There is a VPN
     solution, `Pulse Secure VPN <http://vubnet.vub.ac.be/vpn.html>`__  which
     requires special permission.
