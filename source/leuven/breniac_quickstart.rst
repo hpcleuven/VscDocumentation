@@ -155,6 +155,13 @@ is done by specifying the ``singleisland`` feature::
    $ qsub -l nodes=20:ppn=28  -l walltime=2:00:00  -l feature=singleisland \
           -A myproject  myjobscript.pbs
 
+Similarly, if your job runs on less than 68 nodes (broadwell), or
+48 nodes (skylake) you can request that all nodes the job runs on are
+in the same rack. This is done by specifying the ``singlerack`` feature::
+
+   $ qsub -l nodes=40:ppn=28  -l walltime=2:00:00  -l feature=singlerack \
+          -A myproject  myjobscript.pbs
+
 
 Running on specific nodes/islands
 ---------------------------------
