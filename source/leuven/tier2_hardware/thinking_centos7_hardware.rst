@@ -57,7 +57,8 @@ Hardware details
 
 In the older partition of the cluster, nodes are connected via a QDR infiniband interconnect, while the newer partition has a faster FDR interconnect.  See the diagram below.
 
-A :ref:`quickstart guide <Thinking7 quick start guide>` is available to get you started on submitting jobs to the updated ThinKing cluster.
+A :ref:`quick start guide <Thinking7 quick start guide>` is available to get you
+started on submitting jobs to the updated ThinKing cluster.
 
 |Thinking CentOS 7 hardware|
 
