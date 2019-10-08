@@ -232,20 +232,20 @@ Several clusters at the VSC have nodes with different properties,  e.g.,
 You can then specify which node type you want by adding further properties
 to the ``-l nodes=`` specification.
 
-For example, assume a cluster with both Ivy Bridge and Haswell generation
-nodes. The Haswell CPU supports new and useful floating point instructions,
-but programs that use these will not run on the older Ivy Bridge nodes.
+For example, assume a cluster with both ivybridge and haswell generation
+nodes. The haswell CPU supports new and useful floating point instructions,
+but programs that use these will not run on the older ivybridge nodes.
 
-The cluster will then specify the property ``ivybridge`` for the Ivy Bridge
-nodes and ``haswell`` for the Haswell nodes. To tell the scheduler that you
-want to use the Haswell nodes, specify::
+The cluster will then specify the property ``ivybridge`` for the ivybridge
+nodes and ``haswell`` for the haswell nodes. To tell the scheduler that you
+want to use the haswell nodes, specify::
 
    -l nodes=8:ppn=6:haswell
 
-Since Haswell nodes often have 24 cores, you will likely get 2 physical nodes.
+Since haswell nodes often have 24 cores, you will likely get 2 physical nodes.
 
 The exact list of properties depends on the cluster and is given in the
-page for your cluster in the ":ref:`hardware`" section.
+page for your cluster in the :ref:`hardware specification pages <hardware>`.
 
 .. note::
 
