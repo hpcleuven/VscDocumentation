@@ -163,8 +163,8 @@ In total, each of the 16 processes can use 10 GB RAM.
      nodes.
 
 For instance, on a node with 192 GB of RAM, you should ensure that
-``ppn`` \* ``pmem`` < 192 GB - 8 GB.  The 8 GB is substracted to leave
-the operating system and other services running on the system suffient
+``ppn`` \* ``pmem`` < 192 GB - 8 GB.  The 8 GB is subtracted to leave
+the operating system and other services running on the system sufficient
 memory to function properly.
 
 For example, to run on a node with 36 cores and 192 GB RAM,
