@@ -145,7 +145,43 @@ The following option specifies the RAM requirements of your job::
    -l pmem=<memory>
 
 The job needs ``<memory>`` RAM memory per core or hyperthread (the unit used
-by ppn).  The units are ``kb``, ``mb``, ''gb`` or ``tb``.
+by ppn).  The units are for the ``pmem`` value are ``kb``, ``mb``, ''gb`` or
+``tb``.
+
+Example::
+
+   -l nodes=2:ppn=8  -l pmem=10gb
+
+In total, each of the 16 processes can use 10 GB RAM.
+
+.. warning::
+
+   It is important to realize that
+   
+   - the values for ``ppn`` and ``pmem`` depend on one another, and
+   - that these depends on the amount of RAM installed in the compute
+     nodes.
+
+For instance, on a node with 192 GB of RAM, you should ensure that
+``ppn`` \* ``pmem`` < 192 GB - 8 GB.  The 8 GB is substracted to leave
+the operating system and other services running on the system suffient
+memory to function properly.
+
+For example, to run on a node with 36 cores and 192 GB RAM,
+
+- if a thread requires 10 GB, the maximum number of cores you can
+  request is 18, since 18 \* 10 GB = 180 GB < 192 GB - 8 GB, so::
+
+  -l nodes=1:ppn=18  -l pmem=10gb
+
+- if a thread requires only 5 GB, the maximum number of cores you
+  can request is 36, since 36 \* 5 GB = 180 GB < 192 GB - 8 GB, so::
+  
+  -l nodes=1:ppn=18  -l pmem=10gb
+
+Check the :ref:`hardware specification <hardware>` of the cluster/nodes
+you want to run on for the available memory and core count of the nodes.
+
 
 .. warning::
 
@@ -157,11 +193,6 @@ by ppn).  The units are ``kb``, ``mb``, ''gb`` or ``tb``.
    use of resources, so when this is enabled, they
    may just terminate your job if it uses more memory than requested.
 
-Example::
-
-   -l nodes=2:ppn=8  -l pmem=10gb
-
-In total, each of the 16 processes can use 10 GB RAM.
 
 .. _pvmem:
 
