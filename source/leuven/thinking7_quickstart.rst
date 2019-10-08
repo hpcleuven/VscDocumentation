@@ -27,19 +27,34 @@ For visualization nodes please refer to the :ref:`TurboVNC documentation <TurboV
 Running jobs
 ------------
 
-Remind that with migration to CentOS 7.6 toolchain starting from 2018a are available for Ivybride nodes and Haswell nodes. Older toolchains are no longer available. By default toolchain 2018a is loaded, for the CPU type of the specific node. If you want to load the toolchains explicitly you find then at
+In case you are not yet familiar with the system, you read more
+information on
 
-- for ivybridge::
+- :ref:`running jobs <running jobs>`, and
+- :ref:`specifying resources <resource specification>`.
 
-     module use /apps/leuven/ivybridge/2018a/modules/all
+.. note::
 
-- for haswell::
+   Remember that due to the migration to CentOS 7.6 toolchains
+   starting from 2018a are available for ivybride nodes and haswell
+   nodes. Older toolchains are no longer available. By default toolchain
+   2018a is loaded, for the CPU type of the specific node. If you want
+   to load the toolchains explicitly you find then at 
+   
+   - for ivybridge::
+
+        $ module use /apps/leuven/ivybridge/2018a/modules/all
+
+   - for haswell::
  
-     module use /apps/leuven/haswell/2018a/modules/all
+        $ module use /apps/leuven/haswell/2018a/modules/all
  
-ThinKing is now also using Lmod as module system. Have a look at  :ref:`Software stack <Software stack>` for more information.
+ThinKing is now also using Lmod as module system. Have a look at
+:ref:`Software stack <Software stack>` for more information.
 
-There are several type of nodes in the ThinKing cluster: compute nodes with ivybridge or haswell processors and some gpu nodes. Have a look at the hardware pages for more information.
+There are several type of nodes in the ThinKing cluster: compute nodes
+with ivybridge or haswell processors and some GPU nodes. Have a look at
+the hardware pages for more information.
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
