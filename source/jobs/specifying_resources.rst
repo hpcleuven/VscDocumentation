@@ -101,11 +101,11 @@ on a single node.
 
 If you don't use all cores of a node in your job, the scheduler
 
-- may decide to bundle the tasks of several nodes in your resource request on
+- may decide to pack the tasks of several nodes in your resource request on
   a single node;
-- may put other jobs you have in the queue on the same node(s);
+- may run other jobs you have in the queue on the same node(s);
 - may, depending on how the system administrator has configured the
-  scheduler, put jobs of other users on the same node.
+  scheduler, run jobs of other users on the same node.
  
 In fact, the last scenario typically doesn't occur in practice since most VSC
 clusters have a single user per node policy as misbehaving jobs of one user
