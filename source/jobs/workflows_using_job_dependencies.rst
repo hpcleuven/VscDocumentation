@@ -96,6 +96,11 @@ start them in any order, so the postprocessing job might run first, and immediat
 failing because the file ``simulated11.dat`` and/or ``simulated2.dat`` don't exist
 yet.
 
+.. note::
+
+   You don't necessarily have to create separate job scripts for similar tasks
+   since it is possible to :ref:`parameterize job scripts <Parameterized job scripts>`.
+
 
 Job dependencies
 -----------------
@@ -209,8 +214,8 @@ command executed, so that of ``preprocess``, ``simulate`` and ``postprocess``
 respectively.
 
 
-Parameterized job files
------------------------
+Parameterized job scripts
+-------------------------
 
 Consider the two job scripts for preprocessing the data in our running example.
 
