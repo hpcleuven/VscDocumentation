@@ -1,5 +1,7 @@
-Workflows using job dependencies
-================================
+Can I run workflows on an HPC cluster?
+======================================
+
+Short answer: yes, you can.
 
 Some workflows do not lend themselves to be completed in a single job.  As a
 running example, consider the following simple workflow:
