@@ -128,13 +128,13 @@ sequence of job submissions::
 
    $ preprocessing1_id=$(qsub preprocessing1.pbs)
    $ preprocessing2_id=$(qsub preprocessing2.pbs)
-   $ simulation1_id=$(qsub  -l depend=afterok:$preprocessing1_id  simulation1.pbs)
-   $ simulation2_id=$(qsub  -l depend=afterok:$preprocessing2_id  simulation2.pbs)
-   $ qsub  -l depend=afterok:$simulation1_id:$simulation2_id   postprocessing.pbs
+   $ simulation1_id=$(qsub  -W depend=afterok:$preprocessing1_id  simulation1.pbs)
+   $ simulation2_id=$(qsub  -W depend=afterok:$preprocessing2_id  simulation2.pbs)
+   $ qsub  -W depend=afterok:$simulation1_id:$simulation2_id   postprocessing.pbs
 
 The ``qsub`` command returns the job ID, and this is assigned to a bash variable.
 It is used in subsequent submissions to specify the job dependencies using
-``-l depend``.  In this case, follow-up jobs should only be run when the
+``-W depend``.  In this case, follow-up jobs should only be run when the
 previous jobs succeeded, hence the ``afterok`` dependencies.
 
 The scheduler can run ``preprocessing1.pbs`` and ``preprocessing2.pbs`` concurrently
