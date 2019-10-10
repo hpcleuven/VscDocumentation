@@ -1,7 +1,7 @@
 .. _worker framework:
 
-worker quickstart
-=================
+worker quick start
+==================
 
 Purpose
 -------

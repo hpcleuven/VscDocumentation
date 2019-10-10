@@ -43,6 +43,8 @@ separately. These packages will not be listed by ``pip`` unless you
 loaded the corresponding module.
 
 
+.. _conda for Python:
+
 Install your own packages using conda
 -------------------------------------
 
