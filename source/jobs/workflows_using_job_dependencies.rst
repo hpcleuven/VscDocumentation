@@ -179,6 +179,10 @@ The following types of dependencies can be specified:
 The dependency types listed above are the most useful ones, for a complete list,
 see the official qsub documentation.
 
+To conveniently and efficiently execute embarrassingly parallel parts of a
+workflow (e.g., parameter exploration, or processing many independent inputs),
+the :ref:`worker framework or atools <worker or atools>` will be helpful.
+
 
 Job success or failure
 ----------------------
