@@ -37,6 +37,8 @@ running example, consider the following simple workflow:
    that can run on all cores of a single node, and takes 1 hour to complete.  It will
    produce ``result.dat`` as final output.
 
+|workflow|
+
 This workflow can be executed using the job script below::
 
     #!/usr/bin/env bash
@@ -159,25 +161,17 @@ The following types of dependencies can be specified:
 ``afterany``
    only start the job when the jobs with the specified job IDs all completed,
    regardless of success or failure.
-- ``after``
+``after``
    start the job as soon as the jobs the the specified job IDs have all started
    to run.
-- ``synccount:<count>``
-   the submitted job is the first of ``<count>`` that should be executed at
-   the same time.
-- ``syncwith:<job_id>``
-  the submitted job is one of the ``<count>`` jobs that should run concurrently,
-  and ``<job_id>`` is the job ID of the first that was submitted using
-  ``synccount:<count>``.
 
-.. warning::
-
-   Since ``synccount``/``syncwith`` dependencies specify that all jobs should run
-   concurrently that implies that the resources to do this should be available at
-   the same time.  This may lead to your job spending a long time in the queue.
+A similar set of dependencies is defined for job arrays, e.g.,
+``afterokarray:<job_id>[]`` indicates that the submitted job can only start
+after all jobs in the job array have completed successfully.
 
 The dependency types listed above are the most useful ones, for a complete list,
-see the official qsub documentation.
+see the official `qsub documentation`_.  Unfortunately, not everything works as
+advertized.
 
 To conveniently and efficiently execute embarrassingly parallel parts of a
 workflow (e.g., parameter exploration, or processing many independent inputs),
@@ -256,8 +250,12 @@ could create a single job script ``preprocessing.pbs`` using two variables
 
 The job submission to preprocess ``input1.dat`` and ``input2.dat`` would be::
 
-   $ qsub  -v in_file=input1.daat,out_file=preprocessed1.dat  preprocessing.pbs
-   $ qsub  -v in_file=input2.daat,out_file=preprocessed2.dat  preprocessing.pbs
+   $ qsub  -v in_file=input1.dat,out_file=preprocessed1.dat  preprocessing.pbs
+   $ qsub  -v in_file=input2.dat,out_file=preprocessed2.dat  preprocessing.pbs
 
 Using job dependencies and variables in job scripts allows you to define quite
 sophisticated workflows, simply relying on the scheduler.
+
+
+.. |workflow| image:: workflows_using_job_dependencies/workflow_using_job_dependencies.png
+.. include:: links.rst
