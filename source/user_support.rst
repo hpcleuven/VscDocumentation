@@ -53,8 +53,8 @@ Please provide the following information:
 #. the name of the application (e.g., Ansys, Matlab, R, ...),
 #. the module(s) you load to use the software (e.g.,
    R/3.1.2-intel-2015a),
-#. the error message the application produces, as well as the output and error
-   files if this ran as a job,
+#. the error message the application produces, as well as the location of the
+   output and error files if this ran as a job,
 #. whether the error is reproducible,
 #. if possible, a procedure and data to reproduce the problem,
 #. if the application was run as a job, the jobID(s) of (un)successful
@@ -66,8 +66,8 @@ If your own software malfunctions/crashes
 Please provide the following information:
 
 #. the location of the source code,
-#. the error message produced at build time or runtime, as well as the output
-   and error files if this ran as a job,
+#. the error message produced at build time or runtime, as well as the location
+   of the output and error files if this ran as a job,
 #. the toolchain and other module(s) you load to build the software
    (e.g., intel/2015a with HDF5/1.8.4-intel-2015a),
 #. if possible and applicable, a procedure and data to reproduce the
