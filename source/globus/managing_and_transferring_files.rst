@@ -34,6 +34,10 @@ To access a Globus Collection:
 Transferring files
 ~~~~~~~~~~~~~~~~~~
 
+VSC users can use Globus to transfer files and data between collections they have access to. Those can be, e.g., own VSC */scratch* and */data* directories on Tier-1 and Tier-2, or any other remote and local server collection.
+
+To transfer data between two collections:
+
 - Click :bgrnd1:`Transfer` or :bgrnd1:`Sync to...` in the command panel on the right side of the page. A new collection panel will open, with a :bgrnd1:`Transfer or Sync to` field at the top of the panel. Alternatively, use the :bgrnd1:`Panels` toggle button in the top right corner to split the directory tree panel and select a destination collection.
 
 - Find and choose the second collection and connect to it as you did with the first one. Click on the left first collection and select all the files to transfer. The :bgrnd1:`Start` button at the bottom of the panel will become active. Between the two :bgrnd1:`Start` buttons at the bottom of the page, the :bgrnd1:`Transfer and Sync Options` tab provides access to several options. By default, Globus verifies file integrity after transfer using checksums. Change the transfer settings if you would like. You may also enter a label for the transfer.

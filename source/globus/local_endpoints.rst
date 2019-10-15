@@ -13,8 +13,10 @@ To access and manage your local endpoints:
 
 - From a browser log into Globus and in the File Manager navigate to :bgrnd1:`Endpoints`. Then select the :bgrnd1:`Administered by you` tab.
 
+- To change the attributes of an endpoint click on its name. You can adjust a variety of settings like private or public, endpoint name, contact info, and encryption.
+
 .. image:: local_endpoints/endpoints1.png
 
-- To change the attributes of an endpoint click on its name. You can adjust a variety of settings like private or public, endpoint name, contact info, and encryption.
+.. warning:: Users should use caution and carefully select the privacy permissions and attributes when creating enpdpoints on their personal computers.
 
 .. include:: links.rst
