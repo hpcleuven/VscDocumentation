@@ -1,3 +1,8 @@
+.. _glossary:
+
+Glossary
+--------
+
 .. glossary::
 
    Globus Collection
@@ -14,4 +19,6 @@
        Globus is a data sharing and data transfer platform.
 
 
-.. seealso:: The official `Globus How-To pages <https://docs.globus.org/how-to/>`_.
+.. seealso:: The official `Globus How-To pages`_.
+
+.. include:: links.rst

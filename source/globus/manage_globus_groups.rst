@@ -1,8 +1,14 @@
+.. include:: css.rst
 
-Globus allows you to create and manage groups of Globus users and share files and folders with these groups. More information on Globus groups can be found `here <https://docs.globus.org/how-to/managing-groups/>`_.
+.. _manage_globus_groups:
+
+Manage Globus groups
+--------------------
+
+Globus allows you to create and manage groups of Globus users and share files and folders with these groups. More information about Globus groups can be found on the `Globus Groups How-To page`_.
 
 
-.. image:: img/groups-1.png
+.. image:: manage_globus_groups/groups-1.png
 
 
 - Click :bgrnd1:`Groups` in the left-side command pane to open the Your Groups page. You will see a list of all the groups you are a member of, including those you administer or manage. To search for a group you belong to, type part of its name in the Filter groups field above the list.
@@ -23,3 +29,4 @@ Globus allows you to create and manage groups of Globus users and share files an
 
 - Click the :bgrnd1:`Settings` tab to view the group's settings and policies. These policies control who can see the group and its membership list, how new users are added to the group, and related privileges. Click :bgrnd1:`Edit Policies` to change any of these policies.
 
+.. include:: links.rst

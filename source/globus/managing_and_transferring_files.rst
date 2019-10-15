@@ -1,9 +1,16 @@
+.. include:: css.rst
+
+.. _managing_and_transferring_files:
+
+Managing and transferring files
+-------------------------------
+
 The File Manager
 ~~~~~~~~~~~~~~~~
 
 After you have logged in to Globus, you will begin at the **File Manager**. The first time you use the File Manager, all fields will be blank.
 
-.. image:: img/filemanager-1.png
+.. image:: managing_and_transferring_files/filemanager-1.png
 
 
 Globus Collections and Endpoints
@@ -17,7 +24,7 @@ To access a Globus Collection:
 
 -  Click in the :bgrnd1:`Collection` field at the top of the File Manager page and search all available collections and endpoints by typing a collection/endpoint name or a description. Globus will list collections with matching names.
 
-.. image:: img/collection1.png
+.. image:: managing_and_transferring_files/collection1.png
 
 .. note:: At the VSC all Tier-1 and Tier-2 systems have dedicated Globus Collections. Type *vsc* in the search field to see the list.
 
@@ -27,7 +34,7 @@ To access a Globus Collection:
 Transferring files
 ~~~~~~~~~~~~~~~~~~
 
-.. image:: img/filetransfer-2.png
+.. image:: managing_and_transferring_files/filetransfer-2.png
 
 
 - Click :bgrnd1:`Transfer` or :bgrnd1:`Sync to...` in the command panel on the right side of the page. A new collection panel will open, with a :bgrnd1:`Transfer or Sync to` field at the top of the panel. Alternatively, use the :bgrnd1:`Panels` toggle button in the top right corner to split the directory tree panel and select a destination collection.
@@ -38,3 +45,4 @@ Transferring files
 
 Completed file transfers can be seen in the :bgrnd1:`Activity` tab in the command menu on the left of the page. On the Activity page, click the arrow icon on the right to view details about the transfer. You will also receive an email with the transfer details.
 
+.. include:: links.rst
