@@ -34,14 +34,13 @@ To access a Globus Collection:
 Transferring files
 ~~~~~~~~~~~~~~~~~~
 
-.. image:: managing_and_transferring_files/filetransfer-2.png
-
-
 - Click :bgrnd1:`Transfer` or :bgrnd1:`Sync to...` in the command panel on the right side of the page. A new collection panel will open, with a :bgrnd1:`Transfer or Sync to` field at the top of the panel. Alternatively, use the :bgrnd1:`Panels` toggle button in the top right corner to split the directory tree panel and select a destination collection.
 
 - Find and choose the second collection and connect to it as you did with the first one. Click on the left first collection and select all the files to transfer. The :bgrnd1:`Start` button at the bottom of the panel will become active. Between the two :bgrnd1:`Start` buttons at the bottom of the page, the :bgrnd1:`Transfer and Sync Options` tab provides access to several options. By default, Globus verifies file integrity after transfer using checksums. Change the transfer settings if you would like. You may also enter a label for the transfer.
 
 - Click the :bgrnd1:`Start` button to transfer the selected files to the collection in the right panel. Globus will display a green notification panel - confirming that the transfer request was submitted - and add a badge to the :bgrnd1:`Activity` item in the command menu on the left of the page. You can navigate away from the File Manager, close the browser window, and even logout. Globus will optimize the transfer for performance, monitor the transfer for completion and correctness, and recover from network errors and collection downtime.
+
+.. image:: managing_and_transferring_files/filetransfer-2.png
 
 Completed file transfers can be seen in the :bgrnd1:`Activity` tab in the command menu on the left of the page. On the Activity page, click the arrow icon on the right to view details about the transfer. You will also receive an email with the transfer details.
 
