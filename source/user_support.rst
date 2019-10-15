@@ -49,6 +49,7 @@ If installed software malfunctions/crashes
 
 Please provide the following information:
 
+#. the name of the cluster your are working on,
 #. the name of the application (e.g., Ansys, Matlab, R, ...),
 #. the module(s) you load to use the software (e.g.,
    R/3.1.2-intel-2015a),
