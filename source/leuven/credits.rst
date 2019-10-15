@@ -109,3 +109,4 @@ support <Contact VSC>`.
 .. _Geert Jan Bex: mailto:geertjan.bex@uhasselt.be
 .. _credit request form:  https://admin.kuleuven.be/icts/onderzoek/hpc/request-project-credits
 .. include:: jobs/links.rst
+.. include:: links.rst
