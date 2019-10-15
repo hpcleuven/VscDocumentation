@@ -19,6 +19,13 @@ When you submit a support request, it helps if you always provide:
 #. the time the problem occurred,
 #. the steps you took to resolve the problem.
 
+.. warning::
+
+   If you are working in a terminal, please *do not* provide a screenshot,
+   simply copy/paste the text in your terminal.  This is easier to read for
+   support staff, and allows them to copy/paste information, rather than
+   having to retype, e.g., paths.
+
 Below, you will find more useful information you can provide for various
 categories of problems you may encounter. Although it may seem like more
 work to you, it will often save a few iterations and get your problem
