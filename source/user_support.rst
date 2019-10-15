@@ -62,7 +62,7 @@ Please provide the following information:
 If your own software malfunctions/crashes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-then provide the following information:
+Please provide the following information:
 
 #. the location of the source code,
 #. the error message produced at build time or runtime,
