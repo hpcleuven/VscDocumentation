@@ -23,8 +23,9 @@ first (more info on our ":ref:`using Pageant`" page).
 #. In the tab marked General, enter the following values (all other
    fields remain blank):
 
-   -  Host: *vsc.login.node*, the name of the login node of your home
-      institute VSC cluster
+   -  Host: fill in the hostname of the VSC login node of your home
+      institution. You can find this information in the :ref:`overview
+      of available hardware on this site <hardware>`.
    -  Servertype: SFTP - SSH File Transfer Protocol
    -  Logontype: Normal
    -  User: *your own* VSC user ID, e.g., vsc98765;
