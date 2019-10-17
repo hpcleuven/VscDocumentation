@@ -11,7 +11,7 @@ very common scenario, so we developed software to do that for you.
 Two general purpose software packages are available:
 
 - the `worker framework <https://github.com/gjbex/worker>`_ (:ref:`worker
-  quickstart <worker framework>` and `worker documentation`_) and
+  quick start <worker framework>` and `worker documentation`_) and
 - `atools <https://github.com/gjbex/atools>`_ (`atools documentation`_).
 
 Both are designed to handle this use case, but each has its own strengths

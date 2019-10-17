@@ -19,6 +19,13 @@ When you submit a support request, it helps if you always provide:
 #. the time the problem occurred,
 #. the steps you took to resolve the problem.
 
+.. warning::
+
+   If you are working in a terminal, please *do not* provide a screenshot,
+   simply copy/paste the text in your terminal.  This is easier to read for
+   support staff, and allows them to copy/paste information, rather than
+   having to retype, e.g., paths.
+
 Below, you will find more useful information you can provide for various
 categories of problems you may encounter. Although it may seem like more
 work to you, it will often save a few iterations and get your problem
@@ -42,10 +49,12 @@ If installed software malfunctions/crashes
 
 Please provide the following information:
 
+#. the name of the cluster your are working on,
 #. the name of the application (e.g., Ansys, Matlab, R, ...),
 #. the module(s) you load to use the software (e.g.,
    R/3.1.2-intel-2015a),
-#. the error message the application produces,
+#. the error message the application produces, as well as the location of the
+   output and error files if this ran as a job,
 #. whether the error is reproducible,
 #. if possible, a procedure and data to reproduce the problem,
 #. if the application was run as a job, the jobID(s) of (un)successful
@@ -54,10 +63,11 @@ Please provide the following information:
 If your own software malfunctions/crashes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-then provide the following information:
+Please provide the following information:
 
 #. the location of the source code,
-#. the error message produced at build time or runtime,
+#. the error message produced at build time or runtime, as well as the location
+   of the output and error files if this ran as a job,
 #. the toolchain and other module(s) you load to build the software
    (e.g., intel/2015a with HDF5/1.8.4-intel-2015a),
 #. if possible and applicable, a procedure and data to reproduce the

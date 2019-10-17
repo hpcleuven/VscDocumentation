@@ -1,7 +1,7 @@
 .. _worker framework:
 
-worker quickstart
-=================
+worker quick start
+==================
 
 Purpose
 -------
@@ -414,7 +414,7 @@ to execute multi-threaded work items doesn't work by default. Suppose a node
 has 20 cores, and each work item runs most efficiently on 4 cores, then one
 would expect the following resource specification to work::
 
-   $ wsub  -l nodes=10:ppn=5 -W x=nmatchpolicy=exactnode  -batch run.pbs  \\
+   $ wsub  -l nodes=10:ppn=5 -W x=nmatchpolicy:exactnode  -batch run.pbs  \\
            -data my_data.csv
 
 This would run 5 work items per node, so that each work item would have
