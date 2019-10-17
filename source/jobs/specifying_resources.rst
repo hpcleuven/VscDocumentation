@@ -101,11 +101,11 @@ on a single node.
 
 If you don't use all cores of a node in your job, the scheduler
 
-- may decide to bundle the tasks of several nodes in your resource request on
+- may decide to pack the tasks of several nodes in your resource request on
   a single node;
-- may put other jobs you have in the queue on the same node(s);
+- may run other jobs you have in the queue on the same node(s);
 - may, depending on how the system administrator has configured the
-  scheduler, put jobs of other users on the same node.
+  scheduler, run jobs of other users on the same node.
  
 In fact, the last scenario typically doesn't occur in practice since most VSC
 clusters have a single user per node policy as misbehaving jobs of one user
@@ -145,7 +145,43 @@ The following option specifies the RAM requirements of your job::
    -l pmem=<memory>
 
 The job needs ``<memory>`` RAM memory per core or hyperthread (the unit used
-by ppn).  The units are ``kb``, ``mb``, ''gb`` or ``tb``.
+by ppn).  The units are for the ``pmem`` value are ``kb``, ``mb``, ''gb`` or
+``tb``.
+
+Example::
+
+   -l nodes=2:ppn=8  -l pmem=10gb
+
+In total, each of the 16 processes can use 10 GB RAM.
+
+.. warning::
+
+   It is important to realize that
+   
+   - the values for ``ppn`` and ``pmem`` depend on one another, and
+   - that these depends on the amount of RAM installed in the compute
+     nodes.
+
+For instance, on a node with 192 GB of RAM, you should ensure that
+``ppn`` \* ``pmem`` < 192 GB - 8 GB.  The 8 GB is subtracted to leave
+the operating system and other services running on the system sufficient
+memory to function properly.
+
+For example, to run on a node with 36 cores and 192 GB RAM,
+
+- if a thread requires 10 GB, the maximum number of cores you can
+  request is 18, since 18 \* 10 GB = 180 GB < 192 GB - 8 GB, so::
+
+  -l nodes=1:ppn=18  -l pmem=10gb
+
+- if a thread requires only 5 GB, the maximum number of cores you
+  can request is 36, since 36 \* 5 GB = 180 GB < 192 GB - 8 GB, so::
+  
+  -l nodes=1:ppn=18  -l pmem=10gb
+
+Check the :ref:`hardware specification <hardware>` of the cluster/nodes
+you want to run on for the available memory and core count of the nodes.
+
 
 .. warning::
 
@@ -157,11 +193,6 @@ by ppn).  The units are ``kb``, ``mb``, ''gb`` or ``tb``.
    use of resources, so when this is enabled, they
    may just terminate your job if it uses more memory than requested.
 
-Example::
-
-   -l nodes=2:ppn=8  -l pmem=10gb
-
-In total, each of the 16 processes can use 10 GB RAM.
 
 .. _pvmem:
 
@@ -201,20 +232,20 @@ Several clusters at the VSC have nodes with different properties,  e.g.,
 You can then specify which node type you want by adding further properties
 to the ``-l nodes=`` specification.
 
-For example, assume a cluster with both Ivy Bridge and Haswell generation
-nodes. The Haswell CPU supports new and useful floating point instructions,
-but programs that use these will not run on the older Ivy Bridge nodes.
+For example, assume a cluster with both ivybridge and haswell generation
+nodes. The haswell CPU supports new and useful floating point instructions,
+but programs that use these will not run on the older ivybridge nodes.
 
-The cluster will then specify the property ``ivybridge`` for the Ivy Bridge
-nodes and ``haswell`` for the Haswell nodes. To tell the scheduler that you
-want to use the Haswell nodes, specify::
+The cluster will then specify the property ``ivybridge`` for the ivybridge
+nodes and ``haswell`` for the haswell nodes. To tell the scheduler that you
+want to use the haswell nodes, specify::
 
    -l nodes=8:ppn=6:haswell
 
-Since Haswell nodes often have 24 cores, you will likely get 2 physical nodes.
+Since haswell nodes often have 24 cores, you will likely get 2 physical nodes.
 
 The exact list of properties depends on the cluster and is given in the
-page for your cluster in the ":ref:`hardware`" section.
+page for your cluster in the :ref:`hardware specification pages <hardware>`.
 
 .. note::
 

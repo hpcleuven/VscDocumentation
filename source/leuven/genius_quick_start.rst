@@ -14,6 +14,17 @@ For example, to log in to any of the login node using SSH::
 
 Running jobs
 ------------
+
+There are several type of nodes in the Genius cluster: normal compute
+nodes, GPU nodes, big memory nodes.  The resources specifications for
+jobs have to be tuned to use these nodes properly.
+
+In case you are not yet familiar with the system, you read more
+information on
+
+- :ref:`running jobs <running jobs>`, and
+- :ref:`specifying resources <resource specification>`.
+
 There are several type of nodes in the Genius cluster: normal compute nodes,
 GPU nodes, big memory nodes.  For information on systems, see the :ref:`hardware
 specification <Genius hardware>`.
