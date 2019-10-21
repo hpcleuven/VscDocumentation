@@ -52,7 +52,7 @@ loaded:
 
    $ ml
    Currently Loaded Modules:
-     1) cluster/delcatty (S)
+     1) cluster/victini (S)
      Where:
       S:  Module is Sticky, requires --force to unload or purge
 
@@ -150,11 +150,11 @@ tell on which cluster(s) that module available:
            GCCcore
        You will need to load all module(s) on any one of the lines below before the \"GCC/4.9.3-2.25\" module
        is available to load.
-         cluster/delcatty
          cluster/golett
          cluster/phanpy
-         cluster/raichu
          cluster/swalot
+         cluster/skitty
+         cluster/victini
        Help:
           The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada,
           as well as libraries for these languages (libstdc++, libgcj,...). - Homepage: http://gcc.gnu.org/
@@ -163,8 +163,8 @@ tell on which cluster(s) that module available:
          module -r spider '.*GCC/4.9.3-2.25.*'
 
 This tells you that the module named ``GCC/4.9.3-2.25`` is available on
-the clusters ``delcatty``, ``golett``, ``phanpy``, ``raichu`` and
-``swalot``. It also tells you what the module contains and a URL to the
+the clusters ``golett``, ``phanpy``, ``swalot``, ``skitty`` and
+``victini``. It also tells you what the module contains and a URL to the
 homepage of the software.
 
 Available modules for a particular software package: module avail <name> (or ml av <name>)
@@ -244,7 +244,7 @@ For example, to set up your environment to use matplotlib:
    $ ml matplotlib/1.5.1-intel-2016a-Python-2.7.11
    $ ml
    Currently Loaded Modules:
-     1) cluster/delcatty                                    (S)  12) zlib/1.2.8-intel-2016a
+     1) cluster/victini                                   (S)  12) zlib/1.2.8-intel-2016a
      2) GCCcore/4.9.3                                          13) libreadline/6.3-intel-2016a
      3) binutils/2.25-GCCcore-4.9.3                            14) ncurses/6.0-intel-2016a
      4) icc/2016.1.150-GCC-4.9.3-2.25                          15) Tcl/8.6.4-intel-2016a
@@ -325,7 +325,7 @@ To reset your environment back to a clean state, you can use
 
    $ ml
    Currently Loaded Modules:
-     1) cluster/delcatty                                    (S)  11) bzip2/1.0.6-intel-2016a
+     1) cluster/victini                                   (S)  11) bzip2/1.0.6-intel-2016a
      2) GCCcore/4.9.3                                          12) zlib/1.2.8-intel-2016a
      3) binutils/2.25-GCCcore-4.9.3                            13) libreadline/6.3-intel-2016a
      4) icc/2016.1.150-GCC-4.9.3-2.25                          14) ncurses/6.0-intel-2016a
@@ -338,10 +338,10 @@ To reset your environment back to a clean state, you can use
    $ ml purge
    The following modules were not unloaded:
       (Use \"module --force purge\" to unload all):
-     1) cluster/delcatty
+     1) cluster/victini
    [15:21:20] vsc40023@node2626:~ $ ml
    Currently Loaded Modules:
-     1) cluster/delcatty (S)
+     1) cluster/victini (S)
 
 Note that, on HPC-UGent, the ``cluster`` module will always remain
 loaded, since it defines some important environment variables that point
