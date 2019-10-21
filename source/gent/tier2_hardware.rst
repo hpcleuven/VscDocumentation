@@ -16,7 +16,6 @@ Compute clusters
 ============	=======	====================================================	===========	=========================	============
 cluster name	# nodes	Processor architecture                               	Memory/node	Local diskspace/node		Interconnect
 ============	=======	====================================================	===========	=========================	============
-delcatty	123	2 x 8-core Intel E5-2670 (Sandy Bridge @ 2.6 GHz)	64 GB		400 GB				FDR InfiniBand
 phanpy		16	2 x 12-core Intel E5-2680v3 (Haswell-EP @ 2.5 GHz)	512 GB		3 x 400 GB (SSD, striped)	FDR InfiniBand
 golett		200	2 x 12-core Intel E5-2680v3 (Haswell-EP @ 2.5 GHz)	64 GB		500 GB				FDR-10 InfiniBand
 swalot		128	2 x 10-core Intel E5-2660v3 (Haswell-EP @ 2.6 GHz)	128 GB		1 TB				FDR InfiniBand
