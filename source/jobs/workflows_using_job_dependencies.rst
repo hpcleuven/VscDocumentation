@@ -47,12 +47,12 @@ This workflow can be executed using the job script below::
 
     cd $PBS_O_WORKDIR
     preprocess   --input input1.dat          --output preprocessed1.dat
-    simulate     --input preprocessed1.dat   --output  simulated1.dat
+    simulate     --input preprocessed1.dat   --output simulated1.dat
     preprocess   --input input2.dat          --output preprocessed2.dat
-    simulate     --input preprocessed2.dat   --output  simulated2.dat
+    simulate     --input preprocessed2.dat   --output simulated2.dat
     postprocess  --input simulated1.dat simulated2.dat   --output result.dat 
 
-Just to be on the same side, 10 hours of walltime were requested rather than
+Just to be on the safe side, 10 hours of walltime were requested rather than
 the required 9 hours total.  We assume that compute nodes have 36 cores.
 
 The problem obviously is that during 1/3th of the execution time, 19 out of the
@@ -82,7 +82,7 @@ fifth for postprocessing.
     #PBS -l walltime=6:00:00
 
     cd $PBS_O_WORKDIR
-    simulate     --input preprocessed1.dat --output  simulated1.dat
+    simulate     --input preprocessed1.dat --output simulated1.dat
 
 #. The simulation on the second preprocessed file would by done by
    ``simulation2.pbs`` that would be similar to ``simulation1.pbs``.
@@ -93,11 +93,11 @@ fifth for postprocessing.
     #PBS -l walltime=6:00:00
 
     cd $PBS_O_WORKDIR
-    postprocess  --input simulated.dat simulated2.pbs  --output result.dat 
+    postprocess  --input simulated1.dat simulated2.dat  --output result.dat 
 
 However, if we were to submit these three jobs independently, the scheduler may
 start them in any order, so the postprocessing job might run first, and immediately
-failing because the file ``simulated11.dat`` and/or ``simulated2.dat`` don't exist
+failing because the file ``simulated1.dat`` and/or ``simulated2.dat`` don't exist
 yet.
 
 .. note::
@@ -116,14 +116,14 @@ The scheduler supports specifying job dependencies, e.g.,
 
 Job dependencies can effectively solve our problem since
 
-- ``simulation1.pbs`` should only start when ``preprocessing1.dat`` finishes
+- ``simulation1.pbs`` should only start when ``preprocessing1.pbs`` finishes
   successfully, and
-- ``simulation2.pbs`` should only start when ``preprocessing2.dat`` finishes
+- ``simulation2.pbs`` should only start when ``preprocessing2.pbs`` finishes
   successfully, and
 - ``postprocessing.pbs`` should only start when both ``simulation1.pbs`` and
   ``simulation2.pbs`` finished successfully.
 
-It is easy to enforce this using job dependencies, consider the following
+It is easy to enforce this using job dependencies. Consider the following
 sequence of job submissions::
 
    $ preprocessing1_id=$(qsub preprocessing1.pbs)
@@ -144,7 +144,7 @@ would happen to be free.  When both simulations are done, the postprocessing can
 
 Since each step requests only the resources it really requires, efficiency is optimal,
 and the total time could be as low as 5 hours rather than 9 hours if ample resources
-are available..
+are available.
 
 
 Types of dependencies

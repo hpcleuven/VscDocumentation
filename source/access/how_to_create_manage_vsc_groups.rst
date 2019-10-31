@@ -91,7 +91,7 @@ Working with file and directory permissions
 
    ::
 
-      chgrp [options] group target1 [target2 ..]
+      chgrp [options] group target1 [target2 ...]
 
 -  The ``chmod`` command (abbreviated from **ch**\ ange **mod**\ e) can
    change file system modes of files and directories. The modes include

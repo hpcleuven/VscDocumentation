@@ -68,7 +68,7 @@ The charge rate is the same for all nodes, i.e., 1 credit per node-day.
 There are several types of nodes in the Breniac cluster: compute nodes
 with skylake CPUs, and nodes with broadwell CPUs.  The latter have either
 128 or 256 GB RAM.  See the documentation on :ref:`Breniac hardware
-<Breaniac hardware>` for details.
+<Breniac hardware>` for details.
 
 
 .. _submit to Breniac skylake node:

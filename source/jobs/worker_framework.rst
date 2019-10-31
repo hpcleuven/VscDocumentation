@@ -20,7 +20,7 @@ to aggregate information produced by individual computations.
 In short, it has been designed for any scenario that can be reduced to a
 `MapReduce <https://en.wikipedia.org/wiki/MapReduce>`__ approach.
 
-However, in some cases, `atools <atools documentation`_ is a better
+However, in some cases, `atools <atools documentation_>`_ is a better
 alternative than worker, especially for MPI applications.  The worker
 framework can not handle such applications since it uses MPI for its
 own process communication. atools offers similar functionality to

@@ -6,7 +6,7 @@ Glossary
 .. glossary::
 
    Globus Collection
-       A Globus Collection is a named location containing data you can access with Globus. Collections can be hosted on many different kinds of systems, including campus storage, HPC clusters, laptops, Amazon S3 buckets, Google Drive, and scientific instruments. When you use Globus, you don’t need to know a physical location or details about storage. You only need a collection name. A collection allows authorized Globus users to browse and transfer files. Globus Collections can also be used for sharing data with others, for data publication, and for enabling discovery by other Globus users.
+       A Globus Collection is a named location containing data you can access with Globus. Collections can be hosted on many different kinds of systems, including campus storage, HPC clusters, laptops, Amazon S3 buckets, Google Drive, and scientific instruments. When you use Globus, you don't need to know a physical location or details about storage. You only need a collection name. A collection allows authorized Globus users to browse and transfer files. Globus Collections can also be used for sharing data with others, for data publication, and for enabling discovery by other Globus users.
 
 
    Globus Connect
