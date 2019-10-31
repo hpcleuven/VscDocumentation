@@ -17,6 +17,6 @@ To access and manage your local endpoints:
 
 .. image:: local_endpoints/endpoints1.png
 
-.. warning:: Users should use caution and carefully select the privacy permissions and attributes when creating enpdpoints on their personal computers.
+.. warning:: Users should use caution and carefully select the privacy permissions and attributes when creating endpoints on their personal computers.
 
 .. include:: links.rst

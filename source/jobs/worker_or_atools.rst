@@ -69,7 +69,7 @@ atools may be a better match.  The following table summarizes this.
 +----------------+--------+--------+
 | multi-threaded | yes    | yes    |
 +----------------+--------+--------+
-| MPI- based     | no     | yes    |
+| MPI-based      | no     | yes    |
 +----------------+--------+--------+
 
 .. warning::
