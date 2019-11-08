@@ -10,11 +10,19 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
 Hardware details
 ----------------
 
-- 86 thin nodes
-
+- 206 thin nodes 
+   
+    - 86 nodes
     - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
     - 192 GB RAM
     - 200 GB SSD local disk
+    - feature skylake
+
+    - 120 nodes (closed pilot phase)
+    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
+    - 192 GB RAM
+    - 200 GB SSD local disk
+    - feature cascadelake 
 
 - 10 big memory nodes
 
@@ -23,13 +31,20 @@ Hardware details
    - 200 GB SSD local disk
    - partition ``bigmem``, specific ``qsub`` :ref:`options <submit to genius big memory node>` apply.
 
-- 20 GPGPU nodes
+- 22 GPGPU nodes, 96 GPU devices
 
+   - 20 nodes
    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
    - 192 GB RAM
-   - 4 NVIDIA P100\@1.3 GHz, 16 GB GDDR, connected with NVLink
+   - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
    - 200 GB SSD local disk
    - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
+
+   - 2 nodes (closed pilot phase)
+   - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
+   - 192 GB RAM
+   - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
+
 
 - 4 AMD nodes
 
