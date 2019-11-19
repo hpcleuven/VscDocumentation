@@ -161,7 +161,7 @@ In total, each of the 16 processes can use 10 GB RAM.
 
    On the VUB Hydra cluster, the usage of ``pmem`` is discouraged. Instead,
    users are recommended to specify the total amount of RAM requested for the job
-   with ``-l mem=<total_meory>``.
+   with ``-l mem=<total_memory>``.
 
 .. warning::
 
