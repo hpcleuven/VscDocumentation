@@ -33,6 +33,12 @@ Once downloaded, run the installation script::
 
    $ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
 
+.. warning::
+
+   It is important to use ``$VSC_DATA`` to store your conda installation
+   since environments tend to be large, and your quota in ``$VSC_HOME``
+   would be exceeded soon.
+
 Optionally, you can add the path to the Miniconda installation to the
 PATH environment variable in your ``.bashrc`` file. This is convenient, but
 may lead to conflicts when working with the module system, so make sure
