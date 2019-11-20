@@ -39,6 +39,12 @@ Once downloaded, run the installation script::
    since environments tend to be large, and your quota in ``$VSC_HOME``
    would be exceeded soon.
 
+.. warning::
+
+   The installation script will offer to modify your ``.bashrc`` file.
+   You will not be able to log in on NX nodes when you allow the
+   installer to do so.
+
 Optionally, you can add the path to the Miniconda installation to the
 PATH environment variable in your ``.bashrc`` file. This is convenient, but
 may lead to conflicts when working with the module system, so make sure
