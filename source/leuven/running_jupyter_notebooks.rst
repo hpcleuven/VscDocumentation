@@ -19,10 +19,16 @@ Prerequisites
 The most convenient way to install Jupyter, and any other Python packages
 you require is using conda.  In case you're not familiar with conda, please
 check out the information on :ref:`managing Python packages using conda
-<conda for Python>`.  In this how-to, we will assume that the conda
-environment's name that has Jupyter installed is `science`.  We will also
-assume that the `$VSC_DATA/miniconda3/bin` directory is in your ``PATH``
-variable.
+<conda for Python>`.
+
+.. warning::
+
+   Pay attention to the warning `not` to let the installation script modify
+   your ``.bashrc`` file.
+
+In this how-to, we will assume that the conda environment's name that has
+Jupyter installed is ``science``.  We will also assume that the
+``$VSC_DATA/miniconda3/bin`` directory is in your ``PATH`` variable.
 
 
 Using a notebook on an NX node
