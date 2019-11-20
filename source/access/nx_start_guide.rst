@@ -93,7 +93,7 @@ step-by-step or to the :download:`document containing graphical
 instructions <nx_start_guide/nx_config_guide.pdf>`.
 
 How to start using NX on Genius?
-----------------------------------
+--------------------------------
 
 #. Once your desktop is open, you can use all available GUI designed
    software that is listed within the Applications menu. Software is
@@ -116,6 +116,16 @@ How to start using NX on Genius?
    session <nx_start_guide/nx_slides.pdf>`. In the slides you can find the
    information how to **connect the local HDD** to the NX session for
    easier transfer of data between the cluster and your local computer.
+
+
+Troubleshooting
+---------------
+
+In some circumstances, you may not be able to log in using NX, in particular,
+if you allowed the ``miniconda3`` installation script to modify you ``.bashrc``,
+your login will fail.  You will have to remove the definition of the ``conda``
+function from your ``.bashrc``.
+
 
 Attached documents
 ------------------
