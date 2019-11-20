@@ -28,23 +28,24 @@ Direct login is using SSH is possible to all login infrastructure without restri
 - One haswell login node for SSH access and one for
   :ref:`TurboVNC<TurboVNC start guide>` access.	
 
-    - ``login7-tier2.hpc.kuleuven.be``
-    - ``login8-tier2.hpc.kuleuven.be``
+  - ``login7-tier2.hpc.kuleuven.be``
+  - ``login8-tier2.hpc.kuleuven.be``
+
 
 Hardware details
 ----------------
 
 - 160 ivybridge nodes
 
-  - 2 Xeon E5-2680 v2 CPUs@2.8 GHz, 10 cores each
-  - 64 GB RAM (130) / 128 GB RAM (30)
+  - 2 Xeon E5-2680 v2 CPUs\@2.8 GHz, 10 cores each
+  - 64 GB RAM (130 nodes) / 128 GB RAM (30 nodes) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency ivybridge tier2>`)
   - feature ``ivybridge``
 
 
 - 144 haswell nodes
 
   - 2 Xeon E5\-2680 v3 CPUs\@2.5 GHz, 12 cores each
-  - 64 GB RAM(32) / 128 GB RAM(96)
+  - 64 GB RAM (32 nodes) / 128 GB RAM (96 nodes) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency haswell tier2>`)
   - feature ``haswell``
 
 - 5 GPGPU nodes
