@@ -9,7 +9,7 @@ be specified:
 - :ref:`walltime <walltime>`
 - :ref:`number of nodes and cores <nodes and ppn>`
 - :ref:`memory <pmem>`
-- :ref:`number of GPUs <gpus>` (optional)
+- :ref:`number of GPUs <gpus>` (if applicable)
 
 Additional specifications may be required to :ref:`accommodate hardware
 details <specifying node properties>`.
@@ -110,7 +110,8 @@ If you don't use all cores of a node in your job, the scheduler
  
 In the last scenario, if the cluster has a 'shared' policy, the scheduler can
 fill up nodes efficiently with jobs without users having to use tools
-such as :ref: `worker or atools`. The downside of this, however, is that
+such as :ref: `worker or atools` (worker/atools are still recommended when
+running a large number of tasks/jobs). The downside of this, however, is that
 misbehaving jobs of one user may cause a crash or performance degradation of
 another user's job.
 
@@ -153,7 +154,7 @@ by ppn).  The units for the ``pmem`` value are ``kb``, ``mb``, ``gb`` or
 
 Example::
 
-   -l nodes=2:ppn=8 -l pmem=10gb
+   -l nodes=2:ppn=8  -l pmem=10gb
 
 In total, each of the 16 processes can use 10 GB RAM.
 
