@@ -6,9 +6,10 @@ Specifying job resources
 Resources are specified using the ``-l`` option.  Typically, three resources will
 be specified:
 
-- :ref:`walltime <walltime>`,
-- :ref:`number of nodes and cores <nodes and ppn>`, and
-- :ref:`memory <pmem>`.
+- :ref:`walltime <walltime>`
+- :ref:`number of nodes and cores <nodes and ppn>`
+- :ref:`memory <pmem>`
+- :ref:`number of GPUs <gpus>` (if applicable)
 
 Additional specifications may be required to :ref:`accommodate hardware
 details <specifying node properties>`.
@@ -104,28 +105,31 @@ If you don't use all cores of a node in your job, the scheduler
 - may decide to pack the tasks of several nodes in your resource request on
   a single node;
 - may run other jobs you have in the queue on the same node(s);
-- may, depending on how the system administrator has configured the
-  scheduler, run jobs of other users on the same node.
+- may, depending on the :ref: `job policies <Job policies>` of the cluster, run
+  jobs of other users on the same node.
  
-In fact, the last scenario typically doesn't occur in practice since most VSC
-clusters have a single user per node policy as misbehaving jobs of one user
-may cause a crash or performance degradation of another user's job.
+In the last scenario, if the cluster has a 'shared' policy, the scheduler can
+fill up nodes efficiently with jobs without users having to use tools
+such as :ref: `worker or atools` (worker/atools are still recommended when
+running a large number of tasks/jobs). The downside of this, however, is that
+misbehaving jobs of one user may cause a crash or performance degradation of
+another user's job.
 
 To ensure that the scheduler respects your resource specification you can
 use the following two options:
 
 ``-W x=nmatchpolicy:exactnode``
-   This will result in the scheduler giving you resourced on the exact
-   number of nodes you request.  However, other jobs may still be
-   scheduled on the same nodes if not all cores are used.
+   This will result in the scheduler giving you the exact
+   number of nodes you requested for your job.  However, other jobs may still
+   run on the same nodes if not all cores are used.
 ``-l naccesspolicy=singlejob``
    This will make sure that no other job can use the nodes allocated
    to your job.
   
 .. warning::
 
-   In most cases it is very asocial to claim a whole node for a job that
-   cannot fully utilize the resources on the node.
+   In most cases it is very wasteful of resources (and also asocial) to claim
+   a whole node for a job that cannot fully utilize the resources on the node.
   
 However, there are some rare cases when your program actually runs so much
 faster by leaving some resources unused that it actually improves the
@@ -145,7 +149,7 @@ The following option specifies the RAM requirements of your job::
    -l pmem=<memory>
 
 The job needs ``<memory>`` RAM memory per core or hyperthread (the unit used
-by ppn).  The units are for the ``pmem`` value are ``kb``, ``mb``, ''gb`` or
+by ppn).  The units for the ``pmem`` value are ``kb``, ``mb``, ``gb`` or
 ``tb``.
 
 Example::
@@ -154,12 +158,18 @@ Example::
 
 In total, each of the 16 processes can use 10 GB RAM.
 
+.. note::
+
+   On the VUB Hydra cluster, the usage of ``pmem`` is discouraged. Instead,
+   users are recommended to specify the total amount of RAM requested for the job
+   with ``-l mem=<total_memory>``.
+
 .. warning::
 
    It is important to realize that
    
    - the values for ``ppn`` and ``pmem`` depend on one another, and
-   - that these depends on the amount of RAM installed in the compute
+   - these values depend on the amount of RAM available in the compute
      nodes.
 
 For instance, on a node with 192 GB of RAM, you should ensure that
@@ -177,7 +187,7 @@ For example, to run on a node with 36 cores and 192 GB RAM,
 - if a thread requires only 5 GB, the maximum number of cores you
   can request is 36, since 36 \* 5 GB = 180 GB < 192 GB - 8 GB, so::
   
-  -l nodes=1:ppn=18  -l pmem=10gb
+  -l nodes=1:ppn=36  -l pmem=10gb
 
 Check the :ref:`hardware specification <hardware>` of the cluster/nodes
 you want to run on for the available memory and core count of the nodes.
@@ -268,3 +278,20 @@ is equivalent with the line::
    #PBS -l walltime=2:30:00,nodes=2:ppn=16:sandybridge,pmem=2gb
 
 The same holds when using ``-l`` on the command line for ``qsub``.
+
+
+.. _gpus:
+
+Requesting GPUs
+---------------
+
+It is possible to request one or more GPGPUs for your job on some of the
+VSC clusters that provide them. For cluster-specific usage instructions, please
+consult the respective documentation sources:
+
+- KU Leuven/UHasselt Genius: :ref:`Submit to a GPU node <submit to genius GPU node>`
+- KU Leuven/UHasselt Thinking7a: :ref:`Thinking7 quick start guide`
+- UAntwerp Leibniz: :ref:`GPU computing @ UAntwerp <GPU computing UAntwerp>`
+- VUB Hydra: https://hpc.vub.be/documentation/faq.html#how-can-i-use-the-gpus-to-run-my-jobs
+
+
