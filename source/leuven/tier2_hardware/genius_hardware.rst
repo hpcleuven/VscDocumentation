@@ -12,17 +12,19 @@ Hardware details
 
 - 206 thin nodes 
    
-    - 86 nodes
-    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
-    - 192 GB RAM
-    - 200 GB SSD local disk
-    - feature skylake
+   - 86 skylake nodes
 
-    - 120 nodes (closed pilot phase)
-    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
-    - 192 GB RAM
-    - 200 GB SSD local disk
-    - feature cascadelake 
+      - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
+      - 192 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
+      - 200 GB SSD local disk
+      - feature skylake
+
+   - 120 cascadelake nodes (closed pilot phase)
+
+      - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
+      - 192 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
+      - 200 GB SSD local disk
+      - feature cascadelake 
 
 - 10 big memory nodes
 
@@ -33,17 +35,19 @@ Hardware details
 
 - 22 GPGPU nodes, 96 GPU devices
 
-   - 20 nodes
-   - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
-   - 192 GB RAM
-   - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
-   - 200 GB SSD local disk
-   - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
+   - 20 P100 nodes
 
-   - 2 nodes (closed pilot phase)
-   - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
-   - 192 GB RAM
-   - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
+      - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
+      - 192 GB RAM
+      - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
+      - 200 GB SSD local disk
+      - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
+
+   - 2 V100 nodes (closed pilot phase)
+
+      - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
+      - 192 GB RAM
+      - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
 
 
 - 4 AMD nodes
