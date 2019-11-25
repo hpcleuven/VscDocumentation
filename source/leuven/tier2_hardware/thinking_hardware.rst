@@ -1,59 +1,70 @@
-Thinking hardware
-=================
+Thinking7 hardware
+==================
 
-Thinking is KU Leuven/UHasselt's older Tier-2 cluster. It has thin nodes, large memory nodes, as well as GPGPU nodes.  This cluster is still running CentOS 6, but is gradually being migrage to CentOS 7.  The migrated nodes are :ref:`available<thinking7 hardware>`.
+Thinking is KU Leuven/UHasselt's older Tier-2 cluster. It has thin nodes, large memory nodes, as well as GPGPU nodes.  It is migrated to CentOS 7, so this section will expand over time.
 
 
 Login infrastructure
 --------------------
 
+You can access Thinking by using 
+<<<<<<< HEAD
+
+- ``login-thinking.hpc.kuleuven.be``
+
+This will loadbalance your connection to one of the 4 Thinking login nodes
+ 
 Direct login is using SSH is possible to all login infrastructure without restrictions.
 
-- Two login nodes for SSH access are available.
+- Two ivybridge login nodes for SSH access are available.
 
-    - login1.hpc.kuleuven.be
-    - login2.hpc.kuleuven.be
+  .. note::
+
+     These are ivybridge nodes, so for better performance, build your software on
+     a haswell compute node.
+
+  - ``login5-tier2.hpc.kuleuven.be``
+  - ``login6-tier2.hpc.kuleuven.be``
+     
+- One haswell login node for SSH access and one for
+  :ref:`TurboVNC<TurboVNC start guide>` access.	
+
+  - ``login7-tier2.hpc.kuleuven.be``
+  - ``login8-tier2.hpc.kuleuven.be``
 
 
 Hardware details
 ----------------
 
-- 176 ivybridge nodes
+- 160 ivybridge nodes
 
-    - 2 Xeon E5-2680 v2 CPUs\@2.8 GHz, 10 cores each
-    - 64 GB RAM
-    - feature ``ivybridge``
+  - 2 Xeon E5-2680 v2 CPUs\@2.8 GHz, 10 cores each
+  - 64 GB RAM (130 nodes) / 128 GB RAM (30 nodes) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency ivybridge tier2>`)
+  - feature ``ivybridge``
 
-- 32 ivybridge nodes
 
-    - 2 Xeon E5-2680 v2 CPUs\@2.8 GHz, 10 cores each
-    - 128 GB RAM
-    - feature ``ivybridge``
+- 144 haswell nodes
 
-- 48 haswell nodes
-
-    - 2 Xeon E5-2680 v3 CPUs\@2.5 GHz, 12 cores each
-    - 64 GB RAM
-    - feature ``haswell``
-
-- 86 haswell nodes
-
-    - 2 Xeon E5-2680 v3 CPUs\@2.5 GHz, 12 cores each
-    - 128 GB RAM
-    - feature ``haswell``
+  - 2 Xeon E5\-2680 v3 CPUs\@2.5 GHz, 12 cores each
+  - 64 GB RAM (32 nodes) / 128 GB RAM (96 nodes) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency haswell tier2>`)
+  - feature ``haswell``
 
 - 5 GPGPU nodes
 
-    - 2 Xeon E5-2650 v3 CPUs\@2.3 GHz, 10 cores each
-    - 64 GB RAM
-    - 2 NVIDIA K40c\@750 MHz, 12 GB GDDR
-    - partition ``gpu``
+  - 2 Xeon E5-2650 v3 CPUs\@2.3 GHz, 10 cores each
+  - 64 GB RAM
+  - 2 NVIDIA K40c\@750 MHz, 12 GB GDDR
+  - partition ``gpu``
+  - feature ``K40c``
 
 In the older partition of the cluster, nodes are connected via a QDR infiniband interconnect, while the newer partition has a faster FDR interconnect.  See the diagram below.
 
-|Thinking hardware|
+A :ref:`quick start guide <Thinking7 quick start guide>` is available to get you
+started on submitting jobs to the updated ThinKing cluster.
 
-.. |Thinking hardware| image:: thinking_hardware/thinking.png
+|Thinking CentOS 7 hardware|
+
+.. |Thinking CentOS 7 hardware| image:: thinking_hardware/thinking_centos7.png
   :width: 800
-  :alt: Thinking hardware diagram
+  :alt: Thinking CentOS 7 hardware diagram
 
