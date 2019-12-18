@@ -43,8 +43,10 @@ toolchain <FOSS toolchain>` and the :ref:`Intel toolchain <Intel toolchain>`.
    the work of other users.
 
 
-Running jobs
-------------
+.. _running jobs on breniac:
+
+Running jobs on Breniac
+-----------------------
 
 The way you submit jobs on Breniac is similar to what you are used to
 on VSC Tier-2 infrastructure, you can review the :ref:`documentation
