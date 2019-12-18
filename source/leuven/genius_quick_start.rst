@@ -12,8 +12,8 @@ For example, to log in to any of the login node using SSH::
 
 .. _running jobs on genius:
 
-Running jobs
-------------
+Running jobs on Genius
+----------------------
 
 There are several type of nodes in the Genius cluster: normal compute
 nodes, GPU nodes, big memory nodes.  The resources specifications for

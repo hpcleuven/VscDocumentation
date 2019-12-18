@@ -29,8 +29,8 @@ login nodes, please refer to the :ref:`TurboVNC documentation
 
 .. _running jobs on thinking:
 
-Running jobs
-------------
+Running jobs on Thinking
+------------------------
 
 In case you are not yet familiar with the system, you read more
 information on
