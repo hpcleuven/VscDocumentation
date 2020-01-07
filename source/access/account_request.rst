@@ -156,7 +156,8 @@ Users of Brussels University Association
 -  Bachelor and Master students who want to use the cluster for their thesis
    must ask their supervisor to send a confirmation letter and a short
    motivation for their HPC needs to hpc@vub.ac.be. Afterwards, the student
-   procedure <generic access procedure>` should be followed to request the account.
+   can follow follow the :ref:`generic procedure <generic access procedure>` to request
+   his/her account.
 
 Troubleshooting
 ---------------
