@@ -152,7 +152,7 @@ How?
 Users of Brussels University Association
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Researchers can use the :ref:`generic procedure <generic access procedure>`.
+-  Researchers can follow the :ref:`generic procedure <generic access procedure>`.
 -  Bachelor and Master students who want to use the cluster for their thesis
    must ask their supervisor to send a confirmation letter and a short
    motivation for their HPC needs to hpc@vub.ac.be, and then the :ref:`generic
