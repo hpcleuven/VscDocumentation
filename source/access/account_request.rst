@@ -5,9 +5,7 @@ What is a VSC account?
 ----------------------
 
 To log on to and use the VSC infrastructure, you need a so-called VSC
-account. There is only one exception: Users of the Brussels University
-Association who only need access to the VUB/ULB cluster Hydra can use
-their institute account.
+account.
 
 All VSC-accounts start with the letters \\"vsc\" followed by a
 five-digit number. The first digit gives information about your home
@@ -154,11 +152,11 @@ How?
 Users of Brussels University Association
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  If you only need access to the VUB cluster Hydra, you don't
-   necessarily need a full VSC account but can use your regular
-   institute account. More information can be found on `this VUB Web
-   Notes
-   page <http://www.ulb.ac.be/wserv2_oratio/oratio?f_type=view&f_context=fiches&language=nl&noteid=227>`_.
+-  Researchers can use the :ref:`generic procedure <generic access procedure>`.
+-  Bachelor and Master students who want to use the cluster for their thesis
+   must ask their supervisor to send a confirmation letter and a short
+   motivation for their HPC needs to hpc@vub.ac.be, and then the :ref:`generic
+   procedure <generic access procedure>` should be followed to request the account.
 
 Troubleshooting
 ---------------
