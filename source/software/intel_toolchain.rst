@@ -64,7 +64,9 @@ use the appropriate option listed in the table below.
 +------------------+------------------+
 | Broadwell        | ``-xAVX2``       |
 +------------------+------------------+
-| Skylake          | ``-xAVX-512``    |
+| Skylake          | ``-xCORE-AVX512  |
++------------------+------------------+
+| Cascadelake      | ``-xCORE-AVX512  |
 +------------------+------------------+
 | detect host CPU  | ``-xHost``       |
 +------------------+------------------+
@@ -85,7 +87,7 @@ Additional code paths can be specified using the ``-ax`` option.
 +-------------------------+------------------------+
 | Haswell/Broadwell       | ``-axCORE-AVX2``       |
 +-------------------------+------------------------+
-| Skylake                 | ``-axCORE-AVX512``     |
+| Skylake/Cascadelake     | ``-axCORE-AVX512``     |
 +-------------------------+------------------------+
 
 Hence the target architecture can be specified using the
