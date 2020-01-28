@@ -64,9 +64,9 @@ use the appropriate option listed in the table below.
 +------------------+------------------+
 | Broadwell        | ``-xAVX2``       |
 +------------------+------------------+
-| Skylake          | ``-xCORE-AVX512  |
+| Skylake          | ``-xCORE-AVX512``|
 +------------------+------------------+
-| Cascadelake      | ``-xCORE-AVX512  |
+| Cascadelake      | ``-xCORE-AVX512``|
 +------------------+------------------+
 | detect host CPU  | ``-xHost``       |
 +------------------+------------------+
