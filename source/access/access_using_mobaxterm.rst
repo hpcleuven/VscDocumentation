@@ -132,7 +132,7 @@ introduced it once.
 2. You should see the `MobaXterm Configuration` panel. In the **General** tab
    choose the **MobaXterm passwords management** option; a new panel will be
    opened; make sure that **Save sessions passwords** has the options
-   **Always** and **Save SSH keys passphrases as well** selected as shown below
+   **Always** and **Save SSH keys passphrases as well** selected (as shown below)
    and click OK.
 
    .. figure:: access_using_mobaxterm/mobaxterm_save_passwords.png
