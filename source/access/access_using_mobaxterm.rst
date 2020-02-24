@@ -119,7 +119,7 @@ copied something or created/removed a file or folder on the cluster.
 ------------------------------------------------------------------
 
 Once you've successfully setup the connection to your cluster, 
-shortcut, you will notice that you are prompted for the passphrase for
+you will notice that you are prompted for the passphrase at
 each connection you make to a cluster.
 To avoid retyping it each time, you can setup an internal SSH agent in
 MobaXterm that will take care of unlocking the private key when you
