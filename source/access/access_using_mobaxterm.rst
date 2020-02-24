@@ -39,7 +39,7 @@ decompress the contents of the downloaded zip file inside it.
 
 4. In the *Remote host* field introduce the cluster remote address of
    your :ref:`VSC cluster <hardware>`, which should be written in the form ``my-vsc-cluster.example.com``.
-   Tick the *Specify username* box and introduce your VSC account.
+   Tick the *Specify username* box and introduce your VSC account username.
    Click the *Advanced SSH settings* tab and you will see these extra options:
 
 .. figure:: access_using_mobaxterm/mobaxterm_advanced_ssh.png
