@@ -139,7 +139,7 @@ introduced it once.
       :align: center
       :alt: mobaxterm save passwords option
 
-3. Now go in the same `MobaXterm Configuration` panel to the **SSH** tab.
+3. Open  the **SSH** tab in the same `MobaXterm Configuration` panel.
    Make sure that all the options below the **SSH agents** section are
    ticked.
 
