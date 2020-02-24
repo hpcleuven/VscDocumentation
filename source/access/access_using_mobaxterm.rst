@@ -73,7 +73,7 @@ decompress the contents of the downloaded zip file inside it.
    the *hidden* files by clicking on the right most button at the top of the file
    browser.
 
-7. When you disconnect from the cluster (by typing ``exit`` or closing the
+7. Once you disconnect from the cluster (by typing ``exit`` or closing the
    terminal tab) you will find on the left sidebar on the *Sessions* tab
    a shortcut to the session you just setup. From now on, when you open
    MobaXterm, you can just double click that shortcut and you will start
