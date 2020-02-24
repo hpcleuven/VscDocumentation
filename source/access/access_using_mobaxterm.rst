@@ -66,7 +66,7 @@ decompress the contents of the downloaded zip file inside it.
       :align: center
       :alt: hmem greeting
 
-   On the left sidebar (in the *Sftp* tab) you will see a file browser of your
+   On the left sidebar (in the *Sftp* tab) there is a file browser of your
    home directory in the cluster. You will see by default many files whose
    names start with a dot (**.**) symbol. These are hidden files of the
    Linux environment and you should **not delete nor move** them. You can hide
