@@ -31,7 +31,7 @@ using the MobaXterm application.
 
 
 4. Make sure the option **RSA** is chosen and **Number of bits in a generated
-   key** is set to **4096** and press the button **Generate**. As shown below,
+   key** is set to **4096**. Press the button **Generate**. As shown below,
    you will be requested to move the mouse in the **Key** area to generate some
    entropy; do so until the green bar is completely filled.
 
