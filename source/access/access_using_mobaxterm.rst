@@ -89,8 +89,8 @@ decompress the contents of the downloaded zip file inside it.
    :alt: session desktop shortcut
 
 
-8. Now you can repeat these steps for the other :ref:`VSC clusters <hardware>`
-   you are planning to use.
+8. Now you can create connections to other :ref:`VSC clusters <hardware>`
+   by repeating these steps and changing the address of the cluster.
    You will have then a shortcut on the Sessions tab of the left sidebar
    for each of them to connect to.
 
