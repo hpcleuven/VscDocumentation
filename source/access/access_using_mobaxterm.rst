@@ -140,7 +140,7 @@ introduced it once.
       :alt: mobaxterm save passwords option
 
 3. Open  the **SSH** tab in the same `MobaXterm Configuration` panel.
-   Make sure that all the options below the **SSH agents** section are
+   Make sure that all the boxes below the **SSH agents** section are
    ticked.
 
 4. Press the **+** button in the **Load following keys at MobAgent startup**
