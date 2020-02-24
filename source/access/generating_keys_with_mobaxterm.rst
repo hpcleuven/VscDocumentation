@@ -13,7 +13,7 @@ using the MobaXterm application.
    zip file.
 
 2. Double click the ``MobaXterm_Personal`` executable file inside the
-   ``Documents\MobaXterm`` folder.
+   ``MobaXterm`` folder.
    You should see the MobaXterm main window like this one:
 
    .. _mobaxterm-main-window-sshkey:
@@ -59,4 +59,3 @@ using the MobaXterm application.
    You must remember where you saved it, as you will need it to
    connect to the cluster after you receive the confirmation that your account
    is active.
-
