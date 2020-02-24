@@ -70,7 +70,7 @@ decompress the contents of the downloaded zip file inside it.
    home directory in the cluster. You will see by default many files whose
    names start with a dot (**.**) symbol. These are hidden files of the
    Linux environment and you should **not delete nor move** them. You can hide
-   the hidden files by clicking on the right most button at the top of the file
+   the *hidden* files by clicking on the right most button at the top of the file
    browser.
 
 7. When you disconnect from the cluster (by typing ``exit`` or closing the
