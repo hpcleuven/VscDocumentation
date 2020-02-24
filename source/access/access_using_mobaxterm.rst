@@ -31,7 +31,7 @@ your preference if you wish.
 ----------------------------------------
 
 1. Double click the ``MobaXterm_Personal`` executable file inside the
-   ``Documents\MobaXterm`` folder.
+   ``MobaXterm`` folder.
    You should see the MobaXterm main window like this one:
 
 .. _mobaxterm-main-window:
