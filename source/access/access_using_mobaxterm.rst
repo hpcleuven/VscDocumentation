@@ -82,7 +82,7 @@ decompress the contents of the downloaded zip file inside it.
    To create a direct shortcut on your desktop (optional),
    right click on the saved session name and choose
    *Create a desktop shortcut* (see image below). An icon will appear on your
-   Desktop that will start MobaXterm and open a session in the relevant cluster.
+   Desktop that will start MobaXterm and open a session in the corresponding cluster.
    
 .. figure:: access_using_mobaxterm/mobaxterm_session_shortcut.png
    :align: center
@@ -158,5 +158,5 @@ introduced it once.
 
 6. Once MobaXterm restarts you will be asked for the private key passphrase at
    launch. This will occur only once and after you introduce it correctly it will stay saved for all
-   any following session. Double clicking on the shortcuts for the clusters
+   following sessions. Double clicking on a shortcuts for a cluster
    should open the corresponding connection directly.
