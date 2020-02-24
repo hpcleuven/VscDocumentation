@@ -158,5 +158,5 @@ introduced it once.
 
 6. Once MobaXterm restarts you will be asked for the private key passphrase at
    launch. This will occur only once and after you introduce it correctly it will stay saved for all
-   the forthcoming sessions. You should be able to double click in the
+   any following session. Double clicking on the shortcuts for the clusters
    shortcuts for the clusters and get connected directly.
