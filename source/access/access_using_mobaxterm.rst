@@ -13,7 +13,7 @@ Download and setup MobaXterm
 
 Go to the `MobaXterm website <https://mobaxterm.mobatek.net>`__ and download the
 free version. Make sure to select the **Portable edition** from the download
-page. Create a ``MobaXterm`` folder in your ``Documents`` folder and
+page. Create a folder called ``MobaXterm`` in a known location in your computer and
 decompress the contents of the downloaded zip file inside it.
 
 We chose to create the MobaXterm folder on that particular location and we will
@@ -173,4 +173,3 @@ introduced it once.
    the beginning; after you introduced it correctly it will stay saved for all
    the forthcoming sessions. You should be able to double click in the
    shortcuts for the clusters and get connected directly.
-
