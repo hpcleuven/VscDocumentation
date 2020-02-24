@@ -78,12 +78,12 @@ decompress the contents of the downloaded zip file inside it.
    a shortcut to the session you just setup. From now on, when you open
    MobaXterm, you can just double click that shortcut and you will start
    a remote session on ``my-vsc-cluster.example.com``.
-   If you wish you can also create a direct shortcut on your desktop. To do
-   that, right click on the saved session name and choose
-   *Create a desktop shortcut*, as shown below. An icon will appear on your
-   Desktop which double clicking starts MobaXterm with a session on
-   the cluster.
-
+   
+   To create a direct shortcut on your desktop (optional),
+   right click on the saved session name and choose
+   *Create a desktop shortcut* (see image below). An icon will appear on your
+   Desktop that will start MobaXterm and open a session in the relevant cluster.
+   
 .. figure:: access_using_mobaxterm/mobaxterm_session_shortcut.png
    :align: center
    :alt: session desktop shortcut
