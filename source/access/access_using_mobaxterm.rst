@@ -156,7 +156,7 @@ introduced it once.
    
 5. Press OK and when prompted for restarting MobaXterm, choose to do so.
 
-6. When MobaXterm is relaunched you will be asked for the private key passphrase at
+6. Once MobaXterm restarts you will be asked for the private key passphrase at
    the beginning; after you introduced it correctly it will stay saved for all
    the forthcoming sessions. You should be able to double click in the
    shortcuts for the clusters and get connected directly.
