@@ -77,7 +77,7 @@ decompress the contents of the downloaded zip file inside it.
    terminal tab) you will find on the left sidebar (in the *Sessions* tab)
    a shortcut to the session you just setup. From now on, when you open
    MobaXterm, you can just double click that shortcut and you will start
-   a remote session on ``my-vsc-cluster.example.com``.
+   a remote session on the :ref:`VSC cluster <hardware>` that you used in previous steps.
    
    To create a direct shortcut on your desktop (optional),
    right click on the saved session name and choose
