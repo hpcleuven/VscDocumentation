@@ -118,7 +118,7 @@ copied something or created/removed a file or folder on the cluster.
 3. Setup an SSH agent to avoid typing the passphrase at each login
 ------------------------------------------------------------------
 
-After you've successfully setup your cluster to connect by double clicking the
+Once you've successfully setup the connection to your cluster, 
 shortcut, you will notice that you are prompted for the passphrase for
 each connection you make to a cluster.
 To avoid retyping it each time, you can setup an internal SSH agent in
