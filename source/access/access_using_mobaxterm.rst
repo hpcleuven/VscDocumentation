@@ -107,7 +107,7 @@ connected to.
 
 You can simply drag and drop files from your computer to that panel and they
 will be copied to the cluster. You can also drag and drop files from the
-cluster to your computer. Alternatively, you can use the buttons located at the
+cluster to your computer. Alternatively, you can use the file tools located at the
 top of the file browser.
 
 Remember to **always** press the ``Refresh current folder`` button **after** you
