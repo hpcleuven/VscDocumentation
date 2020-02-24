@@ -8,9 +8,9 @@ using the MobaXterm application.
 
 1. Go to the `MobaXterm website <http://mobaxterm.mobatek.net>`__ and download
    the free version. Make sure to select the **Portable edition** from the
-   download page. Create a ``MobaXterm`` folder in your
-   ``Documents`` folder and uncompress inside it the contents of the downloaded
-   zip file.
+   download page. Create a folder called ``MobaXterm`` in a known
+   location in your computer and decompress the contents of the downloaded
+   zip file inside it.
 
 2. Double click the ``MobaXterm_Personal`` executable file inside the
    ``MobaXterm`` folder.
