@@ -100,8 +100,8 @@ decompress the contents of the downloaded zip file inside it.
 2. Copying files to and from the cluster
 ----------------------------------------
 
-After you succeeded to setup the shortcut for connecting to a cluster, as we
-noted on the `step 6 <#step-sftp-tab>`_ of the previous section, you will see
+Once you've setup the shortcut for connecting to a cluster, as we
+noted in `step 6 <#step-sftp-tab>`_ of the previous section, you will see
 on the left sidebar (in the *Sftp* tab) a file browser on the cluster you are
 connected to.
 
