@@ -151,9 +151,9 @@ introduced it once.
       :align: center
       :alt: mobaxterm ssh agent setup
 
-   Remember that you should not change the file location, otherwise you'll have
-   to come back to this settings panel to update it.
-
+   Please, keep in mind that these settings will have to be updated if the
+   location of private key ever changes.
+   
 5. Press OK and when prompted for restarting MobaXterm, choose to do so.
 
 6. When MobaXterm is relaunched you will be asked for the private key passphrase at
