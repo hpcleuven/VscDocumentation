@@ -32,7 +32,7 @@ your preference if you wish.
 
 1. Double click the ``MobaXterm_Personal`` executable file inside the
    ``MobaXterm`` folder.
-   You should see the MobaXterm main window like this one:
+   The MobaXterm main window will appear on your screen. It should be similar to this one:
 
 .. _mobaxterm-main-window:
 .. figure:: access_using_mobaxterm/mobaxterm_main_window.png
