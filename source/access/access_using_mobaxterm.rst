@@ -16,10 +16,6 @@ free version. Make sure to select the **Portable edition** from the download
 page. Create a folder called ``MobaXterm`` in a known location in your computer and
 decompress the contents of the downloaded zip file inside it.
 
-We chose to create the MobaXterm folder on that particular location and we will
-refer to that in this guide. You can, of course, select some other location of
-your preference if you wish.
-
 .. note::
 
     We will use ``my-vsc-cluster.example.com`` as a generic dummy address
