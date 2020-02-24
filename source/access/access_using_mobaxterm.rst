@@ -16,13 +16,6 @@ free version. Make sure to select the **Portable edition** from the download
 page. Create a folder called ``MobaXterm`` in a known location in your computer and
 decompress the contents of the downloaded zip file inside it.
 
-.. note::
-
-    We will use ``my-vsc-cluster.example.com`` as a generic dummy address
-    throughout the guide. When trying to follow the steps on your machine
-    replace the address by a real remote host of the :ref:`VSC cluster <hardware>`
-    you wish to use.
-
 1. Setup a shortcut for a remote session
 ----------------------------------------
 
