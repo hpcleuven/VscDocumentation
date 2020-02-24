@@ -50,11 +50,10 @@ decompress the contents of the downloaded zip file inside it.
 
 5. Tick the *Use private key* box and click on the file icon in that field.
    A file browser will be opened; locate the private SSH key file you created when requesting your VSC account.
-   Take note that you should not change the location of
-   the private key file. If you move it you will have to update its location in
-   this setting section again, to allow MobaXterm to find it. Check that the
-   *SSH-browser type* is set as *SFTP protocol*.
-
+   Please keep in mind that these settings have to be updated if the location
+   of the private SSH key ever changes. 
+   Check that the *SSH-browser type* is set as *SFTP protocol*.
+   
 .. _step-sftp-tab:
 
 6. Press the OK button and you should be prompted for your **passphrase**.
