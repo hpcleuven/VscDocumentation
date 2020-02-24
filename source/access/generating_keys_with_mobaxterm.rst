@@ -56,6 +56,6 @@ using the MobaXterm application.
    we recommend to name this file ``id_rsa.vsc``. As the *private* part of
    the name suggests, this file should not be shared, you must keep it in a safe
    location in your computer.
-   You must remember where you saved it, as you will need it to
+   You will have to remember where you saved it, as you will need it to
    connect to the cluster after you receive the confirmation that your account
    is active.
