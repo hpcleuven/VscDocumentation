@@ -40,7 +40,7 @@ using the MobaXterm application.
       :align: center
       :alt: mobaxterm main
 
-5. When the process is over you will see a result as shown below. Enter a
+5. When the process is over you will see its result as shown below. Enter a
    comment in the **Key comment** field and a strong passphrase.
 
    .. _mobaxterm-sshkey-passphrase:
