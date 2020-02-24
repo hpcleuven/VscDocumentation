@@ -30,8 +30,8 @@ decompress the contents of the downloaded zip file inside it.
 
 2. Click on the `Session` icon in the top left corner.
 
-3. The *Session settings* configuration panel will open; select the SSH session
-   type and you should see a window like this:
+3. The *Session settings* configuration panel will open; click on the SSH icon in the top row
+   and you should see a window like this:
 
 .. figure:: access_using_mobaxterm/mobaxterm_session_settings_ssh.png
    :align: center
