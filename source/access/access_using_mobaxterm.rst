@@ -144,7 +144,7 @@ introduced it once.
    ticked.
 
 4. Press the **+** button in the **Load following keys at MobAgent startup**
-   field and look for your private key file, at the end the panel should
+   field, look for your private key file and select it. At the end of the process, the panel should
    look like this (the location of your private SSH key may be different):
 
    .. figure:: access_using_mobaxterm/mobaxterm_ssh_agent.png
