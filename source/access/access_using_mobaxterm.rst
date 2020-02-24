@@ -74,7 +74,7 @@ decompress the contents of the downloaded zip file inside it.
    browser.
 
 7. Once you disconnect from the cluster (by typing ``exit`` or closing the
-   terminal tab) you will find on the left sidebar on the *Sessions* tab
+   terminal tab) you will find on the left sidebar (in the *Sessions* tab)
    a shortcut to the session you just setup. From now on, when you open
    MobaXterm, you can just double click that shortcut and you will start
    a remote session on ``my-vsc-cluster.example.com``.
