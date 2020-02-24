@@ -37,9 +37,8 @@ decompress the contents of the downloaded zip file inside it.
    :align: center
    :alt: ssh settings window
 
-4. In the *Remote host* field introduce the cluster remote address
-   ``my-vsc-cluster.example.com`` (check the note above to find a valid
-   address for your desired cluster).
+4. In the *Remote host* field introduce the cluster remote address of
+   your :ref:`VSC cluster <hardware>`, which should be written in the form ``my-vsc-cluster.example.com``.
    Tick the *Specify username* box and introduce your VSC account.
    Click the *Advanced SSH settings* tab and you will see these extra options:
 
