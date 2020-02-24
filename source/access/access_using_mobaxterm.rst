@@ -48,7 +48,7 @@ decompress the contents of the downloaded zip file inside it.
 
 .. _step-advanced-ssh-settings:
 
-5. Tick the *Use private key* box and click on the icon on that field.
+5. Tick the *Use private key* box and click on the file icon in that field.
    A file browser will be opened; locate the private SSH key file you created when requesting your VSC account.
    Take note that you should not change the location of
    the private key file. If you move it you will have to update its location in
