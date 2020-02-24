@@ -126,7 +126,7 @@ MobaXterm that will take care of unlocking the private key when you
 open the application. The SSH agent will save the passphrase after you have
 introduced it once.
 
-1. Open the MobaXterm program and go in the menu to **Settings** ->
+1. Open the MobaXterm program and go to the menu **Settings** ->
    **Configuration**
 
 2. You should see the `MobaXterm Configuration` panel. In the **General** tab
