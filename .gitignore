@@ -11,3 +11,6 @@ source/leuven/tier1_hardware/breniac_hardware/breniac_node_map.pdf
 PdfDocs
 source/leuven/tier2_hardware/thinking_hardware/~$thinking_node_map_v2_centos7.xlsx
 source/leuven/tier2_hardware/thinking_hardware/thinking_node_map_v2_centos7.pdf
+
+#build script
+build.sh

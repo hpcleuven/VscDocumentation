@@ -1,4 +1,4 @@
-.. _generating keys windows:
+.. _generating keys putty:
 
 Generating keys with PuTTY
 ==========================

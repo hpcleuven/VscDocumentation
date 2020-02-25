@@ -15,7 +15,8 @@ available, and most often installed by default.
 Windows
 ~~~~~~~
 
-You can use OpenSSH on Windows also if you install the free UNIX
+You can use OpenSSH on Windows also if you :ref:`download and setup MobaXterm <access using mobaxterm>`,
+or if you install the free UNIX
 emulation layer `Cygwin`_ with the package "openssh".
 
 macOS

@@ -80,7 +80,7 @@ Alternatives
 MobaXterm is a free and easy to use SSH client for Windows that has text-mode,
 a graphical file browser, an X server, an SSH agent, and more, all in one.
 No installation is required when using the *Portable edition*. See
-:ref:`detailed instructions on how to setup MobaXterm <access_using_mobaxterm>`.
+:ref:`detailed instructions on how to setup MobaXterm <access using mobaxterm>`.
 
 If you install the free UNIX emulation layer `Cygwin`_ with the necessary
 packages, you can use the same OpenSSH client as on Linux systems and

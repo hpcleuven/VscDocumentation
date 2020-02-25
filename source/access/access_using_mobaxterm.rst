@@ -1,4 +1,4 @@
-.. _access_using_mobaxterm:
+.. _access using mobaxterm:
 
 Download and setup MobaXterm
 ============================
