@@ -1,6 +1,15 @@
 Getting access
 ==============
 
+Required steps to get access
+----------------------------
+
+New users of the VSC clusters should take the following three steps to get access:
+
+#. :ref:`create a public/private key pair <create key pair>`
+#. :ref:`apply a VSC account <apply for account>`
+#. :ref:`login to the cluster <access and data transfer>`
+
 VSC accounts
 ------------
 
@@ -77,6 +86,7 @@ Without a key pair, you won't be able to apply for a VSC account.
 
 Your VSC account is currently managed through your institute account.
 
+.. _apply for account:
 
 Applying for the account
 ~~~~~~~~~~~~~~~~~~~~~~~~

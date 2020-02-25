@@ -8,9 +8,9 @@ Getting started with Pageant
 
 Pageant is part of the `PuTTY`_ distribution.
 it is an SSH authentication agent that you can use for Putty and Filezilla.
-Before you run Pageant, you need to have a private key in PKK format
-(filename ends on ``.pkk``). See :ref:`our page on generating keys with
-PuTTY <generating keys windows>` to find out how to
+Before you run Pageant, you need to have a private key in PPK format
+(filename ends with ``.ppk``). See :ref:`our page on generating keys with
+PuTTY <generating keys putty>` to find out how to
 generate and use one. When you run Pageant, it will put an icon of a
 computer wearing a hat into the System tray. It will then sit and do
 nothing, until you load a private key into it. If you click the Pageant

@@ -1,4 +1,4 @@
-.. _generating_keys_mobaxterm:
+.. _generating keys mobaxterm:
 
 Create an SSH key pair for use with MobaXterm
 ---------------------------------------------------------

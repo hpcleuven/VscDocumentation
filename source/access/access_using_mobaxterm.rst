@@ -1,4 +1,4 @@
-.. _access_using_mobaxterm:
+.. _access using mobaxterm:
 
 Download and setup MobaXterm
 ============================
@@ -9,7 +9,7 @@ Download and setup MobaXterm
     SSH key pairs generated with PuTTY are in another format (.ppk) and thus cannot be used
     with MobaXterm. If you have created your key pair with PuTTY, you can
     :ref:`convert your private key to OpenSSH format <converting PuTTY keys>`
-    or :ref:`generate a new key pair with MobaXterm <generating_keys_mobaxterm>`.
+    or :ref:`generate a new key pair with MobaXterm <generating keys mobaxterm>`.
 
 Go to the `MobaXterm website <https://mobaxterm.mobatek.net>`__ and download the
 free version. Make sure to select the **Portable edition** from the download
