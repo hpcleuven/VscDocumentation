@@ -9,8 +9,13 @@ Getting ready to request an account
 Before requesting an account, you need to generate a pair of SSH
 keys. One popular way to do this on Windows is using the freely
 available `PuTTY`_ client which you can then also use to log on to
-the clusters, see the :ref:`instructions for generating a key pair
-<generating keys windows>`.
+the clusters, see the :ref:`instructions for generating a key pair with PuTTY
+<generating keys putty>`.
+
+Another popular way is using the (also freely available)
+:ref:`MobaXterm client <access using mobaxterm>`,
+see the :ref:`instructions for generating a key pair with MobaXterm
+<generating keys mobaxterm>`.
 
 Connecting to the cluster
 -------------------------

@@ -7,7 +7,7 @@ Prerequisits
 ------------
 
 -  A ssh key pair, properly installed in your VSC account, see the :ref:`page
-   on generating keys <generating keys windows>`.
+   on generating keys <create key pair>`.
 -  Additionally, you should be able to :ref:`connect to the cluster's login
    node <OpenSSH access>` using ssh.
 
