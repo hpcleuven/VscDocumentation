@@ -11,7 +11,7 @@
 .. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
 .. _OpenSHMEM: http://www.openshmem.org/site/
 .. _MVAPICH: http://mvapich.cse.ohio-state.edu/
-.. _ARM-DDT video: https://developer.arm.com/products/software-development-tools/hpc/arm-forge/arm-ddt/video-demos-and-tutorials-for-arm-ddt
+.. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
 .. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
 .. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US

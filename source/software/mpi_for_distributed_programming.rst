@@ -15,7 +15,7 @@ used in high-performance computing today.
 The current version of the MPI standard is 3.0, but only the newest
 implementations implement the full standard. The previous specifications
 are the MPI 2.0 specification with minor updates in the MPI-2.1 and
-MPI-2.2 specifications. The standardisation body for MPI is the `MPI
+MPI-2.2 specifications. The standardization body for MPI is the `MPI
 forum`_ .
 
 Some background information
@@ -28,7 +28,7 @@ additions in MPI-2.0 (1997) and its updates MPI-2.1 (2008) and MPI-2.2
 (2009) are one-sided communication (get/put), dynamic process management
 and a model for parallel I/O. MPI-3.0 (2012) adds non-blocking
 collectives, a major update of the one-sided communication model and
-neighbourhood collectives on graph topologies. The first update of the
+neighborhood collectives on graph topologies. The first update of the
 MPI-3.1 specification was released in 2015, and work is ongoing on the
 next major update, MPI-4.0.
 
@@ -39,7 +39,7 @@ as MPICH, then the complete rewrite was renamed to MPICH2, but as this
 name caused confusion as the MPI standard evolved into MPI 3.x, the name
 was changed again to MPICH, and the version number bumped to 3.0.
 MVAPICH developed at Ohio State University is the offspring of MPICH
-further optimised for InfiniBand and some other high-performance
+further optimized for InfiniBand and some other high-performance
 interconnect technologies. Most other MPI implementations are derived
 from one of these implementations.
 
@@ -61,50 +61,18 @@ Implementations
 ---------------
 
 On VSC clusters, several MPI implementations are installed. We provide
-two MPI implementations on all newer machines that can support those
-implementations:
+two MPI implementations on all newer machines that implement the MPI-3.1
+specification.
 
 #. :ref:`Intel MPI <Intel MPI>` in the intel toolchain
 
-   #. Intel MPI 4.1 (intel/2014a and intel/2014b toolchains) implements
-      the MPI-2.2 specification
-   #. Intel MPI 5.0 (intel/2015a and intel/2015b toolchains) and Intel
-      MPI 5.1 (intel/2016a and intel/2016b toolchains) implement the
-      MPI-3.0 specification
+#. :ref:`Open MPI <Open MPI>` in the foss toolchain
 
-#. :ref:`Open MPI <Open MPI>`
-   in the foss toolchain
-
-   #. Open MPI 1.6 (foss/2014a toolchain) only implements the MPI-2.1
-      specification
-   #. Open MPI 1.8 (foss/2014b, foss/2015a and foss/2015b toolchains)
-      and Open MPI 1.10 (foss/2016a and foss/2016b) implement the
-      MPI-3.0 specification
 
 When developing your own software, this is the preferred order to select
 an implementation. The performance should be very similar, however, more
 development tools are available for Intel MPI
-(i.e., ":ref:`ITAC`" for performance
-monitoring).
-
-Specialised hardware sometimes requires specialised MPI-libraries.
-
--  The interconnect in :ref:`Cerebro, the SGI UV shared memory machine at KU
-   Leuven <hardware>`,
-   provides hardware acceleration for some MPI functions. To take full
-   advantage of the interconnect, it is necessary to use the SGI MPI
-   library, part of the MPT packages which stands for Message Passing
-   Toolkit (and also contains SGI's own implementation
-   of `OpenSHMEM`_).
-   Support is offered through additional toolchains (intel-mpt and
-   foss-mpt).
-
-   -  SGI MPT 2.09 (intel-mpt/2014a and foss-mpt/2014a toolchains)
-      contains the SGI MPI 1.7 library which implements the MPI-2.2
-      specification.
-   -  SGI MPT 2.10 (not yet installed, contact :ref:`KU Leuven
-      support <user support VSC>`) contains the SGI
-      MPI 1.8 library which implements the MPI-3.0 specification.
+(e.g., ":ref:`ITAC`" for performance monitoring).
 
 Several other implementations may be installed, e.g., `MVAPICH`_, but we assume
 you know what you're doing if you choose to use them.
@@ -120,9 +88,11 @@ See to the documentation about the :ref:`toolchains`.
 Debugging
 ---------
 
-For debugging, we recommend the ARM DDT debugger (formerly Allinea DDT,
-module allinea-ddt). Video tutorials are available on the Arm website:
-`ARM-DDT video`_ .  (KU Leuven-only).
+For debugging, we recommend the Arm DDT debugger (formerly Allinea DDT,
+module allinea-ddt). The debugger and the profiler Arm MAP (formerly
+Allinea MAP) are now bundled nito ArmForge, which is available as a
+module on KU Leuven systems. Video tutorials are available on the
+Arm website: `ARM-DDT video`_ .  (KU Leuven-only).
 
 When using the intel toolchain, ":ref:`ITAC`" (ITAC) may also prove useful.
 
