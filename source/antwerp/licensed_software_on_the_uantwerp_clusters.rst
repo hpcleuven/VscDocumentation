@@ -71,7 +71,7 @@ designed for use of HPC (despite a number of toolboxes that support
 parallel computing) nor efficient.
 
 MATLAB on the UAntwerp clusters can be used by everybody who can legally
-use MATLAB within the UAntwerp Campus Agreement with The Mathworks. You
+use MATLAB within the UAntwerp Campus Agreement with The MathWorks. You
 should have access to the modules if you are eligible. If you cannot
 load the MATLAB modules yet think you are allowed to use MATLAB under
 the UAntwerp license, please :ref:`contact support <user support VSC>`.
