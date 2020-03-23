@@ -56,7 +56,7 @@ File systems
   conda on the scratch file system will not work.*
   
 Note that the VSC storage is not meant for backup purposes. You should not 
-rely on it to store all data of your Ph.D. or postdoc. It is the individual
+rely on it to store all data of your PhD or postdoc. It is the individual
 user's responsibility to store that data on reliable storage managed by
 your research group or the ICT service of the university.
 
@@ -86,6 +86,7 @@ Requesting quota
 * Users with a vsc2XXXX account: Additional quota can be requested via the
   UAntwerp support team at hpc@uantwerpen.be. 
 * Users with another VSC account:
+
   * Your scratch directory is not automatically created on the UAntwerp
     clusters. Please contact the UAntwerp support team at hpc@uantwerpen.be
     to get a scratch directory on our systems if you plan to use them. You 

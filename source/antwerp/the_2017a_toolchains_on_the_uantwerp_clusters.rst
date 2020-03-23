@@ -79,6 +79,6 @@ older versions of packages also often fail to take advantage of advances
 in supercomputer architecture and offer lower performance. Packages that
 have not been used recently will only be installed on demand.
 
-Several of the packages in the system toolchain are still listed as “on
-demand” since they require licenses and interaction with their users is
+Several of the packages in the system toolchain are still listed as on
+demand since they require licenses and interaction with their users is
 needed before we can install them.
