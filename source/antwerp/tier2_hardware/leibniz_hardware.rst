@@ -76,7 +76,6 @@ Hardware details
     - :ref:`Instructions <remote visualization UAntwerp>`
 
 The nodes are connected using an InfiniBand EDR network. 
-Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.
 More info on the storage system is available on the :ref:`UAntwerpen storage` page.
 
 

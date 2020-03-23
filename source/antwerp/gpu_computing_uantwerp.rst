@@ -33,7 +33,7 @@ running on regular nodes as we will use this information for future
 purchase decisions.
 
 Currently the nodes are not yet integrated in the job system, you can
-log on manually to the node but need to check if noone else is using the
+log on manually to the node but need to check if no-one else is using the
 node.
 
 Monitoring GPU nodes
