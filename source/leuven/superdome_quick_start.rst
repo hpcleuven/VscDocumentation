@@ -40,7 +40,7 @@ and ``place``.
 
 For example::
   
-   $ qsub  -l partition=superdome  –q qsuperdome  -L tasks=1:lprocs=42:place=numanode=3 \
+   $ qsub  -l partition=superdome  -q qsuperdome  -L tasks=1:lprocs=42:place=numanode=3 \
            -A lp_myproject  my_job.pbs
   
 Without specifying the ``superdome`` partition and ``qsuperdome`` queue, your jobs
