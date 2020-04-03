@@ -57,8 +57,19 @@ resources you specify are not available.
    have to request ``lprocs=14:place=numanode=1``. If you want to use 1/4th
    (1.5 TB), your request should state ``lprocs=28:place=numanode=2``, for
    3/4th of the memory (4.5 TB), you would use ``lprocs=84:place=numanode=6``,
-   etc.
+   and so on.
 
+
+If your application requires fewer cores than the 14 a NUMA-node has, but
+you need more memory than the default, you should specify that explicitely.
+For instance, if you would have a sequential program that required 500 GB of
+RAM, you would use ``-L tasks=1:lprocs=1:place=numanode=1:memory=500gb``.
+
+However, keep in mind that if the memory you require exceeds that of a
+NUMA-node, you would have to request multiple nodes to accommodate for
+the total amount of memory.  For example, if a sequential program would
+require 1 TB of RAM, you would specify:
+``-L tasks=1:lprocs=1:place=numanode=2:memory=1tb``.
 
 More documentation on the ``-L`` NUMA-aware resource specification can be
 found in the vendor's `documentation
