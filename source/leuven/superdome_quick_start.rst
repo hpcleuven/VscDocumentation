@@ -34,8 +34,9 @@ and ``place``.
    you want to use for your job.
 ``place``
    The place determines where the logical processors are executed, and
-   is ``numanode`` for Superdome.  Each ``numanode`` has 14 cores, so if you
-   want to use, e.g., 28 cores, you would specify ``lprocs=28:place=numanode=2``.
+   is ``numanode`` for Superdome.  Each ``numanode`` has 14 cores and 750 GB of
+   RAM, so if you want to use, e.g., 28 cores, you would specify
+   ``lprocs=28:place=numanode=2``.
 
 
 For example::
