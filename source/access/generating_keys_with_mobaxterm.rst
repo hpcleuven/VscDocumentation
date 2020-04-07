@@ -49,11 +49,11 @@ using the MobaXterm application.
       :alt: mobaxterm main
 
 6. Click on the **Save public key** button and save it to some desired
-   location; we recommend to name it ``id_rsa.vsc.pub``. You must upload this public key to your
+   location; we recommend to name it ``id_rsa_vsc.pub``. You must upload this public key to your
    your `VSC accountpage <https://account.vscentrum.be>`__ before you can login to a VSC cluster.
 
 7. Finally click on the **Save private key** button and save that file also;
-   we recommend to name this file ``id_rsa.vsc``. As the *private* part of
+   we recommend to name this file ``id_rsa_vsc.ppk``. As the *private* part of
    the name suggests, this file should not be shared, you must keep it in a safe
    location in your computer.
    You will have to remember where you saved it, as you will need it to
