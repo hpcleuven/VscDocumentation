@@ -80,6 +80,17 @@ that you know what you are doing in either case. The line to add to your
    export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
 
 
+If you had the miniconda installer change your ``.bashrc``, in your job scripts you would
+have to source it before activating an environment.
+
+::
+
+    source ${VSC_HOME}/.bashrc
+    conda activate science
+
+Here, ``science`` represents the name of a conda environment you create.
+
+
 Create an environment
 ~~~~~~~~~~~~~~~~~~~~~
 
