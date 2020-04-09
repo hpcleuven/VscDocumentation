@@ -139,7 +139,7 @@ debugging nodes.  A few restrictions apply:
 To submit a job to run on the debug nodes, you have to specify the Quality
 Of Service (``qos``)::
 
-   $ qsub -l nodes=2:ppn=28:broadwell  -l walltime=2:00:00  -l qos=debugging \
+   $ qsub -l nodes=2:ppn=28:broadwell  -l walltime=1:00:00  -l qos=debugging \
           -A myproject  myjobscript.pbs
 
 
