@@ -12,5 +12,8 @@ PdfDocs
 source/leuven/tier2_hardware/thinking_hardware/~$thinking_node_map_v2_centos7.xlsx
 source/leuven/tier2_hardware/thinking_hardware/thinking_node_map_v2_centos7.pdf
 
-#build script
+# build script
 build.sh
+
+# direnv files
+.envrc
