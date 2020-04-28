@@ -1,7 +1,10 @@
 ThinKing7 quick start guide
 ===========================
 
-:ref:`ThinKing7 <thinking7 hardware>` is the old ThinKing cluster that got an upgrade to CentOS 7.6. The cluster is at the end of its lifetime. The ivybridge nodes will be removed by the end of 2019. The haswell nodes have a little longer to go. ThinKing can be used for most workloads, but have a look at :ref:`Genius <Genius hardware>` for the most recent hardware.
+:ref:`ThinKing7 <thinking7 hardware>` is the old ThinKing cluster that got an upgrade to CentOS 7.6.
+The cluster is at the end of its lifetime. The ivybridge nodes have been removed.
+The haswell nodes have a little longer to go. ThinKing can be used for most workloads,
+but have a look at :ref:`Genius <Genius hardware>` for the most recent hardware.
 
 How to connect to ThinKing?
 ---------------------------
@@ -41,24 +44,20 @@ information on
 .. note::
 
    Remember that due to the migration to CentOS 7.6 toolchains
-   starting from 2018a are available for ivybride nodes and haswell
+   starting from 2018a are available for haswell
    nodes. Older toolchains are no longer available. By default toolchain
    2018a is loaded, for the CPU type of the specific node. If you want
    to load the toolchains explicitly you find then at 
    
-   - for ivybridge::
-
-        $ module use /apps/leuven/ivybridge/2018a/modules/all
-
-   - for haswell::
+   ::
  
         $ module use /apps/leuven/haswell/2018a/modules/all
 
 ThinKing is now also using Lmod as module system. Have a look at
 :ref:`Software stack <Software stack>` for more information.
 
-There are several type of nodes in the ThinKing cluster: compute nodes with ivybridge
-CPUs, haswell CPUs, and some GPU nodes with two NVIDIA K40c GPUs. Have a look at
+There are several type of nodes in the ThinKing cluster: compute nodes
+haswell CPUs, and some GPU nodes with two NVIDIA K40c GPUs. Have a look at
 the :ref:`hardware pages <Thinking hardware>` for more information.
 
 The charge rate for the various node types of Thinking are listed in the table
@@ -68,8 +67,6 @@ below.  Information on :ref:`obtaining credits <KU Leuven credits>` and
 +----------------+--------------+
 | node type      | credit/hour  |
 +================+==============+
-| ivybridge      | 4.76         |
-+----------------+--------------+
 | haswell        | 6.68         |
 +----------------+--------------+
 | K40c GPU nodes | 2.86         |
@@ -79,13 +76,9 @@ below.  Information on :ref:`obtaining credits <KU Leuven credits>` and
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores per node (20 in case of ivybridge nodes and 24 in case of haswell nodes). For example to request 2 nodes with each 24 cores for 1 hour you can submit like this::
+To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores per node (24 in case of haswell CPU nodes, 20 for the haswell GPU nodes). For example to request 2 nodes with each 24 cores for 1 hour you can submit like this::
 
    $ qsub -l nodes=2:ppn=24  -l walltime=1:00:00  -A myproject  myjob.pbs
-
-and the request of 2 nodes with each 20 cores with the specific ivybridge architecture you can submit like that::
-
-   $ qsub -l nodes=2:ppn=20:ivybridge  -l walltime=1:00:00  -A myproject  myjob.pbs
 
 You always need to submit with a project account (-A). To find out which projects you have, run::
 
