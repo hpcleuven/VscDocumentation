@@ -111,7 +111,7 @@ To run a debug job for 20 minutes on two CPU nodes, you would use::
    $ qsub  -A myproject  -l nodes=2:ppn=36  -l walltime=00:20:00  \
            -l qos=debugging  myscript.pbs
 
-To run a debug job for 15 minutes, you would use::
+To run a debug job for 15 minutes on a GPU node, you would use::
 
    $ qsub  -A myproject  -l nodes=1:ppn=9:gpus=1  -l partition=gpu \
            -l walltime=00:15:00   -l qos=debugging  myscript.pbs
