@@ -9,7 +9,6 @@ Login infrastructure
 --------------------
 
 You can access Thinking by using 
-<<<<<<< HEAD
 
 - ``login-thinking.hpc.kuleuven.be``
 
