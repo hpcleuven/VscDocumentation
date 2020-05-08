@@ -7,3 +7,4 @@ Tier-1 Data Service
    Tier1_Data_Service
    Introduction_to_irods
    user_access
+   using_iCommands
