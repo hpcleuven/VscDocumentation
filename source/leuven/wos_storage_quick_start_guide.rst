@@ -21,7 +21,7 @@ components.
 Storage Types
 -------------
 
-As described on `the web page ":ref:`data location`"
+As described on the :ref:`VSC storage guidelines <data location>`,
 different types of data can be stored in different places. There is also
 an extra storage space for Archive use.
 
