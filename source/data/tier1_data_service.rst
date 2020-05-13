@@ -17,8 +17,7 @@ More and more users have computational work that makes intensive use of large da
 This service has as primary goal to offer the users a platform to easy manage research data and help them to apply the **FAIR** principles to their research data from the very beginning of their projects. This should make it easier to transfer their research data at the end of the project to institutional or domain specific repositories for publication and preservation and when applicable ensure they are made publicly available (open access).
 
 
-.. image:: data_service/tier1_VSC_Data.png
-
+.. image:: data_service/tier1_vsc_data.png
 
 The Tier-1 Data component would provide a service to allow users to store research data during the active phase of the research data life cycle (that is, data that is being collected and analyzed and has not yet being published). This service for now is restricted to data of research projects that are using the VSC Tier-1 Compute infrastructure.
 
