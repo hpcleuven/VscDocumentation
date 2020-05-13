@@ -23,5 +23,5 @@ iRODS gives users four core competencies:
 
 .. image:: introduction/irods_core.png
 
-Other features that make iRODS a unique data management platform can be found on the next pages.
+Other features that make iRODS a unique data management platform can be found on next pages.
 
