@@ -10,3 +10,4 @@ Tier-1 Data Service
    using_iCommands
    data_discovery
    webdaw_access_to_irods
+   cyberduck_access_irods
