@@ -43,7 +43,7 @@ Upload from local computer to iRODS using Cyberduck
 ---------------------------------------------------
 
 
-.. warning:: When uploading your data to the iRODS you should not upload files/folders with names containing spaces (e.g. test1 for iRODS.txt) or name that contain special characters (e.g. ~ ` ! @ # $ % ^ & * ( ) + = { } [ ] | : ; ” ‘ < > , ? /). The command line side will/may typically not tolerate these characters. For long file/folder names the use of underscores (e.g. test1_for_iRODS.txt) is the recommended practice. (.. htmlonly::)
+.. warning:: When uploading your data to the iRODS you should not upload files/folders with names containing spaces (e.g. test1 for iRODS.txt) or name that contain special characters (e.g. ~ ` ! @ # $ % ^ & * ( ) + = { } [ ] | : ; ” ‘ < > , ? /). The command line side will/may typically not tolerate these characters. For long file/folder names the use of underscores (e.g. test1_for_iRODS.txt) is the recommended practice.
 
 
 - Double-click on the “irods.hpc.kuleuven.be – IRODS” bookmark (that was done automatically by profile file connection) to connect to the iRODS.
