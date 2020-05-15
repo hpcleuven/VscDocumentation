@@ -1,4 +1,4 @@
-.. _Introduction_to_irods:
+.. _introduction_to_irods:
 
 Introduction to iRODS
 =====================
