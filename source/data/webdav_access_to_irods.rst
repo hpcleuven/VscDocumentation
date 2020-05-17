@@ -1,4 +1,4 @@
-.. _webdaw_access_to_irods:
+.. _webdav_access_to_irods:
 
 A WebDAV Client Access to iRODS
 ===============================
@@ -10,7 +10,7 @@ The module that we use for our iRODS connection is called Davrods_. Davrods is a
 
 For an access using Graphical User Interface (GUI) clients to iRODS, we can and will use different tools. However in this page we will see how to use mapping a network drive.
 
-From a web browser side a simple directory index is used as an interface. It is purpose for now is only to list and to view. It is not intended to download and upload data.
+From a web browser side a simple directory index is used as an interface. It's purpose is only to list and to view. It is not intended to download and upload data.
 
 Web Browser-Directory Index
 ---------------------------

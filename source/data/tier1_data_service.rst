@@ -5,7 +5,7 @@ Tier-1 Data Service
 
 The Tier-1 supercomputing infrastructure in Flanders had until 2018 mainly been targeted at users with serious calculation issues (typical HPC/HTC workloads). Although this platform in its current form is already very successful, the current focus on compute no longer meets all the needs of many researchers. There is also a strong demand for more data storage capacity, data processing solutions and customized user environments. 
 
-Therefore, VSC decided on 2018 to offer a new Tier-1 model: Supercomputing as a Service. In this model three infrastructure components (Compute, Data and Cloud) are tightly coupled to allow easy and fast transfers of data between the three systems and to offer a higher level of service to the VSC users.
+Therefore, VSC decided in 2018 to offer a new Tier-1 model: Supercomputing as a Service. In this model three infrastructure components (Compute, Data and Cloud) are tightly coupled to allow easy and fast transfers of data between the three systems and to offer a higher level of service to the VSC users.
 
 The Tier-1 Data component aims to offer the VSC users the required tools and infrastructure as well as human resources to help them to manage research data. 
 
