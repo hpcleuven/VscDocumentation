@@ -21,9 +21,11 @@ Installing and First Time Configuration of Cyberduck
 
 .. image:: cyberduck/cduck3.png
 
-- Contact us by the following e-mail address “data@vscentrum.be” to get your **VSC-Tier1Data** Cyberduck configuration profile.
+- Click the following profile configuration link to download the VSC-Tier1_Data Cyberduck profile file on your local machine.
 
-- After you receive the profile, save it on your computer.
+:download:`VSC-Tier1_Data Cyberduck profile <cyberduck/vsc_Tier1_Data.cyberduckprofile>`.
+
+- After you download the profile, save it on your computer.
 
 .. image:: cyberduck/cduck4.png
 

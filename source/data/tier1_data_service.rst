@@ -1,4 +1,4 @@
-.. _tier1_Data_Service:
+.. _tier1_data_service:
 
 Tier-1 Data Service
 ===================
