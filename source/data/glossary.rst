@@ -75,7 +75,7 @@ An iRODS server is software that interacts with the access protocol of a specifi
 
 The physical location of Data Objects on a storage device. 
 
-**Workow** 
+**Workflow** 
 
 Some form of computation or action performed on Data Objects.
 
