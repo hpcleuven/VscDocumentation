@@ -14,9 +14,9 @@ a number of actions to further ensure the integrity and security of all VSC syst
 Your current SSH keys will be revoked on May 27, 2020
 -----------------------------------------------------
 
-We will effectively revoke all SSH-keys uploaded before 20 May 2020. You
-should generate a new key pair and upload the new public key in the
-`account page <https://account.vscentrum.be>`_. Instructions on how to create a
+**We will effectively revoke all SSH public keys uploaded before 20 May 2020.** You
+should generate a new SSH key pair and upload the new public key in the
+`VSC account page <https://account.vscentrum.be>`_ (via ``Edit account`` tab). Instructions on how to create a
 key pair and upload the public key :ref:`can be found here <upload_new_ssh_key>`.
  
 .. note::
@@ -30,14 +30,20 @@ key pair and upload the public key :ref:`can be found here <upload_new_ssh_key>`
    * *never* share your SSH private key with another person. 
 
 
-On Wednesday 27 May 2020, we will revoke all the SSH-keys that were uploaded before 20
-May 2020. This operation will have no impact on your running jobs, but you will only be
+**On Wednesday 27 May 2020, we will revoke all the SSH-keys that were uploaded before 20
+May 2020.** This operation will have no impact on your running jobs, but you will only be
 able to access the VSC systems if you have uploaded a new key pair. 
 
 .. warning::
 
-   Upload a new SSH key pair before 27 May 2020!
+   Upload a new SSH public key before 27 May 2020 to ensure you will still be able to connect to the VSC clusters with your VSC account!
 
+If needed, you can still restore access to your VSC account on or after 27 May 2020 by uploading a new SSH public key.
+
+.. note::
+
+  Take into account that it takes a while before a new SSH public key becomes active on the system
+  (it should not take longer than 1 hour after uploading the public key to the VSC account page).
 
 Additional Firewall layer 
 -------------------------
@@ -54,15 +60,16 @@ options to get access to VSC login nodes:
 * register your IP address by accessing (https://firewall.hpc.kuleuven.be/) and logging
   in with your institutional account. While this web connection is active a new
   SSH-session can be started.
+  Active SSH sessions will remain active even when this web page is closed.
 
 * contact your HPC support team and ask them to whitelist your IP-range (e.g., for
   industry access, automated processes). 
 
-These IP filtering rules will go into effect starting 20 May 2020, 14h00 (CET). 
+These IP filtering rules will go into effect starting 20 May 2020, 14h00 (CEST).
 
 We understand that these actions require some effort from your side, but we hope you
 can understand the necessity of these actions. We will keep on investigating to offer
 you safe and user friendly ways to get access to the VSC clusters and keep you
-informed about future developments. If you have any questions, please contact us.
+informed about future developments. **If you have any questions, please contact us.**
 
 .. include:: user_support_addresses.rst
