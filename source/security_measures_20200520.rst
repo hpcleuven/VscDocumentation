@@ -58,7 +58,7 @@ options to get access to VSC login nodes:
 * contact your HPC support team and ask them to whitelist your IP-range (e.g., for
   industry access, automated processes). 
 
-These IP filtering rules will go into effect starting 20 May 2020, 14h00. 
+These IP filtering rules will go into effect starting 20 May 2020, 14h00 (CET). 
 
 We understand that these actions require some effort from your side, but we hope you
 can understand the necessity of these actions. We will keep on investigating to offer
