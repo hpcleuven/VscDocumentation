@@ -1,4 +1,4 @@
--  KU Leuven/Hasselt University cluster: hpcinfo@kuleuven.be
+-  KU Leuven/Hasselt University: hpcinfo@kuleuven.be
 -  Ghent University: hpc@ugent.be, for further info, see
    the `web site <https://www.ugent.be/hpc/en>`_
 -  University of Antwerp: hpc@uantwerpen.be, for further

@@ -105,15 +105,15 @@ If you don't use all cores of a node in your job, the scheduler
 - may decide to pack the tasks of several nodes in your resource request on
   a single node;
 - may run other jobs you have in the queue on the same node(s);
-- may, depending on the :ref: `job policies <Job policies>` of the cluster, run
+- may, depending on the :ref:`job policies <Job policies>` of the cluster, run
   jobs of other users on the same node.
  
 In the last scenario, if the cluster has a 'shared' policy, the scheduler can
 fill up nodes efficiently with jobs without users having to use tools
-such as :ref: `worker or atools` (worker/atools are still recommended when
-running a large number of tasks/jobs). The downside of this, however, is that
-misbehaving jobs of one user may cause a crash or performance degradation of
-another user's job.
+such as :ref:`work or atools <worker or atools>` (worker/atools are still
+recommended when running a large number of tasks/jobs). The downside of this,
+however, is that misbehaving jobs of one user may cause a crash or performance
+degradation of another user's job.
 
 To ensure that the scheduler respects your resource specification you can
 use the following two options:

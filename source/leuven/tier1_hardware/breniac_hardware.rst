@@ -41,7 +41,7 @@ Breniac storage
 
 Your ``$VSC_HOME`` and ``$VSC_DATA`` directory are mounted on the Breniac
 login and compute nodes.  See your VSC institute's information on local
-storage about policies and quota.  Also check the :ref:``VSC storage
+storage about policies and quota.  Also check the :ref:`VSC storage
 guidelines <data location>` for information on what to store where.
 
 .. note::
