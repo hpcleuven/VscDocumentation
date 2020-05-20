@@ -30,7 +30,7 @@ key pair and upload the public key :ref:`can be found here <upload_new_ssh_key>`
    * *never* share your SSH private key with another person. 
 
 
-**On Wednesday 27 May 2020, we will revoke all the SSH-keys that were uploaded before 20
+**On Wednesday 27 May 2020, we will remove all the SSH public keys that were uploaded before 20
 May 2020.** This operation will have no impact on your running jobs, but you will only be
 able to access the VSC systems if you have uploaded a new key pair. 
 
