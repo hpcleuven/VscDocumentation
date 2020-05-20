@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'VSC documentation'
-copyright = '2019, VSC (Vlaams Supercomputing Center)'
+copyright = '2020, VSC (Vlaams Supercomputing Center)'
 author = 'VSC (Vlaams Supercomputing Center)'
 
 # The short X.Y version
