@@ -36,7 +36,7 @@ able to access the VSC systems if you have uploaded a new key pair.
 
 .. warning::
 
-   Upload a new SSH public key before 27 May 2020 to ensure you will still be able to connect to your VSC account!
+   Upload a new SSH public key before 27 May 2020 to ensure you will still be able to connect to the VSC clusters with your VSC account!
 
 If needed, you can still restore access to your VSC account on or after 27 May 2020 by uploading a new SSH public key.
 
