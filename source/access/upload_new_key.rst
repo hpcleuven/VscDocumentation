@@ -14,9 +14,11 @@ Upload a new SSH key
    #. Upload your new public key adding it in the 'Add Public Key'
       section of the page. Use 'Browse...' to find your public key,
       press 'Add' to upload it.
-   #. You may now delete the entry for the \\"lost\" key if you know
-      which one that is, but this is not crucial.
-   #. Exercise some patience, within 30 minutes, your account should be
-      accessible again.
+   #. You may now delete the entry for any keys you no longer require.
+
+.. warning::
+
+   Exercise some patience, within 30 minutes, your account should be
+   accessible again.
 
 .. include:: links.rst
