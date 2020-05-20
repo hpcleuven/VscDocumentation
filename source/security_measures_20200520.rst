@@ -38,7 +38,8 @@ able to access the VSC systems if you have uploaded a new key pair.
 
    Upload a new SSH public key before 27 May 2020 to ensure you will still be able to connect to the VSC clusters with your VSC account!
 
-If needed, you can still restore access to your VSC account on or after 27 May 2020 by uploading a new SSH public key.
+You can still restore access to the VSC clusters on or after 27 May 2020 by uploading
+a new SSH public key.
 
 .. note::
 
@@ -70,6 +71,11 @@ These IP filtering rules will go into effect starting 20 May 2020, 14h00 (CEST).
 We understand that these actions require some effort from your side, but we hope you
 can understand the necessity of these actions. We will keep on investigating to offer
 you safe and user friendly ways to get access to the VSC clusters and keep you
-informed about future developments. **If you have any questions, please contact us.**
+informed about future developments.
+
+Questions?
+----------
+
+If you have any questions, please contact us.
 
 .. include:: user_support_addresses.rst
