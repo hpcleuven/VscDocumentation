@@ -20,12 +20,12 @@ CPMD
 
 `CPMD`_ can be used for free for
 non-commercial research in education institutions under the `CPMD Free
-License <http://cpmd.org/download/cpmd-licence>`_.
+License <https://www.cpmd.org/wordpress/index.php/download/apply-for-a-license/>`_.
 
 To get access:
 
 -  `Fill in the form for downloading
-   CPMD <http://cpmd.org/download/accept-license/cpmd-license-application>`_
+   CPMD <https://www.cpmd.org/wordpress/index.php/download/apply-for-a-license/cpmd-license-application/>`_
    on the CPMD website.
 -  You'll see a "Thank You" page confirming your submission. Somewhat
    later - it may take up to a week but usually it is quite fast -

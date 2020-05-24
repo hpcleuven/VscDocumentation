@@ -122,7 +122,7 @@ the executable is supposed to run. This can be done using the ``ppn``
 resource specification, e.g., ``-l nodes=1:ppn=10`` for an executable
 that should be run with 10 OpenMP threads.
 
-.. warming::
+.. warning::
 
    The number of threads should not exceed the number of cores on a compute
    node.

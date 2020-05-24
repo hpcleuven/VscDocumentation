@@ -39,8 +39,8 @@ Grid computing
 --------------
 
 -  F. Magoules, J. Pan, K.-A. Tan, and A. Kumar. `Introduction to grid
-   computing <https://www.crcpress.com/Introduction-to-Grid-Computing/Magoules-Pan-Tan-Kumar/p/book/978142007406222>`_.
-   CRC Press, 2009. ISBN 9781420074062.
+   computing <https://www.routledge.com/Introduction-to-Grid-Computing-1st-Edition/Magoules-Pan-Tan-Kumar/p/book/9780367385828>`_.
+   CRC Press, 2019. ISBN 9780367385828.
 
 MPI
 ---
@@ -117,7 +117,7 @@ Xeon Phi computing
    Morgan Kaufmann, 2016. ISBN 978-0-12-809194-4. Errata and
    downloadable code examples for this book and other books by Jeffers
    and Reinders are maintained on the blog
-   `lotsofcores.com <http://lotsofcores.com/>`_.
+   `lotsofcores.com <https://lotsofcores.com/>`_.
 
 Case studies and examples of programming paradigms
 --------------------------------------------------

@@ -34,11 +34,11 @@ Implementations
 
 On the VSC clusters, the following compilers support OpenMP:
 
-:ref:`Intel compilers <Intel OpenMP>` in the intel toolchain
+:ref:`Intel compilers <Intel OpenMP>` in the Intel toolchain
    The Intel compiler version 18.0 (intel/2018a and intel/2018b
    toolchains) offers almost complete OpenMP 4.5 support.
 
-:ref:`GCC compilers <GCC OpenMP>` in the foss toolchain
+:ref:`GCC compilers <GCC OpenMP>` in the FOSS toolchain
    GCC 6.x (foss/2018a) offers full OpenMP 4.5
    support in C and C++, including offloading to some variants of the
    Xeon Phi and to AMD HSAIL and some support for OpenACC on NVIDIA.  For
@@ -78,7 +78,7 @@ procedure. If not, check the :ref:`Running jobs` section first.
 
 Since OpenMP is intended for use in a shared memory context, when
 submitting a job to the queue system, remember to request a single node
- and as many processors as you need parallel
+and as many processors as you need parallel
 threads (e.g., ``-l nodes=1:ppn=4``). The latter should not exceed the number of
 cores on the machine the job runs on. For relevant hardware information,
 please consult the list of available :ref:`hardware <hardware>`.

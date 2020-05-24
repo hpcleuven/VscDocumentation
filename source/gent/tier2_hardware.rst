@@ -26,6 +26,7 @@ Compute clusters
   joltik               10    2x 16-core Intel Xeon Gold 6242(Cascade Lake @ 2.8 GHz)   256 GiB               800GB SSD                   double EDR Infiniband  
                              4x NVIDIA Volta V100 GPUs (32GB GPU memory)                                                                                        
  =============== ========== ========================================================= ===================== =========================== ======================= 
+
 (*) default cluster
 
 For most recent information about the available resources and cluster status, please consult https://www.ugent.be/hpc/en/infrastructure .

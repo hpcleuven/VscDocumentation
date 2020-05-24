@@ -17,7 +17,7 @@ Prerequisites
 -  Optional: You can use `JellyfiSSH`_ to
    store your ssh session settings. The most recent version is available
    for a small fee from the Mac App Store, but if you `google for
-   JellyfiSSH 4.5.2 <https://www.google.be/webhp?ion=1&ie=UTF-8#q=JellyfiSSH+4.5.2>`_,
+   JellyfiSSH 4.5.2 <https://www.google.be/webhp?#q=JellyfiSSH+4.5.2>`_,
    the version used for the screenshots in this page, you can still find
    some free downloads for that version. Installation is easy: just drag
    the program's icon to the Application folder in the Finder, and

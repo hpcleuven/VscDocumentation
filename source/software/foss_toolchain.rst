@@ -105,7 +105,7 @@ OpenMP threads.
    compute node.
 
 
-.. _OpenMPI:
+.. _Open MPI:
 
 Communication library: Open MPI
 -------------------------------
@@ -160,7 +160,7 @@ that gets this information from the resource specification for that job.
 FOSS mathematical libraries
 ---------------------------
 
-The foss toolchain contains the basic HPC mathematical libraries, it
+The FOSS toolchain contains the basic HPC mathematical libraries, it
 offers:
 
 -  `OpenBLAS`_ (Basic Linear Algebra Subprograms)

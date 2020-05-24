@@ -111,7 +111,7 @@ Cygwin
 ~~~~~~
 By installing the UNIX emulation layer `Cygwin`_ with the appropriate
 packages you can mimic very well the VSC cluster environment (at
-least with the foss toolchain). Cygwin supports the GNU compilers and
+least with the FOSS toolchain). Cygwin supports the GNU compilers and
 also contains packages for OpenMPI (`look for
 "openmpi" <https://cygwin.com/cgi-bin2/package-grep.cgi?grep=openmpi&arch=x86_64>`_)
 and some other popular libraries (FFTW, HDF5, ...). As such it can

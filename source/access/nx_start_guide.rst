@@ -31,6 +31,7 @@ Choose the hostname:
 
    If you experience problems with connection please switch to Protocol
    NX and port 4000.
+
 -  These login nodes cannot be used to access the cluster from the terminal.   
 
 Choose the authentication **Use the system login.**
@@ -87,7 +88,7 @@ reconnection from a different device (e.g. mobile device) it is highly
 recommended to change the resolution.
 
 For more detailed information about the configuration process please
-refer to the `short video <https://www.vscentrum.be/assets/1187>`_ (ThinKing
+refer to the `short video <https://hervsc.live.statik.be/assets/1187>`_ (ThinKing
 configuration) showing the installation and configuration procedure
 step-by-step or to the :download:`document containing graphical
 instructions <nx_start_guide/nx_config_guide.pdf>`.

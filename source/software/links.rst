@@ -1,5 +1,5 @@
 .. _MPI forum: https://www.mpi-forum.org/
-.. _MPI Standard documents: https://www.mpi-forum.org/docs/²
+.. _MPI Standard documents: https://www.mpi-forum.org/docs/
 .. _Open MPI web site: https://www.open-mpi.org/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Intel MPI site: https://software.intel.com/en-us/intel-mpi-library
@@ -19,7 +19,7 @@
 .. _Interoperability with OpenMP API: https://software.intel.com/en-us/node/528819
 .. _MPI Reference Manual: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
 .. _Beginning Hybrid MPI/OpenMP Development: https://software.intel.com/en-us/articles/beginning-hybrid-mpiopenmp-development
-.. _Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems: http://faculty.cs.uwlax.edu/%7Ejjhursey/papers/2011/hursey-cluster-poster-2011.pdf
+.. _Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems: http://www.joshuahursey.com/papers/2011/hursey-cluster-poster-2011.pdf
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
 .. _LAPACK user guide: http://www.netlib.org/lapack/lug/
 .. _Netlib BLAS repository: http://www.netlib.org/blas/
@@ -28,7 +28,7 @@
 .. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
-.. _OpenBLAS: http://www.openblas.net/
+.. _OpenBLAS: https://www.openblas.net/
 .. _OpenBLAS Wiki: https://github.com/xianyi/OpenBLAS/wiki
 .. _FFTW: http://www.fftw.org/
 .. _FFTW documentation: http://www.fftw.org/#documentation

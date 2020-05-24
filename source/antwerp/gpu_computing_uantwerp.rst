@@ -79,8 +79,8 @@ GPUs.
 |                       | cuDNN/7.0.5-CUDA-8.0.61                                                       | Network library,                                                 |
 |                       | cuDNN/7.0.5-CUDA-9.0.176                                                      | version 6.0 and 7.0,                                             |
 |                       | cuDNN/7.0.5-CUDA-9.1.85                                                       | both installed from                                              |
-|                       | cuDNN/7.4.1.5-CUDA-9.0.176                                                    | standard NVIDIA                                                   |
-|                       | cuDNN/7.4.1.5-CUDA-10.0.130                                                   | tarballs but in the                                               |
+|                       | cuDNN/7.4.1.5-CUDA-9.0.176                                                    | standard NVIDIA                                                  |
+|                       | cuDNN/7.4.1.5-CUDA-10.0.130                                                   | tarballs but in the                                              |
 |                       |                                                                               | directory structure                                              |
 |                       |                                                                               | of our module system.                                            |
 +-----------------------+-------------------------------------------------------------------------------+------------------------------------------------------------------+

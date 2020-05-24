@@ -175,7 +175,7 @@ More information
 ~~~~~~~~~~~~~~~~
 
 Additional information about conda can be found on its `documentation
-site <https://conda.readthedocs.io/en/latest/>`_.
+site <https://docs.conda.io/en/latest/>`_.
 
 
 Alternatives to conda
@@ -263,7 +263,7 @@ Installing Anaconda on NX node (KU Leuven Genius)
    some other location or temporary archive. It creates conflicts with
    Anaconda.
 #. Download appropriate (64-Bit (x86) Linux Installer) version of Anaconda
-   from `https://www.anaconda.com/download/#linux <https://www.anaconda.com/download/#linux>`_
+   from `https://www.anaconda.com/products/individual#Downloads <https://www.anaconda.com/products/individual#Downloads>`_
 #. Change the permissions of the file (if necessary)::
 
       $ chmod u+x Anaconda3-2019.07-Linux-x86_64.sh

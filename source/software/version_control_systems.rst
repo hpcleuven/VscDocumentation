@@ -1,7 +1,7 @@
 .. _version control systems:
 
 Version control systems
-======================
+=======================
 
 Why use a version control system?
 ---------------------------------

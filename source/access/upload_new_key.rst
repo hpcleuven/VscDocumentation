@@ -7,7 +7,7 @@ Upload a new SSH key
       outlined in the client sections for
       :ref:`Linux <generating keys linux>`,
       :ref:`Windows <generating keys windows>` and :ref:`macOS
-      (formerly OS X) <generating keys macos>`.
+      <generating keys macos>` (formerly OS X).
    #. Go to the `VSC account page`_.
    #. Choose your institute and log in.
    #. At the top of the page, click 'Edit Account'.
