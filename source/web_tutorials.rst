@@ -7,9 +7,9 @@ PRACE
 -----
 
 | The `PRACE Training
-  Portal <http://www.training.prace-ri.eu/>`__ has a number of
+  Portal <https://www.training.prace-ri.eu/>`__ has a number of
   `training
-  videos <http://www.training.prace-ri.eu/tutorials/index.html>`__
+  videos <https://training.prace-ri.eu/index.php/prace-tutorials/>`__
   online from their courses.
 
 LLNL - Lawrence Livermore National Laboratory (USA)

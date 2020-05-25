@@ -1,6 +1,6 @@
 .. include:: css.rst
 
-.. _data_sharing
+.. _data_sharing:
 
 Data sharing
 ------------

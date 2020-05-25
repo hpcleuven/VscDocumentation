@@ -26,7 +26,7 @@ Foss toolchain
 +-----------------------+-----------------------+-----------------------+
 | Cython/0.22.1-foss-20 | Python/2.7.13-intel-2 | Integrated into the   |
 | 15a-Python-2.7.9      | 017a                  | standard Python       |
-|                       |                       | module for the intel  |
+|                       |                       | module for the Intel  |
 |                       |                       | toolchains            |
 +-----------------------+-----------------------+-----------------------+
 | FFTW/3.3.4-gompi-2016 | FFTW/3.3.6-gompi-2017 |                       |
@@ -63,7 +63,7 @@ Foss toolchain
 |                       |                       | toolchain.            |
 +-----------------------+-----------------------+-----------------------+
 | SAMtools/0.1.19-foss- |                       | Newer versions with   |
-| 2015a                 |                       | intel toolchain       |
+| 2015a                 |                       | Intel toolchain       |
 +-----------------------+-----------------------+-----------------------+
 | SPAdes/3.10.1-foss-20 | SPAdes/3.10.1-foss-20 |                       |
 | 16b                   | 17a                   |                       |

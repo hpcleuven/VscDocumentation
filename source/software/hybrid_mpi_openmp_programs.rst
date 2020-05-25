@@ -230,7 +230,7 @@ developing and running hybrid programs:
 -  `Beginning Hybrid MPI/OpenMP Development`_,
    useful if you develop your own code.
 
-Foss toolchain (GCC and Open MPI)
+FOSS toolchain (GCC and Open MPI)
 ---------------------------------
 
 Open MPI has very flexible options for process and thread placement, but

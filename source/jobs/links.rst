@@ -1,6 +1,6 @@
-.. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-0-1/help.htm
-.. _qsub documentation: http://docs.adaptivecomputing.com/torque/4-0-2/Content/topics/commands/qsub.htm
-.. _Adaptive Computing documentation: http://www.adaptivecomputing.com/support/documentation-index/
+.. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm 
+.. _qsub documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm#topics/torque/commands/qsub.htm
+.. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
 .. _Service Catalog: https://icts.kuleuven.be/sc/HPC
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _atools documentation: https://atools.readthedocs.io/en/latest/

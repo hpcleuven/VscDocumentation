@@ -5,11 +5,11 @@ Getting compute time in other centres
 -------------------------------------
 
 -  `PRACE - Partnership for Advanced Computing in
-   Europe <http://www.prace-ri.eu/>`_ has a `program to get
+   Europe <https://www.prace-ri.eu/>`_ has a `program to get
    access to the tier-0 infrastructure in
-   Europe <http://www.prace-ri.eu/hpc-access>`_.
+   Europe <https://www.prace-ri.eu/hpc-access/>`_.
 -  The `DOE leadership computing program
-   INCITE <http://www.doeleadershipcomputing.org/>`_ also
+   INCITE <https://www.doeleadershipcomputing.org/>`_ also
    offers compute time to non-US-groups. It is more or less the
    equivalent of the PRACE tier-0 computing program. The annual deadline
    for proposals is usually end of June.
@@ -18,7 +18,7 @@ Training programs in other centres
 ----------------------------------
 
 -  `PRACE training
-   programs <http://www.training.prace-ri.eu/nc/training_courses/index.html>`_
+   programs <https://www.training.prace-ri.eu/>`_
 -  `HLRS, Stuttgart
    (Germany) <https://www.hlrs.de/solutions-services/service-portfolio/training>`_
 -  `Leibniz RechenZentrum, Garching, near München
@@ -30,7 +30,7 @@ EU initiatives
 --------------
 
 -  `PRACE, Partnership for Advanced Computing in
-   Europe <http://www.prace-ri.eu/>`_
+   Europe <https://www.prace-ri.eu/>`_
 -  `EGI - European Grid Initiative <https://www.egi.eu/>`_, the
    successor of the `EGEE - Enabling Grids for
    E-SciencE <http://eu-egee-org.web.cern.ch/eu-egee-org/index.html>`_

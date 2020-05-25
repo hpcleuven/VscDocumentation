@@ -126,6 +126,7 @@ Detailed steps:
     4. Go to the relevant directory, e.g., ``$VSC_DATA``.
     5. Start the Jupyter notebook, use a unique port number:
        ::
+
           r23g36$ jupyter notebook --port 30140
 
 Set up SSH tunnel
