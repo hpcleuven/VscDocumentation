@@ -39,7 +39,7 @@ Hardware details
 - 144 haswell nodes
 
   - 2 Xeon E5\-2680 v3 CPUs\@2.5 GHz, 12 cores each
-  - 64 GB RAM (32 nodes) / 128 GB RAM (96 nodes) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency haswell tier2>`)
+  - 64 GB RAM (48 nodes) / 128 GB RAM (96 nodes) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency haswell tier2>`)
   - feature ``haswell``
 
 - 5 GPGPU nodes

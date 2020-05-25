@@ -32,7 +32,7 @@ neighborhood collectives on graph topologies. The first update of the
 MPI-3.1 specification was released in 2015, and work is ongoing on the
 next major update, MPI-4.0.
 
-The two dominant Open Source implementations are `Open MPI <Open MPI web site`_
+The two dominant Open Source implementations are `Open MPI <Open MPI web site>`_
 and `MPICH`_. The latter has been through
 a couple of name changes: It was originally conceived in the early '90's
 as MPICH, then the complete rewrite was renamed to MPICH2, but as this
@@ -64,9 +64,9 @@ On VSC clusters, several MPI implementations are installed. We provide
 two MPI implementations on all newer machines that implement the MPI-3.1
 specification.
 
-#. :ref:`Intel MPI <Intel MPI>` in the intel toolchain
+#. :ref:`Intel MPI <Intel MPI>` in the Intel toolchain
 
-#. :ref:`Open MPI <Open MPI>` in the foss toolchain
+#. :ref:`Open MPI <Open MPI>` in the FOSS toolchain
 
 
 When developing your own software, this is the preferred order to select
@@ -92,9 +92,9 @@ For debugging, we recommend the Arm DDT debugger (formerly Allinea DDT,
 module allinea-ddt). The debugger and the profiler Arm MAP (formerly
 Allinea MAP) are now bundled nito ArmForge, which is available as a
 module on KU Leuven systems. Video tutorials are available on the
-Arm website: `ARM-DDT video`_ .  (KU Leuven-only).
+Arm website: `ARM-DDT video`_.  (KU Leuven-only).
 
-When using the intel toolchain, ":ref:`ITAC`" (ITAC) may also prove useful.
+When using the Intel toolchain, ":ref:`ITAC`" (ITAC) may also prove useful.
 
 Profiling
 ---------
@@ -109,7 +109,7 @@ Further information
 
    -  `Intel MPI Documentation`_ (Latest version)
 
--  `Open MPI`_ 
+-  `Open MPI web site`_ 
 
    -  `Open MPI Documentation`_
 

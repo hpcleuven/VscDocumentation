@@ -16,7 +16,7 @@ code, how to compile and build an application.
 Note for KU Leuven and UHasselt users: Microsoft Visual Studio is
 covered by the campus license for Microsoft products of both KU Leuven
 and Hasselt University. Hence staff and students can
-`download <https://www.dreamspark.com/>`_ and use the software.
+`download <https://azureforeducation.microsoft.com/>`_ and use the software.
 
 Also note that although Microsoft offers a free evaluation version of
 its development tools, i.e., Visual Studio Express, this version does

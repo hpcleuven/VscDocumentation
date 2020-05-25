@@ -79,7 +79,7 @@ Haswell CPUs.
 
 To build for a specific architecture both the Intel and GCC compiler family
 offer command line options.  See the toolchain documentation for the
-:ref:`intel <Intel optimization>` and the :ref:`GCC <GCC optimization>`
+:ref:`Intel <Intel optimization>` and the :ref:`GCC <GNU optimization>`
 toolchains for an overview of the relevant compiler options.
 
 
@@ -139,8 +139,8 @@ implementation of MPI (Message Passing Interface).  This is a de-facto standard
 implemented by many libraries and the API can be used from C/C++ and Fortran.
 
 On the clusters, at least two implementations are available,
-:ref:`Intel MPI <Intel MPI>` in the intel toolchain, and :ref:`Open MPI <OpenMPI>`
-in the foss toolchain.
+:ref:`Intel MPI <Intel MPI>` in the Intel toolchain, and :ref:`Open MPI <Open MPI>`
+in the FOSS toolchain.
 
 
 .. include:: links.rst

@@ -91,7 +91,8 @@ your files, unless you use an :ref:`SSH agent<SSH agent>`.
 Converting SSH2 keys to OpenSSH format
 --------------------------------------
 
-Keys are required in the OpenSSH format.
+*This section is only relevant if you did not use OpenSSH (as described above)
+to generate an ssh key.*
 
 If you have a public key ``id_rsa_4096_ssh.pub`` in the SSH2 format,
 you can use OpenSSH's ssh-keygen to convert it to the OpenSSH format in
