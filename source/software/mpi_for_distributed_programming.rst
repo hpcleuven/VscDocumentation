@@ -32,7 +32,7 @@ neighborhood collectives on graph topologies. The first update of the
 MPI-3.1 specification was released in 2015, and work is ongoing on the
 next major update, MPI-4.0.
 
-The two dominant Open Source implementations are `Open MPI <Open MPI web site>`_
+The two dominant Open Source implementations are `Open MPI`_
 and `MPICH`_. The latter has been through
 a couple of name changes: It was originally conceived in the early '90's
 as MPICH, then the complete rewrite was renamed to MPICH2, but as this
@@ -105,11 +105,11 @@ MAP) or `Scalasca docs`_.  (KU Leuven-only)
 Further information
 -------------------
 
--  `Intel MPI site`_
+-  `Intel MPI`_ web site
 
    -  `Intel MPI Documentation`_ (Latest version)
 
--  `Open MPI web site`_ 
+-  `Open MPI`_ web site 
 
    -  `Open MPI Documentation`_
 
