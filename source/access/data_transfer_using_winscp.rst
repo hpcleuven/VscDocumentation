@@ -130,7 +130,7 @@ team may ask you to enable logging and mail the results.
 .. |WinSCP config advanced| image:: data_transfer_using_winscp/winscp_config-advanced-new.png
 .. |WinSCP config save| image:: data_transfer_using_winscp/winscp_config-save-new.png
 .. |WinSCP interfaces| image:: data_transfer_using_winscp/winscp_interfaces-new.png
-.. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging.png
+.. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging-new.png
 .. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer.png
 
 .. include: links.rst
