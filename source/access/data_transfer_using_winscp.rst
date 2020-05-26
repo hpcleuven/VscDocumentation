@@ -40,17 +40,20 @@ connecting and add host key to the cache'; select 'Yes'.
    #. Double check that the port number is 22.
 
 #. If you are not using pageant to manage your ssh keys, you
-      have to point WinSCP to the private key file (in PuTTY
-      .ppk format) that should be used. You can do that usind 
-      "Advanced" button and then choose "SSH" "Authentication" from the list. 
-      When using pageant, you can leave this field blank.
+   have to point WinSCP to the private key file (in PuTTY
+  .ppk format) that should be used. You can do that usind 
+  "Advanced" button and then choose "SSH" "Authentication" from the list. 
+  When using pageant, you can leave this field blank.
 
    |WinSCP config advanced|
 
 #. If you want to store this data for later use, click the "Save"
-   button at the bottom and enter a name for the session. Next time
+   button and enter a name for the session. Next time
    you'll start WinSCP, you'll get a screen with stored sessions that
    you can open by selecting them and clicking the "Login" button.
+
+   |WinSCP config save|
+
 #. Click the "Login" button to start the session that you just
    created. You'll be asked for your passphrase if pageant is not
    running with a valid key loaded. The first time you make the
@@ -75,9 +78,9 @@ WinSCP has two modes for the graphical user interface:
    can transfer files by dragging them to and from other folder windows
    or the desktop.
 
-During the installation of WinSCP, you'll be prompted for a mode. But
-you can always change your mind afterwards and select the interface mode
-by selecting the \\"Preferences\" category after starting WinSCP.
+The default mode is "commander". You can always switch the modes  
+by going to the the "Options" tab, choosing "Preferences" and 
+selecting the \\"Environment\\Interface\" category.
 
 Enable logging
 ~~~~~~~~~~~~~~
@@ -89,7 +92,7 @@ team may ask you to enable logging and mail the results.
 
    |WinSCP logging|
 
-   #. Check "Advanced options".
+   #. Go to the "Options" tab and choose "Preferences".
    #. Select the "Logging" category.
    #. Check the box next to "Enable session logging on level" and select
       the logging level requested by the user   support team. Often normal
