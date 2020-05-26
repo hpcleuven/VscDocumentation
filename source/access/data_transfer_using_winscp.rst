@@ -28,7 +28,7 @@ Transferring your files to and from the VSC clusters
 The first time you make the connection, you will be asked to 'Continue
 connecting and add host key to the cache'; select 'Yes'.
 
-#. Start WinSCP and go the the "Session" category. Fill in the following
+#. When you first install WinSCP it should open a new session dialog. If that does not happen - start WinSCP and go the the "Session" tab. From there choose "New Session". Fill in the following
    information:
 
    |WinSCP config|
@@ -37,11 +37,15 @@ connecting and add host key to the cache'; select 'Yes'.
       institution. You can find this information in the :ref:`overview
       of available hardware on this site <hardware>`.
    #. Fill in your VSC username.
-   #. If you are not using pageant to manage your ssh keys, you
-      have to point WinSCP to the private key file (in PuTTY
-      .ppk format) that should be used. When using pageant, you
-      can leave this field blank.
    #. Double check that the port number is 22.
+
+#. If you are not using pageant to manage your ssh keys, you
+      have to point WinSCP to the private key file (in PuTTY
+      .ppk format) that should be used. You can do that usind 
+      "Advanced" button and then choose "SSH" "Authentication" from the list. 
+      When using pageant, you can leave this field blank.
+
+   |WinSCP config advanced|
 
 #. If you want to store this data for later use, click the "Save"
    button at the bottom and enter a name for the session. Next time
@@ -123,9 +127,11 @@ team may ask you to enable logging and mail the results.
       programs!*
    #. Finish the mail text and send the mail to user support.
 
-.. |WinSCP config| image:: data_transfer_using_winscp/winscp_config.png
-.. |WinSCP interfaces| image:: data_transfer_using_winscp/winscp_interfaces.png
+.. |WinSCP config| image:: data_transfer_using_winscp/winscp_config-new.png
+.. |WinSCP config advanced| image:: data_transfer_using_winscp/winscp_config-advanced-new.png
+.. |WinSCP config save| image:: data_transfer_using_winscp/winscp_config-save-new.png
+.. |WinSCP interfaces| image:: data_transfer_using_winscp/winscp_interfaces-new.png
 .. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging.png
-.. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer.png
+.. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer-new.png
 
 .. include: links.rst
