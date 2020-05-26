@@ -39,11 +39,7 @@ connecting and add host key to the cache'; select 'Yes'.
    #. Fill in your VSC username.
    #. Double check that the port number is 22.
 
-#. If you are not using pageant to manage your ssh keys, you
-   have to point WinSCP to the private key file (in PuTTY
-  .ppk format) that should be used. You can do that usind 
-  "Advanced" button and then choose "SSH" "Authentication" from the list. 
-  When using pageant, you can leave this field blank.
+#. If you are not using pageant to manage your ssh keys, you have to point WinSCP to the private key file (in PuTTY .ppk format) that should be used. You can do that using "Advanced" button and then choose "SSH" "Authentication" from the list. When using pageant, you can leave this field blank.
 
    |WinSCP config advanced|
 
@@ -135,6 +131,6 @@ team may ask you to enable logging and mail the results.
 .. |WinSCP config save| image:: data_transfer_using_winscp/winscp_config-save-new.png
 .. |WinSCP interfaces| image:: data_transfer_using_winscp/winscp_interfaces-new.png
 .. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging.png
-.. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer-new.png
+.. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer.png
 
 .. include: links.rst
