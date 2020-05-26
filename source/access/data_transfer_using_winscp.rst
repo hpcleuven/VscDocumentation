@@ -28,7 +28,7 @@ Transferring your files to and from the VSC clusters
 The first time you make the connection, you will be asked to 'Continue
 connecting and add host key to the cache'; select 'Yes'.
 
-#. When you first install WinSCP it should open a new session dialog. If that does not happen - start WinSCP and go the the "Session" tab. From there choose "New Session". Fill in the following
+#. When you first install WinSCP it should open a new session dialog. If that does not happen - start WinSCP and go the "Session" tab. From there choose "New Session". Fill in the following
    information:
 
    |WinSCP config|
@@ -75,7 +75,7 @@ WinSCP has two modes for the graphical user interface:
    or the desktop.
 
 The default mode is "commander". You can always switch the modes  
-by going to the the "Options" tab, choosing "Preferences" and 
+by going to the "Options" tab, choosing "Preferences" and 
 selecting the \\"Environment\\Interface\" category.
 
 Enable logging
