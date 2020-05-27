@@ -126,11 +126,11 @@ team may ask you to enable logging and mail the results.
       programs!*
    #. Finish the mail text and send the mail to user support.
 
-.. |WinSCP config| image:: data_transfer_using_winscp/winscp_config-new.png
-.. |WinSCP config advanced| image:: data_transfer_using_winscp/winscp_config-advanced-new.png
-.. |WinSCP config save| image:: data_transfer_using_winscp/winscp_config-save-new.png
-.. |WinSCP interfaces| image:: data_transfer_using_winscp/winscp_interfaces-new.png
-.. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging-new.png
+.. |WinSCP config| image:: data_transfer_using_winscp/winscp_config-new-red.png
+.. |WinSCP config advanced| image:: data_transfer_using_winscp/winscp_config-advanced-new-red.png
+.. |WinSCP config save| image:: data_transfer_using_winscp/winscp_config-save-new-red.png
+.. |WinSCP interfaces| image:: data_transfer_using_winscp/winscp_interfaces-new-red.png
+.. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging-new-red.png
 .. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer.png
 
 .. include: links.rst
