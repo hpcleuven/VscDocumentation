@@ -12,7 +12,7 @@ An iRODS zone represent the deployment of the system. In the architecture of the
 
 As part of the kuleuven_tier1_pilot zone, to manage the research data there are rule engine packages and iRODS metadata catalog-iCAT. When a user accesses iRODS, a communication inside the irods happens. The user’s any request is forwarded to the appropriate iRODS Server. 
 
-A user who wants to access iRODS can use a local computer and/or HPC servers. This accessions are done through user clients which are for now consists of a default client iCommands, a portal client, WebDAV clients and a Python Client.
+A user can access iRODS from a local computer and/or the VSC Tier-1 and Tier-2 systems using different types of user clients.  At this moment they are available:  iCommands, a portal client , WebDAV clients and a Python Client.
 
 iCommands is an utility that give users a command-line interface to operate on data in iRODS. 
 
