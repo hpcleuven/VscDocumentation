@@ -3,7 +3,7 @@
 Using iCommands
 ===============
 
-iRODS permits users and administrators to access and contribute descriptive information about their data. This descriptive information/metadata improves search and therefore better enables data discovery. Users can search for data objects using metadata descriptors as search terms. 
+iRODS allows users and administrators to access and contribute descriptive information about their data. This descriptive information/metadata improves search and therefore better enables data discovery. Users can search for data objects using metadata descriptors as search terms. 
 Both automatic, system-generated metadata and user-created metadata are supported in iRODS. 
 
 What is metadata?
@@ -80,5 +80,4 @@ We can find our text1.txt file with the below query,
         ---------------------------------------
 
 These examples one more time explain the importance of metadata in data management domain.
-
 
