@@ -12,7 +12,7 @@ All iCommands accept standard common line options (e.g., -a for all, -h for help
 - You can use the ``–h`` option with the command (e.g., ``iput –h``)
 - You can use the ``ihelp`` command with the argument that you would like to learn more about (e.g., ``ihelp iput``).
 
-Please keep in mind some iCommands don’t work with auto-complete of a tab press. Also remember that folders in iRODS are called as collection and you can run across object or data-object that represent a file in iRODS.
+Please keep in mind some iCommands don’t work with auto-complete of a tab press. Also remember that folders in iRODS are called 'collection' and files are called 'object' or 'data-object'.
 
 Now we can start working with iCommands based on a simple data management work flow that consists of “useful commands”, “working with directories (collections)”, “data upload and download” and “structuring data” .
 
