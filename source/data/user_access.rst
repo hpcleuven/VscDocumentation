@@ -9,7 +9,7 @@ To be able to log on and to use Tier-1 Data platform, you need to have an active
 
 Users can connect to the iRODS platform using different clients (command line, WebDAV interface or a portal) both from the VSC HPC systems (login and compute nodes) and from external systems (i.e: their labtops).
 
-Before you can interact with iRODS you will need to activate the service by executing the following command:::
+When working on the Tier-1 or Tier-2 HPC systems, before you can interact with iRODS you will need to activate the service by executing the following command:::
 
 $ ssh irods.hpc.kuleuven.be | bash
 
