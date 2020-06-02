@@ -11,7 +11,6 @@ An iRODS zone represent the deployment of the system. In the architecture of the
 .. image:: architecture/resource.png
 
 As part of the kuleuven_tier1_pilot zone, to manage the research data there are rule engine packages and iRODS metadata catalog-iCAT. When a user accesses iRODS, a communication inside the irods happens. The user’s any request is forwarded to the appropriate iRODS Server. 
-The Rule Engine at that location then verifies whether the desired operations can be executed, translates the operations into the protocol required by that type of storage system, and passes the result of the operations back to the iRODS client. Any state information that is generated is registered into the iCAT metadata catalog.
 
 A user who wants to access iRODS can use a local computer and/or HPC servers. This accessions are done through user clients which are for now consists of a default client iCommands, a portal client, WebDAV clients and a Python Client.
 
