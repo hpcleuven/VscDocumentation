@@ -4,7 +4,7 @@ Using iCommands
 ===============
 
 iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In other words ICommands is an Unix utilities that give users a command-line interface.
-There are more than 50 iCommands. A regular user  however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy-use interface to the data architecture.
+There are more than 50 iCommands. A regular user  however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy-use interface to iRODS.
 
 All iCommands accept standard common line options (e.g., -a for all, -h for help) that gives more capabilities to the commands. To see a subset of these options and to know the details of any iCommands, you can follow the below specified options:
 
