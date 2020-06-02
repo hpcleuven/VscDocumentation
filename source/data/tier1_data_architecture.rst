@@ -3,6 +3,8 @@
 Tier-1 Data Platform Architecture
 =========================================
 
+.. image:: architecture/general_overview.png
+
 VSC, as an integrated high-performance research computing environment, provides services to government, industry, and researchers. For this purpose it has developed a differentiated infrastructure (Tier-1 and Tier-2 level) that is available to use. On top of the Tier-1 a Data component (iRODS) has been initialized to manage research data.
 
 An iRODS zone represent the deployment of the system. In the architecture of the current deployment “kuleuven_tier1_pilot” is the only zone that serves for VSC. Inside the zone there are two physical locations as well as replicas of logical representation. We have tier1-p-irods-posix-{1,3} in Heverlee for main storage and we have tier1-p-irods-posix-{2,4} in Leuven for replicas.
@@ -23,4 +25,3 @@ With the aid of WebDAV protocol, a Drag and Drop Access to iRODS is ensured by m
 PRC is a Python Client API to establish a secure connection to iRODS an be able to interoperate with iRODS from python programs.
 
 
-.. image:: architecture/general_overview.png
