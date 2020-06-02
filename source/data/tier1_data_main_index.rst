@@ -10,9 +10,5 @@ Tier-1 Data Service
    user_access
    using_iCommands
    data_discovery
-   webdav_access_to_irods
-   cyberduck_access_irods
-   winscp_access_irods
-   yoda
-   python_client
+   irods_access_index
    glossary

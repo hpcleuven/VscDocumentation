@@ -1,7 +1,7 @@
 .. _data_discovery:
 
-Using iCommands
-===============
+Data Discovery
+==============
 
 iRODS allows users and administrators to access and contribute descriptive information about their data. This descriptive information/metadata improves search and therefore better enables data discovery. Users can search for data objects using metadata descriptors as search terms. 
 Both automatic, system-generated metadata and user-created metadata are supported in iRODS. 
