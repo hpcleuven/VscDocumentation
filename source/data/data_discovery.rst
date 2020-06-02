@@ -29,27 +29,30 @@ iRODS provides the user with the possibility to create Attribute Value Unit trip
 We can annotate files with so-called AVUs triples. These triples are added to a database and are searchable, so that we will be able to ask the iRODS system give me all data (files and collections) based on the matching query criteria.
 First we will explore how to create these AVUs tripes for which we can search later.
 
-- Annotate a data file:
+- Annotate a data file::
 
-$ imeta add -d test1.txt ‘weight’ ‘2’ ‘kg’
-$ imeta add -d test1.txt ‘author’ ‘Jan’ ‘ICTS’
-$ imeta add -d test1.txt ‘shareable’ ‘yes’
+    $ imeta add -d test1.txt ‘weight’ ‘2’ ‘kg’
+
+    $ imeta add -d test1.txt ‘author’ ‘Jan’ ‘ICTS’
+
+    $ imeta add -d test1.txt ‘shareable’ ‘yes’
 
 For the last one we put the ‘Unit’ part empty. That means unit is not mandatory to write if there is no relevant element for that. 
 
-- Annotate a collection
+- Annotate a collection::
 
-$ imeta add -C dataExample ‘type’ ‘collection’
-$ imeta add -C dataExample ‘book’ ‘chemistry’ ‘KuLeuven’
+    $ imeta add -C dataExample ‘type’ ‘collection’
+    
+    $ imeta add -C dataExample ‘book’ ‘chemistry’ ‘KuLeuven’
 
 List metadata
 -------------
 
-In order to list metadata of a file we do:
+In order to list metadata of a file we do::
 
 $ imeta ls -d test1.txt
 
-and to list a collection’s metadata:
+and to list a collection’s metadata::
 
 $ imeta ls -C dataExample
 

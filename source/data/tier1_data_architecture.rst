@@ -1,18 +1,19 @@
 .. _tier1_data_architecture:
 
 Tier-1 Data Platform Architecture
-=========================================
+=================================
+
+
+The VSC Tier-1 a Data component is based on the open source software iRODS. The following image shows the high level archirecture of the platform.
 
 .. image:: architecture/general_overview.png
 
-VSC, as an integrated high-performance research computing environment, provides services to government, industry, and researchers. For this purpose it has developed a differentiated infrastructure (Tier-1 and Tier-2 level) that is available to use. On top of the Tier-1 a Data component (iRODS) has been initialized to manage research data.
+The current deployment is based in a unique iRODS zone (“kuleuven_tier1_pilot”) with a single iCAT database configured on High Availability. There are three distributed storage resources: 2 POSIX based systems and 1 Ceph Object Storage system). 
+One of the POSIX systems and the Ceph based storage are physically installed at the KU Leuven Heverlee datacenter while the other POSIX system is installed at the KU Leuven datacenter located in Leuven center and act as a replica of the POSIX system located in Heverlee. 
 
-An iRODS zone represent the deployment of the system. In the architecture of the current deployment “kuleuven_tier1_pilot” is the only zone that serves for VSC. Inside the zone there are two physical locations as well as replicas of logical representation. We have tier1-p-irods-posix-{1,3} in Heverlee for main storage and we have tier1-p-irods-posix-{2,4} in Leuven for replicas.
+That means that for every object registered in the Data platform 2 copies will be automatically stored (one in Heverlee and one Leuven). 
 
-
-.. image:: architecture/resource.png
-
-As part of the kuleuven_tier1_pilot zone, to manage the research data there are rule engine packages and iRODS metadata catalog-iCAT. When a user accesses iRODS, a communication inside the irods happens. The user’s any request is forwarded to the appropriate iRODS Server. 
+The third storage system will be used for the moment to store a third copy of some selected data objects. 
 
 A user can access iRODS from a local computer and/or the VSC Tier-1 and Tier-2 systems using different types of user clients.  At this moment they are available:  iCommands, a portal client , WebDAV clients and a Python Client.
 
@@ -22,6 +23,6 @@ The portal client-YODA is a user friendly web based application to provide resea
 
 With the aid of WebDAV protocol, a Drag and Drop Access to iRODS is ensured by means of some apps/tools (e.g. WebDAV mapping, Cyberduck and WinSCP) that enable data transfer.
 
-PRC is a Python Client API to establish a secure connection to iRODS an be able to interoperate with iRODS from python programs.
+PRC is a Python Client API to establish a secure connection to iRODS and to be able to interoperate with iRODS from python programs.
 
 

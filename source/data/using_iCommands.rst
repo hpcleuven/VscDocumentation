@@ -14,7 +14,7 @@ All iCommands accept standard common line options (e.g., -a for all, -h for help
 
 Please keep in mind some iCommands don’t work with auto-complete of a tab press. Also remember that folders in iRODS are called 'collection' and files are called 'object' or 'data-object'.
 
-Now we can start working with iCommands based on a simple data management work flow that consists of “useful commands”, “working with directories (collections)”, “data upload and download” and “structuring data” .
+Following sections will illustrate the usage of some icommands organized on the following categories: “useful commands”, “working with directories (collections)”, “data upload and download” and “structuring data”.
 
 Useful iRODS Commands
 ---------------------
@@ -29,7 +29,7 @@ If you would like to know the settings details you can run::
 
 $ ienv
 
-To know about the detailed information about an user you can run the below command following with an user account.::
+To know about the detailed information of an user you can run the below command following with an user account. This command will show for example to which groups a user belongs.::
 
 $ iuserinfo vscXXXXX
 
@@ -37,7 +37,7 @@ To be able to learn what an error code stands for, you can then use the command 
 
 $ ierror 826000
 
-If you want to log out from iRODS you can run ``iexit full`` , but be sure that you need to log on again by executing ``ssh irods.hpc.kuleuven.be | bash`` if you want to use iRODS again.
+If you want to log out from iRODS you can run ``iexit full`` , but take into account that then you will need to log on again by executing ``ssh irods.hpc.kuleuven.be | bash`` if you want to use iRODS again.
 
 Working With Directories
 ------------------------
@@ -55,7 +55,7 @@ To change the collection to the one yo want, you would use ``icd`` with an absol
 
 $ icd testCollection
 
-In order to see the content of any collection(directory), we can use ils. With this command, we can check whether there is data in our iRODS-home directory.
+In order to see the content of any collection(directory), we can use ``ils``. With this command, we can check whether there is data in our iRODS-home directory.
 
 ::
 
@@ -87,7 +87,7 @@ With the linux command ``ls`` you can check that the file has been created and i
 
 **Upload data:**
 
-We now upload the data to the iRODS::
+We now upload the data to iRODS::
 
 $ iput -K test1.txt
 
@@ -123,10 +123,10 @@ The result looks a bit confusing in the beginning, let us look at what these mea
 
 - ``/kuleuven_tier1_pilot/home/vsc33586``:Logical path to the file as iRODS exposes it to the user
 - vsc33586: owner of the file
-- 0, 1: Index of replica of that file in the iRODS system, in iRODS the same file can lie on different
+- 0, 1: Index of replica of that file in the iRODS system, the Tier-1 Data is configured to ensure that by default 2 copies of each file are created (copy 0 and copy 1) on two different datacenter.
 - default: the name of the physical data resource, e.g. a unix folder
 - 26: File size in KB
-- Date
+- Date & name of the file
 - Checksum
 - ``/irods/a/home/vsc33586/test1.txt``: Physical path on the server that hosts iRODS, only the linux user "irods" who runs iRODS has access to that path.
 
@@ -138,7 +138,7 @@ To download or to restore the file (copy it from iRODS to your linux home) you c
 
 $ iget -K test1.txt test1-restore.txt
 
-We store the iRODS file ``test.txt`` in a new file called ``test1-restore.txt`` in our linux home directory. Here the flag ``-K`` triggers iRODS to verify the checksum. To remind that checksums are used to verify data integrity upon data moving.
+We store the iRODS file ``test.txt`` in a new file called ``test1-restore.txt`` in our linux home directory. Here the flag ``-K`` triggers iRODS to verify the checksum. Checksums are used to verify data integrity upon data moving.
 
 Note: The iput and iget commands also work for directories and collections, simply use the ``-r`` (for recursive) flag.
 
@@ -210,10 +210,10 @@ $ irm –f test1.txt
 
 This is called a *hard delete*. Now the file is removed from the system and from the iCAT catalogue.
 
-Accession Control
------------------
+Access Control
+--------------
 
-With the option ``ils -A`` we can list the accession control list of files and collections. Let us check ``dataExample`` collection:
+With the option ``ils -A`` we can list the access control list of files and collections. Let us check ``dataExample`` collection:
 
 ::
 
@@ -224,10 +224,10 @@ With the option ``ils -A`` we can list the accession control list of files and c
     test1.txt
             ACL - vsc33586#kuleuven_tier1_pilot:own
 
-We can understand here ``dataExample`` collection and ``test1.txt`` object are only visible by the user ``vsc33586`` and the irodsadmin who has access to all data by default.
-Collections have a flag "Inheritance". If this flag is set to 'true', all content of the folder will inherit the accession rights from the folder.
+We can understand here ``dataExample`` collection and ``test1.txt`` object are only visible by the user ``vsc33586``.
+Collections have a flag "Inheritance". If this flag is set to 'true', all content of the folder will inherit the access rights from the folder.
 
-Let’s change the accession right of the “dataExample” collection and choose another user who we want to give access (as our neighbour team)::
+Let’s change the access right of the “dataExample” collection and choose another user who we want to give read access (for instance someone from our researh group)::
 
 $ ichmod inherit dataExample
 $ ichmod read vsc33585 dataExample
@@ -245,7 +245,7 @@ if we want to check the result of our change:
     test1.txt
             ACL - vsc33586#kuleuven_tier1_pilot:own
 
-So we can see here that the inheritance is enabled for dataExample collection and user vsc33586 has right to read the data object.
+So we can see here that the inheritance is enabled for dataExample collection and user vsc33585 has now right to read the data object.
 
 List of basic iCommands
 -----------------------
