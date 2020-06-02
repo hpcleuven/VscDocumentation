@@ -20,7 +20,7 @@ The portal client-YODA is a user friendly web based application to provide resea
 
 With the aid of WebDAV protocol, a Drag and Drop Access to iRODS is ensured by means of some apps/tools (e.g. WebDAV mapping, Cyberduck and WinSCP) that enable data transfer.
 
-PRC is a Python Client API to establish a secure connection to iRODS in order to manage the research data.
+PRC is a Python Client API to establish a secure connection to iRODS an be able to interoperate with iRODS from python programs.
 
 
 .. image:: architecture/general_overview.png
