@@ -1,6 +1,6 @@
 .. _tier1_data_architecture:
 
-Tier-1 Data Platform (iRODS) Architecture
+Tier-1 Data Platform Architecture
 =========================================
 
 VSC, as an integrated high-performance research computing environment, provides services to government, industry, and researchers. For this purpose it has developed a differentiated infrastructure (Tier-1 and Tier-2 level) that is available to use. On top of the Tier-1 a Data component (iRODS) has been initialized to manage research data.
@@ -27,4 +27,3 @@ PRC is a Python Client API to establish a secure connection to iRODS in order to
 .. image:: architecture/general_overview.png
 
 A general overview of kuleuven_tier1_pilot is simulated with the diagram at the picture above. 
-
