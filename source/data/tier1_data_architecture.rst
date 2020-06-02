@@ -24,5 +24,3 @@ PRC is a Python Client API to establish a secure connection to iRODS an be able 
 
 
 .. image:: architecture/general_overview.png
-
-A general overview of kuleuven_tier1_pilot is simulated with the diagram at the picture above. 
