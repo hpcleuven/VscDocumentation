@@ -33,7 +33,7 @@ First we will explore how to create these AVUs tripes for which we can search la
 
 $ imeta add -d test1.txt ‘weight’ ‘2’ ‘kg’
 $ imeta add -d test1.txt ‘author’ ‘Jan’ ‘ICTS’
-$ imeta add -d test1.txt ‘sharable’ ‘yes’
+$ imeta add -d test1.txt ‘shareable’ ‘yes’
 
 For the last one we put the ‘Unit’ part empty. That means unit is not mandatory to write if there is no relevant element for that. 
 
@@ -80,4 +80,3 @@ We can find our text1.txt file with the below query,
         ---------------------------------------
 
 These examples one more time explain the importance of metadata in data management domain.
-
