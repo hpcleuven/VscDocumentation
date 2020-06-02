@@ -3,20 +3,22 @@
 User Access to iRODS
 ====================
 
-Since Tier-1 Data Service platform is currently on the pilot phase, users of the system are consisted of volunteers. Thus, if you are invited or have an interest in, please contact with FOZ team.
+The Tier-1 Data Service is currently on the pilot phase, so access to the system is strictly by invitation. If you have a use case that combines data and computing workflows and you are interested on testing the Tier-1 Data service you can contact us to discuss a possible collaboration by e-mail at the address: data@vscentrum.be
 
-To be able to log on and to use Tier-1 Data Service platform, you need to have an iRODS account. Make sure that before claiming an iRODS account, a VSC account should be acquired. However not all VSC users might get an iRODS account. To this end you have to have a convenient project. 
+To be able to log on and to use Tier-1 Data platform, you need to have an active vsc-account and an approved Tier-1 Data project. During the pilot phase Tier-1 Data projects are granted by invitation only. 
 
-After the above mentioned points are assured, you can ask for an iRODS account via an email to FOZ.
+Users can connect to the iRODS platform using different clients (command line, WebDAV interface or a portal) both from the VSC HPC systems (login and compute nodes) and from external systems (i.e: their labtops).
 
-As soon as your user account is created by iRODS admin you will be notified. Keep in mind that your iRODS account will be exactly same as your VSC account.
-
-To reach out the iRODS you can use any login nodes of HPC system. As known well, when you log on to VSC system, the directory where you arrive by default is “VSC_HOME” that has a limited capacity, only for the typical configuration files etc. Therefore it is strongly advised to operate iRODS system in data directory which is pointed by the environment variable “VSC_DATA”. So first go to the “VSC_DATA” directory. 
-
-There to be able to log on to the iRODS, execute only the following::
+When working on the Tier-1 or Tier-2 HPC systems, before you can interact with iRODS you will need to activate the service by executing the following command:::
 
 $ ssh irods.hpc.kuleuven.be | bash
 
-Now you are in iRODS. Whenever the system asks you a new log in or password/authentication related error, execute the same command.
+This command will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate you access by re-executing this command again.
 
-At the moment you are logged on you will be on your iRODS home, which is for instance “/kuleuven_tier1_pilot/home/vsc33586”. You will be able to see and use by default public location like the following “/kuleuven_tier1_pilot/home/public”. This location is anonymous for everybody. Any data that is loaded here will be accessed by all even with third parties, e.g. non iRODS users. In addition to these two default location, if you are added to a project then you will have access to that place too, like this example “/kuleuven_tier1_pilot/home/lt1_es2020”.
+Once logged in iRODS users will have access to the following iRODS collections:
+
+- Your personal area: /kuleuven_tier1_pilot/home/vscXXXXX (where XXXXX is the number of your vsc-account). This are is by default only visible by your user.
+
+- Your group area: /kuleuven_tier1_pilot/home/lt1_projectcode. The area is shared and visible by all the members of your group.
+
+- The public area: /kuleuven_tier1_pilot/home/public. This is an area accessible by everyone in the system.  I could be even accessed by anonymous users from external sources if this is configured. You should not copy on this area any confidential or private data.
