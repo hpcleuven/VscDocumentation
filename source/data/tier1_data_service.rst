@@ -25,3 +25,5 @@ This platform should also help the researchers to run their scientific workflows
 
 This Tier-1 Data service is based on the Open Source software iRODS (`www.irods.org`_).
 
+
+.. include:: links.rst
