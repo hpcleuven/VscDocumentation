@@ -74,5 +74,3 @@ You can select data object(s)/collection(s) in iRODS (Cyberduck window) and drag
 
 A ‘Transfers’ window will appear. Monitor the download to completion. You can also do “synchronization” which means it will check the both sides and will update your local folder that you can create/choose based on the data in iRODS.
 
-
-.. include:: links.rst
