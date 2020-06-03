@@ -70,5 +70,3 @@ How to access iRODS using WebDAV on o Windows 10 pc:
 
 Once you’ve connected, the WebDAV directory is mounted in your local pc. After you click on your driver you will see your iRODS collections and data objects. You can now start adding, editing, deleting files in this directory from the comfort of your computer.
 
-
-.. include:: links.rst
