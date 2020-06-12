@@ -43,7 +43,7 @@ Hardware details
       - 200 GB SSD local disk
       - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
 
-   - 2 V100 nodes (closed pilot phase)
+   - 2 V100 nodes
 
       - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
       - 192 GB RAM
