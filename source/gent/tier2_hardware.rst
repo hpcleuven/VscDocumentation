@@ -23,8 +23,9 @@ Compute clusters
                                                                                                              240 GB SSD                                         
   victini*             96    2 x 18-core Intel Xeon Gold 6140(Skylake @ 2.3 GHz)       88 GiB                1 TB                        10 GbE                 
                                                                                                              240 GB SSD                                         
-  joltik               10    2x 16-core Intel Xeon Gold 6242(Cascade Lake @ 2.8 GHz)   256 GiB               800GB SSD                   double EDR Infiniband  
-                             4x NVIDIA Volta V100 GPUs (32GB GPU memory)                                                                                        
+  joltik               10    2x 16-core Intel Xeon Gold 6242(Cascade Lake @ 2.8 GHz)   256 GiB               800 GB SSD                   double EDR Infiniband  
+                             4x NVIDIA Volta V100 GPUs (32GB GPU memory)                                                                      
+  kirlia               16    2 x 18-core Intel Xeon Gold 6240(Skylake @ 2.6 GHz)       738 GiB               1.6 TB NVME                     HDR-100 InfiniBand
  =============== ========== ========================================================= ===================== =========================== ======================= 
 
 (*) default cluster
