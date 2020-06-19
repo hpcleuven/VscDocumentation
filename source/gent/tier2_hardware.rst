@@ -23,8 +23,9 @@ Compute clusters
                                                                                                              240 GB SSD                                         
   victini*             96    2 x 18-core Intel Xeon Gold 6140(Skylake @ 2.3 GHz)       88 GiB                1 TB                        10 GbE                 
                                                                                                              240 GB SSD                                         
-  joltik               10    2x 16-core Intel Xeon Gold 6242(Cascade Lake @ 2.8 GHz)   256 GiB               800GB SSD                   double EDR Infiniband  
-                             4x NVIDIA Volta V100 GPUs (32GB GPU memory)                                                                                        
+  joltik               10    2x 16-core Intel Xeon Gold 6242(Cascade Lake @ 2.8 GHz)   256 GiB               800 GB SSD                   double EDR Infiniband  
+                             4x NVIDIA Volta V100 GPUs (32GB GPU memory)                                                                      
+  kirlia               16    2 x 18-core Intel Xeon Gold 6240(Skylake @ 2.6 GHz)       738 GiB               1.6 TB NVME                     HDR-100 InfiniBand
  =============== ========== ========================================================= ===================== =========================== ======================= 
 
 (*) default cluster
@@ -35,14 +36,15 @@ For most recent information about the available resources and cluster status, pl
 Shared storage
 --------------
 
-====================== ===================================================================================================== ===========================  ====================== ====================
-Filesystem name        Intended usage                                                                                        Total storage space          Personal storage space VO storage space (*)
-====================== ===================================================================================================== ===========================  ====================== ====================
-*$VSC_HOME*            Home directory, entry point to the system                                                             51 TB                        3GB *(fixed)*          *(none)*
-*$VSC_DATA*            Long-term storage of large data files                                                                 1.8 PB                        25GB *(fixed)*         250GB
-*$VSC_SCRATCH*         Temporary fast storage of 'live' data for calculations                                                1.9 PB                         25GB *(fixed)*         250GB
-*$VSC_SCRATCH_PHANPY*  Temporary very fast storage of 'live' data for calculations (recommended for very I/O-intensive jobs) 39 TB SSD                    *(none)*               *(none)*
-====================== ===================================================================================================== ===========================  ====================== ====================
+======================= ===================================================================================================== ===========================  ====================== ====================
+Filesystem name         Intended usage                                                                                        Total storage space          Personal storage space VO storage space (*)
+======================= ===================================================================================================== ===========================  ====================== ====================
+*$VSC_HOME*             Home directory, entry point to the system                                                             51 TB                        3GB *(fixed)*          *(none)*
+*$VSC_DATA*             Long-term storage of large data files                                                                 1.8 PB                        25GB *(fixed)*         250GB
+*$VSC_SCRATCH*          Temporary fast storage of 'live' data for calculations                                                1.9 PB                         25GB *(fixed)*         250GB
+*$VSC_SCRATCH_PHANPY*   Temporary very fast storage of 'live' data for calculations (recommended for very I/O-intensive jobs) 39 TB SSD                    *(none)*               *upon request*
+*$VSC_SCRATCH_ARCANINE* Temporary very fast storage of 'live' data for calculations (recommended for very I/O-intensive jobs) 70 TB NVME                   *(none)*               *upon request*
+======================= ===================================================================================================== ===========================  ====================== ====================
 
 (*) Storage space for a group of users (Virtual Organisation or VO for short) can be increased significantly on request.
 
