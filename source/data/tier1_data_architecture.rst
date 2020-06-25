@@ -4,7 +4,7 @@ Tier-1 Data Platform Architecture
 =================================
 
 
-The VSC Tier-1 a Data component is based on the open source software iRODS. The following image shows the high level archirecture of the platform.
+The VSC Tier-1 Data component is based on the open source software iRODS. The following image shows the high level archirecture of the platform.
 
 .. image:: architecture/general_overview.png
 
@@ -15,7 +15,7 @@ That means that for every object registered in the Data platform 2 copies will b
 
 The third storage system will be used for the moment to store a third copy of some selected data objects. 
 
-A user can access iRODS from a local computer and/or the VSC Tier-1 and Tier-2 systems using different types of user clients.  At this moment they are available:  iCommands, a portal client , WebDAV clients and a Python Client.
+A user can access iRODS from a local computer and/or the VSC Tier-1 and Tier-2 systems using different types of user clients.  At this moment they are available:  iCommands, the YODA portal client , WebDAV clients and a Python Client.
 
 iCommands is an utility that give users a command-line interface to operate on data in iRODS. 
 

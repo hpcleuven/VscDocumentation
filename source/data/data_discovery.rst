@@ -27,7 +27,7 @@ Create Attribute, Value, Unit triples
 
 iRODS provides the user with the possibility to create Attribute Value Unit triplets and store them with the data. The triplets are stored in the iCAT catalogue, which can be queried to identify and retrieve the correct objects.
 We can annotate files with so-called AVUs triples. These triples are added to a database and are searchable, so that we will be able to ask the iRODS system give me all data (files and collections) based on the matching query criteria.
-First we will explore how to create these AVUs tripes for which we can search later.
+First we will explore how to create these AVUs triples for which we can search later.
 
 - Annotate a data file::
 
@@ -59,13 +59,13 @@ $ imeta ls -C dataExample
 Queries of data
 ---------------
 
-The imeta command allows users to define simple queries.::
+The imeta command allows users to define simple queries::
 
 $ imeta qu -d weight = 2
 
 However we should use sql-like queries with ``iquest`` command for more sophisticated search.
 
-With the following command we can fetch the data file, given the attribute 'author'.::
+With the following command we can fetch the data file, given the attribute 'author'::
 
 $ iquest "select COLL_NAME, DATA_NAME, META_DATA_ATTR_VALUE where META_DATA_ATTR_NAME like 'author'" 
 

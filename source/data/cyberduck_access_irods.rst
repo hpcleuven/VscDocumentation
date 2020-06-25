@@ -4,7 +4,7 @@ Using Cyberduck for Accessing to iRODS
 ======================================
 
 Cyberduck_ is a free cross-platform, high-throughput and parallel data transfer open source file transfer program that supports multiple transfer protocols (FTP, SFTP, WebDAV, Cloud files, Amazon S3, etc.). 
-This allows users to transfer large files, depending on the user's available bandwidth and network settings. Cyberduck can also be used to rename files, and browse other shared or public Data Store locations.
+This allows users to transfer large files, depending on the user's available bandwidth and network settings. Cyberduck can also be used to rename files and browse other shared or public Data Store locations.
 
 Installing and First Time Configuration of Cyberduck
 ----------------------------------------------------
@@ -35,9 +35,9 @@ Installing and First Time Configuration of Cyberduck
 
 .. image:: cyberduck/cduck5.png
 
-- After you double click on the profile it launched Cyberduck and auto populate relevant access data as you seen the screen above.
+- After you double click on the profile it will launch Cyberduck and auto populate relevant access data as you see on the screen above.
 
-- Enter your username and password that you obtained earlier. If your password is expired you should get a new one at: https://vsc-passwd.icts.kuleuven.be following the same procedure you may have done here_ before.
+- Enter your username and the password you obtained earlier. If your password is expired you should get a new one at: https://vsc-passwd.icts.kuleuven.be following the same procedure you may have done here_ before.
 
 **Note:** You can use Cyberduck for other remote connections to do a file transfer etc. Just save your connection as bookmark.
 

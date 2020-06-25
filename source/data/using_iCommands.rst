@@ -3,10 +3,10 @@
 Using iCommands
 ===============
 
-iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In other words ICommands is an Unix utilities that give users a command-line interface.
+iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In other words iCommands is an Unix utilities that give users a command-line interface.
 There are more than 50 iCommands. A regular user  however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy-use interface to iRODS.
 
-All iCommands accept standard common line options (e.g., -a for all, -h for help) that gives more capabilities to the commands. To see a subset of these options and to know the details of any iCommands, you can follow the below specified options:
+All iCommands accept standard common line options (e.g., -a for all, -h for help) that gives more capabilities to the commands. To see a subset of these options and to know the details of any iCommand, you can follow the below specified options:
 
 - You can visit `iCommands`_
 - You can use the ``–h`` option with the command (e.g., ``iput –h``)
@@ -29,11 +29,11 @@ If you would like to know the settings details you can run::
 
 $ ienv
 
-To know about the detailed information of an user you can run the below command following with an user account. This command will show for example to which groups a user belongs.::
+To know about the detailed information of an user you can run the below command following with an user account. This command will show for example to which groups a user belongs::
 
 $ iuserinfo vscXXXXX
 
-To be able to learn what an error code stands for, you can then use the command below with a code number.::
+To be able to learn what an error code stands for, you can then use the command below with a code number::
 
 $ ierror 826000
 
@@ -51,7 +51,7 @@ To identify the current working collection you can use the ``ipwd`` command. The
     $ ipwd
     kuleuven_tier1_pilot/home/vsc33586 
 
-To change the collection to the one yo want, you would use ``icd`` with an absolute path or a relative path. In other saying, to navigate around to enter one of the (or the only) folder(s), do::
+To change the collection to the one you want, you would use ``icd`` with an absolute path or a relative path. In other saying, to navigate around folder(s), do::
 
 $ icd testCollection
 
@@ -62,13 +62,13 @@ In order to see the content of any collection(directory), we can use ``ils``. Wi
     $ ils
     /kuleuven_tier1_pilot/home/vscXXXXX:
 
-What we get here is “kuleuven_tier1_pilot”: the name of the iRODS zone and “/home/<user>”: your default working directory. Because in our iRODS-home directory we don’t have any data or collections yet.
+What we get here is “kuleuven_tier1_pilot”: the name of the iRODS zone and “/home/<user>”: your default working directory. Because in our iRODS-home directory we don’t have any data or collections yet there is no file listed.
 In the following we will show more details with the ``ils`` command using with arguments to know more. 
 
 Data upload and download
 ------------------------
 
-In this part we are ingesting datafiles into iRODS. We will also find out where iRODS places the files. To upload data to iRODS and to download data from iRODS to local file system, iput and iget commands are used.
+In this part we cover how we can ingest datafiles into iRODS. We will also find out where iRODS places the files. To upload data to iRODS and to download data from iRODS to local file system, iput and iget commands are used.
 
 **Create data:**
 
@@ -130,7 +130,7 @@ The result looks a bit confusing in the beginning, let us look at what these mea
 - Checksum
 - ``/irods/a/home/vsc33586/test1.txt``: Physical path on the server that hosts iRODS, only the linux user "irods" who runs iRODS has access to that path.
 
-All the information above is stored in the iCAT metadata catalogue and can also be retrieved in sql-like queries (you will see this under the structuring data subtitle).
+All the information above is stored in the iCAT metadata catalogue and can also be retrieved in sql-like queries (you will see this under the structuring data section).
 
 **Download data:**
 
@@ -196,7 +196,7 @@ When we inspect what happens, we will not see ``text1.txt`` in our current worki
             vsc33586          1 default;tier1-p-irods-2020-pilot;tier1-p-irods-2020-pilot-replication;tier1-p-irods-posix;tier1-p-irods-posix-1-4;tier1-p-irods-posix-3-a-4-a;tier1-p-irods-posix-4-a-weight;tier1-p-irods-posix-4-a           26 2020-05-11.14:13 & test1.txt
 
 
-That means you can restore the file with the follwing commands.::
+That means you can restore the file with the following commands.::
 
 $ imv /kuleuven_tier1_pilot/trash/home/vsc33586/dataExample/test1.txt /kuleuven_tier1_pilot/home/vsc33586/dataExample
 
