@@ -5,6 +5,8 @@
 Data sharing
 ------------
 
+IMPORTANT! Currently, data can be shared with others only if the Globus endpoint is one of the user's own managed endpoints.
+
 To share data, you will create a guest collection and grant your collaborators access as described in the instructions below. If you like, you can designate other Globus users as *access managers* for the guest collection, allowing them to grant or revoke access privileges for other Globus users.
 
 
