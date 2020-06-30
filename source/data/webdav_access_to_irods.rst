@@ -4,9 +4,9 @@ A WebDAV Client Access to iRODS
 ===============================
 
 WebDAV stands for Web Distributed Authoring and Versioning, which is an extension to HTTP, the protocol that web-browsers and webservers use to communicate with each other.
-In other words, WebDAV is a method for remotely managing files over the internet. With WebDAV, we can access files stored in VSC Data component (iRODS) by using the same interface as we do with our local files.
+In other words, WebDAV is a method for remotely managing files over the internet. With WebDAV, we can access files stored in the VSC Tier-1 Data component by using the same interface as we do with our local files.
 
-The module that we use for our iRODS connection is called Davrods_. Davrods is an Apache WebDAV interface to iRODS and it provides access to iRODS servers using the WebDAV protocol. It is a bridge between the WebDAV protocol and the iRODS.
+The module that we use for our iRODS connection is called Davrods_. Davrods is an Apache WebDAV interface to iRODS and it provides access to iRODS servers using the WebDAV protocol. It is a bridge between the WebDAV protocol and iRODS.
 
 For an access using Graphical User Interface (GUI) clients to iRODS, we can and will use different tools. However in this page we will see how to use mapping a network drive.
 
@@ -16,7 +16,7 @@ Web Browser-Directory Index
 ---------------------------
 
 A connection through Davrods is available at https://irods.hpc.kuleuven.be address. After you click the link you can log in using your vsc-account and a temporary password, which should be obtained at https://vsc-passwd.icts.kuleuven.be address. 
-To get the password you can simply log in the mentioned address, authorize the application, and copy the obtained password.
+To get the password you can simply log in the mentioned address using your institution account, authorize the application, and copy the obtained password.
 
 Therefore the first step is to acquire password. To do so, simply click the link provided above or copy it and then “paste and search for” on your favorite web browser. 
 
@@ -41,7 +41,7 @@ Mapping drive-WebDAV
 
 To perform simply more actions – drag and drop (install/download), rename, delete –  you can map your WebDAV share as a network drive.
 
-How to access iRODS using WebDAV on o Windows 10 pc:
+How to access iRODS using WebDAV on a Windows 10 pc:
 
 - Go to File Explorer and select This PC on the left hand pane.
 - Select Computer from the top ribbon.
@@ -50,7 +50,7 @@ How to access iRODS using WebDAV on o Windows 10 pc:
 .. image:: webdav/map1.png
 
 - Choose the drive name you want to use. 
-- Type “https://irods.hpc.kuleuven.be/home/” in folder area. This is the path that you can. find in your browser directory_index .
+- Type “https://irods.hpc.kuleuven.be/home/” in folder area. This is the path that you can find in your browser directory_index.
 
 .. image:: webdav/map2.png
 

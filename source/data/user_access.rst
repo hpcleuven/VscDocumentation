@@ -7,7 +7,7 @@ The Tier-1 Data Service is currently on the pilot phase, so access to the system
 
 To be able to log on and to use Tier-1 Data platform, you need to have an active vsc-account and an approved Tier-1 Data project. During the pilot phase Tier-1 Data projects are granted by invitation only. 
 
-Users can connect to the iRODS platform using different clients (command line, WebDAV interface or a portal) both from the VSC HPC systems (login and compute nodes) and from external systems (i.e: their labtops).
+Users can connect to the iRODS platform using different clients (command line, WebDAV interface or a portal) both from the VSC HPC systems (login and compute nodes) and from external systems (i.e: their laptops).
 
 When working on the Tier-1 or Tier-2 HPC systems, before you can interact with iRODS you will need to activate the service by executing the following command:::
 
