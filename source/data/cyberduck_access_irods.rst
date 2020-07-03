@@ -39,7 +39,7 @@ Installing and First Time Configuration of Cyberduck
 
 - Enter your username and the password you obtained earlier. If your password is expired you should get a new one at: https://vsc-passwd.icts.kuleuven.be following the same procedure you may have done here_ before.
 
-**Note:** You can use Cyberduck for other remote connections to do a file transfer etc. Just save your connection as bookmark.
+.. note:: You can use Cyberduck for other remote connections to do a file transfer etc. Just save your connection as bookmark.
 
 Upload from local computer to iRODS using Cyberduck
 ---------------------------------------------------
@@ -56,7 +56,7 @@ Upload from local computer to iRODS using Cyberduck
 
 .. image:: cyberduck/cduck7.png
 
-.. note:: Note: Unless your passwords has not been expired or you have not deleted your “irods.hpc.kuleuven.be – IRODS” bookmark on Cyberduck, you don’t have to do above two steps.
+.. note:: Unless your passwords has not been expired or you have not deleted your “irods.hpc.kuleuven.be – IRODS” bookmark on Cyberduck, you don’t have to do above two steps.
 
 - Open the Cyberduck and double-click “irods.hpc.kuleuven.be – IRODS”  bookmark.
 

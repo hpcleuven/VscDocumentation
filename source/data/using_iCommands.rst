@@ -145,7 +145,7 @@ Note: The iput and iget commands also work for directories and collections, simp
 Structuring data
 ----------------
 
-As you create folder structures to organize your data, you can do same by creating collections in iRODS. Let’s create testData collection (folder)::
+As you create folder structures to organize your data, you can do same by creating collections in iRODS. Let’s create a test collection (folder)::
 
 $ imkdir dataExample
 
@@ -200,15 +200,19 @@ That means you can restore the file with the following commands.::
 
 $ imv /kuleuven_tier1_pilot/trash/home/vsc33586/dataExample/test1.txt /kuleuven_tier1_pilot/home/vsc33586/dataExample
 
-To remove the file completly from the system, you need to execute; either,:: 
+To remove the file completly from the system, you need to execute; either;
 
-$ irmtrash
+:: 
+
+    $ irmtrash
 
 Or::
 
 $ irm –f test1.txt
 
 This is called a *hard delete*. Now the file is removed from the system and from the iCAT catalogue.
+
+.. note:: The "irmtrash" command empties trash folder.
 
 Access Control
 --------------
