@@ -410,8 +410,6 @@ If you would like to see more details and examples, you can have a look at the f
 VSC Python iRODS Client (VSC-PRC)
 ---------------------------------
 
-Welcome to the Vlaams Supercomputing Centrum extensions to the Python iRODS Client (VSC-PRC)!
-
 VSC-PRC's main goal is to make it easier for researchers to manage their data using iRODS, in particular on VSC's high performance computing infrastructure.
 
 To this end, VSC-PRC offers a Python module and associated command line scripts:
