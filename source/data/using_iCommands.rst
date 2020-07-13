@@ -128,7 +128,7 @@ The result looks a bit confusing in the beginning, let us look at what these mea
 - 26: File size in KB
 - Date & name of the file
 - Checksum
-- ``/irods/a/home/vsc33586/test1.txt``: Physical path on the server that hosts iRODS, only the linux user "irods" who runs iRODS has access to that path.
+- ``/irods/a/home/vsc33586/test1.txt``: Physical path on the server that hosts iRODS, only the linux user "vsc33586" who runs iRODS has access to that path.
 
 All the information above is stored in the iCAT metadata catalogue and can also be retrieved in sql-like queries (you will see this under the structuring data section).
 
