@@ -11,15 +11,15 @@ Hardware details
 =======  ==========================================  ======  ======  =======  ==================================================
 nodes    processor                                   memory  disk    network  extra
 =======  ==========================================  ======  ======  =======  ==================================================
-11       2x 10-core INTEL E5-2680v2 (IvyBridge)      128 GB  900 GB  QDR-IB
-20       2x 10-core INTEL E5-2680v2 (IvyBridge)      256 GB  900 GB  QDR-IB
-6        2x 10-core INTEL E5-2680v2 (IvyBridge)      128 GB  900 GB  QDR-IB   2x Tesla K20x NVIDIA GPGPUs with 6Gb/node
-27       2x 14-core INTEL E5-2680v4 (Broadwell)      256 GB    1 TB  10 Gbps
-1        4x 10-core INTEL E7-8891v4 (Broadwell)      1.5 TB    4 TB  10 Gbps
-4        2x 12-core INTEL E5-2650v4 (Broadwell)      256 GB    2 TB  10 Gbps  2x Tesla P100 NVIDIA GPGPUs with 16 Gb/node
-1        2x 16-core INTEL E5-2683v4 (Broadwell)      512 GB    8 TB  10 Gbps  4x GeForce GTX 1080 Ti NVIDIA GPUs with 12 Gb/node
-22       2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB    1 TB  10 Gbps
-28       2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB    1 TB  EDR-IB
+11       2x 10-core INTEL E5-2680v2 (ivybridge)      128 GB  900 GB  QDR-IB
+20       2x 10-core INTEL E5-2680v2 (ivybridge)      256 GB  900 GB  QDR-IB
+6        2x 10-core INTEL E5-2680v2 (ivybridge)      128 GB  900 GB  QDR-IB   2x Tesla K20Xm NVIDIA GPGPUs 6Gb/node (kepler)
+27       2x 14-core INTEL E5-2680v4 (broadwell)      256 GB    1 TB  10 Gbps
+1        4x 10-core INTEL E7-8891v4 (broadwell)      1.5 TB    4 TB  10 Gbps
+4        2x 12-core INTEL E5-2650v4 (broadwell)      256 GB    2 TB  10 Gbps  2x Tesla P100 NVIDIA GPGPUs 16 Gb/node (pascal)
+1        2x 16-core INTEL E5-2683v4 (broadwell)      512 GB    8 TB  10 Gbps  4x GeForce 1080Ti NVIDIA GPUs 12 Gb/node (geforce)
+22       2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB  10 Gbps
+31       2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB  EDR-IB
 =======  ==========================================  ======  ======  =======  ==================================================
 
 Access restrictions
