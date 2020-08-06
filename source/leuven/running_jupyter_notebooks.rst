@@ -59,30 +59,18 @@ Start a Jupyter notebook server:
 
 ::
 
-   $ jupyter notebook
+   $ jupyter notebook  --ip $(hostname)  --port ${USER:3}
+
+The port is set to the digits of you user name so that there will be no conflict when two users try
+and run a notebook on the same compute node.
 
 When Jupyter has started, the last line of output will be the URL to point your web browser to, e.g.,
 ::
 
-   http://localhost:8888/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
+   http://r5i1n7:30140/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
 
-Connecting the client
-~~~~~~~~~~~~~~~~~~~~~
+You can right-click this link and open the URL in a browser on the NX login node.
 
-First, we have to establish an SSH tunnel from the NX login node to the
-compute node.  This is required so that the web browser running on the
-login node can communicate with the Jupyter server on the compute node.
-
-On the NX login node, start another shell, and create a tunnel to the
-compute node (`r5i1n7`).  As a port number, use the five digits of your
-VSC account, this should ensure that there are no conflicts, e.g., if your
-VSC account is vsc30140, use 30140 as port number:
-
-::
-   $ ssh -L 30140:localhost:8888 -N r5i1n7.genius.hpc.kuleuven.be
-
-Now, start Firefox on the NX login node, and browse to the link the
-Jupyter notebook server displayed.  Enjoy.
 
 
 Using a notebook by tunneling from a Linux machine to a genius GPU node
