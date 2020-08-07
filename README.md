@@ -19,7 +19,7 @@ Downloads and installation instructions for Miniconda can be found on [conda's w
 
 The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The environment can be created using
 ```bash
-$ conda env create -f Scripts/sphinx.yml
+$ conda env create -f environment.yml
 ```
 
 ## What is the status of improvements/fixes?
