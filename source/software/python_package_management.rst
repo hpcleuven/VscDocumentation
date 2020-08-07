@@ -254,6 +254,10 @@ directories as well by providing an install option.
    
       $ pip install --install-option="--prefix=${VSC_DATA}/python_lib" sphinx
 
+   For newer version of ``pip``, you would use::
+
+      $ pip install  --prefix="${VSC_DATA}/python_lib" sphinx
+
 
 Installing Anaconda on NX node (KU Leuven Genius)
 -------------------------------------------------
