@@ -22,7 +22,13 @@ network and runs the standard VSC software setup. It is also available to all
 VSC-users, though we appreciate that you contact the UAntwerpen support team so
 that we know why you want to use the cluster.
 
-Jobs can have a maximal execution wall time of 3 days (72 hours).
+Jobs can have a maximal execution wall time of 3 days (72 hours), except on the
+"hopper" compute nodes of Leibniz were it is possible to submit 7 days jobs on
+request (motivation needed). 
+
+Please also consider using the newer cluster Vaughan for big parallel jobs
+that can use 64 cores or multiples thereof as soon as that cluster becomes 
+available.
 
 The login nodes and regular compute nodes are freely available. Contact 
 UAntwerp user support (hpc@uantwerpen.be) for access to the visualization node
@@ -31,11 +37,17 @@ and accelerator nodes (free of charge but controlled access).
 Hardware details
 ----------------
 
-- 152 compute nodes
+- 152 regular compute nodes
 
     - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
     - 128 GB RAM (144 nodes) or 256 GB RAM (8 nodes)
     - 120 GB SSD local disk
+
+- 24 "hopper" compute nodes (recovered from the former Hopper cluster) - Expected availability September 2020
+
+    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 10 cores each
+    - 64 GB RAM (144 nodes) or 256 GB RAM (24 nodes)
+    - 500 GB local disk
 
 - 2 GPGPU nodes
 
@@ -54,13 +66,6 @@ Hardware details
    - 240 GB SSD local disk
    - :ref:`Instructions <UAntwerp NEC SX Aurora>`
 
-- 1 Xeon Phi node
-
-   - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
-   - 128 GB RAM
-   - Intel Xeon Phi 7220P PCIe card, 16 GB RAM
-   - 120 GB SSD local disk
-
 - 2 login nodes
 
     - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
@@ -75,7 +80,8 @@ Hardware details
     - 120 GB SSD local disk
     - :ref:`Instructions <remote visualization UAntwerp>`
 
-The nodes are connected using an InfiniBand EDR network. 
+The nodes are connected using an InfiniBand EDR network except for the "hopper" compute nodes that utilize
+FDR10 InfiniBand. 
 More info on the storage system is available on the :ref:`UAntwerpen storage` page.
 
 
@@ -93,7 +99,7 @@ Direct login is possible to both login nodes and to the visualization node.
 ..                    External interface                 Internal interface
 ===================   =================================  ===========================
 Login generic         login\-leibniz.hpc.uantwerpen.be   ..
-Login	              login1\-leibniz.hpc.uantwerpen.be  ln1.leibniz.antwerpen.vsc
+Login\                login1\-leibniz.hpc.uantwerpen.be  ln1.leibniz.antwerpen.vsc
 ..                    login2\-leibniz.hpc.uantwerpen.be  ln2.leibniz.antwerpen.vsc
 Visualisation node    viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
 ===================   =================================  ===========================
@@ -125,3 +131,57 @@ mem256             use nodes with 256 GB RAM (roughly 240 GB available).
                    bundle jobs yourself such as Worker, as it helps the scheduler to put those jobs on 
                    nodes that can be further filled with your jobs.
 ============       ====================================================================================
+
+
+Compiling for Leibniz
+---------------------
+
+To compile code for Leibniz, all ``intel``, 
+``foss`` and ``GCC`` modules can be used (the 
+latter equivalent to ``foss`` but without MPI and the math libraries).
+
+
+Optimization options for the Intel compilers
+""""""""""""""""""""""""""""""""""""""""""""
+
+To optimize specifically for Leibniz, compile on one of the Leibniz login 
+or compute nodes and combine the option ``-xHost`` with either optimization 
+level ``-O2`` or ``-O3``. For some codes, the additional optimizations at
+level ``-O3`` actually produce slower code (often the case if the code
+contains many short loops).
+
+Note that if you forget these options, the default for the Intel compilers
+is to generate code at optimization level ``-O2`` (which is pretty good) but
+for the Pentium 4 (``-march=pentium4``) which uses none of the new instructions
+and hence also none of the vector instructions introduced since 2005,
+which is pretty bad. Hence always specify ``-xHost`` (or any of the equivalent
+architecture options specifically for Broadwell for specialists) when
+compiling code.
+
+
+Optimization options for the GNU compilers
+""""""""""""""""""""""""""""""""""""""""""
+
+Never use the default GNU compilers installed
+on the system, but always load one of the ``foss`` or ``GCC`` modules.
+
+To optimize for Leibniz, compile on one of the Leibniz login 
+or compute nodes and combine either the option ``-march=native``
+or ``-march=broadwell`` with either optimization 
+level ``-O2`` or ``-O3``. In most cases, and especially for
+floating point intensive code, ``-O3`` will be the prefered optimization level
+with the GNU compilers as it only activates vectorization at this level
+whereas the Intel compilers already offer vectorization at level ``-O2``.
+
+Note that if you forget these options, the default for the GNU compilers is
+to generate unoptimized (level ``-O0``) code for a very generic CPU 
+(``-march=x86-64``) which doesn't exploit the performance potential of
+the Leibniz CPUs at all. Hence one should always specify an appropriate
+architecture (the ``-march`` flag) and appropriate optimization level
+(the ``-O``flag) as explained in the previous paragraph.
+
+
+Further documentation:
+""""""""""""""""""""""
+* :ref:`Intel toolchains <Intel toolchain>`
+* :ref:`FOSS toolchains (contains GCC) <FOSS toolchain>`
