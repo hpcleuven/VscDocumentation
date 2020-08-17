@@ -10,7 +10,7 @@ Vaughan hardware
 until all software is installed and courses for the new job system have been prepared.**
 
 Vaughan was installed in the summer of 2020. It is a NEC system consisting of
-104 nodes with 2 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ 
+104 nodes with two 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ 
 Rome generation CPUs connected through a HDR100 InfiniBand network. 
 All nodes have 256 GB RAM. 
 The nodes do not have a sizeable local disk. 
@@ -25,12 +25,12 @@ With Vaughan we do switch away from the Torque/Moab combo to Slurm Workload
 Manager and we use native Slurm job scripts. Users are required to take the 
 "transition to Vaughan and Slurm" course when the setup of Vaughan is ready.
 Vaughan is also available to all
-VSC-users, though we appreciate that you contact the UAntwerpen support team so
+VSC-users, though we appreciate that you contact the UAntwerp support team so
 that we know why you want to use the cluster.
 
 Jobs can have a maximal execution wall time of 3 days (72 hours). 
 Vaughan should only be used if you have large enough parallel jobs to or can
-otherwise sufficienlty fill up all cores of a compute node. Other work should
+otherwise sufficiently fill up all cores of a compute node. Other work should
 be done on Leibniz.
 
 The login nodes are freely available. Access to the job queues and compute
@@ -42,7 +42,7 @@ a compute node.
 Hardware details
 ----------------
 
-- 104 compute nodes (expected extension to 152 nodes in early 2021)
+- 104 compute nodes
 
     - 2 AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ CPUs\@2.35 GHz (Rome), 32 cores each
     - 256 GB RAM
@@ -84,7 +84,7 @@ Characteristics of the compute nodes
 
 Since Vaughan is currently a homogeneous system with respect to CPU type, memory and
 interconnect, it is not needed to specify the corresponding properties (see
-also the page on specifying resources, output files and notifications).
+also :ref:`the page on specifying resources, output files and notifications<Antwerp Slurm>`).
 
 **Vaughan is running Slurm Workload Manager as the resource manager and scheduler.**
 We do not support the PBS compatibility layer but encourage users to develop
@@ -100,7 +100,7 @@ enjoy the power of the ``srun`` command when starting processes.
 property           explanation
 ============       ====================================================================================
 r1, r2, r3         Nodes in the first, second or third island of compute nodes. :raw-html:`<br />`
-                   Use ``--constraint=[r1|r2|r3]`` to make sure that all nodes are allocated in a single island
+                   Use ``--constraint=[r1|r2|r3]`` to make sure that all nodes are allocated in a single island.
 ============       ====================================================================================
 
 
@@ -117,7 +117,7 @@ Optimization options for the Intel compilers
 """"""""""""""""""""""""""""""""""""""""""""
 
 As the processors in Vaughan are made by AMD, there is no explicit support
-in the Intel compilers. However, by chosing the appropriate compiler
+in the Intel compilers. However, by choosing the appropriate compiler
 options, the Intel compilers still produce very good code for Vaughan that
 will often beat code produced by GCC (certainly for Fortran codes as gfortran
 is a rather weak compiler). 
@@ -154,7 +154,7 @@ To optimize for Vaughan, compile on one of the Vaughan login
 or compute nodes and combine either the option ``-march=native``
 or ``-march=znver2`` with either optimization 
 level ``-O2`` or ``-O3``. In most cases, and especially for
-floating point intensive code, ``-O3`` will be the prefered optimization level
+floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
 whereas the Intel compilers already offer vectorization at level ``-O2``.
 
@@ -167,7 +167,7 @@ to generate unoptimized (level ``-O0``) code for a very generic CPU
 (``-march=x86-64``) which doesn't exploit the performance potential of
 the Vaughan CPUs at all. Hence one should always specify an appropriate
 architecture (the ``-march`` flag) and appropriate optimization level
-(the ``-O``flag) as explained in the previous paragraph.
+(the ``-O`` flag) as explained in the previous paragraph.
 
 
 Further documentation:

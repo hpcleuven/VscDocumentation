@@ -52,7 +52,7 @@ PBS_JOBID                 SLURM_JOB_ID :raw-html:`<br />`
 PBS_JOBNAME               SLURM_JOB_NAME :raw-html:`<br />`
                           %j in filename templates
 PBS_NODENUM
-PBS_NODEFILE              Replaced by a variable specifying the nodes rather than a node file: SLURM__JOB_NODELIST, SLURM_NODELIST (for backward compatibility)
+PBS_NODEFILE              Replaced by a variable specifying the nodes rather than a node file: SLURM_JOB_NODELIST, SLURM_NODELIST (for backward compatibility)
 PBS_NUM_NODES             SLURM_JOB_NUM_NODES :raw-html:`<br />`
                           SLURM_NNODES (for backward compatibility)
 PBS_NUM_PPN

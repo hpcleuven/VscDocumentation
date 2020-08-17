@@ -185,3 +185,17 @@ Further documentation:
 """"""""""""""""""""""
 * :ref:`Intel toolchains <Intel toolchain>`
 * :ref:`FOSS toolchains (contains GCC) <FOSS toolchain>`
+
+
+Origin of the name
+------------------
+
+Leibniz is named after `Gottfried Wilhelm Leibniz <https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz>`_,
+a German multi-disciplinary scientist living in the late 17th and early 18th century. 
+Leibniz may be best known as a developer of differential and integral calculus,
+independently of the work of Isaac Newton.  But his contributions to science do not stop 
+there. Leibniz also refined the binary number system, the foundation of nearly all modern
+computers. He also designed mechanical calculators on which one could do the four basic
+operations (add, subtract, multiply and divide). In all, Leibniz made contributions to
+phylosophy, mathematics, physics and technology, and several other fields.
+

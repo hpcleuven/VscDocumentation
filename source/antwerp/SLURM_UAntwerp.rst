@@ -14,9 +14,9 @@ sure jobs use the resources allocated to them. The scheduler is the piece of sof
 prioritises jobs that are waiting in the queue and decides which job can start with which
 resources. It is clear that both have to work together very closely. Torque and Moab were
 developed and supported by Adaptive Computing. This company was acquired by ALA Services 
-Technology Companies and since then development had come to a halt, bugs don't get fixed 
-anymore, many developers have left the company and the support has become really bad. 
-Therefore the decision was taken to transfer to a differnt resource manager and scheduler
+Technology Companies. Since then the software isn't well supported anymore, resulting in
+problems to keep it running on our systems. 
+Therefore the decision was taken to transfer to a different resource manager and scheduler
 software. Slurm Workload Manager was chosen due to its wide use in academic supercomputer
 centres. We've been preparing for this switch for over two years now by stressing in the
 introductory courses those features of Torque and Moab that resemble Slurm features
@@ -24,14 +24,14 @@ the most.
 
 Slurm Workload Manager is also used on the clusters at UGent (but with a wrapper that still
 accepts Torque job scripts with some limitations) and will also be the scheduler on the
-successor of the Breniac Tier-1 system.
+successor of the BrENIAC Tier-1 system.
 
 Historically, Slurm was an acronym of **S**\imple **L**\inux **U**\tility for 
-**Resource **M**\anagement. The development started around 2002 at Lawrence Livermore
+**R**\esource **M**\anagement. The development started around 2002 at Lawrence Livermore
 National Lab as a resource manager for Linux cluster. Slurm has always had a very modular
 architecture. From 2008 on increasingly sophisticated scheduling plugins were added
-to Slurn. Nowadays it is used on some of the largest systems in the world. Slurm is
-completely Open Source though commercial support can be optained from SchedMD, a
+to Slurm. Nowadays it is used on some of the largest systems in the world. Slurm is
+completely Open Source though commercial support can be obtained from SchedMD, a
 spin-off company of the Slurm development.
 
 
@@ -44,7 +44,7 @@ Slurm concepts
 * **Job**: A resource allocation request.
 * **Job step**: A set of (possibly parallel) tasks within a job. A job can consist of
   just a single job step, or can contain multiple job steps which may use all or just
-  a part of the resource allocation of a job and can run sequentiall or in parallel
+  a part of the resource allocation of a job and can run sequentially or in parallel
   (or a mix of that). The job script itself is a special job step, called the batch
   job step, but additional job
   steps can be created (e.g., for running a parallel MPI application).
@@ -81,7 +81,7 @@ lines in the job script.
 
 * Slurm ``sbatch`` has a lot of command line options. We will only list the
   most important command line options below. Command line options of Slurm
-  take precedence over environment variables of ``# SBATCH`` lines in the
+  take precedence over environment variables of ``#SBATCH`` lines in the
   job script.
 * Some command line options can also be passed to ``sbatch`` through environment
   variables instead. A list of those can be found in the 
@@ -90,7 +90,7 @@ lines in the job script.
   matching command line option.
 * All command line options can also be passed in ``#SBATCH`` lines in the job script.
   These lines should follow immediately below the shebang in the first block of 
-  comment lines (lines that start with ``# ``) as otherwise they will
+  comment lines (lines that start with ``#``) as otherwise they will
   be ignored by Slurm.
 
 Requesting compute resources
@@ -123,7 +123,7 @@ swapping and since swapping is extremely detrimental to the performance of
 the cluster.
 
 Slurm has various ways to request memory. Unfortunately there is currently no
-way to request memory per task. The prefered method for requesting memory in
+way to request memory per task. The preferred method for requesting memory in
 Slurm on the UAntwerp clusters is to specify the amount of memory per CPU (per
 hardware thread, which in the case of the UAntwerp clusters is per core):
 ``--mem-per-cpu=<amount><unit>``(e.g., ``--mem-per-cpu=1g``). The amount is an
@@ -136,7 +136,7 @@ Requesting wall time
 The requested compute time is specified using ``--time=<time>`` or ``-t <time>``.
 ``<time>`` is specified in mm (minutes), mm\:ss (minutes and seconds), hh\:mm\:ss
 (hours, minutes and seconds), d-hh (days and hours), d-h\:mm (days, hours and minutes)
-or d-h\:mm\:ss (days, hours, minutes and seconds) format.
+or d-h\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a typo!
 
 Specifying a job name
 """""""""""""""""""""
@@ -157,6 +157,7 @@ There are two flags to ``sbatch`` to change this behaviour:
   file, unless ``--output`` is also used.
 
 Hence:
+
 * No ``--output`` and no ``--error``: stdout and stderr are both sent to the default output
   file ``slurm-<jobid>.out``.
 * ``--output`` specified but no ``--error``: stdout and stderr are both sent to the file
@@ -166,7 +167,7 @@ Hence:
 * Both ``--output`` and ``--error`` are specified: stdout is redirected to the file pointed to
   by ``--output`` and stderr is redirected to the file pointed to by ``--error``.
   
-The file name can (and usually will) be a template. It can contains replacement symbols preceded 
+The file name can (and usually will) be a template. It can contain replacement symbols preceded 
 by a % that allow to use the jobid etc. in the name of the file to ensure unique file names. 
 The most useful of such symbols is ``%j`` which will be replaced by the unque jobid.
 A full list of replacement symbols can be found in 
@@ -175,14 +176,14 @@ A full list of replacement symbols can be found in
 Sending mail at specific events
 """""""""""""""""""""""""""""""
 
-Slurm can send mail when a job starts, fails or ends normally, and on a number of other occassions.
+Slurm can send mail when a job starts, fails or ends normally, and on a number of other occasions.
 Two flags influence this behaviour:
 
 * ``--mailtype=<type>`` specifies when mail should be sent. ``<type>`` is a comma-separated list
   of type values. Type values include START, END and FAIL to denote respectively the start of a 
   job, end of a job and failure of a job, but there are many other options that can be found in
   `the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
-* ``--mail-user=<mail address>`` specifies to which mail adress the mails should be sent. The
+* ``--mail-user=<mail address>`` specifies to which mail address the mails should be sent. The
   default value is the mail address associated with the VSC-account of the submitting user.
 
 The job environment
@@ -191,10 +192,10 @@ The job environment
 The Slurm ``sbatch`` command by default copies the environment in which the job script was submitted
 (at least, the environment seen by the ``sbatch`` command, so all exported variables and functions).
 This implies that, e.g., all modules that were loaded when you submitted the job script, will
-be loaded in your job environment. This poses a number of risks
+be loaded in your job environment. This poses a number of risks:
 
 * Some modules adapt their behaviour to the environment in which they were loaded. 
-  One important example are the modules that providie MPI on the cluster. When 
+  One important example are the modules that provide MPI on the cluster. When 
   launched in a Slurm job environment, some environment variables are set to
   ensure maximal integration with Slurm. However, when loaded on the login nodes
   these variables are not set as otherwise running a MPI program as a regular 
@@ -239,14 +240,14 @@ demonstrate the power of the ``srun`` command. The advantage of this way of work
 all processes run under the strict control of Slurm, ensuring that if something goes wrong,
 they are also cleaned up properly.
 
-The ``srun`` command can also be used outside of a resource allocation (i.e., at the command
+The ``srun`` command can also be used outside of a resource allocation, i.e., at the command
 line of the login nodes, outside a job script or an allocation obtained with ``salloc`` (see 
 further in the text). It will then first create the resource allocation before executing the
 command given as an argument to ``srun``. One useful case which we discuss further down in this
 text is to start an interactive session on a single node. Most of the command line options of 
 ``sbatch`` to specify the properties of the allocation can also be used with ``srun``. 
 
-Just as ``sbatch``, ``srun`` will propagate the environment. When ``srun``is used in
+Just as ``sbatch``, ``srun`` will propagate the environment. When ``srun`` is used in
 a job script to start a parallel application, this is also very sensible and desired
 behaviour as it ensures the processes started with Slurm run in the right environment
 created by the job script.
@@ -308,7 +309,7 @@ The ``sstat`` command displays information on running jobs. By default, without
 any arguments, ``sstat`` will show you information on pertaining to CPU, Task, 
 Node, Resident Set Size (RSS) and Virtual Memory (VM)
 for all your running jobs. However, it is possible to specify a particular job
-you want information about by specifying ``-j <jobid>`` or ``--jobs=<jobid>`` or ``-j <jobid>``.
+you want information about by specifying ``-j <jobid>`` or ``--jobs=<jobid>``.
 It is possible to specify multiple jobs as a comma-separated list of job IDs.
 By default it will only show information about the lowest job step running in 
 a particular job unless ``--allsteps`` or ``-a`` is also specified.
@@ -390,8 +391,9 @@ compiled with the intel/2019b toolchain. It will be run on 10 cores.
    #SBATCH --time=05:00
    
    # Build the environment
-   module load calcua/2019b
-   module load intel/2019b
+   module purge
+   module load calcua/2020a
+   module load intel/2020a
    
    # Set the number of threads
    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -430,8 +432,8 @@ directory compiled with Intel MPI.
    
    # Build the environment
    module purge
-   ml calcua/2019b
-   ml intel/2019b
+   ml calcua/2020a
+   ml intel/2020a
    
    # Run the MPI program
    srun ./mpi_hello
@@ -454,7 +456,9 @@ to be set in one way or another. With many MPI implementations (and the ones
 we use at the VSC), ``srun`` is an ideal program starter and will start the
 hybrid MPI/OpenMP processes on the right sets of cores.
 The example below assumes ``mpi_omp_hello`` is a program compiled with
-the Intel toolchain that uses both MPI and OpenMP.
+the Intel toolchain that uses both MPI and OpenMP. It starts 8 processes
+with 7 threads each, so it would occupy two nodes on a cluster with 28 cores
+per node.
 
 .. code:: bash
    
@@ -465,7 +469,7 @@ the Intel toolchain that uses both MPI and OpenMP.
    
    module purge
    module load calcua/supported
-   module load intel/2019b
+   module load intel/2020a
 
    # Set the number of threads per MPI rank
    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -527,7 +531,7 @@ Interactive job
 Starting an interactive job in Slurm is a bit more cumbersome then it was with 
 Torque. We do need to distinguish between two scenarios:
 1. A request for a number of cores on a single node
-2. Requests that involve multiple nodes, e.g., to test a MPI program
+2. Requests that involve multiple nodes, e.g., to test an MPI program.
 
 Simple request, cores on a single node
 """"""""""""""""""""""""""""""""""""""
