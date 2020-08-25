@@ -12,6 +12,16 @@ Access to such packages is managed by UNIX groups. You can request
 membership to the group, but that membership will only be granted if you
 are eligible for use of the package.
 
+AMBER
+-----
+
+Amber is licensed software (through a site license). The license fee is minimal
+for non-profit work but comes at a considerable cost for for-profit research. In
+case of use for a third party that third party needs to have a license too.
+
+Contact `Hans De Winter <https://www.uantwerpen.be/nl/personeel/hans-dewinter/>'_
+for more information on the conditions to use the license.
+
 ANSYS
 -----
 
@@ -86,7 +96,8 @@ NUMECA FINE/Marine
 FINE/Marine is commercial CFD software from NUMECA International for
 simulation of flow around ships etc. The license has been granted for
 use of the Solar Boat Team as sponsoring from NUMECA and cannot be used
-by others.
+by others. The license has expired, so FINE/Marine though still installed
+on Leibniz can no longer be used until a group renews the license.
 
 
 NUMECA OMNIS/LB
