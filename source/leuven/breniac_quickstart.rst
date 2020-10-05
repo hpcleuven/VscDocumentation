@@ -78,7 +78,6 @@ The charge rate is the same for all nodes, i.e., 1 credit per node-day.
    - q1h: max_user_queueable = 400
    - q24h: max_user_queueable = 500
    - q72h: max_user_queueable = 300
-   - q7d: max_user_queueable = 20
 
 There are several types of nodes in the Breniac cluster: compute nodes
 with skylake CPUs, and nodes with broadwell CPUs.  The latter have either
