@@ -75,15 +75,15 @@ Advanced usage
 ^^^^^^^^^^^^^^
 There are different GPU compute modes available, which are explained on this `documentation page <http://docs.adaptivecomputing.com/9-1-0/MWM/help.htm#topics/moabWorkloadManager/topics/accelerators/nvidiaGpus.htm>`_.
 
+- exclusive_process: only one compute process is allowed to run on the GPU
 - default: shared mode available for multiple processes
 - exclusive_thread: only one compute thread is allowed to run on the GPU
-- exclusive_process: only one compute process is allowed to run on the GPU
 
 To select the mode of your choice, you can for example submit like this::
 
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_process -l partition=gpu  -A myproject  myscript.pbs
    $ qsub -l nodes=1:ppn=9:gpus=1:skylake:default -l partition=gpu  -A myproject  myscript.pbs
    $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_thread -l partition=gpu  -A myproject  myscript.pbs
-   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_process -l partition=gpu  -A myproject  myscript.pbs
 
 If no mode is specified, the ``exclusive_process`` mode is selected by default.
   
