@@ -19,7 +19,7 @@ Hardware details
       - 200 GB SSD local disk
       - feature skylake
 
-   - 120 cascadelake nodes (closed pilot phase)
+   - 144 cascadelake nodes
 
       - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
       - 192 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
