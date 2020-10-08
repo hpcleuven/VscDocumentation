@@ -46,7 +46,7 @@ Hardware details
    - 2 V100 nodes
 
       - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
-      - 192 GB RAM
+      - 768 GB RAM
       - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
 
 
