@@ -64,7 +64,8 @@ Start a Jupyter notebook server:
 The port is set to the digits of you user name so that there will be no conflict when two users try
 and run a notebook on the same compute node.
 
-When Jupyter has started, the last line of output will be the URL to point your web browser to, e.g.,
+When Jupyter has started, the first URL below the line reading
+``Jupyter Notebook X.Y.Z is running at:`` should look similar to this:
 ::
 
    http://r5i1n7:30140/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
