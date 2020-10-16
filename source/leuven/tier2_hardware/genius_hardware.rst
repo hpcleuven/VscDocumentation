@@ -10,7 +10,7 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
 Hardware details
 ----------------
 
-- 206 thin nodes 
+- 230 thin nodes 
    
    - 86 skylake nodes
 
