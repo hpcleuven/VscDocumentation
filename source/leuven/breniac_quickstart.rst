@@ -67,6 +67,18 @@ The charge rate is the same for all nodes, i.e., 1 credit per node-day.
    specify a queue using the ``-q`` option, but rather to simply specify the
    required walltime (at most 3 days).
 
+.. note::
+
+   There is a limit on the number of jobs you can have in a queue. This number
+   includes idle, running, and blocked jobs. If you try to submit more jobs
+   than the maximum number, these jobs will be deferred and will not start.
+   Therefore you should always respect the following limits on how many jobs
+   you have in a queue at the same time:
+
+   - q1h: max_user_queueable = 400
+   - q24h: max_user_queueable = 500
+   - q72h: max_user_queueable = 300
+
 There are several types of nodes in the Breniac cluster: compute nodes
 with skylake CPUs, and nodes with broadwell CPUs.  The latter have either
 128 or 256 GB RAM.  See the documentation on :ref:`Breniac hardware
