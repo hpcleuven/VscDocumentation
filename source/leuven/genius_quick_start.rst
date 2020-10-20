@@ -57,14 +57,36 @@ To submit to a compute node it all boils down to specifying the required number 
 
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
-The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as a shared resource, meaning that different users can simultaneously use the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU you can submit for example like this::
+The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as shared resources, meaning that different users can simultaneously use a portion of the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU of type P100 (which are on nodes with SkyLake architecture) you can submit for example like this::
 
-   $ qsub -l nodes=1:ppn=9:gpus=1  -l partition=gpu  -A myproject  myscript.pbs
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake -l partition=gpu -l pmem=5gb -A myproject  myscript.pbs
   
-Note that in case of 1 GPU you have to request 9 cores. In case you need more GPUs you have to multiply the 9 cores with the number of GPUs requested, so in case of for example 3 GPUS you will have to specify this::
+Note that in case of 1 GPU you have to request 9 cores. In case you need more GPUs you have to multiply the 9 cores with the number of GPUs requested, so in case of for example 3 GPUs you will have to specify this::
 
-   $ qsub -l nodes=1:ppn=27:gpus=3  -l partition=gpu  -A myproject  myscript.pbs
-   
+   $ qsub -l nodes=1:ppn=27:gpus=3:skylake -l partition=gpu -l pmem=5gb -A myproject  myscript.pbs
+
+To specifically request V100 GPUs (which are on nodes with CascadeLake architecture), you can submit for example like this::
+
+   $ qsub -l nodes=1:ppn=4:gpus=1:cascadelake -l partition=gpu -l pmem=20gb  -A myproject  myscript.pbs
+  
+For the V100 type of GPU, it is required that you request 4 cores for each GPU. Also notice that these nodes offer much larger memory bank.
+
+Advanced usage
+^^^^^^^^^^^^^^
+There are different GPU compute modes available, which are explained on this `documentation page <http://docs.adaptivecomputing.com/9-1-0/MWM/help.htm#topics/moabWorkloadManager/topics/accelerators/nvidiaGpus.htm>`_.
+
+- exclusive_process: only one compute process is allowed to run on the GPU
+- default: shared mode available for multiple processes
+- exclusive_thread: only one compute thread is allowed to run on the GPU
+
+To select the mode of your choice, you can for example submit like this::
+
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_process -l partition=gpu  -A myproject  myscript.pbs
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:default -l partition=gpu  -A myproject  myscript.pbs
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_thread -l partition=gpu  -A myproject  myscript.pbs
+
+If no mode is specified, the ``exclusive_process`` mode is selected by default.
+  
 
 .. _submit to genius big memory node:
 
@@ -96,8 +118,7 @@ leaving some room for the operating system to function properly.
 Running debug jobs
 ------------------
 Debugging on a busy cluster can be taxing due to long queue times.  To mitigate
-this, two skylake  CPU nodes and a skylake GPU node has been reserved for debugging
-purposes.
+this, two skylake  CPU nodes and a skylake GPU node has been reserved for debugging purposes.
 
 A few restrictions apply to a debug job:
 
