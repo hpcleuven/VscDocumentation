@@ -124,7 +124,8 @@ use the following two options:
    run on the same nodes if not all cores are used.
 ``-l naccesspolicy=singlejob``
    This will make sure that no other job can use the nodes allocated
-   to your job.
+   to your job. When requesting half a node or less on Genius and ThinKing,
+   you will also need to add ``-l qos=shared`` to enforce this policy.
   
 .. warning::
 
