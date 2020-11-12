@@ -16,7 +16,7 @@ resources. It is clear that both have to work together very closely. Torque and 
 developed and supported by Adaptive Computing. This company was acquired by ALA Services 
 Technology Companies. Since then the software isn't well supported anymore, resulting in
 problems to keep it running on our systems. 
-Therefore the decision was taken to transfer to a different resource manager and scheduler
+Therefore, the decision was taken to transfer to a different resource manager and scheduler
 software. Slurm Workload Manager was chosen due to its wide use in academic supercomputer
 centres. We've been preparing for this switch for over two years now by stressing in the
 introductory courses those features of Torque and Moab that resemble Slurm features
@@ -43,7 +43,7 @@ Slurm concepts
   of a queue in Torque.
 * **Job**: A resource allocation request.
 * **Job step**: A set of (possibly parallel) tasks within a job. A job can consist of
-  just a single job step, or can contain multiple job steps which may use all or just
+  just a single job step or can contain multiple job steps which may use all or just
   a part of the resource allocation of a job and can run sequentially or in parallel
   (or a mix of that). The job script itself is a special job step, called the batch
   job step, but additional job
@@ -92,6 +92,11 @@ lines in the job script.
   These lines should follow immediately below the shebang in the first block of 
   comment lines (lines that start with ``#``) as otherwise they will
   be ignored by Slurm.
+  
+Note that all ``sbatch`` command line options should be specified 
+*before* the name of the job script. All command line parameters specified
+*after* the name of the job script will be passed as command line arguments
+to the job script when it executes.
 
 Requesting compute resources
 """"""""""""""""""""""""""""
@@ -122,7 +127,7 @@ disabled since the nodes don't have drives suitable for the load caused by
 swapping and since swapping is extremely detrimental to the performance of
 the cluster.
 
-Slurm has various ways to request memory. Unfortunately there is currently no
+Slurm has various ways to request memory. Unfortunately, there is currently no
 way to request memory per task. The preferred method for requesting memory in
 Slurm on the UAntwerp clusters is to specify the amount of memory per CPU (per
 hardware thread, which in the case of the UAntwerp clusters is per core):
@@ -185,6 +190,30 @@ Two flags influence this behaviour:
   `the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
 * ``--mail-user=<mail address>`` specifies to which mail address the mails should be sent. The
   default value is the mail address associated with the VSC-account of the submitting user.
+  
+Specifying dependencies
+"""""""""""""""""""""""
+
+Job dependencies can be used to defer the start of a job until the specified dependencies have been 
+satisfied. They are very helpful when implementing a workflow consisting of steps with different
+requirements for each job in the workflow.
+
+The basic way of specifying a job dependency is through 
+``--dependency=<type>:jobid:jobid,<type>:jobid:jobid``
+etc. For (almost) each type one can specify one or more jobids, and it is also possible
+to specify multiple types of dependencies.
+
+============================  =====================
+Dependency type               What it does
+============================  =====================
+**after**:jobid[:jobid]       Job can begin after all specified jobs have started
+**afterany**:jobid[:jobid]    Job can begin after all specified jobs have terminated
+**afterok**:jobid[:jobid]     Job can begin after the specified jobs has successfully completed
+**afternotok**:jobid[:jobid]  Job can begin after the specified jobs have failed
+**singleton**                 Job can start after all previously launched jobs with the same name and same user have ended.
+                              This can be useful to collate results after running a batch of related jobs.
+============================  =====================
+
 
 The job environment
 """""""""""""""""""
@@ -261,7 +290,7 @@ Checking the queue
 
 `Slurm squeue manual page on the web <https://slurm.schedmd.com/squeue.html>`_ 
 
-The Slurm comand to list jobs in the queue is ``squeue``. 
+The Slurm command to list jobs in the queue is ``squeue``. 
 
 The basic command without options will show basic information about all your jobs in the queue.
 There are a number of useful command line options though:
@@ -296,7 +325,7 @@ the array by specifying the array elements as follows:
    scancel 20_[1-3]
    scancel 20_4 20_6
 
-The first command would kill jobs 1, 2 and 3 in the job array with job id 20,
+The first command would kill jobs 1, 2 and 3 in the job array with jobid 20,
 the second command would kill jobs 4 and 6 of that job array.
 
 
@@ -310,12 +339,12 @@ any arguments, ``sstat`` will show you information on pertaining to CPU, Task,
 Node, Resident Set Size (RSS) and Virtual Memory (VM)
 for all your running jobs. However, it is possible to specify a particular job
 you want information about by specifying ``-j <jobid>`` or ``--jobs=<jobid>``.
-It is possible to specify multiple jobs as a comma-separated list of job IDs.
-By default it will only show information about the lowest job step running in 
+It is possible to specify multiple jobs as a comma-separated list of jobids.
+By default, it will only show information about the lowest job step running in 
 a particular job unless ``--allsteps`` or ``-a`` is also specified.
 It is also possible to request information on a specific job step of a job
 by using ``<jobID.JobStep>``, i.e., add the number of the job step to the
-job ID, separated by a dot.
+jobid, separated by a dot.
 
 To show additional information not shown by the default format, one can
 specify a specific format using the ``-o``,  ``--format`` and ``--fields``
@@ -331,16 +360,16 @@ Getting information about a job after it finishes
 Whereas ``sstat`` is used to show near real-time information for running jobs,
 ``sacct`` shows the information as it is kept by Slurm in the job accounting
 log/database. Hence it is particularly useful to show information about jobs 
-that have finished already. It allows you to see how much CPU time, walltime, 
+that have finished already. It allows you to see how much CPU time, wall time, 
 memory, etc. were used by the application. 
 
-By default, ``sacct`` shows the job ID, job name, partition name, account name,
+By default, ``sacct`` shows the jobid, job name, partition name, account name,
 number of CPUs allocated to the job, the state of the job and the exit code
 of completed jobs. For now there is no reason to be concerned about the
 account name as we do not use accounting to control the amount of compute time
 a user can use. Several options modify the format:
 
-* ``--brief`` or ``-b`` shows only the job id, state and exit ode.
+* ``--brief`` or ``-b`` shows only the jobid, state and exit ode.
 * ``--long`` or ``-l`` shows an overwhelming amount of information, probably more than you
   want to know as a regular user.
 * ``--format`` or ``-o`` can be used to specify your own output format. We refer 
@@ -525,6 +554,55 @@ the package is available as the module ``atools/slurm``.
 For information on how to use atools, we refer to the 
 `atools documentation on ReadTheDocs <https://atools.readthedocs.io/en/latest/>`_.
 
+Workflow through job dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consider the following example
+
+* We run a simulation to compute a first solution.
+* After the simulation, we add two different sized perturbations to the solution and 
+  run again from these perturbed states.
+  
+Of course, one could try to do all three simulations in a single job script, but that is
+not a good idea for various reasons.
+
+* Longer-running jobs may have a lower priority in the scheduler
+* When there is a failure halfway the job, it may take some puzzling to figure out which
+  parts have to run again and to adapt the job script to that.
+* As the simulations from the perturbed state are independent of each other, it is possible
+  to run them in parallel rather then sequentially.
+  
+On the other hand, first launching the simulation that computes the first solution, then
+waiting until that job has finished and only then launching two jobs, one for each perturbation,
+isn't a very handy solution either.
+
+Two elements can be combined to do this in a handier way, submitting all jobs simultaneously:
+* As environment variables are passed to the job script, they can be used to influence the 
+  behaviour of a job script. In our example, they could be used to specify the size of the 
+  perturbation to apply so that both jobs that run from a perturbed state can be submitted using
+  the same job script.
+* Dependency specifications can then be used to ensure that the jobs that run from a perturbed
+  state do not start before the first simulation has successfully completed.
+
+Assume that we have two job scripts:
+* ``job_first.slurm`` is a job script that computes the first solution.
+* ``job_Depend.slurm`` is a job script to compute a solution from a perturbed initial state.
+  It uses the environment variable ``perturbation_size`` to determine the perturbation to 
+  apply.
+
+A little annoyance of the ``sbatch`` command is that it does not simply print the
+jobid, but prints some text that contains the jobid. However, even that can
+be circumvented to automate the launch of the three jobs:
+
+.. code:: bash
+
+    first=$(sbatch --job-name job_leader job_first.slurm | awk '{print $(NF)}')
+    perturbation_size='0.05' sbatch --job-name job_pert_0_05 --dependency=afterok:$first job_depend.slurm
+    perturbation_size='0.1'  sbatch --job-name job_pert_0_1  --dependency=afterok:$first job_depend.slurm
+
+In the first command, we send the output of ``sbatch`` to awk, and this ``awk`` command will
+print the last word of the text which happens to be the jobid. 
+
 Interactive job
 ~~~~~~~~~~~~~~~
 
@@ -557,7 +635,7 @@ Requesting cores on multiple nodes
 
 Using multiple nodes in an interactive job is a two-step process. 
 First a Slurm *job* is created using ``salloc``. This command takes most of the
-same paramters as ``sbatch``. 
+same parameters as ``sbatch``. 
 
 .. code:: bash
 
