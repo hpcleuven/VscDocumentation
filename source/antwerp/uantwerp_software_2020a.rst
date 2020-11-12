@@ -3,7 +3,7 @@
 UAntwerp 2020a toolchains
 =========================
 
-Most software packages in use on Leibniz were reinstalled in the 2020a toolchains,
+Most software packages in use on leibniz were reinstalled in the 2020a toolchains,
 which are the initial toolchains for the Vaughan cluster. Many packages were updated
 to their most recent versions.
 
@@ -14,7 +14,7 @@ At UAntwerp, Lmod is the environment module system to manage the software availa
 the users since 2017.
 
 One advantage of Lmod over the software we used before, is much more powerful search for 
-installed software. Search is also case-insensitive so you do not need to know if capitals
+installed software. Search is also case-insensitive, so you do not need to know if capitals
 are used in the module name or not to find the correct name and version of a module.
 
 There are three commands to search for a module:
@@ -22,7 +22,7 @@ There are three commands to search for a module:
 #. Search in the list of activated modules (those modules that can be loaded without first
    loading another `calcua`` module)::
 
-      $ module av Python
+       $ module av Python
 
    will search for an activated module whose name or version string contains ``Python``.
    
@@ -45,13 +45,13 @@ There are three commands to search for a module:
    
       $ module whatis Python/3.8.3-intel-2020a
       
-   It is possible to search through all the 'whats'-information of installed modules using ``moudle keyword``::
+   It is possible to search through all the 'whatis'-information of installed modules using ``module keyword``::
    
       $ module keyword CMake
       
    This is a pretty powerful way to search for installed software. Whenever we put several related
    software packages together in a single module, we try to make sure that that software can be found
-   through ``module keyword``. Unfortunately though the software that we use to install packages and to
+   through ``module keyword``. Unfortunately, though the software that we use to install packages and to
    generate the modules in a consistent way, does not yet allow us to easily generate a list of the extensions
    included in modules such as ``Python``, ``Perl`` or ``R``. The output of ``module spider`` for s specific
    version number will usually show the included packages (with very few exceptions where we needed to use
@@ -64,7 +64,7 @@ Overview of modules
 
 The first column is the name of the module. The second column contains the most recent version
 of the module installed in the pre-2020a toolchains. The third column then shows the version(s) offered
-in the 2020a toolchains, or refers to an alternative.
+in the 2020a toolchains or refers to an alternative.
 
 +-----------------------+----------------------------------------------+-------------------------------------------------------+
 | Package               | Last version                                 | 2020a version                                         |

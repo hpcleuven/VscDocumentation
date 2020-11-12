@@ -96,14 +96,16 @@ Direct login is possible to both login nodes and to the visualization node.
 - From inside the VSC network (e.g., another VSC cluster): use the internal
   interface names.
 
-===================   =================================  =========================== 
+===================   =================================  ============================
 ..                    External interface                 Internal interface
-===================   =================================  ===========================
+===================   =================================  ============================
 Login generic         login\-leibniz.hpc.uantwerpen.be   ..
 Login\                login1\-leibniz.hpc.uantwerpen.be  ln1.leibniz.antwerpen.vsc
+                                                         login1.leibniz.antwerpen.vsc
 ..                    login2\-leibniz.hpc.uantwerpen.be  ln2.leibniz.antwerpen.vsc
+                                                         login2.leibniz.antwerpen.vsc
 Visualisation node    viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
-===================   =================================  ===========================
+===================   =================================  ============================
 
 
 Characteristics of the compute nodes
@@ -120,7 +122,7 @@ broadwell          only use Intel processors from the Broadwell family (E5-XXXXv
                    (Not needed at the moment as this is CPU type is selected automatically)
 ivybridge          only use Intel processors from the Ivy Bridge family (E5-XXXXv2)
                    Not needed at the moment as there is no automatic selection of the queue for the
-                   ivybridge nodes. Specify ``-q hopper`` instead.
+                   IVy Bridge nodes. Specify ``-q hopper`` instead.
 gpu                only use the GPGPU nodes of Leibniz.
                    Not needed at the moment as there is no automatic selection of the queue for the
                    GPGPU nodes at the moment. Specify ``-q gpu`` instead.
@@ -175,7 +177,7 @@ To optimize for Leibniz, compile on one of the Leibniz login
 or compute nodes and combine either the option ``-march=native``
 or ``-march=broadwell`` with either optimization 
 level ``-O2`` or ``-O3``. In most cases, and especially for
-floating point intensive code, ``-O3`` will be the prefered optimization level
+floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
 whereas the Intel compilers already offer vectorization at level ``-O2``.
 
@@ -184,7 +186,7 @@ to generate unoptimized (level ``-O0``) code for a very generic CPU
 (``-march=x86-64``) which doesn't exploit the performance potential of
 the Leibniz CPUs at all. Hence one should always specify an appropriate
 architecture (the ``-march`` flag) and appropriate optimization level
-(the ``-O``flag) as explained in the previous paragraph.
+(the ``-O`` flag) as explained in the previous paragraph.
 
 
 Further documentation:
@@ -203,5 +205,5 @@ independently of the work of Isaac Newton.  But his contributions to science do 
 there. Leibniz also refined the binary number system, the foundation of nearly all modern
 computers. He also designed mechanical calculators on which one could do the four basic
 operations (add, subtract, multiply and divide). In all, Leibniz made contributions to
-phylosophy, mathematics, physics and technology, and several other fields.
+philosophy, mathematics, physics and technology, and several other fields.
 

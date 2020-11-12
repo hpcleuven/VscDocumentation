@@ -122,7 +122,7 @@ provided by the X server, but in true UNIX-spirit of having separate
 components for every bit of functionality, this is not the case. On X11,
 this functionality is provided by the Window Manager, a separate
 software package that you start after starting the X server (or may be
-started for you automatically by the startup script that is run when
+started for you automatically by the start-up script that is run when
 starting the X server). The basic window managers from the early days of
 X11 have evolved into feature-rich desktop environments that do not only
 offer a window manager, but also a task bar etc. Gnome and KDE are
@@ -139,7 +139,7 @@ hopper.)
 For the remote visualization setup on the UAntwerp clusters, we have
 chosen to use the Xfce Desktop Environment which is definitely more
 user-friendly than the rather primitive Tab Window Manager and Motif
-Window Manager, yet requires less system resources and is easier to set
+Window Manager yet requires less system resources and is easier to set
 up than the more advanced Gnome and KDE desktops.
 
 Prerequisites
@@ -206,7 +206,7 @@ Here also there are several possible setups:
    some versions of macOS. However, there already exist 64-bit
    pre-release builds so future versions will certainly fully support
    future macOS versions. Some places report that this client is a lot
-   slower than the the TurboVNC one on macOS.
+   slower than the TurboVNC one on macOS.
    `Binaries are available <https://bintray.com/tigervnc/stable/tigervnc/>`_.
    Look for the ``tigervnc-*.dmg`` files, which contrary to those for
    Windows and Linux, only contain the viewer software.
@@ -284,12 +284,12 @@ only use this command if you fully understand how it works and what it
 does. Also, please don't forget to kill the VNC server when you have
 finished using it as it will not be killed automatically when started
 through this command (or use the ``-autokill`` command line option at
-startup). The default startup script (``xstartup.turbovnc``) which will
+start-up). The default start-up script (``xstart-up.turbovnc``) which will
 be put in the ``~/.vnc`` directory on first use does not function
 properly on our systems. We know this and we have no intent to repair
 this as we prefer to install the vncserver command unmodified from the
 distribution and provide wrapper scripts instead that use working
-startup files.
+start-up files.
 
 Step 2: Connecting to the server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,7 +309,7 @@ Step 2: Connecting to the server
    viz1-leibniz.hpc.uantwerpen.be, login2-leibniz.hpc.uantwerpen.be or
    login1-vaughan.hpc.uantwerpen.be.
 
-   #. In brief:With OpenSSH, your command will look like
+   #. In brief: With OpenSSH, your command will look like
    
           :bash:`ssh -L 5902:localhost:5902 -N vsc20XXX@viz1-leibniz.hpc.uantwerpen.be`
 
@@ -324,7 +324,7 @@ Step 2: Connecting to the server
       or localhost if you will log on to the node running the VNC server.
 
 #. Once your tunnel is up-and-running, start your VNC client. The
-   procedure depends on the precise client you are using. However in
+   procedure depends on the precise client you are using. However, in
    general, the client will ask for the VNC server. That server is
    localhost:x where x is the number of your VNC server, 2 in the above
    example. It will then ask you for the password that you have assigned
@@ -347,7 +347,7 @@ Step 3: Starting an application
    started your session).
    In the default Xfce-environment, you can open a terminal by selecting
    \"Terminal Emulator\" in the \"Applications\" menu in the top left.
-   The first time it will let you chose between selected terminal
+   The first time it will let you choose between selected terminal
    applications.
 #. Load the modules that are required to start your application of
    choice.
@@ -367,9 +367,9 @@ Step 3: Starting an application
       The MATLAB command ``opengl info`` will then show that you are
       indeed using the GPU.
 
-#. When you've finished, don't forget to log out in the xfce desktop 
+#. When you've finished, don't forget to log out in the Xfce desktop 
    (right mouse click in the desktop, then select `"Application\"
-   and then select\"Log Out\") when you use one of
+   and then select \"Log Out\") when you use one of
    our wrapper scripts or kill the VNC server otherwise (using
    
        :bash:`vncserver -kill :x` 

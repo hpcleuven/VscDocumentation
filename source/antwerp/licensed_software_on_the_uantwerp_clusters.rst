@@ -19,7 +19,7 @@ Amber is licensed software (through a site license). The license fee is minimal
 for non-profit work but comes at a considerable cost for for-profit research. In
 case of use for a third party that third party needs to have a license too.
 
-Contact `Hans De Winter <https://www.uantwerpen.be/nl/personeel/hans-dewinter/>'_
+Contact `Hans De Winter <https://www.uantwerpen.be/nl/personeel/hans-dewinter/>`_
 for more information on the conditions to use the license.
 
 ANSYS
