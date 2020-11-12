@@ -1,5 +1,8 @@
 .. _remote visualization UAntwerp:
 
+.. role:: bash(code)
+    :language: bash
+
 Remote visualization @ UAntwerp
 ===============================
 
@@ -229,12 +232,12 @@ How do I run an application with TurboVNC?
 
 Running an application with TurboVNC requires 3 steps:
 
--  Start the VNC server on the cluster
--  Start the VNC client on your desktop/laptop and connect to the server
--  Start your application
+#. Start the VNC server on the cluster
+#. Start the VNC client on your desktop/laptop and connect to the server
+#. Start your application
 
-Starting the server
-~~~~~~~~~~~~~~~~~~~
+Step 1: Starting the VNC server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Log on in the regular way to one of the login nodes of hopper or to
    the visualization node of Leibniz. Note that the latter should only
@@ -242,14 +245,21 @@ Starting the server
    acceleration. The node is not meant for those who just want to run
    some lightweight 2D GUI application, e.g., an editor with GUI.
 #. Load the module vsc-vnc:
-   ``module load vsc-vnc``
+
+       :bash:`module load vsc-vnc`
+       
    This module does not only put the TurboVNC server in the path, but
    also provides wrapper scripts to start the VNC server with a
    supported window manager / desktop environment. Try
-   ``module help vsc-vnc`` for more info about the specific wrappers.
+   
+       :bash:`module help vsc-vnc` 
+       
+   for more info about the specific wrappers.
 #. Use your wrapper of choice to start the VNC server. We encourage to
    use the one for the Xfce desktop environment:
-   ``vnc-xfce``
+   
+       :bash:`vnc-xfce`
+       
 #. The first time you use VNC, it will ask you to create a password. For
    security reasons, please use a password that you don't use for
    anything else. If you have forgotten your password, it can easily be
@@ -258,7 +268,9 @@ Starting the server
    viewer-only password. If you don't know what this is, you don't need
    it.
 #. Among other information, the VNC server will show a line similar to:
-   ``Desktop 'TurboVNC: viz1.leibniz:2 (vsc20XXX)' started on display viz1.leibniz:2``
+
+       ``Desktop 'TurboVNC: viz1.leibniz:2 (vsc20XXX)' started on display viz1.leibniz:2``
+   
    Note the number after TurboVNC:viz1.leibniz, in this case 2. This is
    the number of your VNC server, and it will in general be the same as
    the X display number which is the last number on the line. You'll
@@ -279,8 +291,8 @@ this as we prefer to install the vncserver command unmodified from the
 distribution and provide wrapper scripts instead that use working
 startup files.
 
-Connecting to the server
-~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2: Connecting to the server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. In most cases, you'll not be able to connect directly to the TurboVNC
    server (which runs on port 5900 + the server number, 5902 in the
@@ -294,22 +306,30 @@ Connecting to the server
    login names (such as login.hpc.uantwerpen.be) for that as you may be
    assigned a different login node as you were assigned just minutes
    ago. Instead, use the full names for the specific nodes, e.g.,
-   login1-hopper.uantwerpen.be, login2-leibniz.uantwerpen.be or
-   viz1-leibniz.uantwerpen.be.
+   viz1-leibniz.hpc.uantwerpen.be, login2-leibniz.hpc.uantwerpen.be or
+   login1-vaughan.hpc.uantwerpen.be.
 
    #. In brief:With OpenSSH, your command will look like
-      ``ssh -L 5902:viz1-leibniz.uantwerpen.be:5902 -N vsc20XXX@viz1-leibniz.uantwerpen.be``
-   #. In PuTTY, select \\"Connections - SSH - Tunnel\" in the left pane.
-      As \\"Source port\", use 5900 + the server number (5902 in our
+   
+          :bash:`ssh -L 5902:localhost:5902 -N vsc20XXX@viz1-leibniz.hpc.uantwerpen.be`
+
+      The above line assumes that you log on to the node where the VNC
+      server is running, which is why we can use ``localhost`` in the 
+      ``-L``-line (as this is the name under which the node running the 
+      VNC server is known on that node).      
+   #. In PuTTY, select \"Connections - SSH - Tunnel\" in the left pane.
+      As \"Source port\", use 5900 + the server number (5902 in our
       example) and as destination the full name of the node on which the
-      VNC server is running, e.g., viz1-leibniz.uantwerpen.be.
+      VNC server is running, e.g., viz1-leibniz.hpc.uantwerpen.be,
+      or localhost if you will log on to the node running the VNC server.
 
 #. Once your tunnel is up-and-running, start your VNC client. The
    procedure depends on the precise client you are using. However in
    general, the client will ask for the VNC server. That server is
    localhost:x where x is the number of your VNC server, 2 in the above
    example. It will then ask you for the password that you have assigned
-   when you first started VNC.
+   when you first started VNC. (Instead of using the screen number
+   most VNC clients will also allow you to use the port number instead.)
 #. If all went well, you will now get a window with the desktop
    environment that you have chosen when starting the VNC server
 #. Do not forget to close your tunnel when you log out from the VNC
@@ -320,13 +340,13 @@ you'll see a panel "Welcome to the first start of the panel". Please
 select "Use default config" as otherwise you get a very empty
 desktop.*
 
-Starting an application
-~~~~~~~~~~~~~~~~~~~~~~~
+Step 3: Starting an application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Open a terminal window (if one was not already created when you
    started your session).
    In the default Xfce-environment, you can open a terminal by selecting
-   \\"Terminal Emulator\" in the \\"Applications\" menu in the top left.
+   \"Terminal Emulator\" in the \"Applications\" menu in the top left.
    The first time it will let you chose between selected terminal
    applications.
 #. Load the modules that are required to start your application of
@@ -341,17 +361,24 @@ Starting an application
 
    #. MATLAB: start MATLAB with the ``-nosoftwareopengl`` option to
       enable accelerated OpenGL:
-      ``vglrun matlab -nosoftwareopengl``
+      
+          :bash:`vglrun matlab -nosoftwareopengl`
+      
       The MATLAB command ``opengl info`` will then show that you are
       indeed using the GPU.
 
-#. When you've finished, don't forget to log out (when you use one of
-   our wrapper scripts) or kill the VNC server otherwise (using
-   ``vncserver -kill :x`` with ``x`` the number of the server).
+#. When you've finished, don't forget to log out in the xfce desktop 
+   (right mouse click in the desktop, then select `"Application\"
+   and then select\"Log Out\") when you use one of
+   our wrapper scripts or kill the VNC server otherwise (using
+   
+       :bash:`vncserver -kill :x` 
+       
+   with ``x`` the number of the server).
 
 Note: For a quick test of your setup, enter
 
-::
+.. code:: bash
 
    vglrun glxinfo
    vglrun glxgears
@@ -359,7 +386,7 @@ Note: For a quick test of your setup, enter
 The first command will print some information about the OpenGL
 functionality that is supported. The second command will display a set
 of rotating gears. Don't be fooled if they appear to stand still but
-look at the \\"frames per second\" printed in the terminal window.
+look at the \"frames per second\" printed in the terminal window.
 
 Common problems
 ~~~~~~~~~~~~~~~
