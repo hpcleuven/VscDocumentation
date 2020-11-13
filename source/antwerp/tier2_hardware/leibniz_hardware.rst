@@ -122,7 +122,7 @@ broadwell          only use Intel processors from the Broadwell family (E5-XXXXv
                    (Not needed at the moment as this is CPU type is selected automatically)
 ivybridge          only use Intel processors from the Ivy Bridge family (E5-XXXXv2)
                    Not needed at the moment as there is no automatic selection of the queue for the
-                   IVy Bridge nodes. Specify ``-q hopper`` instead.
+                   Ivy Bridge nodes. Specify ``-q hopper`` instead.
 gpu                only use the GPGPU nodes of Leibniz.
                    Not needed at the moment as there is no automatic selection of the queue for the
                    GPGPU nodes at the moment. Specify ``-q gpu`` instead.
