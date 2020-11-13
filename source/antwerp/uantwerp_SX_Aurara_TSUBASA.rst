@@ -53,12 +53,12 @@ with (GPU) accelerators.
   vector engines but offload scalar code to the x86 host.
 - Previous SX-series computers were big endian machines. However,
   for compatibility of data formats with x86, the SX Aurora uses
-  the little endian byte order.
+  the little-endian byte order.
 - Each Vector Host can contain up to 8 Vector Engines. However,
   the memory is not shared between the vector host and the vector
   engines or among the vector engines. Each vector engine also has its
   own process space. Vector Engines can communicate with each other
-  trough MPI. Larger machines can be build by linking multiple
+  through MPI. Larger machines can be built by linking multiple
   vector hosts through InfiniBand.
 
 The software environment consists of the NEC C, C++ and Fortran
@@ -102,13 +102,13 @@ We also developed two modules to ease access to the NEC tools
 and compilers:
 
 - ``veutils`` defines a number of aliases for standard Linux tools
-  (such as ps and top) that also have versions for the vector
+  (such as ``ps`` and ``top``) that also have versions for the vector
   engines
 - ``vesetup`` sets up the software development environment. We do
   support multiple versions of the compilers and libraries on 
-  the system; each version of the vesetup module supports a
+  the system; each version of the ``vesetup`` module supports a
   set of compatible compilers, MPI libraries and NLC library.
   
-Please use the standard LMOD module commands such as ``module spider``
+Please use the standard Lmod module commands such as ``module spider``
 and ``module help`` to obtain more information about these modules.
 

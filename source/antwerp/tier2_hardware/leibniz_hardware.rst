@@ -43,11 +43,12 @@ Hardware details
     - 128 GB RAM (144 nodes) or 256 GB RAM (8 nodes)
     - 120 GB SSD local disk
 
-- 24 "hopper" compute nodes (recovered from the former Hopper cluster) - Expected availability September 2020
+- 24 "hopper" compute nodes (recovered from the former Hopper cluster)
 
     - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 10 cores each
     - 64 GB RAM (144 nodes) or 256 GB RAM (24 nodes)
     - 500 GB local disk
+    - :ref:`Instructions for the hopper compute nodes <UAntwerp hopper nodes>`
 
 - 2 GPGPU nodes
 
@@ -55,7 +56,7 @@ Hardware details
    - 128 GB RAM
    - 2 NVIDIA P100, 16 GB HBM2
    - 120 GB SSD local disk
-   - :ref:`Instructions <GPU computing UAntwerp>`
+   - :ref:`Instructions for the GPGPU nodes <GPU computing UAntwerp>`
    
 - 1 vector computing node (NEC SX-Aurora TSUBASA model A300-2)
 
@@ -64,7 +65,7 @@ Hardware details
    - 2 `NEC SX-Aurora Vector Engines type 10B <https://www.nec.com/en/global/solutions/hpc/sx/vector_engine.html>`_ 
      (per card 8 cores \@1.4 GHz, 48 GB HBM2)
    - 240 GB SSD local disk
-   - :ref:`Instructions <UAntwerp NEC SX Aurora>`
+   - :ref:`Instructions for the NEC SX-Aurora node <UAntwerp NEC SX Aurora>`
 
 - 2 login nodes
 
@@ -78,7 +79,7 @@ Hardware details
     - 256 GB RAM
     - 1 NVIDIA Quadro P5000
     - 120 GB SSD local disk
-    - :ref:`Instructions <remote visualization UAntwerp>`
+    - :ref:`Instructions for the visualization node <remote visualization UAntwerp>`
 
 The nodes are connected using an InfiniBand EDR network except for the "hopper" compute nodes that utilize
 FDR10 InfiniBand. 
@@ -95,36 +96,43 @@ Direct login is possible to both login nodes and to the visualization node.
 - From inside the VSC network (e.g., another VSC cluster): use the internal
   interface names.
 
-===================   =================================  =========================== 
+===================   =================================  ============================
 ..                    External interface                 Internal interface
-===================   =================================  ===========================
+===================   =================================  ============================
 Login generic         login\-leibniz.hpc.uantwerpen.be   ..
 Login\                login1\-leibniz.hpc.uantwerpen.be  ln1.leibniz.antwerpen.vsc
+                                                         login1.leibniz.antwerpen.vsc
 ..                    login2\-leibniz.hpc.uantwerpen.be  ln2.leibniz.antwerpen.vsc
+                                                         login2.leibniz.antwerpen.vsc
 Visualisation node    viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
-===================   =================================  ===========================
+===================   =================================  ============================
 
 
 Characteristics of the compute nodes
 ------------------------------------
 
-Since Leibniz is currently a homogeneous system with respect to CPU type and
-interconnect, it is not needed to specify the corresponding properties (see
-also the page on specifying resources, output files and notifications).
-
-However, to make it possible to write job scripts that can be used on both
-Hopper and Leibniz (or other VSC clusters) and to prepare for future extensions
-of the cluster, the following features are defined:
+To remain compatible with the typical VSC setup, a number of properties 
+can be used in job scripts. However, only one is really useful in the current
+setup of leibniz to select the proper node type, ``mem256``.
 
 ============       ====================================================================================
 property           explanation
 ============       ====================================================================================
-broadwell          only use Intel processors from the Broadwell family (E5-XXXv4) 
-                   (Not needed at the moment as this is the only CPU type)
+broadwell          only use Intel processors from the Broadwell family (E5-XXXXv4) 
+                   (Not needed at the moment as this is CPU type is selected automatically)
+ivybridge          only use Intel processors from the Ivy Bridge family (E5-XXXXv2)
+                   Not needed at the moment as there is no automatic selection of the queue for the
+                   Ivy Bridge nodes. Specify ``-q hopper`` instead.
+gpu                only use the GPGPU nodes of Leibniz.
+                   Not needed at the moment as there is no automatic selection of the queue for the
+                   GPGPU nodes at the moment. Specify ``-q gpu`` instead.
 ib                 use InfiniBand interconnect 
                    (Not needed at the moment as all nodes are connected to the InfiniBand interconnect)
 mem128             use nodes with 128 GB RAM (roughly 112 GB available). 
                    This is the majority of the nodes on Leibniz.
+                   Requesting this as a feature ensures that you get a node with 128 GB of memory and
+                   keep the nodes with more memory available for other users who really need that
+                   feature.
 mem256             use nodes with 256 GB RAM (roughly 240 GB available). 
                    This property is useful if you submit a batch of jobs that require more than 4 GB of 
                    RAM per processor but do not use all cores and you do not want to use a tool to 
@@ -169,7 +177,7 @@ To optimize for Leibniz, compile on one of the Leibniz login
 or compute nodes and combine either the option ``-march=native``
 or ``-march=broadwell`` with either optimization 
 level ``-O2`` or ``-O3``. In most cases, and especially for
-floating point intensive code, ``-O3`` will be the prefered optimization level
+floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
 whereas the Intel compilers already offer vectorization at level ``-O2``.
 
@@ -178,7 +186,7 @@ to generate unoptimized (level ``-O0``) code for a very generic CPU
 (``-march=x86-64``) which doesn't exploit the performance potential of
 the Leibniz CPUs at all. Hence one should always specify an appropriate
 architecture (the ``-march`` flag) and appropriate optimization level
-(the ``-O``flag) as explained in the previous paragraph.
+(the ``-O`` flag) as explained in the previous paragraph.
 
 
 Further documentation:
@@ -197,5 +205,5 @@ independently of the work of Isaac Newton.  But his contributions to science do 
 there. Leibniz also refined the binary number system, the foundation of nearly all modern
 computers. He also designed mechanical calculators on which one could do the four basic
 operations (add, subtract, multiply and divide). In all, Leibniz made contributions to
-phylosophy, mathematics, physics and technology, and several other fields.
+philosophy, mathematics, physics and technology, and several other fields.
 

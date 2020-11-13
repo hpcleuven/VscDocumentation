@@ -8,19 +8,19 @@ The storage is organised according to the :ref:`VSC storage guidelines<data loca
 File systems
 ------------
 
-+-------------------+---------+---------+--------+---------------------+----------------+
-| Variable          | Type    | Access  | Backup | Default quota       | Total capacity |
-+===================+=========+=========+========+=====================+================+
-| $VSC_HOME         | NFS/XFS | VSC     | YES    | 3 GB, 20000 files   | 3.5 TB         |
-+-------------------+---------+---------+--------+---------------------+----------------+
-| $VSC_DATA         | NFS/XFS | VSC     | YES    | 25 GB, 100000 files | 60 TB          |
-+-------------------+---------+---------+--------+---------------------+----------------+
-| $VSC_SCRATCH      | BeeGFS  | Hopper, | NO     | 50 GB               | 0.5 PB         |
-| $VSC_SCRATCH_SITE |         | Leibniz |        |                     |                |
-+-------------------+---------+---------+--------+---------------------+----------------+
-| $VSC_SCRATCH_NODE | ext4    | Node    | NO     |                     | 250 GB Hopper, |
-|                   |         |         |        |                     | 100 GB Leibniz |
-+-------------------+---------+---------+--------+---------------------+----------------+
++-------------------+---------+----------+--------+---------------------+-----------------+
+| Variable          | Type    | Access   | Backup | Default quota       | Total capacity  |
++===================+=========+==========+========+=====================+=================+
+| $VSC_HOME         | NFS/XFS | VSC      | YES    | 3 GB, 20000 files   | 3.5 TB          |
++-------------------+---------+----------+--------+---------------------+-----------------+
+| $VSC_DATA         | NFS/XFS | VSC      | YES    | 25 GB, 100000 files | 60 TB           |
++-------------------+---------+----------+--------+---------------------+-----------------+
+| $VSC_SCRATCH      | BeeGFS  | leibniz, | NO     | 50 GB               | 0.5 PB          |
+| $VSC_SCRATCH_SITE |         | vaughan  |        |                     |                 |
++-------------------+---------+----------+--------+---------------------+-----------------+
+| $VSC_SCRATCH_NODE | ext4    | Node     | NO     |                     | 100 GB lebiniz, |
+|                   |         |          |        |                     | 100 GB vaughan  |
++-------------------+---------+----------+--------+---------------------+-----------------+
 
 * The **home file system** uses two mirrored SSD drives. It should only be used
   for all configuration files that Linux programs use. It should not be used
