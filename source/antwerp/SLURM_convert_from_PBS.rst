@@ -36,7 +36,7 @@ PBS/Torque                           Slurm equivalent
 -o **<file>**                        -o **<file template>**\ , --output=\ **<file template>**
 -e **<file>**                        -e **<file template>**\ , --error=\ **<file template>**\ , default is sending stderr to stdout
 -m abe                               --mail-type=FAIL,BEGIN,END
--M **<mailadress>**                  --mail-user=\ **<mailadress>**
+-M **<mailaddress>**                 --mail-user=\ **<mailaddress>**
 -v **<variable list>**               --export=\ **<variable list>**
 ===================================  =====================
 

@@ -6,8 +6,9 @@
 Vaughan hardware
 ================
 
-**Vaughan is currently being installed. Initial use will be on invitation only 
-until all software is installed and courses for the new job system have been prepared.**
+**Vaughan is currently in pilot use. Initial use is on invitation only 
+until all software is installed and courses for the new job system have been prepared.
+We expect from pilot users that they also go through the documentation on this site.**
 
 Vaughan was installed in the summer of 2020. It is a NEC system consisting of
 104 nodes with two 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ 
@@ -70,13 +71,15 @@ Direct login is possible to both login nodes.
 - From inside the VSC network (e.g., another VSC cluster): use the internal
   interface names.
 
-==============   =================================  =========================== 
+==============   =================================  ============================== 
 ..               External interface                 Internal interface
-==============   =================================  ===========================
+==============   =================================  ==============================
 Login generic    login\-vaughan.hpc.uantwerpen.be    ..
-Login            login1\-vaughan.hpc.uantwerpen.be  ln1.vaughan.antwerpen.vsc
-..               login2\-vaughan.hpc.uantwerpen.be  ln2.vaughan.antwerpen.vsc
-==============   =================================  ===========================
+Login            login1\-vaughan.hpc.uantwerpen.be  | login1.vaughan.antwerpen.vsc
+                                                    | ln1.vaughan.antwerpen.vsc
+..               login2\-vaughan.hpc.uantwerpen.be  | login2.vaughan.antwerpen.vsc
+                                                    | ln2.vaughan.antwerpen.vsc
+==============   =================================  ==============================
 
 
 Characteristics of the compute nodes

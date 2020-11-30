@@ -11,17 +11,18 @@ Since Python support for Python 2 officially terminated on December 31, 2019 (ev
 months later a new bundle, Python 2.7.18, was released containing all patches that were 
 accepted by December 31, 2019), we no longer actively support Python 2 on the UAntwerp clusters.
 The already installed modules on Leibniz remain available on that cluster but will not be ported
-to Vaughan, nor wil new versions be installed.
+to Vaughan, nor will new versions be installed.
 
 Since the 2020a toolchains, we offer two Python distributions:
   * The regular Python module is compiled from sources with the Intel compilers. The modules also
     contain a lot of frequently used packages, including NumPy, SciPy, pandas, matplotlib and many
-    others. These are usually the one of the latest versions at the time of install.
+    others. These are usually one of the latest versions at the time of install, provided they
+    compile without problems with the compilers that we use.
   * The IntelPython3 module is the Intel Python distribution that comes with Intel Parallel Studio XE,
     the Intel product that also contains the compilers, MPI library and several mathematical and other
     libraries on our cluster. The Intel Python distribution already comes with a lot of packages.
     Loading the IntelPython3-Packages module instead will add most packages included in the regular
-    Python modules, though the version numbers may differ. EVerything contained in the ``IntelPython3``
+    Python modules, though the version numbers may differ. Everything contained in the ``IntelPython3``
     modules (but not the ``IntelPython3-Packages`` modules) is covered by our support contract with 
     Intel. This implies that we can submit bug reports, though that requires a small piece of code 
     that demonstrates how the bug can be triggered.
@@ -30,7 +31,7 @@ Note that during the lifetime of a toolchain, we do update Intel Parallel Studio
 to the latest bugfixes. Hence the actual patch level of Python in the Intel Python distribution may also
 vary. 
 
-The following versions fo Python are offered:
+The following versions of Python are offered:
 
 +-----------+----------------+--------------+
 | Toolchain | Regular Python | IntelPython3 |
@@ -52,17 +53,17 @@ Installing additional packages
 There is a :ref:`page on Python package management <Python packages>` in this documentation. There are 
 however a number of remarks specifically for the cluster at the University of Antwerp.
 
-  * Python packages should never be installed on VSC_USER. There is simply not enouogh storage available
+  * Python packages should never be installed on VSC_USER. There is simply not enough storage available
     on that file system. Python packages or distributions should be installed on VSC_DATA or VSC_SCRATCH.
       * **Users with a vsc2xxxx userid**: When working on the UAntwerp clusters, VSC_DATA is a local file
         system for you. We expect that for Python packages (and similarly for R and Perl packages), 
         VSC_DATA will give better performance than VSC_SCRATCH due to the amount of file metadata accesses
         that occur when running Python.
       * **Users with a different home institution**: VSC_DATA for you is a file system at your local
-        institution. Due to the distance between our clusters and your home instition, file access to 
+        institution. Due to the distance between our clusters and your home institution, file access to 
         VSC_DATA will have a high latency. Installing the packages that you need locally on VSC_SCRATCH
         will give much better performance.
-  * The prefered method of installing Python packages on the UAntwerp cluster is using ``pip``, ``easy_install``
+  * The preferred method of installing Python packages on the UAntwerp cluster is using ``pip``, ``easy_install``
     or ``python setup``, depending on what the package supports. This does require that all non-Python and in 
     some cases Python dependencies are already installed. However, it installs a minimal number of additional files
     and makes maximum use of what is already installed on the systems. The apps directory (where all 
