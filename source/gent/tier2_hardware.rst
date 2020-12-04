@@ -17,7 +17,6 @@ Compute clusters
   cluster name    # nodes                    Processor architecture                    Usable memory/node      Local diskspace/node          Interconnect       
  =============== ========== ========================================================= ===================== =========================== ======================= 
   phanpy               16    2 x 12-core Intel E5-2680v3(Haswell-EP @ 2.5 GHz)         480 GiB               3 x 400 GB(SSD, striped)    FDR InfiniBand         
-  golett              200    2 x 12-core Intel E5-2680v3(Haswell-EP @ 2.5 GHz)         53 GiB                500 GB                      FDR-10 InfiniBand      
   swalot              128    2 x 10-core Intel E5-2660v3(Haswell-EP @ 2.6 GHz)         116 GiB               1 TB                        FDR InfiniBand         
   skitty               72    2 x 18-core Intel Xeon Gold 6140(Skylake @ 2.3 GHz)       177 GiB               1 TB                        EDR InfiniBand         
                                                                                                              240 GB SSD                                         
@@ -42,7 +41,6 @@ Filesystem name         Intended usage                                          
 *$VSC_HOME*             Home directory, entry point to the system                                                             51 TB                        3GB *(fixed)*          *(none)*
 *$VSC_DATA*             Long-term storage of large data files                                                                 1.8 PB                        25GB *(fixed)*         250GB
 *$VSC_SCRATCH*          Temporary fast storage of 'live' data for calculations                                                1.9 PB                         25GB *(fixed)*         250GB
-*$VSC_SCRATCH_PHANPY*   Temporary very fast storage of 'live' data for calculations (recommended for very I/O-intensive jobs) 39 TB SSD                    *(none)*               *upon request*
 *$VSC_SCRATCH_ARCANINE* Temporary very fast storage of 'live' data for calculations (recommended for very I/O-intensive jobs) 70 TB NVME                   *(none)*               *upon request*
 ======================= ===================================================================================================== ===========================  ====================== ====================
 
