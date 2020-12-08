@@ -5,6 +5,10 @@ Slurm @ UAntwerp
 
 **This is preliminary documentation for the pilot users. It will be further refined as the pilot progresses.**
 
+This page covers the more basic Slurm use, including starting jobs, basic job management
+and some templates for job scripts for various scenarios. It is the minimum a user should
+master. A second page describes :ref:`more advanced use of Slurm <Antwerp advanced Slurm>`.
+
 What and why?
 -------------
 
