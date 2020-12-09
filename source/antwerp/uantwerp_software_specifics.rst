@@ -10,7 +10,12 @@ Vaughan runs Slurm Workload Manager as the resource manager and scheduler;
 Leibniz will be switched over at a later date. The Slurm documentation is work-in-progress
 as we are still refining the setup.
 
-- Check the :ref:`Slurm Workload Manager @ UAntwerp <Antwerp Slurm>` documentation.
+- An overview of Slurm concepts and commands:
+    - The :ref:`Slurm Workload Manager @ UAntwerp <Antwerp Slurm>` page contains the 
+      minimum that we expect a user to know.
+    - The :ref:`Slurm @ UAntwerp: Advanced use <Antwerp advanced Slurm>` page contains
+      some more advanced commands and additional ways to request resources. Check those
+      if you feel the basic information is not enough.
 - You can also have a look at our 
   :ref:`quick PBS-to-Slurm conversion tables <Antwerp Slurm_convert_from_PBS>` which will
   help you convert your PBS job scripts to Slurm.
