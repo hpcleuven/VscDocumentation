@@ -165,6 +165,16 @@ In total, each of the 16 processes can use 10 GB RAM.
    users are recommended to specify the total amount of RAM requested for the job
    with ``-l mem=<total_memory>``.
 
+.. note::
+
+   On the KU Leuven/UHasselt Tier-2 cluster, setting ``pmem`` to a value
+   higher than the total amount of memory on the node divided by the number of
+   cores on the node, will lead the scheduler to reserve the entire node. This
+   impacts the queueing time and the amount of credits that will be charged.
+   Setting ``pmem`` higher than the amount of memory available per core can
+   also be used as an alternative way to ensure no other jobs can use the
+   nodes allocated to your job.
+
 .. warning::
 
    It is important to realize that
