@@ -7,21 +7,35 @@ The Tier-1 Data Service is currently on the pilot phase, so access to the system
 
 To be able to log on and to use Tier-1 Data platform, you need to have an active vsc-account and an approved Tier-1 Data project. During the pilot phase Tier-1 Data projects are granted by invitation only. 
 
-Users can connect to the iRODS platform using different clients (command line, WebDAV interface or a portal) both from the VSC HPC systems (login and compute nodes) and from external systems (i.e: their laptops).
+Users can connect to the iRODS platform by using different clients (command line, WebDAV interface or a portal) both from the VSC HPC systems (login and compute nodes) and from external systems (i.e: their laptops).
 
-Before you can interact with iRODS, as a VSC user you will need to activate the service by executing the following commands;
+Before you can interact with iRODS, as a VSC user you will need to activate the service executing one of the following commands;
 
-- if you are working on the Tier-1:
+- After you have reached the Tier-1 to work on, you should use:
 
 ::
 
-    $ ssh irods.hpc.kuleuven.be | bash
+    $ irods-setup | bash
 
-- if you are working on the Tier-2:
+or,
+
+::
+
+    $ ssh irods.hpc.kuleuven.be | bash 
+
+- If you are connecting from a Tier-2 login node, you should then execute:
+
+::
+
+    $ irods-setup | bash
+
+or,
 
 ::
 
     $ ssh irods.tier1.leuven.vsc | bash
+
+**Note**: As you have seen, ``irods-setup | bash`` command can work both on Tier-1 and Tier-2 login nodes. Therefore, it is recommended that you can use this command frequently to get an iRODS session.
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 
