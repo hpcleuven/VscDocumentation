@@ -15,6 +15,12 @@ support whenever you encounter trouble doing so.
 Installing your own packages using conda
 ----------------------------------------
 
+.. note::
+
+    Conda packages are incompatible with the software modules.
+    Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
+    and VUB.
+
 The easiest way to install and manage your own R environment is conda.
 
 

@@ -48,6 +48,12 @@ loaded the corresponding module.
 Install your own packages using conda
 -------------------------------------
 
+.. note::
+
+    Conda packages are incompatible with the software modules.
+    Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
+    and VUB.
+
 The easiest way to install and manage your own Python environment is
 conda.
 
