@@ -1,5 +1,5 @@
 .. _www.globus.org: https://www.globus.org
-.. _Globus login page: https://www.globus.org/app/login
+.. _Globus Management Console: https://www.globus.org/app/login
 .. _Globus Connect Server Installation Guide: https://docs.globus.org/globus-connect-server-installation-guide
 .. _docs.globus.org: https://docs.globus.org
 .. _Globus How-To pages: https://docs.globus.org/how-to
