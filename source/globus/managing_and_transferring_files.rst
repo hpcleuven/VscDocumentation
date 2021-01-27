@@ -48,4 +48,11 @@ To transfer data between two collections:
 
 Completed file transfers can be seen in the :bgrnd1:`Activity` tab in the command menu on the left of the page. On the Activity page, click the arrow icon on the right to view details about the transfer. You will also receive an email with the transfer details.
 
+
+Management Console
+~~~~~~~~~~~~~~~~~~
+
+File transfers can also be monitored via the `Globus Management Console`_.
+
+
 .. include:: links.rst
