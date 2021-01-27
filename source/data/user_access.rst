@@ -35,7 +35,7 @@ or,
 
     $ ssh irods.tier1.leuven.vsc | bash
 
-**Note**: As you have seen, ``irods-setup | bash`` command can work both on Tier-1 and Tier-2 login nodes. Therefore, it is recommended that you can use this command frequently to get an iRODS session.
+**Note**: As you have seen, `irods-setup | bash` command can work both in Tier-1 and Tier-2 login nodes. Besides, to avaoid pseudo-terminal warnings it is recommended to use the same command in compute nodes, meaning in batch scripts once required.
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 
