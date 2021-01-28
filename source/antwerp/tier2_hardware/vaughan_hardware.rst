@@ -1,54 +1,54 @@
 .. role:: raw-html(raw)
     :format: html
-    
+
 .. _Vaughan hardware:
 
 Vaughan hardware
 ================
 
-**Vaughan is currently in pilot use. Initial use is on invitation only 
+**Vaughan is currently in pilot use. Initial use is on invitation only
 until all software is installed and courses for the new job system have been prepared.
 We expect from pilot users that they also go through the documentation on this site.**
 
 Vaughan was installed in the summer of 2020. It is a NEC system consisting of
-104 nodes with two 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ 
-Rome generation CPUs connected through a HDR100 InfiniBand network. 
-All nodes have 256 GB RAM. 
-The nodes do not have a sizeable local disk. 
+104 nodes with two 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_
+Rome generation CPUs connected through a HDR100 InfiniBand network.
+All nodes have 256 GB RAM.
+The nodes do not have a sizeable local disk.
 
 Access restrictions
 -------------------
 
 Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
-network and runs to a large extent the standard VSC software setup. 
+network and runs to a large extent the standard VSC software setup.
 With Vaughan we do switch away from the Torque/Moab combo to Slurm Workload
-Manager and we use native Slurm job scripts. Users are required to take the 
+Manager and we use native Slurm job scripts. Users are required to take the
 "transition to Vaughan and Slurm" course when the setup of Vaughan is ready.
 Vaughan is also available to all
 VSC-users, though we appreciate that you contact the UAntwerp support team so
 that we know why you want to use the cluster.
 
-Jobs can have a maximal execution wall time of 3 days (72 hours). 
+Jobs can have a maximal execution wall time of 3 days (72 hours).
 Vaughan should only be used if you have large enough parallel jobs to or can
 otherwise sufficiently fill up all cores of a compute node. Other work should
 be done on Leibniz.
 
 The login nodes are freely available. Access to the job queues and compute
-nodes is currently restricted. 
-Contact UAntwerp user support (hpc@uantwerpen.be) if you are interested in 
+nodes is currently restricted.
+Contact UAntwerp user support (hpc@uantwerpen.be) if you are interested in
 being a test user. One requirement is that you have jobs large enough to fill
-a compute node. 
+a compute node.
 
 Hardware details
 ----------------
 
-- 104 compute nodes
+- 152 compute nodes
 
     - 2 AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ CPUs\@2.35 GHz (Rome), 32 cores each
     - 256 GB RAM
     - 240 GB SSD local disk (for OS, should not be used as main scratch)
-    
+
 - 2 login nodes
 
     - 2 AMD `Epyc 7282 <https://www.amd.com/en/products/cpu/amd-epyc-7282>`_ CPUs\@2.8 GHz (Rome), 16 cores each
@@ -71,7 +71,7 @@ Direct login is possible to both login nodes.
 - From inside the VSC network (e.g., another VSC cluster): use the internal
   interface names.
 
-==============   =================================  ============================== 
+==============   =================================  ==============================
 ..               External interface                 Internal interface
 ==============   =================================  ==============================
 Login generic    login\-vaughan.hpc.uantwerpen.be    ..
@@ -111,8 +111,8 @@ r1, r2, r3         Nodes in the first, second or third island of compute nodes. 
 Compiling for Vaughan
 ---------------------
 
-To compile code for Vaughan, all ``intel``, 
-``foss`` and ``GCC`` modules can be used (the 
+To compile code for Vaughan, all ``intel``,
+``foss`` and ``GCC`` modules can be used (the
 latter equivalent to ``foss`` but without MPI and the math libraries).
 
 
@@ -123,9 +123,9 @@ As the processors in Vaughan are made by AMD, there is no explicit support
 in the Intel compilers. However, by choosing the appropriate compiler
 options, the Intel compilers still produce very good code for Vaughan that
 will often beat code produced by GCC (certainly for Fortran codes as gfortran
-is a rather weak compiler). 
-To optimize specifically for Vaughan, compile on one of the Vaughan login 
-or compute nodes and combine the option ``-march=core-avx2`` with either optimization 
+is a rather weak compiler).
+To optimize specifically for Vaughan, compile on one of the Vaughan login
+or compute nodes and combine the option ``-march=core-avx2`` with either optimization
 level ``-O2`` or ``-O3``. For some codes, the additional optimizations at
 level ``-O3`` actually produce slower code (often the case if the code
 contains many short loops).
@@ -141,7 +141,7 @@ compiling code.
 The ``-x`` and ``-ax``-based options don't function properly on AMD processors.
 These options add CPU detection to the code, and whenever detecting AMD
 processors, binaries refuse to work or switch to code for the ancient
-Pentium 4 architecture. E.g., ``-xCORE-AVX2`` is known to produce 
+Pentium 4 architecture. E.g., ``-xCORE-AVX2`` is known to produce
 non-working code.
 
 
@@ -153,9 +153,9 @@ We suggest to use the newest GNU compilers available on the Vaughan
 has improved a lot recently. Never use the default GNU compilers installed
 on the system, but always load one of the ``foss`` or ``GCC`` modules.
 
-To optimize for Vaughan, compile on one of the Vaughan login 
+To optimize for Vaughan, compile on one of the Vaughan login
 or compute nodes and combine either the option ``-march=native``
-or ``-march=znver2`` with either optimization 
+or ``-march=znver2`` with either optimization
 level ``-O2`` or ``-O3``. In most cases, and especially for
 floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
@@ -166,7 +166,7 @@ is not yet available. On GCC 6 or 7, ``-march=znver1`` is probably the best
 choice. However, avoid using GCC versions that are even older.
 
 Note that if you forget these options, the default for the GNU compilers is
-to generate unoptimized (level ``-O0``) code for a very generic CPU 
+to generate unoptimized (level ``-O0``) code for a very generic CPU
 (``-march=x86-64``) which doesn't exploit the performance potential of
 the Vaughan CPUs at all. Hence one should always specify an appropriate
 architecture (the ``-march`` flag) and appropriate optimization level
@@ -184,10 +184,10 @@ Origin of the name
 ------------------
 
 Vaughan is named after `Dorothy Vaughan <https://en.wikipedia.org/wiki/Dorothy_Vaughan>`_,
-an Afro-American mathematician who worked for NACA and NASA. 
-During her 28-year career, Vaughan prepared for the introduction of machine computers in 
-the early 1960s by teaching herself and her staff the programming language of Fortran. 
-She later headed the programming section of the Analysis and Computation Division (ACD) 
+an Afro-American mathematician who worked for NACA and NASA.
+During her 28-year career, Vaughan prepared for the introduction of machine computers in
+the early 1960s by teaching herself and her staff the programming language of Fortran.
+She later headed the programming section of the Analysis and Computation Division (ACD)
 at Langley.
 
 
