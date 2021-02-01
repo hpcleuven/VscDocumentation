@@ -10,10 +10,10 @@ to their most recent versions.
 Searching for installed software
 --------------------------------
 
-At UAntwerp, Lmod is the environment module system to manage the software available to 
+At UAntwerp, Lmod is the environment module system to manage the software available to
 the users since 2017.
 
-One advantage of Lmod over the software we used before, is much more powerful search for 
+One advantage of Lmod over the software we used before, is much more powerful search for
 installed software. Search is also case-insensitive, so you do not need to know if capitals
 are used in the module name or not to find the correct name and version of a module.
 
@@ -25,30 +25,30 @@ There are three commands to search for a module:
        $ module av Python
 
    will search for an activated module whose name or version string contains ``Python``.
-   
-#. Search in the list of all available modules, including those that require loading other 
+
+#. Search in the list of all available modules, including those that require loading other
    modules first::
-   
+
       $ module spider Python
-      
+
    If you need more information about the module, including which modules you might need to load,
    you can use::
-   
+
       $ module spider Python/3.8.3-intel-2020a
-   
-   The explanation in the output about the module(s) that need to be loaded to actually use 
+
+   The explanation in the output about the module(s) that need to be loaded to actually use
    that Python module, can be a bit confusing. You have to take one line from the output and load
    all modules on that line (and in most cases one module will be sufficient).
-   
+
 #. Each module also contains a limited amount of additional information that can be shown with
    the ``module whatis`` command, e.g.::
-   
+
       $ module whatis Python/3.8.3-intel-2020a
-      
+
    It is possible to search through all the 'whatis'-information of installed modules using ``module keyword``::
-   
+
       $ module keyword CMake
-      
+
    This is a pretty powerful way to search for installed software. Whenever we put several related
    software packages together in a single module, we try to make sure that that software can be found
    through ``module keyword``. Unfortunately, though the software that we use to install packages and to
@@ -56,7 +56,7 @@ There are three commands to search for a module:
    included in modules such as ``Python``, ``Perl`` or ``R``. The output of ``module spider`` for s specific
    version number will usually show the included packages (with very few exceptions where we needed to use
    special tricks to install the packages).
-    
+
 
 
 Overview of modules
@@ -151,7 +151,7 @@ in the 2020a toolchains or refers to an alternative.
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | CellRanger               | 2.2.0-intel-2018b                            | Move to system toolchain, need update from the user   |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
-| CellRanger-DNA           | 1.1.0                                        | SYSTEM toolchain TODO?                                |
+| CellRanger-DNA           | 1.1.0                                        | SYSTEM toolchain, files and license needed            |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `CGAL`_                  | 4.10.2-intel-2019b-forOpenFOAM6              | 4.10.2-intel-2020a-forOpenFOAM6                       |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -159,7 +159,7 @@ in the 2020a toolchains or refers to an alternative.
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | CMake                    | 3.9.1                                        | Moved to buildtools/2020a                             |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
-| COMSOL                   | 5.3                                          | Toolchain-independent                                 |
+| COMSOL                   | 5.3                                          | 5.5.0.359                                             |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | core-counter             | 1.1                                          | 1.1.1 (SYSTEM toolchain)                              |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -171,7 +171,7 @@ in the 2020a toolchains or refers to an alternative.
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `Cube`_                  | 4.3.5-intel-2018a                            | TODO - Awaiting Qt5 which does not compile            |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
-| `CUDA`_                  | 10.2.89                                      | Toolchain-independent                                 |
+| `CUDA`_                  | 10.2.89                                      | 11.1.0                                                |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `cuDNN`_                 | 7.6.5.32-CUDA-10.1.243                       | Toolchain-independent                                 |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -290,7 +290,8 @@ in the 2020a toolchains or refers to an alternative.
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `GPAW`_                  | 19.8.1 (multiple configurations)             | 20.1.0 (multiple configurations)                      |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
-| `GROMACS`_               | 2019.4-intel-2019b                           | 2020.2-intel-2020a and 2019.4 with PLUMED             |
+| `GROMACS`_               | 2019.4-intel-2019b                           | * 2019.4 with PLUMED                                  |
+|                          |                                              | * 2020.2-intel-2020a with and without CUDA            |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | GSL                      | 2.5-intel-2018b                              | Moved to baselibs/2020a-GCCcore-9.3.0                 |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -329,6 +330,8 @@ in the 2020a toolchains or refers to an alternative.
 | `intltool`_              | 0.51.0-intel-2018b-Perl-5.26.1               | 0.51.0-GCCcore-9.3.0-Perl-5.30.2                      |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `IOzone`_                | 3.489                                        | System maintenance only                               |
++--------------------------+----------------------------------------------+-------------------------------------------------------+
+| i-PI                     | /                                            | 2.3.0-intel-2020a-Python-3.8.3                        |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `ITensor`_               | 2.1.1-intel-2018b                            | On demand, not meant for a central install            |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -500,7 +503,8 @@ in the 2020a toolchains or refers to an alternative.
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `parallel`_              | 20180422                                     | 20200422                                              |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
-| `ParaView`_              | 5.4.1-intel-2018a-viz-Python-3.6.4           | Updated on demand                                     |
+| `ParaView`_              | - 5.4.1-intel-2018a-viz-Python-3.6.4         | Updated on demand, fails to compile so far            |
+|                          | - 5.8.1-intel-2018a-viz-Python-3.6.4         |                                                       |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `ParMETIS`_              | 4.0.3-intel-2019b-i32-fp64                   | 4.0.3-intel-2020a-i32-fp64                            |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -583,6 +587,8 @@ in the 2020a toolchains or refers to an alternative.
 | `SPAdes`_                | 3.14.0-intel-2019b-Python-3.7.4              | 3.14.1-intel-2020a-Python-3.8.2                       |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | `SQLite`_                | 3.29.0-intel-2019b                           | 3.31.1-intel-2020a                                    |
++--------------------------+----------------------------------------------+-------------------------------------------------------+
+| STAR                     | /                                            | 2.7.6a-intel-2020a                                    |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
 | STAR-CCM+                | 2019.3.1                                     | Toolchain-independent                                 |
 +--------------------------+----------------------------------------------+-------------------------------------------------------+
@@ -673,23 +679,23 @@ For the modules in alphabetical order:
 Python
 ~~~~~~
 
-We refer to the page :ref:`Python on the UAntwerp clusters <Antwerp Python>` for information 
+We refer to the page :ref:`Python on the UAntwerp clusters <Antwerp Python>` for information
 on the differences between various Python modules on our system and on installing additional packages.
 
 
 R module
 ~~~~~~~~
 
-The R module in the 2020a toolchain contains roughly 600 R packages from the `CRAN <https://cran.r-project.org/>`_ 
+The R module in the 2020a toolchain contains roughly 600 R packages from the `CRAN <https://cran.r-project.org/>`_
 and `BioConductor <https://www.bioconductor.org/>`_ repositories. The list is based on packages requested by our own
 users and by users at some institutions that we collaborate with.
 
-It is possible to install additional packages in your own directory using ``install.packages``. 
+It is possible to install additional packages in your own directory using ``install.packages``.
 As for Python, we prefer that Conda is only used as the method-of-last-resort for the same reasons as
 given on :ref:`the page "Python on the UAntwerp clusters <Antwerp Python>`.
 
 If you install additional packages yourself and let us know, we will try to add them to the next release of
-our R module. 
+our R module.
 
 .. include:: ../software/links.rst
 .. include:: UAntwerp_links.rst
