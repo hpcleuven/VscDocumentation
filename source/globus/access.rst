@@ -7,7 +7,7 @@ Access
 
 Log in with your institution:
 
-Visit `www.globus.org`_ and click :bgrnd1:`Login` at the top of the page. On the Globus login page, choose an organization you are already registered with, such as your school or your employer. Alternatively, one could directly navigate to the `Globus login page`_.
+Visit `www.globus.org`_ and click :bgrnd1:`Login` at the top of the page. On the Globus login page, choose an organization you are already registered with, such as your school or your employer.
 
 
 .. image:: access/access-login-screen.png

@@ -8,6 +8,7 @@ Converting PBS/Torque options to Slurm
 
 **This is preliminary documentation for the pilot users. It will be further refined as the pilot progresses.**
 
+See also the `Slurm Rosetta Stone of Workload Managers (PDF document) <https://slurm.schedmd.com/rosetta.pdf>`_.
 
 Common tasks in Torque/Moab and Slurm
 -------------------------------------
