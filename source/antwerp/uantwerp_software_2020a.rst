@@ -698,5 +698,5 @@ If you install additional packages yourself and let us know, we will try to add 
 our R module.
 
 .. include:: ../software/links.rst
-.. include:: UAntwerp_links.rst
+.. include:: uantwerp_links.rst
 
