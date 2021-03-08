@@ -11,31 +11,17 @@ Users can connect to the iRODS platform by using different clients (command line
 
 Before you can interact with iRODS, as a VSC user you will need to activate the service executing one of the following commands;
 
-- After you have reached the Tier-1 to work on, you should use:
+- If you are logged in to the login nodes of Tier-1 or Tier-2 clusters of KU Leuven , you should use:
 
 ::
 
     $ irods-setup | bash
 
-or,
+- If you want to connect from any login nodes of other universities' HPC cluster, you should then execute:
 
 ::
 
-    $ ssh irods.hpc.kuleuven.be | bash 
-
-- If you are connecting from a Tier-2 login node, you should then execute:
-
-::
-
-    $ irods-setup | bash
-
-or,
-
-::
-
-    $ ssh irods.tier1.leuven.vsc | bash
-
-**Note**: As you have seen, `irods-setup | bash` command can work both in Tier-1 and Tier-2 login nodes. Besides, to avaoid pseudo-terminal warnings it is recommended to use the same command in compute nodes, meaning in batch scripts once required.
+    $ ssh login.hpc.kuleuven.be irods-setup | bash
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 
