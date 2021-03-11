@@ -13,14 +13,7 @@ All users having an active VSC account can connect to the login node(s).You can 
 
    $ ssh vscXXXXX@login-thinking.hpc.kuleuven.be
 
-ThinKing has 4 dedicated login nodes. You can directly login to these nodes with the same credentials, by using their host name
-
-Normal login nodes:
-
-- ``login5-tier2.hpc.kuleuven.be``
-- ``login6-tier2.hpc.kuleuven.be``
-
-With a visualization capabilities (2 NVIDIA Quadro K5200 GPUs):
+ThinKing has 2 dedicated login nodes with visualization capabilities (2 NVIDIA Quadro K5200 GPUs). You can directly login to these nodes with the same credentials, by using their host name:
 
 - ``login7-tier2.hpc.kuleuven.be``
 - ``login8-tier2.hpc.kuleuven.be``
