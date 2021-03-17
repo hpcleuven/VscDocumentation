@@ -6,7 +6,7 @@ User support
 | Ghent University: `hpc@ugent.be <\%22mailto:hpc@ugent.be\%22>`__
 | Antwerp University:
   `hpc@uantwerpen.be <\%22mailto:hpc@uantwerpen.be\%22>`__
-| VUB: `hpc@vub.ac.be <\%22mailto:hpc@vub.ac.be\%22>`__
+| VUB: `hpc@vub.be <\%22mailto:hpc@vub.be\%22>`__
 
 `Please take a look at the information that you should provide with your
 support question. <\%22/support/contact-support\%22>`__.

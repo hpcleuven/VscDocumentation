@@ -37,7 +37,7 @@ Login infrastructure
 
 Users with a VSC account (VSC-ID) can connect to Hydra via the following hostname:
 
-* <VSC-ID>@login.hpc.vub.ac.be
+* <VSC-ID>@login.hpc.vub.be
 
 Hardware specs: 
 
@@ -56,4 +56,4 @@ For documentation on Hydra usage, consult the documentation website:
 
 https://hpc.vub.be/documentation
 
-For question or problems, contact the VUB HPC team: hpc@vub.ac.be
+For question or problems, contact the VUB HPC team: hpc@vub.be
