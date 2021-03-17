@@ -28,7 +28,7 @@ First, start an interactive job on the cluster, e.g.,
 
 ::
 
-   $ qsub  -I  -l nodes=1,ppn=20
+   $ qsub  -I  -l nodes=1:ppn=20
 
 Given that remote visualization makes sense most for large data sets, 64
 GB of RAM is probably the minimum you will need. To use a node with more
