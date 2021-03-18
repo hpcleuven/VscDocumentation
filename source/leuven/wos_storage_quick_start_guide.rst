@@ -108,7 +108,7 @@ You could run the command:
 This command will not perform the copy yet but it will give an overview
 of all data changed since last copy from archive. Therefore not all data
 needs to be copied back. If you agree with this overview you can run
-this command without the --dry-run’ option. If you are synching a large
+this command without the ``--dry-run`` option. If you are synching a large
 amount files, please contact HPC support for follow-up.
 
 Use case : How to get local data on archive?
