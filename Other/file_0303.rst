@@ -8,9 +8,9 @@ cluster also contains a number of nodes with NVIDIA GPUs.
 Login nodes:
 ~~~~~~~~~~~~
 
--  ``login.hpc.vub.ac.be`` or ``hydra.vub.ac.be``
--  use one of those hostnames if you read vsc.login.node in the
-   documentation and want to connect to this login node
+-  ``login.hpc.vub.be``
+-  use the above hostname if you read ``vsc.login.node`` in the
+   documentation and want to connect to one of the login nodes
 
 Compute nodes:
 ~~~~~~~~~~~~~~

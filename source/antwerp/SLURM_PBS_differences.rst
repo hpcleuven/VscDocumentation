@@ -19,5 +19,5 @@ Important differences between Slurm and Torque
    - In Torque, stdout and stderr go to different files by default. Both streams can be merged 
      in a single file as in Slurm by specifying ``-j oe`` in the job script or at the qsub command line.
    - In Slurm, stdout and stderr are merged into a single file by default. You can change the behaviour 
-     by specifying a filename for stderr using ``--output-err`.
+     by specifying a filename for stderr using ``--output-err``.
 
