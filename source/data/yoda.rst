@@ -6,7 +6,7 @@ Yoda Portal Client for VSC Users
 `Yoda <https://yoda.uu.nl/yoda-uu-nl/what-is-yoda/index.html>`__ is a research data management solution on top of iRODS developed by Utrecht University. Yoda portal is a web application for performing data management activities, such as managing access to your data and changing metadata. It allows users to deploy and manage their research data.
 
 You can reach the Yoda portal by clicking `yoda portal <https://icts-p-hpc-yoda-portal.cloud.icts.kuleuven.be/user/login>`__.
-You will need to authenticate with your institutional account and then the password request will be done automatically.
+You will need to authenticate with your institutional account and then you will be automatically login with your VSC-account.
 
 In VSC-Yoda portal, there are two main workspaces, “research” and “vault”.
 
