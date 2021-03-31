@@ -18,7 +18,7 @@ Installing and First Time Configuration of WinSCp
 
 - After you complete your installation, run the program.
 
-- Choose the required options and fill the blank fields with the corresponding information as you see on the screen below. Write the password that you will get at https://vsc-passwd.icts.kuleuven.be .
+- Choose the required options and fill the blank fields with the corresponding information as you see on the screen below. Write the password that you will get at https://irods.hpc.kuleuven.be/ .
 
 .. image:: winscp/winscp2.png
 

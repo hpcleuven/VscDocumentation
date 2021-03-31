@@ -82,5 +82,3 @@ Some form of computation or action performed on Data Objects.
 **Zone**
 
 An iRODS deployment is called as Zone.
-
-
