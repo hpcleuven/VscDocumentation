@@ -46,9 +46,8 @@ Starting jobs
 
 The GPU compute nodes are managed through a separate queue, so you will need
 to explicitly specify it when submitting your job. We also configured the GPU
-nodes as shared resources, meaning that different users can simultaneously
-use a portion of the same node. However, every user will have exclusive
-access to the number of GPUs requested.
+nodes as shared resources, so that two users could each get exclusive 
+access to a single, dedicated GPU at the same time.
 
 To submit a job on a GPU compute node and get a single GPU, use the qsub command
 
