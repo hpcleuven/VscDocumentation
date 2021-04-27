@@ -302,6 +302,6 @@ consult the respective documentation sources:
 - KU Leuven/UHasselt Genius: :ref:`Submit to a GPU node <submit to genius GPU node>`
 - KU Leuven/UHasselt Thinking7a: :ref:`Thinking7 quick start guide`
 - UAntwerp Leibniz: :ref:`GPU computing @ UAntwerp <GPU computing UAntwerp>`
-- VUB Hydra: https://hpc.vub.be/documentation/faq.html#how-can-i-use-the-gpus-to-run-my-jobs
+- VUB Hydra: `How to use GPUs in Hydra <https://hpc.vub.be/docs/faq/basic/#how-can-i-use-gpus-in-my-jobs>`_
 
 
