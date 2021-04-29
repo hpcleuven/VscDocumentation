@@ -9,8 +9,7 @@ automatically).
 
 Although this is very convenient and easy to use, for more computationally
 intensive work you may want to run the notebook server on a compute node
-of a VSC cluster (we'll assume you using thinking here, but the approach
-works for all our clusters).
+of a VSC cluster.
 
 
 Prerequisites
