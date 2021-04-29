@@ -157,12 +157,12 @@ Users of Brussels University Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 All information about the access policy is available on the `VUB
-HPC documentation website <https://hpc.vub.be/documentation>`_.
+HPC documentation website <https://hpc.vub.be/docs/access/>`_.
 
 -  Researchers can use the :ref:`generic procedure <generic access procedure>`.
 -  Master students can also use the infrastructure for their master
    thesis work. The promotor of the thesis should first send a
-   motivation to hpc@vub.ac.be and then the :ref:`generic
+   motivation to hpc@vub.be and then the :ref:`generic
    procedure <generic access procedure>` should be followed to request the account.
 
 Everyone else
