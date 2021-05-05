@@ -88,7 +88,7 @@ reconnection from a different device (e.g. mobile device) it is highly
 recommended to change the resolution.
 
 For more detailed information about the configuration process please
-refer to the `short video <https://hervsc.live.statik.be/assets/1187>`_ (ThinKing
+refer to the `short video <https://hervsc.live.statik.be/assets/1187>`_ (Genius
 configuration) showing the installation and configuration procedure
 step-by-step or to the :download:`document containing graphical
 instructions <nx_start_guide/nx_config_guide.pdf>`.

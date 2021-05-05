@@ -67,7 +67,7 @@ connection settings. To do this, follow these steps:
 #. In the 'Host or IP' field, type in <vsc-loginnode>. In the 'Login
    name' field, type in your <vsc-account>.
    In the screenshot below we have filled in the fields for a connection
-   to ThinKing cluster at KU Leuven as user vsc98765.
+   to the Genius cluster at KU Leuven as user vsc98765.
 
    |JellyfiSSH|
 

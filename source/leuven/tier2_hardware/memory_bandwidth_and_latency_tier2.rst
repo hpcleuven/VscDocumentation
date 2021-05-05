@@ -24,21 +24,3 @@ skylake nodes Tier-2
 
 .. include:: skylake_mlc.txt
    :literal:
-
-
-.. _memory bandwidth and latency haswell tier2:
-
-haswell nodes Tier-2
---------------------
-
-.. include:: haswell_mlc.txt 
-   :literal:
-
-
-.. _memory bandwidth and latency ivybridge tier2:
-
-ivybridge nodes Tier-2
-----------------------
-
-.. include:: ivybridge_mlc.txt
-   :literal:

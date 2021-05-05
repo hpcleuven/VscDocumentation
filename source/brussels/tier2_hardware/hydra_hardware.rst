@@ -54,6 +54,6 @@ User documentation
 
 For documentation on Hydra usage, consult the documentation website:
 
-https://hpc.vub.be/documentation
+https://hpc.vub.be/docs/
 
 For question or problems, contact the VUB HPC team: hpc@vub.be

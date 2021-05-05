@@ -157,7 +157,7 @@ Users of Brussels University Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 All information about the access policy is available on the `VUB
-HPC documentation website <https://hpc.vub.be/documentation>`_.
+HPC documentation website <https://hpc.vub.be/docs/access/>`_.
 
 -  Researchers can use the :ref:`generic procedure <generic access procedure>`.
 -  Master students can also use the infrastructure for their master
