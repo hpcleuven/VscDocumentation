@@ -124,7 +124,7 @@ use the following two options:
    run on the same nodes if not all cores are used.
 ``-l naccesspolicy=singlejob``
    This will make sure that no other job can use the nodes allocated
-   to your job. When requesting half a node or less on Genius and ThinKing,
+   to your job. When requesting half a node or less on Genius,
    you will also need to add ``-l qos=shared`` to enforce this policy.
   
 .. warning::
@@ -300,7 +300,6 @@ VSC clusters that provide them. For cluster-specific usage instructions, please
 consult the respective documentation sources:
 
 - KU Leuven/UHasselt Genius: :ref:`Submit to a GPU node <submit to genius GPU node>`
-- KU Leuven/UHasselt Thinking7a: :ref:`Thinking7 quick start guide`
 - UAntwerp Leibniz: :ref:`GPU computing @ UAntwerp <GPU computing UAntwerp>`
 - VUB Hydra: `How to use GPUs in Hydra <https://hpc.vub.be/docs/faq/basic/#how-can-i-use-gpus-in-my-jobs>`_
 

@@ -9,8 +9,7 @@ automatically).
 
 Although this is very convenient and easy to use, for more computationally
 intensive work you may want to run the notebook server on a compute node
-of a VSC cluster (we'll assume you using thinking here, but the approach
-works for all our clusters).
+of a VSC cluster.
 
 
 Prerequisites
@@ -44,7 +43,7 @@ The first step is to run a Jupyter notebook server, since this has to be done on
 
 The ``-I`` flag specifies this is an interactive job, and we request 4 hours walltime.  Note that you would probably have to add the `-A` option with the project to debit for credits.
 
-Once your job starts, you'll see the name of the node the job is running on in the shell prompt.  In this tutorial, we will assume it is ``r5i1n7``.
+Once your job starts, you'll see the name of the node the job is running on in the shell prompt.  In this tutorial, we will assume it is ``r23g36``.
 
 Navigate to the relevant directory where your notebook is stored, or where you intend to create a new one.
 
@@ -68,7 +67,7 @@ When Jupyter has started, the first URL below the line reading
 ``Jupyter Notebook X.Y.Z is running at:`` should look similar to this:
 ::
 
-   http://r5i1n7:30140/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
+   http://r23g36:30140/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
 
 You can right-click this link and open the URL in a browser on the NX login node.
 
