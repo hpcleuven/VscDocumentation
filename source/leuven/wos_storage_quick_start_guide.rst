@@ -134,30 +134,36 @@ command:
 
    du --apparent-size folder-name
 
-How to stage in or stage out using torque?
-------------------------------------------
 
-Torque gives also the possibility to specify data staging as a job
-requirement. This way Torque will copy your data to scratch while your
-job is in the queue and will not start the job before all data is
-copied. The same mechanism is possible for stageout requirements. In the
-example below Torque will copy back your data from scratch when your job
-is finished to the archive storage tier:
+.. On our clusters, Torque is currently no longer configured with support
+.. for data staging. If this gets (re-)enabled in the future, the paragraph
+.. below can be included again.
+.. comments:
 
-::
+    How to stage in or stage out using torque?
+    ------------------------------------------
 
-   qsub -W stagein=/scratch/leuven/3XX/vsc3XXXX@login1:/archive/leuven/arc_000XX/foldertostagein 
-   -W stageout=/scratch/leuven/3XX/vsc3XXXX/foldertostageout@login1:/archive/leuven/arc_000XX/
+    Torque gives also the possibility to specify data staging as a job
+    requirement. This way Torque will copy your data to scratch while your
+    job is in the queue and will not start the job before all data is
+    copied. The same mechanism is possible for stageout requirements. In the
+    example below Torque will copy back your data from scratch when your job
+    is finished to the archive storage tier:
 
-Hostname is always one of the login nodes, because these are the only
-nodes where ‘archive’ is available on the cluster.
+    ::
 
-For stagein the copy goes from ``/archive/leuven/arc_000XX/foldertostagein``
-to ``/scratch/leuven/3XX/vsc3XXXX``
+       qsub -W stagein=/scratch/leuven/3XX/vsc3XXXX@login1:/archive/leuven/arc_000XX/foldertostagein
+       -W stageout=/scratch/leuven/3XX/vsc3XXXX/foldertostageout@login1:/archive/leuven/arc_000XX/
 
-For stageout the copy goes from
-``/scratch/leuven/3XX/vsc3XXXX/foldertostageout`` to
-``/archive/leuven/arc_000XX/``
+    Hostname is always one of the login nodes, because these are the only
+    nodes where ‘archive’ is available on the cluster.
+
+    For stagein the copy goes from ``/archive/leuven/arc_000XX/foldertostagein``
+    to ``/scratch/leuven/3XX/vsc3XXXX``
+
+    For stageout the copy goes from
+    ``/scratch/leuven/3XX/vsc3XXXX/foldertostageout`` to
+    ``/archive/leuven/arc_000XX/``
 
 Attached documents
 ------------------
