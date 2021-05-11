@@ -6,7 +6,7 @@ GPU computing @ UAntwerp
 Leibniz has two compute nodes each equipped with two NVIDIA Tesla P100
 GPU compute cards, the most powerful cards available at the time of
 installation of the system. We run the regular NVIDIA software stack on
-those systems
+those systems.
 
 The main goal of the system is to assess the performance of GPUs for
 applications used by our researchers. We want to learn for which
@@ -30,7 +30,7 @@ Getting access
 --------------
 
 Contact :ref:`the UAntwerp support team <user support VSC>`
-to get access to the GPU node.
+to get access to the GPU compute nodes.
 
 Users of the GPU compute nodes are expected to report back on their
 experiences. We are most interested in users who can also compare with
@@ -44,27 +44,33 @@ a single GPU in a node what is restricting them to use both.
 Starting jobs
 -------------
 
-The GPU nodes are managed through a separate queue in the queueing system
-that cannot be accessed through the automatic queue dispatch mechanism in 
-Torque and hence cannot be accessed by specifying features in your node
-request. Instead, specify that the job should be submitted to the queue
-``gpu`` either by adding ``-q gpu`` to the qsub command, e.g.,
+The GPU compute nodes are managed through a separate queue, so you will need
+to explicitly specify it when submitting your job. We also configured the GPU
+nodes as shared resources, so that two users could each get exclusive 
+access to a single, dedicated GPU at the same time.
+
+To submit a job on a GPU compute node and get a single GPU, use the qsub command
 
 .. code:: bash
    
-    qsub -q gpu <jobscript>
+    qsub -q gpu -l gpus=1 <jobscript>
 
-or by adding the line
+or add the lines
 
 .. code:: bash
    
     #PBS -q gpu
+    #PBS -l gpus=1
 
 to your job script.
 
-As we have only two GPU nodes and to make sure they can be quickly enough
-available again for management work that cannot be done on the login nodes,
-the maximum wall time is limited to 24 hours with no exceptions made.
+Using ``gpus=2`` would give you access to both GPU cards on a GPU compute node.
+
+The defaults are set to ``nodes=1:ppn=14:gpus=1`` and ``walltime=1:00:00``, so
+that with using only ``-q gpu`` you would get a single GPU for 1 hour and all
+cores belonging to the CPU that is closest to that GPU.
+
+Note that the maximum wall time is limited to 24 hours, with no exceptions made.
 
 Monitoring GPU nodes
 --------------------
@@ -109,6 +115,7 @@ GPUs.
 |               | - CUDA/10.0.130                                              |                                                              |
 |               | - CUDA/10.2.89                                               |                                                              |
 |               | - CUDA/11.1.0                                                |                                                              |
+|               | - CUDA/11.2.1                                                |                                                              |
 +---------------+--------------------------------------------------------------+--------------------------------------------------------------+
 | `cuDNN`_      | - cuDNN/6.0-CUDA-8.0.61                                      | The CUDA Deep Neural                                         |
 |               | - cuDNN/7.0.5-CUDA-8.0.61                                    | Network library,                                             |
