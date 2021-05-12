@@ -25,13 +25,7 @@ Change the Protocol to **SSH**.
 Choose the hostname:
 
 -  for Genius (Tier-2): **nx.hpc.kuleuven.be** and port **22**.
--  for BrENIAC (Tier-1): **nx-tier1.hpc.kuleuven.be** and port **22**.
-
-.. note::
-
-   If you experience problems with connection please switch to Protocol
-   NX and port 4000.
-
+-  for BrENIAC (Tier-1): **nx-tier1.hpc.kuleuven.be** and port **22**.  
 -  These login nodes cannot be used to access the cluster from the terminal.   
 
 Choose the authentication **Use the system login.**
