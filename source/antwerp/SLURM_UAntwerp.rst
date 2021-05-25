@@ -3,7 +3,8 @@
 Slurm @ UAntwerp
 ================
 
-**This is preliminary documentation for the pilot users. It will be further refined as the pilot progresses.**
+**This is preliminary documentation for the pilot users. It will be further refined
+as the pilot progresses.**
 
 This page covers the more basic Slurm use, including starting jobs, basic job management
 and some templates for job scripts for various scenarios. It is the minimum a user should
@@ -32,10 +33,10 @@ successor of the BrENIAC Tier-1 system.
 
 Historically, Slurm was an acronym of **S**\imple **L**\inux **U**\tility for
 **R**\esource **M**\anagement. The development started around 2002 at Lawrence Livermore
-National Lab as a resource manager for Linux cluster. Slurm has always had a very modular
+National Lab as a resource manager for Linux clusters. Slurm has always had a very modular
 architecture. From 2008 on increasingly sophisticated scheduling plugins were added
 to Slurm. Nowadays it is used on some of the largest systems in the world. Slurm is
-completely Open Source though commercial support can be obtained from SchedMD, a
+completely open source though commercial support can be obtained from SchedMD, a
 spin-off company of the Slurm development.
 
 
@@ -43,7 +44,7 @@ Slurm concepts
 --------------
 
 * **Nodes**: The actual compute resources in Slurm.
-* **Partition**: A job queue with limits and access controls, basically the equivalent
+* **Partition**: Groups of nodes with limits and access controls, basically the equivalent
   of a queue in Torque.
 * **Job**: A resource allocation request.
 * **Job step**: A set of (possibly parallel) tasks within a job. A job can consist of
@@ -76,8 +77,8 @@ Submitting a job script: sbatch
 The ``sbatch`` is the command in Slurm to submit a job script.
 A job script first contains a list of resources and other instructions to
 Slurm, and this is followed by a set of commands that will be executed on the
-first node of the job. At successful completion, ``sbatch`` will print a message
-containing the unique jobid for the job.
+first node of the job. When the submission succeeds, ``sbatch`` will print a
+message containing the unique jobid for the job.
 
 Resource specifications and other instructions can be specified in three
 different ways: command line options, environment variables, and ``#SBATCH``
@@ -85,7 +86,7 @@ lines in the job script.
 
 * Slurm ``sbatch`` has a lot of command line options. We will only list the
   most important command line options below. Command line options of Slurm
-  take precedence over environment variables of ``#SBATCH`` lines in the
+  take precedence over environment variables and ``#SBATCH`` lines in the
   job script.
 * Some command line options can also be passed to ``sbatch`` through environment
   variables instead. A list of those can be found in the
@@ -114,30 +115,44 @@ to start OpenMP, MPI and hybrid MPI/OpenMP programs in the right configuration.
 
 * The number of tasks is specified by ``--ntasks=<number of tasks>`` or
   ``-n <number of tasks>``. The ``=``-sign in the long option format can
-  be omitted, and the space between the flag and the value in the short form
-  (``-n``) can also be omitted.
-* The number of CPUs (hardware threads) per task is then specified by
-  ``--cpus-per-task=<value>`` or ``-c <value>``. The default size of a task
-  is one node which if often not what is desired, so this flag is almost always
-  needed.
+  be replaced by a space, and in the short form (``-n``) the space between
+  the flag and the value form can also be omitted (in effect, this holds
+  for all options).
+* The number of CPUs (hardware threads) per task is specified by
+  ``--cpus-per-task=<value>`` or ``-c <value>``.  On the UAntwerp clusters,
+  CPUs are physical cores (since hyperthreading is disabled). For each task,
+  all of the CPUs for that task are allocated on a single node. When using
+  multiple nodes, the allocated CPUs for all tasks are distributed equally
+  over all the nodes (except possibly for the last node).
+
+If not set, the default values of 1 task and 1 CPU are used.
 
 Requesting memory
 """""""""""""""""
 
-Slurm jobs can also request an amount of RAM space (resident memory). Swap space
-cannot be requested; the system uses a default which is function of the
-requested RAM space. In case of the UAntwerp clusters, swapping for jobs is
+Slurm jobs can also request an amount of RAM space (resident memory). 
+In case of the UAntwerp clusters, swapping for jobs is
 disabled since the nodes don't have drives suitable for the load caused by
 swapping and since swapping is extremely detrimental to the performance of
-the cluster.
+the cluster; therefore, swap space cannot be requested.
 
 Slurm has various ways to request memory. Unfortunately, there is currently no
 way to request memory per task. The preferred method for requesting memory in
-Slurm on the UAntwerp clusters is to specify the amount of memory per CPU (per
-hardware thread, which in the case of the UAntwerp clusters is per core):
+Slurm on the UAntwerp clusters is to specify the amount of memory per CPU (
+per core on the UAntwerp clusters):
 ``--mem-per-cpu=<amount><unit>`` (e.g., ``--mem-per-cpu=1g``). The amount is an
 integer, ``<unit>`` can be either ``k`` for kilobytes, ``m`` for megabyte or
 ``g`` for gigabyte.
+
+The job will be rejected if the final amount of memory requested cannot be satisfied.
+This could happen if ``--mem-per-cpu`` times the number of CPUs on a node is greater
+than the memory on that node that is available for job allocations. Note that on the
+UAntwerp clusters, the memory available for job allocations is somewhat less than the
+total memory installed on a node (to keep asome some amount of memory for the OS). 
+
+
+If not set, a default value will be used, equal to the total memory available for job
+allocations of that node divided by the number of CPUs. 
 
 Requesting wall time
 """"""""""""""""""""
@@ -146,6 +161,8 @@ The requested compute time is specified using ``--time=<time>`` or ``-t <time>``
 ``<time>`` is specified in mm (minutes), mm\:ss (minutes and seconds), hh\:mm\:ss
 (hours, minutes and seconds), d-hh (days and hours), d-h\:mm (days, hours and minutes)
 or d-h\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a typo!
+
+If not set, a default wall time of 1 hour will be assigned.
 
 Specifying a job name
 """""""""""""""""""""
@@ -188,12 +205,14 @@ Sending mail at specific events
 Slurm can send mail when a job starts, fails or ends normally, and on a number of other occasions.
 Two flags influence this behaviour:
 
-* ``--mailtype=<type>`` specifies when mail should be sent. ``<type>`` is a comma-separated list
-  of type values. Type values include START, END and FAIL to denote respectively the start of a
+* ``--mail-type=<type>`` specifies when mail should be sent. ``<type>`` is a comma-separated list
+  of type values. Type values include BEGIN, END and FAIL to denote respectively the start of a
   job, end of a job and failure of a job, but there are many other options that can be found in
   `the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
 * ``--mail-user=<mail address>`` specifies to which mail address the mails should be sent. The
   default value is the mail address associated with the VSC-account of the submitting user.
+
+If not set, no mail will be sent.
 
 Specifying dependencies
 """""""""""""""""""""""
@@ -210,14 +229,13 @@ to specify multiple types of dependencies.
 ============================  =====================
 Dependency type               What it does
 ============================  =====================
-**after**:jobid[:jobid]       Job can begin after all specified jobs have started
+**after**:jobid[:jobid]       Job can begin after all specified jobs have started (or are cancelled)
 **afterany**:jobid[:jobid]    Job can begin after all specified jobs have terminated
 **afterok**:jobid[:jobid]     Job can begin after the specified jobs has successfully completed
 **afternotok**:jobid[:jobid]  Job can begin after the specified jobs have failed
 **singleton**                 Job can start after all previously launched jobs with the same name and same user have ended.
                               This can be useful to collate results after running a batch of related jobs.
 ============================  =====================
-
 
 The job environment
 """""""""""""""""""
@@ -249,7 +267,7 @@ Therefore, to avoid accidental mistakes, we advise you to apply one of the follo
   loading the appropriate calcua module (``module load calcua/supported`` will do for most users)
   and then loading the appropriate application modules.
 * Use the option ``--export=NONE`` (either with the ``sbatch`` command or as a ``#SBATCH`` line
-  in the job script. This automatically implies the option ``--get-user-env``, and the effect of
+  in the job script). This automatically implies the option ``--get-user-env``, and the effect of
   the combination of both options is that the environment in which ``sbatch`` executes is not
   propagated (the ``--export=NONE``) and an environment that resembles the environment that you
   get when you would log on to the cluster is constructed (the ``--get-user-env`` which is
@@ -286,11 +304,11 @@ behaviour as it ensures the processes started with Slurm run in the right enviro
 created by the job script.
 
 
-Managing jobs
-~~~~~~~~~~~~~
+Commands for managing jobs
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Checking the queue
-""""""""""""""""""
+Checking the queue: squeue
+""""""""""""""""""""""""""
 
 `Slurm squeue manual page on the web <https://slurm.schedmd.com/squeue.html>`_
 
@@ -299,23 +317,26 @@ The Slurm command to list jobs in the queue is ``squeue``.
 The basic command without options will show basic information about all your jobs in the queue.
 There are a number of useful command line options though:
 
-* The ``--log`` or ``-l`` flag adds some additional information.
-* ``-o <output format>`` or ``--format=<output format>`` allows you to specify
+* The ``--long`` or ``-l`` flag adds some additional information.
+* ``--format=<output format>`` or ``-o <output format>`` allows you to specify
   your custom output format that can show a lot more information. Likewise,
-  ``-O <output format>`` or ``--Format=<output format>`` can show even more
+  ``--Format=<output format>`` or ``-O <output format>`` (with a capital first letter)
+  can show even more
   information but with a longer syntax for the output format. See the
   `squeue manual page <https://slurm.schedmd.com/squeue.html>`_ for information
   on all format options.
 * It is possible to show that information for only one or a selection of your
-  jobs by using ``-j <job_id_list>``or ``--jobs=<job_id_list>``.
+  jobs by using ``--jobs=<job_id_list>`` or ``-j <job_id_list>``, where ``<job_id_list>``
+  is a comma-separated list of jobids.
 
 The column "REASON" lists why a job is waiting for execution. It distinguishes between
 30+ different reasons, way to much to discuss here, but some of the codes speak for
-themselves.
+themselves. The full list of reason codes can be found in the
+`squeue manual page <https://slurm.schedmd.com/squeue.html>`_.
 
 
-Kill/delete a job
-"""""""""""""""""
+Kill/delete a job: scancel
+""""""""""""""""""""""""""
 
 `Slurm scancel manual page on the web <https://slurm.schedmd.com/scancel.html>`_
 
@@ -333,32 +354,35 @@ the array by specifying the array elements as follows:
 The first command would kill jobs 1, 2 and 3 in the job array with jobid 20,
 the second command would kill jobs 4 and 6 of that job array.
 
+As shown in the example above, a space separated list of multiple jobids can also
+be specified, as well as a selection based on multiple filters, e.g. in which partition
+the job is running. Consult the `scancel manual page <https://slurm.schedmd.com/scancel.html>`_
+for more information.
 
-Getting more information on a running job
-"""""""""""""""""""""""""""""""""""""""""
+Getting more information on a running job: sttat
+""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Slurm sstat manual page on the web <https://slurm.schedmd.com/sstat.html>`_
 
-The ``sstat`` command displays information on running jobs. By default, without
-any arguments, ``sstat`` will show you information on pertaining to CPU, Task,
-Node, Resident Set Size (RSS) and Virtual Memory (VM)
-for all your running jobs. However, it is possible to specify a particular job
-you want information about by specifying ``-j <jobid>`` or ``--jobs=<jobid>``.
-It is possible to specify multiple jobs as a comma-separated list of jobids.
+The ``sstat`` command displays information on running jobs pertaining to CPU, Task,
+Node, Resident Set Size (RSS) and Virtual Memory (VM) for all your running jobs.
+The jobs need to be explicitly mentioned using ``--jobs=<job_id_list>`` or
+``-j <job_id_list>`` (where ``<job_id_list>`` is a comma-separated list of jobids). 
+
 By default, it will only show information about the lowest job step running in
 a particular job unless ``--allsteps`` or ``-a`` is also specified.
 It is also possible to request information on a specific job step of a job
-by using ``<jobID.JobStep>``, i.e., add the number of the job step to the
+by using ``<jobid.jobstep>``, i.e., add the number of the job step to the
 jobid, separated by a dot.
 
 To show additional information not shown by the default format, one can
-specify a specific format using the ``-o``,  ``--format`` and ``--fields``
-flags. We refer to the `manual page <https://slurm.schedmd.com/sstat.html>`_
+specify a specific format using the ``--format`` or identical ``--fields``
+and ``-o`` flags.  Check the `sstat manual page <https://slurm.schedmd.com/sstat.html>`_
 for further information.
 
 
-Getting information about a job after it finishes
-"""""""""""""""""""""""""""""""""""""""""""""""""
+Getting information about a job after it finishes: sacct
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Slurm sacct manual page on the web <https://slurm.schedmd.com/sacct.html>`_
 
@@ -370,32 +394,33 @@ memory, etc. were used by the application.
 
 By default, ``sacct`` shows the jobid, job name, partition name, account name,
 number of CPUs allocated to the job, the state of the job and the exit code
-of completed jobs. For now there is no reason to be concerned about the
-account name as we do not use accounting to control the amount of compute time
-a user can use. Several options modify the format:
+of completed jobs. Several options can be used to modify the format:
 
 * ``--brief`` or ``-b`` shows only the jobid, state and exit ode.
 * ``--long`` or ``-l`` shows an overwhelming amount of information, probably more than you
   want to know as a regular user.
 * ``--format`` or ``-o`` can be used to specify your own output format. We refer
-  the the `manual page <https://slurm.schedmd.com/sacct.html>`_ for an overview of
+  to the `sacct manual page <https://slurm.schedmd.com/sacct.html>`_ for an overview of
   possible fields and how to construct the format string.
 
 By default, ``sacct`` will show information about jobs that have been running
 since midnight. There are however a number of options to specify for which jobs
 you want to see information:
 
-* ``--jobs=<jobIDs>`` or ``-j <jobIDs>`` with a comma-separated list of jobIDs (in
-  the same format as for ``sstat``) will only show information on those jobs
+* ``--jobs=<job_id_list>`` or ``-j <job_id_list>`` with a comma-separated list of jobids
+  (in the same format as for ``sstat``) will only show information on those jobs
   (or job steps).
-* ``--startime=<time>`` or ``-S <time>``: Show information about all jobs that
+* ``--startime=<time>`` or ``-S <time>`` will show information about all jobs that
   have been running since the indicated start time. There are four possible
   formats for ``<time>``: HH:MM[:SS] [AM|PM], MMDD[YY] or MM/DD[/YY] or MM.DD[.YY],
   MM/DD[/YY]-HH:MM[:SS] and YYYY-MM-DD[THH:MM[:SS]] (where [] denotes an optional
   part).
-* ``--endtime=<time>`` or ``-E <time>``: Show information about all jobs that
+* ``--endtime=<time>`` or ``-E <time>`` will show information about all jobs that
   have been running before the indicated end time. By combining a start time and
   end time it is possible to specify a window for the jobs.
+
+For now, there is no reason to be concerned about the account name as we do not use
+accounting to control the amount of compute time a user can use.
 
 
 Job types: Examples
