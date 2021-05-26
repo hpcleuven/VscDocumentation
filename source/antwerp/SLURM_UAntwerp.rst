@@ -134,7 +134,7 @@ Slurm jobs can also request an amount of RAM space (resident memory).
 In case of the UAntwerp clusters, swapping for jobs is
 disabled since the nodes don't have drives suitable for the load caused by
 swapping and since swapping is extremely detrimental to the performance of
-the cluster; therefore, swap space cannot be requested.
+the cluster. Therefore, swap space cannot be requested.
 
 Slurm has various ways to request memory. Unfortunately, there is currently no
 way to request memory per task. The preferred method for requesting memory in
@@ -195,7 +195,7 @@ Hence:
 
 The file name can (and usually will) be a template. It can contain replacement symbols preceded
 by a % that allow to use the jobid etc. in the name of the file to ensure unique file names.
-The most useful of such symbols is ``%j`` which will be replaced by the unque jobid.
+The most useful of such symbols is ``%j`` which will be replaced by the unique jobid.
 A full list of replacement symbols can be found in
 `the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
 
@@ -410,7 +410,7 @@ you want to see information:
 * ``--jobs=<job_id_list>`` or ``-j <job_id_list>`` with a comma-separated list of jobids
   (in the same format as for ``sstat``) will only show information on those jobs
   (or job steps).
-* ``--startime=<time>`` or ``-S <time>`` will show information about all jobs that
+* ``--starttime=<time>`` or ``-S <time>`` will show information about all jobs that
   have been running since the indicated start time. There are four possible
   formats for ``<time>``: HH:MM[:SS] [AM|PM], MMDD[YY] or MM/DD[/YY] or MM.DD[.YY],
   MM/DD[/YY]-HH:MM[:SS] and YYYY-MM-DD[THH:MM[:SS]] (where [] denotes an optional

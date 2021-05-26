@@ -12,9 +12,9 @@ Important differences between Slurm and Torque
      This can have unexpected results, e.g., if you resubmit the job from a different 
      environment or if some things are in different directories on the login and cluster 
      nodes which does sometimes happen when we do a silent upgrade of the cluster.
-       - ``--export=NONE`` will start the job with a very empty environment*
+       - ``--export=NONE`` will start the job with a very empty environment
        - ``--export=NONE --get-user-env`` will give an environment pretty equivalent
-         to what you would get on Torque.*
+         to what you would get on Torque.
 - **Redirection of stdout and stderr:**
    - In Torque, stdout and stderr go to different files by default. Both streams can be merged 
      in a single file as in Slurm by specifying ``-j oe`` in the job script or at the qsub command line.
