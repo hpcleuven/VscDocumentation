@@ -437,9 +437,11 @@ and some interpreters (e.g., Matlab) require it to be set in the code being inte
 OpenMP is a popular technology for creating shared memory programs. Some OpenMP programs
 will read the number of threads from the input file and then set it using OpenMP library functions.
 But most OpenMP programs simply use the environment variable ``OMP_NUM_THREADS`` to
-determine the number of threads that should be used. The following job script is an
+determine the number of threads that should be used. 
+
+The following job script is an
 example of this. It assumes there is a program ``omp`` in the current directory
-compiled with the intel/2019b toolchain. It will be run on 10 cores.
+compiled with the intel/2020a toolchain. It will be run on 10 cores.
 
 .. code:: bash
 
@@ -475,6 +477,7 @@ recognize Slurm (sometimes with the help of some environment variables)
 and work with Slurm to start the MPI processes on the correct cores
 and under the control of the resource manager (so that they are cleaned
 up properly if things go wrong).
+
 However, with several implementations, it is also possible to use the
 Slurm ``srun`` command to start the MPI processes. This is the case
 for programs compiled with Intel MPI as the example below shows. The
@@ -491,8 +494,8 @@ directory compiled with Intel MPI.
 
    # Build the environment
    module purge
-   ml calcua/2020a
-   ml intel/2020a
+   module load calcua/2020a
+   module load intel/2020a
 
    # Run the MPI program
    srun ./mpi_hello
@@ -509,11 +512,14 @@ memory technology. The idea is that shared memory doesn't scale beyond a single
 node (and often not even to the level of a single node), while distributed
 memory programs that spawn a process per core may also suffer from too much memory
 and communication overhead. Combining both can sometimes give better performance
-for a given number of cores. Especially the combination of MPI and OpenMP is
+for a given number of cores. 
+
+Especially the combination of MPI and OpenMP is
 popular. Such programs require a program starter and need the number of threads
-to be set in one way or another. With many MPI implementations (and the ones
+to be set in one way or another. With many MPI implementations (including the ones
 we use at the VSC), ``srun`` is an ideal program starter and will start the
 hybrid MPI/OpenMP processes on the right sets of cores.
+
 The example below assumes ``mpi_omp_hello`` is a program compiled with
 the Intel toolchain that uses both MPI and OpenMP. It starts 8 processes
 with 7 threads each, so it would occupy two nodes on a cluster with 28 cores
@@ -582,7 +588,7 @@ and to start programs using parameter values stored in a CSV file that can be ge
 easily using a spreadsheet program. On the UAntwerp clusters, the most recent version of
 the package is available as the module ``atools/slurm``.
 For information on how to use atools, we refer to the
-`atools documentation on ReadTheDocs <https://atools.readthedocs.io/en/latest/>`_.
+`atools documentation <https://atools.readthedocs.io/en/latest/>`_.
 
 Workflow through job dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -615,25 +621,21 @@ Two elements can be combined to do this in a handier way, submitting all jobs si
 * Dependency specifications can then be used to ensure that the jobs that run from a perturbed
   state do not start before the first simulation has successfully completed.
 
-Assume that we have two job scripts:
+For example, assume that we have two job scripts:
 
 * ``job_first.slurm`` is a job script that computes the first solution.
-* ``job_Depend.slurm`` is a job script to compute a solution from a perturbed initial state.
+* ``job_depend.slurm`` is a job script to compute a solution from a perturbed initial state.
   It uses the environment variable ``perturbation_size`` to determine the perturbation to
   apply.
 
-A little annoyance of the ``sbatch`` command is that it does not simply print the
-jobid, but prints some text that contains the jobid. However, even that can
-be circumvented to automate the launch of the three jobs:
+To make ``sbatch`` print simply the jobid after submitting, use the ``--parsable`` option.
+The following lines automate the launch of the three jobs:
 
 .. code:: bash
 
-    first=$(sbatch --job-name job_leader job_first.slurm | awk '{print $(NF)}')
+    first=$(sbatch --parsable --job-name job_leader job_first.slurm)
     perturbation_size='0.05' sbatch --job-name job_pert_0_05 --dependency=afterok:$first job_depend.slurm
     perturbation_size='0.1'  sbatch --job-name job_pert_0_1  --dependency=afterok:$first job_depend.slurm
-
-In the first command, we send the output of ``sbatch`` to awk, and this ``awk`` command will
-print the last word of the text which happens to be the jobid.
 
 Interactive job
 ~~~~~~~~~~~~~~~
@@ -693,13 +695,4 @@ as you would do in a batch script using ``srun``. E.g.,
    srun -l hostname
 
 will execute the ``hostname`` command on both nodes of the allocation.
-
-
-
-
-
-
-
-
-
 
