@@ -641,17 +641,13 @@ The following lines automate the launch of the three jobs:
 Interactive job
 ~~~~~~~~~~~~~~~
 
-Starting an interactive job in Slurm is a bit more cumbersome then it was with
-Torque. We do need to distinguish between two scenarios:
+Simple interactive jobs
+"""""""""""""""""""""""
 
-1. A request for a number of cores on a single node
-2. Requests that involve multiple nodes, e.g., to test an MPI program.
+Starting an interactive job in Slurm  can be done easily by using ``srun`` 
+on the command line of one of the login nodes.
 
-Simple request, cores on a single node
-""""""""""""""""""""""""""""""""""""""
-
-This kind of requests can be done easily by using ``srun`` on the command line of
-one of the login nodes. E.g.,
+For a single node job,
 
 .. code:: bash
 
@@ -666,8 +662,33 @@ or briefly
 will start a bash shell on a compute node and allocate 10 cores and 4 GB of memory
 to that session. The maximum wall time of the job is set to 10 minutes.
 
-Requesting cores on multiple nodes
-""""""""""""""""""""""""""""""""""
+Specifying the ``--pty`` option redirects the standard and error outputs of the
+first (and, in this case, only) task to the attached terminal. This effectively results
+in an interactive bash session on the requested compute node.
+
+Running an executable using multiple nodes can be done by e.g.
+
+.. code:: bash
+
+   srun --nodes=2 --cpus-per-task=20 --time=10:00 --mem=4G hostname
+
+or briefly
+
+.. code:: bash
+
+   srun -N2 -c20 -t10 --mem=4G hostname
+
+In this example, the ``hostname`` command is executed on both allocated nodes,
+each using 20 cores to do so.
+
+When executing a shared memory, MPI or hybrid program this way, ``srun`` will distribute the job
+according to the specified options.
+
+Allocating and using resources on multiple nodes
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+**The following method is potentially dangerous. Care must be taken since the commands
+below permit side effects in the bash environment.**
 
 Using multiple nodes in an interactive job is a two-step process.
 First a Slurm *job* is created using ``salloc``. This command takes most of the
