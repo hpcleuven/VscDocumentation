@@ -21,6 +21,7 @@ resources. It is clear that both have to work together very closely. Torque and 
 developed and supported by Adaptive Computing. This company was acquired by ALA Services
 Technology Companies. Since then the software isn't well supported anymore, resulting in
 problems to keep it running on our systems.
+
 Therefore, the decision was taken to transfer to a different resource manager and scheduler
 software. Slurm Workload Manager was chosen due to its wide use in academic supercomputer
 centres. We've been preparing for this switch for over two years now by stressing in the
