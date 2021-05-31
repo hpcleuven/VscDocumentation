@@ -274,18 +274,27 @@ be loaded in your job environment. This poses a number of risks:
 
 Therefore, to avoid accidental mistakes, we advise you to apply one of the following solutions:
 
-* Clear your module environment using ``module purge`` and reconstruct your environment by first
-  loading the appropriate calcua module (``module load calcua/supported`` will do for most users)
+* Before calling sbatch, clear out any environment variables that you do not want to see 
+  propagated in the runtime job environment. This includes clearing your module environment
+  using ``module purge`` and reconstructing it by first loading the appropriate calcua module
+  (``module load calcua/supported`` will do for most users)
   and then loading the appropriate application modules.
-* Use the option ``--export=NONE`` (either with the ``sbatch`` command or as a ``#SBATCH`` line
-  in the job script). This automatically implies the option ``--get-user-env``, and the effect of
-  the combination of both options is that the environment in which ``sbatch`` executes is not
-  propagated (the ``--export=NONE``) and an environment that resembles the environment that you
-  get when you would log on to the cluster is constructed (the ``--get-user-env`` which is
-  implied). There is a difference though with what you get when executing your
+  In fact, this should be common practice in all your job scripts.
+* Use one of the options ``-get-user-env`` or ``--export=NONE`` (either with the ``sbatch``
+  command or, preferably, as a ``#SBATCH`` line in the job script).
+
+  The option ``--get-user-env`` will tell ``sbatch`` not to propagate the environment in which
+  it executes, but to reconstruct the environment that you would get when you log on to the
+  cluster. Though be aware that any environment variables already set in the environment will
+  still take precedence over any environment variables in the user's login environment.
+  And there is also a difference with what you get when executing your
   ``.bash_profile`` script: The environment only contains exported variables and functions and
   no aliases or variables or functions that are not exported by ``.bash_profile``.
 
+  The option ``--export=NONE`` will only define SLURM_* variables from the user environment.
+  When using this option, one must use an absolute path to the binary to be executed (which
+  could then be used to further define the environment). When using this option, it is not
+  possible to pass environment variables to the job script.
 
 Starting multiple copies of a process in a job script: srun
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
