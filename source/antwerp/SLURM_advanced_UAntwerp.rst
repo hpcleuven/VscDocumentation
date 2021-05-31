@@ -29,7 +29,7 @@ if you would run your job on clusters (or partitions) that allow multiple users 
 or even multiple jobs of a single user per node. Parallel jobs that get spread out over
 more nodes than really needed may show decreased performance due to more communication
 over the cluster interconnect (rather than through shared memory within the node) or 
-interference with other jobs on the node (that, e.g., might cause cache trashing if they
+interference with other jobs on the node (that, e.g., might cause cache thrashing if they
 have a bad memory access pattern).
 
 Specifying the number of nodes that will be used can be done with either

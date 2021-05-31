@@ -165,6 +165,16 @@ or d-h\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a typ
 
 If not set, a default wall time of 1 hour will be assigned.
 
+Specifying a partition
+""""""""""""""""""""""
+
+Slurm jobs can be submitted to a certain partition of compute nodes. Indicating
+the kind of job in this manner imposes some additional restrictions on resources
+and time, but may let the job start sooner. The partition can be specified
+using ``--partition=<partition>`` or ``-p <partition>``.
+
+If not set, the default partition will be used.
+
 Specifying a job name
 """""""""""""""""""""
 

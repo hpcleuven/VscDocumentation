@@ -82,11 +82,11 @@ Login            login1\-vaughan.hpc.uantwerpen.be  | login1.vaughan.antwerpen.v
 ==============   =================================  ==============================
 
 
-Characteristics of the compute nodes
-------------------------------------
+Available resources
+-------------------
 
-Node resources
-""""""""""""""
+Characteristics of the compute nodes
+""""""""""""""""""""""""""""""""""""
 
 Since Vaughan is currently a homogeneous system with respect to CPU type, memory and
 interconnect, it is not needed to specify any properties.
@@ -104,16 +104,15 @@ and how to convert your Torque scripts:
 * :ref:`Converting PBS/Torque options to Slurm <Antwerp Slurm_convert_from_PBS>`
 
 
-Partitions
-""""""""""
+Available partitions
+""""""""""""""""""""
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
-a node partition using the quality of service option
-(``--qos=<partition>`` or more briefly ``-q <partition>``). This helps to indicate
-the nature of your job and imposes some restrictions, but may let your job start faster.
+the partition your job is submitted to. This indicates the type of your job and
+imposes some restrictions, but may let your job start sooner.
 When the option is omitted, your job is submitted to the default partition (*vaughan*).
 
-Possible values for ``partition`` are as follows:
+The following partitions are available:
 
 
 =========       ================================================================
