@@ -74,6 +74,35 @@ In this case also one should be very careful when specifying the parameters:
     Slurm.
 
 
+Specifying node network location
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The nodes in a cluster are connected with each other through a number of switches that
+form a hierarchical network tree (also called a topology).
+Nodes are split up in groups, where each group of nodes are connected to an edge switch,
+and these switches are themselves also connected to a number of top level switches
+so that all nodes can communicate with each other.
+
+This means that traffic between two nodes either passes through just a single switch
+(if the nodes are connected to the same edge switch) or through a series of three switches
+(edge - top - edge). Obviously, traffic that passes through multiple switches will incurr
+a higher latency. Slurm tries to minimize network contention by identifying the lowest
+level switch in the hierarchy that can satisfy a job's request and then allocates the
+requested resources, based on a best-fit algorithm and the currently available resources.
+This may result in an allocation with more than the optimum number of switches.
+
+A user can request a maximum number of switches for a job using the ``--switches=<count>``
+option. Usually, one would specify ``--switches=1`` here to make sure the job runs on
+nodes which are all connected to the same edge switch.
+Note that this may increase the wait time of the job (because the scheduler has
+less nodes to choose from).
+ 
+Optionally, a maximum time delay can be specified as well using
+``--switches=<count>@<max-time>`` to tell the scheduler that it can delay the job until
+it either finds an allocation with the desired switch count, or to ignore the switches
+request when the time limit expires.  
+
+
 Advanced Slurm commands
 -----------------------
 
