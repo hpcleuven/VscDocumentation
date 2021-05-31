@@ -641,23 +641,21 @@ The following lines automate the launch of the three jobs:
 Interactive job
 ~~~~~~~~~~~~~~~
 
-Simple interactive jobs
-"""""""""""""""""""""""
+Simple interactive jobs on a single node
+""""""""""""""""""""""""""""""""""""""""
 
-Starting an interactive job in Slurm  can be done easily by using ``srun`` 
-on the command line of one of the login nodes.
-
-For a single node job,
+Starting an interactive job in Slurm can be done easily by using ``srun --pty bash`` 
+on the command line of one of the login nodes. For example:
 
 .. code:: bash
 
-   srun --nodes=1 --cpus-per-task=10 --time=10:00 --mem=4G --pty bash
+   srun --tasks=1 --cpus-per-task=10 --time=10:00 --mem=4G --pty bash
 
 or briefly
 
 .. code:: bash
 
-   srun -N1 -c10 -t10 --mem=4G --pty bash
+   srun -n1 -c10 -t10 --mem=4G --pty bash
 
 will start a bash shell on a compute node and allocate 10 cores and 4 GB of memory
 to that session. The maximum wall time of the job is set to 10 minutes.
