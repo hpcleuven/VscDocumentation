@@ -43,7 +43,7 @@ below.  Information on :ref:`obtaining credits <KU Leuven credits>` and
 | GPU            | 5.00 per GPU |
 +----------------+--------------+
 
-The maximum wall time for any job on Genius is 7 days (168 hours). Job requests
+The maximum walltime for any job on Genius is 7 days (168 hours). Job requests
 with walltimes between 3 and 7 days are furthermore only allowed to request up
 to 10 compute nodes per job. No such limitation is imposed on jobs with
 walltimes of 3 days or less.
