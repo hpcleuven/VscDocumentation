@@ -666,24 +666,6 @@ Specifying the ``--pty`` option redirects the standard and error outputs of the
 first (and, in this case, only) task to the attached terminal. This effectively results
 in an interactive bash session on the requested compute node.
 
-Running an executable using multiple nodes can be done by e.g.
-
-.. code:: bash
-
-   srun --nodes=2 --cpus-per-task=20 --time=10:00 --mem=4G hostname
-
-or briefly
-
-.. code:: bash
-
-   srun -N2 -c20 -t10 --mem=4G hostname
-
-In this example, the ``hostname`` command is executed on both allocated nodes,
-each using 20 cores to do so.
-
-When executing a shared memory, MPI or hybrid program this way, ``srun`` will distribute the job
-according to the specified options.
-
 Allocating and using resources on multiple nodes
 """"""""""""""""""""""""""""""""""""""""""""""""
 
@@ -718,3 +700,5 @@ as you would do in a batch script using ``srun``. E.g.,
 
 will execute the ``hostname`` command on both nodes of the allocation.
 
+When executing a shared memory, MPI or hybrid program this way, ``srun`` will
+take care of properly distributing the job according to the specified options.
