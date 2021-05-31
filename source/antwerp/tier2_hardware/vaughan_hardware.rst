@@ -89,25 +89,19 @@ Node resources
 """"""""""""""
 
 Since Vaughan is currently a homogeneous system with respect to CPU type, memory and
-interconnect, it is not needed to specify the corresponding properties (see
-also :ref:`the page on specifying resources, output files and notifications<Antwerp Slurm>`).
+interconnect, it is not needed to specify any properties.
 
 **Vaughan is running Slurm Workload Manager as the resource manager and scheduler.**
 We do not support the PBS compatibility layer but encourage users to develop
 proper Slurm job scripts as one can then fully exploit the Slurm features and
 enjoy the power of the ``srun`` command when starting processes.
 
+Make sure to read the following pages which give a lot of information on Slurm
+and how to convert your Torque scripts:
+
 * :ref:`Local Slurm documentation <Antwerp Slurm>`
 * :ref:`Important differences between Slurm and Torque<Antwerp Slurm_PBS_differences>`
 * :ref:`Converting PBS/Torque options to Slurm <Antwerp Slurm_convert_from_PBS>`
-
-
-============       ====================================================================================
-property           explanation
-============       ====================================================================================
-r1, r2, r3         Nodes in the first, second or third island of compute nodes. :raw-html:`<br />`
-                   Use ``--constraint=[r1|r2|r3]`` to make sure that all nodes are allocated in a single island.
-============       ====================================================================================
 
 
 Partitions
