@@ -85,6 +85,9 @@ Login            login1\-vaughan.hpc.uantwerpen.be  | login1.vaughan.antwerpen.v
 Characteristics of the compute nodes
 ------------------------------------
 
+Node resources
+""""""""""""""
+
 Since Vaughan is currently a homogeneous system with respect to CPU type, memory and
 interconnect, it is not needed to specify the corresponding properties (see
 also :ref:`the page on specifying resources, output files and notifications<Antwerp Slurm>`).
@@ -105,6 +108,27 @@ property           explanation
 r1, r2, r3         Nodes in the first, second or third island of compute nodes. :raw-html:`<br />`
                    Use ``--constraint=[r1|r2|r3]`` to make sure that all nodes are allocated in a single island.
 ============       ====================================================================================
+
+
+Partitions
+""""""""""
+
+When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
+a node partition using the quality of service option
+(``--qos=<partition>`` or more briefly ``-q <partition>``). This helps to indicate
+the nature of your job and imposes some restrictions, but may let your job start faster.
+When the option is omitted, your job is submitted to the default partition (*vaughan*).
+
+Possible values for ``partition`` are as follows:
+
+
+=========       ================================================================
+partition       limits
+=========       ================================================================
+*vaughan*       Default. Maximum wall time of 3 days.
+debug           Maximum 1 node with a maximum wall time of 2 hours.
+short           Maximum wall time of 6 hours.
+=========       ================================================================
 
 
 
