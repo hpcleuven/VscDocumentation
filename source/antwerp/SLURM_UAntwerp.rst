@@ -641,10 +641,10 @@ The following lines automate the launch of the three jobs:
 Interactive job
 ~~~~~~~~~~~~~~~
 
-Simple interactive jobs on a single node
-""""""""""""""""""""""""""""""""""""""""
+Single task interactive job
+"""""""""""""""""""""""""""
 
-Starting an interactive job in Slurm can be done easily by using ``srun --pty bash`` 
+Starting a single task interactive job can be done easily by using ``srun --pty bash``
 on the command line of one of the login nodes. For example:
 
 .. code:: bash
@@ -664,30 +664,33 @@ Specifying the ``--pty`` option redirects the standard and error outputs of the
 first (and, in this case, only) task to the attached terminal. This effectively results
 in an interactive bash session on the requested compute node.
 
-Allocating and using resources on multiple nodes
-""""""""""""""""""""""""""""""""""""""""""""""""
+Allocating and using resources for interactive use with multiple tasks
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 **The following method is potentially dangerous. Care must be taken since the commands
 below permit side effects in the bash environment.**
 
-Using multiple nodes in an interactive job is a two-step process.
-First a Slurm *job* is created using ``salloc``. This command takes most of the
-same parameters as ``sbatch``.
+Using multiple tasks, possibly spread over over multiple nodes, in an interactive job
+is a two-step process.
+First a Slurm *job* is created using ``salloc`` which takes most of the
+same parameters as ``sbatch``. For example:
 
 .. code:: bash
 
-   salloc --nodes=2 --cpus-per-task=20 --time=10:00 --mem=4G bash
+   salloc --tasks=2 --cpus-per-task=20 --time=10:00 --mem=4G bash
 
 or briefly
 
 .. code:: bash
 
-   salloc -N2 -c20 -t10 --mem=4G bash
+   salloc -n2 -c20 -t10 --mem=4G bash
 
-will make an allocation for 2 nodes with 20 cores each. It will then start
+will make an allocation for 2 tasks with 20 cores each, running on two nodes
+on a cluster with 20 cores per node.
+It will then start
 ``bash``. However, ``bash`` will not run on one of the nodes allocated to the
 job, but on the node where you executed the ``salloc`` command (which would
-typically be a login node).
+typically be a login node)!
 
 In that shell you can then create *job steps* using ``srun`` in the same way
 as you would do in a batch script using ``srun``. E.g.,
