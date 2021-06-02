@@ -280,7 +280,7 @@ Therefore, to avoid accidental mistakes, we advise you to apply one of the follo
   (``module load calcua/supported`` will do for most users)
   and then loading the appropriate application modules.
   In fact, this should be common practice in all your job scripts.
-* Use one of the options ``-get-user-env`` or ``--export=NONE`` (either with the ``sbatch``
+* Use one of the options ``--get-user-env`` or ``--export=NONE`` (either with the ``sbatch``
   command or, preferably, as a ``#SBATCH`` line in the job script).
 
   The option ``--get-user-env`` will tell ``sbatch`` not to propagate the environment in which
