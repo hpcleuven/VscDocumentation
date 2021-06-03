@@ -3,9 +3,6 @@
 Slurm @ UAntwerp
 ================
 
-**This is preliminary documentation for the pilot users. It will be further refined
-as the pilot progresses.**
-
 This page covers the more basic Slurm use, including starting jobs, basic job management
 and some templates for job scripts for various scenarios. It is the minimum a user should
 master. A second page describes :ref:`more advanced use of Slurm <Antwerp advanced Slurm>`.
@@ -126,6 +123,15 @@ to start OpenMP, MPI and hybrid MPI/OpenMP programs in the right configuration.
   multiple nodes, the allocated CPUs for all tasks are distributed equally
   over all the nodes (except possibly for the last node).
 
+Make sure to request a valid combination of tasks and/or CPUs per task.
+Otherwise, your job can be rejected or it could end up in the partition
+queue but it will never start (in that case, check the reason code, as
+explained later in this document in the section on checking the queue.
+
+If set, the Slurm controller will set the corresponding variables,
+respectively ``SLURM_NTASKS`` and ``SLURM_CPUS_PER_TASK`` in the
+environment of the running job.
+
 If not set, the default values of 1 task and 1 CPU are used.
 
 Requesting memory
@@ -151,9 +157,12 @@ than the memory on that node that is available for job allocations. Note that on
 UAntwerp clusters, the memory available for job allocations is somewhat less than the
 total memory installed on a node (to keep asome some amount of memory for the OS). 
 
-
 If not set, a default value will be used, equal to the total memory available for job
 allocations of that node divided by the number of CPUs. 
+
+The amount of available memory per CPU is available via the variable
+``SLURM_MEM_PER_CPU`` as an integer with megabytes as unit in the
+environment of the running job.
 
 Requesting wall time
 """"""""""""""""""""
@@ -175,11 +184,17 @@ using ``--partition=<partition>`` or ``-p <partition>``.
 
 If not set, the default partition will be used.
 
+The name of partition is available in the variable ``SLURM_JOB_PARTITION``
+in the environment of the running job.
+
 Specifying a job name
 """""""""""""""""""""
 
 The default name of a job is the name of the job script. The name can however be changed
 using ``--job-name=<name>`` or ``-J <name>``.
+
+The name of the job is available in the variable ``SLURM_JOB_NAME``
+in the environment of the running job.
 
 Redirecting stdout and stderr
 """""""""""""""""""""""""""""
@@ -295,6 +310,16 @@ Therefore, to avoid accidental mistakes, we advise you to apply one of the follo
   When using this option, one must use an absolute path to the binary to be executed (which
   could then be used to further define the environment). When using this option, it is not
   possible to pass environment variables to the job script.
+
+The Slurm controller also sets several SLURM_* variables in the environment of the running job.
+Some of these variables are only available if the corresponding option has been explicitly set,
+while other variables are always set (with default values filled if, if appropriate).
+Several of these variables are mentioned on our 
+:ref:`PBS-to-Slurm conversion tables <Antwerp Slurm_convert_from_PBS>` page.
+A full list of all SLURM_* environments can be found in the
+`sbatch manual page <https://slurm.schedmd.com/srun.html>`_ (in the section on
+"OUTPUT ENVIRONMENT VARIABLES").
+
 
 Starting multiple copies of a process in a job script: srun
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -3,10 +3,6 @@
 Slurm @ UAntwerp: Advanced use
 ==============================
 
-
-**This is preliminary documentation for the pilot users. It will be further refined
-as the pilot progresses.**
-
 This page contains some more advanced commands and additional ways to request resources.
 Make sure to first read our :ref:`basic Slurm use <Antwerp Slurm>` page.
 
