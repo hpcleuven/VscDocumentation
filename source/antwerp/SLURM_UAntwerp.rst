@@ -76,7 +76,7 @@ The ``sbatch`` is the command in Slurm to submit a job script.
 A job script first contains a list of resources and other instructions to
 Slurm, and this is followed by a set of commands that will be executed on the
 first node of the job. When the submission succeeds, ``sbatch`` will print a
-message containing the unique jobid for the job.
+message containing the unique job ID for the job.
 
 Resource specifications and other instructions can be specified in three
 different ways: command line options, environment variables, and ``#SBATCH``
@@ -155,7 +155,7 @@ The job will be rejected if the final amount of memory requested cannot be satis
 This could happen if ``--mem-per-cpu`` times the number of CPUs on a node is greater
 than the memory on that node that is available for job allocations. Note that on the
 UAntwerp clusters, the memory available for job allocations is somewhat less than the
-total memory installed on a node (to keep asome some amount of memory for the OS). 
+total memory installed on a node (to keep some amount of memory for the OS). 
 
 If not set, a default value will be used, equal to the total memory available for job
 allocations of that node divided by the number of CPUs. 
@@ -220,8 +220,8 @@ Hence:
   by ``--output`` and stderr is redirected to the file pointed to by ``--error``.
 
 The file name can (and usually will) be a template. It can contain replacement symbols preceded
-by a % that allow to use the jobid etc. in the name of the file to ensure unique file names.
-The most useful of such symbols is ``%j`` which will be replaced by the unique jobid.
+by a % that allow to use the job ID etc. in the name of the file to ensure unique file names.
+The most useful of such symbols is ``%j`` which will be replaced by the unique job ID.
 A full list of replacement symbols can be found in
 `the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
 
@@ -249,7 +249,7 @@ requirements for each job in the workflow.
 
 The basic way of specifying a job dependency is through
 ``--dependency=<type>:jobid:jobid,<type>:jobid:jobid``
-etc. For (almost) each type one can specify one or more jobids, and it is also possible
+etc. For (almost) each type one can specify one or more job IDs, and it is also possible
 to specify multiple types of dependencies.
 
 ============================  =====================
@@ -372,7 +372,7 @@ There are a number of useful command line options though:
   on all format options.
 * It is possible to show that information for only one or a selection of your
   jobs by using ``--jobs=<job_id_list>`` or ``-j <job_id_list>``, where ``<job_id_list>``
-  is a comma-separated list of jobids.
+  is a comma-separated list of job IDs.
 
 The column "REASON" lists why a job is waiting for execution. It distinguishes between
 30+ different reasons, way to much to discuss here, but some of the codes speak for
@@ -396,15 +396,15 @@ the array by specifying the array elements as follows:
    scancel 20_[1-3]
    scancel 20_4 20_6
 
-The first command would kill jobs 1, 2 and 3 in the job array with jobid 20,
+The first command would kill jobs 1, 2 and 3 in the job array with job ID 20,
 the second command would kill jobs 4 and 6 of that job array.
 
-As shown in the example above, a space separated list of multiple jobids can also
+As shown in the example above, a space separated list of multiple job IDs can also
 be specified, as well as a selection based on multiple filters, e.g. in which partition
 the job is running. Consult the `scancel manual page <https://slurm.schedmd.com/scancel.html>`_
 for more information.
 
-Getting more information on a running job: sttat
+Getting more information on a running job: sstat
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 `Slurm sstat manual page on the web <https://slurm.schedmd.com/sstat.html>`_
@@ -412,13 +412,13 @@ Getting more information on a running job: sttat
 The ``sstat`` command displays information on running jobs pertaining to CPU, Task,
 Node, Resident Set Size (RSS) and Virtual Memory (VM) for all your running jobs.
 The jobs need to be explicitly mentioned using ``--jobs=<job_id_list>`` or
-``-j <job_id_list>`` (where ``<job_id_list>`` is a comma-separated list of jobids). 
+``-j <job_id_list>`` (where ``<job_id_list>`` is a comma-separated list of job IDs). 
 
 By default, it will only show information about the lowest job step running in
 a particular job unless ``--allsteps`` or ``-a`` is also specified.
 It is also possible to request information on a specific job step of a job
 by using ``<jobid.jobstep>``, i.e., add the number of the job step to the
-jobid, separated by a dot.
+job ID, separated by a dot.
 
 To show additional information not shown by the default format, one can
 specify a specific format using the ``--format`` or identical ``--fields``
@@ -437,11 +437,11 @@ log/database. Hence it is particularly useful to show information about jobs
 that have finished already. It allows you to see how much CPU time, wall time,
 memory, etc. were used by the application.
 
-By default, ``sacct`` shows the jobid, job name, partition name, account name,
+By default, ``sacct`` shows the job ID, job name, partition name, account name,
 number of CPUs allocated to the job, the state of the job and the exit code
 of completed jobs. Several options can be used to modify the format:
 
-* ``--brief`` or ``-b`` shows only the jobid, state and exit ode.
+* ``--brief`` or ``-b`` shows only the job ID, state and exit ode.
 * ``--long`` or ``-l`` shows an overwhelming amount of information, probably more than you
   want to know as a regular user.
 * ``--format`` or ``-o`` can be used to specify your own output format. We refer
@@ -452,7 +452,7 @@ By default, ``sacct`` will show information about jobs that have been running
 since midnight. There are however a number of options to specify for which jobs
 you want to see information:
 
-* ``--jobs=<job_id_list>`` or ``-j <job_id_list>`` with a comma-separated list of jobids
+* ``--jobs=<job_id_list>`` or ``-j <job_id_list>`` with a comma-separated list of job IDs
   (in the same format as for ``sstat``) will only show information on those jobs
   (or job steps).
 * ``--starttime=<time>`` or ``-S <time>`` will show information about all jobs that
@@ -673,7 +673,7 @@ For example, assume that we have two job scripts:
   It uses the environment variable ``perturbation_size`` to determine the perturbation to
   apply.
 
-To make ``sbatch`` print simply the jobid after submitting, use the ``--parsable`` option.
+To make ``sbatch`` print simply the job ID after submitting, use the ``--parsable`` option.
 The following lines automate the launch of the three jobs:
 
 .. code:: bash

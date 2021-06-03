@@ -40,7 +40,7 @@ without consulting us first and discussing why it would make sense for your job.
 Note that you should be very careful when specifying the number of nodes:
   * Requesting more nodes than really needed is very asocial behaviour as it will decrease
     the efficiency of cluster use and lengthen the waiting time for other users.
-  * If you request less nodes than is required to accomodate the tasks (if also specifying 
+  * If you request less nodes than is required to accommodate the tasks (if also specifying 
     the number of tasks and of CPUs per task), your job will be refused by the system.
   * If you only request nodes and forget to further specify the number of tasks and 
     CPUs per task, you will get the default of 1 CPU per node.
@@ -66,7 +66,7 @@ In this case also one should be very careful when specifying the parameters:
   * Not filling up the nodes optimally is very asocial behaviour as it will decrease
     the efficiency of the cluster use and lengthen the waiting time for others.
   * Requesting a number of tasks per node in combination with a number of CPUs per task
-    that cannot be accomodated on the cluster, will lead to the job being refused by
+    that cannot be accommodated on the cluster, will lead to the job being refused by
     Slurm.
 
 
@@ -81,7 +81,7 @@ so that all nodes can communicate with each other.
 
 This means that traffic between two nodes either passes through just a single switch
 (if the nodes are connected to the same edge switch) or through a series of three switches
-(edge - top - edge). Obviously, traffic that passes through multiple switches will incurr
+(edge - top - edge). Obviously, traffic that passes through multiple switches will incur
 a higher latency. Slurm tries to minimize network contention by identifying the lowest
 level switch in the hierarchy that can satisfy a job's request and then allocates the
 requested resources, based on a best-fit algorithm and the currently available resources.
@@ -114,9 +114,18 @@ One good use for regular users though is to get more information about one of yo
 
 .. code:: bash
 
-    scontrol -d show job <jobID>
+    scontrol -d show job <jobid>
 
-will show extensive information for the job with job id ``<jobID>``. 
+will show extensive information for the job with job ID ``<jobid>``. 
+
+Some software might require a list of hostnames:
+
+.. code:: bash
+
+   scontrol show hostnames
+
+in the context of a job, returns a list of (unqualified) hostnames of the allocated nodes.
+This can be used, e.g. with bash scripting, to generate a nodelist file in the format required by the software.
 
 The sinfo command
 ~~~~~~~~~~~~~~~~~
@@ -135,7 +144,7 @@ The command
     
 will print a list of partitions with their availability, nodes that will be used to run
 jobs within that partition, number of nodes in that partition, and the state. The default
-partition will be marked with an asteriks behind the partition name.
+partition will be marked with an asterisk behind the partition name.
 
 The command
 
