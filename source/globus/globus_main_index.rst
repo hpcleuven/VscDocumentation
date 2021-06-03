@@ -10,4 +10,5 @@ Globus file and data sharing platform
    local_endpoints
    data_sharing
    manage_globus_groups
+   cli
    glossary
