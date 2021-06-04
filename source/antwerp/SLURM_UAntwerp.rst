@@ -490,7 +490,7 @@ compiled with the intel/2020a toolchain. It will be run on 10 cores.
 
 .. code:: bash
 
-   #!/bin/bash
+   #! /bin/bash
    #
    #SBATCH --job-name=OpenMP-demo
    #SBATCH --ntasks=1 --cpus-per-task=10 --mem=2g
@@ -531,7 +531,7 @@ directory compiled with Intel MPI.
 
 .. code:: bash
 
-   #!/bin/bash
+   #! /bin/bash
    #
    #SBATCH --job-name=mpihello
    #SBATCH --ntasks=56 --cpus-per-task=1 --mem-per-cpu=512m
@@ -610,7 +610,7 @@ the output to ``output_1.dat`` till ``output_100.dat``. The job script would loo
 
 .. code:: bash
 
-   #!/bin/bash -l
+   #! /bin/bash -l
 
    #SBATCH --ntasks=1 --cpus-per-task=1
    #SBATCH --mem-per-cpu=512M
