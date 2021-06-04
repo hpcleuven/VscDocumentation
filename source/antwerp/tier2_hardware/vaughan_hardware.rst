@@ -119,8 +119,8 @@ The following partitions are available:
 partition       limits
 =========       ================================================================
 *vaughan*       Default. Maximum wall time of 3 days.
-debug           Maximum 1 node with a maximum wall time of 2 hours.
-short           Maximum wall time of 6 hours.
+debug           Maximum 2 nodes with a maximum wall time of 1 hour. 
+short           Maximum wall time of 6 hours, with priority boost. 
 =========       ================================================================
 
 
