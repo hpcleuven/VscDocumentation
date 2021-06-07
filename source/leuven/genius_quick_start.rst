@@ -43,6 +43,11 @@ below.  Information on :ref:`obtaining credits <KU Leuven credits>` and
 | GPU            | 5.00 per GPU |
 +----------------+--------------+
 
+The maximum walltime for any job on Genius is 7 days (168 hours). Job requests
+with walltimes between 3 and 7 days are furthermore only allowed to request up
+to 10 compute nodes per job. No such limitation is imposed on jobs with
+walltimes of 3 days or less.
+
 
 .. _submit to genius compute node:
 
@@ -124,8 +129,8 @@ A few restrictions apply to a debug job:
 
 - it has to be submitted with ``-l qos=debugging``
 - it can only use at most two nodes for CPU jobs, a single node for GPU jobs,
-- its walltime is at oust 30 minutes,
-- you can only have a single debug node in the queue at any time.
+- its walltime is at most 30 minutes,
+- you can only have a single debug job in the queue at any time.
 
 To run a debug job for 20 minutes on two CPU nodes, you would use::
 
