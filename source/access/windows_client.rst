@@ -64,19 +64,22 @@ On the KU Leuven/UHasselt clusters it is also possible to use the
 on to the machine and run graphical programs. Instead of an
 X server, another piece of client software is required.
 
-TurboVNC
-^^^^^^^^
-The KU Leuven/UHasselt and UAntwerp clusters also offer support
-for visualization software through TurboVNC. VNC renders images on
-the cluster and transfers the resulting images to your client
-device.
+VNC
+^^^
+The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
+visualization software through Virtual Network Computing (VNC). VNC renders
+images on the cluster and transfers the resulting images to your client device.
+VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
--  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC<TurboVNC start guide>`
-   is supported on the visualization nodes.
--  On the UAntwerp clusters, TurboVNC is supported on all regular
-   login nodes (without OpenGL support) and on the visualization
-   node of Leibniz (with OpenGL support through VirtualGL). See
-   the page ":ref:`Remote visualization UAntwerp`"
+-  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC<TurboVNC start guide>` is
+   supported on the visualization nodes.
+-  On the UAntwerp clusters, TurboVNC is supported on all regular login nodes
+   (without OpenGL support) and on the visualization node of Leibniz (with
+   OpenGL support through VirtualGL). See the page ":ref:`Remote visualization
+   UAntwerp`" for instructions.
+-  On the VUB clusters, TigerVNC is supported on all nodes. See our
+   documentation on `running graphical applications
+   <https://hpc.vub.be/docs/software/modules/#how-can-i-run-graphical-applications>`_
    for instructions.
 
 
