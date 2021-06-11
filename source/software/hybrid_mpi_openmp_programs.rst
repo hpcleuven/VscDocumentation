@@ -234,10 +234,7 @@ FOSS toolchain (GCC and Open MPI)
 ---------------------------------
 
 Open MPI has very flexible options for process and thread placement, but
-they are not always easy to use. There is however also a simple option
-to indicate the number of logical cores you want to assign to each MPI
-rank (MPI process): ``-cpus-per-proc <num>`` with <num> the number of
-logical cores assigned to each MPI rank.
+they are not always easy to use.
 
 You may want to further control the thread placement one can using the
 standard OpenMP mechanism, e.g. the GNU-specific variable
