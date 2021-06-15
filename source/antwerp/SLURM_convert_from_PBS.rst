@@ -1,6 +1,6 @@
 .. role:: raw-html(raw)
     :format: html
-    
+
 .. _Antwerp Slurm_convert_from_PBS:
 
 Converting PBS/Torque options to Slurm
@@ -25,7 +25,7 @@ List jobs in the queue                      qstat, showq        squeue
 #PBS / qsub command line options
 --------------------------------
 
-When specified in a Torque job script, the line specifying the option should start with ``#PBS``. 
+When specified in a Torque job script, the line specifying the option should start with ``#PBS``.
 In Slurm, such lines start with ``#SBATCH``.
 
 ===================================  =====================
@@ -58,7 +58,8 @@ PBS_NUM_NODES             SLURM_JOB_NUM_NODES :raw-html:`<br />`
                           SLURM_NNODES (for backward compatibility)
 PBS_NUM_PPN
 PBS_NP
-PBS_O_WORKDIR             Slurm executes the job in the directory from which the job was submitted (unless otherwise specified) rather than the home dir.
+PBS_O_WORKDIR             SLURM_SUBMIT_DIR :raw-html:`<br />`
+                          Slurm executes the job in the directory from which the job was submitted (unless otherwise specified) rather than the home dir.
 PBS_WALLTIME              No equivalent.
 ========================  ================================
 
