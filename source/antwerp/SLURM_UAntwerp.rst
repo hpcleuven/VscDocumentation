@@ -911,7 +911,7 @@ Next, starting a session that uses a full node on Vaughan can be done as
 .. code:: bash
 
    login$ salloc -n 1 -c 64 -t 1:00:00
-   login$ ssh -X $SLURM_NODELIST
+   login$ ssh -X $SLURM_JOB_NODELIST
    r0c00cn0$ xclock
    r0c00cn0$ exit
    login$ exit
@@ -922,7 +922,7 @@ What this does is:
    a shell prompt on the login node as soon as the allocation is ready.
 
 2. Next we log on to the allocated compute node using ``ssh``.  The ``-X`` option is used to forwarded
-   X11 traffic. As we allocate only a single node, ``$SLURM_NODELIST`` is just a single node and can be
+   X11 traffic. As we allocate only a single node, ``$SLURM_JOB_NODELIST`` is just a single node and can be
    used as argument to ``ssh``.
 
 3. It is important to note that now we are in our **home directory** on the compute node as ``ssh`` starts
