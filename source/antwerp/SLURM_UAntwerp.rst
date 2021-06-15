@@ -26,7 +26,7 @@ introductory courses those features of Torque and Moab that resemble Slurm featu
 the most.
 
 Slurm Workload Manager is also used on the clusters at UGent (but with a wrapper that still
-accepts Torque job scripts with some limitations) and will also be the scheduler on the
+accepts Torque job scripts with some limitations) and will also be the scheduler on Hortense, the
 successor of the BrENIAC Tier-1 system.
 
 Historically, Slurm was an acronym of **S**\imple **L**\inux **U**\tility for
@@ -41,9 +41,16 @@ spin-off company of the Slurm development.
 Slurm concepts
 --------------
 
-* **Nodes**: The actual compute resources in Slurm.
+* **Nodes**: On the UAntwerp clusters (and most other clusters) a node is the largest
+  part of the cluster running a single operating system image, and hence capable of
+  supporting a shared memory program. Nodes are connected with each other through an
+  interconnect, and communication between nodes is done via message passing.
+* **Core**: A core is a physical core in a system.
+* **CPU**: A CPU is a virtual core in a system, in other words, a hardware thread
+  in a system with hyperthreading/SMT enabled. On a system with hyperthreading/SMT
+  disabled, virtual cores are just physical cores.
 * **Partition**: Groups of nodes with limits and access controls, basically the equivalent
-  of a queue in Torque.
+  of a queue in Torque. A node can be part of multiple partitions.
 * **Job**: A resource allocation request.
 * **Job step**: A set of (possibly parallel) tasks within a job. A job can consist of
   just a single job step or can contain multiple job steps which may use all or just
@@ -57,10 +64,6 @@ Slurm concepts
   number of cores per task is a very convenient way to request resources to Slurm
   as afterwards starting a MPI or hybrid MPI/OpenMP program using the ``srun``
   command is very easy.
-* **Core**: A core is a physical core in a system.
-* **CPU**: A CPU is a virtual core in a system, in other words, a hardware thread
-  in a system with hyperthreading/SMT enabled. On a system with hyperthreading/SMT
-  disabled, virtual cores are just physical cores.
 
 
 Slurm commands
@@ -90,7 +93,10 @@ lines in the job script.
   variables instead. A list of those can be found in the
   `sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_. The name of those
   variables starts with ``SBATCH_`` and the remaining part is derived from the
-  matching command line option.
+  matching command line option. However, be careful when using those and hiding them
+  in ``.bashrc`` or ``.bash_profile`` as they are easily forgotten yet have a higher
+  priority than those on ``SBATCH`` lines which is the most used mechanism to specify
+  resources etc.
 * All command line options can also be passed in ``#SBATCH`` lines in the job script.
   These lines should follow immediately below the shebang in the first block of
   comment lines (lines that start with ``#``) as otherwise they will
@@ -126,7 +132,7 @@ to start OpenMP, MPI and hybrid MPI/OpenMP programs in the right configuration.
 Make sure to request a valid combination of tasks and/or CPUs per task.
 Otherwise, your job can be rejected or it could end up in the partition
 queue but it will never start (in that case, check the reason code, as
-explained later in this document in the section on checking the queue.
+explained later in this document in the section on checking the queue).
 
 If set, the Slurm controller will set the corresponding variables,
 respectively ``SLURM_NTASKS`` and ``SLURM_CPUS_PER_TASK`` in the
@@ -137,7 +143,7 @@ If not set, the default values of 1 task and 1 CPU are used.
 Requesting memory
 """""""""""""""""
 
-Slurm jobs can also request an amount of RAM space (resident memory). 
+Slurm jobs can also request an amount of RAM space (resident memory).
 In case of the UAntwerp clusters, swapping for jobs is
 disabled since the nodes don't have drives suitable for the load caused by
 swapping and since swapping is extremely detrimental to the performance of
@@ -145,8 +151,8 @@ the cluster. Therefore, swap space cannot be requested.
 
 Slurm has various ways to request memory. Unfortunately, there is currently no
 way to request memory per task. The preferred method for requesting memory in
-Slurm on the UAntwerp clusters is to specify the amount of memory per CPU (
-per core on the UAntwerp clusters):
+Slurm on the UAntwerp clusters is to specify the amount of memory per CPU
+(per core on the UAntwerp clusters):
 ``--mem-per-cpu=<amount><unit>`` (e.g., ``--mem-per-cpu=1g``). The amount is an
 integer, ``<unit>`` can be either ``k`` for kilobytes, ``m`` for megabyte or
 ``g`` for gigabyte.
@@ -155,10 +161,11 @@ The job will be rejected if the final amount of memory requested cannot be satis
 This could happen if ``--mem-per-cpu`` times the number of CPUs on a node is greater
 than the memory on that node that is available for job allocations. Note that on the
 UAntwerp clusters, the memory available for job allocations is somewhat less than the
-total memory installed on a node (to keep some amount of memory for the OS). 
+total memory installed on a node (to keep some amount of memory for the OS and file
+system buffers).
 
 If not set, a default value will be used, equal to the total memory available for job
-allocations of that node divided by the number of CPUs. 
+allocations of that node divided by the number of CPUs.
 
 The amount of available memory per CPU is available via the variable
 ``SLURM_MEM_PER_CPU`` as an integer with megabytes as unit in the
@@ -169,8 +176,8 @@ Requesting wall time
 
 The requested compute time is specified using ``--time=<time>`` or ``-t <time>``.
 ``<time>`` is specified in mm (minutes), mm\:ss (minutes and seconds), hh\:mm\:ss
-(hours, minutes and seconds), d-hh (days and hours), d-h\:mm (days, hours and minutes)
-or d-h\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a typo!
+(hours, minutes and seconds), d-hh (days and hours), d-hh\:mm (days, hours and minutes)
+or d-hh\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a typo!
 
 If not set, a default wall time of 1 hour will be assigned.
 
@@ -289,12 +296,14 @@ be loaded in your job environment. This poses a number of risks:
 
 Therefore, to avoid accidental mistakes, we advise you to apply one of the following solutions:
 
-* Before calling sbatch, clear out any environment variables that you do not want to see 
-  propagated in the runtime job environment. This includes clearing your module environment
-  using ``module purge`` and reconstructing it by first loading the appropriate calcua module
-  (``module load calcua/supported`` will do for most users)
-  and then loading the appropriate application modules.
-  In fact, this should be common practice in all your job scripts.
+* Clear the environment in your job script by reloading all modules that are needed and
+  ensuring that all environment variables that you need are set.
+  Cleaning the module environment can be done by calling
+
+  ``module --force purge``
+
+  and then reloading the right ``calcua`` software stack module and application modules. This should
+  be a common practice in all your job scripts.
 * Use one of the options ``--get-user-env`` or ``--export=NONE`` (either with the ``sbatch``
   command or, preferably, as a ``#SBATCH`` line in the job script).
 
@@ -313,8 +322,8 @@ Therefore, to avoid accidental mistakes, we advise you to apply one of the follo
 
 The Slurm controller also sets several SLURM_* variables in the environment of the running job.
 Some of these variables are only available if the corresponding option has been explicitly set,
-while other variables are always set (with default values filled if, if appropriate).
-Several of these variables are mentioned on our 
+while other variables are always set (with default values filled in, if appropriate).
+Several of these variables are mentioned on our
 :ref:`PBS-to-Slurm conversion tables <Antwerp Slurm_convert_from_PBS>` page.
 A full list of all SLURM_* environments can be found in the
 `sbatch manual page <https://slurm.schedmd.com/srun.html>`_ (in the section on
@@ -340,7 +349,7 @@ The ``srun`` command can also be used outside of a resource allocation, i.e., at
 line of the login nodes, outside a job script or an allocation obtained with ``salloc`` (see
 further in the text). It will then first create the resource allocation before executing the
 command given as an argument to ``srun``. One useful case which we discuss further down in this
-text is to start an interactive session on a single node. Most of the command line options of
+text is to start an interactive session. Most of the command line options of
 ``sbatch`` to specify the properties of the allocation can also be used with ``srun``.
 
 Just as ``sbatch``, ``srun`` will propagate the environment. When ``srun`` is used in
@@ -400,7 +409,7 @@ The first command would kill jobs 1, 2 and 3 in the job array with job ID 20,
 the second command would kill jobs 4 and 6 of that job array.
 
 As shown in the example above, a space separated list of multiple job IDs can also
-be specified, as well as a selection based on multiple filters, e.g. in which partition
+be specified, as well as a selection based on multiple filters, e.g., in which partition
 the job is running. Consult the `scancel manual page <https://slurm.schedmd.com/scancel.html>`_
 for more information.
 
@@ -412,7 +421,7 @@ Getting more information on a running job: sstat
 The ``sstat`` command displays information on running jobs pertaining to CPU, Task,
 Node, Resident Set Size (RSS) and Virtual Memory (VM) for all your running jobs.
 The jobs need to be explicitly mentioned using ``--jobs=<job_id_list>`` or
-``-j <job_id_list>`` (where ``<job_id_list>`` is a comma-separated list of job IDs). 
+``-j <job_id_list>`` (where ``<job_id_list>`` is a comma-separated list of job IDs).
 
 By default, it will only show information about the lowest job step running in
 a particular job unless ``--allsteps`` or ``-a`` is also specified.
@@ -474,6 +483,11 @@ Job types: Examples
 Shared memory job
 ~~~~~~~~~~~~~~~~~
 
+A shared memory program consists of a single task. The number of CPUs you would
+request for the task corresponds to the number of computational threads
+you want to use for the application. Keep in mind that a single task cannot
+span multiple nodes in the cluster.
+
 Shared memory programs often need to be told how many threads they should use.
 Unfortunately, there is no standard way that works for all programs. Some programs
 require an environment variable to be set, others have a parameter in the input file
@@ -482,7 +496,7 @@ and some interpreters (e.g., Matlab) require it to be set in the code being inte
 OpenMP is a popular technology for creating shared memory programs. Some OpenMP programs
 will read the number of threads from the input file and then set it using OpenMP library functions.
 But most OpenMP programs simply use the environment variable ``OMP_NUM_THREADS`` to
-determine the number of threads that should be used. 
+determine the number of threads that should be used.
 
 The following job script is an
 example of this. It assumes there is a program ``omp`` in the current directory
@@ -497,19 +511,36 @@ compiled with the intel/2020a toolchain. It will be run on 10 cores.
    #SBATCH --time=05:00
 
    # Build the environment
-   module purge
+   module --force purge
    module load calcua/2020a
-   module load intel/2020a
+   module load vsc-tutorial
 
    # Set the number of threads
    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
    # Run the program
-   ./omp
+   omp_hello
 
-In fact, when using Intel OpenMP, not setting the variable ``OMP_NUM_THREADS``
-seems to work fine also as the runtime seems to recognize Slurm and pick up
+In this example, ``omp_hello`` is a demo program contained in the ``vsc-tutorial``
+module that will simply print a message from each thread. the ``vsc-tutorial``
+module also loads the ``intel/2020a`` module as that compiler was used to compile
+the programs in the module.
+
+When using Intel OpenMP, not setting the variable ``OMP_NUM_THREADS``
+works fine in most or even all cases as the runtime seems to recognize Slurm and pick up
 the right number of threads.
+
+In many cases it may be beneficial to also set
+
+.. code:: bash
+
+   export OMP_PROC_BIND=true
+
+before calling the OpenMP program. It will spread the OpenMP threads over the cores and
+keep them bound to the core, which is beneficial for reuse of data in caches. Except for
+really short running threads (as is the case in this example) the Linux scheduler will
+usually rather quickly distribute the threads across the cores and keep them pinned. Yet
+there are cases where ``OMP_PROC_BIND=true`` turns out to be beneficial for performance.
 
 
 MPI program
@@ -523,11 +554,14 @@ and work with Slurm to start the MPI processes on the correct cores
 and under the control of the resource manager (so that they are cleaned
 up properly if things go wrong).
 
-However, with several implementations, it is also possible to use the
+However, with several implementations (and all MPI implementations supported
+on our cluster), it is also possible to use the
 Slurm ``srun`` command to start the MPI processes. This is the case
 for programs compiled with Intel MPI as the example below shows. The
-example assumes there is a MPI program called ``mpi_hello`` in the current
-directory compiled with Intel MPI.
+example assumes there is a MPI program called ``mpi_hello`` provided by the
+``vsc-tutorial`` module. The ``vsc-tutorial`` module will also load the
+``intel/2020a`` module for the libraries used by the compiler and the
+MPI library.
 
 .. code:: bash
 
@@ -538,15 +572,26 @@ directory compiled with Intel MPI.
    #SBATCH --time=5:00
 
    # Build the environment
-   module purge
+   module --force purge
    module load calcua/2020a
-   module load intel/2020a
+   module load vsc-tutorial
 
    # Run the MPI program
-   srun ./mpi_hello
+   srun mpi_hello
 
 In the above case, 56 MPI ranks will be spawned, corresponding to two
 nodes on a cluster with 28 cores per node.
+
+Note that if the executable called by ``srun`` is not in the path, you do need
+to specify the path to the executable just as you would have to do on the command
+line. E.g., if ``mpi_hello`` would be in the current directory in the above example,
+it would be started using
+
+.. code:: bash
+
+   srun ./mpi_hello
+
+and of course you'd have to load a module with MPI support.
 
 
 Hybrid MPI/OpenMP program
@@ -557,7 +602,7 @@ memory technology. The idea is that shared memory doesn't scale beyond a single
 node (and often not even to the level of a single node), while distributed
 memory programs that spawn a process per core may also suffer from too much memory
 and communication overhead. Combining both can sometimes give better performance
-for a given number of cores. 
+for a given number of cores.
 
 Especially the combination of MPI and OpenMP is
 popular. Such programs require a program starter and need the number of threads
@@ -577,23 +622,26 @@ per node.
    #SBATCH --time=5:00
    #SBATCH --job-name=hybrid-hello-test
 
-   module purge
+   module --force purge
    module load calcua/supported
-   module load intel/2020a
+   module load vsc-tutorial
 
    # Set the number of threads per MPI rank
    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+   export OMP_PROC_BIND=true
 
    # Start the application
-   srun ./mpi_omp_hello
+   srun mpi_omp_hello
 
 As with shared memory programs, it turns out that setting OMP_NUM_THREADS is
 not needed most of the time when the Intel compilers were used for the application
-as they pick up the correct number of threads from Slurm.
+as they pick up the correct number of threads from Slurm. We did set
+``OMP_PROC_BIND`` to ``true`` as binding threads to core is as essential as it is
+for regular shared memory programs.
 
 
-Job array
-~~~~~~~~~
+Job arrays and parameter exploration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Slurm manual page on job array <https://slurm.schedmd.com/job_array.html>`_
 
@@ -633,7 +681,11 @@ and to start programs using parameter values stored in a CSV file that can be ge
 easily using a spreadsheet program. On the UAntwerp clusters, the most recent version of
 the package is available as the module ``atools/slurm``.
 For information on how to use atools, we refer to the
-`atools documentation <https://atools.readthedocs.io/en/latest/>`_.
+`atools documentation on ReadTheDocs <https://atools.readthedocs.io/en/latest/>`_ and
+`course material from a course at KU Leuven <https://gjbex.github.io/worker-and-atools/>`_.
+Note however that the Worker package which is also mentioned in that course does not work
+on Slurm and can no longer be used.
+
 
 Workflow through job dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -663,6 +715,9 @@ Two elements can be combined to do this in a handier way, submitting all jobs si
   behaviour of a job script. In our example, they could be used to specify the size of the
   perturbation to apply so that both jobs that run from a perturbed state can be submitted using
   the same job script.
+
+  An alternative is to pass command line arguments to the job script which is possible in Slurm
+  by adding them to the ``sbatch`` command line after the job script.
 * Dependency specifications can then be used to ensure that the jobs that run from a perturbed
   state do not start before the first simulation has successfully completed.
 
@@ -685,65 +740,201 @@ The following lines automate the launch of the three jobs:
 Interactive job
 ~~~~~~~~~~~~~~~
 
-Single task interactive job
-"""""""""""""""""""""""""""
+Method 1: with srun
+"""""""""""""""""""
+
+Interactively running shared memory programs
+''''''''''''''''''''''''''''''''''''''''''''
 
 Starting a single task interactive job can be done easily by using ``srun --pty bash``
 on the command line of one of the login nodes. For example:
 
 .. code:: bash
 
-   srun --tasks=1 --cpus-per-task=10 --time=10:00 --mem=4G --pty bash
+   login$ srun --ntasks=1 --cpus-per-task=10 --time=10:00 --mem-per-cpu=3G --pty bash
 
-or briefly
+(with ``login$`` denoting the command prompt on the login node) or briefly
 
 .. code:: bash
 
-   srun -n1 -c10 -t10 --mem=4G --pty bash
+   login$ srun -n1 -c10 -t10 --mem-per-cpu=3G --pty bash
 
-will start a bash shell on a compute node and allocate 10 cores and 4 GB of memory
+will start a bash shell on a compute node and allocate 10 cores and 30 GB of memory
 to that session. The maximum wall time of the job is set to 10 minutes.
 
 Specifying the ``--pty`` option redirects the standard and error outputs of the
 first (and, in this case, only) task to the attached terminal. This effectively results
 in an interactive bash session on the requested compute node.
 
-Allocating and using resources for interactive use with multiple tasks
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**The following method is potentially dangerous. Care must be taken since the commands
-below permit side effects in the bash environment.**
+Interactively running MPI programs
+''''''''''''''''''''''''''''''''''
 
-Using multiple tasks, possibly spread over over multiple nodes, in an interactive job
-is a two-step process.
-First a Slurm *job* is created using ``salloc`` which takes most of the
-same parameters as ``sbatch``. For example:
+Interactively running MPI programs or hybrid MPI/OpenMP programs is very similar to
+the way you run shared memory programs interactively, but just as in batch scripts you
+now need to request one task per MPI rank and use a process starter to start the program,
+which usually amounts to running ``srun`` in an ``srun``-session. E.g.,
 
 .. code:: bash
 
-   salloc --tasks=2 --cpus-per-task=20 --time=10:00 --mem=4G bash
+   login$ srun -n 64 -c 1 -t 1:00:00 --pty bash
 
-or briefly
-
-.. code:: bash
-
-   salloc -n2 -c20 -t10 --mem=4G bash
-
-will make an allocation for 2 tasks with 20 cores each, running on two nodes
-on a cluster with 20 cores per node.
-It will then start
-``bash``. However, ``bash`` will not run on one of the nodes allocated to the
-job, but on the node where you executed the ``salloc`` command (which would
-typically be a login node)!
-
-In that shell you can then create *job steps* using ``srun`` in the same way
-as you would do in a batch script using ``srun``. E.g.,
+will create an allocation for 64 single-core tasks and start a bash shell in the first task
+that takes its input from the keyboard and sends its output to the terminal. You can then
+run a MPI program in the same way as you would in a batch script (with ``r0c00cn0$``
+denoting the command prompt of the compute node):
 
 .. code:: bash
 
-   srun -l hostname
+   r0c00cn0$ module --force purge
+   r0c00cn0$ module load calcua/2020a vsc-tutorial
+   r0c00cn0$ srun mpi_hello
+   r0c00cn0$ exit
 
-will execute the ``hostname`` command on both nodes of the allocation.
+The ``exit`` command at the end ends the shell and hence the interactive job.
 
-When executing a shared memory, MPI or hybrid program this way, ``srun`` will
-take care of properly distributing the job according to the specified options.
+
+Running X11 programs
+''''''''''''''''''''
+
+You can also use ``srun`` to start an interactive session with X11 support. However, before
+starting a session you should ensure that you can start X11 programs from the session from
+you will be starting ``sriun``. So either
+
+1. ensure you are running an X11 server on the machine from which you log on to the cluster
+   and then log on using ``ssh -X`` to forward X11 traffic from the cluster to your
+   local machine,
+
+2. or use a VNC session on the cluster. VNC without 3D acceleration is supported on all
+   login nodes of the UAntwerp infrastructure and 3D acceleration is supported on the
+   visualisation node. Follow the instructions on the
+   :ref:`Remote visualisation@UAntwerp<remote visualization UAntwerp>` page to start
+   a VNC session.
+
+X11 programs rarely use distributed memory parallelism, so in most case you will be requesting
+just a single task. To add support for X11, use the ``--x11`` option before ``--pty``:
+
+.. code:: bash
+
+   login$ srun -n 1 -c 64 -t 1:00:00 --x11 --pty bash
+   r0c00cn0$ xclock
+   r0c00cn0$ exit
+
+would allocate 64 (virtual) cores, and the second line starts a simple X11 program, ``x11``,
+which is only good to test if X11 programs work but should not be used for other purposes
+than this on the clusters.
+
+
+Method 2: With salloc
+"""""""""""""""""""""
+
+Non-X11 programs
+''''''''''''''''
+
+You can use ``salloc`` to create a resource allocation. ``salloc`` will wait until the
+resources are available and then return a shell prompt. Note however that that shell
+is running on the node where you ran ``salloc`` (likely a login node). Contrary to
+the method just before this one based on ``srun``, the shell is **not** running on the
+allocated resources. You can however run commands on the allocated resources via
+``srun``.
+
+**Note that in particular on clusters with multiple CPU architectures, you need to
+understand Linux environments and the way they interact with Slurm very well as you
+are now executing commands in two potentially incompatible sections of the cluster that
+require different settings in the environment. So if you execute a command in the wrong
+environment it may run inefficiently, or it may simply fail.**
+
+There is no problem with Vaughan though as on that cluster all CPUs are of the same
+generation.
+
+E.g., to run a shared memory program on 16 (virtual) cores, the following commands
+can be used:
+
+.. code:: bash
+
+   login$ salloc --ntasks=1 --cpus-per-task=16 --time=1:00:00 --mem-per-cpu=3g
+
+executed on a login node will return a shell on the login node. To then execute commands.
+it is still better to rebuild the environment just as for a batch script as some modules
+will use different settings when they load in a Slurm environment. So let's use this shell
+to start the demo program ``omp_hello`` on the allocated resources:
+
+.. code:: bash
+
+   login$ module --force purge
+   login$ module load calcua/2020a vsc-tutorial
+   login$ srun omp_hello
+   login$ exit
+
+It is essential in this example that ``omp_hello`` is started through ``srun`` as otherwise
+it would be running on the login node rather than on the allocated resources. Also do not forget
+to leave the shell when you have finished your interactive work!
+
+For an MPI or hybrid MPI/OpenMP program you would proceed in exactly the same way, except that the
+resource request is different to allocate all MPI tasks. E.g., to run the demo program
+``mpi_omp_hello`` in an interactive shell and using 16 MPI processes and 8 threads per MPI
+rank, you'd allocate the resources through
+
+.. code:: bash
+
+   login$ salloc --ntasks=16 --cpus-per-task=8 --time=1:00:00 --mem-per-cpu=3g
+
+and then run the program with
+
+.. code:: bash
+
+   login$ module --force purge
+   login$ module load calcua/2020a vsc-tutorial
+   login$ srun mpi_omp_hello
+   login$ exit
+
+Note that since we are using all allocated resources, we don't need to specify the number of tasks
+or virtual CPUs to ``srun``. It will take care of of properly distributing the job according to the
+options specified when calling ``salloc``.
+
+
+Running a shared memory X11 program with salloc
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+As you can log on to a compute node while you have resources allocated on that node, you can also
+use ``salloc`` to create an allocation and then use ``ssh`` to log on to the node that has been
+allocated. This only makes sense if you allocate one node or less, as when you log on via ``ssh``,
+you leave the Slurm environment and hence cannot rely on Slurm anymore to start tasks. Moreover,
+if you have multiple jobs running on the node, you may inadvertently influence those jobs as
+any work that you're doing in that ssh session is not fully under the control of Slurm anymore.
+
+As when using ``srun``, the first step is to ensure that X11 access from the login node to your
+local screen is properly set up.
+
+Next, starting a session that uses a full node on Vaughan can be done as
+
+.. code:: bash
+
+   login$ salloc -n 1 -c 64 -t 1:00:00
+   login$ ssh -X $SLURM_JOB_NODELIST
+   r0c00cn0$ xclock
+   r0c00cn0$ exit
+   login$ exit
+
+What this does is:
+
+1. The first command, executed on the login node, creates an allocation for 64 cores. It returns with
+   a shell prompt on the login node as soon as the allocation is ready.
+
+2. Next we log on to the allocated compute node using ``ssh``.  The ``-X`` option is used to forwarded
+   X11 traffic. As we allocate only a single node, ``$SLURM_JOB_NODELIST`` is just a single node and can be
+   used as argument to ``ssh``.
+
+3. It is important to note that now we are in our **home directory** on the compute node as ``ssh`` starts
+   with a clean login shell. We can now execute X11 commands or anything we want to do and is supported on
+   a compute node.
+
+4. The first ``exit`` command leaves the compute node and returns to the login shell, **but still within the
+   salloc command**.
+
+5. Hence we need a second ``exit`` command to leave the shell created by ``salloc`` and free the resources for
+   other users.
+
+**So do not forget that you need to exit two shells to free the resources!**
+
+
