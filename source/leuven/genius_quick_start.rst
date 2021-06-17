@@ -62,6 +62,10 @@ walltimes of 3 days or less.
    - q7d: max_user_queueable = 20
    - qsuperdome: max_user_queueable = 20
 
+   These limits can be checked on the cluster by executing::
+
+      $ qstat -f -Q
+
 
 .. _submit to genius compute node:
 
