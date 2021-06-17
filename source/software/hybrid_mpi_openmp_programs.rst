@@ -234,10 +234,7 @@ FOSS toolchain (GCC and Open MPI)
 ---------------------------------
 
 Open MPI has very flexible options for process and thread placement, but
-they are not always easy to use. There is however also a simple option
-to indicate the number of logical cores you want to assign to each MPI
-rank (MPI process): ``-cpus-per-proc <num>`` with <num> the number of
-logical cores assigned to each MPI rank.
+they are not always easy to use.
 
 You may want to further control the thread placement one can using the
 standard OpenMP mechanism, e.g. the GNU-specific variable
@@ -254,7 +251,7 @@ Essential elements of our job script are:
 
    #! /bin/bash -l
    # Adapt nodes and ppn on the next line according to the cluster your're using!
-   #PBS -lnodes=2:ppn=20
+   #PBS -l nodes=2:ppn=20
    ...
    #
    module load foss
@@ -262,11 +259,12 @@ Essential elements of our job script are:
    export OMP_NUM_THREADS=5
    #
    export OMP_PROC_BIND=true
+   
+   MPI_NUM_PROCS=$(( $PBS_NP/$OMP_NUM_THREADS ))
    #
-   mpirun -cpus-per-proc $OMP_NUM_THREADS ./hybrid_mpi
+   mpirun --np $MPI_NUM_PROCS  --map-by socket:PE=$OMP_NUM_THREADS  --bind-to core  ./hybrid_mpi
 
-Advanced issues
-~~~~~~~~~~~~~~~
+
 
 Open MPI allows a lot of control over process placement and rank
 assignment. The Open MPI mpirun command has several options that
