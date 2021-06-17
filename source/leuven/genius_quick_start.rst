@@ -48,6 +48,24 @@ with walltimes between 3 and 7 days are furthermore only allowed to request up
 to 10 compute nodes per job. No such limitation is imposed on jobs with
 walltimes of 3 days or less.
 
+.. note::
+
+   There is a limit on the number of jobs you can have in a queue. This number
+   includes idle, running, and blocked jobs. If you try to submit more jobs
+   than the maximum number, these jobs will be deferred and will not start.
+   Therefore you should always respect the following limits on how many jobs
+   you have in a queue at the same time:
+
+   - q1h: max_user_queueable = 200
+   - q24h: max_user_queueable = 250
+   - q72h: max_user_queueable = 150
+   - q7d: max_user_queueable = 20
+   - qsuperdome: max_user_queueable = 20
+
+   These limits can be checked on the cluster by executing::
+
+      $ qstat -f -Q
+
 
 .. _submit to genius compute node:
 
