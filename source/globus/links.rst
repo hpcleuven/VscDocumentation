@@ -5,3 +5,5 @@
 .. _Globus How-To pages: https://docs.globus.org/how-to
 .. _Globus Connect Personal: https://www.globus.org/globus-connect-personal
 .. _Globus Groups How-To page: https://docs.globus.org/how-to/managing-groups
+.. _Globus CLI documentation: https://docs.globus.org/cli/examples
+.. _Globus-Timer-CLI on PyPi: https://pypi.org/project/globus-timer-cli
