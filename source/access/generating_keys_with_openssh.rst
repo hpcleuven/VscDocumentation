@@ -15,9 +15,11 @@ available, and most often installed by default.
 Windows
 ~~~~~~~
 
-You can use OpenSSH on Windows also if you :ref:`download and setup MobaXterm <access using mobaxterm>`,
-or if you install the free UNIX
-emulation layer `Cygwin`_ with the package "openssh".
+You can use OpenSSH on Windows also if you
+
+- :ref:`download and setup MobaXterm <access using mobaxterm>`,
+- use Windows Subsystem for Linux (WSL or WSL2), or
+- install the free UNIX emulation layer `Cygwin`_ with the package "openssh".
 
 macOS
 ~~~~~
@@ -92,7 +94,7 @@ Converting SSH2 keys to OpenSSH format
 --------------------------------------
 
 *This section is only relevant if you did not use OpenSSH (as described above)
-to generate an ssh key.*
+to generate an SSH key.*
 
 If you have a public key ``id_rsa_4096_ssh.pub`` in the SSH2 format,
 you can use OpenSSH's ssh-keygen to convert it to the OpenSSH format in
