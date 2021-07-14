@@ -71,8 +71,6 @@ visualization software through Virtual Network Computing (VNC). VNC renders
 images on the cluster and transfers the resulting images to your client device.
 VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
--  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC<TurboVNC start guide>` is
-   supported on the visualization nodes.
 -  On the UAntwerp clusters, TurboVNC is supported on all regular login nodes
    (without OpenGL support) and on the visualization node of Leibniz (with
    OpenGL support through VirtualGL). See the page ":ref:`Remote visualization
