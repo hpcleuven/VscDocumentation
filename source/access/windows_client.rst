@@ -53,9 +53,11 @@ Display graphical programs
 
 X server
 ^^^^^^^^
-You can install a so-called X server: :ref:`Xming<Xming>`.
+You can install an X server: :ref:`Xming<Xming>`.
 X is the protocol that is used by most Linux applications to display
 graphics on a local or remote screen.
+
+Alternatively, you can use :ref:`MobaXterm<access using mobaxterm>`.
 
 NX client
 ^^^^^^^^^
@@ -71,8 +73,6 @@ visualization software through Virtual Network Computing (VNC). VNC renders
 images on the cluster and transfers the resulting images to your client device.
 VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
--  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC<TurboVNC start guide>` is
-   supported on the visualization nodes.
 -  On the UAntwerp clusters, TurboVNC is supported on all regular login nodes
    (without OpenGL support) and on the visualization node of Leibniz (with
    OpenGL support through VirtualGL). See the page ":ref:`Remote visualization
@@ -126,8 +126,8 @@ system (which most recent computers have), it is best to go for the
 64-bit version of Cygwin. After all, the VSC-clusters are also
 running a 64-bit OS.
 
-Windows Subsystem for Linux (LWS)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Windows Subsystem for Linux (WSL/WSL2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you're running Windows 10 build 1607 (Anniversary Edition) or
 later, you may consider running the "`Windows Subsystem for
 Linux <https://www.google.be/webhp?q=windows%20subsystem%20for%20linux>`_"
@@ -172,8 +172,6 @@ Version control
 Information on tools for version control (git and subversion) is
 available on the :ref:`version control systems` introduction page.
 
-Information about :ref:`using the TortoiseSVN Subversion client with
-the VSC systems <TortoiseSVN>`.
 
 .. |Windows| image:: windows_client/windows.png
 .. |Windows+Linux| image:: windows_client/windows_with_linux.png
