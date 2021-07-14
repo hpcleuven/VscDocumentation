@@ -35,10 +35,9 @@ on the size and usage of these data. Following locations are available:
    -  Several types exist, available in $VSC_SCRATCH_XXX variables
    -  For temporary or transient data; there is typically no backup for
       these filesystems, and 'old' data may be removed automatically.
-   -  Currently, $VSC_SCRATCH_NODE, $VSC_SCRATCH_SITE and
-      $VSC_SCRATCH_GLOBAL are defined, for space that is available per
-      node, per site, or globally on all nodes of the VSC (currently,
-      there is no real 'global' scratch filesystem yet).
+   -  Currently, $VSC_SCRATCH_NODE and $VSC_SCRATCH_SITE
+      are defined for space that is available per
+      node or per site on all nodes of the VSC.
    -  These file systems are not exported to other VSC sites.
 
 Since these directories are not necessarily mounted on the same
