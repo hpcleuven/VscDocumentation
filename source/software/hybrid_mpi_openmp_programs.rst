@@ -121,8 +121,8 @@ correct number of MPI processes to start based on the resource
 specifications and the given number of processes per node (the
 ``--hybrid`` switch).
 
-Intel toolchain
----------------
+Intel toolchain (Intel compilers and Intel MPI)
+---------------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On Intel MPI defining the MPI domains is done through the environment
 variable ``I_MPI_PIN_DOMAIN``. Note however that the Linux scheduler is
