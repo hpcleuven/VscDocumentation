@@ -15,12 +15,12 @@ influence run-time behavior.
 OpenMP uses a portable, scalable model that gives programmers a simple
 and flexible interface for developing parallel applications for
 platforms ranging from the standard desktop computer to the
-supercomputer. The current version of the OpenMP specification is 5.0,
-released in November 2018.
+supercomputer. The current version of the OpenMP specification is 5.1,
+released in November 2020.
 
 However, not all compilers already fully support this standard. The
-previous specification were OpenMP 4.5 (November 2015) and
-OpenMP 4.0 (July 2013).
+previous specification were OpenMP 5.0 (November 2018), OpenMP 4.5 (November
+2015) and OpenMP 4.0 (July 2013).
 
 
 Prerequisites
