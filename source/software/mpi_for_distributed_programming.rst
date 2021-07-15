@@ -12,11 +12,9 @@ how its features must behave in any implementation." MPI's goals are high
 performance, scalability, and portability. MPI remains the dominant model
 used in high-performance computing today.
 
-The current version of the MPI standard is 3.0, but only the newest
-implementations implement the full standard. The previous specifications
-are the MPI 2.0 specification with minor updates in the MPI-2.1 and
-MPI-2.2 specifications. The standardization body for MPI is the `MPI
-forum`_ .
+The current version of the MPI standard is 4.0, but hardly any implementations
+currently have support for the new features.  All recent
+implementations support the full 3.1 standard though.
 
 Some background information
 ---------------------------
@@ -28,9 +26,8 @@ additions in MPI-2.0 (1997) and its updates MPI-2.1 (2008) and MPI-2.2
 (2009) are one-sided communication (get/put), dynamic process management
 and a model for parallel I/O. MPI-3.0 (2012) adds non-blocking
 collectives, a major update of the one-sided communication model and
-neighborhood collectives on graph topologies. The first update of the
-MPI-3.1 specification was released in 2015, and work is ongoing on the
-next major update, MPI-4.0.
+neighborhood collectives on graph topologies. An update of the specification,
+MPI-3.1 was released in 2015. The MPI-4.0 was formally approved in June 2021.
 
 The two dominant Open Source implementations are `Open MPI`_
 and `MPICH`_. The latter has been through
@@ -45,10 +42,8 @@ from one of these implementations.
 
 At the VSC we offer both implementations: Open MPI is offered with the
 GNU compilers in the ":ref:`FOSS toolchain`"
-, while
-the Intel MPI used in the ":ref:`Intel toolchain`"
-is
-derived from the MPICH code base.
+, while the Intel MPI used in the ":ref:`Intel toolchain`"
+is derived from the MPICH code base.
 
 Prerequisites
 -------------
