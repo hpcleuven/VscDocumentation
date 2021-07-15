@@ -47,13 +47,5 @@ code.
 Additional toolchains may be defined on specialised hardware to extract
 the maximum performance from that hardware.
 
--  On Cerebro, the SGI UV shared memory system at the KU Leuven, you
-   need to use the SGI MPI-library (called MPT for Message Passing
-   Toolkit) to get the maximum performance from the interconnect (which
-   offers hardware acceleration for some MPI functions). On that
-   machine, two additional toolchains are defined, ``intel-mpt`` and
-   ``foss-mpt``, equivalent to the standard ``intel`` and ``foss``
-   toolchains respectively but with the MPI library replaced with MPT.
-
 For detailed documentation on each of these toolchains, we refer to the
 pages linked above in this document.
