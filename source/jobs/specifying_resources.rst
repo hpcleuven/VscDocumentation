@@ -157,7 +157,7 @@ Example::
 
    -l nodes=2:ppn=8  -l pmem=10gb
 
-In total, each of the 16 processes can use 10 GB RAM.
+Each of the 16 processes can use 10 GB RAM for a total of 160 GB.
 
 .. note::
 
