@@ -280,7 +280,7 @@ It is possible to combine multiple ``-l`` options in a single one by
 separating the arguments with a colon (,). E.g., the block::
 
    #PBS -l walltime=2:30:00
-   #PBS -l nodes=2:ppn=16:sandybridge
+   #PBS -l nodes=2:ppn=16:skylake
    #PBS -l pmem=2gb
 
 is equivalent with the line::
@@ -295,7 +295,7 @@ The same holds when using ``-l`` on the command line for ``qsub``.
 Requesting GPUs
 ---------------
 
-It is possible to request one or more GPGPUs for your job on some of the
+It is possible to request one or more GPUs for your job on some of the
 VSC clusters that provide them. For cluster-specific usage instructions, please
 consult the respective documentation sources:
 
