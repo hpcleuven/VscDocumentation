@@ -122,7 +122,7 @@ specifications and the given number of processes per node (the
 ``--hybrid`` switch).
 
 Intel toolchain (Intel compilers and Intel MPI)
----------------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------
 
 On Intel MPI defining the MPI domains is done through the environment
 variable ``I_MPI_PIN_DOMAIN``. Note however that the Linux scheduler is
@@ -248,7 +248,7 @@ setting ``OMP_PROC_BIND`` to true is generally a safe choice to assure
 that all threads remain on the same core as they were started on to
 improve cache performance.
 
-Essential elements of our job script are:
+Essential elements of your job script are:
 
 ::
 
@@ -261,12 +261,13 @@ Essential elements of our job script are:
    #
    export OMP_NUM_THREADS=5
    #
-   export OMP_PROC_BIND=true
+   export MPI_NUM_PROCS=$(( ${PBS_NP}/${OMP_NUM_THREADS} ))
    #
-   mpirun -cpus-per-proc $OMP_NUM_THREADS ./hybrid_mpi
-
-Advanced issues
-~~~~~~~~~~~~~~~
+   mpirun --np ${MPI_NUM_PROCS} \
+          --map-by socket:PE=${OMP_NUM_THREADS} \
+          --bind-to core \
+          ./hybrid_mpi
+                  
 
 Open MPI allows a lot of control over process placement and rank
 assignment. The Open MPI mpirun command has several options that
