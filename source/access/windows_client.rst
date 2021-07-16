@@ -90,9 +90,9 @@ a graphical file browser, an X server, an SSH agent, and more, all in one.
 No installation is required when using the *Portable edition*. See
 :ref:`detailed instructions on how to setup MobaXterm <access using mobaxterm>`.
 
-If you install the free UNIX emulation layer `Cygwin`_ with the necessary
-packages, you can use the same OpenSSH client as on Linux systems and
-all pages about SSH and data transfer from :ref:`the Linux client
+Recent versions of Windows come with an OpenSSH installed, and you can use
+it from PowerShell or the Command Prompt as you would in the termial on Linux
+systems and all pages about SSH and data transfer from :ref:`the Linux client
 pages <Linux client>` apply.
 
 The Windows Subsystem for Linux can be an alternative if you are using
@@ -109,22 +109,6 @@ Programming tools
    differ substantially from the VSC HPC hardware.  Therefore it is
    recommended that performance optimizations are done on the target
    system.
-
-Cygwin
-~~~~~~
-By installing the UNIX emulation layer `Cygwin`_ with the appropriate
-packages you can mimic very well the VSC cluster environment (at
-least with the FOSS toolchain). Cygwin supports the GNU compilers and
-also contains packages for OpenMPI (`look for
-"openmpi" <https://cygwin.com/cgi-bin2/package-grep.cgi?grep=openmpi&arch=x86_64>`_)
-and some other popular libraries (FFTW, HDF5, ...). As such it can
-turn your Windows PC in a computer that can be used to develop
-software for the cluster if you don't rely on too many external
-libraries (which may be hard to install). This can come in handy if
-you sometimes need to work off-line. If you have a 64-bit Windows
-system (which most recent computers have), it is best to go for the
-64-bit version of Cygwin. After all, the VSC-clusters are also
-running a 64-bit OS.
 
 Windows Subsystem for Linux (WSL/WSL2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,8 +142,6 @@ Environment (IDE) very well suited for code development on clusters.
    and how to get it.
 -  You can use :ref:`Eclipse on the desktop as a remote editor for the
    cluster <Eclipse as remote editor>`.
--  You can use :ref:`Eclipse on the desktop to access files in a
-   subversion repository on the cluster <Eclipse VSC subversion>`.
 -  You can combine the remote editor feature with version control
    from Eclipse, but some care is needed, and :ref:`here's how to do
    it <Eclipse PTP>`.

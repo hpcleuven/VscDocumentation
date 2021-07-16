@@ -22,8 +22,8 @@ more version control systems. E.g., Eclipse, the IDE which we recommend
 for the development of C/C++ or Fortran codes on clusters, supports all
 of the systems mentioned on this page, some out-of-the-box and others by
 adding an additional package. The systems mentioned on this page are all
-available on Linux, macOS and Windows (through the UNIX emulation layer
-Cygwin and all except RCS also in at least one native implementation).
+available on Linux, macOS and Windows through the Windows Subsystem for Linux
+(WSL).
 
 Types of version control systems
 --------------------------------
@@ -73,7 +73,7 @@ Links:
 -  CVS implementations
 
    -  A command-line client is included in most Linux distributions. On
-      Windows, the Cygwin UNIX emulation layer also has a svn package.
+      Windows, any system on the Windows Subsystem for Linux has a client.
       On macOS, it is available (though no longer maintained) through the
       MacPorts and HomeBrew projects.
    -  The Eclipse IDE comes with built-in support for CVS.
@@ -81,8 +81,8 @@ Links:
 -  SVN implementations
 
    -  Command-line clients are included in most Linux distributions and
-      macOS. On Windows, the Cygwin UNIX emulation layer also has a svn
-      package. The command line client is also available on the VSC
+      macOS and Windows (WSL).
+      The command line client is also available on the VSC
       clusters.
    -  :ref:`TortoiseSVN <TortoiseSVN>` (or `go
       straight to the TortoiseSVN web
@@ -129,17 +129,14 @@ Links:
 
    -  If you have a Linux system, Git is most likely already installed
       on your system. On macOS, git is available through Xcode, though it
-      is not always the most recent version. On Windows, there is a
-      Git-package in the UNIX emulation layer Cygwin. Downloads for all
+      is not always the most recent version. On Windows, you can use WSL.
+      Downloads for all
       systems are also available on `the download section of the main
       git web site <https://git-scm.com/download>`__. That page
       also contains links to a number of GUI options. Most if not all
       GUI tools store projects in a way that is fully compatible with
       the command line tools, so you can use both simultaneously. The
       command line client is also available on the VSC clusters.
-   -  `TortoiseGit <https://tortoisegit.org/>`__ is an
-      explorer-integrated interface to Git on Windows similar to
-      TortoiseSVN.
    -  Another nice GUI application is
       `SourceTree <https://www.atlassian.com/software/sourcetree>`__
       produced by `Atlassian <https://www.atlassian.com/>`__.

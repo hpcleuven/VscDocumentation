@@ -106,8 +106,6 @@ Environment (IDE) very well suited for code development on clusters.
    and how to get it.
 -  You can use :ref:`Eclipse on the desktop as a remote editor for the
    cluster <Eclipse as remote editor>`.
--  You can use :ref:`Eclipse on the desktop to access files in a
-   subversion repository on the cluster <Eclipse VSC subversion>`.
 -  You can combine the remote editor feature with version control
    from Eclipse, but some care is needed, and :ref:`here's how to do
    it <Eclipse PTP>`.
@@ -118,7 +116,3 @@ Version control
 
 Linux supports all popular version control systems. See :ref:`our
 introduction to version control systems <version control systems>`.
-
-Specific instructions to :ref:`access subversion repositories on the
-VSC clusters or other servers from your desktop with UNIX-style
-command line tools <desktop access VSC SVN>`.

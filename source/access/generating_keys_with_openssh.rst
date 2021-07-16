@@ -19,7 +19,7 @@ You can use OpenSSH on Windows also if you
 
 - :ref:`download and setup MobaXterm <access using mobaxterm>`,
 - use Windows Subsystem for Linux (WSL or WSL2), or
-- install the free UNIX emulation layer `Cygwin`_ with the package "openssh".
+- simply from PowerShell on recent versions of Windows.
 
 macOS
 ~~~~~
