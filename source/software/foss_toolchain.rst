@@ -61,6 +61,10 @@ use the appropriate option listed in the table below.
 +------------------+---------------------------+
 | Skylake          | ``-march=skylake-avx512`` |
 +------------------+---------------------------+
+| Cascade Lake     | ``-march=cascadelake``    |
++------------------+---------------------------+
+| Napels/Rome (AMD)| ``-march=znver2``         |
++------------------+---------------------------+
 | detect host CPU  | ``-march=native``         |
 +------------------+---------------------------+
 
@@ -167,14 +171,6 @@ offers:
 -  LAPACK from the `Netlib LAPACK repository`_ (Linear Algebra PACKage)
 -  ScaLAPACK from the `Netlib ScaLAPACK repository`_ (Scalable Linear Algebra PACKage)
 -  `FFTW`_ (Fastest Fourier Transform in the West)
-
-Other components
-----------------
-
--  From the 2015b series on, binutils was added to the toolchain. The
-   binutils package contains the assembler used by gcc, and the standard
-   OS assembler doesn't always support the newer instructions that are
-   used on newer cluster nodes.
 
 Version numbers
 ---------------
