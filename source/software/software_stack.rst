@@ -328,7 +328,7 @@ Remove an environment
 .. _specialized software stacks:
 
 Specialized software stacks
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The list of software available on a particular cluster can be
 unwieldingly long and the information that ``module av`` produces
