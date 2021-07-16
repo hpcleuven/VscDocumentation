@@ -281,10 +281,7 @@ Further information on Intel tools
    and sometimes one older version of te compiler and libraries.
 -  Some other useful documents:
 
-   -  `Step by Step Performance Optimization with Intel® C++
-      Compiler <https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler>`_.
-      Despite the title, the remarks also hold for the C and Fortran
-      compilers.
+   -  `Quick-Reference Guide to Optimization with Intel® Compilers <https://software.intel.com/content/dam/develop/public/us/en/documents/quick-reference-guide-intel-compilers-v19-1-final-.pdf>`_.
    -  `Direct link to the C/C++ compiler developer and reference
       guide <https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference>`_
    -  `Direct link to the Fortran compiler user and reference
