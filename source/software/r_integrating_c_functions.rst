@@ -153,13 +153,13 @@ will be programmed to provide a convenient \\"function-feel\".
 
 ::
 
-   dyn.load(\"myRLib.so\");
+   dyn.load("myRLib.so");
 
    # sayHello wrapper not shown
 
    mySum <- function(a) {
        n <- length(a);
-       result <- .C(\"mySum\", as.double(a), as.integer(n), s = double(1));
+       result <- .C("mySum", as.double(a), as.integer(n), s = double(1));
        result$s
    }
 
@@ -177,7 +177,7 @@ From R, 'mySum' can now easily be called:
 
 ::
 
-   > source(\"myRLib.R\")
+   > source("myRLib.R")
    > mySum(c(1, 3, 8))
    [1] 12
 
@@ -212,13 +212,13 @@ script for this new function as follows:
 
 ::
 
-   dyn.load(\"myRLib.so\");
+   dyn.load("myRLib.so");
 
    # sayHello and mySum wrapper not shown
 
    myMult <- function(a, lambda) {
        n <- length(a);
-       result <- .C(\"myMult\", as.double(a), as.integer(n),
+       result <- .C("myMult", as.double(a), as.integer(n),
                     as.double(lambda), m = double(n));
        result$m
    }
@@ -227,7 +227,7 @@ From within R, 'myMult' can be used as expected.
 
 ::
 
-   > source(\"myRLib.R\")
+   > source("myRLib.R")
    > myMult(c(1, 3, 8), 9)
    [1]  9 27 72
    > mySum(myMult(c(1, 3, 8), 9))
