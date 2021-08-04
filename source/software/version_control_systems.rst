@@ -122,12 +122,7 @@ Cloud services
 --------------
 
 Many companies offer hosting services for SVN, Git or Mercurial
-repositories in the cloud. Google, e.g., for `subversion hosting
-service <https://www.google.be/webhp?#q=subversion+hosting+service>`__,
-`git hosting
-service <https://www.google.be/search?q=git+hosting+service>`__
-or `mercurial hosting
-service <https://www.google.be/search?q=mercurial+hosting+service>`__.
+repositories in the cloud.
 Several offer free public hosting for Open Source projects or have free
 access for academic accounts. Some noteworthy ones that are popular for
 academic projects are:
@@ -135,13 +130,9 @@ academic projects are:
 -  `GitHub (github.com) <https://github.com/>`__ offers free Git
    and Subversion hosting for Open Source projects. We use this service
    for some VSC in-house tools development. It is also possible to host
-   private projects if you subscribe to one of their paying plans.
--  `Bitbucket (bitbucket.org) <https://bitbucket.org/>`__ offers
-   both Git and Mercurial services. It also supports private projects
-   with a limited number of users in free accounts (and has a special
-   deal for academic institutions, allowing unlimited users) while the
-   other services mentioned on this page only support open source
-   projects for free.
+   private projects if you subscribe to one of their paying plans or 
+   register as an academic usser.
+- `GitLab (gitlab.com) <https://gitlab.com/>`__ also offers free public and private repositories.
 -  `SourceForge <https://sourceforge.net/>`__ is a very well
    known service for hosting Open Source projects. It currently supports
    projects managed through Subversion, Git, Mercurial and a few other
@@ -149,7 +140,8 @@ academic projects are:
 
 However, we urge you to always carefully check the terms-of-use of these
 services to assure that, e.g., the way they deal with intellectual
-property is in line with your institute's requirements.
+property is in line with your institute's requirements.  Also note that some
+institutes provide version control services.
 
 Local systems
 ~~~~~~~~~~~~~
