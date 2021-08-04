@@ -31,7 +31,7 @@ such as make.
 ParameterWeaver currently supports the following target languages:
 
 -  C/C++
--  Fortran 90
+-  Fortran 90 and later
 -  R
 
 High-level overview & concepts
