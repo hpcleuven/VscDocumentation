@@ -86,17 +86,14 @@ be very much out-of-sync with each other, making the job harder when
 those versions have to be merged again.
 
 Popular examples of systems of this type are Git (originally developed
-to manage the Linux kernel project) and Mercurial (sometimes abbreviated
-as Hg, chemists will understand why).
+to manage the Linux kernel project) and `Mercurial <https://www.mercurial-scm.org>`_
+(sometimes abbreviated as Hg, chemists will understand why).
 
 Links:
 
 -  `Git on
    Wikipedia <https://en.wikipedia.org/wiki/Git_(software)>`__
 -  `Main Git web page <https://git-scm.com/>`__
--  `Mercurial on
-   Wikipedia <https://en.wikipedia.org/wiki/Mercurial>`__
--  `Main Mercural web page <https://www.mercurial-scm.org>`__
 -  Git implementations
 
    -  If you have a Linux system, Git is most likely already installed
@@ -129,21 +126,6 @@ Links:
       free and integrates with several git cloud services and
       bugtracking services.
 
--  Mercurial (Hg) implementations
-
-   -  Mercurial is written in Python and hence runs on most systems.
-      Most Linux distributions offer a Mercurial package. `Windows and
-      macOS command line utilities are also
-      available <https://www.mercurial-scm.org/>`__.
-   -  `TortoiseHg <https://tortoisehg.bitbucket.io/>`__ is an
-      explorer-integrated interface to the Mercurial VCS on Windows
-      similar to TortoiseSVN. There is also a macOS and Linux version
-      available. The latter integrates with Gnome/Nautilus.
-   -  The Eclipse IDE supports Mercurial through the `optional
-      MercurialEclipse
-      plugin <https://marketplace.eclipse.org/content/mercurialeclipse>`__
-      available on the `Eclipse
-      Marketplace <https://marketplace.eclipse.org/>`__.
 
 Cloud services
 --------------
