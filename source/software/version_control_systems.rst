@@ -117,15 +117,6 @@ Links:
       standard plug-in EGit. More recent versions of this plugin may be
       available through the `Eclipse
       Marketplace <https://marketplace.eclipse.org/>`__.
-   -  `CollabNet
-      GitEye <https://www.collab.net/products/giteye>`__ is a
-      Git GUI for Windows, macOS and Linux build on top of a number of
-      Eclipse libraries, but you don/t need to install Eclipse to be
-      able to use it. It is a nice way though to browse through your Git
-      repositories outside of the Eclipse environment. GitEye itself is
-      free and integrates with several git cloud services and
-      bugtracking services.
-
 
 Cloud services
 --------------
