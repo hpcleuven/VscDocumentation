@@ -32,24 +32,6 @@ An excellent introduction to the various types of version control
 systems can be found in `the book Pro GIT by Scott Chacon and Ben
 Straub <https://git-scm.com/book/en/v2>`__.
 
-Local systems
-~~~~~~~~~~~~~
-
-These first generation systems use a local database that stores previous
-versions of files. One of the most popular examples of this type is the
-venerable RCS (Revision Control System) system, distributed with many
-UNIX-like systems. It works by keeping patch sets (differences between
-various versions of a file) in a special format on disk. It can then
-return to a previous version of a file by adding up all the patches.
-
-RCS and other \\"local systems\" are very outdated. Hence we advise you
-to use one of the systems from the next two categories.
-
-Links:
-
--  `Wikipedia
-   page <https://en.wikipedia.org/wiki/Revision_Control_System>`__
--  `GNU RCS <https://www.gnu.org/software/rcs/rcs.html>`__
 
 Centralised systems
 ~~~~~~~~~~~~~~~~~~~
@@ -60,24 +42,14 @@ may not share a common file system. The version files are now maintained
 by a server to which multiple clients can connect and check out files,
 and the systems help to manage concurrent changes to a file by several
 users (through a copy-modify-merge procedure). Popular examples of this
-type are CVS (Concurrent Versions System) and SVN (Subversion). Of those
+type are `CVS (Concurrent Versions System) <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`_ and SVN (Subversion). Of those
 two, SVN is the more recent system while CVS is no longer further
 developed and less and less used.
 
 Links:
 
--  `CVS Wikipedia
-   page <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`__
 -  `SVN Wikipedia
    page <https://en.wikipedia.org/wiki/Apache_Subversion>`__
--  CVS implementations
-
-   -  A command-line client is included in most Linux distributions. On
-      Windows, any system on the Windows Subsystem for Linux has a client.
-      On macOS, it is available (though no longer maintained) through the
-      MacPorts and HomeBrew projects.
-   -  The Eclipse IDE comes with built-in support for CVS.
-
 -  SVN implementations
 
    -  Command-line clients are included in most Linux distributions and
@@ -205,6 +177,25 @@ academic projects are:
 However, we urge you to always carefully check the terms-of-use of these
 services to assure that, e.g., the way they deal with intellectual
 property is in line with your institute's requirements.
+
+Local systems
+~~~~~~~~~~~~~
+
+These first generation systems use a local database that stores previous
+versions of files. One of the most popular examples of this type is the
+venerable RCS (Revision Control System) system, distributed with many
+UNIX-like systems. It works by keeping patch sets (differences between
+various versions of a file) in a special format on disk. It can then
+return to a previous version of a file by adding up all the patches.
+
+RCS and other \\"local systems\" are very outdated. Hence we advise you
+to use one of the systems from the next two categories.
+
+Links:
+
+-  `Wikipedia
+   page <https://en.wikipedia.org/wiki/Revision_Control_System>`__
+-  `GNU RCS <https://www.gnu.org/software/rcs/rcs.html>`__
 
 Which one should I use?
 -----------------------
