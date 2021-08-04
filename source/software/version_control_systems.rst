@@ -132,7 +132,8 @@ academic projects are:
    for some VSC in-house tools development. It is also possible to host
    private projects if you subscribe to one of their paying plans or 
    register as an academic usser.
-- `GitLab (gitlab.com) <https://gitlab.com/>`__ also offers free public and private repositories.
+-  `GitLab (gitlab.com) <https://gitlab.com/>`__ also offers free public
+   and private repositories.
 -  `SourceForge <https://sourceforge.net/>`__ is a very well
    known service for hosting Open Source projects. It currently supports
    projects managed through Subversion, Git, Mercurial and a few other
@@ -143,33 +144,17 @@ services to assure that, e.g., the way they deal with intellectual
 property is in line with your institute's requirements.  Also note that some
 institutes provide version control services.
 
-Local systems
-~~~~~~~~~~~~~
-
-These first generation systems use a local database that stores previous
-versions of files. One of the most popular examples of this type is the
-venerable RCS (Revision Control System) system, distributed with many
-UNIX-like systems. It works by keeping patch sets (differences between
-various versions of a file) in a special format on disk. It can then
-return to a previous version of a file by adding up all the patches.
-
-RCS and other \\"local systems\" are very outdated. Hence we advise you
-to use one of the systems from the next two categories.
-
-Links:
-
--  `Wikipedia
-   page <https://en.wikipedia.org/wiki/Revision_Control_System>`__
--  `GNU RCS <https://www.gnu.org/software/rcs/rcs.html>`__
-
 Which one should I use?
 -----------------------
 
 It is not up to us to make this choice for you, but here are a number of
 elements that you should take into account:
 
+-  Use a cloud service if you can, since this ensures that your code
+   is safely stored off-site.
 -  Subversion, Git and Mercurial are all recent systems that are well
-   maintained and supported by several hosting services.
+   maintained and supported by several hosting services.  Git currently
+   seems the most popular choice.
 -  Subversion and Git are installed on most VSC systems. We use Git
    ourselves for some of our in-house development.
 -  Centralised version management systems have a simpler concept than
