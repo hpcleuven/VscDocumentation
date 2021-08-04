@@ -151,10 +151,12 @@ It is not up to us to make this choice for you, but here are a number of
 elements that you should take into account:
 
 -  Use a cloud service if you can, since this ensures that your code
-   is safely stored off-site.
+   is safely stored off-site.  However, verify this is in line with
+   the intellectual property policies of your institute.
 -  Subversion, Git and Mercurial are all recent systems that are well
    maintained and supported by several hosting services.  Git currently
-   seems the most popular choice.
+   seems the most popular choice and the VSC provides training sessions
+   on Git.
 -  Subversion and Git are installed on most VSC systems. We use Git
    ourselves for some of our in-house development.
 -  Centralised version management systems have a simpler concept than
