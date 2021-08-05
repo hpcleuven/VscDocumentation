@@ -47,8 +47,8 @@ packages you need for scientific computing have been bundled into the
 
 .. _conda for Python:
 
-Install packages using conda
-----------------------------
+Install Python packages using conda
+-----------------------------------
 
 .. note::
 
