@@ -56,7 +56,7 @@ Hardware details
    - 256 GB RAM
    - partition ``amd``, specific ``qsub`` :ref:`options <submit to genius AMD node>` apply.
 
-The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
+The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands are indicated on the diagram below.
 
 |Genius hardware|
 
