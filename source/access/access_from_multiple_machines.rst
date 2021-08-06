@@ -1,5 +1,3 @@
-.. _access from multiple machines:
-
 Access from multiple machines
 =============================
 
