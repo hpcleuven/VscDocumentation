@@ -136,8 +136,6 @@ that should be run with 10 OpenMP threads.
    node.
 
 
-.. _Intel MPI:
-
 Communication library: Intel MPI
 --------------------------------
 

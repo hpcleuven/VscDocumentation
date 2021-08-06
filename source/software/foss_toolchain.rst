@@ -109,8 +109,6 @@ OpenMP threads.
    compute node.
 
 
-.. _Open MPI:
-
 Communication library: Open MPI
 -------------------------------
 
