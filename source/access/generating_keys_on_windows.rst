@@ -8,5 +8,4 @@ To get access from a Windows computer, we currently provide documentation for tw
 both of which require a public/private key pair in a different format:
 
 * :ref:`generate a key pair with PuTTY <generating keys putty>`
-* :ref:`generate a key pair with MobaXterm (OpenSSH format) <generating keys mobaxterm>`
-
+* :ref:`generate a key pair with MobaXterm <generating keys mobaxterm>`
