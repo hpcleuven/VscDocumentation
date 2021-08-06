@@ -6,7 +6,7 @@ Where can I store what kind of data?
 Data on the VSC clusters can be stored in several locations, depending
 on the size and usage of these data. Following locations are available:
 
--  :ref:`Home directory <VSC home directory>`
+:ref:`Home directory <VSC home directory>`
 
    -  Location available as $VSC_HOME
    -  The data stored here should be relatively small, and not
@@ -21,7 +21,7 @@ on the size and usage of these data. Following locations are available:
       only for yourself, i.e., 700. To share data with others, use the
       data directory.
 
--  :ref:`Data directory <VSC data directory>`
+:ref:`Data directory <VSC data directory>`
 
    -  Location available as $VSC_DATA
    -  A bigger 'workspace', for program code, datasets or results that
@@ -30,7 +30,7 @@ on the size and usage of these data. Following locations are available:
       performance may not be very high.
    -  Readable and writable on all VSC sites.
 
--  :ref:`Scratch directories <VSC scratch space>`
+:ref:`Scratch directories <VSC scratch space>`
 
    -  Several types exist, available in $VSC_SCRATCH_XXX variables
    -  For temporary or transient data; there is typically no backup for
