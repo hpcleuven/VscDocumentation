@@ -29,7 +29,7 @@ Text-mode session using an SSH client
 To get terminal-based access to a remote system, you can use
 
 -  the :ref:`OpenSSH ssh command<OpenSSH access>`, or
--  the :ref:`JellyfiSSH<OpenSSH JellyfiSSH access>` GUI client.
+-  the :ref:`JellyfiSSH<JellyfiSSH access>` GUI client.
 
 
 Transfer data using Secure FTP (SFTP)
