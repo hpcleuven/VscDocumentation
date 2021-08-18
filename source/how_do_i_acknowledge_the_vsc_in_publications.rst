@@ -6,14 +6,19 @@ acknowledge the VSC in all relevant publications. This will help the VSC
 secure funding, and hence you will benefit from it in the long run as
 well. It is also a contractual obligation for the VSC.
 
-Please use the following phrase to do so in Dutch: "De
-infrastructuur en dienstverlening gebruikt in dit werk werd voorzien door
-het VSC (Vlaams Supercomputer Centrum), gefinancierd door het FWO en de Vlaamse
-overheid." or in English: "The resources and services used in this work were
-provided by the VSC (Flemish Supercomputer Center), funded by the Research
-Foundation - Flanders (FWO) and the Flemish Government."
+- Please use the following phrase to do so in Dutch:
+ 
+      De infrastructuur en dienstverlening gebruikt in dit werk werd voorzien door
+      het VSC (Vlaams Supercomputer Centrum), gefinancierd door het FWO en de Vlaamse
+      overheid.
+     
+- or in English:
+ 
+      The resources and services used in this work were
+      provided by the VSC (Flemish Supercomputer Center), funded by the Research
+      Foundation - Flanders (FWO) and the Flemish Government.
 
 Moreover, if you are in the KU Leuven association, you are also
-requested to add the relevant papers to the virtual collection \\"High
-Performance Computing\" in Lirias so that we can easily generate the
+requested to add the relevant papers to the virtual collection "High
+Performance Computing" in Lirias so that we can easily generate the
 publication lists with relevant publications.

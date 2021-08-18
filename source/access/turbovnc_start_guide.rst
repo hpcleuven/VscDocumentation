@@ -17,14 +17,11 @@ Installing TurboVNC client (viewer)
 TurboVNC client Configuration & Start Guide
 -------------------------------------------
 
-Note: These instructions are for the KU Leuven Thinking visualization nodes (login7 and login8)
-only. The nodes have been added as login nodes to the migrated ThinKing cluster. The visualisation nodes are not in the queueing system anymore. The UAntwerp visualization node also uses TurboVNC, but the setup
+The UAntwerp visualization node uses TurboVNC, but the setup
 is different and TurboVNC is also supported on the regular login
 nodes (but without OpenGL support). Specific instructions for the use of
 TurboVNC on the UAntwerp clusters can be found on the page
 ":ref:`remote visualization UAntwerp`".
-
-#. login on one of the ThinKing visualisation nodes (login7 or login8)
 
 #. Create password to authenticate your session:
 
@@ -72,7 +69,7 @@ TurboVNC on the UAntwerp clusters can be found on the page
 
    | 
    | In Windows:
-   | In putty go to Connection-SSH-Tunnels tab and add the source port
+   | In PuTTY go to Connection-SSH-Tunnels tab and add the source port
    | 590<d> (e.g., 5902) and destination host:590<d> (e.g., tier2-p-login-8:5902).
 
    |TVNC 1|

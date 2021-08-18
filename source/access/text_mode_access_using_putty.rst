@@ -67,6 +67,18 @@ login node.
 For future sessions, just select your saved session from the list and
 press 'Open'.
 
+Troubleshooting PuTTY connection issues
+---------------------------------------
+
+If you have trouble accessing the infrastructure, the support staff will
+likely ask you to provide a log.  After you have made a failed attempt to connect,
+you can obtain the connection log by
+
+#. right-clicking in PuTTY's title bar and selecting **Event Log**.
+#. In the dialog window that appears, click the **Copy** button to copy the
+   log messages.  They are copied as text and can be pasted in your message
+   to support.
+
 .. |PuTTY config 1| image:: text_mode_access_using_putty/text_mode_access_using_putty_01.png
    :width: 456
 .. |PuTTY config 2| image:: text_mode_access_using_putty/text_mode_access_using_putty_02.png

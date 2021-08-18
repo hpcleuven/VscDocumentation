@@ -1,5 +1,3 @@
-.. _account management:
-
 Account management
 ==================
 

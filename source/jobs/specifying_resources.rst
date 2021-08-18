@@ -157,7 +157,7 @@ Example::
 
    -l nodes=2:ppn=8  -l pmem=10gb
 
-In total, each of the 16 processes can use 10 GB RAM.
+Each of the 16 processes can use 10 GB RAM for a total of 160 GB.
 
 .. note::
 
@@ -252,17 +252,17 @@ Several clusters at the VSC have nodes with different properties,  e.g.,
 You can then specify which node type you want by adding further properties
 to the ``-l nodes=`` specification.
 
-For example, assume a cluster with both ivybridge and haswell generation
-nodes. The haswell CPU supports new and useful floating point instructions,
-but programs that use these will not run on the older ivybridge nodes.
+For example, assume a cluster with both skylake and cascadelake generation
+nodes. The cascadelake CPU supports new and useful floating point instructions,
+but programs that use these will not run on the older skylake nodes.
 
-The cluster will then specify the property ``ivybridge`` for the ivybridge
-nodes and ``haswell`` for the haswell nodes. To tell the scheduler that you
-want to use the haswell nodes, specify::
+The cluster will then specify the property ``skylake`` for the skylake
+nodes and ``cascadelake`` for the cascadelake nodes. To tell the scheduler that you
+want to use the cascadelake nodes, specify::
 
-   -l nodes=8:ppn=6:haswell
+   -l nodes=8:ppn=6:cascadelake
 
-Since haswell nodes often have 24 cores, you will likely get 2 physical nodes.
+Since cascadelake nodes often have 24 cores, you will likely get 2 physical nodes.
 
 The exact list of properties depends on the cluster and is given in the
 page for your cluster in the :ref:`hardware specification pages <hardware>`.
@@ -280,7 +280,7 @@ It is possible to combine multiple ``-l`` options in a single one by
 separating the arguments with a colon (,). E.g., the block::
 
    #PBS -l walltime=2:30:00
-   #PBS -l nodes=2:ppn=16:sandybridge
+   #PBS -l nodes=2:ppn=16:skylake
    #PBS -l pmem=2gb
 
 is equivalent with the line::
@@ -295,7 +295,7 @@ The same holds when using ``-l`` on the command line for ``qsub``.
 Requesting GPUs
 ---------------
 
-It is possible to request one or more GPGPUs for your job on some of the
+It is possible to request one or more GPUs for your job on some of the
 VSC clusters that provide them. For cluster-specific usage instructions, please
 consult the respective documentation sources:
 

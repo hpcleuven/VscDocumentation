@@ -20,11 +20,11 @@ Two types of login nodes are available:
 
   - ``nx-tier1.hpc.kuleuven.be``
 
-.. warning::
+    .. warning::
 
-   This node *should not* be accessed using terminal SSH, it serves only
-   as a gateway to the actual login nodes your NX sessions will be running
-   on.
+       This node *should not* be accessed using terminal SSH, it serves only
+       as a gateway to the actual login nodes your NX sessions will be running
+       on.
 
-The NX login node will start a session on a login node that has a GPU, i.e.,
-``login2-tier1.hpc.kuleuven.be``.
+    The NX login node will start a session on a login node that has a GPU, i.e.,
+    ``login2-tier1.hpc.kuleuven.be``.

@@ -22,7 +22,7 @@ config.
    git config --global core.editor vi
 
 These settings are stored in the file ``.gitconfig`` in your home directory
-(OS X, Linux, Cygwin). The file is a simple user-editable text file.
+(OS X, Linux, WSL). The file is a simple user-editable text file.
 
 Some remarks on accessing a remote repository using command line tools
 ----------------------------------------------------------------------

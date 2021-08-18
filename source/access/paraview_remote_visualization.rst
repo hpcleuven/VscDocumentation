@@ -74,7 +74,7 @@ the same local port.
 
    |paraview 2 configure server|
 
-#. Enter a name in the 'Name' field, e.g., 'Thinking'. If you have used
+#. Enter a name in the 'Name' field, e.g., 'HPC'. If you have used
    11111 as the local port to establish the tunnel, just click the
    'Configure' button, otherwise modify the 'Port' field appropriately
    and click 'Configure'. This opens the 'Configure Server' dialog:
@@ -83,7 +83,7 @@ the same local port.
 
 #. Set the 'Startup Type' from 'Command' to 'Manual' in the drop-down
    menu, and click 'Save'.
-#. In the 'Choose Server' dialog, select the server, i.e., 'Thinking'
+#. In the 'Choose Server' dialog, select the server, i.e., 'HPC'
    and click the 'Connect' button.
 
    |paraview 4 connect|

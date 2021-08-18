@@ -19,16 +19,16 @@ Two types of login nodes are available:
 - login node that provides a desktop environment that can be used for,
   e.g., visualization, see the :ref:`NX clients section <NX start guide>`:
 
-  - ``nx.hpc.kuleuven.be``
+  -  ``nx.hpc.kuleuven.be``
 
-.. warning::
+     .. warning::
 
-   This node *should not* be accessed using terminal SSH, it serves only
-   as a gateway to the actual login nodes your NX sessions will be running
-   on.
+        This node *should not* be accessed using terminal SSH, it serves only
+        as a gateway to the actual login nodes your NX sessions will be running
+        on.
 
-The NX login node will start a session on a login node that has a GPU, i.e.,
-either
+     The NX login node will start a session on a login node that has a GPU, i.e.,
+     either
 
-  - ``login3-tier2.hpc.kuleuven.be``
-  - ``login4-tier2.hpc.kuleuven.be``
+       - ``login3-tier2.hpc.kuleuven.be``
+       - ``login4-tier2.hpc.kuleuven.be``

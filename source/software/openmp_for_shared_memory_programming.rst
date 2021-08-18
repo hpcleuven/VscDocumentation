@@ -15,12 +15,12 @@ influence run-time behavior.
 OpenMP uses a portable, scalable model that gives programmers a simple
 and flexible interface for developing parallel applications for
 platforms ranging from the standard desktop computer to the
-supercomputer. The current version of the OpenMP specification is 5.0,
-released in November 2018.
+supercomputer. The current version of the OpenMP specification is 5.1,
+released in November 2020.
 
 However, not all compilers already fully support this standard. The
-previous specification were OpenMP 4.5 (November 2015) and
-OpenMP 4.0 (July 2013).
+previous specification were OpenMP 5.0 (November 2018), OpenMP 4.5 (November
+2015) and OpenMP 4.0 (July 2013).
 
 
 Prerequisites
@@ -34,11 +34,11 @@ Implementations
 
 On the VSC clusters, the following compilers support OpenMP:
 
-:ref:`Intel compilers <Intel OpenMP>` in the Intel toolchain
+:ref:`Intel compilers <Intel OpenMP>` in the :ref:`Intel toolchain`
    The Intel compiler version 18.0 (intel/2018a and intel/2018b
    toolchains) offers almost complete OpenMP 4.5 support.
 
-:ref:`GCC compilers <GCC OpenMP>` in the FOSS toolchain
+:ref:`GCC compilers <GCC OpenMP>` in the :ref:`FOSS toolchain`
    GCC 6.x (foss/2018a) offers full OpenMP 4.5
    support in C and C++, including offloading to some variants of the
    Xeon Phi and to AMD HSAIL and some support for OpenACC on NVIDIA.  For
