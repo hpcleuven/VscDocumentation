@@ -11,7 +11,7 @@ Important differences between Slurm and Torque
      environment or if some things are in different directories on the login and cluster
      nodes which does sometimes happen when we do a silent upgrade of the cluster.
       - ``--get-user-env`` will give an environment pretty equivalent
-         to what you would get on Torque
+        to what you would get on Torque
       - ``--export=NONE`` will start the job with a very empty environment
 - **Working directory at job start:** This is in fact a logical consequence of the previous
   bullet.
