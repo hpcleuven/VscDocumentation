@@ -6,12 +6,8 @@
 Vaughan hardware
 ================
 
-**Vaughan is currently in pilot use. Initial use is on invitation only
-until all software is installed and courses for the new job system have been prepared.
-We expect from pilot users that they also go through the documentation on this site.**
-
 Vaughan was installed in the summer of 2020. It is a NEC system consisting of
-104 nodes with two 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_
+152 nodes with two 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_
 Rome generation CPUs connected through a HDR100 InfiniBand network.
 All nodes have 256 GB RAM.
 The nodes do not have a sizeable local disk.
