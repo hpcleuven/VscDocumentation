@@ -279,8 +279,8 @@ For this type of scenario, it is probably best to contact :ref:`user
 support <user support VSC>`.
 
 
-.. _Singularity installation documentation: https://sylabs.io/guides/3.2/user-guide/installation.html#
-.. _Singularity definition file documentation: https://sylabs.io/guides/3.2/user-guide/definition_files.html
+.. _Singularity installation documentation: https://singularity.hpcng.org/user-docs/3.8/quick_start.html#quick-installation-steps
+.. _Singularity definition file documentation: https://singularity.hpcng.org/user-docs/3.8/definition_files.html
 .. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
 
 .. include:: links.rst

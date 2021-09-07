@@ -52,4 +52,6 @@
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
 .. _atools documentation: https://atools.readthedocs.io/en/latest/
 .. _Docker: https://www.docker.com/
-.. _Singularity: https://sylabs.io/singularity/
+.. _Singularity: https://singularity.hpcng.org/
+.. _Singularity documentation: https://singularity.hpcng.org/user-docs/3.8/
+.. _Sylabs Singularity: https://sylabs.io/singularity/
