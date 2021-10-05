@@ -32,7 +32,7 @@ Slurm partition  nodes   GPUs per node                    GPU memory  processors
 ===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
 kepler_gpu       6       2x Nvidia Tesla K20Xm (kepler)   6 GB        2x 10-core INTEL E5-2680v2 (ivybridge)   128 GB      900 GB      QDR-IB
 pascal_gpu       4       2x Nvidia Tesla P100 (pascal)    16 GB       2x 12-core INTEL E5-2650v4 (broadwell)   256 GB      2 TB        10 Gbps
-ampere_gpu       6       2x Nvidia Tesla A100 (ampere)    40 GB       2x 16-core AMD EPYC 7282 (zen2)          256 GB      2 TB        HDR-IB
+ampere_gpu       6       2x Nvidia Tesla A100 (ampere)    40 GB       2x 16-core AMD EPYC 7282 (zen2)          256 GB      2 TB        EDR-IB
 ===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
 
 Access restrictions
