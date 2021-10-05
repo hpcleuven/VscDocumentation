@@ -3,7 +3,12 @@
 Hydra hardware
 ===============
 
-The VUB Hydra cluster contains a mix of nodes containing Intel processors with different CPU microarchitectures and different interconnects in different sections of the cluster. The cluster also contains a number of nodes with NVIDIA GPUs.
+The VUB Hydra cluster is an heterogeneous cluster with a mixture of nodes with
+varied hardware. The majority of nodes are non-GPU nodes for generic
+multi-purpose compute, they are distributed in partitions depending on their CPU
+microarchitectures and network interconnects. The cluster also contains a number
+of nodes with NVIDIA GPUs, which are also distributed in partitions depending on
+their GPU generation.
 
 Hardware details
 ----------------
@@ -39,21 +44,23 @@ Users with a VSC account (VSC-ID) can connect to Hydra via the following hostnam
 
 * <VSC-ID>@login.hpc.vub.be
 
-Hardware specs: 
+Hardware specs:
 
-* Intel Skylake (Xeon Gold 6126) - 24 cores in total (fair share between all users)
+* 2x Intel Skylake (Xeon Gold 6126) - 24 cores in total (fair share between all
+  users)
 
-* 96GB memory (maximum per user: 12GB) 
+* 96GB memory (maximum per user: 12GB)
 
-* 10GbE network connection 
+* 10GbE network connection
 
-* Infiniband EDR connection to the storage 
+* Infiniband EDR connection to the storage
 
 User documentation
 ------------------------
 
-For documentation on Hydra usage, consult the documentation website:
+For documentation specific to the VUB cluster, please consult the documentation
+at:
 
 https://hpc.vub.be/docs/
 
-For question or problems, contact the VUB HPC team: hpc@vub.be
+For question or problems, please contact the VUB HPC team: hpc@vub.be
