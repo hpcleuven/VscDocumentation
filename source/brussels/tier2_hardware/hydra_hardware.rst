@@ -13,19 +13,27 @@ their GPU generation.
 Hardware details
 ----------------
 
-=======  ==========================================  ======  ======  =======  ==================================================
-nodes    processor                                   memory  disk    network  extra
-=======  ==========================================  ======  ======  =======  ==================================================
-11       2x 10-core INTEL E5-2680v2 (ivybridge)      128 GB  900 GB  QDR-IB
-20       2x 10-core INTEL E5-2680v2 (ivybridge)      256 GB  900 GB  QDR-IB
-6        2x 10-core INTEL E5-2680v2 (ivybridge)      128 GB  900 GB  QDR-IB   2x Tesla K20Xm NVIDIA GPGPUs 6Gb/node (kepler)
-27       2x 14-core INTEL E5-2680v4 (broadwell)      256 GB    1 TB  10 Gbps
-1        4x 10-core INTEL E7-8891v4 (broadwell)      1.5 TB    4 TB  10 Gbps
-4        2x 12-core INTEL E5-2650v4 (broadwell)      256 GB    2 TB  10 Gbps  2x Tesla P100 NVIDIA GPGPUs 16 Gb/node (pascal)
-1        2x 16-core INTEL E5-2683v4 (broadwell)      512 GB    8 TB  10 Gbps  4x GeForce 1080Ti NVIDIA GPUs 12 Gb/node (geforce)
-22       2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB  10 Gbps
-31       2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB  EDR-IB
-=======  ==========================================  ======  ======  =======  ==================================================
+* Generic nodes
+
+===============  ======  ==========================================  ======  ==========  =======
+Slurm partition  nodes   processors per node                         memory  local disk  network
+===============  ======  ==========================================  ======  ==========  =======
+ivybridge_mpi    16      2x 10-core INTEL E5-2680v2 (ivybridge)      256 GB  900 GB      QDR-IB
+broadwell        27      2x 14-core INTEL E5-2680v4 (broadwell)      256 GB    1 TB      10 Gbps
+himem            1       4x 10-core INTEL E7-8891v4 (broadwell)      1.5 TB    4 TB      10 Gbps
+skylake          22      2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB      10 Gbps
+skylake_mpi      31      2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB      EDR-IB
+===============  ======  ==========================================  ======  ==========  =======
+
+* GPU nodes
+
+===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
+Slurm partition  nodes   GPUs per node                    GPU memory  processors per node                      CPU memory  local disk  network
+===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
+kepler_gpu       6       2x Nvidia Tesla K20Xm (kepler)   6 GB        2x 10-core INTEL E5-2680v2 (ivybridge)   128 GB      900 GB      QDR-IB
+pascal_gpu       4       2x Nvidia Tesla P100 (pascal)    16 GB       2x 12-core INTEL E5-2650v4 (broadwell)   256 GB      2 TB        10 Gbps
+ampere_gpu       6       2x Nvidia Tesla A100 (ampere)    40 GB       2x 16-core AMD EPYC 7282 (zen2)          256 GB      2 TB        HDR-IB
+===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
 
 Access restrictions
 -------------------
