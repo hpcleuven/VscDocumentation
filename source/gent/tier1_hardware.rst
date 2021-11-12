@@ -6,7 +6,7 @@ Hardware details
    - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz
    - 256 GiB RAM
 
-- partition cpu_rome
+- partition cpu_rome_512
    - 42 nodes
    - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz
    - 512 GiB RAM
