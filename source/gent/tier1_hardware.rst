@@ -41,6 +41,36 @@ Shared infrastructure:
 - 3 PB shared scratch storage (Lustre)
 - all nodes and storage are interconnected via InfiniBand HDR-100
 
+Getting access
+--------------
+
+*(more information soon)*
+
+System-specific aspects
+-----------------------
+
+*(more information soon)*
+
+Software
+--------
+
+Operating system
+****************
+
+Both login nodes and workernodes in Hortense run Red Hat Enterprise Linux 8 (RHEL8).
+
+Scientific software
+*******************
+
+A central software stack with a rich set of scientific libraries, tools, and applications
+is available via the ``module`` command, and was installed using [EasyBuild](https://easybuild.io).
+
+Use ``module avail`` to see which software versions are available,
+and load one or more modules via the ``module load`` command to start using them.
+
+If software that you require is missing, please submit a software installation request
+via https://www.ugent.be/hpc/en/support/software-installation-request .
+
 Support contact
 ---------------
 
