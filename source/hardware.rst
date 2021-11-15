@@ -25,3 +25,4 @@ Tier-1 hardware
    :maxdepth: 2
 
    leuven/tier1_hardware/breniac_hardware
+   gent/tier1_hardware
