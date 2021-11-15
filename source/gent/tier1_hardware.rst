@@ -1,24 +1,27 @@
-Tier-1 (Hortense) @ HPC-UGent
------------------------------
+Hortense @ HPC-UGent
+====================
 
 .. warning::
-    (2021-11-15) This documentation is still being completed,
+
+    This documentation is still being completed,
     as Hortense is being prepared for testing.
 
     More information and details will be added in the coming days.
 
 General information
-==================
+-------------------
 
-*"Hortense"* is the 3rd VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016)
+***Hortense*** is the 3rd VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016)
 and *BrENIAC* (hosted by HPC-Leuven, 2016-2022).
 
-The Hortense Tier-1 cluster is available since 2021, is hosted by Ghent University, and maintained and supported by the HPC-UGent team.
+Hortense is available since 2021, is hosted by Ghent University,
+and maintained and supported by the HPC-UGent team.
 
 Hardware details
-================
+----------------
 
 Hortense consists of 3 partitions:
+
 - The ``cpu_rome`` partition:
    - 294 workernodes, each with:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
@@ -34,12 +37,12 @@ Hortense consists of 3 partitions:
        - 256 GiB RAM (~5GB/CPU core)
 
 Shared infrastructure:
+
 - 3 PB shared scratch storage (Lustre)
 - all nodes and storage are interconnected via InfiniBand HDR-100
 
-
 Support contact
-===============
+---------------
 
 For questions and problems related to Tier-1 Hortense, please contact the central
 support address for Tier-1 compute: <a href="mailto:compute@vscentrum.be">compute@vscentrum.be</a>.
