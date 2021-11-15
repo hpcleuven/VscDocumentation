@@ -11,10 +11,10 @@ Hortense @ HPC-UGent
 General information
 -------------------
 
-***Hortense*** is the 3rd VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016)
+**Hortense** is the 3rd VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016)
 and *BrENIAC* (hosted by HPC-Leuven, 2016-2022).
 
-Hortense is available since 2021, is hosted by Ghent University,
+It is available since 2021, is hosted by Ghent University,
 and maintained and supported by the HPC-UGent team.
 
 Hardware details
@@ -57,13 +57,13 @@ Software
 Operating system
 ****************
 
-Both login nodes and workernodes in Hortense run Red Hat Enterprise Linux 8 (RHEL8).
+Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 8 (RHEL8)* as operating system.
 
 Scientific software
 *******************
 
 A central software stack with a rich set of scientific libraries, tools, and applications
-is available via the ``module`` command, and was installed using [EasyBuild](https://easybuild.io).
+is available via the ``module`` command, and was installed using `EasyBuild <https://easybuild.io>`_.
 
 Use ``module avail`` to see which software versions are available,
 and load one or more modules via the ``module load`` command to start using them.
@@ -75,4 +75,4 @@ Support contact
 ---------------
 
 For questions and problems related to Tier-1 Hortense, please contact the central
-support address for Tier-1 compute: <a href="mailto:compute@vscentrum.be">compute@vscentrum.be</a>.
+support address for Tier-1 compute: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
