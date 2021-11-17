@@ -15,7 +15,7 @@ help:
 .PHONY: help Makefile
 
 web: Makefile
-	@$(SPHINXAUTOBUILD) -b html -B "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXAUTOBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 check: Makefile
 	$(RM) -r build
