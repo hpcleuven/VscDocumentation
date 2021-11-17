@@ -1,34 +1,28 @@
-alabaster @ file:///home/ktietz/src/ci/alabaster_1611921544520/work
-Babel @ file:///tmp/build/80754af9/babel_1620871417480/work
-brotlipy==0.7.0
+alabaster==0.7.12
+Babel==2.9.1
 certifi==2021.10.8
-cffi @ file:///tmp/build/80754af9/cffi_1613246951236/work
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
-colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
-cryptography @ file:///tmp/build/80754af9/cryptography_1635366129652/work
-docutils @ file:///tmp/build/80754af9/docutils_1620827980776/work
-idna @ file:///tmp/build/80754af9/idna_1622654382723/work
-imagesize @ file:///Users/ktietz/demo/mc3/conda-bld/imagesize_1628863108022/work
-Jinja2 @ file:///tmp/build/80754af9/jinja2_1635780242639/work
-livereload @ file:///home/conda/feedstock_root/build_artifacts/livereload_1598114753789/work
-MarkupSafe @ file:///tmp/build/80754af9/markupsafe_1621523467000/work
-packaging @ file:///tmp/build/80754af9/packaging_1625611678980/work
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
-Pygments @ file:///tmp/build/80754af9/pygments_1629234116488/work
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
-pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
-PySocks @ file:///tmp/build/80754af9/pysocks_1605305812635/work
+charset-normalizer==2.0.7
+colorama==0.4.4
+docutils==0.17.1
+idna==3.3
+imagesize==1.3.0
+Jinja2==3.0.3
+livereload==2.6.3
+MarkupSafe==2.0.1
+packaging==21.2
+Pygments==2.10.0
+pyparsing==2.4.7
 pytz==2021.3
-requests @ file:///tmp/build/80754af9/requests_1629994808627/work
-six @ file:///tmp/build/80754af9/six_1623709665295/work
-snowballstemmer @ file:///tmp/build/80754af9/snowballstemmer_1611258885636/work
-Sphinx==4.2.0
-sphinx-autobuild @ file:///home/conda/feedstock_root/build_artifacts/sphinx-autobuild_1615741904625/work
-sphinxcontrib-applehelp @ file:///home/ktietz/src/ci/sphinxcontrib-applehelp_1611920841464/work
-sphinxcontrib-devhelp @ file:///home/ktietz/src/ci/sphinxcontrib-devhelp_1611920923094/work
-sphinxcontrib-htmlhelp @ file:///tmp/build/80754af9/sphinxcontrib-htmlhelp_1623945626792/work
-sphinxcontrib-jsmath @ file:///home/ktietz/src/ci/sphinxcontrib-jsmath_1611920942228/work
-sphinxcontrib-qthelp @ file:///home/ktietz/src/ci/sphinxcontrib-qthelp_1611921055322/work
-sphinxcontrib-serializinghtml @ file:///tmp/build/80754af9/sphinxcontrib-serializinghtml_1624451540180/work
-tornado @ file:///home/conda/feedstock_root/build_artifacts/tornado_1610094708661/work
+requests==2.26.0
+six==1.16.0
+snowballstemmer==2.2.0
+Sphinx==4.3.0
+sphinx-autobuild==2021.3.14
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.5
+tornado==6.1
 urllib3==1.26.7
