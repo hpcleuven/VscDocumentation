@@ -22,6 +22,7 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 |                          |        | job only |        |                |
 +--------------------------+--------+----------+--------+----------------+
 
+$VSC_SCRATCH at KU Leuven is not a permament storage. The files older than 28 days are clened regularily.
 For users from other universities, the quota on ``$VSC_HOME`` and ``$VSC_DATA``
 will be determined by the local policy of your home institution as these file
 systems are mounted from there. The path names will be similar with trivial
