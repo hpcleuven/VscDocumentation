@@ -8,6 +8,11 @@ Hortense @ HPC-UGent
 
     More information and details will be added in the coming days.
 
+.. contents::
+    :depth: 2
+    :local:
+    :backlinks: none
+
 General information
 -------------------
 
@@ -70,6 +75,13 @@ and load one or more modules via the ``module load`` command to start using them
 
 If software that you require is missing, please submit a software installation request
 via https://www.ugent.be/hpc/en/support/software-installation-request .
+
+Resources
+---------
+
+* kickoff meeting (23 Nov 2021) -
+  slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2021-11-23.pdf>` -
+  recording: `watch on YouTube <https://www.youtube.com/watch?v=o0kNNsNT_rs>`_
 
 Support contact
 ---------------
