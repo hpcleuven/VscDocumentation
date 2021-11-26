@@ -12,7 +12,7 @@ Hortense @ HPC-UGent
 .. contents::
     :depth: 3
     :local:
-    :backlinks: entry
+    :backlinks: none
 
 General information
 -------------------
