@@ -8,6 +8,11 @@ Hortense @ HPC-UGent
 
     More information and details will be added in the coming days.
 
+.. contents::
+    :depth: 2
+    :local:
+    :backlinks: none
+
 General information
 -------------------
 
