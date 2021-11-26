@@ -3,10 +3,11 @@ Hortense @ HPC-UGent
 
 .. warning::
 
-    This documentation is still being completed,
-    as Hortense is being prepared for testing.
+    This documentation is still being completed.
 
     More information and details will be added in the coming days.
+
+    In case of questions, please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
 .. contents::
     :depth: 3
