@@ -58,6 +58,10 @@ Shared infrastructure:
 Getting access
 --------------
 
+**The Hortense VSC Tier-1 cluster can only be used by people with an active Tier-1 compute project.**
+
+See https://www.vscentrum.be/compute for more information on requesting access.
+
 To access the Tier-1 Hortense cluster, use SSH to connect to the dedicated login node with your VSC account:
 
 * from the public internet, use ``tier1.hpc.ugent.be``
