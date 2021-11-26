@@ -77,7 +77,7 @@ More general information about SSH login is available at :ref:`acccess_data_tran
   For resource-intensive tasks, like software compilation, testing job scripts, etc., please use an interactive job.
 
 .. note::
-  The login node of the Tier-1 Hortense cluster are currently only accessible via SSH.
+  The login node of the Tier-1 Hortense cluster is currently only accessible via SSH.
 
   Alternative methods (using NX, a web portal) will be available soon.
 
@@ -125,9 +125,9 @@ The following options are supported for each of the Torque frontend commands lis
 * ``--version``: print version information for jobcli and Slurm;
 * ``--debug``: show detailed information about how the command is executed in the backend (Slurm);
 
-  * for ``qsub``, this includes the contents of the job script as it will be submitted;
+  * for ``qsub``, this includes the contents of the job script like it will be submitted;
 
-* ``--dryrun``: see how a command *would* be executed, without actually the corresponding backend commands;
+* ``--dryrun``: see how a command *would* be executed, without actually executing the corresponding backend commands;
 
 `#PBS` header lines in job script
 +++++++++++++++++++++++++++++++++
