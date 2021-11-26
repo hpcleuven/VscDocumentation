@@ -118,7 +118,7 @@ define a connection in the SSH configuration file, e.g.,
        User vsc50005
        ForwardAgent yes
        ForwardX11 yes
-       LocalForward 50005 login.hpc.kuleuven.be 50005
+       LocalForward 50005 login.hpc.kuleuven.be:50005
 
 This ensures that a process on the login node that uses port 50005 can be
 accessed from your computer on that same port number.

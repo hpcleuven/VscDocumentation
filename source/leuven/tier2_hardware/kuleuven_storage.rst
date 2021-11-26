@@ -12,8 +12,8 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 +--------------------------+--------+----------+--------+----------------+
 |$VSC_DATA                 | NFS    |  VSC     |YES     | 75 GB          |
 +--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH              | GPFS   |  genius, |NO      | 100 GB         |
-|$VSC_SCRATCH_SITE         |        |  thinking|        |                |
+|$VSC_SCRATCH              | Lustre |  genius  |NO      | 500 GB         |
+|$VSC_SCRATCH_SITE         |        |          |        |                |
 +--------------------------+--------+----------+--------+----------------+
 |$VSC_SCRATCH_NODE         | ext4   | genius,  |NO      | 200 GB         |
 |                          |        | job only |        |                |

@@ -148,11 +148,9 @@ various cluster/partitions.
 +----------+--------------------+-----------+-------------+------------+
 | Ghent    | any                | any       | shared      | no         |
 +----------+--------------------+-----------+-------------+------------+
-| Leuven   | thinking           | default   | single user | yes        |
+| Leuven   | genius             | default   | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+
-| Leuven   | genius             | default   | single user | yes        |
-+----------+--------------------+-----------+-------------+------------+
-| Leuven   | genius             | bigmem    | single user | yes        |
+| Leuven   | genius             | bigmem    | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+
 | Leuven   | genius             | gpu       | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+

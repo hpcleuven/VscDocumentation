@@ -1,5 +1,3 @@
-.. _data transfer:
-
 Data transfer
 =============
 

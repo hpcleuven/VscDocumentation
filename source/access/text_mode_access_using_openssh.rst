@@ -78,8 +78,12 @@ to automatically add X forwarding or specify the path of a key that is not in
 the default location.  We provide :ref:`some useful tips<SSH config>`.
 
 
-Troubleshooting
----------------
+Troubleshooting OpenSSH connection issues
+-----------------------------------------
+
+When contacting support regarding connection issues, it saves time if you
+provide the verbose output of the ``ssh`` command.  This can be obtained by
+adding the ``-vvv`` option for maximal verbosity.
 
 If you get a ``Permission denied`` error message, one of the things to verify
 is that your private key is in the default location, i.e., the output of
@@ -92,10 +96,7 @@ need to provide the path to it while making the connection:
 
    $ ssh -i <path-to-your-private-key-file> <vsc-account>@<vsc-loginnode>
 
-When contacting support regarding connection issues, it saves time if you
-provide the verbose output of the ``ssh`` command.  This can be obtained by
-adding the ``-vvv`` option for maximal verbosity.
-
+Alternatively, create aan :ref:`SSH configuration file <SSH config>`.
 
 Links
 -----

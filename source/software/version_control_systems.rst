@@ -22,8 +22,8 @@ more version control systems. E.g., Eclipse, the IDE which we recommend
 for the development of C/C++ or Fortran codes on clusters, supports all
 of the systems mentioned on this page, some out-of-the-box and others by
 adding an additional package. The systems mentioned on this page are all
-available on Linux, macOS and Windows (through the UNIX emulation layer
-Cygwin and all except RCS also in at least one native implementation).
+available on Linux, macOS and Windows through the Windows Subsystem for Linux
+(WSL).
 
 Types of version control systems
 --------------------------------
@@ -32,24 +32,6 @@ An excellent introduction to the various types of version control
 systems can be found in `the book Pro GIT by Scott Chacon and Ben
 Straub <https://git-scm.com/book/en/v2>`__.
 
-Local systems
-~~~~~~~~~~~~~
-
-These first generation systems use a local database that stores previous
-versions of files. One of the most popular examples of this type is the
-venerable RCS (Revision Control System) system, distributed with many
-UNIX-like systems. It works by keeping patch sets (differences between
-various versions of a file) in a special format on disk. It can then
-return to a previous version of a file by adding up all the patches.
-
-RCS and other \\"local systems\" are very outdated. Hence we advise you
-to use one of the systems from the next two categories.
-
-Links:
-
--  `Wikipedia
-   page <https://en.wikipedia.org/wiki/Revision_Control_System>`__
--  `GNU RCS <https://www.gnu.org/software/rcs/rcs.html>`__
 
 Centralised systems
 ~~~~~~~~~~~~~~~~~~~
@@ -60,29 +42,19 @@ may not share a common file system. The version files are now maintained
 by a server to which multiple clients can connect and check out files,
 and the systems help to manage concurrent changes to a file by several
 users (through a copy-modify-merge procedure). Popular examples of this
-type are CVS (Concurrent Versions System) and SVN (Subversion). Of those
+type are `CVS (Concurrent Versions System) <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`_ and SVN (Subversion). Of those
 two, SVN is the more recent system while CVS is no longer further
 developed and less and less used.
 
 Links:
 
--  `CVS Wikipedia
-   page <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`__
 -  `SVN Wikipedia
    page <https://en.wikipedia.org/wiki/Apache_Subversion>`__
--  CVS implementations
-
-   -  A command-line client is included in most Linux distributions. On
-      Windows, the Cygwin UNIX emulation layer also has a svn package.
-      On macOS, it is available (though no longer maintained) through the
-      MacPorts and HomeBrew projects.
-   -  The Eclipse IDE comes with built-in support for CVS.
-
 -  SVN implementations
 
    -  Command-line clients are included in most Linux distributions and
-      macOS. On Windows, the Cygwin UNIX emulation layer also has a svn
-      package. The command line client is also available on the VSC
+      macOS and Windows (WSL).
+      The command line client is also available on the VSC
       clusters.
    -  :ref:`TortoiseSVN <TortoiseSVN>` (or `go
       straight to the TortoiseSVN web
@@ -114,32 +86,26 @@ be very much out-of-sync with each other, making the job harder when
 those versions have to be merged again.
 
 Popular examples of systems of this type are Git (originally developed
-to manage the Linux kernel project) and Mercurial (sometimes abbreviated
-as Hg, chemists will understand why).
+to manage the Linux kernel project) and `Mercurial <https://www.mercurial-scm.org>`_
+(sometimes abbreviated as Hg, chemists will understand why).
 
 Links:
 
 -  `Git on
    Wikipedia <https://en.wikipedia.org/wiki/Git_(software)>`__
 -  `Main Git web page <https://git-scm.com/>`__
--  `Mercurial on
-   Wikipedia <https://en.wikipedia.org/wiki/Mercurial>`__
--  `Main Mercural web page <https://www.mercurial-scm.org>`__
 -  Git implementations
 
    -  If you have a Linux system, Git is most likely already installed
       on your system. On macOS, git is available through Xcode, though it
-      is not always the most recent version. On Windows, there is a
-      Git-package in the UNIX emulation layer Cygwin. Downloads for all
+      is not always the most recent version. On Windows, you can use WSL.
+      Downloads for all
       systems are also available on `the download section of the main
       git web site <https://git-scm.com/download>`__. That page
       also contains links to a number of GUI options. Most if not all
       GUI tools store projects in a way that is fully compatible with
       the command line tools, so you can use both simultaneously. The
       command line client is also available on the VSC clusters.
-   -  `TortoiseGit <https://tortoisegit.org/>`__ is an
-      explorer-integrated interface to Git on Windows similar to
-      TortoiseSVN.
    -  Another nice GUI application is
       `SourceTree <https://www.atlassian.com/software/sourcetree>`__
       produced by `Atlassian <https://www.atlassian.com/>`__.
@@ -151,41 +117,12 @@ Links:
       standard plug-in EGit. More recent versions of this plugin may be
       available through the `Eclipse
       Marketplace <https://marketplace.eclipse.org/>`__.
-   -  `CollabNet
-      GitEye <https://www.collab.net/products/giteye>`__ is a
-      Git GUI for Windows, macOS and Linux build on top of a number of
-      Eclipse libraries, but you don/t need to install Eclipse to be
-      able to use it. It is a nice way though to browse through your Git
-      repositories outside of the Eclipse environment. GitEye itself is
-      free and integrates with several git cloud services and
-      bugtracking services.
-
--  Mercurial (Hg) implementations
-
-   -  Mercurial is written in Python and hence runs on most systems.
-      Most Linux distributions offer a Mercurial package. `Windows and
-      macOS command line utilities are also
-      available <https://www.mercurial-scm.org/>`__.
-   -  `TortoiseHg <https://tortoisehg.bitbucket.io/>`__ is an
-      explorer-integrated interface to the Mercurial VCS on Windows
-      similar to TortoiseSVN. There is also a macOS and Linux version
-      available. The latter integrates with Gnome/Nautilus.
-   -  The Eclipse IDE supports Mercurial through the `optional
-      MercurialEclipse
-      plugin <https://marketplace.eclipse.org/content/mercurialeclipse>`__
-      available on the `Eclipse
-      Marketplace <https://marketplace.eclipse.org/>`__.
 
 Cloud services
 --------------
 
 Many companies offer hosting services for SVN, Git or Mercurial
-repositories in the cloud. Google, e.g., for `subversion hosting
-service <https://www.google.be/webhp?#q=subversion+hosting+service>`__,
-`git hosting
-service <https://www.google.be/search?q=git+hosting+service>`__
-or `mercurial hosting
-service <https://www.google.be/search?q=mercurial+hosting+service>`__.
+repositories in the cloud.
 Several offer free public hosting for Open Source projects or have free
 access for academic accounts. Some noteworthy ones that are popular for
 academic projects are:
@@ -193,13 +130,10 @@ academic projects are:
 -  `GitHub (github.com) <https://github.com/>`__ offers free Git
    and Subversion hosting for Open Source projects. We use this service
    for some VSC in-house tools development. It is also possible to host
-   private projects if you subscribe to one of their paying plans.
--  `Bitbucket (bitbucket.org) <https://bitbucket.org/>`__ offers
-   both Git and Mercurial services. It also supports private projects
-   with a limited number of users in free accounts (and has a special
-   deal for academic institutions, allowing unlimited users) while the
-   other services mentioned on this page only support open source
-   projects for free.
+   private projects if you subscribe to one of their paying plans or 
+   register as an academic usser.
+-  `GitLab (gitlab.com) <https://gitlab.com/>`__ also offers free public
+   and private repositories.
 -  `SourceForge <https://sourceforge.net/>`__ is a very well
    known service for hosting Open Source projects. It currently supports
    projects managed through Subversion, Git, Mercurial and a few other
@@ -207,7 +141,8 @@ academic projects are:
 
 However, we urge you to always carefully check the terms-of-use of these
 services to assure that, e.g., the way they deal with intellectual
-property is in line with your institute's requirements.
+property is in line with your institute's requirements.  Also note that some
+institutes provide version control services.
 
 Which one should I use?
 -----------------------
@@ -215,8 +150,13 @@ Which one should I use?
 It is not up to us to make this choice for you, but here are a number of
 elements that you should take into account:
 
+-  Use a cloud service if you can, since this ensures that your code
+   is safely stored off-site.  However, verify this is in line with
+   the intellectual property policies of your institute.
 -  Subversion, Git and Mercurial are all recent systems that are well
-   maintained and supported by several hosting services.
+   maintained and supported by several hosting services.  Git currently
+   seems the most popular choice and the VSC provides training sessions
+   on Git.
 -  Subversion and Git are installed on most VSC systems. We use Git
    ourselves for some of our in-house development.
 -  Centralised version management systems have a simpler concept than

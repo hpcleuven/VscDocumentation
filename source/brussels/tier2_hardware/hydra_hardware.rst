@@ -3,57 +3,47 @@
 Hydra hardware
 ===============
 
-The VUB Hydra cluster contains a mix of nodes containing Intel processors with different CPU microarchitectures and different interconnects in different sections of the cluster. The cluster also contains a number of nodes with NVIDIA GPUs.
+The VUB Hydra cluster is an heterogeneous cluster with a mixture of nodes with
+varied hardware. The majority of nodes are non-GPU nodes for generic
+multi-purpose compute, they are distributed in partitions depending on their CPU
+microarchitectures and network interconnects. The cluster also contains a number
+of nodes with NVIDIA GPUs, which are also distributed in partitions depending on
+their GPU generation.
 
-Hardware details
-----------------
+CPU-only nodes
+--------------
 
-=======  ==========================================  ======  ======  =======  ==================================================
-nodes    processor                                   memory  disk    network  extra
-=======  ==========================================  ======  ======  =======  ==================================================
-11       2x 10-core INTEL E5-2680v2 (IvyBridge)      128 GB  900 GB  QDR-IB
-20       2x 10-core INTEL E5-2680v2 (IvyBridge)      256 GB  900 GB  QDR-IB
-6        2x 10-core INTEL E5-2680v2 (IvyBridge)      128 GB  900 GB  QDR-IB   2x Tesla K20x NVIDIA GPGPUs with 6Gb/node
-27       2x 14-core INTEL E5-2680v4 (Broadwell)      256 GB    1 TB  10 Gbps
-1        4x 10-core INTEL E7-8891v4 (Broadwell)      1.5 TB    4 TB  10 Gbps
-4        2x 12-core INTEL E5-2650v4 (Broadwell)      256 GB    2 TB  10 Gbps  2x Tesla P100 NVIDIA GPGPUs with 16 Gb/node
-1        2x 16-core INTEL E5-2683v4 (Broadwell)      512 GB    8 TB  10 Gbps  4x GeForce GTX 1080 Ti NVIDIA GPUs with 12 Gb/node
-22       2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB    1 TB  10 Gbps
-28       2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB    1 TB  EDR-IB
-=======  ==========================================  ======  ======  =======  ==================================================
+===============  ======  ==========================================  ======  ==========  =======
+Slurm partition  nodes   processors per node                         memory  local disk  network
+===============  ======  ==========================================  ======  ==========  =======
+ivybridge_mpi    16      2x 10-core INTEL E5-2680v2 (ivybridge)      256 GB  900 GB      QDR-IB
+broadwell        27      2x 14-core INTEL E5-2680v4 (broadwell)      256 GB    1 TB      10 Gbps
+broadwell_himem  1       4x 10-core INTEL E7-8891v4 (broadwell)      1.5 TB    4 TB      10 Gbps
+skylake          22      2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB      10 Gbps
+skylake_mpi      31      2x 20-core INTEL Xeon Gold 6148 (skylake)   192 GB    1 TB      EDR-IB
+===============  ======  ==========================================  ======  ==========  =======
 
-Access restrictions
--------------------
+GPU nodes
+---------
 
-Access is available for faculty members, students (master's projects under faculty
-supervision), and researchers of the VUB, as well as VSC users of other Flemish universities.
+===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
+Slurm partition  nodes   GPUs per node                    GPU memory  processors per node                      CPU memory  local disk  network
+===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
+kepler_gpu       6       2x Nvidia Tesla K20Xm (kepler)   6 GB        2x 10-core INTEL E5-2680v2 (ivybridge)   128 GB      900 GB      QDR-IB
+pascal_gpu       4       2x Nvidia Tesla P100 (pascal)    16 GB       2x 12-core INTEL E5-2650v4 (broadwell)   256 GB      2 TB        10 Gbps
+ampere_gpu       6       2x Nvidia A100 (ampere)          40 GB       2x 16-core AMD EPYC 7282 (zen2)          256 GB      2 TB        EDR-IB
+===============  ======  ===============================  ==========  =======================================  ==========  ==========  =======
 
-The cluster is integrated in the VSC network and runs the standard VSC software setup.
+Login nodes
+-----------
 
-Jobs can have a maximal execution wall time of 5 days (120 hours).
+* nodes: 2 (fair share between all users)
 
-Login infrastructure
---------------------
+* processors per node: 2x 12-core INTEL Xeon Gold 6126 (skylake)
 
-Users with a VSC account (VSC-ID) can connect to Hydra via the following hostname:
+* memory: 96GB (maximum per user: 12GB)
 
-* <VSC-ID>@login.hpc.vub.ac.be
+* 10GbE network connection
 
-Hardware specs: 
+* Infiniband EDR connection to the storage
 
-* Intel Skylake (Xeon Gold 6126) - 24 cores in total (fair share between all users)
-
-* 96GB memory (maximum per user: 12GB) 
-
-* 10GbE network connection 
-
-* Infiniband EDR connection to the storage 
-
-User documentation
-------------------------
-
-For documentation on Hydra usage, consult the documentation website:
-
-https://hpc.vub.be/documentation
-
-For question or problems, contact the VUB HPC team: hpc@vub.ac.be

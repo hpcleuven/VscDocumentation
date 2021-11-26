@@ -10,7 +10,7 @@ Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, la
 Hardware details
 ----------------
 
-- 206 thin nodes 
+- 230 thin nodes 
    
    - 86 skylake nodes
 
@@ -19,7 +19,7 @@ Hardware details
       - 200 GB SSD local disk
       - feature skylake
 
-   - 120 cascadelake nodes (closed pilot phase)
+   - 144 cascadelake nodes
 
       - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
       - 192 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
@@ -46,17 +46,20 @@ Hardware details
    - 2 V100 nodes
 
       - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
-      - 192 GB RAM
+      - 768 GB RAM
       - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
+      - 200 GB SSD local disk
+      - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
 
 
 - 4 AMD nodes
 
    - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
    - 256 GB RAM
+   - 200 GB SSD local disk
    - partition ``amd``, specific ``qsub`` :ref:`options <submit to genius AMD node>` apply.
 
-The nodes are connected using an Infiniband EDR network (bandwidth 25 Gbit/s), the islands are indicated on the diagram below.
+The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands are indicated on the diagram below.
 
 |Genius hardware|
 

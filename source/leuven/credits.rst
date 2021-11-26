@@ -63,11 +63,10 @@ Where
 -  *nodetype* is the factor representing the node type's performance as
    listed in the table below.
 
-Since Tier-2 cluster has several types of compute nodes, none of which
-is actually a reference node, the values can be found in the specific
-documentation for each of the systems:
+The Tier-2 cluster has several types of compute nodes, none of which
+is actually a reference node. The values for the different types are
+listed at the following links:
 
-- :ref:`Thinking <running jobs on thinking>`
 - :ref:`Genius <running jobs on genius>`
 
 The difference in cost between different machines/processors reflects
@@ -75,26 +74,17 @@ the performance difference between those types of nodes. The total cost
 of a job will typically be the same on any compute nodes, but the
 walltime will be different, depending on the performance of the nodes.
 
-In the examples below, you run your jobs on an ``ivybridge`` node, for which
-we charge 4.76 credits per hour.
+In the examples below, you run your jobs on a ``skylake`` node, for which
+we charge 10 credits per hour.
 
 An example of a job running on multiple nodes and cores is given below::
 
-   $ qsub  -A lp_astrophysics_014  -l nodes=2:ppn=20:ivybridge  simulation_3415.pbs
+   $ qsub  -A lp_astrophysics_014  -l nodes=2:ppn=36:skylake  simulation_3415.pbs
 
 If this job finished in 2.5 hours (i.e., walltime is 9000 seconds), the user
 will be charged:
 
-0.000278 \* 2 \* 9000 \* 4.76 = 23.8 credits
-
-For a single node, single core job that also took 2.5 hours and was
-submitted as::
-
-   $ qsub  -A lp_astrophysics_014  -l nodes=1:ppn=1:ivybridge  simulation_147.pbs
-
-In this case, the user will be charged:
-
-0.000278 \* 1 \* 9000 \* 4.76 = 11.9 credits
+0.000278 \* 2 \* 9000 \* 10 = 50.0 credits
 
 
 How do I get credits to use the Tier-1 infrastructure

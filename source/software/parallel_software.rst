@@ -68,7 +68,7 @@ added extensions to the original instruction sets.
 +-------------------------+------------------------+
 | Haswell/Broadwell       | AVX2                   |
 +-------------------------+------------------------+
-| Skylake                 | AVX-512                |
+| Skylake/Cascade Lake    | AVX-512                |
 +-------------------------+------------------------+
 
 Software that is specifically compiled to run on, e.g., Ivy Bridge will run
@@ -79,7 +79,7 @@ Haswell CPUs.
 
 To build for a specific architecture both the Intel and GCC compiler family
 offer command line options.  See the toolchain documentation for the
-:ref:`Intel <Intel optimization>` and the :ref:`GCC <GNU optimization>`
+:ref:`Intel <Intel optimization>` and the :ref:`FOSS <GNU optimization>`
 toolchains for an overview of the relevant compiler options.
 
 
@@ -131,7 +131,8 @@ so, or when your use case matches some common pattern.
   the application/library can be run distributed, and how to do that.
 - If you run an application many times for different parameter settings, or
   on different data sets, check out the `worker framework documentation`_
-  or the `atools documentation`_.
+  or the `atools documentation`_. for a comparison, see :ref:`worker or
+  atools? <worker or atools>`
 - If you build your own software, there is some information below.
 
 For scientific software, the go-to library for distributed programming is an
@@ -139,8 +140,8 @@ implementation of MPI (Message Passing Interface).  This is a de-facto standard
 implemented by many libraries and the API can be used from C/C++ and Fortran.
 
 On the clusters, at least two implementations are available,
-:ref:`Intel MPI <Intel MPI>` in the Intel toolchain, and :ref:`Open MPI <Open MPI>`
-in the FOSS toolchain.
+:ref:`Intel MPI <Communication library: Intel MPI>` in the Intel toolchain, and
+:ref:`Open MPI <Communication library: Open MPI>` in the FOSS toolchain.
 
 
 .. include:: links.rst

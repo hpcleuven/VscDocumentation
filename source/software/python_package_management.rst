@@ -40,16 +40,50 @@ those in your ``PYTHONPATH`` environment variable.
 Note that some packages, e.g., ``mpi4py``, ``pyh5``, ``pytables``,...,
 are available through the module system, and have to be loaded
 separately. These packages will not be listed by ``pip`` unless you
-loaded the corresponding module.
+loaded the corresponding module.  In recent toolchains, many of the
+packages you need for scientific computing have been bundled into the
+``SciPy-bundle`` module.
 
 
 .. _conda for Python:
 
-Install your own packages using conda
--------------------------------------
+Install Python packages using conda
+-----------------------------------
+
+.. note::
+
+    Conda packages are incompatible with the software modules.
+    Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
+    and VUB.
 
 The easiest way to install and manage your own Python environment is
-conda.
+conda.  Using conda has some major advantages.
+
+-  You can create project-specific environments that can be shared with
+   others and (up to a point) across platforms.  This makes it easier to
+   ensure that your experiments are reproducible.
+-  conda takes care of the dependencies, up to the level of system libraries.
+   This makes it very easy to install packages.
+
+However, this last advantage is also a potential drawback: you have to
+review the libraries that conda installs because they may not have
+been optimized for the hardware you are using.  For linear algebra, conda
+will typically use Intel MKL runtime libraries, giving you performance that
+is on par with the Python modules for `numpy` and `scipy`.
+
+However, care has to be taken in a number of situations.  When you require
+``mpi4py``, conda will typically use a library that is not configured and
+optimized for the networks used in our clusters, and the performance impact
+is quite severe.  Another example is TensorFlow when running on CPUs, the
+default package is not optimized for the CPUs in our infrastructure, and will
+run sub-optimally.  (Note that this is not the case when you run TensorFlow on
+GPUs, since conda will install the appropriate CUDA libraries.)
+
+These issues can be avoided by using Intel's Python distribution that contains
+Intel MPI and optimized versions of packages such as scikit-learn and TensorFlow.
+You will find `installation instructions <https://software.intel.com/content/www/us/en/develop/articles/using-intel-distribution-for-python-with-anaconda.html>`_
+provided by Intel.
+
 
 Install Miniconda
 ~~~~~~~~~~~~~~~~~
@@ -93,11 +127,13 @@ If the result is blank, or reports that conda can not be found, modify
 the ``PATH`` environment variable appropriately by adding Miniconda's ``bin``
 directory to ``PATH``.
 
-At this point, you may wish to load a module for a recent compiler (GCC
-is likely giving the least problems). Note that this module should also
-be loaded when using the environment you are about to create.
+You can create an environment based on the default conda channels, but
+it is recommended to at least consider the Intel Python distribution.
 
-Creating a new conda environment is straightforward::
+Intel provides instructions on `how to install the Intel Python distribution
+<https://software.intel.com/content/www/us/en/develop/articles/using-intel-distribution-for-python-with-anaconda.html>`_.
+
+Alternatively, to creating a new conda environment based on the default channels:
 
    $ conda create  -n science  numpy scipy matplotlib
 
@@ -253,6 +289,10 @@ directories as well by providing an install option.
    the install path (this would install the sphinx package)::
    
       $ pip install --install-option="--prefix=${VSC_DATA}/python_lib" sphinx
+
+   For newer version of ``pip``, you would use::
+
+      $ pip install  --prefix="${VSC_DATA}/python_lib" sphinx
 
 
 Installing Anaconda on NX node (KU Leuven Genius)

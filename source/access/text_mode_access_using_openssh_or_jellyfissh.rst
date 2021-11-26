@@ -1,7 +1,7 @@
-.. _OpenSSH JellyfiSSH access:
+.. _JellyfiSSH access:
 
-Text-mode access using OpenSSH or JellyfiSSH
-============================================
+Text-mode access using JellyfiSSH
+=================================
 
 Prerequisites
 -------------
@@ -23,38 +23,6 @@ Prerequisites
    the program's icon to the Application folder in the Finder, and
    you're done.
 
-Connecting using OpenSSH
-------------------------
-
-Like in the Linux client section, the ssh command is used to make a
-connection to (one of) the VSC clusters. In a Terminal window, execute:
-
-::
-
-   $ ssh <vsc-account>@<vsc-loginnode>
-
-where
-
--  <vsc-account> is your VSC username that you have received by mail
-   after your request was approved,
--  <vsc-loginnode> is the name of the loginnode of the VSC cluster you
-   want to connect to.
-
-You can find the names of the loginnodes in the
-:ref:`sections of the local VSC clusters <hardware>`.
-
-SSH will ask you to enter your passphrase.
-
-On sufficiently recent macOS versions (Leopard and newer) you can
-use the Keychain Access service to automatically provide your passphrase
-to ssh. All you need to do is to add the key using
-
-::
-
-   $ ssh-add ~/.ssh/id_rsa
-
-(assuming that your private key that :ref:`you generated
-before <generating keys linux>` is called ``id_rsa``).
 
 Using JellyfiSSH for bookmarking ssh connection settings
 --------------------------------------------------------
@@ -67,7 +35,7 @@ connection settings. To do this, follow these steps:
 #. In the 'Host or IP' field, type in <vsc-loginnode>. In the 'Login
    name' field, type in your <vsc-account>.
    In the screenshot below we have filled in the fields for a connection
-   to ThinKing cluster at KU Leuven as user vsc98765.
+   to the Genius cluster at KU Leuven as user vsc98765.
 
    |JellyfiSSH|
 

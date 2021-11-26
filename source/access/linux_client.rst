@@ -75,22 +75,21 @@ can sleep your laptop, disconnect and move to another network
 without loosing your X-session. Performance may also be better
 with many programs over high-latency networks.
 
-TurboVNC
-^^^^^^^^
+VNC
+^^^
+The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
+visualization software through Virtual Network Computing (VNC). VNC renders
+images on the cluster and transfers the resulting images to your client device.
+VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
-The KU Leuven/UHasselt and UAntwerp clusters also offer support
-for visualization software through TurboVNC. VNC renders images on
-the cluster and transfers the resulting images to your client
-device. VNC clients are available for Windows, macOS, Linux,
-Android and iOS.
-
--  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC is supported on
-   the visualization nodes <TurboVNC start guide>`.
--  On the UAntwerp clusters, TurboVNC is supported on all regular
-   login nodes (without OpenGL support) and on the visualization
-   node of Leibniz (with OpenGL support through VirtualGL). See
-   the page ":ref:`Remote visualization @ UAntwerp <remote visualization
-   UAntwerp>`" for instructions.
+-  On the UAntwerp clusters, TurboVNC is supported on all regular login nodes
+   (without OpenGL support) and on the visualization node of Leibniz (with
+   OpenGL support through VirtualGL). See the page ":ref:`Remote visualization
+   UAntwerp`" for instructions.
+-  On the VUB clusters, TigerVNC is supported on all nodes. See our
+   documentation on `running graphical applications
+   <https://hpc.vub.be/docs/software/modules/#how-can-i-run-graphical-applications>`_
+   for instructions.
 
 
 Software development
@@ -107,8 +106,6 @@ Environment (IDE) very well suited for code development on clusters.
    and how to get it.
 -  You can use :ref:`Eclipse on the desktop as a remote editor for the
    cluster <Eclipse as remote editor>`.
--  You can use :ref:`Eclipse on the desktop to access files in a
-   subversion repository on the cluster <Eclipse VSC subversion>`.
 -  You can combine the remote editor feature with version control
    from Eclipse, but some care is needed, and :ref:`here's how to do
    it <Eclipse PTP>`.
@@ -119,7 +116,3 @@ Version control
 
 Linux supports all popular version control systems. See :ref:`our
 introduction to version control systems <version control systems>`.
-
-Specific instructions to :ref:`access subversion repositories on the
-VSC clusters or other servers from your desktop with UNIX-style
-command line tools <desktop access VSC SVN>`.

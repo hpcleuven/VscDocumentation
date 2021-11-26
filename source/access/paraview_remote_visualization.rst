@@ -28,12 +28,11 @@ First, start an interactive job on the cluster, e.g.,
 
 ::
 
-   $ qsub  -I  -l nodes=1,ppn=20
+   $ qsub  -I  -l nodes=1,ppn=36
 
-Given that remote visualization makes sense most for large data sets, 64
-GB of RAM is probably the minimum you will need. To use a node with more
-memory, add a memory specification, e.g., ``-l mem=120gb``. If this is
-not sufficient, you should consider using Cerebro.
+Given that remote visualization makes sense most for large data sets, you
+may have high memory requirements. If the regular nodes do not satisfy your
+memory needs, you should consider using the bigmem or superdome partition.
 
 Once this interactive session is active, you can optionally navigate to
 the directory containing the data to visualize (not shown below), load
@@ -41,7 +40,7 @@ the appropriate module, and start the server:
 
 ::
 
-   $ module load Paraview/4.1.0-foss-2014a
+   $ module load Paraview/5.4.1-foss-2018a
    $ n_proc=$(cat $PBS_NODEFILE  |  wc  -l)
    $ mpirun  -np $n_proc pvserver  --use-offscreen-rendering \\
                                    --server-port=11111
@@ -75,8 +74,8 @@ the same local port.
 
    |paraview 2 configure server|
 
-#. Enter a name in the 'Name' field, e.g., 'Thinking'. If you have used
-   11111 as the local port to establish the tunnen, just click the
+#. Enter a name in the 'Name' field, e.g., 'HPC'. If you have used
+   11111 as the local port to establish the tunnel, just click the
    'Configure' button, otherwise modify the 'Port' field appropriately
    and click 'Configure'. This opens the 'Configure Server' dialog:
 
@@ -84,7 +83,7 @@ the same local port.
 
 #. Set the 'Startup Type' from 'Command' to 'Manual' in the drop-down
    menu, and click 'Save'.
-#. In the 'Choose Server' dialog, select the server, i.e., 'Thinking'
+#. In the 'Choose Server' dialog, select the server, i.e., 'HPC'
    and click the 'Connect' button.
 
    |paraview 4 connect|

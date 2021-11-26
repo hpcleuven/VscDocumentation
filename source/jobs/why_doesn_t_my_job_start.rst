@@ -33,8 +33,8 @@ To get an idea when your job might start, you could try Moab's
 :ref:`showstart <showstart>` command.
 
 Also, don't try to outsmart the scheduler by explicitly specifying nodes
-that seem empty when you launch your job. The scheduler may be reserving
-these nodes for a job that multiple nodes, so your job will likely spend
+that seem empty when you submit your job. The scheduler may be reserving
+these nodes for a job that requires multiple nodes, so your job will likely spend
 even more time in the queue, since the scheduler will not launch your job
 on another node which may be available sooner.
 
@@ -43,4 +43,5 @@ desktop PC. Short, sequential jobs may spend quite some time in the
 queue, but this type of calculation is atypical from an HPC perspective.
 If you have large batches of (even relatively short) sequential jobs,
 you can still pack them as longer sequential or even parallel jobs and
-get to run them sooner. User support can help you with that.
+get to run them sooner. User support can help you with that, or see
+the page :ref:`How can I run many similar computations conveniently?`.

@@ -1,13 +1,16 @@
 .. _remote visualization UAntwerp:
 
+.. role:: bash(code)
+    :language: bash
+
 Remote visualization @ UAntwerp
 ===============================
 
 The UAntwerp clusters have limited features for remote visualization on
-the login nodes of hopper and the visualization node of leibniz using a
+the login nodes of the clusters and the visualization node of leibniz using a
 `VNC-based remote display
 technology <https://en.wikipedia.org/wiki/Virtual_Network_Computing>`_.
-On the regular login nodes of hopper, there is no acceleration of 3D
+On the regular login nodes of the clusters, there is no acceleration of 3D
 graphics, but the visualisation node of leibniz is equipped with a
 NVIDIA P5000 card that when used properly will offer accelerated
 rendering of OpenGL applications. The setup is similar to the setup of
@@ -34,7 +37,7 @@ anymore with today's powerful computers yet has so many applications that
 support it that it is still the standard in practice (though there are
 efforts going on to replace it with Wayland on modern Linux systems).
 
-X11 applications talk to a X server which draws the commands on your
+X11 applications talk to an X server which draws the commands on your
 screen. These commands can go over a network so applications on a remote
 machine can draw on your local screen. Note also the somewhat confusing
 terminology: The server is the program that draws on the screen and thus
@@ -44,10 +47,10 @@ this scenario runs on a computer which you will usually call the
 server). However, partly due to the way the X11 protocol works and
 partly also because modern applications are very graphics-heavy, the
 network has become a bottleneck and graphics-heavy applications (e.g.,
-the MATLAB GUI) will work sluggish on all but the fastest network
+the MATLAB GUI) will work sluggish on all but the lowest latency network
 connections.
 
-X11 is a protocol for 2D-graphics only. however, it is extensible. Enter
+X11 is a protocol for 2D-graphics only. However, it is extensible. Enter
 `OpenGL <https://en.wikipedia.org/wiki/OpenGL>`_, a standard
 cross-platform API for professional 3D-graphics. Even though its
 importance on Windows and macOS platforms had decreased as Microsoft and
@@ -69,9 +72,9 @@ Optimizing remote graphics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The solution offered on the visualization node of leibniz (and in a
-reduced setting on the login nodes of hopper) consists of two elements
-to deal with the issues of network bandwidth and, more importantly,
-network latency.
+reduced setting on the regular login nodes of the clusters) consists 
+of two elements to deal with the issues of network bandwidth and, more 
+importantly, network latency.
 
 `VirtualGL <https://en.wikipedia.org/wiki/VirtualGL>`_ is a
 technology that redirects OpenGL commands to a 3D graphics accelerator
@@ -97,7 +100,7 @@ for the communication between server and client. The server renders the
 graphics on the computer on which it runs and sends compressed images to
 the client. The client of course takes care of keyboard and mouse input
 and sends this to the server. A VNC server for X applications will in
-fact emulate a X server. Since the protocol between client and server is
+fact emulate an X server. Since the protocol between client and server is
 pretty standard, most clients will work with most servers, though some
 combinations of client and server will be more efficient because they
 may support a more efficient compression technology. Our choice of
@@ -119,30 +122,28 @@ provided by the X server, but in true UNIX-spirit of having separate
 components for every bit of functionality, this is not the case. On X11,
 this functionality is provided by the Window Manager, a separate
 software package that you start after starting the X server (or may be
-started for you automatically by the startup script that is run when
+started for you automatically by the start-up script that is run when
 starting the X server). The basic window managers from the early days of
 X11 have evolved into feature-rich desktop environments that do not only
 offer a window manager, but also a task bar etc. Gnome and KDE are
-currently the most popular desktop environments (or Unity on Ubuntu, but
-future editions of Ubuntu will return to Gnome). However, these require
+currently the most popular desktop environments. However, these require
 a lot of resources and are difficult to install on top of TurboVNC.
 Examples of very basic old-style window managers are the `Tab Window
 Manager <https://en.wikipedia.org/wiki/Twm>`_ (command ``twm``)
 and the `Motif Window
 Manager <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_
-(command ``mwm``). (Both are currently available on the login nodes of
-hopper.)
+(command ``mwm``).
 
 For the remote visualization setup on the UAntwerp clusters, we have
 chosen to use the Xfce Desktop Environment which is definitely more
 user-friendly than the rather primitive Tab Window Manager and Motif
-Window Manager, yet requires less system resources and is easier to set
+Window Manager yet requires less system resources and is easier to set
 up than the more advanced Gnome and KDE desktops.
 
 Prerequisites
 -------------
 
-You'll need a ssh client on your desktop that provides port forwarding
+You'll need an ssh client on your desktop that provides port forwarding
 functionality on your desktop. We refer to the :ref:`access and data transfer`
 section for information about ssh clients for various client operating systems.
 PuTTY (Windows) and OpenSSH (macOS, Linux, UNIX-compatibility environment on
@@ -153,7 +154,7 @@ Furthermore, you'll need a VNC client, preferably the TurboVNC client.
 Windows
 ~~~~~~~
 
-We have tested the setup with three different clients:
+We have tested the setup with four different clients:
 
 -  The TurboVNC client can be downloaded by following the Download link
    on the `TurboVNC`_ web site (which at the moment of
@@ -175,10 +176,13 @@ We have tested the setup with three different clients:
    website <http://www.tightvnc.com/download.php>`_. When
    installing on your PC or laptop, make sure to chose the "custom
    install" and only install the TightVNC Viewer.
+-  `MobaXterm <https://mobaxterm.mobatek.net/>`_ also has an integrated VNC viewer. 
+   With that viewer it is possible to build the tunnel in the 
+   network settings of the VNC connection.
 
-All three viewers are quite fast and offer good performance, even when
+All four viewers are quite fast and offer good performance, even when
 run from home over a typical broadband internet connection. TigerVNC
-seems to be a bit quicker than the other two, while TightVNC doesn't
+seems to be a bit quicker than the others, while TightVNC and MobaXterm don't
 allow you to resize your window. With the other two implementations,
 when you resize your desktop window, the desktop is also properly
 resized.
@@ -190,27 +194,26 @@ Here also there are several possible setups:
 
 -  The TurboVNC client can be downloaded from the `TurboVNC`_ web
    site. The macOS client is
-   Java-based. Packages are available for both Apple Java on older
-   versions of OS X and Oracle Java (which you will need to install if
-   it is not yet on your system). We advise to use the Oracle Java
-   version as Java needs frequent security updates and Apple Java is no
-   longer maintained.
+   Java-based. It requires Oracle Java (which you will need to install if
+   it is not yet on your system).
 -  `TigerVNC <https://tigervnc.org/>`_, a client whose
    development is supported by the Swedish company Cendio who makes a
    remote display server product (ThinLinc) based on TigerVNC, is a
-   native macOS client. At the time of writing (version 1.9.0), it is
-   still only distributed as a 32-bit binary so you may get warnings on
-   some versions of macOS. However, there already exist 64-bit
-   pre-release builds so future versions will certainly fully support
-   future macOS versions. Some places report that this client is a lot
-   slower than the the TurboVNC one on macOS.
+   native macOS client. Some places report that this client is a lot
+   slower than the TurboVNC one on macOS.
    `Binaries are available <https://bintray.com/tigervnc/stable/tigervnc/>`_.
    Look for the ``tigervnc-*.dmg`` files, which contrary to those for
    Windows and Linux, only contain the viewer software.
 -  A not-so-good alternative is to use the Apple Screen Sharing feature
    which is available through the Finder (command-K key combination) or
    Safari (URL bar) by specifying the server as a URL starting with
-   svn://. This VNC client is considerably slower though than the
+   vnc://. You also have to use the port number on the local host
+   to access the screen rather than the screen number.
+   The port number is 5900 + the number of the VNC server if you 
+   follow the scheme below to
+   start an application in a VNC session. So the full URL will be
+   ``vnc://localhost:5901`` for VNC server 1.
+   This VNC client is considerably slower though than the
    TurboVNC client, partly because it doesn't support some of the
    TurboVNC-specific compression algorithms.
 
@@ -229,27 +232,35 @@ How do I run an application with TurboVNC?
 
 Running an application with TurboVNC requires 3 steps:
 
--  Start the VNC server on the cluster
--  Start the VNC client on your desktop/laptop and connect to the server
--  Start your application
+#. Start the VNC server on the cluster
+#. Start the VNC client on your desktop/laptop and connect to the server
+#. Start your application
 
-Starting the server
-~~~~~~~~~~~~~~~~~~~
+Step 1: Starting the VNC server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Log on in the regular way to one of the login nodes of hopper or to
+#. Log on in the regular way to one of the regular login nodes or to
    the visualization node of Leibniz. Note that the latter should only
    be used for running demanding visualizations that benefit from the 3D
    acceleration. The node is not meant for those who just want to run
    some lightweight 2D GUI application, e.g., an editor with GUI.
 #. Load the module vsc-vnc:
-   ``module load vsc-vnc``
+
+       :bash:`module load vsc-vnc`
+       
    This module does not only put the TurboVNC server in the path, but
    also provides wrapper scripts to start the VNC server with a
    supported window manager / desktop environment. Try
-   ``module help vsc-vnc`` for more info about the specific wrappers.
+   
+       :bash:`module help vsc-vnc` 
+       
+   for more info about the specific wrappers.
 #. Use your wrapper of choice to start the VNC server. We encourage to
    use the one for the Xfce desktop environment:
-   ``vnc-xfce``
+   
+       :bash:`vnc-xfce`
+
+   Other wrapper scripts may or may not be available on the system.       
 #. The first time you use VNC, it will ask you to create a password. For
    security reasons, please use a password that you don't use for
    anything else. If you have forgotten your password, it can easily be
@@ -258,7 +269,9 @@ Starting the server
    viewer-only password. If you don't know what this is, you don't need
    it.
 #. Among other information, the VNC server will show a line similar to:
-   ``Desktop 'TurboVNC: viz1.leibniz:2 (vsc20XXX)' started on display viz1.leibniz:2``
+
+       ``Desktop 'TurboVNC: viz1.leibniz:2 (vsc20XXX)' started on display viz1.leibniz:2``
+   
    Note the number after TurboVNC:viz1.leibniz, in this case 2. This is
    the number of your VNC server, and it will in general be the same as
    the X display number which is the last number on the line. You'll
@@ -272,15 +285,15 @@ only use this command if you fully understand how it works and what it
 does. Also, please don't forget to kill the VNC server when you have
 finished using it as it will not be killed automatically when started
 through this command (or use the ``-autokill`` command line option at
-startup). The default startup script (``xstartup.turbovnc``) which will
+start-up). The default start-up script (``xstart-up.turbovnc``) which will
 be put in the ``~/.vnc`` directory on first use does not function
 properly on our systems. We know this and we have no intent to repair
 this as we prefer to install the vncserver command unmodified from the
 distribution and provide wrapper scripts instead that use working
-startup files.
+start-up files.
 
-Connecting to the server
-~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2: Connecting to the server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. In most cases, you'll not be able to connect directly to the TurboVNC
    server (which runs on port 5900 + the server number, 5902 in the
@@ -288,28 +301,40 @@ Connecting to the server
    traffic to the VNC server. The exact procedure is explained in length
    in the pages ":ref:`ssh tunnel using PuTTY`" (for
    Windows) and ":ref:`tunnel OpenSSH`" (for or Linux and macOS) .
-   You'll need to tunnel port number (5900 + server number) (5902 in the
-   example above) on you local machine to the same port number on the
-   node on which the VNC server is running. You cannot use the generic
+   The easiest thing to do is to tunnel port number (5900 + server number) (5902 in the
+   example above) on your local machine to the same port number on the
+   node on which the VNC server is running, but you can use another port 
+   number on your local machine. You cannot use the generic
    login names (such as login.hpc.uantwerpen.be) for that as you may be
    assigned a different login node as you were assigned just minutes
    ago. Instead, use the full names for the specific nodes, e.g.,
-   login1-hopper.uantwerpen.be, login2-leibniz.uantwerpen.be or
-   viz1-leibniz.uantwerpen.be.
+   viz1-leibniz.hpc.uantwerpen.be, login2-leibniz.hpc.uantwerpen.be or
+   login1-vaughan.hpc.uantwerpen.be.
 
-   #. In brief:With OpenSSH, your command will look like
-      ``ssh -L 5902:viz1-leibniz.uantwerpen.be:5902 -N vsc20XXX@viz1-leibniz.uantwerpen.be``
-   #. In PuTTY, select \\"Connections - SSH - Tunnel\" in the left pane.
-      As \\"Source port\", use 5900 + the server number (5902 in our
+   #. In brief: With OpenSSH, your command will look like
+   
+          :bash:`ssh -L 5902:localhost:5902 -N vsc20XXX@viz1-leibniz.hpc.uantwerpen.be`
+
+      The above line assumes that you log on to the node where the VNC
+      server is running, which is why we can use ``localhost`` in the 
+      ``-L``-line (as this is the name under which the node running the 
+      VNC server is known on that node).      
+   #. In PuTTY, select \"Connections - SSH - Tunnel\" in the left pane.
+      As \"Source port\", use 5900 + the server number (5902 in our
       example) and as destination the full name of the node on which the
-      VNC server is running, e.g., viz1-leibniz.uantwerpen.be.
+      VNC server is running, e.g., viz1-leibniz.hpc.uantwerpen.be,
+      or localhost if you will log on to the node running the VNC server.
 
 #. Once your tunnel is up-and-running, start your VNC client. The
-   procedure depends on the precise client you are using. However in
+   procedure depends on the precise client you are using. However, in
    general, the client will ask for the VNC server. That server is
    localhost:x where x is the number of your VNC server, 2 in the above
    example. It will then ask you for the password that you have assigned
-   when you first started VNC.
+   when you first started VNC. (Instead of using the screen number
+   most VNC clients will also allow you to use the port number instead.)
+   Some clients also allow you to use the port number instead of the
+   server number and will automatically assume that bigger numbers
+   are port numbers.
 #. If all went well, you will now get a window with the desktop
    environment that you have chosen when starting the VNC server
 #. Do not forget to close your tunnel when you log out from the VNC
@@ -320,14 +345,14 @@ you'll see a panel "Welcome to the first start of the panel". Please
 select "Use default config" as otherwise you get a very empty
 desktop.*
 
-Starting an application
-~~~~~~~~~~~~~~~~~~~~~~~
+Step 3: Starting an application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Open a terminal window (if one was not already created when you
    started your session).
    In the default Xfce-environment, you can open a terminal by selecting
-   \\"Terminal Emulator\" in the \\"Applications\" menu in the top left.
-   The first time it will let you chose between selected terminal
+   \"Terminal Emulator\" in the \"Applications\" menu in the top left.
+   The first time it will let you choose between selected terminal
    applications.
 #. Load the modules that are required to start your application of
    choice.
@@ -341,17 +366,24 @@ Starting an application
 
    #. MATLAB: start MATLAB with the ``-nosoftwareopengl`` option to
       enable accelerated OpenGL:
-      ``vglrun matlab -nosoftwareopengl``
+      
+          :bash:`vglrun matlab -nosoftwareopengl`
+      
       The MATLAB command ``opengl info`` will then show that you are
       indeed using the GPU.
 
-#. When you've finished, don't forget to log out (when you use one of
-   our wrapper scripts) or kill the VNC server otherwise (using
-   ``vncserver -kill :x`` with ``x`` the number of the server).
+#. When you've finished, don't forget to log out in the Xfce desktop 
+   (right mouse click in the desktop, then select `"Application\"
+   and then select \"Log Out\") when you use one of
+   our wrapper scripts or kill the VNC server otherwise (using
+   
+       :bash:`vncserver -kill :x` 
+       
+   with ``x`` the number of the server).
 
 Note: For a quick test of your setup, enter
 
-::
+.. code:: bash
 
    vglrun glxinfo
    vglrun glxgears
@@ -359,7 +391,7 @@ Note: For a quick test of your setup, enter
 The first command will print some information about the OpenGL
 functionality that is supported. The second command will display a set
 of rotating gears. Don't be fooled if they appear to stand still but
-look at the \\"frames per second\" printed in the terminal window.
+look at the \"frames per second\" printed in the terminal window.
 
 Common problems
 ~~~~~~~~~~~~~~~
@@ -395,10 +427,8 @@ Related technologies
 -  `The KDE web site <https://www.kde.org/>`_ and `some
    background in Wikipedia <https://en.wikipedia.org/wiki/KDE>`_
 -  `The Tab Window Manager (sometimes called Tom's Window Manager) on
-   Wikipedia <https://en.wikipedia.org/wiki/Twm>`_, currently available
-   on hopper without support.
+   Wikipedia <https://en.wikipedia.org/wiki/Twm>`_.
 -  `The Motif Window Manager on Wikipedia
-   <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_, currently
-   available on hopper without support.
+   <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_.
 
 .. include:: ../access/links.rst
