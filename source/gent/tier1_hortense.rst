@@ -81,6 +81,52 @@ More general information about SSH login is available at :ref:`acccess_data_tran
 
   Alternative methods (using NX, a web portal) will be available soon.
 
+Managing project members
+************************
+
+Managing members of a project can be done by the Principal Investigator (PI) and group moderators of the project
+via the `VSC accountpage <https://account.vscentrum.be>`_, as follows:
+
+* Go to the `Edit Group <https://account.vscentrum.be/django/group/edit>`_ tab;
+* Select the group that corresponds to the project you want to manage.
+  For projects on the Tier-1 cluster *Hortense*, the group names all start with "``gpr_compute_``".
+* Click the ``Edit`` button once the group that corresponds to your Tier-1 project is selected.
+* Change group membership via the ``Manage members`` section on the next page:
+
+  * **To remove a project member**:, click the ``x`` next to the VSC account that was invited
+    in the ``Members`` subsection.
+  * **To invite someone to join the project**: click the box in the ``Invite users`` subsection,
+    add select a VSC account ID to send a join invitation to. Note that you can filter the accounts
+    to select by (partially) typing the name of the VSC account.
+  * **To cancel a pending invitation**: use the ``x`` next to the VSC account that was invited.
+  * **To promote a project member to group moderator**: click the box in the ``Moderators`` subsection
+    and select their VSC account ID.
+
+* **Click** ``Update`` **to apply the changes you made.**
+
+Keep in mind that:
+
+* Group join invitations need to be *accepted* first before the VSC account is added to the group.
+* It can take a while (about one hour) before any changes in group membership are reflected on the system itself.
+
+Sending a request to join a project
+***********************************
+
+You can submit a request to join a Tier-1 project to the moderators of the corresponding group
+via the `VSC accountpage <https://account.vscentrum.be>`_, as follows:
+
+* Go to the `New/Join Group <https://account.vscentrum.be/django/group/new>`_ tab;
+* Select the group that corresponds to the project you want to join in the ``Join group`` section.
+  For projects on the Tier-1 cluster *Hortense*, the group names all start with "``gpr_compute_``".
+* In the ``Message`` field, add a short message that will be included in the join request that will
+  be sent to the group moderators. Make it clear who you are, and why you want to join the project.
+* **Click** ``Submit`` **to send the group join request.**
+
+Keep in mind that:
+
+* Your request needs to be approved by one of the group moderators before your VSC account is added to the group.
+* It can take a while (about one hour) before any changes in group membership are reflected on the system itself.
+
 System-specific aspects
 -----------------------
 
