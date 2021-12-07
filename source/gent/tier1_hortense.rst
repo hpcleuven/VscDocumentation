@@ -216,6 +216,8 @@ The maximum walltime that jobs can request is 3 days (72 hours): ``-l walltime=7
 
 Jobs that request more walltime will be refused by the resource manager at submission time ("``Requested time limit is invalid``").
 
+.. _scientific_software:
+
 Scientific software
 *******************
 
@@ -227,6 +229,65 @@ and load one or more modules via the ``module load`` command to start using them
 
 If software that you require is missing, please submit a software installation request
 via https://www.ugent.be/hpc/en/support/software-installation-request .
+
+Access to licensed software
++++++++++++++++++++++++++++
+
+For licensed software, you may need to be a member of a specific group of users in order to access the available central software installations.
+
+If not, you will see an error message as shown below when trying to load the module for the licensed software you would like to use:
+
+.. code:: shell
+
+   You are not part of 'gli_example' group of users that have access to this software.
+
+Creating a software license group
+#################################
+
+If a license to use the software on the VSC Tier-1 cluster Hortense hosted by Ghent University is available, the Principal Investigator (PI) of the Tier-1 project should take the following steps to let project members use the license software:
+
+1) Create a dedicated user group that only contains the VSC accounts that should be able to access the licensed software.
+   This can be done via the VSC accountpage:
+
+  * Visit https://account.vscentrum.be/django/group/new .
+  * Use the "`Create new group`" section at the bottom of the page.
+  * Pick a group name that starts with '``xli_``', where '``x``' corresponds to the first letter of the VSC site that your VSC account is connected with. **Note that this letter is prepend automatically to the specified group name!** The '``li_``' infix in the group name allows us to easily discriminate groups that are used to manage access to software licenses.
+  * You are free to choose the last part of the group name after '``xli_``', but please keep these guidelines into account:
+
+    * The group name should indicate to which software is is related.
+    * The group name should indicate for which research group, or company, etc. it is for.
+  * For example: '``gli_soft_grp``' would be a good group name for a licensed software application named '``soft``', and a (UGent) research group named '``grp``'.
+  * The VSC account used to create the group will automatically be a moderator of that group, and add additional group members (and moderators), and approve join requests, via https://account.vscentrum.be/django/group/edit .
+  * **Note that all members of this group should be allowed to use the licensed software!** It is the responsibility of the group moderators to ensure this is indeed (and remains to be) the case. The Tier-1 support team will not intervene in the management of this software license user group.
+
+2) Contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_ to request that the users of this group should have access
+   to the licensed software, and include the following information:
+
+   * The name of the licensed software that the request relates to.
+   * A list of names of centrally installed modules that group members should be able to use.
+   * The name of the software license user group.
+   * To which Tier-1 project your request relates to.
+   * A document that clearly shows that you have a license for the software, or a reference to your project application that includes this already.
+   * **Clearly mention that your request relates to the Hortense Tier-1 cluster in the subject of your message.**
+
+Managing a software license group
+#################################
+
+To add one or more VSC accounts to an existing software license group:
+
+* A group moderator can add the VSC accounts to the group via https://account.vscentrum.be/django/group/edit.
+  A request to effectively join the group will be sent to each added VSC account, which must be approved first.
+* A VSC account can submit a group join request via https://account.vscentrum.be/django/group/edit, which must be approved by one of the group moderators.
+
+Likewise, a group moderator can manage the software license group via https://account.vscentrum.be/django/group/edit, by:
+
+* Promoting a group member to group moderator.
+* Removing existing group members (or moderators).
+
+.. note:: Take into account that it takes a while (up to 1 hour) before any changes to a user group that were made in the VSC accountpage are active on the Tier-1 system itself.
+
+If an existing software license group should *no longer have access* to central installations of installed software,
+please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
 Resources
 ---------
