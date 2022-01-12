@@ -55,6 +55,8 @@ Shared infrastructure:
 
 .. note:: A high-level overview of the cluster can be obtained by running the ``pbsmon`` command.
 
+.. _hortense_getting_access:
+
 Getting access
 --------------
 
@@ -189,6 +191,48 @@ For example:
   #!/bin/bash
   #PBS -l nodes=1:ppn=64
   #PBS -l walltime=10:00:00
+
+Specifying a project
+++++++++++++++++++++
+
+When submitting jobs to Hortense, it is required that you specify which project credits you want to use
+(see also :ref:`hortense_getting_access`).
+
+.. note::
+   The terminology used by the Slurm backend is "*accounts*", while we usually refer to *projects*.
+
+Specifying a project can be done in the ``qsub`` command, using the ``-A`` option:
+
+.. code:: shell
+
+  qsub -A example script.sh
+
+Or via a ``#PBS`` header line in your job script:
+
+.. code:: shell
+
+  #PBS -A example
+
+Another option is to define the ``$SLURM_ACCOUNT`` environment variable
+(for example in your ``$HOME/.bashrc`` startup script on Hortense):
+
+.. code:: shell
+
+  export SLURM_ACCOUNT='example'
+
+If you've specified an incorrect project name through one of the mechanisms mentioned above,
+the ``qsub`` command will produce a helpful error that mentions the names of the projects
+you currently have access to:
+
+.. code:: shell
+
+   $ qsub -A wrong_project script.sh
+   ERROR: Specified account 'wrong_project' is not valid (valid account(s): valid_project_1, valid_project_2)
+
+.. note::
+    Be careful when you are a member of multiple Tier-1 Hortense projects,
+    make sure that you always specify the correct project to avoid accidentally exhausting
+    the credits of a project unintendedly.
 
 Submitting to a specific cluster partition
 ++++++++++++++++++++++++++++++++++++++++++
