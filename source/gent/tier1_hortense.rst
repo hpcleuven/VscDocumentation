@@ -132,6 +132,13 @@ Keep in mind that:
 System-specific aspects
 -----------------------
 
+Checking quota
+**************
+
+* You can check personal and project quota by running ``my_dodrio_quota``.
+* If you want to check quota for (a) specific project(s), or project(s) that is not listed automatically, use ``-p`` option.
+* For a list of all options, run ``my_dodrio_quota -H``.
+
 *(more information soon)*
 
 Software
