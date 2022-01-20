@@ -132,6 +132,13 @@ Keep in mind that:
 System-specific aspects
 -----------------------
 
+Storage quota usage
+*******************
+
+* You can check personal and project storage quota usage by running the ``my_dodrio_quota`` command.
+* If you want to check storage quota for specific projects, or for projects that are not listed automatically, use the ``-p`` option.
+* For a list of all options, run ``my_dodrio_quota -h``.
+
 *(more information soon)*
 
 Software
