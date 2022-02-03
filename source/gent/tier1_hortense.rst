@@ -132,6 +132,19 @@ Keep in mind that:
 System-specific aspects
 -----------------------
 
+Project storage
+***************
+
+* Dedicated scratch storage space is reserved for all Tier1 projects.
+* The environment variable $VSC_SCRATCH_PROJECTS_BASE points to the basefolder containing all project spaces.
+* Project space is given the same name as your project.
+* You can use a command of this type to directly switch to your dedicated project space:
+
+.. code:: shell
+
+  cd $VSC_SCRATCH_PROJECTS_BASE/<yourprojectnamehere>
+
+
 Storage quota usage
 *******************
 
