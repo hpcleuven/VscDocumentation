@@ -35,15 +35,18 @@ Hortense currently consists of 3+1 partitions:
    - 294 workernodes, each with:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
+       - 480 GB SSD local disk
 - ``dodrio/cpu_rome_512``: large-memory partition:
    - 42 workernodes, each with:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 512 GiB RAM (~4GB/core), no swap
+       - 480 GB SSD local disk
 - ``dodrio/gpu_rome_a100``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
        - 256 GiB RAM (~5GB/CPU core), no swap
+       - 480 GB SSD local disk
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
 
 Shared infrastructure:
@@ -131,6 +134,17 @@ Keep in mind that:
 
 System-specific aspects
 -----------------------
+
+Local storage
+*************
+
+In each node, a local storage device is available.
+This storage space can be addressed with the environment variable $TMPDIR
+
+.. code:: shell
+
+  cd $TMPDIR
+
 
 Project storage
 ***************
