@@ -135,7 +135,8 @@ System-specific aspects
 Project storage
 ***************
 
-* Dedicated scratch storage space is reserved for all Tier1 projects.
+* Please be aware that storage space on $VSC_SCRATCH is limited per user to 3 GB.
+* Instead, it is better to use the dedicated scratch storage space which is reserved for every Tier1 project.
 * The environment variable $VSC_SCRATCH_PROJECTS_BASE points to the basefolder containing all project spaces.
 * Project space is given the same name as your project.
 * You can e.g. use this command to directly switch to your dedicated project space:
