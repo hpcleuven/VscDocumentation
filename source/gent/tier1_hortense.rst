@@ -83,6 +83,11 @@ More general information about SSH login is available at :ref:`acccess_data_tran
 
   Alternative methods (using NX, a web portal) will be available soon.
 
+.. note::
+  To access your data on your (project) scratch using Globus is possible via the `VSC UGent Tier2` endpoint.
+
+  More general information about Globus is available at :ref:`managing_and_transferring_files`.
+
 Managing project members
 ************************
 
