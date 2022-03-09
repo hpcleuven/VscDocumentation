@@ -64,24 +64,49 @@ Getting access
 
 See https://www.vscentrum.be/compute for more information on requesting access.
 
-To access the Tier-1 Hortense cluster, use SSH to connect to the dedicated login node with your VSC account:
+To access the Tier-1 Hortense cluster use the `web portal <https://tier1.hpc.ugent.be/>`_,
+or use SSH to connect to the dedicated login node with your VSC account:
 
 * from the public internet, use ``tier1.hpc.ugent.be``
 * from within the VSC network, use ``tier1.gent.vsc``
 
+You can find more information about the usage of the web portal in chapter "8 Using the HPC-UGent web portal"
+in the `HPC Ugent tutorials <https://www.ugent.be/hpc/en/support/documentation.htm>`_
+
 More general information about SSH login is available at :ref:`acccess_data_transfer`.
 
 .. note::
-  There is currently only one small login node (16 cores, 64GB RAM) available.
+  The ssh key of the login nodes changed. If you get a message like this (or similar):
+    | ``@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@``
+    | ``@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @``
+    | ``@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@``
+    | 
+    | ``IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!``
+    | ``Someone could be eavesdropping on you right now (man-in-the-middle attack)!``
+    | ``It is also possible that a host key has just been changed.`` 
+  or like this (or similar):
+    | ``WARNING - POTENTIAL SECURITY BREACH!``
+    | ``The server's host key does not match the one PuTTY has''
+    | ``cached in the registry. This means that either the``
+    | ``server administrator has changed the host key, or you` 
+    | ``have actually connected to another computer pretending``
+    | ``to be the server.``
+  Then you have to check whether the new fingerprint of the host key is one of the following:
+    | ``SHA256:1Q6syHAJnrybhPJPX87gmLKsKRUVDZAy+5N96RbELBg`` 
+    | ``90:c7:d5:29:b3:c8:8c:fc:d4:c6:d7:14:68:bc:0a:7b``
+    | ``SHA256:IPfUtYyl12Vr+1QEb53uoNq4DzaIPUGipWunNjwVpwI``
+    | ``d0:8e:19:5a:bb:dc:32:45:53:82:ed:ae:10:07:83:72``
+    | ``SHA256:B8R1oVM02ikstqnwBAvvM0CH7cZxvwWuek/BroqNoxI``
+    | ``53:48:19:2b:bf:e2:a3:e7:45:a9:cd:fe:83:c3:98:a1``
+  If it is a match then you can remove or replace the old key.
+
+.. note::
+  There are currently two small login nodes (each with 8 CPU cores and 64GB RAM) available. An user from 
+  the same IP address weould always end up the same one (login55 or login56). 
 
   **Please only use the login node as an access portal!**
 
-  For resource-intensive tasks, like software compilation, testing job scripts, etc., please use an interactive job.
-
-.. note::
-  The login node of the Tier-1 Hortense cluster is currently only accessible via SSH.
-
-  Alternative methods (using NX, a web portal) will be available soon.
+  For resource-intensive tasks, like software compilation, testing job scripts, etc., please use the debug partitiuon.
 
 .. note::
   To access your data on your (project) scratch using Globus is possible via the `VSC UGent Tier2` endpoint.
@@ -150,6 +175,28 @@ Project storage
 
   cd $VSC_SCRATCH_PROJECTS_BASE/<yourprojectnamehere>
 
+
+Read only filesystem
+********************
+
+The performance of the filee system is not always optimal in case of small files often read without
+writing them (software stack, certain input files, for example ones for DNA sequencing). 
+For those files we defined a read-only partition (mirroring the whole network file system). 
+To access this read-only partition you have to simply suffix the path with ``/readonly``, 
+for example use ``/readonly/$VSC_SCRATCH_PROJECT_BASE`` instead of ``$VSC_SCRATCH_PROJECT_BASE``.
+Please be aware that we only update the read-only partition every half an hour on the login noodes,
+and on the worker nodes every times when a job starts. For exmaple, if you place a file, for example,
+to ``$VSC_SCRATCH_PROJECT_BASE/<project>/<file>`` on the login node, it would only appear at 
+``/readonly/$VSC_SCRATCH_PROJECT_BASE/<project>/<file>`` up to 30 minutes later, or on the worker nodes
+if a job starts. Please note that we do not update the read-only partition during a job, so nothing what you 
+write during your simulation will appear there. 
+
+We do advise to use the read-only partition whenever is possible, as it can seriouly speed up simulations.
+
+.. note::
+  If you have used hard-coded software paths before, or you linked your own software against the centrally 
+  installed software, we advise to use EasyBuild iebvironmental variables ($EBROOT...) set by ``module load`` 
+  commands, and you might have to recompile your software to achieve better performance.
 
 Storage quota usage
 *******************
@@ -275,6 +322,11 @@ For example, to submit a GPU job:
 A list of available partitions can be obtained using ``module avail cluster/dodrio``.
 
 To check the currently active partition, use ``module list cluster``.
+
+Debug Partition
+###############
+
+Foo bar baz
 
 Limitations for jobs
 ++++++++++++++++++++
