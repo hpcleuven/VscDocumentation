@@ -52,33 +52,103 @@ Shared infrastructure:
 Getting access
 --------------
 
+.. _hortense_access_policy:
+
+Access policy
+*************
+
 **The Hortense VSC Tier-1 cluster can only be used by people with an active Tier-1 compute project.**
 
 See https://www.vscentrum.be/compute for more information on requesting access.
 
-To access the Tier-1 Hortense cluster, use SSH to connect to the dedicated login node with your VSC account:
+.. _hortense_login_nodes:
+
+Login nodes (SSH)
+*****************
+
+You can use SSH to connect to the login nodes of the Tier-1 Hortense cluster with your VSC account:
 
 * from the public internet, use ``tier1.hpc.ugent.be``
 * from within the VSC network, use ``tier1.gent.vsc``
 
 More general information about SSH login is available at :ref:`acccess_data_transfer`.
 
-.. note::
-  There is currently only one small login node (16 cores, 64GB RAM) available.
+There are 2 login nodes for Hortense: ``login55`` and ``login56``.
+When logging in using SSH, you will be (consistently) assigned to either of these login nodes,
+based on the IP address of the host you are connecting from.
 
-  **Please only use the login node as an access portal!**
-
-  For resource-intensive tasks, like software compilation, testing job scripts, etc., please use an interactive job.
-
-.. note::
-  The login node of the Tier-1 Hortense cluster is currently only accessible via SSH.
-
-  Alternative methods (using NX, a web portal) will be available soon.
+If you need to access a *specific* login node (for example because you have a ``screen`` or ``tmux`` session
+running there), just use ``ssh login56`` if you were assigned to ``login55`` (or vice versa).
 
 .. note::
-  To access your data on your (project) scratch using Globus is possible via the `VSC UGent Tier2` endpoint.
+  The available resources on the Hortense login nodes are very limited:
+  there are only 8 cores and ~60GB of RAM memory available (and no GPUs).
 
-  More general information about Globus is available at :ref:`managing_and_transferring_files`.
+  **Please only use the Hortense login nodes as an access portal!**
+
+  For resource-intensive interactive tasks, like software compilation, testing software or job scripts, etc.,
+  please use an interactive job, either via ``qsub -I`` (see also :ref:`hortense_resource_manager`)
+  or through the :ref:`hortense_web_portal`.
+
+
+.. _hortense_login_nodes_host_keys:
+
+Host keys
++++++++++
+
+The first time you log in to the Hortense login nodes, you will need to confirm the correctness
+of the host key, to ensure you are connecting to the correct system.
+
+**Please verify that the fingerprint of the host key is *one* of the following**:
+
+* ECDSA format:
+
+  * ``90:c7:d5:29:b3:c8:8c:fc:d4:c6:d7:14:68:bc:0a:7b`` (MD5)
+  * ``1Q6syHAJnrybhPJPX87gmLKsKRUVDZAy+5N96RbELBg`` (SHA256)
+
+* ED25519 format:
+
+  * ``d0:8e:19:5a:bb:dc:32:45:53:82:ed:ae:10:07:83:72`` (MD5)
+  * ``IPfUtYyl12Vr+1QEb53uoNq4DzaIPUGipWunNjwVpwI`` (SHA256)
+
+* RSA format:
+
+  * ``53:48:19:2b:bf:e2:a3:e7:45:a9:cd:fe:83:c3:98:a1`` (MD5)
+  * ``B8R1oVM02ikstqnwBAvvM0CH7cZxvwWuek/BroqNoxI`` (SHA256)
+
+The type of fingerprint that will be shown depends on the version and configuration of your SSH client.
+
+.. _hortense_web_portal:
+
+Web portal
+**********
+
+To access Tier-1 Hortense you can also use the `Open On-Demand <https://openondemand.org>`_
+web portal https://tier1.hpc.ugent.be.
+
+More information about the usage of the web portal is available in Chapter 8 (Using the HPC-UGent web portal)
+of the HPC-UGent user manual, see https://www.ugent.be/hpc/en/support/documentation.htm .
+
+
+.. note::
+
+   If you are using the Hortense web portal from outside of the UGent network,
+   you will first need to open the `VSC firewall app <https://firewall.hpc.kuleuven.be>`_
+   and log via the VSC account page.
+
+   Keep the browser tab with firewall app open as long as you want to use the web portal!
+
+
+.. _hortense_scratch_globus:
+
+Hortense scratch via Globus
+***************************
+
+To access your data in your (project) scratch directory on Tier-1 Hortense,
+you can use Globus via the `VSC UGent Tier2` endpoint.
+
+More general information about Globus is available at :ref:`managing_and_transferring_files`.
+
 
 Managing project members
 ************************
@@ -160,6 +230,8 @@ Operating system
 
 Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 8 (RHEL8)* as operating system.
 
+.. _hortense_resource_manager:
+
 Resource manager
 ****************
 
@@ -170,6 +242,8 @@ A `Torque <https://github.com/adaptivecomputing/torque>`_ frontend
 that provides *wrapper commands* for the familiar Torque commands ``qsub``, ``qstat``, ``qdel``, etc. is available.
 
 **We strongly recommend using the Torque frontend for submitting and managing your jobs!**
+
+.. _hortense_job_submission_mgmt:
 
 Commands for job submission & management
 ++++++++++++++++++++++++++++++++++++++++
