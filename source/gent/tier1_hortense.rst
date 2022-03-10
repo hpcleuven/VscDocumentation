@@ -57,7 +57,7 @@ Getting access
 Access policy
 *************
 
-**The Hortense VSC Tier-1 cluster can only be used by people with an active Tier-1 compute project.**
+**The Hortense VSC Tier-1 cluster can only be accessed by people with an active Tier-1 compute project.**
 
 See https://www.vscentrum.be/compute for more information on requesting access.
 
@@ -74,15 +74,17 @@ You can use SSH to connect to the login nodes of the Tier-1 Hortense cluster wit
 More general information about SSH login is available at :ref:`acccess_data_transfer`.
 
 There are 2 login nodes for Hortense: ``login55`` and ``login56``.
-When logging in using SSH, you will be (consistently) assigned to either of these login nodes,
+When logging in using SSH, you will be assigned to either of these login nodes,
 based on the IP address of the host you are connecting from.
 
 If you need to access a *specific* login node (for example because you have a ``screen`` or ``tmux`` session
-running there), just use ``ssh login56`` if you were assigned to ``login55`` (or vice versa).
+running there), just run "``ssh login56``" to jump to ``login56`` if you were logged in to ``login55``,
+or use "``ssh login55``" to jump to ``login55`` from ``login56``.
 
 .. note::
   The available resources on the Hortense login nodes are very limited:
-  there are only 8 cores and ~60GB of RAM memory available (and no GPUs).
+  there are only 8 cores and ~60GB of RAM memory available on each login node,
+  and these resources are shared by everyone that is logged in there.
 
   **Please only use the Hortense login nodes as an access portal!**
 
@@ -96,22 +98,23 @@ running there), just use ``ssh login56`` if you were assigned to ``login55`` (or
 Host keys
 +++++++++
 
-The first time you log in to the Hortense login nodes, you will need to confirm the correctness
-of the host key, to ensure you are connecting to the correct system.
+The first time you log in to the Hortense login nodes, a fingerprint of the host key will be shown.
+Before confirming the connection, verify the correctness of the host key, to ensure you are
+connecting to the correct system.
 
 **Please verify that the fingerprint of the host key is *one* of the following**:
 
-* ECDSA format:
+* for ECDSA host key:
 
   * ``90:c7:d5:29:b3:c8:8c:fc:d4:c6:d7:14:68:bc:0a:7b`` (MD5)
   * ``1Q6syHAJnrybhPJPX87gmLKsKRUVDZAy+5N96RbELBg`` (SHA256)
 
-* ED25519 format:
+* for ED25519 host key:
 
   * ``d0:8e:19:5a:bb:dc:32:45:53:82:ed:ae:10:07:83:72`` (MD5)
   * ``IPfUtYyl12Vr+1QEb53uoNq4DzaIPUGipWunNjwVpwI`` (SHA256)
 
-* RSA format:
+* for RSA host key:
 
   * ``53:48:19:2b:bf:e2:a3:e7:45:a9:cd:fe:83:c3:98:a1`` (MD5)
   * ``B8R1oVM02ikstqnwBAvvM0CH7cZxvwWuek/BroqNoxI`` (SHA256)
@@ -132,9 +135,9 @@ of the HPC-UGent user manual, see https://www.ugent.be/hpc/en/support/documentat
 
 .. note::
 
-   If you are using the Hortense web portal from outside of the UGent network,
+   If you are using the Hortense web portal from outside of the network of a Flemish university,
    you will first need to open the `VSC firewall app <https://firewall.hpc.kuleuven.be>`_
-   and log via the VSC account page.
+   and log in via the VSC account page.
 
    Keep the browser tab with firewall app open as long as you want to use the web portal!
 
