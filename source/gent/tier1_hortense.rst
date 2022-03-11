@@ -300,7 +300,7 @@ For example:
 
 
 As the name suggests, the ``/readonly`` mount point only provides *read-only* access to your data.
-Trying to make any changes to files accessing via ``/readonly`` will result in ``Permission denied`` errors.
+Trying to make any changes to files accessing via ``/readonly`` will result in "``Read-only filesystem``" errors.
 
 .. note::
 
@@ -475,24 +475,33 @@ performance benefit.
 
 To ensure that the paths which are 'engraved' in your own software installations always start with ``/readonly/``,
 for example in scripts or binaries that make part of the installation,
-you should install the software using the ``bwrap`` utility. This allows you to "rename" the path to your
+you should install the software using the ``dodrio-bind-readonly`` utility. This allows you to "rename" the path to your
 project scratch directory so it starts with ``/readonly/``, while preserving write access to it.
 
 Assuming that the procedure to install the software is implemented in a script named ``install.sh``,
-you can use ``bwrap`` as follows:
+you can use ``dodrio-bind-readonly`` as follows:
 
 .. code::
 
-   bwrap --bind / / --bind $VSC_SCRATCH_PROJECTS_BASE /readonly/$VSC_SCRATCH_PROJECTS_BASE --dev /dev --bind /dev/log /dev/log ./install.sh
+   dodrio-bind-readonly ./install.sh
 
 The ``install.sh`` script should be implemented such that it installs the software to
 ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...``, that is a location in your project scratch directory that starts
 with ``/readonly/``.
 
-This can only work when ``bwrap`` is used to map the base path for project scratch directories
-``$VSC_SCRATCH_PROJECTS_BASE`` to ``/readonly/$VSC_SCRATCH_PROJECTS_BASE``, since otherwise
-any path that start with ``/readonly`` is indeed *read-only*, and trying to do any write operation
-would result in a ``Permission denied`` error.
+Or you can start a new shell session in which ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` is
+accessible with write permissions:
+
+.. code::
+
+   dodrio-bind-readonly /bin/bash
+
+.. note::
+
+    This can only work when the ``dodrio-bind-readonly`` is used to map the base path for project scratch directories
+    ``$VSC_SCRATCH_PROJECTS_BASE`` to ``/readonly/$VSC_SCRATCH_PROJECTS_BASE``, since otherwise
+    any path that start with ``/readonly`` is indeed *read-only*, and trying to do any write operation
+    would result in a "``Read-only file system``" error.
 
 If you need any help with this, please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
 
