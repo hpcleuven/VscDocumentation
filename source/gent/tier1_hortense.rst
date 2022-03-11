@@ -202,8 +202,13 @@ Keep in mind that:
 * Your request needs to be approved by one of the group moderators before your VSC account is added to the group.
 * It can take a while (about one hour) before any changes in group membership are reflected on the system itself.
 
+
+.. _hortense_system_specific_aspects:
+
 System-specific aspects
 -----------------------
+
+.. _hortense_local_storage:
 
 Local storage
 *************
@@ -216,28 +221,97 @@ This storage space can be addressed with the environment variable $TMPDIR
   cd $TMPDIR
 
 
-Project storage
-***************
+.. _hortense_home_on_scratch:
 
-* Please be aware that storage space on $VSC_SCRATCH is limited per user to 3 GB.
-* Instead, it is better to use the dedicated scratch storage space which is reserved for every Tier1 project.
-* The environment variable $VSC_SCRATCH_PROJECTS_BASE points to the basefolder containing all project spaces.
-* Project space is given the same name as your project.
-* You can e.g. use this command to directly switch to your dedicated project space:
+Home-on-scratch setup
+*********************
+
+On Tier-1 Hortense, the home directory (``$HOME``) corresponds to your personal scratch directory (``$VSC_SCRATCH``),
+rather than your usual VSC home directory (``$VSC_HOME``).
+
+This is done to ensure that Tier-1 Hortense can remain operational, even if there is maintenance being
+performed on the Tier-2 shared storage filesystem of a VSC site (UGent, KUL, VUB, UAntwerpen),
+or in case of problems with the network connection to the other VSC sites.
+
+Although your VSC home directory is usually accessible via ``$VSC_HOME``,
+we strongly recommend to *not* simply create symbolic links to files like your ``.bashrc`` startup script,
+since that would defeat the purpose of this "home-on-scratch" setup.
+
+.. _hortense_project_scratch_dirs:
+
+Project scratch directories
+***************************
+
+* Please be aware that storage space on ``$VSC_SCRATCH`` (personal scratch directory) is limited per user to 3 GB.
+* Instead, it is better to use the dedicated scratch storage space which is reserved for your Tier-1 project.
+* The environment variable ``$VSC_SCRATCH_PROJECTS_BASE`` points to the base folder containing all project directories.
+* Project directories are given the same name as your Tier-1 project (so *without* a prefix like ``gpr_compute_``).
+* To change to your project scratch directory, you can use this command:
 
 .. code:: shell
 
-  cd $VSC_SCRATCH_PROJECTS_BASE/<yourprojectnamehere>
+  cd $VSC_SCRATCH_PROJECTS_BASE/your_project_name
+
+In this command, you should change '``your_project_name``' to the actual name of your project.
 
 
-Storage quota usage
-*******************
+.. _hortense_scratch_storage_quota_usage:
+
+Scratch storage quota usage
+***************************
 
 * You can check personal and project storage quota usage by running the ``my_dodrio_quota`` command.
 * If you want to check storage quota for specific projects, or for projects that are not listed automatically, use the ``-p`` option.
 * For a list of all options, run ``my_dodrio_quota -h``.
 
-*(more information soon)*
+
+.. _hortense_accessing_data_readonly:
+
+Accessing data via ``/readonly``
+********************************
+
+Due to the fairly aggressive page cache purging policy that is used by the `Lustre <https://www.lustre.org>`_
+storage software that is used for the Tier-1 Hortense scratch filesystem, you may need to make some changes
+to how you access data in your job scripts to avoid performance problems.
+
+Whether or not this is required depends on the specific characteristics of your workloads:
+the number of files that are read, how large those files are, how the data in these files is accessed
+(the I/O pattern), etc. Note that this applies to both input data for your workloads, as well as
+any software you have installed on the Tier-1 Hortense scratch filesystem (see also :ref:`hortense_software_readonly`).
+
+To mitigate performance problems, you can access the data in your project scratch directory
+through the ``/readonly`` mount point, rather than accessing it directly.
+**We recommend to access your data via the** ``/readonly`` **mount point whenever possible,
+since it can result in a signficant performance speedup for your jobs.**
+
+This is done by prefixing the path to files and directories with ``/readonly/`` in your job script:
+rather than accessing your data via ``$VSC_SCRATCH_PROJECTS_BASE/...`` (or ``/dodrio/scratch/...``,
+which you should not used), you just use ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` instead.
+For example:
+
+.. code:: shell
+
+   export INPUT_DATA=/readonly/VSC_SCRATCH_PROJECTS_BASE/your_project_name/inputs/
+   python example_process_data.py $INPUT_DATA
+
+
+As the name suggests, the ``/readonly`` mount point only provides *read-only* access to your data.
+Trying to make any changes to files accessing via ``/readonly`` will result in ``Permission denied`` errors.
+
+.. note::
+
+   On the login nodes, there is a delay of maximum 30 minutes for changes to files (or new/removed
+   files/directories) to be reflected through the ``/readlonly/`` mount point.
+
+   In jobs, any changes you make to files or directories in your project scratch directory should be reflected
+   through the ``/readonly`` mount point immediately, as long as the job started running *after* the
+   changes were made.
+
+   In addition, take into account that changes which are made while the job is running will *not* be
+   reflected through the ``/readonly`` mount point (for that job).
+   If your job script creates new files, updates existing files, etc., those changes will *not* be
+   visible via ``/readonly`` during the lifetime of the job.
+
 
 Software
 --------
@@ -369,7 +443,7 @@ The maximum walltime that jobs can request is 3 days (72 hours): ``-l walltime=7
 
 Jobs that request more walltime will be refused by the resource manager at submission time ("``Requested time limit is invalid``").
 
-.. _scientific_software:
+.. _hortense_scientific_software:
 
 Scientific software
 *******************
@@ -382,6 +456,11 @@ and load one or more modules via the ``module load`` command to start using them
 
 If software that you require is missing, please submit a software installation request
 via https://www.ugent.be/hpc/en/support/software-installation-request .
+
+.. _hortense_software_readonly:
+
+Serving via ``readonly``
+++++++++++++++++++++++++
 
 Access to licensed software
 +++++++++++++++++++++++++++
