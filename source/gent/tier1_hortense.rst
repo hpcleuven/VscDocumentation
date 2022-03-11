@@ -462,8 +462,42 @@ via https://www.ugent.be/hpc/en/support/software-installation-request .
 
 .. _hortense_software_readonly:
 
-Serving via ``readonly``
-++++++++++++++++++++++++
+Accessing software via ``/readonly`` mount point
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+The central software stack on Tier-1 Hortense is provided via the ``/readonly`` mount point
+(see also :ref:`hortense_accessing_data_readonly`). This is largely transparent as long as you
+only load modules that are part of the central software stack.
+
+If you install any software yourself in your project scratch directory, we highly recommend
+you to also access it only through the ``/readonly`` mount point, since this can have a significant
+performance benefit.
+
+To ensure that the paths which are 'engraved' in your own software installations always start with ``/readonly/``,
+for example in scripts or binaries that make part of the installation,
+you should install the software using the ``bwrap`` utility. This allows you to "rename" the path to your
+project scratch directory so it starts with ``/readonly/``, while preserving write access to it.
+
+Assuming that the procedure to install the software is implemented in a script named ``install.sh``,
+you can use ``bwrap`` as follows:
+
+.. code::
+
+   bwrap --bind / / --bind $VSC_SCRATCH_PROJECTS_BASE /readonly/$VSC_SCRATCH_PROJECTS_BASE --dev /dev --bind /dev/log /dev/log ./install.sh
+
+The ``install.sh`` script should be implemented such that it installs the software to
+``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...``, that is a location in your project scratch directory that starts
+with ``/readonly/``.
+
+This can only work when ``bwrap`` is used to map the base path for project scratch directories
+``$VSC_SCRATCH_PROJECTS_BASE`` to ``/readonly/$VSC_SCRATCH_PROJECTS_BASE``, since otherwise
+any path that start with ``/readonly`` is indeed *read-only*, and trying to do any write operation
+would result in a ``Permission denied`` error.
+
+If you need any help with this, please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
+
+
+.. _hortense_licensed_software:
 
 Access to licensed software
 +++++++++++++++++++++++++++
@@ -530,6 +564,8 @@ Resources
 * kickoff meeting (23 Nov 2021) -
   slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2021-11-23.pdf>` -
   recording: `watch on YouTube <https://www.youtube.com/watch?v=o0kNNsNT_rs>`_
+
+.. _hortense_help:
 
 Getting help
 -------------
