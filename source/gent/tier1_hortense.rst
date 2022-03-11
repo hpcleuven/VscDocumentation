@@ -239,8 +239,7 @@ since that would defeat the purpose of this "home-on-scratch" setup.
 
 This recommendation also applies to ``$VSC_DATA``: you should avoid using it in your job scripts as much as
 possible, and ensure that your workflow only relies on the Hortense scratch filesystem. If you require any
-data as input for your jobs, it should be copied to the Hortense scratch filesystem first (for example
-via :ref:`globus`).
+data as input for your jobs, it should be copied to the Hortense scratch filesystem first.
 
 .. _hortense_project_scratch_dirs:
 
@@ -275,23 +274,23 @@ Scratch storage quota usage
 Accessing data via ``/readonly``
 ********************************
 
-Due to the fairly aggressive page cache purging policy that is used by the `Lustre <https://www.lustre.org>`_
+Due to the fairly aggressive page cache purging policy of the `Lustre <https://www.lustre.org>`_
 storage software that is used for the Tier-1 Hortense scratch filesystem, you may need to make some changes
 to how you access data in your job scripts to avoid performance problems.
 
-Whether or not this is required depends on the specific characteristics of your workloads:
-the number of files that are read, how large those files are, how the data in these files is accessed
-(the I/O pattern), etc. Note that this applies to both input data for your workloads, as well as
+Whether or not this is required depends whether data is being read multiple times during your job.
+If so, the extent of the performance impact depends on the number of files that are read,
+how large those files are, how those files are being accessed (the I/O pattern), etc.
+Note that this applies to both input data for your workloads, as well as
 any software you have installed on the Tier-1 Hortense scratch filesystem (see also :ref:`hortense_software_readonly`).
 
-To mitigate performance problems, you can access the data in your project scratch directory
-through the ``/readonly`` mount point, rather than accessing it directly.
-**We recommend to access your data via the** ``/readonly`` **mount point whenever possible,
-since it can result in a signficant performance speedup for your jobs.**
+To mitigate performance problems caused by the aggressive page cache purging,
+you can access the data in your project scratch directory through the ``/readonly`` mount point,
+rather than accessing it directly.
 
 This is done by prefixing the path to files and directories with ``/readonly/`` in your job script:
 rather than accessing your data via ``$VSC_SCRATCH_PROJECTS_BASE/...`` (or ``/dodrio/scratch/...``,
-which you should not used), you just use ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` instead.
+which you should not use), you just use ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` instead.
 For example:
 
 .. code:: shell
@@ -309,13 +308,12 @@ Trying to make any changes to files accessing via ``/readonly`` will result in `
    files/directories) to be reflected through the ``/readlonly/`` mount point.
 
    In jobs, any changes you make to files or directories in your project scratch directory should be reflected
-   through the ``/readonly`` mount point immediately, as long as the job started running *after* the
-   changes were made.
+   through the ``/readonly`` mount point, as long as the job started running *after* the changes were made.
 
-   In addition, take into account that changes which are made while the job is running will *not* be
-   reflected through the ``/readonly`` mount point (for that job).
-   If your job script creates new files, updates existing files, etc., those changes will *not* be
-   visible via ``/readonly`` during the lifetime of the job.
+   In addition, take into account that changes in your project scratch directory which are made while the job
+   is running may *not* be reflected through the ``/readonly`` mount point (during that job).
+   If your job script creates new files, updates existing files, etc., those changes may not be
+   visible via ``/readonly`` during the lifetime of the job, so you should not assume that this will be the case.
 
 
 Software
