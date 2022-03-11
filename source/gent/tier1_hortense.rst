@@ -300,12 +300,12 @@ For example:
 
 
 As the name suggests, the ``/readonly`` mount point only provides *read-only* access to your data.
-Trying to make any changes to files accessing via ``/readonly`` will result in "``Read-only filesystem``" errors.
+Trying to make any changes to files that are accessed via ``/readonly`` will result in "``Read-only filesystem``" errors.
 
 .. note::
 
    On the login nodes, there is a delay of maximum 30 minutes for changes to files (or new/removed
-   files/directories) to be reflected through the ``/readlonly/`` mount point.
+   files/directories) to be reflected through the ``/readlonly`` mount point.
 
    In jobs, any changes you make to files or directories in your project scratch directory should be reflected
    through the ``/readonly`` mount point, as long as the job started running *after* the changes were made.
