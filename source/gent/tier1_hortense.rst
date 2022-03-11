@@ -237,6 +237,11 @@ Although your VSC home directory is usually accessible via ``$VSC_HOME``,
 we strongly recommend to *not* simply create symbolic links to files like your ``.bashrc`` startup script,
 since that would defeat the purpose of this "home-on-scratch" setup.
 
+This recommendation also applies to ``$VSC_DATA``: you should avoid using it in your job scripts as much as
+possible, and ensure that your workflow only relies on the Hortense scratch filesystem. If you require any
+data as input for your jobs, it should be copied to the Hortense scratch filesystem first (for example
+via :ref:`globus`).
+
 .. _hortense_project_scratch_dirs:
 
 Project scratch directories
