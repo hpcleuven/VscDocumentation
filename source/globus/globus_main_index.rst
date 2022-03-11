@@ -1,3 +1,5 @@
+.. _globus:
+
 Globus file and data sharing platform
 =====================================
 

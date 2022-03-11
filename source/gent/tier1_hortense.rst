@@ -202,8 +202,13 @@ Keep in mind that:
 * Your request needs to be approved by one of the group moderators before your VSC account is added to the group.
 * It can take a while (about one hour) before any changes in group membership are reflected on the system itself.
 
+
+.. _hortense_system_specific_aspects:
+
 System-specific aspects
 -----------------------
+
+.. _hortense_local_storage:
 
 Local storage
 *************
@@ -216,28 +221,100 @@ This storage space can be addressed with the environment variable $TMPDIR
   cd $TMPDIR
 
 
-Project storage
-***************
+.. _hortense_home_on_scratch:
 
-* Please be aware that storage space on $VSC_SCRATCH is limited per user to 3 GB.
-* Instead, it is better to use the dedicated scratch storage space which is reserved for every Tier1 project.
-* The environment variable $VSC_SCRATCH_PROJECTS_BASE points to the basefolder containing all project spaces.
-* Project space is given the same name as your project.
-* You can e.g. use this command to directly switch to your dedicated project space:
+Home-on-scratch setup
+*********************
+
+On Tier-1 Hortense, the home directory (``$HOME``) corresponds to your personal scratch directory (``$VSC_SCRATCH``),
+rather than your usual VSC home directory (``$VSC_HOME``).
+
+This is done to ensure that Tier-1 Hortense can remain operational, even if there is maintenance being
+performed on the Tier-2 shared storage filesystem of a VSC site (UGent, KUL, VUB, UAntwerpen),
+or in case of problems with the network connection to the other VSC sites.
+
+Although your VSC home directory is usually accessible via ``$VSC_HOME``,
+we strongly recommend to *not* simply create symbolic links to files like your ``.bashrc`` startup script,
+since that would defeat the purpose of this "home-on-scratch" setup.
+
+This recommendation also applies to ``$VSC_DATA``: you should avoid using it in your job scripts as much as
+possible, and ensure that your workflow only relies on the Hortense scratch filesystem. If you require any
+data as input for your jobs, it should be copied to the Hortense scratch filesystem first.
+
+.. _hortense_project_scratch_dirs:
+
+Project scratch directories
+***************************
+
+* Please be aware that storage space on ``$VSC_SCRATCH`` (personal scratch directory) is limited per user to 3 GB.
+* Instead, it is better to use the dedicated scratch storage space which is reserved for your Tier-1 project.
+* The environment variable ``$VSC_SCRATCH_PROJECTS_BASE`` points to the base folder containing all project directories.
+* Project directories are given the same name as your Tier-1 project (so *without* a prefix like ``gpr_compute_``).
+* To change to your project scratch directory, you can use this command:
 
 .. code:: shell
 
-  cd $VSC_SCRATCH_PROJECTS_BASE/<yourprojectnamehere>
+  cd $VSC_SCRATCH_PROJECTS_BASE/your_project_name
+
+In this command, you should change '``your_project_name``' to the actual name of your project.
 
 
-Storage quota usage
-*******************
+.. _hortense_scratch_storage_quota_usage:
+
+Scratch storage quota usage
+***************************
 
 * You can check personal and project storage quota usage by running the ``my_dodrio_quota`` command.
 * If you want to check storage quota for specific projects, or for projects that are not listed automatically, use the ``-p`` option.
 * For a list of all options, run ``my_dodrio_quota -h``.
 
-*(more information soon)*
+
+.. _hortense_accessing_data_readonly:
+
+Accessing data via ``/readonly``
+********************************
+
+Due to the fairly aggressive page cache purging policy of the `Lustre <https://www.lustre.org>`_
+storage software that is used for the Tier-1 Hortense scratch filesystem, you may need to make some changes
+to how you access data in your job scripts to avoid performance problems.
+
+Whether or not this is required depends whether data is being read multiple times during your job.
+If so, the extent of the performance impact depends on the number of files that are read,
+how large those files are, how those files are being accessed (the I/O pattern), etc.
+Note that this applies to both input data for your workloads, as well as
+any software you have installed on the Tier-1 Hortense scratch filesystem (see also :ref:`hortense_software_readonly`).
+
+To mitigate performance problems caused by the aggressive page cache purging,
+you can access the data in your project scratch directory through the ``/readonly`` mount point,
+rather than accessing it directly.
+
+This is done by prefixing the path to files and directories with ``/readonly/`` in your job script:
+rather than accessing your data via ``$VSC_SCRATCH_PROJECTS_BASE/...`` (or ``/dodrio/scratch/...``,
+which you should not use), you just use ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` instead.
+For example:
+
+.. code:: shell
+
+   export INPUT_DATA=/readonly/VSC_SCRATCH_PROJECTS_BASE/your_project_name/inputs/
+   python example_process_data.py $INPUT_DATA
+
+
+As the name suggests, the ``/readonly`` mount point only provides *read-only* access to your data.
+Trying to make any changes to files accessing via ``/readonly`` will result in "``Read-only filesystem``" errors.
+
+.. note::
+
+   On the login nodes, there is a delay of maximum 30 minutes for changes to files (or new/removed
+   files/directories) to be reflected through the ``/readlonly/`` mount point.
+
+   In jobs, any changes you make to files or directories in your project scratch directory should be reflected
+   through the ``/readonly`` mount point, as long as the job started running *after* the changes were made.
+
+   In addition, take into account that changes in your project scratch directory which are made while the job
+   is running may *not* be reflected through the ``/readonly`` mount point (during that job).
+   If your job script creates new files, updates existing files, etc., those changes may not be
+   visible via ``/readonly`` during the lifetime of the job, so you should not assume that this will be the case.
+
 
 Software
 --------
@@ -369,7 +446,7 @@ The maximum walltime that jobs can request is 3 days (72 hours): ``-l walltime=7
 
 Jobs that request more walltime will be refused by the resource manager at submission time ("``Requested time limit is invalid``").
 
-.. _scientific_software:
+.. _hortense_scientific_software:
 
 Scientific software
 *******************
@@ -382,6 +459,54 @@ and load one or more modules via the ``module load`` command to start using them
 
 If software that you require is missing, please submit a software installation request
 via https://www.ugent.be/hpc/en/support/software-installation-request .
+
+.. _hortense_software_readonly:
+
+Accessing software via ``/readonly`` mount point
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+The central software stack on Tier-1 Hortense is provided via the ``/readonly`` mount point
+(see also :ref:`hortense_accessing_data_readonly`). This is largely transparent as long as you
+only load modules that are part of the central software stack.
+
+If you install any software yourself in your project scratch directory, we highly recommend
+you to also access it only through the ``/readonly`` mount point, since this can have a significant
+performance benefit.
+
+To ensure that the paths which are 'engraved' in your own software installations always start with ``/readonly/``,
+for example in scripts or binaries that make part of the installation,
+you should install the software using the ``dodrio-bind-readonly`` utility. This allows you to "rename" the path to your
+project scratch directory so it starts with ``/readonly/``, while preserving write access to it.
+
+Assuming that the procedure to install the software is implemented in a script named ``install.sh``,
+you can use ``dodrio-bind-readonly`` as follows:
+
+.. code::
+
+   dodrio-bind-readonly ./install.sh
+
+The ``install.sh`` script should be implemented such that it installs the software to
+``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...``, that is a location in your project scratch directory that starts
+with ``/readonly/``.
+
+Or you can start a new shell session in which ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` is
+accessible with write permissions:
+
+.. code::
+
+   dodrio-bind-readonly /bin/bash
+
+.. note::
+
+    This can only work when the ``dodrio-bind-readonly`` is used to map the base path for project scratch directories
+    ``$VSC_SCRATCH_PROJECTS_BASE`` to ``/readonly/$VSC_SCRATCH_PROJECTS_BASE``, since otherwise
+    any path that start with ``/readonly`` is indeed *read-only*, and trying to do any write operation
+    would result in a "``Read-only file system``" error.
+
+If you need any help with this, please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
+
+
+.. _hortense_licensed_software:
 
 Access to licensed software
 +++++++++++++++++++++++++++
@@ -448,6 +573,8 @@ Resources
 * kickoff meeting (23 Nov 2021) -
   slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2021-11-23.pdf>` -
   recording: `watch on YouTube <https://www.youtube.com/watch?v=o0kNNsNT_rs>`_
+
+.. _hortense_help:
 
 Getting help
 -------------
