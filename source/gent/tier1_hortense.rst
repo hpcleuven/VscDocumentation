@@ -570,9 +570,8 @@ please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 Resources
 ---------
 
-* kickoff meeting (23 Nov 2021) -
-  slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2021-11-23.pdf>` -
-  recording: `watch on YouTube <https://www.youtube.com/watch?v=o0kNNsNT_rs>`_
+* kickoff meeting (15 March 2022) -
+  slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2022-03-15.pdf>`
 
 .. _hortense_help:
 
