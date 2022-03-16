@@ -571,7 +571,8 @@ Resources
 ---------
 
 * kickoff meeting (15 March 2022) -
-  slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2022-03-15.pdf>`
+  slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2022-03-15.pdf>` -
+  recording: `watch on YouTube <https://www.youtube.com/watch?v=ENQrgMc2BAY>`_
 
 .. _hortense_help:
 
