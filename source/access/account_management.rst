@@ -58,11 +58,11 @@ Managing disk space
 
 The amount of disk space that a user can use on the various file systems
 on the system is limited by quota on the amount of disk space and number
-of files. UGent users can see and request upgrades for their quota on
+of files. UGent and VUB users can see and request upgrades for their quota on
 the Account management site (Users need to be in a VO (Virtual
 Organization) to request additional quota. Creating and joining a VO is
 also done through the Account Management website). On other sites
 checking your disk space use is still :ref:`mostly done from the command
-line <disk usage>` and requesting more quote is done via email.
+line <disk usage>` and requesting more quota is done via email.
 
 .. include:: links.rst
