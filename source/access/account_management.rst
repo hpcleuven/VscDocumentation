@@ -49,8 +49,9 @@ clusters at KU Leuven).
 -  If you are a group moderator, you can manage your group by accepting
    requests from users that would like to join the group or inviting
    users to join your group through the `VSC account page`_.
--  For UGent users only: You can create or join a so-called Virtual
-   Organization or VO.
+-  For UGent and VUB users only: You can create or join a so-called
+   Virtual Organization or VO. VUB users may consult the VUB-HPC docs on
+   `Virtual Organization <https://hpc.vub.be/docs/vo/>`_ for more info.
 
 Managing disk space
 -------------------
