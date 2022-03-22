@@ -23,8 +23,8 @@ Managing user credentials
       you can restore the keys on the cluster or upload a new key and
       then delete the old one.
 
-Group and Virtual Organization management
------------------------------------------
+Group management
+----------------
 
 Once your VSC account is active and you can log on to your home cluster,
 you can also manage groups through the account management web interface.
@@ -49,9 +49,16 @@ clusters at KU Leuven).
 -  If you are a group moderator, you can manage your group by accepting
    requests from users that would like to join the group or inviting
    users to join your group through the `VSC account page`_.
--  For UGent and VUB users only: You can create or join a so-called
-   Virtual Organization or VO. VUB users may consult the VUB-HPC docs on
-   `Virtual Organization <https://hpc.vub.be/docs/vo/>`_ for more info.
+
+.. _virtual_organization:
+
+Virtual Organization management
+-------------------------------
+
+For UGent and VUB users only: You can create or join a so-called Virtual
+Organization or VO, which gives access to extra storage in the HPC cluster that
+is shared between the members of the VO. VUB users may consult the VUB-HPC docs
+on `Virtual Organization <https://hpc.vub.be/docs/vo/>`_ for more info.
 
 Managing disk space
 -------------------
