@@ -151,7 +151,7 @@ Hortense scratch via Globus
 ***************************
 
 To access your data in your (project) scratch directory on Tier-1 Hortense,
-you can use Globus via the `VSC UGent Tier2` endpoint.
+you should use Globus via the `VSC UGent Tier1 projects` endpoint.
 
 More general information about Globus is available at :ref:`managing_and_transferring_files`.
 
