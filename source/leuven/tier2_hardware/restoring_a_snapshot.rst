@@ -11,10 +11,16 @@ The backup consists of snapshots that are created at regular intervals:
 
 An offsite backup is maintained for older data, but operator intervention is required to restore that. The names in brackets will be explained below.
 
-The snapshots can be found in:
+The snapshots can be found in two ways.
+Either from the top-level folder on ``$VSC_HOME`` and ``$VSC_DATA``:
 
 - ``/user/leuven/.snapshot`` for ``$VSC_HOME``
 - ``/data/leuven/.snapshot`` for ``$VSC_DATA``
+
+Or equivalently, from any nested subfolder inside ``$VSC_HOME`` and ``$VSC_DATA``.
+E.g., if a a file is missing from ``projects/simulations`` folder, you may retrieve it from:
+
+- ``$VSC_DATA/projects/simulations/.snapshot``
 
 In these ``.snapshot`` directories, a number of directories can be found, their names reflecting the moment the snapshot was taken, as explained above. For example, the directory ``weekly.2019-06-09_0000`` will contain the snapshot taken at midnight on June 9, 2019.
 
