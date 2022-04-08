@@ -1,7 +1,7 @@
 Restoring a snapshot
 ====================
 
-**Note:** *this only applies to the ``$VSC_HOME`` and ``$VSC_DATA`` directories of KU Leuven/UHasselt users.*
+**Note:** *this only applies to the* ``$VSC_HOME`` *,* ``$VSC_DATA`` *and* ``archive`` *directories of KU Leuven/UHasselt users.*
 
 The backup consists of snapshots that are created at regular intervals:
 
@@ -12,12 +12,13 @@ The backup consists of snapshots that are created at regular intervals:
 An offsite backup is maintained for older data, but operator intervention is required to restore that. The names in brackets will be explained below.
 
 The snapshots can be found in two ways.
-Either from the top-level folder on ``$VSC_HOME`` and ``$VSC_DATA``:
+Either from the top-level folder on ``$VSC_HOME``, ``$VSC_DATA`` and ``archive``:
 
 - ``/user/leuven/.snapshot`` for ``$VSC_HOME``
 - ``/data/leuven/.snapshot`` for ``$VSC_DATA``
+- ``/archive/leuven/.snapshot`` for ``archive``
 
-Or equivalently, from any nested subfolder inside ``$VSC_HOME`` and ``$VSC_DATA``.
+Or equivalently, from any nested subfolder inside ``$VSC_HOME``, ``$VSC_DATA`` and ``archive``.
 E.g., if a a file is missing from ``projects/simulations`` folder, you may retrieve it from:
 
 - ``$VSC_DATA/projects/simulations/.snapshot``
