@@ -126,7 +126,7 @@ Users of Ghent University Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 All information about the access policy is available `in
-English <https://www.ugent.be/hpc/en/policy>`_ at the `UGent
+English <https://www.ugent.be/hpc/en/access>`_ at the `UGent
 HPC web pages <https://www.ugent.be/hpc>`_.
 
 -  Researchers and students can use the :ref:`generic procedure <generic access procedure>`.
