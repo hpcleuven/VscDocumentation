@@ -161,18 +161,20 @@ showq
 ~~~~~
 
 The ``showq`` command will show you information about the queue from the
-scheduler's perspective. Jobs are subdivided in three categories:
+scheduler's perspective. The ``showq`` output is split up according to
+the following categories:
 
--  Active jobs are actually running, started or terminated.
+-  Active jobs are actually running (or just about to get started or
+   terminated). Their state in the ``showq`` output will be "Running" and
+   they are sorted according to their expected end time.
 -  Eligible jobs are queued and considered eligible for scheduling.
+   Their state in the ``showq`` output will be "Idle" and they are sorted
+   according to their current priority.
 -  Blocked jobs are ineligible to run or to be queued for scheduling.
+   These jobs can have various states (see list below).
  
-The ``showq`` command will split its output according to the three major
-categories. Active jobs are sorted according to their expected end time
-while eligible jobs are sorted according to their current priority.
-
-There are multiple reasons why a job might be blocked, indicated by the state
-value below:
+Blocked jobs will have one of the following states, depending on the reason
+for the block:
 
 Idle
    Job violates a fairness policy, i.e., you have used too many resources lately.
@@ -186,7 +188,7 @@ BatchHold
 
    - the requested resources are not available in the system, or
    - because the resource manager has repeatedly failed in attempts to start the
-     job.  This typically indicates a problem with some nodes of the cluster,
+     job. This typically indicates a problem with some nodes of the cluster,
      so you may want to contact user support.
 Deferred
    A scheduler defer hold is in place (a temporary hold used when a job has been
