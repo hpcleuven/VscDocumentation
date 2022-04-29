@@ -176,7 +176,6 @@ value below:
 
 Idle
    Job violates a fairness policy, i.e., you have used too many resources lately.
-   Use diagnose ``-q`` for more information.
 UserHold
    A user hold is in place.  This may be caused by job dependencies.
 SystemHold
