@@ -13,18 +13,20 @@ Log in to the HPC-UGent infrastructure using SSH via login.hpc.ugent.be .
 Compute clusters
 ----------------
 
- =============== ========== ========================================================= ===================== =========================== ======================= ===================
-  cluster name    # nodes                    Processor architecture                    Usable memory/node      Local diskspace/node          Interconnect         Operating system
- =============== ========== ========================================================= ===================== =========================== ======================= ===================
-  swalot              128    2 x 10-core Intel E5-2660v3(Haswell-EP @ 2.6 GHz)         116 GiB               1 TB                        FDR InfiniBand           CentOS 7
-  skitty               72    2 x 18-core Intel Xeon Gold 6140(Skylake @ 2.3 GHz)       177 GiB               1 TB + 240GB SSD            EDR InfiniBand           CentOS 7
-  victini*             96    2 x 18-core Intel Xeon Gold 6140(Skylake @ 2.3 GHz)       88 GiB                1 TB + 240 GB SSD            10 GbE                  CentOS 7
-  joltik               10    2x 16-core Intel Xeon Gold 6242(Cascade Lake @ 2.8 GHz)   256 GiB               800 GB SSD                   double EDR Infiniband   CentOS 7
-                             + 4x NVIDIA Volta V100 GPUs (32GB GPU memory)                                                                      
+ =============== ========== =========================================================== ===================== =========================== ======================= ===================
+  cluster name    # nodes                    Processor architecture                     Usable memory/node    Local diskspace/node        Interconnect            Operating system
+ =============== ========== =========================================================== ===================== =========================== ======================= ===================
+  swalot              128    2 x 10-core Intel E5-2660v3 (Haswell-EP @ 2.6 GHz)         116 GiB               1 TB                        FDR InfiniBand          CentOS 7
+  skitty               72    2 x 18-core Intel Xeon Gold 6140 (Skylake @ 2.3 GHz)       177 GiB               1 TB + 240GB SSD            EDR InfiniBand          RHEL 8
+  victini*             96    2 x 18-core Intel Xeon Gold 6140 (Skylake @ 2.3 GHz)       88 GiB                1 TB + 240 GB SSD           10 GbE                  RHEL 8
+  joltik               10    2x 16-core Intel Xeon Gold 6242 (Cascade Lake @ 2.8 GHz)   256 GiB               800 GB SSD                  double EDR Infiniband   RHEL 8
+                             + 4x NVIDIA Volta V100 GPUs (32GB GPU memory)
 
-  kirlia               16    2 x 18-core Intel Xeon Gold 6240(Skylake @ 2.6 GHz)       738 GiB               1.6 TB NVME                     HDR-100 InfiniBand   CentOS 7
-  doduo               128    2x 48-core AMD EPYC 7552 (Rome @ 2.2 GHz)                 250 GiB               180 GB SSD                      HDR-100 InfiniBand   RHEL 8
- =============== ========== ========================================================= ===================== =========================== ======================= ===================
+  kirlia               16    2 x 18-core Intel Xeon Gold 6240 (Cascade Lake @ 2.6 GHz)  738 GiB               1.6 TB NVME                 HDR-100 InfiniBand      RHEL 8
+  doduo               128    2x 48-core AMD EPYC 7552 (Rome @ 2.2 GHz)                  250 GiB               180 GB SSD                  HDR-100 InfiniBand      RHEL 8
+  accelgor              9    2x 24-core AMD EPYC 7413 (Milan @ 2.2 GHz)                 500 GiB               180GB SSD                   HDR-100 InfiniBand      RHEL 8
+                             + 4x NVIDIA Ampere A100 GPUs (80GB GPU memory)
+ =============== ========== =========================================================== ===================== =========================== ======================= ===================
 
 (*) default cluster
 
