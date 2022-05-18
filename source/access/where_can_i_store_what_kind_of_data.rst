@@ -35,6 +35,24 @@ on the size and usage of these data. Following locations are available:
    -  Several types exist, available in $VSC_SCRATCH_XXX variables
    -  For temporary or transient data; there is typically no backup for
       these filesystems, and 'old' data may be removed automatically.
+
+      .. note::
+
+          On the Tier-2 clusters in Leuven, the automatic file removal is
+          based on the moment a file was accessed for the last time. The
+          reasoning behind this is that as long as you are actively using a
+          file (so accessing it), the file will not be removed. This policy
+          can however cause confusion when files are initially transferred to
+          a scratch directory. If you use for instance the `mv` command, the
+          file is not actually accessed. When the last access timestamp of the
+          original file is a long time in the past, this file will be
+          considered to be inactive and automatically removed. A similar
+          thing happens when using `rsync` with the option to preserve
+          timestamps. Also `Midnight Commander` will always preserve
+          timestamps when copying or moving data. To avoid this problem, the
+          `cp` command (without `-a` argument) should be used for the
+          initial transfer of files to a scratch directory.
+
    -  Currently, $VSC_SCRATCH_NODE and $VSC_SCRATCH_SITE
       are defined for space that is available per
       node or per site on all nodes of the VSC.
