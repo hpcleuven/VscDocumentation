@@ -436,6 +436,21 @@ A list of available partitions can be obtained using ``module avail cluster/dodr
 
 To check the currently active partition, use ``module list cluster``.
 
+Requesting GPU resources
+++++++++++++++++++++++++
+
+Don't forget to actively request GPU resources in your jobs or from the commandline.
+Only loading the cluster/dodrio/gpu_rome_a100 module is not sufficient.
+You should request 12 cores per GPU (remember: 4 GPUs per node, 48 cores per node).
+
+.. code:: shell
+
+    module swap cluster/dodrio/gpu_rome_a100
+    qsub -l nodes=1:ppn=12*G:gpus=G
+    
+(The above example is for a single-node job, 1 or more GPUs, max. 4 GPUs) (where: 1<= G <= 4)
+
+
 Limitations for jobs
 ++++++++++++++++++++
 
