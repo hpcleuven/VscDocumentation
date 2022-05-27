@@ -33,6 +33,8 @@ Compute clusters
 For most recent information about the available resources and cluster status, please consult https://www.ugent.be/hpc/en/infrastructure .
 
 
+.. _UGent storage:
+
 Shared storage
 --------------
 

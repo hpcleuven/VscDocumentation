@@ -62,6 +62,14 @@ open for the general quota warnings! The same holds for running jobs
 that need to write files: when you reach your hard quota, jobs will
 crash.
 
+A few additional site-specific remarks concerning data storage can be found
+on the following pages:
+
+   - :ref:`UAntwerpen<UAntwerpen storage>`
+   - :ref:`VUB<VUB storage>`
+   - :ref:`HPC-UGent Tier-2<UGent storage>`
+   - :ref:`KU Leuven/UHasselt<KU Leuven storage>`
+
 .. _VSC home directory:
 
 Home directory
