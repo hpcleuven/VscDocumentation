@@ -1,4 +1,4 @@
-Genius hardware
+wICE hardware
 ===============
 
 wICE will be KU Leuven/UHasselt's next Tier-2 cluster. It has thin nodes, large memory nodes, interactive nodes and GPGPU nodes.
