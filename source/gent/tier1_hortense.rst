@@ -202,6 +202,24 @@ Keep in mind that:
 * Your request needs to be approved by one of the group moderators before your VSC account is added to the group.
 * It can take a while (about one hour) before any changes in group membership are reflected on the system itself.
 
+Consult your project resource usage
+***********************************
+
+The Resource Application web app https://resapp.hpc.ugent.be allows you to consult your usage in a user-friendly way.
+
+Please note that this app is still in ‘beta’.
+(For instance, storage usage is not yet done, so this will show up 0 everywhere.)
+In an upcoming development cycle, we will improve shortcomings and correct bugs. 
+Do not hesitate to give your feedback on using the Resource Application via compute@vscentrum.be
+
+Practical usage:
+
+* Open a webbrowser to https://resapp.hpc.ugent.be (The app will redirect you via the VSC firewall application first, if needed.)
+* The Resource Application shows you all Tier1-Hortense projects that you are a member of.
+* By clicking on the dropdown arrow on the right in the initial Projects tab, you can consult the raw usage of one of your projects (in CPU hours and GPU hours).
+* You can also view Logs and get more fine-grained usage details.
+* When you click on the project name, you enter a new screen giving you information on allocation and cutoff. The orange box and number in the box refer to the 20% cutoff.
+
 
 .. _hortense_system_specific_aspects:
 
