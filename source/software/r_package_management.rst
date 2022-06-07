@@ -15,7 +15,7 @@ support whenever you encounter trouble doing so.
 Installing your own packages using conda
 ----------------------------------------
 
-The easiest way to install and manage your own R environment is conda.
+The easiest way to install and manage your own R environment(s) is conda.
 
 
 Installing Miniconda
@@ -146,13 +146,17 @@ Setting up your own package repository for R is straightforward.
 
       $ module load R/3.2.1-foss-2014a-x11-tcl
 
-#. Start R and install the package::
+#. Start R and install the package (preferably in your $VSC_DATA directory)::
 
-      > install.packages("DEoptim")
+      > install.packages("DEoptim", lib="/data/leuven/304/vsc30468/R/")
 
 #. Alternatively you can download the desired package::
 
       $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+
+      and install it with::
+  
+      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
 
 #. These packages might depend on the specific R version, so you may
    need to reinstall them for the other version.
