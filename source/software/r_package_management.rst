@@ -65,6 +65,7 @@ handy in any case to preprocess, visualize, or postprocess your data.
 You can of course install more, depending on your requirements and
 personal taste.
 
+A lot of bioconda and bioconductor packages are not in sync with their dependencies, therefore you may need to create a separate environment for each of those packages to avoid conflicts.
 
 Working with the environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
