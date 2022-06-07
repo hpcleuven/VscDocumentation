@@ -441,14 +441,14 @@ Requesting GPU resources
 
 Don't forget to actively request GPU resources in your jobs or from the commandline.
 Only loading the cluster/dodrio/gpu_rome_a100 module is not sufficient.
-You should request 12 cores per GPU (remember: 4 GPUs per node, 48 cores per node).
+By default you'll get 12 cores per requested GPU (an explicit ppn= statement is not required).
 
 .. code:: shell
 
     module swap cluster/dodrio/gpu_rome_a100
-    qsub -l nodes=1:ppn=12*G:gpus=G
+    qsub -l nodes=1:gpus=1
     
-(The above example is for a single-node job, 1 or more GPUs, max. 4 GPUs) (where: 1<= G <= 4)
+(The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
 
 
 Limitations for jobs
