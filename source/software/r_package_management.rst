@@ -34,7 +34,7 @@ Setting up your own package repository for R is straightforward.
   
       $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
       
- #. These packages might depend on the specific R version, so you may
+#. These packages might depend on the specific R version, so you may
    need to reinstall them for the other version.
    
 Some R packages depend on libraries installed on the system.  In that case,
