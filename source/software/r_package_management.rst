@@ -22,10 +22,21 @@ Setting up your own package repository for R is straightforward.
 
       $ module load R/3.2.1-foss-2014a-x11-tcl
 
-#. Start R and install the package::
+#. Start R and install the package (preferably in your $VSC_DATA directory)::
 
-      > install.packages("DEoptim")
+      > install.packages("DEoptim", lib="/data/leuven/304/vsc30468/R/")
 
+#. Alternatively you can download the desired package::
+
+      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+
+      and install it with::
+  
+      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
+      
+ #. These packages might depend on the specific R version, so you may
+   need to reinstall them for the other version.
+   
 Some R packages depend on libraries installed on the system.  In that case,
 you first have to load the modules for these libraries, and only then proceed
 to the R package installation.  For instance, if you would like to install
@@ -46,7 +57,7 @@ Installing R packages using conda
     Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
     and VUB.
 
-The easiest way to install and manage your own R environment is conda.
+The easiest way to install and manage your own R environment(s) is conda.
 
 
 Installing Miniconda
@@ -96,6 +107,7 @@ handy in any case to preprocess, visualize, or postprocess your data.
 You can of course install more, depending on your requirements and
 personal taste.
 
+A lot of bioconda and bioconductor packages are not in sync with their dependencies, therefore you may need to create a separate environment for each of those packages to avoid conflicts.
 
 Working with the environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,6 +176,4 @@ original state, use the following command
 More information
 ~~~~~~~~~~~~~~~~
 
-Additional information about conda can be found on its `documentation
-site <https://docs.conda.io/en/latest/>`_.
-
+Additional information about conda can be found on its `documentation site <https://conda.readthedocs.io/en/latest/>`__.
