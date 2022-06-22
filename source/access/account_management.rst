@@ -1,5 +1,3 @@
-.. _account management:
-
 Account management
 ==================
 
@@ -25,8 +23,8 @@ Managing user credentials
       you can restore the keys on the cluster or upload a new key and
       then delete the old one.
 
-Group and Virtual Organisation management
------------------------------------------
+Group management
+----------------
 
 Once your VSC account is active and you can log on to your home cluster,
 you can also manage groups through the account management web interface.
@@ -45,25 +43,33 @@ clusters at KU Leuven).
       you feel you should belong to. It is then up to the moderator of
       that group to grant you membership.
    -  :ref:`create a new group <create groups>`
-   -  use group permissions to :ref:`control acces to files and
+   -  use group permissions to :ref:`control access to files and
       directories <permissions groups>`
 
 -  If you are a group moderator, you can manage your group by accepting
    requests from users that would like to join the group or inviting
    users to join your group through the `VSC account page`_.
--  For UGent users only: You can create or join a so-called Virtual
-   Organisation or VO.
+
+.. _virtual_organization:
+
+Virtual Organization management
+-------------------------------
+
+For UGent and VUB users only: You can create or join a so-called Virtual
+Organization or VO, which gives access to extra storage in the HPC cluster that
+is shared between the members of the VO. VUB users may consult the VUB-HPC docs
+on `Virtual Organization <https://hpc.vub.be/docs/vo/>`_ for more info.
 
 Managing disk space
 -------------------
 
 The amount of disk space that a user can use on the various file systems
 on the system is limited by quota on the amount of disk space and number
-of files. UGent users can see and request upgrades for their quota on
+of files. UGent and VUB users can see and request upgrades for their quota on
 the Account management site (Users need to be in a VO (Virtual
-Organisation) to request aditional quota. Creating and joining a VO is
-also done trought the Account Management website). On other sites
+Organization) to request additional quota. Creating and joining a VO is
+also done through the Account Management website). On other sites
 checking your disk space use is still :ref:`mostly done from the command
-line <disk usage>` and requesting more quote is done via email.
+line <disk usage>` and requesting more quota is done via email.
 
 .. include:: links.rst

@@ -1,7 +1,7 @@
 Breniac hardware
 ================
 
-Breniac is the VSC's Tier-1 cluster.
+Breniac is the VSC's Tier-1 cluster hosted by KU Leuven.
 
 .. include:: breniac_login_nodes.rst
 
@@ -11,21 +11,24 @@ Hardware details
 
 - 408 skylake nodes
 
-    - 2 Xeon Gold 6132 CPU\@2.6GHz, 14 cores each
-    - 192 GB RAM
-    - 75 GB SSD local disk
+   - 2 Xeon Gold 6132 CPU\@2.6GHz, 14 cores each
+   - 192 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency skylake tier1>`)
+   - 75 GB SSD local disk
+   - specific ``qsub`` :ref:`options <submit to Breniac skylake node>` apply
 
 - 436 broadwell nodes
 
-   - 2 Xeon E5-2680v4 CPUs@2.4GHz, 14 cores each
-   - 128 GB RAM
+   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
+   - 128 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency broadwell tier1>`)
    - 75 GB SSD local disk
+   - specific ``qsub`` :ref:`options <submit to Breniac broadwell node>` apply
 
 - 144 broadwell nodes
 
-   - 2 Xeon E5-2680v4 CPUs@2.4GHz, 14 cores each
+   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
    - 256 GB RAM
    - 75 GB SSD local disk
+   - specific ``qsub`` :ref:`options <submit to Breniac 256 GB broadwell node>` apply
 
 The nodes are connected using an Infiniband EDR network.
 
@@ -38,7 +41,7 @@ Breniac storage
 
 Your ``$VSC_HOME`` and ``$VSC_DATA`` directory are mounted on the Breniac
 login and compute nodes.  See your VSC institute's information on local
-storage about policies and quota.  Also check the :ref:``VSC storage
+storage about policies and quota.  Also check the :ref:`VSC storage
 guidelines <data location>` for information on what to store where.
 
 .. note::

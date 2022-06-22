@@ -1,5 +1,3 @@
-.. _access from multiple machines:
-
 Access from multiple machines
 =============================
 
@@ -8,10 +6,10 @@ There are two possibilities.
 #. You can copy your private key from the machine where you generated
    the key to the other computers you want to use to access the VSC
    clusters. If you want to use both PuTTY on Windows and the
-   traditional OpenSSH client on macOS or Linux (or Windows with Cygwin)
+   traditional OpenSSH client on macOS or Linux (or Windows with MobaXterm)
    and chose for this scenario, you should generate the key using PuTTY
    and then export it in OpenSSH format as explained on :ref:`the PuTTY
-   pages <generating keys windows>`.
+   pages <generating keys putty>`.
 #. Alternatively, you can generate another key pair for the second
    machine following the instructions for your respective client
    (:ref:`Windows <generating keys windows>`, :ref:`macOS/OS

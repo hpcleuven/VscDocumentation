@@ -3,29 +3,68 @@ Genius quick start guide
 
 :ref:`Genius <Genius hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
 
-
-How to connect to Genius?
--------------------------
-Genius does have a 4 dedicated login nodes. All users having an active VSC account can connect to the login node with the same credentials using the command::
+.. include:: tier2_hardware/genius_login_nodes.rst
   
-   $ ssh vscXXXXX@nodename 
+For example, to log in to any of the login node using SSH::
 
-Where ``nodename`` is one of the following: 
-
-Normal login nodes: 
-
-- ``login1-tier2.hpc.kuleuven.be``
-- ``login2-tier2.hpc.kuleuven.be``
-
-With a visualization capabilities (NVIDIA Quadro P6000 GPU): 
-
-- ``login3-tier2.hpc.kuleuven.be``
-- ``login4-tier2.hpc.kuleuven.be``
+   $ ssh vscXXXXX@login.hpc.kuleuven.be
 
 
-Running jobs
-------------
-There are several type of nodes in the Genius cluster: normal compute nodes, GPU nodes, big memory nodes.
+.. _running jobs on genius:
+
+Running jobs on Genius
+----------------------
+
+There are several type of nodes in the Genius cluster: normal compute
+nodes, GPU nodes, big memory nodes.  The resources specifications for
+jobs have to be tuned to use these nodes properly.
+
+In case you are not yet familiar with the system, you read more
+information on
+
+- :ref:`running jobs <running jobs>`, and
+- :ref:`specifying resources <resource specification>`.
+
+There are several type of nodes in the Genius cluster: normal compute nodes,
+GPU nodes, big memory nodes.  For information on systems, see the :ref:`hardware
+specification <Genius hardware>`.
+
+The charge rate for the various node types of Genius are listed in the table
+below.  Information on :ref:`obtaining credits <KU Leuven credits>` and
+:ref:`credit system basics <credit system basics>` is available.
+
++----------------+--------------+
+| node type      | credit/hour  |
++================+==============+
+| skylake        | 10.00        |
++----------------+--------------+
+| skylake bigmem | 12.00        |
++----------------+--------------+
+| GPU            | 5.00 per GPU |
++----------------+--------------+
+
+The maximum walltime for any job on Genius is 7 days (168 hours). Job requests
+with walltimes between 3 and 7 days are furthermore only allowed to request up
+to 10 compute nodes per job. No such limitation is imposed on jobs with
+walltimes of 3 days or less.
+
+.. note::
+
+   There is a limit on the number of jobs you can have in a queue. This number
+   includes idle, running, and blocked jobs. If you try to submit more jobs
+   than the maximum number, these jobs will be deferred and will not start.
+   Therefore you should always respect the following limits on how many jobs
+   you have in a queue at the same time:
+
+   - q1h: max_user_queueable = 200
+   - q24h: max_user_queueable = 250
+   - q72h: max_user_queueable = 150
+   - q7d: max_user_queueable = 20
+   - qsuperdome: max_user_queueable = 20
+
+   These limits can be checked on the cluster by executing::
+
+      $ qstat -f -Q
 
 
 .. _submit to genius compute node:
@@ -41,14 +80,36 @@ To submit to a compute node it all boils down to specifying the required number 
 
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
-The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as a shared resource, meaning that different users can simultaneously use the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU you can submit for example like this::
+The GPU nodes are located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as shared resources, meaning that different users can simultaneously use a portion of the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU of type P100 (which are on nodes with SkyLake architecture) you can submit for example like this::
 
-   $ qsub -l nodes=1:ppn=9:gpus=1  -l partition=gpu  -A myproject  myscript.pbs
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake -l partition=gpu -l pmem=5gb -A myproject  myscript.pbs
   
-Note that in case of 1 GPU you have to request 9 cores. In case you need more GPUs you have to multiply the 9 cores with the number of GPUs requested, so in case of for example 3 GPUS you will have to specify this::
+Note that in case of 1 GPU you have to request 9 cores. In case you need more GPUs you have to multiply the 9 cores with the number of GPUs requested, so in case of for example 3 GPUs you will have to specify this::
 
-   $ qsub -l nodes=1:ppn=27:gpus=3  -l partition=gpu  -A myproject  myscript.pbs
-   
+   $ qsub -l nodes=1:ppn=27:gpus=3:skylake -l partition=gpu -l pmem=5gb -A myproject  myscript.pbs
+
+To specifically request V100 GPUs (which are on nodes with CascadeLake architecture), you can submit for example like this::
+
+   $ qsub -l nodes=1:ppn=4:gpus=1:cascadelake -l partition=gpu -l pmem=20gb  -A myproject  myscript.pbs
+  
+For the V100 type of GPU, it is required that you request 4 cores for each GPU. Also notice that these nodes offer much larger memory bank.
+
+Advanced usage
+^^^^^^^^^^^^^^
+There are different GPU compute modes available, which are explained on this `documentation page <http://docs.adaptivecomputing.com/9-1-0/MWM/help.htm#topics/moabWorkloadManager/topics/accelerators/nvidiaGpus.htm>`_.
+
+- exclusive_process: only one compute process is allowed to run on the GPU
+- default: shared mode available for multiple processes
+- exclusive_thread: only one compute thread is allowed to run on the GPU
+
+To select the mode of your choice, you can for example submit like this::
+
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_process -l partition=gpu  -A myproject  myscript.pbs
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:default -l partition=gpu  -A myproject  myscript.pbs
+   $ qsub -l nodes=1:ppn=9:gpus=1:skylake:exclusive_thread -l partition=gpu  -A myproject  myscript.pbs
+
+If no mode is specified, the ``exclusive_process`` mode is selected by default.
+  
 
 .. _submit to genius big memory node:
 
@@ -64,14 +125,37 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 Submit to an AMD node
 ~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are in their own parition.  Besides specifying the partition,
+The AMD nodes are in their own partition.  Besides specifying the partition,
 it is also important to specify the memory per process (``pmem``) since
 the AMD nodes have 256 GB of RAM, which implies that the default value is
 too high, and your job will never run.
 
 For example::
 
-   $ qsub -l nodes=2:ppn=64  -l pmem=3800mb  -l parition=amd  -A myproject  myscript.pbs
+   $ qsub -l nodes=2:ppn=64  -l pmem=3800mb  -l partition=amd  -A myproject  myscript.pbs
 
 This resource specification for the memory is a few GB less than 256 GB,
 leaving some room for the operating system to function properly.
+
+
+Running debug jobs
+------------------
+Debugging on a busy cluster can be taxing due to long queue times.  To mitigate
+this, two skylake  CPU nodes and a skylake GPU node has been reserved for debugging purposes.
+
+A few restrictions apply to a debug job:
+
+- it has to be submitted with ``-l qos=debugging``
+- it can only use at most two nodes for CPU jobs, a single node for GPU jobs,
+- its walltime is at most 30 minutes,
+- you can only have a single debug job in the queue at any time.
+
+To run a debug job for 20 minutes on two CPU nodes, you would use::
+
+   $ qsub  -A myproject  -l nodes=2:ppn=36  -l walltime=00:20:00  \
+           -l qos=debugging  myscript.pbs
+
+To run a debug job for 15 minutes on a GPU node, you would use::
+
+   $ qsub  -A myproject  -l nodes=1:ppn=9:gpus=1  -l partition=gpu \
+           -l walltime=00:15:00   -l qos=debugging  myscript.pbs

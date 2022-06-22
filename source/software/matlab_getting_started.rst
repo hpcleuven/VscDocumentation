@@ -5,33 +5,26 @@ MATLAB getting started
 
 MATLAB has to be loaded using the module utility prior to running it.
 This ensures that the environment is correctly set. Get the list of
-available versions of MATLAB using
+available versions of MATLAB using::
 
-::
+   $ module avail matlab
 
-   module avail matlab
+(KU Leuven clusters) or::
 
-(KU Leuven clusters) or
-
-::
-
-   module avail MATLAB
+   $ module avail MATLAB
 
 (UAntwerpen and VUB clusters).
 
-Load a specific version by specifying the MATLAB version in the command
+Load a specific version by specifying the MATLAB version in the command::
 
-::
+   $ module load matlab/R2014a
 
-   module load matlab/R2014a
+or::
 
-or
-
-::
-
-   module load MATLAB/2014a
+   $ module load MATLAB/2014a
 
 depending on the site you're at.
+
 
 Interactive use
 ---------------
@@ -40,7 +33,7 @@ Interactive use
    MATLAB on the cluster! Use batch processing of compiled MATLAB code
    instead.
 -  If there is an X Window System server installed on your PC (as is by
-   default the case under :ref:`linux client`; you can use
+   default the case under :ref:`Linux client`; you can use
    XMing Server under :ref:`Windows client` or XQuartz
    on :ref:`macOS/OS X <macOS client>`), the full graphical
    MATLAB Desktop is available. If the speed is acceptable to you - much
@@ -54,16 +47,14 @@ Interactive use
    limited amount of CPU time is available to you, after which your
    session will be killed (with possible data loss).
 -  With ``matlab -nodesktop`` you can start MATLAB without the full
-   desktop, while you are still able to use the visualisation features.
+   desktop, while you are still able to use the visualization features.
    The ``helpwin``, ``helpdesk`` and ``edit`` commands also work and
    open GUI-style help windows or a GUI-based editor. Of course this
    also requires a X server.
 -  You can always, i.e., without X-Window server, start MATLAB in
-   console-mode, via
+   console-mode, via::
 
-   ::
-
-      matlab -nodisplay
+      $ matlab -nodisplay
 
    You get a MATLAB command prompt, from where you can start m-files,
    but have no access to the graphical facilities. The same limitations
@@ -72,15 +63,16 @@ Interactive use
 -  For intensive calculations you want to run interactively, it is
    possible to use the PBS Job system to reserve a node for your
    exclusive use, while still having access to, e.g., the graphical
-   capabilities of MATLAB, by forwarding the X output (qsub -X -I).
+   capabilities of MATLAB, by forwarding the X output (``qsub -X -I``).
 -  WARNING: an interactive MATLAB session on a compute node can be very
    slow. A workaround (found at `hpc.uark.edu <https://hpc.uark.edu/>`_) is:
 
-   -  launch an interactive session qsub -I -X
+   -  launch an interactive session ``qsub -I -X``
    -  once the interactive session is started, (say it starts on
-      r2i0n15), start another connection to that compute node (ssh -X
-      r2i0n15). In this second connection, start MATLAB, and it will
+      ``r2i0n15``), start another connection to that compute node (``ssh -X
+      r2i0n15``). In this second connection, start MATLAB, and it will
       work at normal speed.
+
 
 Batch use
 ---------
@@ -92,12 +84,10 @@ Running a MATLAB script
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 You first have to write a MATLAB m-file that executes the required
-calculation. Make sure the last command of this m-file is 'quit' or
-'exit', otherwise MATLAB might wait forever for more commands ...
+calculation. Make sure the last command of this m-file is ``quit`` or
+``exit``, otherwise MATLAB might wait forever for more commands ...
 
-Example (to be saved, e.g., in testmatlabscript.m) :
-
-::
+Example (to be saved, e.g., in ``testmatlabscript.m``)::
 
    ndim = 600;
    a = rand(600,1)*10;
@@ -109,9 +99,7 @@ Example (to be saved, e.g., in testmatlabscript.m) :
    exit;
 
 You can now run this program (as a test, still on the login node, from
-the directory were you saved the file testmatlabscript.m):
-
-::
+the directory where you saved the file ``testmatlabscript.m``)::
 
    matlab  -nodisplay -r testmatlabscript
 
@@ -119,9 +107,11 @@ The next thing is to write a small shell script, to be sent to the PBS
 Job System, so that the program can be executed on a compute node,
 rather than on the login node.
 
-A simple example follows (to be saved, e.g., in testmatlabscript.sh ) ;
+For information on how to run jobs on the VSC cluster, see the :ref:`documentation
+of the job system <running jobs>`.  Below you will find a quick run through
+for the impatient, but make sure to familiarize yourself with the details.
 
-::
+A simple example follows (to be saved in, e.g.,  ``testmatlabscript.sh``)::
 
    #!/bin/bash -l
    # The maximum duration of the program,
@@ -138,29 +128,22 @@ A simple example follows (to be saved, e.g., in testmatlabscript.sh ) ;
    # Start MATLAB, specify the correct command-file ...
    matlab -nojvm -nodisplay -r test
 
-Now you submit your job with
-
-::
+Now you submit your job with::
 
    $ qsub testmatlabscript.sh
 
-and you get the jobid that was assigned to your job. With
+and you get the job ID that was assigned to your job. You get an overview
+of the status of your jobs using::
 
-::
+   $ qstat
 
-   qstat
-
-you get an overview of the status of your jobs. When the job has run,
-output will be available in the file <jobname>.o<jobid> in the directory
+When the job has run,
+output will be available in the file ``<jobname>.o<jobid>`` in the directory
 where you submitted the job from. In the case of the file
-testmatlabscript.m above, a file testmatlabscript.mat will have been
-created, with the calculated data d and e, you can load the resulting
-file into a MATLAB for further processing.
+``testmatlabscript.m`` above, a file ``testmatlabscript.mat`` will have been
+created, with the calculated data ``d`` and ``e``, you can load the resulting
+file into MATLAB for further processing.
 
-More commands and options of the Job System are described in the
-:ref:`general documentation on running jobs <running jobs>` and in
-particular on the page ":ref:`Submitting and managing
-jobs <submitting jobs>`".
 
 Running a MATLAB function
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,9 +151,7 @@ Running a MATLAB function
 If instead of a script, a MATLAB function is used, parameters can be
 passed into the function.
 
-Example (to be saved, e.g., in testmatlabfunction.m) :
-
-::
+Example (to be saved, e.g., in ``testmatlabfunction.m``)::
 
    function testmatlabfunction(input1,input2)
    % source: https://wiki.inf.ed.ac.uk/ANC/MatlabComputing
@@ -188,14 +169,15 @@ Example (to be saved, e.g., in testmatlabfunction.m) :
    exit;
 
 You can now run this program (as a test, still on the login node, from
-the directory were you saved the file testmatlabfunction.m):
+the directory were you saved the file ``testmatlabfunction.m``)::
 
-::
+   $ matlab  -nodisplay -r "testmatlabfunction 3 6"
 
-   matlab  -nodisplay -r \"testmatlabfunction 3 6\"
+.. note::
 
-Note the quotes around the function name and the parameters. Note also
-that the function name does not include the \*.m extension.
+   - The quotes around the function name and the parameters are required;
+   - the function name does not include the ``*.m`` extension.
+
 
 MATLAB compiler
 ---------------
@@ -217,54 +199,48 @@ for MATLAB as a first step and compile the code in a second step with
 the mcc command.
 
 If we want to compile a MATLAB program 'main.m', the corresponding
-command line should be:
+command line should be::
 
-::
-
-   mcc  -v  -R -singleCompThread  -m  main.m
+   $ mcc  -v  -R -singleCompThread  -m  main.m
 
 Where the options are:
 
--  -m: generate a standalone application
--  -v: verbose display of the compilation steps
--  -R: runtime options, useful ones are: -singleCompThread, -nodisplay,
-   -nojvm
+-  ``-m``: generate a standalone application
+-  ``-v``: verbose display of the compilation steps
+-  ``-R``: runtime options, useful ones are: ``-singleCompThread``, ``-nodisplay``,
+   ``-nojvm``
 
-| The deployed executable is compiled to run using a single thread via
-  the option -singleCompThread. This is important when a number of
-  processes
-| are to run concurrently on the same node (e.g. worker framework).
+The deployed executable is compiled to run using a single thread via
+the option ``-singleCompThread``. This is important when a number of processes
+are to run concurrently on the same node (e.g., worker framework).
 
-Notes
-~~~~~
+.. note::
 
--  Parameters are always considered as strings, and thus have to be
-   converted to, e.g., numbers inside your function when needed. You can
-   test with 'isdeployed' or 'isstr' functions (see examples).
--  The function is allowed to return a value, but that value is \*not\*
-   returned to the shell. Thus, to get results out, they have to be
-   written to the screen, or saved in a file.
--  Not all MATLAB functions are allowed in compiled code (`see the
-   "Compiler Support for MATLAB and Toolboxes" page at the
-   MathWorks <https://nl.mathworks.com/products/compiler/supported/compiler_support.html>`__).
+   -  Parameters are always considered as strings, and thus have to be
+      converted to, e.g., numbers inside your function when needed. You can
+      test with ``isdeployed`` or ``isstr`` MATLAB functions (see examples).
+   -  The function is allowed to return a value, but that value is *not*
+      returned to the shell. Thus, to get results out, they have to be
+      written to the screen, or saved in a file.
+   -  Not all MATLAB functions are allowed in compiled code (`see the
+      "Compiler Support for MATLAB and Toolboxes" page at the
+      MathWorks <https://nl.mathworks.com/products/compiler/supported/compiler_support.html>`__).
 
 Example 1: Simple MATLAB script file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  File fibonacci.m contains :
-
-::
+The file ``fibonacci.m`` contains::
 
    function a = fibonacci(n)
    % FIBONACCI Calculate the fibonacci value of n.
    % When complied as standalone function,
-   % arguments are always passed as strings, not nums ...
+   % arguments are always passed as strings, not numbers ...
    if (isstr(n))
-     n = str2num(n);
+       n = str2num(n);
    end;
    if (length(n)~=1) || (fix(n) ~= n) || (n < 0)
-     error(['MATLAB:factorial:NNotPositiveInteger', ...
-           'N must be a positive integer.']);
+       error(['MATLAB:factorial:NNotPositiveInteger', ...
+              'N must be a positive integer.']);
    end
    first = 0;second = 1;
    for i=1:n-1
@@ -274,22 +250,19 @@ Example 1: Simple MATLAB script file
    end
    % When called from a compiled application, display result
    if (isdeployed)
-     disp(sprintf('Fibonacci %d -> %d' , n,first))
+       disp(sprintf('Fibonacci %d -> %d' , n,first))
    end
    % Also return the result, so that the function remains usable
    % from other MATLAB scripts.
    a=first;
 
--  Run the compiler
+Run the compiler::
 
-::
+    $ mcc -m fibonacci
 
-    mcc -m fibonacci
+An executable file `fibonacci` is created.
 
--  Executable file 'fibonacci' is created.
--  You can now run your application as follows :
-
-::
+You can now run your application as follows::
 
    ./fibonacci 6
    Fibonacci 6 -> 5
@@ -298,12 +271,11 @@ Example 1: Simple MATLAB script file
    $ ./fibonacci 45
    Fibonacci 45 -> 701408733
 
+
 Example 2 : Function that uses other MATLAB files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  File multi_fibo.m contains :
-
-::
+The file ``multi_fibo.m`` contains::
 
    function multi_fibo()
    %MULTIFIBO Calls FIBONACCI multiple times in a loop
@@ -327,15 +299,11 @@ Example 2 : Function that uses other MATLAB files
        end
    end
 
--  Compile :
+Compile the file::
 
-::
+   $ mcc -m multi_fibo
 
-   mcc -m multi_fibo
-
--  Run :
-
-::
+Run the executable::
 
    ./multi_fibo
    n =
@@ -355,19 +323,17 @@ Example 2 : Function that uses other MATLAB files
              34          55          89         144         233         
    377         610         987        1597        2584        4181
 
+
 Example 3 : Function that used other MATLAB files in other directories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  If your script uses MATLAB files (e.g., self-made scripts, compiled
-   mex files) other than those part of the MATLAB-distribution, include
-   them at compile time as follows:
+If your script uses MATLAB files (e.g., self-made scripts, compiled
+mex files) other than those part of the MATLAB-distribution, include
+them at compile time as follows::
 
-::
+   $ mcc -m  -I /path/to/MyMatlabScripts1/  -I /path/to/MyMatlabScripts2 .... \
+             -I /path/to/MyMatlabScriptsN multi_fibo
 
-   mcc -m -I /path/to/MyMatlabScripts1/ -I /path/to/MyMatlabScripts2 .... 
-   -I /path/to/MyMatlabScriptsN multi_fibo
-
-(on a single line).
 
 More info on the MATLAB Compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

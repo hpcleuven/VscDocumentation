@@ -11,7 +11,7 @@ very common scenario, so we developed software to do that for you.
 Two general purpose software packages are available:
 
 - the `worker framework <https://github.com/gjbex/worker>`_ (:ref:`worker
-  quickstart <worker framework>` and `worker documentation`_) and
+  quick start <worker framework>` and `worker documentation`_) and
 - `atools <https://github.com/gjbex/atools>`_ (`atools documentation`_).
 
 Both are designed to handle this use case, but each has its own strengths
@@ -69,7 +69,7 @@ atools may be a better match.  The following table summarizes this.
 +----------------+--------+--------+
 | multi-threaded | yes    | yes    |
 +----------------+--------+--------+
-| MPI- based     | no     | yes    |
+| MPI-based      | no     | yes    |
 +----------------+--------+--------+
 
 .. warning::
@@ -148,11 +148,9 @@ various cluster/partitions.
 +----------+--------------------+-----------+-------------+------------+
 | Ghent    | any                | any       | shared      | no         |
 +----------+--------------------+-----------+-------------+------------+
-| Leuven   | thinking           | default   | single user | yes        |
+| Leuven   | genius             | default   | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+
-| Leuven   | genius             | default   | single user | yes        |
-+----------+--------------------+-----------+-------------+------------+
-| Leuven   | genius             | bigmem    | single user | yes        |
+| Leuven   | genius             | bigmem    | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+
 | Leuven   | genius             | gpu       | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+

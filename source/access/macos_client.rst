@@ -29,7 +29,7 @@ Text-mode session using an SSH client
 To get terminal-based access to a remote system, you can use
 
 -  the :ref:`OpenSSH ssh command<OpenSSH access>`, or
--  the :ref:`JellyfiSSH<OpenSSH JellyfiSSH access>` GUI client.
+-  the :ref:`JellyfiSSH<JellyfiSSH access>` GUI client.
 
 
 Transfer data using Secure FTP (SFTP)
@@ -64,21 +64,20 @@ programs. Instead of an X-server, another piece of client software is
 required.
 
 
-TurboVNC
-^^^^^^^^
+VNC
+^^^
+The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
+visualization software through Virtual Network Computing (VNC). VNC renders
+images on the cluster and transfers the resulting images to your client device.
+VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
-The KU Leuven/UHasselt and UAntwerp clusters also offer support
-for visualization software through TurboVNC. VNC renders images on
-the cluster and transfers the resulting images to your client
-device. VNC clients are available for Windows, macOS, Linux,
-Android and iOS.
-
--  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC is supported
-   on the visualization nodes <TurboVNC start guide>`.
--  On the UAntwerp clusters, TurboVNC is supported on all regular
-   login nodes (without OpenGL support) and on the visualization
-   node of Leibniz (with OpenGL support through VirtualGL). See
-   the page ":ref:`Remote visualization @ UAntwerp <remote visualization UAntwerp>`"
+-  On the UAntwerp clusters, TurboVNC is supported on all regular login nodes
+   (without OpenGL support) and on the visualization node of Leibniz (with
+   OpenGL support through VirtualGL). See the page ":ref:`Remote visualization
+   UAntwerp`" for instructions.
+-  On the VUB clusters, TigerVNC is supported on all nodes. See our
+   documentation on `running graphical applications
+   <https://hpc.vub.be/docs/software/modules/#how-can-i-run-graphical-applications>`_
    for instructions.
 
 
@@ -99,9 +98,6 @@ Environment (IDE) very well suited for code development on clusters.
    explain here <Eclipse macOS>`.
 -  You can use :ref:`Eclipse on the desktop as a remote editor for the
    cluster <Eclipse as remote editor>`.
--  You can use :ref:`Eclipse on the desktop to access files in a
-   subversion repository on the
-   cluster <Eclipse VSC subversion>`.
 -  You can combine the remote editor feature with version control
    from Eclipse, but some care is needed, and :ref:`here's how to do
    it <Eclipse PTP>`.
@@ -113,7 +109,3 @@ Version control
 Most popular version control systems, including Subversion and git,
 are supported on macOS. See :ref:`our introduction to version control
 systems <version control systems>`.
-
-Specific instructions to :ref:`access subversion repositories on the
-VSC clusters or other servers from your desktop with UNIX-style
-command line tools <desktop access VSC SVN>`.

@@ -9,8 +9,13 @@ Getting ready to request an account
 Before requesting an account, you need to generate a pair of SSH
 keys. One popular way to do this on Windows is using the freely
 available `PuTTY`_ client which you can then also use to log on to
-the clusters, see the :ref:`instructions for generating a key pair
-<generating keys windows>`.
+the clusters, see the :ref:`instructions for generating a key pair with PuTTY
+<generating keys putty>`.
+
+Another popular way is using the (also freely available)
+:ref:`MobaXterm client <access using mobaxterm>`,
+see the :ref:`instructions for generating a key pair with MobaXterm
+<generating keys mobaxterm>`.
 
 Connecting to the cluster
 -------------------------
@@ -27,15 +32,11 @@ the :ref:`NX client for Windows<NX start guide>` so that you don't need
 to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
 distribution.
 
-To log on to a node protected by a firewall through another login node,
-you need to :ref:`set up an SSH
-proxy with PuTTY <ssh proxy with PuTTY>`.
-
-To establish network communication between your local machine and the
-cluster otherwise blocked by firewalls you have to :ref:`create an SSH
-tunnel using PuTTY <ssh tunnel using PuTTY>` .  This is also useful to run
-client software on your Windows machine, e.g., ParaView or Jupyter
-notebooks that run on a compute node.
+To establish network communication between your local machine and a compute
+node of a cluster you have to :ref:`create an SSH tunnel using PuTTY
+<ssh tunnel using PuTTY>` .  This is also useful to run client software
+on your Windows machine, e.g., ParaView or Jupyter notebooks that run on
+a compute node.
 
 
 Transfer data using Secure FTP (SFTP) clients
@@ -52,9 +53,11 @@ Display graphical programs
 
 X server
 ^^^^^^^^
-You can install a so-called X server: :ref:`Xming<Xming>`.
+You can install an X server: :ref:`Xming<Xming>`.
 X is the protocol that is used by most Linux applications to display
 graphics on a local or remote screen.
+
+Alternatively, you can use :ref:`MobaXterm<access using mobaxterm>`.
 
 NX client
 ^^^^^^^^^
@@ -63,27 +66,33 @@ On the KU Leuven/UHasselt clusters it is also possible to use the
 on to the machine and run graphical programs. Instead of an
 X server, another piece of client software is required.
 
-TurboVNC
-^^^^^^^^
-The KU Leuven/UHasselt and UAntwerp clusters also offer support
-for visualization software through TurboVNC. VNC renders images on
-the cluster and transfers the resulting images to your client
-device.
+VNC
+^^^
+The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
+visualization software through Virtual Network Computing (VNC). VNC renders
+images on the cluster and transfers the resulting images to your client device.
+VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
--  On the KU Leuven/UHasselt clusters, :ref:`TurboVNC<TurboVNC start guide>`
-   is supported on the visualization nodes.
--  On the UAntwerp clusters, TurboVNC is supported on all regular
-   login nodes (without OpenGL support) and on the visualization
-   node of Leibniz (with OpenGL support through VirtualGL). See
-   the page ":ref:`Remote visualization UAntwerp`"
+-  On the UAntwerp clusters, TurboVNC is supported on all regular login nodes
+   (without OpenGL support) and on the visualization node of Leibniz (with
+   OpenGL support through VirtualGL). See the page ":ref:`Remote visualization
+   UAntwerp`" for instructions.
+-  On the VUB clusters, TigerVNC is supported on all nodes. See our
+   documentation on `running graphical applications
+   <https://hpc.vub.be/docs/software/modules/#how-can-i-run-graphical-applications>`_
    for instructions.
 
 
 Alternatives
 ------------
-If you install the free UNIX emulation layer `Cygwin`_ with the necessary
-packages, you can use the same OpenSSH client as on Linux systems and
-all pages about SSH and data transfer from :ref:`the Linux client
+MobaXterm is a free and easy to use SSH client for Windows that has text-mode,
+a graphical file browser, an X server, an SSH agent, and more, all in one.
+No installation is required when using the *Portable edition*. See
+:ref:`detailed instructions on how to setup MobaXterm <access using mobaxterm>`.
+
+Recent versions of Windows come with an OpenSSH installed, and you can use
+it from PowerShell or the Command Prompt as you would in the termial on Linux
+systems and all pages about SSH and data transfer from :ref:`the Linux client
 pages <Linux client>` apply.
 
 The Windows Subsystem for Linux can be an alternative if you are using
@@ -101,24 +110,8 @@ Programming tools
    recommended that performance optimizations are done on the target
    system.
 
-Cygwin
-~~~~~~
-By installing the UNIX emulation layer `Cygwin`_ with the appropriate
-packages you can mimic very well the VSC cluster environment (at
-least with the foss toolchain). Cygwin supports the GNU compilers and
-also contains packages for OpenMPI (`look for
-"openmpi" <https://cygwin.com/cgi-bin2/package-grep.cgi?grep=openmpi&arch=x86_64>`_)
-and some other popular libraries (FFTW, HDF5, ...). As such it can
-turn your Windows PC in a computer that can be used to develop
-software for the cluster if you don't rely on too many external
-libraries (which may be hard to install). This can come in handy if
-you sometimes need to work off-line. If you have a 64-bit Windows
-system (which most recent computers have), it is best to go for the
-64-bit version of Cygwin. After all, the VSC-clusters are also
-running a 64-bit OS.
-
-Windows Subsystem for Linux (LWS)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Windows Subsystem for Linux (WSL/WSL2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you're running Windows 10 build 1607 (Anniversary Edition) or
 later, you may consider running the "`Windows Subsystem for
 Linux <https://www.google.be/webhp?q=windows%20subsystem%20for%20linux>`_"
@@ -149,8 +142,6 @@ Environment (IDE) very well suited for code development on clusters.
    and how to get it.
 -  You can use :ref:`Eclipse on the desktop as a remote editor for the
    cluster <Eclipse as remote editor>`.
--  You can use :ref:`Eclipse on the desktop to access files in a
-   subversion repository on the cluster <Eclipse VSC subversion>`.
 -  You can combine the remote editor feature with version control
    from Eclipse, but some care is needed, and :ref:`here's how to do
    it <Eclipse PTP>`.
@@ -163,8 +154,6 @@ Version control
 Information on tools for version control (git and subversion) is
 available on the :ref:`version control systems` introduction page.
 
-Information about :ref:`using the TortoiseSVN Subversion client with
-the VSC systems <TortoiseSVN>`.
 
 .. |Windows| image:: windows_client/windows.png
 .. |Windows+Linux| image:: windows_client/windows_with_linux.png

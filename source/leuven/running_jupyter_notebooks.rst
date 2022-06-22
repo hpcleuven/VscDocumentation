@@ -9,8 +9,7 @@ automatically).
 
 Although this is very convenient and easy to use, for more computationally
 intensive work you may want to run the notebook server on a compute node
-of a VSC cluster (we'll assume you using thinking here, but the approach
-works for all our clusters).
+of a VSC cluster.
 
 
 Prerequisites
@@ -18,10 +17,11 @@ Prerequisites
 
 The most convenient way to install Jupyter, and any other Python packages
 you require is using conda.  In case you're not familiar with conda, please
-check out the [quickstart guide](INSTALL_CONDA.md).  In this how-to, we will
-assume that the conda environment's name that has Jupyter installed is
-`science`.  We will also assume that the `$VSC_DATA/miniconda3/bin`
-directory is in your ``PATH`` variable.
+check out the information on :ref:`managing Python packages using conda
+<conda for Python>`.  In this how-to, we will assume that the conda
+environment's name that has Jupyter installed is ``science``.  We will also
+assume that the ``$VSC_DATA/miniconda3/bin`` directory is in your ``PATH``
+variable.
 
 
 Using a notebook on an NX node
@@ -30,7 +30,7 @@ Using a notebook on an NX node
 Prerequisite: NoMachine
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Although alternatives exist, the easiest approach is to use the NX login nodes, since this provides a GUI environment on a cluster login node.  The installation and setup of the NoMachine software on your computer is documented in the :ref:``quick start guide<NX start guide>`.  Once NoMachine is installed and configured, you can connect to the cluster.
+Although alternatives exist, the easiest approach is to use the NX login nodes, since this provides a GUI environment on a cluster login node.  The installation and setup of the NoMachine software on your computer is documented in the :ref:`quick start guide <NX start guide>`.  Once NoMachine is installed and configured, you can connect to the cluster.
 
 Starting the server
 ~~~~~~~~~~~~~~~~~~~
@@ -43,7 +43,7 @@ The first step is to run a Jupyter notebook server, since this has to be done on
 
 The ``-I`` flag specifies this is an interactive job, and we request 4 hours walltime.  Note that you would probably have to add the `-A` option with the project to debit for credits.
 
-Once your job starts, you'll see the name of the node the job is running on in the shell prompt.  In this tutorial, we will assume it is ``r5i1n7``.
+Once your job starts, you'll see the name of the node the job is running on in the shell prompt.  In this tutorial, we will assume it is ``r23g36``.
 
 Navigate to the relevant directory where your notebook is stored, or where you intend to create a new one.
 
@@ -58,30 +58,19 @@ Start a Jupyter notebook server:
 
 ::
 
-   $ jupyter notebook
+   $ jupyter notebook  --ip $(hostname)  --port ${USER:3}
 
-When Jupyter has started, the last line of output will be the URL to point your web browser to, e.g.,
+The port is set to the digits of you user name so that there will be no conflict when two users try
+and run a notebook on the same compute node.
+
+When Jupyter has started, the first URL below the line reading
+``Jupyter Notebook X.Y.Z is running at:`` should look similar to this:
 ::
 
-   http://localhost:8888/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
+   http://r23g36:30140/?token=56262fe0755d2321911f96df8c3c98e651f24238452035d9
 
-Connecting the client
-~~~~~~~~~~~~~~~~~~~~~
+You can right-click this link and open the URL in a browser on the NX login node.
 
-First, we have to establish an SSH tunnel from the NX login node to the
-compute node.  This is required so that the web browser running on the
-login node can communicate with the Jupyter server on the compute node.
-
-On the NX login node, start another shell, and create a tunnel to the
-compute node (`r5i1n7`).  As a port number, use the five digits of your
-VSC account, this should ensure that there are no conflicts, e.g., if your
-VSC account is vsc30140, use 30140 as port number:
-
-::
-   $ ssh -L 30140:localhost:8888 -N r5i1n7.genius.hpc.kuleuven.be
-
-Now, start Firefox on the NX login node, and browse to the link the
-Jupyter notebook server displayed.  Enjoy.
 
 
 Using a notebook by tunneling from a Linux machine to a genius GPU node
@@ -125,6 +114,7 @@ Detailed steps:
     4. Go to the relevant directory, e.g., ``$VSC_DATA``.
     5. Start the Jupyter notebook, use a unique port number:
        ::
+
           r23g36$ jupyter notebook --port 30140
 
 Set up SSH tunnel

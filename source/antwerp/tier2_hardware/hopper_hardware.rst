@@ -25,18 +25,17 @@ Hardware details
 
 - 168 compute nodes
 
-    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (IvyBridge), 10 cores each
+    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 10 cores each
     - 64 GB RAM (144 nodes) or 256 GB RAM (24 nodes)
     - 500 GB local disk
 
 - 3 login nodes
 
-    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (IvyBridge), 14 cores each
+    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 14 cores each
     - 64 GB RAM
     - 500 GB local disk
 
 The nodes are connected using an InfiniBand FDR10 network.
-Storage is provided through a 100 TB DDN SFA7700 disk array with 4 storage servers.
 More info on the storage system is available on the :ref:`UAntwerpen storage` page.
 
 
@@ -46,7 +45,7 @@ Login infrastructure
 Direct login is possible to both login nodes and to the visualization node.
 
 - From outside the VSC network: use the external interface names. Outside of
-  Belgium, a VPN connection to the UAntwerp network is required.
+  Belgium, a :ref:`VPN connection <VPN>` connection to the UAntwerp network is required.
 - From inside the VSC network (e.g., another VSC cluster): use the internal interface names.
 
 ===================   =================================  ===========================
@@ -74,7 +73,7 @@ of the cluster, the following features are defined:
 ============       ====================================================================================
 property           explanation
 ============       ====================================================================================
-ivybridge          only use Intel processors from the IvyBridge family (E5-XXXv2)
+ivybridge          only use Intel processors from the Ivy Bridge family (E5-XXXv2)
                    (Not needed at the moment as this is the only CPU type)
 ib                 use InfiniBand interconnect
                    (Not needed at the moment as all nodes are connected to the InfiniBand interconnect)

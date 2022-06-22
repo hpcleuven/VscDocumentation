@@ -12,8 +12,50 @@ very easy for a user to install them just for himself, or for his
 research group, that is not a problem though. Do not hesitate to contact
 support whenever you encounter trouble doing so.
 
-Installing your own packages using conda
-----------------------------------------
+Standard R package installation
+-------------------------------
+
+Setting up your own package repository for R is straightforward.
+
+#. Load the appropriate R module, i.e., the one you want the R package
+   to be available for::
+
+      $ module load R/3.2.1-foss-2014a-x11-tcl
+
+#. Start R and install the package (preferably in your $VSC_DATA directory)::
+
+      > install.packages("DEoptim", lib="/data/leuven/304/vsc30468/R/")
+
+#. Alternatively you can download the desired package::
+
+      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+
+      and install it with::
+  
+      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
+      
+ #. These packages might depend on the specific R version, so you may
+   need to reinstall them for the other version.
+   
+Some R packages depend on libraries installed on the system.  In that case,
+you first have to load the modules for these libraries, and only then proceed
+to the R package installation.  For instance, if you would like to install
+the `gsl` R package, you would first have to load the module for the GSL
+library, .e.g., ::
+
+   $ module load GSL/2.5-GCC-6.4.0-2.28
+
+Note that R packages often depend on the specific R version they were installed
+for, so you may need to reinstall them for other versions of R.
+
+Installing R packages using conda
+---------------------------------
+
+.. note::
+
+    Conda packages are incompatible with the software modules.
+    Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
+    and VUB.
 
 The easiest way to install and manage your own R environment(s) is conda.
 
@@ -24,7 +66,7 @@ Installing Miniconda
 If you have Miniconda already installed, you can skip ahead to the next
 section, if Miniconda is not installed, we start with that. Download the
 Bash script that will install it from
-`conda.io <https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>`__
+`conda.io <https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>`_
 using, e.g., ``wget``::
 
    $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -134,30 +176,4 @@ original state, use the following command
 More information
 ~~~~~~~~~~~~~~~~
 
-Additional information about conda can be found on its `documentation
-site <https://conda.readthedocs.io/en/latest/>`__.
-
-Alternatives to conda
----------------------
-
-Setting up your own package repository for R is straightforward.
-
-#. Load the appropriate R module, i.e., the one you want the R package
-   to be available for::
-
-      $ module load R/3.2.1-foss-2014a-x11-tcl
-
-#. Start R and install the package (preferably in your $VSC_DATA directory)::
-
-      > install.packages("DEoptim", lib="/data/leuven/304/vsc30468/R/")
-
-#. Alternatively you can download the desired package::
-
-      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
-
-      and install it with::
-  
-      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
-
-#. These packages might depend on the specific R version, so you may
-   need to reinstall them for the other version.
+Additional information about conda can be found on its `documentation site <https://conda.readthedocs.io/en/latest/>`__.

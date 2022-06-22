@@ -1,7 +1,7 @@
 .. _worker framework:
 
-worker quickstart
-=================
+worker quick start
+==================
 
 Purpose
 -------
@@ -20,14 +20,14 @@ to aggregate information produced by individual computations.
 In short, it has been designed for any scenario that can be reduced to a
 `MapReduce <https://en.wikipedia.org/wiki/MapReduce>`__ approach.
 
-However, in some cases, `atools <atools documentation`_ is a better
+However, in some cases, `atools <atools documentation_>`_ is a better
 alternative than worker, especially for MPI applications.  The worker
 framework can not handle such applications since it uses MPI for its
 own process communication. atools offers similar functionality to
 worker.  We provide some :ref:`guidance for choosing between worker
 and atools<worker or atools>`.
 
-This quickstart shows you how to use the basics of the worker framework. For
+This quick start shows you how to use the basics of the worker framework. For
 more information, please consult the `worker documentation`_.
 
 
@@ -265,7 +265,7 @@ Typically, worker will be effective when
    involved in the job (e.g., more than 30 for 8 cores).
 
 Too few work items per core will lead to bad load balance, and hence
-inefficient use of the compute resources.  To analyse the laod balance
+inefficient use of the compute resources.  To analyse the load balance
 of a finished job, use ``wload`` (see the `worker documentation`_ for
 details).
 
@@ -409,28 +409,8 @@ For more sophisticated aggregation tasks, the worker framework provides the
 Multi-threaded work items
 -------------------------
 
-When a cluster is configured to use CPU sets, (i.e., cgroups), using worker
-to execute multi-threaded work items doesn't work by default. Suppose a node
-has 20 cores, and each work item runs most efficiently on 4 cores, then one
-would expect the following resource specification to work::
-
-   $ wsub  -l nodes=10:ppn=5 -W x=nmatchpolicy=exactnode  -batch run.pbs  \\
-           -data my_data.csv
-
-This would run 5 work items per node, so that each work item would have
-4 cores at its disposal. However, this will not work when CPU sets are
-active since the four work item threads would all run on a single core,
-which is detrimental for application performance, and leaves 15 out of
-the 20 cores idle. Simply adding the -threaded option will ensure that
-the behavior and performance is as expected::
-
-    $ wsub  -l nodes=10:ppn=5  -batch run.pbs  -data my_data.csv  -threaded 4
-
-Note however that using multi-threaded work items may actually be less
-efficient than single threaded execution in this setting of many work
-items since the thread management overhead will be accumulated.
-
-Also note that this feature is new since worker version 1.5.x.
+The worker framework can be used to run multi-threaded work items, please
+see the `worker documentation`_ for details.
 
 
 Further information
@@ -478,7 +458,7 @@ is printed when the ``-help`` option is specified:
    #   -help                 : print this help message
    #   -master               : start an extra master process, i.e.,
    #                           the number of slaves will be nodes*ppn
-   #   -threaded             : indicates that work items are multithreaded,
+   #   -threaded             : indicates that work items are multi-threaded,
    #                           ensures that CPU sets will have all cores,
    #                           regardless of ppn, hence each work item will
    #                           have <total node cores>/ppn cores for its
