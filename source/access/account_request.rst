@@ -123,12 +123,7 @@ All information about the access policy is available `in
 English <https://www.ugent.be/hpc/en/access>`_ at the `UGent
 HPC web pages <https://www.ugent.be/hpc>`_.
 
--  Researchers can use the :ref:`generic procedure <generic access procedure>`.
--  Master students can also use the infrastructure for their master
-   thesis work. The supervisor of the thesis should first send a
-   motivation to hpc@ugent.be and then the :ref:`generic
-   procedure <generic access procedure>` should be followed (using your
-   student UGent id) to request the account.
+-  Researchers and students can use the :ref:`generic procedure <generic access procedure>`.
 
 Users of the Antwerp University Association (AUHA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
