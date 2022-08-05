@@ -114,8 +114,9 @@ html_logo = "_static/vsc-logo-1.png"
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
-
+html_sidebars = {
+    "**": ["search-field.html", "sidebar-nav-bs.html", "sidebar-links.html"]
+}
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
