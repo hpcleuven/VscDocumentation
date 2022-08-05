@@ -42,6 +42,7 @@ html_title = project
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_panels',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
@@ -81,18 +82,29 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'classic'
+html_theme = 'pydata_sphinx_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    "show_prev_next": False,
+    "github_url": "https://github.com/vscentrum",
+    "twitter_url": "https://twitter.com/VSC_HPC",
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Bootstrap CSS classes from sphinx-panels
+# disable to avoid conflicts with Bootstrap in pydata-sphinx-theme
+panels_add_bootstrap_css = False
+
+# Logo in top bar
+html_logo = "_static/vsc-logo-1.png"
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
