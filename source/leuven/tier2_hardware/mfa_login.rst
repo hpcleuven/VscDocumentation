@@ -51,7 +51,7 @@ Authentication with an agent
 
 In order to circumvent the annoyances of multiple MFA prompts or connecting to the cluster in a ssh-client before being able to use certain apps like NX, you can use an agent. This agent will store a certificate that contains the identity verification you did when following the firewall link. This way, you will only be asked to verify your identity once. Of course this certificate does not live forever. When using the built-in ssh-agent of Linux and Mac this will be as long as your agent lives, and when using the vscagent this will be 16h. There are two ways in which the certificates are stored in an agent:
 
-- Previously injected: the agent will automatically store the certificate when you first connect to the cluster in the way as described above (built-in ssh-agents for Mac and Linux).
+- Previously injected: the agent will automatically store the certificate when you first connect to the cluster in the way as described above (built-in ssh-agents for Mac and Linux, but also in a future release of Pageant on Windows).
 - Explicitly loaded in the agent: storing the certificate happens by opening the UI of an agent, where you specifically ask to create a certificate. You will be redirected to the firewall link to verify your identity (vscagent).
 
 To adopt any of these methods, read the following parts. The methods you can use varies based on your OS.
@@ -69,12 +69,11 @@ For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent. It in
   
     - You are a KU Leuven user
     - You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
-      
-  - If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
+    - If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
   
-    - Principals: uXXXXXX  
-    - Role: kuleuven
-    - TTL : 16h
+      - Principals: uXXXXXX  
+      - Role: kuleuven
+      - TTL : 16h
       
   - check ‘Enable HPC user certificates‘
   - check ‘tier2-leuven’. 'tier1-leuven' is only for access to Breniac, which is unavaible for the majority of users.
@@ -98,7 +97,7 @@ Authentication with an agent on Linux/Mac
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For Linux and Mac you can use the built-in ssh-agent. If you would prefer a user interface, you can also use the the previously mentioned vscagent.
-Instead of downloading 'vscagent.exe' download 'vscagent'. Follow the above procedure to configure it.
+Instead of downloading 'vscagent.exe' download 'vscagent' and run 'vscagent gui'and follow the above procedure to configure it.
 **Be aware that the vscagent does not work for Macs with an M1 processor!**
 
 If you prefer using the built-in ssh-agent, use the following instructions to configure it correctly. First of all, verify that it is running. You can do this by executing:: 
@@ -115,7 +114,6 @@ If your agent is running, the ``ssh-add -l`` will show the identities that were 
 
 Now, depending on how ssh is configured, it might be that your key will not be stored by default. It is probably best to verify the following steps before continuing:
 
-#. Check your /etc/ssh/sshd_config file. Use your favourite editor to edit this file if necessary. You will need to use sudo rights to adapt this: ``sudo vim etc/ssh/sshd_config``. Here, look for ``AllowAgentForwarding``, set this to ``yes`` and be sure to uncomment it.
 #. Adapt or create a profile for your cluster connection in the config file in your .ssh folder. If you do not have a config file there, create one first. From your home dir::
 
    touch ~/.ssh/config
