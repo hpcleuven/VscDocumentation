@@ -67,14 +67,14 @@ For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent. It in
 
   - For most users, the 'Enable KU Leuven server certificates' should be left **unchecked**. You should only check it and fill it in when you satisfy the next two conditions:
   
-      - You are a KU Leuven user
-      - You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
+    - You are a KU Leuven user
+    - You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
       
   - If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
   
-      - Principals: uXXXXXX  
-      - Role: kuleuven
-      - TTL : 16h
+    - Principals: uXXXXXX  
+    - Role: kuleuven
+    - TTL : 16h
       
   - check ‘Enable HPC user certificates‘
   - check ‘tier2-leuven’. 'tier1-leuven' is only for access to Breniac, which is unavaible for the majority of users.
@@ -143,25 +143,25 @@ As you have probably not yet set up your ssh-client or other apps that use ssh t
 
 - MobaXTerm
 
-    - right-click on the user session you have created to connect to the Tier-2 cluster and choose 'Edit Session'
-    - Select the 'Advanced SSH settings' tab
-    - Uncheck 'Use private key' if selected
-    - click 'Ok'
+  - right-click on the user session you have created to connect to the Tier-2 cluster and choose 'Edit Session'
+  - Select the 'Advanced SSH settings' tab
+  - Uncheck 'Use private key' if selected
+  - click 'Ok'
     
 - PuTTY
 
-    - Load your profile to connect to the Tier-2 cluster
-    - Go to 'Auth' under 'Connection'
-    - Be sure that 'Allow agent forwarding' is checked
-    - If you have a private key file stored under 'Private key file for authentication', remove it
+  - Load your profile to connect to the Tier-2 cluster
+  - Go to 'Auth' under 'Connection'
+  - Be sure that 'Allow agent forwarding' is checked
+  - If you have a private key file stored under 'Private key file for authentication', remove it
     
 - NX
 
-    - Right-click on the connection to the Tier-2 cluster
-    - Click on 'Edit connection'
-    - Select the 'Configuration' tab
-    - Select 'Use key-based authentication with a SSH agent'
-    - Click 'Modify' and verify that 'Forward authentication' is checked
+  - Right-click on the connection to the Tier-2 cluster
+  - Click on 'Edit connection'
+  - Select the 'Configuration' tab
+  - Select 'Use key-based authentication with a SSH agent'
+  - Click 'Modify' and verify that 'Forward authentication' is checked
 
 Known issues - General remarks
 ------------------------------
