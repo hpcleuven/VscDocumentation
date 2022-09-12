@@ -43,8 +43,7 @@ UI applications with SSH connection in the background
 
 Some UI applications that use an SSH connection in the background, like NX or FileZilla, will not prompt you the firewall URL (other apps like WinSCP will do this however). If you want to use such an application without using an agent, you should first login to the KU Leuven cluster with an ssh-client on your machine. As long as you keep this connection open, you can connect with the other apps as well. Using an agent will avoid this extra step, which will be explained in the next part.
 
-Remark:
-- Be aware that it is not possible to connect to NX when using a ED25519 keytype. The RSA4096 keytype does allow you to connect. As this is the recommended keytype for connections to the HPC clusters, this should not be an issue for most users.
+Remark: be aware that it is not possible to connect to NX when using a ED25519 keytype. The RSA4096 keytype does allow you to connect. As this is the recommended keytype for connections to the HPC clusters, this should not be an issue for most users.
 
 Authentication with an agent
 ----------------------------
@@ -131,8 +130,7 @@ The indentation is not strictly necessary, but is recommended for readability.
 
 If you now connect to the cluster using your standard 'ssh' command, the certificate will automatically be stored for as long as your agent lives. If you want to use apps that use ssh in the background (NX, FileZilla), you will have to do this connection to the cluster as well. You are free to log out of that session afterwards. 
 
-Remark:
-- You might have to adapt some options in the configuration of your connection profiles in some apps. Have a look at 'Configuration of ssh-clients and UI apps' below.
+Remark: you might have to adapt some options in the configuration of your connection profiles in some apps. Have a look at 'Configuration of ssh-clients and UI apps' below.
 
 Configuration of ssh-clients and UI apps
 ----------------------------------------
