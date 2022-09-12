@@ -116,8 +116,8 @@ Now, depending on how ssh is configured, it might be that your key will not be s
 
 #. Adapt or create a profile for your cluster connection in the config file in your .ssh folder. If you do not have a config file there, create one first. From your home dir::
 
-   touch ~/.ssh/config
-   chmod 600 ~/.ssh/config
+    touch ~/.ssh/config
+    chmod 600 ~/.ssh/config
 
 In this file you can create a profile for each of your connections and add options specifically for that connection. For Tier-2::
 
