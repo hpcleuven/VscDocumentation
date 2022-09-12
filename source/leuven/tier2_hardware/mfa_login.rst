@@ -17,9 +17,6 @@ The benefits of this method are:
 - users can't share keys
 - users won't be able to connect if the university account is no longer valid
 
-If there are any questions, remarks, potential bugs, experiences with workflows for other clients…, please send them to the HPC helpdesk: hpcinfo@kuleuven.be. 
-
-
 What do you need to use MFA on your vsc-account
 -----------------------------------------------
 
@@ -33,68 +30,76 @@ With our MFA enabled login nodes, you can access the cluster in following ways:
 MFA Authentication without an agent
 -----------------------------------
 
-When you try to login to the cluster and you have no agent running:
+When you try to login to the cluster with a ssh-client (e.g. PuTTY, MobaXTerm...) and you have no agent running (see later):
 
 - start any SSH session to a KU Leuven cluster and authenticate with your private vsc-key
 - your ssh connection will prompt you a URL
 - copy/paste this URL in your browser and use the VSC account authentication
 
-Your SSH-connection will now be completed (This method also works from a Linux terminal)
+Your SSH-connection will now be completed. This method also works from a Linux or Mac terminal.
 
-Note that in case you are working with another type of UI that does an SSH-connection in the background, it is possible that you will first need to login with an ssh-client on your machine. WinSCP for example will also prompt you with the URL.
+UI applications with SSH connection in the background
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is not possible to connect to NX when using a ED25519 keytype. The RSA4096 keytype does allow you to connect. You can login with your ssh key, but you will need to use `VSC firewall page`_ or login through a terminal ssh before connecting to NX. The same goes for other applications (eg Filezilla) that will not prompt you the firewall URL when trying to ssh to the cluster through these applications. There are a couple of options here:
+Some UI applications that use an SSH connection in the background, like NX or FileZilla, will not prompt you the firewall URL (other apps like WinSCP will do this however). If you want to use such an application without using an agent, you should first login to the KU Leuven cluster with an ssh-client on your machine. As long as you keep this connection open, you can connect with the other apps as well. Using an agent will avoid this extra step, which will be explained in the next part.
 
-- keep an ssh session open to the cluster (Putty, MobaXterm...). You should now be able to connect without any problem.
-- on Mac/Linux you can load your certificate in the ssh-agent
-or use the vsc-agent, this will give a better user experience.
+Remark: be aware that it is not possible to connect to NX when using a ED25519 keytype. The RSA4096 keytype does allow you to connect. As this is the recommended keytype for connections to the HPC clusters, this should not be an issue for most users.
 
 Authentication with an agent
 ----------------------------
 
-In order to circumvent the annoyances of multiple MFA prompts, you can use an ssh-agent. The MFA prompt is bypassed if a previously injected certificate is used for authentication. A “previously injected certificate” means that a capable ssh-agent must be running on the user’s local computer, and that the user previously connected to the cluster by means of one of the previously mentioned nethods.
+In order to circumvent the annoyances of multiple MFA prompts or connecting to the cluster in a ssh-client before being able to use certain apps like NX, you can use an agent. This agent will store a certificate that contains the identity verification you did when following the firewall link. This way, you will only be asked to verify your identity once. Of course this certificate does not live forever. When using the built-in ssh-agent of Linux and Mac this will be as long as your agent lives, and when using the vscagent this will be 16h. There are two ways in which the certificates are stored in an agent:
+
+- Previously injected: the agent will automatically store the certificate when you first connect to the cluster in the way as described above (built-in ssh-agents for Mac and Linux, but also in a future release of Pageant on Windows).
+- Explicitly loaded in the agent: storing the certificate happens by opening the UI of an agent, where you specifically ask to create a certificate. You will be redirected to the firewall link to verify your identity (vscagent).
+
+To adopt any of these methods, read the following parts. The methods you can use varies based on your OS.
 
 Authentication with an agent on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**_NOTE:_** Download the `vscagent`_.
+**NOTE:** Download the `vscagent`_ here.
 
+For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent. It includes a “Renew VSC certificate” button that does exactly that to retrieve a certificate. Download the vscagent.exe file from the previously mentioned download link. If you have a centrally managed KU Leuven laptop, you should copy the vscagent.exe in your C:\\Workdir\\myapps and run it from there (create the folder if it does not exist on your system yet). For other machines, place it in a directory of your choice. Once opened, follow these steps:
 
-For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent, and also includes a “Renew VSC certificate” button that does exactly that to retrieve a certificate. Download it from the vsc-agent page. You can copy the vscagent.exe in your  C:\\Workdir\\myapps and run it from there if you have a KU Leuven central managed laptop. Once opened, follow these steps:
+- Go to the 'Configuration' tab:
 
-- Configuration:
-
-  - go to the ‘Configuration’ tab
-  - non-KU Leuven users skip the next step, leave 'Enable KU Leuven server certificates' unchecked
-  - **Only for KU Leuven users**, leave the 'Enable KU Leuven server certificates' box checked. Fill in these fields:
-
-    - Principals: uXXXXXX  
-    - Role: kuleuven
-    - TTL : 16h
+  - For most users, the 'Enable KU Leuven server certificates' should be left **unchecked**. You should only check it and fill it in when you satisfy the next two conditions:
+  
+    - You are a KU Leuven user
+    - You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
+    - If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
+  
+      - Principals: uXXXXXX  
+      - Role: kuleuven
+      - TTL : 16h
+      
   - check ‘Enable HPC user certificates‘
-  - check ‘tier2-leuven’
+  - check ‘tier2-leuven’. 'tier1-leuven' is only for access to Breniac, which is unavaible for the majority of users.
   - Username : vscXXXXX
   - Save configuration file
 
-- SSH key(s)
+- Go to the 'SSH key(s)' tab
 
-  - Go to the ‘SSH Key Files’ tab
   - point to your private VSC-key
 
 - Request a certificate
 
   - Go to the ‘SSH identities’ tab
-  - renew certificate
-  - Select ‘KU Leuven server certificate’ or ‘HPC Tier2 Leuven certificate’
+  - click 'Renew certificate'
+  - Select ‘HPC Tier2 Leuven certificate’ for the certificate for the Tier2 cluster
+  - If you are storing your KU Leuven server certificate in this agent as well, you can also renew the ‘KU Leuven server certificate’
 
-You will need to do your second factor authentication to activate the certificate.
-
-This agent also works for the NX-client. When you have your certificate, you will be able to connect to the cluster with your ssh-client, and using agent authentication. In a putty profile it is possible that you need to remove the path to your private key, if you have stored this in the profile.
+The agent will automatically open the firewall link in your browser. Here you can verify your identity. You are now able to connect to the cluster using any ssh-client or with UI apps like NX and FileZilla. it might be that you have to adapt some options in the configuration of these apps. Have a look at the 'Configuration of ssh-clients and UI apps' below.
 
 Authentication with an agent on Linux/Mac
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Linux and Mac you can use the built-in ssh-agent. This also means that it should be running before attempting this. You can verify this by executing:: 
+For Linux and Mac you can use the built-in ssh-agent. If you would prefer a user interface, you can also use the the previously mentioned vscagent.
+Instead of downloading 'vscagent.exe' download 'vscagent' and run 'vscagent gui'and follow the above procedure to configure it.
+**Be aware that the vscagent does not work for Macs with an M1 processor!**
+
+If you prefer using the built-in ssh-agent, use the following instructions to configure it correctly. First of all, verify that it is running. You can do this by executing:: 
 
     ssh-add -l
 
@@ -108,31 +113,60 @@ If your agent is running, the ``ssh-add -l`` will show the identities that were 
 
 Now, depending on how ssh is configured, it might be that your key will not be stored by default. It is probably best to verify the following steps before continuing:
 
-#. Check your /etc/ssh/sshd_config file. Use your favourite editor to edit this file if necessary. You will need to use sudo rights to adapt this: ``sudo vim etc/ssh/sshd_config``. Here, look for ``PubkeyAuthentication``, set this to ``yes`` and be sure to uncomment it. Do the same for ``AllowAgentForwarding``. 
-#. Adapt or create a profile for your cluster connection in the config file in your .ssh folder. If you do not have a config file there, create one first. From your home dir
+#. Adapt or create a profile for your cluster connection in the config file in your .ssh folder. If you do not have a config file there, create one first. From your home dir::
 
-::
-
-   touch ~/.ssh/config
-   chmod 600 ~/.ssh/config
+    touch ~/.ssh/config
+    chmod 600 ~/.ssh/config
 
 In this file you can create a profile for each of your connections and add options specifically for that connection. For Tier-2::
 
-   Host <connection_name>
-     HostName login.hpc.kuleuven.be
+   Host login.hpc.kuleuven.be
      ForwardAgent yes
+     PubkeyAuthentication yes
+     ChallengeResponseAuthentication yes
+     PreferredAuthentications publickey,keyboard-interactive
+
+The indentation is not strictly necessary, but is recommended for readability.
+
+If you now connect to the cluster using your standard 'ssh' command, the certificate will automatically be stored for as long as your agent lives. If you want to use apps that use ssh in the background (NX, FileZilla), you will have to do this connection to the cluster as well. You are free to log out of that session afterwards. 
+
+Remark: you might have to adapt some options in the configuration of your connection profiles in some apps. Have a look at 'Configuration of ssh-clients and UI apps' below.
+
+Configuration of ssh-clients and UI apps
+----------------------------------------
+
+As you have probably not yet set up your ssh-client or other apps that use ssh to be able to use an agent, you might have to make some changes in your connection profiles. Similar apps will need similar changes, but here we shortly show what to do for MobaXTerm, PuTTY and NX:
+
+- MobaXTerm
+
+  - right-click on the user session you have created to connect to the Tier-2 cluster and choose 'Edit Session'
+  - Select the 'Advanced SSH settings' tab
+  - Uncheck 'Use private key' if selected
+  - click 'Ok'
     
-In the previous, 'Host' is optional. This will allow you to connect to the cluster with ``ssh <vsc_nr>@<connection_name>`` instead of the full HostName. If you prefer not to use this, you can remove this line. The indentation is not necessary either, but is recommended for readability. The important setting here is the ``ForwardAgent``. 
+- PuTTY
 
-If all these settings are set, your certificate will be stored as long as your ssh-agent lives.
+  - Load your profile to connect to the Tier-2 cluster
+  - Go to 'Auth' under 'Connection'
+  - Be sure that 'Allow agent forwarding' is checked
+  - If you have a private key file stored under 'Private key file for authentication', remove it
+    
+- NX
 
-Known issues: general
----------------------
+  - Right-click on the connection to the Tier-2 cluster
+  - Click on 'Edit connection'
+  - Select the 'Configuration' tab
+  - Select 'Use key-based authentication with a SSH agent'
+  - Click 'Modify' and verify that 'Forward authentication' is checked
+
+Known issues - General remarks
+------------------------------
 
 #. It has happened that users cannot properly load the MFA URL. If that would happen to you, it is worth trying to paste the URL in a incognito browser window. This has only been verified to work in Chrome and does not seem to work in Firefox.
-#. MobaXTerm: version 21.1 has known issues in combination with the vsc-agent. It does not always seem to find the certificate in your agent. Updating to the latest version should solve this.
+#. MobaXTerm: version 21.1 has known issues in combination with the vscagent. It does not always seem to find the certificate in your agent. Updating to the latest version should solve this.
 #. If you are using sshfs, no link will be prompted to you as when using ssh. This is intended to be this way. The recommended approach would be to use an ssh agent to store your certificate. This will avoid you having to connect with the MFA link every time when connecting to the cluster.
-
+#. Safari does not properly load the vscagent download page. 
+#. Some ssh-clients have their own built-in agents that can prompt you the firewall link. You are free to use these instead of the vscagent as well. Be aware that Pageant (PuTTY agent) does not support this for the moment. If this would become standard practice in the future, we might adopt these as default agents instead of the vscagent.
 
 .. _VSC firewall page: https://firewall.vscentrum.be
 .. _vscagent: https://firewall.vscentrum.be/vscagent/latest/
