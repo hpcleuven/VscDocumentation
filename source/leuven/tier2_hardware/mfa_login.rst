@@ -75,7 +75,7 @@ For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent. It in
       - TTL : 16h
       
   - check ‘Enable HPC user certificates‘
-  - check ‘tier2-leuven’. 'tier1-leuven' is only for access to Breniac, which is unavaible for the majority of users.
+  - check ‘tier2-leuven’. 'tier1-leuven' is only for access to Breniac, which is unavailable for the majority of users.
   - Username : vscXXXXX
   - Save configuration file
 
