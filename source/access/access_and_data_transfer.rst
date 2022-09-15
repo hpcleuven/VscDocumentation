@@ -21,6 +21,9 @@ need to use on your client system depends on its operating system:
    macos_client
    linux_client
 
+.. note::
+   When logging in to a KU Leuven cluster, take a look at the page on
+   :ref:`Multi Factor Authentication<mfa_leuven>`.
 
 Data storage
 ------------
