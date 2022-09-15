@@ -8,16 +8,18 @@ There are more than 50 iCommands. A regular user  however may use only a few of 
 
 All iCommands accept standard common line options (e.g., -a for all, -h for help) that gives more capabilities to the commands. To see a subset of these options and to know the details of any iCommand, you can follow the below specified options:
 
-- You can visit `iCommands`_
+- You can visit `iCommands <https://docs.irods.org/4.2.6/icommands/user/>`__
+ 
 - You can use the ``–h`` option with the command (e.g., ``iput –h``)
+  
 - You can use the ``ihelp`` command with the argument that you would like to learn more about (e.g., ``ihelp iput``).
-
-Please keep in mind some iCommands don’t work with auto-complete of a tab press. Also remember that folders in iRODS are called 'collection' and files are called 'object' or 'data-object'.
+  
+Please keep in mind some iCommands don't work with auto-complete of a tab press. Also remember that folders in iRODS are called 'collection' and files are called 'object' or 'data-object'.
 
 Following sections will illustrate the usage of some icommands organized on the following categories: “useful commands”, “working with directories (collections)”, “data upload and download” and “structuring data”.
 
-Useful iRODS Commands
----------------------
+Informative iRODS Commands
+--------------------------
 
 These commands help us find and understand some required information that we may need while implementing a data related task.
 
@@ -51,24 +53,24 @@ To identify the current working collection you can use the ``ipwd`` command. The
     $ ipwd
     kuleuven_tier1_pilot/home/vsc33586 
 
-To change the collection to the one you want, you would use ``icd`` with an absolute path or a relative path. In other saying, to navigate around folder(s), do::
+To change the collection to the one you want, you would use ``icd`` with an absolute path or a relative path. In other words, to navigate around folder(s), do::
 
 $ icd testCollection
 
-In order to see the content of any collection(directory), we can use ``ils``. With this command, we can check whether there is data in our iRODS-home directory.
+In order to see the content of any collection (directory), we can use ``ils``. With this command, we can check whether there is data in our iRODS-home directory.
 
 ::
 
     $ ils
     /kuleuven_tier1_pilot/home/vscXXXXX:
 
-What we get here is “kuleuven_tier1_pilot”: the name of the iRODS zone and “/home/<user>”: your default working directory. Because in our iRODS-home directory we don’t have any data or collections yet there is no file listed.
-In the following we will show more details with the ``ils`` command using with arguments to know more. 
+What we get here is “kuleuven_tier1_pilot”: the name of the iRODS zone and “/home/<user>”: your default working directory. Because in our iRODS-home directory we don't have any data or collections yet there is no file listed.
+In what follows we will show more arguments for the ``ils`` command to gather more details about data or collections. 
 
 Data upload and download
 ------------------------
 
-In this part we cover how we can ingest datafiles into iRODS. We will also find out where iRODS places the files. To upload data to iRODS and to download data from iRODS to local file system, iput and iget commands are used.
+In this part we cover how we can ingest datafiles into iRODS. We will also find out where iRODS places the files. To upload data to iRODS and to download data from iRODS to a local file system, the ``iput`` and  ``iget`` commands are used.
 
 **Create data:**
 
@@ -97,7 +99,7 @@ We can safely remove the original file from our linux directory to see what happ
 
 $ rm test1.txt
 
-Check your local directory with ``ls`` and see you don’t have your ``test1.txt`` file.
+Check your local directory with ``ls`` and see you don't have your ``test1.txt`` file.
 
 To check that the file is now only available on the iRODS server:
 
@@ -121,12 +123,12 @@ iRODS provides an abstraction from the physical location of the files. ``/kuleuv
 
 The result looks a bit confusing in the beginning, let us look at what these mean:
 
-- ``/kuleuven_tier1_pilot/home/vsc33586``:Logical path to the file as iRODS exposes it to the user
+- ``/kuleuven_tier1_pilot/home/vsc33586``: Logical path to the file as iRODS exposes it to the user
 - vsc33586: owner of the file
-- 0, 1: Index of replica of that file in the iRODS system, the Tier-1 Data is configured to ensure that by default 2 copies of each file are created (copy 0 and copy 1) on two different datacenter.
+- 0, 1: Index of replica of that file in the iRODS system, the Tier-1 Data is configured to ensure that by default 2 copies of each file are created (copy 0 and copy 1) in two different data centers.
 - default: the name of the physical data resource, e.g. a unix folder
 - 26: File size in KB
-- Date & name of the file
+- Creation date & name of the file
 - Checksum
 - ``/irods/a/home/vsc33586/test1.txt``: Physical path on the server that hosts iRODS, only the linux user "vsc33586" who runs iRODS has access to that path.
 
@@ -134,18 +136,18 @@ All the information above is stored in the iCAT metadata catalogue and can also 
 
 **Download data:**
 
-To download or to restore the file (copy it from iRODS to your linux home) you can do::
+To download or to restore the file (=copying it from iRODS to your linux home) you can do::
 
 $ iget -K test1.txt test1-restore.txt
 
 We store the iRODS file ``test.txt`` in a new file called ``test1-restore.txt`` in our linux home directory. Here the flag ``-K`` triggers iRODS to verify the checksum. Checksums are used to verify data integrity upon data moving.
 
-Note: The iput and iget commands also work for directories and collections, simply use the ``-r`` (for recursive) flag.
+Note: The ``iput`` and ``iget`` commands also work for directories and collections, simply use the ``-r`` (for recursive) flag.
 
 Structuring data
 ----------------
 
-As you create folder structures to organize your data, you can do same by creating collections in iRODS. Let’s create a test collection (folder)::
+As you create folder structures to organize your data, you can do same by creating collections in iRODS. Let's create a test collection (folder)::
 
 $ imkdir dataExample
 
@@ -178,13 +180,13 @@ With the following ``–r`` argument of ``ils``,
 
 you can list all collections and subcollections in iRODS recursively.
 
-If we want to delete/remove a data object, we simply use ``irm`` command.
+If we want to delete/remove a data object, we simply use the ``irm`` command.
 
 ::
 
     $ irm text1.txt
 
-When we inspect what happens, we will not see ``text1.txt`` in our current working collection. Since we will not find the file, it seems to be deleted. However, an inspection of the trash folder shows us that only the file's physical and logical path was changed. This is called as a *soft delete*.
+When we inspect what happens, we will not see ``text1.txt`` in our current working collection. As we won't find the file, it seems to be deleted. However, an inspection of the trash folder shows us that only the file's physical and logical path was changed. This is called a *soft delete*.
 
 ::
 
@@ -212,7 +214,7 @@ $ irm –f test1.txt
 
 This is called a *hard delete*. Now the file is removed from the system and from the iCAT catalogue.
 
-.. note:: The "irmtrash" command empties trash folder completely.
+.. note:: The ``irmtrash`` command empties the trash folder completely.
 
 The ``istream`` command with the ``read`` option prints the contents of a data object in iRODs like the ``cat`` command in CLI shells. 
 
@@ -223,7 +225,7 @@ The ``istream`` command with the ``read`` option prints the contents of a data o
 Access Control
 --------------
 
-With the option ``ils -A`` we can list the access control list of files and collections. Let us check ``dataExample`` collection:
+With the option ``ils -A`` we can list the access control list of files and collections. Let us check the ``dataExample`` collection:
 
 ::
 
@@ -234,15 +236,15 @@ With the option ``ils -A`` we can list the access control list of files and coll
     test1.txt
             ACL - vsc33586#kuleuven_tier1_pilot:own
 
-We can understand here ``dataExample`` collection and ``test1.txt`` object are only visible by the user ``vsc33586``.
-Collections have a flag "Inheritance". If this flag is set to 'true', all content of the folder will inherit the access rights from the folder.
+We can understand from this that the ``dataExample`` collection and the ``test1.txt`` object are only visible to the user ``vsc33586``.
+Collections have a flag "Inheritance". If this flag is set to 'true', all the content of the folder will inherit the access rights from the folder.
 
-Let’s change the access right of the “dataExample” collection and choose another user who we want to give read access (for instance someone from our researh group)::
+Let's change the access right of the “dataExample” collection and choose another user who we want to give read access (for instance someone from our research group)::
 
 $ ichmod inherit dataExample
 $ ichmod read vsc33585 dataExample
 
-To summarize, with ``ichmod`` we can set “read”, “write” and “own” permissions and we can also set inheritance for collections.
+To summarize, with ``ichmod`` we can set “read”, “write” and “own” permissions and we can also set the inheritance for collections.
 
 if we want to check the result of our change:
 
