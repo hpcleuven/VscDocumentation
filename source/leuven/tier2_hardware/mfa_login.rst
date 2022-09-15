@@ -53,6 +53,8 @@ In order to circumvent the annoyances of multiple MFA prompts or connecting to t
 - Previously injected: the agent will automatically store the certificate when you first connect to the cluster in the way as described above (built-in ssh-agents for Mac and Linux, but also in a future release of Pageant on Windows).
 - Explicitly loaded in the agent: storing the certificate happens by opening the UI of an agent, where you specifically ask to create a certificate. You will be redirected to the firewall link to verify your identity (vscagent).
 
+**NOTE**: vscagent is provided as a temporary solution to have an ssh-agent on Windows that supports storing a certificate. We expect that that Pageant will support this as well in their future official release. Once we can confirm this support, we will adapt our official recommendation to Pageant instead of vscagent. This documentation will be adapted acordingly and you will also be informed about this change.
+
 To adopt any of these methods, read the following parts. The methods you can use varies based on your OS.
 
 Authentication with an agent on Windows
@@ -60,7 +62,7 @@ Authentication with an agent on Windows
 
 **NOTE:** Download the `vscagent`_ here.
 
-For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent. It includes a “Renew VSC certificate” button that does exactly that to retrieve a certificate. Download the vscagent.exe file from the previously mentioned download link. If you have a centrally managed KU Leuven laptop, you should copy the vscagent.exe in your C:\\Workdir\\myapps and run it from there (create the folder if it does not exist on your system yet). For other machines, place it in a directory of your choice. Once opened, follow these steps:
+For MS-Windows systems the `vscagent`_ is available to serve as ssh-agent. It includes a “Renew VSC certificate” button that does exactly that to retrieve a certificate. Download the vscagent.exe file from the previously mentioned download link. If you have a centrally managed KU Leuven laptop, you should copy the vscagent.exe in your C:\temp folder and run it from there (create the folder if it does not exist on your system yet). For other machines, place it in a directory of your choice. Once opened, follow these steps:
 
 - Go to the 'Configuration' tab:
 
