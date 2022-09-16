@@ -13,8 +13,10 @@ two factors are necessary to connect to the KU Leuven clusters:
 - A valid private key
 - Access to a VSC-associated university/institution account
 
+This approach ensures that if your private key is compromised, the person who
+has unauthorized access to it will still not be able to abuse your VSC account.
 This document provides two methods to connect to the KU Leuven clusters with
-MFA. The first method, without an agent, is easier to get started but requires
+MFA. The first method, without an agent, is easier to get started with, but requires
 some repetitive steps with each connection. The second method, *with* an agent,
 requires some more effort to set up initially but will be easier when you need
 multiple connections or you are using some specific GUI applications to connect. 
@@ -29,8 +31,8 @@ Mac, or WSL.
 
 #. [Optional] Visit the `VSC firewall page`_ in a browser and login with your
    institution credentials. This step is optional when connecting from a
-   whitelisted IP address (among which are the KU Leuven address range, Flemish
-   universities, most Belgian internet providers,...). It is **mandatory** for
+   white-listed IP address (among which are the KU Leuven address range, Flemish
+   universities, most Belgian Internet providers,...). It is **mandatory** for
    other IP addresses (for instance when you are connecting from abroad).
 #. Launch your ssh client and choose your private VSC key for authentication as
    usual.
@@ -42,16 +44,16 @@ Mac, or WSL.
 The last step is the second factor in the authentication process. When following
 that link, you will be asked to choose your university/association and log in.
 If you already did this in the same browser session (for instance when accessing
-another university-related websites or during step 1), the login will proceed
-automatically. If the login was succesful, you will be redirected to a page
+another university-related web sites or during step 1), the login will proceed
+automatically. If the login was successful, you will be redirected to a page
 with the message that your VSC identity was confirmed.
 
 Your ssh connection is now completed!
 
 .. note::
 
-    For `login[-tier1].hpc.kuleuven.be` only, a succesful connection will
-    whitelist your IP address for 90 days. Within that time frame, the first
+    For `login[-tier1].hpc.kuleuven.be` only, a successful connection will
+    white list your IP address for 90 days. Within that time frame, the first
     step mentioned above becomes optional.
 
 GUI applications with SSH connection in the background
@@ -105,7 +107,7 @@ will be as long as your agent lives, and when using the vscagent this will be
    an ssh agent on Windows that supports storing a certificate. We expect that
    Pageant will support this as well in their future official release. Once we
    can confirm this support, we will adapt our official recommendation to
-   Pageant instead of vscagent. This documentation will be adapted acordingly
+   Pageant instead of vscagent. This documentation will be adapted accordingly
    and you will also be informed about this change.
 
 To adopt any of these methods, read the following parts. The methods you can use varies based on your OS.
@@ -116,7 +118,7 @@ Authentication with an agent on Windows
 For MS-Windows systems, `vscagent` is available to serve as ssh agent. It
 can be started and set up as follows:
 
-#. Visit the `vscagent`_ webpage and download the file `vscagent.exe`
+#. Visit the `vscagent`_ web page and download the file `vscagent.exe`
 #. If you have a centrally managed KU Leuven laptop, you should copy the
    `vscagent.exe` in your `C:\\temp` folder and run it from there (create the
    folder if it does not exist on your system yet). For other machines, place
