@@ -102,11 +102,9 @@ it is best to verify whether or not it is configured correctly:
 #. Open a terminal
 #. Verify if your agent is running with `ssh-add -l`. If it is not running you will get following error: `Could not open a connection to your authentication agent`
 #. If this is the case, start your agent with `eval $(ssh-agent)`
-#. You now need to create or adapt a profile for the cluster in your ~/.shh/config file. If you notice you do not have this file yet, create it with the following command: 
+#. You now need to create or adapt a profile for the cluster in your ~/.shh/config file. If you notice you do not have this file yet, create it with the following command, you should adapt the permissions as well:
 
       touch ~/.ssh/config
-You should adapt the permissions as well:
-
       chmod 600 ~/.ssh/config
 #. Your profile should look like this
 
