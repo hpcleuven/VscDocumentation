@@ -128,7 +128,7 @@ MobaXTerm
 
    .. _moba_edit_session:
    .. figure:: mfa_quickstart/moba_edit_session.png
-      :align: left
+      :align: center
       :alt: moba_edit_session
 #. Under advanced settings. Be sure that ‘Use private key’ is not selected
 
@@ -136,7 +136,7 @@ MobaXTerm
    .. figure:: mfa_quickstart/moba_priv.PNG
       :align: left
       :alt: moba_priv
-#. c.	Click ‘Ok’
+#. Click ‘Ok’
 
 PuTTY
 ~~~~~
@@ -145,7 +145,7 @@ PuTTY
 
    .. _putty:
    .. figure:: mfa_quickstart/putty.png
-      :align: left
+      :align: center
       :alt: putty
 #. Save the profile under ‘Session’
 
@@ -155,18 +155,18 @@ NX
 
    .. _nx_profile:
    .. figure:: mfa_quickstart/nx_profile.png
-      :align: left
+      :align: center
       :alt: nx_profile  
 #. Go to the ‘Configuration’ tab and select 'Use key-based authentication with a SSH agent'
 
    .. _nx_config:
    .. figure:: mfa_quickstart/nx_config.PNG
-      :align: left
+      :align: center
       :alt: nx_config  
 #. Click ‘Modify’ and verify that 'Forward authentication' is checked
 
    .. _nx_mod:
    .. figure:: mfa_quickstart/nx_mod.PNG
-      :align: left
+      :align: center
       :alt: nx_mod
          
