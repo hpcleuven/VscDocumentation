@@ -12,27 +12,27 @@ Getting started
 
    .. _firewall_link_mfa:
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
-      :align: center
+      :align: left
       :alt: firewall_link_mfa
 #. Copy-paste the provided link in a browser and follow it. You should end up on a login page of your university or association.
 For KU Leuven this will be the idp page:
 
    .. _idp_page:
    .. figure:: mfa_quickstart/idp_page.PNG
-      :align: center
+      :align: left
       :alt: idp_page
 #. Log in as usual. You should now end up on a page that tells you that your vsc identity is confirmed. If you already performed
 the previous login in that browser session, you will immediately end up on this page.
 
    .. _firewall_confirmed:
    .. figure:: mfa_quickstart/firewall_confirmed.PNG
-      :align: center
+      :align: left
       :alt: firewall_confirmed
 #. Go back to your SSH client or terminal. You should now be connected to a login node on the cluster.    
 
    .. _login_node:
    .. figure:: mfa_quickstart/login_node.PNG
-      :align: center
+      :align: left
       :alt: login_node
 #. That’s it! You can continue doing your HPC work as usual.
 
@@ -58,14 +58,14 @@ You will be asked to log in with the credentials of your university or instituti
 
    .. _vscagent_download:
    .. figure:: mfa_quickstart/vscagent_download.PNG
-      :align: center
+      :align: left
       :alt: vscagent_download
 #. This exe file can be run directly. If you have a KU Leuven central managed laptop, place it in C:\temp (running it from other locations won’t work).
 If you have another machine, place it on a location of your choice. Run the application.
 
    .. _vscagent_app:
    .. figure:: mfa_quickstart/vscagent_app.PNG
-      :align: center
+      :align: left
       :alt: vscagent_app
 #. Select the ‘Configuration’ tab. Check the ‘Enable HPC user certificates’ and the ‘tier2-leuven’ boxes. Add your vsc number under ‘Username’.
 Save the configuration file.
@@ -74,7 +74,7 @@ Save the configuration file.
 
    .. _vscagent_config:
    .. figure:: mfa_quickstart/vscagent_config.PNG
-      :align: center
+      :align: left
       :alt: vscagent_config
 #. Now, Go to the ‘SSH Key Files’ tab. Click the ‘+’ and navigate to your private file. Then, click ‘Open’.
 You will be asked to provide your key passphrase. 
@@ -83,20 +83,20 @@ Your private key should then appear in the list here.
 
    .. _vscagent_keys:
    .. figure:: mfa_quickstart/vscagent_keys.PNG
-      :align: center
+      :align: left
       :alt: vscagent_keys
 #. You can now load your certificate. Go to the ‘SSH Identities’ tab. You will already see your key listed there. Now, click the ‘Renew certificate’
 button and then the ‘HPC Tier 2 Leuven certificate’. Your browser opens and you will now follow step 2 and 3 under ‘Getting started’.
 
    .. _vscagent_renewcert:
    .. figure:: mfa_quickstart/vscagent_renewcert.PNG
-      :align: center
+      :align: left
       :alt: vscagent_renewcert 
 #. You will get a message that the certificate was renewed.
 
    .. _vscagent_success:
    .. figure:: mfa_quickstart/vscagent_success.PNG
-      :align: center
+      :align: left
       :alt: vscagent_success    
 #. The agent is now configured. From now on, when you start the agent, you will be asked the passphrase of your key first, followed by step 5 and 6.
 
@@ -144,13 +144,13 @@ MobaXTerm
 
    .. _moba_edit_session:
    .. figure:: mfa_quickstart/moba_edit_session.png
-      :align: center
+      :align: left
       :alt: moba_edit_session
 #. Under advanced settings. Be sure that ‘Use private key’ is not selected
 
    .. _moba_priv:
    .. figure:: mfa_quickstart/moba_priv.PNG
-      :align: center
+      :align: left
       :alt: moba_priv
 #. c.	Click ‘Ok’
 
@@ -161,7 +161,7 @@ PuTTY
 
    .. _putty:
    .. figure:: mfa_quickstart/putty.png
-      :align: center
+      :align: left
       :alt: putty
 #. Save the profile under ‘Session’
 
@@ -171,18 +171,18 @@ NX
 
    .. _nx_profile:
    .. figure:: mfa_quickstart/nx_profile.png
-      :align: center
+      :align: left
       :alt: nx_profile  
 #. Go to the ‘Configuration’ tab and select 'Use key-based authentication with a SSH agent'
 
    .. _nx_config:
    .. figure:: mfa_quickstart/nx_config.PNG
-      :align: center
+      :align: left
       :alt: nx_config  
 #. Click ‘Modify’ and verify that 'Forward authentication' is checked
 
    .. _nx_mod:
    .. figure:: mfa_quickstart/nx_mod.PNG
-      :align: center
+      :align: left
       :alt: nx_mod
          
