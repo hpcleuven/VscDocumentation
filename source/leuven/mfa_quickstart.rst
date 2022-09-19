@@ -113,10 +113,10 @@ You should adapt the permissions as well:
 
 
     Host login.hpc.kuleuven.be
-  	    ForwardAgent yes
-  	    PubkeyAuthentication yes
-  	    ChallengeResponseAuthentication yes
-  	    PreferredAuthentications publickey,keyboard-interactive
+  	  ForwardAgent yes
+  	  PubkeyAuthentication yes
+  	  ChallengeResponseAuthentication yes
+  	  PreferredAuthentications publickey,keyboard-interactive
 
 #. You can now ssh to the cluster. The agent will automatically store your certificate. The certificate will be stored as long as your agent stays alive.
 
