@@ -94,7 +94,7 @@ Linux and Mac machines
 If you want to use a UI as an agent, you can also use the vscagent, as explained under ‘Windows machines’.
 The steps are the same, just download ‘vscagent’ instead of ‘vscagent.exe’. Start it with `vscagent gui`.
 
-***!!! The vscagent does not work for Mac PCs with a M1 processor!!!***
+**!!! The vscagent does not work for Mac PCs with a M1 processor!!!**
 
 Linux and MacOS come with a built-in SSH agent, so there is no real need to download an extra program. Before using it,
 it is best to verify whether or not it is configured correctly:
