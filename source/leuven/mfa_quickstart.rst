@@ -63,9 +63,7 @@ Windows machines
    .. figure:: mfa_quickstart/vscagent_app.PNG
       :align: left
       :alt: vscagent_app
-#. Select the ‘Configuration’ tab. Check the ‘Enable HPC user certificates’ and the ‘tier2-leuven’ boxes. Add your vsc number under ‘Username’. Save the configuration file.
-
-**KU Leuven server certificates and the tier1-leuven are only for very specific users. Have a read through our documentation if you think you would belong to them.**
+#. Select the ‘Configuration’ tab. Check the ‘Enable HPC user certificates’ and the ‘tier2-leuven’ boxes. Add your vsc number under ‘Username’. Save the configuration file. **KU Leuven server certificates and the tier1-leuven are only for very specific users. Have a read through our documentation if you think you would belong to them.**
 
    .. _vscagent_config:
    .. figure:: mfa_quickstart/vscagent_config.PNG
@@ -102,11 +100,9 @@ Linux and MacOS come with a built-in SSH agent, so there is no real need to down
 it is best to verify whether or not it is configured correctly:
 
 #. Open a terminal
-#. Verify if your agent is running with `ssh-add -l`. If it is not running you will get following error:
-`Could not open a connection to your authentication agent`
+#. Verify if your agent is running with `ssh-add -l`. If it is not running you will get following error: `Could not open a connection to your authentication agent`
 #. If this is the case, start your agent with `eval $(ssh-agent)`
-#. You now need to create or adapt a profile for the cluster in your ~/.shh/config file. If you notice you do not have this file yet,
-create it with the following command: 
+#. You now need to create or adapt a profile for the cluster in your ~/.shh/config file. If you notice you do not have this file yet, create it with the following command: 
 
 `touch ~/.ssh/config`
 
@@ -122,6 +118,7 @@ Host login.hpc.kuleuven.be
   	ChallengeResponseAuthentication yes
   	PreferredAuthentications publickey,keyboard-interactive
 ```
+
 #. You can now ssh to the cluster. The agent will automatically store your certificate. The certificate will be stored as long as your agent stays alive.
 
 Configuration of SSH clients and UI apps for use with an agent
