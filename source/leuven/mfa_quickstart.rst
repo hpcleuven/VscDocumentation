@@ -104,8 +104,8 @@ it is best to verify whether or not it is configured correctly:
 #. If this is the case, start your agent with `eval $(ssh-agent)`
 #. You now need to create or adapt a profile for the cluster in your ~/.shh/config file. If you notice you do not have this file yet, create it with the following command, you should adapt the permissions as well::
 
-   touch ~/.ssh/config
-   chmod 600 ~/.ssh/config
+      touch ~/.ssh/config
+      chmod 600 ~/.ssh/config
    
 #. Your profile should look like this::
 
