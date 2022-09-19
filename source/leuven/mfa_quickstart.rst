@@ -1,10 +1,13 @@
-# Quickstart guide for using MFA on the KU Leuven cluster
-## General
-From 19/09/2022, multi factor authentication (MFA) has been activated for all users that try to log in to the KU Leuven cluster. This guide will take you
+Quickstart guide for using MFA on the KU Leuven cluster
+=======================================================
+General
+-------
+Multi factor authentication (MFA) has been activated for all users that try to log in to the KU Leuven cluster. This guide will take you
 through the steps of correctly using and setting up MFA. For more detailed information, visit the
 official VSC documentation page: https://docs.vscentrum.be/en/latest/leuven/tier2_hardware/mfa_login.html.
 
-## Getting started
+Getting started
+---------------
 #. When you try to connect to the cluster through an ssh-client or a terminal, you will be prompted with a URL:
 
    .. _firewall_link_mfa:
@@ -37,22 +40,23 @@ the previous login in that browser session, you will immediately end up on this 
       
 #. That’s it! You can continue doing your HPC work as usual.
 
-
-
-## Using apps that use SSH connections in the background
+Using apps that use SSH connections in the background
+-----------------------------------------------------
 Not all apps that can connect to the cluster with an SSH connection can prompt you the firewall link. For some apps it is possible to first connect
 to the cluster as described above, keep that connection open and if you then launch the app, it will start normally. Another method
 is going straight to https://firewall.vscentrum.be/ while the connection is pending. Look for: "Are you trying to log in from <IP address>? YES / NO".
 Click YES. This works for FileZilla, and some versions of NX. If that does not allow you to connect, you should set up an agent. 
 
-## Setting up an agent
+Setting up an agent
+-------------------
 The standard login method will prompt you the URL every time you try to connect to the cluster. By setting up an SSH agent, you can create a
 certificate that will avoid this. Depending on your OS, there are different solutions. Select the correct one for your machine and follow the
 subsequent steps to set it up. The different set-ups are:
 -	Windows machines
 -	Linux machines and Mac machines 
 
-### Windows machines
+Windows machines
+~~~~~~~~~~~~~~~~
 #. For the Windows machines, download the vscagent.exe from https://firewall.vscentrum.be/vscagent/latest/.
 You will be asked to log in with the credentials of your university or institution. Then you will to be able to download it.
 
@@ -105,7 +109,8 @@ button and then the ‘HPC Tier 2 Leuven certificate’. Your browser opens and 
       
 #. The agent is now configured. From now on, when you start the agent, you will be asked the passphrase of your key first, followed by step 5 and 6.
 
-### Linux and Mac machines
+Linux and Mac machines
+~~~~~~~~~~~~~~~~~~~~~~
 If you want to use a UI as an agent, you can also use the vscagent, as explained under ‘Windows machines’.
 The steps are the same, just download ‘vscagent’ instead of ‘vscagent.exe’. Start it with `vscagent gui`.
 
@@ -138,11 +143,13 @@ Host login.hpc.kuleuven.be
 ```
 #. You can now ssh to the cluster. The agent will automatically store your certificate. The certificate will be stored as long as your agent stays alive.
 
-## Configuration of SSH clients and UI apps for use with an agent
+Configuration of SSH clients and UI apps for use with an agent
+--------------------------------------------------------------
 Depending on how you set up your SSH clients and UI apps like NX and FileZilla, it can be that you have to make some changes to the configurations
 in these profiles. Here, we shortly show you how to set up MobaXTerm, PuTTY and NX correctly.
 
-### MobaXTerm
+MobaXTerm
+~~~~~~~~~
 #. Right-click on the correct session and click on ‘edit session’
 
    .. _moba_edit_session:
@@ -159,7 +166,8 @@ in these profiles. Here, we shortly show you how to set up MobaXTerm, PuTTY and 
       
 #. c.	Click ‘Ok’
 
-### PuTTY
+PuTTY
+~~~~~
 #. Select your saved session for the cluster connection and load it.
 #. Under ‘SSH’, go to ‘Auth’. Select ‘Allow agent forwarding’ and remove any private key directories from under ‘Private key file for authentication’
 
@@ -170,7 +178,8 @@ in these profiles. Here, we shortly show you how to set up MobaXTerm, PuTTY and 
       
 #. Save the profile under ‘Session’
 
-### NX
+NX
+~~
 #. Open NX and right-click your correct profile. Select ‘Edit connection’
 
    .. _nx_profile:
