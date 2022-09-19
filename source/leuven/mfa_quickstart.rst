@@ -14,15 +14,13 @@ Getting started
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
       :align: left
       :alt: firewall_link_mfa
-#. Copy-paste the provided link in a browser and follow it. You should end up on a login page of your university or association.
-For KU Leuven this will be the idp page:
+#. Copy-paste the provided link in a browser and follow it. You should end up on a login page of your university or association. For KU Leuven this will be the idp page:
 
    .. _idp_page:
    .. figure:: mfa_quickstart/idp_page.PNG
       :align: left
       :alt: idp_page
-#. Log in as usual. You should now end up on a page that tells you that your vsc identity is confirmed. If you already performed
-the previous login in that browser session, you will immediately end up on this page.
+#. Log in as usual. You should now end up on a page that tells you that your vsc identity is confirmed. If you already performed the previous login in that browser session, you will immediately end up on this page.
 
    .. _firewall_confirmed:
    .. figure:: mfa_quickstart/firewall_confirmed.PNG
@@ -53,22 +51,19 @@ subsequent steps to set it up. The different set-ups are:
 
 Windows machines
 ~~~~~~~~~~~~~~~~
-#. For the Windows machines, download the vscagent.exe from https://firewall.vscentrum.be/vscagent/latest/.
-You will be asked to log in with the credentials of your university or institution. Then you will to be able to download it.
+#. For the Windows machines, download the vscagent.exe from https://firewall.vscentrum.be/vscagent/latest/. You will be asked to log in with the credentials of your university or institution. Then you will to be able to download it.
 
    .. _vscagent_download:
    .. figure:: mfa_quickstart/vscagent_download.PNG
       :align: left
       :alt: vscagent_download
-#. This exe file can be run directly. If you have a KU Leuven central managed laptop, place it in C:\temp (running it from other locations won’t work).
-If you have another machine, place it on a location of your choice. Run the application.
+#. This exe file can be run directly. If you have a KU Leuven central managed laptop, place it in C:\temp (running it from other locations won’t work). If you have another machine, place it on a location of your choice. Run the application.
 
    .. _vscagent_app:
    .. figure:: mfa_quickstart/vscagent_app.PNG
       :align: left
       :alt: vscagent_app
-#. Select the ‘Configuration’ tab. Check the ‘Enable HPC user certificates’ and the ‘tier2-leuven’ boxes. Add your vsc number under ‘Username’.
-Save the configuration file.
+#. Select the ‘Configuration’ tab. Check the ‘Enable HPC user certificates’ and the ‘tier2-leuven’ boxes. Add your vsc number under ‘Username’. Save the configuration file.
 
 **KU Leuven server certificates and the tier1-leuven are only for very specific users. Have a read through our documentation if you think you would belong to them.**
 
@@ -76,17 +71,13 @@ Save the configuration file.
    .. figure:: mfa_quickstart/vscagent_config.PNG
       :align: left
       :alt: vscagent_config
-#. Now, Go to the ‘SSH Key Files’ tab. Click the ‘+’ and navigate to your private file. Then, click ‘Open’.
-You will be asked to provide your key passphrase. 
-**If this is not the case, you don’t have a passphrase protected key, which is a security threat! Consider creating a new key-pair.**
-Your private key should then appear in the list here.
+#. Now, Go to the ‘SSH Key Files’ tab. Click the ‘+’ and navigate to your private file. Then, click ‘Open’. You will be asked to provide your key passphrase. **If this is not the case, you don’t have a passphrase protected key, which is a security threat! Consider creating a new key-pair.** Your private key should then appear in the list here.
 
    .. _vscagent_keys:
    .. figure:: mfa_quickstart/vscagent_keys.PNG
       :align: left
       :alt: vscagent_keys
-#. You can now load your certificate. Go to the ‘SSH Identities’ tab. You will already see your key listed there. Now, click the ‘Renew certificate’
-button and then the ‘HPC Tier 2 Leuven certificate’. Your browser opens and you will now follow step 2 and 3 under ‘Getting started’.
+#. You can now load your certificate. Go to the ‘SSH Identities’ tab. You will already see your key listed there. Now, click the ‘Renew certificate’ button and then the ‘HPC Tier 2 Leuven certificate’. Your browser opens and you will now follow step 2 and 3 under ‘Getting started’.
 
    .. _vscagent_renewcert:
    .. figure:: mfa_quickstart/vscagent_renewcert.PNG
