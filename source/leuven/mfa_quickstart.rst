@@ -134,7 +134,7 @@ MobaXTerm
 
    .. _moba_priv:
    .. figure:: mfa_quickstart/moba_priv.PNG
-      :align: left
+      :align: center
       :alt: moba_priv
 #. Click ‘Ok’
 
