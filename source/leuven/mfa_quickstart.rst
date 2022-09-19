@@ -30,7 +30,7 @@ Getting started
 
    .. _login_node:
    .. figure:: mfa_quickstart/login_node.PNG
-      :align: left
+      :align: center
       :alt: login_node
 #. That’s it! You can continue doing your HPC work as usual.
 
