@@ -104,11 +104,10 @@ it is best to verify whether or not it is configured correctly:
 #. If this is the case, start your agent with `eval $(ssh-agent)`
 #. You now need to create or adapt a profile for the cluster in your ~/.shh/config file. If you notice you do not have this file yet, create it with the following command: 
 
-`touch ~/.ssh/config`
-
+      touch ~/.ssh/config
 You should adapt the permissions as well:
 
-`chmod 600 ~/.ssh/config`
+      chmod 600 ~/.ssh/config
 #. Your profile should look like this
 
       Host login.hpc.kuleuven.be
@@ -116,7 +115,6 @@ You should adapt the permissions as well:
         PubkeyAuthentication yes
         ChallengeResponseAuthentication yes
         PreferredAuthentications publickey,keyboard-interactive
-
 #. You can now ssh to the cluster. The agent will automatically store your certificate. The certificate will be stored as long as your agent stays alive.
 
 Configuration of SSH clients and UI apps for use with an agent
