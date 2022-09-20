@@ -11,13 +11,13 @@ Users can connect to the iRODS platform by using different clients (command line
 
 Before you can interact with iRODS, as a VSC user you will need to activate the service executing one of the following commands;
 
-- After you have reached the Tier-1 to work on, you should use:
+- If you are logged in to the login nodes of Tier-1 or Tier-2 clusters of KU Leuven, you should use:
 
 ::
 
     $ irods-setup | bash
 
-or,
+- If you want to connect from any login nodes of other universities' HPC cluster, you should then execute:
 
 ::
 

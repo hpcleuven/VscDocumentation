@@ -28,7 +28,7 @@ Once you reach the screen above, and click “Authorize” button. And save the 
 
 After that you should go to the log in link https://irods.hpc.kuleuven.be and see the screen below.
 
-.. image:: webdav/davrods_access.png
+.. image:: webdav/davrods_access.PNG
 
 Once you enter your user name and the password you saved, you will see the exact same directory structure as you see in your iRODS server.
 
@@ -50,7 +50,7 @@ How to access iRODS using WebDAV on a Windows 10 pc:
 .. image:: webdav/map1.png
 
 - Choose the drive name you want to use. 
-- Type “https://irods.hpc.kuleuven.be/home/” in folder area. This is the path that you can find in your browser directory_index.
+- Type “https://irods.hpc.kuleuven.be:8443/home/” in folder area. This is the path that you can find in your browser directory_index.
 
 .. image:: webdav/map2.png
 
@@ -69,4 +69,3 @@ How to access iRODS using WebDAV on a Windows 10 pc:
 .. image:: webdav/map5.png
 
 Once you’ve connected, the WebDAV directory is mounted in your local pc. After you click on your driver you will see your iRODS collections and data objects. You can now start adding, editing, deleting files in this directory from the comfort of your computer.
-
