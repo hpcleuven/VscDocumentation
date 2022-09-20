@@ -18,9 +18,13 @@ Installing and First Time Configuration of WinSCp
 
 - After you complete your installation, run the program.
 
+<<<<<<< HEAD
 - Choose the required options and fill the blank fields with the corresponding information as you see on the screen below. Write the password that you will get at https://irods.hpc.kuleuven.be/.
 
 .. note:: Since the password you obtained is temporary, you need to get every time a new one after your password is expired.
+=======
+- Choose the required options and fill the blank fields with the corresponding information as you see on the screen below. Write the password that you will get at https://vsc-passwd.icts.kuleuven.be .
+>>>>>>> data_M
 
 .. image:: winscp/winscp2.png
 
@@ -45,4 +49,8 @@ Upload/Download Data to/from iRODS using WinSCp
 
 - We can use WinSCP on both local and iRODS to create/delete/rename a file or folder.
 
+<<<<<<< HEAD
 - Also we can edit a file which gives GUI conform to change content. This is not possible with iCommands. 
+=======
+- Also we can edit a file which gives GUI conform to change content. This is not possible with iCommands. 
+>>>>>>> data_M

@@ -82,4 +82,8 @@ We can find our text1.txt file with the below query,
         DATA_SIZE = 26
         ---------------------------------------
 
+<<<<<<< HEAD
 These examples one more time explain the importance of metadata in data management domain.
+=======
+These examples one more time explain the importance of metadata in data management domain.
+>>>>>>> data_M

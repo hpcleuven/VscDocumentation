@@ -81,4 +81,10 @@ Some form of computation or action performed on Data Objects.
 
 **Zone**
 
+<<<<<<< HEAD
 An iRODS deployment is called as Zone.
+=======
+An iRODS deployment is called as Zone.
+
+
+>>>>>>> data_M

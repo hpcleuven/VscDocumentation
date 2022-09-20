@@ -212,6 +212,7 @@ $ irm –f test1.txt
 
 This is called a *hard delete*. Now the file is removed from the system and from the iCAT catalogue.
 
+<<<<<<< HEAD
 .. note:: The "irmtrash" command empties trash folder completely.
 
 The ``istream`` command with the ``read`` option prints the contents of a data object in iRODs like the ``cat`` command in CLI shells. 
@@ -219,6 +220,9 @@ The ``istream`` command with the ``read`` option prints the contents of a data o
 :: 
 
     $ istream read test.txt
+=======
+.. note:: The "irmtrash" command empties trash folder.
+>>>>>>> data_M
 
 Access Control
 --------------
