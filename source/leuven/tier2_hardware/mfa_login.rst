@@ -61,7 +61,7 @@ Your ssh connection is now completed!
     The above method works fine to create the connection through MobaXTerm.
     The included file explorer will show you the files, but opening, downloading
     and uploading files from here does not work without the agent. If you would 
-    like to use the file explorer, have a look at :ref:`Authentication with an ssh agent<mfa_agent>`.
+    like to use the file explorer, have a look at :ref:`Authentication with an ssh agent<mfa_agent>` . 
 
 
 GUI applications with SSH connection in the background
@@ -196,7 +196,7 @@ correctly.
    SSH agent for a connection to a remote server, all certificates that are stored in your agent
    are visible for root users on the remote server. So be sure to **only** use the agent
    for trusted servers. If you would prefer more secure set-ups, have a look at 
-   :ref:`Secure your SSH agent set-up<secure_ssh_agent>`
+   :ref:`Secure your SSH agent set-up<secure_ssh_agent>` .
 
 First of all, verify that it is running. You can do this by executing:: 
 
