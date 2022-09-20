@@ -11,21 +11,13 @@ Users can connect to the iRODS platform by using different clients (command line
 
 Before you can interact with iRODS, as a VSC user you will need to activate the service executing one of the following commands;
 
-<<<<<<< HEAD
-- If you are logged in to the login nodes of Tier-1 or Tier-2 clusters of KU Leuven , you should use:
-=======
-- After you have reached the Tier-1 to work on, you should use:
->>>>>>> data_M
+- If you are logged in to the login nodes of Tier-1 or Tier-2 clusters of KU Leuven, you should use:
 
 ::
 
     $ irods-setup | bash
 
-<<<<<<< HEAD
 - If you want to connect from any login nodes of other universities' HPC cluster, you should then execute:
-=======
-or,
->>>>>>> data_M
 
 ::
 
@@ -37,8 +29,6 @@ or,
 
     $ irods-setup | bash
 
-<<<<<<< HEAD
-=======
 or,
 
 ::
@@ -49,7 +39,6 @@ or,
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 
->>>>>>> data_M
 Once logged in iRODS users will have access to the following iRODS collections:
 
 - Your personal area: /kuleuven_tier1_pilot/home/vscXXXXX (where XXXXX is the number of your vsc-account). This are is by default only visible by your user.
