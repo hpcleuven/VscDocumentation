@@ -1,19 +1,19 @@
 .. _cyberduck_access_irods.rst:
 
-Using Cyberduck for Accessing iRODS
-===================================
+Using Cyberduck for Accessing to iRODS
+======================================
 
-Cyberduck is a free cross-platform, high-throughput and parallel data transfer open source file transfer program that supports multiple transfer protocols (FTP, SFTP, WebDAV, Cloud files, Amazon S3, etc.). 
+Cyberduck_ is a free cross-platform, high-throughput and parallel data transfer open source file transfer program that supports multiple transfer protocols (FTP, SFTP, WebDAV, Cloud files, Amazon S3, etc.). 
 This allows users to transfer large files, depending on the user's available bandwidth and network settings. Cyberduck can also be used to rename files and browse other shared or public Data Store locations.
 
-Installation and first time configuration of Cyberduck
+Installing and First Time Configuration of Cyberduck
 ----------------------------------------------------
 
 - Visit https://cyberduck.io/ and select the download compatible with your operating system.
 
 .. image:: cyberduck/cduck1.png
 
-- Open the Cyberduck.exe file and click "run", install in accordance with your institution's application install policy.
+- Open the Cyberduck.exe file and click "run", install in accordance with your institution’s application install policy.
 
 .. image:: cyberduck/cduck2.png
 
