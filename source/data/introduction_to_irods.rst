@@ -19,8 +19,9 @@ iRODS gives users four core competencies:
     iRODS servers can execute event-triggered background process (rules) to execute defined actions when a particular system activity happens. iRODS event triggers are called Policy Enforcement Points (PEPs). The combination of PEPs and rules allows administrators and users to create powerful, customized workflows for automating procedures that help to save time and prevent human error.
 
 - **Secure Collaboration**
-    iRODS provides facilities to share data between users and user groups in a secure way. iRODS has a permissions system similar to Unix file system permissions. Other facilities offered are 'Tickets' and 'Federation', but these are not actively used on the Tier-1 Data Platform.
+    A facility to share data between users and user groups in a secure way.
 
-.. image:: introduction/irods_4competences.png
+.. image:: introduction/irods_core.png
 
-Other features that make iRODS a unique data management platform can be found on the next pages.
+Other features that make iRODS a unique data management platform can be found on next pages.
+

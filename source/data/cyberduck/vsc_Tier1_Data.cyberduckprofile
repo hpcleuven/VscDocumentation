@@ -32,7 +32,7 @@
         <key>Region</key>
         <string>kuleuven_tier1_pilot:default</string>
         <key>Default Port</key>
-        <string>8443</string>
+        <string>1247</string>
         <key>Authorization</key>
         <string>PAM</string>
     </dict>
