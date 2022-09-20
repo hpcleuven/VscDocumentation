@@ -7,6 +7,5 @@ iRODS Client Access
    webdav_access_to_irods
    cyberduck_access_irods
    winscp_access_irods
-   metalnx
    yoda
    python_client

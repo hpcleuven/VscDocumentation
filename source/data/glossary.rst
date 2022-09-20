@@ -5,15 +5,11 @@ Glossary of iRODS
 
 **API**
 
-An Application Programming Interface (API) is a computing interface to enable other software to communicate with it. Basically, an API specifies how software components should interact. iRODS defines a client API and expects that clients connect and communicate with iRODS servers in this controlled manner. iRODS has an API written in C, and another written in Java (Jargon). Other languages have wrappers around the C API (Python, PHP, etc.).
-
-**AVU**
-
-Attribute-Value-Unit (AVU) triples are associated with Collections or Data Objects and are the building blocks of metadata.
+An Application Programming Interface (API) is a computing interfaces to enable other software to communicate with it. Basically, an API specifies how software components should interact.  iRODS defines a client API and expects that clients connect and communicate with iRODS servers in this controlled manner. iRODS has an API written in C, and another written in Java (Jargon). Other languages have wrappers around the C API (Python, PHP, etc.).
 
 **Client**
 
-A Client in the iRODS client-server architecture gives users an interface to manipulate at least Collections and Data Objects. iRODS clients include: WebDAV clients, web interfaces, iCommands, Python API etc. The latter are more fully fledged and also allow manipulation of other iRODS entities such as Users, Groups and metadata.
+A Client in the iRODS client-server architecture gives users an interface to manipulate Data Objects. iRODS clients include: iCommands, web interfaces, Python API etc.
 
 **Collection**
 
@@ -21,15 +17,15 @@ A Collection is the logical representation of physical containers, similar to di
 
 **Grid**
 
-The hardware, operating system, and other machinery that support a Zone.
+Grid The hardware, operating system, and other machinery that support a Zone.
 
 **Data Object**
 
-A Data Object is a data file that is stored in iRODS. It is given a unique internal identifier in iRODS (allowing a global name space), and is associated with (situated in) a single Collection.
+A Data Object is a data file that is stored in iRODS. It is given a unique internal identifier in iRODS (allowing a global name space), and is associated with (situated in) a Collection.
 
 **iCAT**
 
-The iCAT, or iRODS Metadata Catalog, is a database (e.g. PostgreSQL, MySQL, Oracle) that stores references to and between the iRODS entities in an iRODS Zone: Data Objects, Collections, Users and Groups. It also stores information such as system metadata, the mapping between logical and physical storage locations and user-defined metadata (AVUs). There is one iCAT per iRODS Zone.
+The iCAT, or iRODS Metadata Catalog, is a database (e.g. PostgreSQL, MySQL, Oracle) that stores metadata about the Data Objects, Collections, Users, and Groups in an iRODS Zone. There is one iCAT per iRODS Zone.
 
 **iCommands**
 
@@ -45,7 +41,7 @@ This a virtual identifier used by iRODS to uniquely name a Data Object, Collecti
 
 **Metadata**
 
-Metadata is data about data. Metadata can include system or user-defined attributes associated with a Data Object, Collection or Resource stored in the iCAT database. The metadata is in the form of AVUs (attribute-value-unit tuples). 
+Metadata is data about data. Metadata can include system or user-defined attributes associated with a Data-Object, Collection or Resource stored in the iCAT database. The metadata is in the form of AVUs (attribute-value-unit tuples). 
 
 **Microservice**
 
@@ -53,11 +49,11 @@ Microservices are small, well-defined procedures/functions that perform a certai
 
 **Policy Enforcement Point (PEP)** 
 
-A event trigger in iRODS is called a PEP and it invokes an interpreted rule script via the iRODS rule engine for the purpose of influencing a data management operation.
+A event trigger in iRODS called PEP and it invokes an interpreted rule script via the iRODS rule engine for the purpose of influencing a data management operation.
 
 **Replica**
 
-An identical, physical copy of a Data Object on another storage server.
+An identical, physical copy of a Data Object.
 
 **Resources**
 
@@ -65,7 +61,7 @@ A resource, or storage resource, is a software/hardware system that stores digit
 
 **Rules**
 
-Rules are definitions of actions that are to be performed by the server. These actions are defined in multiple ways, depending on the language that is used to define the actions. The native language in iRODS is the iRODS Rule Language that defines actions with microservices and other actions.
+Rules are definitions of actions that are to be performed by the server. These actions are defined in multiple ways, depending on the language that is used to define the actions. The native language in iRODS is  iRODS Rule Language that defines actions with microservices and other actions.
 
 **Rule Engine**
 
@@ -81,8 +77,10 @@ The physical location of Data Objects on a storage device.
 
 **Workflow** 
 
-Some form of computation or action performed on Data Objects, with a specific start and end poiint.
+Some form of computation or action performed on Data Objects.
 
 **Zone**
 
-An iRODS deployment is called a Zone.
+An iRODS deployment is called as Zone.
+
+

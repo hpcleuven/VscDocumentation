@@ -1,19 +1,19 @@
 .. _cyberduck_access_irods.rst:
 
-Using Cyberduck for Accessing iRODS
-===================================
+Using Cyberduck for Accessing to iRODS
+======================================
 
-Cyberduck is a free cross-platform, high-throughput and parallel data transfer open source file transfer program that supports multiple transfer protocols (FTP, SFTP, WebDAV, Cloud files, Amazon S3, etc.). 
+Cyberduck_ is a free cross-platform, high-throughput and parallel data transfer open source file transfer program that supports multiple transfer protocols (FTP, SFTP, WebDAV, Cloud files, Amazon S3, etc.). 
 This allows users to transfer large files, depending on the user's available bandwidth and network settings. Cyberduck can also be used to rename files and browse other shared or public Data Store locations.
 
-Installation and first time configuration of Cyberduck
+Installing and First Time Configuration of Cyberduck
 ----------------------------------------------------
 
 - Visit https://cyberduck.io/ and select the download compatible with your operating system.
 
 .. image:: cyberduck/cduck1.png
 
-- Open the Cyberduck.exe file and click "run", install in accordance with your institution's application install policy.
+- Open the Cyberduck.exe file and click "run", install in accordance with your institution’s application install policy.
 
 .. image:: cyberduck/cduck2.png
 
@@ -37,7 +37,7 @@ Installation and first time configuration of Cyberduck
 
 - After you double click on the profile it will launch Cyberduck and auto populate relevant access data as you see on the screen above.
 
-- Enter your username and the password you obtained earlier. If your password is expired you should get a new one at: https://irods.hpc.kuleuven.be/ following the same procedure you may have done in the webdav access section above.
+- Enter your username and the password you obtained earlier. If your password is expired you should get a new one at: https://vsc-passwd.icts.kuleuven.be following the same procedure you may have done here_ before.
 
 .. note:: You can use Cyberduck for other remote connections to do a file transfer etc. Just save your connection as bookmark.
 
@@ -73,3 +73,4 @@ You can select data object(s)/collection(s) in iRODS (Cyberduck window) and drag
 .. image:: cyberduck/cduck8.png
 
 A ‘Transfers’ window will appear. Monitor the download to completion. You can also do “synchronization” which means it will check the both sides and will update your local folder that you can create/choose based on the data in iRODS.
+

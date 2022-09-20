@@ -3,7 +3,7 @@
 Python API Client - PRC
 =======================
 
-The Python iRODS Client (PRC) is an API client implemented in python to access to iRODS. The main goal of the PRC is to offer researchers means to manage their data in python. With the help of this client, users can manage their research data. Currently supported operations with PRC are quite various and range from “put/get data objects“ to “execution of iRODS rules”. We will cover here basic ones in addition to VSC-PRC (the Vlaams Supercomputing Centrum (VSC) extensions to the Python iRODS Client).
+PRC is an API client implemented in python to access to iRODS. The main goal of PRC is to offer researchers means to manage their data in python. With the help of this client, users can manage their research data. Currently supported operations with PRC are quite various and range from “put/get data objects“ to “execution of iRODS rules”. We will cover here basic ones in addition to VSC-PRC (the Vlaams Supercomputing Centrum (VSC) extensions to the Python iRODS Client).
 
 This client will be used inside the VSC like iCommands instead of reaching iRODS server from outside the VSC.
 
@@ -15,7 +15,7 @@ We recommend to set up PRC and VSC-PRC via the module system as follows:
 ::
 
     module use /apps/leuven/common/modules/all
-    module load vsc-python-irodsclient
+    module load vsc-python-irodsclient/development
 
 .. note:: PRC and VSC-PRC require Python 3 and hence cannot be used with Python 2 interpreters.
 
@@ -99,7 +99,7 @@ It is possible to create a collection under a specific location.
 
     285438
 
-.. note:: If a collection we want to create already exists, the PRC doesn't do anything, and neither complains nor overwrites the existed collection.
+.. note:: If a collection we want to create has already existed, the PRC doesn't do anything, neither complains nor overwrites on the existed collection.
 
 We can create a collection even recursively:
 
@@ -194,7 +194,7 @@ If we would like to delete the data object, we use the code below. But notice th
 Reading and writing files
 -------------------------
 
-The PRC provides file-like manipulations for data objects:.
+PRC provides file-like objects to be able to manipulate data file.
 
 ::
 
@@ -228,7 +228,7 @@ If we try to check a file with no metadata attached, the result should be an emp
 
     []
 
-Let's now add some metadata. As we did with the iCommand, we can add multiple AVU's with the same name field.
+Let’s now add some metadata. As we did with iCommand, we can add multiple AVU's with the same name field.
 
 ::
 
@@ -239,7 +239,7 @@ Let's now add some metadata. As we did with the iCommand, we can add multiple AV
     print(obj.metadata.items())
     [<iRODSMeta 161995 key1 value1 units1>, <iRODSMeta 161998 key1 value2 None>, <iRODSMeta 162001 key2 value3 None>]
 
-We can update any added metadata with Python's item indexing syntax referring an existing attribute to set all AVU's with name field "key2" to a single value and unit.
+We can update added metadata with Python's item indexing syntax referring an existing attribute to  overwrite AVU's with a name field of "key2".
 
 ::
 
@@ -249,7 +249,7 @@ We can update any added metadata with Python's item indexing syntax referring an
     print(obj.metadata.items())
     [<iRODSMeta 161995 key1 value1 units1>, <iRODSMeta 161998 key1 value2 None>, <iRODSMeta 291438 key2 python_API_training version1>]
 
-If we know an AVU key is present only once, we can use the get_one method as in the following example. This method returns an AVU for the given unique attribute.
+If we want to search for only one AVU triples, we can then use get_one method as the following example has. This method returns an AVU for the given an unique attribute.
 
 ::
 
@@ -278,7 +278,7 @@ We can also use a for loop to remove all existing AVUs from a data object.
 General queries with PRC
 ------------------------
 
-We can collect all Collection and DataObject objects of all projects that we are assigned to with the following general query. We can then use the result list for further lookups. 
+With the following general query example, we can reach the Collection and DataObject methods of all projects that we are assigned to. Accordingly we can search what we want to see. 
 
 ::
 
@@ -301,7 +301,7 @@ We can collect all Collection and DataObject objects of all projects that we are
     /kuleuven_tier1_pilot/home/vsc33586/data_test/test2.txt, size=59, create_time=2020-06-29 08:58:51
     /kuleuven_tier1_pilot/home/vsc33586/KULeuven/alice1.txt, size=74703, create_time=2020-04-27 14:09:31
 
-It's also possible to search for specific data records based on the general metadata query by filtering with AVU info.
+We can also search for data records based on the metadata query. We can filter our query with AVU info.
 
 ::
 
@@ -315,7 +315,7 @@ It's also possible to search for specific data records based on the general meta
         for r in results:
             print(r[Collection.name], r[CollectionMeta.name], r[CollectionMeta.value], r[CollectionMeta.units])
 
-    /kuleuven_tier1_pilot/home/vsc33586/dataExample 'book' 'chemistry' 'KuLeuven'
+    /kuleuven_tier1_pilot/home/vsc33586/dataExample ‘book’ ‘chemistry’ ‘KuLeuven’
 
 We can query with aggregation(min, max, sum, avg, count) like the following example;
 
@@ -331,7 +331,7 @@ We can query with aggregation(min, max, sum, avg, count) like the following exam
 Instantiating iRODS objects from query results
 ----------------------------------------------
 
-In addition to the general query that gets information out of the ICAT, we can instantiate certain iRODS objects mirroring the persisted entities (instances of Collection, DataObject, User, or Resource, etc.) of the ICAT.
+In addition to general query getting information out of the ICAT, we can instantiate certain iRODS objects to mirror the persistent entities (instances of Collection, DataObject, User, or Resource, etc.) of the ICAT.
 
 ::
 
@@ -340,9 +340,9 @@ In addition to the general query that gets information out of the ICAT, we can i
 
     <iRODSUser 11479 vsc33586 rodsuser kuleuven_tier1_pilot>
 
-We can do the same with creation, removal and unlink.
+We can do same with creation, removal and unlink.
 
-The below example retrieves a reference to an existing collection using *get*.
+If we retrieve a reference to an existing collection using *get*, we can execute the below example.
 
 ::
 
@@ -371,7 +371,7 @@ The following code gives us some useful information.
     'unregister',
     'walk']
 
-Let's check now the metadata of this instance. To see the result properly, we will use here the "pretty-print" module. 
+Let’s check now the metadata of this instance. To see the result properly, we will use here “pretty-print’ module. 
 
 ::
 
@@ -379,10 +379,10 @@ Let's check now the metadata of this instance. To see the result properly, we wi
 
     pprint((col.metadata.items()))
 
-    [<iRODSMeta 195744 'type' 'collection' None>,
-    <iRODSMeta 195747 'book' 'chemistry' 'KuLeuven'>]
+    [<iRODSMeta 195744 ‘type’ ‘collection’ None>,
+    <iRODSMeta 195747 ‘book’ ‘chemistry’ ‘KuLeuven’>]
 
-We can see the sub-collections of a specific collection by using the walk method of this instance.
+We can see sub-collections of a specific collection by using walk method of this instance.
 
 ::
 
@@ -393,7 +393,7 @@ We can see the sub-collections of a specific collection by using the walk method
 
     < series of Python data structures giving the complete tree structure of *col* instance under collection 'vsc33586'>
 
-If we wish to enumerate all collections in the iRODS catalog, we can use, as an alternative approach, general queries and the capabilities afforded by the PRC's object-relational mapping.
+If we wish to enumerate all collections in the iRODS catalog we can use, as an alternative approach, general queries and the capabilities afforded by the PRC's object-relational mapping.
 
 ::
 
