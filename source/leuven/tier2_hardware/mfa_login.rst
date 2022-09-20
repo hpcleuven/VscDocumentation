@@ -55,6 +55,14 @@ Your ssh connection is now completed!
     For `login[-tier1].hpc.kuleuven.be` only, a successful connection will
     white list your IP address for 90 days. Within that time frame, the first
     step mentioned above becomes optional.
+    
+.. note::
+
+    The above method works fine to create the connection through MobaXTerm.
+    The included file explorer will show you the files, but opening, downloading
+    and uploading files from here does not work without the agent. If you would 
+    like to use the file explorer, have a look at :ref:`Authentication with an ssh agent<mfa_agent>`.
+
 
 GUI applications with SSH connection in the background
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,9 +187,18 @@ Instead of downloading `vscagent.exe` download `vscagent` and run
 `vscagent gui` and follow the above procedure to configure it.
 **Be aware that the vscagent does not work for Macs with an M1 processor!**
 
-If you prefer using the built-in ssh-agent, use the following instructions to
-configure it correctly. First of all, verify that it is running. You can do
-this by executing:: 
+If you prefer using the built-in ssh-agent, use the following instructions to configure it
+correctly.
+
+.. note::
+   Before starting out with the built-in SSH agent, you should know that using an SSH agent
+   poses a possible security threat when you are not using this with care. When using an
+   SSH agent for a connection to a remote server, all certificates that are stored in your agent
+   are visible for root users on the remote server. So be sure to **only** use the agent
+   for trusted servers. If you would prefer more secure set-ups, have a look at 
+   :ref:`Secure your SSH agent set-up<secure_ssh_agent>`
+
+First of all, verify that it is running. You can do this by executing:: 
 
     ssh-add -l
 
@@ -231,6 +248,37 @@ that session afterwards.
     You might have to adapt some options in the configuration of your
     connection profiles in some apps. Have a look at
     :ref:`Configuration of ssh-clients and UI apps<mfa_client_config>` below.
+   
+   
+.. _secure_ssh_agent:   
+
+Secure your SSH agent set-up
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are ways to protect yourself from possible malicious attempts
+to use certificates stored in your SSH agent on your local machine. A root user
+on any remote server can access those certificates, and can use those to connect
+to the remote servers for which you also have a certificate stored in your agent, 
+and this connection will happen in your name. Luckily, as the agent only lives
+for a limited time this threat also only exists for a limited time.
+You also don't expose your private key.
+
+Before diving into the technical settings, the first step to ensure your security,
+is vigilance. Think about what connections could potentially pose a risk. Avoid
+adding those to your agent. When connecting to our cluster you set up the agent
+to avoid that you need to follow the firewall link every time. If you see no special
+need for using an agent, it is probably better to avoid it.
+
+If you do wish to use multiple certificates in your agent, you can also add
+your key to your agent using::
+
+    ssh-add -c /path/to/your/private/key
+    
+The '-c' will ask for a confirmation every time you (or in the worst case someone
+else in your name) tries to use the agent to connect to a remote server. You will
+manually have to click 'ok' before. You might have to install the package 'ssh-askpass'
+on your local machine first.
+
 
 .. _mfa_client_config:
 
