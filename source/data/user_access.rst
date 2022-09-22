@@ -25,7 +25,7 @@ Before you can interact with iRODS, as a VSC user you will need to activate the 
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 
-The Tier-1 Data service has a web accessible endpoint: https://irods.hpc.kuleuven.be/. This allows to browse your collections and the public ones.
+The Tier-1 Data service has a web (GUI) client: https://irods.hpc.kuleuven.be/. This allows to browse your collections and the public ones.
 
 It is also possible to launch iCommands directly from your local Linux (either native or via a VM or the Windows Subsystem for Linux) computer against the Tier-1 iRODS zone. For this you need to install iCommands and execute the snippet under 'iCommands Client on Linux' from the endpoint.
 
