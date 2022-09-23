@@ -70,8 +70,7 @@ Templates
 To enter the Templates menu, you can click on 'Templates' at the top once you are in the 'Job Composer' menu. You can also access this menu by clicking the button 'New 
 Job'-'From Template'. Once in this menu, you should see a table with 3 System Templates. The resources that are requested in these scripts are the default settings. 
 The templates:
-- CPU job template: this is a template for CPU jobs (batch partition). This is also the default template (which you will get when clicking 'From Default Template' 
-  under the 'New Job' button in the 'Jobs' menu).
+- CPU job template: this is a template for CPU jobs (batch partition). This is also the default template (which you will get when clicking 'From Default Template' under the 'New Job' button in the 'Jobs' menu).
 - GPU job template: a template for creating GPU jobs 
 - Big memory CPU jobs: a template to create job scripts that submit to the big memory partition instead of the default batch partition
 
