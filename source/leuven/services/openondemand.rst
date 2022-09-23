@@ -98,8 +98,8 @@ job by going to the File Explorer (click 'Edit Files' or 'Open Dir') or by direc
 also allows you to edit the job script directly.
 
 Using the 'Job Options' button, you can add some more specifications to your job:
-- Name: this will specify a name in the job composer list. This will not be your job name. The actual job name is the one that will be specified in the job script. If
-  you do not specify a name there, you will see that that job gets the name 'sbatch' in the 'Active Jobs' menu.
+
+- Name: this will specify a name in the job composer list. This will not be your job name. The actual job name is the one that will be specified in the job script. If you do not specify a name there, you will see that that job gets the name 'sbatch' in the 'Active Jobs' menu.
 - Cluster: there is no need to change this, as you only can specify 'wice'.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script**
@@ -131,9 +131,7 @@ information. These will be explained in the specific chapter about the app. A ge
 - Numbers of hours: your walltime (min 1h)
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. Every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the 
-  type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU
-  types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types to the interactive partition.
+- Number of GPUs. Every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types to the interactive partition.
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
 
