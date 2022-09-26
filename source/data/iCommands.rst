@@ -20,7 +20,7 @@ The following sections illustrate the usage of some iCommands organized on the f
 
 Installing iCommands locally
 ----------------------------
-iCommands is installed on the VSC Tier-1 and Tier-2. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
+iCommands is installed on the VSC Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
 
 On a linux OS you can use a package manager to install iCommands in the terminal. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. Depending on your linux distribution and version, the installation procedure may vary. However, the main ones are given below.
 
