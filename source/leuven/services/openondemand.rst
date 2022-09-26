@@ -113,8 +113,8 @@ Clusters
 
 When selecting 'Clusters - Login Server Shell Access' you will get a terminal window in a new browser tab. You will arrive on one of the Genius login nodes, which
 you can use as you are used to, including the option to submit jobs to wICE. **(Is this true? And will this look like a Genius login node, or will this be generalized to 'Tier2 login node?)**.
-As with the Genius login nodes, this means that this shell is not meant for any calculations. If you would like an interactive shell, you should be using the 
-:ref:`interactive shell<interactive_shell>`
+As with the Genius login nodes, this means that this shell is not meant for any calculations. If you would like to perform calculations in an interactive shell,
+you should be using the :ref:`interactive shell app<interactive_shell>`
 
 Interactive apps
 ----------------
@@ -135,14 +135,26 @@ information. These will be explained in the specific chapter about the app. A ge
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
 
+.. _interactive_shell:
+Interactive shell
+=================
+
+(WIP)
+
 Jupyter Notebook
 ================
+
+
 
 RStudio Server
 ==============
 
+
+
 Tensorboard
 ===========
+
+
 
 code-server
 ===========
