@@ -3,7 +3,7 @@
 Cadaver Client Access
 =====================
 
-Cadaver is a command-line client for WebDAV and is available on UNIX-like operating systems such as Linux (native and Windows WSL) and MacOS (through brew). It supports file upload, download, on-screen display, namespace operations (move/copy), collection creation and deletion, and locking operations. After connecting to a WebDAV endpoint a session opens.
+Cadaver is a command-line client for WebDAV and is available on UNIX-like operating systems such as Linux (native and Windows WSL) and MacOS. It supports file upload, download, on-screen display, namespace operations (move/copy), collection creation and deletion, and locking operations. After connecting to a WebDAV endpoint a session opens.
 
 As WebDAV is an extension on HTTP, a WebDAV server supports the basic HTTP request methods such as GET, PUT and DELETE. WebDAV extends these i.a. with MKCOL, MOVE and COPY. It is therefore possible to use cURL to do file and collection operations. Please note Cadaver is more user friendly and wraps all these operations in a Unix-like session. 
 
@@ -43,9 +43,9 @@ If not yet the case, connect to the Tier 1 zone by executing:
 :: 
     dav:!> open https://irods.hpc.kuleuven.be:8443
 
-The first time you connect, it will warn you with 'Untrusted server certificate presented for irods.hpc.kuleuven.be' and then prompt you to install the certificate.
+The first time you connect, it will warn you with 'Untrusted server certificate presented for irods.hpc.kuleuven.be' and then prompt you to install the certificate. Proceed.
 
-Then complete your username and password. You are now connected and can perform operations.
+Then complete your username and password. You are now connected and can perform the WebDAV operations.
 
 Type ``help`` to discover all commands. 
 
@@ -59,12 +59,14 @@ Now you can upload data objects to this new collection by first specifying the l
 
 To leave the session and close cadaver, type ``exit``.
 
-It is also possible to run cadaver as a oneliner from the shell by providing it a list of instructions. Providing the client address, username and password is optional, cadaver will prompt if not given.
+It is also possible to run cadaver as a oneliner from the shell by providing it a list of instructions. 
 
 Make a ~/davscript file with the following contents:
 ::
     put /home/user/test.txt /home/vsc34962/cadaver_test
     exit
+
+You can also provide the client address next to an ``open`` command inside the script.
 
 Now you can execute these commands on the fly:
 ::  
