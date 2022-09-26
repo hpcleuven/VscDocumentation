@@ -35,4 +35,4 @@ Once logged in iRODS users will have access to the following iRODS collections:
 
 - Your group area: /kuleuven_tier1_pilot/home/lt1_projectcode. The area is shared and visible by all the members of your group.
 
-- The public area: /kuleuven_tier1_pilot/home/public. This is an area accessible by everyone in the system. It could be even accessed by anonymous users from external sources if this is configured. Usage of this area is discouraged, and the group directory under home should be used for shared storage.
+- The public area: /kuleuven_tier1_pilot/home/public. This is an area accessible by everyone in the system. It could be even accessed by anonymous users from external sources if this is configured. Usage of this area is discouraged, and your group directory under home should be used for shared storage.
