@@ -73,7 +73,7 @@ Now you can upload data objects to this new collection by first specifying the l
 
 ::
 
-    dav:!> put /home/user/test.txt /home/vsc34962/cadaver_test
+    dav:!> put /home/user/test.txt /home/vscXXXXX/cadaver_test
 
 To leave the session and close cadaver, type ``exit``.
 
@@ -83,7 +83,7 @@ Make a ~/davscript file with the following contents:
 
 ::
 
-    put /home/user/test.txt /home/vsc34962/cadaver_test
+    put /home/user/test.txt /home/vscXXXXX/cadaver_test
     exit
 
 You can also provide the client address next to an ``open`` command inside the script.
