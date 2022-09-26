@@ -11,16 +11,24 @@ Using cURL with iRODS
 ---------------------
 To use cURL (and cadaver), first go to https://irods.hpc.kuleuven.be and note your user account, temporary (4h) password and the Davrods client url (https://irods.hpc.kuleuven.be:8443).  
 
-Before continuing with cURL (not cadaver) you should the SSL certificate provided by https://irods.hpc.kuleuven.be:8443. In most browsers certificates can be downloaded by clicking the lock icon next to the url bar. The file format should be .crt (. For further instructions installing certificates on Ubuntu, please follow the instructions at https://ubuntu.com/server/docs/security-trust-store. You can skip this step by providing the -k switch to curl; however this is insecure as it bypasses SSL security. As it is better to use cadaver we only show the most basic capabilities.
+Before continuing with cURL (not cadaver) you should install the SSL certificate provided by https://irods.hpc.kuleuven.be:8443. In most browsers certificates can be downloaded by clicking the lock icon next to the url bar and following through to the certificate. On Chrome and Edge on Windows this opens a standard certificate viewer offering a .cer file, on Firefox it's a .pem file. For further instructions converting and installing certificates on Ubuntu, please follow the instructions at https://ubuntu.com/server/docs/security-trust-store. You can skip installing the certificate by providing the -k switch to curl; however this is insecure as it bypasses SSL security. As it is better to use cadaver we only show the most basic capabilities.
 
-To show an overview of your collections as an html response, you can use:
+To show an overview of your collections, you can use the following command. It only displays an html response.
 
 :: 
+
     $ curl https://irods.hpc.kuleuven.be:8443/home/vscXXXXX/ --user vscXXXXX:password
+
+To create a new Collection 'collection1':
+
+:: 
+
+    $ curl https://irods.hpc.kuleuven.be:8443/home/vscXXXXX/ --user vscXXXXX:password -X MKCOL 'https://irods.hpc.kuleuven.be:8443/home/vscXXXXX/collection1/'
 
 To upload a file to your 'collection1' Collection:
 
 :: 
+
     $ curl https://irods.hpc.kuleuven.be:8443/home/vscXXXXX/collection1/ --user vscXXXXX:password -T test.txt
 
 Using cadaver with iRODS
@@ -32,11 +40,12 @@ Installation on Debian/Ubuntu is as follows:
     $ sudo apt-get update
     sudo apt-get install cadaver
 
- To use cadaver, first go to https://irods.hpc.kuleuven.be and note your user account, temporary (4h) password and the Davrods client url (https://irods.hpc.kuleuven.be:8443).  
+To use cadaver, first go to https://irods.hpc.kuleuven.be and note your user account, temporary (4h) password and the Davrods client url (https://irods.hpc.kuleuven.be:8443).  
 
 Start a cadaver session by executing  ``cadaver``. You can also connect to your iRODS root collection in one command as follows:
 
 ::
+
     cadaver https://irods.hpc.kuleuven.be:8443/home/vscXXXXX
  
 
@@ -45,6 +54,7 @@ Start a cadaver session by executing  ``cadaver``. You can also connect to your 
 If not yet the case, connect to the Tier 1 zone by executing:
 
 :: 
+
     dav:!> open https://irods.hpc.kuleuven.be:8443
 
 The first time you connect, it will warn you with 'Untrusted server certificate presented for irods.hpc.kuleuven.be' and then prompt you to install the certificate. Proceed.
@@ -56,11 +66,13 @@ Type ``help`` to discover all commands.
 To create a Collection, you can use either mkcol or mkdir:
 
 ::
+
     dav:!> mkcol cadaver_test
 
 Now you can upload data objects to this new collection by first specifying the local absolute path to the file, and then the remote relative or absolute path:
 
 ::
+
     dav:!> put /home/user/test.txt /home/vsc34962/cadaver_test
 
 To leave the session and close cadaver, type ``exit``.
@@ -70,6 +82,7 @@ It is also possible to run cadaver as a oneliner from the shell by providing it 
 Make a ~/davscript file with the following contents:
 
 ::
+
     put /home/user/test.txt /home/vsc34962/cadaver_test
     exit
 
@@ -78,4 +91,5 @@ You can also provide the client address next to an ``open`` command inside the s
 Now you can execute these commands on the fly:
 
 ::  
+
     $ cadaver -r ~/davscript https://irods.hpc.kuleuven.be:8443
