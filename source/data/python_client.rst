@@ -342,7 +342,7 @@ In addition to the general query that gets information out of the ICAT, we can i
 
 We can do the same with creation, removal and unlink.
 
-The below example retrieves a reference to an existing collection using *get*.
+The example below retrieves a reference to an existing collection using *get*.
 
 ::
 

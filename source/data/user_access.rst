@@ -25,14 +25,14 @@ Before you can interact with iRODS, as a VSC user you will need to activate the 
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 
-The Tier-1 Data service has a web accessible endpoint: https://irods.hpc.kuleuven.be/. This allows to browse your collections and the public ones.
+The Tier-1 Data service has the following landing page: https://irods.hpc.kuleuven.be/. This provides the entrypoint to start working with iCommands, the Python iRODS client and the WebDAV client.
 
-It is also possible to launch iCommands directly from your local Linux (either native or via a VM or the Windows Subsystem for Linux) computer against the Tier-1 iRODS zone. For this you need to install iCommands and execute the snippet under 'iCommands Client on Linux' from the endpoint.
+It is also possible to launch iCommands directly from your local Linux (either native or via a VM or the Windows Subsystem for Linux) computer against the Tier-1 iRODS zone. For this you need to install iCommands and execute the snippet under 'iCommands Client on Linux' from the landing page.
 
 Once logged in iRODS users will have access to the following iRODS collections:
 
-- Your personal area: /kuleuven_tier1_pilot/home/vscXXXXX (where XXXXX is the number of your vsc-account). This are is by default only visible by your user.
+- Your personal area: /kuleuven_tier1_pilot/home/vscXXXXX (where XXXXX is the number of your vsc-account). This area is by default only visible by your user account.
 
 - Your group area: /kuleuven_tier1_pilot/home/lt1_projectcode. The area is shared and visible by all the members of your group.
 
-- The public area: /kuleuven_tier1_pilot/home/public. This is an area accessible by everyone in the system.  I could be even accessed by anonymous users from external sources if this is configured. You should not copy on this area any confidential or private data.
+- The public area: /kuleuven_tier1_pilot/home/public. This is an area accessible by everyone in the system. It could be even accessed by anonymous users from external sources if this is configured. Usage of this area is discouraged, and the group directory under home should be used for shared storage.

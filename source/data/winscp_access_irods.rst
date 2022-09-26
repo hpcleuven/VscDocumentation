@@ -1,6 +1,6 @@
 .. _winscp_access_irods.rst:
 
-Using WinSCP for Accessing to iRODS
+Using WinSCP to access iRODS
 ===================================
 
 Another tool to upload/download data to/from iRODS through a Graphical User Interface (GUI) is WinSCP (Windows Secure Copy). WinSCP is an open source free (SFTP client, FTP client, WebDAV client, S3 client and SCP client) for Windows. Its main function is file transfer between a local and a remote computer.
@@ -26,7 +26,7 @@ Installing and First Time Configuration of WinSCp
 .. note:: Since the password you obtained is temporary, you need to get a new one every time your password has expired.
 - The first time you make the connection, you will be prompted for the password and asked to ‘Continue connecting and add host key to the cache’; select ‘Yes’.
 
-- You can choose/set your remote directory for easiness. 
+- You can choose/set your remote directory for ease of use. 
 
 
 Upload/Download Data to/from iRODS using WinSCP
