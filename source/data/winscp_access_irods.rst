@@ -23,7 +23,9 @@ Installing and First Time Configuration of WinSCp
 .. image:: winscp/winscp2.png
 
 - Write the password down that you get at https://irods.hpc.kuleuven.be/. Do not enter the password in the Password text box. As it is quite long, it will be truncated by WinSCP and it is only valid for 4 hours anyway.
+
 .. note:: Since the password you obtained is temporary, you need to get a new one every time your password has expired.
+
 - The first time you make the connection, you will be prompted for the password and asked to ‘Continue connecting and add host key to the cache’; select ‘Yes’.
 
 - You can choose/set your remote directory for ease of use. 

@@ -10,4 +10,5 @@ Tier-1 Data Service
    data_discovery
    user_access
    irods_clients_index
+   workflow_automation
    glossary
