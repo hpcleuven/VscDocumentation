@@ -222,7 +222,7 @@ That means you can restore the file with the following commands.::
 
 $ imv /kuleuven_tier1_pilot/trash/home/vsc33586/dataExample/test1.txt /kuleuven_tier1_pilot/home/vsc33586/dataExample
 
-To remove the file completly from the system, you need to execute; either;
+To remove the file completely from the system, you need to execute either;
 
 :: 
 
