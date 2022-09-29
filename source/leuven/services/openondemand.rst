@@ -127,11 +127,11 @@ To launch any of the interactive apps, you need to fill in the resources you req
 information. These will be explained in the specific chapter about the app. A general overview of the others can be found here:
 
 - Account: the credit account you want to deduct the credits from. The accounts associated to your vsc number will be displayed in a dropdown.
-- Partition: this field is only relevant if you or your research group has dedicated nodes. Otherwise this will always default to the interactive partition.
+- Partition: you can choose any of the existing partitions. If you require a GPU, you can of course only submit jobs to the gpu or interactive partitions. For the most general use-cases we recommend that you use the interactive partition.
 - Numbers of hours: your walltime (min 1h)
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. Every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types to the interactive partition.
+- Number of GPUs. If you request a GPU of the gpu partition you will get a full A100 GPU. For the interactive partition, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types.
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
 
