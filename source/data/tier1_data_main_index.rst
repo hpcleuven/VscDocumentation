@@ -2,13 +2,13 @@ Tier-1 Data Service
 ===================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    tier1_data_service
-   tier1_data_architecture
    introduction_to_irods
-   user_access
-   using_iCommands
+   tier1_data_architecture
    data_discovery
-   irods_access_index
+   user_access
+   irods_clients_index
+   workflow_automation
    glossary

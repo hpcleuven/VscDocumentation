@@ -1,22 +1,45 @@
-.. _using_iCommands:
+.. _iCommands:
 
-Using iCommands
+iCommands
 ===============
 
-iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In other words iCommands is an Unix utilities that give users a command-line interface.
-There are more than 50 iCommands. A regular user  however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy-use interface to iRODS.
+iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In short, iCommands is an Unix utility that gives users a command-line interface.
+There are more than 50 iCommands. A regular user however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy to use interface to iRODS.
 
 All iCommands accept standard common line options (e.g., -a for all, -h for help) that gives more capabilities to the commands. To see a subset of these options and to know the details of any iCommand, you can follow the below specified options:
 
-- You can visit `iCommands <https://docs.irods.org/4.2.6/icommands/user/>`__
+- You can visit the `iCommands documentation <https://docs.irods.org/4.2.6/icommands/user/>`__
  
 - You can use the ``–h`` option with the command (e.g., ``iput –h``)
   
 - You can use the ``ihelp`` command with the argument that you would like to learn more about (e.g., ``ihelp iput``).
   
-Please keep in mind some iCommands don't work with auto-complete of a tab press. Also remember that folders in iRODS are called 'collection' and files are called 'object' or 'data-object'.
+Please keep in mind some iCommands don't work with tab press auto-complete. Also remember that folders in iRODS are called 'Collections' and files are called 'Objects' or 'Data Objects'.
 
-Following sections will illustrate the usage of some icommands organized on the following categories: “useful commands”, “working with directories (collections)”, “data upload and download” and “structuring data”.
+The following sections illustrate the usage of some iCommands organized on the following categories: "Informative commands", "Working with Collections", "Data upload and download", "Structuring data", "Access Control" and "Handling metadata".
+
+Installing iCommands locally
+----------------------------
+iCommands is installed on the VSC Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
+
+On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.10. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
+
+For CentOS:
+::
+    $ sudo yum install irods-runtime=4.2.10
+    sudo yum install irods-icommands=4.2.10
+
+For Debian/Ubuntu:
+::
+    $ sudo apt update
+    sudo apt install irods-runtime=4.2.10
+    sudo apt install irods-icommands=4.2.10
+
+.. note::
+   Depending on your linux distribution and version, the installation procedure may vary.
+   - The most recent version of iCommands is 4.3.0.
+   - However, the Tier 1 iRODS instance still runs on iRODS 4.2.10.
+   - In case you have a Linux version (e.g. Ubuntu 20) for which iCommands 4.2.10 is not available, please contact rdm-icts@kuleuven.be for the procedure.
 
 Informative iRODS Commands
 --------------------------
@@ -41,7 +64,7 @@ $ ierror 826000
 
 If you want to log out from iRODS you can run ``iexit full`` , but take into account that then you will need to log on again by executing ``ssh irods.hpc.kuleuven.be | bash`` if you want to use iRODS again.
 
-Working With Directories
+Working With Collections
 ------------------------
 
 The iCommands that will be used in this part completely emulate standard Unix commands such as ``cd``, ``ls``, and ``pwd``.
@@ -202,7 +225,7 @@ That means you can restore the file with the following commands.::
 
 $ imv /kuleuven_tier1_pilot/trash/home/vsc33586/dataExample/test1.txt /kuleuven_tier1_pilot/home/vsc33586/dataExample
 
-To remove the file completly from the system, you need to execute; either;
+To remove the file completely from the system, you need to execute either;
 
 :: 
 
@@ -257,10 +280,86 @@ if we want to check the result of our change:
     test1.txt
             ACL - vsc33586#kuleuven_tier1_pilot:own
 
-So we can see here that the inheritance is enabled for dataExample collection and user vsc33585 has now right to read the data object.
+So we can see here that inheritance is enabled for the dataExample collection and user vsc33585 has now the right to read the data object.
 
-List of basic iCommands
------------------------
+
+Handling metadata
+-----------------
+
+Creating Attribute, Value, Unit triples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+iRODS provides the user with the possibility to create Attribute-Value-Unit (AVU) triples for any iRODS entity (Data Objects, Collections, Resources or Users). The triples are stored in the iCAT catalogue (in the database), which can be queried to identify and retrieve the correct objects when needed.
+
+This enables us to ask the iRODS system to provide all data (files and collections) based on the matching query criteria.
+
+First we will explore how to create these AVU triples for which we can search later.
+
+- Annotate a data file::
+
+    $ imeta add -d test1.txt weight 2 kg
+
+    $ imeta add -d test1.txt 'author' 'Jan Ooghe' 'ICTS'
+
+    $ imeta add -d test1.txt 'shareable' yes
+
+In the last one we left the 'Unit' part empty. That means unit is not mandatory to write if there is no relevant element for that. 
+
+.. note:: Please note that apostrophes are not mandatory but are needed to store Values containing spaces.
+
+- Annotate a collection::
+
+    $ imeta add -C dataExample 'type' 'collection'
+    
+    $ imeta add -C dataExample 'book' 'chemistry' 'KULeuven'
+
+List metadata
+^^^^^^^^^^^^^
+
+In order to list metadata of a file we do::
+
+$ imeta ls -d test1.txt
+
+and to list a collection's metadata::
+
+$ imeta ls -C dataExample
+
+Querying data
+^^^^^^^^^^^^^
+
+It is also possible to find all entities matching certain attribute values. The imeta command allows users to define simple queries::
+
+$ imeta qu -d weight = 2
+
+A more sophisticated search can be done using ``iquest``: this uses sql-like queries to find entities by AVUs and by information not stored in AVUs. For instance searching by name, id, size, checksum, owner,...
+
+With the following command we can fetch the data file, that has the attribute 'author' completed::
+
+    $ iquest "select COLL_NAME, DATA_NAME, META_DATA_ATTR_VALUE where META_DATA_ATTR_NAME like 'author'" 
+
+We can filter for a specific attribute values and use wildcards ('%' and '_'):::
+
+    $ iquest "select COLL_NAME, DATA_NAME where \
+    META_DATA_ATTR_NAME like 'author' and META_DATA_ATTR_VALUE like 'Jan%'"
+
+We can find our text1.txt file by estimating its size in bytes:::
+
+    $ iquest "select DATA_NAME,DATA_SIZE where DATA_SIZE BETWEEN '20' '30'"
+
+        DATA_NAME = test1-restore.txt
+        DATA_SIZE = 26
+        ---------------------------------------
+        DATA_NAME = test1.txt
+        DATA_SIZE = 26
+        ---------------------------------------
+
+To see all searchable attributes, use 
+::
+
+    $ iquest attrs 
+
+Cheat sheet of basic iCommands
+------------------------------
 
 A list of commands that is required for basic data operations is provided below. 
 

@@ -13,7 +13,7 @@ Attribute-Value-Unit (AVU) triples are associated with Collections or Data Objec
 
 **Client**
 
-A Client in the iRODS client-server architecture gives users an interface to manipulate at least Collections and Data Objects. iRODS clients include: WebDAV clients, web interfaces, iCommands, Python API etc. The latter are more fully fledged and also allow manipulation of other iRODS entities such as Users, Groups and metadata.
+A client in the iRODS client-server architecture gives users an interface to interact with iRODS to manipulate iRODS objects based on users' account profile and access level. iRODS clients include: WebDAV clients, web interfaces, iCommands, Python API etc. The programming clients are more fully fledged and also allow users to automate some repetitive works.
 
 **Collection**
 
@@ -53,7 +53,7 @@ Microservices are small, well-defined procedures/functions that perform a certai
 
 **Policy Enforcement Point (PEP)** 
 
-A event trigger in iRODS is called a PEP and it invokes an interpreted rule script via the iRODS rule engine for the purpose of influencing a data management operation.
+An event trigger in iRODS is called a PEP (Policy Enforcement Point) and it invokes an interpreted rule script via the rule engine configured in iRODS' server for the purpose of influencing a data management operation.
 
 **Replica**
 
@@ -81,7 +81,7 @@ The physical location of Data Objects on a storage device.
 
 **Workflow** 
 
-Some form of computation or action performed on Data Objects, with a specific start and end poiint.
+Some form of computation or action performed on Data Objects, with a specific start and end point.
 
 **Zone**
 
