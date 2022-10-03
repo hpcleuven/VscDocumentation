@@ -19,6 +19,20 @@ We recommend to set up PRC and VSC-PRC via the module system as follows:
 
 .. note:: PRC and VSC-PRC require Python 3 and hence cannot be used with Python 2 interpreters.
 
+
+.. note:: There is also a module on the HPC clusters of KU Leuven with only the bare python-irodsclient (version 1.1.4).
+    You can use it as follows:
+ 
+    ::
+
+        module use /apps/leuven/<node_architecture>/2021a/modules/all
+        module load python-irodsclient/1.1.4-GCCcore-10.3.0
+
+    You should replace <node_architecture> with the architecture of the (login) node you are on ('cascadelake', 'skylake' or 'broadwell').
+
+    However, in the following examples, the module 'vsc-python-irodsclient' will be used.  
+
+
 A Secure Connection Settings
 ----------------------------
 
