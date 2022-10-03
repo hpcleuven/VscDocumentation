@@ -9,16 +9,16 @@ This is made possible by the Rule Engine Plugin Framework (REPF), which executes
 
 User-level rules are stored locally and manually invoked by any user using the ``irule`` command, which runs it in the iRODS server. They are meant for personal or group use (if the user is part of that group) and are typically simple 'one-shot' workflow operations. System-defined rules are stored server-side by an iRODS developer or administrator and automatically invoked by the Rule Engine when a certain condition is met. This condition is called an 'event' or more formally a Policy Enforcement Point (PEP). They are meant for consistent data management of a whole zone or for complex group/project data management tasks.
 
-Rules can be invoked in three ways: by directly calling the ``irule`` command on a rule file (only for User-level rules); by reaching a Policy Enforcement Point, triggering a System-level rule; or periodically via delayed execution (both for User-level and System-level rules). The delay mechanism is used for resource-heavy, time-intensive processes that can occur one or more times in the future at regular intervals.
+Rules can be invoked in three ways: by directly calling the ``irule`` command on a rule file (only for User-level rules); by reaching a Policy Enforcement Point, triggering a System-level rule; or periodically via Delay rules (both for User-level and System-level rules). Resource-heavy, time-intensive processes are best executed as a system-level delay rules.
 
 The Python iRODS Client (PRC) is executed client-side, making it somewhat less efficient than iRODS rule execution. Although both offer overlapping functionality, the delay mechanism used by iRODS rules is more graceful and these rules get stored centrally in the REPF. It is also possible to invoke a rule via the PRC.
 
-This article focuses only on User-level rules. If you have more complex data processing pipelines, the Tier-1 Data Team (FOZ-RDM) at KU Leuven can create System-level rules for you.
+This article focuses only on User-level rules. If you have more complex data processing pipelines, the Tier-1 Data Team (FOZ-RDM) at KU Leuven can create System-level rules for you. Please contact us at data@vscentrum.be.
 
 Rule syntax
 -----------
 
-User-level rules can only be written in the iRODS Rule language, System-level rules can also be written in other languages (Python, C++ or JavaScript). The iRODS Rule language is a domain specific scripting language composed of simple building blocks. It uses curly brackets, # for comments, variable names start with '*' and strings are enclosed by ' or ". The documentation for the language can be found here: https://docs.irods.org/4.2.10/plugins/irods_rule_language/.
+Rules can be written in Python, C++ or the iRODS Rule language. However, normal users can (for the time being) only execute rules written in the iRODS Rule language (either User-level or System-level rules). The iRODS Rule language is a domain specific scripting language composed of simple building blocks. It uses curly brackets, # for comments, variable names start with '*' and strings are enclosed by ' or ". The documentation for the language can be found here: https://docs.irods.org/4.2.10/plugins/irods_rule_language/.
 
 ::
 
@@ -189,7 +189,7 @@ In your rulefile, you can define functions to contain oft-used functionality. Fu
 Delayed execution rules
 -----------------------
 
-A rule action can be executed at a certain point in the future by delaying it or scheduling it at a certain time. To express this, a timing syntax based on XML is provided:
+A rule action can be executed (as a System-level rule or with ``irule``) at a certain point in the future by delaying it or scheduling it at a certain time. To express this, a timing syntax based on XML is provided:
 
  - ET: Absolute time when something should be performed, for instance at 8:00 PM: <ET>20:00</ET>.
  - PLUSET: Delay execution for a certain amount of time from now, for instance <PLUSET>10s</PLUSET> or <PLUSET>1m</PLUSET>.

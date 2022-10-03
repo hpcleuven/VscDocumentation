@@ -63,7 +63,7 @@ Then complete your username and password. You are now connected and can perform 
 
 Type ``help`` to discover all commands. 
 
-To create a Collection, you can use either mkcol or mkdir:
+To create a Collection, you can use either ``mkcol`` or ``mkdir``:
 
 ::
 
