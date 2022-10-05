@@ -70,19 +70,20 @@ Templates
 To enter the Templates menu, you can click on 'Templates' at the top once you are in the 'Job Composer' menu. You can also access this menu by clicking the button 'New 
 Job'-'From Template'. Once in this menu, you should see a table with 3 System Templates. The resources that are requested in these scripts are the default settings. 
 The templates:
+
 - CPU job template: this is a template for CPU jobs (batch partition). This is also the default template (which you will get when clicking 'From Default Template' under the 'New Job' button in the 'Jobs' menu).
 - GPU job template: a template for creating GPU jobs 
 - Big memory CPU jobs: a template to create job scripts that submit to the big memory partition instead of the default batch partition
 
 You can create your own templates from scratch or by copying one of the existing templates. In both cases you will be redirected to a page where you can provide a
 name, the cluster (only wICE) and add some notes. Once you save this, you will create a new folder in the templates folder
-($VSC_DATA/ondemand/data/sys/myjobs/templates/). This information will be saved in the manifest.yml file that is always present in each of the templates folder. Which
+($VSC_DATA/ondemand/data/sys/myjobs/templates/). This information will be saved in the manifest.yml file that is always present in each of the template folders. Which
 other files that are present in this folder will depend on how you created your new template. If you use the 'New Template' button, it will also contain the job 
 script of the default template, being the CPU job template. If you use the 'Copy Template' button, the contents of the folder will depend on the template you are
-copying from. Use the system template that suit you needs the best when starting ou. Once you use this more often, you can also use your own templates to create new
+copying from. Use the system template that suit your needs the best when starting out. Once you use this more often, you can also use your own templates to create new
 ones. Any file that is present in that folder, will be copied to your new one as well.
 
-Once you've created the new template folder,you can really start customizing it to your needs. You could of course immediately create a new job from it, adapt some
+Once you've created the new template folder, you can start customizing it to your needs. You could of course immediately create a new job from it, adapt some
 extra options and launch it (which will be explained in the next chapter), but you can still further costumize your template folder first. You can view the files in
 the folder using the Folder Explorer (click 'View Files' on top or 'Open Dir' at the bottom). As explained above, you can edit or remove any file, create new files,
 upload new files... These files will be present in each job you create from this template, which means you fully adapt this to the standard set-up you use for your
@@ -92,10 +93,12 @@ Jobs
 ~~~~
 
 The functioning of creating jobs is a bit similar to how you create new templates. Whatever method you choose, you will create a new folder for each job, this time
-located at $VSC_DATA/ondemand/data/projects/default/. **Add part about folder naming** To create a job, press the 'New Job' button and choose the option that suits
-your needs the most. You will get a new item in your job list for each job you've created. Again, you can edit, remove and add files like you want to create a custom
-job by going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking the file names. The 'Open Editor' button in the 'Submit Script' overview
-also allows you to edit the job script directly.
+located at $VSC_DATA/ondemand/data/projects/default/. The job folders will be numbered according to the order you have created them in. **Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.**
+When removing a job, the folder will be deleted as well. 
+
+To create a job, press the 'New Job' button and choose the option that suits your needs the most. You will get a new item in your job list for each job you've created. 
+Again, you can edit, remove and add files like you want to create a custom job by going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking 
+the file names. The 'Open Editor' button in the 'Submit Script' overview also allows you to edit the job script directly.
 
 Using the 'Job Options' button, you can add some more specifications to your job:
 
@@ -112,19 +115,18 @@ Clusters
 --------
 
 When selecting 'Clusters - Login Server Shell Access' you will get a terminal window in a new browser tab. You will arrive on one of the Genius login nodes, which
-you can use as you are used to, including the option to submit jobs to wICE. **(Is this true? And will this look like a Genius login node, or will this be generalized to 'Tier2 login node?)**.
-As with the Genius login nodes, this means that this shell is not meant for any calculations. If you would like to perform calculations in an interactive shell,
-you should be using the :ref:`interactive shell app<interactive_shell>`
+you can use as you are used to, including the option to submit jobs to wICE. As with the Genius login nodes, this means that this shell is not meant for any 
+calculations. If you would like to perform calculations in an interactive shell, you should be using the :ref:`interactive shell app<interactive_shell>`
 
 Interactive apps
 ----------------
 
-This menu provides a range of different apps that provide a GUI, while working on the interactive nodes in the background. This is an ideal environment to write, test
-and debug code, do post-hoc analysis, plot... This is not meant to launch full jobs on. As you are always working on interactive nodes, you will notice
-that you can only request a limited amount of resources. 
+This menu provides a range of different apps that provide a GUI. In the background this means that you are submitting an interactive job to the cluster, in which the
+app will be running.
 
-To launch any of the interactive apps, you need to fill in the resources you require. Between all the apps, most of them are the same. Some apps require specific
-information. These will be explained in the specific chapter about the app. A general overview of the others can be found here:
+To launch any of the interactive apps, you need to fill in the resources you require. Be aware that you will end up in a regular queue, so requesting a large amount of 
+resources might result in a long queueing time. Between all the apps, most of them are the same. Some apps require specific information. These will be explained in the 
+specific chapter about the app. A general overview of the others can be found here:
 
 - Account: the credit account you want to deduct the credits from. The accounts associated to your vsc number will be displayed in a dropdown.
 - Partition: you can choose any of the existing partitions. If you require a GPU, you can of course only submit jobs to the gpu or interactive partitions. For the most general use-cases we recommend that you use the interactive partition.
@@ -139,17 +141,50 @@ Once you've selected all your resources, just press 'Launch' and your job will b
 Interactive shell
 =================
 
-(WIP)
+**Work in progress**
 
-Jupyter Notebook
+Jupyter Lab
 ================
 
+With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding. There are two kernels already available, being a Python and a
+R kernel. The Python and R versions that are used for this, are the versions located in /usr/bin. While you can use these to do some testing, it is not recommended to 
+use these to work with. It is better to work with conda environments in this case. You can `install miniconda <https://docs.vscentrum.be/en/latest/software/python_package_management.html#install-miniconda>`_ if you it is not installed yet. When you do not have any conda 
+environments and their associated kernels, your both the Python and R installation will default to the ~/miniconda3/bin/... installation.
 
+To create any other kernels, first create a  `Python <https://docs.vscentrum.be/en/latest/software/python_package_management.html#create-an-environment>`_ or 
+`R <https://docs.vscentrum.be/en/latest/software/r_package_management.html#creating-an-environment>`_ conda environment. The second step consists out of effectively
+creating the kernel in your home folder. This starts with first of all activating your conda environment::
+
+      source activate <env_name>
+      
+For Python you will need the ``ipykernel`` package installed in your conda environment. Then you can create the kernel as follows::
+
+      python -m ipykernel install  --prefix=${VSC_HOME}/.local/ --name '<env_name>'
+      
+For R, you need both the ``jupyter_client`` and the ``irkernel`` package installed. With the following command you can create the kernel::
+      
+      Rscript -e 'IRkernel::installspec(prefix="${VSC_HOME}/.local/", name="<env_name>", displayname="<kernel_name>")'
+      
+Once the kernel is created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
+
+For more general information concerning Jupyter Lab, go to their ´official documentation <https://docs.jupyter.org/en/latest/>´_.
+
+**Remarks:**
+
+- For now, the default location is $VSC_HOME.
 
 RStudio Server
 ==============
 
+This interactive app allows you to run an RStudio session. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check out the
+´official documentation <https://docs.rstudio.com/>´_. 
 
+The usage is very similar to the regular RStudio. It is recommended to install packages in a folder on your ´$VSC_DATA´ instead of the default location though, to
+avoid clogging your ´$VSC_HOME´. You can do this by using the ´lib´ argument for both the ´install.packages´ and the ´library´ function.
+
+**Remarks:**
+
+- Navigating between your different directories is possible using the file explorer.If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the tree dots on the right (...) and enter your file location.
 
 Tensorboard
 ===========
