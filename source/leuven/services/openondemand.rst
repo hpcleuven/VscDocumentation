@@ -176,28 +176,53 @@ For more general information concerning Jupyter Lab, go to their ´official docu
 RStudio Server
 ==============
 
-This interactive app allows you to run an RStudio session. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check out the
-´official documentation <https://docs.rstudio.com/>´_. 
+This interactive app allows you to run an RStudio session on the cluster. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check 
+out the ´official documentation <https://docs.rstudio.com/>´_. 
 
-The usage is very similar to the regular RStudio. It is recommended to install packages in a folder on your ´$VSC_DATA´ instead of the default location though, to
+The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ´$VSC_DATA´ instead of the default location though, to
 avoid clogging your ´$VSC_HOME´. You can do this by using the ´lib´ argument for both the ´install.packages´ and the ´library´ function.
 
 **Remarks:**
 
-- Navigating between your different directories is possible using the file explorer.If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the tree dots on the right (...) and enter your file location.
+- Navigating between your different directories is possible using the file explorer. If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the three dots on the right (...) and enter your file location.
+- The 'Tools-Install packages' interface does not allow you to select any other path than the default in your `$VSC_HOME`. It is recommended to use the `install.packages` function instead.
 
 Tensorboard
 ===========
 
+Tensorboard is an app that allows you to visualize and measure different ascpects of your machine learning workflow. Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_ for more detailed information. 
+
+The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options. It is not possible to navigate to the correct
+folder from within the app.
 
 
 code-server
 ===========
 
+This is the browser version of Visual Studio Code. For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_. As a default,
+a Python and a Git module are already loaded, which means you can use both Python and git from a terminal window within code-server. How to open a terminal
+window is probably one of the first things you should know: click on the three horizontal lines in the upper left corner, select 'Terminal - New Terminal'. This will
+open a shell on the node you are running your session on. Notice that you are start in your `$VSC_DATA` folder. You can use this as a regular shell, meaning that you
+can submit jobs, load modules and so on. 
+
+Code-server contains many different options and menus, which we won't discuss all. Feel free to explore them. We will however discuss how to set up code-server to use 
+any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of the specific 
+interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the steps
+for the most popular languages are described. 
+
+Python
+++++++
+
+There are multiple Python extensions available, so feel free to try and install the extension that suits you the best. This comes with the warning that only the
+Microsoft Python extension has been tested by our team. Just press install, 
+
+Python
+++++++
+
 cryo-sparc
 ==========
 
-
+(Work in progress)
 
 
 .. _KU Leuven Open Ondemand page: https://ondemand.hpc.kuleuven.be/ 
