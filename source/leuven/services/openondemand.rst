@@ -214,10 +214,26 @@ Python
 ++++++
 
 There are multiple Python extensions available, so feel free to try and install the extension that suits you the best. This comes with the warning that only the
-Microsoft Python extension has been tested by our team. Just press install, 
+Microsoft Python extension has been tested by our team. To install this extension, go to 'Extensions' and search for 'Pythonn'. Install the one with as developer
+'ms-python'. If you now open a script, you can now use code-server as an IDE and run the lines of code from within the script (the shortkey is shift+enter).
+Code-server will start a Python session with the currently selected Python interpreter. If you did not specify another one, this should default to the loaded Python
+module. This Python extension gives you the possibility to choose other interpreters as well. In the right down corner, you can see <python-version-number> right next
+to 'Python'. If you click that, a window will appear where you can select your Python version. Next to the module version, you should see at least some system Python
+versions (/bin/python). You can also load other modules, or you can also use conda environments here (if you have any conda environments already, you should see
+them here as well).
 
-Python
-++++++
+If you need more information about creating your customized Python environments, have a look `here <https://docs.vscentrum.be/en/latest/software/python_package_management.html>`_. 
+
+**Remarks:**
+
+- Whenever loading a new Python interpreter,you will have to kill your current Python terminal before you will be able to use this new interpreter.
+
+
+R
++
+
+(still testing)
+
 
 cryo-sparc
 ==========
