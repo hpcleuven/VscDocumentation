@@ -30,7 +30,7 @@ detail.
 Files
 -----
 
-This menu provides a file explorer that allows you to navigate files by clicking. You can access your `$VSC_HOME` and `$VSC_DATA` folders. Other storage is not
+This menu provides a file explorer that allows you to navigate files by clicking. You can access your ``$VSC_HOME`` and ``$VSC_DATA`` folders. Other storage is not
 available here. General file explorer options like moving, deleting, modifying and creating files or directories are available as well. You can also use this interface
 to download and upload files to and from your local machine. Be aware that this is not recommended for very large files.
 
@@ -58,11 +58,9 @@ If your job is still running, you can also delete it by clicking the bin under '
 Job Composer
 ============
 
-This part deserves some extra attention, as there is more to it than just simply creating and editing a .slurm file. Fully using the Open 
-Ondemand method requires some more configuration, but a well thought-out personal strategy will allow you to reap great benefits from this.
-
-Under the job composer tab you can find two other menus, namely 'Jobs' and 'Templates'. As templates are the backbone of job creation in Open Ondemand, we will
-start by explaining this. The 'Jobs' menu is pretty much self-explanitory once understanding this.
+This part deserves some extra attention, as there is more to it than just simply creating and editing a .slurm file. Under the job composer tab you can find two other 
+menus, namely 'Jobs' and 'Templates'. As templates are the backbone of job creation in Open Ondemand, we will start by explaining this. The 'Jobs' menu is pretty much 
+self-explanitory once understanding this.
 
 Templates
 ~~~~~~~~~
@@ -76,9 +74,9 @@ The templates:
 - Big memory CPU jobs: a template to create job scripts that submit to the big memory partition instead of the default batch partition
 
 You can create your own templates from scratch or by copying one of the existing templates. In both cases you will be redirected to a page where you can provide a
-name, the cluster (only wICE) and add some notes. Once you save this, you will create a new folder in the templates folder
-($VSC_DATA/ondemand/data/sys/myjobs/templates/). This information will be saved in the manifest.yml file that is always present in each of the template folders. Which
-other files that are present in this folder will depend on how you created your new template. If you use the 'New Template' button, it will also contain the job 
+name, the cluster (only wICE) and add some notes. Once you save this, you will create a new folder in the templates folder 
+``$VSC_DATA/ondemand/data/sys/myjobs/templates/``. This information will be saved in the ``manifest.yml`` file that is always present in each of the template folders. 
+Which other files that are present in this folder will depend on how you created your new template. If you use the 'New Template' button, it will also contain the job 
 script of the default template, being the CPU job template. If you use the 'Copy Template' button, the contents of the folder will depend on the template you are
 copying from. Use the system template that suit your needs the best when starting out. Once you use this more often, you can also use your own templates to create new
 ones. Any file that is present in that folder, will be copied to your new one as well.
@@ -93,8 +91,7 @@ Jobs
 ~~~~
 
 The functioning of creating jobs is a bit similar to how you create new templates. Whatever method you choose, you will create a new folder for each job, this time
-located at $VSC_DATA/ondemand/data/projects/default/. The job folders will be numbered according to the order you have created them in. **Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.**
-When removing a job, the folder will be deleted as well. 
+located at ``$VSC_DATA/ondemand/data/projects/default/``. The job folders will be numbered according to the order you have created them in. **Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.** When removing a job, the folder will be deleted as well. 
 
 To create a job, press the 'New Job' button and choose the option that suits your needs the most. You will get a new item in your job list for each job you've created. 
 Again, you can edit, remove and add files like you want to create a custom job by going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking 
@@ -109,7 +106,7 @@ Using the 'Job Options' button, you can add some more specifications to your job
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
-the folder that is associated with it. 
+the folder that it is associated with. 
 
 Clusters
 --------
@@ -124,11 +121,11 @@ Interactive apps
 This menu provides a range of different apps that provide a GUI. In the background this means that you are submitting an interactive job to the cluster, in which the
 app will be running.
 
-To launch any of the interactive apps, you need to fill in the resources you require. Be aware that you will end up in a regular queue, so requesting a large amount of 
-resources might result in a long queueing time. Between all the apps, most of them are the same. Some apps require specific information. These will be explained in the 
-specific chapter about the app. A general overview of the others can be found here:
+To launch any of the interactive apps, you need to fill in the resources form. Be aware that you will end up in a regular queue, so requesting a large amount of 
+resources might result in a long queueing time. Between all the apps, most of these options are the same. Some apps require specific information. These will be 
+explained in the specific chapter about the app. A general overview of the others can be found here:
 
-- Account: the credit account you want to deduct the credits from. The accounts associated to your vsc number will be displayed in a dropdown.
+- Account: the credit account you want to deduct the credits from. The accounts associated with your vsc number will be displayed in a dropdown.
 - Partition: you can choose any of the existing partitions. If you require a GPU, you can of course only submit jobs to the gpu or interactive partitions. For the most general use-cases we recommend that you use the interactive partition.
 - Numbers of hours: your walltime (min 1h)
 - Number of cores: the amount of cores per node. This defaults to 1.
@@ -147,9 +144,9 @@ Jupyter Lab
 ================
 
 With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding. There are two kernels already available, being a Python and a
-R kernel. The Python and R versions that are used for this, are the versions located in /usr/bin. While you can use these to do some testing, it is not recommended to 
-use these to work with. It is better to work with conda environments in this case. You can `install miniconda <https://docs.vscentrum.be/en/latest/software/python_package_management.html#install-miniconda>`_ if you it is not installed yet. When you do not have any conda 
-environments and their associated kernels, your both the Python and R installation will default to the ~/miniconda3/bin/... installation.
+R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
+to work with these. It is better to work with conda environments in this case. You can `install miniconda <https://docs.vscentrum.be/en/latest/software/python_package_management.html#install-miniconda>`_ if you have not installed it yet. When you do not have any conda 
+environments and their associated kernels, both the Python and R installation will default to the ``~/miniconda3/bin/...`` installation.
 
 To create any other kernels, first create a  `Python <https://docs.vscentrum.be/en/latest/software/python_package_management.html#create-an-environment>`_ or 
 `R <https://docs.vscentrum.be/en/latest/software/r_package_management.html#creating-an-environment>`_ conda environment. The second step consists out of effectively
@@ -171,7 +168,7 @@ For more general information concerning Jupyter Lab, go to their ´official docu
 
 **Remarks:**
 
-- For now, the default location is $VSC_HOME.
+- For now, the default location is ``$VSC_HOME``.
 
 RStudio Server
 ==============
@@ -179,22 +176,21 @@ RStudio Server
 This interactive app allows you to run an RStudio session on the cluster. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check 
 out the ´official documentation <https://docs.rstudio.com/>´_. 
 
-The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ´$VSC_DATA´ instead of the default location though, to
-avoid clogging your ´$VSC_HOME´. You can do this by using the ´lib´ argument for both the ´install.packages´ and the ´library´ function.
+The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though, to
+avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
 
 **Remarks:**
 
 - Navigating between your different directories is possible using the file explorer. If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the three dots on the right (...) and enter your file location.
-- The 'Tools-Install packages' interface does not allow you to select any other path than the default in your `$VSC_HOME`. It is recommended to use the `install.packages` function instead.
+- The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``. It is recommended to use the ``install.packages`` function instead.
 
 Tensorboard
 ===========
 
 Tensorboard is an app that allows you to visualize and measure different ascpects of your machine learning workflow. Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_ for more detailed information. 
 
-The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options. It is not possible to navigate to the correct
-folder from within the app.
-
+The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options. This is a relative directory starting from your 
+``$VSC_DATA``. It is not possible to navigate to the correct folder from within the app.
 
 code-server
 ===========
@@ -202,13 +198,13 @@ code-server
 This is the browser version of Visual Studio Code. For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_. As a default,
 a Python and a Git module are already loaded, which means you can use both Python and git from a terminal window within code-server. How to open a terminal
 window is probably one of the first things you should know: click on the three horizontal lines in the upper left corner, select 'Terminal - New Terminal'. This will
-open a shell on the node you are running your session on. Notice that you are start in your `$VSC_DATA` folder. You can use this as a regular shell, meaning that you
+open a shell on the node you are running your session on. Notice that you are start in your ``$VSC_DATA`` folder. You can use this as a regular shell, meaning that you
 can submit jobs, load modules and so on. 
 
 Code-server contains many different options and menus, which we won't discuss all. Feel free to explore them. We will however discuss how to set up code-server to use 
 any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of the specific 
-interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the steps
-for the most popular languages are described. 
+interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the steps for
+both Python and R are described. 
 
 Python
 ++++++
@@ -230,15 +226,25 @@ If you need more information about creating your customized Python environments,
 
 
 R
-+
+++++
 
-(still testing)
+While there are also multiple extensions for using R in code-server, these don't all work as they should. The main issue here is that these extensions were not
+built with use on a cluster/server in mind. Also, these extensions are often built with the idea that you are only using one R version in the background, which
+sadly limits the flexibility to switch between different environments, as you can do with Python environments. 
 
+Even with these limitations, there is still a way to work with R in code-server. For this, you need to install the 'R' extension created by Ikuyadeu. Once this
+is installed, you can specify the path in the settings (click the settings wheel of the extension, then click on 'Extension settings'): search for 'R > Rterm: Linux'
+and add the path to your preferred R installation. This can as well be a miniconda R installation. The packages in the environment will then also be available to you.
+If you would need to switch R versions, you need to change this path and restart your terminal. Sadly, there is no direct way to change versions.
 
 cryo-sparc
 ==========
 
-(Work in progress)
+**Work in progress**
 
+ParaViewWeb
+===========
+
+**Work in progress**
 
 .. _KU Leuven Open Ondemand page: https://ondemand.hpc.kuleuven.be/ 
