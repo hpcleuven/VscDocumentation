@@ -164,7 +164,7 @@ For R, you need both the ``jupyter_client`` and the ``irkernel`` package install
       
 Once the kernel is created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
 
-For more general information concerning Jupyter Lab, go to their ´official documentation <https://docs.jupyter.org/en/latest/>´_.
+For more general information concerning Jupyter Lab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`_.
 
 **Remarks:**
 
@@ -174,7 +174,7 @@ RStudio Server
 ==============
 
 This interactive app allows you to run an RStudio session on the cluster. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check 
-out the ´official documentation <https://docs.rstudio.com/>´_. 
+out the `official documentation <https://docs.rstudio.com/>`_. 
 
 The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though, to
 avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
