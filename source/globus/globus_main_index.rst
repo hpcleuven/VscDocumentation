@@ -8,8 +8,8 @@ Globus file and data sharing platform
 
    globus_platform
    access
+   endpoints
    managing_and_transferring_files
-   local_endpoints
    data_sharing
    manage_globus_groups
    cli

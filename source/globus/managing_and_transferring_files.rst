@@ -16,10 +16,6 @@ After you have logged in to Globus, you will begin at the **File Manager**. The 
 Globus Collections and Endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Within Globus user data resides in a location called **Globus Collection**. Globus Collections can be hosted on various storage and computer systems, e.g., HPC clusters, laptops, or cloud storage. To use a collection you only need its name. It is not necessary to know any details about the storage or system where that collection is being hosted.
-
-An **Endpoint** is a server that hosts collections. If you want to be able to access, share, transfer, or manage data using Globus, the first step is to create an endpoint on the system where the data is (or will be) stored.
-
 To access a Globus Collection:
 
 -  Click in the :bgrnd1:`Collection` field at the top of the File Manager page and search all available collections and endpoints by typing a collection/endpoint name or a description. Globus will list collections with matching names.
