@@ -41,7 +41,7 @@ Jobs
 ----
 
 All jobs submitted from Open Ondemand will run on wICE. The Genius cluster is not supported. This also means that all your jobs should be submitted as **slurm** jobs.
-For more detail on how to create slurm job scripts, have a look here (Add link to slurm pages).
+For more detail on how to run jobs on wICE, check out our :ref:`quickstart guide <wice_t2_leuven>`_.
 
 The jobs tab has two menus: 'Active Jobs' and 'Job Composer':
 
