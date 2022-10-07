@@ -1,3 +1,5 @@
+.. include:: css.rst
+
 ===============
 Endpoints 
 ===============
