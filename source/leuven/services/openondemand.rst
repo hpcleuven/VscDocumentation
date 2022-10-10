@@ -234,8 +234,19 @@ sadly limits the flexibility to switch between different environments, as you ca
 
 Even with these limitations, there is still a way to work with R in code-server. For this, you need to install the 'R' extension created by Ikuyadeu. Once this
 is installed, you can specify the path in the settings (click the settings wheel of the extension, then click on 'Extension settings'): search for 'R > Rterm: Linux'
-and add the path to your preferred R installation. This can also be a miniconda R installation. The packages in the environment will then also be available to you.
-If you would need to switch R versions, you need to change this path and restart your terminal. Sadly, there is no direct way to change versions.
+and add the path to your preferred R installation. If you would need to switch R versions, you need to change this path and restart your terminal. It is strongly 
+recommended to use a miniconda environment for this. Not only can you use all the packages already installed in this environment, you also need to have the 
+`languageserver` package installed. For your conda environment, go to a terminal and use following commands::
+
+      source activate <env_name>
+      conda install -c conda-forge r-languageserver
+      
+Now you can use code-server as a R IDE as well. The first time you open up a script, you will get a warning that `languageserver` is not installed. You have to click
+'No'. You will still be able to work. It is just the extension that is not looking for `languageserver` in the correct place.
+
+**Remarks:**
+
+- Running lines of code is 'ctrl+enter' for R.
 
 cryo-sparc
 ==========
