@@ -76,8 +76,14 @@ To access and manage your local endpoints:
 Creating a managed endpoint
 ---------------------------
 
+The five Flemish universities have a `High Assurance subscription <https://www.globus.org/subscriptions>`_ for Globus, which allows the creation of extra managed endpoints. 
 
-TBA
+VSC users and researchers from those universities can create their own managed endpoint under this subcription.  
+
+You can find the technical prerequites `here <https://docs.globus.org/globus-connect-server/v5.4/#globus_connect_server_prerequisites>`_.
+
+If you want create your own managed endpoint, please mail to data@vscentrum.be. 
+
 
 .. include:: links.rst
 
