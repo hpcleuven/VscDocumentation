@@ -15,15 +15,6 @@ An **endpoint** is a server that hosts one or multiple collections.
 
 
 
-
-+-------------------------+------------+-----------+
-| Name                    | Header 2   | Header 3  |
-+=========================+============+===========+
-| KU Leuven Onedrive      | column 2   | column 3  |
-+-----------------------
-
-
-
 Available collections
 ------------------
 
