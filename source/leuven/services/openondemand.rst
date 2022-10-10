@@ -82,7 +82,7 @@ copying from. Use the system template that suit your needs the best when startin
 ones. Any file that is present in that folder, will be copied to your new one as well.
 
 Once you've created the new template folder, you can start customizing it to your needs. You could of course immediately create a new job from it, adapt some
-extra options and launch it (which will be explained in the next chapter), but you can still further custommize your template folder first. You can view the files in
+extra options and launch it (which will be explained in the next chapter), but you can still further customize your template folder first. You can view the files in
 the folder using the Folder Explorer (click 'View Files' on top or 'Open Dir' at the bottom). As explained above, you can edit or remove any file, create new files,
 upload new files... These files will be present in each job you create from this template, which means you fully adapt this to the standard set-up you use for your
 jobs.
