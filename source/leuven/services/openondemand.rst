@@ -169,7 +169,8 @@ For more general information concerning Jupyter Lab, go to their `official docum
 
 **Remarks:**
 
-- For now, the default location is ``$VSC_HOME``.
+- The start location is `$VSC_DATA`
+- At the moment, we do not support installing extensions in Jupyter Lab
 
 RStudio Server
 ==============
