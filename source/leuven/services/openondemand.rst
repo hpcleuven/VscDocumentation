@@ -9,8 +9,8 @@ About
 Open OnDemand provides a user interface to HPC clusters from within a web browser. This tool supports a range of different apps and features that not only allow the
 user to easily submit jobs from within the browser session, but also provide different coding GUIs, tools for plotting and more.
 
-You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. You can log in using your KU Leuven credentials. Access for VSC users from other 
-organizations is not yet supported. Once logged in, you'll notice you are connected with your VSC account. 
+You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. You can log in using your KU Leuven or VSC credentials. Access is only granted to VSC3 
+users for the moment. Once logged in, you'll notice you are connected with your VSC account. 
 
 Open OnDemand is only available for the Tier-2 wICE cluster.
 
