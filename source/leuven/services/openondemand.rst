@@ -9,7 +9,7 @@ About
 Open OnDemand provides a user interface to HPC clusters from within a web browser. This tool supports a range of different apps and features that not only allow the
 user to easily submit jobs from within the browser session, but also provide different coding GUIs, tools for plotting and more.
 
-You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. You can log in using your KU Leuven credentials. Access for vsc users from other 
+You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. You can log in using your KU Leuven credentials. Access for VSC users from other 
 organizations is not yet supported. Once logged in, you'll notice you are connected with your VSC account. 
 
 Open OnDemand is only available for the Tier-2 wICE cluster.
@@ -69,9 +69,9 @@ To enter the Templates menu, you can click on 'Templates' at the top once you ar
 Job'-'From Template'. Once in this menu, you should see a table with 3 System Templates. The resources that are requested in these scripts are the default settings. 
 The templates:
 
-- CPU job template: this is a template for CPU jobs (batch partition). This is also the default template (which you will get when clicking 'From Default Template' under the 'New Job' button in the 'Jobs' menu).
-- GPU job template: a template for creating GPU jobs 
-- Big memory CPU jobs: a template to create job scripts that submit to the big memory partition instead of the default batch partition
+- CPU job template: a template for jobs on the thin nodes (the default `batch` partition). This is also the default template (which you will get when clicking 'From Default Template' under the 'New Job' button in the 'Jobs' menu).
+- GPU job template: a template for jobs with GPU resources (`gpu` partition) 
+- Big memory CPU jobs: a template for jobs with large memory requirements (`bigmem` partition)
 
 You can create your own templates from scratch or by copying one of the existing templates. In both cases you will be redirected to a page where you can provide a
 name, the cluster (only wICE) and add some notes. Once you save this, you will create a new folder in the templates folder 
@@ -101,8 +101,9 @@ Using the 'Job Options' button, you can add some more specifications to your job
 
 - Name: this will specify a name in the job composer list. This will not be your job name. The actual job name is the one that will be specified in the job script. If you do not specify a name there, you will see that that job gets the name 'sbatch' in the 'Active Jobs' menu.
 - Cluster: there is no need to change this, as you only can specify 'wice'.
-- Specify job script: if you have multiple job scripts in the directory, you can specify which one to run
-- Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script**
+- Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
+- Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
+- Job array: we do not recommend using this. If you would like to use job arrays, have a look `here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`_.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
@@ -127,7 +128,7 @@ explained in the specific paragraph about the app. A general overview of the oth
 
 - Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
 - Partition: you can choose any of the existing partitions. If you require a GPU, you can of course only submit jobs to the `gpu` or `interactive` partitions. For the most general use cases we recommend that you use the `interactive` partition.
-- Numbers of hours: your walltime (min 1h)
+- Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
 - Number of GPUs. If you request a GPU of the `gpu` partition you will get a full A100 GPU. For the `interactive` partition, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types.
@@ -241,7 +242,7 @@ recommended to use a miniconda environment for this. Not only can you use all th
       source activate <env_name>
       conda install -c conda-forge r-languageserver
       
-Now you can use code-server as a R IDE as well. The first time you open up a script, you will get a warning that `languageserver` is not installed. You have to click
+Now you can use code-server as an R IDE as well. The first time you open up a script, you will get a warning that `languageserver` is not installed. You have to click
 'No'. You will still be able to work. It is just the extension that is not looking for `languageserver` in the correct place.
 
 **Remarks:**
