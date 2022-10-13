@@ -41,14 +41,14 @@ Jobs
 ----
 
 All jobs submitted from Open OnDemand will run on wICE. The Genius cluster is not supported. This also means that all your jobs should be submitted as **Slurm** jobs.
-For more detail on how to run jobs on wICE, check out our :ref:`quickstart guide <wice_t2_leuven>`_.
+For more detail on how to run jobs on wICE, check out our :ref:`quickstart guide <wice_t2_leuven>`.
 
 The jobs tab has two menus: 'Active Jobs' and 'Job Composer':
 
 Active jobs
 ===========
 
-This lists all of your running, queued and completed jobs. Completed jobs will slowly disappear after a couple of minutes. You have a handy overview of some job
+This lists all of your running, queued and completed jobs. Completed jobs will disappear after a couple of minutes. You have a handy overview of some job
 details by clicking the large arrow next to the job id, including things like the node list, the account you used, the status of the job... It also gives you the
 option to open the folder of the job script in the file manager. and thus inspect the created output and error files. 
 
@@ -93,7 +93,7 @@ Jobs
 The functioning of creating jobs is a bit similar to how you create new templates. Whatever method you choose, you will create a new folder for each job, this time
 located at ``$VSC_DATA/ondemand/data/projects/default/``. The job folders will be numbered in the order you have created them. **Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.** When removing a job, the folder will be deleted as well. 
 
-To create a job, press the 'New Job' button and choose the option that suits your needs the most. You will get a new item in your job list for each job you've created. 
+To create a job, press the 'New Job' button and choose the option that best suits your needs. You will get a new item in your job list for each job you've created. 
 Again, you can edit, remove and add files like you want to create a custom job by going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking 
 the file names. The 'Open Editor' button in the 'Submit Script' overview also allows you to edit the job script directly.
 
@@ -127,7 +127,7 @@ resources might result in a long queue time. Between all the apps, most of these
 explained in the specific paragraph about the app. A general overview of the others can be found here:
 
 - Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
-- Partition: you can choose any of the existing partitions. If you require a GPU, you can of course only submit jobs to the `gpu` or `interactive` partitions. For the most general use cases we recommend that you use the `interactive` partition.
+- Partition: you can choose any of the existing partitions. We recommend using the ``interactive`` partition for most interactive work.
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
@@ -151,11 +151,13 @@ environments and their associated kernels, both the Python and R installation wi
 
 To create any other kernels, first create a  `Python <https://docs.vscentrum.be/en/latest/software/python_package_management.html#create-an-environment>`_ or 
 `R <https://docs.vscentrum.be/en/latest/software/r_package_management.html#creating-an-environment>`_ conda environment. The second step consists out of effectively
-creating the kernel in your home folder. This starts with first of all activating your conda environment::
+creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location. The following commands should be excecuted from a shell, 
+and only need to be done once for the set-up of each new kernel. This starts with first of all activating your conda 
+environment::
 
       source activate <env_name>
       
-For Python you will need the ``ipykernel`` package installed in your conda environment. Then you can create the kernel as follows::
+For Python you will need the ``ipykernel`` package installed in your conda environment. Then you create the kernel as follows::
 
       python -m ipykernel install  --prefix=${VSC_HOME}/.local/ --name '<env_name>'
       
@@ -203,10 +205,10 @@ window is probably one of the first things you should know: click on the three h
 open a shell on the node you are running your session on. Notice that you are start in your ``$VSC_DATA`` folder. You can use this as a regular shell, meaning that you
 can submit jobs, load modules and so on. 
 
-Code-server contains many different options and menus, but only a few will be discussed here. Feel free to explore them. We will however discuss how to set up code-
-server to use, any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of the 
-specific interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the steps 
-for both Python and R are described. 
+Code-server contains many different options and menus, but only a few will be discussed here. Feel free to explore them. We will however discuss how to set up 
+code-server to use, any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of 
+the specific interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the 
+steps for both Python and R are described. 
 
 Python
 ++++++
