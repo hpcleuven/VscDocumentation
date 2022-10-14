@@ -63,10 +63,47 @@ When you click this,
 Transferring files between collections
 ------------------
 
+The main goal of Globus is to transfer data from one collection to another.  
+
+To do this, you first need to open a second panel inside the file manager by clicking the middle button next to 'Panel' in the top right corner. 
+Next, you can use the collection search bar on the right side to search for a second collection:
+
+.. image:: using_globus_via_web/dual_pane.png
+
+Your account remembers your panel settings when you close the website, so you don't need to repeat this step every time.
+
+To transfer a file from collection A to collection B:
+
+- Click on the panel of collection A to select it. 
+- Click the checkboxes next to the file(s)/folder(s) you would like to transfer.
+- Before starting the transfer, verify you are in the correct folder in collection B. This will be the destination of the transfer. 
+- Click on the 'start' button above collection A. 
+
+Conveniently, the arrow on the start button indicated the direction of the transfer.
+
+.. image:: using_globus_via_web/transfer.png
+
+Additionally, Globus has a multitude of options for transfers under the dropdown 'Transfer & Timer Options', between the start buttons. 
+
+.. note::
+   Each panel has a 'refresh' button, represented by a circular arrow. 
+   If you don't see your files yet after a transfer has been completed, you should refresh the collection. 
+
+Transfers between endpoints are 'fire-and-forget': once they are started, you can close Globus, and the transfer will continue.  
+You can follow-up on both running and completed transfers in the 'activity' tab on the left side of the page.
+By default, Globus will also send you a mail when a transfer has been completed.
+
+.. note::
+   If you are transferring data from or to a local endpoint, of course you need to keep the Globus Personal Connect app running.
+   However, you can still close the Globus web page. 
 
 
-** Remark: open a second tab **
-** Remark: 
+
+
+
+
+
+
 
 
 
