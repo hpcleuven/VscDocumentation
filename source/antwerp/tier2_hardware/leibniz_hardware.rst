@@ -19,7 +19,7 @@ Access restrictions
 Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
 network and runs the standard VSC software setup. It is also available to all
-VSC-users, though we appreciate that you contact the UAntwerpen support team so
+VSC users, though we appreciate that you contact the UAntwerpen support team so
 that we know why you want to use the cluster.
 
 Jobs can have a maximal execution wall time of 3 days (72 hours), except on the
@@ -111,23 +111,21 @@ Visualisation node    viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.
 Characteristics of the compute nodes
 ------------------------------------
 
-To remain compatible with the typical VSC setup, a number of properties 
-can be used in job scripts. However, only one is really useful in the current
-setup of leibniz to select the proper node type, ``mem256``.
+To remain compatible with the typical VSC setup, a number of features 
+can be used in job scripts (e.g. with Slurm's ``--constraint`` option). However, only one is really useful in the current
+setup of Leibniz to select the proper node type, ``mem256``.
 
 ============       ====================================================================================
-property           explanation
+feature            explanation
 ============       ====================================================================================
 broadwell          only use Intel processors from the Broadwell family (E5-XXXXv4) 
                    (Not needed at the moment as this is CPU type is selected automatically)
 ivybridge          only use Intel processors from the Ivy Bridge family (E5-XXXXv2)
                    Not needed at the moment as there is no automatic selection of the queue for the
-                   Ivy Bridge nodes. Specify ``-q hopper`` instead.
+                   Ivy Bridge nodes. Specify ``-p ivybridge`` instead.
 gpu                only use the GPGPU nodes of Leibniz.
                    Not needed at the moment as there is no automatic selection of the queue for the
-                   GPGPU nodes at the moment. Specify ``-q gpu`` instead.
-ib                 use InfiniBand interconnect 
-                   (Not needed at the moment as all nodes are connected to the InfiniBand interconnect)
+                   GPGPU nodes at the moment. Specify ``-p pascal_gpu`` instead.
 mem128             use nodes with 128 GB RAM (roughly 112 GB available). 
                    This is the majority of the nodes on Leibniz.
                    Requesting this as a feature ensures that you get a node with 128 GB of memory and

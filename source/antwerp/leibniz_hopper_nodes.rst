@@ -3,7 +3,7 @@
 Using the hopper nodes in leibniz
 =================================
 
-The 24 nodes of hopper with 256 GB RAM have been recpvered and integrated into
+The 24 nodes of hopper with 256 GB RAM have been recovered and integrated into
 leibniz. These nodes should be used for:
 
   * Jobs that need more than 128 GB of RAM to run properly and do not have enough
@@ -37,21 +37,19 @@ compute nodes.
 Starting jobs
 -------------
 
-The hopper nodes are managed through a separate queue in the queueing system
-that cannot be accessed through the automatic queue dispatch mechanism in 
-Torque and hence cannot be accessed by specifying features in your node
-request. Instead, specify that the job should be submitted to the queue
-``hopper`` either by adding ``-q hopper`` to the qsub command, e.g.,
+The hopper nodes are managed through a separate Slurm partition. 
+
+To submit a job on a Hopper compute node, specify the `ìvybridge`` Slurm partition, e.g. using
 
 .. code:: bash
    
-    qsub -q hopper <jobscript>
+    sbatch -p ivybridge <jobscript>
 
 or by adding the line
 
 .. code:: bash
    
-    #PBS -q hopper
+    #SBATCH -p ivybridge
 
 to your job script.
 

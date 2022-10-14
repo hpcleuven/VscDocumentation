@@ -18,11 +18,10 @@ Access restrictions
 Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
 network and runs to a large extent the standard VSC software setup.
-With Vaughan we do switch away from the Torque/Moab combo to Slurm Workload
-Manager and we use native Slurm job scripts. Users are required to take the
-"transition to Vaughan and Slurm" course when the setup of Vaughan is ready.
+With Vaughan we switched away from the Torque/Moab combo to Slurm Workload
+Manager and we use native Slurm job scripts. 
 Vaughan is also available to all
-VSC-users, though we appreciate that you contact the UAntwerp support team so
+VSC users, though we appreciate that you contact the UAntwerp support team so
 that we know why you want to use the cluster.
 
 Jobs can have a maximal execution wall time of 3 days (72 hours).
@@ -30,11 +29,7 @@ Vaughan should only be used if you have large enough parallel jobs to or can
 otherwise sufficiently fill up all cores of a compute node. Other work should
 be done on Leibniz.
 
-The login nodes are freely available. Access to the job queues and compute
-nodes is currently restricted.
-Contact UAntwerp user support (hpc@uantwerpen.be) if you are interested in
-being a test user. One requirement is that you have jobs large enough to fill
-a compute node.
+The login nodes and regular compute nodes are freely available. 
 
 Hardware details
 ----------------
@@ -106,7 +101,7 @@ Available partitions
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
 the partition your job is submitted to. This indicates the type of your job and
 imposes some restrictions, but may let your job start sooner.
-When the option is omitted, your job is submitted to the default partition (*vaughan*).
+When the option is omitted, your job is submitted to the default partition (*zen2*).
 
 The following partitions are available:
 
@@ -114,7 +109,7 @@ The following partitions are available:
 =========       ================================================================
 partition       limits
 =========       ================================================================
-*vaughan*       Default. Maximum wall time of 3 days.
+*zen2*          Default. Maximum wall time of 3 days.
 debug           Maximum 2 nodes with a maximum wall time of 1 hour.
 short           Maximum wall time of 6 hours, with priority boost.
 =========       ================================================================
