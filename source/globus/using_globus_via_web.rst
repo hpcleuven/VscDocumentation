@@ -34,6 +34,7 @@ You can move to other folders in two ways:
 If you ever want to go back to the previous level, you can click on the button 'up one folder'. 
 
 
+
 Uploading/downloading files via HTTPS
 ------------------
 
@@ -49,13 +50,14 @@ You will be presented with a choice between 'Select Files to Upload' and 'Select
 
 .. image:: using_globus_via_web/https_2.png
 
-To download a file or folder over HTTPS, hover over its name. You should see a checkbox appearing next to the name: click it.  
+To download a file over HTTPS, hover over its name. You should see a checkbox appearing next to the name: click it.  
 
-In the menu on the right, you should see the icon 'Download' lighting up
+In the menu on the right, you should see the icon 'Download' lighting up. 
+When you click this, 
 
-
-
-
+.. note::
+   It is only possible to download individual files over HTTPS.  
+   If you need to download (nested) folders to your PC, we suggest looking at :ref:`globus-local-endpoints`.
 
 
 Transferring files between collections
@@ -64,6 +66,7 @@ Transferring files between collections
 
 
 ** Remark: open a second tab **
+** Remark: 
 
 
 
