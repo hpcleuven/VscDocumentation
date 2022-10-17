@@ -13,6 +13,7 @@ Hardware details
    - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (Ice lake), 36 cores each
    - 256 GB RAM 
    - 960 GB SSD local disk
+   - partitions ``batch/batch_long``
 
 - 5 big memory nodes
 
@@ -35,6 +36,7 @@ Hardware details
    - 512 GB RAM
    - 1 NVIDIA A100, 80 GB GDDR 
    - 960 GB SSD local disk
+   - partition ``interactive``
 
 The nodes are connected using an Infiniband HDR-100 network, the islands are indicated on the diagram below.
 
