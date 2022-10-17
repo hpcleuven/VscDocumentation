@@ -31,7 +31,7 @@ The Hopper compute nodes should be used for:
 Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
 network but runs an older version of the standard VSC software setup.
-It also available to all
+It is also available to all
 VSC users, though we appreciate that you contact the UAntwerp support team so
 that we know why you want to use the cluster.
 
