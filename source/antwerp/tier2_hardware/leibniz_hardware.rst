@@ -26,7 +26,7 @@ that we know why you want to use the cluster.
 
 Jobs can have a maximal execution wall time of 3 days (72 hours).
 On the accelerator nodes, a shorter wall time of 1 day applies.
-For big parallel job, consider using the newer cluster :ref:`Vaughan<Vaughan hardware>`,
+For big parallel jobs, consider using the newer cluster :ref:`Vaughan<Vaughan hardware>`,
 which has nodes with 64 cores.
 
 
