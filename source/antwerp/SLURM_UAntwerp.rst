@@ -294,7 +294,13 @@ be loaded in your job environment. This poses a number of risks:
   work on the cluster, but that implies that some nodes will be running one version while
   other nodes will be running another version of the OS setup.
 
-Therefore, to avoid accidental mistakes, we advise you to apply one of the following solutions:
+To alleviate these issues,  we set a minimal environment for jobs by default. This means that, along
+with the SLURM_* variables, only the HOME, USER and TERM environment variables are exported to the job.
+The PATH environment variable is set to a minimum in the job environment. This implies that the desired
+software modules must be loaded in your job scripts for use during the execution of the job.
+
+In case you would attempt to use the ``--export`` sbatch option to override this behaviour, 
+we advise you to apply one of the following solutions to avoid accidental mistakes:
 
 * Clear the environment in your job script by reloading all modules that are needed and
   ensuring that all environment variables that you need are set.
