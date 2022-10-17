@@ -118,7 +118,7 @@ Origin of the name
 Hopper is named after `Grace Hopper <https://en.wikipedia.org/wiki/Grace_Hopper>`_.
 Grace Hopper was an American mathematician turned computer scientist and United States Navy
 rear admiral. She worked as a programmer of some of the first computer systems and devised
-hte theory of machine independent programming languages. Her work laid at the base of the 
+the theory of machine independent programming languages. Her work laid at the base of the 
 programming language COBOL. 
 
 
