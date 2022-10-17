@@ -1,6 +1,6 @@
-.. _UAntwerpen storage:
+.. _UAntwerp storage:
 
-UAntwerpen storage
+UAntwerp storage
 ==================
 
 The storage is organised according to the :ref:`VSC storage guidelines<data location>`.
