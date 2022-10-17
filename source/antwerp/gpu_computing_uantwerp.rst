@@ -55,13 +55,13 @@ access to a single, dedicated GPU at the same time.
 
 In total, three GPU partitions are available:
 
-============       ================================================================
-partition          available nodes
-============       ================================================================
-pascal_gpu         2 Leibniz nodes with 2 NVIDIA Tesla P100 cards
-ampere_gpu         1 Vaughan node with 4 NVIDIA Tesla A100 cards
-arcturus_gpu       2 Vaughan nodes with 2 AMD MI100 cards
-============       ================================================================
+=======   ============   ==================================================
+Cluster   Partition      Available nodes
+=======   ============   ==================================================
+Vaughan   arcturus_gpu   2 nodes with 2 AMD Instinct (Arcturus) MI100 cards
+Vaughan   ampere_gpu     1 node with 4 NVIDIA (Tesla) Ampere A100 cards
+Leibniz   pascal_gpu     2 nodes with 2 NVIDIA (Tesla) Pascal P100 cards
+=======   ============   ==================================================
  
 
 To submit a job on a GPU compute node belonging to a certain partition and get a single GPU, use the  ``sbatch`` command
