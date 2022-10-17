@@ -6,8 +6,8 @@ UAntwerp-specific software instructions
 Slurm Workload Manager
 ----------------------
 
-Vaughan runs Slurm Workload Manager as the resource manager and scheduler; 
-Leibniz will be switched over at a later date. The Slurm documentation is work-in-progress
+Both Leibniz and Vaughan run Slurm Workload Manager as the resource manager and scheduler.
+The Slurm documentation is work-in-progress
 as we are still refining the setup.
 
 - An overview of Slurm concepts and commands:

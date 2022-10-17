@@ -3,15 +3,17 @@
 Leibniz hardware
 ================
 
-Leibniz was installed in the spring of 2017. It is a NEC system consisting of
-152 nodes with 2 14-core Intel `E5-2680v4 <https://ark.intel.com/products/75277>`_ 
+The Leibniz cluster was installed in the spring of 2017. It is a NEC system consisting of
+152 compute nodes with dual 14-core Intel `E5-2680v4 <https://ark.intel.com/products/75277>`_ 
 Broadwell generation CPUs connected through a EDR InfiniBand network. 144 of
 these nodes have 128 GB RAM, the other
-8 have 256 GB RAM. The nodes do not have a sizeable local disk. The cluster also
-contains a node for visualisation and 3 node types for experimenting with accelerator:
-2 nodes for GPU computing (NVIDIA Pascal
-generation), one node with dual NEC SX-Aurora TSUBASA vector processors
-and one node with an Intel Xeon Phi expansion board.
+8 have 256 GB RAM. The nodes do not have a sizeable local disk.
+
+Leibniz also
+contains a node for visualisation and 3 node types for experimenting with accelerators:
+2 nodes for GPU computing with two NVIDIA Tesla P100 GPU compute cards,
+1 node with dual NEC SX-Aurora TSUBASA vector processors
+and 1 node with an Intel Xeon Phi expansion board.
 
 Access restrictions
 -------------------
@@ -19,20 +21,14 @@ Access restrictions
 Access is available for faculty, students (master's projects under faculty
 supervision), and researchers of the AUHA. The cluster is integrated in the VSC
 network and runs the standard VSC software setup. It is also available to all
-VSC-users, though we appreciate that you contact the UAntwerpen support team so
+VSC users, though we appreciate that you contact the UAntwerp support team so
 that we know why you want to use the cluster.
 
-Jobs can have a maximal execution wall time of 3 days (72 hours), except on the
-"hopper" compute nodes of Leibniz were it is possible to submit 7 days jobs on
-request (motivation needed). 
+Jobs can have a maximal execution wall time of 3 days (72 hours).
+On the accelerator nodes, a shorter wall time of 1 day applies.
+For big parallel jobs, consider using the newer cluster :ref:`Vaughan<Vaughan hardware>`,
+which has nodes with 64 cores.
 
-Please also consider using the newer cluster Vaughan for big parallel jobs
-that can use 64 cores or multiples thereof as soon as that cluster becomes 
-available.
-
-The login nodes and regular compute nodes are freely available. Contact 
-UAntwerp user support (hpc@uantwerpen.be) for access to the visualization node
-and accelerator nodes (free of charge but controlled access).
 
 Hardware details
 ----------------
@@ -43,47 +39,41 @@ Hardware details
     - 128 GB RAM (144 nodes) or 256 GB RAM (8 nodes)
     - 120 GB SSD local disk
 
-- 24 "hopper" compute nodes (recovered from the former Hopper cluster)
+- 2 GPU nodes (NVIDIA Pascal architecture)
 
-    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 10 cores each
-    - 64 GB RAM (144 nodes) or 256 GB RAM (24 nodes)
-    - 500 GB local disk
-    - :ref:`Instructions for the hopper compute nodes <UAntwerp hopper nodes>`
-
-- 2 GPGPU nodes
-
-   - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
-   - 128 GB RAM
-   - 2 NVIDIA P100, 16 GB HBM2
-   - 120 GB SSD local disk
-   - :ref:`Instructions for the GPGPU nodes <GPU computing UAntwerp>`
+    - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
+    - 2 NVIDIA Tesla P100, 16 GB HBM2
+    - 128 GB RAM
+    - 120 GB SSD local disk
+    - :ref:`Instructions for using the GPU nodes <GPU computing UAntwerp>`
    
 - 1 vector computing node (NEC SX-Aurora TSUBASA model A300-2)
 
-   - 1 Xeon `Gold 6126 <https://ark.intel.com/products/120483>`_ CPU\@2.60 GHz (Skylake) with 12 cores
-   - 96 GB RAM
-   - 2 `NEC SX-Aurora Vector Engines type 10B <https://www.nec.com/en/global/solutions/hpc/sx/vector_engine.html>`_ 
-     (per card 8 cores \@1.4 GHz, 48 GB HBM2)
-   - 240 GB SSD local disk
-   - :ref:`Instructions for the NEC SX-Aurora node <UAntwerp NEC SX Aurora>`
+    - 1 Xeon `Gold 6126 <https://ark.intel.com/products/120483>`_ CPU\@2.60 GHz (Skylake) with 12 cores
+    - 2 `NEC SX-Aurora Vector Engines type 10B <https://www.nec.com/en/global/solutions/hpc/sx/vector_engine.html>`_ 
+      (per card 8 cores \@1.4 GHz, 48 GB HBM2)
+    - 96 GB RAM
+    - 240 GB SSD local disk
+    - :ref:`Instructions for using the NEC SX-Aurora node <UAntwerp NEC SX Aurora>`
 
 - 2 login nodes
 
     - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
     - 256 GB RAM
-    - 120 GB SSD local disk
+    - 2x 1 TB HDD local disk (raid 1)
 
 - 1 visualization node
 
     - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
-    - 256 GB RAM
     - 1 NVIDIA Quadro P5000
-    - 120 GB SSD local disk
-    - :ref:`Instructions for the visualization node <remote visualization UAntwerp>`
+    - 256 GB RAM
+    - 2x 1 TB HDD local disk (raid 1)
+    - :ref:`Instructions for using the visualization node <remote visualization UAntwerp>`
 
-The nodes are connected using an InfiniBand EDR network except for the "hopper" compute nodes that utilize
-FDR10 InfiniBand. 
-More info on the storage system is available on the :ref:`UAntwerpen storage` page.
+All nodes are connected using an InfiniBand EDR network. The regular compute nodes
+are logically organised in 5 islands with 24 nodes, 1 island with 22 nodes and 1 island
+with 10 nodes (including the 8 nodes with 256 GB RAM).
+Storage is provided through the central :ref:`UAntwerp storage` system.
 
 
 Login infrastructure
@@ -91,54 +81,75 @@ Login infrastructure
 
 Direct login is possible to both login nodes and to the visualization node.
 
-- From outside the VSC network: use the external interface names. Outside of
+- From outside the VSC network: use the external interface names. Note that from outside of
   Belgium, a :ref:`VPN connection <VPN>` to the UAntwerp network is required.
 - From inside the VSC network (e.g., another VSC cluster): use the internal
   interface names.
 
-===================   =================================  ============================
-..                    External interface                 Internal interface
-===================   =================================  ============================
-Login generic         login\-leibniz.hpc.uantwerpen.be   ..
-Login\                login1\-leibniz.hpc.uantwerpen.be  ln1.leibniz.antwerpen.vsc
-                                                         login1.leibniz.antwerpen.vsc
-..                    login2\-leibniz.hpc.uantwerpen.be  ln2.leibniz.antwerpen.vsc
-                                                         login2.leibniz.antwerpen.vsc
-Visualisation node    viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
-===================   =================================  ============================
+=========================   =================================  ============================
+Node                        External interface                 Internal interface
+=========================   =================================  ============================
+Login node (generic name)   login\-leibniz.hpc.uantwerpen.be   login.leibniz.antwerpen.vsc
+Login node (per node)       login1\-leibniz.hpc.uantwerpen.be  login1.leibniz.antwerpen.vsc
+..                          login2\-leibniz.hpc.uantwerpen.be  login2.leibniz.antwerpen.vsc
+Visualisation node          viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
+=========================   =================================  ============================
 
+
+Available resources
+-------------------
 
 Characteristics of the compute nodes
-------------------------------------
+""""""""""""""""""""""""""""""""""""
 
-To remain compatible with the typical VSC setup, a number of properties 
-can be used in job scripts. However, only one is really useful in the current
-setup of leibniz to select the proper node type, ``mem256``.
+**Leibniz is running the Slurm Workload Manager as its resource manager and scheduler.**
+We do not support the PBS compatibility layer but encourage users to develop
+proper Slurm job scripts as one can then fully exploit the Slurm features and
+enjoy the power of the ``srun`` command when starting processes.
 
-============       ====================================================================================
-property           explanation
-============       ====================================================================================
-broadwell          only use Intel processors from the Broadwell family (E5-XXXXv4) 
-                   (Not needed at the moment as this is CPU type is selected automatically)
-ivybridge          only use Intel processors from the Ivy Bridge family (E5-XXXXv2)
-                   Not needed at the moment as there is no automatic selection of the queue for the
-                   Ivy Bridge nodes. Specify ``-q hopper`` instead.
-gpu                only use the GPGPU nodes of Leibniz.
-                   Not needed at the moment as there is no automatic selection of the queue for the
-                   GPGPU nodes at the moment. Specify ``-q gpu`` instead.
-ib                 use InfiniBand interconnect 
-                   (Not needed at the moment as all nodes are connected to the InfiniBand interconnect)
-mem128             use nodes with 128 GB RAM (roughly 112 GB available). 
-                   This is the majority of the nodes on Leibniz.
-                   Requesting this as a feature ensures that you get a node with 128 GB of memory and
-                   keep the nodes with more memory available for other users who really need that
-                   feature.
-mem256             use nodes with 256 GB RAM (roughly 240 GB available). 
-                   This property is useful if you submit a batch of jobs that require more than 4 GB of 
-                   RAM per processor but do not use all cores and you do not want to use a tool to 
-                   bundle jobs yourself such as Worker, as it helps the scheduler to put those jobs on 
-                   nodes that can be further filled with your jobs.
-============       ====================================================================================
+Make sure to read the following pages which give a lot of information on Slurm
+and how to convert your Torque scripts:
+
+* :ref:`Local Slurm documentation <Antwerp Slurm>`
+* :ref:`Important differences between Slurm and Torque<Antwerp Slurm_PBS_differences>`
+* :ref:`Converting PBS/Torque options to Slurm <Antwerp Slurm_convert_from_PBS>`
+
+To remain compatible with the typical VSC setup, a number of features 
+can be used in job scripts (e.g. with Slurm's ``--constraint`` option).
+However, only the following features are really useful in the current
+setup of Leibniz to select regular compute nodes based on the amount
+of available memory.
+
+=======   ====================================================================================
+Feature   Explanation
+=======   ====================================================================================
+mem128    Use nodes with 128 GB RAM (roughly 112 GB available). 
+          This is the majority of the regular compute nodes on Leibniz.
+          Requesting this as a feature ensures that you only get nodes with 128 GB of memory
+          and keep the nodes with more memory available for other users who really need that
+          feature.
+mem256    Use nodes with 256 GB RAM (roughly 240 GB available). 
+          This property is useful if you submit a batch of jobs that require more than 4 GB of 
+          memory per processor but do not use all cores and you do not want to use a tool
+          such as Worker to bundle jobs yourself, as it helps the scheduler to put those jobs 
+          on nodes that can be further filled with your jobs.
+=======   ====================================================================================
+
+Available partitions
+""""""""""""""""""""
+
+When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
+the partition your job is submitted to.
+When the option is omitted, your job is submitted to the default partition (*broadwell*).
+
+The following partitions are available:
+
+===========   =========================================================
+Partition     Limits
+===========   =========================================================
+*broadwell*   Default. Maximum wall time of 3 days.
+pascal_gpu    Submit to the Pascal GPU nodes.
+===========   =========================================================
 
 
 Compiling for Leibniz
@@ -146,20 +157,20 @@ Compiling for Leibniz
 
 To compile code for Leibniz, all ``intel``, 
 ``foss`` and ``GCC`` modules can be used (the 
-latter equivalent to ``foss`` but without MPI and the math libraries).
+latter being equivalent to ``foss`` but without MPI and the math libraries).
 
 
 Optimization options for the Intel compilers
 """"""""""""""""""""""""""""""""""""""""""""
 
-To optimize specifically for Leibniz, compile on one of the Leibniz login 
+To optimize specifically for Leibniz, compile on the Leibniz login 
 or compute nodes and combine the option ``-xHost`` with either optimization 
 level ``-O2`` or ``-O3``. For some codes, the additional optimizations at
 level ``-O3`` actually produce slower code (often the case if the code
 contains many short loops).
 
 Note that if you forget these options, the default for the Intel compilers
-is to generate code at optimization level ``-O2`` (which is pretty good) but
+is to generate code using optimization level ``-O2`` (which is pretty good) but
 for the Pentium 4 (``-march=pentium4``) which uses none of the new instructions
 and hence also none of the vector instructions introduced since 2005,
 which is pretty bad. Hence always specify ``-xHost`` (or any of the equivalent
@@ -173,7 +184,7 @@ Optimization options for the GNU compilers
 Never use the default GNU compilers installed
 on the system, but always load one of the ``foss`` or ``GCC`` modules.
 
-To optimize for Leibniz, compile on one of the Leibniz login 
+To optimize for Leibniz, compile on the Leibniz login 
 or compute nodes and combine either the option ``-march=native``
 or ``-march=broadwell`` with either optimization 
 level ``-O2`` or ``-O3``. In most cases, and especially for

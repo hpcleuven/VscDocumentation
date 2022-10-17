@@ -11,9 +11,8 @@ on the size and usage of these data. Following locations are available:
    -  Location available as $VSC_HOME
    -  The data stored here should be relatively small, and not
       generating very intense I/O during jobs.
-      Its main purpose is to stora all kinds of configuration files are
-      stored, e.g., .bashrc, or MATLAB, and Eclipse
-      configuration, ...
+      Its main purpose is to store all kinds of configuration files,
+      e.g., .bashrc, or MATLAB, and Eclipse configuration, ...
    -  Performance is tuned for the intended load: reading configuration
       files etc.
    -  Readable and writable on all VSC sites.
@@ -65,7 +64,7 @@ crash.
 A few additional site-specific remarks concerning data storage can be found
 on the following pages:
 
-   - :ref:`UAntwerpen<UAntwerpen storage>`
+   - :ref:`UAntwerpen<UAntwerp storage>`
    - :ref:`VUB<VUB storage>`
    - :ref:`HPC-UGent Tier-2<UGent storage>`
    - :ref:`KU Leuven/UHasselt<KU Leuven storage>`
