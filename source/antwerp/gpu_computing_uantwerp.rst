@@ -3,13 +3,13 @@
 GPU computing @ UAntwerp
 ========================
 
-Leibniz has two compute nodes each equipped with two NVIDIA Tesla P100
+Leibniz has two compute nodes each equipped with two NVIDIA Pascal P100
 GPU compute cards, the most powerful cards available at the time of
 installation of the system. Vaughan has one compute node equipped with 
-four NVIDIA Tesla A100 GPU compute cards. We run the regular NVIDIA software stack on
+four NVIDIA Ampere A100 GPU compute cards. We run the regular NVIDIA software stack on
 those systems.
 
-Additionally, Vaughan has two compute nodes equipped with two AMD Instinct
+Additionally, Vaughan has two compute nodes equipped with two AMD Instinct (Arcturus)
 MI100 GPU compute cards. We run the AMD ROCm software stack on those systems.
 
 The main goal of the system is to assess the performance of GPUs for
@@ -59,8 +59,8 @@ In total, three GPU partitions are available:
 Cluster   Partition      Available nodes
 =======   ============   ==================================================
 Vaughan   arcturus_gpu   2 nodes with 2 AMD Instinct (Arcturus) MI100 cards
-Vaughan   ampere_gpu     1 node with 4 NVIDIA (Tesla) Ampere A100 cards
-Leibniz   pascal_gpu     2 nodes with 2 NVIDIA (Tesla) Pascal P100 cards
+Vaughan   ampere_gpu     1 node with 4 NVIDIA Ampere A100 cards
+Leibniz   pascal_gpu     2 nodes with 2 NVIDIA Pascal P100 cards
 =======   ============   ==================================================
  
 

@@ -11,7 +11,7 @@ these nodes have 128 GB RAM, the other
 
 Leibniz also
 contains a node for visualisation and 3 node types for experimenting with accelerators:
-2 nodes for GPU computing with two NVIDIA Tesla P100 GPU compute cards,
+2 nodes for GPU computing with two NVIDIA Pascal P100 GPU compute cards,
 1 node with dual NEC SX-Aurora TSUBASA vector processors
 and 1 node with an Intel Xeon Phi expansion board.
 
@@ -39,10 +39,10 @@ Hardware details
     - 128 GB RAM (144 nodes) or 256 GB RAM (8 nodes)
     - 120 GB SSD local disk
 
-- 2 GPU nodes (NVIDIA Pascal architecture)
+- 2 NVIDIA GPU nodes
 
     - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
-    - 2 NVIDIA Tesla P100, 16 GB HBM2
+    - 2 NVIDIA Pascal P100, 16 GB HBM2
     - 128 GB RAM
     - 120 GB SSD local disk
     - :ref:`Instructions for using the GPU nodes <GPU computing UAntwerp>`

@@ -13,7 +13,7 @@ All nodes have 256 GB RAM.
 The nodes do not have a sizeable local disk.
 
 Vaughan also contains 2 node types for GPU computing: 1 node with
-four NVIDIA (Tesla) Ampere A100 GPU compute cards and 2 nodes equipped with
+four NVIDIA Ampere A100 GPU compute cards and 2 nodes equipped with
 two AMD Instinct (Arcturus) MI100 GPU compute cards.
 
 Access restrictions
@@ -44,7 +44,7 @@ Hardware details
 - 1 NVIDIA GPU node
 
     - 2 AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ CPUs\@2.35 GHz (Rome), 32 cores each
-    - 4 NVIDIA (Tesla) Ampere A100, 40 GB SXM4
+    - 4 NVIDIA Ampere A100, 40 GB SXM4
     - 256 GB RAM
     - 480 GB SSD local disk
     - :ref:`Instructions for using the GPU nodes <GPU computing UAntwerp>`
@@ -125,7 +125,7 @@ Partition      Limits
 debug          Maximum 2 nodes with a maximum wall time of 1 hour.
 short          Maximum wall time of 6 hours, with priority boost.
 ampere_gpu     Submit to the NVIDIA Ampere GPU node.
-arcturus_gpu   Submit to the AMD Arcturus GPU nodes.
+arcturus_gpu   Submit to the AMD Instinct (Arcturus) GPU nodes.
 ============   =========================================================
 
 See :ref:`GPU computing @ UAntwerp` for more information on using the GPU nodes.
