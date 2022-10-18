@@ -221,7 +221,7 @@ Practical usage:
 * When you click on the project name, you enter a new screen giving you information on allocation and cutoff. The orange box and number in the box refer to the 20% cutoff.
 
 The 20% cutoff is for academic non-starting grant projects only, referring to paragraph 9(4) of the 'Regulations Governing Applications For Use of the Flemish Tier-1 Supercomputing Platform' (see https://www.vscentrum.be/_files/ugd/5446c2_21daee40839244c5a099a6d6bffaedb5.pdf).
-This is 20% of the initial allocated compute time a project is at risk of loosing, if that 20% has not yet been used beyond 3 months into the project.
+This is 20% of the initial allocated compute time a project is at risk of losing, if that 20% has not yet been used during the first 3 months of the project.
 
 
 .. _hortense_system_specific_aspects:
