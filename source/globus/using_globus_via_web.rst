@@ -53,7 +53,7 @@ You will be presented with a choice between 'Select Files to Upload' and 'Select
 To download a file over HTTPS, hover over its name. You should see a checkbox appearing next to the name: click it.  
 
 In the menu on the right, you should see the icon 'Download' lighting up. 
-When you click this, 
+When you click this, the file will be downloaded to the 'Downloads' folder on your PC.
 
 .. note::
    It is only possible to download individual files over HTTPS.  
