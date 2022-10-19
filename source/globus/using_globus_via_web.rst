@@ -98,10 +98,52 @@ By default, Globus will also send you a mail when a transfer has been completed.
    However, you can still close the Globus web page. 
 
 
+Synchronizing folders (repeatedly) between collections 
+------------------
+
+When transferring data, you have the option to turn the transfer into a synchronization.
+For each file, Globus will check whether the same file is already present in the destination collection. 
+Globus will then only transfer files which aren't yet in the destination collection, or which have outdated contents there.
+
+By default, Globus compares checksums between the file on the source and the destination to determine whether a file should be transferred.
+However, in the dropdown 'Transfer & Timer Options', you can find alternative options.
+
+To synchronize a file or folder from one collection to another: 
+
+- Click the checkbox next to the file or folder you want to transfer.
+- Open the dropdown 'Transfer & Timer Options' and click the checkbox 'sync - only transfer new or changed files'.
+- Optionally, change the criteria by which Globus decides to transfer files or not. 
+- Click on the 'Start' button above the source collection. 
+
+.. image:: using_globus_via_web/sync.png
+
+.. note::
+   In some cases, when you want to synchronize data from folder1 in collection A to collection B, you might already have a folder1 in collection B.
+   
+   Please remember you should transfer to the parent directory of folder1, not to folder1 itself.
+   
+   If you open folder1 in the panel of collection B, a new folder 'folder1' under your existing folder1 will be created. 
 
 
+A common use case is when people want to push data from a folder in collection A automatically to a folder in collection B, recurringly.
+This way, you can easily create a folder where you can just drop in files, and they get uploaded to another server overnight. 
+To schedule this, we can use the timer options of Globus:
+
+- In the panel of collection A, click the checkbox on the folder you would like to synchronize. 
+- In the panel collection B, browse to the place where the corresponding folder is or needs to be created.
+- In the dropdown 'Transfer & Timer Options', click the checkbox 'sync - only transfer new or changed files'.
+- In that same dropdown, scroll down and set 'Schedule Start' to the moment you want the synchronizations to start.
+- Underneath, select how often the synchronization should happen. 
+   - For example, to schedule this synchronization every week forever, set 'Repeat' to 'days', set 'every X days' to 7 and 'ends' to 'never'.
+- Click on the 'Start' button above the source collection. 
+
+.. image:: using_globus_via_web/timer.png
+
+You can get an overview of all scheduled transfers and synchronizations on 'activity' tab (on the right side of the page) under the subtab 'timers. 
+You can click on any process to get more info, or click on the trashbin icon next to one to cancel the process.
 
 
+.. image:: using_globus_via_web/activity_timers.png
 
 
 
