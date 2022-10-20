@@ -1,7 +1,7 @@
 Genius quick start guide
 ========================
 
-:ref:`Genius <Genius hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
+:ref:`Genius <Genius hardware>` is the default KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
 
 .. include:: tier2_hardware/genius_login_nodes.rst
   
