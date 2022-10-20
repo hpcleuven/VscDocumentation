@@ -1,3 +1,5 @@
+.. _genius_login_nodes:
+
 Login infrastructure
 --------------------
 
