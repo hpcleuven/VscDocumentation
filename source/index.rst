@@ -9,13 +9,10 @@ Welcome to VSC documentation
 .. toctree::
    :maxdepth: 2
 
-   access/getting_access
-   access/access_and_data_transfer
-   software/software_stack
-   jobs/running_jobs
-   software/software_development
    hardware
-   globus/globus_main_index
+   access/index
+   jobs/index
    faq
+.. globus/globus_main_index
 
 Feel free to contact :ref:`user support <user support VSC>`.

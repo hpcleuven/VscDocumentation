@@ -115,7 +115,8 @@ html_logo = "_static/vsc-logo-1.png"
 # 'searchbox.html']``.
 #
 html_sidebars = {
-    "**": ["search-field.html", "sidebar-nav-bs.html", "sidebar-links.html"]
+    "index": ["search-field.html", "sidebar-links.html"],
+    "**": ["search-field.html", "sidebar-nav-bs.html", "sidebar-links.html"],
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
