@@ -1,7 +1,8 @@
 .. _faqs:
 
-Frequently asked questions (FAQs)
-=================================
+##########################
+:fa:`question-circle` FAQs
+##########################
 
 .. _general faqs:
 
