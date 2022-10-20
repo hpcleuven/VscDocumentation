@@ -5,7 +5,7 @@ wICE quick start guide
 
 :ref:`wICE <wice hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
 
-It does not have separate login nodes and can be accessed from the :ref:`Genius login nodes <tier2_hardware/genius_login_nodes>`
+It does not have separate login nodes and can be accessed from the :ref:`Genius login nodes <genius_login_nodes>`
 
 .. _running jobs on wice:
 
@@ -16,7 +16,7 @@ There are several type of nodes in the wICE cluster: normal compute nodes, GPU n
 
 The maximum walltime for any job on wICE regular nodes is 7 days (168 hours). Job requests with walltimes between 3 and 7 days are not allowed to run on big memory, interactive, GPU nodes.
 
-wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More info about Slurm can be found :ref:`here </source/antwerp/SLURM_convert_from_PBS>`
+wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here </source/antwerp/SLURM_convert_from_PBS>`
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
