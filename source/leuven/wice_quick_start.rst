@@ -31,6 +31,8 @@ Submit a long job to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 To submit to a compute node a job longer than 3 days you need to request a separate partition:
 
+::
+
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 –-partition=batch_long -A lp_myproject  myjobscript.slurm
 
 
