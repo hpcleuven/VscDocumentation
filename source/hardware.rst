@@ -1,7 +1,8 @@
 .. _hardware:
 
-VSC hardware
-============
+#########################
+:fa:`server` VSC hardware
+#########################
 
 .. _tier2 hardware:
 
