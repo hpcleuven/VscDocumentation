@@ -10,7 +10,7 @@ Globus file and data sharing platform
    access
    endpoints
    using_globus_via_web
-   data_sharing
+   sharing
    manage_globus_groups
    cli
    glossary

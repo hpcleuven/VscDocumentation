@@ -14,6 +14,7 @@ An **endpoint** is a server that hosts one or multiple collections.
 
 
 
+.. _globus-available-collections:
 
 Available collections
 ------------------
