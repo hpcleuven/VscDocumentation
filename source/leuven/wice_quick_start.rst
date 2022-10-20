@@ -16,7 +16,7 @@ There are several type of nodes in the wICE cluster: normal compute nodes, GPU n
 
 The maximum walltime for any job on wICE regular nodes is 7 days (168 hours). Job requests with walltimes between 3 and 7 days are not allowed to run on big memory, interactive, GPU nodes.
 
-wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab.
+wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More info about Slurm can be found :ref:`here </source/antwerp/SLURM_convert_from_PBS>`
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,6 +26,13 @@ To submit to a compute node you need to provide the required number of nodes and
 
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=2:00:00  -A lp_myproject  myjobscript.slurm
   
+
+Submit a long job to a compute node
+~~~~~~~~~~~~~~~~~~~~~~~~
+To submit to a compute node a job longer than 3 days you need to request a separate partition:
+
+   $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 –-partition=batch_long -A lp_myproject  myjobscript.slurm
+
 
 Submit to an interactive partition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
