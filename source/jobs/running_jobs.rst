@@ -83,15 +83,18 @@ Every job script has the same basic structure.
    to use ``.pbs`` since that allows support staff to easily identify your
    job script.
 
-More information is available on
+More information is available on:
 
-- :ref:`specifying job resources <resource specification>`,
-- :ref:`specifying job names, output files and notifications
-  <specifying output files and notifications>`,
-- using the :ref:`credit system <credit system basics>` (KU Leuven/UHasselt
-  infrastructure and Tier-1 only),
-- using the :ref:`module system <module system basics>`.
+.. toctree::
+   :maxdepth: 2
+   
+    Job resources <specifying_resources>
+    Job names, output files and notifications <specifying_output_files_and_notifications>
+    Credit system <credit_system_basics>
 
+.. sealso::
+
+   Using the :ref:`module system <module system basics>`
 
 Submitting and monitoring a job
 -------------------------------
@@ -134,7 +137,7 @@ More information is available on
 .. toctree::
    :maxdepth: 3
    
-   submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
+   Submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
 
 
 Job output
@@ -199,6 +202,14 @@ Troubleshooting
 
 Advanced topics
 ---------------
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+    monitoring_memory_and_cpu_usage_of_programs
+    worker_framework
+    checkpointing_framework
 
 -  :ref:`monitoring memory and cpu`, which helps to find the
    right parameters to improve your specification of the job requirements.
