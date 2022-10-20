@@ -1,108 +1,14 @@
-Getting access
+Getting Access
 ==============
 
-New users of the VSC clusters should take the following three steps to get access:
-
-#. :ref:`create a public/private key pair <create key pair>`
-#. :ref:`apply for a VSC account <apply for account>`
-#. :ref:`login to the cluster <access and data transfer>`
-
-VSC accounts
-------------
-
-In order to use the infrastructure of the VSC, you need a VSC-user ID,
-also called a VSC account.  Check the `VSC website <eligible users_>`_
-for conditions.
-
-All VSC-accounts start with the letters ``vsc`` followed by a
-five-digit number. The first digit gives information about your home
-institution. There is no relationship with your name, nor is the
-information about the link between VSC-accounts and your name publicly
-accessible.
-
-Your VSC account gives you access to most of the VSC Tier-2 infrastructure,
-though for some more specialized hardware you may have to ask access separately.
-The rationale is that  we want to ensure that that specialized (usually rather
-expensive) hardware is used efficiently for the type of applications it was
-purchased for.  Contact your `local VSC coordinator <get in touch_>`_ to arrange
-access when required.
-
-For the main Tier-1 compute cluster you need to submit a
-`project application <tier-1 project application_>`_ (or you should be
-covered by a project application within your research group).
-
-
-.. _account request:
-
-How to request an account?
---------------------------
-
-Unlike your institute account, VSC accounts don't use regular fixed
-passwords but a key pair consisting of a public an private key because
-that is a more secure authentication technique.  To apply for a VSC
-account, you need a public/private key pair.
-
-.. _create key pair:
-
-Create a public/private key pair
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A key pair consists of a private and a public key.
-
-#. The private key is stored on the computer(s) you use to access the VSC
-   infrastructure and always stays there.
-#. The public key is stored on the  VSC systems you want to access, allowing
-   to prove your identity through the corresponding private key.
-  
-How to generate such a key pair depends on your operating system. We
-describe the generation of key pairs in the client sections for
-
-.. panels::
-
-    .. link-button:: generating keys linux
-        :type: ref
-        :text: Linux
-        :classes: btn-outline-primary btn-block
-
-    .. link-button:: generating keys windows
-        :type: ref
-        :text: Windows
-        :classes: btn-outline-primary btn-block
-
-    .. link-button:: generating keys macos
-        :type: ref
-        :text: macOS
-        :classes: btn-outline-primary btn-block
-
-Without a key pair, you won't be able to apply for a VSC account.
-
-.. warning::
-
-   It is clear from the above that it is very important to protect your
-   private key well. Therefore:
-   
-   - You should choose a strong passphrase to protect your private key.
-   - You should not share your key pair with other users.
-   - If you have accounts at multiple supercomputer centers (or on other
-     systems that use SSH), you should seriously consider using a
-     different key pair for each of those accounts. In that way, if a key
-     would get compromised, the damage can be controlled.
-   - For added security, you may also consider to use a different key pair
-     for each computer you use to access your VSC account. If your
-     computer is stolen, it is then easy to disable access from that
-     computer while you can still access your VSC account from all your
-     other computers. The procedure is explained on a separate web
-     page ":ref:`access from multiple machines`".
-
-Your VSC account is currently managed through your institute account.
+Once you have a valid :ref:`public/private key pair<create key pair>`, you can
+submit an account request.  The following algorithm guides you to the
+appropriate approach for each institution.
 
 .. _apply for account:
 
 Applying for the account
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-Once you have a valid public/private key pair, you can submit an account
-request.  The following algorithm guides you to the appropriate approach.
 
 .. tabbed:: KU Leuven/UHasselt
 
@@ -233,18 +139,6 @@ Information on our training program and the schedule is available on the
 
 Additional information
 ----------------------
-
-Before you apply for VSC account, it is useful to first check whether
-the infrastructure is suitable for your application. Windows or macOS
-programs for instance cannot run on our infrastructure as we use the
-Linux operating system on the clusters. The infrastructure also should
-not be used to run applications for which the compute power of a good
-laptop is sufficient. The pages on the :ref:`tier1 hardware` and
-:ref:`tier2 hardware`
-in this part of the website give a high-level description of our
-infrastructure. You can find more detailed information in the user
-documentation on the user portal. When in doubt, you can also contact
-your `local support team <get in touch_>`_. This does not require a VSC account.
 
 Your account also includes two “blocks” of disk space: your home
 directory and data directory. Both are accessible from all VSC clusters.

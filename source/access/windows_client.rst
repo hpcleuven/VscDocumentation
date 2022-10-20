@@ -47,6 +47,7 @@ Two GUI clients SFTP clients for Windows are recommended:
 -  :ref:`FileZilla<FileZilla>`
 -  :ref:`WinSCP<WinSCP>`
 
+.. _Windows gui:
 
 Display graphical programs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -52,6 +52,8 @@ Data can easily be transferred to and from remote systems using
 the :ref:`OpenSSH sftp and scp commands <scp and sftp>`.
 
 
+.. _Linux gui:
+
 Display graphical programs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 

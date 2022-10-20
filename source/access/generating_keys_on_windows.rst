@@ -7,5 +7,8 @@ To get access from a Windows computer, we currently provide documentation for tw
 :ref:`PuTTY <text mode access using PuTTY>` and :ref:`MobaXterm <access using mobaxterm>`,
 both of which require a public/private key pair in a different format:
 
-* :ref:`generate a key pair with PuTTY <generating keys putty>`
-* :ref:`generate a key pair with MobaXterm <generating keys mobaxterm>`
+.. toctree::
+   :maxdepth: 2
+
+   generating_keys_with_putty
+   generating_keys_with_mobaxterm

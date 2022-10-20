@@ -1,7 +1,8 @@
 .. _generating keys mobaxterm:
 
-Create an SSH key pair for use with MobaXterm
----------------------------------------------------------
+##############################
+Generating keys with MobaXterm
+##############################
 
 The following steps explain how to generate an SSH key pair in ``OpenSSH`` format
 using the MobaXterm application.

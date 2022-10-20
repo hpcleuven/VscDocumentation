@@ -1,10 +1,13 @@
 .. _generating keys putty:
 
+##########################
 Generating keys with PuTTY
-==========================
+##########################
 
-Prerequisite: PuTTY
--------------------
+Requirements:
+
+* Windows operating system
+* PuTTY
 
 By default, there is no SSH client software available on Windows, so you
 will typically have to install one yourself. We recommend to use `PuTTY`_,

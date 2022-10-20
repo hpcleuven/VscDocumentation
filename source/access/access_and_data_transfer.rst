@@ -1,7 +1,8 @@
 .. _acccess_data_transfer:
 
-Access and data transfer
-========================
+########################
+Access and Data Transfer
+########################
 
 Before you can really start using one of the clusters, there are several
 things you need to do or know:
@@ -18,8 +19,8 @@ need to use on your client system depends on its operating system:
    :maxdepth: 2
 
    windows_client
-   macos_client
    linux_client
+   macos_client
 
 .. note::
    When logging in to a KU Leuven cluster, take a look at the page on
@@ -63,9 +64,9 @@ Optionally, if you wish to use programs with a graphical user
 interface, you'll need an X server on your client system. Again, this
 depends on the latter's operating system:
 
-   -  :ref:`Windows <Windows client>`
-   -  :ref:`Linux <Linux client>`
-   -  :ref:`macOS/OS X <macOS client>`
+- :ref:`Windows <Windows gui>`
+- :ref:`Linux <Linux gui>`
+- :ref:`macOS/OS X <macOS gui>`
 
 
 VPN

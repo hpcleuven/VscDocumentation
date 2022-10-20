@@ -40,6 +40,7 @@ Data can be transferred using
 - Secure FTP (SFTP) with the :ref:`OpenSSH sftp and scp commands <scp and sftp>`, or
 - GUI clients such as :ref:`Cyberduck or FileZilla <data transfer>`.
 
+.. _macOS gui:
 
 Display graphical programs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
