@@ -54,14 +54,14 @@ If a GPU is necessary for the visualization process - it can be requested (max 1
 
 Submit to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The big memory nodes are also located in a separate partition. In case of the big memory nodes it is also important to add your memory requirements, for example:
+The big memory nodes are also located in a separate partition. In case of the big memory nodes it is also important to add your memory requirements (the maximum of memory per core that can be requested is 28GB/core), for example:
 
 ::
 
    $ sbatch –-cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=20G --account=lp_myproject myjobscript.slurm 
 
 
-.. _submit to genius GPU node:
+.. _submit to wice GPU node:
 
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
