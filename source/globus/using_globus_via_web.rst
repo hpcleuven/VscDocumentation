@@ -7,7 +7,6 @@ Globus web interface
 This section teaches you how to manage, transfer and share files from the `Globus web interface <https://app.globus.org/>`_.
 
 
-
 Managing files
 -------------
 
@@ -139,7 +138,7 @@ To schedule this, we can use the timer options of Globus:
 
 .. image:: using_globus_via_web/timer.png
 
-You can get an overview of all scheduled transfers and synchronizations on 'activity' tab (on the right side of the page) under the subtab 'timers. 
+You can get an overview of all scheduled transfers and synchronizations on 'activity' tab (on the left side of the page) under the subtab 'timers. 
 You can click on any process to get more info, or click on the trashbin icon next to one to cancel the process.
 
 

@@ -26,7 +26,7 @@ How to create a guest collection
 There are two ways to create a guest collection:
 
 - In the file manager, click on the checkbox next to the folder you want to share, and click on 'share'.
-- On the right, click on the tab 'collections', search for your collection and click on it, and click on 'create a guest collection' under the subtab 'Collections'.
+- On the left, click on the tab 'collections', search for your collection and click on it, and click on 'create a guest collection' under the subtab 'Collections'.
 
 With both methods, you will arrive at the page 'Create New Guest Collection'. 
 
@@ -49,7 +49,7 @@ Once you have created your guest collection, you will be transported to a page t
 
 Later, you can reach this page as follows:
 
-- Go to the 'collections' tab on your right.
+- Go to the 'collections' tab on your left.
 - Go to the subtab 'Administered by you' and click on your guest collection.
 - Click on your guest collection's name.
 - Go to the subtab 'permissions'
