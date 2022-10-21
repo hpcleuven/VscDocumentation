@@ -38,7 +38,7 @@ To submit to a compute node a job longer than 3 days you need to request a separ
 
 Submit to an interactive partition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The interactive nodes are located in a separate partition. In case of these nodes it is important to use then in interactive way (so not submittiong the script) and specyfying the requirements, for example:
+The interactive nodes are located in a separate partition. The users are allowed to request maximum of 8 cores for maximum walltime of 16 hours. In case of these nodes it is important to use then in interactive way (so not submittiong the script) and specyfying the requirements, for example:
 
 ::
 
