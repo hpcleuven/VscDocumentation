@@ -44,7 +44,7 @@ The interactive nodes are located in a separate partition. The users are allowed
 
    $ srun -n 1 -t 01:00:00 -A lp_myproject --partition=interactive --cluster=wice --pty bash –l
 
-If a GPU is necessary for the visualization process - it can be requested (max 1 GPU per max 8 cores and max 16 hours). Additionaly, X11 forwarding should be on:
+If a GPU is necessary for the visualization process - it can be requested (max 1 GPU per max 8 cores and max 16 hours). The available GPU is a single A100, but split in 7 'virtual' GPU's. Additionaly, X11 forwarding should be on:
 
 ::
 
