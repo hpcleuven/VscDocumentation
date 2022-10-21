@@ -11,6 +11,6 @@ Globus file and data sharing platform
    endpoints
    using_globus_via_web
    sharing
-   manage_globus_groups
+   groups
    cli
    glossary
