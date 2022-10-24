@@ -25,14 +25,6 @@ Both the KU Leuven and the VSC host a number of collections:
 +------------------------------------------+-------------------+----------------+------------------+
 | Name                                     | Account needed    | High assurance | Guest collections| 
 +==========================================+===================+================+==================+
-| KU Leuven Onedrive                       | KULeuven account  | Yes            | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC iRODS set.irods.icts.kuleuven.be     | iRODS account     | No             | Yes              |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC iRODS ghum.irods.icts.kuleuven.be    | iRODS account     | No             | Yes              |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC iRODS gbiomed.irods.icts.kuleuven.be | iRODS account     | No             | Yes              |
-+------------------------------------------+-------------------+----------------+------------------+
 | VSC iRODS irods.hpc.kuleuven.be          | iRODS account     | No             | Yes              |
 +------------------------------------------+-------------------+----------------+------------------+
 | VSC VUB Hydra                            | VSC account       | No             | No               |
@@ -41,7 +33,7 @@ Both the KU Leuven and the VSC host a number of collections:
 +------------------------------------------+-------------------+----------------+------------------+
 | VSC UGent Tier1 Projects                 | VSC account       | No             | No               |
 +------------------------------------------+-------------------+----------------+------------------+
-| VSC UAntwerpen Tier2                     | UAntwerpen account| No             | No               |
+| VSC UAntwerpen Tier2                     | VSC account       | No             | No               |
 +------------------------------------------+-------------------+----------------+------------------+
 | VSC KU Leuven tier1 scratch              | VSC account       | No             | No               |
 +------------------------------------------+-------------------+----------------+------------------+
