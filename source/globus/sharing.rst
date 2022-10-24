@@ -1,5 +1,7 @@
 .. include:: css.rst
 
+.. _globus-sharing:
+
 ===============
 Sharing data
 ===============
@@ -65,11 +67,15 @@ To add new permissions, click on the button 'add permissions'. You will get to t
 First, you will need to select the path within your guest collection to which the permission applies. If you leave this empty, the permission will apply from the root of your guest collection.
 
 Secondly, you will need to select the user or group that gets access. 
+
+
 If you want to give access to a user, you can either do this by providing a username (if the user has already used Globus) or an e-mail address.
 Other options are:
 
 - Providing all users with a Globus login access
 - Providing public (anonymous) access
+
+Note that if you give access to a group, you get a search bar to search for publicly available groups. After all, you don't need to be member of a group to share data with them. 
 
 Lastly, you should choose whether you want to give read or write access.
 
