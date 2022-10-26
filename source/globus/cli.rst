@@ -76,7 +76,7 @@ The consent is added to your session (so it's tied to one PC) and lasts until yo
 
 You can transfer a file between two endpoints as follows::
 
-      $ globus transfer $tier2scratch:scratch/337/vsc33731/survey_user1.csv \
+      $ globus transfer $tier2scratch:scratch/337/vsc33731/test/survey_user1.csv \
                $tier1scratch:337/vsc33731/test/survey_user1.csv --label "test_transfer"
 
       Message: The transfer has been accepted and a task has been created and queued for execution
