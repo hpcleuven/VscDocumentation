@@ -40,8 +40,8 @@ a terminal and typing:
    OpenSSH_8.0p1, OpenSSL 1.1.1c FIPS  28 May 2019
 
 
-Generating a public/private key pair
-------------------------------------
+Generating a public/private key pair in Linux and macOS
+-------------------------------------------------------
 
 A key pair might already be present in the default location inside
 your home directory:
@@ -57,25 +57,28 @@ this particular case, the private key is ``id_rsa`` and public key is
 ``id_rsa.pub``. You may have multiple keys (not necessarily in the
 directory ``~/.ssh``) if you or your operating system requires this.
 
+.. warning::
+
+   For security reasons, users should always generate a new key pair for use in
+   the VSC clusters, and only use it for the VSC clusters.
+
 You will need to generate a new key pair, when:
 
--  you don't have a key pair yet, or
--  you have a key pair, but is not in the correct format (RSA) or
-   uses too few bits (at least 4096),
+-  you don’t yet have a key pair that is dedicated for the VSC clusters, or
 -  you forgot the passphrase protecting your private key, or
 -  or your private key was compromised.
 
-To generate a new public/private pair, use the following command:
+To generate a new public/private pair, use the following command (make sure to
+generate a 4096-bit key):
 
 ::
 
-   $ ssh-keygen -t rsa -b 4096
+   $ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_vsc
    Generating public/private rsa key pair. 
-   Enter file in which to save the key (/home/user/.ssh/id_rsa): 
    Enter passphrase (empty for no passphrase): 
    Enter same passphrase again: 
-   Your identification has been saved in /home/user/.ssh/id_rsa.
-   Your public key has been saved in /home/user/.ssh/id_rsa.pub.
+   Your identification has been saved in /home/user/.ssh/id_rsa_vsc
+   Your public key has been saved in /home/user/.ssh/id_rsa_vsc.pub
 
 This will ask you for a file name to store the private and public key,
 and a passphrase to protect your private key.
