@@ -92,6 +92,17 @@ The system will ask you for your passphrase every time you want to use the
 private key, that is, every time you want to access the cluster or transfer
 your files, unless you use an :ref:`SSH agent<SSH agent>`.
 
+Next, link your VSC private key to your VSC-id to avoid having to
+specify the key every time you login. Add the following lines to your :ref:`SSH
+configuration file <SSH config>` located at ``~/.ssh/config``:
+
+::
+
+   Match User vscXXXXX
+       IdentityFile ~/.ssh/id_rsa_vsc
+
+Replace vscXXXXX with your VSC-id.
+
 
 Converting SSH2 keys to OpenSSH format
 --------------------------------------
