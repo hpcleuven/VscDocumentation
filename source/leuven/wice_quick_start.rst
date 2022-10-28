@@ -18,6 +18,8 @@ The maximum walltime for any job on wICE regular nodes is 7 days (168 hours). Jo
 
 wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
 
+.. _submit to wice compute node:
+
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 The submission will occur from login nodes of Genius cluster, therefore you need to always remember to specify the cluster you need to use. 
@@ -36,6 +38,8 @@ To submit to a compute node a job longer than 3 days you need to request a separ
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 –-partition=batch_long -A lp_myproject  myjobscript.slurm
 
 
+.. _submit to genius interactive node:
+
 Submit to an interactive partition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The interactive nodes are located in a separate partition. The users are allowed to request maximum of 8 cores for maximum walltime of 16 hours. In case of these nodes it is important to use then in interactive way (so not submittiong the script) and specyfying the requirements, for example:
@@ -51,6 +55,7 @@ If a GPU is necessary for the visualization process - it can be requested (max 1
    $ srun -N 1 -t 16:00:00 --ntasks-per-node=8 --gpus-per-node=1 -A lp_myproject -p interactive --cluster=wice --x11 --pty bash -l
 
 
+.. _submit to wice big memory node:
 
 Submit to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
