@@ -13,7 +13,7 @@ Hardware details
    - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (Ice lake), 36 cores each
    - 256 GB RAM 
    - 960 GB SSD local disk
-   - partitions ``batch/batch_long`` :ref:`submit options <submit to wice compute node>`
+   - partitions ``batch/batch_long``, :ref:`submit options <submit to wice compute node>`
 
 
 - 5 big memory nodes
@@ -21,7 +21,7 @@ Hardware details
    - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (Ice lake), 36 cores each
    - 2048 GB RAM
    - 960 GB SSD local disk
-   - partition ``bigmem`` :ref:`submit options <submit to wice big memory node>`
+   - partition ``bigmem``, :ref:`submit options <submit to wice big memory node>`
 
 - 4 GPGPU nodes, 16 GPU devices
 
@@ -29,7 +29,7 @@ Hardware details
    - 512 GB RAM
    - 4 NVIDIA A100 SXM4, 80 GB GDDR, connected with NVLink
    - 960 GB SSD local disk
-   - partition ``gpu``  :ref:`submit options <submit to wice GPU node>`
+   - partition ``gpu``, :ref:`submit options <submit to wice GPU node>`
 
 - 5 interactive nodes
 
