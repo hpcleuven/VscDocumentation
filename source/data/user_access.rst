@@ -3,7 +3,7 @@
 User Access to iRODS
 ====================
 
-The Tier-1 Data Service is currently in a pilot phase, so access to the system is strictly by invitation. If you have a use case that combines data and computing workflows and you are interested on testing the Tier-1 Data service you can contact us to discuss a possible collaboration by e-mail at the address: data@vscentrum.be
+The Tier-1 Data Service at KU Leuven is currently in a pilot phase, so access to the system is strictly by invitation. If you have a use case that combines data and computing workflows and you are interested on testing the Tier-1 Data service you can contact us to discuss a possible collaboration by e-mail at the address: data@vscentrum.be
 
 To be able to log on and to use the Tier-1 Data platform, you need to have an active vsc-account and an approved Tier-1 Data project. During the pilot phase Tier-1 Data projects are granted by invitation only. 
 
@@ -17,11 +17,13 @@ Before you can interact with iRODS, as a VSC user you will need to activate the 
 
     $ irods-setup | bash
 
-- If you want to connect from any login nodes of other universities' HPC cluster, you should execute:
+- If you want to connect from any login nodes of other universities' HPC cluster, you should execute:
 
 ::
 
     $ ssh login.hpc.kuleuven.be irods-setup | bash
+
+In any case, any attempt to login to the Tier-1 or Tier-2 HPC clusters at KU Leuven will invite you to open the HPC Firewall url, which in turn forwards to your institutional login page. Therefore, please note that you can't login to iRODS in an automated fashion. More information can be found on the `HPC Firewall page <https://firewall.vscentrum.be/>`__.
 
 These commands will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
 

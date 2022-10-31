@@ -20,7 +20,7 @@ The following sections illustrate the usage of some iCommands organized on the f
 
 Installing iCommands locally
 ----------------------------
-iCommands is installed on the VSC Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
+iCommands is installed on the KU Leuven Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
 
 On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.10. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
 
@@ -38,7 +38,7 @@ For Debian/Ubuntu:
 .. note::
    Depending on your linux distribution and version, the installation procedure may vary.
    - The most recent version of iCommands is 4.3.0.
-   - However, the Tier 1 iRODS instance still runs on iRODS 4.2.10.
+   - However, the KU Leuven Tier-1 iRODS instance still runs on iRODS 4.2.10.
    - In case you have a Linux version (e.g. Ubuntu 20) for which iCommands 4.2.10 is not available, please contact rdm-icts@kuleuven.be for the procedure.
 
 Informative iRODS Commands
