@@ -63,21 +63,21 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 ::
 
-   $ sbatch –-cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=20G --account=lp_myproject myjobscript.slurm 
+   $ sbatch –-cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=20G --account=lp_myproject myjobscript.slurm
 
 
 .. _submit to wice GPU node:
 
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
-The GPU nodes are also located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as shared resources, meaning that different users can simultaneously use a portion of the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU of type A100 you can submit for example like this::
+The GPU nodes are also located in a separate cluster partition so you will need to explicitly specify it when submitting your job. We also configured the GPU nodes as shared resources, meaning that different users can simultaneously use a portion of the same node. However every user will have exclusive access to the number of GPUs requested. If you want to use only 1 GPU of type A100 you can submit for example like this:
 
 ::
 
-   $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=18 --gpus-per-node=1 --partition=gpu myjobscript.slurm 
+   $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=18 --gpus-per-node=1 --partition=gpu myjobscript.slurm
   
-Note that in case of 1 GPU you have to request 18 cores. In case you need more GPUs you have to multiply the 18 cores with the number of GPUs requested, so in case of for example 3 GPUs you will have to specify this::
+Note that in case of 1 GPU you have to request 18 cores. In case you need more GPUs you have to multiply the 18 cores with the number of GPUs requested, so in case of for example 3 GPUs you will have to specify this:
 
 ::
 
-   $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=54 --gpus-per-node=3 --partition=gpu myjobscript.slurm 
+   $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=54 --gpus-per-node=3 --partition=gpu myjobscript.slurm
