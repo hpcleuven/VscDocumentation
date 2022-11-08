@@ -12,7 +12,26 @@ initial version.
    neither group nor world should be able to read the file, i.e.,
    ::
    
-      $ chmod 700 .ssh/config
+      $ chmod 700 ~/.ssh/config
+
+
+.. _linking key with vsc-id linux:
+
+Linking your private key with your VSC-id
+-----------------------------------------
+
+To avoid having to specify your VSC private key every time you login, we highly
+recommend linking your key to your VSC-id.
+
+Assuming your private key is ``~/.ssh/id_rsa_vsc``, add the following
+lines to your ``~/.ssh/config``:
+
+::
+
+   Match User vscXXXXX
+       IdentityFile ~/.ssh/id_rsa_vsc
+
+Replace vscXXXXX with your VSC-id.
 
 
 Simple usage
@@ -52,15 +71,15 @@ Now you can simply log in to ``login.hpc.kuleuven.be`` using the ``hpc`` alias:
    $ ssh hpc
 
 
-How to use a key that is not the default?
------------------------------------------
+How to link your key with a host?
+---------------------------------
 
-If your SSH private key is not in the default directory (``~/.ssh/``), or
-doesn't have the default name (``id_rsa``) you can specify the key to use
-on the command line using the `-i` option, or, more conveniently, by
-specifying its location in the ``~/.ssh/config`` file.
+As alternative to linking your key with your VSC-id, you can also link your key
+with a specific host.  Specifying identity files allows you to have distinct
+keys for different hosts, e.g., you can use one key pair to connect to VSC
+infrastructure, and a different one for your departmental server.
 
-Suppose that your private key is ``~/Keys/priv_key_vsc``, then you can
+Assuming your private key is ``~/.ssh/id_rsa_vsc``, then you can
 use it to connect by specifying the ``IdentityFile`` attribute, i.e.,
 
 ::
@@ -70,13 +89,7 @@ use it to connect by specifying the ``IdentityFile`` attribute, i.e.,
        User vsc50005
        ForwardAgent yes
        ForwardX11 yes
-       IdentityFile ~/Keys/priv_key_vsc
-  
-.. note::
-
-   Specifying identity files allows you to have distinct keys for different
-   hosts, e.g., you can use one key pair to connect to VSC infrastructure,
-   and a different one for your departmental server.
+       IdentityFile ~/.ssh/id_rsa_vsc
 
 
 How to use a proxy host?

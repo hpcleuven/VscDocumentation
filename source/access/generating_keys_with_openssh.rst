@@ -64,7 +64,7 @@ directory ``~/.ssh``) if you or your operating system requires this.
 
 You will need to generate a new key pair, when:
 
--  you don’t yet have a key pair that is dedicated for the VSC clusters, or
+-  you don’t yet have a dedicated key pair for the VSC clusters, or
 -  you forgot the passphrase protecting your private key, or
 -  or your private key was compromised.
 
@@ -92,16 +92,8 @@ The system will ask you for your passphrase every time you want to use the
 private key, that is, every time you want to access the cluster or transfer
 your files, unless you use an :ref:`SSH agent<SSH agent>`.
 
-Next, link your VSC private key to your VSC-id to avoid having to
-specify the key every time you login. Add the following lines to your :ref:`SSH
-configuration file <SSH config>` located at ``~/.ssh/config``:
-
-::
-
-   Match User vscXXXXX
-       IdentityFile ~/.ssh/id_rsa_vsc
-
-Replace vscXXXXX with your VSC-id.
+Next, make sure to follow the instructions to :ref:`link your key with your
+VSC-id <linking key with vsc-id linux>`.
 
 
 Converting SSH2 keys to OpenSSH format
@@ -110,13 +102,13 @@ Converting SSH2 keys to OpenSSH format
 *This section is only relevant if you did not use OpenSSH (as described above)
 to generate an SSH key.*
 
-If you have a public key ``id_rsa_4096_ssh.pub`` in the SSH2 format,
+If you have a public key ``id_rsa_vsc_ssh2.pub`` in the SSH2 format,
 you can use OpenSSH's ssh-keygen to convert it to the OpenSSH format in
 the following way:
 
 ::
 
-   $ ssh-keygen -i -f ~/.ssh/id_rsa_4096_ssh.pub > ~/.ssh/id_rsa_4096_openssh.pub
+   $ ssh-keygen -i -f ~/.ssh/id_rsa_vsc_ssh2.pub > ~/.ssh/id_rsa_vsc_openssh.pub
 
 .. include:: links.rst
 
