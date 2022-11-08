@@ -39,15 +39,13 @@ $ source activate sphinx
 
 ### Creating a feature branch
 
-Do not make changes in the master or development branch directly, but create feature/bugfix branches as required, e.g.,
+Do not make changes in the master branch directly, but create feature/bugfix branches as required, e.g.,
 ```bash
-$ git checkout development
-$ git checkout -b feature/new_stuff
+$ git switch master
+$ git switch -c feature/new_stuff
 ```
 
-Note that at any given time, we should be able to merge the development branch into the master branch, and rebuild the documentation, hence the development branch should always be in a sane state.
-
-Exception on feature/bugfix branches: use common sense, to fix a simple typo, it is likely better to do that directly in the development branch, and merge that immediately into master.
+Exception on feature/bugfix branches: use common sense, to fix a simple typo, it is likely better to do that directly in the master branch.
 
 
 ### Running a local sphinx server
@@ -72,15 +70,6 @@ When you are done, create a pull request on GitHub.  For consistency, do the pul
 
 For major changes, it is good practice to ask others to review your pull request.  Although this policy is encouraged, it is not enforced.
 
-Once the pull request has been merged, the branch will be deleted from GitHub.  For your own convenience, it is probably easiest to pull the master and development branches from GitHub,
-and remove the local feature branch, e.g.,
-```bash
-$ git checkout master
-$ git pull
-$ git checkout development
-$ git pull origin development
-$ git branch -d feature/new_stuff
-```
 
 
 ## Repository structure
