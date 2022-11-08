@@ -70,10 +70,11 @@ If your key has the wrong format, you'll either need to generate a new
 OpenSSH RSA key for use with Eclipse
 by adding the ``-m PEM`` option to ``ssh-keygen`` (and otherwise proceed
 with the regular instructions to add another key to your account) or
-convert your private key (assuming it is a RSA key) to the PEM format. 
+convert your private key (assuming it is a RSA key) to the PEM format.
 
 One easy way to convert your key to PEM format is by using ``ssh-keygen`` with
-another file. Assuming your private key is called ``id_rsa_vsc``:
+the ``-p`` option to change the passphrase. Assuming your private key is called
+``id_rsa_vsc``:
 
 ::
 
