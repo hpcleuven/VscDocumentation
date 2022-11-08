@@ -10,7 +10,6 @@ You will need to clone the repository, i.e.,
 ```bash
 $ git clone git@github.com:hpcleuven/VscDocumentation.git
 $ cd VscDocumentation
-$ git fetch origin development:development
 ```
 
 Your life will be substantially easier if you can preview your changes locally.  A conda environment has be defined to install all the required software
@@ -21,6 +20,7 @@ The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The envi
 ```bash
 $ conda env create -f environment.yml
 ```
+
 
 ## What is the status of improvements/fixes?
 
@@ -45,8 +45,6 @@ $ git switch master
 $ git switch -c feature/new_stuff
 ```
 
-Exception on feature/bugfix branches: use common sense, to fix a simple typo, it is likely better to do that directly in the master branch.
-
 
 ### Running a local sphinx server
 
@@ -66,10 +64,9 @@ $ git push origin feature/new_stuff
 
 ### Pull request
 
-When you are done, create a pull request on GitHub.  For consistency, do the pull request to the development branch, not the master branch.
+When you are done, create a pull request on GitHub.
 
-For major changes, it is good practice to ask others to review your pull request.  Although this policy is encouraged, it is not enforced.
-
+You will have to ask others to review your pull request (at least two approvals before a merge is even possible).  Direct pushes to the master branch are not possible.
 
 
 ## Repository structure
