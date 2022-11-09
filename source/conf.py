@@ -89,9 +89,10 @@ html_theme = 'pydata_sphinx_theme'
 # documentation.
 #
 html_theme_options = {
-    "show_prev_next": False,
     "left_sidebar_end": ["sidebar-links"],
-    "page_sidebar_items": ["page-toc"],
+    "page_sidebar_items": ["page-toc", "edit-this-page"],
+    "use_edit_page_button": True,
+    "show_prev_next": False,
     "icon_links": [
         {
             "name": "GitHub",
@@ -130,6 +131,14 @@ html_logo = "_static/vsc-logo-1.png"
 html_sidebars = {
     "index": ["search-field"],
     "**": ["search-field", "sidebar-nav-bs",],
+}
+
+# Edit this page button
+html_context = {
+    "github_user": "hpcleuven",
+    "github_repo": "VscDocumentation",
+    "github_version": "master",
+    "doc_path": "source",
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
