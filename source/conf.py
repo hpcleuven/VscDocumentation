@@ -92,6 +92,7 @@ html_theme_options = {
     "show_prev_next": False,
     "github_url": "https://github.com/vscentrum",
     "twitter_url": "https://twitter.com/VSC_HPC",
+    "left_sidebar_end": ["sidebar-links"],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -115,8 +116,8 @@ html_logo = "_static/vsc-logo-1.png"
 # 'searchbox.html']``.
 #
 html_sidebars = {
-    "index": ["search-field.html", "sidebar-links.html"],
-    "**": ["search-field.html", "sidebar-nav-bs.html", "sidebar-links.html"],
+    "index": ["search-field"],
+    "**": ["search-field", "sidebar-nav-bs",],
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
