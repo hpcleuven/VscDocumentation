@@ -90,10 +90,21 @@ html_theme = 'pydata_sphinx_theme'
 #
 html_theme_options = {
     "show_prev_next": False,
-    "github_url": "https://github.com/vscentrum",
-    "twitter_url": "https://twitter.com/VSC_HPC",
     "left_sidebar_end": ["sidebar-links"],
     "page_sidebar_items": ["page-toc"],
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/vscentrum",
+            "icon": "fa-brands fa-square-github",
+            "type": "fontawesome",
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/VSC_HPC",
+            "icon": "fa-brands fa-square-twitter",
+        },
+    ],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
