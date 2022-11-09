@@ -48,8 +48,8 @@ saving it in a format required by different VSC login nodes.
 #. Finally, save both the public and private keys in a secure place
    (i.e., a folder on your personal computer, or on your personal USB
    stick, ...) with the buttons 'Save public key' and 'Save private
-   key'. We recommend to use the name ``id_rsa.pub`` for the public
-   key, and ``id_rsa.ppk`` for the private key.
+   key'. We recommend to use the name ``id_rsa_vsc.pub`` for the public
+   key, and ``id_rsa_vsc.ppk`` for the private key.
 
 If you use another program to generate a key pair, please remember that
 they need to be in the OpenSSH format to access the VSC clusters.
@@ -74,7 +74,7 @@ can be used by Eclipse.
    VSC cluster.
 #. When prompted, enter the appropriate passphrase.
 #. From the 'Conversions' menu, select 'Export OpenSSH key' and save it
-   as ``id_rsa`` (or any other name if the former already exists).
+   as ``id_rsa_vsc``.
    Remember the file name and its location, it will have to be specified
    in the configuration process of, e.g., Eclipse.
 #. Exit PuTTYgen.

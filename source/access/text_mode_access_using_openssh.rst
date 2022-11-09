@@ -87,16 +87,21 @@ adding the ``-vvv`` option for maximal verbosity.
 
 If you get a ``Permission denied`` error message, one of the things to verify
 is that your private key is in the default location, i.e., the output of
-``ls ~/.ssh`` should show a file named ``id_rsa``.
+``ls ~/.ssh`` should show a file named ``id_rsa_vsc``.
 
-If your private key is not stored in a default file (``~/.ssh/id_rsa``) you
-need to provide the path to it while making the connection:
+The second thing to check is that your :ref:`private key is linked to your
+VSC-id <linking key with vsc-id linux>` in your :ref:`SSH configuration file <SSH
+config>` at ``~/.ssh/config``.
+
+If your private key is not stored in ``~/.ssh/id_rsa_vsc``, you need to adapt
+the path to it in your ``~/.ssh/config`` file.
+
+Alternatively, you can provide the path as an option to the ``ssh`` command when
+making the connection:
 
 ::
 
    $ ssh -i <path-to-your-private-key-file> <vsc-account>@<vsc-loginnode>
-
-Alternatively, create aan :ref:`SSH configuration file <SSH config>`.
 
 Links
 -----

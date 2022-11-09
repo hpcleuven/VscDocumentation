@@ -81,7 +81,7 @@ One solution is to generate a new RSA 4096-bit key for use with Eclipse:
 
 ::
 
-   $ ssh-keygen -t rsa -b 4096 -m PEM
+   $ ssh-keygen -t rsa -b 4096 -m PEM -f ~/.ssh/id_rsa_vsc_PEM
     
 will generate a key and store it in a format compatible with Eclipse.
 You can then upload your public key as an additional key to the 
@@ -89,17 +89,13 @@ You can then upload your public key as an additional key to the
 :ref:`Access from multiple machines<access from multiple machines>` page. 
 
 If you have a 4096-bit RSA private key in the wrong format, another option is to
-simply convert the private key to the PEM format. Since this procedure
-overwrites the private key file, it may be better to first copy
-it to a different file. E.g., assume your private key file 
-is called `ìd_rsa_4096``, then the conversion can be done using
+simply convert the private key to the PEM format.  Assuming your private key
+file is called `ìd_rsa_vsc``, then the conversion can be done using
 
 ::
 
    $ cd ~/.ssh
-   $ cp id_rsa_4096 id_rsa_4096_PEM
-   $ ssh-keygen -p -m PEM -f id_rsa_4096_PEM
-
+   $ ssh-keygen -e -p -m PEM -f id_rsa_vsc >id_rsa_vsc_PEM
 
 
 All users
@@ -110,9 +106,8 @@ All users
 #. In the category 'General', expand the subcategory 'Network
    Connections' and select 'SSH2'.
 #. Point Eclipse to the directory where the OpenSSH private key is
-   stored that is used for authentication on the VSC cluster. If that
-   key is not called 'id_rsa', select it by clicking the 'Add Private
-   Key...' button.
+   stored that is used for authentication on the VSC cluster. Next,
+   select your key by clicking the 'Add Private Key...' button.
 #. Close the 'Preferences' dialog by clicking 'OK'.
 
 Creating a remote connection
