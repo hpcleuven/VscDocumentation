@@ -93,6 +93,7 @@ html_theme_options = {
     "github_url": "https://github.com/vscentrum",
     "twitter_url": "https://twitter.com/VSC_HPC",
     "left_sidebar_end": ["sidebar-links"],
+    "page_sidebar_items": ["page-toc"],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
