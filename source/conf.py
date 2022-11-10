@@ -42,7 +42,7 @@ html_title = project
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_panels',
+    'sphinx_design',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
@@ -112,10 +112,6 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
-# Bootstrap CSS classes from sphinx-panels
-# disable to avoid conflicts with Bootstrap in pydata-sphinx-theme
-panels_add_bootstrap_css = False
 
 # Logo in top bar
 html_logo = "_static/vsc-logo-1.png"
