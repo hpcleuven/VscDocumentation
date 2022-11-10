@@ -106,12 +106,15 @@ html_theme_options = {
             "icon": "fa-brands fa-square-twitter",
         },
     ],
+    "pygment_light_style": "solarized-light",
+    "pygment_dark_style": "nord",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['css/vsc.css']
 
 # Logo in top bar
 html_logo = "_static/vsc-logo-1.png"
