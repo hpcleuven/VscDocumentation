@@ -1,8 +1,8 @@
 .. _acccess_data_transfer:
 
-########################
-Access and Data Transfer
-########################
+################################################
+:fas:`right-to-bracket` Access and Data Transfer
+################################################
 
 Before you can really start using one of the clusters, there are several
 things you need to do or know:

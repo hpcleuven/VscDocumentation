@@ -1,8 +1,8 @@
 .. _generating keys macos:
 
-########################
-Generating keys on macOS
-########################
+#####################################
+:fab:`apple` Generating keys on macOS
+#####################################
 
 Requirements:
 

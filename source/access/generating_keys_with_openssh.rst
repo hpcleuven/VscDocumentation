@@ -1,8 +1,8 @@
 .. _generating keys linux:
 
-########################
-Generating keys on Linux
-########################
+#####################################
+:fab:`linux` Generating keys on Linux
+#####################################
 
 Requirements:
 

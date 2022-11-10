@@ -1,7 +1,8 @@
 .. _generating keys windows:
 
-Generating keys on Windows
-==========================
+#########################################
+:fab:`windows` Generating keys on Windows
+#########################################
 
 To get access from a Windows computer, we currently provide documentation for two SSH clients,
 :ref:`PuTTY <text mode access using PuTTY>` and :ref:`MobaXterm <access using mobaxterm>`,

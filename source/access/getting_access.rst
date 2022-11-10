@@ -1,5 +1,6 @@
-Getting Access
-==============
+################################
+:fas:`user-check` Getting Access
+################################
 
 Once you have a valid :ref:`public/private key pair<create key pair>`, you can
 submit an account request.  The following algorithm guides you to the
@@ -7,8 +8,8 @@ appropriate approach for each institution.
 
 .. _apply for account:
 
-Applying for the account
-~~~~~~~~~~~~~~~~~~~~~~~~
+Applying for your VSC account
+=============================
 
 .. tab-set::
 
@@ -104,7 +105,7 @@ procedure does not work.
 #. Open the `VSC account page`_.
 #. Select your "home" institution from the drop-down menu and click the "confirm" button.
 #. Log in using your institution login and password.
-#. You will be asked to upload the public key you `created earlier <create key pair_>`_.
+#. You will be asked to upload the public key you `created earlier <create key pair>`_.
 #. You will get an e-mail to confirm your application, click the included link to do so.
 #. After the account has been approved by the VSC, your account will be created and
    you will get a confirmation e-mail.
@@ -134,7 +135,7 @@ Information on our training program and the schedule is available on the
 
 .. note::
 
-   :badge:`KU Leuven,badge-primary` if there is no course announced, users of
+   :bdg-primary:`KU Leuven` if there is no course announced, users of
    KU Leuven can register to the `training waiting list`_ and we will organize
    a new session as soon as we get a few people interested in it.
 

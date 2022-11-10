@@ -1,6 +1,6 @@
-#################
-:fa:`rocket` Jobs
-#################
+################
+:fas:`gear` Jobs
+################
 
 An HPC cluster is a multi-user system.  This implies that your computations
 run on a part of the cluster that will be temporarily reserved for you by

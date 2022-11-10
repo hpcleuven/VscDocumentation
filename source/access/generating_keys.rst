@@ -1,6 +1,6 @@
-#############
-Security Keys
-#############
+########################
+:fas:`key` Security Keys
+########################
 
 Unlike your institute account, VSC accounts don't use regular fixed
 passwords but a key pair consisting of a public an private key because
@@ -44,6 +44,6 @@ describe the generation of key pairs in the client sections below:
    :maxdepth: 2
 
    generating_keys_on_windows
-   generating_keys_on_linux
-   generating_keys_on_os_x
+   generating_keys_with_openssh
+   generating_keys_with_openssh_on_os_x
 

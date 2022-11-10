@@ -92,7 +92,7 @@ More information is available on:
     Job names, output files and notifications <specifying_output_files_and_notifications>
     Credit system <credit_system_basics>
 
-.. sealso::
+.. seealso::
 
    Using the :ref:`module system <module system basics>`
 

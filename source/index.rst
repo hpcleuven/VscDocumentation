@@ -3,15 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+############################
 Welcome to VSC documentation
-============================
+############################
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   hardware
    access/index
-   jobs/index
+   compute
+   cloud
+   data
    faq
 .. globus/globus_main_index
 
