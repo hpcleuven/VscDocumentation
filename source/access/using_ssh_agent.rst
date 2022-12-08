@@ -100,21 +100,15 @@ There are a number of basic scenarios
 Managing keys
 -------------
 
-Once you have an ssh-agent up and running, it is very easy to add your
-key to it. If your key has the default name(id_rsa), all you need to do
-is to type
+Once you have an ssh-agent up and running, it is easy to add your key to it.
+Assuming your key is ``~/.ssh/id_rsa_vsc``, type the following at the command
+prompt:
 
 ::
 
-   $ ssh-add
+   $ ssh-add ~/.ssh/id_rsa_vsc
 
-at the command prompt. You will then be asked to enter your passphrase.
-If your key has a different name, e.g., id_rsa_cluster, you can specify
-that name as an additional argument to ssh-add:
-
-::
-
-   $ ssh-add ~/.ssh/id_rsa_cluster
+You will then be asked to enter your passphrase.
 
 To list the keys that ssh-agent is managing, type
 

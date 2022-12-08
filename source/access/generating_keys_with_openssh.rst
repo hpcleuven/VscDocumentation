@@ -41,25 +41,28 @@ this particular case, the private key is ``id_rsa`` and public key is
 ``id_rsa.pub``. You may have multiple keys (not necessarily in the
 directory ``~/.ssh``) if you or your operating system requires this.
 
+.. warning::
+
+   For security reasons, users should always generate a new key pair for use in
+   the VSC clusters, and only use it for the VSC clusters.
+
 You will need to generate a new key pair, when:
 
--  you don't have a key pair yet, or
--  you have a key pair, but is not in the correct format (RSA) or
-   uses too few bits (at least 4096),
+-  you don’t yet have a dedicated key pair for the VSC clusters, or
 -  you forgot the passphrase protecting your private key, or
 -  or your private key was compromised.
 
-To generate a new public/private pair, use the following command:
+To generate a new public/private pair, use the following command (make sure to
+generate a 4096-bit key):
 
 ::
 
-   $ ssh-keygen -t rsa -b 4096
+   $ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_vsc
    Generating public/private rsa key pair. 
-   Enter file in which to save the key (/home/user/.ssh/id_rsa): 
    Enter passphrase (empty for no passphrase): 
    Enter same passphrase again: 
-   Your identification has been saved in /home/user/.ssh/id_rsa.
-   Your public key has been saved in /home/user/.ssh/id_rsa.pub.
+   Your identification has been saved in /home/user/.ssh/id_rsa_vsc
+   Your public key has been saved in /home/user/.ssh/id_rsa_vsc.pub
 
 This will ask you for a file name to store the private and public key,
 and a passphrase to protect your private key.
@@ -73,6 +76,9 @@ The system will ask you for your passphrase every time you want to use the
 private key, that is, every time you want to access the cluster or transfer
 your files, unless you use an :ref:`SSH agent<SSH agent>`.
 
+Next, make sure to follow the instructions to :ref:`link your key with your
+VSC-id <linking key with vsc-id linux>`.
+
 
 Converting SSH2 keys to OpenSSH format
 ======================================
@@ -80,13 +86,13 @@ Converting SSH2 keys to OpenSSH format
 *This section is only relevant if you did not use OpenSSH (as described above)
 to generate an SSH key.*
 
-If you have a public key ``id_rsa_4096_ssh.pub`` in the SSH2 format,
+If you have a public key ``id_rsa_vsc_ssh2.pub`` in the SSH2 format,
 you can use OpenSSH's ssh-keygen to convert it to the OpenSSH format in
 the following way:
 
 ::
 
-   $ ssh-keygen -i -f ~/.ssh/id_rsa_4096_ssh.pub > ~/.ssh/id_rsa_4096_openssh.pub
+   $ ssh-keygen -i -f ~/.ssh/id_rsa_vsc_ssh2.pub > ~/.ssh/id_rsa_vsc_openssh.pub
 
 .. include:: links.rst
 
