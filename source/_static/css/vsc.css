@@ -1,11 +1,11 @@
 html[data-theme="light"] {
     --pst-color-primary: #d96c31;
     --pst-color-background: #f1f2f2;
-    --pst-color-link: #f28e24;
+    --pst-color-link: #0b6585;
 }
 
 html[data-theme="dark"] {
     --pst-color-primary: #f28e24;
     --pst-color-background: #383839;
-    --pst-color-link: #e8a023;
+    --pst-color-link: #dbb99c;
 }
