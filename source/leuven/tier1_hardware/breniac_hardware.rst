@@ -1,5 +1,5 @@
-Breniac hardware
-================
+Breniac infrastructure
+======================
 
 Breniac is the VSC's Tier-1 cluster hosted by KU Leuven.
 

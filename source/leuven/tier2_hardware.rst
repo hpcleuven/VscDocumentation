@@ -1,5 +1,5 @@
-KU Leuven/UHasselt Tier-2 hardware
-==================================
+KU Leuven/UHasselt Tier-2 Infrastructure
+========================================
 
 .. toctree::
    :maxdepth: 2

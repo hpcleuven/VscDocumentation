@@ -1,8 +1,8 @@
 .. _hardware:
 
-#########################
-:fa:`server` VSC hardware
-#########################
+###########################
+:fa:`server` Infrastructure
+###########################
 
 .. toctree::
    :maxdepth: 3
