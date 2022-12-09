@@ -1,8 +1,44 @@
-# VscDocumentation
+# VscDocumentation (pydata branch)
 
-This repository contains user-level documentation for the VSC infrastructure.  It is deployed on [ReadTheDocs](https://vlaams-supercomputing-centrum-vscdocumentation.readthedocs-hosted.com/en/latest/).
+This branch contains the new re-design of the VSC documentation using the
+modern [PyData theme](https://pydata-sphinx-theme.readthedocs.io).
 
-When a commit is done on the repository's master branch, the documentation is rebuilt automatically on ReadTheDocs, and is immediately live.  Hence you may prefer to work on a branch for major updates.
+## Goals of the re-design
+
+1. Organize the existing documentation in 4 main sections: Access, Compute,
+   Cloud and Data
+2. All documents should be visible and reachable organically through
+   navigation. Users should be able to figure out were to find information
+   without search.
+3. Site-specific information should be minimized. Disagreements between sites
+   will be forwarded to a CUE meeting. Remaining site-specific information will
+   be organized in tabs to avoid clutter.
+
+## How to contribute?
+
+1. Check the existing documentation
+2. Does a generic document has some piece of information that is site-specific?
+    1. Try to find a common solution that applies to all sites and correct the
+       document
+    2. If there are insurmountable disagreements, arrange site-specific
+       information either in tabs or with color badges
+    3. In case of doubt open a question in the next CUE meeting
+3. Check for documents in the repo not reachable through navigation
+    1. If the hidden document is useful, put it in a `toctree`
+    2. If the hidden document is no useful, delete it
+4. Feel free to improve the formatting
+    * we use the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io)
+    * use any format element from
+      [sphinx-design](https://sphinx-design.readthedocs.io), such as cards,
+      tabs or badges
+    * use graphic symbols from [FontAwesome 6 free
+      tier](https://fontawesome.com/icons?m=free), available in both the
+      [PyData theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/fonts.html)
+      and [sphinx-design](https://sphinx-design.readthedocs.io/en/latest/badges_buttons.html#fontawesome-icons)
+
+Open your pull requests to the `pydata` branch in this repo. The `pydata`
+branch is kept in sync with the `master` branch in a regular but non-daily
+basis.
 
 ## Prerequisites
 
@@ -10,32 +46,45 @@ You will need to clone the repository, i.e.,
 ```bash
 $ git clone git@github.com:hpcleuven/VscDocumentation.git
 $ cd VscDocumentation
-$ git fetch origin development:development
+$ git fetch origin
+$ git checkout pydata
 ```
 
-Your life will be substantially easier if you can preview your changes locally.  A conda environment has be defined to install all the required software
+Your life will be substantially easier if you can preview your changes locally. Install the required packages in a self-contained environment with a Python venv or Conda.
+
+### Python venv
+
+All required Python modules can be easily installed in a Python virtual environment using the `requirements.txt` file in this repo
+
+```bash
+$ python -m venv /path/to/new/venv
+$ source /path/to/new/venv/bin/activate
+$ cd VscDocumentation
+$ git checkout pydata
+$ python -m pip install -r requirements.txt
+```
+
+### Conda
+
+A conda environment has be defined to install all the required software
 
 Downloads and installation instructions for Miniconda can be found on [conda's website](https://docs.conda.io/en/latest/miniconda.html).
 
 The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The environment can be created using
+
 ```bash
 $ conda env create -f environment.yml
+```
+The `sphinx` environment can be activated by
+```bash
+$ source activate sphinx
 ```
 
 ## What is the status of improvements/fixes?
 
 Feel free to open issues to get fixes or improvements on the agenda.  To get an overview of work that is planned or in progress, check out the [project overview](https://github.com/hpcleuven/VscDocumentation/projects/1).
 
-
 ## Workflow
-
-### Activate the environment
-
-The ``sphinx`` environment can be activated by
-```bash
-$ source activate sphinx
-```
-
 
 ### Creating a feature branch
 
