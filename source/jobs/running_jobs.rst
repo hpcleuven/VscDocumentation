@@ -1,224 +1,72 @@
 .. _running jobs:
 
-Running jobs
-============
+Running jobs in Slurm
+=====================
 
-An HPC cluster is a multi-user system.  This implies that your computations
-run on a part of the cluster that will be temporarily reserved for you by
-the scheduler.
+This page covers the more basic Slurm use, including starting jobs, basic job management
+and some templates for job scripts for various scenarios. It is the minimum a user should
+master. A second page describes :ref:`more advanced use of Slurm <Antwerp advanced Slurm>`.
 
-.. warning::
+Since the start of the VSC, Torque and Moab were used as the resource manager and scheduler
+respectively. The resource manager is responsible for keeping track of resources and making
+sure jobs use the resources allocated to them. The scheduler is the piece of software that
+prioritises jobs that are waiting in the queue and decides which job can start with which
+resources. It is clear that both have to work together very closely. Torque and Moab were
+developed and supported by Adaptive Computing. This company was acquired by ALA Services
+Technology Companies. Since then the software isn't well supported anymore, resulting in
+problems to keep it running on our systems.
 
-   Do not run computationally intensive tasks on the login nodes! These
-   nodes are shared among all active users, so putting a heavy load on those
-   nodes will annoy other users.
+Therefore, the decision was taken to transfer to a different resource manager and scheduler
+software. Slurm Workload Manager was chosen due to its wide use in academic supercomputer
+centres. We've been preparing for this switch for over two years now by stressing in the
+introductory courses those features of Torque and Moab that resemble Slurm features
+the most.
 
-Although you can :ref:`work interactively <interactive jobs>` on an HPC system,
-most computations are performed in batch mode.
+Slurm Workload Manager is also used on the clusters at UGent (but with a wrapper that still
+accepts Torque job scripts with some limitations) and will also be the scheduler on Hortense, the
+successor of the BrENIAC Tier-1 system.
 
-The workflow is straightforward:
-
-#. Create a job script.
-#. Submit it as a job to the scheduler.
-#. Wait for the computation to run and finish.
-
-
-Job script
-----------
-
-A job script is essentially a Bash script, augmented with information for the
-scheduler.  As an example, consider a file ``hello_world.pbs`` as below.
-
-.. code-block:: bash
-   :linenos:
-
-   #!/usr/bin/env bash
-
-   #PBS -l nodes=1:ppn=1
-   #PBS -l walltime=00:05:00
-   #PBS -l pmem=1gb
-
-   cd $PBS_O_WORKDIR
-
-   module purge
-   module load Python/3.7.2-foss-2018a
-
-   python hello_world.py
+Historically, Slurm was an acronym of **S**\imple **L**\inux **U**\tility for
+**R**\esource **M**\anagement. The development started around 2002 at Lawrence Livermore
+National Lab as a resource manager for Linux clusters. Slurm has always had a very modular
+architecture. From 2008 on increasingly sophisticated scheduling plugins were added
+to Slurm. Nowadays it is used on some of the largest systems in the world. Slurm is
+completely open source though commercial support can be obtained from SchedMD, a
+spin-off company of the Slurm development.
 
 
-We discuss this script line by line.
+Resource manager concepts
+-------------------------
 
-- Line 1 is a she-bang that indicates that this is a Bash script.
-- Lines 3-5 inform the scheduler about the resources required by this job.
-
-  - It requires a single node (``nodes=1``), and a single core (``ppn=1``) on
-    that node.
-  - It will run for at most 5 minutes (``walltime=00:05:00``).
-  - It will use at most 1 GB of RAM (``pmem=1gb``).
-
-- Line 7 changes the working directory to the directory in which the job will
-  be submitted (that will be the value of the ``$PBS_O_WORKDIR`` environment
-  variable when the job runs).
-- Lines 9 and 10 set up the environment by :ref:`loading the appropriate modules 
-  <module system basics>`.
-- Line 12 performs the actual computation, i.e., running a Python script.
-
-.. warning::
-
-   When running on KU Leuven/UHasselt and Tier-1 infrastructure make sure to specify
-   a credit account as part of your job script, if not, your job will not
-   run.
-
-   ::
-
-      #PBS -A lp_example
-
-   For more information, see :ref:`credit system basics<credit system basics>`.
-
-Every job script has the same basic structure.
-
-.. note::
-
-   Although you can use any file name extension you want, it is good practice
-   to use ``.pbs`` since that allows support staff to easily identify your
-   job script.
-
-More information is available on:
-
-.. toctree::
-   :maxdepth: 2
-   
-    Job resources <specifying_resources>
-    Job names, output files and notifications <specifying_output_files_and_notifications>
-    Credit system <credit_system_basics>
-
-.. seealso::
-
-   Using the :ref:`module system <module system basics>`
-
-Submitting and monitoring a job
--------------------------------
-
-Once you have created your job script, and transferred all required input data
-if necessary, you can submit your job to the scheduler
-
-::
-
-   $ qsub hello_world.pbs
-   205814.leibniz
-
-The ``qsub`` returns a job ID, an unique identifier that you can use to manage
-your job.  Only the number, i.e., ``205814`` is significant.
-
-Once submitted, you can monitor the status of your job using the ``qstat`` command.
-
-::
-
-   $ qstat
-   Job ID                    Name             User            Time Use S Queue
-   ------------------------- ---------------- --------------- -------- - -----
-   205814.leibniz            hello_world.pbs  vsc30140               0 Q q1h
-
-The status of your job is given in the ``S`` column.  The most common values are
-given below.
-
-+--------+------------------------------------------------------+
-| status | meaning                                              |
-+========+======================================================+
-| Q      | job is *queued*, i.e., waiting to be executed        |
-+--------+------------------------------------------------------+
-| R      | job is *running*                                     |
-+--------+------------------------------------------------------+
-| C      | job is *completed*, i.e., finished.                  |
-+--------+------------------------------------------------------+
-
-More information is available on
+* **Nodes**: On the UAntwerp clusters (and most other clusters) a node is the largest
+  part of the cluster running a single operating system image, and hence capable of
+  supporting a shared memory program. Nodes are connected with each other through an
+  interconnect, and communication between nodes is done via message passing.
+* **Core**: A core is a physical core in a system.
+* **CPU**: A CPU is a virtual core in a system, in other words, a hardware thread
+  in a system with hyperthreading/SMT enabled. On a system with hyperthreading/SMT
+  disabled, virtual cores are just physical cores.
+* **Partition**: Groups of nodes with limits and access controls, basically the equivalent
+  of a queue in Torque. A node can be part of multiple partitions.
+* **Job**: A resource allocation request.
+* **Job step**: A set of (possibly parallel) tasks within a job. A job can consist of
+  just a single job step or can contain multiple job steps which may use all or just
+  a part of the resource allocation of a job and can run sequentially or in parallel
+  (or a mix of that). The job script itself is a special job step, called the batch
+  job step, but additional job
+  steps can be created (e.g., for running a parallel MPI application).
+* **Task**: A task is executed within a job step and essentially corresponds to a
+  Linux process: a single- or multithreaded process, or a single rank within a MPI
+  process. Specifying the number of tasks one wants to run simultaneously and the
+  number of cores per task is a very convenient way to request resources to Slurm
+  as afterwards starting a MPI or hybrid MPI/OpenMP program using the ``srun``
+  command is very easy.
 
 .. toctree::
    :maxdepth: 3
-   
-   Submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
+   :numbered: 2
 
+   job_submission
+   job_management
+   job_types
 
-Job output
-----------
-
-By default, the output of your job is saved to two files.
-
-``<job_name>.o<jobid>``
-   This file contains all text written to standard output, as well as some
-   information about your job.
-``<job_name>.e<jobid>``
-   This file contains all text written to standard error, if any.  If your job fails,
-   or doesn't produce the expected output, this is the first place to look.
-
-For instance, for the running example, the output file would be
-``hello_world.pbs.o205814`` and contains
-
-.. code-block:: txt
-   :linenos:
-
-   ===== start of prologue =====
-   Date : Mon Aug  5 14:50:28 CEST 2019
-   Job ID : 205814
-   Job Name : hello_world.pbs
-   User ID : vsc30140
-   Group ID : vsc30140
-   Queue Name : q1h
-   Resource List : walltime=00:05:00,nodes=1:ppn=1,neednodes=1:ppn=1
-   ===== end of prologue =======
-   
-   hello world!
-   
-   ===== start of epilogue =====
-   Date : Mon Aug  5 14:50:29 CEST 2019
-   Session ID : 21768
-   Resources Used : cput=00:00:00,vmem=0kb,walltime=00:00:02,mem=0kb,energy_used=0
-   Allocated Nodes : r3c08cn1.leibniz 
-   Job Exit Code : 0
-   ===== end of epilogue =======
-
-Lines 1 through 10 are written by the prologue, i.e., the administrative script that
-runs before your job script.  Similarly, lines 12 though 19 are written by the
-epilogue, i.e., the administrative script that runs after your job script.
-
-Line 11 is the actual output of your job script.
-
-.. note::
-
-   The format of the output file differs slightly from cluster to cluster, although
-   the overall structure is the same.
-
-
-Troubleshooting
----------------
-
-.. toctree::
-   :maxdepth: 2
-
-   Why doesn't my job start immediately? <why_doesn_t_my_job_start>
-   Why does my job fail after a successful start? <what_if_jobs_fail_after_starting_successfully>
-
-
-Advanced topics
----------------
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-    monitoring_memory_and_cpu_usage_of_programs
-    worker_framework
-    checkpointing_framework
-
--  :ref:`monitoring memory and cpu`, which helps to find the
-   right parameters to improve your specification of the job requirements.
--  :ref:`worker framework`: To manage lots of small jobs on a cluster. The
-   cluster scheduler isn't
-   meant to deal with tons of small jobs. Those create a lot of
-   overhead, so it is better to bundle those jobs in larger sets.
--  The :ref:`checkpointing framework` can be used to run programs that take
-   longer than the maximum time
-   allowed by the queue. It can break a long job in shorter jobs, saving
-   the state at the end to automatically start the next job from the
-   point where the previous job was interrupted.

@@ -110,7 +110,7 @@ enjoy the power of the ``srun`` command when starting processes.
 Make sure to read the following pages which give a lot of information on Slurm
 and how to convert your Torque scripts:
 
-* :ref:`Local Slurm documentation <Antwerp Slurm>`
+* :ref:`Local Slurm documentation <running jobs>`
 * :ref:`Important differences between Slurm and Torque<Antwerp Slurm_PBS_differences>`
 * :ref:`Converting PBS/Torque options to Slurm <Antwerp Slurm_convert_from_PBS>`
 

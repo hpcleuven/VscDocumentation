@@ -4,7 +4,7 @@ Slurm @ UAntwerp: Advanced use
 ==============================
 
 This page contains some more advanced commands and additional ways to request resources.
-Make sure to first read our :ref:`basic Slurm use <Antwerp Slurm>` page.
+Make sure to first read our :ref:`basic Slurm use <running jobs>` page.
 
 Requesting resources
 --------------------
@@ -144,7 +144,7 @@ The sinfo command
 
 The ``sinfo`` command can return a lot of information about a Slurm cluster. Understanding
 its output does require a good understanding of the Slurm concepts
-(see our :ref:`basic Slurm use <Antwerp Slurm>` page).
+(see our :ref:`basic Slurm use <running jobs>` page).
 
 The command
 
