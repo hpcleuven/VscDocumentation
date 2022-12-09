@@ -1,10 +1,10 @@
-.. _Antwerp advanced Slurm:
+.. _job advanced:
 
-Slurm @ UAntwerp: Advanced use
-==============================
+Job scripts: Advanced topics
+============================
 
 This page contains some more advanced commands and additional ways to request resources.
-Make sure to first read our :ref:`basic Slurm use <running jobs>` page.
+Make sure to first read our :ref:`running jobs` page.
 
 Requesting resources
 --------------------

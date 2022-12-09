@@ -69,4 +69,5 @@ Resource manager concepts
    job_submission
    job_management
    job_types
+   job_advanced
 

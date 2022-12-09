@@ -11,9 +11,9 @@ The Slurm documentation is work-in-progress
 as we are still refining the setup.
 
 - An overview of Slurm concepts and commands:
-    - The :ref:`Slurm Workload Manager @ UAntwerp <running jobs>` page contains the 
+    - The :ref:`running jobs` page contains the 
       minimum that we expect a user to know.
-    - The :ref:`Slurm @ UAntwerp: Advanced use <Antwerp advanced Slurm>` page contains
+    - The :ref:`job advanced` page contains
       some more advanced commands and additional ways to request resources. Check those
       if you feel the basic information is not enough.
 - You can also have a look at our 
