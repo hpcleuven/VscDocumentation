@@ -74,7 +74,7 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+# pygments_style = None
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -128,15 +128,15 @@ html_logo = "_static/vsc-logo-1.png"
 # 'searchbox.html']``.
 #
 html_sidebars = {
-    "index": ["search-field"],
-    "**": ["search-field", "sidebar-nav-bs",],
+    "index": [],
+    "**": ["search-field", "sidebar-nav-bs"],
 }
 
 # Edit this page button
 html_context = {
     "github_user": "hpcleuven",
     "github_repo": "VscDocumentation",
-    "github_version": "master",
+    "github_version": "pydata",
     "doc_path": "source",
 }
 
