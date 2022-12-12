@@ -36,15 +36,16 @@ For Debian/Ubuntu:
 
    - The most recent version of iCommands is 4.3.0.
    - However, the KU Leuven Tier-1 iRODS instance still runs on iRODS 4.2.11.
-   - In case you have a Linux version (e.g. Ubuntu 20 or higher) for which iCommands 4.2.11 is not available, please do the following:
+   - In case you have a Linux version (e.g. Ubuntu 20 or higher) for which iCommands 4.2.11 is not available, please execute the following commands:
 
-    - LSB_RELEASE="bionic"
-    - wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
-    - echo "deb [arch=amd64] https://packages.irods.org/apt/ ${LSB_RELEASE}  main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
-    - sudo apt-get update
-    - sudo apt-get install irods-runtime=4.2.11-1~bionic
-    - sudo apt-get install irods-icommands=4.2.11-1~bionic
+    - ``LSB_RELEASE="bionic"``
+    - ``wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -``
+    - ``echo "deb [arch=amd64] https://packages.irods.org/apt/ ${LSB_RELEASE}  main" | sudo tee /etc/apt/sources.list.d/renci-irods.list``
+    - ``sudo apt-get update``
+    - ``sudo apt-get install irods-runtime=4.2.11-1~bionic``
+    - ``sudo apt-get install irods-icommands=4.2.11-1~bionic``
 
+   - For any further assistance, please contact data@vscentrum.be.
 
 Informative iRODS Commands
 --------------------------
