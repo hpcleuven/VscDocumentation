@@ -22,7 +22,7 @@ Installing iCommands locally
 ----------------------------
 iCommands is installed on the KU Leuven Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
 
-On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.10. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
+On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.11. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
 
 For CentOS:
 ::
