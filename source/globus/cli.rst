@@ -84,41 +84,6 @@ You can transfer a file between two endpoints as follows:
 For more documentation and examples about the globus CLI, see the official `Globus CLI documentation`_.
 
 
-Scheduling transfers with Globus-Timer-CLI
-------------------------------------------
-
-Transfers can also be scheduled to happen in the future (instead of being
-executed immediately as in the example above) and to be repeated on a regular
-basis. These services are enabled by the Globus Timer API. The corresponding
-CLI tools can be installed in your Python (virtual) environment using Pip
-(`Globus-Timer-CLI on PyPi`_).
-
-The above example can then be made to start at a certain point in the future 
-and to be repeated every 7 days:
-
-      $ globus-timer job transfer \
-                     --name test_transfer_weekly \
-                     --label "test_transfer_weekly" \
-                     --interval 604800 \
-                     --start '2021-06-02T11:00:00' \
-                     --source-endpoint $endpoint_src \
-                     --dest-endpoint $endpoint_dest \
-                     --item $VSC_SCRATCH/testfile.tgz $VSC_SCRATCH/testfile.tgz false
-      Name:            test_transfer
-      Job ID:          6aa3ca88-8ae4-442d-99da-c5a89821c299
-      Status:          new
-      Start:           2021-06-02T09:00:00+00:00
-      Interval:        7 days, 0:00:00
-      Next Run At:     2021-06-09T09:00:00+00:00
-      Last Run Result: NOT RUN
-
-For more information on the available transfer options and monitoring tools,
-please consult `Globus-Timer-CLI on PyPi`_.
-
-.. warning::
-
-      Times in the globus-timer outputs are always in UTC time,
-      not in our local (CEST) time.
 
 .. include:: links.rst
 
