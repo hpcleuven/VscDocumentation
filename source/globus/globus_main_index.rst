@@ -8,9 +8,9 @@ Globus file and data sharing platform
 
    globus_platform
    access
-   managing_and_transferring_files
-   local_endpoints
-   data_sharing
-   manage_globus_groups
+   endpoints
+   using_globus_via_web
+   sharing
+   groups
    cli
    glossary
