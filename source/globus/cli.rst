@@ -12,13 +12,13 @@ Getting started with the CLI
 ----------------------------
 
 The Globus CLI can be installed as a python package.
-You can install this in a Python Virtual Environment as follows:
+You can install this in a Python Virtual Environment as follows::
 
       $ /usr/bin/python3 -m venv venv_globus
       $ source ./venv_globus/bin/activate
       $ pip install globus-cli
 
-You can now authenticate by executing:
+You can now authenticate by executing::
 
       $ globus login
 
@@ -27,7 +27,7 @@ If you had no running session, you will be asked to log in to Globus.
 
 Paste the token you get on this site in your terminal, and you are logged in to the globus CLI!
 
-You can confirm this by listing your globus ID's as follows:
+You can confirm this by listing your globus ID's as follows::
 
       $ globus whoami
 
@@ -37,7 +37,7 @@ Transferring data
 
 In Globus, every collection has an ID. In the Globus CLI, you need this ID to list or transfer data from/to a collection.
 
-You can look up the ID's of collections and endpoints with the command 'globus endpoint search':
+You can look up the ID's of collections and endpoints with the command 'globus endpoint search'::
 
       $ Globus endpoint search 'VSC KU Leuven tier2 scratch'
       ID                                   | Owner                                                        | Display Name
@@ -52,7 +52,7 @@ You can find the names of all VSC collections in our table of :ref:`globus-avail
     While collections are directly accessible, endpoints are not, and this might cause confusion.  
 
 You can list the contents of a collection with 'globus ls', followed by the collection id.
-You can specify a directory path on the collection after a colon:
+You can specify a directory path on the collection after a colon::
 
       # To list a collection from the root: 
       $ globus ls $tier2scratch        
@@ -72,7 +72,7 @@ The first time you access a particular collection from the CLI, the CLI will ask
 It will ask you to run 'globus session consent [...]' and go to the provided url.
 The consent is added to your session (so it's tied to one PC) and lasts until you use the 'globus logout' command. 
 
-You can transfer a file between two endpoints as follows:
+You can transfer a file between two endpoints as follows::
 
       $ globus transfer $tier2scratch:scratch/337/vsc33731/test/survey_user1.csv \
                $tier1scratch:337/vsc33731/test/survey_user1.csv --label "test_transfer"
