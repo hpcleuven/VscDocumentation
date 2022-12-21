@@ -25,7 +25,7 @@ You will be asked for a group name, description, and whether the group should be
 
 .. image:: groups/create_group.png
 
-After you click on 'Create group', you will be transported to the page of your group.
+After you click on 'Create group', you will be forwarded to the page of your group.
 
 Under the 'settings' tab on this page, you can later edit more settings of your group. 
 
@@ -52,7 +52,7 @@ For users who have not yet accepted your invitation:
 For users who have already accepted your invitation:
 
 - You can change their status (active or suspended), or remove them from the group.
-- You can change their role 
+- You can change their role.  
 
 These are the available roles and the actions they can take:
 
@@ -68,7 +68,7 @@ These are the available roles and the actions they can take:
 
 
 .. warning:: 
-   If you promote someone to administrator, they will also be able to delete your group (see under).
+   If you promote someone to administrator, they will also be able to delete your group (see lower).
 
 
 Each time you make changes to a member's settings, there is a text field where you can add a reason for the changes. 
