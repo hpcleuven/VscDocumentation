@@ -11,7 +11,11 @@ It is available for Windows, Mac and Linux (examples below taken from Linux).
 Getting started with the CLI
 ----------------------------
 
-The Globus CLI can be installed as a python package.
+Currently, a version of the Globus CLI is already available on the Tier-2 Cluster of the VUB (Hydra) and can be loaded as follows::
+
+      module load Globus-CLI
+
+In other environments, the Globus CLI can be installed as a python package.
 You can install this in a Python Virtual Environment as follows::
 
       $ /usr/bin/python3 -m venv venv_globus
