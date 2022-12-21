@@ -78,7 +78,7 @@ Each time you make changes to a member's settings, there is a text field where y
 Leaving or deleting a group
 ----------------
 
-To leave a group you are member of, go to the groups tab, and then to the page of your group. On the right, you should see a 
+To leave a group you are member of, go to the groups tab, and then to the page of your group. On the right, you should see a button to leave your group.  
 
 To delete a group that you are administrator of, go the page of your group, and then go to settings. There you will find a button 'delete group'.
 
