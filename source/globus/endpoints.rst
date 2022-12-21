@@ -25,8 +25,6 @@ Both the KU Leuven and the VSC host a number of collections:
 +------------------------------------------+-------------------+----------------+------------------+
 | Name                                     | Account needed    | High assurance | Guest collections| 
 +==========================================+===================+================+==================+
-| VSC iRODS irods.hpc.kuleuven.be          | iRODS account     | No             | Yes              |
-+------------------------------------------+-------------------+----------------+------------------+
 | VSC VUB Hydra                            | VSC account       | No             | No               |
 +------------------------------------------+-------------------+----------------+------------------+
 | VSC UGent Tier2 filesystems              | UGent account     | No             | No               |
@@ -43,6 +41,8 @@ Both the KU Leuven and the VSC host a number of collections:
 +------------------------------------------+-------------------+----------------+------------------+
 | VSC KU Leuven data directories           | VSC account       | No             | No               |
 +------------------------------------------+-------------------+----------------+------------------+
+
+If you are one of the pilot users of the Tier-1 Data platform, you can find its collection by searching for 'vsc irods.hpc'.  
 
 .. _globus-local-endpoints:
 
