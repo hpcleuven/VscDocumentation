@@ -8,7 +8,7 @@ Sharing data
 
 Globus allows you to share data with others, even if they do not have access to the same endpoints. 
 To share data with others, you need to create a **shared collection**, which is a shared folder on an existing collection.
-You can then give individual users, groups or even the whole world to the data in that folder. 
+You can then give individual users, groups or even the whole world access to the data in that folder. 
 
 Data sharing policy
 -------------------
@@ -135,8 +135,6 @@ Otherwise, you could also go to the 'collections' tab, and then click on the 'Sh
 If you click on any of these collections, you will see a button 'Open in File Manager'.
 This sends you straight to the file manager to start working with the data. 
 
-..
-  todo: add image
 
 
 
