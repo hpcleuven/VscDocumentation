@@ -16,54 +16,57 @@ There are several type of nodes in the wICE cluster: normal compute nodes, GPU n
 
 The maximum walltime for any job on wICE regular nodes is 7 days (168 hours). Job requests with walltimes between 3 and 7 days are not allowed to run on big memory, interactive, GPU nodes.
 
-wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
+wICE cluster uses a different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
 
 .. _submit to wice compute node:
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
-The submission will occur from login nodes of Genius cluster, therefore you need to always remember to specify the cluster you need to use. 
+In these examples, the submission will be done from login nodes of the Genius cluster, therefore you need to always remember to specify the cluster you want to use.
 
 To submit to a compute node you need to provide the required number of nodes and cores. For example to request 2 nodes with each 72 cores for 2 hours you can submit like this::
 
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=2:00:00  -A lp_myproject  myjobscript.slurm
-  
+
 
 Submit a long job to a compute node
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To submit to a compute node a job longer than 3 days you need to request a separate partition:
 
 ::
 
-   $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 –-partition=batch_long -A lp_myproject  myjobscript.slurm
+   $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 --partition=batch_long -A lp_myproject  myjobscript.slurm
 
 
 .. _submit to wice interactive node:
 
 Submit to an interactive partition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The interactive nodes are located in a separate partition. The users are allowed to request maximum of 8 cores for maximum walltime of 16 hours. In case of these nodes it is important to use then in interactive way (so not submittiong the script) and specyfying the requirements, for example:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The interactive nodes are located in a separate partition. The users are allowed to request a maximum of 8 cores for a maximum walltime of 16 hours. These nodes are intended for interactive use. Instead of submitting a job script, you open an interactive session on a compute node as follows:
 
 ::
 
-   $ srun -n 1 -t 01:00:00 -A lp_myproject --partition=interactive --cluster=wice --pty bash –l
+   $ srun -n 1 -t 01:00:00 -A lp_myproject --partition=interactive --cluster=wice --pty bash -l
 
-If a GPU is necessary for the visualization process - it can be requested (max 1 GPU per max 8 cores and max 16 hours). The available GPU is a single A100, but split in 7 'virtual' GPU's. Additionaly, X11 forwarding should be on:
+If a GPU is necessary for the visualization process - it can be requested (max 1 GPU per max 8 cores and max 16 hours). The available GPU is a single A100, but split in 7 'virtual' GPU's. Additionally, X11 forwarding should be on:
 
 ::
 
    $ srun -N 1 -t 16:00:00 --ntasks-per-node=8 --gpus-per-node=1 -A lp_myproject -p interactive --cluster=wice --x11 --pty bash -l
 
+.. note::
+
+   The interactive partition is intended for relatively lightweight interactive work, such as compiling software, running small preprocessing scripts, or visualization. This is the reason why the amount of resources you can get in a job is limited on the interactive partition. In case you must do heavy computational work in an interactive way, it is also possible to submit interactive jobs to the other partitions. Do note that in general it is recommended to run heavy computational work in a script which you run as a batch job (so without opening an interactive terminal on the compute node).
 
 .. _submit to wice big memory node:
 
 Submit to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The big memory nodes are also located in a separate partition. In case of the big memory nodes it is also important to add your memory requirements (the maximum of memory per core that can be requested is 28GB/core), for example:
+The big memory nodes (2048GB of RAM) are also located in a separate partition. In case of the big memory nodes it is also important to add your memory requirements (the maximum of memory per core that can be requested is 28000MB/core), for example:
 
 ::
 
-   $ sbatch –-cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=20G --account=lp_myproject myjobscript.slurm
+   $ sbatch --cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=28000M --account=lp_myproject myjobscript.slurm
 
 
 .. _submit to wice GPU node:
