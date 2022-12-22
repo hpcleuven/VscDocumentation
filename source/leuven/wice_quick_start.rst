@@ -14,9 +14,9 @@ Running jobs on wICE
 
 There are several type of nodes in the wICE cluster: normal compute nodes, GPU nodes, big memory nodes and nodes configured for interactive use. The resources specifications for jobs have to be tuned to use these nodes properly.
 
-The maximum walltime for any job on wICE regular nodes is 7 days (168 hours). Job requests with walltimes between 3 and 7 days are not allowed to run on big memory, interactive, GPU nodes.
+In general, the maximum walltime for wICE jobs is 3 days (72 hours). Only jobs submitted to the ``batch_long`` partition are allowed to have walltimes up to 7 days (168 hours), as illustrated below.
 
-wICE cluster uses a different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
+The wICE cluster uses a different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
 
 .. _submit to wice compute node:
 
@@ -40,15 +40,15 @@ To submit to a compute node a job longer than 3 days you need to request a separ
 
 .. _submit to wice interactive node:
 
-Submit to an interactive partition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Submit to the interactive partition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The interactive nodes are located in a separate partition. The users are allowed to request a maximum of 8 cores for a maximum walltime of 16 hours. These nodes are intended for interactive use. Instead of submitting a job script, you open an interactive session on a compute node as follows:
 
 ::
 
    $ srun -n 1 -t 01:00:00 -A lp_myproject --partition=interactive --cluster=wice --pty bash -l
 
-If a GPU is necessary for the visualization process - it can be requested (max 1 GPU per max 8 cores and max 16 hours). The available GPU is a single A100, but split in 7 'virtual' GPU's. Additionally, X11 forwarding should be on:
+If a GPU is necessary for the visualization process, it can be requested (max 1 GPU and max 8 cores for at most 16 hours). The available GPU is a single A100 which has been split in 7 GPU instances (one of which will be allocated to your job). Additionally, X11 forwarding should be enabled:
 
 ::
 
@@ -56,7 +56,7 @@ If a GPU is necessary for the visualization process - it can be requested (max 1
 
 .. note::
 
-   The interactive partition is intended for relatively lightweight interactive work, such as compiling software, running small preprocessing scripts, or visualization. This is the reason why the amount of resources you can get in a job is limited on the interactive partition. In case you must do heavy computational work in an interactive way, it is also possible to submit interactive jobs to the other partitions. Do note that in general it is recommended to run heavy computational work in a script which you run as a batch job (so without opening an interactive terminal on the compute node).
+   The interactive partition is intended for relatively lightweight interactive work, such as compiling software, running small preprocessing scripts, small-scale debugging, or visualization. This is the reason why the amount of resources you can get in a job is limited on the interactive partition. In case you must do heavy computational work in an interactive way, it is also possible to submit interactive jobs to the other partitions. For instance suppose you need to debug a program using more than 8 cores. In that case you can use the command above to run an interactive job, changing the partition to ``batch``, ``gpu``, or ``bigmem`` and adapting the resources as needed.  Do note that in general it is recommended to run heavy computational work in a script which you run as a batch job (so without opening an interactive terminal on the compute node).
 
 .. _submit to wice big memory node:
 
