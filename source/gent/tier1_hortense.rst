@@ -1,3 +1,5 @@
+.. _hortense_main:
+
 Hortense @ HPC-UGent
 ====================
 

@@ -27,7 +27,6 @@ you're working on Windows and using PuTTY.
    #. choose the hostname:
 
          -  for Genius (Tier-2): **nx.hpc.kuleuven.be** and port **22**.
-         -  for BrENIAC (Tier-1): **nx-tier1.hpc.kuleuven.be** and port **22**.
 
             .. note::
 

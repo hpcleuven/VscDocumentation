@@ -156,8 +156,6 @@ various cluster/partitions.
 +----------+--------------------+-----------+-------------+------------+
 | Leuven   | genius             | superdome | shared      | yes        |
 +----------+--------------------+-----------+-------------+------------+
-| Leuven   | breniac (Tier-1)   | default   | single job  | yes        |
-+----------+--------------------+-----------+-------------+------------+
 
 Clusters with accounting enabled:
    If you use atools on a cluster where accounting is active, make sure a work

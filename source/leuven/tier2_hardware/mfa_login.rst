@@ -145,8 +145,7 @@ can be started and set up as follows:
         - TTL : 16h
 
    - check `Enable HPC user certificates`
-   - check `tier2-leuven`. Only select `tier1-leuven` as well if you have
-     access to breniac (which is not the case for most users).
+   - check `tier2-leuven`
    - Username : `vscXXXXX`
    - The configuration should look as follows (obviously changing the username
      to your own):
