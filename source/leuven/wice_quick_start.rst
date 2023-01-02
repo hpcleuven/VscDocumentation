@@ -27,7 +27,8 @@ In these examples, the submission will be done from login nodes of the Genius cl
 To submit to a compute node you need to provide the required number of nodes and cores. For example to request 2 nodes with each 72 cores for 2 hours you can submit like this::
 
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=2:00:00  -A lp_myproject  myjobscript.slurm
-
+   
+ More information about accounting used on wice can be found :ref:`here <_accounting_leuven>`.
 
 Submit a long job to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
