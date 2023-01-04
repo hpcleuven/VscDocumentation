@@ -51,10 +51,10 @@ If you are only interested in the overview of user's transactions, and don't req
 
 .. note::
 
-   It takes quite a while to compute such statements, so **please be patient**.  
+   - It takes quite a while to compute such statements, so **please be patient**.  
    
-   Also - the full statements are only visible to the project leaders. Individual users can only see their usage, but not the whole project usage.
+   - Also - the full statements are only visible to the project leaders. Individual users can only see their usage, but not the whole project usage.
    
-   All ``sam``-commands provide help with ``-h`` option.
+   - All ``sam``-commands provide help with ``-h`` option.
 
 
