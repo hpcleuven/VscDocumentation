@@ -107,12 +107,12 @@ be overcome by setting the environment variable ``I_MPI_PIN_RESPECT_CPUSET=off``
 or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
 mpirun command. To check that processes are pinned correctly to physical cores,
 set the environment variable ``I_MPI_DEBUG=5`` to get more verbose output. Note
-that this issue does not occur with the OpenMPI library.
+that this issue does not occur with the Open MPI library.
 
 Environment propagation
 =======================
 
-Jobs on wICE do not start in a blank slate. Some information from the session
+Jobs on wICE do not start with a clean slate. Some information from the session
 in which the job was submitted is propagated. For instance modules that were
 loaded at job submission time, will also be loaded inside the job. This can
 create problems when you submit a job to wICE from a Genius login node, because
