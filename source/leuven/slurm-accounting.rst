@@ -43,7 +43,7 @@ It is more convenient to filter this information so that only specific projects 
 
    $ sam-statement -A lp_my_project -s 2023-01-01 -e 2023-01-31
 
-This will show the transactions on the account for the ``lp_my_project`` project for the month january 2023.
+This will show the transactions on the account for the ``lp_my_project`` project for the month January 2023.
 
 If you are only interested in the overview of user's transactions, and don't require the actual jobs and balance information, ``sam-list-usagerecords`` provides a much faster alternative for summarized statement::
 
