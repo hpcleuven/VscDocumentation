@@ -3,7 +3,7 @@
 Slurm Accounting
 ========================
 
-:ref:`wICE <wice_t2_leuven>` cluster uses Slurm Account Manager for credits accounting purpose. We developed so called SAM-commands to mimic the behavior of previously used MAM (moab account manager). From the user point of view it should be enough to change ``mam`` phrase in the accounting command into ``sam``.
+The :ref:`wICE <wice_t2_leuven>` cluster uses the Slurm Account Manager (SAM) for credit accounting. We developed so called SAM-commands to mimic the behavior of previously used MAM-commands (from the MOAB account manager). From the user point of view it should mostly be enough to change the prefix ``mam`` in the accounting command into ``sam``.
 
 The accounting system is very similar to a regular bank. Individual users have accounts that will be charged for the jobs they run. However, the number of credits on such accounts is fairly small, so
 research projects will typically have one or more project accounts associated with them. Users that are project members can have their project-related jobs charged to such a project account. In this how-to,
@@ -12,7 +12,7 @@ the technical aspects of accounting are explained.
 Checking an account balance
 ---------------------------
 
-Since no calculations can be done without credits, it is quite useful to determine the amount of credits at your disposal. This can be done quite easily::
+Since no calculations can be done without credits, it is quite useful to determine the amount of credits at your disposal. This can be done by executing the following command on any KU Leuven Tier-2 node::
 
    $ sam-balance
 
@@ -25,7 +25,7 @@ Running jobs: accounting workflow
 When a job is submitted using ``sbatch`` or ``srun`` and it has to be charged against a project account, the name of the project has to be specified as an option. In case of the introduction
 credits the project account should be specified as  ``default_project``::
 
-   $ sbatch  -A lp_my_project  run-job.slurm
+   $ sbatch -A lp_my_project run-job.slurm
 
 If the account to be charged, i.e., ``lp_my_project``, has insufficient credits for the job, the user receives a warning at this point.
 
@@ -33,7 +33,7 @@ Obtaining an overview of transactions
 -------------------------------------
 
 A bank provides an overview of the financial transactions on your accounts under the form of statements. Similarly, the job accounting system provides statements that give the user an overview of the cost of
-each individual job. The following command will provide an overview of all transactions on all accounts the user has access to::
+each individual job. The following command will provide an overview of all transactions on all accounts the user has access to, as well as a summary of the credit usage at the top::
 
      $ sam-statement
 
@@ -41,13 +41,13 @@ It is more convenient to filter this information so that only specific projects 
 
 ::
 
-   $ sam-statement  -A lp_my_project  -s 2023-01-01  -e 2023-01-31
+   $ sam-statement -A lp_my_project -s 2023-01-01 -e 2023-01-31
 
 This will show the transactions on the account for the ``lp_my_project`` project for the month january 2023.
 
 If you are only interested in the overview of user's transactions, and don't require the actual jobs and balance information, ``sam-list-usagerecords`` provides a much faster alternative for summarized statement::
 
-   $ sam-list-usagerecords  -A lp_my_project  -s 2023-01-01  -e 2023-01-31
+   $ sam-list-usagerecords -A lp_my_project -s 2023-01-01 -e 2023-01-31
 
 .. note::
 
