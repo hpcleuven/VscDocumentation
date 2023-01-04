@@ -28,7 +28,7 @@ To submit to a compute node you need to provide the required number of nodes and
 
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=2:00:00  -A lp_myproject  myjobscript.slurm
    
-More information about accounting used on wice can be found :ref:`here <_accounting_leuven>`.
+More information about accounting used on wice can be found :ref:`here <accounting_leuven>`.
 
 Submit a long job to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
