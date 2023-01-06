@@ -181,7 +181,7 @@ Lastly, we submit the transfer request, and print the task ID::
       print(f"submitted transfer, task_id={task_id}")
 
 
-This transfer can be followed up via the 'Activity' tab of the `Globus Web Interface`_.
+This transfer can be followed up via the 'Activity' tab of the `Web Interface`_.
 
 
 Acquiring longer authentication
