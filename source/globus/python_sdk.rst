@@ -73,19 +73,19 @@ We wrap the transfer token we acquired earlier in an authorizer object::
 
 Next, we create a TransferClient object::
 
-      tc = globus_sdk.TransferClient(authorizer=authorizer)
+      transfer_client = globus_sdk.TransferClient(authorizer=authorizer)
 
 With this object, we can search for endpoints and collections.
 We can search for specific keywords::
 
       print("Found endpoints:")
-      for ep in tc.endpoint_search(filter_fulltext="VSC KU Leuven"):
+      for ep in transfer_client.endpoint_search(filter_fulltext="VSC KU Leuven"):
             print("[{}] {}".format(ep["id"], ep["display_name"]))
 
 Or we can list all of our own endpoints::
 
       print("My Endpoints:")
-      for ep in tc.endpoint_search(filter_scope="my-endpoints"):
+      for ep in transfer_client.endpoint_search(filter_scope="my-endpoints"):
             print("[{}] {}".format(ep["id"], ep["display_name"]))
 
 This way, you can find the ID's of collections, which are needed for transferring data to/from them. 
@@ -156,7 +156,7 @@ Transferring data
 To transfer data from one collection to another, we first need to instantiate an authorizer and transfer client::
 
       authorizer = globus_sdk.AccessTokenAuthorizer(TRANSFER_TOKEN)
-      tc = globus_sdk.TransferClient(authorizer=authorizer)
+      transfer_client = globus_sdk.TransferClient(authorizer=authorizer)
 
 Next, we create a transfer task::
 
