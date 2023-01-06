@@ -161,14 +161,15 @@ To transfer data from one collection to another, we first need to instantiate an
 Next, we create a transfer task::
 
       task_data = globus_sdk.TransferData(
-            transfer_client, <source_collection_ID>, <destination_collection_ID>
+            # we specify the transfer client, source collection and destination collecion
+            transfer_client, VUB_tier2, KULeuven_tier2_scratch
       )
 
 Then, we add data to the transfer::
 
       task_data.add_item(
-            "/path/to/data/source",  # on source collection
-            "/path/to/data/destination",  # on destination collection
+            "/path/to/data/on/VUB/tier2",  # source
+            "/path/to/destination/on/Kuleuven/tier2",  # destination
       )
 
 Lastly, we submit the transfer request, and print the task ID::
