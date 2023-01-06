@@ -126,7 +126,7 @@ We start from a TransferScopes object and make it mutable. Then, we add consent 
 
       # we need the ID's of both endpoints
       KULeuven_tier2_scratch = "872a58ab-02b9-4233-a3e0-f017ed8ab090"
-      VUB_tier2 = "693d0489-c450-4257-99cf-ec834c7a2d86"
+      VUB_tier2 = "2d1d4873-a849-4b9c-bd34-2034a2163003"
 
       # adding the endpoints to the scope
       transfer_scope.add_dependency(
