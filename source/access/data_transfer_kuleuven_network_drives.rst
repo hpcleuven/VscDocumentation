@@ -1,0 +1,114 @@
+.. _KU Leuven network drives:
+
+Transferring data to and from KU Leuven network drives
+======================================================
+
+On clusters hosted at KU Leuven it is possible to transfer data to
+and from KU Leuven network drives to which you may have access.
+These include:
+
+- Personal network drive (I-drive)
+- Shared network drive (J-drive)
+- Large Volume Storage (L-drive)
+
+These drives need to be accessed through the CIFS protocol and there are
+different tools that can be used for this purpose. Here we will describe
+``GIO`` and ``smbclient``.
+
+
+With GIO
+--------
+Mounting the drives via GIO can be convenient but only works on specific
+login nodes and not on the compute nodes. Keep in mind that the CPU time
+limitations on the login nodes may cause long transfers to get interrupted.
+GIO can be used both via a GUI and the CLI.
+
+* Via the GUI (NoMachine)
+
+  #. Open a NoMachine connection (see the :ref:`NX start guide<NX start guide>`)
+  #. Click on ``Places`` -> ``Connect to Server``
+  #. Fill in the fields as follows:
+
+     - Server: ``shares.kuleuven.be``
+     - Type: ``Windows share``
+     - Share: ``users`` (I-drive), ``shares`` (J-drive) or ``lvs`` (L-drive)
+     - Folder: ``/``
+     - Domain Name: ``luna``
+     - User Name: u-number
+     - Password: password for u-number
+
+  #. A file manager window appears, showing the contents of the mounted folder.
+     Mounted drives will remain visible in the file manager's Network section,
+     where you can also unmount them afterwards (right click -> ``Unmount``).
+
+.. (comment that just adds some whitespace between these two blocks)
+
+* Via the CLI
+
+  #. Open an SSH connection to ``login3-tier2.hpc.kuleuven.be`` or
+     ``login4-tier2.hpc.kuleuven.be`` or start a terminal in your NoMachine
+     session.
+  #. Start a D-Bus session and then mount the network drive::
+
+       dbus-run-session bash
+       gio mount smb://unumber@shares.kuleuven.be/drivename
+
+     Substitute ``unumber`` with your u-number and ``drivename`` with the chosen
+     drive: ``users`` (I-drive), ``shares`` (J-drive) or ``lvs`` (L-drive).
+  #. When asked for the domain name, enter ``luna``.
+  #. When asked for a password, enter your u-number password.
+  #. File transfers also need to happen via ``gio``, e.g.::
+
+       gio copy /path/to/local/dir/file.txt smb://unumber@shares.kuleuven.be/drivename/path/to/remote/dir/
+
+  #. To unmount the share afterwards, repeat the same ``gio mount`` command
+     with an additional ``--unmount`` flag.
+
+
+With smbclient
+--------------
+Larger transfers are best done via a job on a compute node, where ``GIO`` is not
+available and ``smbclient`` can be used instead.
+
+.. note::
+
+   This specifically needs to happen via an interactive job, not in batch jobs.
+   The reason is that you need to provide your u-number password, which we strongly
+   recommend to **never** store in text files such as a job script.
+
+Using ``smbclient`` is similar to :ref:`sftp<scp and sftp>`. You can for example
+launch an interactive prompt like this::
+
+  smbclient --user=unumber --workgroup=luna \\\\shares.kuleuven.be\\drivename
+  Enter LUNA\unumber's password:
+  smb: \>
+
+This assumes the same ``drivename`` and ``unumber`` substitutions as in the ``GIO``
+section. It can sometimes be more convenient to pass a set of commands instead of using
+the prompt. For example::
+
+  cd $VSC_SCRATCH
+  smbclient --user=unumber --workgroup=luna \\\\shares.kuleuven.be\\drivename \
+            -c "cd /path/to/remote/dir/; get file.txt"
+
+
+Limitations
+-----------
+Because the network drives need to be accessed via the CIFS protocol, it is
+not possible to transfer all file attributes from Unix-like file systems.
+File ownerships, permissions and symlinks can for example not be transferred.
+
+If it is necessary to retain all metadata, an easy workaround is to first create
+an (compressed or uncompressed) archive and then transfer this archive file::
+
+  tar -cv --file=archive.tar /path/to/directory
+
+For large directories it can be convenient to split the archive into smaller chunks,
+for example::
+
+  tar -cv -M -L 10G --file=archive.tar.{000..100} /path/to/directory
+
+Afterwards the directory can be reconstructed as follows::
+
+  tar -xv -M --file=../archive.tar.{000..100}
+
