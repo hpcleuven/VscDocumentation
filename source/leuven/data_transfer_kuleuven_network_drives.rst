@@ -5,15 +5,21 @@ Transferring data to and from KU Leuven network drives
 
 On clusters hosted at KU Leuven it is possible to transfer data to
 and from KU Leuven network drives to which you may have access.
-These include:
+These need to be accessed through the CIFS protocol and there are
+different tools that can be used for this purpose. Here we will
+describe ``GIO`` and ``smbclient``.
 
-- Personal network drive (I-drive)
-- Shared network drive (J-drive)
-- Large Volume Storage (L-drive)
+In these instructions you will need to replace ``unumber`` with your
+u-number and ``drivename`` with the drive you want to access:
 
-These drives need to be accessed through the CIFS protocol and there are
-different tools that can be used for this purpose. Here we will describe
-``GIO`` and ``smbclient``.
+- ``users`` for the personal network drive (I-drive)
+- ``shares`` for the shared network drive (J-drive)
+- ``lvs`` for the Large Volume Storage (L-drive)
+
+.. note::
+
+   The location of your I-drive will not correspond to the mount point
+   itself, but to a ``unumber`` subdirectory of the mount point.
 
 
 With GIO
@@ -31,11 +37,11 @@ GIO can be used both via a GUI and the CLI.
 
      - Server: ``shares.kuleuven.be``
      - Type: ``Windows share``
-     - Share: ``users`` (I-drive), ``shares`` (J-drive) or ``lvs`` (L-drive)
+     - Share: ``drivename``
      - Folder: ``/``
      - Domain Name: ``luna``
-     - User Name: u-number
-     - Password: password for u-number
+     - User Name: ``unumber``
+     - Password: password for ``unumber``
 
   #. A file manager window appears, showing the contents of the mounted folder.
      Mounted drives will remain visible in the file manager's Network section,
@@ -53,17 +59,14 @@ GIO can be used both via a GUI and the CLI.
        dbus-run-session bash
        gio mount smb://unumber@shares.kuleuven.be/drivename
 
-     Substitute ``unumber`` with your u-number and ``drivename`` with the chosen
-     drive: ``users`` (I-drive), ``shares`` (J-drive) or ``lvs`` (L-drive).
   #. When asked for the domain name, enter ``luna``.
   #. When asked for a password, enter your u-number password.
   #. File transfers also need to happen via ``gio``, e.g.::
 
        gio copy /path/to/local/dir/file.txt smb://unumber@shares.kuleuven.be/drivename/path/to/remote/dir/
 
-  #. To unmount the share afterwards, repeat the same ``gio mount`` command
+  #. To unmount the drive afterwards, repeat the same ``gio mount`` command
      with an additional ``--unmount`` flag.
-
 
 With smbclient
 --------------
@@ -83,8 +86,7 @@ launch an interactive prompt like this::
   Enter LUNA\unumber's password:
   smb: \>
 
-This assumes the same ``drivename`` and ``unumber`` substitutions as in the ``GIO``
-section. It can sometimes be more convenient to pass a set of commands instead of using
+It can sometimes be more convenient to pass a set of commands instead of using
 the prompt. For example::
 
   cd $VSC_SCRATCH
