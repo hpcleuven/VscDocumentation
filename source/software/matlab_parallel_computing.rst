@@ -3,7 +3,7 @@
 MATLAB parallel computing
 =========================
 
-Matlab allows you to use parallel computing on a HPC cluster using the 'Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>'_.
+Matlab allows you to use parallel computing on a HPC cluster using the `Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>`_.
 Only Matlab installations that have this installed, can be configured to use this. This documentation will describe how to configure this. Be aware that this has only
 been tested for some installations on the KU Leuven Tier-2 clusters.
 
@@ -22,10 +22,10 @@ Configuring Matlab for parallel computing
 Using parallel computing together with Matlab does not work out of the box. You will need to follow some (simple) configurations steps, that will be explained here.
 
 First of all, you will need some scripts that will configure Matlab for parallel use. You can download the appropriate script from this 
-'repository <https://github.com/hpcleuven/matlab-remote>'_. Place this folder somewhere on your cluster storage (e.g. $VSC_DATA). Set your working directory to
+`repository <https://github.com/hpcleuven/matlab-remote>`_. Place this folder somewhere on your cluster storage (e.g. $VSC_DATA). Set your working directory to
 the directory where you saved the scripts. Within the folder, you will see a `mdcs.rc` file. This is a configuration file that allows you to adapt the cluster
 profile to your needs. There is only one setting that needs to be changed with the approach you are using here: `LocalJobStorageLocation`. This will define where
-your job output will be directed to. There is no need for quotation marks when defining this path. **Be carefull**: when leaving this field blank, this location will 
+your job output will be directed to. There is no need for quotation marks when defining this path. **Be careful**: when leaving this field blank, this location will 
 default to your $VSC_HOME, which could result in quickly filling up your home directory.
 
 Next, you'll need to load the module, and start it. It is recommended to request an interactive job for this beforehand.
@@ -86,7 +86,7 @@ Batch job
 +++++++++
 
 Batch jobs are started with the `batch` function. Here we will give you an example job where we query the working directories of each of the threads Matlab is using. 
-Have a look at the 'Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>'_ for more information.
+Have a look at the `Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>`_ for more information.
 
     >> c = parcluster;
     >> job = c.batch(@pwd, 1, {}, 'CurrentFolder','.', 'AutoAddClientPath',false);
