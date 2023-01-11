@@ -30,6 +30,8 @@ default to your ``$VSC_HOME``, which could result in quickly filling up your hom
 
 Next, you'll need to load the module, and start it. It is recommended to request an interactive job for this beforehand.
 
+::
+
    $ # Genius
    $ module use /apps/leuven/skylake/2021a/modules/all
    $ module load MATLAB/R2022b #MATLAB/R2022a if you would like to load this version
@@ -37,8 +39,12 @@ Next, you'll need to load the module, and start it. It is recommended to request
 Once the module is loaded, start Matlab. You can start it in a terminal without the GUI by using the ``-nodisplay`` flag. Then, run the ``configCluster`` script.
 This will set up the parallel configuration.  
 
+::
+
    $ matlab -nodisplay
-   
+
+::
+
    >> rehash toolbox;
    >> configCluster;
    
@@ -47,6 +53,8 @@ You will get a message as follows if it succeeded: 'Complete.  Default cluster p
 Before you will be able to submit multi-node jobs to the cluster, you will first need to get a handle on the cluster, and then set the additional properties of the 
 loaded profile. Once these are saved, they will be kept in the settings of your cluster profile, but they can always be adapted again later.
 
+::
+
    >> % get a handle on the cluster
    >> c = parcluster;
    >> % If you would prefer to use the local resources (i.e. the resources of the node you are currently on), use:
@@ -54,10 +62,14 @@ loaded profile. Once these are saved, they will be kept in the settings of your 
 
 If you would have multiple cluster profiles, you can also load the correct cluster profile with:
 
+:: 
+
    >> c = parcluster("<profile_name>") % for example "Genius R2022a"
    
 You can set a range of additional properties on each cluster profile. There are two properties that are required, namely ``AccountName`` and ``WallTime``. Set any 
 other to your preference.
+
+::
 
    >> % View the additional properties
    >> c.AdditionalProperties
@@ -79,6 +91,8 @@ Interactive job
 
 You can start an interactive job using the ``parpool`` function:
 
+::
+
     >> c = parcluster;
     >> p = parpool(64); % requesting 64 cores
     
@@ -87,6 +101,8 @@ Batch job
 
 Batch jobs are started with the ``batch`` function. Here we will give you an example job where we query the working directories of each of the threads Matlab is using. 
 Have a look at the `Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>`_ for more information.
+
+::
 
     >> c = parcluster;
     >> job = c.batch(@pwd, 1, {}, 'CurrentFolder','.', 'AutoAddClientPath',false);
@@ -99,9 +115,13 @@ Have a look at the `Matlab documentation <https://www.mathworks.com/help/paralle
 
 If you are running multiple jobs, you can get an overview of all jobs as follows:
 
+::
+
     >> jobs = c.Jobs;
     
 To get for example the output of the second job in this list, you can use the following:
+
+::
 
     >> job2 = c.Jobs(2);
     >> job2.fetchOutputs{:}
