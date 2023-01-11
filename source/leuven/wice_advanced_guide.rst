@@ -92,6 +92,13 @@ Slurm such as:
 * `sacct <https://slurm.schedmd.com/sacct.html>`__ to display information about
   finished jobs
 
+.. note::
+
+    Our Slurm scheduler is aware of multiple clusters and ``wice`` is not the
+    default one. As a consequence, any Slurm command (such as `scontrol`,
+    `squeue`, `sacct`) needs to be executed with the option ``--cluster=wice``
+    (or ``-M wice`` in short) in order to get information for the wICE cluster.
+
 For convenience, we provide the ``slurm_jobinfo`` tool, which runs and parses
 output from the Slurm tools mentioned above into a format that is easier to
 read. Simply use ``slurm_jobinfo <jobid>`` where ``<jobid>`` has to be replaced
