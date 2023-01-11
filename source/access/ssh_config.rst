@@ -24,7 +24,7 @@ To avoid having to specify your VSC private key every time you login, we highly
 recommend linking your key to your VSC-id.
 
 Assuming your private key is ``~/.ssh/id_rsa_vsc``, add the following
-lines to your ``~/.ssh/config``:
+lines to the end of your ``~/.ssh/config``:
 
 ::
 
