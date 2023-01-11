@@ -85,8 +85,8 @@ You can start an interactive job using the `parpool` function:
 Batch job
 +++++++++
 
-Batch jobs are started with the `batch` function. Here we will give you an example job where we query the names of the nodes Matlab is running on. Have a look
-at the 'Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>'_ for more information.
+Batch jobs are started with the `batch` function. Here we will give you an example job where we query the working directories of each of the threads Matlab is using. 
+Have a look at the 'Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>'_ for more information.
 
     >> c = parcluster;
     >> job = c.batch(@pwd, 1, {}, 'CurrentFolder','.', 'AutoAddClientPath',false);
