@@ -29,6 +29,10 @@ login nodes and not on the compute nodes. Keep in mind that the CPU time
 limitations on the login nodes may cause long transfers to get interrupted.
 GIO can be used both via a GUI and the CLI.
 
+.. note::
+
+   Don't forget to unmount the drives after your transfers have finished.
+
 * Via the GUI (NoMachine)
 
   #. Open a NoMachine connection (see the :ref:`NX start guide<NX start guide>`)
@@ -44,8 +48,10 @@ GIO can be used both via a GUI and the CLI.
      - Password: password for ``unumber``
 
   #. A file manager window appears, showing the contents of the mounted folder.
-     Mounted drives will remain visible in the file manager's Network section,
-     where you can also unmount them afterwards (right click -> ``Unmount``).
+     Mounted drives will remain visible in the file manager's Network section
+     in the panel on the left.
+  #. To unmount the drive afterwards, right-click on the drive name in the
+     Network section and select ``Unmount``.
 
 .. (comment that just adds some whitespace between these two blocks)
 
