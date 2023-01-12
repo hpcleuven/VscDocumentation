@@ -3,21 +3,27 @@
 MATLAB parallel computing
 =========================
 
+General
+-------
+
 Matlab allows you to use parallel computing on a HPC cluster using the `Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>`_.
-Only Matlab installations that have this installed, can be configured to use this. This documentation will describe how to configure this. Be aware that this has only
-been tested for some installations on the KU Leuven Tier-2 clusters.
+Only Matlab installations that have this toolbox installed, can be configured to use this. This documentation will describe how to configure this and how to submit 
+multinode jobs for Matlab.
+
+KU Leuven clusters
+------------------
 
 Availability
-------------
+++++++++++++
 
-The Parallel Computing Toolbox has been installed in the Matlab 2022a and 2022b versions on Genius. wICE support is in development at the moment. These versions have 
-been installed in the 2021a toolchain. We strongly recommend using Matlab 2022b installation. 
+The Parallel Computing Toolbox has been installed in the Matlab 2022a and 2022b versions on Genius. wICE support is under development at the moment. These versions 
+have been installed in the 2021a toolchain. We strongly recommend using Matlab 2022b installation. 
 
 The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not part of our Matlab group and would like to use this 
 software, we kindly ask you to contact our helpdesk and request access.
 
 Configuring Matlab for parallel computing
------------------------------------------
++++++++++++++++++++++++++++++++++++++++++
 
 Using parallel computing together with Matlab does not work out of the box. You will need to follow some (simple) configurations steps, that will be explained here.
 
@@ -82,12 +88,12 @@ other to your preference.
 Now the profile is ready, and you should be able to submit multi-node jobs with Matlab now.
 
 Submitting jobs
----------------
++++++++++++++++
 
 You can start both interactive and independent batch jobs with this profile. Here, we will show how to start these jobs from an opened Matlab session.
 
 Interactive job
-+++++++++++++++
+***************
 
 You can start an interactive job using the ``parpool`` function:
 
@@ -97,7 +103,7 @@ You can start an interactive job using the ``parpool`` function:
     >> p = parpool(64); % requesting 64 cores
     
 Batch job
-+++++++++
+*********
 
 Batch jobs are started with the ``batch`` function. Here we will give you an example job where we query the working directories of each of the threads Matlab is using. 
 Have a look at the `Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>`_ for more information.
