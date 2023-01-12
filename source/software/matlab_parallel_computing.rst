@@ -7,8 +7,7 @@ General
 -------
 
 Matlab allows you to use parallel computing on a HPC cluster using the `Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>`_.
-Only Matlab installations that have this toolbox installed, can be configured to use this. This documentation will describe how to configure this and how to submit 
-multinode jobs for Matlab.
+Only for Matlab installations that have this toolbox installed, a cluster profile can be created. It is the cluster profile that allows your to submit multinode jobs. 
 
 KU Leuven clusters
 ------------------
@@ -16,7 +15,7 @@ KU Leuven clusters
 Availability
 ++++++++++++
 
-The Parallel Computing Toolbox has been installed in the Matlab 2022a and 2022b versions on Genius. wICE support is under development at the moment. These versions 
+The Parallel Computing Toolbox has been enabled for the Matlab 2022a and 2022b modules on Genius. wICE support is under development at the moment. These versions 
 have been installed in the 2021a toolchain. We strongly recommend using Matlab 2022b installation. 
 
 The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not part of our Matlab group and would like to use this 
@@ -25,7 +24,7 @@ software, we kindly ask you to contact our helpdesk and request access.
 Configuring Matlab for parallel computing
 +++++++++++++++++++++++++++++++++++++++++
 
-Using parallel computing together with Matlab does not work out of the box. You will need to follow some (simple) configurations steps, that will be explained here.
+Using parallel computing together with Matlab does not work out of the box. You will need to follow some (simple) configurations steps, which will be explained here.
 
 First of all, you will need some scripts that will configure Matlab for parallel use. You can download the appropriate script from this 
 `repository <https://github.com/hpcleuven/matlab-remote>`_. Place this folder somewhere on your cluster storage (e.g. ``$VSC_DATA``). Set your working directory to
@@ -34,7 +33,7 @@ profile to your needs. There is only one setting that needs to be changed with t
 your job output will be directed to. There is no need for quotation marks when defining this path. **Be careful**: when leaving this field blank, this location will 
 default to your ``$VSC_HOME``, which could result in quickly filling up your home directory.
 
-Next, you'll need to load the module, and start it. It is recommended to request an interactive job for this beforehand.
+Next, you'll need to load the module, and start it. It is recommended to do this via an interactive job.
 
 ::
 
@@ -57,7 +56,7 @@ This will set up the parallel configuration.
 You will get a message as follows if it succeeded: 'Complete.  Default cluster profile set to "<cluster_name> <matlab_version>".'. 
    
 Before you will be able to submit multi-node jobs to the cluster, you will first need to get a handle on the cluster, and then set the additional properties of the 
-loaded profile. Once these are saved, they will be kept in the settings of your cluster profile, but they can always be adapted again later.
+loaded profile.
 
 ::
 
@@ -73,7 +72,7 @@ If you would have multiple cluster profiles, you can also load the correct clust
    >> c = parcluster("<profile_name>") % for example "Genius R2022a"
    
 You can set a range of additional properties on each cluster profile. There are two properties that are required, namely ``AccountName`` and ``WallTime``. Set any 
-other to your preference.
+other to your preference. Once these are saved, they will be kept in the settings of your cluster profile, but they can always be adapted again later.
 
 ::
 
