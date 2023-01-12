@@ -89,7 +89,12 @@ Now the profile is ready, and you should be able to submit multi-node jobs with 
 Submitting jobs
 +++++++++++++++
 
-You can start both interactive and independent batch jobs with this profile. Here, we will show how to start these jobs from an opened Matlab session.
+Submitting jobs will happen from within Matlab. The general approach to launch any job in such a way, would be to start an interactive job, load your preferred
+Matlab module and start Matlab. You can do this immediately in the terminal by using the ``-nodisplay´´ flag, but you can also launch a GUI by starting Matlab on
+NX or a compute node with a GPU (it is also possible to start the GUI on nodes without a GPU, but be aware that this might hurt performance significantly).
+
+Once Matlab is opened, you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a 
+job.
 
 Interactive job
 ***************
