@@ -71,9 +71,18 @@ walltimes of 3 days or less.
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
-To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores per node (36 cores in this case). For example to request 2 nodes with each 36 cores you can submit like this::
+Submitting a compute job boils down to specifying the required number of nodes, cores-per-node, memory and walltime.
+The nodes on the ``pbs``, ``bigmem`` and ``gpu`` partitions have ``SHARED`` policy (but the nodes on the ``amd`` partition have ``SINGLEUSER`` policy).
+This means the CPU and memory resources per nodes are exploited as much as possible by packing more and more jobs into a single node.
+The ``SHARED`` node policy leaves room for smaller jobs to hit the queue and start earlier than scheduled initially.
+Therefore, users are adviced to request only as much resources as needed by their applications.
 
-   $ qsub -l nodes=2:ppn=36  -l walltime=2:00:00  -A myproject  myjobscript.pbs
+For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this:
+
+   $ qsub -l nodes=1:ppn=4  -l walltime=2:00:00  -A myproject  myjobscript.pbs
+   
+However, make sure that you do not exceed the maximum allowed resources on compute nodes for the targeted partition.
+E.g. you can use maximum 36 cores per node ``ppn=36``.
   
 
 .. _submit to genius GPU node:
