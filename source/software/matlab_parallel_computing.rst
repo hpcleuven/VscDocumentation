@@ -81,7 +81,7 @@ Before you will be able to adapt these properties, you first need to get a handl
 
    >> c = parcluster;
    
-``c = parcluster´´ will automatically load the correct profile based on the Matlab module you have loaded. So if you would have a profile for both R2022a and R2022b,
+``c = parcluster`` will automatically load the correct profile based on the Matlab module you have loaded. So if you would have a profile for both R2022a and R2022b,
 the correct profile will be chosen when using this command.
 
 If you would prefer to use the local resources (i.e. the resources of the node you are currently on), use:
