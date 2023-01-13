@@ -33,7 +33,7 @@ Configuring a cluster profile
 
 We have provided some scripts that will allow to easily set up such a profile. You can download them from this 
 `repository <https://github.com/hpcleuven/matlab-remote>`_. Clone this folder somewhere on your personal storage (e.g. ``$VSC_DATA``). Set your working directory to
-the the cloned repository:
+the cloned repository:
 
 ::
     $ cd <your_preferred_location>
