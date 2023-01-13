@@ -73,7 +73,7 @@ Configuring additional properties
 *********************************
 
 It is possible to set some user-specific properties and save them in your cluster profile. You can always adapt these and save the profile again, without performing
-the previous step again. All of these properties are available in the ``AdditionalProperties´´ property of your cluster profile. 
+the previous step again. All of these properties are available in the ``AdditionalProperties`` property of your cluster profile. 
    
 Before you will be able to adapt these properties, you first need to get a handle on the cluster:
 
