@@ -77,10 +77,15 @@ This means that once a job lands on a Skylake node, no job from other users can 
 You may e.g. request two full nodes like this:
 
    $ qsub -l nodes=2:ppn=36  -l walltime=2:00:00  -A myproject  myjobscript.pbs
+   
+If you insist on using a full node, you may enforce getting a Skylake node in one of the following ways
+
+   $ qsub -l nodes=1:ppn=8:skylake -l walltime=30:00 -A myproject myjobscript.pbs # or
+   $ qsub -l nodes=1:ppn=8 -l feature=skylake -l walltime=30:00 -A myproject myjobscript.pbs
 
 The node access policy on Cascadelake nodes is 'shared'.
 This means the CPU and memory resources per nodes are exploited as much as possible by packing more and more jobs into a single node.
-The 'shared' node access policy leaves room for smaller jobs to hit the queue and start earlier than scheduled initially.
+The 'shared' node access policy leaves room for smaller jobs to start executing earlier than initially scheduled.
 Therefore, users are adviced to request only as much resources as needed by their applications.
 
 For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this:
