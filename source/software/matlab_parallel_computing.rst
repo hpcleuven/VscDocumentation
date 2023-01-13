@@ -7,7 +7,7 @@ General
 -------
 
 Matlab allows you to use parallel computing on a HPC cluster using the `Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>`_.
-Only for Matlab installations that have this toolbox installed, a cluster profile can be created. It is the cluster profile that allows your to submit multi-node jobs. 
+This toolbox may not be included for all Matlab installations. Try ``help distcomp`` to see if the toolbox is installed for the Matlab installation that you are using. The toolbox is needed to create a cluster profile and it is this profile that will allow you to submit multi-node jobs.
 
 KU Leuven clusters
 ------------------
