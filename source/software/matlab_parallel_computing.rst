@@ -24,16 +24,29 @@ software, we kindly ask you to contact our helpdesk and request access.
 Configuring Matlab for parallel computing
 +++++++++++++++++++++++++++++++++++++++++
 
-Using parallel computing together with Matlab does not work out of the box. You will need to follow some (simple) configurations steps, which will be explained here.
+Using parallel computing together with Matlab does not work out of the box. Matlab needs a 'cluster profile', specifically for the 'cluster-matlab version' combination
+you are planning to use. This cluster profile contains information like the amount of nodes, the resource manager, the way to submit jobs on that cluster... 
+Configuring these settings can be done by running the correct script once. Next to this, there are some user-specific options that can be defined. 
 
-First of all, you will need some scripts that will configure Matlab for parallel use. You can download the appropriate script from this 
-`repository <https://github.com/hpcleuven/matlab-remote>`_. Place this folder somewhere on your cluster storage (e.g. ``$VSC_DATA``). Set your working directory to
-the directory where you saved the scripts. Within the folder, you will see a ``mdcs.rc`` file. This is a configuration file that allows you to adapt the cluster
-profile to your needs. There is only one setting that needs to be changed with the approach you are using here: ``LocalJobStorageLocation``. This will define where
-your job output will be directed to. There is no need for quotation marks when defining this path. **Be careful**: when leaving this field blank, this location will 
-default to your ``$VSC_HOME``, which could result in quickly filling up your home directory.
+Configuring a cluster profile
+*****************************
 
-Next, you'll need to load the module, and start it. It is recommended to do this via an interactive job.
+We have provided some scripts that will allow to easily set up such a profile. You can download them from this 
+`repository <https://github.com/hpcleuven/matlab-remote>`_. Clone this folder somewhere on your personal storage (e.g. ``$VSC_DATA``). Set your working directory to
+the the cloned repository:
+
+::
+    $ cd <your_preferred_location>
+    $ git clone https://github.com/hpcleuven/matlab-remote.git
+    $ cd <your_preferred_location>/matlab-remote
+
+Within the folder, you will see a ``mdcs.rc`` file. This is a configuration file that allows you to adapt the cluster profile to your needs. There is only one setting 
+that needs to be changed here: ``LocalJobStorageLocation``. This will define where your job output will be directed to. This script will not create the folder for you, 
+so be sure to create it yourself if it does not exist yet. There is no need for quotation marks when defining this path. 
+
+> **_NOTE:_**  Be careful: when leaving this field blank, this location will default to your ``$VSC_HOME``, which could result in quickly filling up your home directory.
+
+Next, you'll need to load your preferred module, and start it. It is recommended to do this via an interactive job.
 
 ::
 
@@ -53,25 +66,31 @@ This will set up the parallel configuration.
    >> rehash toolbox;
    >> configCluster;
    
-You will get a message as follows if it succeeded: 'Complete.  Default cluster profile set to "<cluster_name> <matlab_version>".'. 
+You will get a message as follows if it succeeded: 'Complete.  Default cluster profile set to "<cluster_name> <matlab_version>".'. You have now created a cluster
+profile.
+
+Configuring additional properties
+*********************************
+
+It is possible to set some user-specific properties and save them in your cluster profile. You can always adapt these and save the profile again, without performing
+the previous step again. All of these properties are available in the ``AdditionalProperties´´ property of your cluster profile. 
    
-Before you will be able to submit multi-node jobs to the cluster, you will first need to get a handle on the cluster, and then set the additional properties of the 
-loaded profile.
+Before you will be able to adapt these properties, you first need to get a handle on the cluster:
 
 ::
 
-   >> % get a handle on the cluster
    >> c = parcluster;
-   >> % If you would prefer to use the local resources (i.e. the resources of the node you are currently on), use:
+   
+``c = parcluster´´ will automatically load the correct profile based on the Matlab module you have loaded. So if you would have a profile for both R2022a and R2022b,
+the correct profile will be chosen when using this command.
+
+If you would prefer to use the local resources (i.e. the resources of the node you are currently on), use:
+
+::
+
    >> c = parcluster('local');
 
-If you would have multiple cluster profiles, you can also load the correct cluster profile with:
-
-:: 
-
-   >> c = parcluster("<profile_name>") % for example "Genius R2022a"
-   
-You can set a range of additional properties on each cluster profile. There are two properties that are required, namely ``AccountName`` and ``WallTime``. Set any 
+You can set a range of additional properties on each profile. There are two properties that are required, namely ``AccountName`` and ``WallTime``. Set any 
 other to your preference. Once these are saved, they will be kept in the settings of your cluster profile, but they can always be adapted again later.
 
 ::
@@ -89,12 +108,12 @@ Now the profile is ready, and you should be able to submit multi-node jobs with 
 Submitting jobs
 +++++++++++++++
 
-Submitting jobs will happen from within Matlab. The general approach to launch any job in such a way, would be to start an interactive job, load your preferred
-Matlab module and start Matlab. You can do this immediately in the terminal by using the ``-nodisplay´´ flag, but you can also launch a GUI by starting Matlab on
-NX or a compute node with a GPU (it is also possible to start the GUI on nodes without a GPU, but be aware that this might hurt performance significantly).
+Submitting jobs will happen from within Matlab. First of all, you will need to start an interactive session on the cluster. It is possible to use the GUI, but then
+you will need to request GPU resources. You can also open the GUI on NX, but you need to submit your jobs from a compute node. Submitting from a login node
+will cause an error. 
 
-Once Matlab is opened, you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a 
-job.
+Once you have an active interactive job, load the module and start Matlab. Now you can start both interactive and independent batch jobs with the previously configured 
+cluster profile. Follow the steps below to submit a job.
 
 Interactive job
 ***************
