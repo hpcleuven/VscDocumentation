@@ -16,7 +16,7 @@ Availability
 ++++++++++++
 
 The Parallel Computing Toolbox has been enabled for the Matlab 2022a and 2022b modules on Genius. wICE support is under development at the moment. These versions 
-have been installed in the 2021a toolchain. We strongly recommend using Matlab 2022b installation. 
+have been installed in the 2021a toolchain. We strongly recommend using the Matlab 2022b installation. 
 
 The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not part of our Matlab group and would like to use this 
 software, we kindly ask you to contact our helpdesk and request access.
