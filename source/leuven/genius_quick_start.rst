@@ -72,9 +72,15 @@ walltimes of 3 days or less.
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Submitting a compute job boils down to specifying the required number of nodes, cores-per-node, memory and walltime.
-The nodes on the ``pbs``, ``bigmem`` and ``gpu`` partitions have ``SHARED`` policy (but the nodes on the ``amd`` partition have ``SINGLEUSER`` policy).
+The node access policy on Skylake and AMD nodes is 'singleuser'.
+This means that once a job lands on a Skylake node, no job from other users can land on the same node(s).
+You may e.g. request two full nodes like this:
+
+   $ qsub -l nodes=2:ppn=36  -l walltime=2:00:00  -A myproject  myjobscript.pbs
+
+The node access policy on Cascadelake nodes is 'shared'.
 This means the CPU and memory resources per nodes are exploited as much as possible by packing more and more jobs into a single node.
-The ``SHARED`` node policy leaves room for smaller jobs to hit the queue and start earlier than scheduled initially.
+The 'shared' node access policy leaves room for smaller jobs to hit the queue and start earlier than scheduled initially.
 Therefore, users are adviced to request only as much resources as needed by their applications.
 
 For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this:
