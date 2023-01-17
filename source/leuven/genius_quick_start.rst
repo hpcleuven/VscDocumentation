@@ -84,7 +84,22 @@ For instance, to test a multi-threaded application which performs optimally usin
 In the two above examples, the jobs may start on Skylake or Cascadelake nodes.
 Please bear in mind to not exceed the maximum allowed resources on compute nodes for the targeted partition.
 E.g. you can request at most 36 cores per node (``ppn=36``).
-  
+
+Advanced node usage
+^^^^^^^^^^^^^^^^^^^
+The node access policy on Skylake nodes is `SINGLEUSER`.
+This means that once a job lands on a Skylake node(s), no job from other users can land on the same node(s).
+If you insist on using a full node (to exclude jobs from other users), you may enforce getting a Skylake node in one of the following ways
+
+   $ qsub -l nodes=1:ppn=8:skylake -l walltime=30:00 -A myproject myjobscript.pbs             # or
+   $ qsub -l nodes=1:ppn=8 -l feature=skylake -l walltime=30:00 -A myproject myjobscript.pbs
+
+The node access policy on Cascadelake nodes is `SHARED`.
+This means the CPU and memory resources per nodes are exploited as much as possible by packing more and more jobs into a single node.
+Similarly, you may enforce getting a Cascadelake node by specifying either `nodes=1:ppn=8:cascadelake` or `-l feature=cascadelake`
+when only needing 8 cores.
+The `SHARED` node access policy leaves room for smaller jobs to start executing earlier than initially scheduled.
+Therefore, users are adviced to request only as much resources as needed by their applications.
 
 .. _submit to genius GPU node:
 
@@ -103,22 +118,6 @@ To specifically request V100 GPUs (which are on nodes with CascadeLake architect
    $ qsub -l nodes=1:ppn=4:gpus=1:cascadelake -l partition=gpu -l pmem=20gb  -A myproject  myscript.pbs
   
 For the V100 type of GPU, it is required that you request 4 cores for each GPU. Also notice that these nodes offer much larger memory bank.
-
-Advanced node usage
-^^^^^^^^^^^^^^^^^^^
-The node access policy on Skylake nodes is `SINGLEUSER`.
-This means that once a job lands on a Skylake node(s), no job from other users can land on the same node(s).
-If you insist on using a full node (to exclude jobs from other users), you may enforce getting a Skylake node in one of the following ways
-
-   $ qsub -l nodes=1:ppn=8:skylake -l walltime=30:00 -A myproject myjobscript.pbs             # or
-   $ qsub -l nodes=1:ppn=8 -l feature=skylake -l walltime=30:00 -A myproject myjobscript.pbs
-
-The node access policy on Cascadelake nodes is `SHARED`.
-This means the CPU and memory resources per nodes are exploited as much as possible by packing more and more jobs into a single node.
-Similarly, you may enforce getting a Cascadelake node by specifying either `nodes=1:ppn=8:cascadelake` or `-l feature=cascadelake`
-when only needing 8 cores.
-The `SHARED` node access policy leaves room for smaller jobs to start executing earlier than initially scheduled.
-Therefore, users are adviced to request only as much resources as needed by their applications.
 
 Advanced GPU usage
 ^^^^^^^^^^^^^^^^^^
@@ -151,10 +150,10 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 Submit to an AMD node
 ~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are in their own partition.  Besides specifying the partition,
-it is also important to specify the memory per process (``pmem``) since
-the AMD nodes have 256 GB of RAM, which implies that the default value is
-too high, and your job will never run.
+The AMD nodes are in their own partition, with `SINGLEUSER` node access policy.
+Besides specifying the partition, it is also important to specify the memory 
+per process (``pmem``) since the AMD nodes have 256 GB of RAM, which implies 
+that the default value is too high, and your job will never run.
 
 For example::
 
