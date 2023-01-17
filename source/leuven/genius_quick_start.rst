@@ -83,7 +83,7 @@ For instance, to test a multi-threaded application which performs optimally usin
    
 In the two above examples, the jobs may start on Skylake or Cascadelake nodes.
 Please bear in mind to not exceed the maximum allowed resources on compute nodes for the targeted partition.
-E.g. you can use maximum 36 cores per node ``ppn=36``.
+E.g. you can request at most 36 cores per node (``ppn=36``).
   
 
 .. _submit to genius GPU node:
