@@ -106,7 +106,7 @@ For the V100 type of GPU, it is required that you request 4 cores for each GPU. 
 
 Advanced node usage
 ^^^^^^^^^^^^^^^^^^^
-The node access policy on Skylake and AMD nodes is `SINGLEUSER`.
+The node access policy on Skylake nodes is `SINGLEUSER`.
 This means that once a job lands on a Skylake node(s), no job from other users can land on the same node(s).
 If you insist on using a full node (to exclude jobs from other users), you may enforce getting a Skylake node in one of the following ways
 
