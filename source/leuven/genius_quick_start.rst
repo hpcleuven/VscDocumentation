@@ -82,7 +82,7 @@ For instance, to test a multi-threaded application which performs optimally usin
    $ qsub -l nodes=1:ppn=4  -l walltime=2:00:00  -A myproject  myjobscript.pbs
    
 In the two above examples, the jobs may start on Skylake or Cascadelake nodes.
-Please bear in mind no to exceed the maximum allowed resources on compute nodes for the targeted partition.
+Please bear in mind to not exceed the maximum allowed resources on compute nodes for the targeted partition.
 E.g. you can use maximum 36 cores per node ``ppn=36``.
   
 
