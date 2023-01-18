@@ -108,12 +108,17 @@ Now the profile is ready, and you should be able to submit multi-node jobs with 
 Submitting jobs
 +++++++++++++++
 
-Submitting jobs will happen from within Matlab. First of all, you will need to start an interactive session on the cluster. It is possible to use the GUI, but then
-you will need to request GPU resources. You can also open the GUI on NX, but you need to submit your jobs from a compute node. Submitting from a login node
-will cause an error. 
+Submitting jobs will happen from within Matlab. There are two ways to do this. You can start a Matlab session on a login node, or you can first request an
+interactive job, where you launch your Matlab session. Which one you choose will depend on the workload you plan to have on the node before submitting a job.
+As for any other work on the cluster, you can always do minor work on the login node, but for heavier calculations (before submitting your multinode job), you should
+use an interactive session. 
 
-Once you have an active interactive job, load the module and start Matlab. Now you can start both interactive and independent batch jobs with the previously configured 
-cluster profile. Follow the steps below to submit a job.
+It is possible to use the Matlab GUI as well, on all login nodes. It is strongly recommended though to use NoMachine if you want to use the GUI though (login node
+3 and 4), as the starting the GUI from any other login node will be extremely slow. If you want to use a GUI on a compute node, you would need GPU resources
+(no X11 forwarding on the other nodes). Requesting GPU resources just for the GUI is quite expensive though. Once the Matlab Parallel Computing Toolbox is
+available on wICE, interactive sessions on the interactive partition will solve this issue. 
+
+Now you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a job.
 
 Interactive job
 ***************
@@ -124,6 +129,37 @@ You can start an interactive job using the ``parpool`` function:
 
     >> c = parcluster;
     >> p = parpool(64); % requesting 64 cores
+    
+Once the job has started, you'll receive output like this:
+
+::
+
+    Starting parallel pool (parpool) using the 'genius R2022a' profile ...
+
+    additionalSubmitArgs =
+
+        '-l nodes=2:ppn=32 -l pmem=4gb -A '<account_name>' -l walltime=00:30:00'
+
+    Connected to the parallel pool (number of workers: 64).
+
+    ans =
+
+        ClusterPool with properties:
+
+                Connected: true
+               NumWorkers: 64
+                     Busy: false
+                  Cluster: genius R2022a
+            AttachedFiles: {}
+        AutoAddClientPath: true
+                FileStore: [1x1 parallel.FileStore]
+               ValueStore: [1x1 parallel.ValueStore]
+              IdleTimeout: 30 minutes (30 minutes remaining)
+              SpmdEnabled: true
+     EnvironmentVariables: {}
+
+    >> <start typing your commands here"
+
     
 Batch job
 *********
