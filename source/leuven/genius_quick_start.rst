@@ -87,9 +87,9 @@ E.g. you can request at most 36 cores per node (``ppn=36``). In general, we advi
 
 Advanced node usage
 ^^^^^^^^^^^^^^^^^^^
-In certain cases (such as performance tests) you may want to be sure that your job runs on a specific type of node (i.e. only Skylake nodes or only Cascadelake nodes). You can do this by selecting a node feature via e.g. `-l nodes=1:ppn:8:skylake` or `-l feature=skylake` (same for `cascadelake`).
+In certain cases (such as performance tests) you may want to be sure that your job runs on a specific type of node (i.e. only Skylake nodes or only Cascadelake nodes). You can do this by selecting a node feature via e.g. ``-l nodes=1:ppn:8:skylake`` or ``-l feature=skylake`` (same for ``cascadelake``).
 
-When doing so, you should take into account that all jobs on the Skylake nodes are subjected to the `SINGLEUSER` node access policy. This means that once a Skylake node is allocated to a job, no job from other users can land on this node (even if the original job only requested a small part of the node's resources). This is different on the Cascadelake nodes, where small jobs (less than 18 cores and with default memory requirements) are given the `SHARED` node access policy instead. This allows multiple small jobs from different users to run on the same node.
+When doing so, you should take into account that all jobs on the Skylake nodes are subjected to the ``SINGLEUSER`` node access policy. This means that once a Skylake node is allocated to a job, no job from other users can land on this node (even if the original job only requested a small part of the node's resources). This is different on the Cascadelake nodes, where small jobs (less than 18 cores and with default memory requirements) are given the ``SHARED`` node access policy instead. This allows multiple small jobs from different users to run on the same node.
 
 .. _submit to genius GPU node:
 
@@ -140,7 +140,7 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 Submit to an AMD node
 ~~~~~~~~~~~~~~~~~~~~~
-All jobs on AMD nodes are given the `SINGLEUSER` node access policy
+All jobs on AMD nodes are given the ``SINGLEUSER`` node access policy
 (see above "Advanced node usage" paragraph for more information).
 Besides specifying the partition, it is also important to specify the memory 
 per process (``pmem``) since the AMD nodes have 256 GB of RAM, which implies 
