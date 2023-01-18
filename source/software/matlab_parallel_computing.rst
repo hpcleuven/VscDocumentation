@@ -158,7 +158,7 @@ Once the job has started, you'll receive output like this:
               SpmdEnabled: true
      EnvironmentVariables: {}
 
-    >> <start typing your commands here"
+    >> <start typing your commands here>
 
     
 Batch job
