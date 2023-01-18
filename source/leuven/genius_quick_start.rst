@@ -83,23 +83,13 @@ For instance, to test a multi-threaded application which performs optimally usin
    
 In the two above examples, the jobs may start on Skylake or Cascadelake nodes.
 Please bear in mind to not exceed the maximum allowed resources on compute nodes for the targeted partition.
-E.g. you can request at most 36 cores per node (``ppn=36``).
+E.g. you can request at most 36 cores per node (``ppn=36``). In general, we advise you to only request as much resources as needed by your application.
 
 Advanced node usage
 ^^^^^^^^^^^^^^^^^^^
-The node access policy on Skylake nodes is ``SINGLEUSER``.
-This means that once a job lands on a Skylake node(s), no job from other users can land on the same node(s).
-If you insist on using a full node (to exclude jobs from other users), you may enforce getting a Skylake node in one of the following ways::
+In certain cases (such as performance tests) you may want to be sure that your job runs on a specific type of node (i.e. only Skylake nodes or only Cascadelake nodes). You can do this by selecting a node feature via e.g. `-l nodes=1:ppn:8:skylake` or `-l feature=skylake` (same for `cascadelake`).
 
-   $ qsub -l nodes=1:ppn=8:skylake -l walltime=30:00 -A myproject myjobscript.pbs             # or
-   $ qsub -l nodes=1:ppn=8 -l feature=skylake -l walltime=30:00 -A myproject myjobscript.pbs
-
-The node access policy on Cascadelake nodes is ``SHARED``.
-This means the CPU and memory resources per nodes are exploited as much as possible by packing more and more jobs into a single node.
-Similarly, you may enforce getting a Cascadelake node by specifying either ``nodes=1:ppn=8:cascadelake`` or ``-l feature=cascadelake``
-when only needing 8 cores.
-The ``SHARED`` node access policy leaves room for smaller jobs to start executing earlier than initially scheduled.
-Therefore, users are adviced to request only as much resources as needed by their applications.
+When doing so, you should take into account that all jobs on the Skylake nodes are subjected to the `SINGLEUSER` node access policy. This means that once a Skylake node is allocated to a job, no job from other users can land on this node (even if the original job only requested a small part of the node's resources). This is different on the Cascadelake nodes, where small jobs (less than 18 cores and with default memory requirements) are given the `SHARED` node access policy instead. This allows multiple small jobs from different users to run on the same node.
 
 .. _submit to genius GPU node:
 
