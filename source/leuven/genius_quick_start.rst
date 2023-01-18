@@ -140,7 +140,8 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 Submit to an AMD node
 ~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are in their own partition, with `SINGLEUSER` node access policy.
+All jobs on AMD nodes are given the `SINGLEUSER` node access policy
+(see above "Advanced node usage" paragraph for more information).
 Besides specifying the partition, it is also important to specify the memory 
 per process (``pmem``) since the AMD nodes have 256 GB of RAM, which implies 
 that the default value is too high, and your job will never run.
