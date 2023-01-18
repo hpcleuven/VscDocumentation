@@ -71,10 +71,25 @@ walltimes of 3 days or less.
 
 Submit to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~
-To submit to a compute node it all boils down to specifying the required number of nodes and cores. As the nodes have a single user policy we recommend to always request all available cores per node (36 cores in this case). For example to request 2 nodes with each 36 cores you can submit like this::
+Submitting a compute job boils down to specifying the required number of nodes, cores-per-node, memory and walltime.
+You may e.g. request two full nodes like this::
 
    $ qsub -l nodes=2:ppn=36  -l walltime=2:00:00  -A myproject  myjobscript.pbs
-  
+
+You may also request only a part of the resources on a node.
+For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this::
+
+   $ qsub -l nodes=1:ppn=4  -l walltime=2:00:00  -A myproject  myjobscript.pbs
+   
+In the two above examples, the jobs may start on Skylake or Cascadelake nodes.
+Please bear in mind to not exceed the maximum allowed resources on compute nodes for the targeted partition.
+E.g. you can request at most 36 cores per node (``ppn=36``). In general, we advise you to only request as much resources as needed by your application.
+
+Advanced node usage
+^^^^^^^^^^^^^^^^^^^
+In certain cases (such as performance tests) you may want to be sure that your job runs on a specific type of node (i.e. only Skylake nodes or only Cascadelake nodes). You can do this by selecting a node feature via e.g. ``-l nodes=1:ppn:8:skylake`` or ``-l feature=skylake`` (same for ``cascadelake``).
+
+When doing so, you should take into account that all jobs on the Skylake nodes are subjected to the ``SINGLEUSER`` node access policy. This means that once a Skylake node is allocated to a job, no job from other users can land on this node (even if the original job only requested a small part of the node's resources). This is different on the Cascadelake nodes, where small jobs (less than 18 cores and with default memory requirements) are given the ``SHARED`` node access policy instead. This allows multiple small jobs from different users to run on the same node.
 
 .. _submit to genius GPU node:
 
@@ -94,8 +109,8 @@ To specifically request V100 GPUs (which are on nodes with CascadeLake architect
   
 For the V100 type of GPU, it is required that you request 4 cores for each GPU. Also notice that these nodes offer much larger memory bank.
 
-Advanced usage
-^^^^^^^^^^^^^^
+Advanced GPU usage
+^^^^^^^^^^^^^^^^^^
 There are different GPU compute modes available, which are explained on this `documentation page <http://docs.adaptivecomputing.com/9-1-0/MWM/help.htm#topics/moabWorkloadManager/topics/accelerators/nvidiaGpus.htm>`_.
 
 - exclusive_process: only one compute process is allowed to run on the GPU
@@ -125,10 +140,11 @@ The big memory nodes are also located in a separate partition. In case of the bi
 
 Submit to an AMD node
 ~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are in their own partition.  Besides specifying the partition,
-it is also important to specify the memory per process (``pmem``) since
-the AMD nodes have 256 GB of RAM, which implies that the default value is
-too high, and your job will never run.
+All jobs on AMD nodes are given the ``SINGLEUSER`` node access policy
+(see above "Advanced node usage" paragraph for more information).
+Besides specifying the partition, it is also important to specify the memory 
+per process (``pmem``) since the AMD nodes have 256 GB of RAM, which implies 
+that the default value is too high, and your job will never run.
 
 For example::
 
