@@ -76,7 +76,7 @@ You may e.g. request two full nodes like this:
 
    $ qsub -l nodes=2:ppn=36  -l walltime=2:00:00  -A myproject  myjobscript.pbs
 
-However, you may request a portion of resources on a node.
+You may also request only a part of the resources on a node.
 For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this:
 
    $ qsub -l nodes=1:ppn=4  -l walltime=2:00:00  -A myproject  myjobscript.pbs
