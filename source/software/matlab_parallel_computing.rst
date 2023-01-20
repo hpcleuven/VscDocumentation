@@ -111,7 +111,7 @@ Submitting jobs
 Submitting jobs will happen from within Matlab. There are two ways to do this. You can start a Matlab session on a login node, or you can first request an
 interactive job, where you launch your Matlab session. Which one you choose will depend on the workload you plan to have on the node before submitting a job.
 As for any other work on the cluster, you can always do minor work on the login node, but for heavier calculations (before submitting your multinode job), you should
-use an interactive session. 
+use an interactive job. 
 
 It is possible to use the Matlab GUI as well, on all login nodes. It is strongly recommended though to use NoMachine if you want to use the GUI though (login node
 3 and 4), as the starting the GUI from any other login node will be extremely slow. If you want to use a GUI on a compute node, you would need GPU resources
