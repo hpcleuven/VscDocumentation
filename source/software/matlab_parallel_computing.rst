@@ -127,7 +127,7 @@ You can start an interactive job using the ``parpool`` function:
 ::
 
     >> c = parcluster;
-    >> p = parpool(64); % requesting 64 cores
+    >> p = parpool(72); % requesting 72 cores
     
 Once the job has started, you'll receive output like this:
 
@@ -137,16 +137,16 @@ Once the job has started, you'll receive output like this:
 
     additionalSubmitArgs =
 
-        '-l nodes=2:ppn=32 -l pmem=4gb -A '<account_name>' -l walltime=00:30:00'
+        '-l nodes=2:ppn=36 -l pmem=4gb -A '<account_name>' -l walltime=00:30:00'
 
-    Connected to the parallel pool (number of workers: 64).
+    Connected to the parallel pool (number of workers: 72).
 
     ans =
 
         ClusterPool with properties:
 
                 Connected: true
-               NumWorkers: 64
+               NumWorkers: 72
                      Busy: false
                   Cluster: genius R2022a
             AttachedFiles: {}
