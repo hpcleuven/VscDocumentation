@@ -113,9 +113,11 @@ interactive job, where you launch your Matlab session. Which one you choose will
 As for any other work on the cluster, you can always do minor work on the login node, but for heavier calculations (before submitting your multinode job), you should
 use an interactive job. 
 
-It is possible to use the Matlab GUI as well, on all login nodes. It is strongly recommended though to use NoMachine if you want to use the GUI though (login node
-3 and 4), as starting the GUI from any other login node will be extremely slow. If you want to use a GUI on a compute node, you'd need to submit your interacive job
-with X forwarding. You'll need to ``-X`` to your qsub command. Note that this is also quite slow. 
+In general, we recommend to carry out the examples below via Matlab's command line interface
+(as shown in the configuration section). It is also possible to use the Matlab GUI, in which case it
+is best to do this via a NoMachine connection. If you then need to launch the Matlab GUI in an
+interactive job, don't forget to add ``-X`` option to qsub and keep in mind that the GUI will
+necessarily be less responsive.
 
 Now you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a job.
 
