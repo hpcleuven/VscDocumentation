@@ -102,17 +102,30 @@ This way, you can find the ID's of collections, which are needed for transferrin
 
 Adding scopes
 ---------------------------
-There are some collection to which every user has access:
 
+In the section 'Authentication', you saw how to request consent of the user.  
+However, this consent was general.  
+
+To transfer data between managed collections (like those of the VSC), we have to request the user's consent for both collections specifically.
+This is done by creating a scope object to be used by the authentication process. 
+
+.. Note::
+      You only have to create scope objects for collections that require extra authentication (which is most managed collections).  
+      There are some collections to which every user has access by default:
+      
       - Globus tutorial endpoint 1
       - Globus tutorial endpoint 2
       - Their own local endpoints
       - ...
-When your client asks Globus for permission to manage data, it gets access to these collections by default.  
 
-However, in order to give a client access to other collections, like the managed collections of the VSC, you will need to take those up in the scope of the authentication.
+      If during this section, you get an error that looks like this::
 
-In the examples above, we started the authentication without explictly providing a scope::
+            client_id=f2cd3b64-d7a1-4c8b-9c4d-c7f5fe0621e0 requested unknown scopes: ['https://auth.globus.org/scopes/ddb59aef-6d04-11e5-ba46-22000b92c6ec/data_access']
+      
+      it is likely that you have requested a scope for a collection you didn't need it for. 
+
+
+In the section 'Authentication', we started the authentication without explictly providing a scope::
       
       auth_client.oauth2_start_flow()
 
@@ -140,14 +153,7 @@ Now, we can use this scope to initiate our session::
 
       auth_client.oauth2_start_flow(requested_scopes=[transfer_scope])
 
-      authorize_url = auth_client.oauth2_get_authorize_url()
-      print(f"Please go to this URL and login:\n\n{authorize_url}\n")
-      auth_code = input("Please enter the code here: ").strip()
-      token_response = auth_client.oauth2_exchange_code_for_tokens(auth_code)
-
-      globus_transfer_data = token_response.by_resource_server["transfer.api.globus.org"]
-
-      TRANSFER_TOKEN = globus_transfer_data["access_token"]  
+Apart from this, the authentication process remains the same as seen earlier.  
 
 
 Transferring data
