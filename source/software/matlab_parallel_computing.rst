@@ -114,9 +114,8 @@ As for any other work on the cluster, you can always do minor work on the login 
 use an interactive job. 
 
 It is possible to use the Matlab GUI as well, on all login nodes. It is strongly recommended though to use NoMachine if you want to use the GUI though (login node
-3 and 4), as starting the GUI from any other login node will be extremely slow. If you want to use a GUI on a compute node, you would need GPU resources
-(no X11 forwarding on the other nodes). Requesting GPU resources just for the GUI is quite expensive though. Once the Matlab Parallel Computing Toolbox is
-available on wICE, interactive sessions on the interactive partition will solve this issue. 
+3 and 4), as starting the GUI from any other login node will be extremely slow. If you want to use a GUI on a compute node, you'd need to submit your interacive job
+with X forwarding. You'll need to ``-X`` to your qsub command. Note that this is also quite slow. 
 
 Now you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a job.
 
