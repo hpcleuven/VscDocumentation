@@ -120,7 +120,7 @@ This is done by creating a scope object to be used by the authentication process
 
       If during this section, you get an error that looks like this::
 
-            client_id=f2cd3b64-d7a1-4c8b-9c4d-c7f5fe0621e0 requested unknown scopes: ['https://auth.globus.org/scopes/ddb59aef-6d04-11e5-ba46-22000b92c6ec/data_access']
+            client_id=<your_client_id> requested unknown scopes: ['https://auth.globus.org/scopes/ddb59aef-6d04-11e5-ba46-22000b92c6ec/data_access']
       
       it is likely that you have requested a scope for a collection you didn't need it for. 
 
@@ -159,12 +159,14 @@ Apart from this, the authentication process remains the same as seen earlier.
 Transferring data
 ----------------
 
-To transfer data from one collection to another, we first need to instantiate an authorizer and transfer client::
+To transfer data from one collection to another, we first need to authenticate and require consent for the source and destination collection, as show in the sections 'Authentication' and 'Adding Scopes'.   
+ 
+Next, we instantiate an authorizer and transfer client::
 
       authorizer = globus_sdk.AccessTokenAuthorizer(TRANSFER_TOKEN)
       transfer_client = globus_sdk.TransferClient(authorizer=authorizer)
 
-Next, we create a transfer task::
+After that, we create a transfer task::
 
       task_data = globus_sdk.TransferData(
             # we specify the transfer client, source collection and destination collecion
@@ -193,7 +195,7 @@ This transfer can be followed up via the 'Activity' tab of the `Web Interface`_.
 Acquiring longer authentication
 --------------
 
-In the workflow we have shown above, users need to log in to Globus every time they use the script/client in question to acquire a token.
+In the workflow we have shown so far, users need to log in to Globus every time they use the script/client in question to acquire a token.
 
 These tokens have a short lifespan, but should be enough for any process running shorter than a day. 
 
