@@ -69,7 +69,8 @@ You can specify a directory path on the collection after a colon::
             scratch/                                                            
       
       # To list a specific directory:
-      $ globus ls $kuleuventier2scratch:scratch/<redacted>/<username>/test
+      # (In this snippet, a real VSC account is replaced with 'vscxxxxx')
+      $ globus ls $kuleuventier2scratch:scratch/xxx/vscxxxxx/test
             statistics/
             survey_user1.csv
             survey_user2.csv
