@@ -176,8 +176,17 @@ After that, we create a transfer task::
 Then, we add data to the transfer::
 
       task_data.add_item(
-            "/path/to/data/on/VUB/tier2",  # source
+            "/path/to/file/on/VUB/tier2",  # source
             "/path/to/destination/on/Kuleuven/tier2",  # destination
+      )
+
+Instead of files, you can also transfer entire directories.  
+In that case, you need to add `recursive=True` to the `add_item` method::
+
+      task_data.add_item(
+            "/path/to/directory/on/VUB/tier2",  # source
+            "/path/to/destination/on/Kuleuven/tier2",  # destination
+            recursive=True
       )
 
 Lastly, we submit the transfer request, and print the task ID::
