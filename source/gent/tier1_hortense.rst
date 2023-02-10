@@ -1,3 +1,5 @@
+.. _Hortense hardware:
+
 Hortense @ HPC-UGent
 ====================
 

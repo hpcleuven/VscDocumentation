@@ -1,3 +1,5 @@
+.. _UGentT2 hardware:
+
 HPC-UGent Tier-2 Infrastructure
 ===============================
 

@@ -1,9 +1,13 @@
-Legacy: running jobs in PBS
-===========================
+.. _running jobs torque:
 
-.. warning:: The following documentation is deprecated. All clusters in VSC
-   currently use Slurm as their resource manager and job scheduler. Please
-   follow the documentation in :ref:`running jobs`
+Running jobs in Torque
+======================
+
+VSC clusters using the Torque job scheduler:
+
+.. include:: clusters_torque.rst
+
+.. note:: Other clusters might use the :ref:`Slurm job scheduler <running jobs>`
 
 The workflow in the HPC is straightforward:
 

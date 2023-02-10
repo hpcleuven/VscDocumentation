@@ -3,6 +3,12 @@
 Running jobs in Slurm
 =====================
 
+VSC clusters using the Slurm job scheduler
+
+.. include:: clusters_slurm.rst
+
+.. note:: Other clusters might use the :ref:`Torque job scheduler <running jobs torque>`
+
 This page covers the more basic Slurm use, including starting jobs, basic job management
 and some templates for job scripts for various scenarios. It is the minimum a user should
 master. A second page describes :ref:`more advanced use of Slurm <Antwerp advanced Slurm>`.

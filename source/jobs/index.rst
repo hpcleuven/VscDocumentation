@@ -13,22 +13,36 @@ the scheduler.
    nodes will annoy other users.
 
 Although you can :ref:`work interactively <interactive jobs>` on an HPC system,
-most computations are performed in batch mode.
-
-The workflow in the HPC is straightforward:
+most computations are performed in batch mode. The workflow in batch mode is straightforward:
 
 #. Create a job script
 #. Submit it as a job to the scheduler
 #. Wait for the computation to run and finish
 
 The following sections cover all aspects related to the preparation, execution
-and monitoring of your jobs in the HPC:
+and monitoring of your jobs in the HPC.
+
+.. toctree::
+   :maxdepth: 2
+
+   running_jobs
+
+:fas:`server` VSC clusters using the :ref:`Slurm job scheduler <running jobs>`
+
+.. include:: clusters_slurm.rst
+
+.. toctree::
+   :maxdepth: 2
+
+   running_jobs_torque
+
+:fas:`server` VSC clusters using the :ref:`Torque job scheduler <running jobs torque>`
+
+.. include:: clusters_torque.rst
 
 .. toctree::
    :maxdepth: 3
 
-   running_jobs
-   running_jobs_pbs
    ../software/software_stack
    ../software/software_development
 
