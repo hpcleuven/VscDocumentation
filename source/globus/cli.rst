@@ -43,7 +43,7 @@ In Globus, every collection has an ID. In the Globus CLI, you need this ID to li
 
 You can look up the ID's of collections and endpoints with the command 'globus endpoint search'::
 
-      $ Globus endpoint search 'VSC KU Leuven tier2 scratch'
+      $ globus endpoint search 'VSC KU Leuven tier2 scratch'
       ID                                   | Owner                                                        | Display Name
       ------------------------------------ | ------------------------------------------------------------ | ---------------------------
       872a58ab-02b9-4233-a3e0-f017ed8ab090 | 91aed976-e7a6-4ae9-9e95-fda50e6cab01@clients.auth.globus.org | VSC KU Leuven tier2 scratch
@@ -58,15 +58,19 @@ You can find the names of all VSC collections in our table of :ref:`globus-avail
 You can list the contents of a collection with 'globus ls', followed by the collection id.
 You can specify a directory path on the collection after a colon::
 
+      # Making a variable for the collection ID for convenience
+      $ kuleuventier2scratch=872a58ab-02b9-4233-a3e0-f017ed8ab090
+
       # To list a collection from the root: 
-      $ globus ls $tier2scratch        
+      $ globus ls $kuleuventier2scratch        
             nproject/
             nscratch/
             project/
             scratch/                                                            
       
       # To list a specific directory:
-      $ globus ls $tier2scratch:scratch/337/vsc33731/test
+      # (In this snippet, a real VSC account is replaced with 'vscxxxxx')
+      $ globus ls $kuleuventier2scratch:scratch/xxx/vscxxxxx/test
             statistics/
             survey_user1.csv
             survey_user2.csv
@@ -78,8 +82,11 @@ The consent is added to your session (so it's tied to one PC) and lasts until yo
 
 You can transfer a file between two endpoints as follows::
 
-      $ globus transfer $tier2scratch:scratch/337/vsc33731/test/survey_user1.csv \
-               $tier1scratch:337/vsc33731/test/survey_user1.csv --label "test_transfer"
+      # Also saving the destination endpoint in a variable for convenience
+      vubtier2=2d1d4873-a849-4b9c-bd34-2034a2163003
+
+      $ globus transfer $kuleuventier2scratch:path/to/data/on/kuleuven/tier2 \
+               $vubtier2:path/to/data/on/VUB/tier2 --label "test_transfer"
 
       Message: The transfer has been accepted and a task has been created and queued for execution
       Task ID: 4dff3446-5512-11ed-ba54-d5fb255a47cc
@@ -88,12 +95,7 @@ You can transfer a file between two endpoints as follows::
 For more documentation and examples about the globus CLI, see the official `Globus CLI documentation`_.
 
 
-
 .. include:: links.rst
 
-
-
-.. todo:
-      - Why can you see old endpoints? 
 
      

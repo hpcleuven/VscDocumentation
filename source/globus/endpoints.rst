@@ -19,7 +19,7 @@ An **endpoint** is a server that hosts one or multiple collections.
 Available collections
 ------------------
 
-Both the KU Leuven and the VSC host a number of collections:
+The VSC hosts a number of collections:
 
 
 +------------------------------------------+-------------------+----------------+------------------+
@@ -42,7 +42,13 @@ Both the KU Leuven and the VSC host a number of collections:
 | VSC KU Leuven data directories           | VSC account       | No             | No               |
 +------------------------------------------+-------------------+----------------+------------------+
 
+.. Note::
+      The collection 'VSC KU Leuven tier2 scratch' also contains the staging directories, under :bgrnd1:`/project`
+
+
 If you are one of the pilot users of the Tier-1 Data platform, you can find its collection by searching for 'vsc irods.hpc'.  
+
+
 
 .. _globus-local-endpoints:
 
