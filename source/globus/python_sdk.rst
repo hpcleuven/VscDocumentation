@@ -29,6 +29,12 @@ When you register an app, it gets a **client ID**. This will be used to authenti
 
 2. Installation
 
+Currently, a version of the Python SDK is already available on the Tier-2 Cluster of the VUB (Hydra) and can be loaded as follows::
+
+      module load Globus-CLI
+
+In other environments, the Python SDK can be installed as a python package.
+
 The Python SDK can be installed with pip as follows::
 
       pip install globus-sdk
