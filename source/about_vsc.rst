@@ -1,5 +1,9 @@
-About VSC
-=========
+#####
+About
+#####
+
+VSC
+===
 
 The Flemish Supercomputer Centre (**VSC**) is a virtual 
 centre making supercomputer infrastructure available for both the

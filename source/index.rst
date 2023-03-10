@@ -16,6 +16,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 .. toctree::
    :hidden:
 
+   about_vsc
    access/index
    compute
    cloud
