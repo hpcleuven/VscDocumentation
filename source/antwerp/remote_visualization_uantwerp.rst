@@ -176,7 +176,7 @@ We have tested the setup with four different clients:
    website <http://www.tightvnc.com/download.php>`_. When
    installing on your PC or laptop, make sure to chose the "custom
    install" and only install the TightVNC Viewer.
--  `MobaXterm <https://mobaxterm.mobatek.net/>`_ also has an integrated VNC viewer. 
+-  `MobaXterm`_ also has an integrated VNC viewer. 
    With that viewer it is possible to build the tunnel in the 
    network settings of the VNC connection.
 

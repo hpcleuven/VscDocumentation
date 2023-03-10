@@ -9,10 +9,10 @@ Download and setup MobaXterm
     You can use the key pair previously generated with PuTTY or :ref:`generate
     a new key pair with MobaXterm <generating keys mobaxterm>`.
 
-Go to the `MobaXterm website <https://mobaxterm.mobatek.net>`__ and download the
-free version. Make sure to select the **Portable edition** from the download
-page. Create a folder called ``MobaXterm`` in a known location in your computer and
-decompress the contents of the downloaded zip file inside it.
+Go to the `MobaXterm`_ website and download the free version. Make sure to
+select the **Portable edition** from the download page. Create a folder called
+``MobaXterm`` in a known location in your computer and decompress the contents
+of the downloaded zip file inside it.
 
 Setup a shortcut for a remote session
 -------------------------------------

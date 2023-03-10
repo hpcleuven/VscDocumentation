@@ -67,6 +67,24 @@ login node.
 For future sessions, just select your saved session from the list and
 press 'Open'.
 
+Managing SSH keys
+-----------------
+
+:ref:`Pageant <using Pageant>` can be used to manage active keys for
+PuTTY, :ref:`WinSCP<WinSCP>`, :ref:`FileZilla<FileZilla>` as well as
+the :ref:`NX client for Windows<NX start guide>` so that you don't need
+to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
+distribution.
+
+Network tunnels to compute nodes
+--------------------------------
+
+To establish network communication between your local machine and a compute
+node of a cluster you have to :ref:`create an SSH tunnel using PuTTY
+<ssh tunnel using PuTTY>` .  This is also useful to run client software
+on your Windows machine, e.g., ParaView or Jupyter notebooks that run on
+a compute node.
+
 Troubleshooting PuTTY connection issues
 ---------------------------------------
 

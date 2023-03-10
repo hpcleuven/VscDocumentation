@@ -1,5 +1,3 @@
-.. _Windows client:
-
 Windows client
 ==============
 
@@ -7,37 +5,57 @@ Getting ready to request an account
 -----------------------------------
 
 Before requesting an account, you need to generate a pair of SSH
-keys. One popular way to do this on Windows is using the freely
-available `PuTTY`_ client which you can then also use to log on to
-the clusters, see the :ref:`instructions for generating a key pair with PuTTY
-<generating keys putty>`.
+keys. There multiple ways to create yours keys in Windows, in the following we
+cover the most common ones:
 
-Another popular way is using the (also freely available)
-:ref:`MobaXterm client <access using mobaxterm>`,
-see the :ref:`instructions for generating a key pair with MobaXterm
-<generating keys mobaxterm>`.
+* `PuTTY`_
+  One popular way to do this on Windows is using the freely
+  available `PuTTY`_ client which you can then also use to log on to
+  the clusters, see the :ref:`instructions for generating a key pair with PuTTY
+  <generating keys putty>`.
+
+* `MobaXterm`_
+  Another popular way is using the (also freely available)
+  :ref:`MobaXterm client <access using mobaxterm>`, see the :ref:`instructions
+  for generating a key pair with MobaXterm <generating keys mobaxterm>`.
 
 Connecting to the cluster
 -------------------------
 
-Text-mode session using an SSH client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Text-mode session using PuTTY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PuTTY  is a simple-to-use and freely available GUI SSH client for Windows that
 is :ref:`easy to set up <text mode access using PuTTY>`.
 
-:ref:`Pageant <using Pageant>` can be used to manage active keys for
-PuTTY, :ref:`WinSCP<WinSCP>`, :ref:`FileZilla<FileZilla>` as well as
-the :ref:`NX client for Windows<NX start guide>` so that you don't need
-to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
-distribution.
+.. toctree::
 
-To establish network communication between your local machine and a compute
-node of a cluster you have to :ref:`create an SSH tunnel using PuTTY
-<ssh tunnel using PuTTY>` .  This is also useful to run client software
-on your Windows machine, e.g., ParaView or Jupyter notebooks that run on
-a compute node.
+   text_mode_access_using_putty
 
+Text-mode and graphical browser using MobaXterm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MobaXterm is a free and easy to use SSH client for Windows that has text-mode,
+a graphical file browser, an X server, an SSH agent, and more, all in one.
+No installation is required when using the *Portable edition*. See
+:ref:`detailed instructions on how to setup MobaXterm <access using mobaxterm>`.
+
+.. toctree::
+
+   access_using_mobaxterm
+
+Alternatives
+~~~~~~~~~~~~
+
+Recent versions of Windows come with an OpenSSH installed, and you can use
+it from PowerShell or the Command Prompt as you would in the termial on Linux
+systems and all pages about SSH and data transfer from :ref:`the Linux client
+pages <Linux client>` apply.
+
+The Windows Subsystem for Linux can be an alternative if you are using
+Windows 10 build 1607 or later.  The available Linux distributions have
+SSH clients, so you can refer to all pages about SSH and data transfer
+from :ref:`the Linux client pages <Linux client>` as well.
 
 Transfer data using Secure FTP (SFTP) clients
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,23 +101,6 @@ VNC clients are available for Windows, macOS, Linux, Android and iOS.
    <https://hpc.vub.be/docs/software/modules/#how-can-i-run-graphical-applications>`_
    for instructions.
 
-
-Alternatives
-------------
-MobaXterm is a free and easy to use SSH client for Windows that has text-mode,
-a graphical file browser, an X server, an SSH agent, and more, all in one.
-No installation is required when using the *Portable edition*. See
-:ref:`detailed instructions on how to setup MobaXterm <access using mobaxterm>`.
-
-Recent versions of Windows come with an OpenSSH installed, and you can use
-it from PowerShell or the Command Prompt as you would in the termial on Linux
-systems and all pages about SSH and data transfer from :ref:`the Linux client
-pages <Linux client>` apply.
-
-The Windows Subsystem for Linux can be an alternative if you are using
-Windows 10 build 1607 or later.  The available Linux distributions have
-SSH clients, so you can refer to all pages about SSH and data transfer
-from :ref:`the Linux client pages <Linux client>` as well.
 
 Programming tools
 -----------------

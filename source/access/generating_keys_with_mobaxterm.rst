@@ -7,11 +7,10 @@ Generating keys with MobaXterm
 The following steps explain how to generate an SSH key pair in ``OpenSSH`` format
 using the MobaXterm application.
 
-#. Go to the `MobaXterm website <http://mobaxterm.mobatek.net>`__ and download
-   the free version. Make sure to select the **Portable edition** from the
-   download page. Create a folder called ``MobaXterm`` in a known
-   location in your computer and decompress the contents of the downloaded
-   zip file inside it.
+#. Go to the `MobaXterm`_ website and download the free version. Make sure to
+   select the **Portable edition** from the download page. Create a folder
+   called ``MobaXterm`` in a known location in your computer and decompress the
+   contents of the downloaded zip file inside it.
 
 #. Double click the ``MobaXterm_Personal`` executable file inside the
    ``MobaXterm`` folder.
