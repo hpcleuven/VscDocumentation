@@ -1,15 +1,15 @@
 .. _acccess_data_transfer:
 
 ################################################
-:fas:`right-to-bracket` Access and Data Transfer
+:fas:`right-to-bracket` Login and Data Transfer
 ################################################
 
 Before you can really start using one of the clusters, there are several
 things you need to do or know:
 
 
-Logging in to a cluster
------------------------
+Login to a cluster
+------------------
 
 You need to log on to a cluster via an ssh-client to one of the
 login nodes. This will give you a command line. The software you'll
