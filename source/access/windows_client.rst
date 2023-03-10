@@ -29,6 +29,7 @@ PuTTY  is a simple-to-use and freely available GUI SSH client for Windows that
 is :ref:`easy to set up <text mode access using PuTTY>`.
 
 .. toctree::
+   :maxdepth: 2
 
    text_mode_access_using_putty
 
@@ -41,6 +42,7 @@ No installation is required when using the *Portable edition*. See
 :ref:`detailed instructions on how to setup MobaXterm <access using mobaxterm>`.
 
 .. toctree::
+   :maxdepth: 2
 
    access_using_mobaxterm
 

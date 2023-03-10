@@ -67,8 +67,8 @@ login node.
 For future sessions, just select your saved session from the list and
 press 'Open'.
 
-Managing SSH keys
------------------
+Managing SSH keys with Pageant
+------------------------------
 
 :ref:`Pageant <using Pageant>` can be used to manage active keys for
 PuTTY, :ref:`WinSCP<WinSCP>`, :ref:`FileZilla<FileZilla>` as well as
@@ -84,6 +84,10 @@ node of a cluster you have to :ref:`create an SSH tunnel using PuTTY
 <ssh tunnel using PuTTY>` .  This is also useful to run client software
 on your Windows machine, e.g., ParaView or Jupyter notebooks that run on
 a compute node.
+
+.. toctree::
+
+   creating_a_ssh_tunnel_using_putty
 
 Troubleshooting PuTTY connection issues
 ---------------------------------------

@@ -26,31 +26,22 @@ which you can then also use to log on to the clusters.
 Connecting to the cluster
 -------------------------
 
-Text-mode session using an SSH client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Text-mode session using OpenSSH
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The OpenSSH :ref:`ssh command <OpenSSH access>` can be used to open
 a connection in a Linux terminal session.
 
-It is convenient to use :ref:`an SSH-agent <SSH agent>` to avoid
-having to enter your private key's passphrase all the time when
-establishing a new connection.
+.. toctree::
+   :maxdepth: 2
 
-The SSH configuration file ``.ssh/config`` can be used to :ref:`define
-connection properties<SSH config>` for nodes you often use.  It is a
-considerable time saver when working terminal-based.
-
-To establish network communication between your local machine and the
-cluster otherwise blocked by firewalls, you have to :ref:`create an
-SSH tunnel using OpenSSH <tunnel OpenSSH>`.
-
+   text_mode_access_using_openssh
 
 Transfer data using Secure FTP (SFTP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Data can easily be transferred to and from remote systems using
 the :ref:`OpenSSH sftp and scp commands <scp and sftp>`.
-
 
 .. _Linux gui:
 

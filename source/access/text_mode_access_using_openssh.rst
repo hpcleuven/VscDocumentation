@@ -73,10 +73,29 @@ the X-Forwarding.
 How to configure the OpenSSH client?
 ------------------------------------
 
-The ``~/.ssh/config`` file can be used to configure your SSH connections, e.g.,
-to automatically add X forwarding or specify the path of a key that is not in
-the default location.  We provide :ref:`some useful tips<SSH config>`.
+The SSH configuration file ``~/.ssh/config`` can be used to configure your SSH
+connections. For instance, to automatically define your username, or the
+location of your key, or add X forwarding. We provide :ref:`some useful
+tips<SSH config>` to help you save time when working on a terminal-based
+session.
 
+Managing keys with an SSH agent
+-------------------------------
+
+It is convenient to use :ref:`an SSH-agent <SSH agent>` to avoid
+having to enter your private key's passphrase all the time when
+establishing a new connection.
+
+Network tunnel to compute node
+------------------------------
+
+To establish network communication between your local machine and the cluster
+otherwise blocked by firewalls, you have to create an
+:ref:`SSH tunnel using OpenSSH <tunnel OpenSSH>`.
+
+.. toctree::
+
+   creating_a_ssh_tunnel_using_openssh
 
 Troubleshooting OpenSSH connection issues
 -----------------------------------------
@@ -103,8 +122,8 @@ making the connection:
 
    $ ssh -i <path-to-your-private-key-file> <vsc-account>@<vsc-loginnode>
 
-Links
------
+SSH Manual
+----------
 
 -  `ssh manual page`_
 
