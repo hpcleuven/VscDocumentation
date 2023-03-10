@@ -9,7 +9,7 @@ things you need to do or know:
 
 
 Login to a cluster
-------------------
+==================
 
 You need to log on to a cluster via an ssh-client to one of the
 login nodes. This will give you a command line. The software you'll
@@ -19,15 +19,15 @@ need to use on your client system depends on its operating system:
    :maxdepth: 2
 
    windows_client
-   linux_client
    macos_client
+   linux_client
 
 .. note::
-   When logging in to a KU Leuven cluster, take a look at the page on
-   :ref:`Multi Factor Authentication<mfa_leuven>`.
+   :bdg-primary:`KU Leuven` When logging in to a KU Leuven cluster, take a look
+   at the page on :ref:`Multi Factor Authentication<mfa_leuven>`.
 
 Data storage
-------------
+============
 
 Your account also comes with a certain amount of data storage
 capacity in at least three subdirectories on each cluster. You'll
@@ -41,7 +41,7 @@ need to familiarise yourself with
 
 
 Transferring data
------------------
+=================
 
 Before you can do some work, you'll have to transfer the files that
 you need from your desktop or department to the cluster. At the end
@@ -58,7 +58,7 @@ software on your client system which depends on its operating system:
 
 
 GUI applications on the clusters
---------------------------------
+================================
 
 Optionally, if you wish to use programs with a graphical user
 interface, you'll need an X server on your client system. Again, this
@@ -68,9 +68,14 @@ depends on the latter's operating system:
 - :ref:`Linux <Linux gui>`
 - :ref:`macOS/OS X <macOS gui>`
 
+There are alternative multi-platform tools to connect to the cluster as well:
+
+.. toctree::
+
+   multiplatform_client_tools
 
 VPN
----
+===
 
 Logging in to the login nodes of your institute's cluster may not work
 if your computer is not on your institute's network (e.g., when you work

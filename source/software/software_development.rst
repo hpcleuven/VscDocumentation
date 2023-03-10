@@ -23,6 +23,7 @@ Development tools
    intel_toolchain
    foss_toolchain
    intel_trace_analyzer_collector
+   eclipse
    parameterweaver
    version_control_systems
 

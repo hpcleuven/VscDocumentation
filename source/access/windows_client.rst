@@ -1,8 +1,9 @@
+##############
 Windows client
-==============
+##############
 
 Getting ready to request an account
------------------------------------
+===================================
 
 Before requesting an account, you need to generate a pair of SSH
 keys. There multiple ways to create yours keys in Windows, in the following we
@@ -20,10 +21,10 @@ cover the most common ones:
   for generating a key pair with MobaXterm <generating keys mobaxterm>`.
 
 Connecting to the cluster
--------------------------
+=========================
 
 Text-mode session using PuTTY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 PuTTY  is a simple-to-use and freely available GUI SSH client for Windows that
 is :ref:`easy to set up <text mode access using PuTTY>`.
@@ -34,7 +35,7 @@ is :ref:`easy to set up <text mode access using PuTTY>`.
    text_mode_access_using_putty
 
 Text-mode and graphical browser using MobaXterm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------
 
 MobaXterm is a free and easy to use SSH client for Windows that has text-mode,
 a graphical file browser, an X server, an SSH agent, and more, all in one.
@@ -47,7 +48,7 @@ No installation is required when using the *Portable edition*. See
    access_using_mobaxterm
 
 Alternatives
-~~~~~~~~~~~~
+------------
 
 Recent versions of Windows come with an OpenSSH installed, and you can use
 it from PowerShell or the Command Prompt as you would in the termial on Linux
@@ -60,7 +61,7 @@ SSH clients, so you can refer to all pages about SSH and data transfer
 from :ref:`the Linux client pages <Linux client>` as well.
 
 Transfer data using Secure FTP (SFTP) clients
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=============================================
 
 Two GUI clients SFTP clients for Windows are recommended:
 
@@ -70,10 +71,10 @@ Two GUI clients SFTP clients for Windows are recommended:
 .. _Windows gui:
 
 Display graphical programs
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 X server
-^^^^^^^^
+--------
 You can install an X server: :ref:`Xming<Xming>`.
 X is the protocol that is used by most Linux applications to display
 graphics on a local or remote screen.
@@ -81,14 +82,14 @@ graphics on a local or remote screen.
 Alternatively, you can use :ref:`MobaXterm<access using mobaxterm>`.
 
 NX client
-^^^^^^^^^
+---------
 On the KU Leuven/UHasselt clusters it is also possible to use the
 :ref:`NX Client<NX start guide>` to log
 on to the machine and run graphical programs. Instead of an
 X server, another piece of client software is required.
 
 VNC
-^^^
+---
 The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
 visualization software through Virtual Network Computing (VNC). VNC renders
 images on the cluster and transfers the resulting images to your client device.
@@ -105,7 +106,7 @@ VNC clients are available for Windows, macOS, Linux, Android and iOS.
 
 
 Programming tools
------------------
+=================
 
 .. warning::
    Although it is convenient to develop software on your local machine,
@@ -115,7 +116,7 @@ Programming tools
    system.
 
 Windows Subsystem for Linux (WSL/WSL2)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 If you're running Windows 10 build 1607 (Anniversary Edition) or
 later, you may consider running the "`Windows Subsystem for
 Linux <https://www.google.be/webhp?q=windows%20subsystem%20for%20linux>`_"
@@ -124,7 +125,7 @@ to install some Ubuntu packages. *In build 1607 this is still
 considered experimental technology and we offer no support.*
 
 Microsoft Visual Studio
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 :ref:`Microsoft Visual Studio <MS Visual Studio>` can also
 be used to develop OpenMP or MPI programs. If you do not use any
 Microsoft-specific libraries but stick to plain C or C++, the
@@ -137,24 +138,16 @@ full-blown IDE and compilers that support the latest technologies in
 the HPC world on Windows.
 
 Eclipse
-~~~~~~~
-Eclipse is a popular multi-platform Integrated Development
-Environment (IDE) very well suited for code development on clusters.
+-------
 
--  Read our :ref:`Eclipse introduction <Eclipse intro>` to
-   find out why you should consider using Eclipse if you develop code
-   and how to get it.
--  You can use :ref:`Eclipse on the desktop as a remote editor for the
-   cluster <Eclipse as remote editor>`.
--  You can combine the remote editor feature with version control
-   from Eclipse, but some care is needed, and :ref:`here's how to do
-   it <Eclipse PTP>`.
+.. include:: eclipse_intro.rst
 
-On Windows Eclipse relies by default on the `Cygwin`_ toolchain for its
-compilers and other utilities, so you need to install that too.
+.. note::
+   On Windows Eclipse relies by default on the `Cygwin`_ toolchain for its
+   compilers and other utilities, so you need to install that too.
 
 Version control
-~~~~~~~~~~~~~~~
+---------------
 Information on tools for version control (git and subversion) is
 available on the :ref:`version control systems` introduction page.
 
