@@ -199,9 +199,9 @@ Advanced topics
    :maxdepth: 2
    :hidden:
 
-    monitoring_memory_and_cpu_usage_of_programs
-    worker_framework
-    checkpointing_framework
+   monitoring_memory_and_cpu_usage_of_programs
+   worker_framework
+   checkpointing_framework
 
 -  :ref:`monitoring memory and cpu`, which helps to find the
    right parameters to improve your specification of the job requirements.
