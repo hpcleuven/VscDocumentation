@@ -75,6 +75,9 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+# To render double dashes in text as double dashes (and not as an "en dash"):
+smartquotes_action = 'qe'  # instead of default 'qDe'
+
 
 # -- Options for HTML output -------------------------------------------------
 
