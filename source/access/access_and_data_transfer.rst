@@ -68,12 +68,6 @@ depends on the latter's operating system:
 - :ref:`Linux <Linux gui>`
 - :ref:`macOS/OS X <macOS gui>`
 
-There are alternative multi-platform tools to connect to the cluster as well:
-
-.. toctree::
-
-   multiplatform_client_tools
-
 VPN
 ===
 
