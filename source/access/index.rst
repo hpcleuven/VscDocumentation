@@ -50,4 +50,5 @@ their VSC account and access the VSC infrastructure:
    generating_keys
    getting_access
    access_and_data_transfer
+   account_management
 
