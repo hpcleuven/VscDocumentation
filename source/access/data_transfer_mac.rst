@@ -1,8 +1,9 @@
-Data transfer
-=============
+####################
+Data Transfer on Mac
+####################
 
 Prerequisite: OpenSSH, Cyberduck or FileZilla
----------------------------------------------
+=============================================
 
 -  macOS comes with its own implementation of OpenSSH, so you don't need
    to install any third-party software to use it. Just open a Terminal
@@ -24,7 +25,7 @@ Prerequisite: OpenSSH, Cyberduck or FileZilla
 .. _Cyberduck data transfer:
 
 Transferring files with Cyberduck
----------------------------------
+=================================
 
 Files can be easily transferred with Cyberduck. Setup is easy:
 
@@ -48,7 +49,7 @@ Files can be easily transferred with Cyberduck. Setup is easy:
    created.
 
 Transferring files with FileZilla
----------------------------------
+=================================
 
 To install FileZilla, follow these steps:
 
@@ -101,5 +102,11 @@ keychain system.
 .. |Cyberduck config| image:: data_transfer/cyberduck_config.png
 .. |FileZilla config| image:: data_transfer/filezilla_config.png
 .. |FileZilla private keys| image:: data_transfer/filezilla_private_keys.jpg
+
+Terminal tools
+==============
+
+Alternatively, you can use command line tools such as
+:ref:`scp and sftp <scp and sftp>`.
 
 .. include:: links.rst

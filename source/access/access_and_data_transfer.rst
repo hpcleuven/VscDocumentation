@@ -52,9 +52,9 @@ software on your client system which depends on its operating system:
 .. toctree::
    :maxdepth: 2
 
-   data_transfer_with_filezilla
-   data_transfer_using_winscp
-   data_transfer_with_scp_sftp
+   data_transfer_windows
+   data_transfer_mac
+   data_transfer_linux
 
 
 GUI applications on the clusters
