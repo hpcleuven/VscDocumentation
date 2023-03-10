@@ -84,28 +84,40 @@ exclude_patterns = []
 #
 html_theme = 'pydata_sphinx_theme'
 
+# Icon links on right side of the navbar
+# https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/header-links.html#icon-links
+html_navbar_icon_links = [
+    {
+        "name": "GitHub",
+        "url": "https://github.com/vscentrum",
+        "icon": "fa-brands fa-square-github",
+        "type": "fontawesome",
+    },
+    {
+        "name": "Twitter",
+        "url": "https://twitter.com/VSC_HPC",
+        "icon": "fa-brands fa-square-twitter",
+    },
+]
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-    "left_sidebar_end": ["sidebar-links"],
-    "page_sidebar_items": ["page-toc", "edit-this-page"],
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-nav"],
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],
+    "navbar_persistent": ["search-button"],
+    "navbar_align": "left",
+    "header_links_before_dropdown": 8,
+    "icon_links": html_navbar_icon_links,
+    "search_bar_text": "Search in VSC Docs...",
+    # "left_sidebar_end": ["sidebar-links"],
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "use_edit_page_button": True,
     "show_prev_next": False,
-    "icon_links": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/vscentrum",
-            "icon": "fa-brands fa-square-github",
-            "type": "fontawesome",
-        },
-        {
-            "name": "Twitter",
-            "url": "https://twitter.com/VSC_HPC",
-            "icon": "fa-brands fa-square-twitter",
-        },
-    ],
+    "footer_start": ["copyright"],
     "pygment_light_style": "solarized-light",
     "pygment_dark_style": "nord",
 }
@@ -129,7 +141,7 @@ html_logo = "_static/vsc-logo-1.png"
 #
 html_sidebars = {
     "index": [],
-    "**": ["search-field", "sidebar-nav-bs"],
+    "**": ["sidebar-nav-bs"],
 }
 
 # Edit this page button
