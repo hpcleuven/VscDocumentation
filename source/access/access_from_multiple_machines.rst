@@ -1,5 +1,5 @@
-Access from multiple machines
-=============================
+Access from multiple computers
+==============================
 
 There are two possibilities.
 
