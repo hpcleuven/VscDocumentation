@@ -108,6 +108,26 @@ For getting a compact overview of the current state of the cluster, execute
 ``slurmtop`` on any KU Leuven Tier-2 node. Use ``slurmtop --help`` to get to
 know the functionality.
 
+.. _wice_environment_propagation:
+
+Environment propagation
+-----------------------
+
+Slurm jobs now start in a clean environment which corresponds to your login
+environment, i.e. with only those additional variables that you defined in your
+``~/.bashrc`` file. Environment variables that happen to be set in the session
+from which you submit the job are no longer propagated to the job.
+
+If needed you can modify this default behaviour with the
+`--export option <https://slurm.schedmd.com/sbatch.html#OPT_export>`__.
+When doing so, keep in mind that you will need to include the default minimal
+environment as well. To e.g. pass an additional environment variable ``FOO``
+with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
+
+Note that we still discourage loading modules in your ``~/.bashrc`` file and
+recommend to do that in your jobscripts instead (see also the
+:ref:`Compiling software <wice_compilation>` paragraph above).
+
 .. _wice_known_issues:
 
 Known issues
@@ -124,19 +144,3 @@ or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
 ``mpirun`` command. To check that processes are pinned correctly to physical
 cores, set the environment variable ``I_MPI_DEBUG=5`` to get more verbose
 output. Note that this issue does not occur with the Open MPI library.
-
-Environment propagation
-=======================
-
-Jobs on wICE do not start with a clean slate. Some information from the session
-in which the job was submitted is propagated. For instance modules that were
-loaded at job submission time, will also be loaded inside the job. This can
-create problems when you submit a job to wICE from a Genius login node, because
-modules installed for Genius are generally not suited to be used on wICE nodes.
-You can make sure this does not happen by executing ``module --force purge`` at
-the start of your job script, which will unload any currently loaded module.
-Furthermore, any environment variable exported in the session from which the
-job was submitted will propagate to your job on wICE. Therefore, you should
-avoid exporting environment variables in your ``~/.bashrc`` file (or by other
-means). Otherwise, you will fall into module inconsistencies and code
-misbehavior on wICE.
