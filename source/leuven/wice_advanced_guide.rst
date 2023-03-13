@@ -113,7 +113,7 @@ know the functionality.
 Environment propagation
 -----------------------
 
-Slurm jobs now start in a clean environment which corresponds to your login
+Slurm jobs start in a clean environment which corresponds to your login
 environment, i.e. with only those additional variables that you defined in your
 ``~/.bashrc`` file. Environment variables that happen to be set in the session
 from which you submit the job are no longer propagated to the job.
