@@ -14,9 +14,27 @@ Running jobs on wICE
 
 There are several type of nodes in the wICE cluster: normal compute nodes, GPU nodes, big memory nodes and nodes configured for interactive use. The resources specifications for jobs have to be tuned to use these nodes properly.
 
-In general, the maximum walltime for wICE jobs is 3 days (72 hours). Only jobs submitted to the ``batch_long`` partition are allowed to have walltimes up to 7 days (168 hours), as illustrated below.
+In general, the maximum walltime for wICE jobs is 3 days (72 hours). Only jobs submitted to the ``batch_long`` partition are allowed to have walltimes up to 7 days (168 hours), as will be illustrated below.
 
-The wICE cluster uses a different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
+The wICE cluster uses a different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`. A Slurm jobscript for wICE will typically look like this:
+
+::
+   
+    #!/bin/bash -l
+    #SBATCH --cluster=wice
+    #SBATCH --partition=...
+    #SBATCH --time=...
+    #SBATCH --nodes=...
+    #SBATCH --ntasks-per-node=...
+    #SBATCH --account=...
+
+    module use /apps/leuven/icelake/2021a/modules/all
+    module load ...
+
+    ...
+
+For more information on using and installing software on wICE, see the :ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
+
 
 .. _submit to wice compute node:
 
