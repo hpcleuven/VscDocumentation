@@ -141,14 +141,14 @@ It is easy to adjust your ``$PATH`` variable inside an universal ``.bashrc`` fil
 
 ::
    
-    case ${VSC_INSTITUTE_CLUSTER} in
-        genius)
-            export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"        
-            ;;
-        wice)
-            export PATH="${VSC_DATA}/miniconda3-wice/bin:${PATH}"        
-            ;;
-    esac
+   case ${VSC_INSTITUTE_CLUSTER} in
+       genius)
+           export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
+           ;;
+        wice)
+           export PATH="${VSC_DATA}/miniconda3-wice/bin:${PATH}"
+           ;;
+   esac
 
 Beginning of the slurm script matters. Use ``#!/bin/bash –l`` not ``#!/bin/bash`` to be able to load the environment properly.
 
