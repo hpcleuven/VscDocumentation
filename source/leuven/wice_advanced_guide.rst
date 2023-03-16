@@ -77,6 +77,8 @@ If instead you want to launch Worker jobs from an interactive job running on
 wICE, you can use the ``worker/1.6.12-foss-2021a`` module (but do make sure
 this is the version installed in a subdirectory of ``/apps/leuven/icelake``).
 
+Currently ``-master`` flag does not work neither does ``wresume`` and all the resources have to be specified inside the `slurm script for worker <https://github.com/gjbex/worker/tree/development_slurm/examples/>`__ and not from the command line.
+
 .. _wice_monitoring:
 
 Monitoring
@@ -127,6 +129,28 @@ with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
 Note that we still discourage loading modules in your ``~/.bashrc`` file and
 recommend to do that in your jobscripts instead (see also the
 :ref:`Compiling software <wice_compilation>` paragraph above).
+
+.. _wice_conda:
+
+Conda on wice
+----------
+
+As the operating system and hardware is different on Genius and on Wice cluster we advise to have 2 separate :ref:`conda installations <conda for Python>` (1 for each cluster). 
+
+It is easy to adjust your ``$PATH`` variable inside an universal ``.bashrc`` file so that the correct PATH is loaded depending on which cluster is used:
+
+::
+   
+    case ${VSC_INSTITUTE_CLUSTER} in
+        genius)
+            export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"        
+            ;;
+        wice)
+            export PATH="${VSC_DATA}/miniconda3-wice/bin:${PATH}"        
+            ;;
+    esac
+
+Beginning of the slurm script matters. Use ``#!/bin/bash –l`` not ``#!/bin/bash`` to be able to load the environment properly.
 
 .. _wice_known_issues:
 
