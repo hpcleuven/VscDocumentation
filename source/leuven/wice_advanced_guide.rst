@@ -63,9 +63,9 @@ general information on software development on the VSC, have a look at this
 Worker
 ------
 
-The :ref:`worker framework <worker framework>`, which allows to conveniently
+The :ref:`Worker framework <worker framework>`, which allows to conveniently
 parameterize simulations, is available on wICE. An attention point is that
-if you want to lauch worker jobs from the Genius login nodes, you will need to
+if you want to lauch Worker jobs from the Genius login nodes, you will need to
 use a specific module:
 
 ::
@@ -77,7 +77,15 @@ If instead you want to launch Worker jobs from an interactive job running on
 wICE, you can use the ``worker/1.6.12-foss-2021a`` module (but do make sure
 this is the version installed in a subdirectory of ``/apps/leuven/icelake``).
 
-Currently ``-master`` flag does not work neither does ``wresume`` and all the resources have to be specified inside the `slurm script for worker <https://github.com/gjbex/worker/tree/development_slurm/examples/>`__ and not from the command line.
+Also note that the Worker support for Slurm is not yet complete. Both
+the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
+only work for PBS/Torque and hence should not be used in the case of Slurm.
+
+All the resources furthermore need to be specified inside the Slurm script
+used as input for Worker (passing resources via the command line is not
+supported). Various examples can be found in a `development branch
+<https://github.com/gjbex/worker/tree/development_slurm/examples/>`__.
+
 
 .. _wice_monitoring:
 
