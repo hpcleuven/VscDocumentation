@@ -63,9 +63,9 @@ general information on software development on the VSC, have a look at this
 Worker
 ------
 
-The :ref:`worker framework <worker framework>`, which allows to conveniently
+The :ref:`Worker framework <worker framework>`, which allows to conveniently
 parameterize simulations, is available on wICE. An attention point is that
-if you want to lauch worker jobs from the Genius login nodes, you will need to
+if you want to lauch Worker jobs from the Genius login nodes, you will need to
 use a specific module:
 
 ::
@@ -76,6 +76,16 @@ use a specific module:
 If instead you want to launch Worker jobs from an interactive job running on
 wICE, you can use the ``worker/1.6.12-foss-2021a`` module (but do make sure
 this is the version installed in a subdirectory of ``/apps/leuven/icelake``).
+
+Also note that the Worker support for Slurm is not yet complete. Both
+the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
+only work for PBS/Torque and hence should not be used in the case of Slurm.
+
+All the resources furthermore need to be specified inside the Slurm script
+used as input for Worker (passing resources via the command line is not
+supported). Various examples can be found in a `development branch
+<https://github.com/gjbex/worker/tree/development_slurm/examples/>`__.
+
 
 .. _wice_monitoring:
 
@@ -108,6 +118,52 @@ For getting a compact overview of the current state of the cluster, execute
 ``slurmtop`` on any KU Leuven Tier-2 node. Use ``slurmtop --help`` to get to
 know the functionality.
 
+.. _wice_environment_propagation:
+
+Environment propagation
+-----------------------
+
+Slurm jobs start in a clean environment which corresponds to your login
+environment, i.e. with only those additional variables that you defined in your
+``~/.bashrc`` file. Environment variables that happen to be set in the session
+from which you submit the job are no longer propagated to the job.
+
+If needed you can modify this default behaviour with the
+`--export option <https://slurm.schedmd.com/sbatch.html#OPT_export>`__.
+When doing so, keep in mind that you will need to include the default minimal
+environment as well. To e.g. pass an additional environment variable ``FOO``
+with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
+
+Note that we still discourage loading modules in your ``~/.bashrc`` file and
+recommend to do that in your jobscripts instead (see also the
+:ref:`Compiling software <wice_compilation>` paragraph above).
+
+.. _wice_conda:
+
+Conda on wICE
+-------------
+
+As the operating system and hardware are different on Genius and wICE, we advise
+to have two separate :ref:`Conda installations <conda for Python>` (one for each
+cluster). To select the correct Conda installation when you log in and at the
+start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
+
+::
+   
+   case ${VSC_INSTITUTE_CLUSTER} in
+       genius)
+           export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
+           ;;
+        wice)
+           export PATH="${VSC_DATA}/miniconda3-wice/bin:${PATH}"
+           ;;
+   esac
+
+Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
+requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript, as
+shown in the :ref:`wICE quickstart guide <running jobs on wice>`.
+
+
 .. _wice_known_issues:
 
 Known issues
@@ -124,19 +180,3 @@ or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
 ``mpirun`` command. To check that processes are pinned correctly to physical
 cores, set the environment variable ``I_MPI_DEBUG=5`` to get more verbose
 output. Note that this issue does not occur with the Open MPI library.
-
-Environment propagation
-=======================
-
-Jobs on wICE do not start with a clean slate. Some information from the session
-in which the job was submitted is propagated. For instance modules that were
-loaded at job submission time, will also be loaded inside the job. This can
-create problems when you submit a job to wICE from a Genius login node, because
-modules installed for Genius are generally not suited to be used on wICE nodes.
-You can make sure this does not happen by executing ``module --force purge`` at
-the start of your job script, which will unload any currently loaded module.
-Furthermore, any environment variable exported in the session from which the
-job was submitted will propagate to your job on wICE. Therefore, you should
-avoid exporting environment variables in your ``~/.bashrc`` file (or by other
-means). Otherwise, you will fall into module inconsistencies and code
-misbehavior on wICE.
