@@ -140,12 +140,13 @@ recommend to do that in your jobscripts instead (see also the
 
 .. _wice_conda:
 
-Conda on wice
-----------
+Conda on wICE
+-------------
 
-As the operating system and hardware is different on Genius and on Wice cluster we advise to have 2 separate :ref:`conda installations <conda for Python>` (1 for each cluster). 
-
-It is easy to adjust your ``$PATH`` variable inside an universal ``.bashrc`` file so that the correct PATH is loaded depending on which cluster is used:
+As the operating system and hardware are different on Genius and wICE, we advise
+to have two separate :ref:`Conda installations <conda for Python>` (one for each
+cluster). To select the correct Conda installation when you log in and at the
+start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
 
 ::
    
@@ -158,7 +159,10 @@ It is easy to adjust your ``$PATH`` variable inside an universal ``.bashrc`` fil
            ;;
    esac
 
-Beginning of the slurm script matters. Use ``#!/bin/bash –l`` not ``#!/bin/bash`` to be able to load the environment properly.
+Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
+requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript, as
+shown in the :ref:`wICE quickstart guide <running jobs on wice>`.
+
 
 .. _wice_known_issues:
 
