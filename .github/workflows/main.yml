@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: install sphinx
         run: |
-          python3 -m pip install sphinx==4.3.0
+          python3 -m pip install -r requirements.txt
       - name: build sphinx docs
         run: |
           make html
