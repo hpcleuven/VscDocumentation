@@ -12,18 +12,18 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 +--------------------------+--------+----------+--------+----------------+
 |$VSC_DATA                 | NFS    |  VSC     |YES     | 75 GB          |
 +--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH              | Lustre |  genius  |NO      | 500 GB         |
-|$VSC_SCRATCH_SITE         |        |          |        |                |
+|$VSC_SCRATCH              | Lustre |  Genius  |NO      | 500 GB         |
+|$VSC_SCRATCH_SITE         |        |  & wICE  |        |                |
 +--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH_NODE         | ext4   | genius,  |NO      | 200 GB         |
-|                          |        | job only |        |                |
+|$VSC_SCRATCH_NODE         | ext4   |  Genius  |NO      | 200 GB         |
+|                          |        |  & wICE  |        |                |
 +--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH_JOB          | BeeGFS | genius,  |NO      | variable       |
+|$VSC_SCRATCH_JOB          | BeeGFS | Genius,  |NO      | variable       |
 |                          |        | job only |        |                |
 +--------------------------+--------+----------+--------+----------------+
 
-$VSC_SCRATCH at KU Leuven is not a permament storage. The files older than 28
-days are cleaned regularly. To be more specific, the automatic file removal is
+$VSC_SCRATCH at KU Leuven is not a permament storage. The files older than 30
+days are cleaned up regularly. To be more specific, the automatic file removal is
 based on the moment a file was accessed for the last time. The reasoning
 behind this is that as long as you are actively using a file (so accessing it)
 , the file will not be removed. This policy can however cause confusion when
@@ -42,14 +42,19 @@ will be determined by the local policy of your home institution as these file
 systems are mounted from there. The path names will be similar with trivial
 modifications based on your home institution and VSC account number.
 
+The table below lists the path to different storages that KULeuven users can
+by default access.
+Note that all KULeuven VSC accounts start with the digit ``3``.
+Also the dots ``.`` are wildcards that match single digits.
+
 +--------------------------+------------------------------+
-|Variable                  |Name                          |
+|Variable                  |Path                          |
 +==========================+==============================+
-|$VSC_HOME                 |/user/leuven/30X/vsc30XYZ     |
+|$VSC_HOME                 |/user/leuven/3../vsc3....     |
 +--------------------------+------------------------------+
-|$VSC_DATA                 |/data/leuven/30X/vsc30XYZ     |
+|$VSC_DATA                 |/data/leuven/3../vsc3....     |
 +--------------------------+------------------------------+
-|$VSC_SCRATCH              |/scratch/leuven/30X/vsc30XYZ  |
+|$VSC_SCRATCH              |/scratch/leuven/3../vsc3....  |
 |$VSC_SCRATCH_SITE         |                              |
 +--------------------------+------------------------------+
 |$VSC_SCRATCH_NODE         |/local_scratch                |
@@ -57,7 +62,7 @@ modifications based on your home institution and VSC account number.
 
 The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
 recover data that was accidentally deleted or modified.  You can retrieve data by
-:ref:`restoring a snapshot <Restoring a snapshot>`.
+referring to :ref:`restoring a snapshot <Restoring a snapshot>`.
 
-On genius, a BeeGFS file system can be created during the run of a job, for details,
-see the page on :ref:`using BeeGFS <using BeeGFS>` for details.
+On genius, a BeeGFS file system can be created during the run of a job.
+See :ref:`using BeeGFS <using BeeGFS>` for details.
