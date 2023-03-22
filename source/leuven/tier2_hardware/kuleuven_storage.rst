@@ -42,9 +42,9 @@ will be determined by the local policy of your home institution as these file
 systems are mounted from there. The path names will be similar with trivial
 modifications based on your home institution and VSC account number.
 
-The table below lists the path to different storages that KULeuven users can
+The table below lists the path to different storages that KU Leuven users can
 by default access.
-Note that all KULeuven VSC accounts start with the digit ``3``.
+Note that all KU Leuven VSC accounts start with the digit ``3``.
 Also the dots ``.`` are wildcards that match single digits.
 
 +--------------------------+------------------------------+
