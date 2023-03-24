@@ -12,7 +12,7 @@ several actions from the lecturer are required.
    facilities are necessary for teaching the course. Please also add the
    attachment with the list of students attending the course (2 weeks
    before the beginning of the course).
-#. Send the information to students that they have 1 week time windowto
+#. Send the information to students that they have 1 week time window to
    apply for the account (the last day when account creating can be
    processed is the day before the course starts). Students should
    follow the :ref:`generic procedure <generic access procedure>`, that
@@ -31,7 +31,7 @@ several actions from the lecturer are required.
    procedure of creating the project please refer to the page
    ":ref:`credit system basics`".
    Once the project is accepted, the students that already applied for
-   the account will be automatically added to the project (1 week before
+   the account need to be added to the project (1 week before
    the beginning of the course).
 #. Students that failed to submit request in a given time will have to
    follow regular procedure of applying for the account involving
@@ -39,7 +39,7 @@ several actions from the lecturer are required.
    creation process (these students will have to motivate the reason of
    applying for the account and send a request for using the project
    credits). Students that submit the requests later than 2 days before
-   the beginning of the courseare not guaranteed to get the account in
+   the beginning of the course are not guaranteed to get the account in
    time.
 #. Both the accounts and the generated key-pairs are strictly PRIVATE
    and students are not supposed to share the accounts, not even for the
@@ -60,7 +60,7 @@ several actions from the lecturer are required.
    the purpose of the course.
 
 #. Make sure that the software to connect to the cluster (Putty, Xming,
-   FileZilla, NX) is available in pc-class that will be used during the
+   FileZilla, NX) is available in the PC-class that will be used during the
    course. For KU Leuven courses: please follow the procedure at
    https://icts.kuleuven.be/sc/pcklas/ictspcklassen
    (1 month before the beginning of the course).
