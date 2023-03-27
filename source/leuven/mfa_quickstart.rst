@@ -40,7 +40,7 @@ For KU Leuven this will be the idp page:
    .. figure:: mfa_quickstart/login_node.PNG
       :align: center
       :alt: login_node
-#. That’s it! You can continue doing your HPC work as usual.
+#. That's it! You can continue doing your HPC work as usual.
 
 Using apps that use SSH connections in the background
 -----------------------------------------------------
