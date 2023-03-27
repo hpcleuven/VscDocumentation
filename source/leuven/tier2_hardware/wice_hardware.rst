@@ -1,8 +1,9 @@
 wICE hardware
 ===============
 
-wICE is KU Leuven/UHasselt's latest Tier-2 cluster. It has thin nodes, large memory nodes, interactive nodes and GPGPU nodes.
-This cluster is currently in a pilot phase and will go into production early 2023.
+wICE is KU Leuven/UHasselt's latest Tier-2 cluster. 
+It has thin nodes, large memory nodes, interactive nodes and GPGPU nodes.
+This cluster is in production since February 2023.
 
 
 Hardware details
