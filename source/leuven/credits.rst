@@ -50,6 +50,7 @@ Job cost calculation
 
 On Tier-2 clusters, we use Slurm for acounting purposes (on top of resource and 
 job management).
+See :ref:`Slurm accounting <accounting_leuven>` page for additional information.
 In Slurm terminology, the cost of a job depends on the trackable resources (TRES)
 it consumes. Two distinct TRES are the number of CPU cores and GPU devices. 
 Furthermore, different CPU and GPU architectures are weighted by a constant factor
