@@ -33,8 +33,8 @@ information on
 The charge rate for the various node types of Genius are listed in the table
 below.  
 The reported cost is the number of Slurm credits needed per core/GPU per minute.
-Information on :ref:`obtaining credits <KU Leuven credits>` and
-:ref:`credit system basics <credit system basics>` is available.
+For complementary information, please take a look at 
+:ref:`obtaining credits <KU Leuven credits>` and :ref:`Slurm accountig <accounting_leuven>`.
 
 +-----------------+---------------+
 | node type       | cost          |
@@ -53,7 +53,7 @@ The default ``batch`` partition allows jobs with maximum 3 days of walltime.
 Jobs which require a walltime up to maximum 7 days must be submitted to the 
 ``batch_long`` partition explicitly.
 
-:ref:`Slurm Workload Manager <https://slurm.schedmd.com>` is the scheduler, resource manager and 
+`Slurm Workload Manager <https://slurm.schedmd.com>` is the scheduler, resource manager and 
 accounting manager on Genius (and wICE).
 To get started with Slurm, you may refer to the internal documentation on  
 `Basics of Slurm <Antwerp Slurm>` and `Advanced Slurm <Antwerp advanced Slurm>` usage.

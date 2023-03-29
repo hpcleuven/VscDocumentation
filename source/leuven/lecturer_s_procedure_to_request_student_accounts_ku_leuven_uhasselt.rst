@@ -29,7 +29,7 @@ several actions from the lecturer are required.
    This will also give a lecturer an opportunity of tracing the use of
    the cluster during the course. For more information about the
    procedure of creating the project please refer to the page
-   ":ref:`credit system basics`".
+   :ref:`Slurm accounting <accounting_leuven>`.
    Once the project is accepted, the students that already applied for
    the account need to be added to the project (1 week before
    the beginning of the course).

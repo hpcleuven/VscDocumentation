@@ -6,9 +6,6 @@ Credits to use KU Leuven infrastructure
 KU Leuven uses a credit system to do accounting on the HPC systems it hosts.
 This is the case for its Tier-2 clusters.
 
-Information on how to use the credit system can be found in the :ref:`documentation
-on credit system basics <credit system basics>`.
-
 
 How do I request credits on the KU Leuven Tier-2 systems
 --------------------------------------------------------
@@ -69,7 +66,7 @@ As an example, for a GPU node, the weights are configured as::
 
 The following formula applies::
 
-   CPU TRESBillingWeights \* num_cores \* walltime
+   CPU TRESBillingWeights * num_cores * walltime
 
 Where
 
@@ -115,7 +112,7 @@ Where
     different resources on different partitions of Genius and wICE. Therefore, the cost
     of a job depends on the specific hardware it lands on.
     For additional information, you may refer to the 
-    `HPC Service Catalog<https://icts.kuleuven.be/sc/onderzoeksgegevens/hpc_vsc_page>`
+    `HPC Service Catalog<https://icts.kuleuven.be/sc/onderzoeksgegevens/hpc_vsc_page>`_
     (login required).
 
 The difference in cost between different machines/processors reflects
