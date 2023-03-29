@@ -1,7 +1,7 @@
 Genius hardware
 ===============
 
-Genius is one of KU Leuven/UHasselt's most Tier-2 clusters, which is in production
+Genius is one of KU Leuven/UHasselt's Tier-2 clusters, which is in production
 since 2018. It has thin nodes, large memory nodes, as well as GPGPU nodes.
 
 
@@ -42,7 +42,7 @@ Hardware details
       - 192 GB RAM
       - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
       - 200 GB SSD local disk
-      - partition ``gpu``, specific Slurm :ref:`options <submit to genius GPU node>` apply
+      - partition ``gpu_p100``, specific Slurm :ref:`options <submit to genius GPU node>` apply
 
    - 2 V100 nodes
 
@@ -50,7 +50,7 @@ Hardware details
       - 768 GB RAM
       - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
       - 200 GB SSD local disk
-      - partition ``gpu``, specific Slurm :ref:`options <submit to genius GPU node>` apply
+      - partition ``gpu_v100``, specific Slurm :ref:`options <submit to genius GPU node>` apply
 
 
 - 4 AMD nodes
