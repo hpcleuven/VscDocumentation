@@ -16,10 +16,7 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 |$VSC_SCRATCH_SITE         |        |  & wICE  |        |                |
 +--------------------------+--------+----------+--------+----------------+
 |$VSC_SCRATCH_NODE         | ext4   |  Genius  |NO      | 200 GB         |
-|                          |        |  & wICE  |        |                |
-+--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH_JOB          | BeeGFS | Genius,  |NO      | variable       |
-|                          |        | job only |        |                |
+|                          |        |  & wICE  |        | 600 GB         |
 +--------------------------+--------+----------+--------+----------------+
 
 $VSC_SCRATCH at KU Leuven is not a permament storage. The files older than 30
@@ -63,6 +60,3 @@ Also the dots ``.`` are wildcards that match single digits.
 The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
 recover data that was accidentally deleted or modified.  You can retrieve data by
 referring to :ref:`restoring a snapshot <Restoring a snapshot>`.
-
-On genius, a BeeGFS file system can be created during the run of a job.
-See :ref:`using BeeGFS <using BeeGFS>` for details.
