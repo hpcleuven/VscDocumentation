@@ -140,7 +140,7 @@ How do I get credits to use the Tier-1 infrastructure
 Access to the Tier-1 is project-based, if you have a starting grant or
 an approved project, or you pay for your compute time, you should have
 received information on your job credits.
-If not, please refer to the `official VSC website <https://www.vscentrum.be/>`, or
+If not, please refer to the `official VSC website <https://www.vscentrum.be/>`_, or
 :ref:`contact your VSC support team <Contact VSC>`.
 
 
