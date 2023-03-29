@@ -3,8 +3,7 @@
 Credits to use KU Leuven infrastructure
 =======================================
 
-KU Leuven uses a credit system to do accounting on the HPC systems it hosts.
-This is the case for its Tier-2 clusters.
+KU Leuven uses a credit system to do accounting on the Tier-2 HPC systems it hosts.
 
 
 How do I request credits on the KU Leuven Tier-2 systems
@@ -45,16 +44,13 @@ Please contact your VSC coordinator/contact or your :ref:`local support staff
 Job cost calculation
 ~~~~~~~~~~~~~~~~~~~~
 
-On Tier-2 clusters, we use Slurm for acounting purposes (on top of resource and 
+On Tier-2 clusters, we use Slurm for accounting purposes (on top of resource and 
 job management).
 See :ref:`Slurm accounting <accounting_leuven>` page for additional information.
 In Slurm terminology, the cost of a job depends on the trackable resources (TRES)
 it consumes. Two distinct TRES are the number of CPU cores and GPU devices. 
-Furthermore, different CPU and GPU architectures are weighted by a constant factor
-according to their generation.
-
-In order to retrieve the configured weights (precisely speaking ``TRESBillingWeights``) 
-e.g. on wICE, you can execute::
+Different types of CPU and GPU nodes are given different weights 
+(``TRESBillingWeights``) which you can retrieve as follows for e.g. wICE::
 
    scontrol show partitions -M wice
 
@@ -72,13 +68,13 @@ Where
 
 - ``CPU TRESBillingWeights`` is the applied weight for CPU resources (see above)
 - ``num_cores`` is the *effective* number of cores used for the job
-- ``walltime`` is minutes that the job consumed the resources
+- ``walltime`` is the number of minutes that the job ran
 
 **GPU jobs**
 
 The following formula applies::
 
-   (CPU TRESBillingWeights \* num_cores + GPU TRESBillingWeights \* num_gpus) \* walltime
+   (CPU TRESBillingWeights * num_cores + GPU TRESBillingWeights * num_gpus) * walltime
    
 Where
 
@@ -86,7 +82,7 @@ Where
 - ``GPU TRESBillingWeights`` is the applied weight for GPU resources (see above)
 - ``num_cores`` is the *effective* number of cores used for the job
 - ``num_gpus`` is the *effective* number of GPUs used for the job
-- ``walltime`` is minutes that the job consumed the resources
+- ``walltime`` is the number of minutes that the job ran
 
 .. note::
 
@@ -107,17 +103,18 @@ Where
 
 .. note::
 
-    The Tier-2 cluster has several types of compute nodes, none of which
-    is actually a reference node. Hence, different ``TRESBillingWeights`` applies to 
-    different resources on different partitions of Genius and wICE. Therefore, the cost
-    of a job depends on the specific hardware it lands on.
+    The Tier-2 cluster has several types of compute nodes.
+    Hence, different ``TRESBillingWeights`` applies to 
+    different resources on different partitions of Genius and wICE.
+    The difference in cost between different machines/processors reflects
+    the performance difference between those types of nodes.
     For additional information, you may refer to the 
     `HPC Service Catalog<https://icts.kuleuven.be/sc/onderzoeksgegevens/hpc_vsc_page>`_
     (login required).
 
 The difference in cost between different machines/processors reflects
-the performance difference between those types of nodes. The total cost
-of a job will typically be the same on any compute nodes, but the
+the price-performance difference between those types of nodes. The total cost
+of a job will be comparable on any compute node, but the
 walltime will be different, depending on the performance of the nodes.
 
 In the examples below, you run your jobs on a ``skylake`` node, for which
