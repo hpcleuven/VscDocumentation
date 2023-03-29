@@ -3,7 +3,7 @@ Genius quick start guide
 
 :ref:`Genius <Genius hardware>` is one of the two KU Leuven/UHasselt Tier-2 clusters,
 besides :ref:`wICE <wice hardware>`. 
-Given the architectural diversity of compute nodes on Genius, this cluster is ideal 
+Given the architectural diversity of compute nodes on Genius, this cluster is suited  
 for most HPC workloads.
 
 .. include:: tier2_hardware/tier2_login_nodes.rst
@@ -27,6 +27,8 @@ information on
 
 - :ref:`hardware specification <Genius hardware>`
 - :ref:`specifying resources <resource specification>`
+- Submitting jobs using :ref:`Slurm Workload Manager <Antwerp Slurm>` and the 
+  `Advanced topics <Antwerp advanced Slurm>`
 - :ref:`running jobs <running jobs>`
 
 
