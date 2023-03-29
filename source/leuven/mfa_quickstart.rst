@@ -11,15 +11,15 @@ https://docs.vscentrum.be/en/latest/leuven/tier2_hardware/mfa_login.html.
 Getting started
 ---------------
 #. When you try to connect to the cluster through an ssh-client or a terminal, 
-you will be prompted with a URL:
+   you will be prompted with a URL:
 
    .. _firewall_link_mfa:
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
       :align: left
       :alt: firewall_link_mfa
 #. Copy-paste the provided link in a browser and follow it. 
-You should end up on a login page of your university or association. 
-For KU Leuven this will be the idp page:
+   You should end up on a login page of your university or association. 
+   For KU Leuven this will be the idp page:
 
    .. _idp_page:
    .. figure:: mfa_quickstart/idp_page.PNG
@@ -63,7 +63,7 @@ and follow the subsequent steps to set it up. The different set-ups are:
 
 Windows machines
 ~~~~~~~~~~~~~~~~
-#. For Windows machines, :ref:`Pageant <using Pageannt>` (version 0.78 or later) is a 
+#. For Windows machines, :ref:`Pageant <using Pageant>` (version 0.78 or later) is a 
    widely-used SSH agent.
    First follow here the instructions about 
    :ref:`downloading and configuring PuTTY <text mode access using PuTTY>`.
