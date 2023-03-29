@@ -3,8 +3,8 @@
 Slurm Accounting
 ========================
 
-The :ref:`wICE <wice_t2_leuven>` cluster uses the Slurm Account Manager (SAM) 
-for credit accounting.
+The :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>` Tier-2 clusters use the Slurm 
+Account Manager (SAM) for credit accounting.
 The reason is that having a valid Slurm account with sufficient credits in it
 is mandatory for running jobs on KU Leuven Tier-2 machines. 
 We developed so called SAM-commands to mimic the behavior of previously used 
@@ -12,13 +12,16 @@ MAM-commands (from the MOAB account manager).
 From the user point of view it should mostly be enough to change the prefix ``mam`` 
 in the accounting command into ``sam``.
 
-The accounting system is very similar to a regular bank. 
-Individual users have accounts that will be charged for the jobs they run. 
-However, the number of credits on such accounts is fairly small, so research projects 
-will typically have one or more project accounts associated with them. 
-Users that are project members can have their project-related jobs charged to such a 
-project account. 
-In this how-to, the technical aspects of accounting are explained.
+The accounting system is somewhat similar to a regular bank.
+A research group typically has one or more credit accounts, for instance a separate 
+credit account for each project.
+When credits are purchased, they are depositied in a credit account.
+All users that are a member of such a credit account can withdraw credits from it 
+by running jobs.
+A users can also request introduction credits, in that case a credit account will 
+be opened specifically for this user with a limited amount of free credits.
+
+In this page, the technical aspects of accounting and some relevant commands are explained.
 
 Checking an account balance
 ---------------------------
@@ -40,7 +43,8 @@ When a job is submitted using ``sbatch`` or ``srun``, it has to be charged again
 project account.
 The name of the project has to be specified as an option. 
 If a user requests introductory credits, the assigned project name carries the VSC-id
-of the user, e.g. ``intro_vsc3....``, where the dots ``.`` signify the user's uniqe VSC-id.
+of the user, e.g. ``intro_vsc39999``.
+In the following commands, you will need to replace ``vsc39999`` with your own VSC-id::
 
    $ sbatch -A lp_my_project run-job.slurm
    or
@@ -80,4 +84,4 @@ alternative for a summarized statement::
    - It takes quite a while to compute such statements, so **please be patient**
    - The full statements are only visible to the project leaders. 
      Individual users can only see their usage, but not the whole project usage
-   - All ``sam``-commands provide help with ``-h`` option
+   - All ``sam``-commands provide help by running them with ``-h`` option
