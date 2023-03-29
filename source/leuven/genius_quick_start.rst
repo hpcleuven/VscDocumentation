@@ -55,7 +55,7 @@ The default ``batch`` partition allows jobs with maximum 3 days of walltime.
 Jobs which require a walltime up to maximum 7 days must be submitted to the 
 ``batch_long`` partition explicitly.
 
-`Slurm Workload Manager <https://slurm.schedmd.com>` is the scheduler, resource manager and 
+`Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler, resource manager and 
 accounting manager on Genius (and wICE).
 To get started with Slurm, you may refer to the internal documentation on  
 `Basics of Slurm <Antwerp Slurm>` and `Advanced Slurm <Antwerp advanced Slurm>` usage.
@@ -105,18 +105,18 @@ Submit to a GPU node
 The GPU nodes are accessible via different partitions.
 The table below summarizes all the possibilities:
 
-+---+---+---+
-| Partition | Walltime | Resources |
-+===+===+===+
-| gpu_p100 | 3 days | 20 nodes, 4x Nvidia P100 GPUs per node |
-| gpu_p100_long | 7 days | |
-+===+===+===+
-| gpu_v100 | 3 days | 2 nodes, 8x Nvidia V100 GPUs per node |
-| gpu_v100_long | 7 days | |
-+===+===+===+
++---------------+----------+----------------------------------------+
+| Partition     | Walltime | Resources                              |
++===============+==========+========================================+
+| gpu_p100      | 3 days   | 20 nodes, 4x Nvidia P100 GPUs per node |
+| gpu_p100_long | 7 days   |                                        |
++---------------+----------+----------------------------------------+
+| gpu_v100      | 3 days | 2 nodes, 8x Nvidia V100 GPUs per node    |
+| gpu_v100_long | 7 days |                                          |
++---------------+----------+----------------------------------------+
 
 
-The GPU nodes as shared resources, meaning that different users can 
+The GPU nodes are shared resources, meaning that different users can 
 simultaneously use a portion of the same node. 
 However every user will have exclusive access to the number of GPUs requested. 
 If you want to use only 1 GPU of type P100 (which hosted by the SkyLake nodes) 
@@ -146,7 +146,7 @@ Submit to a big memory node
 
 The big memory nodes are hosted by the ``bigmem`` and ``bigmem_long`` partitions. 
 In case of the big memory nodes it is also important to add your memory requirements, 
-for example:::
+for example::
 
    $ sbatch -A lp_my_project -M genius -N 1 -n 36 --mem-per-cpu 20G -p bigmem myjobscript.slurm
 
@@ -158,7 +158,7 @@ Submit to an AMD node
 The AMD nodes are accessible via the ``amd`` and ``amd_long`` partitions.
 Besides specifying the partition, it is also important to note that the default memory
 per core in this partition is 3800 MB, and each node offers maximum 64 cores. 
-For example, to request two full nodes:::
+For example, to request two full nodes::
 
    $ sbatch -A lp_my_project -M genius -N 2 --ntasks-per-node 64 -p amd myjobscript.slurm 
 
@@ -169,7 +169,7 @@ leaving some room for the operating system to function properly.
 Running debug jobs
 ------------------
 Debugging on a busy cluster can be taxing due to long queue times.
-To mitigate this, two skylake CPU nodes and a skylake GPU node has been reserved 
+To mitigate this, two skylake CPU nodes and a skylake GPU node have been reserved 
 for debugging purposes.
 Specifically, the ``batch_debug`` and ``gpu_p100_debug`` partitions must be specified.
 
