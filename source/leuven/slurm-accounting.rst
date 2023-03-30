@@ -3,14 +3,11 @@
 Slurm Accounting
 ========================
 
-The :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>` Tier-2 clusters use the Slurm 
-Account Manager (SAM) for credit accounting.
-The reason is that having a valid Slurm account with sufficient credits in it
-is mandatory for running jobs on KU Leuven Tier-2 machines. 
-We developed so called SAM-commands to mimic the behavior of previously used 
-MAM-commands (from the MOAB account manager). 
-From the user point of view it should mostly be enough to change the prefix ``mam`` 
-in the accounting command into ``sam``.
+To run jobs on :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>` 
+clusters, you will need a valid Slurm credit account with sufficient credits. 
+To make it easier to e.g. see your current credit balance and past credit usage,
+we have developed a set of ``sam-*`` tools (``sam-balance``, ``sam-list-usagerecords``,
+``sam-list-allocations`` and ``sam-statement``).
 
 The accounting system is somewhat similar to a regular bank.
 A research group typically has one or more credit accounts, for instance a separate 
@@ -20,38 +17,37 @@ All users that are a member of such a credit account can withdraw credits from i
 by running jobs.
 A users can also request introduction credits, in that case a credit account will 
 be opened specifically for this user with a limited amount of free credits.
+Hence, it is possible for users to have access to multiple credit accounts.
 
 In this page, the technical aspects of accounting and some relevant commands are explained.
+
 
 Checking an account balance
 ---------------------------
 
-Since no calculations can be done without credits, it is quite useful to determine the 
-amount of credits at your disposal. 
+It is a good practice to check the balance of your credit project(s) from time to time.
 This can be done by executing the following command on any KU Leuven Tier-2 node::
 
    $ sam-balance
 
-This will provide an overview of the balance on the user's personal account, as well as 
-on all project accounts the user has access to.
+This will show the balance of each credit account the user has access to.
 
 
 Running jobs: accounting workflow
 ---------------------------------
 
-When a job is submitted using ``sbatch`` or ``srun``, it has to be charged against a 
-project account.
-The name of the project has to be specified as an option. 
-If a user requests introductory credits, the assigned project name carries the VSC-id
-of the user, e.g. ``intro_vsc39999``.
-In the following commands, you will need to replace ``vsc39999`` with your own VSC-id::
+For every job that gets submitted, the name of a credit account needs to be specified.
+If you for example have been granted introduction credits, the corresponding credit
+account will be named ``intro_vscxxxxx`` (with ``vscxxxxx`` referring to your VSC username).
+Submitting a batch job can then look as follows::
 
    $ sbatch -A lp_my_project run-job.slurm
    or
-   $ sbatch -A intro_39999 run-job.slurm
+   $ sbatch -A intro_3xxxx run-job.slurm
 
 If the account to be charged, i.e., ``lp_my_project``, has insufficient credits for the 
-job, the user receives a warning at this point, and the job will never enter the queue.
+job, the user receives a warning at this point, and the job will start until the account
+is topped up with sufficient credits.
 
 Obtaining an overview of transactions
 -------------------------------------
@@ -73,7 +69,7 @@ displayed and/or information for a specific period of time, e.g.::
 This will show the transactions on the account for the ``lp_my_project`` project for 
 the month January 2023.
 
-If you are only interested in the overview of user's transactions, and don't require 
+If you are only interested in the overview of your past credit usage, and don't require 
 the actual balance information, ``sam-list-usagerecords`` provides a much faster 
 alternative for a summarized statement::
 
@@ -83,5 +79,7 @@ alternative for a summarized statement::
 
    - It takes quite a while to compute such statements, so **please be patient**
    - The full statements are only visible to the project leaders. 
-     Individual users can only see their usage, but not the whole project usage
+     Individual users can only see their own usage and not that of other users of 
+     the same credit account.
+     The latter is only available to users who have been given a Coordinator role.
    - All ``sam``-commands provide help by running them with ``-h`` option
