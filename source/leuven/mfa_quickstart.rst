@@ -64,7 +64,7 @@ and follow the subsequent steps to set it up. The different set-ups are:
 Windows machines
 ~~~~~~~~~~~~~~~~
 #. For Windows machines, :ref:`Pageant <using Pageant>` (version 0.78 or later) is a 
-   widely-used SSH agent.
+   widely used SSH agent.
    First follow here the instructions about 
    :ref:`downloading and configuring PuTTY <text mode access using PuTTY>`.
 
@@ -89,7 +89,7 @@ Windows machines
 #. Try to connect to one of `Tier2 login nodes <tier2_login_nodes>`.
    You will be given a URL to validate your identity.
    Copy that URL in your browser and login to your KU Leuven account.
-   Upon a successful login to your KU Leuven account, your login to your VSC accountw
+   Upon a successful login to your KU Leuven account, the login with your VSC account 
    will also succeed.
    Eventually, a new certificate will be stored in Pageant that holds your identity for
    a limited period of time.
