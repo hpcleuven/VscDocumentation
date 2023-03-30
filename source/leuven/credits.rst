@@ -131,6 +131,29 @@ will be charged::
    4.62963 \* (2 \* 36) \* 150 = 50 000 credits
 
 
+Charging rates
+--------------
+
+The charge rate for the various node types of Genius and wICE are listed in the table
+below.  
+The reported cost is the number of Slurm credits needed per core/GPU per minute.
+
++---------+-----------------+------------------------+
+| Cluster | node type       | ``TRESBillingWeights`` |
++=========+=================+========================+
+| Genius  | skylake         | 4.62963                |
+|         | cascadelake     | 4.62963                |
+|         | skylake bigmem  | 5.55556                |
+|         | Nvidia P100 GPU | 41.6667                |
+|         | Nvidia V100 GPU | 59.5833                |
++=========+=================+========================+
+| wICE    | icelake         | 2.54630                |
+|         | icelake bigmem  | 4.39815                |
+|         | Nvidia A100 GPU | 141.667                |
++---------+-----------------+------------------------+
+
+
+
 How do I get credits to use the Tier-1 infrastructure
 -----------------------------------------------------
 
