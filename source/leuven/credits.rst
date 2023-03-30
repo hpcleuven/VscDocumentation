@@ -86,7 +86,7 @@ Where
 
 .. note::
 
-    *effective* number of cores is not necessarily equal to what the user requests.
+    *Effective* number of cores is not necessarily equal to what the user requests.
     E.g. if a job requests a single core/task, but the full memory of a node on wICE,
     then one node is blocked for such a job. Consequently, the effective number of cores
     will be 72, instead of 1.
@@ -96,7 +96,7 @@ Where
 
 .. note::
 
-    *effective* number of GPUs deserves an explanation. If a user requests e.g. 2 GPUs
+    *Effective* number of GPUs deserves an explanation. If a user requests e.g. 2 GPUs
     for a job, then ``num_gpus`` will be 2. However, in certain cases, we allow multiple
     users to share a GPU (called sharding). In such cases, ``num_gpus`` could be a factor
     between zero and one.
@@ -139,16 +139,22 @@ below.
 The reported cost is the number of Slurm credits needed per core/GPU per minute.
 
 +---------+-----------------+------------------------+
-| Cluster | node type       | TRESBillingWeights     |
+| Cluster | node type       | ``TRESBillingWeights`` |
 +=========+=================+========================+
 | Genius  | skylake         | 4.62963                |
++         +-----------------+------------------------+
 |         | cascadelake     | 4.62963                |
++         +-----------------+------------------------+
 |         | skylake bigmem  | 5.55556                |
++         +-----------------+------------------------+
 |         | Nvidia P100 GPU | 41.6667                |
++         +-----------------+------------------------+
 |         | Nvidia V100 GPU | 59.5833                |
 +---------+-----------------+------------------------+
 | wICE    | icelake         | 2.54630                |
++         +-----------------+------------------------+
 |         | icelake bigmem  | 4.39815                |
++         +-----------------+------------------------+
 |         | Nvidia A100 GPU | 141.667                |
 +---------+-----------------+------------------------+
 
