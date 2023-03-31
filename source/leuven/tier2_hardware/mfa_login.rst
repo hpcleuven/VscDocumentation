@@ -121,8 +121,8 @@ To setup your Pageant, please refer to :ref:`Using Pageant<using Pageant>`.
 Authentication with an agent on Linux/Mac/WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Linux, Mac, and WSL you can use the built-in ssh agent, by following these 
-instructions to configure it correctly.
+For Linux, Mac, and WSL you can use the SSH agent included in the OpenSSH package
+by following these instructions to configure it correctly.
 
 .. note::
    Before starting out with the built-in SSH agent, you should know that using an SSH agent

@@ -106,9 +106,8 @@ Windows machines
 
 Linux and Mac machines
 ~~~~~~~~~~~~~~~~~~~~~~
-Linux and MacOS come with a built-in SSH agent, so there is no real need to download 
-an extra program. Before using your agent, it is best to verify whether or not it is 
-configured correctly:
+On Linux and MacOS it is common to use OpenSSH, which is often already installed by default. 
+Before using your agent, it is best to verify whether or not it is configured correctly:
 
 #. Open a terminal
 #. Verify if your agent is running with ``ssh-add -l``. 

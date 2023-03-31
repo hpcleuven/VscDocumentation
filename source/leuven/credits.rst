@@ -91,9 +91,6 @@ Where
     then one node is blocked for such a job. Consequently, the effective number of cores
     will be 72, instead of 1.
 
-    Similarly, on a node with 4 GPUs, if a user requests to use a single GPU, one-fourth
-    of cores will be assigned to the job. So, e.g. on wICE ``num_cores`` will be 18.
-
 .. note::
 
     The Tier-2 cluster has several types of compute nodes.
