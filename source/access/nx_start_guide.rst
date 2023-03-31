@@ -12,7 +12,7 @@ NoMachine NX Client Configuration
 ---------------------------------
 
 NoMachine works smoothly with SSH agents, such as :ref:`Pageant <using Pageant>` 
-for Windows users, and :ref:`Built-in SSH agent <SSH agent>` for Linux/Mac users.
+for Windows users, and the default :ref:`agent included with OpenSSH <SSH agent>` for Linux/Mac users.
 As a result of that, users first need to authenticate themselves, using 
 :ref:`Multi-Factor Authentication (MFA) <mfa_leuven>` before being able to start a new 
 NX session.
@@ -41,10 +41,12 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
 
 #. Press **Connect**
 
-#. Your VSC username and passphrase will be automatically fetched from your SSH agent
+#. If this is your first login via NX, you will need to enter your VSC username
+
+#. Your private key will be automatically fetched from your SSH agent
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
-   Otherwise please refer to the :ref:`section on how to reconnec to an NX session
+   Otherwise please refer to the :ref:`section on how to reconnect to an NX session
    <Reconnecting to an NX session>` for instructions.
 
 #. Read the useful information regarding your session displayed on several
