@@ -1,3 +1,5 @@
+.. _mfa quick start:
+
 Quickstart guide for using MFA on the KU Leuven cluster
 =======================================================
 General
@@ -163,6 +165,7 @@ PuTTY
       :alt: putty
 #. Save the profile under ‘Session’
 
+.. _mfa for nx:
 NX
 ~~
 #. Open NX and right-click your correct profile. Select ‘Edit connection’

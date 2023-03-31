@@ -109,7 +109,7 @@ Where
     The difference in cost between different machines/processors reflects
     the performance difference between those types of nodes.
     For additional information, you may refer to the 
-    `HPC Service Catalog<https://icts.kuleuven.be/sc/onderzoeksgegevens/hpc_vsc_page>`_
+    `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/hpc_vsc_page>`_
     (login required).
 
 The difference in cost between different machines/processors reflects
