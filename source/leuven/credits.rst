@@ -81,7 +81,7 @@ Where
 - ``CPU TRESBillingWeights`` is the applied weight for CPU resources (see above)
 - ``GPU TRESBillingWeights`` is the applied weight for GPU resources (see above)
 - ``num_cores`` is the *effective* number of cores used for the job
-- ``num_gpus`` is the *effective* number of GPUs used for the job
+- ``num_gpus`` is the number of GPUs requested for the job
 - ``walltime`` is the number of minutes that the job ran
 
 .. note::
@@ -96,15 +96,8 @@ Where
 
 .. note::
 
-    *Effective* number of GPUs deserves an explanation. If a user requests e.g. 2 GPUs
-    for a job, then ``num_gpus`` will be 2. However, in certain cases, we allow multiple
-    users to share a GPU (called sharding). In such cases, ``num_gpus`` could be a factor
-    between zero and one.
-
-.. note::
-
     The Tier-2 cluster has several types of compute nodes.
-    Hence, different ``TRESBillingWeights`` applies to 
+    Hence, different ``TRESBillingWeights`` apply to 
     different resources on different partitions of Genius and wICE.
     The difference in cost between different machines/processors reflects
     the performance difference between those types of nodes.
@@ -122,7 +115,7 @@ we charge 10 000 Slurm credits per hour.
 
 An example of a job running on multiple nodes and cores is given below::
 
-   $ sbatch -A lp_astrophysics_014 -M genius -N 2 -ntasks-per-node 36 simulation_3415.slurm
+   $ sbatch -A lp_astrophysics_014 -M genius -N 2 -ntasks-per-node=36 simulation_3415.slurm
 
 For Genius thin nodes we have ``TRESBillingWeights=CPU=4.62963``.
 If this job finishes in 2.5 hours (i.e., walltime is 150 minutes), the user
@@ -131,8 +124,8 @@ will be charged::
    4.62963 * (2 * 36) * 150 = 50 000 credits
 
 
-Charging rates
---------------
+Charge rates
+------------
 
 The charge rate for the various node types of Genius and wICE are listed in the table
 below.  
