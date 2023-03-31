@@ -2,7 +2,7 @@ Genius hardware
 ===============
 
 Genius is one of KU Leuven/UHasselt's Tier-2 clusters, which is in production
-since 2018. It has thin nodes, large memory nodes, as well as GPGPU nodes.
+since 2018. It has thin nodes, large memory nodes, as well as GPU nodes.
 
 
 .. include:: tier2_login_nodes.rst

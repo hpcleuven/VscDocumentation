@@ -67,7 +67,7 @@ Your ssh connection is now completed!
 
     If you use PuTTY to login, highlighting the URL with your mouse/cursor will copy 
     it to your clipboard, and make it ready to paste into your browser.
-    Therefore, do not use the Ctrl+C combination on your keyborad, or it will cancel 
+    Therefore, do not use the Ctrl+C combination on your keyboard, or it will cancel 
     your login attempt.
 
 GUI applications with SSH connection in the background
