@@ -50,14 +50,14 @@ Submit to a compute node
 Submitting a compute job boils down to specifying the required number of nodes, cores-per-node, memory and walltime.
 You may e.g. request two full nodes like this::
 
-   $ sbatch -A lp_myproject -M genius -t 2:00:00 --nodes 2 --ntasks-per-node 36 myjobscript.slurm
+   $ sbatch -A lp_myproject -M genius -t 2:00:00 --nodes=2 --ntasks-per-node=36 myjobscript.slurm
 
 You may also request only a part of the resources on a node.
 For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this::
 
    $ sbatch -A lp_myproject -M genius -t 2:00:00 --ntasks=4 myjobscript.slurm
    # or
-   $ sbatch -A lp_myproject -M genius -t 2:00:00 --ntasks=1 --cpus-per-task 4 myjobscript.slurm
+   $ sbatch -A lp_myproject -M genius -t 2:00:00 --ntasks=1 --cpus-per-task=4 myjobscript.slurm
 
 .. note::
 
@@ -110,7 +110,7 @@ Note that in case of 1 GPU you have to request 9 cores.
 In case you need more GPUs you have to multiply the 9 cores with the number of GPUs 
 requested, so in case of for example 3 GPUs you will have to specify this::
 
-   $ sbatch -A lp_my_project -M genius -N 1 -n 27 --gpus-per-node 3 -p gpu_p100 myjobscript.slurm
+   $ sbatch -A lp_my_project -M genius -N 1 -n 27 --gpus-per-node=3 -p gpu_p100 myjobscript.slurm
 
 To specifically request V100 GPUs, you can submit for example like this::
 
