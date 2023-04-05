@@ -4,8 +4,12 @@ Tier-2 access
 -------------
 
 Currently, Genius and wICE are the two Tier-2 clusters in production at KU Leuven.
-The access to both machines is possible via the Genius login nodes (see below),
-as wICE itself has no dedicated login nodes.
+The access to both machines is possible
+
+- either via the Genius login nodes (see below), as wICE itself has no 
+  dedicated login node
+
+- or via the :ref:`Open On-Demand <ood_t2_leuven>` on your web browser
 
 Login infrastructure
 --------------------

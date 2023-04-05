@@ -19,8 +19,12 @@ Getting started
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
       :align: left
       :alt: firewall_link_mfa
-#. Copy-paste the provided link in a browser and follow it. 
-   You should end up on a login page of your university or association. 
+#. Copy-paste the provided link in a browser and follow it;
+   highlighting the link with your mouse is sufficient to copy the URL to your
+   clipboard. Avoid using CTRL-C, or it will send a SIGINT signal interrupting
+   your process, instead of performing a copy operation.
+   Once you paste the link in your browser, you end up on a login page of your 
+   university or association. 
    For KU Leuven this will be the idp page:
 
    .. _idp_page:
@@ -129,6 +133,7 @@ Before using your agent, it is best to verify whether or not it is configured co
         
 #. You can now ssh to the cluster. The agent will automatically store your certificate. 
    The certificate will be stored as long as your agent stays alive.
+   Bear in  mind that the certificates are valid for maximum 16 hours.
 
 Configuration of SSH clients and UI apps for use with an agent
 --------------------------------------------------------------

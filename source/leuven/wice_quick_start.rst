@@ -7,8 +7,9 @@ wICE quick start guide
 It can be used for most workloads, and has nodes with a lot of memory, as well as 
 nodes with GPUs.
 
-It does not have separate login nodes and can be accessed from the 
-:ref:`Genius login nodes <tier2_login_nodes>`.
+wICE does not have separate login nodes and can be accessed either from the 
+:ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the 
+:ref:`Open On-Demand <ood_t2_leuven>` service.
 
 .. _running jobs on wice:
 
