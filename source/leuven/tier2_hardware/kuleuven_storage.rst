@@ -13,16 +13,14 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 |$VSC_DATA         | NFS    | VSC     |YES    | 75 GB          |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH      | Lustre | Genius  | NO    | 500 GB         |
-+------------------+        +---------+       +----------------+
-|$VSC_SCRATCH      |        | wICE    |       | 500 GB         |
+|                  |        | & wICE  |       |                |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH_SITE |        | Genius  | NO    | 500 GB         |
-+------------------+        +---------+       |                |
-|$VSC_SCRATCH_SITE |        | wICE    |       |                |
+|                  |        | & wICE  |       |                |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH_NODE | ext4   | Genius  | NO    | 200 GB         |
-+------------------+--------+---------+-------+----------------+
-|$VSC_SCRATCH_NODE | ext4   | wICE    | NO    | 600 GB         |
+|                  |        |         |       |                |
+|                  |        | wICE    |       | 600 GB         |
 +------------------+--------+---------+-------+----------------+
 
 $VSC_SCRATCH at KU Leuven is not a permanent storage. The files older than 30
@@ -60,8 +58,8 @@ Also the dots ``.`` are wildcards that match single digits.
 | $VSC_SCRATCH       | /scratch/leuven/3../vsc3....  |
 +--------------------+-------------------------------+
 | $VSC_SCRATCH_NODE  | /local_scratch (Genius)       |
-+--------------------+-------------------------------+
-| $VSC_SCRATCH_NODE  | /tmp (wIce)                   |
++                    +-------------------------------+
+|                    | /tmp (wIce)                   |
 +--------------------+-------------------------------+
 | $VSC_SCRATCH_SITE  | $VSC_SCRATCH                  |
 +--------------------+-------------------------------+
