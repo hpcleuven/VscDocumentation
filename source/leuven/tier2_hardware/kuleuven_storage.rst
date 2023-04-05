@@ -13,10 +13,12 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 |$VSC_DATA         | NFS    | VSC     |YES    | 75 GB          |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH      | Lustre | Genius  |NO     | 500 GB         |
-|$VSC_SCRATCH_SITE |        | & wICE  |       |                |
++------------------+--------+---------+-------+----------------+
+|$VSC_SCRATCH_SITE |        | wICE    |       |                |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH_NODE | ext4   | Genius  |NO     | 200 GB         |
-|                  |        | & wICE  |       | 600 GB         |
++------------------+--------+---------+-------+----------------+
+|                  |        | wICE    |       | 600 GB         |
 +------------------+--------+---------+-------+----------------+
 
 $VSC_SCRATCH at KU Leuven is not a permanent storage. The files older than 30
@@ -44,18 +46,19 @@ by default access.
 Note that all KU Leuven VSC accounts start with the digit ``3``.
 Also the dots ``.`` are wildcards that match single digits.
 
-+--------------------------+------------------------------+
-|Variable                  |Path                          |
-+==========================+==============================+
-|$VSC_HOME                 |/user/leuven/3../vsc3....     |
-+--------------------------+------------------------------+
-|$VSC_DATA                 |/data/leuven/3../vsc3....     |
-+--------------------------+------------------------------+
-|$VSC_SCRATCH              |/scratch/leuven/3../vsc3....  |
-|$VSC_SCRATCH_SITE         |                              |
-+--------------------------+------------------------------+
-|$VSC_SCRATCH_NODE         |                              |
-+--------------------------+------------------------------+
++--------------------+-------------------------------+
+| Variable           | Path                          |
++====================+===============================+
+| $VSC_HOME          | /user/leuven/3../vsc3....     |
++--------------------+-------------------------------+
+| $VSC_DATA          | /data/leuven/3../vsc3....     |
++--------------------+-------------------------------+
+| $VSC_SCRATCH       | /scratch/leuven/3../vsc3....  |
++--------------------+-------------------------------+
+| $VSC_SCRATCH_SITE  |                               |
++--------------------+                               +
+| $VSC_SCRATCH_NODE  |                               |
++--------------------+-------------------------------+
 
 The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
 recover data that was accidentally deleted or modified.  You can retrieve data by
