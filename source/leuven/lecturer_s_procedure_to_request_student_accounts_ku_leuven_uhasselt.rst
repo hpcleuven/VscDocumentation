@@ -54,10 +54,11 @@ several actions from the lecturer are required.
 
    ::
 
-      $ qsub -A project-name -W group_list=project-name script-file
+      $ sbatch -A <project_name> --reservation=<reservation_name> jobscript.slurm
 
-   where project-name refers to the project created by the lecturer for
-   the purpose of the course.
+   where ``project_name`` refers to the project created by the lecturer for
+   the purpose of the course, and the ``<reservation_name>`` refers to an 
+   existing reservation on the system for the spcific course.
 
 #. Make sure that the software to connect to the cluster (Putty, Xming,
    FileZilla, NX) is available in the PC-class that will be used during the

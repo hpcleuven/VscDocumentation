@@ -29,16 +29,16 @@ information on
 
 - :ref:`hardware specification <Genius hardware>`
 - Submitting jobs using :ref:`Slurm Workload Manager <Antwerp Slurm>` and the 
-  `Advanced topics <Antwerp advanced Slurm>`
+  :ref:`Advanced topics <Antwerp advanced Slurm>`
 - :ref:`running jobs <running jobs>`
 - :ref:`obtaining credits <KU Leuven credits>` and 
-  :ref:`Slurm accountig <accounting_leuven>`
+  :ref:`Slurm accounting <accounting_leuven>`
 
 The default ``batch`` partition allows jobs with maximum 3 days of walltime.
 Jobs which require a walltime up to maximum 7 days must be submitted to the 
 ``batch_long`` partition explicitly.
 
-`Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler, resource manager and 
+The :ref:`Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler, resource manager and 
 accounting manager on Genius (and wICE).
 To get started with Slurm, you may refer to the internal documentation on  
 `Basics of Slurm <Antwerp Slurm>` and `Advanced Slurm <Antwerp advanced Slurm>` usage.
@@ -94,8 +94,8 @@ The table below summarizes all the possibilities:
 | gpu_p100      | 3 days   | 20 nodes, 4x Nvidia P100 GPUs per node | Skylake     |
 | gpu_p100_long | 7 days   |                                        |             |
 +---------------+----------+----------------------------------------+-------------+
-| gpu_v100      | 3 days | 2 nodes, 8x Nvidia V100 GPUs per node    | Cascadelake |
-| gpu_v100_long | 7 days |                                          |             |
+| gpu_v100      | 3 days   | 2 nodes, 8x Nvidia V100 GPUs per node  | Cascadelake |
+| gpu_v100_long | 7 days   |                                        |             |
 +---------------+----------+----------------------------------------+-------------+
 
 

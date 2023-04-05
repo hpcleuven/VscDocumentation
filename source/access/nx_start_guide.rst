@@ -101,7 +101,6 @@ How to start using NX on Genius?
 Attached documents
 ------------------
 
--  :download:`Instructions with screenshots <nx_start_guide/nx_config_guide.pdf>`
 -  :download:`Slides from the lunchbox session <nx_start_guide/nx_slides.pdf>`
 
 .. include:: links.rst

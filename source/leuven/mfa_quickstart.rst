@@ -141,9 +141,10 @@ MobaXTerm
 #. Right-click on the correct session and click on ‘edit session’
 
    .. _moba_edit_session:
-   .. figure:: mfa_quickstart/moba_edit_session.png
+   .. figure:: mfa_quickstart/moba_edit_session.
       :align: center
       :alt: moba_edit_session
+
 #. Under advanced settings. Be sure that ‘Use private key’ is not selected
 
    .. _moba_priv:
@@ -154,14 +155,22 @@ MobaXTerm
 
 PuTTY
 ~~~~~
-#. Select your saved session for the cluster connection and load it.
-#. Under ‘SSH’, go to ‘Auth’. Select ‘Allow agent forwarding’ and remove any private 
-   key directories from under ‘Private key file for authentication’
+#. Select your saved session for the cluster connection and load it
+#. Under ‘SSH’, go to ‘Auth’. Make sure that the option ‘Attept authentication using Pageant’
+   is selected. Additionally, select ‘Allow agent forwarding’
+
+   .. figure:: mfa_quickstart/putty_agent_fwd.PNG
+      :align: center
+      :alt: putty agent forwarding
+
+#. Under ‘Auth’, select ‘Credentials’ and remove any private 
+   key from the box ‘Private key file for authentication’
 
    .. _putty:
-   .. figure:: mfa_quickstart/putty.png
+   .. figure:: mfa_quickstart/putty_priv_key.PNG
       :align: center
-      :alt: putty
+      :alt: putty private key
+
 #. Save the profile under ‘Session’
 
 .. _mfa for nx:

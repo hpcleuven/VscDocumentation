@@ -5,21 +5,21 @@ KU Leuven storage
 
 The storage is organized according to the :ref:`VSC storage guidelines<data location>`
 
-+--------------------------+--------+----------+--------+----------------+
-|Variable                  | Type   |  Access  |Backup  | Default quota  |
-+==========================+========+==========+========+================+
-|$VSC_HOME                 | NFS    |  VSC     |YES     | 3 GB           |
-+--------------------------+--------+----------+--------+----------------+
-|$VSC_DATA                 | NFS    |  VSC     |YES     | 75 GB          |
-+--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH              | Lustre |  Genius  |NO      | 500 GB         |
-|$VSC_SCRATCH_SITE         |        |  & wICE  |        |                |
-+--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH_NODE         | ext4   |  Genius  |NO      | 200 GB         |
-|                          |        |  & wICE  |        | 600 GB         |
-+--------------------------+--------+----------+--------+----------------+
++------------------+--------+---------+-------+----------------+
+|Variable          | Type   | Access  |Backup | Default quota  |
++==================+========+=========+=======+================+
+|$VSC_HOME         | NFS    | VSC     |YES    | 3 GB           |
++------------------+--------+---------+-------+----------------+
+|$VSC_DATA         | NFS    | VSC     |YES    | 75 GB          |
++------------------+--------+---------+-------+----------------+
+|$VSC_SCRATCH      | Lustre | Genius  |NO     | 500 GB         |
+|$VSC_SCRATCH_SITE |        | & wICE  |       |                |
++------------------+--------+---------+-------+----------------+
+|$VSC_SCRATCH_NODE | ext4   | Genius  |NO     | 200 GB         |
+|                  |        | & wICE  |       | 600 GB         |
++------------------+--------+---------+-------+----------------+
 
-$VSC_SCRATCH at KU Leuven is not a permament storage. The files older than 30
+$VSC_SCRATCH at KU Leuven is not a permanent storage. The files older than 30
 days are cleaned up regularly. To be more specific, the automatic file removal is
 based on the moment a file was accessed for the last time. The reasoning
 behind this is that as long as you are actively using a file (so accessing it)
@@ -54,7 +54,7 @@ Also the dots ``.`` are wildcards that match single digits.
 |$VSC_SCRATCH              |/scratch/leuven/3../vsc3....  |
 |$VSC_SCRATCH_SITE         |                              |
 +--------------------------+------------------------------+
-|$VSC_SCRATCH_NODE         |/local_scratch                |
+|$VSC_SCRATCH_NODE         |                              |
 +--------------------------+------------------------------+
 
 The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
