@@ -13,12 +13,12 @@ The storage is organized according to the :ref:`VSC storage guidelines<data loca
 |$VSC_DATA         | NFS    | VSC     |YES    | 75 GB          |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH      | Lustre | Genius  | NO    | 500 GB         |
++------------------+        +---------+       +----------------+
+|$VSC_SCRATCH      |        | wICE    |       | 500 GB         |
 +------------------+--------+---------+-------+----------------+
-|$VSC_SCRATCH      | Lustre | wICE    | NO    | 500 GB         |
-+------------------+--------+---------+-------+----------------+
-|$VSC_SCRATCH_SITE | Lustre | Genius  | NO    |                |
-+------------------+--------+---------+-------+----------------+
-|$VSC_SCRATCH_SITE | Lustre | wICE    | NO    |                |
+|$VSC_SCRATCH_SITE |        | Genius  | NO    | 500 GB         |
++------------------+        +---------+       |                |
+|$VSC_SCRATCH_SITE |        | wICE    |       |                |
 +------------------+--------+---------+-------+----------------+
 |$VSC_SCRATCH_NODE | ext4   | Genius  | NO    | 200 GB         |
 +------------------+--------+---------+-------+----------------+
