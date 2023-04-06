@@ -1,10 +1,11 @@
 Genius hardware
 ===============
 
-Genius is KU Leuven/UHasselt's most recent Tier-2 cluster. It has thin nodes, large memory nodes, as well as GPGPU nodes.
+Genius is one of KU Leuven/UHasselt's Tier-2 clusters, which is in production
+since 2018. It has thin nodes, large memory nodes, as well as GPU nodes.
 
 
-.. include:: genius_login_nodes.rst
+.. include:: tier2_login_nodes.rst
 
 
 Hardware details
@@ -31,7 +32,7 @@ Hardware details
    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
    - 768 GB RAM
    - 200 GB SSD local disk
-   - partition ``bigmem``, specific ``qsub`` :ref:`options <submit to genius big memory node>` apply.
+   - partition ``bigmem``, specific Slurm :ref:`options <submit to genius big memory node>` apply
 
 - 22 GPGPU nodes, 96 GPU devices
 
@@ -41,7 +42,7 @@ Hardware details
       - 192 GB RAM
       - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
       - 200 GB SSD local disk
-      - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
+      - partition ``gpu_p100``, specific Slurm :ref:`options <submit to genius GPU node>` apply
 
    - 2 V100 nodes
 
@@ -49,7 +50,7 @@ Hardware details
       - 768 GB RAM
       - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
       - 200 GB SSD local disk
-      - partition ``gpu``, specific ``qsub`` :ref:`options <submit to genius GPU node>` apply.
+      - partition ``gpu_v100``, specific Slurm :ref:`options <submit to genius GPU node>` apply
 
 
 - 4 AMD nodes
@@ -57,9 +58,10 @@ Hardware details
    - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
    - 256 GB RAM
    - 200 GB SSD local disk
-   - partition ``amd``, specific ``qsub`` :ref:`options <submit to genius AMD node>` apply.
+   - partition ``amd``, specific Slurm :ref:`options <submit to genius AMD node>` apply
 
-The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands are indicated on the diagram below.
+The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands 
+are indicated on the diagram below.
 
 |Genius hardware|
 
