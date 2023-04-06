@@ -56,7 +56,7 @@ A bank provides an overview of the financial transactions on your accounts under
 form of statements. 
 Similarly, the job accounting system provides statements that give the user an overview 
 of the cost of each individual job. 
-The following command will provide an overview of all transactions an account
+The following command will provide an overview of all transactions for an account
 that the user has access to, as well as a summary of the credit usage at the top::
 
      $ sam-statement -A lp_my_project
