@@ -6,13 +6,16 @@ Open OnDemand on the KULeuven Tier2 cluster
 About
 -----
 
-Open OnDemand provides a user interface to HPC clusters from within a web browser. This tool supports a range of different apps and features that not only allow the
-user to easily submit jobs from within the browser session, but also provide different coding GUIs, tools for plotting and more.
+Open OnDemand provides a user interface to HPC clusters from within a web browser. 
+This tool supports a range of different apps and features that not only allow the
+user to easily submit jobs from within the browser session, but also provide different 
+coding GUIs, tools for plotting and more.
+Open OnDemand is available for the Tier-2 Genius and wICE clusters.
 
-You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. You can log in using your KU Leuven or VSC credentials. Access is only granted to VSC3 
-users for the moment. Once logged in, you'll notice you are connected with your VSC account. 
-
-Open OnDemand is only available for the Tier-2 wICE cluster.
+You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. 
+You can log in using your KU Leuven or VSC credentials. 
+Access is only granted to VSC3 users for the moment. 
+Once logged in, you'll notice you are connected with your VSC account. 
 
 Use
 ---
@@ -40,17 +43,23 @@ obvious save button on the editor page.
 Jobs
 ----
 
-All jobs submitted from Open OnDemand will run on wICE. The Genius cluster is not supported. This also means that all your jobs should be submitted as **Slurm** jobs.
-For more detail on how to run jobs on wICE, check out our :ref:`quickstart guide <wice_t2_leuven>`.
+All jobs submitted from Open OnDemand can run on Genius and wICE. 
+This also means that all your jobs should be submitted as **Slurm** jobs.
+For more detail on how to run jobs on wICE, check out our 
+:ref:`quickstart guide <wice_t2_leuven>`.
 
 The jobs tab has two menus: 'Active Jobs' and 'Job Composer':
 
 Active jobs
 ===========
 
-This lists all of your running, queued and completed jobs. Completed jobs will disappear after a couple of minutes. You have a handy overview of some job
-details by clicking the large arrow next to the job id, including things like the node list, the account you used, the status of the job... It also gives you the
-option to open the folder of the job script in the file manager. and thus inspect the created output and error files. 
+This lists all of your running, queued and completed jobs. 
+Completed jobs will disappear after a couple of minutes. 
+You have a handy overview of some job details by clicking the large arrow next 
+to the job id, including things like the node list, the account you used, and 
+the status of the job. 
+It also gives you the option to open the folder of the job script in the file 
+manager, and thus inspect the created output and error files. 
 
 If your job is still running, you can also delete it by clicking the bin under 'Actions'. The 'Active jobs' menu does not allow re-submission of your job. How to
 (re-)submit jobs will be made clear in the next chapter.
@@ -73,34 +82,56 @@ The templates:
 - GPU job template: a template for jobs with GPU resources (`gpu` partition) 
 - Big memory CPU jobs: a template for jobs with large memory requirements (`bigmem` partition)
 
-You can create your own templates from scratch or by copying one of the existing templates. In both cases you will be redirected to a page where you can provide a
-name, the cluster (only wICE) and add some notes. Once you save this, you will create a new folder in the templates folder 
-``$VSC_DATA/ondemand/data/sys/myjobs/templates/``. This information will be saved in the ``manifest.yml`` file that is always present in each of the template folders. 
-Which other files will be present in this folder depends on how you created your new template. If you use the 'New Template' button, it will also contain the job 
-script of the default template, being the CPU job template. If you use the 'Copy Template' button, the contents of the folder will depend on the template you are
-copying from. Use the system template that suit your needs the best when starting out. Once you use this more often, you can also use your own templates to create new
-ones. Any file that is present in that folder, will be copied to your new one as well.
+You can create your own templates from scratch or by copying one of the existing templates. 
+In both cases you will be redirected to a page where you can provide a
+name, the cluster and add some notes. 
+Once you save this, you will create a new folder in the templates folder 
+``$VSC_DATA/ondemand/data/sys/myjobs/templates/``. 
+This information will be saved in the ``manifest.yml`` file that is always present 
+in each of the template folders. 
+Which other files will be present in this folder depends on how you created your new template. 
+If you use the 'New Template' button, it will also contain the job 
+script of the default template, being the CPU job template. 
+If you use the 'Copy Template' button, the contents of the folder will depend on the 
+template you are copying from. 
+Use the system template that suit your needs the best when starting out. 
+Once you use this more often, you can also use your own templates to create new ones. 
+Any file that is present in that folder, will be copied to your new one as well.
 
 Once you've created the new template folder, you can start customizing it to your needs. You could of course immediately create a new job from it, adapt some
 extra options and launch it (which will be explained in the next chapter), but you can still further customize your template folder first. You can view the files in
 the folder using the Folder Explorer (click 'View Files' on top or 'Open Dir' at the bottom). As explained above, you can edit or remove any file, create new files,
-upload new files... These files will be present in each job you create from this template, which means you fully adapt this to the standard set-up you use for your
+upload new files. 
+These files will be present in each job you create from this template, which means you fully adapt this to the standard set-up you use for your
 jobs.
 
 Jobs
 ~~~~
 
-The functioning of creating jobs is a bit similar to how you create new templates. Whatever method you choose, you will create a new folder for each job, this time
-located at ``$VSC_DATA/ondemand/data/projects/default/``. The job folders will be numbered in the order you have created them. **Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.** When removing a job, the folder will be deleted as well. 
+The functioning of creating jobs is a bit similar to how you create new templates. 
+Whatever method you choose, you will create a new folder for each job, this time
+located at ``$VSC_DATA/ondemand/data/projects/default/``.
+The job folders will be numbered in the order you have created them. 
+**Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.** 
+When removing a job, the folder will be deleted as well. 
 
-To create a job, press the 'New Job' button and choose the option that best suits your needs. You will get a new item in your job list for each job you've created. 
-Again, you can edit, remove and add files like you want to create a custom job by going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking 
-the file names. The 'Open Editor' button in the 'Submit Script' overview also allows you to edit the job script directly.
+To create a job, press the 'New Job' button and choose the option that best suits 
+your needs. 
+You will get a new item in your job list for each job you've created. 
+Again, you can edit, remove and add files like you want to create a custom job by 
+going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking 
+the file names. 
+The 'Open Editor' button in the 'Submit Script' overview also allows you to edit 
+the job script directly.
 
 Using the 'Job Options' button, you can add some more specifications to your job:
 
-- Name: this will specify a name in the job composer list. This will not be your job name. The actual job name is the one that will be specified in the job script. If you do not specify a name there, you will see that that job gets the name 'sbatch' in the 'Active Jobs' menu.
-- Cluster: there is no need to change this, as you only can specify 'wice'.
+- Name: this will specify a name in the job composer list. 
+  This will not be your job name. 
+  The actual job name is the one that will be specified in the job script. 
+  If you do not specify a name there, you will see that that job gets the name 
+  ``sbatch`` in the 'Active Jobs' menu.
+- Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
 - Job array: we do not recommend using this. If you would like to use job arrays, have a look `here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`_.
@@ -112,9 +143,14 @@ the folder that it is associated with.
 Clusters
 --------
 
-When selecting 'Clusters - Login Server Shell Access' you will get a terminal window in a new browser tab. You will arrive on one of the Genius login nodes, which
-you can use as you are used to, including the option to submit jobs to wICE. As with the Genius login nodes, this means that this shell is not meant for any 
-calculations. If you would like to perform calculations in an interactive job, you should be using the :ref:`interactive shell app<interactive_shell>`
+When selecting 'Clusters - Login Server Shell Access' you will get a terminal 
+window in a new browser tab. 
+You will arrive on one of the Genius login nodes, which
+you can use as you are used to, including the option to submit jobs to Genius or wICE. 
+As with the Genius login nodes, this means that this shell is not meant for any 
+calculations. 
+If you would like to perform calculations in an interactive job, you should be 
+using the :ref:`interactive shell app<interactive_shell>`
 
 Interactive apps
 ----------------
