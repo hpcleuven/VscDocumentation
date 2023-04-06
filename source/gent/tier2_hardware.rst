@@ -16,7 +16,7 @@ Compute clusters
  =============== ========== =========================================================== ===================== =========================== ======================= ===================
   cluster name    # nodes                    Processor architecture                     Usable memory/node    Local diskspace/node        Interconnect            Operating system
  =============== ========== =========================================================== ===================== =========================== ======================= ===================
-  swalot              128    2 x 10-core Intel E5-2660v3 (Haswell-EP @ 2.6 GHz)         116 GiB               1 TB                        FDR InfiniBand          CentOS 7
+  swalot              128    2 x 10-core Intel E5-2660v3 (Haswell-EP @ 2.6 GHz)         116 GiB               1 TB                        FDR InfiniBand          RHEL 8
   skitty               72    2 x 18-core Intel Xeon Gold 6140 (Skylake @ 2.3 GHz)       177 GiB               1 TB + 240GB SSD            EDR InfiniBand          RHEL 8
   victini             96    2 x 18-core Intel Xeon Gold 6140 (Skylake @ 2.3 GHz)       88 GiB                1 TB + 240 GB SSD           10 GbE                  RHEL 8
   joltik               10    2x 16-core Intel Xeon Gold 6242 (Cascade Lake @ 2.8 GHz)   256 GiB               800 GB SSD                  double EDR Infiniband   RHEL 8
