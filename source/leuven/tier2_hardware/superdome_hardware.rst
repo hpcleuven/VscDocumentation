@@ -3,7 +3,7 @@ Superdome hardware
 Superdome is a shared memory machine and consists of several nodes.
 
 
-.. include:: genius_login_nodes.rst
+.. include:: tier2_login_nodes.rst
 
 
 Hardware details

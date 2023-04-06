@@ -16,7 +16,7 @@ two factors are necessary to connect to the KU Leuven clusters:
 This approach ensures that if your private key is compromised, the person who
 has unauthorized access to it will still not be able to abuse your VSC account.
 This document provides two methods to connect to the KU Leuven clusters with
-MFA. The first method, without an agent, is easier to get started with, but requires
+MFA. The first method, *without* an agent, is easier to get started with, but requires
 some repetitive steps with each connection. The second method, *with* an agent,
 requires some more effort to set up initially but will be easier when you need
 multiple connections or you are using some specific GUI applications to connect. 
@@ -63,6 +63,12 @@ Your ssh connection is now completed!
     and uploading files from here does not work without the agent. If you would 
     like to use the file explorer, have a look at :ref:`Authentication with an ssh agent<mfa_agent>` . 
 
+.. note::
+
+    If you use PuTTY to login, highlighting the URL with your mouse/cursor will copy 
+    it to your clipboard, and make it ready to paste into your browser.
+    Therefore, do not use the Ctrl+C combination on your keyboard, or it will cancel 
+    your login attempt.
 
 GUI applications with SSH connection in the background
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,6 +89,7 @@ explained in the next part.
    the method with an :ref:`ssh agent<mfa_agent>` when using MFA with NX.
 
 .. note::
+
    It is currently not possible to connect to NX when using a ED25519 keytype.
    The RSA4096 keytype does allow you to connect. As this is the recommended
    keytype for connections to the HPC clusters, this should not be an issue for
@@ -99,96 +106,23 @@ you can use an agent. This agent will store a certificate that contains the
 identity verification you did when following the firewall link. This way, you
 will only be asked to verify your identity once. Of course this certificate
 does not live forever. When using the built-in ssh-agent of Linux and Mac this
-will be as long as your agent lives, and when using the vscagent this will be
-16h. There are two ways in which the certificates are stored in an agent:
-
-- Previously injected: the agent will automatically store the certificate when
-  you first connect to the cluster in the way as described above (built-in
-  ssh-agents for Mac and Linux, but also in a future release of Pageant on Windows).
-- Explicitly loaded in the agent: storing the certificate happens by opening
-  the UI of an agent, where you specifically ask to create a certificate. You
-  will be redirected to the firewall link to verify your identity (vscagent).
-
-.. note ::
-
-   We provide an in-house developed `vscagent` as a temporary solution to have
-   an ssh agent on Windows that supports storing a certificate. We expect that
-   Pageant will support this as well in their future official release. Once we
-   can confirm this support, we will adapt our official recommendation to
-   Pageant instead of vscagent. This documentation will be adapted accordingly
-   and you will also be informed about this change.
-
-To adopt any of these methods, read the following parts. The methods you can use varies based on your OS.
+will be as long as your agent lives. 
 
 Authentication with an agent on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For MS-Windows systems, `vscagent` is available to serve as ssh agent. It
-can be started and set up as follows:
+For Windows users, the recommended agent is Pageant which is automatically installed
+together with PuTTY. Make sure you install version 0.78 or later.
 
-#. Visit the `vscagent`_ web page and download the file `vscagent.exe`
-#. If you have a centrally managed KU Leuven laptop, you should copy the
-   `vscagent.exe` in your `C:\\temp` folder and run it from there (create the
-   folder if it does not exist on your system yet). For other machines, place
-   it in a directory of your choice. Double click the file to start the agent.
-#. Go to the `Configuration` tab:
-
-   - For most users, the 'Enable KU Leuven server certificates' should be left **unchecked**. You should only check it and fill it in when you satisfy the next two conditions:
-
-     #. You are a KU Leuven user
-     #. You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
-
-     If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
-
-        - Principals: uXXXXXX  
-        - Role: kuleuven
-        - TTL : 16h
-
-   - check `Enable HPC user certificates`
-   - check `tier2-leuven`. Only select `tier1-leuven` as well if you have
-     access to breniac (which is not the case for most users).
-   - Username : `vscXXXXX`
-   - The configuration should look as follows (obviously changing the username
-     to your own):
-
-   .. _vscagent-configuration:
-   .. figure:: mfa_login/vscagent_configuration.png
-      :align: center
-      :alt: vscagent-configuration
-   - Click on `Apply settings` and `Save configuration file`
-
-#. Go to the `SSH Key files` tab
-
-   - Click on the plus sign and navigate to your private VSC key.
-
-#. Go to the `SSH identities` tab
-
-   - click `Renew certificate`
-   - Select `HPC Tier2 Leuven certificate` for the certificate for the Tier2
-     cluster
-   - If you are storing your KU Leuven server certificate in this agent as
-     well, you can also renew the `KU Leuven server certificate`
-
-The agent will automatically open the firewall link in your browser. Here you
-can verify your identity. You are now able to connect to the cluster using any
-ssh-client or with GUI apps like NX and FileZilla.
-
-.. note::
-   It might be that you have to
-   adapt some options in the configuration of these apps. Have a look at the
-   :ref:`Configuration of ssh-clients and GUI apps<mfa_client_config>` below.
+Pageant stores the certificates together with your private SSH keys, which allows you
+to use VSC facilities whenever you are prompted for your identity.
+To setup your Pageant, please refer to :ref:`Using Pageant<using Pageant>`.
 
 Authentication with an agent on Linux/Mac/WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Linux, Mac, and WSL you can use the built-in ssh agent. If you would prefer
-a user interface, you can also use the the previously mentioned vscagent.
-Instead of downloading `vscagent.exe` download `vscagent` and run
-`vscagent gui` and follow the above procedure to configure it.
-**Be aware that the vscagent does not work for Macs with an M1 processor!**
-
-If you prefer using the built-in ssh-agent, use the following instructions to configure it
-correctly.
+For Linux, Mac, and WSL you can use the SSH agent included in the OpenSSH package
+by following these instructions to configure it correctly.
 
 .. note::
    Before starting out with the built-in SSH agent, you should know that using an SSH agent
@@ -198,29 +132,32 @@ correctly.
    for trusted servers. If you would prefer more secure set-ups, have a look at 
    :ref:`Secure your SSH agent set-up<secure_ssh_agent>` .
 
-First of all, verify that it is running. You can do this by executing:: 
+First of all, verify that your agent is running. You can do this by executing:: 
 
     ssh-add -l
 
 If the agent is not running, you will get a
-'Could not open a connection to your authentication agent.' message. In this
+``Could not open a connection to your authentication agent.`` message. In this
 case you can start the agent with::
 
     eval $(ssh-agent)
 
 (to kill the agent use ``eval "$(ssh-agent -k)"``)
 
-If your agent is running, the ``ssh-add -l`` will show the identities that were
+If your agent is running, the ``ssh-add -l`` will list the identities that were
 added to the ssh-agent. If none are added, the output will state
-'The agent has no identities.'. You can add your key with
-``ssh-add </path/to/your/private/key>``. Now ``ssh-add -l`` should show your key.
+``The agent has no identities.``. You can add your key with::
 
-Now, depending on how ssh is configured, it might be that your key will not be
+    ssh-add </path/to/your/private/key> 
+    
+Now ``ssh-add -l`` should show your key.
+
+Depending on how ssh is configured, it might be that your key will not be
 stored by default. It is probably best to verify the following steps before
 continuing:
 
 #. Adapt or create a profile for your cluster connection in the config file in
-   your .ssh folder. If you do not have a config file there, create one first.
+   your ``.ssh`` folder. If you do not have a config file there, create one first.
    From your home dir::
 
       touch ~/.ssh/config
@@ -237,9 +174,9 @@ continuing:
 
 The indentation is not strictly necessary, but is recommended for readability.
 
-If you now connect to the cluster using your standard `ssh` command, the
+If you now connect to the cluster using your standard ``ssh`` command, the
 certificate will automatically be stored for as long as your agent lives. If
-you want to use apps that use ssh in the background (NX, FileZilla), you will
+you want to use apps that use ``ssh`` in the background (NX, FileZilla), you will
 have to do this connection to the cluster as well. You are free to log out of
 that session afterwards. 
 
@@ -274,9 +211,9 @@ your key to your agent using::
 
     ssh-add -c /path/to/your/private/key
     
-The '-c' will ask for a confirmation every time you (or in the worst case someone
+The ``-c`` will ask for a confirmation every time you (or in the worst case someone
 else in your name) tries to use the agent to connect to a remote server. You will
-manually have to click 'ok' before. You might have to install the package 'ssh-askpass'
+manually have to click ``ok`` before. You might have to install the package ``ssh-askpass``
 on your local machine first.
 
 
@@ -319,19 +256,9 @@ Known issues - General remarks
   happen to you, it is worth trying to paste the URL in an incognito browser
   window. This has only been verified to work in Chrome and does not seem to
   work in Firefox.
-- MobaXTerm: version 21.1 has known issues in combination with the vscagent.
-  It does not always seem to find the certificate in your agent. Updating to
-  the latest version should solve this.
-- If you are using sshfs, no link will be prompted to you as when using ssh.
+- If you are using ``sshfs``, no link will be prompted to you as when using ``ssh``.
   This is intended to be this way. The recommended approach would be to use an
   ssh agent to store your certificate. This will avoid you having to connect
   with the MFA link every time when connecting to the cluster.
-- Safari does not properly load the vscagent download page. 
-- Some ssh-clients have their own built-in agents that can prompt you the
-  firewall link. You are free to use these instead of the vscagent as well.
-  Be aware that Pageant (PuTTY agent) does not support this for the moment.
-  If this would become standard practice in the future, we might adopt these
-  as default agents instead of the vscagent.
 
 .. _VSC firewall page: https://firewall.vscentrum.be
-.. _vscagent: https://firewall.vscentrum.be/vscagent/latest/

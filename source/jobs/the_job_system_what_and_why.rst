@@ -102,11 +102,6 @@ and can be used in your job.
 Assuming that this script is called ``myscript.pbs``, the job can then be
 submitted to the queueing system with the command ``qsub myscript.pbs``.
 
-Note that if you use a system at the KU Leuven, including the Tier-1
-system BrENIAC, you need credits. When submitting your job, you also
-need to tell ``qsub`` which credits to use. We refer to the page on
-:ref:`Credit system basics <credit system basics>`.
-
 
 Structure of this documentation section
 ---------------------------------------

@@ -63,18 +63,6 @@ We discuss this script line by line.
   <module system basics>`.
 - Line 12 performs the actual computation, i.e., running a Python script.
 
-.. warning::
-
-   When running on KU Leuven/UHasselt and Tier-1 infrastructure make sure to specify
-   a credit account as part of your job script, if not, your job will not
-   run.
-
-   ::
-
-      #PBS -A lp_example
-
-   For more information, see :ref:`credit system basics<credit system basics>`.
-
 Every job script has the same basic structure.
 
 .. note::
@@ -88,8 +76,6 @@ More information is available on
 - :ref:`specifying job resources <resource specification>`,
 - :ref:`specifying job names, output files and notifications
   <specifying output files and notifications>`,
-- using the :ref:`credit system <credit system basics>` (KU Leuven/UHasselt
-  infrastructure and Tier-1 only),
 - using the :ref:`module system <module system basics>`.
 
 
