@@ -54,6 +54,7 @@ software on your client system which depends on its operating system:
    data_transfer_with_filezilla
    data_transfer_using_winscp
    data_transfer_with_scp_sftp
+   ../leuven/data_transfer_kuleuven_network_drives
 
 
 GUI applications on the clusters

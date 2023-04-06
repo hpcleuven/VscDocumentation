@@ -28,6 +28,25 @@ Similar to Genius, wICE uses Slurm as the workload manager.
 More information about converting pbs scripts and commands into Slurm can be found 
 :ref:`here <Antwerp Slurm_convert_from_PBS>`.
 
+A Slurm jobscript for wICE will typically look like this:
+
+::
+   
+    #!/bin/bash -l
+    #SBATCH --cluster=wice
+    #SBATCH --partition=...
+    #SBATCH --time=...
+    #SBATCH --nodes=...
+    #SBATCH --ntasks-per-node=...
+    #SBATCH --account=...
+
+    module use /apps/leuven/icelake/2021a/modules/all
+    module load ...
+
+    ...
+
+For information about using and installing software on wICE, see the :ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
+
 
 .. _submit to wice compute node:
 
@@ -50,7 +69,7 @@ page and on :ref:`KU Leuven credits <KU Leuven credits>`.
 Submit a long job to a compute node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To submit to a compute node a job longer than 3 days you need to request a separate partition::
+To submit to a compute node a job longer than 3 days you need to submit specifically to the ``batch_long`` partition::
 
    $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 --partition=batch_long -A lp_myproject  myjobscript.slurm
 

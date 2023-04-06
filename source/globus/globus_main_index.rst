@@ -13,4 +13,5 @@ Globus file and data sharing platform
    sharing
    groups
    cli
+   python_sdk
    glossary

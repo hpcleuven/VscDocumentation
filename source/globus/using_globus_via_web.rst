@@ -1,10 +1,12 @@
 .. include:: css.rst
+.. include:: links.rst
+.. _globus-web:
 
 ===============
 Globus web interface
 ===============
 
-This section teaches you how to manage, transfer and share files from the `Globus web interface <https://app.globus.org/>`_.
+This section teaches you how to manage, transfer and share files from the Globus `Web Interface`_.
 
 
 Managing files

@@ -1,0 +1,16 @@
+name: test_sphinx_build
+on: [push, pull_request]
+
+jobs:
+  build_docs_job:
+    runs-on: ubuntu-22.04
+    name: build sphinx docs
+    steps:
+      - uses: actions/checkout@v3
+      - name: install sphinx
+        run: |
+          python3 -m pip install -r requirements.txt
+      - name: build sphinx docs
+        run: |
+          make html
+
