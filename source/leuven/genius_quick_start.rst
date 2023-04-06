@@ -143,9 +143,6 @@ For example, to request two full nodes::
 
    $ sbatch -A lp_my_project -M genius -N 2 --ntasks-per-node=64 -p amd myjobscript.slurm 
 
-This resource specification for the memory is a few GB less than 256 GB,
-leaving some room for the operating system to function properly.
-
 
 Running debug jobs
 ------------------

@@ -56,13 +56,13 @@ A bank provides an overview of the financial transactions on your accounts under
 form of statements. 
 Similarly, the job accounting system provides statements that give the user an overview 
 of the cost of each individual job. 
-The following command will provide an overview of all transactions on all accounts
+The following command will provide an overview of all transactions an account
 that the user has access to, as well as a summary of the credit usage at the top::
 
-     $ sam-statement -u <vsc-account>
+     $ sam-statement -A lp_my_project
 
-It is more convenient to filter this information so that only specific projects are 
-displayed and/or information for a specific period of time, e.g.::
+It is more convenient to filter this information for a specific period of time, 
+e.g.::
 
    $ sam-statement -A lp_my_project -s 2023-01-01 -e 2023-01-31
 
