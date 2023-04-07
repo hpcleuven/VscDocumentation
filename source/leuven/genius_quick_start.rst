@@ -38,10 +38,10 @@ The default ``batch`` partition allows jobs with maximum 3 days of walltime.
 Jobs which require a walltime up to maximum 7 days must be submitted to the 
 ``batch_long`` partition explicitly.
 
-The :ref:`Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler, resource manager and 
+The `Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler, resource manager and 
 accounting manager on Genius (and wICE).
 To get started with Slurm, you may refer to the internal documentation on  
-`Basics of Slurm <Antwerp Slurm>` and `Advanced Slurm <Antwerp advanced Slurm>` usage.
+:ref:`Basics of Slurm <Antwerp Slurm>` and :ref:`Advanced Slurm <Antwerp advanced Slurm>` usage.
 
 .. _submit to genius compute node:
 
