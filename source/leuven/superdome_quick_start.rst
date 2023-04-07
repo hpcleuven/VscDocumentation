@@ -5,7 +5,9 @@ The :ref:`Superdome <Superdome hardware>` is a shared memory machine
 which is intended for applications requiring large amounts of RAM
 on a single host.
 
-.. include:: tier2_hardware/genius_login_nodes.rst
+As Superdome is part of the Genius cluster, please also see the
+:ref:`Tier-2 access page<tier2_login_nodes>` for general information
+on how to access Genius.
 
 How to run a job on Superdome?
 ------------------------------

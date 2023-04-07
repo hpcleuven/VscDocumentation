@@ -1,9 +1,7 @@
 Superdome hardware
 ==================
 Superdome is a single node with a large amount of memory (6 TB)
-which is part of the Genius cluster. Please see the
-:ref:`Tier-2 access page<tier2_login_nodes>` for general information
-on how to access Genius.
+which is part of the Genius cluster.
 
 Hardware details
 ----------------
