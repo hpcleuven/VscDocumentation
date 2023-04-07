@@ -1,77 +1,42 @@
 Superdome quick start guide
 ===========================
 
-The :ref:`Superdome <Superdome hardware>` is a shared memory machine, i.e.,
-it can be used to run multi-threaded application that require large amounts
-of RAM.
-
-
-How to connect to Superdome?
-----------------------------
-
-Superdome does not have a dedicated login node, so in order to work with the
-system users can connect to the same login node used for Genius.
+The :ref:`Superdome <Superdome hardware>` is a shared memory machine
+which is intended for applications requiring large amounts of RAM
+on a single host.
 
 .. include:: tier2_hardware/genius_login_nodes.rst
 
 How to run a job on Superdome?
 ------------------------------
 
-Jobs can be submitted from the login node, however, there are a few crucial
-differences.  To submit jobs to Superdome you need to
+To submit jobs to Superdome from a Genius login node you need to select either
+the ``superdome`` or ``superdome_long`` Slurm partition, depending on whether
+your job needs less than 3 days or less than 7 days.
 
-- specify the partition ``superdome``,
-- specify the queue ``qsuperdome``, and
-- use ``-L`` for specifying resources.
+The CPU resources on Superdome are furthermore allocated on the basis of entire
+sockets and not on the basis of individual cores as on other partitions.
+Since the 112 cores in Superdome are grouped in 8 sockets (see the
+:ref:`Superdome hardware page<Superdome hardware>`), this means that all
+Superdome jobs get access to a number of cores which is a multiple of 14.
 
-The resource specification is specified in terms of ``tasks``, ``lprocs``
-and ``place``.
+The allocation for the following job will hence consist of an entire socket
+(and its 14 cores)::
 
-``tasks``
-   For Superdome, the number of tasks is always equal to 1.
-``lprocs``
-   The number of logical processors is essentially the number of cores
-   you want to use for your job.
-``place``
-   The place determines where the logical processors are executed, and
-   is ``numanode`` for Superdome.  Each ``numanode`` has 14 cores and 750 GB of
-   RAM, so if you want to use, e.g., 28 cores, you would specify
-   ``lprocs=28:place=numanode=2``.
+  $ sbatch -M genius -p superdome -A myaccount --ntasks=1 myscript.slurm
 
+The following job will get two sockets (and so 28 cores in total)::
 
-For example::
-  
-   $ qsub  -l partition=superdome  -q qsuperdome  -L tasks=1:lprocs=42:place=numanode=3 \
-           -A lp_myproject  my_job.pbs
-  
-Without specifying the ``superdome`` partition and ``qsuperdome`` queue, your jobs
-will be submitted to Genius, and will probably not be able to start, since the
-resources you specify are not available.
+  $ sbatch -M genius -p superdome -A myaccount --ntasks=2 myscript.slurm
 
+If you want to get multiple Slurm tasks per socket you will need to use the
+``--ntasks-per-socket`` option, for example::
+
+  $ sbatch -M genius -p superdome -A myaccount --ntasks=28 --ntasks-per-socket=14 myscript.slurm
 
 .. note::
 
-   When submitting to Superdome no explicit memory request should be added.
-   Memory will scale with the number of NUMA-nodes. You will have exclusive
-   access to the memory of the requested NUMA-nodes. The Superdome has 8
-   NUMA-nodes, so if you want 1/8th of the Superdome's memory (750 GB) you
-   have to request ``lprocs=14:place=numanode=1``. If you want to use 1/4th
-   (1.5 TB), your request should state ``lprocs=28:place=numanode=2``, for
-   3/4th of the memory (4.5 TB), you would use ``lprocs=84:place=numanode=6``,
-   and so on.
+   The maximum amount of memory per core for Superdome is 53.5 GB, which is also
+   the default value. Your jobs will hence by default receive 749 GB of RAM per
+   allocated socket.
 
-
-If your application requires fewer cores than the 14 a NUMA-node has, but
-you need more memory than the default, you should specify that explicitely.
-For instance, if you would have a sequential program that required 500 GB of
-RAM, you would use ``-L tasks=1:lprocs=1:place=numanode=1:memory=500gb``.
-
-However, keep in mind that if the memory you require exceeds that of a
-NUMA-node, you would have to request multiple nodes to accommodate for
-the total amount of memory.  For example, if a sequential program would
-require 1 TB of RAM, you would specify:
-``-L tasks=1:lprocs=1:place=numanode=2:memory=1tb``.
-
-More documentation on the ``-L`` NUMA-aware resource specification can be
-found in the vendor's `documentation
-<http://docs.adaptivecomputing.com/9-0-3/MWM/Content/topics/NUMA/-Lresource.htm>`_.
