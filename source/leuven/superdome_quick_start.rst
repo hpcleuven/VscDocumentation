@@ -27,7 +27,8 @@ The allocation for the following job will hence consist of an entire socket
 
   $ sbatch -M genius -p superdome -A myaccount --ntasks=1 myscript.slurm
 
-The following job will get two sockets (and so 28 cores in total)::
+By default, each task will be launched on a separate socket. The following
+job will therefore get two sockets (and so 28 cores in total)::
 
   $ sbatch -M genius -p superdome -A myaccount --ntasks=2 myscript.slurm
 
