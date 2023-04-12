@@ -330,10 +330,12 @@ rst_prolog += """
 .. _TensorFlow: https://www.tensorflow.org/
 .. _Threading Building Blocks: https://www.threadingbuildingblocks.org
 .. _tier-1 project application: https://www.vscentrum.be/tier1
+.. _TigerVNC: https://tigervnc.org/
 .. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm 
 .. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
 .. _TurboVNC download page: https://sourceforge.net/projects/turbovnc/files/
 .. _TurboVNC: https://www.turbovnc.org/
+.. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
 .. _VSC account page: https://account.vscentrum.be/
 .. _VSC training: https://www.vscentrum.be/training
 .. _VSC training: https://www.vscentrum.be/training
