@@ -271,7 +271,7 @@ rst_prolog += """
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
-.. _iCommands: https://docs.irods.org/4.2.8/icommands/user/
+.. _iCommands docs: https://docs.irods.org/4.2.8/icommands/user/
 .. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
 .. _Intel MPI: https://software.intel.com/en-us/intel-mpi-library
 .. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation

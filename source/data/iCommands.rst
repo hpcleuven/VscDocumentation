@@ -1,7 +1,7 @@
 .. _iCommands:
 
 iCommands
-===============
+=========
 
 iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In short, iCommands is an Unix utility that gives users a command-line interface.
 There are more than 50 iCommands. A regular user however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy to use interface to iRODS.
@@ -25,17 +25,22 @@ iCommands is installed on the KU Leuven Tier-1 and some of the Tier-2 clusters. 
 On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.10. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
 
 For CentOS:
-::
-    $ sudo yum install irods-runtime=4.2.10
-    sudo yum install irods-icommands=4.2.10
+
+.. code:: bash
+
+   $ sudo yum install irods-runtime=4.2.10
+   $ sudo yum install irods-icommands=4.2.10
 
 For Debian/Ubuntu:
-::
-    $ sudo apt update
-    sudo apt install irods-runtime=4.2.10
-    sudo apt install irods-icommands=4.2.10
+
+.. code:: bash
+
+   $ sudo apt update
+   $ sudo apt install irods-runtime=4.2.10
+   $ sudo apt install irods-icommands=4.2.10
 
 .. note::
+
    Depending on your linux distribution and version, the installation procedure may vary.
    - The most recent version of iCommands is 4.3.0.
    - However, the KU Leuven Tier-1 iRODS instance still runs on iRODS 4.2.10.
