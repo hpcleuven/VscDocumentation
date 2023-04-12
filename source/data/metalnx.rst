@@ -20,12 +20,12 @@ The Metalnx portal is mainly composed of two panes. The left pane shows tabs of 
 - View info, by clicking the 'i' icon
 - Upload files, by clicking the cloud icon
 - Under the Action dropdown menu, after ticking a check box:
- - Move data objects/collections 
- - Copy fidata objectsles/collections 
- - Rename data objects/collections 
- - Apply metadata templates
- - Download data objects
- - Delete data objects and collections
+  - Move data objects/collections 
+  - Copy fidata objectsles/collections 
+  - Rename data objects/collections 
+  - Apply metadata templates
+  - Download data objects
+  - Delete data objects and collections
 
 To the right of any collection or file, you can press 'View info' for the following:
 
