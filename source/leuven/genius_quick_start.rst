@@ -104,7 +104,7 @@ different users.
 However every user will have exclusive access to the number of GPUs requested. 
 If you want to use only 1 GPU of type P100 you can submit for example like this::
 
-   $ sbatch -A lp_my_project -M genius -N 1 -n 9 --gpus-per-node=3 -p gpu_p100 myjobscript.slurm
+   $ sbatch -A lp_my_project -M genius -N 1 -n 9 --gpus-per-node=1 -p gpu_p100 myjobscript.slurm
   
 Note that in case of 1 GPU you have to request 9 cores. 
 In case you need more GPUs you have to multiply the 9 cores with the number of GPUs 
