@@ -143,7 +143,7 @@ PuTTY
 #. Select your saved session for the cluster connection and load it.
 #. Under ‘SSH’, go to ‘Auth’. Select ‘Allow agent forwarding’ and remove any private key directories from under ‘Private key file for authentication’
 
-   .. _putty:
+   .. _putty_auth_panel:
    .. figure:: mfa_quickstart/putty.png
       :align: center
       :alt: putty
