@@ -78,35 +78,41 @@ Windows machines
 
    .. _pageant_logo:
    .. figure:: mfa_quickstart/Pageant_logo.PNG
-      :align: left
+      :align: center
       :alt: pageant_logo
+
 #. Right-click on Pageant, and choose ‘Add Key’
 
    .. _pageant_add_key:
    .. figure:: mfa_quickstart/Pageant_add_key.PNG
-      :align: left
+      :align: center
       :alt: pageant_add_key
+
 #. Browse to your VSC private SSH key, and enter your passphrase if prompted for
 
    .. _pageant_passphrase:
    .. figure:: mfa_quickstart/Pageant_passphrase.PNG
-      :align: left
+      :align: center
       :alt: pageant_passphrase
-#. Try to connect to one of `Tier2 login nodes <tier2_login_nodes>`.
-   You will be given a URL to validate your identity.
-   Copy that URL in your browser and login to your KU Leuven account.
-   Upon a successful login to your KU Leuven account, the login with your VSC account 
-   will also succeed.
-   Eventually, a new certificate will be stored in Pageant that holds your identity for
-   a limited period of time.
-   You may view this certificate if you right-click on Pageant and select ‘View Keys’:
+
+#. Try to connect to one of :ref:`Tier2 login nodes <tier2_login_nodes>`. It
+   is mandatory to allow agent forwarding in your ssh client. While connecting,
+   you will be given a URL to validate your identity. Copy that URL in your
+   browser and login to your KU Leuven account. Upon a successful login to
+   your KU Leuven account, the login with your VSC account will also succeed.
+   At this point,a new certificate will be stored in Pageant that holds your
+   identity for a limited period of time. You can check the certificate has
+   been stored by right-clicking on Pageant and selecting ‘View Keys’:
 
    .. _pageant_view_keys:
    .. figure:: mfa_quickstart/Pageant_view_keys.PNG
-      :align: left
+      :align: center
       :alt: pageant_view_keys
-#. Pageant will silently provide your credentials to other applications (e.g. NX, FileZilla, MobaXterm)
-   whenever you are prompted for your identity.
+
+#. Pageant will provide your credentials to other applications
+   (such as NoMachine, FileZilla, MobaXterm) whenever you are prompted for your
+   identity. It might be required to configure your ssh client for this as
+   explained :ref:`below <ssh client mfa config>`.
 
 Linux and Mac machines
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -135,9 +141,12 @@ Before using your agent, it is best to verify whether or not it is configured co
    The certificate will be stored as long as your agent stays alive.
    Bear in  mind that the certificates are valid for maximum 16 hours.
 
+
+.. _ssh client mfa config:
+
 Configuration of SSH clients and UI apps for use with an agent
 --------------------------------------------------------------
-Depending on how you set up your SSH clients and UI apps like NX and FileZilla, it can t
+Depending on how you set up your SSH clients and UI apps like NX and FileZilla, it can
 be that you have to make some changes to the configurations in these profiles. 
 Here, we shortly show you how to set up MobaXTerm, PuTTY and NX correctly.
 
@@ -146,7 +155,7 @@ MobaXTerm
 #. Right-click on the correct session and click on ‘edit session’
 
    .. _moba_edit_session:
-   .. figure:: mfa_quickstart/moba_edit_session.
+   .. figure:: mfa_quickstart/moba_edit_session.png
       :align: center
       :alt: moba_edit_session
 

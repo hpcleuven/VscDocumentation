@@ -37,25 +37,32 @@ VSC clusters.
 #. In the category Connection > Data, in the field 'Auto-login
    username', put in <vsc-account>, which is your VSC username that you
    have received by mail after your request was approved.
-#. In the category Connection > SSH > Auth, click on 'Browse' and select
-   the private key that you generated and saved above.
 
    |PuTTY config 2|
+
+#. In the category Connection > SSH > Auth > Credentials, click on 'Browse' and select
+   the private key that you generated and saved above.
+
+   |PuTTY config 3|
 
    Here, the private key was previously saved in the folder
    ``C:\Users\Me\Keys``. In older versions of Windows, you would have
    to use ``C:\Documents and Settings\Me\Keys``.
-   
-   You can also enable agent forwarding by ticking the 'Allow agent
-   forwarding' checkbox.
+
 #. In the category Connection > SSH > X11, click the Enable X11
    Forwarding checkbox:
 
-   |PuTTY config 3|
+   |PuTTY config 4|
+
+#. In the category Connection > SSH > Auth, you can enable agent forwarding
+   by ticking the 'Allow agent forwarding' checkbox.
+
+   |PuTTY config 5|
 
 #. Now go back to Session, and fill in a name in the 'Saved Sessions'
    field and press 'Save' to store the session information.
-#. Now pressing 'Open' should start ask for you passphrase, and connect
+
+#. Now pressing 'Open' should ask for your passphrase, and connect
    you to <vsc-loginnode>.
 
 The first time you make a connection to the login node, a Security Alert
@@ -83,4 +90,6 @@ you can obtain the connection log by
    :width: 456
 .. |PuTTY config 2| image:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
 .. |PuTTY config 3| image:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
-.. |PuTTY alert| image:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+.. |PuTTY config 4| image:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+.. |PuTTY config 5| image:: text_mode_access_using_putty/text_mode_access_using_putty_05.png
+.. |PuTTY alert| image:: text_mode_access_using_putty/text_mode_access_using_putty_06.png
