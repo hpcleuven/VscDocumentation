@@ -1,3 +1,5 @@
+.. include:: uantwerp_links.rst
+
 .. _Antwerp software 2020a:
 
 UAntwerp 2020a toolchains
