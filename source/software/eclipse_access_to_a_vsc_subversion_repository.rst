@@ -154,4 +154,3 @@ don't.
 .. |Subclipse enter passpharse| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_username_password.png
 .. |Subclipse checkout| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_checkout.png
 
-.. include:: links.rst

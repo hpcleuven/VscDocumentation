@@ -94,7 +94,6 @@ the following way:
 
    $ ssh-keygen -i -f ~/.ssh/id_rsa_vsc_ssh2.pub > ~/.ssh/id_rsa_vsc_openssh.pub
 
-.. include:: links.rst
 
 
 Additional information
@@ -103,4 +102,3 @@ Additional information
 -  `ssh-keygen manual page`_
 -  `ssh manual page`_
 
-.. include:: links.rst

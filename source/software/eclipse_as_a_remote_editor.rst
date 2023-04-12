@@ -232,4 +232,3 @@ available under 'RSE User Guide' heading.
 .. |install software| image:: eclipse_as_a_remote_editor/install_software.png
 .. |open perspective| image:: eclipse_as_a_remote_editor/open_perspective.png
 
-.. include:: links.rst

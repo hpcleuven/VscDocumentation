@@ -37,4 +37,3 @@ There are two ways in which you may have messed up your keys:
    #. Exercise some patience, within 30 minutes, your account should be
       accessible again.
 
-.. include:: links.rst

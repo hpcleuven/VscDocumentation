@@ -127,4 +127,3 @@ SSH Manual
 
 -  `ssh manual page`_
 
-.. include:: links.rst

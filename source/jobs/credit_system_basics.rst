@@ -194,4 +194,3 @@ Where job ID does not have to be complete.
    concurrently, she is advised to use the :ref:`worker framework`.
 
 
-.. include:: links.rst

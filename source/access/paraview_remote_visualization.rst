@@ -113,4 +113,3 @@ A decent `Paraview tutorial`_ on is also available from the VTK public wiki.
 .. |paraview 3 configure server| image:: paraview_remote_visualization/paraview_remote_visualization_03.png
 .. |paraview 4 connect| image:: paraview_remote_visualization/paraview_remote_visualization_04.png
 
-.. include:: links.rst

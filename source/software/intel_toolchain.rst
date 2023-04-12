@@ -307,4 +307,3 @@ Further information on Intel tools
     single: BLAS
     single: LAPACK
 
-.. include:: links.rst

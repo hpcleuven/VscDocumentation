@@ -157,4 +157,3 @@ that you have a valid license or the person who has paid the license on
 the cluster must allow you to use the license. For this you can contact
 your local support team.
 
-.. include:: links.rst

@@ -179,5 +179,3 @@ Interesting bits in the documentation
       Modules <https://help.eclipse.org/2019-06/index.jsp?topic=%2Forg.eclipse.ptp.doc.user%2Fhtml%2Fmodules.html&cp=76_8>`_.
    -  `The PTP Wiki <http://wiki.eclipse.org/PTP>`_
 
-.. include:: links.rst
-.. include:: ../access/links.rst

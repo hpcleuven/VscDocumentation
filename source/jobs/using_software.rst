@@ -45,5 +45,3 @@ Packages with additional documentation
    administrator intervention. Some documentation for doing this for
    :ref:`Perl <Perl packages>` and :ref:`Python <Python packages>` is provided.
 
-.. include:: links.rst
-.. include:: ../software/links.rst

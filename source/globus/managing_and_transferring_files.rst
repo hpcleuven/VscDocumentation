@@ -55,4 +55,3 @@ Management Console
 File transfers can also be monitored via the `Globus Management Console`_.
 
 
-.. include:: links.rst

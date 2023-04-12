@@ -340,4 +340,3 @@ More info on the MATLAB Compiler
 
 `MATLAB compiler documentation`_ on the Mathworks website. 
 
-.. include:: links.rst

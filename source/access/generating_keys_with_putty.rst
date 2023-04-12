@@ -89,4 +89,3 @@ can be used by Eclipse.
    :width: 600
    :alt: Filled PuTTYgen screen
 
-.. include:: links.rst

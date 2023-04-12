@@ -106,3 +106,4 @@ you can obtain the connection log by
 .. |PuTTY config 2| image:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
 .. |PuTTY config 3| image:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
 .. |PuTTY alert| image:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+

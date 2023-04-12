@@ -62,4 +62,3 @@ The tunnel is now ready to use.
 
 .. |PuTTY tunnel config| image:: creating_a_ssh_tunnel_using_putty/putty_tunnel_config.png
 
-.. include:: links.rst

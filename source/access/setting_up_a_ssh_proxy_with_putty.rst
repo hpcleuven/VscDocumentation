@@ -153,4 +153,3 @@ What happens behind the scenes:
  .. |PuTTY data section| image:: setting_up_a_ssh_proxy_with_putty/putty_data_section.png
  .. |PuTTY session section| image:: setting_up_a_ssh_proxy_with_putty/putty_session_section.png
 
-.. include:: links.rst

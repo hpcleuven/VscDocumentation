@@ -72,4 +72,3 @@ also done through the Account Management website). On other sites
 checking your disk space use is still :ref:`mostly done from the command
 line <disk usage>` and requesting more quota is done via email.
 
-.. include:: links.rst

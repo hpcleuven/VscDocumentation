@@ -58,4 +58,3 @@ Running Xming:
 .. |Xming clipboard| image:: using_the_xming_x_server_to_display_graphical_programs/xming_clipboard.png
 .. |Xming save| image:: using_the_xming_x_server_to_display_graphical_programs/xming_save.png
 
-.. include:: links.rst

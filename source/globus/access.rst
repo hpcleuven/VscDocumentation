@@ -29,4 +29,3 @@ Finally, you need to give Globus permission to use your identity to access infor
 
 .. image:: access/access-first-time-login-permissions.png
 
-.. include:: links.rst

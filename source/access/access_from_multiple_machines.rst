@@ -27,4 +27,3 @@ way, all you need to do if your computer is stolen or your key may be
 compromised in another way, is to delete that key on the `VSC account page`_
 (via "Edit account"). You can continue to work on your other devices.
 
-.. include:: links.rst

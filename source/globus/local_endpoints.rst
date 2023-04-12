@@ -19,4 +19,3 @@ To access and manage your local endpoints:
 
 .. warning:: Users should use caution and carefully select the privacy permissions and attributes when creating endpoints on their personal computers.
 
-.. include:: links.rst

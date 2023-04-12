@@ -119,5 +119,3 @@ or `Erik Neyts <https://www.uantwerpen.be/en/staff/erik-neyts/>`_
 for more information.
 
 
-.. include:: ../software/links.rst
-.. include:: ../access/links.rst

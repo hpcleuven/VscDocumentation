@@ -29,4 +29,3 @@ Globus allows you to create and manage groups of Globus users and share files an
 
 - Click the :bgrnd1:`Settings` tab to view the group's settings and policies. These policies control who can see the group and its membership list, how new users are added to the group, and related privileges. Click :bgrnd1:`Edit Policies` to change any of these policies.
 
-.. include:: links.rst

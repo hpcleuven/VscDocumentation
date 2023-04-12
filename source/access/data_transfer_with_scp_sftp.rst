@@ -106,4 +106,3 @@ Links
 -  `scp manual page`_ (external)
 -  `sftp manual page`_ (external)
 
-.. include:: links.rst

@@ -51,4 +51,3 @@ connection settings. To do this, follow these steps:
 
 .. |JellyfiSSH| image:: text_mode_access_using_openssh_or_jellyfissh/text_mode_access_using_openssh_or_jellyfissh_01.png 
 
-.. include:: links.rst

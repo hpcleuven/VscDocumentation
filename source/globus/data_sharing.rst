@@ -33,4 +33,3 @@ To share data, you will create a guest collection and grant your collaborators a
 
    Be careful whom you give permissions to when sharing data.
 
-.. include:: links.rst

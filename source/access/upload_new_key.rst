@@ -21,4 +21,3 @@ Upload a new SSH key
    Exercise some patience, within 30 minutes, your account should be
    accessible again.
 
-.. include:: links.rst

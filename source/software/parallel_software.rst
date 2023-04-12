@@ -144,4 +144,3 @@ On the clusters, at least two implementations are available,
 :ref:`Open MPI <Communication library: Open MPI>` in the FOSS toolchain.
 
 
-.. include:: links.rst

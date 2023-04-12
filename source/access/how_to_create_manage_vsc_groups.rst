@@ -125,4 +125,3 @@ Working with file and directory permissions
 
          [user@foo]# find /path/to/directory -type d -exec chmod g+s '{}' \\;
 
-.. include:: links.rst

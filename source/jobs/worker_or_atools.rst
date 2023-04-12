@@ -176,4 +176,3 @@ Clusters with shared policy
    :ref:`number of work items <Number of work items>`.
 
 
-.. include:: links.rst

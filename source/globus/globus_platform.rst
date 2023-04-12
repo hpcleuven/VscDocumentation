@@ -13,4 +13,3 @@ For all questions concerning the Globus file sharing platform, please contact th
 
 We welcome your feedback, comments and suggestions for improving the Globus Tutorial.
 
-.. include:: links.rst

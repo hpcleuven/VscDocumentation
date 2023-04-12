@@ -91,4 +91,3 @@ please consult `Globus-Timer-CLI on PyPi`_.
       Times in the globus-timer outputs are always in UTC time,
       not in our local (CEST) time.
 
-.. include:: links.rst

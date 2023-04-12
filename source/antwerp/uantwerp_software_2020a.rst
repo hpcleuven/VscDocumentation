@@ -697,6 +697,4 @@ given on :ref:`the page "Python on the UAntwerp clusters <Antwerp Python>`.
 If you install additional packages yourself and let us know, we will try to add them to the next release of
 our R module.
 
-.. include:: ../software/links.rst
-.. include:: uantwerp_links.rst
 

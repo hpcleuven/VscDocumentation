@@ -252,4 +252,3 @@ manual on the `Adaptive Computing documentation`_ web site.
 
 -  `Torque 6.0.1 documentation`_
 
-.. include:: links.rst

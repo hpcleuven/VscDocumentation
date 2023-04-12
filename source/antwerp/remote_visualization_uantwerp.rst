@@ -431,4 +431,3 @@ Related technologies
 -  `The Motif Window Manager on Wikipedia
    <https://en.wikipedia.org/wiki/Motif_Window_Manager>`_.
 
-.. include:: ../access/links.rst

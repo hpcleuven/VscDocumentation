@@ -283,4 +283,3 @@ support <user support VSC>`.
 .. _Singularity definition file documentation: https://singularity.hpcng.org/user-docs/3.8/definition_files.html
 .. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
 
-.. include:: links.rst

@@ -109,4 +109,3 @@ Terminal tools
 Alternatively, you can use command line tools such as
 :ref:`scp and sftp <scp and sftp>`.
 
-.. include:: links.rst

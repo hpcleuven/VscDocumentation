@@ -167,4 +167,3 @@ Links
 -  `ssh_config manual page`_
 -  `ssh manual page`_
 
-.. include:: links.rst

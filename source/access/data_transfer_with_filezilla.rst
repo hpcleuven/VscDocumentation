@@ -52,4 +52,3 @@ passphrase. As an alternative you can choose to use putty pageant.
    :width: 600
    :alt: FileZilla site manager with settings
 
-.. include:: links.rst

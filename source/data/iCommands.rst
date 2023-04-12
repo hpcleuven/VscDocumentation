@@ -367,4 +367,3 @@ A list of commands that is required for basic data operations is provided below.
 
 
 
-.. include:: links.rst

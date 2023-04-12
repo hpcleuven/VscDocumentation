@@ -258,4 +258,3 @@ sophisticated workflows, simply relying on the scheduler.
 
 
 .. |workflow| image:: workflows_using_job_dependencies/workflow_using_job_dependencies.png
-.. include:: links.rst

@@ -232,3 +232,115 @@ epub_exclude_files = ['search.html']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# -- RST Prolog ---------------------------------------------------------------
+rst_prolog = ""
+
+# Links used multiple times across the documentation
+rst_prolog += """
+.. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
+.. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
+.. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
+.. _atools documentation: https://atools.readthedocs.io/en/latest/
+.. _Beginning Hybrid MPI/OpenMP Development: https://software.intel.com/en-us/articles/beginning-hybrid-mpiopenmp-development
+.. _CP2K: https://www.cp2k.org/
+.. _CPMD: http://www.cpmd.org/
+.. _CUDA: https://developer.nvidia.com/cuda-zone
+.. _cuDNN: https://developer.nvidia.com/cudnn
+.. _Cyberduck: https://cyberduck.io
+.. _Cygwin: https://www.cygwin.com/
+.. _Docker: https://www.docker.com/
+.. _docs.globus.org: https://docs.globus.org
+.. _download FileZilla: https://filezilla-project.org/download.php?type=client
+.. _Eclipse download page: http://www.eclipse.org/downloads
+.. _Eclipse packages download page: https://www.eclipse.org/downloads/packages/
+.. _Eclipse: https://www.eclipse.org/
+.. _eligible users: https://www.vscentrum.be/getaccess
+.. _FFTW documentation: http://www.fftw.org/#documentation
+.. _FFTW: http://www.fftw.org/
+.. _FileZilla project page: https://filezilla-project.org/
+.. _GCC documentation: http://gcc.gnu.org/onlinedocs/
+.. _get in touch: https://www.vscentrum.be/getintouch
+.. _Globus CLI documentation: https://docs.globus.org/cli/examples
+.. _Globus Connect Personal: https://www.globus.org/globus-connect-personal
+.. _Globus Connect Server Installation Guide: https://docs.globus.org/globus-connect-server-installation-guide
+.. _Globus Groups How-To page: https://docs.globus.org/how-to/managing-groups
+.. _Globus How-To pages: https://docs.globus.org/how-to
+.. _Globus Management Console: https://www.globus.org/app/login
+.. _Globus-Timer-CLI on PyPi: https://pypi.org/project/globus-timer-cli
+.. _GNU binutils documentation: https://sourceware.org/binutils/docs/
+.. _GROMACS: http://www.gromacs.org/
+.. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
+.. _iCommands: https://docs.irods.org/4.2.8/icommands/user/
+.. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
+.. _Intel MPI: https://software.intel.com/en-us/intel-mpi-library
+.. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation
+.. _Interoperability with OpenMP API: https://software.intel.com/en-us/node/528819
+.. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/
+.. _JellyfiSSH: http://www.m-works.co.nz/jellyfissh.php
+.. _Keras: https://keras.io/
+.. _LAPACK user guide: http://www.netlib.org/lapack/lug/
+.. _LAPACK95 user guide: http://www.netlib.org/lapack95/lug95/
+.. _Linux Basics on Lifewire : https://www.lifewire.com/learn-how-linux-basics-4102692 
+.. _Linux Newbie Administrator Guide: http://lnag.sourceforge.net/
+.. _Linux Tutorials YouTube Channel: https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ 
+.. _LLNL openMP tutorial: https://computing.llnl.gov/tutorials/openMP
+.. _Lmod documentation: http://lmod.readthedocs.io/en/latest/
+.. _Lmod: http://lmod.readthedocs.io/en/latest/
+.. _Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems: http://www.joshuahursey.com/papers/2011/hursey-cluster-poster-2011.pdf
+.. _MathWorks: https://nl.mathworks.com/
+.. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
+.. _MKL Link Line Advisor: https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
+.. _MobaXterm: https://mobaxterm.mobatek.net
+.. _MPI forum: https://www.mpi-forum.org/
+.. _MPI Reference Manual: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
+.. _MPI Standard documents: https://www.mpi-forum.org/docs/
+.. _MPICH: https://www.mpich.org/
+.. _MVAPICH: http://mvapich.cse.ohio-state.edu/
+.. _NAMD: http://www.ks.uiuc.edu/Research/namd/
+.. _Netlib BLAS repository: http://www.netlib.org/blas/
+.. _Netlib LAPACK repository: http://www.netlib.org/lapack/
+.. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
+.. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
+.. _Open MPI Documentation: https://www.open-mpi.org/doc
+.. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
+.. _Open MPI: https://www.open-mpi.org/
+.. _OpenBLAS Wiki: https://github.com/xianyi/OpenBLAS/wiki
+.. _OpenBLAS: https://www.openblas.net/
+.. _OpenMP compilers and tools: https://www.openmp.org/resources/openmp-compilers-tools/
+.. _OpenMP: https://www.openmp.org
+.. _OpenSHMEM: http://www.openshmem.org/site/
+.. _Paraview tutorial: https://www.vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
+.. _Paraview website: https://www.paraview.org/
+.. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
+.. _PuTTY download site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+.. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+.. _qsub documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm#topics/torque/commands/qsub.htm
+.. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
+.. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
+.. _scp manual page: http://man.openbsd.org/scp
+.. _Service Catalog: https://icts.kuleuven.be/sc/HPC
+.. _sftp manual page: http://man.openbsd.org/sftp
+.. _Singularity documentation: https://singularity.hpcng.org/user-docs/3.8/
+.. _Singularity: https://singularity.hpcng.org/
+.. _ssh manual page: http://man.openbsd.org/ssh
+.. _ssh-keygen manual page: http://man.openbsd.org/ssh-keygen
+.. _ssh_config manual page: http://man.openbsd.org/ssh_config
+.. _Sylabs Singularity: https://sylabs.io/singularity/
+.. _TensorFlow: https://www.tensorflow.org/
+.. _Threading Building Blocks: https://www.threadingbuildingblocks.org
+.. _tier-1 project application: https://www.vscentrum.be/tier1
+.. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm 
+.. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
+.. _TurboVNC download page: https://sourceforge.net/projects/turbovnc/files/
+.. _TurboVNC: https://www.turbovnc.org/
+.. _VSC account page: https://account.vscentrum.be/
+.. _VSC training: https://www.vscentrum.be/training
+.. _VSC training: https://www.vscentrum.be/training
+.. _WinSCP: https://winscp.net/eng/docs/start
+.. _worker documentation: http://worker.readthedocs.io/en/latest/
+.. _worker framework documentation: https://worker.readthedocs.io/en/latest/
+.. _www.globus.org: https://www.globus.org
+.. _www.irods.org: https://irods.org/
+.. _Xming web site: http://www.straightrunning.com/XmingNotes/
+"""

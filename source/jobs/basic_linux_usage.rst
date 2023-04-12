@@ -76,4 +76,3 @@ following sites:
 -  We organise regular Linux introductory courses, see the
    `VSC website <VSC training_>`_. 
 
-.. include:: links.rst 

@@ -37,4 +37,3 @@ Links
 
 - `BeeGFS home page`_ (external)
 
-.. include:: links.rst

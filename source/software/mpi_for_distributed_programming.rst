@@ -119,4 +119,3 @@ Further information
 -  See also the pages in the tutorials section e.g., for
    :ref:`books` and online tutorial :ref:`web tutorials`
 
-.. include:: links.rst

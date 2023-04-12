@@ -133,4 +133,3 @@ team may ask you to enable logging and mail the results.
 .. |WinSCP logging| image:: data_transfer_using_winscp/winscp_logging-new-red.png
 .. |WinSCP windows explorer| image:: data_transfer_using_winscp/winscp_file_explorer.png
 
-.. include: links.rst

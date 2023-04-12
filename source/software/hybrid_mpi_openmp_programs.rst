@@ -288,4 +288,3 @@ presentations:
 -  Poster paper \\"`Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems`_\" 
 -  Slides from the presentation \\"`Open MPI Explorations in Process Affinity`_\" from EuroMPI'13 
 
-.. include:: links.rst

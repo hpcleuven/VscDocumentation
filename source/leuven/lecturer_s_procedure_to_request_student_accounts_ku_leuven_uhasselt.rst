@@ -65,4 +65,3 @@ several actions from the lecturer are required.
    https://icts.kuleuven.be/sc/pcklas/ictspcklassen
    (1 month before the beginning of the course).
 
-.. include:: ../access/links.rst
