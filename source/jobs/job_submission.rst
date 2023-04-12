@@ -3,7 +3,7 @@
 Submission of job scripts: sbatch
 =================================
 
-`Slurm sbatch manual page on the web <https://slurm.schedmd.com/sbatch.html>`_
+Slurm `sbatch manual page`_
 
 The ``sbatch`` is the command in Slurm to submit a job script.
 A job script first contains a list of resources and other instructions to
@@ -20,13 +20,12 @@ lines in the job script.
   take precedence over environment variables and ``#SBATCH`` lines in the
   job script.
 * Some command line options can also be passed to ``sbatch`` through environment
-  variables instead. A list of those can be found in the
-  `sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_. The name of those
-  variables starts with ``SBATCH_`` and the remaining part is derived from the
-  matching command line option. However, be careful when using those and hiding them
-  in ``.bashrc`` or ``.bash_profile`` as they are easily forgotten yet have a higher
-  priority than those on ``SBATCH`` lines which is the most used mechanism to specify
-  resources etc.
+  variables instead. A list of those can be found in the `sbatch manual page`_.
+  The name of those variables starts with ``SBATCH_`` and the remaining part is
+  derived from the matching command line option. However, be careful when using
+  those and hiding them in ``.bashrc`` or ``.bash_profile`` as they are easily
+  forgotten yet have a higher priority than those on ``SBATCH`` lines which is
+  the most used mechanism to specify resources etc.
 * All command line options can also be passed in ``#SBATCH`` lines in the job script.
   These lines should follow immediately below the shebang in the first block of
   comment lines (lines that start with ``#``) as otherwise they will
@@ -159,8 +158,7 @@ Hence:
 The file name can (and usually will) be a template. It can contain replacement symbols preceded
 by a % that allow to use the job ID etc. in the name of the file to ensure unique file names.
 The most useful of such symbols is ``%j`` which will be replaced by the unique job ID.
-A full list of replacement symbols can be found in
-`the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
+A full list of replacement symbols can be found in the `sbatch manual page`_.
 
 Sending mail at specific events
 -------------------------------
@@ -171,7 +169,7 @@ Two flags influence this behaviour:
 * ``--mail-type=<type>`` specifies when mail should be sent. ``<type>`` is a comma-separated list
   of type values. Type values include BEGIN, END and FAIL to denote respectively the start of a
   job, end of a job and failure of a job, but there are many other options that can be found in
-  `the sbatch manual page <https://slurm.schedmd.com/sbatch.html>`_.
+  the `sbatch manual page`_.
 * ``--mail-user=<mail address>`` specifies to which mail address the mails should be sent. The
   default value is the mail address associated with the VSC-account of the submitting user.
 
@@ -262,8 +260,7 @@ while other variables are always set (with default values filled in, if appropri
 Several of these variables are mentioned on our
 :ref:`PBS-to-Slurm conversion tables <Antwerp Slurm_convert_from_PBS>` page.
 A full list of all SLURM_* environments can be found in the
-`sbatch manual page <https://slurm.schedmd.com/srun.html>`_ (in the section on
-"OUTPUT ENVIRONMENT VARIABLES").
+`sbatch manual page`_ (in the section on "OUTPUT ENVIRONMENT VARIABLES").
 
 
 Starting multiple copies of a process in a job script: srun

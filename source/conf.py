@@ -323,6 +323,7 @@ rst_prolog += """
 .. _sftp manual page: http://man.openbsd.org/sftp
 .. _Singularity documentation: https://singularity.hpcng.org/user-docs/3.8/
 .. _Singularity: https://singularity.hpcng.org/
+.. _sbatch manual page: https://slurm.schedmd.com/sbatch.html
 .. _ssh manual page: http://man.openbsd.org/ssh
 .. _ssh-keygen manual page: http://man.openbsd.org/ssh-keygen
 .. _ssh_config manual page: http://man.openbsd.org/ssh_config
