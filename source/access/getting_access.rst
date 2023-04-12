@@ -26,6 +26,7 @@ Applying for your VSC account
       How?
          Researchers with a regular personnel account (u-number) can use
          the :ref:`generic procedure <generic access procedure>`.
+
       -  If you are in one of the higher education institutions associated
          with KU Leuven, the :ref:`generic procedure <generic access procedure>`
          may not work. In that case, please e-mail hpcinfo@kuleuven.be
@@ -59,6 +60,7 @@ Applying for your VSC account
 
       How?
          Researchers can use the :ref:`generic procedure <generic access procedure>`.
+
       -  Master students can also use the infrastructure for their master
          thesis work. The promotor of the thesis should first send a
          motivation to hpc@uantwerpen.be and then the :ref:`generic
@@ -77,6 +79,7 @@ Applying for your VSC account
       How?
          Researchers with a regular VUB account (`@vub.be`) can use
          the :ref:`generic procedure <generic access procedure>`.
+
       -  Master students can also use the infrastructure for their master
          thesis work. The promotor of the thesis should first send a
          motivation to hpc@vub.be and then the :ref:`generic
