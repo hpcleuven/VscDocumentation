@@ -7,14 +7,12 @@ Prerequisite: WinSCP
 --------------------
 
 To transfer files to and from the cluster, we recommend the use of
-`WinSCP`_, which is a
-graphical ftp-style program (but than one that uses the ssh protocol to
-communicate with the cluster rather then the less secure ftp) that is
-also freely available. WinSCP can be downloaded both as an installation
-package and as a standalone portable executable. When using the portable
-version, you can copy WinSCP together with your private key on a USB
-stick to have access to your files from any internet-connected Windows
-PC.
+`WinSCP docs`_, which is a graphical ftp-style program (but than one that uses
+the ssh protocol to communicate with the cluster rather then the less secure
+ftp) that is also freely available. WinSCP can be downloaded both as an
+installation package and as a standalone portable executable. When using the
+portable version, you can copy WinSCP together with your private key on a USB
+stick to have access to your files from any internet-connected Windows PC.
 
 WinSCP also works together well with the PuTTY suite of applications. It
 uses the :ref:`keys generated with the PuTTY key generation

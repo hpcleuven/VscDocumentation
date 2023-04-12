@@ -337,7 +337,7 @@ rst_prolog += """
 .. _VSC account page: https://account.vscentrum.be/
 .. _VSC training: https://www.vscentrum.be/training
 .. _VSC training: https://www.vscentrum.be/training
-.. _WinSCP: https://winscp.net/eng/docs/start
+.. _WinSCP docs: https://winscp.net/eng/docs/start
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
 .. _www.globus.org: https://www.globus.org
