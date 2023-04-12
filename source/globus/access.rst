@@ -1,6 +1,6 @@
 .. include:: css.rst
 
-.. _access:
+.. _globus access:
 
 Access
 ------
