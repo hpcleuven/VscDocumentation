@@ -75,9 +75,12 @@ How to configure the OpenSSH client?
 
 The SSH configuration file ``~/.ssh/config`` can be used to configure your SSH
 connections. For instance, to automatically define your username, or the
-location of your key, or add X forwarding. We provide :ref:`some useful
-tips<SSH config>` to help you save time when working on a terminal-based
-session.
+location of your key, or add X forwarding. See below for some useful tips to
+help you save time when working on a terminal-based session.
+
+.. toctree::
+
+   ssh_config
 
 Managing keys with an SSH agent
 -------------------------------
