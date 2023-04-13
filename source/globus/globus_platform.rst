@@ -9,7 +9,5 @@ This document is a hands-on guide to the Globus file sharing platform. It should
 
 For all questions concerning the Globus file sharing platform, please contact the VSC Globus team at data@vscentrum.be.
 
-.. include:: globus_contact_information.rst
-
 We welcome your feedback, comments and suggestions for improving the Globus Tutorial.
 
