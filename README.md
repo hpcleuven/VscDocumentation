@@ -14,6 +14,16 @@ modern [PyData theme](https://pydata-sphinx-theme.readthedocs.io).
    will be forwarded to a CUE meeting. Remaining site-specific information will
    be organized in tabs to avoid clutter.
 
+### Main Tasks
+
+* ️✅ configure PyData theme
+* ️✅ define color scheme
+* 🔄 adapt documentation to Sphinx_Design formatting elements
+* 🔄 organize documentation in 4 main sections
+* ✅ fix all formatting errors from RST files
+* 🔄 add all RST files to a TOC tree
+* 🔄 disable automatic labels from section names
+
 ## How to contribute?
 
 1. Check the existing documentation
