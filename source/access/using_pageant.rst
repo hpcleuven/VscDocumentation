@@ -1,4 +1,4 @@
-.. _using Pageannt:
+.. _using Pageant:
 
 Using Pageant
 =============

@@ -76,6 +76,10 @@ the :ref:`NX client for Windows<NX start guide>` so that you don't need
 to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
 distribution.
 
+.. toctree::
+
+   using_pageant
+
 Network tunnels to compute nodes
 --------------------------------
 
