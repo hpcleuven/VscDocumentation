@@ -91,3 +91,7 @@ if your computer is not on your institute's network (e.g., when you work
 from home). In those cases you will have to set up a
 :doc:`VPN (Virtual Private Networking) <vpn>` connection if your institute
 provides this service.
+
+.. toctree::
+
+   vpn
