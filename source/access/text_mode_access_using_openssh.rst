@@ -85,9 +85,12 @@ help you save time when working on a terminal-based session.
 Managing keys with an SSH agent
 -------------------------------
 
-It is convenient to use :ref:`an SSH-agent <SSH agent>` to avoid
-having to enter your private key's passphrase all the time when
-establishing a new connection.
+It is convenient to use an SSH-agent to avoid having to enter your private
+key's passphrase all the time when establishing a new connection.
+
+.. toctree::
+
+   using_ssh_agent
 
 Network tunnel to compute node
 ------------------------------
