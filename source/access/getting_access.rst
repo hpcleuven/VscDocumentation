@@ -105,13 +105,18 @@ been fully automated and works by using your institute account to
 request a VSC account. Check below for exceptions or if the generic
 procedure does not work.
 
-#. Open the `VSC account page`_.
-#. Select your "home" institution from the drop-down menu and click the "confirm" button.
-#. Log in using your institution login and password.
-#. You will be asked to upload the public key you `created earlier <create key pair>`_.
-#. You will get an e-mail to confirm your application, click the included link to do so.
-#. After the account has been approved by the VSC, your account will be created and
-   you will get a confirmation e-mail.
+#. Open the `VSC account page`_
+#. Select your "home" institution from the drop-down menu and click the
+   "confirm" button
+#. Log in using your institution login and password
+#. You will be asked to upload the public key you
+   :ref:`created earlier <create key pair>`
+#. You will be asked for your scientific domain, please pick one from the
+   :ref:`NWO classification <list of scienfic domains>`
+#. You will get an e-mail to confirm your application, click the included link
+   to do so
+#. After the account has been approved by the VSC, your account will be created
+   and you will get a confirmation e-mail
 
 .. warning::
 
@@ -125,7 +130,10 @@ procedure does not work.
    security-related extensions), so you might try with browser
    extensions disabled.
 
+.. toctree::
+   :hidden:
 
+   scientific_domains
 
 Next steps
 ----------
