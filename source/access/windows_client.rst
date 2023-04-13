@@ -75,6 +75,7 @@ Display graphical programs
 
 X server
 --------
+
 You can install an X server: :ref:`Xming<Xming>`.
 X is the protocol that is used by most Linux applications to display
 graphics on a local or remote screen.
@@ -83,13 +84,14 @@ Alternatively, you can use :ref:`MobaXterm<access using mobaxterm>`.
 
 NX client
 ---------
-On the KU Leuven/UHasselt clusters it is also possible to use the
-:ref:`NX Client<NX start guide>` to log
-on to the machine and run graphical programs. Instead of an
-X server, another piece of client software is required.
+
+|KUL| On the KU Leuven/UHasselt clusters it is also possible to use the
+:ref:`NX Client<NX start guide>` to log on to the machine and run graphical
+programs. Instead of an X server, another piece of client software is required.
 
 VNC
 ---
+
 The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
 visualization software through Virtual Network Computing (VNC). VNC renders
 images on the cluster and transfers the resulting images to your client device.

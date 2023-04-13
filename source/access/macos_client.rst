@@ -60,7 +60,7 @@ would on Linux.
 NX client
 ---------
 
-On the KU Leuven/UHasselt clusters it is possible to :ref:`use the NX
+|KUL| On the KU Leuven/UHasselt clusters it is possible to :ref:`use the NX
 Client <NX start guide>` to log on to the machine and run graphical
 programs. Instead of an X-server, another piece of client software is
 required.
@@ -68,6 +68,7 @@ required.
 
 VNC
 ---
+
 The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
 visualization software through Virtual Network Computing (VNC). VNC renders
 images on the cluster and transfers the resulting images to your client device.

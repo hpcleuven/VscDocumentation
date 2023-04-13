@@ -58,8 +58,8 @@ on :ref:`the page on OpenSSH <OpenSSH access>`.
 NX client
 ---------
 
-On the KU Leuven/UHasselt clusters it is also possible to :ref:`use
-the NX Client <NX start guide>` to log
+|KUL| On the KU Leuven/UHasselt clusters it is also possible to
+:ref:`use the NX Client <NX start guide>` to log
 on to the machine and run graphical programs. This requires
 additional client software that is currently available for
 Windows, macOS, Linux, Android and iOS. The advantage over
@@ -70,6 +70,7 @@ with many programs over high-latency networks.
 
 VNC
 ---
+
 The KU Leuven/UHasselt, UAntwerp, and VUB clusters also offer support for
 visualization software through Virtual Network Computing (VNC). VNC renders
 images on the cluster and transfers the resulting images to your client device.

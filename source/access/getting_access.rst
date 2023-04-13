@@ -138,10 +138,9 @@ Information on our training program and the schedule is available on the
 
 .. note::
 
-   :bdg-primary:`KU Leuven` if there is no course announced, users of
-   KU Leuven can register to the `training waiting list`_ and we will organize
-   a new session as soon as we get a few people interested in it.
-
+   |KUL| If there is no course announced, users of KU Leuven can register to
+   the `training waiting list`_ and we will organize a new session as soon as
+   we get a few people interested in it.
 
 Additional information
 ----------------------

@@ -236,6 +236,14 @@ todo_include_todos = True
 # -- RST Prolog ---------------------------------------------------------------
 rst_prolog = ""
 
+# Badges
+rst_prolog += """
+.. |KUL| replace:: :bdg-info:`KU Leuven`
+.. |UA| replace:: :bdg-alert:`UAntwerp`
+.. |UG| replace:: :bdg-primary:`UGent`
+.. |VUB| replace:: :bdg-warning:`VUB`
+"""
+
 # Links used multiple times across the documentation
 rst_prolog += """
 .. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
