@@ -127,34 +127,36 @@ For MS-Windows systems, `vscagent` is available to serve as ssh agent. It
 can be started and set up as follows:
 
 #. Visit the `vscagent`_ web page and download the file `vscagent.exe`
+
 #. If you have a centrally managed KU Leuven laptop, you should copy the
    `vscagent.exe` in your `C:\\temp` folder and run it from there (create the
    folder if it does not exist on your system yet). For other machines, place
    it in a directory of your choice. Double click the file to start the agent.
+
 #. Go to the `Configuration` tab:
 
-   - For most users, the 'Enable KU Leuven server certificates' should be left **unchecked**. You should only check it and fill it in when you satisfy the next two conditions:
+   For most users, the 'Enable KU Leuven server certificates' should be left **unchecked**. You should only check it and fill it in when you satisfy the next two conditions:
 
-     #. You are a KU Leuven user
-     #. You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
+   #. You are a KU Leuven user
 
-     If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
+   #. You already use the KU Leuven server certificate. You are probably already using CertAgent in that case. Be aware that you can still keep using CertAgent next to the vscagent. You can add your credentials in the vscagent if you would prefer using only one agent. **If you have no idea what this means, you should skip the next step.**
 
-        - Principals: uXXXXXX  
-        - Role: kuleuven
-        - TTL : 16h
+   If you have satisfied the previous two conditions and you would like to store your KU Leuven server certificate in your vscagent, check the 'Enable KU Leuven server certificates'. Otherwise proceed to the next step. Fill in the fields as follows:
 
+   - Principals: uXXXXXX  
+   - Role: kuleuven
+   - TTL : 16h
    - check `Enable HPC user certificates`
-   - check `tier2-leuven`. Only select `tier1-leuven` as well if you have
-     access to breniac (which is not the case for most users).
+   - check `tier2-leuven`. Only select `tier1-leuven` as well if you have access to breniac (which is not the case for most users).
    - Username : `vscXXXXX`
-   - The configuration should look as follows (obviously changing the username
-     to your own):
+   - The configuration should look as follows (obviously changing the username to your own):
 
    .. _vscagent-configuration:
+
    .. figure:: mfa_login/vscagent_configuration.png
       :align: center
       :alt: vscagent-configuration
+
    - Click on `Apply settings` and `Save configuration file`
 
 #. Go to the `SSH Key files` tab
