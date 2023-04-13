@@ -24,14 +24,9 @@ which you can then also use to log on to the clusters.
 Connecting to the machine
 =========================
 
-Text-mode session using an SSH client
--------------------------------------
+.. toctree::
 
-To get terminal-based access to a remote system, you can use
-
--  the :ref:`OpenSSH ssh command<OpenSSH access>`, or
--  the :ref:`JellyfiSSH<JellyfiSSH access>` GUI client.
-
+   text_mode_access_using_openssh_or_jellyfissh
 
 Transfer data using Secure FTP (SFTP)
 =====================================
