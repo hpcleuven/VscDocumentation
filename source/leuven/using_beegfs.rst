@@ -1,3 +1,5 @@
+.. include:: links.rst
+
 .. _using BeeGFS:
 
 Using BeeGFS
