@@ -238,6 +238,16 @@ rst_prolog = ""
 
 # Badges
 rst_prolog += """
+.. |Optional| replace:: :bdg-primary:`Optional`
+.. |Example| replace:: :bdg-info:`Example`
+.. |Recommended| replace:: :bdg-success:`Recommended`
+.. |Alert| replace:: :bdg-danger:`Alert`
+.. |Warning| replace:: :bdg-warning:`Warning`
+.. |Info| replace:: :bdg-info:`Info`
+"""
+
+# VSC Institute Badges
+rst_prolog += """
 .. |KUL| replace:: :bdg-info:`KU Leuven`
 .. |UA| replace:: :bdg-alert:`UAntwerp`
 .. |UG| replace:: :bdg-primary:`UGent`
