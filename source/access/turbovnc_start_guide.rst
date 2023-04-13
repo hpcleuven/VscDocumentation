@@ -17,11 +17,13 @@ Installing TurboVNC client (viewer)
 TurboVNC client Configuration & Start Guide
 -------------------------------------------
 
-The UAntwerp visualization node uses TurboVNC, but the setup
-is different and TurboVNC is also supported on the regular login
-nodes (but without OpenGL support). Specific instructions for the use of
-TurboVNC on the UAntwerp clusters can be found on the page
-":ref:`remote visualization UAntwerp`".
+.. note::
+
+   |UA| The UAntwerp visualization node uses TurboVNC, but the setup is
+   different and TurboVNC is also supported on the regular login nodes (but
+   without OpenGL support). Specific instructions for the use of TurboVNC on
+   the UAntwerp clusters can be found on the page :ref:`remote visualization
+   UAntwerp`.
 
 #. Create password to authenticate your session:
 

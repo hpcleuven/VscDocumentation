@@ -249,7 +249,7 @@ rst_prolog += """
 # VSC Institute Badges
 rst_prolog += """
 .. |KUL| replace:: :bdg-info:`KU Leuven`
-.. |UA| replace:: :bdg-alert:`UAntwerp`
+.. |UA| replace:: :bdg-danger:`UAntwerp`
 .. |UG| replace:: :bdg-primary:`UGent`
 .. |VUB| replace:: :bdg-warning:`VUB`
 """
