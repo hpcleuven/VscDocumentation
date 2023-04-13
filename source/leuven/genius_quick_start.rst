@@ -3,12 +3,13 @@ Genius quick start guide
 
 :ref:`Genius <Genius hardware>` is the default KU Leuven/UHasselt Tier-2 cluster.  It can be used for most workloads, and has nodes with a lot of memory, as well as nodes with GPUs.
 
+.. _genius_login_nodes:
+
 .. include:: tier2_hardware/genius_login_nodes.rst
   
 For example, to log in to any of the login node using SSH::
 
    $ ssh vscXXXXX@login.hpc.kuleuven.be
-
 
 .. _running jobs on genius:
 
