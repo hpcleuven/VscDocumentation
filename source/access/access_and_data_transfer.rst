@@ -69,14 +69,18 @@ depends on the latter's operating system:
 - :ref:`Linux <Linux gui>`
 - :ref:`macOS <macOS gui>`
 
-|KUL| On the KU Leuven/UHasselt clusters it is also possible to use the
-:ref:`NX Client<NX start guide>` to log on to the machine and run graphical
-programs.
+Alternative solutions do also exist that might be more performant or cover more specific use cases. In all cases, it is necessary to install some extra software in your computer to be able to run graphical applications on the VSC clusters. See below for guides on available solutions:
+
+.. warning::
+
+   The following options might not be equally supported across the different
+   VSC clusters.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    nx_start_guide
+   paraview_remote_visualization
 
 VPN
 ===
