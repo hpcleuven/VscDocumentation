@@ -23,7 +23,8 @@ need to use on your client system depends on its operating system:
    linux_client
 
 .. note::
-   :bdg-primary:`KU Leuven` When logging in to a KU Leuven cluster, take a look
+
+   |KUL| When logging in to a KU Leuven cluster, take a look
    at the page on :ref:`Multi Factor Authentication<mfa_leuven>`.
 
 Data storage
@@ -66,7 +67,16 @@ depends on the latter's operating system:
 
 - :ref:`Windows <Windows gui>`
 - :ref:`Linux <Linux gui>`
-- :ref:`macOS/OS X <macOS gui>`
+- :ref:`macOS <macOS gui>`
+
+|KUL| On the KU Leuven/UHasselt clusters it is also possible to use the
+:ref:`NX Client<NX start guide>` to log on to the machine and run graphical
+programs.
+
+.. toctree::
+   :maxdepth: 2
+
+   nx_start_guide
 
 VPN
 ===
