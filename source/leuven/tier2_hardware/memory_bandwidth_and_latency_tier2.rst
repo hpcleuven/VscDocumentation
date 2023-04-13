@@ -21,7 +21,7 @@ icelake nodes Tier-2
 cascadelake nodes Tier-2
 ------------------------
 
-.. include:: cascadelake_mlc_avx512.txt
+.. include:: cascadelake_mlc.txt
    :literal:
 
 
