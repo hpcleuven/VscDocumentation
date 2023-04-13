@@ -76,11 +76,19 @@ Display graphical programs
 X server
 --------
 
-You can install an X server: :ref:`Xming<Xming>`.
-X is the protocol that is used by most Linux applications to display
-graphics on a local or remote screen.
+X11 is the protocol that is used by most Linux applications to display
+graphics on a local or remote screen. It is necessary to run an X server on
+your Windows system to display graphical applications running on the Linux
+system of the cluster.
 
-Alternatively, you can use :ref:`MobaXterm<access using mobaxterm>`.
+|Recommended| Use the X server included in :ref:`MobaXterm <access using mobaxterm>`.
+
+Alternatively, you can install an X server such as `Xming <Xming web site>`_ on
+Windows as well.
+
+.. toctree::
+
+   using_the_xming_x_server_to_display_graphical_programs
 
 NX client
 ---------
