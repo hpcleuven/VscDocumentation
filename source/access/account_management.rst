@@ -1,5 +1,6 @@
-Account management
-==================
+###################################
+:fas:`user-gear` Account management
+###################################
 
 Account management at the VSC is mostly done through the `VSC account page`_
 using your institute account rather than your VSC account.
@@ -35,20 +36,10 @@ project can collaborate and control access to those files, and to
 control access to project credits on clusters that use these (all
 clusters at KU Leuven).
 
--  All details are on the page ":ref:`groups`".
-   In particular, you'll find how to
+.. toctree::
+   :maxdepth: 2
 
-   -  :ref:`view the groups you belong to <viewing groups>`.
-   -  :ref:`request membership to a group <join groups>`
-      you feel you should belong to. It is then up to the moderator of
-      that group to grant you membership.
-   -  :ref:`create a new group <create groups>`
-   -  use group permissions to :ref:`control access to files and
-      directories <permissions groups>`
-
--  If you are a group moderator, you can manage your group by accepting
-   requests from users that would like to join the group or inviting
-   users to join your group through the `VSC account page`_.
+   how_to_create_manage_vsc_groups
 
 .. _virtual_organization:
 
