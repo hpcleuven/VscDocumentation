@@ -19,17 +19,18 @@ modern [PyData theme](https://pydata-sphinx-theme.readthedocs.io).
 1. Phase 1
    * ️✅ configure PyData theme
    * ️✅ define color scheme
-   * 🔄 adapt documentation to Sphinx_Design formatting elements
+   * ✅ adapt documentation to Sphinx_Design formatting elements
    * 🔄 organize documentation in 4 main sections
    * ✅ fix all formatting errors from RST files
    * 🔄 add all RST files to a TOC tree
-   * 🔄 disable automatic labels from section names
+   * ✅ disable automatic labels from section names
 2. Phase 2
    * ⬜ re-structure separation between OS in Access
    * ⬜ review mixed use of TOCs and sections
    * ⬜ review sections with large differences between sites:
      * VNC
      * VPN
+   * ⬜ seek outdated information in documentation
    * ⬜ add custom 404 page
 
 ## How to contribute?
