@@ -1,3 +1,5 @@
+.. _ssh_config:
+
 SSH config
 ==========
 

@@ -1,3 +1,5 @@
+.. _superdome hardware:
+
 Superdome hardware
 ==================
 Superdome is a shared memory machine and consists of several nodes.
@@ -16,4 +18,4 @@ Hardware details
     
 So in total Superdome has 6TB RAM memory and additionally a local shared scratch file system of 6TB.
 
-A :ref:`quick start guide <Superdome quick start guide>` is available to get you started on submitting jobs to the Superdome.
+A :ref:`quick start guide <superdome_quick_start>` is available to get you started on submitting jobs to the Superdome.

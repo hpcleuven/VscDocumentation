@@ -69,7 +69,8 @@ of the more important ones are:
 There are also some variables that are useful if you use the Torque
 command ``pbsdsh`` to execute a command on another node/core of your
 allocation. We mention them here for completeness, but they will also be
-elaborated on in the paragraph on ":ref:`Starting a single-core program on each assigned core`" further down this page.
+elaborated on in the paragraph on ":ref:`single_core_program_on_each_core`"
+further down this page.
 
 -  ``PBS_NODENUM`` : The number of the node in your allocation. E.g.,
    when starting a job with ``-l nodes=3:ppn=5``, ``$PBS_NODENUM`` will
@@ -179,10 +180,12 @@ while a shared memory paradigm is often more efficient in exploiting
 parallelism in the node. You'll need additional implementation-dependent
 options to mpirun to start such programs and also to define how many
 threads each instance can use. There is some information specifically
-for :ref:`hybrid MPI/OpenMP programs <hybrid MPI/OpenMP programs>`.
+for :ref:`hybrid MPI/OpenMP programs <hybrid_mpi_openmp_programs>`.
 We advise you to contact user
 support to help you figuring out the right options and values for those
 options if you are not sure which options and values to use.
+
+.. _single_core_program_on_each_core:
 
 Starting a single-core program on each assigned core
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

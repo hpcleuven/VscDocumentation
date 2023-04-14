@@ -1,4 +1,4 @@
-.. _Linux client:
+.. _linux_client:
 
 ############
 Linux client

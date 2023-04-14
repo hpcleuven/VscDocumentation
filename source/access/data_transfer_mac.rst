@@ -1,3 +1,5 @@
+.. _data_transfer_mac:
+
 ####################
 Data Transfer on Mac
 ####################

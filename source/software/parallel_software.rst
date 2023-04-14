@@ -140,7 +140,7 @@ implementation of MPI (Message Passing Interface).  This is a de-facto standard
 implemented by many libraries and the API can be used from C/C++ and Fortran.
 
 On the clusters, at least two implementations are available,
-:ref:`Intel MPI <Communication library: Intel MPI>` in the Intel toolchain, and
-:ref:`Open MPI <Communication library: Open MPI>` in the FOSS toolchain.
+:ref:`Intel MPI <commlib_intelmpi>` in the Intel toolchain, and
+:ref:`Open MPI <commlib_openmpi>` in the FOSS toolchain.
 
 

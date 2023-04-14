@@ -42,5 +42,5 @@ Instructions for the special node types
   fully supported on the visualisation node and partly supported on the regular login nodes.
 - :ref:`Working on the GPU nodes <GPU computing UAntwerp>`
 - :ref:`Vector computing on the NEC SX Aurora TSUBASA node <UAntwerp NEC SX Aurora>`
-- :ref:`Using the hopper nodes in leibniz <UAntwerp hopper nodes>`
+- :ref:`Using the hopper nodes in leibniz <Hopper hardware>`
     

@@ -10,14 +10,15 @@ On the regular login nodes of the clusters, there is no acceleration of 3D
 graphics, but the visualisation node of leibniz is equipped with a
 NVIDIA P5000 card that when used properly will offer accelerated
 rendering of OpenGL applications. The setup is similar to the setup of
-:ref:`the visualization nodes at the KU Leuven <TurboVNC>`.
+:ref:`the visualization nodes at the KU Leuven <TurboVNC start guide>`.
 
-*Using VNC turns out to be more complicated than one would think and
-things sometimes go wrong. It is a good solution for those who
-absolutely need a GUI tool or a visualization tool on the cluster rather
-than on your local desktop; it is not a good solution for those who
-don't want to invest in learning Linux properly and are only looking for
-the ease-of-use of a PC.*
+.. note::
+
+   Using VNC turns out to be more complicated than one would think and things
+   sometimes go wrong. It is a good solution for those who absolutely need a
+   GUI tool or a visualization tool on the cluster rather than on your local
+   desktop; it is not a good solution for those who don't want to invest in
+   learning Linux properly and are only looking for the ease-of-use of a PC.
 
 The idea behind the setup
 -------------------------
@@ -137,7 +138,7 @@ Prerequisites
 -------------
 
 You'll need an ssh client on your desktop that provides port forwarding
-functionality on your desktop. We refer to the :ref:`access data transfer`
+functionality on your desktop. We refer to the :ref:`access_data_transfer`
 section for information about ssh clients for various client operating systems.
 PuTTY (Windows) and OpenSSH (macOS, Linux, UNIX-compatibility environment on
 Windows) both provide all required functionality.

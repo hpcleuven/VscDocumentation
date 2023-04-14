@@ -1,3 +1,5 @@
+.. _hybrid_mpi_openmp_programs:
+
 Hybrid MPI/OpenMP programs
 ==========================
 

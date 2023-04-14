@@ -1,4 +1,4 @@
-.. _macOS client:
+.. _macos_client:
 
 ############
 macOS client
@@ -34,7 +34,7 @@ Transfer data using Secure FTP (SFTP)
 Data can be transferred using
 
 - Secure FTP (SFTP) with the :ref:`OpenSSH sftp and scp commands <scp and sftp>`, or
-- GUI clients such as :ref:`Cyberduck or FileZilla <data transfer>`.
+- GUI clients such as :ref:`Cyberduck or FileZilla <data_transfer_mac>`.
 
 .. _macOS gui:
 

@@ -1,3 +1,5 @@
+.. _windows_client:
+
 ##############
 Windows client
 ##############
@@ -53,12 +55,12 @@ Alternatives
 Recent versions of Windows come with an OpenSSH installed, and you can use
 it from PowerShell or the Command Prompt as you would in the termial on Linux
 systems and all pages about SSH and data transfer from :ref:`the Linux client
-pages <Linux client>` apply.
+pages <linux_client>` apply.
 
 The Windows Subsystem for Linux can be an alternative if you are using
 Windows 10 build 1607 or later.  The available Linux distributions have
 SSH clients, so you can refer to all pages about SSH and data transfer
-from :ref:`the Linux client pages <Linux client>` as well.
+from :ref:`the Linux client pages <linux_client>` as well.
 
 Transfer data using Secure FTP (SFTP) clients
 =============================================

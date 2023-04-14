@@ -1,3 +1,5 @@
+.. _genius hardware:
+
 Genius hardware
 ===============
 

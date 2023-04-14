@@ -11,7 +11,7 @@ VSC clusters using the Slurm job scheduler
 
 This page covers the more basic Slurm use, including starting jobs, basic job management
 and some templates for job scripts for various scenarios. It is the minimum a user should
-master. A second page describes :ref:`more advanced use of Slurm <Antwerp advanced Slurm>`.
+master. A second page describes :ref:`more advanced use of Slurm <job advanced>`.
 
 Since the start of the VSC, Torque and Moab were used as the resource manager and scheduler
 respectively. The resource manager is responsible for keeping track of resources and making

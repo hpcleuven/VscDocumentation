@@ -1,3 +1,5 @@
+.. _superdome_quick_start:
+
 Superdome quick start guide
 ===========================
 

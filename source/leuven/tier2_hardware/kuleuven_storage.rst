@@ -57,7 +57,7 @@ modifications based on your home institution and VSC account number.
 
 The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
 recover data that was accidentally deleted or modified.  You can retrieve data by
-:ref:`restoring a snapshot <Restoring a snapshot>`.
+:ref:`restoring a snapshot <restoring_snapshot>`.
 
 On genius, a BeeGFS file system can be created during the run of a job, for details,
 see the page on :ref:`using BeeGFS <using BeeGFS>` for details.

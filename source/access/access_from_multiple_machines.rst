@@ -1,3 +1,5 @@
+.. _access_multiple_computers:
+
 Access from multiple computers
 ==============================
 

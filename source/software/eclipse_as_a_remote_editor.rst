@@ -86,7 +86,7 @@ One solution is to generate a new RSA 4096-bit key for use with Eclipse:
 will generate a key and store it in a format compatible with Eclipse.
 You can then upload your public key as an additional key to the 
 `VSC account page`_ using the instructions to add another key on the   
-:ref:`Access from multiple machines<access from multiple machines>` page. 
+:ref:`Access from multiple machines <access_multiple_computers>` page. 
 
 If you have a 4096-bit RSA private key in the wrong format, another option is to
 simply convert the private key to the PEM format.  Assuming your private key

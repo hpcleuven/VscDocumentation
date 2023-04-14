@@ -159,6 +159,8 @@ introduced it once.
    following sessions. Double clicking on a shortcuts for a cluster
    should open the corresponding connection directly.
 
+.. _troubleshoot_mobaxterm:
+
 Troubleshooting MobaXTerm connection issues
 -------------------------------------------
 

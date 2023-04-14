@@ -103,7 +103,7 @@ yet.
 .. note::
 
    You don't necessarily have to create separate job scripts for similar tasks
-   since it is possible to :ref:`parameterize job scripts <Parameterized job scripts>`.
+   since it is possible to :ref:`parameterize job scripts <parameterized_job_scripts>`.
 
 
 Job dependencies
@@ -213,6 +213,7 @@ In our running example, the exit status of each job would be that of the last
 command executed, so that of ``preprocess``, ``simulate`` and ``postprocess``
 respectively.
 
+.. _parameterized_job_scripts:
 
 Parameterized job scripts
 -------------------------

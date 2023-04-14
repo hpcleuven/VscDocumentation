@@ -173,14 +173,14 @@ straightforward.
 
 #. Change to the directory containing your project's working copy, e.g.,
 #. Update your working copy to the latest version, see 
-   :ref:`Updating the working copy` 
+   :ref:`svn_updating_working_copy` 
    below for a brief introduction to the topic.
 #. Edit the project's files to your heart's content, or add new files to
    the repository after you created them, e.g., 'utils.c' and 'utils.h'.
    Note that the new files will only be stored in the repository upon
    the next commit operation, see below.
 #. Examine your changes, this will be elaborated upon in 
-   :ref:`Examining status`.
+   :ref:`svn_status`.
 #. Commit your changes, i.e., all changes you made to the working copy
    are now transfered to the repository as a new revision.
 #. Repeat steps 2 to 5 until you are done.
@@ -270,6 +270,8 @@ directly supported by Subversion.
 Again, the change will only be propagated to the repository upon the
 next commit operation.
 
+.. _svn_status:
+
 Examining status
 ~~~~~~~~~~~~~~~~
 
@@ -293,6 +295,8 @@ character:
 
 When nothing has been modified since the last commit, this command shows
 no output.
+
+.. _svn_updating_working_copy:
 
 Updating the working copy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -382,10 +386,9 @@ Desktop access
 --------------
 
 It is also possible to access VSC subversion repositories from your
-desktop. See the pages in the :ref:`Windows
-client <Windows client>`, :ref:`macOS
-client <macOS client>` and :ref:`Linux
-client <Linux client>` sections.
+desktop. See the pages in the :ref:`Windows client <windows_client>`,
+:ref:`macOS client <macos_client>` and :ref:`Linux client <linux_client>`
+sections.
 
 Further information on Subversion
 ---------------------------------

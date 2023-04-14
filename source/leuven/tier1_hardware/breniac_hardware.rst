@@ -1,3 +1,5 @@
+.. _breniac hardware:
+
 Breniac infrastructure
 ======================
 

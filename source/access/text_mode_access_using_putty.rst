@@ -93,6 +93,8 @@ a compute node.
 
    creating_a_ssh_tunnel_using_putty
 
+.. _troubleshoot_putty:
+
 Troubleshooting PuTTY connection issues
 ---------------------------------------
 

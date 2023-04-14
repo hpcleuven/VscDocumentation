@@ -103,6 +103,8 @@ otherwise blocked by firewalls, you have to create an
 
    creating_a_ssh_tunnel_using_openssh
 
+.. _troubleshoot_openssh:
+
 Troubleshooting OpenSSH connection issues
 -----------------------------------------
 
@@ -114,9 +116,9 @@ If you get a ``Permission denied`` error message, one of the things to verify
 is that your private key is in the default location, i.e., the output of
 ``ls ~/.ssh`` should show a file named ``id_rsa_vsc``.
 
-The second thing to check is that your :ref:`private key is linked to your
-VSC-id <linking key with vsc-id linux>` in your :ref:`SSH configuration file <SSH
-config>` at ``~/.ssh/config``.
+The second thing to check is that your
+:ref:`private key is linked to your VSC-id <linking key with vsc-id linux>`
+in your :ref:`SSH configuration file <ssh_config>` at ``~/.ssh/config``.
 
 If your private key is not stored in ``~/.ssh/id_rsa_vsc``, you need to adapt
 the path to it in your ``~/.ssh/config`` file.

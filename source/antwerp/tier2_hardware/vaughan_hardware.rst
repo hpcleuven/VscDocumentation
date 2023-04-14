@@ -128,7 +128,7 @@ ampere_gpu     Submit to the NVIDIA Ampere GPU node.
 arcturus_gpu   Submit to the AMD Arcturus GPU nodes.
 ============   =========================================================
 
-See :ref:`GPU computing @ UAntwerp` for more information on using the GPU nodes.
+See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
 
 Compiling for Vaughan
 ---------------------

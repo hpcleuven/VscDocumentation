@@ -9,13 +9,13 @@ Managing user credentials
 -------------------------
 
 -  You use the VSC account page to request your account as explained on
-   the ":ref:`account request`" page. You'll also need to
+   the ":ref:`apply for account`" page. You'll also need to
    create an SSH-key which is also explained on those pages.
 -  Once your account is active and you can log on to your home cluster,
    you can use the account management pages for many other operations:
 
    -  If you want to :ref:`access the VSC clusters from more than one
-      computer <access from multiple machines>`,
+      computer <access_multiple_computers>`,
       it is good practice to use a different key for each computer. You
       can upload additional keys via the account management page. In
       that way, if your computer is stolen, all you need to do is remove

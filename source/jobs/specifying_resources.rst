@@ -105,7 +105,7 @@ If you don't use all cores of a node in your job, the scheduler
 - may decide to pack the tasks of several nodes in your resource request on
   a single node;
 - may run other jobs you have in the queue on the same node(s);
-- may, depending on the :ref:`job policies <Job policies>` of the cluster, run
+- may, depending on the :ref:`job policies <job_policies>` of the cluster, run
   jobs of other users on the same node.
  
 In the last scenario, if the cluster has a 'shared' policy, the scheduler can

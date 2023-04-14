@@ -1,3 +1,5 @@
+.. _wice hardware:
+
 wICE hardware
 ===============
 

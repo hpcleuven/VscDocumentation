@@ -104,7 +104,7 @@ Using the 'Job Options' button, you can add some more specifications to your job
 - Cluster: there is no need to change this, as you only can specify 'wice'.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
-- Job array: we do not recommend using this. If you would like to use job arrays, have a look :ref:`here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`.
+- Job array: we do not recommend using this. If you would like to use job arrays, have a look `here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`__.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
@@ -169,7 +169,7 @@ For R, you need both the ``jupyter_client`` and the ``irkernel`` package install
       
 Once the kernel is created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
 
-For more general information concerning JupyterLab, go to their :ref:`official documentation <https://docs.jupyter.org/en/latest/>`.
+For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`__.
 
 **Remarks:**
 
@@ -180,7 +180,7 @@ RStudio Server
 --------------
 
 This interactive app allows you to run an RStudio session on the cluster. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check 
-out the :ref:`official documentation <https://docs.rstudio.com/>`.
+out the `official documentation <https://docs.rstudio.com/>`__.
 
 The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though, to
 avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
@@ -224,7 +224,7 @@ to 'Python'. If you click that, a window will appear where you can select your P
 versions (/bin/python). You can also load other modules, or you can also use conda environments here (if you have any conda environments already, you should see
 them here as well).
 
-If you need more information about creating your customized Python environments, have a look :ref:`here <https://docs.vscentrum.be/en/latest/software/python_package_management.html>`. 
+If you need more information about creating your customized Python environments, have a look `here <https://docs.vscentrum.be/en/latest/software/python_package_management.html>`__.
 
 **Remarks:**
 

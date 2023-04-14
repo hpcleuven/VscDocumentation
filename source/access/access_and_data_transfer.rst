@@ -1,4 +1,4 @@
-.. _acccess_data_transfer:
+.. _access_data_transfer:
 
 ################################################
 :fas:`right-to-bracket` Login and Data Transfer
@@ -40,6 +40,7 @@ need to familiarise yourself with
    where_can_i_store_what_kind_of_data
    managing_disk_usage
 
+.. _data_transfer:
 
 Transferring data
 =================

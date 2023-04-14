@@ -33,9 +33,9 @@ Interactive use
    MATLAB on the cluster! Use batch processing of compiled MATLAB code
    instead.
 -  If there is an X Window System server installed on your PC (as is by
-   default the case under :ref:`Linux client`; you can use
-   XMing Server under :ref:`Windows client` or XQuartz
-   on :ref:`macOS/OS X <macOS client>`), the full graphical
+   default the case under :ref:`linux_client`; you can use
+   XMing Server under :ref:`windows_client` or XQuartz
+   on :ref:`macOS/OS X <macos_client>`), the full graphical
    MATLAB Desktop is available. If the speed is acceptable to you - much
    of the MATLAB user interface is coded in Java and Java programs are
    known to be slow over remote X connections - this is the recommended

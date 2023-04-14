@@ -76,7 +76,7 @@ You can use SSH to connect to the login nodes of the Tier-1 Hortense cluster wit
 * from the public internet, use ``tier1.hpc.ugent.be``
 * from within the VSC network, use ``tier1.gent.vsc``
 
-More general information about SSH login is available at :ref:`acccess_data_transfer`.
+More general information about SSH login is available at :ref:`access_data_transfer`.
 
 There are 2 login nodes for Hortense: ``login55`` and ``login56``.
 When logging in using SSH, you will be assigned to either of these login nodes,

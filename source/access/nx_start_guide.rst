@@ -54,8 +54,8 @@ you're working on Windows and using PuTTY.
    private key and press "ok".
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
-   Otherwise please refer to the :ref:`section on how to reconnec to an NX session
-   <Reconnecting to an NX session>` for instructions.
+   Otherwise please refer to the :ref:`section on how to reconnect to an NX session
+   <nx_reconnect>` for instructions.
 
 #. Read the useful information regarding your session displayed on several
    screens. This step is very important in case of mobile devices – once
@@ -64,6 +64,8 @@ you're working on Windows and using PuTTY.
    messages again.
 
 Once connected you will see the virtual Linux desktop.
+
+.. _nx_reconnect:
 
 Reconnecting to an NX session
 -----------------------------

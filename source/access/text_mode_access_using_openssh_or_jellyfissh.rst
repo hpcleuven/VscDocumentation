@@ -14,7 +14,7 @@ Using OpenSSH on macOS
 ----------------------
 
 You can use the same commands as specified in the
-:ref:`Linux client section <linux client>` to access the cluster and transfer
+:ref:`Linux client section <linux_client>` to access the cluster and transfer
 files:
 
 * :ref:`ssh-keygen <generating keys linux>` to generate the keys

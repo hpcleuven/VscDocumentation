@@ -147,7 +147,7 @@ By default, the output of your job is saved to two files.
 For instance, for the running example, the output file would be
 ``hello_world.pbs.o205814`` and contains
 
-.. code-block:: txt
+.. code-block:: text
    :linenos:
 
    ===== start of prologue =====

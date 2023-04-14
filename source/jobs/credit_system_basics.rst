@@ -5,8 +5,7 @@ Credit system basics
 
 VSC infrastructure hosted by KU Leuven uses a credit system, so if you want
 to use this infrastructure, you will need :ref:`access to a credit account
-<Credits to use KU Leuven infrastructure>`.
-
+<KU Leuven credits>`.
 
 Introduction
 ------------

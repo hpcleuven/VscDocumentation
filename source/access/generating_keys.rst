@@ -35,7 +35,7 @@ A key pair consists of a private and a public key.
      computer is stolen, it is then easy to disable access from that
      computer while you can still access your VSC account from all your
      other computers. The procedure is explained on a separate web
-     page ":ref:`access from multiple machines`".
+     page ":ref:`access_multiple_computers`".
 
 How to generate such a key pair depends on your operating system. We
 describe the generation of key pairs in the client sections below:
