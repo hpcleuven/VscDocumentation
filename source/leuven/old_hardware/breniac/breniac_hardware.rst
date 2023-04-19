@@ -1,9 +1,6 @@
 Breniac hardware
 ================
 
-**Breniac was the VSC's Tier-1 cluster hosted by KU Leuven, and it was decomissioned in December 2022.
-This page is obsolete, and we keep it only for the future reference.**
-
 .. include:: breniac_login_nodes.rst
 
 
