@@ -1,6 +1,9 @@
 Breniac login infrastructure
 ----------------------------
 
+**Breniac was the VSC's Tier-1 cluster hosted by KU Leuven, and it was decomissioned in December 2022.
+This page is obsolete, and we keep it only for the future reference.**
+
 Direct login using SSH is possible to all login infrastructure.
 
 .. note::
@@ -16,15 +19,6 @@ Two types of login nodes are available:
   - ``login2-tier1.hpc.kuleuven.be``
 
 - a login node that provides a desktop environment that can be used for,
-  e.g., visualization, see the :ref:`NX clients section <NX start guide>`:
-
-  - ``nx-tier1.hpc.kuleuven.be``
-
-    .. warning::
-
-       This node *should not* be accessed using terminal SSH, it serves only
-       as a gateway to the actual login nodes your NX sessions will be running
-       on.
-
-    The NX login node will start a session on a login node that has a GPU, i.e.,
-    ``login2-tier1.hpc.kuleuven.be``.
+  e.g., visualization. 
+  The NX login node will start a session on a login node that has a GPU, i.e.,
+  ``login2-tier1.hpc.kuleuven.be``.
