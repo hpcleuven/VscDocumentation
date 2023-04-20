@@ -1,7 +1,7 @@
 .. _books:
 
-Books
-=====
+Books about Parallel Computing
+==============================
 
 This is a very incomplete list, permanently under construction, of
 books about parallel computing.

@@ -11,6 +11,7 @@ Programming paradigms
    mpi_for_distributed_programming
    openmp_for_shared_memory_programming
    hybrid_mpi_openmp_programs
+   books_parallel
 
 
 Development tools
