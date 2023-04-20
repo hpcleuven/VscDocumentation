@@ -30,10 +30,12 @@ Software installed on the UAntwerp clusters
 - The :ref:`2020a toolchain family <Antwerp software 2020a>` is our base toolchain for Vaughan. 
   Software in older toolchains will not be made available on Vaughan unless experience shows a serious
   performance degradation when compiled in the newer toolchain.
-- :ref:`Overview of licensed software at UAntwerp <licensed software UAntwerp>` and instructions on how to
-  get access.
 - :ref:`Python on the UAntwerp clusters <Antwerp Python>`
 
+.. toctree::
+   :maxdepth: 1
+
+   licensed_software_on_the_uantwerp_clusters
 
 Instructions for the special node types
 ---------------------------------------
@@ -44,6 +46,6 @@ Instructions for the special node types
 - :ref:`Using the hopper nodes in leibniz <Hopper hardware>`
     
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    gpu_computing_uantwerp
