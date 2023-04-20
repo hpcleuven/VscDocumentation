@@ -25,13 +25,12 @@ as we are still refining the setup.
 Software installed on the UAntwerp clusters
 -------------------------------------------
 
-- :ref:`Python on the UAntwerp clusters <Antwerp Python>`
-
 .. toctree::
    :maxdepth: 1
 
    the_2017a_toolchains_on_the_uantwerp_clusters
    uantwerp_software_2020a
+   uantwerp_Python
    licensed_software_on_the_uantwerp_clusters
 
 Instructions for the special node types
