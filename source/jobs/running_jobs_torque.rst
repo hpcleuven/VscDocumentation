@@ -80,9 +80,8 @@ More information is available on:
 .. toctree::
    :maxdepth: 2
    
-    Job resources <specifying_resources>
-    Job names, output files and notifications <specifying_output_files_and_notifications>
-    Credit system <credit_system_basics>
+   Job resources <specifying_resources>
+   Job names, output files and notifications <specifying_output_files_and_notifications>
 
 .. seealso::
 
@@ -127,9 +126,10 @@ given below.
 More information is available on
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    
    Submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
+   Credit system <credit_system_basics>
 
 
 Job output
