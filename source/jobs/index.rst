@@ -22,10 +22,7 @@ most computations are performed in batch mode. The workflow in batch mode is str
 The following sections cover all aspects related to the preparation, execution
 and monitoring of your jobs in the HPC.
 
-.. toctree::
-   :maxdepth: 2
-
-   running_jobs
+--------
 
 :fas:`server` VSC clusters using the :ref:`Slurm job scheduler <running jobs>`
 
@@ -34,11 +31,20 @@ and monitoring of your jobs in the HPC.
 .. toctree::
    :maxdepth: 2
 
-   running_jobs_torque
+   running_jobs
+
+--------
 
 :fas:`server` VSC clusters using the :ref:`Torque job scheduler <running jobs torque>`
 
 .. include:: clusters_torque.rst
+
+.. toctree::
+   :maxdepth: 2
+
+   running_jobs_torque
+
+--------
 
 .. toctree::
    :maxdepth: 3

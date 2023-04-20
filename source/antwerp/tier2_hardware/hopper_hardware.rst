@@ -91,8 +91,8 @@ Make sure to read the following pages which give a lot of information on Slurm
 and how to convert your Torque scripts:
 
 * :ref:`running jobs`
-* :ref:`Important differences between Slurm and Torque<Antwerp Slurm_PBS_differences>`
-* :ref:`Converting PBS/Torque options to Slurm <Antwerp Slurm_convert_from_PBS>`
+* :ref:`Important differences between Slurm and Torque<Slurm_PBS_differences>`
+* :ref:`Converting PBS/Torque options to Slurm <Slurm_convert_from_PBS>`
 
 Since Hopper is a homogeneous system with respect to CPU type, memory and
 interconnect, it is not needed to specify any features.

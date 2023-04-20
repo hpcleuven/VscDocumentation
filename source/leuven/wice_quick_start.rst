@@ -17,7 +17,7 @@ There are several type of nodes in the wICE cluster: normal compute nodes, GPU n
 
 The maximum walltime for any job on wICE regular nodes is 7 days (168 hours). Job requests with walltimes between 3 and 7 days are not allowed to run on big memory, interactive, GPU nodes.
 
-wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Antwerp Slurm_convert_from_PBS>`
+wICE cluster uses different workload manager than Genius: Slurm instead of Torque+Moab. More information about converting pbs scripts and commands into Slurm can be found :ref:`here <Slurm_convert_from_PBS>`
 
 .. _submit to wice compute node:
 

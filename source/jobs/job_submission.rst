@@ -258,7 +258,7 @@ The Slurm controller also sets several SLURM_* variables in the environment of t
 Some of these variables are only available if the corresponding option has been explicitly set,
 while other variables are always set (with default values filled in, if appropriate).
 Several of these variables are mentioned on our
-:ref:`PBS-to-Slurm conversion tables <Antwerp Slurm_convert_from_PBS>` page.
+:ref:`PBS-to-Slurm conversion tables <Slurm_convert_from_PBS>` page.
 A full list of all SLURM_* environments can be found in the
 `sbatch manual page`_ (in the section on "OUTPUT ENVIRONMENT VARIABLES").
 

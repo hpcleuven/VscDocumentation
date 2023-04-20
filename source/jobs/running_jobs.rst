@@ -87,4 +87,5 @@ spin-off company of the Slurm development.
    job_management
    job_types
    job_advanced
+   slurm_pbs_comparison
 

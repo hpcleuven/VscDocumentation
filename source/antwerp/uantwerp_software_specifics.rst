@@ -17,9 +17,9 @@ as we are still refining the setup.
       some more advanced commands and additional ways to request resources. Check those
       if you feel the basic information is not enough.
 - You can also have a look at our 
-  :ref:`quick PBS-to-Slurm conversion tables <Antwerp Slurm_convert_from_PBS>` which will
+  :ref:`quick PBS-to-Slurm conversion tables <Slurm_convert_from_PBS>` which will
   help you convert your PBS job scripts to Slurm.
-- :ref:`A list of important differences between Torque and Slurm <Antwerp Slurm_PBS_differences>`
+- :ref:`A list of important differences between Torque and Slurm <Slurm_PBS_differences>`
 
 
 Software installed on the UAntwerp clusters
