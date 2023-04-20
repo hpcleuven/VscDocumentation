@@ -17,6 +17,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
    :hidden:
 
    about_vsc
+   contact_vsc
    access/index
    compute
    cloud
