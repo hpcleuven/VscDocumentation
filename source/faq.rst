@@ -14,7 +14,7 @@ General questions
 
    How can I contact user support? <user_support>
    how_do_i_acknowledge_the_vsc_in_publications
-   what_are_standard_terms_used_in_hpc.rst
+   what_are_standard_terms_used_in_hpc
 
 
 .. _access faqs:
@@ -28,7 +28,7 @@ Access to the infrastructure
    I messed up my authentication keys, what can I do? <access/messed_up_keys>
    How can I access from multiple computers? <access/access_from_multiple_machines>
    access/where_can_i_store_what_kind_of_data
-   access/managing_disk_usage.rst
+   access/managing_disk_usage
 
 
 .. _job faqs:
@@ -53,5 +53,14 @@ Software
 .. toctree::
    :maxdepth: 2
 
-   software/parallel_software.rst
-   software/singularity.rst
+   software/parallel_software
+   software/singularity
+
+
+Trainings and additional resources
+----------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   interesting_links
