@@ -46,11 +46,12 @@ and monitoring of your jobs in the HPC.
 
 --------
 
+Linux System
+============
+
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    basic_linux_usage
    how_to_get_started_with_shell_scripts
-   ../software/software_stack
-   ../software/software_development
 

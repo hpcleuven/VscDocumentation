@@ -1,7 +1,6 @@
 Software development
 ====================
 
-
 Programming paradigms
 ---------------------
 
@@ -12,7 +11,6 @@ Programming paradigms
    openmp_for_shared_memory_programming
    hybrid_mpi_openmp_programs
    books_parallel
-
 
 Development tools
 -----------------
@@ -25,9 +23,9 @@ Development tools
    foss_toolchain
    intel_trace_analyzer_collector
    eclipse
+   ms_visual_studio
    parameterweaver
    version_control_systems
-
 
 Libraries
 ---------
@@ -40,11 +38,3 @@ Libraries
    python_package_management
    r_package_management
 
-
-Integrating code with software packages
----------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   r_integrating_c_functions

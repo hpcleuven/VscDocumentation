@@ -32,7 +32,6 @@ An excellent introduction to the various types of version control
 systems can be found in `the book Pro GIT by Scott Chacon and Ben
 Straub <https://git-scm.com/book/en/v2>`__.
 
-
 Centralised systems
 ~~~~~~~~~~~~~~~~~~~
 
@@ -42,32 +41,39 @@ may not share a common file system. The version files are now maintained
 by a server to which multiple clients can connect and check out files,
 and the systems help to manage concurrent changes to a file by several
 users (through a copy-modify-merge procedure). Popular examples of this
-type are `CVS (Concurrent Versions System) <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`_ and SVN (Subversion). Of those
-two, SVN is the more recent system while CVS is no longer further
-developed and less and less used.
+type are `CVS (Concurrent Versions System) 
+<https://en.wikipedia.org/wiki/Concurrent_Versions_System>`_ and :ref:`SVN
+(Subversion) <Subversion>`. Of those two, SVN is the more recent system while
+CVS is no longer further developed and less and less used.
 
-Links:
+Command-line clients are included in most Linux distributions and macOS and
+Windows (WSL). The command line client is also available on the VSC
+clusters.
 
--  `SVN Wikipedia
-   page <https://en.wikipedia.org/wiki/Apache_Subversion>`__
--  SVN implementations
+.. toctree::
+   :maxdepth: 2
 
-   -  Command-line clients are included in most Linux distributions and
-      macOS and Windows (WSL).
-      The command line client is also available on the VSC
-      clusters.
-   -  :ref:`TortoiseSVN <TortoiseSVN>` (or `go
-      straight to the TortoiseSVN web
-      site <https://tortoisesvn.net/>`__) is a popular Windows
-      native GUI client that integrates well with the explorer. However,
-      if you google on \\" SVN GUI\" you'll find a plethora of other
-      choices, not only for Windows but also for macOS and Linux.
-   -  SVN can be integrated with the Eclipse IDE through the \\"Subversive
-      SVN team provider\" plugin which can be installed through the
-      \\"Install New Software\" panel in the help menu. More information
-      and instructions are available on the `Subversive subsite of the
-      main Eclipse web
-      site <http://www.eclipse.org/subversive/>`__.
+   subversion
+
+`TortoiseSVN <https://tortoisesvn.net/>`__ is a popular Windows
+native GUI client that integrates well with the explorer. However,
+if you google on *SVN GUI* you'll find a plethora of other
+choices, not only for Windows but also for macOS and Linux.
+
+.. toctree::
+   :maxdepth: 2
+
+   tortoisesvn
+
+SVN can be integrated with the Eclipse IDE through the *Subversive
+SVN team provider* plugin which can be installed through the
+*Install New Software* panel in the help menu. More information
+and instructions are available on the `Subversive subsite of the
+main Eclipse web site <http://www.eclipse.org/subversive/>`__.
+
+External links:
+
+- `SVN Wikipedia page <https://en.wikipedia.org/wiki/Apache_Subversion>`__
 
 Distributed systems
 ~~~~~~~~~~~~~~~~~~~
@@ -85,38 +91,42 @@ commit, so that the local repositories of various users on a project can
 be very much out-of-sync with each other, making the job harder when
 those versions have to be merged again.
 
-Popular examples of systems of this type are Git (originally developed
+Popular examples of systems of this type are :ref:`Git` (originally developed
 to manage the Linux kernel project) and `Mercurial <https://www.mercurial-scm.org>`_
 (sometimes abbreviated as Hg, chemists will understand why).
 
-Links:
+The command-line tool for Git is available on the VSC clusters.
 
--  `Git on
-   Wikipedia <https://en.wikipedia.org/wiki/Git_(software)>`__
--  `Main Git web page <https://git-scm.com/>`__
--  Git implementations
+.. toctree::
+   :maxdepth: 2
 
-   -  If you have a Linux system, Git is most likely already installed
-      on your system. On macOS, git is available through Xcode, though it
-      is not always the most recent version. On Windows, you can use WSL.
-      Downloads for all
-      systems are also available on `the download section of the main
-      git web site <https://git-scm.com/download>`__. That page
-      also contains links to a number of GUI options. Most if not all
-      GUI tools store projects in a way that is fully compatible with
-      the command line tools, so you can use both simultaneously. The
-      command line client is also available on the VSC clusters.
-   -  Another nice GUI application is
-      `SourceTree <https://www.atlassian.com/software/sourcetree>`__
-      produced by `Atlassian <https://www.atlassian.com/>`__.
-      Atlassian is the company behind the Bitbucket cloud service, but
-      their tool also works well with GitHub, one of their main
-      competitors. It has a very nice way of representing the history of
-      a local repository.
-   -  The Eclipse IDE comes with built-in support for Git through the
-      standard plug-in EGit. More recent versions of this plugin may be
-      available through the `Eclipse
-      Marketplace <https://marketplace.eclipse.org/>`__.
+   git
+
+If you have a Linux system, Git is most likely already installed on your
+system. On macOS, git is available through Xcode, though it is not always the
+most recent version. On Windows, you can use WSL. Downloads for all systems are
+also available on `the download section of the main git web site
+<https://git-scm.com/download>`__. That page also contains links to a number of
+GUI options. Most if not all GUI tools store projects in a way that is fully
+compatible with the command line tools, so you can use both simultaneously. The
+command line client is also available on the VSC clusters.
+
+Another nice GUI application is
+`SourceTree <https://www.atlassian.com/software/sourcetree>`__
+produced by `Atlassian <https://www.atlassian.com/>`__.
+Atlassian is the company behind the Bitbucket cloud service, but their tool
+also works well with GitHub, one of their main competitors. It has a very nice
+way of representing the history of a local repository.
+
+The Eclipse IDE comes with built-in support for Git through the standard
+plug-in EGit. More recent versions of this plugin may be available through the
+`Eclipse Marketplace <https://marketplace.eclipse.org/>`__.
+
+External links:
+
+- `Git on Wikipedia <https://en.wikipedia.org/wiki/Git_(software)>`__
+
+- `Main Git web page <https://git-scm.com/>`__
 
 Cloud services
 --------------
@@ -127,17 +137,19 @@ Several offer free public hosting for Open Source projects or have free
 access for academic accounts. Some noteworthy ones that are popular for
 academic projects are:
 
--  `GitHub (github.com) <https://github.com/>`__ offers free Git
-   and Subversion hosting for Open Source projects. We use this service
-   for some VSC in-house tools development. It is also possible to host
-   private projects if you subscribe to one of their paying plans or 
-   register as an academic usser.
--  `GitLab (gitlab.com) <https://gitlab.com/>`__ also offers free public
-   and private repositories.
--  `SourceForge <https://sourceforge.net/>`__ is a very well
-   known service for hosting Open Source projects. It currently supports
-   projects managed through Subversion, Git, Mercurial and a few other
-   systems.
+- `GitHub (github.com) <https://github.com/>`__ offers free :ref:`git`
+  and Subversion hosting for Open Source projects. We use this service
+  for some VSC in-house tools development. It is also possible to host
+  private projects if you subscribe to one of their paying plans or 
+  register as an academic usser.
+
+- `GitLab (gitlab.com) <https://gitlab.com/>`__ also offers free public
+  and private repositories.
+
+- `SourceForge <https://sourceforge.net/>`__ is a very well
+  known service for hosting Open Source projects. It currently supports
+  projects managed through Subversion, Git, Mercurial and a few other
+  systems.
 
 However, we urge you to always carefully check the terms-of-use of these
 services to assure that, e.g., the way they deal with intellectual
@@ -150,24 +162,29 @@ Which one should I use?
 It is not up to us to make this choice for you, but here are a number of
 elements that you should take into account:
 
--  Use a cloud service if you can, since this ensures that your code
-   is safely stored off-site.  However, verify this is in line with
-   the intellectual property policies of your institute.
--  Subversion, Git and Mercurial are all recent systems that are well
-   maintained and supported by several hosting services.  Git currently
-   seems the most popular choice and the VSC provides training sessions
-   on Git.
--  Subversion and Git are installed on most VSC systems. We use Git
-   ourselves for some of our in-house development.
--  Centralised version management systems have a simpler concept than
-   the distributed ones, but if you expect prolonged periods that you
-   are offline, you have to keep in mind that you cannot make any
-   commits during that period.
--  As you have only a single copy of the repository in a centralised
-   system, a reliable hosting service or a good backup strategy is
-   important. In a distributed system it would still be possible to
-   reconstruct the contents of a repository from the other repositories.
--  If you want to use an IDE, it is good to check which systems are
-   supported by the IDE. E.g., Eclipse supports Git out-of-the-box, and
-   Subversion and Mercurial through a plug-in. Visual Studio also
-   supports all three of these systems.
+- Use a cloud service if you can, since this ensures that your code
+  is safely stored off-site.  However, verify this is in line with
+  the intellectual property policies of your institute.
+
+- Subversion, Git and Mercurial are all recent systems that are well
+  maintained and supported by several hosting services.  Git currently
+  seems the most popular choice and the VSC provides training sessions
+  on Git.
+
+- Subversion and Git are installed on most VSC systems. We use Git
+  ourselves for some of our in-house development.
+- Centralised version management systems have a simpler concept than
+  the distributed ones, but if you expect prolonged periods that you
+  are offline, you have to keep in mind that you cannot make any
+  commits during that period.
+
+- As you have only a single copy of the repository in a centralised
+  system, a reliable hosting service or a good backup strategy is
+  important. In a distributed system it would still be possible to
+  reconstruct the contents of a repository from the other repositories.
+
+- If you want to use an IDE, it is good to check which systems are
+  supported by the IDE. E.g., Eclipse supports Git out-of-the-box, and
+  Subversion and Mercurial through a plug-in. Visual Studio also
+  supports all three of these systems.
+
