@@ -82,6 +82,7 @@ More information is available on:
    
    Job resources <specifying_resources>
    Job names, output files and notifications <specifying_output_files_and_notifications>
+   Starting programs <starting_programs_in_a_job>
 
 .. seealso::
 
