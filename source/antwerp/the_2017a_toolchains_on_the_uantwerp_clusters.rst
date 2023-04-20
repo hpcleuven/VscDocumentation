@@ -53,7 +53,9 @@ There are currently three major toolchains on the UAntwerp clusters:
    matching versions of the GNU compilers, and all software compiled
    with them.
 
-   -  :ref:`Modules in the intel/2017a toolchain <Antwerp 2017a intel>`
+   .. toctree::
+
+      uantwerp_intel_toolchains
 
 -  The FOSS toolchain, built out of open-source components. It is mostly
    used for programs that don't install with the Intel compilers, or by
@@ -63,14 +65,16 @@ There are currently three major toolchains on the UAntwerp clusters:
    GCCcore, and some programs are installed in these subtoolchains
    because they don't use the additional components that FOSS offers.
 
-   -  :ref:`Modules in the foss/2017a toolchain and its
-      subtoolchains <Antwerp 2017a foss>`
+   .. toctree::
+
+      the_foss_2017a_toolchain_and_its_subtoolchains_on_the_uantwerp_clusters
 
 -  The system toolchain (centos7), containing programs that only
    use system libraries or other tools from this toolchain.
 
-   -  :ref:`Modules in the system toolchain for CentOS
-      7 <Antwerp system toolchain CentOS 7>`
+   .. toctree::
+
+      the_system_toolchain_on_the_uantwerp_clusters_for_centos_7
 
 The tables below list the last available module for a given software
 package and the corresponding version in the 2017a toolchain. Older

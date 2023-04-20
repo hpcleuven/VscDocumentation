@@ -25,16 +25,13 @@ as we are still refining the setup.
 Software installed on the UAntwerp clusters
 -------------------------------------------
 
-- The :ref:`Intel toolchain <Antwerp 2017a intel>` is set up in slightly different
-  way from other VSC sites since the 2017a version.
-- The :ref:`2020a toolchain family <Antwerp software 2020a>` is our base toolchain for Vaughan. 
-  Software in older toolchains will not be made available on Vaughan unless experience shows a serious
-  performance degradation when compiled in the newer toolchain.
 - :ref:`Python on the UAntwerp clusters <Antwerp Python>`
 
 .. toctree::
    :maxdepth: 1
 
+   the_2017a_toolchains_on_the_uantwerp_clusters
+   uantwerp_software_2020a
    licensed_software_on_the_uantwerp_clusters
 
 Instructions for the special node types
