@@ -21,7 +21,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
    access/index
    compute
    cloud
-   data
+   data/index
    faq
 
 .. grid:: 3
@@ -59,7 +59,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 
     .. grid-item-card:: :fas:`database` Data
         :columns: 12 4 4 4
-        :link: data
+        :link: data/index
         :link-type: doc
         :class-card: border-info
         :class-title: h3 text-info 
