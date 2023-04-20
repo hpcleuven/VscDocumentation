@@ -57,10 +57,12 @@ Software
    software/singularity
 
 
-Trainings and additional resources
+Tutorials and additional resources
 ----------------------------------
 
 .. toctree::
    :maxdepth: 2
 
+   vsc_tutorials
+   web_tutorials
    interesting_links
