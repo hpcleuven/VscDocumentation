@@ -18,8 +18,8 @@ browsers.
 
       On the UAntwerp clusters, TurboVNC is supported on all regular login
       nodes (without OpenGL support) and on the visualization node of Leibniz
-      (with OpenGL support through VirtualGL). See the page ":ref:`Remote
-      visualization UAntwerp`" for instructions.
+      (with OpenGL support through VirtualGL).
+      See the page :ref:`Remote visualization UAntwerp` for instructions.
 
    .. tab-item:: VUB
 

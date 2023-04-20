@@ -322,17 +322,11 @@ Running X11 programs
 
 You can also use ``srun`` to start an interactive session with X11 support. However, before
 starting a session you should ensure that you can start X11 programs from the session from
-you will be starting ``sriun``. So either
+you will be starting ``srun``. Check the corresponding guide for your operating system:
 
-1. ensure you are running an X11 server on the machine from which you log on to the cluster
-   and then log on using ``ssh -X`` to forward X11 traffic from the cluster to your
-   local machine,
-
-2. or use a VNC session on the cluster. VNC without 3D acceleration is supported on all
-   login nodes of the UAntwerp infrastructure and 3D acceleration is supported on the
-   visualisation node. Follow the instructions on the
-   :ref:`Remote visualisation@UAntwerp<remote visualization UAntwerp>` page to start
-   a VNC session.
+- :ref:`Windows <Windows gui>`
+- :ref:`Linux <Linux gui>`
+- :ref:`macOS <macOS gui>`
 
 X11 programs rarely use distributed memory parallelism, so in most case you will be requesting
 just a single task. To add support for X11, use the ``--x11`` option before ``--pty``:

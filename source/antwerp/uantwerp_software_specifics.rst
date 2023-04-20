@@ -40,12 +40,11 @@ Software installed on the UAntwerp clusters
 Instructions for the special node types
 ---------------------------------------
 
-- :ref:`Using remote visualisation <remote visualization UAntwerp>`. VNC-based remote visualisation is
-  fully supported on the visualisation node and partly supported on the regular login nodes.
 - :ref:`Vector computing on the NEC SX Aurora TSUBASA node <UAntwerp NEC SX Aurora>`
 - :ref:`Using the hopper nodes in leibniz <Hopper hardware>`
     
 .. toctree::
    :maxdepth: 1
 
+   remote_visualization_uantwerp
    gpu_computing_uantwerp
