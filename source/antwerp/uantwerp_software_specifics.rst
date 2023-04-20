@@ -40,7 +40,10 @@ Instructions for the special node types
 
 - :ref:`Using remote visualisation <remote visualization UAntwerp>`. VNC-based remote visualisation is
   fully supported on the visualisation node and partly supported on the regular login nodes.
-- :ref:`Working on the GPU nodes <GPU computing UAntwerp>`
 - :ref:`Vector computing on the NEC SX Aurora TSUBASA node <UAntwerp NEC SX Aurora>`
 - :ref:`Using the hopper nodes in leibniz <Hopper hardware>`
     
+.. toctree::
+   :maxdepth: 2
+
+   gpu_computing_uantwerp

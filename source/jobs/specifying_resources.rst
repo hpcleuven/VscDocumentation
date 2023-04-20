@@ -290,17 +290,7 @@ is equivalent with the line::
 The same holds when using ``-l`` on the command line for ``qsub``.
 
 
-.. _gpus:
+.. _gpus_torque:
 
-Requesting GPUs
----------------
-
-It is possible to request one or more GPUs for your job on some of the
-VSC clusters that provide them. For cluster-specific usage instructions, please
-consult the respective documentation sources:
-
-- KU Leuven/UHasselt Genius: :ref:`Submit to a GPU node <submit to genius GPU node>`
-- UAntwerp Leibniz: :ref:`GPU computing @ UAntwerp <GPU computing UAntwerp>`
-- VUB Hydra: `How to use GPUs in Hydra <https://hpc.vub.be/docs/faq/basic/#how-can-i-use-gpus-in-my-jobs>`_
-
+.. include:: gpus.rst
 

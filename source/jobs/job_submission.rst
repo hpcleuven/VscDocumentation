@@ -69,6 +69,10 @@ environment of the running job.
 
 If not set, the default values of 1 task and 1 CPU are used.
 
+.. _gpus:
+
+.. include:: gpus.rst
+
 Requesting memory
 -----------------
 
