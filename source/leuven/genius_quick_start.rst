@@ -160,8 +160,8 @@ A few restrictions apply to a debug job:
 
 To run a debug job for 20 minutes on two CPU nodes, you would use::
 
-   $ sbatch -A lp_my_project -M genius -N 2 --ntasks-per-node=36 -p debug -t 20:00 myjobscript.slurm
+   $ sbatch -A lp_my_project -M genius -N 2 --ntasks-per-node=36 -p batch_debug -t 20:00 myjobscript.slurm
 
 To run a debug job for 15 minutes on a GPU node, you would use::
 
-   $ sbatch -A lp_my_project -M genius -N 1 -n 9 --gpus-per-node=1 -p batch_debug -t 15:00 myjobscript.slurm
+   $ sbatch -A lp_my_project -M genius -N 1 -n 9 --gpus-per-node=1 -p gpu_p100_debug -t 15:00 myjobscript.slurm
