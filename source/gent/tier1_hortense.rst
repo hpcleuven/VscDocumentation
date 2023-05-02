@@ -512,7 +512,10 @@ performance benefit.
 To ensure that the paths which are 'engraved' in your own software installations always start with ``/readonly/``,
 for example in scripts or binaries that make part of the installation,
 you should install the software using the ``dodrio-bind-readonly`` utility. This allows you to "rename" the path to your
-project scratch directory so it starts with ``/readonly/``, while preserving write access to it.
+project scratch directory so it starts with ``/readonly/``, while preserving sort-of write access to it (
+``dodrio-bind-readonly`` actually provides an environment
+where the ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` part is mapped to the real and writable
+``$VSC_SCRATCH_PROJECTS_BASE/...`` path).
 
 Assuming that the procedure to install the software is implemented in a script named ``install.sh``,
 you can use ``dodrio-bind-readonly`` as follows:
@@ -526,7 +529,7 @@ The ``install.sh`` script should be implemented such that it installs the softwa
 with ``/readonly/``.
 
 Or you can start a new shell session in which ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` is
-accessible with write permissions:
+accessible with sort-of write permissions:
 
 .. code::
 
