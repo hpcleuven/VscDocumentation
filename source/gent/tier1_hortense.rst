@@ -12,19 +12,20 @@ General information
 **Hortense** is the 3rd VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016)
 and *BrENIAC* (hosted by HPC-Leuven, 2016-2022).
 
-The first phase of Hortense is also named ``dodrio``.
+The Hortense cluster also has an internal name ``dodrio``.
 
 It is available since 2021, is hosted by Ghent University,
 and maintained and supported by the HPC-UGent team.
+In 2023, a second phase was added more than doubling the capacity of the system.
 
 
 Hardware details
 ----------------
 
-Hortense currently consists of 3+1 partitions:
+Hortense currently consists of following partitions:
 
 - ``dodrio/cpu_rome``: main partition:
-   - 294 workernodes, each with:
+   - 342 workernodes, each with:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
@@ -33,20 +34,32 @@ Hortense currently consists of 3+1 partitions:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 512 GiB RAM (~4GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100``: GPU partition:
+- ``dodrio/cpu_milan``: phase2 main partition:
+   - 384 workernodes, each with:
+       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz (128 cores per node)
+       - 256 GiB RAM (~2GB/core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/gpu_rome_a100_40``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
        - 256 GiB RAM (~5GB/CPU core), no swap
        - 480 GB SSD local disk
+- ``dodrio/gpu_rome_a100_80``: phase2 GPU partition:
+   - 20 workernodes, each with:
+       - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
+       - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
+       - 512 GiB RAM (~10GB/CPU core), no swap
+       - 480 GB SSD local disk
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
+- ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
 Shared infrastructure:
 
-- *storage*: 3 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
+- *storage*: 6 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
 - *interconnect*: InfiniBand HDR-100 (~12.5GB/sec), 2:1 fat tree topology
 
-  - for the GPU partition specifically: dual HDR-100 Infiniband
+  - for the GPU partition specifically: dual HDR Infiniband
 
 .. note:: A high-level overview of the cluster can be obtained by running the ``pbsmon`` command.
 
@@ -209,7 +222,7 @@ The Resource Application web app https://resapp.hpc.ugent.be allows you to consu
 
 Please note that this app is still in ‘beta’.
 (For instance, storage usage is not yet done, so this will show up 0 everywhere.)
-In an upcoming development cycle, we will improve shortcomings and correct bugs. 
+In an upcoming development cycle, we will improve shortcomings and correct bugs.
 Do not hesitate to give your feedback on using the Resource Application via compute@vscentrum.be
 
 Practical usage:
@@ -468,7 +481,7 @@ By default you'll get 12 cores per requested GPU (an explicit ppn= statement is 
 
     module swap cluster/dodrio/gpu_rome_a100
     qsub -l nodes=1:gpus=1
-    
+
 (The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
 
 
@@ -620,3 +633,26 @@ Getting help
 
 For questions and problems related to Tier-1 Hortense, please contact the central
 support address for Tier-1 compute: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
+
+
+Phase 2
+-------
+
+In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
+20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition and
+384 nodes using the newer AMD Milan CPUs called ``cpu_milan``.
+
+The Lustre based scratch storage was also doubled in volume and throughput to a total of 6PB.
+
+With the new GPU nodes, a renaming of the gpu node partitions occured. Users can mosyt likely still
+still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
+``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when running multinode GPU jobs
+or explicitly requiring the larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
+
+During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
+and MLNX OFED 5.8. This change should be transparent to the users.
+
+In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
+and overal functioning with the ``cpu_rome`` partitions.
+In a later stage, projects will be given access to either the ``cpu_rome`` partitions
+or the ``cpu_milan`` partition.
