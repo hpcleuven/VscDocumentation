@@ -16,15 +16,16 @@ The Hortense cluster also has an internal name ``dodrio``.
 
 It is available since 2021, is hosted by Ghent University,
 and maintained and supported by the HPC-UGent team.
-In 2023, a second phase was added more than doubling the capacity of the system.
+
+In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
 
 Hardware details
 ----------------
 
-Hortense currently consists of following partitions:
+Hortense consists of the following partitions:
 
-- ``dodrio/cpu_rome``: main partition:
+- ``dodrio/cpu_rome``: phase 1 main partition:
    - 342 workernodes, each with:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
@@ -34,7 +35,7 @@ Hortense currently consists of following partitions:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 512 GiB RAM (~4GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/cpu_milan``: phase2 main partition:
+- ``dodrio/cpu_milan``: phase 2 main partition:
    - 384 workernodes, each with:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz (128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
@@ -45,7 +46,7 @@ Hortense currently consists of following partitions:
        - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
        - 256 GiB RAM (~5GB/CPU core), no swap
        - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100_80``: phase2 GPU partition:
+- ``dodrio/gpu_rome_a100_80``: phase 2 GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
@@ -525,8 +526,8 @@ performance benefit.
 To ensure that the paths which are 'engraved' in your own software installations always start with ``/readonly/``,
 for example in scripts or binaries that make part of the installation,
 you should install the software using the ``dodrio-bind-readonly`` utility. This allows you to "rename" the path to your
-project scratch directory so it starts with ``/readonly/``, while preserving sort-of write access to it (
-``dodrio-bind-readonly`` actually provides an environment
+project scratch directory so it starts with ``/readonly/``, while preserving sort-of write access to it
+(``dodrio-bind-readonly`` actually provides an environment
 where the ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` part is mapped to the real and writable
 ``$VSC_SCRATCH_PROJECTS_BASE/...`` path).
 
@@ -642,17 +643,28 @@ In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome
 20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition and
 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``.
 
-The Lustre based scratch storage was also doubled in volume and throughput to a total of 6PB.
+The Lustre based scratch storage was also also doubled in volume to a total of 6PB
+while increasing the overal throughput as well.
 
 With the new GPU nodes, a renaming of the gpu node partitions occured. Users can mosyt likely still
 still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
 ``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when running multinode GPU jobs
 or explicitly requiring the larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
 
-During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
-and MLNX OFED 5.8. This change should be transparent to the users.
-
 In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
 and overal functioning with the ``cpu_rome`` partitions.
 In a later stage, projects will be given access to either the ``cpu_rome`` partitions
 or the ``cpu_milan`` partition.
+
+With both phases active, the cluster crossed the symbolic threshold of 100000 cores.
+However, at the moment there is no partition defined that can be used to use all cores.
+If users can provide a proper case and motivation, you can contact support to request such partition
+to give you access to all the available resources.
+
+
+Recent updates
+--------------
+
+During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
+and MLNX OFED 5.8. This change should be transparent to the users.
+
