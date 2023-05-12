@@ -77,12 +77,23 @@ Alternative solutions do also exist that might be more performant or cover more 
    The following options might not be equally supported across all VSC
    clusters.
 
-.. toctree::
-   :maxdepth: 1
+.. tab-set::
 
-   nx_start_guide
-   paraview_remote_visualization
-   turbovnc_start_guide
+   .. tab-item:: General
+
+      .. toctree::
+         :maxdepth: 1
+      
+         paraview_remote_visualization
+         turbovnc_start_guide
+
+   .. tab-item:: KU Leuven/UHasselt
+
+      .. toctree::
+         :maxdepth: 1
+      
+         nx_start_guide
+         ../leuven/services/openondemand
 
 VPN
 ===
