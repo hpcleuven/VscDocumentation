@@ -1,5 +1,6 @@
-Quickstart guide for using MFA on the KU Leuven cluster
-=======================================================
+Quickstart guide for using MFA on KU Leuven clusters
+====================================================
+
 General
 -------
 Multi factor authentication (MFA) has been activated for all users that try to log in to the KU Leuven cluster. This guide will take you
