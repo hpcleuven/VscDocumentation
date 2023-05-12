@@ -130,7 +130,7 @@ More information is available on
    :maxdepth: 2
    
    Submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
-   Credit system <credit_system_basics>
+   credits
 
 
 Job output
