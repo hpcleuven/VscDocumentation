@@ -134,6 +134,7 @@ procedure does not work.
    :hidden:
 
    scientific_domains
+   ../leuven/lecturer_s_procedure_to_request_student_accounts_ku_leuven_uhasselt
 
 Next steps
 ----------
