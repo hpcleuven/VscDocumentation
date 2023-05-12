@@ -83,3 +83,4 @@ institution and VSC account number.
 .. |Breniac hardware| image:: breniac_hardware/breniac.png
   :width: 800
   :alt: Breniac hardware diagram
+
