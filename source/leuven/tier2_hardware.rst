@@ -8,4 +8,4 @@ KU Leuven/UHasselt Tier-2 Infrastructure
    tier2_genius
    tier2_wice
    tier2_superdome
-   tier2_hardware/kuleuven_storage
+   tier2_storage
