@@ -5,7 +5,7 @@ Basic Linux usage
 
 All the VSC clusters run the Linux operating system:
 
--  KU Leuven: Red Hat Enterprise Linux ComputeNode release 6.5
+-  KU Leuven: Rocky Linux release 8.x (wICE) and CentOS 7.x (Genius)
    (Santiago), 64 bit
 -  UAntwerpen: CentOS 7.x
 -  UGent: CentOS 7.x
