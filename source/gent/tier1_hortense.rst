@@ -27,7 +27,7 @@ Hortense consists of the following partitions:
 
 - ``dodrio/cpu_rome``: phase 1 main partition:
    - 342 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
 - ``dodrio/cpu_rome_512``: large-memory partition:
@@ -37,7 +37,7 @@ Hortense consists of the following partitions:
        - 480 GB SSD local disk
 - ``dodrio/cpu_milan``: phase 2 main partition:
    - 384 workernodes, each with:
-       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz (128 cores per node)
+       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
 - ``dodrio/gpu_rome_a100_40``: GPU partition:
@@ -57,7 +57,7 @@ Hortense consists of the following partitions:
 
 Shared infrastructure:
 
-- *storage*: 6 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
+- *storage*: 5.4 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
 - *interconnect*: InfiniBand HDR-100 (~12.5GB/sec), 2:1 fat tree topology
 
   - for the GPU partition specifically: dual HDR Infiniband
@@ -543,7 +543,7 @@ The ``install.sh`` script should be implemented such that it installs the softwa
 with ``/readonly/``.
 
 Or you can start a new shell session in which ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` is
-accessible with sort-of write permissions:
+accessible with write permissions:
 
 .. code::
 
@@ -620,6 +620,38 @@ Likewise, a group moderator can manage the software license group via https://ac
 If an existing software license group should *no longer have access* to central installations of installed software,
 please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
+Phase 2
+-------
+
+In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
+20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition,
+and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``.
+
+The Lustre based scratch storage was also also doubled in volume to a total of 5.4 PB
+while increasing the overal throughput as well.
+
+With the new GPU nodes, a renaming of the gpu node partitions occured. Users can most likely
+still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
+``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when requiring the
+larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
+
+In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
+and overal functioning with the ``cpu_rome`` partitions.
+In a later stage, projects will be given access to either the ``cpu_rome`` partitions
+or the ``cpu_milan`` partition.
+
+With both phases active, the cluster crossed the symbolic threshold of 100,000 cores.
+However, at the moment there is no partition defined that can be used to use all cores.
+If users can provide a proper case and motivation, you can contact support to request such partition
+to give you access to all the available resources.
+
+
+Recent updates
+--------------
+
+During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
+and MLNX OFED 5.8. This change should be transparent to the users.
+
 Resources
 ---------
 
@@ -634,37 +666,4 @@ Getting help
 
 For questions and problems related to Tier-1 Hortense, please contact the central
 support address for Tier-1 compute: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
-
-
-Phase 2
--------
-
-In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
-20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition and
-384 nodes using the newer AMD Milan CPUs called ``cpu_milan``.
-
-The Lustre based scratch storage was also also doubled in volume to a total of 6PB
-while increasing the overal throughput as well.
-
-With the new GPU nodes, a renaming of the gpu node partitions occured. Users can mosyt likely still
-still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
-``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when running multinode GPU jobs
-or explicitly requiring the larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
-
-In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
-and overal functioning with the ``cpu_rome`` partitions.
-In a later stage, projects will be given access to either the ``cpu_rome`` partitions
-or the ``cpu_milan`` partition.
-
-With both phases active, the cluster crossed the symbolic threshold of 100000 cores.
-However, at the moment there is no partition defined that can be used to use all cores.
-If users can provide a proper case and motivation, you can contact support to request such partition
-to give you access to all the available resources.
-
-
-Recent updates
---------------
-
-During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
-and MLNX OFED 5.8. This change should be transparent to the users.
 
