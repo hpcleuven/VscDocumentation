@@ -61,6 +61,10 @@ open for the general quota warnings! The same holds for running jobs
 that need to write files: when you reach your hard quota, jobs will
 crash.
 
+If you reached the limit in any of your quotas, it might be possible to
+increase them if your need more space to carry out your research projects.
+Check :ref:`more quota` for more information.
+
 A few additional site-specific remarks concerning data storage can be found
 on the following pages:
 
