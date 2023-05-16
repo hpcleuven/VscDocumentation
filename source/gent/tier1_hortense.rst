@@ -62,7 +62,7 @@ Shared infrastructure:
 
   - for the GPU partition specifically: dual HDR Infiniband
 
-.. note:: A high-level overview of the cluster can be obtained by running the ``pbsmon`` command.
+.. note:: A high-level overview of the cluster can be obtained by running the ``pbsmon -P`` command.
 
 .. _hortense_getting_access:
 
@@ -146,8 +146,7 @@ Web portal
 To access Tier-1 Hortense you can also use the `Open On-Demand <https://openondemand.org>`_
 web portal https://tier1.hpc.ugent.be.
 
-More information about the usage of the web portal is available in Chapter 8 (Using the HPC-UGent web portal)
-of the HPC-UGent user manual, see https://www.ugent.be/hpc/en/support/documentation.htm .
+More information about the usage of the web portal is available in https://docs.hpc.ugent.be/web_portal/.
 
 
 .. note::
@@ -636,12 +635,19 @@ still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (
 larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
 
 In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
-and overal functioning with the ``cpu_rome`` partitions.
-In a later stage, projects will be given access to either the ``cpu_rome`` partitions
-or the ``cpu_milan`` partition.
+and overal functioning with the ``cpu_rome`` partitions. No credits will be billed for the usage of the ``cpu_milan``
+partition during this period.
+
+Once in production (currently scheduled when the June 2023 cut-off becomes active, expected end of June 2023),
+projects will be given access to either the ``cpu_rome`` partitions or the ``cpu_milan`` partition
+(with billing of used credits on both partitions).
+
+The support team will try to keep the list of available software modules the same on the ``cpu_rome`` and
+``cpu_milan`` partitions. If you notice modules are missing or not functioning properly,
+please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
 
 With both phases active, the cluster crossed the symbolic threshold of 100,000 cores.
-However, at the moment there is no partition defined that can be used to use all cores.
+However, at the moment there is no partition defined that can be selected to use all cores.
 If users can provide a proper case and motivation, you can contact support to request such partition
 to give you access to all the available resources.
 
