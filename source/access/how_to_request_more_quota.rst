@@ -85,5 +85,5 @@ maximally use. By default, this is set to 50% of the total quota for each user.
 
    The sum of all user quotas in your VO can be above 100%. The share
    for any user indicates what he/she can maximally use, but the actual limit
-   will then depend on the usage of the other members. The total storage space
+   will then depend on the usage of the other members. The total storage quota
    of the VO will always be respected.
