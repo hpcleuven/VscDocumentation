@@ -12,20 +12,22 @@ General information
 **Hortense** is the 3rd VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016)
 and *BrENIAC* (hosted by HPC-Leuven, 2016-2022).
 
-The first phase of Hortense is also named ``dodrio``.
+The Hortense cluster also has an internal name ``dodrio``.
 
 It is available since 2021, is hosted by Ghent University,
 and maintained and supported by the HPC-UGent team.
+
+In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
 
 Hardware details
 ----------------
 
-Hortense currently consists of 3+1 partitions:
+Hortense consists of the following partitions:
 
-- ``dodrio/cpu_rome``: main partition:
-   - 294 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
+- ``dodrio/cpu_rome``: phase 1 main partition:
+   - 342 workernodes, each with:
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
 - ``dodrio/cpu_rome_512``: large-memory partition:
@@ -33,22 +35,34 @@ Hortense currently consists of 3+1 partitions:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
        - 512 GiB RAM (~4GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100``: GPU partition:
+- ``dodrio/cpu_milan``: phase 2 main partition:
+   - 384 workernodes, each with:
+       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
+       - 256 GiB RAM (~2GB/core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/gpu_rome_a100_40``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
        - 256 GiB RAM (~5GB/CPU core), no swap
        - 480 GB SSD local disk
+- ``dodrio/gpu_rome_a100_80``: phase 2 GPU partition:
+   - 20 workernodes, each with:
+       - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
+       - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
+       - 512 GiB RAM (~10GB/CPU core), no swap
+       - 480 GB SSD local disk
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
+- ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
 Shared infrastructure:
 
-- *storage*: 3 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
+- *storage*: 5.4 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
 - *interconnect*: InfiniBand HDR-100 (~12.5GB/sec), 2:1 fat tree topology
 
-  - for the GPU partition specifically: dual HDR-100 Infiniband
+  - for the GPU partition specifically: dual HDR Infiniband
 
-.. note:: A high-level overview of the cluster can be obtained by running the ``pbsmon`` command.
+.. note:: A high-level overview of the cluster can be obtained by running the ``pbsmon -P`` command.
 
 .. _hortense_getting_access:
 
@@ -132,8 +146,7 @@ Web portal
 To access Tier-1 Hortense you can also use the `Open On-Demand <https://openondemand.org>`_
 web portal https://tier1.hpc.ugent.be.
 
-More information about the usage of the web portal is available in Chapter 8 (Using the HPC-UGent web portal)
-of the HPC-UGent user manual, see https://www.ugent.be/hpc/en/support/documentation.htm .
+More information about the usage of the web portal is available in https://docs.hpc.ugent.be/web_portal/.
 
 
 .. note::
@@ -209,7 +222,7 @@ The Resource Application web app https://resapp.hpc.ugent.be allows you to consu
 
 Please note that this app is still in ‘beta’.
 (For instance, storage usage is not yet done, so this will show up 0 everywhere.)
-In an upcoming development cycle, we will improve shortcomings and correct bugs. 
+In an upcoming development cycle, we will improve shortcomings and correct bugs.
 Do not hesitate to give your feedback on using the Resource Application via compute@vscentrum.be
 
 Practical usage:
@@ -468,7 +481,7 @@ By default you'll get 12 cores per requested GPU (an explicit ppn= statement is 
 
     module swap cluster/dodrio/gpu_rome_a100
     qsub -l nodes=1:gpus=1
-    
+
 (The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
 
 
@@ -512,7 +525,10 @@ performance benefit.
 To ensure that the paths which are 'engraved' in your own software installations always start with ``/readonly/``,
 for example in scripts or binaries that make part of the installation,
 you should install the software using the ``dodrio-bind-readonly`` utility. This allows you to "rename" the path to your
-project scratch directory so it starts with ``/readonly/``, while preserving write access to it.
+project scratch directory so it starts with ``/readonly/``, while preserving sort-of write access to it
+(``dodrio-bind-readonly`` actually provides an environment
+where the ``/readonly/$VSC_SCRATCH_PROJECTS_BASE/...`` part is mapped to the real and writable
+``$VSC_SCRATCH_PROJECTS_BASE/...`` path).
 
 Assuming that the procedure to install the software is implemented in a script named ``install.sh``,
 you can use ``dodrio-bind-readonly`` as follows:
@@ -603,6 +619,45 @@ Likewise, a group moderator can manage the software license group via https://ac
 If an existing software license group should *no longer have access* to central installations of installed software,
 please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
+Phase 2
+-------
+
+In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
+20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition,
+and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``.
+
+The Lustre based scratch storage was also also doubled in volume to a total of 5.4 PB
+while increasing the overal throughput as well.
+
+With the new GPU nodes, a renaming of the gpu node partitions occured. Users can most likely
+still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
+``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when requiring the
+larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
+
+In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
+and overal functioning with the ``cpu_rome`` partitions. No credits will be billed for the usage of the ``cpu_milan``
+partition during this period.
+
+Once in production (currently scheduled when the June 2023 cut-off becomes active, expected end of June 2023),
+projects will be given access to either the ``cpu_rome`` partitions or the ``cpu_milan`` partition
+(with billing of used credits on both partitions).
+
+The support team will try to keep the list of available software modules the same on the ``cpu_rome`` and
+``cpu_milan`` partitions. If you notice modules are missing or not functioning properly,
+please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
+
+With both phases active, the cluster crossed the symbolic threshold of 100,000 cores.
+However, at the moment there is no partition defined that can be selected to use all cores.
+If users can provide a proper case and motivation, you can contact support to request such partition
+to give you access to all the available resources.
+
+
+Recent updates
+--------------
+
+During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
+and MLNX OFED 5.8. This change should be transparent to the users.
+
 Resources
 ---------
 
@@ -617,3 +672,4 @@ Getting help
 
 For questions and problems related to Tier-1 Hortense, please contact the central
 support address for Tier-1 compute: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
+
