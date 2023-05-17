@@ -73,7 +73,7 @@ VO moderators can tweak the share of the VO quota that each member can
 maximally use. By default, this is set to 50% of the total quota for each user.
 
 #. Go to the section **Request additional quota** in the
-   `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ page
+   `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ tab
 
 #. Adjust the share (%) of the available space available to each user
 
