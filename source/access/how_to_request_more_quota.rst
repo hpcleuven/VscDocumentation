@@ -54,7 +54,7 @@ Requesting more storage space
 VO moderators can request additional quota for ``VSC_DATA_VO`` and ``VSC_SCRATCH_VO``:
 
 #. Go to the section **Request additional quota** in the
-   `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ page
+   `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ tab
 
 #. Fill in the amount of additional storage you want for ``VSC_DATA_VO``
    (labelled ``VSC_DATA`` in this section) and/or ``VSC_SCRATCH_VO`` (labelled
