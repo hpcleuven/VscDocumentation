@@ -44,7 +44,7 @@ Virtual Organizations
 VSC_DATA_VO, VSC_SCRATCH_VO
   The quota of the data storage in your :ref:`Virtual Organization (VO)
   <virtual_organization>` is managed by the moderator of the VO, who is typically
-  somebody in your research group. The moderator can manage all quotas of the VO
+  the leader of  your research group. The moderator can manage all quotas of the VO
   in the `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ tab of the VSC
   account page.
 
