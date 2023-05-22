@@ -54,7 +54,7 @@ VSC_DATA_VO, VSC_SCRATCH_VO
   account page.
 
 Requesting more storage space
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 VO moderators can request additional quota for ``VSC_DATA_VO`` and ``VSC_SCRATCH_VO``:
 
@@ -72,7 +72,7 @@ VO moderators can request additional quota for ``VSC_DATA_VO`` and ``VSC_SCRATCH
 #. Your request will be reviewed by the HPC administrators
 
 Setting per-member VO quota
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 VO moderators can tweak the share of the VO quota that each member can
 maximally use. By default, this is set to 50% of the total quota for each user.
@@ -92,3 +92,12 @@ maximally use. By default, this is set to 50% of the total quota for each user.
    for any user indicates what he/she can maximally use, but the actual limit
    will then depend on the usage of the other members. The total storage quota
    of the VO will always be respected.
+
+Tier-1 project
+==============
+
+The scratch storage of your project in tier-1 is managed by the institute
+hosting the tier-1 HPC infrastructure. In general, your project will get as
+much quota as requested in your application and that should be sufficient to
+complete it. If that is not the case, please contact the tier-1 helpdesk at
+compute@vscentrum.be.
