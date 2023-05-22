@@ -97,7 +97,7 @@ Tier-1 project
 ==============
 
 The scratch storage of your project in tier-1 is managed by the institute
-hosting the tier-1 HPC infrastructure. In general, your project will get as
-much quota as requested in your application and that should be sufficient to
-complete it. If that is not the case, please contact the tier-1 helpdesk at
-compute@vscentrum.be.
+hosting the tier-1 HPC infrastructure. Your project directory will have the
+quota granted to your project, which should be sufficient to complete all
+computational tasks in tier-1. If that is not the case, please contact the
+tier-1 helpdesk at compute@vscentrum.be.
