@@ -3,6 +3,11 @@
 Breniac infrastructure
 ======================
 
+.. toctree::
+   :hidden:
+
+   memory_bandwidth_and_latency_tier1
+
 Breniac is the VSC's Tier-1 cluster hosted by KU Leuven.
 
 .. include:: breniac_login_nodes.rst

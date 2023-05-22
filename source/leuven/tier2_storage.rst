@@ -7,4 +7,5 @@ Tier-2 Storage
 
    tier2_hardware/kuleuven_storage
    mmlsquota
+   tier2_hardware/restoring_a_snapshot
    using_beegfs
