@@ -14,38 +14,43 @@ Before requesting more storage, please check carefully the
 :ref:`current data usage of your VSC account <quota>` and identify which
 file system needs a larger quota.
 
+.. _more quota personal:
+
 Personal storage
 ================
 
-The following are general guidelines to request more storage in the personal
-file systems of your VSC account:
+The storage of personal VSC file systems (``VSC_HOME``, ``VSC_DATA`` and
+``VSC_SCRATCH``) are managed by your home institute. In case of doubt, please
+contact the corresponding :ref:`helpdesk <tech support VSC>` for your VSC
+account.
 
 VSC_HOME
   The storage of your home directory is small on purpose. If you need more
   storage, please switch to ``VSC_DATA``.
 
-VSC_DATA
-  On VSC sites that support :ref:`Virtual Organizations (VO)
-  <virtual_organization>`, it is preferable to join a VO to get access to a
-  larger ``VSC_DATA_VO``.
-  If that is not the case or if in doubt, please contact :ref:`user support
-  <tech support VSC>`.
+VSC_DATA, VSC_SCRATCH
+  Policies on these file systems depend on your home institute:
 
-VSC_SCRATCH
-  On VSC sites that support :ref:`Virtual Organizations (VO)
-  <virtual_organization>`, it is preferable to join a VO to get access to a
-  larger ``VSC_SCRATCH_VO``.
-  If that is not the case or if in doubt, please contact :ref:`user support
-  <tech support VSC>`.
+  * KU Leuven/Hasselt University: follow instructions in
+    `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/HPC-storage>`_
+  * Ghent University: larger storage quotas are preferably provided through
+    :ref:`Virtual Organizations <more quota vo>`. If it is not possible for you
+    to join a VO, please contact hpc@ugent.be 
+  * University of Antwerp: contact hpc@uantwerpen.be for further information
+  * Vrije Universiteit Brussel: larger storage quotas are preferably provided through
+    :ref:`Virtual Organizations <more quota vo>`. If it is not possible for you
+    to join a VO, please contact hpc@vub.be 
+
+.. _more quota vo:
 
 Virtual Organizations
 =====================
 
 VSC_DATA_VO, VSC_SCRATCH_VO
-  The quota of the data storage in your :ref:`Virtual Organization (VO)
-  <virtual_organization>` is managed by the moderator of the VO, who is typically
-  the leader of  your research group. The moderator can manage all quotas of the VO
-  in the `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ tab of the VSC
+  The storage quotas of your :ref:`Virtual Organization (VO) <virtual_organization>`
+  are managed by the moderator of the VO, who is typically the leader of your
+  research group. The moderator can manage all quotas of the VO in the
+  `Edit VO <https://account.vscentrum.be/django/vo/edit>`_ tab of the VSC
   account page.
 
 Requesting more storage space
