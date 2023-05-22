@@ -2,20 +2,19 @@
 
 Superdome hardware
 ==================
-Superdome is a shared memory machine and consists of several nodes.
-
-
-.. include:: genius_login_nodes.rst
-
+Superdome is a single node with a large amount of memory (6 TB)
+which is part of the Genius cluster.
 
 Hardware details
 ----------------
-- 8 nodes
+Superdome consists of
 
-    - Xeon Gold 6132 CPUs\@2.6 GHz (Skylake), 14 cores each
-    - 750 GB RAM
-    - partition ``superdome``
-    
-So in total Superdome has 6TB RAM memory and additionally a local shared scratch file system of 6TB.
+- 8 sockets with
 
-A :ref:`quick start guide <superdome_quick_start>` is available to get you started on submitting jobs to the Superdome.
+    - Xeon Gold 6132 CPU\@2.6 GHz (Skylake), 14 cores each
+    - 750 GB RAM each
+
+- a 6 TB local node disk
+
+A :ref:`quick start guide <superdome_quick_start>` is available
+to get you started with running jobs on Superdome.

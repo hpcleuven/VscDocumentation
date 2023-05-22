@@ -7,7 +7,9 @@ Getting started with Pageant
 ----------------------------
 
 Pageant is part of the `PuTTY`_ distribution.
-it is an SSH authentication agent that you can use for Putty and Filezilla.
+As of version 0.78, Pageant can hold certificates in addition to SSH private keys.
+
+Pageant is an SSH authentication agent that you can use for Putty and FileZilla.
 Before you run Pageant, you need to have a private key in PPK format
 (filename ends with ``.ppk``). See :ref:`our page on generating keys with
 PuTTY <generating keys putty>` to find out how to
@@ -29,7 +31,7 @@ private key. If the key is protected by a passphrase, Pageant will ask
 you to type the passphrase. When the key has been loaded, it will appear
 in the list in the Pageant window.
 
-Now start PuTTY (or Filezilla) and open an SSH session to a site that
+Now start PuTTY (or FileZilla) and open an SSH session to a site that
 accepts your key. PuTTY (or Filezilla) will notice that Pageant is
 running, retrieve the key automatically from Pageant, and use it to
 authenticate. You can now open as many PuTTY sessions as you like
@@ -37,7 +39,8 @@ without having to type your passphrase again.
 
 When you want to shut down Pageant, click the right button on the
 Pageant icon in the System tray, and select ‘Exit’ from the menu.
-Closing the Pageant main window does *not* shut down Pageant.
+Closing the Pageant main window does *not* shut down Pageant, because
+a SSH agent sits silently in the background.
 
 You can find more info `in the on-line
 manual <http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html>`_.

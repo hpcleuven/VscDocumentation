@@ -68,6 +68,11 @@ In Slurm, such lines start with ``#SBATCH``.
 PBS/Torque                           Slurm equivalent
 ===================================  =====================
 -L tasks=\ **<X>**:lprocs=\ **<Y>**  --ntasks=\ **<X>** --cpus-per-task=\ **<Y>**
+-l nodes=\ **<N>**:ppn=\ **<P>**     | --nodes=\ **<N>** --ntasks-per-node=\ **<P>**
+                                     |
+                                     | or in the case of e.g. hybrid MPI-OpenMP runs:
+                                     |
+                                     | --nodes=\ **<N>** --ntasks-per-node=\ **<Q>** --cpus-per-task=\ **<P/Q>**
 -l walltime=\ **<time>**             -t **<time>**\ , --time=\ **<time>**
 -N **<jobname>**                     -J **<jobname>**\, --job-name=\ **<jobname>**
 -o **<file>**                        -o **<file template>**\ , --output=\ **<file template>**

@@ -1,22 +1,43 @@
 .. _disk usage:
 
+###############################
 How much disk space am I using?
-===============================
+###############################
 
 .. _quota:
 
 Total disk space used on file systems with quota
-------------------------------------------------
+================================================
 
 On file systems with quota enabled, you can check the amount of disk space that
 is available for you, and the amount of disk space that is in use by
 you.
 
-On most systems, ``myquota`` will show you for the ``$VSC_HOME``,
-``$VSC_DATA`` and ``$VSC_SCRATCH`` file systems either the
-percentage of the available disk space you are using, or the
-absolute amount. Users from Ghent university should check their disk usage
-using the `web application <https://account.vscentrum.be/>`_.
+VSC account page
+----------------
+
+Your VSC account page shows up-to-date information about your storage usage on
+each of the file systems accessible to your account. This information is
+available in the *Usage* section of the
+`View Account <https://account.vscentrum.be>`_ tab and includes:
+
+* total data size
+* current quota limit
+* percentage use
+* number of files used (*inodes*)
+
+You will find the usage data for your :ref:`personal storage <data location>`
+space such as ``VSC_HOME``, ``VSC_DATA`` and ``VSC_SCRATCH`` as well as your
+:ref:`Virtual Organization <virtual_organization>` if you are in one.
+
+Terminal in the cluster
+-----------------------
+
+On the system of most VSC clusters, ``myquota`` will show you for the
+``$VSC_HOME``, ``$VSC_DATA`` and ``$VSC_SCRATCH`` file systems either the
+percentage of the available disk space you are using, or the absolute amount.
+Users from Ghent university should check their disk usage using the `web
+application <https://account.vscentrum.be/>`_.
 
 If quota have been set on the number of files you can create on a file
 system, those are listed as well.

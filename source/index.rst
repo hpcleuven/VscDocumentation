@@ -19,15 +19,16 @@ information about the services provided by the `Vlaams Supercomputer Centrum
    about_vsc
    contact_vsc
    access/index
+   data_management
    compute
-   cloud
-   data/index
+   T1 Cloud <cloud/index>
+   T1 Data <data/index>
    faq
 
 .. grid:: 3
     :gutter: 4
 
-    .. grid-item-card:: :fas:`user-circle` Access
+    .. grid-item-card:: :fas:`user-circle` Accounts and access
         :columns: 12
         :link: access/index
         :link-type: doc
@@ -35,6 +36,15 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :class-title: h3 text-info 
 
         How to get your VSC account and access the different VSC services and platforms.
+
+    .. grid-item-card:: :fas:`left-right` Data Management
+        :columns: 12
+        :link: data_management
+        :link-type: doc
+        :class-card: border-info
+        :class-title: h3 text-info 
+
+        Data transfer and storage in the VSC infrastructure.
 
     .. grid-item-card:: :fas:`rocket` Compute
         :columns: 12 4 4 4
@@ -47,9 +57,9 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         of parallel processing enabling researchers to run advanced application
         programs efficiently, reliably and quickly.
 
-    .. grid-item-card:: :fas:`cloud` Cloud
+    .. grid-item-card:: :fas:`cloud` T1 Cloud
         :columns: 12 4 4 4
-        :link: cloud
+        :link: cloud/index
         :link-type: doc
         :class-card: border-info
         :class-title: h3 text-info 
@@ -57,7 +67,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         The VSC Cloud component provides *on-demand* resources in a more
         flexible and cloud-like manner.
 
-    .. grid-item-card:: :fas:`database` Data
+    .. grid-item-card:: :fas:`database` T1 Data
         :columns: 12 4 4 4
         :link: data/index
         :link-type: doc

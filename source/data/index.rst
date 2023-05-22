@@ -1,12 +1,14 @@
-.. _data:
-
-####################
-:fas:`database` Data
-####################
-
+Tier-1 Data Service
+===================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   tier1_data_main_index
-   globus/globus_main_index
+   tier1_data_service
+   introduction_to_irods
+   tier1_data_architecture
+   data_discovery
+   user_access
+   irods_clients_index
+   workflow_automation
+   glossary

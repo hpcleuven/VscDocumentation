@@ -75,6 +75,9 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 # pygments_style = None
 
+# To render double dashes in text as double dashes (and not as an "en dash"):
+smartquotes_action = 'qe'  # instead of default 'qDe'
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -279,21 +282,23 @@ rst_prolog += """
 .. _FileZilla project page: https://filezilla-project.org/
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
 .. _get in touch: https://www.vscentrum.be/getintouch
-.. _Globus CLI documentation: https://docs.globus.org/cli/examples
-.. _Globus Connect Personal: https://www.globus.org/globus-connect-personal
-.. _Globus Connect Server Installation Guide: https://docs.globus.org/globus-connect-server-installation-guide
-.. _Globus Groups How-To page: https://docs.globus.org/how-to/managing-groups
-.. _Globus How-To pages: https://docs.globus.org/how-to
+.. _Globus Web Interface: https://app.globus.org/ 
 .. _Globus Management Console: https://www.globus.org/app/login
+.. _Globus Connect Server Installation Guide: https://docs.globus.org/globus-connect-server-installation-guide
+.. _Globus How-To pages: https://docs.globus.org/how-to
+.. _Globus Connect Personal: https://www.globus.org/globus-connect-personal
+.. _Globus Groups How-To page: https://docs.globus.org/how-to/managing-groups
+.. _Globus CLI documentation: https://docs.globus.org/cli/examples
 .. _Globus-Timer-CLI on PyPi: https://pypi.org/project/globus-timer-cli
+.. _Globus Python SDK documentation: https://globus-sdk-python.readthedocs.io/en/stable/index.html
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
-.. _iCommands docs: https://docs.irods.org/4.2.8/icommands/user/
 .. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
 .. _Intel MPI: https://software.intel.com/en-us/intel-mpi-library
 .. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation
 .. _Interoperability with OpenMP API: https://software.intel.com/en-us/node/528819
+.. _irods.org: https://irods.org/
 .. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/
 .. _JellyfiSSH: http://www.m-works.co.nz/jellyfissh.php
 .. _Keras: https://keras.io/
@@ -362,6 +367,5 @@ rst_prolog += """
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
 .. _www.globus.org: https://www.globus.org
-.. _www.irods.org: https://irods.org/
 .. _Xming web site: http://www.straightrunning.com/XmingNotes/
 """

@@ -58,18 +58,6 @@ R
    r_command_line_arguments_in_scripts
    r_integrating_c_functions
 
-Jupyter Notebooks
-~~~~~~~~~~~~~~~~~
-
-.. tab-set::
-
-   .. tab-item:: KU Leuven/UHasselt
-
-      .. toctree::
-         :maxdepth: 2
-      
-         ../leuven/running_jupyter_notebooks.rst
-
 Programming Languages
 ---------------------
 

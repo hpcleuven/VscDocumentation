@@ -55,18 +55,6 @@ We discuss this script line by line.
   <module system basics>`.
 - Line 12 performs the actual computation, i.e., running a Python script.
 
-.. warning::
-
-   When running on KU Leuven/UHasselt and Tier-1 infrastructure make sure to specify
-   a credit account as part of your job script, if not, your job will not
-   run.
-
-   ::
-
-      #PBS -A lp_example
-
-   For more information, see :ref:`credit system basics<credit system basics>`.
-
 Every job script has the same basic structure.
 
 .. note::
@@ -128,10 +116,8 @@ More information is available on
 
 .. toctree::
    :maxdepth: 2
-   
-   Submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
-   credits
 
+   Submitting and monitoring your jobs <submitting_and_managing_jobs_with_torque_and_moab>
 
 Job output
 ----------

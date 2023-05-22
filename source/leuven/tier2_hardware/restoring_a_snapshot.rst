@@ -11,7 +11,8 @@ The backup consists of snapshots that are created at regular intervals:
 2. for the past week, 6 snapshots are available, created once a day (``daily.<timestamp>``);
 3. for the past month, 4 snapshots are available, created weekly (``weekly.<timestamp>``).
 
-An offsite backup is maintained for older data, but operator intervention is required to restore that. The names in brackets will be explained below.
+An offsite backup is maintained for older data, but operator intervention is required to restore that. 
+The names in brackets will be explained below.
 
 The snapshots can be found in two ways.
 Either from the top-level folder on ``$VSC_HOME`` and ``$VSC_DATA``:
@@ -24,8 +25,20 @@ E.g., if a a file is missing from ``projects/simulations`` folder, you may retri
 
 - ``$VSC_DATA/projects/simulations/.snapshot``
 
-In these ``.snapshot`` directories, a number of directories can be found, their names reflecting the moment the snapshot was taken, as explained above. For example, the directory ``weekly.2019-06-09_0000`` will contain the snapshot taken at midnight on June 9, 2019.
+In these ``.snapshot`` directories, a number of directories can be found, their names reflecting 
+the moment the snapshot was taken, as explained above. For example, the directory ``weekly.2019-06-09_0000`` 
+will contain the snapshot taken at midnight on June 9, 2019.
 
-The directory structure of all the directories mirrors that of ``/user/leuven`` and ``/data/leuven`` respectively, so the most recent backup of your home directory can be found in ``/user/leuven/.snapshot/hourly.2019-06-12_0205/301/vsc30124``.
+The directory structure of all the directories mirrors that of ``/user/leuven`` and ``/data/leuven`` 
+respectively, so the most recent backup of your home directory can be found in 
+``/user/leuven/.snapshot/hourly.2019-06-12_0205/301/vsc30124``.
 
-In this directory, you will find all your files in the state they were in when that particular snapshot was made, and you can simply copy them using the familiar bash shell operations.
+In this directory, you will find all your files in the state they were in when that particular snapshot 
+was made, and you can simply copy them using the familiar bash shell operations.
+
+.. note::
+
+    You can indeed retrieve older states of your files using the snapshots, taken
+    strictly at fixed time intervals. However, for a full control over the history
+    of your critical files, you may consider using version control. Good example of
+    that would be using Github or the private Gitlab services offered at KU Leuven.

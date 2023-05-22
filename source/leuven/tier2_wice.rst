@@ -8,3 +8,4 @@ Tier-2 wICE
 
    tier2_hardware/wice_hardware
    wice_quick_start
+   wice_advanced_guide

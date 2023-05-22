@@ -22,29 +22,53 @@ Installing iCommands locally
 ----------------------------
 iCommands is installed on the KU Leuven Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
 
-On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.10. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
+On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.11. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
 
 For CentOS:
 
 .. code:: bash
 
-   $ sudo yum install irods-runtime=4.2.10
-   $ sudo yum install irods-icommands=4.2.10
+    # Add the iRODS repository to your package manager (if you haven't done so already)
+    sudo rpm --import https://packages.irods.org/irods-signing-key.asc
+    wget -qO - https://packages.irods.org/renci-irods.yum.repo | sudo tee /etc/yum.repos.d/renci-irods.yum.repo
 
-For Debian/Ubuntu:
+    #Installing iCommands  
+    sudo yum install irods-icommands-4.2.11
+
+For Ubuntu:
 
 .. code:: bash
 
-   $ sudo apt update
-   $ sudo apt install irods-runtime=4.2.10
-   $ sudo apt install irods-icommands=4.2.10
+    # Add the iRODS repository to your package manager (if you haven't done so already)
+    # If you are on Ubuntu 20, replace '$(lsb_release -sc)' with 'bionic' in the code below:
+
+    wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
+    echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
+    sudo apt-get update
+
+    # Install prerequisites (needed for more recent ubuntu versions)
+    wget -c \
+        http://security.ubuntu.com/ubuntu/pool/main/p/python-urllib3/python-urllib3_1.22-1ubuntu0.18.04.2_all.deb \
+        http://security.ubuntu.com/ubuntu/pool/main/r/requests/python-requests_2.18.4-2ubuntu0.1_all.deb \
+        http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
+    sudo apt install -y \
+        ./python-urllib3_1.22-1ubuntu0.18.04.2_all.deb \
+        ./python-requests_2.18.4-2ubuntu0.1_all.deb \
+        ./libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
+    rm -rf \
+        ./python-urllib3_1.22-1ubuntu0.18.04.2_all.deb \
+        ./python-requests_2.18.4-2ubuntu0.1_all.deb \
+        ./libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
+
+
+    # Install iCommands  
+    apt-get install irods-runtime=4.2.11-1~bionic 
+    apt-get install irods-icommands=4.2.11-1~bionic
 
 .. note::
 
-   Depending on your linux distribution and version, the installation procedure may vary.
-   - The most recent version of iCommands is 4.3.0.
-   - However, the KU Leuven Tier-1 iRODS instance still runs on iRODS 4.2.10.
-   - In case you have a Linux version (e.g. Ubuntu 20) for which iCommands 4.2.10 is not available, please contact rdm-icts@kuleuven.be for the procedure.
+    Depending on your linux distribution and version, the installation procedure may vary.
+    For any further assistance, please contact data@vscentrum.be.
 
 Informative iRODS Commands
 --------------------------

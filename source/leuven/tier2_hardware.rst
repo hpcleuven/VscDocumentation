@@ -5,6 +5,7 @@ KU Leuven/UHasselt Tier-2 Infrastructure
    :maxdepth: 2
 
    tier2_hardware/mfa_login
+   tier2_hardware/tier2_login_nodes
    tier2_genius
    tier2_wice
    tier2_superdome

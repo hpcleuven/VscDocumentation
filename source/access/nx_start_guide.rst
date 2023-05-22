@@ -11,47 +11,39 @@ Download the enterprise version of the client from the `NX Client download`_ pag
 NoMachine NX Client Configuration
 ---------------------------------
 
-NoMachine NX requires keys in OpenSSH format, therefore the existing key
-needs to be :ref:`converted into OpenSSH format <converting PuTTY keys>` if
-you're working on Windows and using PuTTY.
+NoMachine works smoothly with SSH agents, such as :ref:`Pageant <using Pageant>` 
+for Windows users, and the default :ref:`agent included with OpenSSH <SSH agent>` for Linux/Mac users.
+As a result of that, users first need to authenticate themselves, using 
+:ref:`Multi-Factor Authentication (MFA) <mfa_leuven>` before being able to start a new 
+NX session.
+You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional information.
+
 
 1. Start the NoMachine client and press **Continue** till you see the screen
    listing your connections, titled **Machines**.
 
-#. Press **Add** to create a new connection.
+#. Press **Add** to create a new connection
 
 #. In the **Addres** pane,
 
-   #. choose a name for the connection, e.g., "genius",
-   #. change the Protocol to **SSH**,
-   #. choose the hostname:
-
-         -  for Genius (Tier-2): **nx.hpc.kuleuven.be** and port **22**.
-         -  for BrENIAC (Tier-1): **nx-tier1.hpc.kuleuven.be** and port **22**.
+   #. choose a name for the connection, e.g., "genius"
+   #. change the Protocol to **SSH**
+   #. choose the hostname **nx.hpc.kuleuven.be** for Genius and port **22**
 
             .. note::
 
-                These login nodes cannot be used to access the cluster from the terminal.   
+                This login node cannot be used to access the cluster from the terminal.   
 
-#. In the **Configuration** pane,
+#. In the **Configuration** pane
 
-   #. choose **Use key-based authentication with a key you provide**,
-   #. press **Modify** and browse for your private key. This should be in OpenSSH
-      format (not ``.ppk``).
+   #. choose **Use key-based authentication with a SSH agent**
+   #. press **Modify** and select **Forward authentication**
 
-      -  For Android users it is easy to transfer your key and save it in the
-         chosen location with the Box (KU Leuven) or Dropbox (UHasselt) apps.
-      -  For iOS users (iPad running iOS 5 or later) it is possible to
-         transfer the key with iTunes. Connect your device through iTunes, go
-         to the connected device, choose the \\"apps\" tab, scroll down to
-         \\"file sharing\". Select the NoMachine client and add files to
-         NoMachine Documents. Remember to Sync your device.
-      -  Browse your file on a mobile device from the given location.
+#. Press **Connect**
 
-#. Press **Connect**.
+#. If this is your first login via NX, you will need to enter your VSC username
 
-#. Enter your username (**vsc-account**) and **passphrase** for your
-   private key and press "ok".
+#. Your private key will be automatically fetched from your SSH agent
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
    Otherwise please refer to the :ref:`section on how to reconnect to an NX session
@@ -111,6 +103,5 @@ How to start using NX on Genius?
 Attached documents
 ------------------
 
--  :download:`Instructions with screenshots <nx_start_guide/nx_config_guide.pdf>`
 -  :download:`Slides from the lunchbox session <nx_start_guide/nx_slides.pdf>`
 

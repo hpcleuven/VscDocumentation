@@ -1,8 +1,8 @@
 .. _access_data_transfer:
 
-################################################
+###############################################
 :fas:`right-to-bracket` Login and Data Transfer
-################################################
+###############################################
 
 Before you can really start using one of the clusters, there are several
 things you need to do or know:
@@ -57,6 +57,7 @@ software on your client system which depends on its operating system:
    data_transfer_windows
    data_transfer_mac
    data_transfer_linux
+   ../leuven/data_transfer_kuleuven_network_drives
 
 
 GUI applications on the clusters

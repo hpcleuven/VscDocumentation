@@ -3,8 +3,9 @@
 wICE hardware
 ===============
 
-wICE will be KU Leuven/UHasselt's next Tier-2 cluster. It has thin nodes, large memory nodes, interactive nodes and GPGPU nodes.
-This cluster is currently being installed and will be in pilot usage over summer 2022
+wICE is KU Leuven/UHasselt's latest Tier-2 cluster. 
+It has thin nodes, large memory nodes, interactive nodes and GPU nodes.
+This cluster is in production since February 2023.
 
 
 Hardware details
@@ -25,7 +26,7 @@ Hardware details
    - 960 GB SSD local disk
    - partition ``bigmem``, :ref:`submit options <submit to wice big memory node>`
 
-- 4 GPGPU nodes, 16 GPU devices
+- 4 GPU nodes, 16 GPU devices
 
    - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (Ice lake), 36 cores each
    - 512 GB RAM
