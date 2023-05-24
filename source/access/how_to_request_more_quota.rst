@@ -11,8 +11,26 @@ option depends on data storage policies of the site managing your VSC account,
 VO or Tier-1 project as well as on current capacity of the storage system.
 
 Before requesting more storage, please check carefully the
-:ref:`current data usage of your VSC account <quota>` and identify which
+:ref:`current data usage of your VSC account <checking disk usage>` and identify which
 file system needs a larger quota.
+
+If you need more :ref:`inode quota <quota>`, you should first try to
+reduce the number of files as much as possible:
+
+- Clean up the files you no longer need.
+- Pack the remainder in a tarball, e.g. ``tar zcf myfiles.tgz file1 <...>
+  fileN``. If you need help on ``tar``, please consult the man page, *i.e.*, do:
+  ``man tar``.
+- If tarballs are not a suitable option for you, consider agregating your data
+  into large ``CSV``, ``HDF5``, or ``netCDF`` files, or using a database such as
+  ``SQLite``, ``DuckDB``, ``MariaDB``, or ``PostgreSQL``.
+- Be careful when running jobs that write back to the shared storage and clean
+  up anything you do not need for post-processing or for verification, *i.e.*,
+  intermediate files.
+- Take care not to let your jobs write such small files on the shared storage
+  systems, but instead have them write to the local disks on the nodes where
+  your jobs are running and then pack them if they are still needed before
+  moving them to the shared storage.
 
 .. _more quota personal:
 

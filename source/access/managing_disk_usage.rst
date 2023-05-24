@@ -6,6 +6,22 @@ How much disk space am I using?
 
 .. _quota:
 
+Disk quota
+==========
+
+VSC file systems can have 2 types of quota set on them:
+
+* quota on the disk size
+* quota on the number of inodes
+
+The number of inodes determines the maximum number of files that can be present
+in the file system. The purpose of the inode quota is to maintain good I/O
+performance. HPC shared file systems are typically tailored towards big amounts
+of data in _large_ files. The trade-off is poor performance when handling many
+small files. It is therefore very important to limit the number of files.
+
+.. _checking disk usage:
+
 Total disk space used on file systems with quota
 ================================================
 
