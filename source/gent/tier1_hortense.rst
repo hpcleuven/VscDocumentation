@@ -678,7 +678,7 @@ In the startup period, users are encouraged to try out the ``cpu_milan`` partiti
 and overal functioning with the ``cpu_rome`` partitions. No credits will be billed for the usage of the ``cpu_milan``
 partition during this period.
 
-Once in production (currently scheduled when the June 2023 cut-off becomes active, expected end of June 2023),
+Once in production (July 7th 2023, when the June 2023 cut-off becomes active),
 projects will be given access to either the ``cpu_rome`` partitions or the ``cpu_milan`` partition
 (with billing of used credits on both partitions).
 
