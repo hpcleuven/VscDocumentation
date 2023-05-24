@@ -52,6 +52,13 @@ Hortense consists of the following partitions:
        - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
        - 512 GiB RAM (~10GB/CPU core), no swap
        - 480 GB SSD local disk
+- ``dodrio/debug_rome``: interactive and debug partition:
+   - 3 workernodes, each with:
+       - 12-core AMD Epyc 7402 CPU 2.8 GHz (48 oversubscribed cores as seen by scheduler)
+       - 1 shared NVIDIA Quadro P1000 (4 GB GPU memory)
+       - 1 NVIDIA V100 (16 GB GPU memory)
+       - 256 GiB RAM (~5.2GB/oversubscribed core), no swap
+       - 100 GB SSD local disk
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
 - ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
@@ -350,6 +357,38 @@ Trying to make any changes to files that are accessed via ``/readonly`` will res
    visible via ``/readonly`` during the lifetime of the job, so you should not assume that this will be the case.
 
 
+.. _hortense_interactive_debug:
+
+Interactive and debug partition
+*******************************
+
+A (small) interactive and debug partition `debug_rome` is available where you can get
+quick access but only to a limited number of resources. The limitiations are a maximum of 5 jobs
+(running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
+a total of 8 CPU cores combined.
+
+The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when
+the usage is high.
+
+The nodes have one NVIDIA V100 GPU that can be requested for exclusive access
+(as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
+that is always available but shared across all jobs on that node.
+
+To make use of the partition you can select the ``dodrio debug_rome`` option in the `Cluster` field in the
+`Interactive Apps` forms on the webportal, or from the CLI
+
+.. code:: shell
+
+    module swap cluster/dodrio/debug_rome
+    qsub job_script.sh
+
+
+No credits are consumed when using this partition.
+
+For some additional information, see the documentation on the
+HPC-UGent Tier-2 interactive and debug cluster: https://docs.hpc.ugent.be/interactive_debug/.
+
+
 Software
 --------
 
@@ -624,7 +663,8 @@ Phase 2
 
 In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
 20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition,
-and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``.
+and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``. The `debug_rome` partition was
+also made generally available.
 
 The Lustre based scratch storage was also also doubled in volume to a total of 5.4 PB
 while increasing the overal throughput as well.
@@ -638,7 +678,7 @@ In the startup period, users are encouraged to try out the ``cpu_milan`` partiti
 and overal functioning with the ``cpu_rome`` partitions. No credits will be billed for the usage of the ``cpu_milan``
 partition during this period.
 
-Once in production (currently scheduled when the June 2023 cut-off becomes active, expected end of June 2023),
+Once in production (July 7th 2023, when the June 2023 cut-off becomes active),
 projects will be given access to either the ``cpu_rome`` partitions or the ``cpu_milan`` partition
 (with billing of used credits on both partitions).
 
