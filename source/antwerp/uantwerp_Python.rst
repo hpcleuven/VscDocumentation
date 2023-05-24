@@ -85,8 +85,7 @@ however a number of remarks specifically for the cluster at the University of An
         a few other performance-critical packages is also available via Conda.) The generic CPU that is used for
         binaries that should run on everything is usually an ancient Pentium 4 or Core CPU. For some code, e.g., 
         dense linear algebra and FFT, using the newer instructions of more recent processors can give a big speed
-        boost for those routines, up to a factor 4 on Leibniz and Vaughan and up to a factor of 7 or so on the
-        Skylake partition of the Tier-1 cluster BrENIAC.
+        boost for those routines, e.g. up to a factor 4 on Leibniz and Vaughan.
       * As Conda effectively installs its own upper layers of a Linux/GNU-system and doesn't use security-sensitive
         libraries from our system, it is up to you to keep it secure by frequently updating. This is particularly 
         important for those packages that make connections of the internet. If you're not using any of these, this

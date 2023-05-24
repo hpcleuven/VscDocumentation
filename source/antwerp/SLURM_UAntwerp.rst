@@ -26,8 +26,8 @@ introductory courses those features of Torque and Moab that resemble Slurm featu
 the most.
 
 Slurm Workload Manager is also used on the clusters at UGent (but with a wrapper that still
-accepts Torque job scripts with some limitations) and will also be the scheduler on Hortense, the
-successor of the BrENIAC Tier-1 system.
+accepts Torque job scripts with some limitations) and will also be the scheduler on the current
+VSC Tier-1 system, Hortense.
 
 Historically, Slurm was an acronym of **S**\imple **L**\inux **U**\tility for
 **R**\esource **M**\anagement. The development started around 2002 at Lawrence Livermore
