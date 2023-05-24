@@ -11,8 +11,8 @@ Disk quota
 
 VSC file systems can have 2 types of quota set on them:
 
-* quota on the disk size
-* quota on the number of inodes
+* quota on the *disk space*
+* quota on the *number of inodes*
 
 The number of inodes determines the maximum number of files that can be present
 in the file system. The purpose of the inode quota is to maintain good I/O

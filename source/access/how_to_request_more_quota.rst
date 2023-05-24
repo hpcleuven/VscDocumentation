@@ -14,6 +14,11 @@ Before requesting more storage, please check carefully the
 :ref:`current data usage of your VSC account <checking disk usage>` and identify which
 file system needs a larger quota.
 
+.. _more quota inode:
+
+Requesting more inode quota
+===========================
+
 If you need more :ref:`inode quota <quota>`, you should first try to
 reduce the number of files as much as possible:
 
@@ -111,8 +116,8 @@ maximally use. By default, this is set to 50% of the total quota for each user.
    will then depend on the usage of the other members. The total storage quota
    of the VO will always be respected.
 
-Tier-1 project
-==============
+Tier-1 project quota
+====================
 
 The scratch storage of your project in tier-1 is managed by the institute
 hosting the tier-1 HPC infrastructure. Your project directory will have the
