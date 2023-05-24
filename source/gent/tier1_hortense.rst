@@ -53,7 +53,7 @@ Hortense consists of the following partitions:
        - 512 GiB RAM (~10GB/CPU core), no swap
        - 480 GB SSD local disk
 - ``dodrio/debug_rome``: interactive and debug partition:
-   - 3 virtual workernodes, each with:
+   - 3 workernodes, each with:
        - 12-core AMD Epyc 7402 CPU 2.8 GHz (48 oversubscribed cores as seen by scheduler)
        - 1 shared NVIDIA Quadro P1000 (4 GB GPU memory)
        - 1 NVIDIA V100 (16 GB GPU memory)
@@ -363,12 +363,16 @@ Interactive and debug partition
 *******************************
 
 A (small) interactive and debug partition `debug_rome` is available where you can get
-quick access but only to a limited number of resources.
-The CPUs are oversubscribed by factor 4, which may lead to slower then expected run times when
+quick access but only to a limited number of resources. The limitiations are a maximum of 5 jobs
+(running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
+a total of 8 CPU cores combined.
+
+The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when
 the usage is high.
 
-The nodes have one GPU that can be requested for exclusive access
-(as with the GPU partitions) and also one shared GPU.
+The nodes have one NVIDIA V100 GPU that can be requested for exclusive access
+(as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
+that is always available but shared across all jobs on that node.
 
 To make use of the partition you can select the ``dodrio debug_rome`` option in the `Cluster` field in the
 `Interactive Apps` forms on the webportal, or from the CLI
@@ -379,9 +383,10 @@ To make use of the partition you can select the ``dodrio debug_rome`` option in 
     qsub job_script.sh
 
 
-There is no billing for using this partition.
+No credits are consumed when using this partition.
 
-For some additional information, you can visit https://docs.hpc.ugent.be/interactive_debug/.
+For some additional information, see the documentation on the
+HPC-UGent Tier-2 interactive and debug cluster: https://docs.hpc.ugent.be/interactive_debug/.
 
 
 Software
