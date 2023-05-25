@@ -14,11 +14,17 @@ VSC file systems can have 2 types of quota set on them:
 * quota on the *disk space*
 * quota on the *number of inodes*
 
-The number of inodes determines the maximum number of files that can be present
-in the file system. The purpose of the inode quota is to maintain good I/O
-performance. HPC shared file systems are typically tailored towards big amounts
-of data in _large_ files. The trade-off is poor performance when handling many
-small files. It is therefore very important to limit the number of files.
+The number of inodes limits the maximum number of files that can be present in
+the file system (although there is no one-to-one relation between inodes and
+files).
+
+The inode and space quota allow site admins to control the amount of data and/or
+number of files users create, and to prevent system wide problems in case of
+unexpected problems, such as runaway jobs filling up the available space or
+creating too many files. A filesystem that runs out of space or inodes affects
+all users immediately.  It is also a way to raise users’ awareness of the data
+their jobs produce, as storage is a limited resource and should be used
+responsibly.
 
 .. _checking disk usage:
 
