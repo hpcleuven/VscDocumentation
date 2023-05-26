@@ -701,9 +701,11 @@ and MLNX OFED 5.8. This change should be transparent to the users.
 Resources
 ---------
 
-* kickoff meeting (15 March 2022) -
+* kick-off meeting (15 March 2022) -
   slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2022-03-15.pdf>` -
   recording: `watch on YouTube <https://www.youtube.com/watch?v=ENQrgMc2BAY>`_
+* phase 2 kick-off meeting (26 March 2023) -
+  slides: :download:`download PDF <VSC_Tier-1_Hortense_phase-2_kickoff_meeting_2023-05-26.pdf>`
 
 .. _hortense_help:
 
