@@ -16,11 +16,11 @@ VSC file systems can have 2 types of quota set on them:
 
 The number of inodes limits the maximum number of files that can be present in
 the file system (although there is no one-to-one relation between inodes and
-files).
+number of files).
 
 The inode and space quota allow site admins to control the amount of data and/or
 number of files users create, and to prevent system wide problems in case of
-unexpected problems, such as runaway jobs filling up the available space or
+unexpected behavior, such as runaway jobs filling up the available space or
 creating too many files. A filesystem that runs out of space or inodes affects
 all users immediately.  It is also a way to raise users’ awareness of the data
 their jobs produce, as storage is a limited resource and should be used
