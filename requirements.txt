@@ -2,7 +2,7 @@ accessible-pygments==0.0.3
 alabaster==0.7.12
 Babel==2.11.0
 beautifulsoup4==4.11.1
-certifi==2022.9.24
+certifi==2023.5.7
 charset-normalizer==2.1.1
 colorama==0.4.6
 docutils==0.19
@@ -30,7 +30,7 @@ sphinxcontrib-htmlhelp==2.0.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
-tornado==6.2
+tornado==6.3.2
 typing_extensions==4.5.0
 urllib3==1.26.12
 zipp==3.10.0
