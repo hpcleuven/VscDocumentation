@@ -10,19 +10,48 @@ carry out your research project, it might be possible to increase them. This
 option depends on data storage policies of the site managing your VSC account,
 VO or Tier-1 project as well as on current capacity of the storage system.
 
-Before requesting more storage, please check carefully the
-:ref:`current data usage of your VSC account <quota>` and identify which
-file system needs a larger quota.
+Before requesting more storage, please check carefully the :ref:`current data
+usage of your VSC account <checking disk usage>` and identify which file system
+needs a larger quota.
+
+.. _more quota inode:
+
+Requesting more inode quota
+===========================
+
+If you need more :ref:`inode quota <quota>`, you should first try to limit the
+number of files as much as possible:
+
+- Clean up the files you no longer need.
+- Aggregate your data into ``HDF5``, ``netCDF``, or ``CSV`` files.
+- Alternatively, pack your files in a tarball, for example::
+
+    tar -I pigz cf myfiles.tgz file1 <...> fileN
+
+  On some clusters you may have to load the ``pigz`` (parallel gzip) module to
+  make it available.  If you need help on ``tar`` or ``pigz``, please consult
+  the man pages by running ``man tar`` or ``man pigz`` on the command line.
+- Be careful when running jobs that write back to the shared storage and clean
+  up anything you do not need for post-processing or for verification, *i.e.*,
+  intermediate files.
+- Take care not to let your jobs write such small files on the shared storage
+  systems, but instead have them write to the local disks on the nodes where
+  your jobs are running and then pack them if they are still needed before
+  moving them to the shared storage.
+
+If you still need more inode quota after considering all the above options,
+please contact the :ref:`support team <tech support VSC>` managing the quota of
+the respective file system.
 
 .. _more quota personal:
 
 Personal storage
 ================
 
-The storage of personal VSC file systems (``VSC_HOME``, ``VSC_DATA`` and
-``VSC_SCRATCH``) are managed by your home institute. In case of doubt, please
-contact the corresponding :ref:`helpdesk <tech support VSC>` for your VSC
-account.
+The storage of personal VSC file systems ``VSC_HOME`` and ``VSC_DATA`` are
+managed by your home institute. ``VSC_SCRATCH`` is managed by the institute of
+the cluster. In case of doubt, please contact the corresponding :ref:`support
+team <tech support VSC>`.
 
 VSC_HOME
   The storage of your home directory is small on purpose. If you need more
@@ -93,8 +122,8 @@ maximally use. By default, this is set to 50% of the total quota for each user.
    will then depend on the usage of the other members. The total storage quota
    of the VO will always be respected.
 
-Tier-1 project
-==============
+Tier-1 project quota
+====================
 
 The scratch storage of your project in tier-1 is managed by the institute
 hosting the tier-1 HPC infrastructure. Your project directory will have the

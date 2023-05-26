@@ -6,6 +6,28 @@ How much disk space am I using?
 
 .. _quota:
 
+Disk quota
+==========
+
+VSC file systems can have 2 types of quota set on them:
+
+* quota on the *disk space*
+* quota on the *number of inodes*
+
+The number of inodes limits the maximum number of files that can be present in
+the file system (although there is no one-to-one relation between inodes and
+number of files).
+
+The inode and space quota allow site admins to control the amount of data and/or
+number of files users create, and to prevent system wide problems in case of
+unexpected behavior, such as runaway jobs filling up the available space or
+creating too many files. A filesystem that runs out of space or inodes affects
+all users immediately.  It is also a way to raise users’ awareness of the data
+their jobs produce, as storage is a limited resource and should be used
+responsibly.
+
+.. _checking disk usage:
+
 Total disk space used on file systems with quota
 ================================================
 
