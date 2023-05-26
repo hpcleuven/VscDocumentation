@@ -8,7 +8,7 @@ There are more than 50 iCommands. A regular user however may use only a few of t
 
 All iCommands accept standard common line options (e.g., -a for all, -h for help) that gives more capabilities to the commands. To see a subset of these options and to know the details of any iCommand, you can follow the below specified options:
 
-- You can visit the `iCommands documentation <https://docs.irods.org/4.2.6/icommands/user/>`__
+- You can visit the `iCommands documentation <https://docs.irods.org/4.2.11/icommands/user/>`__
  
 - You can use the ``–h`` option with the command (e.g., ``iput –h``)
   
@@ -22,49 +22,118 @@ Installing iCommands locally
 ----------------------------
 iCommands is installed on the KU Leuven Tier-1 and some of the Tier-2 clusters. As it is a client to any iRODS system, it can also be used from any local computer after installing it there.
 
-On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.11. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
+On a Linux OS you can use a package manager to install iCommands in the terminal. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
+You can install iCommands on different distributions as follows:
 
-For CentOS:
-::
-    # Add the iRODS repository to your package manager (if you haven't done so already)
-    sudo rpm --import https://packages.irods.org/irods-signing-key.asc
-    wget -qO - https://packages.irods.org/renci-irods.yum.repo | sudo tee /etc/yum.repos.d/renci-irods.yum.repo
+Centos 7:
 
-    #Installing iCommands  
-    sudo yum install irods-icommands-4.2.11
+.. code:: sh
 
-For Ubuntu:
-::
-    # Add the iRODS repository to your package manager (if you haven't done so already)
-    # If you are on Ubuntu 20, replace '$(lsb_release -sc)' with 'bionic' in the code below:
+   # Installing prerequisites
+   yum update
+   yum install wget sudo
 
-    wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
-    echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
-    sudo apt-get update
+   # Add the iRODS repository to your package manager (if you haven't done so already)
+   sudo rpm --import https://packages.irods.org/irods-signing-key.asc
+   wget -qO - https://packages.irods.org/renci-irods.yum.repo | sudo tee /etc/yum.repos.d/renci-irods.yum.repo
 
-    # Install prerequisites (needed for more recent ubuntu versions)
-    wget -c \
-        http://security.ubuntu.com/ubuntu/pool/main/p/python-urllib3/python-urllib3_1.22-1ubuntu0.18.04.2_all.deb \
-        http://security.ubuntu.com/ubuntu/pool/main/r/requests/python-requests_2.18.4-2ubuntu0.1_all.deb \
-        http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
-    sudo apt install -y \
-        ./python-urllib3_1.22-1ubuntu0.18.04.2_all.deb \
-        ./python-requests_2.18.4-2ubuntu0.1_all.deb \
-        ./libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
-    rm -rf \
-        ./python-urllib3_1.22-1ubuntu0.18.04.2_all.deb \
-        ./python-requests_2.18.4-2ubuntu0.1_all.deb \
-        ./libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
+   # Installing iCommands  
+   yum install irods-icommands
 
+Almalinux 8/Rocky Linux 8:
 
-    # Install iCommands  
-    apt-get install irods-runtime=4.2.11-1~bionic 
-    apt-get install irods-icommands=4.2.11-1~bionic
+.. code:: sh
+
+   # Installing prerequisites
+   yum update 
+   yum install wget sudo
+
+   # Add the iRODS repository to your package manager (if you haven't done so already)
+   sudo rpm --import https://packages.irods.org/irods-signing-key.asc
+   wget -qO - https://packages.irods.org/renci-irods.yum.repo | sudo tee /etc/yum.repos.d/renci-irods.yum.repo
+
+   # irods runtime needs to be installed manually because of https://github.com/k3s-io/k3s/issues/5588
+   yum install irods-runtime 
+
+   # Installing iCommands  
+   yum install irods-icommands
+
+Debian 11:
+
+.. code:: sh
+
+   # Installing prerequisites
+   apt-get update
+   apt-get install wget lsb-release sudo gnupg
+
+   # Add the iRODS repository to your package manager (if you haven't done so already)
+   wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
+   echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
+   sudo apt-get update
+
+   # Installing iCommands  
+   apt-get install irods-icommands
+
+Ubuntu 18/20:
+
+.. code:: sh
+
+   # Installing prerequisites
+   apt-get update
+   apt-get install wget lsb-core sudo
+
+   # Add the iRODS repository to your package manager (if you haven't done so already)
+   wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
+   echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
+   sudo apt-get update
+
+   # Installing iCommands 
+   apt-get install irods-icommands
+
+Ubuntu 22:
+
+.. code:: sh
+
+   # Installing prerequisites
+   apt-get update
+   apt-get install gnupg wget sudo
+   wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+   sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
+   # Add the iRODS repository to your package manager (if you haven't done so already)
+   wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
+   echo "deb [arch=amd64] https://packages.irods.org/apt/ focal main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
+   sudo apt-get update
+
+   # Installing iCommands 
+   apt-get install irods-icommands
 
 .. note::
     Depending on your linux distribution and version, the installation procedure may vary.
-    For any further assistance, please contact data@vscentrum.be.
+    If you are running a different Linux distribution, please contact data@vscentrum.be.
 
+
+
+Authenticating
+--------------
+
+On the Tier-2 systems of KU Leuven, you can authenticate as follows:
+
+.. code:: sh
+
+    irods-setup | bash
+
+On the login nodes of other Tier-1 or Tier-2 systems of the VSC on which iCommands are installed, you can use:
+
+.. code:: sh
+
+    ssh login.hpc.kuleuven.be irods-setup | bash
+
+Of course, you can also authenticate on a local machine.  
+To do so, go to the `ManGO portal <https://mango.vscentrum.be>`__
+and log in. Click on ‘How to connect’ next to your zone, copy the code
+under ‘iCommands for Linux’ and paste it into your terminal. This should
+authenticate your for 168 hours.
 
 
 Informative iRODS Commands
