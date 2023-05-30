@@ -115,7 +115,6 @@ html_theme_options = {
     "header_links_before_dropdown": 8,
     "icon_links": html_navbar_icon_links,
     "search_bar_text": "Search in VSC Docs...",
-    # "left_sidebar_end": ["sidebar-links"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "use_edit_page_button": True,
     "show_prev_next": False,
@@ -143,7 +142,7 @@ html_logo = "_static/vsc-logo-1.png"
 #
 html_sidebars = {
     "index": [],
-    "**": ["sidebar-nav-bs"],
+    "**": ["search-field", "sidebar-nav-bs"],
 }
 
 # Edit this page button
