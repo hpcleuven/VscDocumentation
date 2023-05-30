@@ -109,19 +109,21 @@ procedure does not work.
 #. Select your "home" institution from the drop-down menu and click the
    "confirm" button
 #. Log in using your institution login and password
-#. You will be asked to upload the public key you
-   :ref:`created earlier <create key pair>`
+#. |Optional| You will be asked to upload your cryptographic public key. This
+   key is need to access the terminal interface of VSC clusters. Do so if you
+   :ref:`created a SSH key pair <create key pair>` already, otherwise it
+   can be done at a later time.
 #. You will be asked for your scientific domain, please pick one from the
-   :ref:`NWO classification <list of scienfic domains>`
-#. You will get an e-mail to confirm your application, click the included link
-   to do so
-#. After the account has been approved by the VSC, your account will be created
-   and you will get a confirmation e-mail
+   :ref:`NWO classification list <list of scienfic domains>`
+#. Once your application is submitted, you will receive a confirmation e-mail.
+   Click the included link to do so
+#. At this point your account application will be reviewed by the VSC staff.
+   Once it is approved, you will be notified via e-mail
 
 .. warning::
 
    Allow for at least half an hour for your account to be properly created
-   after receiving the confirmation email!
+   after receiving the notification email about your account approval!
 
 .. note::
 

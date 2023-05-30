@@ -47,8 +47,8 @@ their VSC account and access the VSC infrastructure:
    :maxdepth: 2
    :numbered: 2
 
-   generating_keys
    getting_access
+   generating_keys
    access_and_data_transfer
    account_management
 

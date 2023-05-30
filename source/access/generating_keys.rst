@@ -2,10 +2,9 @@
 :fas:`key` Security Keys
 ########################
 
-Unlike your institute account, VSC accounts don't use regular fixed
-passwords but a key pair consisting of a public an private key because
-that is a more secure authentication technique.  To apply for a VSC
-account, you need a public/private key pair.
+Connections to VSC clusters are always encrypted to secure your data. Hence,
+you will need a cryptographic key pair, so-called SSH key, to log in to the VSC
+clusters via the terminal interface.
 
 .. _create key pair:
 
@@ -16,7 +15,7 @@ A key pair consists of a private and a public key.
 
 #. The private key is stored on the computer(s) you use to access the VSC
    infrastructure and always stays there.
-#. The public key is stored on the  VSC systems you want to access, allowing
+#. The public key is stored on the VSC systems you want to access, allowing
    to prove your identity through the corresponding private key.
   
 .. warning::
@@ -46,4 +45,69 @@ describe the generation of key pairs in the client sections below:
    generating_keys_on_windows
    generating_keys_with_openssh
    generating_keys_with_openssh_on_os_x
+
+.. _upload public key:
+   
+Upload public key to VSC account page
+=====================================
+
+Every time that you make a new SSH key pair for your VSC account, you have to
+upload the public part of the key to your `VSC account page`_. Once uploaded it
+will be distributed across the VSC clusters.
+
+.. warning::
+
+   Allow for at least half an hour for any change to your public keys to
+   propagate through the VSC systems and be able to log in with them.
+
+The upload procedure is slightly different depending on the motivation for the
+new SSH key.
+
+First key of your account
+-------------------------
+
+You already have an active VSC account and this is the first public key you
+will add to it:
+
+#. Go to the `Edit VO <https://account.vscentrum.be/django/account/edit>`_ tab
+   of your `VSC account page`_
+#. Scroll down to the section *Add public key*
+#. Click *Browse* to select the file of your public key
+#. Click *Upload extra public key* and wait for the upload to complete
+#. Click *Update*
+#. Verify that the new public key is listed under *Manage public keys*
+
+Additional key for your account
+-------------------------------
+
+You already have an active VSC account with a public key and want to add an
+additional key to be able to connect to the VSC clusters from a different
+computer:
+
+#. Go to the `Edit VO <https://account.vscentrum.be/django/account/edit>`_ tab
+   of your `VSC account page`_
+#. Scroll down to the section *Add public key*
+#. Click *Browse* to select the file of your public key
+#. Click *Upload extra public key* and wait for the upload to complete
+#. Click *Update*
+#. Verify that both the old and new public key is listed under *Manage public
+   keys*
+
+.. _replace compromised key:
+
+Replace compromised key
+-----------------------
+
+You already have an active VSC account with a public key, but it got
+compromised and must be replaced with a new one:
+
+#. Go to the `Edit VO <https://account.vscentrum.be/django/account/edit>`_ tab
+   of your `VSC account page`_
+#. Scroll down to *Manage public keys*
+#. Select the *Delete this key* checkbox of the compromised key
+#. Scroll down to the section *Add public key*
+#. Click *Browse* to select the file of your new public key
+#. Click *Upload extra public key* and wait for the upload to complete
+#. Click *Update*
+#. Verify that the new public key is listed under *Manage public keys*
 
