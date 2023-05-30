@@ -40,11 +40,35 @@ How to generate such a key pair depends on your operating system. We
 describe the generation of key pairs in the client sections below:
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    generating_keys_on_windows
-   generating_keys_with_openssh
    generating_keys_with_openssh_on_os_x
+   generating_keys_with_openssh
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: :fab:`windows` Windows
+       :columns: 12 4 4 4
+       :link: generating_keys_on_windows
+       :link-type: doc
+
+       Generating keys
+
+    .. grid-item-card:: :fab:`apple` macOS
+       :columns: 12 4 4 4
+       :link: generating_keys_with_openssh_on_os_x
+       :link-type: doc
+
+       Generating keys
+
+    .. grid-item-card:: :fab:`linux` Linux
+       :columns: 12 4 4 4
+       :link: generating_keys_with_openssh
+       :link-type: doc
+
+       Generating keys
 
 .. _upload public key:
    

@@ -24,8 +24,8 @@ a terminal and typing:
    OpenSSH_8.0p1, OpenSSL 1.1.1c FIPS  28 May 2019
 
 
-Generating a public/private key pair
-====================================
+Create a public/private key pair
+================================
 
 A key pair might already be present in the default location inside
 your home directory:

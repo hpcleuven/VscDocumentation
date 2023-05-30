@@ -19,8 +19,8 @@ that will install all other tools that you might need also.
 You can copy the PuTTY executables together with your private key on a
 USB stick to connect easily from other Windows computers.
 
-Generating a public/private key pair
-------------------------------------
+Create a public/private key pair
+--------------------------------
 
 To generate a public/private key pair, you can use the PuTTYgen key
 generator, which is available on the `PuTTY download site`_.

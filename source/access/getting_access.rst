@@ -98,7 +98,7 @@ Applying for your VSC account
 .. _generic access procedure:
 
 Generic procedure for academic researchers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 For most researchers from the Flemish universities, the procedure has
 been fully automated and works by using your institute account to
@@ -139,7 +139,7 @@ procedure does not work.
    ../leuven/lecturer_s_procedure_to_request_student_accounts_ku_leuven_uhasselt
 
 Next steps
-----------
+==========
 
 Register for an HPC Introduction course. These are organized at all universities
 on a regular basis.
@@ -154,7 +154,7 @@ Information on our training program and the schedule is available on the
    we get a few people interested in it.
 
 Additional information
-----------------------
+======================
 
 Your account also includes two “blocks” of disk space: your home
 directory and data directory. Both are accessible from all VSC clusters.
