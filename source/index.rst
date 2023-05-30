@@ -18,7 +18,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 
    about_vsc
    contact_vsc
-   access/index
+   Accounts <access/index>
    data_management
    compute
    T1 Cloud <cloud/index>

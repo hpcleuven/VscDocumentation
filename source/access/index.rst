@@ -1,8 +1,8 @@
 .. _access:
 
-#########################
-:fas:`user-circle` Access
-#########################
+######################################
+:fas:`user-circle` Accounts and access
+######################################
 
 In order to use the infrastructure of the VSC, you need a VSC-user ID,
 also called a VSC account.  Check the `VSC website <eligible users>`_
