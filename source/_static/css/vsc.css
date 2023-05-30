@@ -1,6 +1,6 @@
 html[data-theme="light"] {
     --pst-color-primary: #d96c31;  /* VSC orange */
-    --pst-color-link: #338F8B;  /* dark teal (complementary) */
+    --pst-color-link: #40807D;  /* dark teal (complementary) */
     --pst-color-link-hover: #f28e24;  /* VSC secondary orange */
     --pst-color-background: #ffffff;  /* actual white */
     --pst-color-on-background: #f9f9f9;  /* lighter VSC white */
@@ -21,10 +21,12 @@ html[data-theme="dark"] {
 }
 
 /* toctree format */
-.toctree-l1 {
+.toctree-wrapper .toctree-l1 {
+    font-size: 1.2rem;
     font-weight: bold;
 }
-.toctree-l2 {
+.toctree-wrapper .toctree-l2 {
+    font-size: 1.0rem;
     font-weight: normal;
 }
 
