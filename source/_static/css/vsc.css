@@ -1,18 +1,21 @@
 html[data-theme="light"] {
     --pst-color-primary: #d96c31;  /* VSC orange */
-    --pst-color-link: #048c88;  /* teal (complementary) */
+    --pst-color-link: #338F8B;  /* dark teal (complementary) */
+    --pst-color-link-hover: #f28e24;  /* VSC secondary orange */
     --pst-color-background: #ffffff;  /* actual white */
-    --pst-color-on-background: #f1f2f2;  /* VSC white */
+    --pst-color-on-background: #f9f9f9;  /* lighter VSC white */
     --pst-color-border: #dbdbdb;
+    --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
 
 html[data-theme="dark"] {
     --pst-color-primary: #f28e24;  /* VSC secondary orange */
-    --pst-color-link: #90f2f2;  /* blue (complementary) */
+    --pst-color-link: #90f2f2;  /* light teal (complementary) */
     --pst-color-link-hover: #f9bf19;
     --pst-color-background: #383839;  /* VSC black */
     --pst-color-on-background: #282828;  /* darker VSC black */
     --pst-color-border: #4e4e4e;
+    --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
 
 .toctree-l1 {

@@ -32,8 +32,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :columns: 12
         :link: access/index
         :link-type: doc
-        :class-card: border-info
-        :class-title: h3 text-info 
+        :class-title: h3
 
         How to get your VSC account and access the different VSC services and platforms.
 
@@ -41,8 +40,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :columns: 12
         :link: data_management
         :link-type: doc
-        :class-card: border-info
-        :class-title: h3 text-info 
+        :class-title: h3
 
         Data transfer and storage in the VSC infrastructure.
 
@@ -50,8 +48,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :columns: 12 4 4 4
         :link: compute
         :link-type: doc
-        :class-card: border-info
-        :class-title: h3 text-info 
+        :class-title: h3
 
         The high-performance computing (HPC) platform provides multiple tiers
         of parallel processing enabling researchers to run advanced application
@@ -61,8 +58,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :columns: 12 4 4 4
         :link: cloud/index
         :link-type: doc
-        :class-card: border-info
-        :class-title: h3 text-info 
+        :class-title: h3
 
         The VSC Cloud component provides *on-demand* resources in a more
         flexible and cloud-like manner.
@@ -71,8 +67,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :columns: 12 4 4 4
         :link: data/index
         :link-type: doc
-        :class-card: border-info
-        :class-title: h3 text-info 
+        :class-title: h3
 
         The VSC Data component enables research data to remain close to the
         computing infrastructure during the active phase of the data life
@@ -82,8 +77,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
         :columns: 12
         :link: faq
         :link-type: doc
-        :class-card: border-info
-        :class-title: h3 text-info 
+        :class-title: h3
 
         Collection of frequently asked questions.
 
