@@ -24,3 +24,11 @@ html[data-theme="dark"] {
 .toctree-l2 {
     font-weight: normal;
 }
+
+/* make sphinx-design cards slightly non-transparent */
+html[data-theme="light"] .sd-card {
+    background-color: rgba(128, 128, 128, 0.06);
+}
+html[data-theme="dark"] .sd-card {
+    background-color: rgba(128, 128, 128, 0.15);
+}
