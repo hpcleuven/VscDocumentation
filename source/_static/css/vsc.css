@@ -4,6 +4,7 @@ html[data-theme="light"] {
     --pst-color-link-hover: #f28e24;  /* VSC secondary orange */
     --pst-color-background: #ffffff;  /* actual white */
     --pst-color-on-background: #f9f9f9;  /* lighter VSC white */
+    --pst-color-surface: #f5f5f5;  /* cards background */
     --pst-color-border: #dbdbdb;
     --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
@@ -12,12 +13,14 @@ html[data-theme="dark"] {
     --pst-color-primary: #f28e24;  /* VSC secondary orange */
     --pst-color-link: #90f2f2;  /* light teal (complementary) */
     --pst-color-link-hover: #f9bf19;
-    --pst-color-background: #383839;  /* VSC black */
-    --pst-color-on-background: #282828;  /* darker VSC black */
+    --pst-color-background: #282828;  /* darker VSC black */
+    --pst-color-on-background: #383839;  /* VSC black */
+    --pst-color-surface: #303030;  /* cards background */
     --pst-color-border: #4e4e4e;
     --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
 
+/* toctree format */
 .toctree-l1 {
     font-weight: bold;
 }
@@ -26,9 +29,6 @@ html[data-theme="dark"] {
 }
 
 /* make sphinx-design cards slightly non-transparent */
-html[data-theme="light"] .sd-card {
-    background-color: rgba(128, 128, 128, 0.06);
-}
-html[data-theme="dark"] .sd-card {
-    background-color: rgba(128, 128, 128, 0.15);
+.sd-card {
+    background-color: var(--pst-color-surface);
 }
