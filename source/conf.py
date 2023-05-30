@@ -119,8 +119,8 @@ html_theme_options = {
     "use_edit_page_button": True,
     "show_prev_next": False,
     "footer_start": ["copyright"],
-    "pygment_light_style": "solarized-light",
-    "pygment_dark_style": "nord",
+    "pygment_light_style": "manni",  # toned-up comments
+    "pygment_dark_style": "inkpot",  # toned-up comments
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

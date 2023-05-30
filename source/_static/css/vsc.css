@@ -32,3 +32,8 @@ html[data-theme="dark"] {
 .sd-card {
     background-color: var(--pst-color-surface);
 }
+
+/* line numbers in codeblocks on transparent column */
+html[data-theme="light"] .highlight span.linenos { background-color: transparent; }
+html[data-theme="dark"] .highlight span.linenos { background-color: transparent; }
+
