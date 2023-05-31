@@ -10,4 +10,5 @@
 
    hardware-tier1
    hardware-tier2
+   hardware-storage
    hardware-archive
