@@ -20,6 +20,41 @@ html[data-theme="dark"] {
     --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
 
+/* background gradients */
+html[data-theme="light"] .bd-sidebar-primary {
+    background-color: #fcf1dd;  /* very light VSC yellow */
+}
+html[data-theme="light"] .bd-content {
+    background-color: var(--pst-color-background);
+}
+@media (min-width: 960px) {
+    html[data-theme="light"] .bd-container {
+        background: var(--pst-color-background);
+        /* light VSC yellow: #f8e2bb */
+        background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(248, 226, 187) 50%, rgb(255, 255, 255) 80%, rgb(255, 255, 255) 100%)
+    }
+    html[data-theme="light"] .bd-sidebar-primary {
+        background-color: transparent;
+    }
+}
+
+html[data-theme="dark"] .bd-sidebar-primary {
+    background-color: #3c2c28;  /* very dark VSC brick */
+}
+html[data-theme="dark"] .bd-content {
+    background-color: var(--pst-color-background);
+}
+@media (min-width: 960px) {
+    html[data-theme="dark"] .bd-container {
+        background: var(--pst-color-background);
+        /* dark VSC brick: #673527 */
+        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(103, 53, 39) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
+    }
+    html[data-theme="dark"] .bd-sidebar-primary {
+        background-color: transparent;
+    }
+}
+
 /* toctree format */
 .toctree-wrapper .toctree-l1 {
     font-size: 1.2rem;
