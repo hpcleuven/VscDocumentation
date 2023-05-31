@@ -19,11 +19,10 @@ information about the services provided by the `Vlaams Supercomputer Centrum
    about_vsc
    contact_vsc
    Accounts <access/index>
-   data_management
-   compute
-   T1 Cloud <cloud/index>
-   T1 Data <data/index>
-   faq
+   Data <data/index>
+   Compute <compute>
+   Cloud <cloud/index>
+   FAQs <faq>
 
 .. grid:: 3
    :gutter: 4
@@ -36,9 +35,9 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 
       How to get your VSC account and access the different VSC services and platforms.
 
-   .. grid-item-card:: :fas:`left-right` Data Management
+   .. grid-item-card:: :fas:`floppy-disk` Research Data
       :columns: 12
-      :link: data_management
+      :link: data/index
       :link-type: doc
       :class-title: h3
 
@@ -65,7 +64,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 
    .. grid-item-card:: :fas:`database` T1 Data
       :columns: 12 4 4 4
-      :link: data/index
+      :link: data/tier1_data_service
       :link-type: doc
       :class-title: h3
 

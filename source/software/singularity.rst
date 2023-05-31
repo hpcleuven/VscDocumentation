@@ -94,7 +94,7 @@ build your image file ``my_image.sif``::
 
    your_machine> singularity build my_image.sif my_image.def
 
-Once your image is built, you can :ref:`transfer <data_transfer>`
+Once your image is built, you can :ref:`transfer <data transfer>`
 it to the VSC infrastructure to use it.
 
 .. warning::

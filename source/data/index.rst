@@ -1,14 +1,12 @@
-Tier-1 Data Service
-===================
+################################
+:fas:`floppy-disk` Research Data
+################################
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
+   storage
+   transfer
+   ../globus/index
    tier1_data_service
-   introduction_to_irods
-   tier1_data_architecture
-   data_discovery
-   user_access
-   irods_clients_index
-   workflow_automation
-   glossary
+

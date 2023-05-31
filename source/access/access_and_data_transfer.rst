@@ -27,39 +27,6 @@ need to use on your client system depends on its operating system:
    |KUL| When logging in to a KU Leuven cluster, take a look
    at the page on :ref:`Multi Factor Authentication<mfa_leuven>`.
 
-Data storage
-============
-
-Your account also comes with a certain amount of data storage
-capacity in at least three subdirectories on each cluster. You'll
-need to familiarise yourself with
-
-.. toctree::
-   :maxdepth: 2
-
-   where_can_i_store_what_kind_of_data
-   managing_disk_usage
-
-.. _data_transfer:
-
-Transferring data
-=================
-
-Before you can do some work, you'll have to transfer the files that
-you need from your desktop or department to the cluster. At the end
-of a job, you might want to transfer some files back. The preferred
-way to do that, is by using an sftp client. It again requires some
-software on your client system which depends on its operating system:
-
-.. toctree::
-   :maxdepth: 2
-
-   data_transfer_windows
-   data_transfer_mac
-   data_transfer_linux
-   ../leuven/data_transfer_kuleuven_network_drives
-
-
 GUI applications on the clusters
 ================================
 
