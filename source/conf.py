@@ -123,6 +123,7 @@ html_theme_options = {
     "use_edit_page_button": True,
     "show_prev_next": False,
     "footer_start": ["copyright"],
+    "footer_end": [],
     "pygment_light_style": "manni",  # toned-up comments
     "pygment_dark_style": "inkpot",  # toned-up comments
 }
