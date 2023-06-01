@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
+    'sphinx_reredirects',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
