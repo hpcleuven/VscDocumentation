@@ -11,7 +11,7 @@ option depends on data storage policies of the site managing your VSC account,
 VO or Tier-1 project as well as on current capacity of the storage system.
 
 Before requesting more storage, please check carefully the :ref:`current data
-usage of your VSC account <checking disk usage>` and identify which file system
+usage of your VSC account <checking storage usage>` and identify which file system
 needs a larger quota.
 
 .. _more quota inode:

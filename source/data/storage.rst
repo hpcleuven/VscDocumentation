@@ -11,5 +11,5 @@ to manage your data in them.
    :maxdepth: 2
 
    storage_locations
-   managing_disk_usage
+   managing_storage_usage
 

@@ -33,7 +33,7 @@ you won't get feedback, since that feedback would be in the error file
 that can't be written.
 
 See the FAQs listed below to :ref:`check the amount of disk
-space <disk usage>` you are currently using, and for a few hints on
+space <storage usage>` you are currently using, and for a few hints on
 :ref:`what data to store where <data location>`.
 
 However, your home directory may unexpectedly fill up in two ways:

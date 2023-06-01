@@ -120,7 +120,7 @@ data you can store here is limited by the operating system, and not just
 by the capacity of the disk system, to prevent that the disk system
 fills up accidentally. You can see your current usage and the current
 limits with the appropriate quota command as explained on the :ref:`page on
-managing disk space <disk usage>`.
+managing disk space <storage usage>`.
 The actual disk capacity, shared by *all* users, can be found on the
 :ref:`Available hardware <hardware>` page.
 

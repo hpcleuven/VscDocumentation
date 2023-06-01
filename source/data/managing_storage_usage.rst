@@ -1,17 +1,17 @@
-.. _disk usage:
+.. _storage usage:
 
-###############################
-How much disk space am I using?
-###############################
+######################
+Managing storage usage
+######################
 
 .. _quota:
 
-Disk quota
-==========
+File system quota
+=================
 
 VSC file systems can have 2 types of quota set on them:
 
-* quota on the *disk space*
+* quota on the *storage space*
 * quota on the *number of inodes*
 
 The number of inodes limits the maximum number of files that can be present in
@@ -26,13 +26,13 @@ all users immediately.  It is also a way to raise users’ awareness of the data
 their jobs produce, as storage is a limited resource and should be used
 responsibly.
 
-.. _checking disk usage:
+.. _checking storage usage:
 
-Total disk space used on file systems with quota
-================================================
+Total space used on file systems with quota
+============================================
 
-On file systems with quota enabled, you can check the amount of disk space that
-is available for you, and the amount of disk space that is in use by
+On file systems with quota enabled, you can check the amount of storage space
+that is available for you, and the amount of storage space that is in use by
 you.
 
 VSC account page
@@ -57,8 +57,8 @@ Terminal in the cluster
 
 On the system of most VSC clusters, ``myquota`` will show you for the
 ``$VSC_HOME``, ``$VSC_DATA`` and ``$VSC_SCRATCH`` file systems either the
-percentage of the available disk space you are using, or the absolute amount.
-Users from Ghent university should check their disk usage using the `web
+percentage of the available storage space you are using, or the absolute amount.
+Users from Ghent university should check their storage usage using the `web
 application <https://account.vscentrum.be/>`_.
 
 If quota have been set on the number of files you can create on a file
@@ -81,8 +81,8 @@ Example::
 
 .. _du command:
 
-Disk space used by individual directories
------------------------------------------
+Space used by individual directories
+====================================
 
 .. warning::
 
