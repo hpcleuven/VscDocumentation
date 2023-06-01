@@ -26,9 +26,9 @@ copyright = f"{datetime.now().year}, VSC (Vlaams Supercomputing Center)"
 author = "VSC (Vlaams Supercomputing Center)"
 
 # The short X.Y version
-version = ''
+version = "2.0"
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = "2.0"
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
