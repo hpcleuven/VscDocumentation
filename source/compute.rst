@@ -4,29 +4,9 @@
 :fas:`rocket` Compute
 #####################
 
-.. grid:: 2
-   :gutter: 4
+.. toctree::
+   :maxdepth: 3
 
-   .. grid-item-card::
-      :columns: 12 6 6 6
-
-      .. toctree::
-         :maxdepth: 3
-
-         hardware
-
-   .. grid-item-card::
-      :columns: 12 6 6 6
-
-      .. toctree::
-         :maxdepth: 3
-
-         jobs/index
-
-   .. grid-item-card::
-      :columns: 12 6 6 6
-
-      .. toctree::
-         :maxdepth: 3
-
-         software/index
+   hardware
+   jobs/index
+   software/index
