@@ -34,6 +34,7 @@ modern [PyData theme](https://pydata-sphinx-theme.readthedocs.io).
    * ✅ split _Access and data transfer_ in 2 different sections
    * ✅ reorganize _Accounts and access_ info to make SSH keys optional
    * ✅ merge all information about data and storage in a single section
+   * 🔄 replace images with figures
    * 🔄 fix broken links with redirects (sphinx-reredirects)
 4. Phase 4
    * ⬜ add widget to preselect home institute
