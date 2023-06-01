@@ -6,6 +6,8 @@
 # full list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
 
+from datetime import datetime
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -19,9 +21,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'VSC documentation'
-copyright = '2020, VSC (Vlaams Supercomputing Center)'
-author = 'VSC (Vlaams Supercomputing Center)'
+project = "VSC documentation"
+copyright = f"{datetime.now().year}, VSC (Vlaams Supercomputing Center)"
+author = "VSC (Vlaams Supercomputing Center)"
 
 # The short X.Y version
 version = ''
