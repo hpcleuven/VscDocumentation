@@ -236,7 +236,13 @@ epub_exclude_files = ['search.html']
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-# -- RST Prolog ---------------------------------------------------------------
+# -- Page redirects ----------------------------------------------------------
+redirects = {
+    "access/getting_access": "/access/vsc_account.html",
+    "access/access_and_data_transfer": "/access/access_methods.html",
+}
+
+# -- RST Prolog --------------------------------------------------------------
 rst_prolog = ""
 
 # Badges

@@ -1,26 +1,16 @@
 .. _windows_client:
 
-##############
-Windows client
-##############
+##################################
+:fab:`windows` Access from Windows
+##################################
 
-Getting ready to request an account
-===================================
+Getting ready to login
+======================
 
-Before requesting an account, you need to generate a pair of SSH
-keys. There multiple ways to create yours keys in Windows, in the following we
-cover the most common ones:
-
-* `PuTTY`_
-  One popular way to do this on Windows is using the freely
-  available `PuTTY`_ client which you can then also use to log on to
-  the clusters, see the :ref:`instructions for generating a key pair with PuTTY
-  <generating keys putty>`.
-
-* `MobaXterm`_
-  Another popular way is using the (also freely available)
-  :ref:`MobaXterm client <access using mobaxterm>`, see the :ref:`instructions
-  for generating a key pair with MobaXterm <generating keys mobaxterm>`.
+Before you can log in with SSH to a VSC cluster, you need to generate a pair of
+SSH keys and upload them to your VSC account. There multiple ways to create
+yours keys in Windows, please check our documentation on
+:ref:`generating keys windows`.
 
 Connecting to the cluster
 =========================
@@ -62,15 +52,7 @@ Windows 10 build 1607 or later.  The available Linux distributions have
 SSH clients, so you can refer to all pages about SSH and data transfer
 from :ref:`the Linux client pages <linux_client>` as well.
 
-Transfer data using Secure FTP (SFTP) clients
-=============================================
-
-Two GUI clients SFTP clients for Windows are recommended:
-
--  :ref:`FileZilla<FileZilla>`
--  :ref:`WinSCP<WinSCP>`
-
-.. _Windows gui:
+.. _windows_gui:
 
 Display graphical programs
 ==========================

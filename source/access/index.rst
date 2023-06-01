@@ -4,8 +4,8 @@
 :fas:`user-circle` Accounts and access
 ######################################
 
-In order to use the infrastructure of the VSC, you need a VSC-user ID,
-also called a VSC account.  Check the `VSC website <eligible users>`_
+In order to use the infrastructure of the VSC, you need a VSC user-ID,
+also called a VSC account. Check the `VSC website <eligible users>`_
 for conditions.
 
 All VSC-accounts start with the letters ``vsc`` followed by a
@@ -31,24 +31,23 @@ programs for instance cannot run on our infrastructure as we use the
 Linux operating system on the clusters. The infrastructure also should
 not be used to run applications for which the compute power of a good
 laptop is sufficient. The pages on the :ref:`tier1 hardware` and
-:ref:`tier2 hardware`
-in this part of the website give a high-level description of our
+:ref:`tier2 hardware` give a high-level description of our
 infrastructure. You can find more detailed information in the user
 documentation on the user portal. When in doubt, you can also contact
 your `local support team <get in touch>`_. This does not require a VSC account.
 
-VSC Account Application
-=======================
+VSC Accounts
+============
 
-New users of the VSC clusters should take the following three steps to get
+New users of the VSC services should take the following steps to get
 their VSC account and access the VSC infrastructure:
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 2
+   :numbered: 1
 
-   getting_access
+   vsc_account
    generating_keys
-   access_and_data_transfer
+   access_methods
    account_management
 

@@ -324,9 +324,9 @@ You can also use ``srun`` to start an interactive session with X11 support. Howe
 starting a session you should ensure that you can start X11 programs from the session from
 you will be starting ``srun``. Check the corresponding guide for your operating system:
 
-- :ref:`Windows <Windows gui>`
-- :ref:`Linux <Linux gui>`
-- :ref:`macOS <macOS gui>`
+- :ref:`Windows <windows_gui>`
+- :ref:`Linux <linux_gui>`
+- :ref:`macOS <macos_gui>`
 
 X11 programs rarely use distributed memory parallelism, so in most case you will be requesting
 just a single task. To add support for X11, use the ``--x11`` option before ``--pty``:

@@ -1,10 +1,15 @@
-################################
-:fas:`user-check` Getting Access
-################################
+#################################
+:fas:`user-check` New VSC Account
+#################################
 
-Once you have a valid :ref:`public/private key pair<create key pair>`, you can
-submit an account request.  The following algorithm guides you to the
-appropriate approach for each institution.
+VSC accounts are the user account system used across the VSC infrastructure. It
+is hence mandatory to create your own personal VSC account to access our
+services.
+
+Using VSC accounts is transparent though. They are tied to your existing
+account in your home institute and therefore, it is not necessary to set up any
+additional passwords. Only a cryptographic key will be needed to access the
+terminal interface of the VSC clusters.
 
 .. _apply for account:
 

@@ -1,8 +1,8 @@
 .. _linux_client:
 
-############
-Linux client
-############
+##############################
+:fab:`linux` Access from Linux
+##############################
 
 Since all VSC clusters use Linux as their main operating system, you
 will need to get acquainted with Linux using the command-line interface and
@@ -14,20 +14,19 @@ If you don't have any experience with using the command-line interface
 in Linux, we suggest you to read the :ref:`basic Linux
 usage <basic linux>` section first.
 
-Getting ready to request an account
-===================================
+Getting ready to login
+======================
 
 Before requesting an account, you need to generate a pair of ssh
 keys. One popular way to do this on Linux is :ref:`using the freely
 available OpenSSH client <generating keys linux>`
 which you can then also use to log on to the clusters.
 
-
 Connecting to the cluster
 =========================
 
-Text-mode session using OpenSSH
--------------------------------
+Text-mode session
+-----------------
 
 The OpenSSH :ref:`ssh command <OpenSSH access>` can be used to open
 a connection in a Linux terminal session.
@@ -37,13 +36,7 @@ a connection in a Linux terminal session.
 
    text_mode_access_using_openssh
 
-Transfer data using Secure FTP (SFTP)
-=====================================
-
-Data can easily be transferred to and from remote systems using
-the :ref:`OpenSSH sftp and scp commands <scp and sftp>`.
-
-.. _Linux gui:
+.. _linux_gui:
 
 Display graphical programs
 ==========================

@@ -138,7 +138,7 @@ Prerequisites
 -------------
 
 You'll need an ssh client on your desktop that provides port forwarding
-functionality on your desktop. We refer to the :ref:`access_data_transfer`
+functionality on your desktop. We refer to the :ref:`access methods`
 section for information about ssh clients for various client operating systems.
 PuTTY (Windows) and OpenSSH (macOS, Linux, UNIX-compatibility environment on
 Windows) both provide all required functionality.
