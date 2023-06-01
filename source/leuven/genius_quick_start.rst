@@ -2,7 +2,6 @@
 
 Genius quick start guide
 ========================
-
 :ref:`Genius <Genius hardware>` is one of the two KU Leuven/UHasselt Tier-2 clusters,
 besides :ref:`wICE <wice hardware>`. 
 Given the architectural diversity of compute nodes on Genius, this cluster is suited  
@@ -15,45 +14,46 @@ For example, to log in to any of the login node using SSH::
    $ ssh vscXXXXX@login.hpc.kuleuven.be
 
 
-.. _running jobs on genius:
+.. _running_jobs_on_genius:
 
 Running jobs on Genius
 ----------------------
-
-Genius is equipped with normal (thin) compute nodes, two kinds of large memory nodes,
-and GPU nodes.  The resources specifications for jobs have to be tuned to use these 
+Genius is equipped with regular (thin) compute nodes, two kinds of big memory nodes,
+and GPU nodes.  The resource specifications for jobs have to be tuned to use these 
 nodes properly.
 
-In case you are not yet familiar with the system, you can find more
-information on
+The `Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler,
+resource manager and credit accounting manager on Genius (and wICE).
 
-- :ref:`hardware specification <Genius hardware>`
-- Submitting jobs using :ref:`Slurm Workload Manager <Antwerp Slurm>` and the 
-  :ref:`Advanced topics <Antwerp advanced Slurm>`
-- :ref:`running jobs <running jobs>`
-- :ref:`obtaining credits <KU Leuven credits>` and 
-  :ref:`Slurm accounting <accounting_leuven>`
+In case you are not yet familiar Slurm and/or the Genius hardware, you can find
+more information on the following pages:
 
-The default ``batch`` partition allows jobs with maximum 3 days of walltime.
-Jobs which require a walltime up to maximum 7 days must be submitted to the 
-``batch_long`` partition explicitly.
+- :ref:`Genius hardware <Genius hardware>`
+- :ref:`Slurm jobs (basics) <Antwerp Slurm>` and 
+  :ref:`Slurm jobs (advanced) <Antwerp advanced Slurm>`
+- :ref:`General info on running jobs <running jobs>`
+- :ref:`Obtaining compute credits <KU Leuven credits>` and 
+  :ref:`Slurm credit accounting <accounting_leuven>`
 
-The `Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler, resource manager and 
-accounting manager on Genius (and wICE).
-To get started with Slurm, you may refer to the internal documentation on  
-:ref:`Basics of Slurm <Antwerp Slurm>` and :ref:`Advanced Slurm <Antwerp advanced Slurm>` usage.
 
-.. _submit to genius compute node:
+.. _submit_genius_batch:
 
-Submit to a compute node
-~~~~~~~~~~~~~~~~~~~~~~~~
-Submitting a compute job boils down to specifying the required number of nodes, cores-per-node, memory and walltime.
-You may e.g. request two full nodes like this::
+Submitting to a regular compute node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The regular (thin) compute nodes are gathered in the default ``batch`` partition.
+This partition allows jobs with maximum 3 days of walltime. Jobs which require a
+walltime up to maximum 7 days need to be submitted to the ``batch_long`` partition
+instead.
+
+Submitting a regular compute job boils down to specifying the required number of
+nodes, cores-per-node, memory and walltime. You may e.g. request two full nodes like
+this::
 
    $ sbatch -A lp_myproject -M genius -t 2:00:00 --nodes=2 --ntasks-per-node=36 myjobscript.slurm
 
 You may also request only a part of the resources on a node.
-For instance, to test a multi-threaded application which performs optimally using 4 cores, you may submit your job like this::
+For instance, to test a multi-threaded application which performs optimally using 4 cores,
+you may submit your job like this::
 
    $ sbatch -A lp_myproject -M genius -t 2:00:00 --ntasks=4 myjobscript.slurm
    # or
@@ -61,15 +61,22 @@ For instance, to test a multi-threaded application which performs optimally usin
 
 .. note::
 
-   Please bear in mind to not exceed the maximum allowed resources on compute nodes for the targeted partition.
-   E.g. you can request at most 36 cores per node (``--ntasks=36``). 
-   In general, we advise you to only request as much resources as needed by your application.
+   Please bear in mind to not exceed the maximum allowed resources on compute
+   nodes for the targeted partition. E.g. you can request at most 36 cores per
+   node (``--ntasks=36``). In general, we advise you to only request as many
+   resources as needed by your application.
 
 .. note::
 
-   By default, each job will use a single core on a single node for a duration of 1 hour.
-   In other words, these default values are implicitly applied 
-   ``--nodes=1 --ntasks=1 --mem-per-cpu=5000M --time=1:00:00``.
+   If you do not provide a walltime for your job, then a default walltime will
+   be applied. This 1 hour for all partitions, except for the debug partitions
+   where it is 30 minutes (see :ref:`submit_genius_debug` below).
+
+.. note::
+
+   If you do not specify the number of tasks and cores per task for your job,
+   then it will default to a single task running on a single core.  
+
 
 Advanced node usage
 ^^^^^^^^^^^^^^^^^^^
@@ -81,27 +88,28 @@ Otherwise, your job will land on the first available node(s) as decided by Slurm
 By default, all nodes are shared among all jobs and users, unless the resource specifications
 would imply an exclusive access to a node by a job or user.
 
-.. _submit to genius GPU node:
 
-Submit to a GPU node
-~~~~~~~~~~~~~~~~~~~~
-The GPU nodes are accessible via different partitions.
-The table below summarizes all the possibilities:
+.. _submit_genius_gpu:
+
+Submitting to a GPU node
+~~~~~~~~~~~~~~~~~~~~~~~~
+The GPU nodes are accessible via the following partitions:
 
 +---------------+----------+----------------------------------------+-------------+
 | Partition     | Walltime | Resources                              | CPU model   |
 +===============+==========+========================================+=============+
 | gpu_p100      | 3 days   | 20 nodes, 4x Nvidia P100 GPUs per node | Skylake     |
++---------------+----------+                                        |             |
 | gpu_p100_long | 7 days   |                                        |             |
 +---------------+----------+----------------------------------------+-------------+
 | gpu_v100      | 3 days   | 2 nodes, 8x Nvidia V100 GPUs per node  | Cascadelake |
++---------------+----------+                                        |             |
 | gpu_v100_long | 7 days   |                                        |             |
 +---------------+----------+----------------------------------------+-------------+
 
-
 Similar to the other nodes, the GPU nodes can be shared by different jobs from 
 different users.
-However every user will have exclusive access to the number of GPUs requested. 
+However, every user will have exclusive access to the number of GPUs requested. 
 If you want to use only 1 GPU of type P100 you can submit for example like this::
 
    $ sbatch -A lp_my_project -M genius -N 1 -n 9 --gpus-per-node=1 -p gpu_p100 myjobscript.slurm
@@ -117,32 +125,33 @@ To specifically request V100 GPUs, you can submit for example like this::
    $ sbatch -A lp_my_project -M genius -N 1 -n 4 --gpus-per-node=1 --mem-per-cpu=20000M -p gpu_v100 myjobscript.slurm
   
 For the V100 type of GPU, it is required that you request 4 cores for each GPU. 
-Also notice that these nodes offer a much larger memory bank.
+Also notice that these nodes offer a much larger amount of CPU memory.
 
 
-.. _submit to genius big memory node:
+.. _submit_genius_bigmem:
 
-Submit to a big memory node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The big memory nodes are hosted by the ``bigmem`` and ``bigmem_long`` partitions. 
+Submitting to a big memory node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The big memory nodes are located in the ``bigmem`` and ``bigmem_long`` partitions. 
 In case of the big memory nodes it is also important to add your memory requirements, 
 for example::
 
    $ sbatch -A lp_my_project -M genius -N 1 -n 36 --mem-per-cpu=20000M -p bigmem myjobscript.slurm
 
-.. _submit to genius AMD node:
 
-Submit to an AMD node
-~~~~~~~~~~~~~~~~~~~~~
+.. _submit_genius_amd:
 
+Submitting to an AMD node
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The AMD nodes are accessible via the ``amd`` and ``amd_long`` partitions.
 Besides specifying the partition, it is also important to note that the default memory
-per core in this partition is 3800 MB, and each node offers maximum 64 cores. 
+per core in this partition is 3800 MB, and each node contains 64 cores.
 For example, to request two full nodes::
 
    $ sbatch -A lp_my_project -M genius -N 2 --ntasks-per-node=64 -p amd myjobscript.slurm 
 
+
+.. _submit_genius_debug:
 
 Running debug jobs
 ------------------
