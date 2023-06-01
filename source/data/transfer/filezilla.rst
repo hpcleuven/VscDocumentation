@@ -1,7 +1,8 @@
 .. _FileZilla:
 
+############################
 Data transfer with FileZilla
-============================
+############################
 
 FileZilla is an easy-to-use freely available ftp-style program to
 transfer files to and from your account on the clusters.
@@ -12,10 +13,12 @@ access your files from any internet-connected PC.
 You can `download FileZilla`_ from the `FileZilla project page`_.
 
 Configuration of FileZilla to connect to a login node
------------------------------------------------------
+=====================================================
 
-Note: Pageant should be running and your private key should be loaded
-first (more info on our ":ref:`using Pageant`" page).
+.. note::
+
+   Pageant should be running and your private key should be loaded first (more
+   info in our ":ref:`using Pageant`" page).
 
 #. Start FileZilla;
 #. Open the Site Manager using the 'File' menu;
@@ -34,21 +37,16 @@ first (more info on our ":ref:`using Pageant`" page).
    'Rename' button;
 #. Press 'Connect' and enter your passphrase when requested.
 
-|site manager|
+.. figure:: filezilla/site_manager.png
+   :alt: FileZilla's site manager
 
 Note that recent versions of FileZilla have a screen in the settings to
 manage private keys. The path to the private key must be provided in
 options (Edit Tab -> options -> connection -> SFTP):
 
-|site manager populated|
+.. figure:: filezilla/prefs_private_key.jpg
+   :alt: FileZilla site manager with settings
 
 After that you should be able to connect after being asked for
 passphrase. As an alternative you can choose to use putty pageant.
-
-.. |site manager| image:: data_transfer_with_filezilla/site_manager.png
-   :width: 600
-   :alt: FileZilla's site manager
-.. |site manager populated| image:: data_transfer_with_filezilla/prefs_private_key.jpg
-   :width: 600
-   :alt: FileZilla site manager with settings
 

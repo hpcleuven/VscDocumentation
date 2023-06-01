@@ -4,17 +4,20 @@
 :fas:`left-right` Data Transfer
 ###############################
 
-Before you can do some work, you'll have to transfer the files that
-you need from your desktop or department to the cluster. At the end
-of a job, you might want to transfer some files back. The preferred
-way to do that, is by using an sftp client. It again requires some
-software on your client system which depends on its operating system:
+Before you can do some work, you'll have to transfer any files or data sets
+that you need for your research from your personal or department computer to
+the :ref:`storage of VSC clusters <data location>`. Then, once you get your
+results, you might want to transfer some files back. 
+
+|Recommended| The preferred way to transfer data to/from the VSC clusters is
+the :ref:`globus platform`.
+
+For those systems not supporting Globus, we provide instructions on alternative
+transfer methods that can also be used in VSC clusters:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   data_transfer_windows
-   data_transfer_mac
-   data_transfer_linux
+   transfer/external_computer
    ../leuven/data_transfer_kuleuven_network_drives
 

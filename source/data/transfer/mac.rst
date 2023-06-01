@@ -1,8 +1,8 @@
 .. _data_transfer_mac:
 
-####################
-Data Transfer on Mac
-####################
+#################################
+:fab:`apple` Data transfer on Mac
+#################################
 
 Prerequisite: OpenSSH, Cyberduck or FileZilla
 =============================================
@@ -44,11 +44,13 @@ Files can be easily transferred with Cyberduck. Setup is easy:
    close the window by pressing on the red circle in the top left corner
    of the window.
 
-   |Cyberduck config|
+   .. figure:: ../cyberduck/cyberduck_config.png
 
 #. To open the scp connection, click on the 'Bookmarks' icon (which
    resembles an open book) and double click on the bookmark you just
    created.
+
+.. _FileZilla data transfer mac:
 
 Transferring files with FileZilla
 =================================
@@ -89,21 +91,19 @@ Windows:
    ":ref:`Text-mode access using OpenSSH <OpenSSH access>`"
    to find out how to add your key to the keychain using ``ssh-add``.
 
-|FileZilla config|
+.. figure:: filezilla/filezilla_config.png
 
 Note that recent versions of FileZilla have a screen in the settings to
 manage private keys. The path to the private key must be provided in
 options (Edit Tab -> options -> connection -> SFTP):
 
-|FileZilla private keys|
+.. figure:: filezilla/filezilla_private_keys.jpg
 
 After that you should be able to connect after being asked for
 passphrase. As an alternative you can choose to use the built-in macOS
 keychain system.
 
-.. |Cyberduck config| image:: data_transfer/cyberduck_config.png
-.. |FileZilla config| image:: data_transfer/filezilla_config.png
-.. |FileZilla private keys| image:: data_transfer/filezilla_private_keys.jpg
+.. _terminal data transfer mac:
 
 Terminal tools
 ==============
