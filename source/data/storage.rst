@@ -12,4 +12,5 @@ to manage your data in them.
 
    storage_locations
    managing_storage_usage
+   request_more_storage
 
