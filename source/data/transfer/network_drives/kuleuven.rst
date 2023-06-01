@@ -1,7 +1,8 @@
 .. _KU Leuven network drives:
 
-Transferring data to and from KU Leuven network drives
-======================================================
+#########################################
+Data transfer on KU Leuven network drives
+#########################################
 
 On clusters hosted at KU Leuven it is possible to transfer data to
 and from KU Leuven network drives to which you may have access.
@@ -21,9 +22,9 @@ u-number and ``drivename`` with the drive you want to access:
    The location of your I-drive will not correspond to the mount point
    itself, but to a ``unumber`` subdirectory of the mount point.
 
+GIO
+===
 
-With GIO
---------
 Mounting the drives via GIO can be convenient but only works on specific
 login nodes and not on the compute nodes. Keep in mind that the CPU time
 limitations on the login nodes may cause long transfers to get interrupted.
@@ -33,49 +34,50 @@ GIO can be used both via a GUI and the CLI.
 
    Don't forget to unmount the drives after your transfers have finished.
 
-* Via the GUI (NoMachine)
+Via the GUI (NoMachine)
+-----------------------
 
-  #. Open a NoMachine connection (see the :ref:`NX start guide<NX start guide>`)
-  #. Click on ``Places`` -> ``Connect to Server``
-  #. Fill in the fields as follows:
+#. Open a NoMachine connection (see the :ref:`NX start guide<NX start guide>`)
+#. Click on ``Places`` -> ``Connect to Server``
+#. Fill in the fields as follows:
 
-     - Server: ``shares.kuleuven.be``
-     - Type: ``Windows share``
-     - Share: ``drivename``
-     - Folder: ``/``
-     - Domain Name: ``luna``
-     - User Name: ``unumber``
-     - Password: password for ``unumber``
+   - Server: ``shares.kuleuven.be``
+   - Type: ``Windows share``
+   - Share: ``drivename``
+   - Folder: ``/``
+   - Domain Name: ``luna``
+   - User Name: ``unumber``
+   - Password: password for ``unumber``
 
-  #. A file manager window appears, showing the contents of the mounted folder.
-     Mounted drives will remain visible in the file manager's Network section
-     in the panel on the left.
-  #. To unmount the drive afterwards, right-click on the drive name in the
-     Network section and select ``Unmount``.
+#. A file manager window appears, showing the contents of the mounted folder.
+   Mounted drives will remain visible in the file manager's Network section
+   in the panel on the left.
+#. To unmount the drive afterwards, right-click on the drive name in the
+   Network section and select ``Unmount``.
 
-.. (comment that just adds some whitespace between these two blocks)
+Via the CLI
+-----------
 
-* Via the CLI
+#. Open an SSH connection to ``login3-tier2.hpc.kuleuven.be`` or
+   ``login4-tier2.hpc.kuleuven.be`` or start a terminal in your NoMachine
+   session.
+#. Start a D-Bus session and then mount the network drive::
 
-  #. Open an SSH connection to ``login3-tier2.hpc.kuleuven.be`` or
-     ``login4-tier2.hpc.kuleuven.be`` or start a terminal in your NoMachine
-     session.
-  #. Start a D-Bus session and then mount the network drive::
+     dbus-run-session bash
+     gio mount smb://unumber@shares.kuleuven.be/drivename
 
-       dbus-run-session bash
-       gio mount smb://unumber@shares.kuleuven.be/drivename
+#. When asked for the domain name, enter ``luna``.
+#. When asked for a password, enter your u-number password.
+#. File transfers also need to happen via ``gio``, e.g.::
 
-  #. When asked for the domain name, enter ``luna``.
-  #. When asked for a password, enter your u-number password.
-  #. File transfers also need to happen via ``gio``, e.g.::
+     gio copy /path/to/local/dir/file.txt smb://unumber@shares.kuleuven.be/drivename/path/to/remote/dir/
 
-       gio copy /path/to/local/dir/file.txt smb://unumber@shares.kuleuven.be/drivename/path/to/remote/dir/
+#. To unmount the drive afterwards, repeat the same ``gio mount`` command
+   with an additional ``--unmount`` flag.
 
-  #. To unmount the drive afterwards, repeat the same ``gio mount`` command
-     with an additional ``--unmount`` flag.
+smbclient
+=========
 
-With smbclient
---------------
 Larger transfers are best done via a job on a compute node, where ``GIO`` is not
 available and ``smbclient`` can be used instead.
 
@@ -99,9 +101,9 @@ the prompt. For example::
   smbclient --user=unumber --workgroup=luna \\\\shares.kuleuven.be\\drivename \
             -c "cd /path/to/remote/dir/; get file.txt"
 
-
 Limitations
------------
+===========
+
 Because the network drives need to be accessed via the CIFS protocol, it is
 not possible to transfer all file attributes from Unix-like file systems.
 File ownerships, permissions and symlinks can for example not be transferred.

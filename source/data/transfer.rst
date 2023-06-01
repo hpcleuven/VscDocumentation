@@ -19,5 +19,5 @@ transfer methods that can also be used in VSC clusters:
    :maxdepth: 3
 
    transfer/external_computer
-   ../leuven/data_transfer_kuleuven_network_drives
+   transfer/network_drives
 
