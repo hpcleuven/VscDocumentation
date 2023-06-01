@@ -114,7 +114,7 @@ requested, so in case of for example 3 GPUs you will have to specify this::
 
 To specifically request V100 GPUs, you can submit for example like this::
 
-   $ sbatch -A lp_my_project -M genius -N 1 -n 4 --gpus-per-node=1 --mem-per-cpu=20G -p gpu_v100 myjobscript.slurm
+   $ sbatch -A lp_my_project -M genius -N 1 -n 4 --gpus-per-node=1 --mem-per-cpu=20000M -p gpu_v100 myjobscript.slurm
   
 For the V100 type of GPU, it is required that you request 4 cores for each GPU. 
 Also notice that these nodes offer a much larger memory bank.
@@ -129,7 +129,7 @@ The big memory nodes are hosted by the ``bigmem`` and ``bigmem_long`` partitions
 In case of the big memory nodes it is also important to add your memory requirements, 
 for example::
 
-   $ sbatch -A lp_my_project -M genius -N 1 -n 36 --mem-per-cpu=20G -p bigmem myjobscript.slurm
+   $ sbatch -A lp_my_project -M genius -N 1 -n 36 --mem-per-cpu=20000M -p bigmem myjobscript.slurm
 
 .. _submit to genius AMD node:
 
