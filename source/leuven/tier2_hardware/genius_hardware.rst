@@ -32,7 +32,7 @@ Hardware details
    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
    - 768 GB RAM
    - 200 GB SSD local disk
-   - partition ``bigmem``, specific Slurm :ref:`options <submit to genius big memory node>` apply
+   - partition ``bigmem``, specific Slurm :ref:`options <submit_genius_bigmem>` apply
 
 - 22 GPGPU nodes, 96 GPU devices
 
@@ -42,7 +42,7 @@ Hardware details
       - 192 GB RAM
       - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
       - 200 GB SSD local disk
-      - partition ``gpu_p100``, specific Slurm :ref:`options <submit to genius GPU node>` apply
+      - partition ``gpu_p100``, specific Slurm :ref:`options <submit_genius_gpu>` apply
 
    - 2 V100 nodes
 
@@ -50,7 +50,7 @@ Hardware details
       - 768 GB RAM
       - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
       - 200 GB SSD local disk
-      - partition ``gpu_v100``, specific Slurm :ref:`options <submit to genius GPU node>` apply
+      - partition ``gpu_v100``, specific Slurm :ref:`options <submit_genius_gpu>` apply
 
 
 - 4 AMD nodes
@@ -58,7 +58,7 @@ Hardware details
    - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
    - 256 GB RAM
    - 200 GB SSD local disk
-   - partition ``amd``, specific Slurm :ref:`options <submit to genius AMD node>` apply
+   - partition ``amd``, specific Slurm :ref:`options <submit_genius_amd>` apply
 
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands 
 are indicated on the diagram below.
