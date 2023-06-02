@@ -36,6 +36,8 @@ modern [PyData theme](https://pydata-sphinx-theme.readthedocs.io).
    * ✅ merge all information about data and storage in a single section
    * 🔄 replace images with figures
    * 🔄 fix broken links with redirects (sphinx-reredirects)
+   * ⬜ write style guide
+   * ⬜ make CI fail on any Sphinx warning
 4. Phase 4
    * ⬜ add widget to preselect home institute
    * ⬜ add support for markdown with MyST
