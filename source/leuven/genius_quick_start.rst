@@ -25,7 +25,7 @@ nodes properly.
 The `Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler,
 resource manager and credit accounting manager on Genius (and wICE).
 
-In case you are not yet familiar Slurm and/or the Genius hardware, you can find
+In case you are not yet familiar with Slurm and/or the Genius hardware, you can find
 more information on the following pages:
 
 - :ref:`Genius hardware <Genius hardware>`
@@ -69,7 +69,7 @@ you may submit your job like this::
 .. note::
 
    If you do not provide a walltime for your job, then a default walltime will
-   be applied. This 1 hour for all partitions, except for the debug partitions
+   be applied. This is 1 hour for all partitions, except for the debug partitions
    where it is 30 minutes (see :ref:`submit_genius_debug` below).
 
 .. note::
