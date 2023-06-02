@@ -5,6 +5,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. Specific CSS style rules for frontpage as it does not have any sidebars
+.. raw:: html
+
+   <style type="text/css">
+       html[data-theme="light"] .bd-container { background: var(--pst-color-background); }
+       html[data-theme="dark"] .bd-container { background: var(--pst-color-background); }
+   </style>
+
+
 ################################
 Welcome to the VSC documentation
 ################################
