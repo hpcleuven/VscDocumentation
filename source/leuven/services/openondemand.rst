@@ -281,6 +281,7 @@ Once you've created your environment, go ahead and start a code-server session o
 for 'R'. You should install the 'R' extension of 'REditorSupport'.
 
 Now there are two ways to use the R installation inside your conda environment:
+
 - Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal), and activate your conda environment. Now type 'R' in the terminal and you will be able to use your scripts interactively (R gets attached as soon as you start it).
 - You can also set the path to the R version that needs to be attached (better if you always use the same conda environment). Go to 'Extensions', and click the settings wheel next to the R extension. Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting. Paste the path to your conda env there (`/path/to/miniconda/envs/<env_name>/lib/R`)
 
