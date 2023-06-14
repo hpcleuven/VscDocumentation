@@ -248,7 +248,7 @@ the specific interpreter and an extension in code-server that allows you to conn
 steps for both Python and R are described. 
 
 Python
-++++++
+~~~~~~
 
 There are multiple Python extensions available, so feel free to try and install the extension that suits you the best. This comes with the warning that only the
 Microsoft Python extension has been tested by our team. To install this extension, go to 'Extensions' and search for 'Python'. Install the one with as developer
@@ -267,22 +267,22 @@ If you need more information about creating your customized Python environments,
 
 
 R
-++++
+~~~~~~
 
-For full functionality, it is recommended to work with conda environments. For the time being, there are some issues with using modules and use functionalities
-like plotting in code-server. 
+For full functionality, it is recommended to work with conda environments. For the time being, there are some issues with using modules together with
+functionalities, like plotting. 
 
 There are some package requirements if you want to use R in code-server. The following command creates a functional environment (of course, add any other
 packages you need):
 
-`conda create -n <env_name> r-base r-remotes r-languageserver r-httpgd r-jsonlite`
+`conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite`
 
 Once you've created your environment, go ahead and start a code-server session on Open Ondemand. On the lefthand side, go to the extension menu and search
 for 'R'. You should install the 'R' extension of 'REditorSupport'.
 
 Now there are two ways to use the R installation inside your conda environment:
-1. Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal), and activate your conda environment. Now type 'R' in the terminal and you will be able to use your scripts interactively (R gets attached as soon as you start it).
-2. You can also set the path to the R version that needs to be attached (better if you always use the same conda environment). Go to 'Extensions', and click the settings wheel next to the R extension. Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting. Paste the path to your conda env there (`/path/to/miniconda/envs/<env_name>/lib/R`)
+- Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal), and activate your conda environment. Now type 'R' in the terminal and you will be able to use your scripts interactively (R gets attached as soon as you start it).
+- You can also set the path to the R version that needs to be attached (better if you always use the same conda environment). Go to 'Extensions', and click the settings wheel next to the R extension. Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting. Paste the path to your conda env there (`/path/to/miniconda/envs/<env_name>/lib/R`)
 
 **Remarks:**
 
