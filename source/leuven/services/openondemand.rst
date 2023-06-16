@@ -175,7 +175,8 @@ Once you've selected all your resources, just press 'Launch' and your job will b
 Interactive shell
 =================
 
-**Work in progress**
+This app will launch a shell on (one of the) requested nodes, allowing you to use these compute resources from within a Linux terminal. This is different
+than the shell you get in the "Clusters" menu, as this is a login shell.
 
 Jupyter Lab
 ================
@@ -247,7 +248,7 @@ the specific interpreter and an extension in code-server that allows you to conn
 steps for both Python and R are described. 
 
 Python
-++++++
+~~~~~~
 
 There are multiple Python extensions available, so feel free to try and install the extension that suits you the best. This comes with the warning that only the
 Microsoft Python extension has been tested by our team. To install this extension, go to 'Extensions' and search for 'Python'. Install the one with as developer
@@ -266,23 +267,23 @@ If you need more information about creating your customized Python environments,
 
 
 R
-++++
+~~~~~~
 
-While there are also multiple extensions for using R in code-server, these don't all work as they should. The main issue here is that these extensions were not
-built with use on a cluster/server in mind. Also, these extensions are often built with the idea that you are only using one R version in the background, which
-sadly limits the flexibility to switch between different environments, as you can do with Python environments. 
+For full functionality, it is recommended to work with conda environments. For the time being, there are some issues with using modules together with
+functionalities, like plotting. 
 
-Even with these limitations, there is still a way to work with R in code-server. For this, you need to install the 'R' extension created by Ikuyadeu. Once this
-is installed, you can specify the path in the settings (click the settings wheel of the extension, then click on 'Extension settings'): search for 'R > Rterm: Linux'
-and add the path to your preferred R installation. If you would need to switch R versions, you need to change this path and restart your terminal. It is strongly 
-recommended to use a miniconda environment for this. Not only can you use all the packages already installed in this environment, you also need to have the 
-`languageserver` package installed. For your conda environment, go to a terminal and use following commands::
+There are some package requirements if you want to use R in code-server. The following command creates a functional environment (of course, add any other
+packages you need):
 
-      source activate <env_name>
-      conda install -c conda-forge r-languageserver
-      
-Now you can use code-server as an R IDE as well. The first time you open up a script, you will get a warning that `languageserver` is not installed. You have to click
-'No'. You will still be able to work. It is just the extension that is not looking for `languageserver` in the correct place.
+`conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite`
+
+Once you've created your environment, go ahead and start a code-server session on Open Ondemand. On the lefthand side, go to the extension menu and search
+for 'R'. You should install the 'R' extension of 'REditorSupport'.
+
+Now there are two ways to use the R installation inside your conda environment:
+
+- Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal), and activate your conda environment. Now type 'R' in the terminal and you will be able to use your scripts interactively (R gets attached as soon as you start it).
+- You can also set the path to the R version that needs to be attached (better if you always use the same conda environment). Go to 'Extensions', and click the settings wheel next to the R extension. Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting. Paste the path to your conda env there (`/path/to/miniconda/envs/<env_name>/lib/R`)
 
 **Remarks:**
 
