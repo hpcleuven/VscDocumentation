@@ -15,6 +15,13 @@ Visit `www.globus.org`_ and click :bgrnd1:`Login` at the top of the page. On the
 
 When you find it, click :bgrnd1:`Continue`. If you cannot find your organization in the list please contact the support team at data@vscentrum.be.
 
+.. Note::  
+    You need an institutional account from KU Leuven, UAntwerpen, UHasselt, UGent or VUB to make use of the VSC's collections in Globus.  
+    Access for externals is only possible via guest collections provided the user can login in `Globus.org <http://globus.org>`_ with an account (e.g: their institution, orcid id, gmail ...).
+
+    For UGent, only staff and student accounts are currently accepted.
+    Users with external UGent accounts cannot login in Globus with the external UGent accounts.
+
 You will be redirected to your organization's login page. Use your credentials for that organization to login.
 
 If that is your first time logging into Globus some organizations may ask for your permission to 
