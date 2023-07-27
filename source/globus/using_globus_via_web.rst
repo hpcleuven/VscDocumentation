@@ -14,13 +14,13 @@ Managing files
 
 Once you log in to Globus, you will immediately be transported to the **File Manager**, where you can browse and manage your files in your collections.  
 
-.. image:: using_globus_via_web/file_manager.png
+.. figure:: using_globus_via_web/file_manager.png
 
 The first time you log in, no collection will be selected. To select a collection, click in the **Collection** text field at the top, and it allows you to search for a collection.
 The first time you open a certain collection (e.g. 'VSC KU Leuven tier2 Scratch'), you might need to authenticate:
 
 
-.. image:: using_globus_via_web/authenticate.png
+.. figure:: using_globus_via_web/authenticate.png
 
 In some collections, you might arrive immediately at your personal files. In other collections, you still need to go to your own folders.
 You can move to other folders in two ways:
@@ -29,7 +29,7 @@ You can move to other folders in two ways:
 - Click on the name/icon of a folder to move into it. 
 
 
-.. image:: using_globus_via_web/file_manager_2.png
+.. figure:: using_globus_via_web/file_manager_2.png
 
 
 If you ever want to go back to the previous level, you can click on the button 'up one folder'. 
@@ -42,13 +42,13 @@ The Globus web interface allows you to upload and download data from your local 
 
 To upload a collection, click on the 'Upload' icon:
 
-.. image:: using_globus_via_web/https_1.png
+.. figure:: using_globus_via_web/https_1.png
 
 Globus might ask you for consent to move files over HTTPS. After being moved back to the file manager, click on the 'Upload' icon again.  
 You will be presented with a choice between 'Select Files to Upload' and 'Select Folder to Upload'. Once you click one of these buttons, a wizard will open to help you select the files/folder to upload.
 
 
-.. image:: using_globus_via_web/https_2.png
+.. figure:: using_globus_via_web/https_2.png
 
 To download a file over HTTPS, hover over its name. You should see a checkbox appearing next to the name: click it.  
 
@@ -69,7 +69,7 @@ The main goal of Globus is to transfer data from one collection to another.
 To do this, you first need to open a second panel inside the file manager by clicking the middle button next to 'Panel' in the top right corner. 
 Next, you can use the collection search bar on the right side to search for a second collection:
 
-.. image:: using_globus_via_web/dual_pane.png
+.. figure:: using_globus_via_web/dual_pane.png
 
 Your account remembers your panel settings when you close the website, so you don't need to repeat this step every time.
 
@@ -82,7 +82,7 @@ To transfer a file from collection A to collection B:
 
 Conveniently, the arrow on the start button indicated the direction of the transfer.
 
-.. image:: using_globus_via_web/transfer.png
+.. figure:: using_globus_via_web/transfer.png
 
 Additionally, Globus has a multitude of options for transfers under the dropdown 'Transfer & Timer Options', between the start buttons. 
 
@@ -116,7 +116,7 @@ To synchronize a file or folder from one collection to another:
 - Optionally, change the criteria by which Globus decides to transfer files or not. 
 - Click on the 'Start' button above the source collection. 
 
-.. image:: using_globus_via_web/sync.png
+.. figure:: using_globus_via_web/sync.png
 
 .. note::
 
@@ -138,10 +138,10 @@ To schedule this, we can use the timer options of Globus:
    - For example, to schedule this synchronization every week forever, set 'Repeat' to 'days', set 'every X days' to 7 and 'ends' to 'never'.
 - Click on the 'Start' button above the source collection. 
 
-.. image:: using_globus_via_web/timer.png
+.. figure:: using_globus_via_web/timer.png
 
 You can get an overview of all scheduled transfers and synchronizations on the 'activity' tab (on the left side of the page) under the subtab 'timers'. 
 You can click on any process to get more info, or click on the trashbin icon next to one to cancel the process.
 
-.. image:: using_globus_via_web/activity_timers.png
+.. figure:: using_globus_via_web/activity_timers.png
 

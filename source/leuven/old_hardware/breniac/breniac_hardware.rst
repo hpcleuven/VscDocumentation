@@ -16,27 +16,26 @@ Hardware details
 
 - 408 skylake nodes
 
-   - 2 Xeon Gold 6132 CPU\@2.6GHz, 14 cores each
-   - 192 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency skylake tier1>`)
-   - 75 GB SSD local disk
+  - 2 Xeon Gold 6132 CPU\@2.6GHz, 14 cores each
+  - 192 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency skylake tier1>`)
+  - 75 GB SSD local disk
 
 - 436 broadwell nodes
 
-   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
-   - 128 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency broadwell tier1>`)
-   - 75 GB SSD local disk
+  - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
+  - 128 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency broadwell tier1>`)
+  - 75 GB SSD local disk
 
 - 144 broadwell nodes
 
-   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
-   - 256 GB RAM
-   - 75 GB SSD local disk
+  - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
+  - 256 GB RAM
+  - 75 GB SSD local disk
 
 The nodes were connected using an Infiniband EDR network.
 
-
-|Breniac hardware|
-
+.. figure:: breniac_hardware/breniac.png
+   :alt: Breniac hardware diagram
 
 Breniac storage
 ---------------
@@ -77,9 +76,4 @@ institution and VSC account number.
 +--------------------------+------------------------------+
 |$VSC_SCRATCH_NODE         |/local_scratch                |
 +--------------------------+------------------------------+
-
-
-.. |Breniac hardware| image:: breniac_hardware/breniac.png
-  :width: 800
-  :alt: Breniac hardware diagram
 

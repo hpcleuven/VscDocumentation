@@ -32,13 +32,15 @@ saving it in a format required by different VSC login nodes.
 #. In 'Parameters' (at the bottom of the window), choose 'RSA' and
    set the number of bits in the key to 4096:
 
-   |PuTTYgen initial|
+   .. figure:: generating_keys_with_putty/puttygen_initial.png
+      :alt: Initial PuTTYgen screen
 
 #. Click on 'Generate'. To generate the key, you must move the mouse
    cursor over the PuTTYgen window (this generates some random data that
    PuTTYgen uses to generate the key pair). Once the key pair is
    generated, your public key is shown in the field 'Public key for
    pasting into OpenSSH authorized_keys file'.
+
 #. Next, you should specify a passphrase in the 'Key passphrase' field
    and retype it in the 'Confirm passphrase' field. Remember, the
    passphrase protects the private key against unauthorized use, so it
@@ -46,7 +48,8 @@ saving it in a format required by different VSC login nodes.
    is adviced to fill in the 'Key comment' field to make it easier
    identifiable afterwards.
    
-   |PuTTYgen filled|
+   .. figure:: generating_keys_with_putty/puttygen_filled_out.png
+      :alt: Filled PuTTYgen screen
 
 #. Finally, save both the public and private keys in a secure place
    (i.e., a folder on your personal computer, or on your personal USB
@@ -72,20 +75,17 @@ first place) can be used to convert the PuTTY private key to one that
 can be used by Eclipse.
 
 #. Start PuTTYgen.
+
 #. From the 'Conversions' menu, select 'Import key' and choose the file
    containing your PuTTY private key that is used to authenticate on the
    VSC cluster.
+
 #. When prompted, enter the appropriate passphrase.
+
 #. From the 'Conversions' menu, select 'Export OpenSSH key' and save it
    as ``id_rsa_vsc``.
    Remember the file name and its location, it will have to be specified
    in the configuration process of, e.g., Eclipse.
-#. Exit PuTTYgen.
 
-.. |PuTTYgen initial| image:: generating_keys_with_putty/puttygen_initial.png
-   :width: 600
-   :alt: Initial PuTTYgen screen
-.. |PuTTYgen filled| image:: generating_keys_with_putty/puttygen_filled_out.png
-   :width: 600
-   :alt: Filled PuTTYgen screen
+#. Exit PuTTYgen.
 

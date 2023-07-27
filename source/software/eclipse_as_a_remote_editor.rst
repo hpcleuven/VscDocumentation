@@ -25,21 +25,26 @@ the "Remote System Explorer User Actions". Here is how to do this:
 #. From Eclipse's 'Help' menu, select 'Install New Software...', the
    following dialog will appear:
    
-   |install software|
+   .. figure:: eclipse_as_a_remote_editor/install_software.png
 
 #. From the 'Work with:' drop down menu, select '<name> -
    http://download.eclipse.org/releases/<name>' (replace "<name>" by
    the name of the release that you are using, e.g., 2019-06). 
-   The list of available
-   components is now automatically populated.
+   The list of available components is now automatically populated.
+
 #. From the category 'General Purpose Tools', select 'Remote System
    Explorer End-User Runtime' and 'Remote System Explorer User Actions'.
+
 #. Click the 'Next >' button to get the installation details.
+
 #. Click the 'Next >' button again to review the licenses.
+
 #. Select the 'I accept the terms of the license agreement' radio
    button.
+
 #. Click the 'Finish' button to start the download and installation
    process.
+
 #. As soon as the installation is complete, you will be prompted to
    restart Eclipse, do so by clicking the 'Restart Now' button.
 
@@ -121,21 +126,27 @@ first.
    'Other...', a dialog like the one below will open (the exact contents
    depends on the components installed in Eclipse).
 
-   |open perspective|
+   .. figure:: eclipse_as_a_remote_editor/open_perspective.png
 
 #. Select 'Remote System Explorer' from the list, and press 'OK', now
    the 'Remote Systems' view appears (at the left by default).
+
 #. In that view, right-click and select 'New' and then 'Connection' from
    the context menu, the 'New Connection' dialog should now appear.
+
 #. From the 'System type' list, select 'SSH Only' and press 'Next >'.
+
 #. In the 'Host name' field, enter *vsc.login.node*, in the 'Connection
    Name' field, the same host name will appear automatically. The latter
    can be changed if desired. Optionally, a description can be added as
    well. Click 'Next >' to continue.
+
 #. In the dialog 'Sftp Files' nothing needs to be changed, so just click
    'Next >'.
+
 #. In the dialog 'Ssh Shells' nothing needs to be changed either, so
    again just click 'Next >'.
+
 #. In the dialog 'Ssh Terminals' (newer versions of Eclipse) nothing
    needs to be changed either, click 'Finish'.
 
@@ -150,18 +161,25 @@ remote file system.
 
 #. In the 'Remote Systems' view, expand the 'Sftp Files' item under the
    newly created connection, 'My Home' and 'Root' will appear.
+
 #. Expand 'My Home', a dialog to enter your password will appear.
+
 #. First enter your user ID in the 'User ID' field, by default this will
    be your user name on your local desktop or laptop. Change it to your
    VSC user ID.
+
 #. Mark the 'Save user ID' checkbox so that Eclipse will remember your
    user ID for this connection.
+
 #. Click 'OK' to proceed, leaving the 'Password' field blank.
+
 #. If the login node is not in your known_hosts file, you will be
    prompted about the authenticity of vsc.login.node, confirm that you
    want to continue connecting by clicking 'Yes'.
+
 #. If no know_hosts exists, Eclipse will prompt you to create one,
    confirm this by clicking 'Yes'.
+
 #. You will now be prompted to enter the passphrase for your private
    key, do so and click 'OK'. 'My Home' will now expand and show the
    contents of your home directory on the VSC cluster.
@@ -176,11 +194,13 @@ filter.
 #. Right-click on the 'Sftp Files' item in your VSC connection ('Remote
    Systems' view), and select 'New' and then 'Filter...' from the
    context menu.
+
 #. In the 'Folder' field, type the path to your data directory (or use
    'Browse...'). If you don't know where your data directory is located,
    type 'echo $VSC_DATA' on the login's command line to see its value.
    Leave all other fields and checkboxes to their default values and
    press 'Next >'.
+
 #. In the field 'Filter name', type any name you find convenient, e.g.,
    'My Data'. leave the checkbox to its default value and click
    'Finish'.
@@ -228,7 +248,4 @@ systems can be found in the Eclipse help files that were automatically
 installed with the respective components. The information can be
 accessed by selecting 'Help Contents' from the 'Help' menu, and is
 available under 'RSE User Guide' heading.
-
-.. |install software| image:: eclipse_as_a_remote_editor/install_software.png
-.. |open perspective| image:: eclipse_as_a_remote_editor/open_perspective.png
 

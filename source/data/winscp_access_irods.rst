@@ -12,7 +12,7 @@ Installing and First Time Configuration of WinSCp
 
 - Click the download icon.
 
-.. image:: winscp/winscp1.png
+.. figure:: winscp/winscp1.png
 
 - Open the WinSCP.exe file and follow the installation procedure at the following link https://winscp.net/eng/docs/guide_install. Complete your install in accordance with your institution's application installation policy.
 
@@ -20,7 +20,7 @@ Installing and First Time Configuration of WinSCp
 - Click 'New session' to store a login
 - Choose the required options and fill the blank fields with the corresponding information as you see on the screen below.
 
-.. image:: winscp/winscp2.png
+.. figure:: winscp/winscp2.png
 
 - Write the password down that you get at https://irods.hpc.kuleuven.be/. Do not enter the password in the Password text box. As it is quite long, it will be truncated by WinSCP and it is only valid for 4 hours anyway.
 
@@ -40,7 +40,7 @@ Upload/Download Data to/from iRODS using WinSCP
 
 - To upload data from iRODS to our local directory, we drag data object(s) or collection(s) from the right pane and drop them in the place we want on the left pane.
 
-.. image:: winscp/winscp3.png
+.. figure:: winscp/winscp3.png
 
 - We can use WinSCP on both local and iRODS to create/delete/rename a file or folder.
 

@@ -11,7 +11,7 @@ You will need to authenticate with your institutional account and then you autom
 
 The Metalnx portal is mainly composed of two panes. The left pane shows tabs of the main functionalities and the right pane provides  the selected tab's functionalities.
 
-.. image:: metalnx/metalnx_general.PNG
+.. figure:: metalnx/metalnx_general.PNG
 
 **Collections**: Under this tab, we can perform all data object and collection-related activities. This tab and its functionalities are among the most used in Metalnx.  
  
@@ -38,13 +38,13 @@ To the right of any collection or file, you can press 'View info' for the follow
 - Set permissions to files/collections, under the tab 'Permissions'
 - Show file previews (txt and csv), under the tab 'Preview'
 
-.. image:: metalnx/metalnx_view_info.png
+.. figure:: metalnx/metalnx_view_info.png
 
 All Access Control functionality provided by iCommands is also offered by Metalnx. A user or group of users can be given Read/Write/Own rights on a specific file or collection. Rights can also be revoked by setting them to 'None'. To provide access rights to a certain file or collection for a certain user/group, one should apply the same or higher access rights to the parent collection as well. This is standard Unix permissions logic but this is not always apparent when working with a GUI application such as Metalnx. When applying rights to a collection it is possible to propagate ('Inheritance' in iRODS) them to child collections and files by selecting 'Apply to subcollections and files'. 
 
 So this is one of the ways to share files/collections with other users. However, it may be hard for users to keep track of all shared files. For this reason, you can tag them as shared, by ticking the 'Shared Link' checkbox when adding user/group rights to a file. They will then appear in the 'Shared links' tab on the left hand tabs.
 
-.. image:: metalnx/metalnx_permissions.png
+.. figure:: metalnx/metalnx_permissions.png
 
 **AVU Search**: Under this tab you can search either based on AVU metadata or system-generated properties. However, this search functionality is currently not available due to a bug in the software that should be fixed soon.
 

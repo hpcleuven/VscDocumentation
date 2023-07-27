@@ -46,22 +46,23 @@ connection settings. To do this, follow these steps:
 
 #. Start JellyfiSSH and select 'New'. This will open a window where you
    can specify the connection settings.
+
 #. In the 'Host or IP' field, type in <vsc-loginnode>. In the 'Login
    name' field, type in your <vsc-account>.
    In the screenshot below we have filled in the fields for a connection
    to the Genius cluster at KU Leuven as user vsc98765.
 
-   |JellyfiSSH|
+   .. figure:: text_mode_access_using_openssh_or_jellyfissh/text_mode_access_using_openssh_or_jellyfissh_01.png 
 
 #. You might also want to change the Terminal window settings, which can
    be done by clicking on the icon in the lower left corner of the
    JellyfiSSH window.
+
 #. When done, provide a name for the bookmark in the 'Bookmark Title'
    field and press 'Add' to create the bookmark.
+
 #. To make a connection, select the bookmark in the 'Bookmark' field and
    click on 'Connect'. Optionally, you can make the bookmark the default
    by selecting it as the 'Startup Bookmark' in the JellyfiSSH >
    Preferences menu entry.
-
-.. |JellyfiSSH| image:: text_mode_access_using_openssh_or_jellyfissh/text_mode_access_using_openssh_or_jellyfissh_01.png 
 

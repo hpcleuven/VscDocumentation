@@ -49,7 +49,7 @@ Start a cadaver session by executing  ``cadaver``. You can also connect to your 
     cadaver https://irods.hpc.kuleuven.be:8443/home/vscXXXXX
  
 
-.. image:: cadaver/cadaver_access.png
+.. figure:: cadaver/cadaver_access.png
 
 If not yet the case, connect to the Tier 1 zone by executing:
 

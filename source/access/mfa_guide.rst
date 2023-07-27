@@ -1,3 +1,5 @@
+.. _mfa_guide:
+
 MFA Guide
 =========
 

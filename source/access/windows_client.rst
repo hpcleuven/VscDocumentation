@@ -132,7 +132,3 @@ Version control
 Information on tools for version control (git and subversion) is
 available on the :ref:`version control systems` introduction page.
 
-
-.. |Windows| image:: windows_client/windows.png
-.. |Windows+Linux| image:: windows_client/windows_with_linux.png
-

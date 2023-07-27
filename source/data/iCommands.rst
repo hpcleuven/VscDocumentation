@@ -130,7 +130,7 @@ Create/open a file with a text editor (nano, vi,..) on the linux filesystem (i.e
 
 $ nano test1.txt
 
-.. image:: iCommands/nano.png
+.. figure:: iCommands/nano.png
 
 With the linux command ``ls`` you can check that the file has been created and is accessible on the User Interface machine.
 
@@ -392,7 +392,7 @@ Cheat sheet of basic iCommands
 
 A list of commands that is required for basic data operations is provided below. 
 
-.. image:: iCommands/cheat_sheet.png
+.. figure:: iCommands/cheat_sheet.png
 
 
 

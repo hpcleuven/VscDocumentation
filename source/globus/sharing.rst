@@ -32,7 +32,7 @@ There are two ways to create a guest collection:
 
 With both methods, you will arrive at the page 'Create New Guest Collection'. 
 
-.. image:: sharing/sharing.png
+.. figure:: sharing/sharing.png
 
 In order to create your collection, provide:
 
@@ -47,7 +47,7 @@ Setting permissions
 
 Once you have created your guest collection, you will be transported to a page to set permissions for it.
 
-.. image:: sharing/permissions.png
+.. figure:: sharing/permissions.png
 
 Later, you can reach this page as follows:
 
@@ -56,12 +56,12 @@ Later, you can reach this page as follows:
 - Click on your guest collection's name.
 - Go to the subtab 'permissions'
 
-.. image:: sharing/getting_to_permissions_1.png
+.. figure:: sharing/getting_to_permissions_1.png
 
 
 To add new permissions, click on the button 'add permissions'. You will get to the following screen:
 
-.. image:: sharing/add_permissions.png
+.. figure:: sharing/add_permissions.png
 
 
 First, you will need to select the path within your guest collection to which the permission applies. If you leave this empty, the permission will apply from the root of your guest collection.
@@ -83,7 +83,7 @@ If you give user-level permissions, Globus will by default inform the user via m
 
 Once you have created a permission, it will show up in the 'permissions' overview of your guest collection.
 
-.. image:: sharing/modifying_permissions.png
+.. figure:: sharing/modifying_permissions.png
 
 You can modify permissions by checking or unchecking the 'write' checkbox, and you can delete the permission altogether by clicking on the dustbin icon next to it.
 
@@ -95,7 +95,7 @@ Adding management roles
 You can also allow other users to manage your guest collection, by assigning them a role.
 To do so, go to the 'roles' subtab and click on 'Assign New Role'.
 
-.. image:: sharing/add_role.png
+.. figure:: sharing/add_role.png
 
 On this page, choose a role, and the user/group to assign the role to.
 
@@ -109,7 +109,7 @@ There are four roles for guest collections:
 
 Once created, these assignments will appear in the tab 'Roles' of your endpoint.
 
-.. image:: sharing/remove_role.png
+.. figure:: sharing/remove_role.png
 
 Click on the dustbin in the row of a role to revoke it. 
 
@@ -121,7 +121,7 @@ You can only delete a guest collection if you are the administrator.
 
 To delete a guest collection, go to the 'collections' tab, select the subtab 'Administered by you' and click on your guest collection.
 
-.. image:: sharing/remove_collection.png
+.. figure:: sharing/remove_collection.png
 
 This page contains a button to remove the whole guest collection. 
 

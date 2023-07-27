@@ -18,7 +18,6 @@ using the MobaXterm application.
 
    .. _mobaxterm-main-window-sshkey:
    .. figure:: access_using_mobaxterm/mobaxterm_main_window.png
-      :align: center
       :alt: mobaxterm main
 
 #. In the **Tools** menu choose the **MobaKeyGen (SSH key generator)** option,
@@ -26,8 +25,7 @@ using the MobaXterm application.
 
    .. _mobaxterm-sshkey-generator:
    .. figure:: generating_keys_with_mobaxterm/mobaxterm_sshkey_generator.png
-      :align: center
-      :alt: mobaxterm main
+      :alt: mobaxterm ssh key generator
 
 
 #. Make sure the option **RSA** is chosen and **Number of bits in a generated
@@ -37,16 +35,14 @@ using the MobaXterm application.
 
    .. _mobaxterm-sshkey-entropy:
    .. figure:: generating_keys_with_mobaxterm/mobaxterm_sshkey_entropy.png
-      :align: center
-      :alt: mobaxterm main
+      :alt: mobaxterm ssh key entropy
 
 #. When the process is over you will see its result as shown below. Enter a
    comment in the **Key comment** field and a strong passphrase.
 
    .. _mobaxterm-sshkey-passphrase:
    .. figure:: generating_keys_with_mobaxterm/mobaxterm_sshkey_passphrase.png
-      :align: center
-      :alt: mobaxterm main
+      :alt: mobaxterm ssh key passphrase
 
 #. Click on the **Save public key** button and save it to some desired
    location; we recommend to name it ``id_rsa_vsc.pub``. You must upload this public key to your
