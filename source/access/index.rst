@@ -47,7 +47,7 @@ their VSC account and access the VSC infrastructure:
    :numbered: 1
 
    vsc_account
-   generating_keys
+   authentication
    access_methods
    account_management
 

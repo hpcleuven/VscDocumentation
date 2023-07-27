@@ -9,7 +9,7 @@ consult the respective documentation sources:
 
    .. tab-item:: KU Leuven/UHasselt
 
-      Genius cluster: :ref:`Submit to a GPU node <submit to genius GPU node>`
+      Genius cluster: :ref:`Submit to a GPU node <submit_genius_gpu>`
 
    .. tab-item:: UAntwerp (AUHA)
 

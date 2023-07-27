@@ -1,10 +1,12 @@
-########################
-:fas:`key` Security Keys
-########################
+#############
+Security Keys
+#############
 
 Connections to VSC clusters are always encrypted to secure your data. Hence,
-you will need a cryptographic key pair, so-called SSH key, to log in to the VSC
-clusters via the terminal interface.
+you will need a personal cryptographic key to connect to the VSC clusters via
+the terminal interface. This secure connection uses the `SSH protocol
+<https://en.wikipedia.org/wiki/Secure_Shell>`_ and we might refer in the
+following to the security keys as SSH keys.
 
 .. _create key pair:
 

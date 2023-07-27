@@ -3,7 +3,7 @@
 Multi Factor Authentication (MFA)
 =================================
 
-Multi Factor Authentication (MFA) is an augmented level of security which, as
+|KUL| Multi Factor Authentication (MFA) is an augmented level of security which, as
 the name suggests, requires multiple steps when authenticating. The following
 two factors are necessary to connect to the KU Leuven clusters:
 
@@ -20,6 +20,6 @@ multiple connections or you are using some specific GUI applications to connect.
 
 .. toctree::
 
-  ../mfa_quickstart
+  mfa_quickstart
   mfa_guide
 
