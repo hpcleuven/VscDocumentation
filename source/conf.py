@@ -44,6 +44,7 @@ html_title = project
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'myst_parser',
     'sphinx_design',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
@@ -55,11 +56,13 @@ extensions = [
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-#
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+# The file extensions of source files. Sphinx considers the files with this
+# suffix as sources. The value can be a dictionary mapping file extensions to
+# file types.
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # The master toctree document.
 master_doc = 'index'
@@ -240,7 +243,7 @@ epub_exclude_files = ['search.html']
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-# -- NotFound Extension -------------------------------------------------------
+# -- NotFound Extension ------------------------------------------------------
 notfound_template = '404.html'
 notfound_urls_prefix = ''
 
@@ -249,6 +252,11 @@ redirects = {
     "access/getting_access": "/access/vsc_account.html",
     "access/access_and_data_transfer": "/access/access_methods.html",
 }
+
+# -- MyST --------------------------------------------------------------------
+
+myst_heading_anchors = 2
+myst_enable_extensions = ["colon_fence"]
 
 # -- RST Prolog --------------------------------------------------------------
 rst_prolog = ""

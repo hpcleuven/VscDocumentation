@@ -32,8 +32,8 @@
    * ✅ replace images with figures
    * 🔄 fix broken links with redirects (sphinx-reredirects)
    * ✅ write style guide
-   * ⬜ make CI fail on any Sphinx warning
+   * ✅ make CI fail on any Sphinx warning
 4. Phase 4
+   * 🔄 add support for markdown with MyST
    * ⬜ add widget to preselect home institute
-   * ⬜ add support for markdown with MyST
 
