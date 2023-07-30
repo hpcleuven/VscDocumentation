@@ -48,7 +48,7 @@ html[data-theme="dark"] .bd-content {
     html[data-theme="dark"] .bd-container {
         background: var(--pst-color-background);
         /* dark VSC brick: #673527 */
-        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(103, 53, 39) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
+        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(76, 39, 29) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
     }
     html[data-theme="dark"] .bd-sidebar-primary {
         background-color: transparent;
