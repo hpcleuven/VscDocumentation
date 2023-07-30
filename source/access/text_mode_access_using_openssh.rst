@@ -92,15 +92,15 @@ key's passphrase all the time when establishing a new connection.
 
    using_ssh_agent
 
-Proxies and network tunnels
----------------------------
+Proxies and network tunnels to compute nodes
+--------------------------------------------
 
 Network communications between your local machine and some node in the cluster
-other than the login nodes will be blocked by the cluster firewalls. In such a
-case, you have to either create an SSH connection using the login node as a
-proxy to open a shell directly on the compute node or, alternatively, you can
-also open a network tunnel to a compute node which allows accessing certain
-ports in it from your personal computer.
+other than the login nodes will be blocked by the cluster firewall. In such a
+case, you can directly open a shell in the compute node with an SSH connection
+using the login node as a proxy or, alternatively, you can also open a network
+tunnel to the compute node which will allow direct communication from software
+in your computer to certain ports in the remote system.
 
 .. toctree::
 

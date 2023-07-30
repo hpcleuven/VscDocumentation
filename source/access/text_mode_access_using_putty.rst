@@ -87,17 +87,21 @@ distribution.
 
    using_pageant
 
-Network tunnels to compute nodes
---------------------------------
+Proxies and network tunnels to compute nodes
+--------------------------------------------
 
-To establish network communication between your local machine and a compute
-node of a cluster you have to :ref:`create an SSH tunnel using PuTTY
-<ssh tunnel using PuTTY>` .  This is also useful to run client software
-on your Windows machine, e.g., ParaView or Jupyter notebooks that run on
-a compute node.
+Network communications between your local machine and some node in the cluster
+other than the login nodes will be blocked by the cluster firewall. In such a
+case, you can directly open a shell in the compute node with an SSH connection
+using the login node as a proxy or, alternatively, you can also open a network
+tunnel to the compute node which will allow direct communication from software
+in your computer to certain ports in the remote system. This is also useful to
+run client software on your Windows machine, e.g., ParaView or Jupyter
+notebooks that run on a compute node.
 
 .. toctree::
 
+   setting_up_a_ssh_proxy_with_putty
    creating_a_ssh_tunnel_using_putty
 
 .. _troubleshoot_putty:
