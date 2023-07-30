@@ -3,8 +3,8 @@
 Creating a SSH tunnel using PuTTY
 =================================
 
-Prerequisits
-------------
+Prerequisites
+-------------
 
 `PuTTY`_ must be installed on
 your computer, and you should be able to :ref:`connect via SSH to the

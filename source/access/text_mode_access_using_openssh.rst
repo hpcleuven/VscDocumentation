@@ -92,15 +92,19 @@ key's passphrase all the time when establishing a new connection.
 
    using_ssh_agent
 
-Network tunnel to compute node
-------------------------------
+Proxies and network tunnels
+---------------------------
 
-To establish network communication between your local machine and the cluster
-otherwise blocked by firewalls, you have to create an
-:ref:`SSH tunnel using OpenSSH <tunnel OpenSSH>`.
+Network communications between your local machine and some node in the cluster
+other than the login nodes will be blocked by the cluster firewalls. In such a
+case, you have to either create an SSH connection using the login node as a
+proxy to open a shell directly on the compute node or, alternatively, you can
+also open a network tunnel to a compute node which allows accessing certain
+ports in it from your personal computer.
 
 .. toctree::
 
+   setting_up_a_ssh_proxy
    creating_a_ssh_tunnel_using_openssh
 
 .. _troubleshoot_openssh:
