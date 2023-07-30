@@ -30,7 +30,7 @@
    * ✅ reorganize _Accounts and access_ info to make SSH keys optional
    * ✅ merge all information about data and storage in a single section
    * ✅ replace images with figures
-   * 🔄 fix broken links with redirects (sphinx-reredirects)
+   * ✅ fix broken links with redirects (sphinx-reredirects)
    * ✅ write style guide
    * ✅ make CI fail on any Sphinx warning
 4. Phase 4

@@ -250,7 +250,24 @@ notfound_urls_prefix = ''
 # -- Page redirects ----------------------------------------------------------
 redirects = {
     "access/getting_access": "/access/vsc_account.html",
+    "access/account_request": "/access/vsc_account.html",
     "access/access_and_data_transfer": "/access/access_methods.html",
+    "access/upload_new_key": "/access/generating_keys.html",
+    "access/data_transfer": "/data/transfer.html",
+    "access/data_transfer_using_winscp": "/data/transfer/winscp.html",
+    "access/data_transfer_with_filezilla": "/data/transfer/filezilla.html",
+    "access/data_transfer_with_scp_sftp": "/data/transfer/scp_sftp.html",
+    "access/eclipse_as_a_remote_editor": "/software/eclipse.html",
+    "access/multiplatform_client_tools": "/access/access_methods.html",
+    "data/tier1_data_main_index": "/data/tier1_data_service.html",
+    "globus/globus_main_index": "/globus/index.html",
+    "globus/globus_platform": "/globus/index.html",
+    "jobs/job_submission_and_credit_reservations": "/jobs/credits.html",
+    "jobs/the_job_system_what_and_why": "/jobs/index.html",
+    "jobs/using_software": "/software/using_software.html",
+    "leuven/data_transfer_kuleuven_network_drives": "/data/transfer/network_drives/kuleuven.html",
+    "leuven/mfa_quickstart": "/access/mfa_quickstart.html",
+    "leuven/tier2_hardware/mfa_login": "/access/mfa_login.html",
 }
 
 # -- MyST --------------------------------------------------------------------
