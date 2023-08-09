@@ -15,7 +15,7 @@ Open OnDemand is available for the Tier-2 Genius and wICE clusters.
 
 You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. 
 You can log in using your KU Leuven or VSC credentials. 
-Access is only granted to VSC3 users for the moment. 
+Access is only granted to VSC3 users at the moment.
 Once logged in, you'll notice you are connected with your VSC account. 
 
 Use
@@ -28,8 +28,8 @@ The KU Leuven Open OnDemand page provides a range of functions:
 - Opening a shell on one of the login nodes
 - Using interactive apps
 
-All of these functionalities can be used by accessing them through the tabs at the top of the page. In the following, we will describe the different parts in some more
-detail.
+All of these functionalities can be used by accessing them through the tabs at the top of the page. In the following, we will describe the different parts in 
+some more detail.
 
 Files
 =====
@@ -113,7 +113,7 @@ The functioning of creating jobs is a bit similar to how you create new template
 Whatever method you choose, you will create a new folder for each job, this time
 located at ``$VSC_DATA/ondemand/data/projects/default/``.
 The job folders will be numbered in the order you have created them. 
-**Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking here.** 
+**Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking.** 
 When removing a job, the folder will be deleted as well. 
 
 To create a job, press the 'New Job' button and choose the option that best suits 
@@ -164,11 +164,13 @@ resources might result in a long queue time. Between all the apps, most of these
 explained in the specific paragraph about the app. A general overview of the others can be found here:
 
 - Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
-- Partition: you can choose any of the existing partitions. We recommend using the ``interactive`` partition for most interactive work.
+- Partition: you can choose any of the existing partitions. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition.
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
 - Number of GPUs. If you request a GPU of the `gpu` partition you will get a full A100 GPU. For the `interactive` partition, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types.
+- Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
+- Pre-run scriptlet: this allows you to add bash commands to your job before launching the app. This can be used for example for loading extra modules that you need within the app. **Be aware that this feature is still somewhat experimental, and its functionality also depends on the app you are running (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
 
@@ -178,7 +180,7 @@ Interactive shell
 -----------------
 
 This app will launch a shell on (one of the) requested nodes, allowing you to use these compute resources from within a Linux terminal. This is different
-than the shell you get in the "Clusters" menu, as this is a login shell.
+than the shell you get in the "Clusters" menu, which directs you towards one of the login nodes.
 
 Jupyter Lab
 -----------
