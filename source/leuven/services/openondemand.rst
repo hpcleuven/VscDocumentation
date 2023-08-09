@@ -172,7 +172,7 @@ is available in the next chapter.
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
 - Pre-run scriptlet: this allows you to add bash commands to your job before launching the app. This can be used for example for loading extra modules that you need within the app. **Be aware that this feature is still somewhat experimental, and its functionality also depends on the app you are running (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
   
-Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
+Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
 Choosing your resources
 =======================
