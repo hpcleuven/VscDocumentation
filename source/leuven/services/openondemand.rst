@@ -160,18 +160,42 @@ app will be running.
 
 To launch any of the interactive apps, you need to fill in the resources form. Be aware that you will end up in a regular queue, so requesting a large amount of 
 resources might result in a long queue time. Between all the apps, most of these options are the same. Some apps require specific information. These will be 
-explained in the specific paragraph about the app. A general overview of the others can be found here:
+explained in the specific paragraph about the app. A general overview of the others can be found below. A more detailed guide on how to choose your resources
+is available in the next chapter.
 
 - Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
-- Partition: you can choose any of the existing partitions. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition.
+- Partition: you can choose any of the existing partitions on both clusters. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular `batch` partition.
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. If you request a GPU of the `gpu` partition you will get a full A100 GPU. For the `interactive` partition, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types.
+- Number of GPUs. If you request a GPU of the `gpu` partition you will get a full A100 GPU. For the `interactive` partition, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types. **The interactive partition only allows you to request max 1 GPU (slice) though.**
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
 - Pre-run scriptlet: this allows you to add bash commands to your job before launching the app. This can be used for example for loading extra modules that you need within the app. **Be aware that this feature is still somewhat experimental, and its functionality also depends on the app you are running (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
+
+Choosing your resources
+=======================
+
+Choosing the correct resources for your interactive session is mostly the same as selecting them when launching regular batch jobs. For this reason we strongly
+recommend you to have a look at how to specify your resources both on `Genius <https://docs.vscentrum.be/en/latest/leuven/genius_quick_start.html#running-jobs-on-genius>`_ and `wICE <https://docs.vscentrum.be/en/latest/leuven/wice_quick_start.html#running-jobs-on-wice>`_.
+
+As mentioned above, in most cases we recommend using the `interactive` partition on wICE for your interactive apps. This partition is meant for lighter work, like
+visualisations, testing and pre- and postprocessing. Using this partition is also free, mainly to encourage you to request these resources for such work, instead
+of using any of the other partitions. There are however some limitations on the amount of resources you can request here:
+
+- Max 1 node
+- Max 8 cores
+- Max 1 virtual GPU slice
+- Max 16h of walltime
+
+This is put in place to ensure that these resources are kept for their original purpose, namely the interactive work.
+
+If for some reason some of these limitations are too strict for you, or you need resources that are not available on the interactive nodes (e.g. a full GPU, big 
+memory nodes), you can always request nodes from another partition. Remember however that these interactive apps are not meant for running full jobs. If you
+indeed need multiple nodes or full GPUs to test your code/program, go ahead and request the resources for your interactive app. In the case that you have passed
+the testing phase and you want to start conducting experiments, we recommend that you make the switch to batch jobs instead, as they will not require
+your presence to start your code.
 
 .. _interactive_shell:
 Interactive shell
