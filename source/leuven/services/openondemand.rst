@@ -164,7 +164,7 @@ explained in the specific paragraph about the app. A general overview of the oth
 is available in the next chapter.
 
 - Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
-- Partition: you can choose any of the existing partitions on both clusters. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition (see the :ref:`Choosing your resources<choosing_your_resources>` section for more detail on hoz to choose your partition).
+- Partition: you can choose any of the existing partitions on both clusters. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition (see the :ref:`Choosing your resources<choosing_your_resources>` section for more detail on how to choose your partition).
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
