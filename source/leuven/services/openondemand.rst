@@ -165,16 +165,17 @@ explained in the specific paragraph about the app. A general overview of the oth
 is available in the next chapter.
 
 - Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
-- Partition: you can choose any of the existing partitions on both clusters. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition.
+- Partition: you can choose any of the existing partitions on both clusters. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition (see the :ref:`Choosing your resources<choosing_your_resources>` section for more detail on hoz to choose your partition).
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. If you request a GPU of the ``gpu`` partition you will get a full A100 GPU. For the ``interactive`` partition, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types. **The interactive partition only allows you to request max 1 GPU (slice) though.**
+- Number of GPUs. If you request a GPU of the ``gpu`` partition you will get a full A100 GPU. For the ``interactive`` partition on wICE, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU slice is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types. **The interactive partition only allows you to request max 1 GPU (slice) though.**
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
 - Pre-run scriptlet: this allows you to add bash commands to your job before launching the app. This can be used for example for loading extra modules that you need within the app. **Be aware that this feature is still somewhat experimental, and its functionality also depends on the app you are running (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
+.. _choosing_your_resources:
 Choosing your resources
 =======================
 
