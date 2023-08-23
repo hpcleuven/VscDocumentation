@@ -163,6 +163,55 @@ Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
 requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript, as
 shown in the :ref:`wICE quickstart guide <running jobs on wice>`.
 
+.. _gpu_compute_mode:
+
+Setting the GPU compute mode
+----------------------------
+
+NVIDIA GPUs support multiple `compute modes
+<https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-modes>`_.
+By default, the compute mode is set to `Exclusive-process` on our clusters
+(which is the best setting in the majority of cases), but you can choose
+another compute mode at job submission time. This is done by making use of a
+plugin for our Slurm job scheduler:
+
+::
+
+   $ sbatch --help
+   ...
+   Options provided by plugins:
+   
+         --gpu_cmode=<shared|exclusive|prohibited>
+                                 Set the GPU compute mode on the allocated GPUs to
+                                 shared, exclusive or prohibited. Default is
+                                 exclusive
+
+Submitting a batch job where you want to set the compute mode of your NVIDIA
+GPU(s) to `shared` can be done with:
+
+::
+
+   sbatch --export=ALL --gpu_cmode=shared jobscript.slurm
+
+An interactive job can be launched as follows:
+
+::
+
+   srun --ntasks-per-node=9 --nodes=1 --gpus-per-node=1 --account=<YOUR_ACCOUNT> \
+        --cluster=wice --time=01:00:00 --partition=gpu --gpu_cmode=shared \
+        --pty /bin/bash -l
+
+A few notes on this features:
+
+* To check the behaviour is as expected, execute ``nvidia-smi`` in your job
+* Runs with GPUs on multiple nodes are not supported. Contact the helpdesk if
+  you think you have a use case where this would be necessary.
+* The GPU compute mode does not apply when multi-instance GPU partitioning
+  (MIG) is used. This is for instance the case on the wICE Slurm partition
+  called ``interactive``. For jobs on that partition this feature is
+  irrelevant.
+* The GPU computed mode can be also set on the ``gpu_p100`` and ``gpu_v100``
+  Slurm partitions of our Genius cluster, in the same way as described above.
 
 .. _wice_known_issues:
 
