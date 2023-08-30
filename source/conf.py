@@ -112,6 +112,11 @@ html_navbar_icon_links = [
         "url": "https://www.linkedin.com/company/vschpc",
         "icon": "fa-brands fa-linkedin",
     },
+    {
+        "name": "VSC Website",
+        "url": "https://www.vscentrum.be/",
+        "icon": "fa-solid fa-house",
+    },
 ]
 
 # Theme options are theme-specific and customize the look and feel of a theme
