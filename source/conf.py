@@ -401,10 +401,9 @@ rst_prolog += """
 .. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
 .. _VSC account page: https://account.vscentrum.be/
 .. _VSC training: https://www.vscentrum.be/training
-.. _VSC training: https://www.vscentrum.be/training
 .. _WinSCP docs: https://winscp.net/eng/docs/start
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
 .. _www.globus.org: https://www.globus.org
-.. _Xming web site: http://www.straightrunning.com/XmingNotes/
+.. _Xming: http://www.straightrunning.com/XmingNotes/
 """
