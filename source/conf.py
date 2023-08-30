@@ -100,12 +100,12 @@ html_navbar_icon_links = [
         "name": "GitHub",
         "url": "https://github.com/vscentrum",
         "icon": "fa-brands fa-square-github",
-        "type": "fontawesome",
     },
     {
         "name": "Twitter",
         "url": "https://twitter.com/VSC_HPC",
-        "icon": "fa-brands fa-square-twitter",
+        "icon": "_static/fa-square-x-twitter.svg",
+        "type": "local",
     },
 ]
 
