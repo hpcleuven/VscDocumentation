@@ -21,6 +21,6 @@ iRODS gives users four core competencies:
 - **Secure Collaboration**
     iRODS provides facilities to share data between users and user groups in a secure way. iRODS has a permissions model similar to Unix file system permissions. Other facilities offered are 'Tickets' and 'Federation', but these are not actively used on the Tier-1 Data Platform.
 
-.. image:: introduction/irods_4competences.png
+.. figure:: introduction/irods_4competences.png
 
 Other features that make iRODS a unique data management platform can be found on the next pages.

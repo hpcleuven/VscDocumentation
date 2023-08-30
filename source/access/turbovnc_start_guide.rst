@@ -12,154 +12,115 @@ Installing TurboVNC client (viewer)
 
 -  Download the most recent version of the client from the `TurboVNC
    download page`_ on SourceForge.
+
 -  Continue with configuration of your client.
 
 TurboVNC client Configuration & Start Guide
 -------------------------------------------
 
-The UAntwerp visualization node uses TurboVNC, but the setup
-is different and TurboVNC is also supported on the regular login
-nodes (but without OpenGL support). Specific instructions for the use of
-TurboVNC on the UAntwerp clusters can be found on the page
-":ref:`remote visualization UAntwerp`".
+.. note::
 
-#. Create password to authenticate your session:
+   |UA| The UAntwerp visualization node uses TurboVNC, but the setup is
+   different and TurboVNC is also supported on the regular login nodes (but
+   without OpenGL support). Specific instructions for the use of TurboVNC on
+   the UAntwerp clusters can be found on the page :ref:`remote visualization
+   UAntwerp`.
 
-   ::
+#. Create password to authenticate your session::
 
-      $ vncpasswd
+    $ vncpasswd
           
-
    In case of problems with saving your password please create the
-   appropriate path first:
+   appropriate path first::
 
-   ::
-
-      $ mkdir .vnc; touch .vnc/passwd; vncpasswd
+    $ mkdir .vnc; touch .vnc/passwd; vncpasswd
           
-
 #. Start VNC server on the visualization node (optionally with geometry
-   settings - do not include brackets in the command):
+   settings - do not include brackets in the command)::
 
-   ::
-
-      $ vncserver (-depth 24 -geometry 1600x1000)
+    $ vncserver (-depth 24 -geometry 1600x1000)
           
+   As a result you will get the information about the display ``<d>`` that
+   you are using, *e.g.* ``tier2-p-login-8:<d>`` with ``<d> = 2`` ::
 
-   As a result you will get the information about the display <d> that
-   you are using (tier2-p-login-8:2), e.g.for <d>=2
-
-   ::
-
-      Desktop 'TurboVNC: tier2-p-login-8:2 (vsc30000)' started on display tier2-p-login-8:2
+    Desktop 'TurboVNC: tier2-p-login-8:2 (vsc30000)' started on display tier2-p-login-8:2
           
+#. Establish the ssh tunnel connection:
 
-#. | Establish the ssh tunnel connection:
-   | In Linux/ Mac OS:
+   * In Linux/ Mac OS ::
 
-   ::
+       $ ssh -L 590<d>:host:590<d> -N vsc30000@login8-tier2.hpc.kuleuven.be
 
-           $ ssh -L 590<d>:host:590<d> -N vsc30000@login8-tier2.hpc.kuleuven.be
+     *e.g.* ::
 
-   | e.g.,
-     
-   ::
+       $ ssh -L 5901:tier2-p-login-8:5901 -N vsc30000@login8-tier2.hpc.kuleuven.be
 
-      $ ssh -L 5901:tier2-p-login-8:5901 -N vsc30000@login8-tier2.hpc.kuleuven.be
+   * In Windows:
 
-   | 
-   | In Windows:
-   | In PuTTY go to Connection-SSH-Tunnels tab and add the source port
-   | 590<d> (e.g., 5902) and destination host:590<d> (e.g., tier2-p-login-8:5902).
+     In PuTTY go to Connection-SSH-Tunnels tab and add the source port
+     ``590<d>`` (*e.g.*, 5902) and destination ``host:590<d>`` (*e.g.*, tier2-p-login-8:5902).
 
-   |TVNC 1|
+     .. figure:: turbovnc_start_guide/turbovnc_start_guide_01.png
 
-   | Once the tunnel is added it will appear in the list of forwarded ports:
+     Once the tunnel is added it will appear in the list of forwarded ports:
 
-   |TVNC 2|
+     .. figure:: turbovnc_start_guide/turbovnc_start_guide_02.png
 
-   | With that settings continue :ref:`login to the
-     cluster <text mode access using PuTTY>`.
+     With that settings continue :ref:`login to the cluster <text mode access using PuTTY>`.
 
 #. Start VNC viewer connection
+
    Start the client: VSC server as localhost:<d> (where <d> is display
    number), e.g., localhost:2
 
-   |TVNC 3|
+   .. figure:: turbovnc_start_guide/turbovnc_start_guide_03.png
 
    Authenticate with your password
 
-   |TVNC 4|
+   .. figure:: turbovnc_start_guide/turbovnc_start_guide_04.png
 
-#. After your work is done do not forget to close your connection:
+#. After your work is done do not forget to close your connection::
 
-   ::
+    $ vncserver -kill :<d>; exit
 
-           $ vncserver -kill :<d>; exit
-
-   e.g.,
-  
-   ::
+   *e.g.* ::
    
-     $ vncserver -kill :2; exit
+    $ vncserver -kill :2; exit
           
-
 How to start using visualization node?
 --------------------------------------
 
 #. TurboVNC works with the Mate Desktop Environment 
    
-   |TVNC 5|
+.. figure:: turbovnc_start_guide/turbovnc_start_guide_05.png
 
 #. To start a new terminal click on the deskop or banner item or use right click of the mouse and choose 'Open in terminal'
 
-   |TVNC 6|
+.. figure:: turbovnc_start_guide/turbovnc_start_guide_06.png
 
-#. Load the appropriate visualization module (Paraview, VisIt, VMD,
-   Avizo, e.g.
+#. Load the appropriate visualization module (Paraview, VisIt, VMD, Avizo)
+   *e.g.* ::
 
-   ::
-
-      $ module load Paraview
+    $ module load Paraview
           
-
 #. Start the application. In general the application has to be started
-   using VirtualGL package, e.g.
+   using VirtualGL package, *e.g.* ::
 
-   ::
-
-      $ vglrun –d :0 paraview
+    $ vglrun –d :0 paraview
           
-
    but to make it easier we created scripts (starting with capital
    letters: Paraview, Visit, VMD) that can execute the necessary
-   commands and start the application, e.g.
+   commands and start the application, *e.g.* ::
 
-   ::
-
-      $ Paraview
+    $ Paraview
           
-
 #. For checking how much GPUs are involved in your visalization you may
-   execute gpuwatch in the new terminal:
+   execute gpuwatch in the new terminal ::
 
-   ::
-
-      $ gpuwatch
+    $ gpuwatch
           
-
 Attached documents
 ------------------
 
 Download: :download:`Slides from the lunchbox session <turbovnc_start_guide/turbovnc.pdf>`
 
-.. |TVNC 1| image:: turbovnc_start_guide/turbovnc_start_guide_01.png 
-.. |TVNC 2| image:: turbovnc_start_guide/turbovnc_start_guide_02.png
-.. |TVNC 3| image:: turbovnc_start_guide/turbovnc_start_guide_03.png
-   :width: 400
-.. |TVNC 4| image:: turbovnc_start_guide/turbovnc_start_guide_04.png
-   :width: 400
-.. |TVNC 5| image:: turbovnc_start_guide/turbovnc_start_guide_05.png
-.. |TVNC 6| image:: turbovnc_start_guide/turbovnc_start_guide_06.png
-
-.. include:: links.rst

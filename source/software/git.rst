@@ -1,6 +1,6 @@
 .. _git:
 
-git
+Git
 ===
 
 This tutorial explains some of the basic use of the git command line

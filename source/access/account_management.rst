@@ -1,5 +1,6 @@
-Account management
-==================
+###################################
+:fas:`user-gear` Account management
+###################################
 
 Account management at the VSC is mostly done through the `VSC account page`_
 using your institute account rather than your VSC account.
@@ -8,13 +9,13 @@ Managing user credentials
 -------------------------
 
 -  You use the VSC account page to request your account as explained on
-   the ":ref:`account request`" page. You'll also need to
+   the ":ref:`apply for account`" page. You'll also need to
    create an SSH-key which is also explained on those pages.
 -  Once your account is active and you can log on to your home cluster,
    you can use the account management pages for many other operations:
 
    -  If you want to :ref:`access the VSC clusters from more than one
-      computer <access from multiple machines>`,
+      computer <access_multiple_computers>`,
       it is good practice to use a different key for each computer. You
       can upload additional keys via the account management page. In
       that way, if your computer is stolen, all you need to do is remove
@@ -35,20 +36,10 @@ project can collaborate and control access to those files, and to
 control access to project credits on clusters that use these (all
 clusters at KU Leuven).
 
--  All details are on the page ":ref:`groups`".
-   In particular, you'll find how to
+.. toctree::
+   :maxdepth: 2
 
-   -  :ref:`view the groups you belong to <viewing groups>`.
-   -  :ref:`request membership to a group <join groups>`
-      you feel you should belong to. It is then up to the moderator of
-      that group to grant you membership.
-   -  :ref:`create a new group <create groups>`
-   -  use group permissions to :ref:`control access to files and
-      directories <permissions groups>`
-
--  If you are a group moderator, you can manage your group by accepting
-   requests from users that would like to join the group or inviting
-   users to join your group through the `VSC account page`_.
+   how_to_create_manage_vsc_groups
 
 .. _virtual_organization:
 
@@ -70,6 +61,5 @@ the Account management site (Users need to be in a VO (Virtual
 Organization) to request additional quota. Creating and joining a VO is
 also done through the Account Management website). On other sites
 checking your disk space use is still :ref:`mostly done from the command
-line <disk usage>` and requesting more quota is done via email.
+line <storage usage>` and requesting more quota is done via email.
 
-.. include:: links.rst

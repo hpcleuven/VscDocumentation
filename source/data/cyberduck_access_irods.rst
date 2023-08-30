@@ -11,11 +11,11 @@ Installation and first time configuration
 
 - Visit https://cyberduck.io/ and select the download compatible with your operating system.
 
-.. image:: cyberduck/cduck1.png
+.. figure:: cyberduck/cduck1.png
 
 - Open the Cyberduck.exe file and click "run", install in accordance with your institution's application install policy.
 
-.. image:: cyberduck/cduck2.png
+.. figure:: cyberduck/cduck2.png
 
 - Click the following link to download the VSC-Tier1_Data Cyberduck profile configuration file on your local machine.
 
@@ -23,13 +23,13 @@ Installation and first time configuration
 
 - After you download the profile, save it to your computer.
 
-.. image:: cyberduck/cduck4.png
+.. figure:: cyberduck/cduck4.png
 
 - Double-click on the vsc_Tier1_Data.cyberduckprofile file. 
 
 - This will launch Cyberduck.
 
-.. image:: cyberduck/cduck5.png
+.. figure:: cyberduck/cduck5.png
 
 - Thanks to this file relevant access information is auto-populated as you can see on the screen above.
 
@@ -44,11 +44,11 @@ Upload from your local computer to iRODS
 
 - Double-click the “irods.hpc.kuleuven.be – IRODS” bookmark to connect to iRODS. This bookmark was created thanks to importing the profile configuration file.
 
-.. image:: cyberduck/cduck6.png
+.. figure:: cyberduck/cduck6.png
 
 - Enter your vsc-account in username and click “login”.
 
-.. image:: cyberduck/cduck7.png
+.. figure:: cyberduck/cduck7.png
 
 .. note:: Cyberduck logs in automatically if there is only one bookmark. You don’t have to do the above two steps unless your password has not expired or you have not deleted your “irods.hpc.kuleuven.be – IRODS” bookmark. If you have more than one bookmark, open the Cyberduck application and double-click the “irods.hpc.kuleuven.be – IRODS” bookmark.
 
@@ -60,6 +60,6 @@ Download from iRODS to local computer using Cyberduck
 
 You can download from iRODS to your local machine similar to data upload: select the data object(s)/collection(s) from the Cyberduck window and drag them to a location on your local computer.
 
-.. image:: cyberduck/cduck8.png
+.. figure:: cyberduck/cduck8.png
 
 A ‘Transfers’ window will appear that can be used to monitor the download to completion. You can also do “synchronization” which means it will check both sides and will update your local folder that you can create/choose based on the data in iRODS.

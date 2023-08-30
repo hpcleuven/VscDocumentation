@@ -7,12 +7,14 @@ besides :ref:`wICE <wice hardware>`.
 Given the architectural diversity of compute nodes on Genius, this cluster is suited  
 for most HPC workloads.
 
-.. include:: tier2_hardware/tier2_login_nodes.rst
+Access to the cluster
+---------------------
+
+Access to Genius follows the common :ref:`access guidelines for KU Leuven/UHasselt Tier-2 clusters <tier2_login_nodes>`. 
   
-For example, to log in to any of the login node using SSH::
+For example, you can log in to any of the login node using SSH::
 
    $ ssh vscXXXXX@login.hpc.kuleuven.be
-
 
 .. _running_jobs_on_genius:
 
@@ -29,12 +31,10 @@ In case you are not yet familiar with Slurm and/or the Genius hardware, you can 
 more information on the following pages:
 
 - :ref:`Genius hardware <Genius hardware>`
-- :ref:`Slurm jobs (basics) <Antwerp Slurm>` and 
-  :ref:`Slurm jobs (advanced) <Antwerp advanced Slurm>`
-- :ref:`General info on running jobs <running jobs>`
-- :ref:`Obtaining compute credits <KU Leuven credits>` and 
-  :ref:`Slurm credit accounting <accounting_leuven>`
-
+- :ref:`Slurm jobs (basics) <running jobs>`
+- :ref:`Slurm jobs (advanced) <job advanced>`
+- :ref:`Obtaining compute credits <KU Leuven credits>`
+- :ref:`Slurm credit accounting <accounting_leuven>`
 
 .. _submit_genius_batch:
 

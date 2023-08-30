@@ -1,5 +1,6 @@
-About VSC
-=========
+#####
+About
+#####
 
 The Flemish Supercomputer Centre (**VSC**) is a virtual 
 centre making supercomputer infrastructure available for both the
@@ -7,3 +8,4 @@ centre making supercomputer infrastructure available for both the
 Research Foundation - Flanders (FWO) in partnership with the five
 Flemish university associations.
 
+.. include:: impact_on_research_industry_and_society.rst

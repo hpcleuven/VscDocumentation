@@ -26,17 +26,21 @@ Checking out a project from a VSC cluster repository
 #. Open Windows Explorer (by e.g., the Windows-E shortcut, or from the
    Start Menu) and navigate to the directory where you would like to
    check out your project that is in the VSC cluster repository.
+
 #. Right-click in this directory, you will notice 'SVN Checkout...' in
    the context menu, select it to open the 'Checkout' dialog.
 
-   |TortoiseSVN checkout|
+   .. figure:: tortoisesvn/tortoisesvn-checkout.png
+
 #. In the 'URL of repository' field, type the following line, replacing
    userid by your VSC user ID, and '300' with '301', '302',... as
    required (e.g., for user ID 'vsc30257', replace '300' by '302'). For
    svn.login.node, substitute the appropriate login node for the cluster
    the repository is on.
+
 #. Check whether the suggested default location for the project suits
    you, i.e., the 'Checkout directory' field, if not, modify it.
+
 #. Click 'OK' to proceed with the check out.
 
 You now have a working copy of your project on your desktop and can
@@ -45,10 +49,10 @@ continue to develop locally.
 Work cycle
 ----------
 
-| Suppose the file 'simulation.c' is added, and 'readme.txt' is added.
-  The 'simulation directory will now look as follows:
+Suppose the file 'simulation.c' is added, and 'readme.txt' is added.
+The 'simulation directory will now look as follows:
 
-| |TortoiseSVN working cycle|
+.. figure:: tortoisesvn/tortoisesvn-working-cycle.png
 
 Files that were changed are marked with a red exclamation mark, while
 those marked in green were unchanged. Files without a mark such as
@@ -57,20 +61,20 @@ can be added to the repository by right-clicking on it, and choosing
 'TortoiseSVN' and then 'Add...' from the context menu. Such files will
 be marked with a blue '+' sign until the project is committed.
 
-| By right-clicking in the project's directory, you will see context
-  menu items 'SVN Update' and 'SVN Commit...'. These have exactly the
-  same semantics as their command line counterparts introduced above.
-  The 'TortoiseSVN' menu item expands into even more command that are
-  familiar, with the notable exception of 'Check for modifications',
-  which is in fact equivalent to 'svn status'.
+By right-clicking in the project's directory, you will see context
+menu items 'SVN Update' and 'SVN Commit...'. These have exactly the
+same semantics as their command line counterparts introduced above.
+The 'TortoiseSVN' menu item expands into even more command that are
+familiar, with the notable exception of 'Check for modifications',
+which is in fact equivalent to 'svn status'.
 
-| |TortoiseSVN working copy|
+.. figure:: tortoisesvn/tortoisesvn-working-copy.png
 
-| Right-clicking in the directory and choosing 'SVN Commit...' will
-  bring up a dialog to enter a comment and, if necessary, include or
-  exclude files from the operation.
+Right-clicking in the directory and choosing 'SVN Commit...' will
+bring up a dialog to enter a comment and, if necessary, include or
+exclude files from the operation.
 
-| |TortoiseSVN commit|
+.. figure:: tortoisesvn/tortoisesvn-commit.png
 
 Merging
 -------
@@ -94,13 +98,14 @@ You have now two options to resolve the conflict.
 
 #. Edit 'simulation.c', keeping those modification of either version
    that you need.
+
 #. Use WinMerge to compare 'simulation.c.mine' and 'simulation.c.r12'
    and resolve the conflicts in the GUI, saving the result as
    'simulation.c'. When two files are selected in Windows Explorer, they
    can be compared using WinMerge by right-clicking on either, and
    choosing 'WinMerge' from the context menu.
 
-   |WinMerge|
+   .. figure:: tortoisesvn/winmerge.png
 
 Once all conflicts have been resolved, commit your changes.
 
@@ -125,19 +130,19 @@ TortoiseSVN makes this easy, right-click in a directory in Windows
 Explorer, and select 'TortoiseSVN' and then 'Repo-browser' from the
 context menu.
 
-| |TortoiseSVN browsing|
+.. figure:: tortoisesvn/tortoisesvn-browsing.png
 
 Importing a local project into the VSC cluster repository
 ---------------------------------------------------------
 
-| As with the command line client, it is possible to import a local
-  directory on your desktop system into your subversion repository on
-  the VSC cluster . Let us assume that this directory is called
-  'calculation'. Right-click on it in Windows Explorer, and choose
-  'Subversion' and then 'Import...' from the context menu. This will
-  open the 'Import' dialog.
+As with the command line client, it is possible to import a local
+directory on your desktop system into your subversion repository on
+the VSC cluster . Let us assume that this directory is called
+'calculation'. Right-click on it in Windows Explorer, and choose
+'Subversion' and then 'Import...' from the context menu. This will
+open the 'Import' dialog.
 
-| |TortoiseSVN import|
+.. figure:: tortoisesvn/tortoisesvn-import.png
 
 The repository's URL would be (modify the user ID and directory
 appropriately):
@@ -155,13 +160,4 @@ Explorer and select 'TortoiseSVN' and then 'Repo-browser'. Navigate to
 the appropriate project directory and create a new directory by
 right-clicking in the parent directory's content view (right pane) and
 selecting 'Create folder...' from the context menu.
-
-
-.. |TortoiseSVN checkout| image:: tortoisesvn/tortoisesvn-checkout.png
-.. |TortoiseSVN working cycle| image:: tortoisesvn/tortoisesvn-working-cycle.png
-.. |TortoiseSVN working copy| image:: tortoisesvn/tortoisesvn-working-copy.png
-.. |TortoiseSVN commit| image:: tortoisesvn/tortoisesvn-commit.png
-.. |WinMerge| image:: tortoisesvn/winmerge.png
-.. |TortoiseSVN browsing| image:: tortoisesvn/tortoisesvn-browsing.png
-.. |TortoiseSVN import| image:: tortoisesvn/tortoisesvn-import.png
 

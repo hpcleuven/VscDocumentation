@@ -59,8 +59,8 @@ On VSC clusters, several MPI implementations are installed. We provide
 two MPI implementations on all newer machines that implement the MPI-3.1
 specification.
 
-#. :ref:`Intel MPI <Communication library: Intel MPI>` in the :ref:`Intel toolchain`
-#. :ref:`Open MPI <Communication library: Open MPI>` in the :ref:`FOSS toolchain`
+#. :ref:`Intel MPI <commlib_intelmpi>` in the :ref:`Intel toolchain`
+#. :ref:`Open MPI <commlib_openmpi>` in the :ref:`FOSS toolchain`
 
 
 When developing your own software, this is the preferred order to select
@@ -119,4 +119,3 @@ Further information
 -  See also the pages in the tutorials section e.g., for
    :ref:`books` and online tutorial :ref:`web tutorials`
 
-.. include:: links.rst

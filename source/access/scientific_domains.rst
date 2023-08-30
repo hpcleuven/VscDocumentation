@@ -1,9 +1,9 @@
 .. _list of scienfic domains:
 
-list of scientific domains
+List of scientific domains
 ==========================
 
-On you application form, you will be asked to indicate the scientific domain of your application according to the NWO classification. Below we present the list of domains and subdomains. You only need to give the domain in your application, but the subdomains may make it easier to determine the most suitable domain for your application.<ul>
+On you application form, you will be asked to indicate the scientific domain of your application according to the NWO classification. Below we present the list of domains and subdomains. You only need to give the domain in your application, but the subdomains may make it easier to determine the most suitable domain for your application.
 
 - Archaeology
 

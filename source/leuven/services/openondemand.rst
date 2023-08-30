@@ -1,10 +1,11 @@
 .. _ood_t2_leuven:
+
 ===========================================
 Open OnDemand on the KULeuven Tier2 cluster
 ===========================================
 
 About
------
+=====
 
 Open OnDemand provides a user interface to HPC clusters from within a web browser. 
 This tool supports a range of different apps and features that not only allow the
@@ -18,7 +19,7 @@ Access is only granted to VSC3 users for the moment.
 Once logged in, you'll notice you are connected with your VSC account. 
 
 Use
----
+===
 
 The KU Leuven Open OnDemand page provides a range of functions:
 
@@ -31,7 +32,7 @@ All of these functionalities can be used by accessing them through the tabs at t
 detail.
 
 Files
------
+=====
 
 This menu provides a file explorer that allows you to navigate files by clicking. You can access your ``$VSC_HOME`` and ``$VSC_DATA`` folders. Other storage is not
 available here. General file explorer options like moving, deleting, modifying and creating files or directories are available as well. You can also use this interface
@@ -41,7 +42,7 @@ to download and upload files to and from your local machine. Be aware that this 
 obvious save button on the editor page.
 
 Jobs
-----
+====
 
 All jobs submitted from Open OnDemand can run on Genius and wICE. 
 This also means that all your jobs should be submitted as **Slurm** jobs.
@@ -51,7 +52,7 @@ For more detail on how to run jobs on wICE, check out our
 The jobs tab has two menus: 'Active Jobs' and 'Job Composer':
 
 Active jobs
-===========
+-----------
 
 This lists all of your running, queued and completed jobs. 
 Completed jobs will disappear after a couple of minutes. 
@@ -65,7 +66,7 @@ If your job is still running, you can also delete it by clicking the bin under '
 (re-)submit jobs will be made clear in the next chapter.
 
 Job Composer
-============
+------------
 
 The Job Composer contains the tools that allow you to set everything up for launching your jobs. This goes from basic job script building, adding necessary files, 
 to building and using templates for easier job creation. Under the job composer tab you can find two other menus, namely 'Jobs' and 'Templates'. As templates are the 
@@ -134,14 +135,14 @@ Using the 'Job Options' button, you can add some more specifications to your job
 - Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
-- Job array: we do not recommend using this. If you would like to use job arrays, have a look `here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`_.
+- Job array: we do not recommend using this. If you would like to use job arrays, have a look `here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`__.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
 the folder that it is associated with. 
 
 Clusters
---------
+========
 
 When selecting 'Clusters - Login Server Shell Access' you will get a terminal 
 window in a new browser tab. 
@@ -153,7 +154,7 @@ If you would like to perform calculations in an interactive job, you should be
 using the :ref:`interactive shell app<interactive_shell>`
 
 Interactive apps
-----------------
+================
 
 This menu provides a range of different apps that provide a GUI. In the background this means that you are submitting an interactive job to the cluster, in which the
 app will be running.
@@ -172,14 +173,15 @@ explained in the specific paragraph about the app. A general overview of the oth
 Once you've selected all your resources, just press 'Launch' and your job will be queued. In the next part, you find an overview of the currently supported apps.
 
 .. _interactive_shell:
+
 Interactive shell
-=================
+-----------------
 
 This app will launch a shell on (one of the) requested nodes, allowing you to use these compute resources from within a Linux terminal. This is different
 than the shell you get in the "Clusters" menu, as this is a login shell.
 
 Jupyter Lab
-================
+-----------
 
 With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding. There are two kernels already available, being a Python and a
 R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
@@ -204,7 +206,7 @@ For R, you need both the ``jupyter_client`` and the ``irkernel`` package install
       
 Once the kernel is created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
 
-For more general information concerning Jupyter Lab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`_.
+For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`__.
 
 **Remarks:**
 
@@ -212,10 +214,10 @@ For more general information concerning Jupyter Lab, go to their `official docum
 - At the moment, we do not support installing extensions in Jupyter Lab
 
 RStudio Server
-==============
+--------------
 
 This interactive app allows you to run an RStudio session on the cluster. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check 
-out the `official documentation <https://docs.rstudio.com/>`_. 
+out the `official documentation <https://docs.rstudio.com/>`__.
 
 The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though, to
 avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
@@ -226,7 +228,7 @@ avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument
 - The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``. It is recommended to use the ``install.packages`` function instead.
 
 Tensorboard
-===========
+-----------
 
 Tensorboard is an app that allows you to visualize and measure different aspects of your machine learning workflow. Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_ for more detailed information. 
 
@@ -234,7 +236,7 @@ The Tensorboard interactive session requires you to specify a project (or log) d
 ``$VSC_DATA``. It is not possible to navigate to the correct folder from within the app.
 
 code-server
-===========
+-----------
 
 This is the browser version of Visual Studio Code. For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_. As a default,
 a Python and a Git module are already loaded, which means you can use both Python and git from a terminal window within code-server. How to open a terminal
@@ -259,7 +261,7 @@ to 'Python'. If you click that, a window will appear where you can select your P
 versions (/bin/python). You can also load other modules, or you can also use conda environments here (if you have any conda environments already, you should see
 them here as well).
 
-If you need more information about creating your customized Python environments, have a look `here <https://docs.vscentrum.be/en/latest/software/python_package_management.html>`_. 
+If you need more information about creating your customized Python environments, have a look `here <https://docs.vscentrum.be/en/latest/software/python_package_management.html>`__.
 
 **Remarks:**
 
@@ -267,7 +269,7 @@ If you need more information about creating your customized Python environments,
 
 
 R
-~~~~~~
+~
 
 For full functionality, it is recommended to work with conda environments. For the time being, there are some issues with using modules together with
 functionalities, like plotting. 
@@ -290,12 +292,12 @@ Now there are two ways to use the R installation inside your conda environment:
 - Running lines of code is 'ctrl+enter' for R.
 
 cryo-sparc
-==========
+----------
 
 **Work in progress**
 
 ParaViewWeb
-===========
+-----------
 
 **Work in progress**
 

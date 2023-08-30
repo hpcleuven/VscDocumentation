@@ -68,4 +68,3 @@ Links
    -  :ref:`Intel toolchain`
    -  :ref:`FOSS toolchain`
 
-.. include:: links.rst

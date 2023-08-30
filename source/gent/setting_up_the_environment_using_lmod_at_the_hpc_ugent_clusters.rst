@@ -535,4 +535,3 @@ for other ways of configuring EasyBuild to use Lmod.
 You should not be using ``lmod`` directly in other circumstances, use
 either ``ml`` or ``module`` instead.
 
-.. include:: ../jobs/links.rst

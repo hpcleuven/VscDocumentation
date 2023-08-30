@@ -1,7 +1,8 @@
 .. _wice_t2_leuven:
-========================
+
+======================
 wICE quick start guide
-========================
+======================
 
 :ref:`wICE <wice hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  
 It can be used for most workloads, and has nodes with a lot of memory, as well as 
@@ -14,7 +15,7 @@ wICE does not have separate login nodes and can be accessed either from the
 .. _running jobs on wice:
 
 Running jobs on wICE
-----------------------
+--------------------
 
 There are several type of nodes in the wICE cluster: normal compute nodes, GPU nodes, 
 big memory nodes and nodes configured for interactive use. 
@@ -26,7 +27,7 @@ Only jobs submitted to the ``batch_long`` partition are allowed to have walltime
 
 Similar to Genius, wICE uses Slurm as the workload manager. 
 More information about converting pbs scripts and commands into Slurm can be found 
-:ref:`here <Antwerp Slurm_convert_from_PBS>`.
+:ref:`here <Slurm_convert_from_PBS>`.
 
 A Slurm jobscript for wICE will typically look like this:
 
@@ -142,3 +143,4 @@ In case you need more GPUs you have to multiply the 18 cores with the number of 
 requested, so in case of for example 3 GPUs you will have to specify this::
 
    $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=54 --gpus-per-node=3 --partition=gpu myjobscript.slurm
+

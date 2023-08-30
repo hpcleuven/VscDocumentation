@@ -6,7 +6,7 @@ Tier-1 Data Platform Architecture
 
 The VSC Tier-1 Data component is based on the open source software iRODS. The following image shows the high level archirecture of the platform.
 
-.. image:: architecture/general_overview.png
+.. figure:: architecture/general_overview.png
 
 The current deployment is based in a unique iRODS zone (“kuleuven_tier1_pilot”) with a single iCAT database configured on High Availability. There are three distributed storage resources: 2 POSIX based systems and 1 Ceph Object Storage system).
 

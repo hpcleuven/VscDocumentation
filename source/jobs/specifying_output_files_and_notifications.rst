@@ -133,4 +133,3 @@ documentation`_.
 
 -  `Torque 6.0.1 documentation`_
 
-.. include:: links.rst

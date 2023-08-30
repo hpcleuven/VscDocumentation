@@ -1,3 +1,5 @@
+.. _superdome hardware:
+
 Superdome hardware
 ==================
 Superdome is a single node with a large amount of memory (6 TB)
@@ -14,5 +16,5 @@ Superdome consists of
 
 - a 6 TB local node disk
 
-A :ref:`quick start guide <Superdome quick start guide>` is available
+A :ref:`quick start guide <superdome_quick_start>` is available
 to get you started with running jobs on Superdome.

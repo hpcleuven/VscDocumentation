@@ -85,4 +85,3 @@ Further information
 
 Intel's `ITAC documentation`_
 
-.. include:: links.rst

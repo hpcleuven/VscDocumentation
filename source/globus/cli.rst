@@ -94,8 +94,3 @@ You can transfer a file between two endpoints as follows::
 
 For more documentation and examples about the globus CLI, see the official `Globus CLI documentation`_.
 
-
-.. include:: links.rst
-
-
-     

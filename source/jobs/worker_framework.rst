@@ -485,4 +485,3 @@ with that, so you will have to convert the file, e.g., for file
 
    $ dos2unix run.pbs
 
-.. include:: links.rst

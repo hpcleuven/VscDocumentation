@@ -136,6 +136,8 @@ that should be run with 10 OpenMP threads.
    node.
 
 
+.. _commlib_intelmpi:
+
 Communication library: Intel MPI
 --------------------------------
 
@@ -307,4 +309,3 @@ Further information on Intel tools
     single: BLAS
     single: LAPACK
 
-.. include:: links.rst

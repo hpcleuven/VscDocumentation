@@ -1,26 +1,15 @@
 .. _UAntwerp storage:
 
+################
 UAntwerp storage
-==================
+################
 
 The storage is organised according to the :ref:`VSC storage guidelines<data location>`.
 
 File systems
-------------
+============
 
-+-------------------+---------+----------+--------+---------------------+-----------------+
-| Variable          | Type    | Access   | Backup | Default quota       | Total capacity  |
-+===================+=========+==========+========+=====================+=================+
-| $VSC_HOME         | NFS/XFS | VSC      | YES    | 3 GB, 20000 files   | 3.5 TB          |
-+-------------------+---------+----------+--------+---------------------+-----------------+
-| $VSC_DATA         | NFS/XFS | VSC      | YES    | 25 GB, 100000 files | 60 TB           |
-+-------------------+---------+----------+--------+---------------------+-----------------+
-| $VSC_SCRATCH      | BeeGFS  | leibniz, | NO     | 50 GB               | 0.5 PB          |
-| $VSC_SCRATCH_SITE |         | vaughan  |        |                     |                 |
-+-------------------+---------+----------+--------+---------------------+-----------------+
-| $VSC_SCRATCH_NODE | ext4    | Node     | NO     |                     | 100 GB lebiniz, |
-|                   |         |          |        |                     | 100 GB vaughan  |
-+-------------------+---------+----------+--------+---------------------+-----------------+
+.. include:: uantwerp_storage_quota_table.rst
 
 * The **home file system** uses two mirrored SSD drives. It should only be used
   for all configuration files that Linux programs use. It should not be used
@@ -61,27 +50,16 @@ user's responsibility to store that data on reliable storage managed by
 your research group or the ICT service of the university.
 
 Environment variables
----------------------
+=====================
 
-+-------------------+---------------------------------+
-| Variable          | Name                            |
-+===================+=================================+
-| $VSC_HOME         | /user/antwerpen/20X/vsc20XYZ    |
-+-------------------+---------------------------------+
-| $VSC_DATA         | /data/antwerpen/20X/vsc20XYZ    |
-+-------------------+---------------------------------+
-| $VSC_SCRATCH      | /scratch/antwerpen/20X/vsc20XYZ |
-| $VSC_SCRATCH_SITE |                                 |
-+-------------------+---------------------------------+
-| $VSC_SCRATCH_NODE | /tmp                            |
-+-------------------+---------------------------------+
+.. include:: uantwerp_storage_paths_table.rst
 
 For users with non-vsc2XXXX-accounts, the path names will be
 similar to those above for UAntwerpen users with trivial modifications
 based on your home institution and VSC account number.
 
 Requesting quota
-----------------
+================
 
 * Users with a vsc2XXXX account: Additional quota can be requested via the
   UAntwerp support team at hpc@uantwerpen.be. 
@@ -97,12 +75,12 @@ Requesting quota
     systems at your home institution.
 
 Note
-----
+====
 
 On the previous storage system, UAntwerpen had an additions volume /small
 that was slightly better optimized for storing lots of small files. 
 There is no full equivalent in the current storage system. If the small
-files are the result of installing software yourself, $VSC_DATA is the 
+files are the result of installing software yourself, ``$VSC_DATA`` is the 
 ideal place to store those files. If they are the result of your jobs, we 
 encourage you consider switching to better software or reworking your code
 to have a more supercomputer-friendly output pattern (or use databases such

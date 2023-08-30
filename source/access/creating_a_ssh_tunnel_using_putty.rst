@@ -3,8 +3,8 @@
 Creating a SSH tunnel using PuTTY
 =================================
 
-Prerequisits
-------------
+Prerequisites
+-------------
 
 `PuTTY`_ must be installed on
 your computer, and you should be able to :ref:`connect via SSH to the
@@ -41,12 +41,14 @@ Procedure: A tunnel from a local client to a server on the cluster
 ------------------------------------------------------------------
 
 #. Log in on the login node
+
 #. Start the server job, note the compute node's name the job is running
    on (e.g., 'r1i3n5'), as well as the port the server is listening on
    (e.g., '44444').
+
 #. Set up the tunnel:
 
-   |PuTTY tunnel config|
+   .. figure:: creating_a_ssh_tunnel_using_putty/putty_tunnel_config.png
 
    #. Right-click in PuTTY's title bar, and select 'Change Settings...'.
    #. In the 'Category' pane, expand 'Connection' -> 'SSH', and select
@@ -60,6 +62,3 @@ Procedure: A tunnel from a local client to a server on the cluster
 
 The tunnel is now ready to use.
 
-.. |PuTTY tunnel config| image:: creating_a_ssh_tunnel_using_putty/putty_tunnel_config.png
-
-.. include:: links.rst

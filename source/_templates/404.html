@@ -1,0 +1,35 @@
+<!-- Template for custom 404 error landing page -->
+<!-- author: Alex Domingo (Vrije Universiteit Brussel) -->
+{%- extends "layout.html" %}
+
+{% block body %}
+
+<h1><i class="fas fa-exclamation-triangle"></i> Page not found</h1>
+<p>The requested page does not exist. Please check the site map below or use the search tool in the left sidebar.</p>
+
+<nav id="notfound-nav" aria-label="{{ _('Main navigation') }}">
+  <div class="notfound-map">
+    <h2><i class="fas fa-map"></i> Site Map</h2>
+    {{ generate_toctree_html(
+        "raw",
+        startdepth=0,
+        maxdepth=3,
+        collapse=False,
+        includehidden=True,
+        titles_only=True
+    ) }}
+  </div>
+</nav>
+
+<script type="text/javascript">
+    function linktoplogo() {
+        // fix link in top logo, the notfound.extension does not cover it
+        // because it is specific of the pydata theme
+        var toplogo = document.getElementById("navbar-start");
+        var toplink = toplogo.getElementsByTagName("A")[0];
+        toplink.href = '/';
+    }
+    document.addEventListener("DOMContentLoaded", linktoplogo);
+</script>
+
+{% endblock %}

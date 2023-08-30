@@ -1,8 +1,8 @@
 .. _sdk:
 
-============================
+==========
 Python SDK
-============================
+==========
 
 The Python Software Development Kit (SDK) allows users to manage data via their own scripts or tools built on Globus.  
 This provides a lot of opportunities for automating workflows.  
@@ -107,8 +107,7 @@ This way, you can find the ID's of collections, which are needed for transferrin
 
 
 Adding scopes
----------------------------
-
+-------------
 In the section 'Authentication', you saw how to request consent of the user.  
 However, this consent was general.  
 
@@ -163,7 +162,7 @@ Apart from this, the authentication process remains the same as seen earlier.
 
 
 Transferring data
-----------------
+-----------------
 
 To transfer data from one collection to another, we first need to authenticate and require consent for the source and destination collection, as show in the sections 'Authentication' and 'Adding Scopes'.   
  
@@ -204,11 +203,11 @@ Lastly, we submit the transfer request, and print the task ID::
       print(f"submitted transfer, task_id={task_id}")
 
 
-This transfer can be followed up via the 'Activity' tab of the `Web Interface`_.
+This transfer can be followed up via the 'Activity' tab of the `Globus Web Interface`_.
 
 
 Acquiring longer authentication
---------------
+-------------------------------
 
 In the workflow we have shown so far, users need to log in to Globus every time they use the script/client in question to acquire a token.
 
@@ -237,7 +236,7 @@ You can find more information about refresh tokens on the `tutorial page of the 
     Tokens always need to be stored in a secure way. 
 
 More information
---------------
+----------------
 
 This short guide only demonstrated part of what the Globus Python SDK is capable of. 
 
@@ -245,5 +244,3 @@ For more documentation about the globus Python SDK, see the official `Globus Pyt
 
 You can also find useful `example scripts <https://globus-sdk-python.readthedocs.io/en/stable/examples/index.html>`_ there. 
 
-
-.. include:: links.rst

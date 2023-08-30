@@ -79,6 +79,9 @@ Create new group
 -  You will receive a confirmation email
 -  After the confirmation, you are now member and moderator of the new
    group
+-  Once you are a group moderator, you can manage your group by accepting
+   requests from users that would like to join the group or inviting
+   users to join your group through the `VSC account page`_
 
 .. _permissions groups:
 
@@ -125,4 +128,3 @@ Working with file and directory permissions
 
          [user@foo]# find /path/to/directory -type d -exec chmod g+s '{}' \\;
 
-.. include:: links.rst
