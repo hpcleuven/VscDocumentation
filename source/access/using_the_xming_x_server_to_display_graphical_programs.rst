@@ -11,7 +11,7 @@ freely available.
 Installing Xming
 ----------------
 
-#. Download the Xming installer from the `Xming web site`_.
+#. Download the Xming installer from the `Xming website`_.
 
 #. Either install Xming from the **Public Domain Releases** (free) or
    from the **Website Releases** (after a donation) on the website.

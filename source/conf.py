@@ -405,5 +405,5 @@ rst_prolog += """
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
 .. _www.globus.org: https://www.globus.org
-.. _Xming: http://www.straightrunning.com/XmingNotes/
+.. _Xming website: http://www.straightrunning.com/XmingNotes/
 """

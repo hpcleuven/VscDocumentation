@@ -67,7 +67,8 @@ system of the cluster.
 
 |Recommended| Use the X server included in :ref:`MobaXterm <access using mobaxterm>`.
 
-Alternatively, you can install an X server such as `Xming`_ on Windows as well.
+Alternatively, you can install an X server such as `Xming <Xming website_>`_ on
+Windows as well.
 
 .. toctree::
 
