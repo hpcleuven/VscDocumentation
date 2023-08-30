@@ -191,7 +191,7 @@ end. This will disable the target for this link. *e.g.*
 `` `link_label <https://url.com>`__ ``
 
 URLs that are used multiple times can be defined a single time in
-[`conf.py`](source/conf.py) with their own explicit target that can be reused
+[`conf.py`](source/conf.py) as a named reference that can be reused
 in the documentation files.
 
 ```
@@ -200,10 +200,22 @@ in the documentation files.
 .. _VSC account page: https://account.vscentrum.be/
 ```
 
+Then you can inject that link directly in the text and it will be rendered as a
+link to the defined URL using the name of the reference as label.
+
+
 ```
 [example.rst]
 
 Check the `VSC account page`_.
+```
+
+Using the URL from a named reference but changing its label is also possible.
+
+```
+[example.rst]
+
+Check `your account page <VSC account page_>`_.
 ```
 
 ### Link Buttons
