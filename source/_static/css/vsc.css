@@ -74,3 +74,15 @@ html[data-theme="dark"] .bd-content {
 html[data-theme="light"] .highlight span.linenos { background-color: transparent; }
 html[data-theme="dark"] .highlight span.linenos { background-color: transparent; }
 
+/* style x-twitter img icon depending on active theme */
+html[data-theme="light"] a.nav-link:hover img.icon-link-image {
+    /* Dark VSC orange: #d96c31. Equivalent to --pst-color-link-hover */
+    filter: brightness(0) saturate(100%) invert(46%) sepia(89%) saturate(502%) hue-rotate(337deg) brightness(91%) contrast(85%);
+}
+html[data-theme="dark"] a.nav-link img.icon-link-image {
+    filter: brightness(150%) contrast(120%);
+}
+html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
+    /* Light VSC orange: #f28e24. Equivalent to --pst-color-link-hover */
+    filter: brightness(0) saturate(100%) invert(56%) sepia(81%) saturate(1394%) hue-rotate(348deg) brightness(106%) contrast(90%);
+}
