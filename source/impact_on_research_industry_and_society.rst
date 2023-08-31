@@ -18,7 +18,7 @@ with pen and paper). It goes without saying that this method was slow
 and cumbersome.
 
 As an astronomer you can not simply make Jupiter a little bigger to see
-what effect this would lager size would have on our solar system. As a
+what effect this would have on our solar system. As a
 nuclear scientist it would be difficult to deliberately lose control
 over a nuclear reaction to ascertain the consequences of such a move.
 (Super)computers can do this and are indeed revolutionizing science.
@@ -36,7 +36,7 @@ supercomputers processing mountains of data.
 
 But supercomputers are not just an expensive toy for researchers at
 universities. Numerical simulation also opens up new possibilities in
-industrial R&D. For example in the search for new medicinal drugs, new
+industrial R&D, for example in the search for new medicine, new
 materials or even the development of a new car model. Biotechnology also
 requires the large data processing capacity of a supercomputer. The
 quest for clean energy, a better understanding of the weather and
