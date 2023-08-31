@@ -5,7 +5,7 @@
 ######################################
 
 In order to use the infrastructure of the VSC, you need a VSC user-ID,
-also called a VSC account. Check the `VSC website <eligible users>`_
+also called a VSC account. Check the `VSC website <eligible users_>`_
 for conditions.
 
 All VSC-accounts start with the letters ``vsc`` followed by a
