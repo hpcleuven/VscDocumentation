@@ -148,7 +148,7 @@ html_static_path = ['_static']
 html_css_files = ['css/vsc.css']
 
 # Logo in top bar
-html_logo = "_static/vsc-logo-1.png"
+html_logo = "_static/vsc-docs-logo-1.png"
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
