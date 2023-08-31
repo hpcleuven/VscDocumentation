@@ -97,10 +97,9 @@ html_theme = 'pydata_sphinx_theme'
 # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/header-links.html#icon-links
 html_navbar_icon_links = [
     {
-        "name": "VSC in Twitter",
-        "url": "https://twitter.com/VSC_HPC",
-        "icon": "_static/fa-square-x-twitter.svg",
-        "type": "local",
+        "name": "VSC in LinkedIn",
+        "url": "https://www.linkedin.com/company/vschpc",
+        "icon": "fa-brands fa-linkedin",
     },
     {
         "name": "VSC in GitHub",
@@ -108,14 +107,16 @@ html_navbar_icon_links = [
         "icon": "fa-brands fa-square-github",
     },
     {
-        "name": "VSC in LinkedIn",
-        "url": "https://www.linkedin.com/company/vschpc",
-        "icon": "fa-brands fa-linkedin",
+        "name": "VSC in Twitter",
+        "url": "https://twitter.com/VSC_HPC",
+        "icon": "_static/fa-square-x-twitter.svg",
+        "type": "local",
     },
     {
         "name": "VSC Website",
         "url": "https://www.vscentrum.be/",
-        "icon": "fa-solid fa-house",
+        "icon": "_static/fa-square-vsc.svg",
+        "type": "local",
     },
 ]
 
