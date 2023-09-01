@@ -149,7 +149,7 @@ html_static_path = ['_static']
 html_css_files = ['css/vsc.css']
 
 # Logo in top bar
-html_logo = "_static/vsc-docs-logo-1.png"
+html_logo = "_static/vsc-docs-logo-2.png"
 
 # Site favicon
 html_favicon = "_static/favicon.ico"
