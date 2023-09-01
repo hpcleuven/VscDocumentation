@@ -97,17 +97,17 @@ html_theme = 'pydata_sphinx_theme'
 # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/header-links.html#icon-links
 html_navbar_icon_links = [
     {
-        "name": "VSC in LinkedIn",
+        "name": "VSC on LinkedIn",
         "url": "https://www.linkedin.com/company/vschpc",
         "icon": "fa-brands fa-linkedin",
     },
     {
-        "name": "VSC in GitHub",
+        "name": "VSC on GitHub",
         "url": "https://github.com/vscentrum",
         "icon": "fa-brands fa-square-github",
     },
     {
-        "name": "VSC in Twitter",
+        "name": "VSC on Twitter",
         "url": "https://twitter.com/VSC_HPC",
         "icon": "_static/fa-square-x-twitter.svg",
         "type": "local",
