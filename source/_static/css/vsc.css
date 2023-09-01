@@ -86,3 +86,9 @@ html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
     /* Light VSC orange: #f28e24. Equivalent to --pst-color-link-hover */
     filter: brightness(0) saturate(100%) invert(56%) sepia(81%) saturate(1394%) hue-rotate(348deg) brightness(106%) contrast(90%);
 }
+
+/* add space after icons in breadcrumb titles */
+.breadcrumb-item > span.fas {
+    margin-right: 0.3rem;
+}
+
