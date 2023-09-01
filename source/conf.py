@@ -151,6 +151,9 @@ html_css_files = ['css/vsc.css']
 # Logo in top bar
 html_logo = "_static/vsc-docs-logo-1.png"
 
+# Site favicon
+html_favicon = "_static/favicon.ico"
+
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
