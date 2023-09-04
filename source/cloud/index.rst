@@ -22,13 +22,12 @@ the OpenStack VSC Tutorial.
 
    access
    dashboard
+   terraform
    manage_images
    flavors
    configure_instances
-   launch_instance
    manage_volumes
-   heat_templates
-   terraform
+   launch_instance
    shares
    gpus
    appendix

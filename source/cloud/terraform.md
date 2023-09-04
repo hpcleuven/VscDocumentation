@@ -1,23 +1,14 @@
 # Orchestration Using Terraform
 
 HashiCorp Terraform <https://www.terraform.io/> is an
-infrastructure as code tool (IaC), similar to OpenStack
-Heat orchestrator
-(See chapter [using heat](heat_templates.md#orchestration-using-heat)
-). Users can deploy a data center
+infrastructure as code tool (IaC). Users can deploy a data center
 infrastructure using a declarative configuration language known as
 HashiCorp Configuration Language (HCL), or using JSON.
 Terraform has
 some advantages over OpenStack Heat service. It is has a simple syntax, it
 can provision virtual infrastructures across multiple cloud providers
-(not only OpenStack) and it provides important features not supported by
-Heat at this
-moment, like network port forwarding rules (see
+(not only OpenStack) and it provides important features like network port forwarding rules (see
 [floating-ip](configure_instances.md#floating-ip-addresses)).
-This means that with Terraform, scripts
-like `neutron_port_forward` (see
-[port forwarding script](configure_instances.md#floating-ip-addresses)
-) are no longer needed.
 Terraform is
 currently one of the most popular infrastructure automation tools
 available. VSC Cloud also provides some template examples that could be
@@ -308,6 +299,19 @@ Terraform generates several files in this directory to keep track of any
 change in your infrastructure. If for some reason you lost or remove
 these files you will not able to modify or change the current Terraform
 plan (only directly from OpenStack).
+
+
+:::{warning}
+It is possible to execute `./modify_variable.sh` script several times,
+(for instance, if you have changed the variables within
+`modify_variable.config` file). This will update your current Terraform
+deployment. Any Terraform variables change may affect to your current
+running VM(s) as well, `terrafrom apply` will inform you about this and
+it will request confirmation. The external ports for port forwarding
+are generated randomly when you run `modify_variable.sh` by default, but
+you can keep the current port forwarding rules if you add `-k` option:
+`./modify_variable.sh -k`
+:::
 
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
