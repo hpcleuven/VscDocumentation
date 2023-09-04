@@ -187,8 +187,8 @@ private key admin access. For this "key pair injection[^1]" to work, the
 image that the instance is based on must contain the **cloud-init**
 package, or have in place another mechanism in place that will interact
 with the OpenStack metadata server to install the appropriate key. For
-general instructions on SSH keys, we refer to section **Getting an HPC Account**
-of our [introduction to HPC](https://hpcugent.github.io/vsc_user_docs/HPC/Gent/).
+general instructions on SSH keys, we refer to the section
+[Security Keys](/access/generating_keys.rst) of this documentation.
 
 If you have generated a key pair with an external tool, you can import
 it into OpenStack. The key pair can be used for multiple instances that
@@ -230,9 +230,9 @@ chmod 0600 yourPrivateKey.pem
 :::{note}
 If you are using the OpenStack Dashboard from a Windows computer, use PuTTYgen
 to load the **\*.pem** file and convert and save it as **\*.ppk**.
-For more information see the
-[*WinSCP web page for PuTTYgen*](https://winscp.net/eng/docs/ui_puttygen),
-and chapter 2 of the [introduction to HPC at VSC](https://hpcugent.github.io/vsc_user_docs).
+For more information see our documentation on
+[Generating keys with PuTTY](/access/generating_keys_with_putty.rst) and also
+the [*WinSCP web page for PuTTYgen*](https://winscp.net/eng/docs/ui_puttygen).
 :::
 
 *  To make the key pair known to SSH, run the **ssh-add** command.
