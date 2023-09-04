@@ -176,6 +176,7 @@ is available in the next chapter.
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
 .. _choosing_your_resources:
+
 Choosing your resources
 =======================
 
