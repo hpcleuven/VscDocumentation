@@ -1,15 +1,15 @@
-.. _genius_t2_leuven:
+.. _genius_2_rocky:
 
 Genius migration 2 Rocky8 
 =========================
-The :ref:`Genius <genius hardware>` operating system will be changed from CentOS 7 to Rocky 8. This is the same OS as currently running on :ref:`wICE <wice_hardware>`. 
+The :ref:`Genius <genius hardware>` operating system will be changed from CentOS 7 to Rocky 8. This is the same OS as currently running on :ref:`wICE <wice hardware>`.
 The migration will be done on September 25th.
 Sofware installed on wICE is not impacted, because there is no change of OS on wICE.
 
 .. note::
 
    Tests nodes are available. If you want to test your software or your conda environment you can do so.
-   On the `VSC account page <www.account.vscentrum.be>`_, request access to the group ``lpt2_rocky8_pilot``.
+   On the `VSC account page`_, request access to the group ``lpt2_rocky8_pilot``.
    Once approved by the admins, you can submit jobs to the reserved Rocky8 nodes by specifying the option ``--reservation=genius_rocky8_pilot``.
    To switch to the modules that have already been reinstalled for Rocky 8, first execute::
 
@@ -61,7 +61,7 @@ If you only have a conda environment working on Genius, it's best to create a ne
 Then, you can use the appropriate conda environment after the migration.
 
 
-.. _running_jobs_on_genius:
+.. _impact_on_running_jobs:
 
 Impact on running jobs on Genius
 --------------------------------
