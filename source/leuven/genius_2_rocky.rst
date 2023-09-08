@@ -47,8 +47,8 @@ This convention is in line with other VSC sites and will also be used on wICE an
 
 Impact on user-installed software
 ---------------------------------
-If you have installed a software package yourself in your own account, it must be recompiled on Genius on a node with the new OS.
-
+If you have installed a software package yourself in your own account, and you did this on a Genius CentOS 7 node, it must be recompiled on Genius on a node with the new OS.
+This can be done on one of the available test nodes. Please request access to the lpt2_rocky8_pilot group.
 
 .. _impact_on_conda:
 
@@ -59,7 +59,7 @@ If you only have a Conda environment working on Genius, it's best to create a ne
 
    ${VSC_DATA}/miniconda3-rocky
   
-You can then use this Conda environment after the migration.
+You can then use this Conda environment after the migration. You can prepare this on the test nodes.
 
 
 .. _impact_on_running_jobs:
