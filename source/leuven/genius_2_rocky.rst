@@ -2,8 +2,8 @@
 
 Genius migration 2 Rocky8 
 =========================
-The :ref:`Genius <genius_hardware>` operating system will be changed from CentOS 7 to Rocky 8. This is the same OS as currently running on :ref:`wICE <wice hardware>`. 
-The migration will be done on September 25th.  
+The :ref:`Genius <genius_hardware>` operating system will be changed from CentOS 7 to Rocky 8. This is the same OS as currently running on :ref:`wICE <wice_hardware>`. 
+The migration will be done on September 25th.
 Sofware installed on wICE is not impacted, because there is no change of OS on wICE.
 
 .. note::
@@ -11,9 +11,15 @@ Sofware installed on wICE is not impacted, because there is no change of OS on w
    Tests nodes are available. If you want to test your software or your conda environment you can do so.
    On the `VSC account page <www.account.vscentrum.be>`_ request access to the group ``lpt2_rocky8_pilot``
    submit jobs to the nodes by selecting the Slurm reservation for these nodes with the ``--reservation=genius_rocky8_pilot`` Slurm option.
-   To switch to the modules that have already been reinstalled for Rocky 8, first execute 
-     module load ``cluster/genius/batch`` for the CPU nodes (which are inside the ``batch`` partition)
-     module load ``cluster/genius/gpu_p100`` for the GPU node (which is in the ``gpu_p100`` partition).
+   To switch to the modules that have already been reinstalled for Rocky 8, first execute::
+
+      module load ``cluster/genius/batch`` 
+     
+   for the CPU nodes (which are inside the ``batch`` partition), and::
+
+      module load ``cluster/genius/gpu_p100`` 
+     
+   for the GPU node (which is in the ``gpu_p100`` partition).
    This will set your module path to point to the new modules for Rocky 8.
 
 
@@ -29,7 +35,7 @@ Unused modules are not migrated automatically, but we stronly advise to use modu
 In order to make distiction between the old CentOS 7 and the new Rocky 8 software installations, an additional hierarchy level is added according to follwoing scheme::
 
    /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/TOOLCHAIN_VERSION/modules/all
-   e.g.
+   # e.g.
    /apps/leuven/rocky8/skylake/2018a/modules/all 
   
 This convention is in line with other VSC sites and will be used also on wICE and future clusters.
