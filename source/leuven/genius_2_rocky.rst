@@ -9,8 +9,8 @@ Sofware installed on wICE is not impacted, because there is no change of OS on w
 .. note::
 
    Tests nodes are available. If you want to test your software or your conda environment you can do so.
-   On the `VSC account page <www.account.vscentrum.be>`_ request access to the group ``lpt2_rocky8_pilot``
-   submit jobs to the nodes by selecting the Slurm reservation for these nodes with the ``--reservation=genius_rocky8_pilot`` Slurm option.
+   On the `VSC account page <www.account.vscentrum.be>`_, request access to the group ``lpt2_rocky8_pilot``.
+   Once approved by the admins, you can submit jobs to the reserved Rocky8 nodes by specifying the option ``--reservation=genius_rocky8_pilot``.
    To switch to the modules that have already been reinstalled for Rocky 8, first execute::
 
       module load cluster/genius/batch
