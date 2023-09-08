@@ -13,11 +13,11 @@ Sofware installed on wICE is not impacted, because there is no change of OS on w
    submit jobs to the nodes by selecting the Slurm reservation for these nodes with the ``--reservation=genius_rocky8_pilot`` Slurm option.
    To switch to the modules that have already been reinstalled for Rocky 8, first execute::
 
-      module load ``cluster/genius/batch`` 
+      module load cluster/genius/batch
      
    for the CPU nodes (which are inside the ``batch`` partition), and::
 
-      module load ``cluster/genius/gpu_p100`` 
+      module load cluster/genius/gpu_p100
      
    for the GPU node (which is in the ``gpu_p100`` partition).
    This will set your module path to point to the new modules for Rocky 8.
@@ -35,7 +35,9 @@ Unused modules are not migrated automatically, but we stronly advise to use modu
 In order to make distiction between the old CentOS 7 and the new Rocky 8 software installations, an additional hierarchy level is added according to follwoing scheme::
 
    /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/TOOLCHAIN_VERSION/modules/all
-   # e.g.
+
+e.g. ::
+
    /apps/leuven/rocky8/skylake/2018a/modules/all 
   
 This convention is in line with other VSC sites and will be used also on wICE and future clusters.
@@ -52,9 +54,8 @@ Impact on conda environments
 ----------------------------
 
 The conda environment you installed might need reinstallations. If you already have a conda environment that works on wICE, it also should work on Genius after the migration.
-If you only have a conda environment working on Genius, it's best to create a new conda installation. In this case, it is recommended to recreate your working environment for full compatibility. Best practice is to choose a new installation folder with explicit mention of the new OS, e.g.
+If you only have a conda environment working on Genius, it's best to create a new conda installation. In this case, it is recommended to recreate your working environment for full compatibility. Best practice is to choose a new installation folder with explicit mention of the new OS, e.g. ::
 
-::
    ${VSC_DATA}/miniconda3-rocky
   
 Then, you can use the appropriate conda environment after the migration.
