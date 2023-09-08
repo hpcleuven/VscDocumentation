@@ -44,7 +44,7 @@ between VMs and other Tier-1 components.
 
 Cloud projects should request VSC network if they want to connect to the
 [VSC Data component](/data/tier1_data_service.rst) with
-[iRODS](/data/introduction_to_irods.rst) and [Globus](/globus/index.rst)
+[iRODS](https://irods.org/) and [Globus](/globus/index.rst)
 from their Tier1 Cloud VMs.
 
 On the other hand, the shared filesystem network is required by the
