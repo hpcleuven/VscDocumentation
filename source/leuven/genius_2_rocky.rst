@@ -2,7 +2,7 @@
 
 Genius migration 2 Rocky8 
 =========================
-The :ref:`Genius <genius_hardware>` operating system will be changed from CentOS 7 to Rocky 8. This is the same OS as currently running on :ref:`wICE <wice_hardware>`. 
+The :ref:`Genius <tier2_hardware/genius_hardware>` operating system will be changed from CentOS 7 to Rocky 8. This is the same OS as currently running on :ref:`wICE <wice_hardware>`. 
 The migration will be done on September 25th.
 Sofware installed on wICE is not impacted, because there is no change of OS on wICE.
 
