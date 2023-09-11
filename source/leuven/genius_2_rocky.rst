@@ -62,20 +62,46 @@ If you only have a Conda environment working on Genius, it's best to create a ne
 You can then use this Conda environment after the migration. You can prepare this on the test nodes.
 
 
-.. _impact_on_running_jobs:
+.. _impact_on_starting_jobs:
 
-Impact on running jobs on Genius
---------------------------------
-In order to minimize the changes you need to make to your jobscripts, an appropriate module path (``$MODULEPATH``) will be set by default at the start of your job. This new module path will now contain all toolchain versions, starting from 2018a.
-If you have set a module path explicitly in your jobscript, you can remove it from your jobscript or change it to the module path for Rocky 8.
+Impact on starting jobs on Genius and wICE
+------------------------------------------
+In order to minimize the changes you need to make to your jobscripts, an appropriate module path (``$MODULEPATH``) will be set by default at the start of your job of the the migration of Genius to Rocky 8 OS. This new module path will now contain all toolchain versions, starting from 2018a on Genius and starting from 2021a on wICE. This is an important change! Previously the modulepath was set to a single toolchain, that would not change over time. You might have set a module path in your jobscripts to refer to newer toolchains.
+
+.. note::
+
+   If you have set a module path explicitly in your jobscript, you can remove it from your jobscript or change it to the module path for Rocky 8.
+
+
+
+Using cluster modules
+~~~~~~~~~~~~~~~~~~~~~
+
+Instead of working with a single default, unchanging, modulepath, refering to a single default toolchain, a new approach is taken. Each cluster partition will have a so called cluster module that sets the ``$MODULEPATH`` that is valid for the specific nodes in the cluster partition. The cluster module will detect the underlying CPU architecture and uses this for setting the path correctly.
 
 
 .. _check_available_software:
 
 Check available software
 ~~~~~~~~~~~~~~~~~~~~~~~~
-On the login node you will be able to load the different available module paths (only for experimentation, not for actual computing). In order to do this in an easy manner, cluster modules have been created for each partition.
-The following cluster modules are available::
+On the login node you will be able to load the different available cluster modules (only for experimentation, not for actual computing). In order to do this you can query the available cluster moduels with::
+
+   $ module avail
+
+this wil show the available cluster modules::
+
+   --------------------------- /apps/leuven/etc/modules ---------------------------
+   cluster/default
+   cluster/genius/amd_long               (S)
+   cluster/genius/amd                    (S)
+   cluster/genius/batch_debug            (S)
+   cluster/genius/batch_long             (S)
+   cluster/genius/batch                  (S)
+   ...
+   cluster/wice/batch
+   ...
+
+Loading any of this modules on the login node::
 
    $ module load cluster/genius/batch
 
