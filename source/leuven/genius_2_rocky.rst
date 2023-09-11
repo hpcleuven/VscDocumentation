@@ -61,7 +61,7 @@ If you only have a Conda environment working on Genius, it's best to create a ne
   
 In order to install miniconda in a new directory you can ::
 
-   bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3/rocky
+   bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3-rocky
    export PATH="${VSC_DATA}/miniconda3-rocky/bin:${PATH}
 
 You can then use this Conda environment after the migration. You can prepare this on the test nodes.
@@ -71,19 +71,20 @@ You can then use this Conda environment after the migration. You can prepare thi
 
 Impact on starting jobs on Genius and wICE
 ------------------------------------------
-In order to minimize the changes you need to make to your jobscripts, an appropriate module path (``$MODULEPATH``) will be set by default at the start of your job of the the migration of Genius to Rocky 8 OS. This new module path will now contain all toolchain versions, so all the modules, starting from 2018a on Genius and starting from 2021a on wICE. This is an important change! Previously the modulepath was set to a single toolchain, that would not change over time. You might have set a module path in your jobscripts to refer to newer toolchains. Module use/unuse should now only be needed in exceptional cases.
+Previously the modulepath was set to a single toolchain, that would not change over time. But, instead of working with such a single default, unchanging, modulepath, refering to a single default toolchain (e.g. 2018a on Genius), a new approach is taken. After the migration, the partition-specific modules will be automatically exposed when a job starts on the compute node(s).
+
+In order to minimize the changes to your jobscripts, an appropriate module path (``$MODULEPATH``) is set by default at the start of your job. This new module path contains all toolchain versions specific to a partition. On Genius, all modelues since 2018a will be avaialbe, and on wICE, all modules starting from 2021a. 
+
+As a result of this change, you do not need to do ``module use/unuse`` in your jobscripts. Such lines can be perfectly removed from your jobscript (unless you deal with an exceptional case).
 
 .. note::
 
    If you have set a module path explicitly in your jobscript, you can remove it from your jobscript or change it to the module path for Rocky 8.
 
-
-
 Using cluster modules
 ~~~~~~~~~~~~~~~~~~~~~
 
-Instead of working with a single default, unchanging, modulepath, refering to a single default toolchain, a new approach is taken. Each cluster partition will have a so called cluster module that sets the ``$MODULEPATH`` that is valid for the specific nodes in the cluster partition. The cluster module will detect the underlying CPU architecture and uses this for setting the path correctly.
-
+Each cluster partition will have a so called cluster module that sets the ``$MODULEPATH`` that is valid for the specific nodes in the cluster partition. The cluster module will detect the underlying CPU architecture and uses this for setting the path correctly.
 
 .. _check_available_software:
 
@@ -110,7 +111,7 @@ Loading any of this modules on the login node::
 
    $ module load cluster/genius/batch
 
-will set the module path for the modules that are applicable for the Genius ``batch`` partition::
+will set the module path for the modules that are applicable for the Genius ``batch`` partition. Similarly,::
 
    $ module load cluster/wice/batch
 
@@ -118,4 +119,3 @@ will set the the module path of the wICE ``batch`` partition. When you do this o
 
    $ module avail
    $ module spider cp2k
-
