@@ -10,7 +10,7 @@ Groups can be used to share data with multiple users at once, without needing to
 By using the 'groups' tab on the left, you can view all groups you are member of.
 If a group has a key symbol in the 'Role' column, that means you are administrator of that group. 
 
-.. image:: groups/groups_overview.png
+.. figure:: groups/groups_overview.png
 
 You can inspect any group by clicking on them.
 
@@ -18,12 +18,12 @@ To find out how you can share data with other groups, see our page on :ref:`glob
 
 
 Creating a new group
--------------------
+--------------------
 
 To create a new group, click on the 'Create new group' button in the upper right corner. 
 You will be asked for a group name, description, and whether the group should be publicly visible or not. 
 
-.. image:: groups/create_group.png
+.. figure:: groups/create_group.png
 
 After you click on 'Create group', you will be forwarded to the page of your group.
 
@@ -37,11 +37,11 @@ To add new members to your group, go to the page of your group (if you aren't th
 You can invite people based on their username or, if they aren't known by Globus yet, an e-mail address. 
 The persons you invite will receive an e-mail with a link to your group. 
 
-.. image:: groups/invite_members.png
+.. figure:: groups/invite_members.png
 
 In the page of your group, under the tab 'Members', you can view all members and people you invited. In the column 'status', you can see whether your invitation has already been accepted.
 
-.. image:: groups/view_members.png
+.. figure:: groups/view_members.png
 
 You can click on the row of anyone in this list to view more detailed information, and to modify their settings.
 
@@ -76,7 +76,7 @@ Each time you make changes to a member's settings, there is a text field where y
 
 
 Leaving or deleting a group
-----------------
+---------------------------
 
 To leave a group you are member of, go to the groups tab, and then to the page of your group. On the right, you should see a button to leave your group.  
 

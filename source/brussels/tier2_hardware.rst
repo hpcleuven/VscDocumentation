@@ -1,5 +1,5 @@
-VUB Tier-2 hardware
-==================================
+VUB Tier-2 Infrastructure
+=========================
 
 .. toctree::
    :maxdepth: 2

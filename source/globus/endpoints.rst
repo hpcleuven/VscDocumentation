@@ -1,8 +1,8 @@
 .. include:: css.rst
 
-===============
-Endpoints 
-===============
+=========
+Endpoints
+=========
 
 With Globus, you might want to access data on various storage and computer systems, for example HPC clusters, laptops, or cloud storage. 
 Directories on those systems can be exposed to Globus as a **collection**.
@@ -17,7 +17,7 @@ An **endpoint** is a server that hosts one or multiple collections.
 .. _globus-available-collections:
 
 Available collections
-------------------
+---------------------
 
 The VSC hosts a number of collections:
 
@@ -66,7 +66,7 @@ To access and manage your local endpoints:
 
 - To change the attributes of an endpoint click on its name. You can adjust a variety of settings like private or public, endpoint name, contact info, and encryption.
 
-.. image:: local_endpoints/endpoints1.png
+.. figure:: local_endpoints/endpoints1.png
 
 .. warning:: Users should use caution and carefully select the privacy permissions and attributes when creating endpoints on their personal computers.
 
@@ -83,9 +83,4 @@ VSC users and researchers from those universities can create their own managed e
 You can find the technical prerequisites `here <https://docs.globus.org/globus-connect-server/v5.4/#globus_connect_server_prerequisites>`_.
 
 If you want create your own managed endpoint, please mail to data@vscentrum.be. 
-
-
-.. include:: links.rst
-
-
 

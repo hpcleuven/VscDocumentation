@@ -1,3 +1,5 @@
+.. _restoring_snapshot:
+
 Restoring a snapshot
 ====================
 

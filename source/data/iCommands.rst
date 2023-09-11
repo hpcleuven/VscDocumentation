@@ -1,7 +1,7 @@
 .. _iCommands:
 
 iCommands
-===============
+=========
 
 iCommands is one of the client-side communication with iRODS server to provide users with data management and metadata management functions to do any data-related actions. In short, iCommands is an Unix utility that gives users a command-line interface.
 There are more than 50 iCommands. A regular user however may use only a few of them for his/her daily needs. iRODS offers other user interfaces but the underlying point is that iCommands is the most powerful and easy to use interface to iRODS.
@@ -25,7 +25,9 @@ iCommands is installed on the KU Leuven Tier-1 and some of the Tier-2 clusters. 
 On a Linux OS you can use a package manager to install iCommands in the terminal. For the time being, you should install version 4.2.11. Instructions for configuring via the appropriate package manager can be found at the link https://packages.irods.org/. 
 
 For CentOS:
-::
+
+.. code:: bash
+
     # Add the iRODS repository to your package manager (if you haven't done so already)
     sudo rpm --import https://packages.irods.org/irods-signing-key.asc
     wget -qO - https://packages.irods.org/renci-irods.yum.repo | sudo tee /etc/yum.repos.d/renci-irods.yum.repo
@@ -34,7 +36,9 @@ For CentOS:
     sudo yum install irods-icommands-4.2.11
 
 For Ubuntu:
-::
+
+.. code:: bash
+
     # Add the iRODS repository to your package manager (if you haven't done so already)
     # If you are on Ubuntu 20, replace '$(lsb_release -sc)' with 'bionic' in the code below:
 
@@ -62,10 +66,9 @@ For Ubuntu:
     apt-get install irods-icommands=4.2.11-1~bionic
 
 .. note::
+
     Depending on your linux distribution and version, the installation procedure may vary.
     For any further assistance, please contact data@vscentrum.be.
-
-
 
 Informative iRODS Commands
 --------------------------
@@ -127,7 +130,7 @@ Create/open a file with a text editor (nano, vi,..) on the linux filesystem (i.e
 
 $ nano test1.txt
 
-.. image:: iCommands/nano.png
+.. figure:: iCommands/nano.png
 
 With the linux command ``ls`` you can check that the file has been created and is accessible on the User Interface machine.
 
@@ -389,8 +392,7 @@ Cheat sheet of basic iCommands
 
 A list of commands that is required for basic data operations is provided below. 
 
-.. image:: iCommands/cheat_sheet.png
+.. figure:: iCommands/cheat_sheet.png
 
 
 
-.. include:: links.rst

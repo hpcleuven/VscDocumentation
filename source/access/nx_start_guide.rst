@@ -47,7 +47,7 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
    Otherwise please refer to the :ref:`section on how to reconnect to an NX session
-   <Reconnecting to an NX session>` for instructions.
+   <nx_reconnect>` for instructions.
 
 #. Read the useful information regarding your session displayed on several
    screens. This step is very important in case of mobile devices – once
@@ -56,6 +56,8 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
    messages again.
 
 Once connected you will see the virtual Linux desktop.
+
+.. _nx_reconnect:
 
 Reconnecting to an NX session
 -----------------------------
@@ -103,4 +105,3 @@ Attached documents
 
 -  :download:`Slides from the lunchbox session <nx_start_guide/nx_slides.pdf>`
 
-.. include:: links.rst

@@ -1,7 +1,8 @@
 .. _accounting_leuven:
-========================
+
+================
 Slurm Accounting
-========================
+================
 
 To run jobs on :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>` 
 clusters, you will need a valid Slurm credit account with sufficient credits. 

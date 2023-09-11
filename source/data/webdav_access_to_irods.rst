@@ -20,18 +20,18 @@ To get the password you simply log in the mentioned address by passing VSC authe
 
 Therefore the first step is to acquire password. To do so, simply click the link provided above or copy it and then “paste and search for” on your favorite web browser. 
 
-.. image:: webdav/vsc_authentication_page.png
+.. figure:: webdav/vsc_authentication_page.png
 
 Once you reach the screen above, choose a login provider that is relevant to you. On the coming page you will see a very long password highlighted on the picture below. Copy this password correctly.
 
-.. image:: webdav/password.png
+.. figure:: webdav/password.png
 
 After that you should go to the log in link https://irods.hpc.kuleuven.be:8443/ and see the screen below.
 
-.. image:: webdav/davrods_access.png
+.. figure:: webdav/davrods_access.png
 
 Once you enter your user name and the password you saved, you will see the exact same directory structure as you see in your iRODS server.
 
-.. image:: webdav/dir_index.png
+.. figure:: webdav/dir_index.png
 
 You can now walk around directories and read the data object on your browser.

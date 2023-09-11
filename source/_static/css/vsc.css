@@ -1,0 +1,94 @@
+html[data-theme="light"] {
+    --pst-color-primary: #d96c31;  /* VSC orange */
+    --pst-color-link: #40807D;  /* dark teal (complementary) */
+    --pst-color-link-hover: #f28e24;  /* VSC secondary orange */
+    --pst-color-background: #ffffff;  /* actual white */
+    --pst-color-on-background: #f9f9f9;  /* lighter VSC white */
+    --pst-color-surface: #f5f5f5;  /* cards background */
+    --pst-color-border: #dbdbdb;
+    --sd-color-card-border-hover: var(--pst-color-link-hover);
+}
+
+html[data-theme="dark"] {
+    --pst-color-primary: #f28e24;  /* VSC secondary orange */
+    --pst-color-link: #90f2f2;  /* light teal (complementary) */
+    --pst-color-link-hover: #f9bf19;
+    --pst-color-background: #282828;  /* darker VSC black */
+    --pst-color-on-background: #383839;  /* VSC black */
+    --pst-color-surface: #303030;  /* cards background */
+    --pst-color-border: #4e4e4e;
+    --sd-color-card-border-hover: var(--pst-color-link-hover);
+}
+
+/* background gradients */
+html[data-theme="light"] .bd-sidebar-primary {
+    background-color: #fcf1dd;  /* very light VSC yellow */
+}
+html[data-theme="light"] .bd-content {
+    background-color: var(--pst-color-background);
+}
+@media (min-width: 960px) {
+    html[data-theme="light"] .bd-container {
+        background: var(--pst-color-background);
+        /* light VSC yellow: #f8e2bb */
+        background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(248, 226, 187) 50%, rgb(255, 255, 255) 80%, rgb(255, 255, 255) 100%)
+    }
+    html[data-theme="light"] .bd-sidebar-primary {
+        background-color: transparent;
+    }
+}
+
+html[data-theme="dark"] .bd-sidebar-primary {
+    background-color: #3c2c28;  /* very dark VSC brick */
+}
+html[data-theme="dark"] .bd-content {
+    background-color: var(--pst-color-background);
+}
+@media (min-width: 960px) {
+    html[data-theme="dark"] .bd-container {
+        background: var(--pst-color-background);
+        /* dark VSC brick: #673527 */
+        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(76, 39, 29) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
+    }
+    html[data-theme="dark"] .bd-sidebar-primary {
+        background-color: transparent;
+    }
+}
+
+/* toctree format */
+.toctree-wrapper .toctree-l1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.toctree-wrapper .toctree-l2 {
+    font-size: 1.0rem;
+    font-weight: normal;
+}
+
+/* make sphinx-design cards slightly non-transparent */
+.sd-card {
+    background-color: var(--pst-color-surface);
+}
+
+/* line numbers in codeblocks on transparent column */
+html[data-theme="light"] .highlight span.linenos { background-color: transparent; }
+html[data-theme="dark"] .highlight span.linenos { background-color: transparent; }
+
+/* style x-twitter img icon depending on active theme */
+html[data-theme="light"] a.nav-link:hover img.icon-link-image {
+    /* Dark VSC orange: #d96c31. Equivalent to --pst-color-link-hover */
+    filter: brightness(0) saturate(100%) invert(46%) sepia(89%) saturate(502%) hue-rotate(337deg) brightness(91%) contrast(85%);
+}
+html[data-theme="dark"] a.nav-link img.icon-link-image {
+    filter: brightness(150%) contrast(120%);
+}
+html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
+    /* Light VSC orange: #f28e24. Equivalent to --pst-color-link-hover */
+    filter: brightness(0) saturate(100%) invert(56%) sepia(81%) saturate(1394%) hue-rotate(348deg) brightness(106%) contrast(90%);
+}
+
+/* add space after icons in breadcrumb titles */
+.breadcrumb-item > span.fas {
+    margin-right: 0.3rem;
+}
+

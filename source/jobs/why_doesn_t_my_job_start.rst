@@ -44,4 +44,4 @@ queue, but this type of calculation is atypical from an HPC perspective.
 If you have large batches of (even relatively short) sequential jobs,
 you can still pack them as longer sequential or even parallel jobs and
 get to run them sooner. User support can help you with that, or see
-the page :ref:`How can I run many similar computations conveniently?`.
+the page :ref:`worker or atools`.

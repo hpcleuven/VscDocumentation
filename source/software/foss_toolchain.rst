@@ -108,6 +108,7 @@ OpenMP threads.
    The number of threads *should not* exceed the number of cores on a
    compute node.
 
+.. _commlib_openmpi:
 
 Communication library: Open MPI
 -------------------------------
@@ -216,4 +217,3 @@ Further information on FOSS components
     single: OpenMP
     single: Open MPI
 
-.. include:: links.rst

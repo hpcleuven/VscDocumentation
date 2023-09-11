@@ -44,10 +44,10 @@ Please provide the following information:
 #. any error messages shown by the client software, or an error log if
    it is available.
 
-Logging information can easily be obtained from the :ref:`OpenSSH client
-<Troubleshooting OpenSSH connection issues>`, :ref:`PuTTY
-<Troubleshooting PuTTY connection issues>` and :ref:`MobaXTerm
-<Troubleshooting MobaXTerm connection issues>`..
+Logging information can easily be obtained from the
+:ref:`OpenSSH client <troubleshoot_openssh>`,
+:ref:`PuTTY <troubleshoot_putty>` and
+:ref:`MobaXTerm <troubleshoot_mobaxterm>`.
 
 If installed software malfunctions/crashes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

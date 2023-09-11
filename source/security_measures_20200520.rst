@@ -16,7 +16,7 @@ Your current SSH keys will be revoked on May 27, 2020
 
 **We will effectively revoke all SSH public keys uploaded before 20 May 2020.** You
 should generate a new SSH key pair and upload the new public key in the
-`VSC account page <https://account.vscentrum.be>`_ (via ``Edit account`` tab). Instructions on how to create a
+`VSC account page`_ (via ``Edit account`` tab). Instructions on how to create a
 key pair and upload the public key :ref:`can be found here <upload_new_ssh_key>`.
  
 .. note::

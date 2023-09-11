@@ -36,7 +36,7 @@ off.
 Once the project is created, simply write the code, and enable the
 openMP compiler option in the project's properties as shown below.
 
-|MS Visual Studio OpenMP|
+.. figure:: ms_visual_studio/ms_visual_studio_openmp.png
 
 Compiling, building and running your program can now be done in the
 familiar way.
@@ -68,7 +68,7 @@ Development
 
 To develop an MPI-based application, create an MPI project.
 
-|MS Visual Studio MPI|
+.. figure:: ms_visual_studio/ms_visual_studio_mpi.png
 
 It is advisable not to use precompiled headers, so switch this setting
 off.
@@ -77,7 +77,7 @@ Next, write your code. Once you are ready to debug or run your code,
 make the following adjustments to the project's properties in the
 'Debugging' section.
 
-|MS Visual Studio run environment|
+.. figure:: ms_visual_studio/ms_visual_studio_run_environment.png
 
 A few settings should be verified, and if necessary, modified:
 
@@ -95,7 +95,7 @@ Debugging now proceeds as usual. One can switch between processes by
 selecting the main thread of the appropriate process by selecting the
 appropriate main thread in the Threads view.
 
-|MS Visual Studio debugging|
+.. figure:: ms_visual_studio/ms_visual_studio_debugging.png
 
 Useful links
 ------------
@@ -104,7 +104,3 @@ Useful links
    <https://www.codeproject.com/Articles/79508/Mastering-Debugging-in-Visual-Studio-A-Beginn>`_
    in Microsoft Visual C++
 
-.. |MS Visual Studio OpenMP| image:: ms_visual_studio/ms_visual_studio_openmp.png
-.. |MS Visual Studio MPI| image:: ms_visual_studio/ms_visual_studio_mpi.png
-.. |MS Visual Studio run environment| image:: ms_visual_studio/ms_visual_studio_run_environment.png
-.. |MS Visual Studio debugging| image:: ms_visual_studio/ms_visual_studio_debugging.png

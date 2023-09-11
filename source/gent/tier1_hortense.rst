@@ -1,3 +1,5 @@
+.. _Hortense hardware:
+
 Hortense @ HPC-UGent
 ====================
 
@@ -95,7 +97,7 @@ You can use SSH to connect to the login nodes of the Tier-1 Hortense cluster wit
 * from the public internet, use ``tier1.hpc.ugent.be``
 * from within the VSC network, use ``tier1.gent.vsc``
 
-More general information about SSH login is available at :ref:`acccess_data_transfer`.
+More general information about SSH login is available at :ref:`access methods`.
 
 There are 2 login nodes for Hortense: ``login55`` and ``login56``.
 When logging in using SSH, you will be assigned to either of these login nodes,
@@ -173,7 +175,7 @@ Hortense scratch via Globus
 To access your data in your (project) scratch directory on Tier-1 Hortense,
 you should use Globus via the `VSC UGent Tier1 projects` endpoint.
 
-More general information about Globus is available at :ref:`managing_and_transferring_files`.
+More general information about Globus is available at :ref:`globus platform`.
 
 
 Managing project members
@@ -703,10 +705,10 @@ Resources
 
 * kick-off meeting (15 March 2022) -
   slides: :download:`download PDF <VSC_Tier-1_Hortense_kickoff_meeting_2022-03-15.pdf>` -
-  recording: `watch on YouTube <https://www.youtube.com/watch?v=ENQrgMc2BAY>`_
+  recording: `watch on YouTube <https://www.youtube.com/watch?v=ENQrgMc2BAY>`__
 * phase 2 kick-off meeting (26 March 2023) -
   slides: :download:`download PDF <VSC_Tier-1_Hortense_phase-2_kickoff_meeting_2023-05-26.pdf>` -
-  recording: `watch on YouTube <https://www.youtube.com/watch?v=kH9XZZntc8U>`_
+  recording: `watch on YouTube <https://www.youtube.com/watch?v=kH9XZZntc8U>`__
 
 .. _hortense_help:
 

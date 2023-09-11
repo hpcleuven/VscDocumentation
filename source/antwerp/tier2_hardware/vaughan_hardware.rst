@@ -74,7 +74,7 @@ Login infrastructure
 Direct login is possible to both login nodes.
 
 - From outside the VSC network: use the external interface names. Note that from outside of
-  Belgium, a :ref:`VPN connection <VPN>` to the UAntwerp network is required.
+  Belgium, a :ref:`VPN connection <vpn>` to the UAntwerp network is required.
 - From inside the VSC network (e.g., another VSC cluster): use the internal
   interface names.
 
@@ -101,9 +101,9 @@ enjoy the power of the ``srun`` command when starting processes.
 Make sure to read the following pages which give a lot of information on Slurm
 and how to convert your Torque scripts:
 
-* :ref:`Local Slurm documentation <Antwerp Slurm>`
-* :ref:`Important differences between Slurm and Torque<Antwerp Slurm_PBS_differences>`
-* :ref:`Converting PBS/Torque options to Slurm <Antwerp Slurm_convert_from_PBS>`
+* :ref:`running jobs`
+* :ref:`Important differences between Slurm and Torque<Slurm_PBS_differences>`
+* :ref:`Converting PBS/Torque options to Slurm <Slurm_convert_from_PBS>`
 
 Since Vaughan is a homogeneous system with respect to CPU type, memory and
 interconnect, it is not needed to specify any features.
@@ -128,7 +128,7 @@ ampere_gpu     Submit to the NVIDIA Ampere GPU node.
 arcturus_gpu   Submit to the AMD Arcturus GPU nodes.
 ============   =========================================================
 
-See :ref:`GPU computing @ UAntwerp` for more information on using the GPU nodes.
+See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
 
 Compiling for Vaughan
 ---------------------

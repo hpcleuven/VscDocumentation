@@ -9,10 +9,10 @@ Download and setup MobaXterm
     You can use the key pair previously generated with PuTTY or :ref:`generate
     a new key pair with MobaXterm <generating keys mobaxterm>`.
 
-Go to the `MobaXterm website <https://mobaxterm.mobatek.net>`__ and download the
-free version. Make sure to select the **Portable edition** from the download
-page. Create a folder called ``MobaXterm`` in a known location in your computer and
-decompress the contents of the downloaded zip file inside it.
+Go to the `MobaXterm`_ website and download the free version. Make sure to
+select the **Portable edition** from the download page. Create a folder called
+``MobaXterm`` in a known location in your computer and decompress the contents
+of the downloaded zip file inside it.
 
 Setup a shortcut for a remote session
 -------------------------------------
@@ -23,7 +23,6 @@ Setup a shortcut for a remote session
 
    .. _mobaxterm-main-window:
    .. figure:: access_using_mobaxterm/mobaxterm_main_window.png
-      :align: center
       :alt: mobaxterm main
 
 #. Click on the `Session` icon in the top left corner.
@@ -32,7 +31,6 @@ Setup a shortcut for a remote session
    and you should see a window like this:
 
    .. figure:: access_using_mobaxterm/mobaxterm_session_settings_ssh.png
-      :align: center
       :alt: ssh settings window
 
 #. In the *Remote host* field introduce the cluster remote address of
@@ -41,7 +39,6 @@ Setup a shortcut for a remote session
    Click the *Advanced SSH settings* tab and you will see these extra options:
 
    .. figure:: access_using_mobaxterm/mobaxterm_advanced_ssh.png
-      :align: center
       :alt: advanced ssh options
 
    .. _step-advanced-ssh-settings:
@@ -60,8 +57,7 @@ Setup a shortcut for a remote session
    type (no circles, no symbols). You should connect to the cluster and be
    greeted by a screen similar to this one:
 
-   .. image:: access_using_mobaxterm/mobaxterm_hydra_login.png
-      :align: center
+   .. figure:: access_using_mobaxterm/mobaxterm_hydra_login.png
       :alt: hmem greeting
 
    On the left sidebar (in the *Sftp* tab) there is a file browser of your
@@ -83,7 +79,6 @@ Setup a shortcut for a remote session
    Desktop that will start MobaXterm and open a session in the corresponding cluster.
    
    .. figure:: access_using_mobaxterm/mobaxterm_session_shortcut.png
-      :align: center
       :alt: session desktop shortcut
 
 
@@ -134,7 +129,6 @@ introduced it once.
    and click OK.
 
    .. figure:: access_using_mobaxterm/mobaxterm_save_passwords.png
-      :align: center
       :alt: mobaxterm save passwords option
 
 #. Open  the **SSH** tab in the same `MobaXterm Configuration` panel.
@@ -146,7 +140,6 @@ introduced it once.
    look like this (the location of your private SSH key may be different):
 
    .. figure:: access_using_mobaxterm/mobaxterm_ssh_agent.png
-      :align: center
       :alt: mobaxterm ssh agent setup
 
    Please, keep in mind that these settings will have to be updated if the
@@ -158,6 +151,8 @@ introduced it once.
    launch. This will occur only once and after you introduce it correctly it will stay saved for all
    following sessions. Double clicking on a shortcuts for a cluster
    should open the corresponding connection directly.
+
+.. _troubleshoot_mobaxterm:
 
 Troubleshooting MobaXTerm connection issues
 -------------------------------------------

@@ -1,35 +1,19 @@
 .. _generating keys linux:
 
-Generating keys with OpenSSH
-============================
+#####################################
+:fab:`linux` Generating keys on Linux
+#####################################
 
-Prerequisite: OpenSSH
----------------------
+Requirements:
 
-Linux
-~~~~~
+* Linux operating system
+* OpenSSH
 
 On all popular Linux distributions, the OpenSSH software is readily
 available, and most often installed by default.
 
-Windows
-~~~~~~~
-
-You can use OpenSSH on Windows also if you
-
-- :ref:`download and setup MobaXterm <access using mobaxterm>`,
-- use Windows Subsystem for Linux (WSL or WSL2), or
-- simply from PowerShell on recent versions of Windows.
-
-macOS
-~~~~~
-
-macOS comes with its own implementation of OpenSSH, so you don't
-need to install any third-party software to use it. Just open a Terminal
-window and jump in!
-
 Check the OpenSSH installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==============================
 
 You can check whether the OpenSSH software is installed by opening
 a terminal and typing:
@@ -40,8 +24,8 @@ a terminal and typing:
    OpenSSH_8.0p1, OpenSSL 1.1.1c FIPS  28 May 2019
 
 
-Generating a public/private key pair in Linux and macOS
--------------------------------------------------------
+Create a public/private key pair
+================================
 
 A key pair might already be present in the default location inside
 your home directory:
@@ -97,7 +81,7 @@ VSC-id <linking key with vsc-id linux>`.
 
 
 Converting SSH2 keys to OpenSSH format
---------------------------------------
+======================================
 
 *This section is only relevant if you did not use OpenSSH (as described above)
 to generate an SSH key.*
@@ -110,13 +94,11 @@ the following way:
 
    $ ssh-keygen -i -f ~/.ssh/id_rsa_vsc_ssh2.pub > ~/.ssh/id_rsa_vsc_openssh.pub
 
-.. include:: links.rst
 
 
-Links
------
+Additional information
+======================
 
 -  `ssh-keygen manual page`_
 -  `ssh manual page`_
 
-.. include:: links.rst

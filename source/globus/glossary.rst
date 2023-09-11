@@ -1,4 +1,4 @@
-.. _glossary:
+.. _glossary globus:
 
 Glossary
 --------
@@ -21,4 +21,3 @@ Glossary
 
 .. seealso:: The official `Globus How-To pages`_.
 
-.. include:: links.rst

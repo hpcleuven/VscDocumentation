@@ -1,4 +1,4 @@
-.. _proxy:
+.. _ssh_proxy:
 
 Setting up an SSH proxy
 =======================

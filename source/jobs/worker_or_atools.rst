@@ -45,15 +45,15 @@ What to use: atools or worker?
 That depends on a number of issues, and you have to consider them all
 to make the correct choice.
 
-- Is an individual computation :ref:`sequential, multi-threaded or
-  even distributed <Type of computation>`?
-- How much :ref:`walltime is required by an individual computation
-  <Walltime per work item>`?
-- :ref:`How many individual computations <Number of work items>`
+- Is an individual computation
+  :ref:`sequential, multi-threaded or even distributed <type_computation>`?
+- How much :ref:`walltime is required by an individual computation <walltime_per_work_item>`?
+- :ref:`How many individual computations <number_work_items>`
   do you need to perform?
-- What are the :ref:`job policies <Job policies>` of the cluster you
+- What are the :ref:`job policies <job_policies>` of the cluster you
   want to run on?
 
+.. _type_computation:
 
 Type of computation
 ~~~~~~~~~~~~~~~~~~~
@@ -82,6 +82,7 @@ for worker.  worker itself is implemented using MPI, and hence things would
 get terminally confused if it executes work items that contain calls to the
 MPI API.
 
+.. _walltime_per_work_item:
 
 Walltime per work item
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -109,6 +110,7 @@ The following table summarizes this.
 | > 24 hours                | \+     | \+\+   |
 +---------------------------+--------+--------+
 
+.. _number_work_items:
 
 Number of work items
 ~~~~~~~~~~~~~~~~~~~~
@@ -118,6 +120,7 @@ If you need to do many individual computations (work items), say more than
 than many individual jobs, hence lightening the load on the scheduler
 considerably.
 
+.. _job_policies:
 
 Job policies
 ~~~~~~~~~~~~
@@ -172,8 +175,7 @@ Clusters with single user policy:
    in the job blocked, aggravating the problem.
 Clusters with shared policy
    Here atools allows the scheduler the most flexibility, but keep in mind the
-   considerations on :ref:`work item walltime <Walltime per work item>` and the
-   :ref:`number of work items <Number of work items>`.
+   considerations on :ref:`work item walltime <walltime_per_work_item>` and the
+   :ref:`number of work items <number_work_items>`.
 
 
-.. include:: links.rst

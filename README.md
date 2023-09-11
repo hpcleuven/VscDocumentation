@@ -1,104 +1,118 @@
 # VscDocumentation
 
-This repository contains user-level documentation for the VSC infrastructure.  It is deployed on [ReadTheDocs](https://vlaams-supercomputing-centrum-vscdocumentation.readthedocs-hosted.com/en/latest/).
+Repository of the [VSC documentation website](https://docs.vscentrum.be).
 
-When a commit is done on the repository's master branch, the documentation is rebuilt automatically on ReadTheDocs, and is immediately live.  Hence you may prefer to work on a branch for major updates.
+## How to contribute?
 
-## Prerequisites
+Improving the documentation is quite simple, all documents can be edited with a
+simple text editor. You standard workflow to contribute changes is:
+
+1. Clone this repository
+2. Make corrections/improvements to any document
+3. Push you changed to a new branch
+4. Open a pull request to the `master` branch of this repo
+
+⚠️ Follow our [style guide](styleguide.md) to edit the VSC documentation.
+
+## What is the status of improvements/fixes?
+
+Feel free to open issues to get fixes or improvements on the agenda.  To get an
+overview of work that is planned or in progress, check out the [project
+overview](https://github.com/hpcleuven/VscDocumentation/projects/1).
+
+## Workflow
+
+### Prerequisites
 
 You will need to clone the repository, i.e.,
 ```bash
 $ git clone git@github.com:hpcleuven/VscDocumentation.git
-$ cd VscDocumentation
-$ git fetch origin development:development
 ```
 
-Your life will be substantially easier if you can preview your changes locally.  A conda environment has be defined to install all the required software
+Your life will be substantially easier if you can preview your changes locally.
+Install the required packages in a self-contained environment such a Python
+virtual environment (*venv*) or Conda.
 
-Downloads and installation instructions for Miniconda can be found on [conda's website](https://docs.conda.io/en/latest/miniconda.html).
+#### Python venv
 
-The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The environment can be created using
+All required Python modules can be easily installed in a Python virtual
+environment using the `requirements.txt` file in this repo
+
+```bash
+$ python -m venv /path/to/new/venv
+$ source /path/to/new/venv/bin/activate
+$ cd VscDocumentation
+$ python -m pip install -r requirements.txt
+```
+
+#### Conda
+
+A conda environment has be defined to install all the required software
+
+Downloads and installation instructions for Miniconda can be found on [conda's
+website](https://docs.conda.io/en/latest/miniconda.html).
+
+The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The
+environment can be created using
+
 ```bash
 $ conda env create -f environment.yml
 ```
 
-## What is the status of improvements/fixes?
+The `sphinx` environment can be activated by
 
-Feel free to open issues to get fixes or improvements on the agenda.  To get an overview of work that is planned or in progress, check out the [project overview](https://github.com/hpcleuven/VscDocumentation/projects/1).
-
-
-## Workflow
-
-### Activate the environment
-
-The ``sphinx`` environment can be activated by
 ```bash
 $ source activate sphinx
 ```
 
-
 ### Creating a feature branch
 
-Do not make changes in the master or development branch directly, but create feature/bugfix branches as required, e.g.,
+Do not make changes in the `master` or `development` branches directly. Create
+your own feature/bugfix branch as needed.
+
 ```bash
-$ git checkout development
+$ cd VscDocumentation
+$ git checkout master
 $ git checkout -b feature/new_stuff
 ```
 
-Note that at any given time, we should be able to merge the development branch into the master branch, and rebuild the documentation, hence the development branch should always be in a sane state.
-
-Exception on feature/bugfix branches: use common sense, to fix a simple typo, it is likely better to do that directly in the development branch, and merge that immediately into master.
-
-
 ### Running a local sphinx server
 
-The repository contains a make file that has a target to run the sphinx server.  The latter will monitor the ``source`` directory for changes, and serve the documentation to a web browser that is opened automatically.
+The repository contains a make file that has a target to run the sphinx server.
+The latter will monitor the `source` directory for changes, and serve the
+documentation to a web browser that is opened automatically.
+
 ```bash
 $ make web
 ```
 
-
 ### Edit content
 
-You can now edit the content to your heart's content, making commits to your feature branch as you go.  You can push your feature branch to the Github repository whenever you like.
+You can now edit the content to your heart's content, making commits to your
+feature branch as you go. You can push your feature branch to the Github
+repository whenever you like.
+
 ```bash
+$ git add source/some_documentation_file.rst
+$ git commit -m "some new stuff added to VSC docs"
 $ git push origin feature/new_stuff
 ```
 
-
 ### Pull request
 
-When you are done, create a pull request on GitHub.  For consistency, do the pull request to the development branch, not the master branch.
+When you are done, create a pull request to the `master` branch of this
+repository on GitHub.
 
-For major changes, it is good practice to ask others to review your pull request.  Although this policy is encouraged, it is not enforced.
+Changes to the documentation require the positive review from the documentation
+maintainers of your pull request. Pay attention to the review in case there
+would be remarks to address.
 
-Once the pull request has been merged, the branch will be deleted from GitHub.  For your own convenience, it is probably easiest to pull the master and development branches from GitHub,
-and remove the local feature branch, e.g.,
+Once the pull request has been merged, the branch will be deleted from GitHub.
+At this point, all that is left to do is delete your local feature branch.
+
 ```bash
+$ git fetch origin
 $ git checkout master
-$ git pull
-$ git checkout development
-$ git pull origin development
+$ git pull origin master
 $ git branch -d feature/new_stuff
 ```
-
-
-## Repository structure
-
-1. source: directory containing the source to be rendered into HTML (e.g., rST and PNG files).
-1. images: directory containing source documents for images (e.g., ODG files).
-1. Makefile & make.bat: make files to render the documentation, and run a local web server.
-1. sphinx.yml: conda environment definition.
-
-The other files and directories are part of the migration, and may be removed at some
-later stage.
-
-
-## Documentation usage
-
-Note that ReadTheDocs has a very convenient feature.  It lets you copy an URL
-to a (sub)section of the documentation to make it easy to refer via email.  Simply
-copy the link represented by the paragraph icon that appears next to the (sub)section
- title when you hover near it.
-
-![copy documentation link](img/links.png)

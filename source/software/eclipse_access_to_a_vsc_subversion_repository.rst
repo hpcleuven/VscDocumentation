@@ -28,33 +28,48 @@ Subclipse is most easily installed through the Eclipse Marketplace.
    :ref:`Remote System Explorer <Eclipse as remote editor>`: 
    
    #. Select 'Install New Software...' from Eclipse's 'Help' menu.  
+
    #. From the 'Work with:' drop down menu, select '<name> -
       http://download.eclipse.org/releases/<name>' (replace "<name>" by
       the name of the release that you are using, e.g., 2019-06). 
-      The list of available
-      components is now automatically populated.
+      The list of available components is now automatically populated.
+
    #. From the category 'General Purpose Tools', select 'Eclipse 
       Marketplace'.
+
    #. Click the 'Next >' button to get the installation details.
+
    #. Click the 'Next >' button again to review the licenses.
+
    #. Select the 'I accept the terms of the license agreement' radio
       button.
+
    #. Click the 'Finish' button to start the download and installation
       process.
+
    #. As soon as the installation is complete, you will be prompted to
       restart Eclipse, do so by clicking the 'Restart Now' button.
 
 #. From the 'Help' menu, open 'Eclipse Marketplace...'
+
 #. In the search box, type 'Sublipse' and then click 'Go' a bit to the right.
-   |Subclipse in Marketplace| 
-#. Click the 'Install' button in the'Subclipse' entry.
+
+   .. figure:: eclipse_access_to_a_vsc_subversion_repository/subclipse_in_eclipse_marketplace.png
+
+#. Click the 'Install' button in the 'Subclipse' entry.
+
 #. Eclipse will now search for other components that are needed to successfully
    install Subclipse and offer a screen similar to
-   |Subclipse installation| 
-   Click 'Confirm'
+
+   .. figure:: eclipse_access_to_a_vsc_subversion_repository/subclipse_installation.png
+
+#. Click 'Confirm'.
+
 #. On the next screen, accept the license agreements and click 'Finish'.
+
 #. You may get a security warning about unsigned components. Click on 
    'Install anyway'.
+
 #. Finally Eclipse will offer to restart. Accept this to enable the 
    Subclipse plugin.
    
@@ -75,6 +90,7 @@ two steps are needed:
 
 #. Open the 'SVN Repository Exploring' perspective and link a SVN
    repository
+
 #. Then check out a project in the repository to create a matching
    project in the Eclipse workspace.
    
@@ -85,19 +101,23 @@ a SVN repository is set up as explained in
 #. To open the 'SVN Repository Exploring' perspective, got to
    `Window` on the menu bar, select 'Perspective', then 
    'Open Perspective' and then 'Other...'.
+
 #. Select 'SVN Repository Exploring' in the window that appears
    and click the 'Open' button. Two tabs, 'SVN Repositories' and 
    'SVN Annotate' will appear in the left pane.
+
 #. In the 'SVN Repositories' tab, right click with the mouse,
    select 'New' and then 'Repository location'
+
 #. A dialog box 'Add a new SVN Repository' appears with a box to enter the
    repository URL. For a repository on a VSC cluster, this URL will be
    similar to the one shown below (but of course replace with your userid,
    directory and favorite login node):
    
-   |Subclipse add repository|
+   .. figure:: eclipse_access_to_a_vsc_subversion_repository/subclipse_add_repository.png
    
-   Click on 'Finish'   
+#. Click on 'Finish'
+
 #. If Eclipse does not yet know how to access the host that you
    used in the URL in the previous step, it will now ask you to
    'Enter SSH Credentials'. Make sure you use the rigbht 'Username',
@@ -106,12 +126,12 @@ a SVN repository is set up as explained in
    enter the passphrase in the corresponding field and finally click
    'OK'.
    
-   |Subclipse enter credentials|
+   .. figure:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_ssh_credentials.png
    
 #. You may then get another dialog box asking you to enter your username
    and password. Here you actually need to enter your passphrase again.
    
-   |Subclipse enter passpharse|
+   .. figure:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_username_password.png
    
 #. Now you're ready to check out your project. You will see a screen
    similar to the picture below.
@@ -122,6 +142,7 @@ a SVN repository is set up as explained in
    want to use a different location then the default location for your
    project or 'Finish'.
 
+   .. figure:: eclipse_access_to_a_vsc_subversion_repository/subclipse_checkout.png
 
 Work cycle
 ----------
@@ -147,11 +168,3 @@ settings, e.g., the '.project' file. Whether or not you wish to store
 these settings in the repository depends on your setup, but probably you
 don't.
 
-.. |Subclipse in Marketplace| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_in_eclipse_marketplace.png
-.. |Subclipse installation| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_installation.png
-.. |Subclipse add repository| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_add_repository.png
-.. |Subclipse enter credentials| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_ssh_credentials.png
-.. |Subclipse enter passpharse| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_enter_username_password.png
-.. |Subclipse checkout| image:: eclipse_access_to_a_vsc_subversion_repository/subclipse_checkout.png
-
-.. include:: links.rst

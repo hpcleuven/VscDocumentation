@@ -105,7 +105,7 @@ If you don't use all cores of a node in your job, the scheduler
 - may decide to pack the tasks of several nodes in your resource request on
   a single node;
 - may run other jobs you have in the queue on the same node(s);
-- may, depending on the :ref:`job policies <Job policies>` of the cluster, run
+- may, depending on the :ref:`job policies <job_policies>` of the cluster, run
   jobs of other users on the same node.
  
 In the last scenario, if the cluster has a 'shared' policy, the scheduler can
@@ -290,17 +290,7 @@ is equivalent with the line::
 The same holds when using ``-l`` on the command line for ``qsub``.
 
 
-.. _gpus:
+.. _gpus_torque:
 
-Requesting GPUs
----------------
-
-It is possible to request one or more GPUs for your job on some of the
-VSC clusters that provide them. For cluster-specific usage instructions, please
-consult the respective documentation sources:
-
-- KU Leuven/UHasselt Genius: :ref:`Submit to a GPU node <submit to genius GPU node>`
-- UAntwerp Leibniz: :ref:`GPU computing @ UAntwerp <GPU computing UAntwerp>`
-- VUB Hydra: `How to use GPUs in Hydra <https://hpc.vub.be/docs/faq/basic/#how-can-i-use-gpus-in-my-jobs>`_
-
+.. include:: gpus.rst
 

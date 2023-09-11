@@ -53,4 +53,3 @@ manual <http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html>`_.
   It is your responsibility to keep your computer safe and prevent easy
   intrusion of your VSC-account due to an obviously unprotected PC!*
 
-.. include:: links.rst

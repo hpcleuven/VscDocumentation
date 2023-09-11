@@ -73,10 +73,41 @@ the X-Forwarding.
 How to configure the OpenSSH client?
 ------------------------------------
 
-The ``~/.ssh/config`` file can be used to configure your SSH connections, e.g.,
-to automatically add X forwarding or specify the path of a key that is not in
-the default location.  We provide :ref:`some useful tips<SSH config>`.
+The SSH configuration file ``~/.ssh/config`` can be used to configure your SSH
+connections. For instance, to automatically define your username, or the
+location of your key, or add X forwarding. See below for some useful tips to
+help you save time when working on a terminal-based session.
 
+.. toctree::
+
+   ssh_config
+
+Managing keys with an SSH agent
+-------------------------------
+
+It is convenient to use an SSH-agent to avoid having to enter your private
+key's passphrase all the time when establishing a new connection.
+
+.. toctree::
+
+   using_ssh_agent
+
+Proxies and network tunnels to compute nodes
+--------------------------------------------
+
+Network communications between your local machine and some node in the cluster
+other than the login nodes will be blocked by the cluster firewall. In such a
+case, you can directly open a shell in the compute node with an SSH connection
+using the login node as a proxy or, alternatively, you can also open a network
+tunnel to the compute node which will allow direct communication from software
+in your computer to certain ports in the remote system.
+
+.. toctree::
+
+   setting_up_a_ssh_proxy
+   creating_a_ssh_tunnel_using_openssh
+
+.. _troubleshoot_openssh:
 
 Troubleshooting OpenSSH connection issues
 -----------------------------------------
@@ -89,9 +120,9 @@ If you get a ``Permission denied`` error message, one of the things to verify
 is that your private key is in the default location, i.e., the output of
 ``ls ~/.ssh`` should show a file named ``id_rsa_vsc``.
 
-The second thing to check is that your :ref:`private key is linked to your
-VSC-id <linking key with vsc-id linux>` in your :ref:`SSH configuration file <SSH
-config>` at ``~/.ssh/config``.
+The second thing to check is that your
+:ref:`private key is linked to your VSC-id <linking key with vsc-id linux>`
+in your :ref:`SSH configuration file <ssh_config>` at ``~/.ssh/config``.
 
 If your private key is not stored in ``~/.ssh/id_rsa_vsc``, you need to adapt
 the path to it in your ``~/.ssh/config`` file.
@@ -103,9 +134,8 @@ making the connection:
 
    $ ssh -i <path-to-your-private-key-file> <vsc-account>@<vsc-loginnode>
 
-Links
------
+SSH Manual
+----------
 
 -  `ssh manual page`_
 
-.. include:: links.rst

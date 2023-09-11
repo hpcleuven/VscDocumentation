@@ -10,7 +10,6 @@ Setting up an SSH proxy with PuTTY
    Please check out :ref:`how to configure PuTTY
    <text mode access using PuTTY>`.
 
-
 Rationale
 ---------
 
@@ -33,7 +32,6 @@ so-called *ssh proxy*. You then connect through another computer (the
 This all sounds quite complicated, but once things are configured
 properly it is really simple to log on to the host.
 
-
 Setting up a proxy in PuTTY
 ---------------------------
 
@@ -51,19 +49,18 @@ Setting up a proxy in PuTTY
       to use use as a proxy in the sections of :ref:`the local VSC
       clusters <hardware>`, and replace ``vsc.login.node`` accordingly.
 
-
 Setting up the connection in PuTTY is a bit more complicated than for a
 simple direct connection to a login node.
 
 #. First you need to start up pageant and load your private key into it.
    :ref:`See the instructions on our "Using Pageant"
    page <using Pageant>`.
+
 #. In PuTTY, go first to the \\"Proxy\" category (under
    \\"Connection\"). In the Proxy tab sheet, you need to fill in the
    following information:
 
-   |PuTTY proxy section|
-
+   .. figure:: setting_up_a_ssh_proxy_with_putty/putty_proxy_section.png
 
    #. Select the proxy type: "Local"                     
    #. Give the name of the "proxy  server\". This is *vsc.login.node*,
@@ -71,26 +68,23 @@ simple direct connection to a login node.
       want to log on and work.               
    #. Make sure that the "Port" number is 22.                  
    #. Enter your VSC-id in the "Username" field.           
-   #. In the "Telnet command, or local proxy command\", enter the string 
-                                     
-      ::                             
-                                     
-         plink -agent -l %user %proxyhost -nc %host:%port             
-                                     
-      | (the easiest is to just copy-and-paste this text). 
+   #. In the "Telnet command, or local proxy command\", enter the string ::
 
-      | "plink" (PuTTY Link) is  a Windows program and comes
-        with the full PuTTY suite of applications. It is the
-        command line version of PuTTY. In case you've only
-        installed the executables putty.exe and pageant.exe,
-        you'll need to download plink.exe also from* the
-        `PuTTY`_ web site We strongly advise to simply install the whole
-        PuTTY-suite of applications  using the installer provided on the
-        `PuTTY download site`_.
+          plink -agent -l %user %proxyhost -nc %host:%port
+
+      .. note::
+
+         "plink" (PuTTY Link) is  a Windows program and comes with the full
+         PuTTY suite of applications. It is the command line version of PuTTY.
+         In case you've only installed the executables putty.exe and
+         pageant.exe, you'll need to download plink.exe also from* the `PuTTY`_
+         web site We strongly advise to simply install the whole PuTTY-suite of
+         applications  using the installer provided on the `PuTTY download
+         site`_.
 
 #. Now go to the "Data" category in PuTTY, again under "Connection".
 
-   |PuTTY data section|
+   .. figure:: setting_up_a_ssh_proxy_with_putty/putty_data_section.png
 
    #. Fill in your VSC-id in the "Auto-login username" field.
    #. Leave the other values untouched (likely the values
@@ -98,7 +92,7 @@ simple direct connection to a login node.
 
 #. Now go to the "Session category
 
-   |PuTTY session section|
+   .. figure:: setting_up_a_ssh_proxy_with_putty/putty_session_section.png
 
    #. Set the field \\"Host Name (or IP address) to the computer 
       you want to log on to. If you are setting up a proxy
@@ -129,13 +123,11 @@ What happens behind the scenes:
    one of its own build-in ways of setting up a proxy, but to use the
    command that you specify in the \\"Telnet command\" of the \\"Proxy\"
    category.
--  In the command
 
-   ::
+-  In the command ::
 
       plink -agent -l %user %proxyhost -nc %host:%port
           
-
    ``%user`` will be replaced by the userid you specify in the "Proxy"
    category screen, %proxyhost will be replaced by the host you specify
    in the "Proxy" category screen (**vsc.login.node** in the
@@ -149,8 +141,3 @@ What happens behind the scenes:
    the credentials. And the -nc option tells plink to tell the SSH
    server on ``%proxyhost`` to further connect to ``%host:%port``.
 
- .. |PuTTY proxy section| image:: setting_up_a_ssh_proxy_with_putty/putty_proxy_section.png
- .. |PuTTY data section| image:: setting_up_a_ssh_proxy_with_putty/putty_data_section.png
- .. |PuTTY session section| image:: setting_up_a_ssh_proxy_with_putty/putty_session_section.png
-
-.. include:: links.rst
