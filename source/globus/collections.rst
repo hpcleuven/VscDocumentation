@@ -1,8 +1,8 @@
 .. include:: css.rst
 
-=========
-Endpoints
-=========
+===========
+Collections
+===========
 
 With Globus, you might want to access data on various storage and computer systems, for example HPC clusters, laptops, or cloud storage. 
 Directories on those systems can be exposed to Globus as a **collection**.
