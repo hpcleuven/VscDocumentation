@@ -22,31 +22,70 @@ Available collections
 The VSC hosts a number of collections:
 
 
-+------------------------------------------+-------------------+----------------+------------------+
-| Name                                     | Account needed    | High assurance | Guest collections| 
-+==========================================+===================+================+==================+
-| VSC VUB Hydra                            | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC UGent Tier2 filesystems              | UGent account     | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC UGent Tier1 Projects                 | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC UAntwerpen Tier2                     | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC KU Leuven tier1 scratch              | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC KU Leuven tier2 scratch              | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC KU Leuven user directories           | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
-| VSC KU Leuven data directories           | VSC account       | No             | No               |
-+------------------------------------------+-------------------+----------------+------------------+
+.. list-table:: Overview of collections for HPC systems
+   :header-rows: 1
+
+   * - Name
+     - Collection
+     - High assurance
+     - Guest collections
+   * - VUB Tier-2 
+     - `VSC VUB Hydra <https://app.globus.org/file-manager/collections/2d1d4873-a849-4b9c-bd34-2034a2163003/overview>`_
+     - No
+     - Yes
+   * - UGent Tier-2
+     - `VSC UGent Tier2 filesystems <https://app.globus.org/file-manager/collections/e9247cdf-2c76-42ef-81d4-1c3f772ce719/overview>`_
+     - No
+     - Yes
+   * - UGent Tier-1
+     - `VSC UGent Tier1 projects <https://app.globus.org/file-manager/collections/ce533ba6-0b81-4640-bdc6-f3a6ff2d4b74/overview>`_
+     - No
+     - No
+   * - UAntwerpen Tier-2
+     - `VSC UAntwerpen Tier2 <https://app.globus.org/file-manager/collections/6a13242d-6506-4b3d-a49c-ac981b35ab7d/overview>`_
+     - No
+     - No
+   * - KU Leuven Tier-2 (scratch)
+     - `VSC KU Leuven tier2 scratch <https://app.globus.org/file-manager/collections/82c495cc-aef8-40ad-88df-f9c92bee82d3/overview>`_
+     - No
+     - Yes
+   * - KU Leuven Tier-2 (user directories)  
+     - `VSC KU Leuven user directories <https://app.globus.org/file-manager/collections/b4ad28e2-d444-485f-97c5-ca5f6e0d3a2b/overview>`_
+     - No
+     - No
+   * - KU Leuven Tier-2 (data directories)
+     - `VSC KU Leuven data directories <https://app.globus.org/file-manager/collections/38948f53-d4f5-4e94-afa5-ad364c7a66b8/overview>`_
+     - No
+     - Yes
 
 .. Note::
       The collection 'VSC KU Leuven tier2 scratch' also contains the staging directories, under :bgrnd1:`/project`
 
+.. list-table:: Overview of collections for Tier-1 Data
+   :header-rows: 1
 
-If you are one of the pilot users of the Tier-1 Data platform, you can find its collection by searching for 'vsc irods.hpc'.  
+   * - Name
+     - Collection
+     - High assurance
+     - Guest collections
+   * - Tier-1 Data: kuleuven_tier1_pilot zone
+     - `VSC iRODS irods.hpc.kuleuven.be <https://app.globus.org/file-manager/collections/7b4afc9a-e89d-4a79-bc8e-a2d9b1c53eda/overview>`_
+     - No
+     - Yes
+   * - Tier-1 Data: VSC zone
+     - `VSC iRODS vsc.irods.hpc.kuleuven.be <https://app.globus.org/file-manager/collections/3e97664d-d90b-488b-9f49-09a24cfaf022/overview>`_
+     - No
+     - Yes
+   * - Tier-1 Data: VSC-climate zone
+     - `VSC iRODS vsc-climate.irods.hpc.kuleuven.be <https://app.globus.org/file-manager/collections/ca51285b-4598-4c12-89f2-9e5de8b13e04/overview>`_
+     - No
+     - No
+
+
+
+
+
+ 
 
 
 
