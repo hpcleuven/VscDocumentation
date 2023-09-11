@@ -8,7 +8,7 @@ Sofware installed on wICE is not impacted, because there is no change of OS on w
 
 .. note::
 
-   Tests nodes are available. If you want to test your software or your Conda environment you can do so as follows:
+   Test nodes are available. If you want to test your software or your Conda environment you can do so as follows:
 
    On the `VSC account page`_, request access to the group ``lpt2_rocky8_pilot``.
    Once approved by the admins, you can submit jobs to the reserved Rocky 8 nodes by specifying the option ``--reservation=genius_rocky8_pilot``.
@@ -59,6 +59,11 @@ If you only have a Conda environment working on Genius, it's best to create a ne
 
    ${VSC_DATA}/miniconda3-rocky
   
+In order to install miniconda in a new directory you can ::
+
+   bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3/rocky
+   export PATH="${VSC_DATA}/miniconda3-rocky/bin:${PATH}
+
 You can then use this Conda environment after the migration. You can prepare this on the test nodes.
 
 
@@ -66,7 +71,7 @@ You can then use this Conda environment after the migration. You can prepare thi
 
 Impact on starting jobs on Genius and wICE
 ------------------------------------------
-In order to minimize the changes you need to make to your jobscripts, an appropriate module path (``$MODULEPATH``) will be set by default at the start of your job of the the migration of Genius to Rocky 8 OS. This new module path will now contain all toolchain versions, starting from 2018a on Genius and starting from 2021a on wICE. This is an important change! Previously the modulepath was set to a single toolchain, that would not change over time. You might have set a module path in your jobscripts to refer to newer toolchains.
+In order to minimize the changes you need to make to your jobscripts, an appropriate module path (``$MODULEPATH``) will be set by default at the start of your job of the the migration of Genius to Rocky 8 OS. This new module path will now contain all toolchain versions, so all the modules, starting from 2018a on Genius and starting from 2021a on wICE. This is an important change! Previously the modulepath was set to a single toolchain, that would not change over time. You might have set a module path in your jobscripts to refer to newer toolchains. Module use/unuse should now only be needed in exceptional cases.
 
 .. note::
 
