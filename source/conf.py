@@ -171,7 +171,7 @@ html_sidebars = {
 html_context = {
     "github_user": "hpcleuven",
     "github_repo": "VscDocumentation",
-    "github_version": "pydata",
+    "github_version": "master",
     "doc_path": "source",
 }
 

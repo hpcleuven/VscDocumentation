@@ -1,8 +1,8 @@
 .. _cloud:
 
-#####################
-:fas:`cloud` T1 Cloud
-#####################
+#########################
+:fas:`cloud` Tier-1 Cloud
+#########################
 
 The VSC cloud platform uses the open-source software
 `OpenStack <https://openstack.org>`_, version *Train*. This
