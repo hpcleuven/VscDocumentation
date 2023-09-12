@@ -62,7 +62,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
       of parallel processing enabling researchers to run advanced application
       programs efficiently, reliably and quickly.
 
-   .. grid-item-card:: :fas:`cloud` T1 Cloud
+   .. grid-item-card:: :fas:`cloud` Tier-1 Cloud
       :columns: 12 4 4 4
       :link: cloud/index
       :link-type: doc
@@ -71,7 +71,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
       The VSC Cloud component provides *on-demand* resources in a more
       flexible and cloud-like manner.
 
-   .. grid-item-card:: :fas:`database` T1 Data
+   .. grid-item-card:: :fas:`database` Tier-1 Data
       :columns: 12 4 4 4
       :link: data/tier1_data_service
       :link-type: doc
