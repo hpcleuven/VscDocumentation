@@ -7,7 +7,7 @@ More and more VSC users have computational tasks that make intensive use of larg
 The Tier-1 Data platform of the VSC enables researchers to store their data close to the computing infrastructure during the active phase of their research projects.
 Additionally, it gives them tools to manage data in a `FAIR <https://www.kuleuven.be/rdm/en/guidance/fair>`_ and efficient way from start to finish.  
 
-The Tier-1 Data platform is based on the open source software iRODS.
+The Tier-1 Data platform is based on the open source software `iRODS <https://irods.org>`_.
 Researchers can manage data via different clients, such as a command-line interface, a Python API or a web interface.  
 
 Tier-1 Data provides four core competencies:
