@@ -24,7 +24,7 @@ to make those modules available. Normally this should happen automatically, but
 in case of problems it is a good idea to check this. If for some reason it is
 missing, it can be added by executing:
 
-::
+.. code-block:: shell
 
     $ module use /apps/leuven/icelake/2021a/modules/all
 
@@ -32,7 +32,7 @@ Note that in the future, newer versions of software will be compiled using
 different toolchain versions. In order to use modules from different toolchain
 versions, you can use:
 
-::
+.. code-block:: shell
 
     $ module use /apps/leuven/icelake/<toolchain-version>/modules/all
 
@@ -68,7 +68,7 @@ parameterize simulations, is available on wICE. An attention point is that
 if you want to lauch Worker jobs from the Genius login nodes, you will need to
 use a specific module:
 
-::
+.. code-block:: shell
 
     $ module use /apps/leuven/skylake/2021a/modules/all
     $ module load worker/1.6.12-foss-2021a-wice
@@ -148,7 +148,7 @@ to have two separate :ref:`Conda installations <conda for Python>` (one for each
 cluster). To select the correct Conda installation when you log in and at the
 start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
 
-::
+.. code-block:: shell
    
    case ${VSC_INSTITUTE_CLUSTER} in
        genius)
@@ -175,7 +175,7 @@ By default, the compute mode is set to `Exclusive-process` on our clusters
 another compute mode at job submission time. This is done by making use of a
 plugin for our Slurm job scheduler:
 
-::
+.. code-block:: shell
 
    $ sbatch --help
    ...
@@ -189,13 +189,13 @@ plugin for our Slurm job scheduler:
 Submitting a batch job where you want to set the compute mode of your NVIDIA
 GPU(s) to `shared` can be done with:
 
-::
+.. code-block:: shell
 
    sbatch --export=ALL --gpu_cmode=shared jobscript.slurm
 
 An interactive job can be launched as follows:
 
-::
+.. code-block:: shell
 
    srun --ntasks-per-node=9 --nodes=1 --gpus-per-node=1 --account=<YOUR_ACCOUNT> \
         --cluster=wice --time=01:00:00 --partition=gpu --gpu_cmode=shared \
