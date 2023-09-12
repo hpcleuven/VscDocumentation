@@ -4,7 +4,7 @@
 Tier-1 Data Architecture
 ########################
 
-The Tier-1 Data platform is based on the open source software iRODS.
+The Tier-1 Data platform is based on the open source software `iRODS <https://irods.org>`_.
 The image below shows the high level architecture of the platform:
 
 .. figure:: ../images/introduction/tier1data_architecture.png
