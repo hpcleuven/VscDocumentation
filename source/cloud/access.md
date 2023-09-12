@@ -10,7 +10,7 @@ need a separate login or password. In order to use the cloud services,
 
 New users can obtain an account by following [the procedure described
 here](/access/vsc_account.rst).
-Once you have an account, contact if you want to start a new OpenStack
+Once you have an account, contact us if you want to start a new OpenStack
 project, or join an existing one.
 
 You can interact with the VSC Cloud using the OpenStack Dashboard, a web
