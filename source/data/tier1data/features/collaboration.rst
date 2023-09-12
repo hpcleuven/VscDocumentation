@@ -28,14 +28,14 @@ A user that has both roles will have both sets of permissions. This way, permiss
 For example:
 
 - Chemistry (project group)  
-    - Mary
-    - John
-    - Chris
+  - Mary
+  - John
+  - Chris
 - Chemistry_data_providers (access group)  
-    - John
+  - John
 - Chemistry_data_analysts (access group)  
-    - Mary
-    - Chris 
+  - Mary
+  - Chris 
 
 Permissions in Tier-1 Data can be given to either individual users or groups.
 
