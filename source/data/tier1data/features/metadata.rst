@@ -94,19 +94,19 @@ Metadata can be added to data in Tier-1 Data in three ways:
 
 1) Manually adding an AVU to an object
 
-Adding AVUs to objects manually is the default method, and is possible via the ManGO portal, iCommands and the Python client. 
+   Adding AVUs to objects manually is the default method, and is possible via the ManGO portal, iCommands and the Python client. 
 
 2) Automatic extraction of metadata from file headers
 
-Many types of files contain contextual information in their header. 
-In the ManGO Portal, you can inspect which contextual information is hidden in your data objects, select the information you find relevant, and add it as AVUs.
+   Many types of files contain contextual information in their header. 
+   In the ManGO Portal, you can inspect which contextual information is hidden in your data objects, select the information you find relevant, and add it as AVUs.
 
 3) Adding metadata via schemas
 
-Adding metadata manually can be time-consuming, and prone to human errors (like typos).
-In the ManGO portal, you can create metadata schemas.
-These schemas allow you to ask for specific fields and put restrictions on the answers users give.
-Then, you and your colleagues can use apply these schemas to add metadata to objects via an online form. 
+   Adding metadata manually can be time-consuming, and prone to human errors (like typos).
+   In the ManGO portal, you can create metadata schemas.
+   These schemas allow you to ask for specific fields and put restrictions on the answers users give.
+   Then, you and your colleagues can use apply these schemas to add metadata to objects via an online form. 
 
 
 
