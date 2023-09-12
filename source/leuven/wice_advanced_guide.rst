@@ -187,7 +187,7 @@ plugin for our Slurm job scheduler:
                                  exclusive
 
 Submitting a batch job where you want to set the compute mode of your NVIDIA
-GPU(s) to `shared` can be done with:
+GPU(s) to be `shared` can be done with:
 
 .. code-block:: shell
 
@@ -203,7 +203,7 @@ An interactive job can be launched as follows:
 
 A few notes on this features:
 
-* To check the behaviour is as expected, execute ``nvidia-smi`` in your job
+* To check the behaviour is as expected, execute ``nvidia-smi`` in your job.
 * Runs with GPUs on multiple nodes are not supported. Contact the helpdesk if
   you think you have a use case where this would be necessary.
 * The GPU compute mode does not apply when multi-instance GPU partitioning
