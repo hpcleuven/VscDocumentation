@@ -54,7 +54,7 @@ several actions from the lecturer are required.
 
    ::
 
-      $ sbatch -A <project_name> --reservation=<reservation_name> jobscript.slurm
+      $ sbatch --account=<project_name> --reservation=<reservation_name> jobscript.slurm
 
    where ``project_name`` refers to the project created by the lecturer for
    the purpose of the course, and the ``<reservation_name>`` refers to an 
