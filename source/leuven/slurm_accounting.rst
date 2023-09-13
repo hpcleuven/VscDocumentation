@@ -42,9 +42,9 @@ If you for example have been granted introduction credits, the corresponding cre
 account will be named ``intro_vscxxxxx`` (with ``vscxxxxx`` referring to your VSC username).
 Submitting a batch job can then look as follows::
 
-   $ sbatch -A lp_my_project run-job.slurm
+   $ sbatch --account=lp_my_project run-job.slurm
    or
-   $ sbatch -A intro_vsc3xxxx run-job.slurm
+   $ sbatch --account=intro_vsc3xxxx run-job.slurm
 
 If the account to be charged, i.e., ``lp_my_project``, has insufficient credits for the 
 job, the user receives a warning at this point, and the job will not start until the account
@@ -60,12 +60,12 @@ of the cost of each individual job.
 The following command will provide an overview of all transactions for an account
 that the user has access to, as well as a summary of the credit usage at the top::
 
-     $ sam-statement -A lp_my_project
+     $ sam-statement --account=lp_my_project
 
 It is more convenient to filter this information for a specific period of time, 
 e.g.::
 
-   $ sam-statement -A lp_my_project -s 2023-01-01 -e 2023-01-31
+   $ sam-statement --account=lp_my_project --start=2023-01-01 --end=2023-01-31
 
 This will show the transactions on the account for the ``lp_my_project`` project for 
 the month January 2023.
@@ -74,7 +74,7 @@ If you are only interested in the overview of your past credit usage, and don't 
 the actual balance information, ``sam-list-usagerecords`` provides a much faster 
 alternative for a summarized statement::
 
-   $ sam-list-usagerecords -A lp_my_project -s 2023-01-01 -e 2023-01-31
+   $ sam-list-usagerecords --account=lp_my_project --start=2023-01-01 --end=2023-01-31
 
 .. note::
 
@@ -83,4 +83,4 @@ alternative for a summarized statement::
      Individual users can only see their own usage and not that of other users of 
      the same credit account.
      The latter is only available to users who have been given a Coordinator role.
-   - All ``sam``-commands provide help by running them with ``-h`` option
+   - All ``sam``-commands provide help by running them with ``-h|--help`` option
