@@ -27,17 +27,17 @@ Superdome jobs get access to a number of cores which is a multiple of 14.
 The allocation for the following job will hence consist of an entire socket
 (and its 14 cores)::
 
-  $ sbatch -M genius -p superdome -A myaccount --ntasks=1 myscript.slurm
+  $ sbatch --account=lp_my_project --clusters=genius --partition=superdome --ntasks=1 myscript.slurm
 
 By default, each task will be launched on a separate socket. The following
 job will therefore get two sockets (and so 28 cores in total)::
 
-  $ sbatch -M genius -p superdome -A myaccount --ntasks=2 myscript.slurm
+  $ sbatch --account=lp_my_project --clusters=genius --partition=superdome --ntasks=2 myscript.slurm
 
 If you want to get multiple Slurm tasks per socket you will need to use the
 ``--ntasks-per-socket`` option, for example::
 
-  $ sbatch -M genius -p superdome -A myaccount --ntasks=28 --ntasks-per-socket=14 myscript.slurm
+  $ sbatch --account=lp_my_project --clusters=genius --partition=superdome --ntasks=28 --ntasks-per-socket=14 myscript.slurm
 
 .. note::
 
