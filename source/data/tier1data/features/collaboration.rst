@@ -122,10 +122,10 @@ However, she can upload new files to this collection herself.
 It's important to stress that one object can have multiple permissions:
 
 - CollectionA
-    - GroupA: read access
-    - GroupB: read access
-    - GroupC: write access
-    - GroupD: own access
+  - GroupA: read access
+  - GroupB: read access
+  - GroupC: write access
+  - GroupD: own access
 
 This way, it is possible that a person can derive access to an object from multiple permissions.
 If Mary is part of both GroupA and GroupC, she will have write access to CollectionA (because this is the highest level of access given to her).  
@@ -186,6 +186,7 @@ In some cases, the owner can also be a group.
 
 While the terms seem similar, ownership and own permissions aren't related. 
 However, it should be noted that, for technical reasons, it's hard to deny the owner of an object access to it.  
+
 
 
 

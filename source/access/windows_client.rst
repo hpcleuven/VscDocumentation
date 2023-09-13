@@ -99,11 +99,19 @@ Programming tools
 Windows Subsystem for Linux (WSL/WSL2)
 --------------------------------------
 If you're running Windows 10 build 1607 (Anniversary Edition) or
-later, you may consider running the "`Windows Subsystem for
-Linux <https://www.google.be/webhp?q=windows%20subsystem%20for%20linux>`_"
+later, you may consider running the ":ref:`Windows Subsystem for
+Linux <wsl>`"
 that will give you a Ubuntu-like environment on Windows and allow you
 to install some Ubuntu packages. *In build 1607 this is still
 considered experimental technology and we offer no support.*
+
+.. toctree::
+   :hidden:
+
+   wsl
+
+
+
 
 Microsoft Visual Studio
 -----------------------

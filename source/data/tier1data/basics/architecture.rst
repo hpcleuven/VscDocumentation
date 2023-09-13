@@ -31,7 +31,7 @@ An iRODS zone can be accessed from different systems:
 - The HPC clusters of the Flemish Supercomputing Center (VSC)
 - Your laptop
 - Scientific instruments like scanners and microscopes
-- ...
+
 
 From each of these systems, access is facilitated by a variety of clients:
 

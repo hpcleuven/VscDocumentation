@@ -9,8 +9,5 @@ Clients
    clients/python_client
    clients/mango_portal
 
-.. toctree::
-   :hidden:
 
-   wsl
 

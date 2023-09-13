@@ -1,12 +1,8 @@
 .. _wsl:
 
 ################################################
-Installing WSL2 on windows (optional)
+Installing WSL2 on windows 
 ################################################
-
-.. note::
-    These instructions are meant users who want to use :ref:`iCommands<icommands>` on their local Windows pc.
-    If you do not fall into this category, you can ignore this page. 
 
 
 As a Windows user if you don't already use any virtualisation system to operate Linux you can install Windows Subsystem for Linux (WSL2).
@@ -34,13 +30,24 @@ We will complete all steps by using Power Shell of Windows. However you can do s
 
 Run Windows PowerShell as administrator,
 Type the following to enable WSL:
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+.. code-block::
+
+  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
 To enable Virtual Machine Platform on Windows 10 (2004), execute the following command:
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+.. code-block::
+     
+  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
 
 To set WSL 2 as default execute the command below (You might need to restart your PC):
-wsl --set-default-version 2
+
+.. code-block::
+     
+  wsl --set-default-version 2
+
 
 To install your Linux distribution of choice on Windows 10, open the Microsoft Store app, search for it, and click the “Get” button.
 The first time you launch a newly installed Linux distribution, a console window will open and you'll be asked to wait for a minute or two.

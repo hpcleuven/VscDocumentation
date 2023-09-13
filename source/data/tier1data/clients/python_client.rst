@@ -49,10 +49,10 @@ You might need to put the file in a folder that doesn't require administrator ri
 3) Linux users can first authenticate with :ref:`icommands`. 
 Then, they create a second configuration file as follows:
 
-.. code-block:: sh
+   .. code-block:: sh
 
-   cp ~/.irods/irods_environment.json ~/.irods/irods_environment_python.json
-   sed -i 's/pam_password/PAM/g'  ~/.irods/irods_environment_python.json
+      cp ~/.irods/irods_environment.json ~/.irods/irods_environment_python.json
+      sed -i 's/pam_password/PAM/g'  ~/.irods/irods_environment_python.json
 
 Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
 

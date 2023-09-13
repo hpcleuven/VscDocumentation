@@ -16,12 +16,14 @@ followed by `Section 3 <#sec-items>`__, in which the different kinds of
 fields are described. Finally, `Section 4 <#sec-full>`__ shows an
 example of the JSON file for a draft version.
 
-      If you would like to design your own metadata schema for Tier-1 Data
-      without using the Metadata Schema Manager, you should focus on
-      `Section 3 <#sec-items>`__ and create a JSON file that matches the
-      value of ``properties`` in the main JSON. On upload to Tier-1 Data, you
-      will be able to provide the name and title of your schema, and the
-      versioning will be taken care of in the backend.
+.. note::
+    
+    If you would like to design your own metadata schema for Tier-1 Data
+    without using the Metadata Schema Manager, you should focus on
+    `Section 3 <#sec-items>`__ and create a JSON file that matches the
+    value of ``properties`` in the main JSON. On upload to Tier-1 Data, you
+    will be able to provide the name and title of your schema, and the
+    versioning will be taken care of in the backend.
 
 Before we go into these sections, here is some useful vocabulary:
 

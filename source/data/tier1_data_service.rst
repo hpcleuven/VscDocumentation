@@ -1,8 +1,8 @@
 .. _tier1_data_service:
 
-######################
-Tier-1 Data platform
-######################
+######################################
+:fa:`people-carry` Tier-1 Data Service
+######################################
 
 .. toctree::
    :maxdepth: 2
