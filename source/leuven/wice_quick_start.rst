@@ -62,7 +62,7 @@ a valid value.
 To submit to a compute node you need to provide the required number of nodes and cores. 
 For example to request 2 nodes with each 72 cores for 2 hours you can submit like this::
 
-   $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=2:00:00  -A lp_myproject  myjobscript.slurm
+   $ sbatch --account=lp_myproject --cluster=wice --nodes=2 --ntasks-per-node=72 --time=2:00:00 myjobscript.slurm
    
 More information about accounting used on wice can be found on the :ref:`Leuven accounting <accounting_leuven>`
 page and on :ref:`KU Leuven credits <KU Leuven credits>`.
@@ -72,7 +72,7 @@ Submit a long job to a compute node
 
 To submit to a compute node a job longer than 3 days you need to submit specifically to the ``batch_long`` partition::
 
-   $ sbatch --cluster=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 --partition=batch_long -A lp_myproject  myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --nodes=2 --ntasks-per-node=72 --time=6-16:00:00 --partition=batch_long myjobscript.slurm
 
 .. _submit to wice interactive node:
 
@@ -86,7 +86,7 @@ These nodes are intended for interactive use.
 Instead of submitting a job script, you open an interactive session on a compute node as 
 follows::
 
-   $ srun -n 1 -t 01:00:00 -A lp_myproject --partition=interactive --cluster=wice --pty bash -l
+   $ srun --account=lp_myproject --ntasks=1 --time=01:00:00 --partition=interactive --clusters=wice --pty bash -l
 
 If a GPU is necessary for the visualization process, it can be requested (max 1 GPU instance 
 and total of 8 cores for at most 16 hours). 
@@ -94,7 +94,7 @@ The available GPU is a single A100 which has been split in 7 GPU instances (one 
 will be allocated to your job). 
 Additionally, X11 forwarding should be enabled::
 
-   $ srun -N 1 -t 16:00:00 --ntasks-per-node=8 --gpus-per-node=1 -A lp_myproject -p interactive --cluster=wice --x11 --pty bash -l
+   $ srun --account=lp_myproject --nodes=1 --time=16:00:00 --ntasks-per-node=8 --gpus-per-node=1 --partition=interactive --clusters=wice --x11 --pty bash -l
 
 .. note::
 
@@ -122,7 +122,7 @@ The big memory nodes (2048GB of RAM) are also located in the ``bigmem`` partitio
 In case of the big memory nodes it is also important to add your memory requirements 
 (the maximum of memory per core that can be requested is 28000MB/core), for example::
 
-   $ sbatch --cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=28000M --account=lp_myproject myjobscript.slurm
+   $ sbatch --account=lp_myproject --cluster=wice --time=01:00:00 --nodes=2 --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=28000M myjobscript.slurm
 
 
 .. _submit to wice GPU node:
@@ -136,11 +136,11 @@ Similar to the other nodes, the GPU nodes can be shared by different jobs from d
 However every user will have exclusive access to the number of GPUs requested. 
 If you want to use only 1 GPU of type A100 you can submit for example like this::
 
-   $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=18 --gpus-per-node=1 --partition=gpu myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --nodes=1 --ntasks=18 --gpus-per-node=1 --partition=gpu myjobscript.slurm
   
 Note that in case of 1 GPU you have to request 18 cores. 
 In case you need more GPUs you have to multiply the 18 cores with the number of GPUs 
 requested, so in case of for example 3 GPUs you will have to specify this::
 
-   $ sbatch --cluster=wice -A lp_myproject -N 1 --ntasks=54 --gpus-per-node=3 --partition=gpu myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --nodes=1 --ntasks=54 --gpus-per-node=3 --partition=gpu myjobscript.slurm
 
