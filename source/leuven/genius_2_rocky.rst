@@ -96,8 +96,8 @@ case).
 
    The appropriate cluster module is only loaded automatically inside a job
    environment and on the login nodes. In other cases (for example when you
-   ssh directly into a node), you will need to first load a cluster module in
-   order to make the correct modules available.
+   ssh directly into a node), you will need to first load a cluster module
+   yourself in order to make the correct modules available.
 
 .. warning::
 
@@ -145,7 +145,7 @@ to ``$MODULEPATH`` in case a cluster module would be loaded. An example is:
 
 .. code-block::
 
-   $ module --ignore-cache spider CP2K
+   $ module spider CP2K
    -------------------------------------
      CP2K:
    -------------------------------------
@@ -191,10 +191,10 @@ of the available versions of the CP2K module by executing:
       cluster/wice/batch
       ...
 
-This command which cluster modules will make the ``CP2K/8.2-intel-2021a``
-available. As discussed earlier, loading ``cluster/wice/batch`` is one example
-of a cluster module that suffices to make ``CP2K/8.2-intel-2021a`` available.
-For more information about ``module spider``, have a look at the
+This command shows which cluster modules will make the ``CP2K/8.2-intel-2021a``
+module available. As discussed earlier, loading ``cluster/wice/batch`` is one
+example of a cluster module that suffices to make ``CP2K/8.2-intel-2021a``
+available. For more information about ``module spider``, have a look at the
 `Lmod documentation page <https://lmod.readthedocs.io/en/latest/135_module_spider.html>`__
 
 .. note::
@@ -214,7 +214,7 @@ Manually modifying the modulepath
 As discussed in the previous section, the recommended approach to set your
 ``$MODULEPATH`` environment variable so modules from the correct software
 stack are available, is by using the cluster module. It is however also
-possible to manually the path where modules are searched.
+possible to manually modify the path where modules are searched.
 
 Each software stack is located in a directory with the following hierarchical
 structure::
