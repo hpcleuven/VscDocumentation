@@ -112,7 +112,8 @@ we charge 10 000 Slurm credits per hour.
 
 An example of a job running on multiple nodes and cores is given below::
 
-   $ sbatch --account=lp_astrophysics_014 --clusters=genius --nodes=2 --ntasks-per-node=36 simulation_3415.slurm
+   $ sbatch --account=lp_astrophysics_014 --clusters=genius --nodes=2 \
+            --ntasks-per-node=36 simulation_3415.slurm
 
 For Genius thin nodes we have ``TRESBillingWeights=CPU=4.62963``.
 If this job finishes in 2.5 hours (i.e., walltime is 150 minutes), the user
