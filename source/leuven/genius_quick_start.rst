@@ -49,7 +49,8 @@ Submitting a regular compute job boils down to specifying the required number of
 nodes, cores-per-node, memory and walltime. You may e.g. request two full nodes like
 this::
 
-   $ sbatch --account=lp_myproject --clusters=genius --time=2:00:00 --nodes=2 --ntasks-per-node=36 myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=genius --time=2:00:00 --nodes=2 \
+            --ntasks-per-node=36 myjobscript.slurm
 
 You may also request only a part of the resources on a node.
 For instance, to test a multi-threaded application which performs optimally using 4 cores,
@@ -57,7 +58,8 @@ you may submit your job like this::
 
    $ sbatch --account=lp_myproject --clusters=genius --time=2:00:00 --ntasks=4 myjobscript.slurm
    # or
-   $ sbatch --account=lp_myproject --clusters=genius --time=2:00:00 --ntasks=1 --cpus-per-task=4 myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=genius --time=2:00:00 --ntasks=1 \
+            --cpus-per-task=4 myjobscript.slurm
 
 .. note::
 
@@ -122,17 +124,20 @@ different users.
 However, every user will have exclusive access to the number of GPUs requested. 
 If you want to use only 1 GPU of type P100 you can submit for example like this::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 --gpus-per-node=1 --partition=gpu_p100 myjobscript.slurm
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 \
+            --gpus-per-node=1 --partition=gpu_p100 myjobscript.slurm
   
 Note that in case of 1 GPU you have to request 9 cores. 
 In case you need more GPUs you have to multiply the 9 cores with the number of GPUs 
 requested, so in case of for example 3 GPUs you will have to specify this::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=27 --gpus-per-node=3 -p gpu_p100 myjobscript.slurm
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=27 \
+            --gpus-per-node=3 -p gpu_p100 myjobscript.slurm
 
 To specifically request V100 GPUs, you can submit for example like this::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=4 --gpus-per-node=1 --mem-per-cpu=20000M --partition=gpu_v100 myjobscript.slurm
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=4 \
+            --gpus-per-node=1 --mem-per-cpu=20000M --partition=gpu_v100 myjobscript.slurm
   
 For the V100 type of GPU, it is required that you request 4 cores for each GPU. 
 Also notice that these nodes offer a much larger amount of CPU memory.
@@ -146,7 +151,8 @@ The big memory nodes are located in the ``bigmem`` and ``bigmem_long`` partition
 In case of the big memory nodes it is also important to add your memory requirements, 
 for example::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=36 --mem-per-cpu=20000M --partition=bigmem myjobscript.slurm
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=36 \
+            --mem-per-cpu=20000M --partition=bigmem myjobscript.slurm
 
 
 .. _submit_genius_amd:
@@ -158,7 +164,8 @@ Besides specifying the partition, it is also important to note that the default 
 per core in this partition is 3800 MB, and each node contains 64 cores.
 For example, to request two full nodes::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=64 --partition=amd myjobscript.slurm 
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=64 \
+            --partition=amd myjobscript.slurm 
 
 
 .. _submit_genius_debug:
@@ -179,8 +186,10 @@ A few restrictions apply to a debug job:
 
 To run a debug job for 20 minutes on two CPU nodes, you would use::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=36 --partition=batch_debug --time=20:00 myjobscript.slurm
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=36 \
+            --partition=batch_debug --time=20:00 myjobscript.slurm
 
 To run a debug job for 15 minutes on a GPU node, you would use::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 --gpus-per-node=1 --partition=gpu_p100_debug --time=15:00 myjobscript.slurm
+   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 \
+            --gpus-per-node=1 --partition=gpu_p100_debug --time=15:00 myjobscript.slurm
