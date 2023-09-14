@@ -30,7 +30,7 @@ up and running even if the datacenter suffers an unexpected power cut.
 (**CPUv1**) and (**GPUv2**) virtual machines are not supported by an UPS and will go
 offline when an unexpected power cut occurs.
 
-VSC Tier-1 Cloud instance types also provide different kind of network
+VSC Tier-1 Cloud instance types also provide different kinds of network
 performance specifications. All the instance types are able to connect
 to the available networks: public network, VSC network and shared
 filesystem network (NFS). Note that VSC and shared file system network
@@ -42,7 +42,7 @@ for high performance connections between different clusters and services
 within VSC. E.g. when you intend to do high data volume reshuffling
 between VMs and other Tier-1 components.
 
-Cloud projects should request VSC network if they want to connect to the
+Cloud projects should request the VSC network if they want to connect to the
 [VSC Data component](/data/tier1_data_service.rst) with
 [iRODS](/data/introduction_to_irods.rst) and [Globus](/globus/index.rst)
 from their Tier1 Cloud VMs.
