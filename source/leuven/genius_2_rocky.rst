@@ -9,7 +9,7 @@ running on :ref:`wICE <wice hardware>` nodes. This update is strictly
 necessary because CentOS 7 will be
 `discontinued <https://www.redhat.com/en/engage/migrate-from-centos-20230404>`__
 and this poses security concerns. We have tried to make the migration as
-transparently as possible for users, but still there are a few changes to take
+transparent as possible for users, but still there are a few changes to take
 into account. The first important item is that the way you can search for and
 load modules has changed. This probably affects all users and you are urged
 to carefully read the section on :ref:`centrally installed modules <impact_on_central_software>`.
@@ -85,7 +85,7 @@ available. The *cluster* module is always available and you can see which
 versions can be loaded by executing ``module avail cluster``.
 
 On the login nodes and inside a job environment, the correct version of the
-cluster will be loaded automatically. This means that for these cases, you do
+cluster module will be loaded automatically. This means that for these cases, you do
 not need to take any special action: the modules from the appropriate software
 stack will be the only ones available to you. As a result of this change, you
 do not need to do ``module use/unuse`` in your jobscripts. Such lines can be
@@ -114,7 +114,8 @@ case).
 A common scenario is that you want to search through the installed modules for
 a software package you need, while you are on a login node. There are two ways
 this can be done. In the example below we assume the commands are executed on
-a Genius login node.
+a Genius login node. The software package that is used as an example is
+called ``CP2K``.
 
 The first option is to load the cluster module corresponding to the node where
 you eventually want to use a certain software package. If you are planning to
@@ -126,7 +127,7 @@ run jobs on the wICE batch partition, the commmand is:
 
 Note that the previously loaded cluster module will be automatically unloaded:
 at most 1 cluster module can be loaded at a time. Now you can search for
-modules containing `CP2K` by executing (the search is not case sensitive):
+modules containing ``CP2K`` by executing (the search is not case sensitive):
 
 .. code-block:: shell
 
@@ -167,8 +168,8 @@ to ``$MODULEPATH`` in case a cluster module would be loaded. An example is:
         $ module spider CP2K/8.2-intel-2021a
    -------------------------------------
 
-As suggested as part of the output, you can obtain more information about one
-of the available versions of the CP2K module by executing:
+As suggested by the output, you can obtain more information about one
+of the available versions of the ``CP2K`` module by executing:
 
 .. code-block:: shell
 
@@ -204,7 +205,9 @@ available. For more information about ``module spider``, have a look at the
    will be available, and on wICE, all modules starting from 2021a. For a few
    legacy modules, installation is impossible on a recent operating system. In
    such a case, it is recommended to use a replacement module from a newer
-   toolchain version.
+   toolchain version. Alternatively you can consider to run your legacy
+   software inside a container, but this is only the best option in some
+   specific cases.
 
 .. _manually_modifying_modulepath:
 
@@ -212,9 +215,9 @@ Manually modifying the modulepath
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As discussed in the previous section, the recommended approach to set your
-``$MODULEPATH`` environment variable so modules from the correct software
-stack are available, is by using the cluster module. It is however also
-possible to manually modify the path where modules are searched.
+``$MODULEPATH`` environment variable, is by using the cluster module. This
+will make modules from the correct software stack available. It is however
+also possible to manually modify the path where modules are searched.
 
 Each software stack is located in a directory with the following hierarchical
 structure::
@@ -248,20 +251,23 @@ Impact on user-installed software
 If you have installed a software package yourself in your own account, and you
 did this on a Genius CentOS 7 node, it must be recompiled on Genius on a node
 with the new OS. This can be done on one of the available test nodes. Please
-request access to the lpt2_rocky8_pilot group.
+request access to the ``lpt2_rocky8_pilot`` group.
 
 Conda environments
 ----------------------------
 The Conda environment you installed might need reinstallations. If you already
 have a Conda environment that works on wICE, it also should work on Genius
 after the migration. If you only have a Conda environment working on Genius,
-it is best to create a new Conda installation. In this case, it is recommended
-to recreate your environment for full compatibility with the new OS. Best practice
-is to choose a new installation folder with explicit mention of the new OS, e.g.::
+it is best to create a new Conda installation. If you used ``pip`` to install
+software inside your conda environment and ``pip`` has compiled the package from
+source, you certainly need to recreate your conda environment. In this case,
+it is recommended to recreate your environment for full compatibility with the
+new OS. Best practice is to choose a new installation folder with explicit
+mention of the new OS, e.g.::
 
-   ${VSC_DATA}/miniconda3-rocky
+   ${VSC_DATA}/miniconda3-rocky8
 
 In order to install miniconda in a new directory you can ::
 
-   bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3-rocky
-   export PATH="${VSC_DATA}/miniconda3-rocky/bin:${PATH}
+   bash Miniconda3-latest-Linux-x86_64.sh -b -p ${VSC_DATA}/miniconda3-rocky8
+   export PATH="${VSC_DATA}/miniconda3-rocky8/bin:${PATH}
