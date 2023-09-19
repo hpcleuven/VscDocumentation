@@ -106,7 +106,7 @@ Slurm such as:
 
     Our Slurm scheduler is aware of multiple clusters and ``wice`` is not the
     default one. As a consequence, any Slurm command (such as `scontrol`,
-    `squeue`, `sacct`) needs to be executed with the option ``--cluster=wice``
+    `squeue`, `sacct`) needs to be executed with the option ``--clusters=wice``
     (or ``-M wice`` in short) in order to get information for the wICE cluster.
 
 For convenience, we provide the ``slurm_jobinfo`` tool, which runs and parses
