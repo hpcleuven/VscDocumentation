@@ -103,7 +103,7 @@ node properly for X support.
 
 
 Viewing your jobs in the queue: qstat
-------------------------------
+-------------------------------------
 
 ``qstat`` show the queue from the resource manager's perspective. It
 doesn't know about priorities, only about requested resources and the
