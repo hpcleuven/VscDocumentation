@@ -57,7 +57,7 @@ Submit to a compute node
 
 In these examples, the submission will be done from login nodes of the Genius cluster, 
 therefore you always need to explicitly specify the cluster you want to use.
-The relevant option for that is ``-M|--cluster`` which takes ``wice`` or ``genius`` as
+The relevant option for that is ``-M|--clusters`` which takes ``wice`` or ``genius`` as
 a valid value.
 
 To submit to a compute node you need to provide the required number of nodes and cores. 
