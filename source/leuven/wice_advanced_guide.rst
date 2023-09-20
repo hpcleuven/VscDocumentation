@@ -106,7 +106,7 @@ Slurm such as:
 
     Our Slurm scheduler is aware of multiple clusters and ``wice`` is not the
     default one. As a consequence, any Slurm command (such as `scontrol`,
-    `squeue`, `sacct`) needs to be executed with the option ``--cluster=wice``
+    `squeue`, `sacct`) needs to be executed with the option ``--clusters=wice``
     (or ``-M wice`` in short) in order to get information for the wICE cluster.
 
 For convenience, we provide the ``slurm_jobinfo`` tool, which runs and parses
@@ -198,7 +198,7 @@ An interactive job can be launched as follows:
 .. code-block:: shell
 
    srun --ntasks-per-node=9 --nodes=1 --gpus-per-node=1 --account=<YOUR_ACCOUNT> \
-        --cluster=wice --time=01:00:00 --partition=gpu --gpu_cmode=shared \
+        --clusters=wice --time=01:00:00 --partition=gpu --gpu_cmode=shared \
         --pty /bin/bash -l
 
 A few notes on this features:
