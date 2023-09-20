@@ -58,7 +58,7 @@ The following page contains the token, as well as instructions to authenticate w
 Be sure to store the token information safely, for example in a password manager.
 
 If you ever lose the token, or think it was compromised, you can generate a new token by clicking on 'Retrieve API token' again.
-This will also invalidate the previous token. 
+This will also immediately invalidate the previous token. 
 
 Server-side automation
 ======================
