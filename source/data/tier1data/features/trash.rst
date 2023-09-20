@@ -34,9 +34,9 @@ Inside your trash, the path of the data object(s) or collection you removed is r
 For example, if you remove ``/<zone>/home/chemistry/results.csv``, you can find it back in ``/<zone>/trash/home/<username>/chemistry/results.csv``.
 
 If you remove a data object or collection and an object with the same name and path is already in your trash, 
-ManGO appends a dot and a random number to the filename of the most recently removed object.  
+Tier-1 Data appends a dot and a random number to the filename of the most recently removed object.  
 
-ManGO automatically removes any objects that remain in trash for more than 14 days.
+Tier-1 Data automatically removes any objects that remain in trash for more than 14 days.
 You can also clean out your trash collection yourself:
 
 - Most clients have a command to remove everything from your trash collection permanently. An example is the ``irmtrash`` command from iCommands. 
@@ -49,6 +49,9 @@ Restoring removed data
 
 If you want to retrieve data from your trash collection, you can move it from the trash to your destination of choice.
 Both metadata and permissions will be preserved. 
+
+.. note::
+  At the moment, restoring data from trash is not yet possible in the :ref:`mango-portal`.
 
 ***************
 Troubleshooting

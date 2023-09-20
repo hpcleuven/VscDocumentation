@@ -42,7 +42,7 @@ the most common. Here, it can be compared to effective cataloging, which
 includes identifying resources, defining them by criteria, and categorizing them
 based on these criteria.
 It also facilites interoperability and the integration of resources.
-Moreover, metadata can be read and understood by humas as well as machines.
+Moreover, metadata can be read and understood by humans as well as machines.
 In addition to supporting data discovery, metadata also organizes and provides contextual and
 historical information about data objects, identifies structural
 relationships within and between data objects.

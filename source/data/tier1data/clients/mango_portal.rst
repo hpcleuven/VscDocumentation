@@ -50,7 +50,16 @@ Notice that only data objects, not collections, can be copied.
 
 Data objects do not have a "Content" tab, as they cannot contain any objects. 
 Instead, they have a "System properties" tab, which contains some basic information about the object.
-They also provide a "Preview" tab in which, depending on the file type, you may be able to see the contents of your data object.
+They also provide a "Preview" tab in which you can see a preview of the contents of your data object.
+Previews are currently possible for the following filetypes:
+
+* JPG
+* JPEG
+* PNG
+* PDF 
+* TIF
+* TIFF
+* GIF
 
 Next to these specific tabs, both collections and data objects have a :ref:`"Metadata" <edit-metadata>` and :ref:`"Permissions" <edit-permissions>` tab
 for inspection and management of metadata and permissions respectively.
@@ -59,29 +68,46 @@ for inspection and management of metadata and permissions respectively.
 Uploading and downloading data
 ******************************
 
+Uploading and downloading data
+==============================
+
 Clicking on 'Upload files...' opens a white box, where you can put one or multiple files to be uploaded to the current collection:
 
 - By dragging files from your local pc into the white box.
 - By clicking inside the white box, which opens your file explorer, where you can select your files. 
 
-.. figure:: ../images/mango_portal/mango_portal_upload.png
-  :width: 500
+.. image:: ../images/mango_portal/mango_portal_upload.png
+  :width: 800
   :alt: Uploading files via the ManGO portal
+
 
 If you made a mistake, you can click on 'Remove file' under the file in question. 
 When you are ready, click on 'Start uploading files' to upload your selection. 
 
-To download a data object, from the page of that object you click on the download-icon next to its name.
-Alternatively, you can download it from the page of its parent collection by clicking on the download
-icon next at the end of its row.
+To download a single data object, you can click on the download-icon next to it:
 
-.. figure:: ../images/mango_portal/mango_portal_download.png
+.. figure:: ../images/mango_portal/mango_portal_download_from_dataobject_page.png
+
+   *Downloading from the page of the data object*
+
+.. figure:: ../images/mango_portal/mango_portal_download_from_parent_page.png
+
+   *Downloading from the page of the parent collection*
+
+
+You can also download multiple data objects at once, as long as they are part of the same collection.
+To do so, go to the page of the collection and select the checkbox next to each data object you want to download.
+Next, select 'Download' in the dropdown and click on 'apply':
+
+.. image:: ../images/mango_portal/mango_portal_bulk_download.png
   :width: 800
-  :alt: Downloading files via the ManGO portal
+  :alt: Downloading multiple data objects at the same time
 
-Uploads and downloads via the ManGO portal are limited to 1GB and 20GB per file respectively.
-You can upload multiple files at the same time, but you can only download data objects individually.
-It is currently not possible to upload or download entire folders at once.
+The data objects will be downloaded together as a tar file.
+A tar file is similar to a Zip folder, and can be extracted with a program like `7-Zip <https://www.7-zip.org/>`_ on Windows, or with the command `tar -xf <filename>` on Linux.
+
+Uploads and downloads via the ManGO portal are limited to 5GB and 50GB per file respectively.
+While it is possible to upload/download multiple files at once, it isn't possible to upload a folder or download a collection as a whole at the moment. 
 If you want to transfer larger amounts of data via a graphical interface, you can use `Globus <https://vlaams-supercomputing-centrum-vscdocumentation.readthedocs-hosted.com/en/latest/globus/globus_main_index.html>`_.
 
 .. _edit-permissions:

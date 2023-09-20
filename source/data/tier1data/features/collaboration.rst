@@ -17,7 +17,7 @@ In Tier-1 Data, individual users can be put together in groups.
 Currently, we distinguish between two groups: project groups and access groups.  
 
 A **project group** is created when a research group applies for a project in Tier-1 Data.
-It includes all collaborators on the project, some of which are **responsibles**, and has a shared collection.
+It includes all collaborators on the project, and has a shared collection.
 
 **Access groups** are subgroups of a project group and are used to assign specific permissions to certain users based on their roles.
 For example, data providers and data analysts may need different permissions on the datasets of the project. By creating an access group for data providers
@@ -37,7 +37,8 @@ For example:
   - Mary
   - Chris 
 
-Permissions in Tier-1 Data can be given to either individual users or groups.
+Depending on the client, permissions can be applied to users and group.
+However, in general we recommend using group permissions.
 
 In the ManGO portal, permissions can only be applied at the group level.
 

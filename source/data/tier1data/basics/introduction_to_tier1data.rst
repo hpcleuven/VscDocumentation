@@ -32,16 +32,16 @@ Tier-1 Data provides four core competencies:
 -  **Automation**
 
    Tier-1 Data has a a Python API and a command-line interface, which can be integrated easily into your existing code and jobscripts.
-   This way, you can easily integrated data movement and data management actions in your existing HPC workflow. 
+   This way, you can easily integrate data movement and data management actions in your existing HPC workflow. 
 
-   Tier-1 Data's servers also have event triggers called Policy Enforcement Points (PEPs), which trigger every time a certain type of action is taken (e.g. a user uploads a file).
+   Tier-1 Data's servers also have event triggers called Policy Enforcement Points (PEPs), which are triggered every time a certain type of action happens (e.g. a user uploads a file).
    Administrators can define processes that run each time one of these PEPs is triggered. This allows us to work together with users and 
    create powerful, automated workflows that help to save time and prevent human errors.
 
 -  **Secure Collaboration**
 
    In Tier-1 Data, you can share data with users and user groups via a system of permissions.  
-   Permissions can be managed on file and folder level, allowing for detailed access control.
+   Permissions can be managed on file and folder level, allowing for fine-tuned access control.
    If you have collaborators without a VSC account, data in Tier-1 Data can be shared via the tool Globus. 
 
 
