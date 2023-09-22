@@ -37,17 +37,18 @@ On Hortense and Stevin, the HPC-clusters of UGent, you can load the module as fo
 Logging in
 ----------
 
-There are three ways to authenticate with the Python-iRODSclient.
+There are three ways to authenticate with the Python-iRODSclient:
 
-1) Follow the instructions on the `ManGO portal <https://mango.vscentrum.be/>`_ > 'How to Connect' > 'Python Client on Windows'.
-This method, despit the title, should work for any operating system.
+1. Follow the instructions on the `ManGO portal <https://mango.vscentrum.be/>`_
+   > 'How to Connect' > 'Python Client on Windows'. This method, despite the
+   title, should work for any operating system.
 
-2) Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.exe>`_. 
-Double click on the file and enter your zone name in the window that pops up. 
-You might need to put the file in a folder that doesn't require administrator rights.  
+2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.exe>`_.
+   Double click on the file and enter your zone name in the window that pops
+   up. You might need to put the file in a folder that doesn't require administrator rights.  
 
-3) Linux users can first authenticate with :ref:`icommands`. 
-Then, they create a second configuration file as follows:
+3. Linux users can first authenticate with :ref:`icommands`. 
+   Then, they create a second configuration file as follows:
 
    .. code-block:: sh
 
