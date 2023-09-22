@@ -145,7 +145,7 @@ Conda on wICE
 
 As the operating system and hardware are different on Genius and wICE, we advise
 to have two separate :ref:`Conda installations <conda for Python>` (one for each
-cluster). The `interactive Slurm partition on wICE<submit to wice interactive node>` 
+cluster). The :ref:`interactive Slurm partition on wICE<submit to wice interactive node>` 
 can be used as an equivalent of the Genius login nodes for wICE, making it suited 
 for Conda environment management.
 
