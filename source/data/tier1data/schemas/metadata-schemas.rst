@@ -55,7 +55,7 @@ After choosing one, the schema manager will open:
          arrow, an empty metadata schema manager that just has the title and
          a button that reads 'new schema'.
    :width: 400
-   :name: fig-start-a
+   :name: fig-start
 
    Choose a realm for new schema.
 
