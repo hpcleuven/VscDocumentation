@@ -2,7 +2,6 @@
 Metadata schemas: technical specifications
 ##########################################
 
-
 This article describes how the metadata schemas used in the ManGO portal
 are stored and represented, from the folder structure that supports the
 schemas lifecycle to the JSON format that codes the different fields and
@@ -47,8 +46,8 @@ to apply a schema / annotate with a schema
 
 .. _sec-lifecycle-tech:
 
-1. Lifecycle and folder structure
-=================================
+Lifecycle and folder structure
+==============================
 
 In the Tier-1 Data infrastructure, schemas belong to “realms”, such as
 projects (other implementations of this infrastructure could extend this
@@ -152,8 +151,8 @@ available.
 
 .. _sec-json:
 
-2. JSON format
-==============
+JSON format
+===========
 
 A specific version of a metadata schema will be stored in a json file
 with a series of key-value pairs.
@@ -199,8 +198,8 @@ when rendering the form used to assing metadata from the schema.
 
 .. _sec-items:
 
-3. Schema fields
-================
+Schema fields
+=============
 
 There are three main kinds of fields that can be included in a metadata
 schema: simple fields, multiple-choice fields and composite fields.
@@ -220,8 +219,8 @@ offers an overview of their common attributes.
 
 .. _sec-attr:
 
-3.1 General Attributes
-----------------------
+General Attributes
+------------------
 
 The following attributes are used in at least two different kinds of
 fields.
@@ -259,8 +258,8 @@ various subtypes.
 
 .. _sec-simple:
 
-3.2 Simple fields
------------------
+Simple fields
+-------------
 
 The prototypical example of a simple field is a text field, such as the
 example below. They key “title” indicates that, when assigning metadata
@@ -316,8 +315,8 @@ types can be provided via numeric input fields, whereas the
 
 .. _sec-multiple:
 
-3.3 Multiple-choice
--------------------
+Multiple-choice
+---------------
 
 Multiple-choice fields are indicated by providing the “select” value to
 the ``type`` attribute. They are characterized by a restricted selection
@@ -358,8 +357,8 @@ not yet possible to import a list of values from an external source.
 
 .. _sec-object:
 
-3.4 Composite field
--------------------
+Composite field
+---------------
 
 Composite fields are miniature schemas nested inside schemas (or other
 composite fields) and are meant to bring together multiple fields that
@@ -410,8 +409,8 @@ composite field shown above results in AVUs with attribute names
 
 .. _sec-full:
 
-4. Full example
-===============
+Full example
+============
 
 This section contains the full example of a JSON file that represents a
 schema draft.
@@ -533,3 +532,4 @@ schema draft.
        "realm" : "project_collection",
        "parent" : ""
    }
+

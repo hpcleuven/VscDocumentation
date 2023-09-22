@@ -4,8 +4,6 @@
 Metadata schemas in the ManGO portal
 ####################################
 
-
-
 This article describes the ManGO portal functionalities related to
 metadata schemas: how to design them and how to apply them. Users who
 might want to design their own schemas independently and load them via
@@ -40,8 +38,8 @@ used to annotate metadata.
 
 .. _sec-draft:
 
-1. Schema design
-================
+Schema design
+=============
 
 In order to design a new schema, we need to go to the “Metadata schemas”
 section via the left sidebar menu. This will first show a selection of
@@ -317,8 +315,8 @@ composite field itself.
 
 .. _sec-lifecycle:
 
-2. Versioning and lifecycle
-===========================
+Versioning and lifecycle
+========================
 
 Once you are satisfied with your draft is ready to be applied, you can
 publish it. This will update the tab so that the orange badge “draft” is
@@ -396,8 +394,8 @@ ID.
 
 .. _sec-application:
 
-3. Apply metadata with a schema
-===============================
+Apply metadata with a schema
+============================
 
 In order to apply a metadata schema, we first have to move to the
 “Collections” tab of the ManGO portal and select the collection or data
@@ -448,5 +446,4 @@ empty, to indicate that the schema has not been completely implemented.
    :width: 600
 
    Figure 12: All metadata fields are shown, with or without values.
-
 
