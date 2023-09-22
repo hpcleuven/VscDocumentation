@@ -159,10 +159,14 @@ definition B
     explanation text
 
     1. order item one
+
        * unorder item one
+
          * nested item one
+
        * unorder item two
        * unorder item three
+
     2. order item two
 ```
 
