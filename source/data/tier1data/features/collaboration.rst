@@ -107,14 +107,18 @@ Each permission relates to a specific collection or data object.
 For example, you can give a group access to a specific collection, but not to the subcollections or data objects under it.
 
 - Chemistry (Mary - read)
-    - ExperimentA (Mary - write)
-        - result1.txt 
-        - result2.txt 
-        - result3.txt
-    - ExperimentB
-        - result1.txt 
-        - result2.txt
-        - result3.txt
+
+  - ExperimentA (Mary - write)
+
+    - result1.txt 
+    - result2.txt 
+    - result3.txt
+
+  - ExperimentB
+
+    - result1.txt 
+    - result2.txt
+    - result3.txt
 
 In this example, Mary will see the collection Chemistry and its subcollection ExperimentA, but not ExperimentB.
 Furthermore, she will not be able to see the data objects inside of ExperimentA.
@@ -123,6 +127,7 @@ However, she can upload new files to this collection herself.
 It's important to stress that one object can have multiple permissions:
 
 - CollectionA
+
   - GroupA: read access
   - GroupB: read access
   - GroupC: write access
@@ -141,17 +146,21 @@ To solve this problem, we can make use of inheritance and recursiveness.
 **Inheritance** is an attribute of a collection. If it is turned on, all collections or data objects that get created/uploaded under that collection inherit its permissions automatically:
 
 - Chemistry
-    - ExperimentA (Chemistry_data_providers - own, inheritance - on)
-        - Newfile.txt (Chemistry_data_providers - own)
-        - Newcollection (Chemistry_data_providers - own, inheritance - on)
+
+  - ExperimentA (Chemistry_data_providers - own, inheritance - on)
+
+    - Newfile.txt (Chemistry_data_providers - own)
+    - Newcollection (Chemistry_data_providers - own, inheritance - on)
 
 If inheritance is turned off, permissions from the parent collection are not applied.
 The person who creates/uploads new data objects/collections gets own access by default, but no other permissions are added:
 
 - Chemistry
-    - ExperimentA (Chemistry_data_providers - own, inheritance - off)
-        - Newfile.txt (John - own)
-        - Newcollection (John - own)
+
+  - ExperimentA (Chemistry_data_providers - own, inheritance - off)
+
+    - Newfile.txt (John - own)
+    - Newcollection (John - own)
 
 Inheritance only has an effect on data added *after* inheritance has been enabled.
 If you enable inheritance for a collection, existing subcollections and data objects are not affected.
@@ -166,10 +175,13 @@ Access to parent collection
 In ManGO, if you want to share data with someone, they need access to all collections above it. Take the following example:
 
 - Chemistry
-    - ExperimentA
-        - Input
-        - Output
-            - results.csv 
+
+  - ExperimentA
+
+    - Input
+    - Output
+
+      - results.csv 
 
 If you want to share the data object results.csv with someone, they need read access to Chemistry, ExperimentA and Output in order to browse to your data object.
 Without this read access, they can't even see that Chemistry and its subcollections exist.
@@ -187,8 +199,4 @@ In some cases, the owner can also be a group.
 
 While the terms seem similar, ownership and own permissions aren't related. 
 However, it should be noted that, for technical reasons, it's hard to deny the owner of an object access to it.  
-
-
-
-
 
