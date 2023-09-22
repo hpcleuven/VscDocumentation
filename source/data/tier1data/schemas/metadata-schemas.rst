@@ -274,10 +274,10 @@ Schemas can be saved at any moment as private drafts with the green **Save
 draft** button at the bottom of the schema editor (see :numref:`fig-start`).
 Once the schema has at least one field it can already made public with the
 yellow **Publish** button (see :numref:`fig-simpleview` and
-:numref:`fig-radioview>`).
+:numref:`fig-radioview`).
 
 Once we save a draft, a new accordion item is created for the new schema in the
-page including a tab for the draft version. :numref:`fig-saved>` shows this tab
+page including a tab for the draft version. :numref:`fig-saved` shows this tab
 after also adding a non-required checkbox field between *Book title* and
 *Publishing house* and saving the draft.
 
@@ -302,7 +302,7 @@ change the title or label of the schema itself, but not to change the
 ID. If we want to add a composite field, you can see in :numref:`fig-composite`
 that the editor starts like the editors of other fields, but then just has an
 **Add element** button, which behaves exactly like the “Add element” button of
-a schema: it opens the modal in :numref:`fig-fields>`, which in turn opens the
+a schema: it opens the modal in :numref:`fig-fields`, which in turn opens the
 modal of the chosen field type.
 
 :numref:`fig-compositefull` shows an editor for a composite field to which we
@@ -337,8 +337,8 @@ Versioning and lifecycle
 
 Once you are satisfied with your draft is ready to be applied, you can
 publish it. This will update the tab so that the orange badge “draft” is
-replaced with a green one labeled “published”, and change the options
-provided in the top right buttons shown in :numref:`fig-published>`. The
+replaced with a green one labeled *published*, and change the options
+provided in the top right buttons shown in :numref:`fig-published`. The
 “View” tab, which shows the form as it will appear when applying the
 metadata schema, is the same as for a draft version, but the rest of the
 buttons have changed.
@@ -368,7 +368,7 @@ tab next to the published version:
 While a draft version exists, the **New (draft) version** button is absent.
 When creating this draft, the Schema ID and label are fixed and cannot be
 edited. In contrast, in the editor in **Copy to new schema** (shown in
-:numref:`fig-clone>`) these fields are empty and, in fact, it is not possible
+:numref:`fig-clone`) these fields are empty and, in fact, it is not possible
 to reuse the same *Schema ID* we had before. Use cases for this feature are
 derived schemas, *i.e.* schemas that share many fields with another schema but
 represent a different thing. The name and version of the published schema it
