@@ -12,9 +12,7 @@ Compiling software
 The wICE compute nodes feature Intel processors nicknamed IceLake, which are
 the successors of the SkyLake and CascadeLake architectures which you can find
 on Genius. Although architectural differences are rather small, it is highly
-recommended to compile a version of your code specifically for wICE. Since the
-operating system (Rocky Linux) differs from the one on Genius (CentOS), a
-separate compilation is strictly required in most cases anyway. A good approach
+recommended to compile a version of your code specifically for wICE. A good approach
 to compile on a wICE node is to launch an interactive job.
 
 Many dependencies you might need are centrally installed. The modules that are
@@ -143,7 +141,7 @@ recommend to do that in your jobscripts instead (see also the
 Conda on wICE
 -------------
 
-As the operating system and hardware are different on Genius and wICE, we advise
+As the hardware is different on Genius and wICE, we advise
 to have two separate :ref:`Conda installations <conda for Python>` (one for each
 cluster). The :ref:`interactive Slurm partition on wICE<submit to wice interactive node>` 
 can be used as an equivalent of the Genius login nodes for wICE, making it suited 
