@@ -3,8 +3,8 @@
 Migration of Genius to Rocky 8
 ==============================
 
-The operating system on :ref:`Genius <genius hardware>` nodes will be updated
-from CentOS 7 to Rocky 8, the same operating system that is currently
+The operating system on :ref:`Genius <genius hardware>` nodes was updated
+from CentOS 7 to Rocky 8, the same operating system
 running on :ref:`wICE <wice hardware>` nodes. This update is strictly
 necessary because CentOS 7 will be
 `discontinued <https://www.redhat.com/en/engage/migrate-from-centos-20230404>`__
@@ -18,18 +18,6 @@ conda environments), will need to reinstall the software for the new OS. More
 details are outlined :ref:`below <impact_on_user_installed_software>`. If you
 still encounter problems *after* reading this documentation page, you can
 contact the :ref:`support team <user support VSC>`.
-
-.. note::
-
-   Until the migration takes place on September 25, some test nodes are
-   available. If you want to test your software or your Conda environment
-   you can do so as follows:
-
-   On the `VSC account page`_, request access to the group ``lpt2_rocky8_pilot``.
-   Once approved by the admins, you can submit jobs to the reserved Rocky 8
-   nodes by specifying the option ``--reservation=genius_rocky8_pilot`` to
-   your submit command.
-
 
 .. _impact_on_central_software:
 
@@ -201,8 +189,8 @@ available. For more information about ``module spider``, have a look at the
 .. note::
 
    In contrast to previous behavior, modules from different toolchain versions
-   will now be available automatically. On Genius, all modules since 2018a
-   will be available, and on wICE, all modules starting from 2021a. For a few
+   are now available automatically. On Genius, all modules since 2018a
+   are available, and on wICE, all modules starting from 2021a. For a few
    legacy modules, installation is impossible on a recent operating system. In
    such a case, it is recommended to use a replacement module from a newer
    toolchain version. Alternatively you can consider to run your legacy
