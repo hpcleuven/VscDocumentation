@@ -189,7 +189,7 @@ available. For more information about ``module spider``, have a look at the
 .. note::
 
    In contrast to previous behavior, modules from different toolchain versions
-   are now be available automatically. On Genius, all modules since 2018a
+   are now available automatically. On Genius, all modules since 2018a
    are available, and on wICE, all modules starting from 2021a. For a few
    legacy modules, installation is impossible on a recent operating system. In
    such a case, it is recommended to use a replacement module from a newer
