@@ -29,8 +29,10 @@ Client-side automation
 
 Users can automate workflows themselves on the client-side. 
 We have two clients which can be integrated easily into your HPC workflow:
-- :ref:`iCommands<icommands>` are bash commands and can thus be integrated into your job scripts
-- Users who use Python in their HPC jobs can integrate the :ref:`Python client<python-client>` in their script
+
+* :ref:`iCommands<icommands>` are bash commands and can thus be integrated into your job scripts
+* Users who use Python in their HPC jobs can integrate the :ref:`Python client<python-client>` in their script
+
 This way, you can easily retrieve data to be used in calculations, store results, add metadata and do other tasks automatically when you submit a job.
 
 Of course, these clients can also be used outside of the HPC environment.
