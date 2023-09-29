@@ -85,6 +85,8 @@ exclude_patterns = []
 # To render double dashes in text as double dashes (and not as an "en dash"):
 smartquotes_action = 'qe'  # instead of default 'qDe'
 
+# Automatic numbering of figures
+numfig = True
 
 # -- Options for HTML output -------------------------------------------------
 

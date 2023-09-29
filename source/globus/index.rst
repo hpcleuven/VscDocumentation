@@ -23,7 +23,7 @@ perspective.
    :maxdepth: 2
 
    access
-   endpoints
+   collections
    using_globus_via_web
    sharing
    groups
