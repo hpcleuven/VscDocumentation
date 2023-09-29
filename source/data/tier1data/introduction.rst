@@ -124,7 +124,7 @@ However, it is also possible to log in with a password of long duration (7 days)
 with iCommands installed.
 
 
-For more information on how to install and use each client, see the `clients <../clients.html>`_ section. 
+For more information on how to install and use each client, see the :ref:`clients <clients>` section. 
 
 Once logged in, Tier-1 Data users can find their group folder at ``/<zone-name>/home/<project-name>``.
 This area is shared with and visible to all members of your group, but can be further subdivided in subfolders
