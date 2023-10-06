@@ -13,7 +13,8 @@ The wICE compute nodes feature Intel processors nicknamed IceLake, which are
 the successors of the SkyLake and CascadeLake architectures which you can find
 on Genius. Although architectural differences are rather small, it is highly
 recommended to compile a version of your code specifically for wICE. A good approach
-to compile on a wICE node is to launch an interactive job.
+to compile on any cluster (such as wICE) is is to launch an interactive job (with the
+``srun`` command).
 
 Many dependencies you might need are centrally installed. The modules that are
 optimized for wICE are available in ``/apps/leuven/icelake/2021a/modules/all``.
