@@ -9,8 +9,7 @@ the login nodes of the clusters and the visualization node of leibniz using a
 On the regular login nodes of the clusters, there is no acceleration of 3D
 graphics, but the visualisation node of leibniz is equipped with a
 NVIDIA P5000 card that when used properly will offer accelerated
-rendering of OpenGL applications. The setup is similar to the setup of
-:ref:`the visualization nodes at the KU Leuven <TurboVNC start guide>`.
+rendering of OpenGL applications.
 
 .. note::
 

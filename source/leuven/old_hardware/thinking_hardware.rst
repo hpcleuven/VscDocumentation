@@ -80,7 +80,7 @@ Direct login is using SSH is possible to all login infrastructure without restri
   - login5\-tier2.hpc.kuleuven.be
   - login6\-tier2.hpc.kuleuven.be
 	
-- One haswell login node for SSH access and :ref:`TurboVNC<TurboVNC start guide>` access.	
+- One haswell login node for SSH access.	
 
   - login7\-tier2.hpc.kuleuven.be
   - login8\-tier2.hpc.kuleuven.be
