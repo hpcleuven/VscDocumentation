@@ -238,8 +238,7 @@ Impact on user-installed software
 ---------------------------------
 If you have installed a software package yourself in your own account, and you
 did this on a Genius CentOS 7 node, it must be recompiled on Genius on a node
-with the new OS. This can be done on one of the available test nodes. Please
-request access to the ``lpt2_rocky8_pilot`` group.
+with the new OS.
 
 Conda environments
 ----------------------------
