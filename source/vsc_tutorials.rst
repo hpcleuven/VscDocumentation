@@ -17,14 +17,6 @@ operating system from which you access the cluster:
 
 **Linux**
 
-**UAntwerpen**
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-antwerpen.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-antwerpen.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-antwerpen.pdf>`__]
-
 **VUB**
 
 [`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-brussel.pdf>`__]
