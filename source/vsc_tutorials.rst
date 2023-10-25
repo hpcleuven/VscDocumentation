@@ -41,11 +41,3 @@ operating system from which you access the cluster:
 
 [`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-gent.pdf>`__]
 
-**KU Leuven/UHasselt**
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-leuven.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-leuven.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-leuven.pdf>`__]
-
