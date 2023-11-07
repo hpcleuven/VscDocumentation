@@ -102,24 +102,13 @@ node properly for X support.
      the systems are mostly idling while you type.
 
 
-Viewing your jobs in the queue
-------------------------------
+Viewing your jobs in the queue: qstat
+-------------------------------------
 
-Two commands can be used to show your jobs in the queue:
-
--  ``qstat`` show the queue from the resource manager's perspective. It
-   doesn't know about priorities, only about requested resources and the
-   state of your job: Still idle and waiting for resources, running,
-   completed, ...
--  ``showq`` shows the queue from the scheduler's perspective, taking
-   priorities and policies into account.
-
-
-
-.. _qstat:
-
-qstat
-~~~~~
+``qstat`` show the queue from the resource manager's perspective. It
+doesn't know about priorities, only about requested resources and the
+state of your job: Still idle and waiting for resources, running,
+completed, ...
 
 On the VSC clusters, users will only receive a part of the information
 that ``qstat`` offers. To protect the users' privacy, output is always
@@ -154,70 +143,8 @@ Several command line options can be specified to modify the output of
 -  ``-i`` will show you the resources the jobs require.
 -  ``-n`` or ``-n1`` will also show you the nodes allocated to each running job.
 
-
-.. _showq:
-
-showq
-~~~~~
-
-The ``showq`` command will show you information about the queue from the
-scheduler's perspective. The ``showq`` output is split up according to
-the following categories:
-
--  Active jobs are actually running (or just about to get started or
-   terminated). Their state in the ``showq`` output will be "Running" and
-   they are sorted according to their expected end time.
--  Eligible jobs are queued and considered eligible for scheduling.
-   Their state in the ``showq`` output will be "Idle" and they are sorted
-   according to their current priority.
--  Blocked jobs are ineligible to run or to be queued for scheduling.
-   These jobs can have various states (see list below).
- 
-Blocked jobs will have one of the following states, depending on the reason
-for the block:
-
-Idle
-   Job violates a fairness policy, i.e., you have used too many resources lately.
-UserHold
-   A user hold is in place.  This may be caused by job dependencies.
-SystemHold
-   An administrative or system hold is in place.  The job will not start until
-   that hold is released.
-BatchHold
-   A scheduler batch hold is in place, used when the job cannot be run because
-
-   - the requested resources are not available in the system, or
-   - because the resource manager has repeatedly failed in attempts to start the
-     job. This typically indicates a problem with some nodes of the cluster,
-     so you may want to contact user support.
-Deferred
-   A scheduler defer hold is in place (a temporary hold used when a job has been
-   unable to start after a specified number of attempts. This hold is automatically
-   removed after a short period of time).  
-NotQueued
-   Job is in the resource manager state NQ (indicating the job's controlling
-   scheduling daemon in unavailable).
-
-If your job is blocked, you may want to run the :ref:`checkjob <checkjob>` command
-to find out why.
-
-There are some useful options for ``showq``:
-
-- ``-r`` will show you the running jobs only, but will also give
-   more information about these jobs, including an estimate about how
-   efficiently they are using the CPU.
-- ``-i`` will give you more information about your eligible jobs.
-- ``-p <partition>`` will only show jobs running in the specified partition.
-
-
-.. _queues:
-
 A note on queues
 ~~~~~~~~~~~~~~~~
-
-Both ``qstat`` and ``showq`` can show you the name of the queue (``qstat``) or
-class (``showq``) which in most cases is actually the same as the
-queue.
 
 All VSC clusters have multiple queues that are used to define policies.
 E.g., users may be allowed to have many short jobs running simultaneously,
