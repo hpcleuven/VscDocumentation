@@ -30,10 +30,6 @@ version = "2.0"
 # The full version, including alpha/beta/rc tags
 release = "2.0"
 
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = project
-
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -50,6 +46,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'sphinx_reredirects',
+    'sphinx_sitemap',
     'notfound.extension',
 ]
 
@@ -90,9 +87,16 @@ numfig = True
 
 # -- Options for HTML output -------------------------------------------------
 
+# The name for this set of Sphinx documents.  If None, it defaults to
+# "<project> v<release> documentation".
+html_title = project
+
+# Base URL of the documentation.
+# (needed to generate the sitemap)
+html_baseurl = 'https://docs.vscentrum.be/'
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'pydata_sphinx_theme'
 
 # Icon links on right side of the navbar
@@ -149,6 +153,9 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = ['css/vsc.css']
+
+# Extra files to be copied into the website build directory
+html_extra_path = ['robots.txt']
 
 # Logo in top bar
 html_logo = "_static/vsc-docs-logo-2.png"
@@ -262,6 +269,9 @@ todo_include_todos = True
 # -- NotFound Extension ------------------------------------------------------
 notfound_template = '404.html'
 notfound_urls_prefix = ''
+
+# -- Sitemap Extension -------------------------------------------------------
+sitemap_url_scheme = "{link}"
 
 # -- Page redirects ----------------------------------------------------------
 redirects = {
