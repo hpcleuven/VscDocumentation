@@ -1,21 +1,13 @@
+#############
 VSC tutorials
-=============
+#############
 
 HPC Tutorial
-------------
+============
 
 This is our standard introduction to the VSC HPC systems. It is
 complementary to the information in this user portal, the latter being
-more the reference manual.
-
-We have separate versions depending on your home institution and the
-operating system from which you access the cluster:
-
-**Windows**
-
-**macOS**
-
-**Linux**
+the reference manual.
 
 **UAntwerpen**
 
@@ -27,11 +19,7 @@ operating system from which you access the cluster:
 
 **VUB**
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-brussel.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-brussel.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-brussel.pdf>`__]
+[`Slides of Linux and HPC trainings <https://hpc.vub.be/docs/training-material/#training-courses>`__]
 
 **UGent**
 
