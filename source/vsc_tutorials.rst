@@ -23,9 +23,4 @@ the reference manual.
 
 **UGent**
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-gent.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-gent.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-gent.pdf>`__]
-
+[`Linux tutorial <https://docs.hpc.ugent.be/linux-tutorial/>`__]
