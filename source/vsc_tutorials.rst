@@ -17,7 +17,8 @@ KULeuven/UHasselt
 The training material (slides and exercises) for the a variety of HPC-related trainings from
 the KULeuven/UHasselt site are organized via the 
 `official Github repository <https://github.com/hpcleuven>`__. 
-The beginners might consider following:
+New users without prior experience with Linux or the HPC might consider the following
+introductory tutorials:
 
 * `HPC Introduction <https://hpcleuven.github.io/HPC-intro/>`__
 * `Linux for HPC <https://hpcleuven.github.io/Linux-for-HPC/>`__
