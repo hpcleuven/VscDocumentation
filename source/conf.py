@@ -154,6 +154,9 @@ html_theme_options = {
 html_static_path = ['_static']
 html_css_files = ['css/vsc.css']
 
+# Extra files to be copied into the website build directory
+html_extra_path = ['robots.txt']
+
 # Logo in top bar
 html_logo = "_static/vsc-docs-logo-2.png"
 
