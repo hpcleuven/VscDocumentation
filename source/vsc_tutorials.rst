@@ -14,7 +14,7 @@ to those training materials.
 KULeuven/UHasselt
 -----------------
 
-The training material (slides and exercises) for the a variety of HPC-related trainings from
+The training material (slides and exercises) for a variety of HPC-related trainings from
 the KULeuven/UHasselt site are organized via the 
 `official Github repository <https://github.com/hpcleuven>`__. 
 New users without prior experience with Linux or the HPC might consider the following
