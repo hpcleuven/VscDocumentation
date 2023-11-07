@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docs.vscentrum.be/sitemap.xml
+Sitemap: https://docs.vscentrum.be/vsc-docs-sitemap.xml
