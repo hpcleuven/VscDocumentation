@@ -23,7 +23,7 @@ introductory tutorials:
 * `HPC Introduction <https://hpcleuven.github.io/HPC-intro/>`__
 * `Linux for HPC <https://hpcleuven.github.io/Linux-for-HPC/>`__
 * `Linux Scripting <https://hpcleuven.github.io/Linux-scripting/>`__
-* `Linux Tools <https://hpcleuven.github.io/Linux-tools/>`
+* `Linux Tools <https://hpcleuven.github.io/Linux-tools/>`__
 
 
 UAntwerpen
