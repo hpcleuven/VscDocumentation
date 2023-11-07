@@ -1,51 +1,31 @@
+#############
 VSC tutorials
-=============
+#############
 
-HPC Tutorial
-------------
+Site Tutorials
+==============
 
-This is our standard introduction to the VSC HPC systems. It is
-complementary to the information in this user portal, the latter being
-more the reference manual.
+VSC sites carry out regular trainings about Linux and the VSC HPC systems. It is
+complementary to the information found in this user portal, the latter being
+the reference manual. Below you can find links to those training materials.
 
-We have separate versions depending on your home institution and the
-operating system from which you access the cluster:
+KULeuven/UHasselt
+-----------------
 
-**Windows**
+* `HPC Introduction <https://hpcleuven.github.io/HPC-intro/>`__
 
-**macOS**
 
-**Linux**
+UAntwerpen
+----------
 
-**UAntwerpen**
+* `Linux and HPC tutorials <https://hpc.uantwerpen.be/support/documentation>`__
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-antwerpen.pdf>`__]
+UGent
+-----
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-antwerpen.pdf>`__]
+* `Linux tutorial <https://docs.hpc.ugent.be/linux-tutorial/>`__
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-antwerpen.pdf>`__]
+VUB
+---
 
-**VUB**
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-brussel.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-brussel.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-brussel.pdf>`__]
-
-**UGent**
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-gent.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-gent.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-gent.pdf>`__]
-
-**KU Leuven/UHasselt**
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-leuven.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-leuven.pdf>`__]
-
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-leuven.pdf>`__]
-
+* `Slides of Linux and HPC trainings <https://hpc.vub.be/docs/training-material/#training-courses>`__
