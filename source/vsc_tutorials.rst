@@ -2,25 +2,30 @@
 VSC tutorials
 #############
 
-HPC Tutorial
-============
+Site Tutorials
+==============
 
-This is our standard introduction to the VSC HPC systems. It is
-complementary to the information in this user portal, the latter being
-the reference manual.
+VSC sites carry out regular trainings about Linux and the VSC HPC systems. It is
+complementary to the information found in this user portal, the latter being
+the reference manual. Below you can find links to those training materials.
 
-**UAntwerpen**
+KULeuven/UHasselt
+-----------------
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-windows-antwerpen.pdf>`__]
+* `HPC Introduction <https://hpcleuven.github.io/HPC-intro/>`__
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-mac-antwerpen.pdf>`__]
 
-[`PDF <http://hpcugent.github.io/vsc_user_docs/pdf/intro-HPC-linux-antwerpen.pdf>`__]
+UAntwerpen
+----------
 
-**VUB**
+* `Linux and HPC tutorials <https://hpc.uantwerpen.be/support/documentation>`__
 
-[`Slides of Linux and HPC trainings <https://hpc.vub.be/docs/training-material/#training-courses>`__]
+UGent
+-----
 
-**UGent**
+* `Linux tutorial <https://docs.hpc.ugent.be/linux-tutorial/>`__
 
-[`Linux tutorial <https://docs.hpc.ugent.be/linux-tutorial/>`__]
+VUB
+---
+
+* `Slides of Linux and HPC trainings <https://hpc.vub.be/docs/training-material/#training-courses>`__
