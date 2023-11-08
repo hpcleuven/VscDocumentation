@@ -272,6 +272,7 @@ notfound_urls_prefix = ''
 
 # -- Sitemap Extension -------------------------------------------------------
 sitemap_url_scheme = "{link}"
+sitemap_filename = "vsc-docs-sitemap.xml"
 
 # -- Page redirects ----------------------------------------------------------
 redirects = {
