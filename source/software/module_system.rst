@@ -139,7 +139,7 @@ Info on modules
 ~~~~~~~~~~~~~~~
 
 If you search on the full modulename the ``spider`` subcommand will give you more information.
-E.g.in which cluster module it is available, what the included extensions are
+E.g.in which cluster module it is available, and what the included extensions are. E.g.
 
 ::
 
@@ -449,11 +449,12 @@ examples.
    with ``module load GCC/4.9.3``
 -  ``ml -GCC`` unloads the currently loaded ``GCC`` module, and is
    equivalent with ``module unload GCC``
--  ``ml av gcc`` prints the currently available modules that match *gcc*
-   (case-insensitively), and is equivalent with ``module avail GCC``
+-  ``ml av gcc`` prints the currently available modules that match ``*gcc*``
+   (case-insensitively), and is equivalent with ``module avail GCC`` or
+   ``module avail gcc``
 -  ``ml show GCC/4.9.3`` prints more information about the ``GCC/4.9.3``
    module, and is equivalent with ``module show GCC``
--  ``ml spider gcc`` searches (case-insensitive) for *gcc* in all
+-  ``ml spider gcc`` searches (case-insensitive) for ``*gcc*`` in all
    available modules over all clusters
 -  ``ml spider GCC/4.9.3`` show all information about the module
    ``GCC/4.9.3`` and on which clusters it can be loaded.
