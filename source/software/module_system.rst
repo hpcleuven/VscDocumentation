@@ -234,7 +234,7 @@ recent version. In the above example,
     D:  Default Module
 
 shows that zlib/1.2.12 is the default.
-``module load zlib`` in this case will load the module ``zlib/1.2.13``. This may not be the
+``module load zlib`` in this case will load the module ``zlib/1.2.12``. This may not be the
 module that you want if you're using the GNU compilers. In that case,
 the user should specify a particular version, e.g.,
 
