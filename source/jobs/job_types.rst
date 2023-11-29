@@ -413,45 +413,41 @@ options specified when calling ``salloc``.
 Running a shared memory X11 program with salloc
 """""""""""""""""""""""""""""""""""""""""""""""
 
-As you can log on to a compute node while you have resources allocated on that node, you can also
-use ``salloc`` to create an allocation and then use ``ssh`` to log on to the node that has been
-allocated. This only makes sense if you allocate one node or less, as when you log on via ``ssh``,
-you leave the Slurm environment and hence cannot rely on Slurm anymore to start tasks. Moreover,
-if you have multiple jobs running on the node, you may inadvertently influence those jobs as
-any work that you're doing in that ssh session is not fully under the control of Slurm anymore.
+You can also use ``salloc`` to create a job allocation and then use ``srun`` to
+attach an interactive shell to the job in the node that has been allocated.  X11
+programs rarely use distributed memory parallelism, so in most case you will be
+requesting just a single task.
 
-As when using ``srun``, the first step is to ensure that X11 access from the login node to your
-local screen is properly set up.
+The first step is to ensure that X11 access from the login node to your local
+screen is properly set up.
 
 Next, starting a session that uses a full node on Vaughan can be done as
 
 .. code:: bash
 
-   login$ salloc -n 1 -c 64 -t 1:00:00
-   login$ ssh -X $SLURM_JOB_NODELIST
+   login$ salloc -n 1 -c 64 -t 1:00:00 --x11
+   login$ srun --jobid=<jobid> --pty bash
    r0c00cn0$ xclock
    r0c00cn0$ exit
    login$ exit
 
 What this does is:
 
-1. The first command, executed on the login node, creates an allocation for 64 cores. It returns with
-   a shell prompt on the login node as soon as the allocation is ready.
+1. The first command, executed on the login node, creates a job allocation for
+   64 cores. It returns with a shell prompt on the login node as soon as the
+   allocation is ready and prints the job ID of the running job on the screen.
+   The ``--x11`` option is used to forward X11 traffic.
 
-2. Next we log on to the allocated compute node using ``ssh``.  The ``-X`` option is used to forwarded
-   X11 traffic. As we allocate only a single node, ``$SLURM_JOB_NODELIST`` is just a single node and can be
-   used as argument to ``ssh``.
+2. Next we log on to the allocated compute node using attaching an interactive
+   shell (``--pty bash``) to the job ID with ``srun``.
 
-3. It is important to note that now we are in our **home directory** on the compute node as ``ssh`` starts
-   with a clean login shell. We can now execute X11 commands or anything we want to do and is supported on
-   a compute node.
+3. We can now execute X11 commands, launch graphical applications, or anything
+   else that we want to do and is supported on a compute node.
 
-4. The first ``exit`` command leaves the compute node and returns to the login shell, **but still within the
-   salloc command**.
+4. The first ``exit`` command leaves the compute node and returns to the login
+   shell, **but still within the salloc command**.
 
-5. Hence we need a second ``exit`` command to leave the shell created by ``salloc`` and free the resources for
-   other users.
+5. Hence we need a second ``exit`` command to leave the shell created by
+   ``salloc`` and free the resources for other users.
 
 **So do not forget that you need to exit two shells to free the resources!**
-
-
