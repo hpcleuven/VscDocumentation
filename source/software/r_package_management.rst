@@ -1,4 +1,4 @@
-.._r-package-management:
+.. _r-package-management:
 R package management
 ====================
 
