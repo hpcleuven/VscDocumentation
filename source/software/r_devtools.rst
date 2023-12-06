@@ -1,5 +1,7 @@
-Installing packages with devtools
-=================================
+.. _r_devtools:
+
+R installing packages with devtools
+===================================
 
 Introduction
 ~~~~~~~~~~~~
@@ -20,7 +22,7 @@ When you are using a standard R library that you use alongside an
 R module or with RStudio Server, you can use the devtools that is
 included in the module. The following steps assume that you already
 have a standard R library located in your ``$VSC_DATA/R`` directory. 
-If you have not yet set up your R library, first set up your :ref:`R library<r-package-management>`.
+If you have not yet set up your R library, first set up your :ref:`R library<r_package_management>`.
 
 Using the module devtools to install R packages
 -----------------------------------------------
@@ -79,7 +81,6 @@ R environment and install devtools
 
 Launch R and make sure that the R library 
 path points to your conda library.
-
 
 
 
