@@ -14,6 +14,8 @@ very easy for a user to install them just for himself, or for his
 research group, that is not a problem though. Do not hesitate to contact
 support whenever you encounter trouble doing so.
 
+.. _r_package_management_standard_lib:
+
 Standard R package installation
 -------------------------------
 
@@ -49,6 +51,8 @@ library, .e.g., ::
 
 Note that R packages often depend on the specific R version they were installed
 for, so you may need to reinstall them for other versions of R.
+
+.. _r_package_management_conda:
 
 Installing R packages using conda
 ---------------------------------
