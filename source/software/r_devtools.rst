@@ -15,13 +15,13 @@ devtools_ documentation for examples of other repositories.
 Depending on how your R library is managed, you will need a slightly different
 approach to use or install devtools.
 
+
 Installing in a local R library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you are using an R installation that comes from a centrally installed R module
-or an RStudio Server app, then you can use the devtools package that is included
-in that R installation. Assuming that you want to install your additional R packages
-in a ``$VSC_DATA/R`` directory, you will need to execute the following commands
-in the R console:
+
+If you manage your R packages in a :ref:`local R library<r_package_management>` under ``$VSC_DATA/R``
+while using a centrally installed R module, you can use the devtools package included in the module.
+You will need to execute the following commands in the R console:
 
 .. code-block:: r
 
@@ -35,6 +35,7 @@ in the R console:
 
 Installing in a conda environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 If you are using conda to manage your R packages, you should first install
 devtools in your conda environment. The following steps assume that you 
 already have a conda environment named "science". If you do not yet have
