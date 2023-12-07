@@ -24,7 +24,7 @@ several actions from the lecturer are required.
    :ref:`Slurm accounting <accounting_leuven>`.
    Once the project is accepted, the students from the course list will be added to it.
 #. If the reservation of few nodes is necessary during the exercise
-   classes please let us know 1 week before the exercise class, so that
+   classes please let us know at the latest 1 week before the exercise class, so that
    it can be scheduled. To submit the job during the class the following
    command should be used:
 
