@@ -39,4 +39,4 @@ Libraries
    perl_package_management
    python_package_management
    r_package_management
-
+   r_devtools
