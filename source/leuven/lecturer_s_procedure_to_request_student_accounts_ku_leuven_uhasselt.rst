@@ -17,7 +17,7 @@ several actions from the lecturer are required.
    and they login  to the cluster only using KU Leuven MFA.
 #. Since introductory credits are supposed to be used for private
    projects (e.g. master thesis computations) we encourage to create
-   a specific project, starting with "p_edu_", which will be used for computations related to the course.
+   a specific project, starting with ``p_edu_``, which will be used for computations related to the course.
    We will assign compute credits to this project. It also gives a lecturer an opportunity of tracing the use of
    the cluster during the course. After provisioning the student accounts, we will also add these to the given project.
    For more information about the procedure of creating the project please refer to the page
