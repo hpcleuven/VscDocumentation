@@ -15,46 +15,20 @@ devtools_ documentation for examples of other repositories.
 Depending on how your R library is managed, you will need a slightly different
 approach to use or install devtools.
 
-A Standard R library
-~~~~~~~~~~~~~~~~~~~~
-
-When you are using a standard R library that you use alongside an 
-R module or with RStudio Server, you can use the devtools that is
-included in the module. The following steps assume that you already
-have a standard R library located in your ``$VSC_DATA/R`` directory. 
-If you have not yet set up your R library, first set up your :ref:`R library<r_package_management>`.
-
-Using the module devtools to install R packages
------------------------------------------------
-
-From an interactive session on a Genius or wICE compute node you can load
-your prefered R module and launch R.
-
-
+Installing in a local R library
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you are using an R installation that comes from a centrally installed R module
+or an RStudio Server app, then you can use the devtools package that is included
+in that R installation. Assuming that you want to install your additional R packages
+in a ``$VSC_DATA/R`` directory, you will need to execute the following commands
+in the R console:
 
 ::
-
-   $ module load R/4.1.0-foss-2021a
-   $ R
-
-By default, the R library path will point to the module R library.
-If this is the case, first set the R library to your personal R library path.
-
-
-
-::
-
-   > # check that the [1] R library path points to your personal R library
+   > # First check that the R library path points to your personal R library:
    > .libPaths()
-   > # set the R library path if this was not the case.
+   > # Set the R library path if this was is the case.
    > .libPaths("/data/leuven/XXX/vscXXXXX/R/")
-
-Load devtools and install your package from github.
-
-
-
-::
-
+   > # Load devtools and e.g. install your package from github:
    > library(devtools)
    > devtools::install_github("Developer/Package")
 
