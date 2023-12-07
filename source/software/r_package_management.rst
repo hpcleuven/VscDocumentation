@@ -179,3 +179,5 @@ More information
 ~~~~~~~~~~~~~~~~
 
 Additional information about conda can be found on its `documentation site <https://conda.readthedocs.io/en/latest/>`__.
+
+For installing R packages from github or other repositories see also :ref:`R devtools<r_devtools>`:
