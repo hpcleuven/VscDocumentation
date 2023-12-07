@@ -13,7 +13,8 @@ several actions from the lecturer are required.
    attachment with the list of students attending the course (1-2 weeks
    before the beginning of the course).
 #. We advise to use :ref:`Open OnDemand <ood_t2_leuven>` service for the student to get access to the login nodes,
-   file browser and the job submission.
+   file browser and the job submission. For working with Open OnDemand only, the accounts are provisioned without students being involved in the procedure
+   and they login  to the cluster only using KU Leuven MFA.
 #. Since introductory credits are supposed to be used for private
    projects (e.g. master thesis computations) we encourage to create the
    project which will be used for computations related to the course.
@@ -36,7 +37,7 @@ several actions from the lecturer are required.
    existing reservation on the system for the spcific course.
 
 
-#. In case workflow requires extra access to the cluster with otehr applications,
+#. In case workflow requires extra access to the cluster with other applications,
    the students will have to :ref:`generate private-public key pair <generic access procedure>`, and add the public key it to their account
    via the `VSC account page`_.
 #. If you are not using Open OnDemand, make sure that the software to connect to the cluster (Putty, Xming,
