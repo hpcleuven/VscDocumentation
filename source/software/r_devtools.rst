@@ -15,6 +15,15 @@ devtools_ documentation for examples of other repositories.
 Depending on how your R library is managed, you will need a slightly different
 approach to use or install devtools.
 
+.. note::
+
+  When consulting the devtools documentation, make sure that it is the correct version!
+  It should match the module devtools version. To check what devtools version is installed:
+
+  .. code-block:: r
+    
+    library(devtools)
+    sessioninfo::session_info()
 
 Installing in a local R library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
