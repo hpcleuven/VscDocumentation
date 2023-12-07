@@ -106,4 +106,4 @@ Load devtools and install your package from github.
    > library(devtools)
    > devtools::install_github("Developer/Package")
 
-.. _devtools: https://www.rdocumentation.org/packages/devtools/versions/2.4.5
+.. _devtools: https://www.rdocumentation.org/packages/devtools
