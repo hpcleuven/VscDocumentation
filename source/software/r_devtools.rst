@@ -32,51 +32,24 @@ in the R console:
    > library(devtools)
    > devtools::install_github("Developer/Package")
 
-A Conda R environment 
-~~~~~~~~~~~~~~~~~~~~~
-
+Installing in a conda environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you are using conda to manage your R packages, you should first install
 devtools in your conda environment. The following steps assume that you 
-already have a conda R environment named "science". If you do not yet have
-a conda R environment, First create a :ref:`conda environment<Python packages>`.
-
-Using the conda devtools to install R packages
-----------------------------------------------
-
-From an interactive session on a Genius or wICE compute node, activate your 
-R environment and install devtools
-
-
+already have a conda environment named "science". If you do not yet have
+a conda environment, First create a :ref:`conda environment<Python packages>`. 
 
 ::
-
+   $ # Activate your conda environment and install devtools
    $ source activate science
    $ conda install -c conda-forge r-devtools
-
-Launch R and make sure that the R library 
-path points to your conda library.
-
-
-
-::
-
+   $ # Launch R
    $ R
-
-
-
-::
-
-   > # check that the [1] R library path points to your conda R library
+   > # Check that the R library path points to your conda R library
    > .libPaths()
-   > # set the R library path if this was not the case.
+   > # Set the R library path if this was not the case.
    > .libPaths("/data/leuven/XXX/vscXXXXX/miniconda3/envs/science/lib/R/library")
-
-Load devtools and install your package from github.
-
-
-
-::
-
+   > # Load devtools and e.g. install your package from github:
    > library(devtools)
    > devtools::install_github("Developer/Package")
 
