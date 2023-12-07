@@ -10,8 +10,8 @@ several actions from the lecturer are required.
    `hpcinfo@.kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
    providing a short description of the course and explanation why HPC
    facilities are necessary for teaching the course. Please also add the
-   attachment with the list of students attending the course (1-2 weeks
-   before the beginning of the course).
+   attachment with the list of students (including student number, provided by the toledo export)
+   1-2 weeks before the beginning of the course.
 #. We advise to use :ref:`Open OnDemand <ood_t2_leuven>` service for the student to get access to the login nodes,
    file browser and the job submission. For working with Open OnDemand only, the accounts are provisioned without students being involved in the procedure
    and they login  to the cluster only using KU Leuven MFA.
