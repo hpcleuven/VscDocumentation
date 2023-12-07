@@ -23,7 +23,8 @@ in that R installation. Assuming that you want to install your additional R pack
 in a ``$VSC_DATA/R`` directory, you will need to execute the following commands
 in the R console:
 
-::
+.. code-block:: r
+
    > # First check that the R library path points to your personal R library:
    > .libPaths()
    > # Set the R library path if this was is the case.
@@ -39,12 +40,16 @@ devtools in your conda environment. The following steps assume that you
 already have a conda environment named "science". If you do not yet have
 a conda environment, First create a :ref:`conda environment<Python packages>`. 
 
-::
+.. code-block:: bash
+
    $ # Activate your conda environment and install devtools
    $ source activate science
    $ conda install -c conda-forge r-devtools
    $ # Launch R
    $ R
+
+.. code-block:: r
+
    > # Check that the R library path points to your conda R library
    > .libPaths()
    > # Set the R library path if this was not the case.
