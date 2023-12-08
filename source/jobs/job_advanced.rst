@@ -185,9 +185,6 @@ however run commands on the allocated resources via ``srun``.
    require different settings in the environment. So if you execute a command in the wrong
    environment it may run inefficiently, or it may simply fail.**
 
-There is no problem with Vaughan though as on that cluster all CPUs are of the same
-generation.
-
 Interactive jobs with salloc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
