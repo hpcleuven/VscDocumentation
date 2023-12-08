@@ -334,5 +334,5 @@ just a single task. To add support for X11, use the ``--x11`` option before ``--
    r0c00cn0$ xclock
    r0c00cn0$ exit
 
-would allocate 64 (virtual) cores, and the second line starts a simple X11 program, ``xclock``,
+would allocate 64 cores, and the second line starts a simple X11 program, ``xclock``,
 to test if X11 programs work.
