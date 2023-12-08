@@ -254,6 +254,11 @@ avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument
 
 - Navigating between your different directories is possible using the file explorer. If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the three dots on the right (...) and enter your file location.
 - The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``. It is recommended to use the ``install.packages`` function instead.
+- RStudioServer will by default store the RStudio cache in ``$VSC_HOME/.local/share/rstudio``. This cache can get very large and cause you to  exceed the quota of your home directory. To avoid this, you can redirect this cache to your data directory by setting ``$XDG_DATA_HOME`` variables in your ``~/.bashrc``. 
+
+  .. code-block:: bash
+    
+    echo export XDG_DATA_HOME=$VSC_DATA/.local/share >> ~/.bashrc
 
 Tensorboard
 -----------
