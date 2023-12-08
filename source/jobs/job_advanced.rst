@@ -178,12 +178,13 @@ is running on the node where you ran ``salloc`` (likely a login node). Contrary 
 ``srun``, the shell is **not** running on the allocated resources. You can
 however run commands on the allocated resources via ``srun``.
 
-**.. note::
+.. note::
+
    Note that in particular on clusters with multiple CPU architectures, you need to
    understand Linux environments and the way they interact with Slurm very well as you
    are now executing commands in two potentially incompatible sections of the cluster that
    require different settings in the environment. So if you execute a command in the wrong
-   environment it may run inefficiently, or it may simply fail.**
+   environment it may run inefficiently, or it may simply fail.
 
 Interactive jobs with salloc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
