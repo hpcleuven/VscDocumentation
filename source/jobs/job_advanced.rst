@@ -197,10 +197,13 @@ The following command shows how to run a shared memory program on 16 cores:
 
    login$ salloc --ntasks=1 --cpus-per-task=16 --time=1:00:00 --mem-per-cpu=3g
 
-executed on a login node will return a shell on the login node. To then execute commands,
-it is still better to rebuild the environment just as for a batch script as some modules
-will use different settings when they load in a Slurm environment. So let's use this shell
-to start the demo program ``omp_hello`` on the allocated resources:
+``salloc`` executed on a login node will open a shell that runs on the login node but
+that can be used to execute tasks on the allocated resources. Therefore,
+it is recommended to re-create the environment as some modules
+will use different settings when they load in a Slurm environment.
+
+|Example| Let's use the previous ``salloc`` shell to start the demo
+program ``omp_hello`` on the allocated resources:
 
 .. code:: bash
 
