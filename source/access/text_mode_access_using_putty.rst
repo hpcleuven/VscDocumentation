@@ -43,7 +43,7 @@ VSC clusters.
 #. In the category Connection > SSH > Auth > Credentials, click on 'Browse' and select
    the private key that you generated and saved above.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
+   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
 
    Here, the private key was previously saved in the folder
    ``C:\Users\Me\Keys``. In older versions of Windows, you would have
@@ -52,12 +52,12 @@ VSC clusters.
 #. In the category Connection > SSH > X11, click the Enable X11
    Forwarding checkbox:
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_05.png
 
 #. In the category Connection > SSH > Auth, you can enable agent forwarding
    by ticking the 'Allow agent forwarding' checkbox.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_05.png
+   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
 
 #. Now go back to Session, and fill in a name in the 'Saved Sessions'
    field and press 'Save' to store the session information.
