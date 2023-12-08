@@ -258,7 +258,7 @@ avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument
 
   .. code-block:: bash
     
-    echo export XDG_DATA_HOME=$VSC_DATA/.local/share >> ~/.bashrc
+    echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
 Tensorboard
 -----------
