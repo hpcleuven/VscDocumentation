@@ -191,8 +191,7 @@ Interactive jobs with salloc
 Non-X11 programs
 """"""""""""""""
 
-E.g., to run a shared memory program on 16 (virtual) cores, the following commands
-can be used:
+The following command shows how to run a shared memory program on 16 cores:
 
 .. code:: bash
 
