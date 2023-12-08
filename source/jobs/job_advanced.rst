@@ -279,4 +279,5 @@ What this does is:
 5. Hence we need a second ``exit`` command to leave the shell created by
    ``salloc`` and free the resources for other users.
 
-**So do not forget that you need to exit two shells to free the resources!**
+.. warning::
+   Do not forget that you need to exit two shells to free the allocated resources!
