@@ -250,11 +250,11 @@ requesting just a single task.
 The first step is to ensure that X11 access from the login node to your local
 screen is properly set up.
 
-Next, starting a session that uses a full node on Vaughan can be done as
+Next, starting a session that uses 4 cores on a single node can be done as
 
-.. code:: bash
+.. code-block:: bash
 
-   login$ salloc -n 1 -c 64 -t 1:00:00 --x11
+   login$ salloc -n 1 -c 4 -t 1:00:00 --x11
    login$ srun --jobid=<jobid> --pty bash
    r0c00cn0$ xclock
    r0c00cn0$ exit
