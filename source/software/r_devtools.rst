@@ -34,7 +34,7 @@ You will need to execute the following commands in the R console:
 
 .. code-block:: r
 
-   > # First check that the R library path points to your personal R library:
+   > # First check that the R library path points to your local R library:
    > .libPaths()
    > # Set the R library path if this was is the case.
    > .libPaths("/data/leuven/XXX/vscXXXXX/R/")
