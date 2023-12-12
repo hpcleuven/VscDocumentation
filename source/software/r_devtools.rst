@@ -44,7 +44,7 @@ You will need to execute the following commands in the R console:
 
 .. note::
 
-  The devtools package is **not** included in "-bare" R modules. *e.g.* R/4.0.2-foss-2018a-bare
+  The devtools package is **not** included in "-bare" R modules, *e.g.* R/4.0.2-foss-2018a-bare.
 
 Installing in a conda environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
