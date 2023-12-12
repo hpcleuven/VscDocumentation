@@ -18,7 +18,7 @@ approach to use or install devtools.
 .. note::
 
   When consulting the devtools documentation, make sure that it is the correct version!
-  It should match the module devtools version. To check what devtools version is installed:
+  It should match the module's devtools version. To check which devtools version is installed:
 
   .. code-block:: r
     
