@@ -13,7 +13,7 @@ In what follows github will be used as an example, please consult the
 devtools_ documentation for examples of other repositories.
 
 Depending on how your R library is managed, you will need a slightly different
-approach to use or install devtools.
+approach to use and install devtools.
 
 .. note::
 
