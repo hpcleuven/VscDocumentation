@@ -1,6 +1,6 @@
 .. _r_devtools:
 
-R installing packages with devtools
+installing R packages with devtools
 ===================================
 
 Introduction
