@@ -6,13 +6,11 @@ R package management
 Introduction
 ------------
 
-Most of the useful R packages come in the form of packages that can be
-installed separately. Some of those are part of the default installation
-on VSC infrastructure. Given the astounding number of packages, it is
-not sustainable to install each and everyone system wide. Since it is
-very easy for a user to install them just for himself, or for his
-research group, that is not a problem though. Do not hesitate to contact
-support whenever you encounter trouble doing so.
+Most of the useful R packages can be installed separately. Some of those are 
+part of the centrally installed R modules. However, given the astounding number of 
+packages, it is not sustainable to install each and everyone of them system wide. 
+Fortunately, it is very easy for users to install R packages themselves.
+If you do encounter problems when doing so, do not hesitate to contact support.
 
 .. _r_package_management_standard_lib:
 
