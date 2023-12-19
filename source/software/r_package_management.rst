@@ -47,8 +47,10 @@ library, .e.g., ::
 
    $ module load GSL/2.5-GCC-6.4.0-2.28
 
-Note that R packages often depend on the specific R version they were installed
-for, so you may need to reinstall them for other versions of R.
+.. note::
+
+  R packages often depend on the specific R version they were installed
+  for, so you may need to reinstall them for other versions of R.
 
 .. _r_package_management_conda:
 
