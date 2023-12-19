@@ -9,7 +9,7 @@ Introduction
 The installation of some R packages may require the use of devtools.
 Devtools is an R package that facilitates the installation of other
 R packages from github, gitlab, bitbucket or other repositories.
-In what follows github will be used as an example, please consult the
+In what follows github will be used as an example. Please consult the
 devtools_ documentation for examples of other repositories.
 
 Depending on how your R library is managed, you will need a slightly different
@@ -18,7 +18,7 @@ approach to use and install devtools.
 .. note::
 
   When consulting the devtools documentation, make sure that it is the correct version!
-  It should match the module's devtools version. To check which devtools version is installed:
+  It should match the devtools version included in the R module. To check which devtools version is installed:
 
   .. code-block:: r
     
@@ -36,7 +36,7 @@ You will need to execute the following commands in the R console:
 
    > # First check that the R library path points to your local R library:
    > .libPaths()
-   > # Set the R library path if this was is the case.
+   > # Set the R library path if this is not the case.
    > .libPaths("/data/leuven/XXX/vscXXXXX/R/")
    > # Load devtools and e.g. install your package from github:
    > library(devtools)
@@ -44,7 +44,7 @@ You will need to execute the following commands in the R console:
 
 .. note::
 
-  The devtools package is **not** included in "-bare" R modules, *e.g.* R/4.0.2-foss-2018a-bare.
+  The devtools package is **not** included in "-bare" R modules, e.g. R/4.0.2-foss-2018a-bare.
 
 Installing in a conda environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,6 +53,7 @@ If you are using conda to manage your R packages, you should first install
 devtools in your conda environment. The following steps assume that you 
 already have a conda environment named "science". If you do not yet have
 a conda environment, First create a :ref:`conda environment<r_package_management_conda>`. 
+In the following example, it is assumed that your miniconda environment is installed in ``$VSC_DATA/miniconda3``.
 
 .. code-block:: bash
 
