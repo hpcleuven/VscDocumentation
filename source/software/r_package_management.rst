@@ -1,16 +1,18 @@
+.. _R_package_management:
+
 R package management
 ====================
 
 Introduction
 ------------
 
-Most of the useful R packages come in the form of packages that can be
-installed separately. Some of those are part of the default installation
-on VSC infrastructure. Given the astounding number of packages, it is
-not sustainable to install each and everyone system wide. Since it is
-very easy for a user to install them just for himself, or for his
-research group, that is not a problem though. Do not hesitate to contact
-support whenever you encounter trouble doing so.
+Most of the useful R packages can be installed separately. Some of those are 
+part of the centrally installed R modules. However, given the astounding number of 
+packages, it is not sustainable to install each and everyone of them system wide. 
+Fortunately, it is very easy for users to install R packages themselves.
+If you do encounter problems when doing so, do not hesitate to contact support.
+
+.. _r_package_management_standard_lib:
 
 Standard R package installation
 -------------------------------
@@ -45,8 +47,12 @@ library, .e.g., ::
 
    $ module load GSL/2.5-GCC-6.4.0-2.28
 
-Note that R packages often depend on the specific R version they were installed
-for, so you may need to reinstall them for other versions of R.
+.. note::
+
+  R packages often depend on the specific R version they were installed
+  for, so you may need to reinstall them for other versions of R.
+
+.. _r_package_management_conda:
 
 Installing R packages using conda
 ---------------------------------
@@ -176,4 +182,6 @@ original state, use the following command
 More information
 ~~~~~~~~~~~~~~~~
 
-Additional information about conda can be found on its `documentation site <https://conda.readthedocs.io/en/latest/>`__.
+Additional information about conda can be found on its `documentation site <https://docs.conda.io/en/latest/>`__.
+
+For installing R packages from github or other repositories see also :ref:`R devtools<r_devtools>`:
