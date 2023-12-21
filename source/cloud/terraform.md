@@ -134,28 +134,33 @@ You will see some messages like this (IDs and IPs may change depending
 on your project's resources).
 
 ```console
-Variable OS_CLOUD is not set. Using openstack as a value.
-Image id: 749f4f24-7222-45fc-b571-996f5b68c28f. (Image name: CentOS-8-stream)
-Flavor name: CPUv1.small.
-Root FS volume size based on flavor disk size: 20.
+Image id: 3313f95f-634c-4127-b65f-cde6d6f797cf. (Image name: Rocky-9)
+Flavor name: CPUv1.medium.
+Image id: 0684c8d3-15c7-4a6e-8fd6-3850e62f3ad4. (Image name: Windows10)
+Flavor name: CPUv1.medium.
+Root FS volume size based on flavor disk size: 30.
 VM network id: 4d72c0ec-c000-429e-89c6-8c3607a28b3d.
 VM subnet id: f0bc8307-568f-457d-adff-219005a054e2.
 NFS network id: 119d8617-4000-47c0-9c6e-589b3afce144.
 NFS subnet id: e4e07edd-39cf-42ea-9fe4-5bf2891d2592.
 VSC network id: f6eba915-06ad-4e50-bc4b-1538cdc39296.
 VSC subnet id: b5ed8dc2-6d3f-42d4-87f8-3ffee19c1a9c.
-Using first ssh access key "ssh-ed25519 AAAAC3Nz_A02TxLd9 lsimngar_varolaptop\".
-Using floating ip id: 64f2705c-43ec-4bdf-864e-d18fee013e3f. (floating ip 193.190.80.3)
+Using first ssh access key "ssh-ed25519".
+Using floating ip id: 64f2705c-43ec-4bdf-864e-d18fee013e3f. (floating ip: 193.190.80.3)
 Using VSC floating ip: 172.24.49.7.
-Using ssh forwarded ports: 56469 59112 54872 51280.
-Using http forwarded port: 52247.
 Modifying ../environment/main.tf file.
+Using ssh forwarded ports: 59604 58458 55222 51217.
+Using http forwarded port: 56871.
+Using rdp forwarded port: 53557.
 Modifying provider.tf files.
+
 SSH commands for VMs access:
-(myvm) ssh -p 56469 <user>@193.190.80.3
-(myvm-nginx) ssh -p 59112 <user>@193.190.80.3
-(myvm-vsc_net) ssh -p 54872 <user>@193.190.80.3
-(myvm-nfs_share) ssh -p 51280 <user>@193.190.80.3
+
+(MyVM)           ssh -p 59604 <user>@193.190.80.3
+(MyVM-nginx)     ssh -p 58458 <user>@193.190.80.3
+(MyVM-vsc_net)   ssh -p 55222 <user>@193.190.80.3
+(MyVM-nfs_share) ssh -p 51217 <user>@193.190.80.3
+(MyVM-windows)   xfreerdp /u:admin /port:53557 /v:193.190.80.3
 ```
 
 After this step your Terraform templates will be ready to be deployed.
@@ -177,18 +182,20 @@ In [section](#getting-terraform-examples) we have downloaded the
 Terraform module examples from the VSC repository. If you deploy these
 modules as it is it will deploy several VM examples by default such as:
 
-1.  **myvm:** simple VM with 20Gb persistent volume and ssh access with port
+1.  **MyVM:** simple VM with 20Gb persistent volume and ssh access with port
     forwarding.
 
-2.  **myvm-nginx:** Like previous example but with an ansible playbook to install nginx
+2.  **MyVM-nginx:** Like previous example but with an ansible playbook to install nginx
     and access to port 80 besides ssh.
 
-3.  **myvm-vsc_net:** Similar to the first example but also includes a VSC network
+3.  **MyVM-vsc_net:** Similar to the first example but also includes a VSC network
     interface (only available for some projects).
 
-4.  **myvm-nfs_share:** Similar to the first example but it creates a NFS share filesystem
+4.  **MyVM-nfs_share:** Similar to the first example but it creates a NFS share filesystem
     and it mounts it during instantiation (only available for some
     projects).
+
+5.  **MyVM-windows:** Windows VM with Remote Desktop access.
 
 But usually you do not want to deploy all these examples, you can just
 keep the required module and comment out the rest. You can do this from
