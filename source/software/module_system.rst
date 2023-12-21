@@ -43,8 +43,8 @@ have
 - ``<extra>``: additional suffix, ``Python-3.6.4``, the version of Python this Boost version
   was installed with.
 
-If packages include something like ``intel-2021a`` or ``foss-2021a`` in their name,
-means that these are packages installed with the 2021a versions of the :ref:`toolchains <toolchains>`
+If packages include something like ``intel-2021a`` or ``foss-2021a`` in their names,
+this means that these packages are installed with the 2021a versions of the :ref:`toolchains <toolchains>`
 based on the Intel and GNU compilers respectively. The other packages do 
 not belong to a particular toolchain. The name of the packages also
 includes a version number (right after the /) and sometimes other
@@ -70,7 +70,7 @@ loaded:
       as other modules, but instead of making executables or libraries available,
       its only purpose is to set up your environment to make the correct modules
       available. The *cluster* module is always available and you can see which
-      versions can be loaded by executing ``module avail cluster``.      
+      versions can be loaded by executing ``module avail cluster``.
       
       On the login nodes and inside a job environment, the correct version of the
       cluster module will be loaded automatically. This means that for these cases, you do
@@ -92,7 +92,7 @@ loaded:
 
    .. tab-item:: UGent
 
-      n a default environment, you should see a single cluster module loaded:
+      In a default environment, you should see a single cluster module loaded:
 
       ::
 
@@ -151,16 +151,16 @@ Searching modules
 ~~~~~~~~~~~~~~~~~
 
 Often, when looking for some specific software, you will want to filter
-the list of available modules, since it tends to be rather large. The
-module command writes its output to standard error, rather than standard
-output, which is somewhat confusing when using pipes to filter. The
-following command would show only the modules that have the string
+the list of available modules, since it tends to be rather large.
+The following command would only show the modules that have the string
 'python' in their name, regardless of the case.
 
 ::
 
-   $ module av |& grep -i python
+   $ module av python
 
+Note that the search done by ``module av`` is case-agnostic, meaning that
+you will get the same result even if you search like ``module av pYThoN``.
 For more comprehensive searches, you can use the Lmod specific ``module spider``, e.g.,
 
 ::
@@ -168,7 +168,9 @@ For more comprehensive searches, you can use the Lmod specific ``module spider``
    $ module spider python
 
 Note that ``spider`` is case-insensitive and looks for partial matches.
-If you only need to look for the python modules, you can try to include / in the module search 
+Unfortunately, the output might in some cases be very exhaustive.
+If you only need to look for the python modules, you can try to include
+``/`` in the module search, e.g.:
 
 ::
 
@@ -292,13 +294,13 @@ the user should specify a particular version, e.g.,
 
 .. note::
 
-   Loading modules with explicit versions is considered best practice.  It ensures
+   Loading modules with explicit versions is considered as best practice. It ensures
    that your scripts will use the expected version of the software, regardless of
-   newly installed software.  Failing to do this may jeopardize the reproducibility
+   newly installed software. Failing to do this may jeopardize the reproducibility
    of your results!
 
-Modules need not be loaded one by one; the two 'load' commands
-can be combined as follows::
+Modules need not be loaded one by one; the two ``load`` sub-commands
+can be combined into one as follows::
 
    $ module load  FFTW/3.3.9-intel-2021a  Boost/1.76.0-intel-compilers-2021.2.0  
 
@@ -339,6 +341,10 @@ with it!
    line alternative (so *not* in the shell initialization files either!).
 
 
+.. warning::
+
+   It is also recommended not to mix modules from e.g. the ``intel`` toolchain, with
+   modules from the ``foss`` toolchain, due to the conflicting dependencies.
 
 
 Unloading modules
@@ -356,7 +362,7 @@ debug some problem.
 Notice that the version was not specified: the module system is
 sufficiently clever to figure out what the user intends. However,
 checking the list of currently loaded modules is always a good idea,
-just to make sure...
+just to make sure!
 
 
 Purging modules
@@ -374,7 +380,7 @@ a clean slate, use:
    It is a good habit to use this command in SLURM scripts, prior to loading
    the modules specifically needed by applications in that job script. This
    ensures that no version conflicts occur if the user loads module using
-   his ``.bashrc`` file.
+   his ``.bashrc`` file (see the warning above).
 
 
 .. note::
@@ -390,11 +396,11 @@ a clean slate, use:
    cluster module will be unloaded and your ``$MODULEPATH`` will not contain
    the directory with the appropriate software stack. It will be necessary to
    load the correct cluster module or set your ``$MODULEPATH`` in another way.
-   This is why we advise to not use ``module --force purge`` in your jobs,
-   unless you are well aware of the consequences. Note that it is ok to
+   This is why we advise to not use the ``--force`` argument for the ``module purge``
+   in your jobs, unless you are well aware of the consequences. Note that it is ok to
    execute ``module purge``, since the cluster module is a
-   `sticky module <https://lmod.readthedocs.io/en/latest/240_sticky_modules.html>`__
-   , which means it is not unloaded with ``module purge``.
+   `sticky module <https://lmod.readthedocs.io/en/latest/240_sticky_modules.html>`__,
+   which means it is not unloaded with ``module purge``.
 
 
 
@@ -506,19 +512,19 @@ examples.
 
 -  ``ml`` lists the currently loaded modules, and is equivalent with
    ``module list``
--  ``ml GCC/4.9.3`` loads the ``GCC/4.9.3`` module, and is equivalent
-   with ``module load GCC/4.9.3``
+-  ``ml GCC/12.2.0`` loads the ``GCC/12.2.0`` module, and is equivalent
+   to ``module load GCC/12.2.0``
 -  ``ml -GCC`` unloads the currently loaded ``GCC`` module, and is
    equivalent with ``module unload GCC``
 -  ``ml av gcc`` prints the currently available modules that match ``*gcc*``
-   (case-insensitively), and is equivalent with ``module avail GCC`` or
+   (case-insensitively), and is equivalent to ``module avail GCC`` or
    ``module avail gcc``
--  ``ml show GCC/4.9.3`` prints more information about the ``GCC/4.9.3``
+-  ``ml show GCC/12.2.0`` prints more information about the ``GCC/12.2.0``
    module, and is equivalent with ``module show GCC``
 -  ``ml spider gcc`` searches (case-insensitive) for ``*gcc*`` in all
    available modules over all clusters
--  ``ml spider GCC/4.9.3`` show all information about the module
-   ``GCC/4.9.3`` and on which clusters it can be loaded.
+-  ``ml spider GCC/12.2.0`` show all information about the module
+   ``GCC/12.2.0`` and on which clusters it can be loaded.
 -  ``ml save mycollection`` stores the currently loaded modules to a
    collection
 -  ``ml restore mycollection`` restores a previously stored collection
