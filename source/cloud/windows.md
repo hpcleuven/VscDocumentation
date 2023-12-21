@@ -33,8 +33,8 @@ Click or select the `Overview` tab, you will see the Windows admin password
 
 ![image](img/windows_admin_pass.png)
 
-You should use this password to login the first time in your Windows machine
-(it is not possible to use Remote Desktop yet).
+You should use this password to login the first time in your Windows machine.
+(You must reset the admin password to connect via Remote Desktop).
 
 ## Reset Windows admin password
 
@@ -49,8 +49,8 @@ Windows will ask you to reset the admin password, type a new password twice to v
 that is correct.
 
 :::{tip}
-Usually you have to reset the password after the first boot, a Windows update or
-if you change the VM's flavor. In that case just use the original password provided
+Usually you have to reset the password after the first boot or if you change
+the VM's flavor. In that case just use the original password provided
 by the metadata and reset the password again.
 :::
 
