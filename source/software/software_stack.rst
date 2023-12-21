@@ -84,13 +84,6 @@ have
 - ``<extra>``: ``Python-3.6.4``, the version of Python this Boost version
   can inter-operate with.
 
-Some packages in the list above include ``intel-2014a`` or ``foss-2014a`` in their name.
-These are packages installed with the 2014a versions of the :ref:`toolchains <toolchains>`
-based on the Intel and GNU compilers respectively. The other packages do
-not belong to a particular toolchain. The name of the packages also
-includes a version number (right after the /) and sometimes other
-packages they need.
-
 Searching modules
 ~~~~~~~~~~~~~~~~~
 
