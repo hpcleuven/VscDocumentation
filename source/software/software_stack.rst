@@ -88,27 +88,30 @@ Searching modules
 ~~~~~~~~~~~~~~~~~
 
 Often, when looking for some specific software, you will want to filter
-the list of available modules, since it tends to be rather large. The
-module command writes its output to standard error, rather than standard
-output, which is somewhat confusing when using pipes to filter. The
-following command would show only the modules that have the string
+the list of available modules, since it tends to be rather large.
+The following command would only show the modules that have the string
 'python' in their name, regardless of the case.
 
 ::
 
-   $ module av |& grep -i python
+   $ module av python
 
+Note that the search done by ``module av`` is case-agnostic, meaning that
+you will get the same result even if you search like ``module av pYThoN``.
 For more comprehensive searches, you can use ``module spider``, e.g.,
 
 ::
 
    $ module spider python
 
+However, the output result can be in some cases very exhaustive.
+
 
 Info on modules
 ~~~~~~~~~~~~~~~
 
-The ``spider`` sub-command can also be used to provide information on on modules, e.g.,
+The ``spider`` sub-command can also be used to provide information about
+a specific module, e.g.,
 
 ::
 
@@ -152,13 +155,14 @@ recent version. In the above example,
 
     $ module load zlib
 
-will load the module ``zlib/1.2.8-intel-2014a``. This may not be the
-module that you want if you're using the GNU compilers. In that case,
-the user should specify a particular version, e.g.,
+will load the module ``zlib/1.2.12`` (at the time of thiw writing), which
+is a version built relying on the system compilers. This,
+however, may not be the module that you exactly want. Therefore, it is
+strongly recommended that the user would load a particular version, e.g.,
 
 ::
 
-   $ module load zlib/1.2.8-foss-2014a
+   $ module load zlib/1.2.12-GCCcore-12.2.0
 
 .. note::
 
@@ -167,10 +171,10 @@ the user should specify a particular version, e.g.,
    newly installed software.  Failing to do this may jeopardize the reproducibility
    of your results!
 
-Modules need not be loaded one by one; the two 'load' commands
+Modules need not be loaded one by one; two or more 'load' commands
 can be combined as follows::
 
-   $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
+   $ module load Boost/1.81.0-GCC-12.2.0 Python/3.10.8-GCCcore-12.2.0
 
 This will load the two modules and, automatically, the respective
 toolchains with just one command.
@@ -181,6 +185,11 @@ toolchains with just one command.
    you *will* shoot yourself in the foot at some point.  Consider using
    :ref:`module collections <collections of modules>` ``restore`` as a command
    line alternative (so *not* in the shell initialization files either!).
+
+.. warning::
+
+   It is also recommended not to mix modules from e.g. ``intel`` toolchain, with
+   modules from the ``foss`` toolchain, due to conflicting dependencies.
 
 
 List loaded modules
@@ -194,31 +203,21 @@ of loaded modules will be very similar to:
 
    $ module list
    Currently Loaded Modulefiles:
-     1) /thinking/2014a
-     2) Java/1.7.0_51
-     3) icc/2013.5.192
-     4) ifort/2013.5.192
-     5) impi/4.1.3.045
-     6) imkl/11.1.1.106
-     7) intel/2014a
-     8) beagle-lib/20140304-intel-2014a
-     9) BEAST/2.1.2
-    10) GCC/4.8.2
-    11) OpenMPI/1.6.5-GCC-4.8.2
-    12) gompi/2014a
-    13) OpenBLAS/0.2.8-gompi-2014a-LAPACK-3.5.0
-    14) FFTW/3.3.3-gompi-2014a
-    15) ScaLAPACK/2.0.2-gompi-2014a-OpenBLAS-0.2.8-LAPACK-3.5.0
-    16) foss/2014a
-    17) zlib/1.2.8-foss-2014a
+   1) cluster/genius/login         (S)   8) gzip/1.12-GCCcore-12.2.0        15) Tcl/8.6.12-GCCcore-12.2.0
+   2) GCCcore/12.2.0                     9) lz4/1.9.4-GCCcore-12.2.0        16) SQLite/3.39.4-GCCcore-12.2.0
+   3) zlib/1.2.12-GCCcore-12.2.0        10) zstd/1.5.2-GCCcore-12.2.0       17) GMP/6.2.1-GCCcore-12.2.0
+   4) binutils/2.39-GCCcore-12.2.0      11) ICU/72.1-GCCcore-12.2.0         18) libffi/3.4.4-GCCcore-12.2.0
+   5) GCC/12.2.0                        12) Boost/1.81.0-GCC-12.2.0         19) OpenSSL/1.1
+   6) bzip2/1.0.8-GCCcore-12.2.0        13) ncurses/6.3-GCCcore-12.2.0      20) Python/3.10.8-GCCcore-12.2.0
+   7) XZ/5.2.7-GCCcore-12.2.0           14) libreadline/8.2-GCCcore-12.2.0
 
-It is important to note at this point that, e.g., ``icc/2013.5.192`` is
-also listed, although it was not loaded explicitly by the user. This is
-because ``BEAST/2.1.2`` depends on it, and the system administrator
-specified that the ``intel`` toolchain module that contains this
-compiler should be loaded whenever the ``BEAST`` module is loaded. There
+It is important to note at this point that, e.g., ``XZ/5.2.7-GCCcore-12.2.0``
+is also listed, although it was not explicitly loaded by the user. This is
+because ``Boost/1.81.0-GCC-12.2.0`` depends on it, and the system administrator
+specified that the ``GCCcore/12.2.0`` toolchain module that contains this
+compiler should be loaded whenever this ``Boost`` module is loaded. There
 are advantages and disadvantages to this, so be aware of automatically
-loaded modules whenever things go wrong: they may have something to do
+loaded modules; whenever things go wrong, they may have something to do
 with it!
 
 
@@ -232,12 +231,12 @@ debug some problem.
 
 ::
 
-   $ module unload BEAST
+   $ module unload Boost
 
 Notice that the version was not specified: the module system is
 sufficiently clever to figure out what the user intends. However,
 checking the list of currently loaded modules is always a good idea,
-just to make sure...
+just to make sure!
 
 
 Purging modules
@@ -252,10 +251,10 @@ a clean slate, use:
 
 .. note::
 
-   It is a good habit to use this command in PBS scripts, prior to loading
-   the modules specifically needed by applications in that job script. This
+   It is a good habit to use this command in your job scripts, prior to loading
+   the modules specifically needed by your applications. This
    ensures that no version conflicts occur if the user loads module using
-   his ``.bashrc`` file.
+   his ``.bashrc`` file (see the warning above).
 
 
 Getting help
@@ -273,9 +272,10 @@ To get a list of all available module commands, type:
 Collections of modules
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Although it is convenient to set up your working environment by loading
-modules in your ``.bashrc`` or ``.profile`` file, this is error prone and
-you will end up shooting yourself in the foot at some point.
+Although it might seem convenient to set up your working environment
+by loading modules in your ``.bashrc`` or ``.profile`` file, this
+practice is error prone and you will end up shooting yourself in the
+foot at some point.
 
 The module system provides an alternative approach that lets you set up
 an environment with a single command, offering a viable alternative to
@@ -302,19 +302,19 @@ Define an environment
 Use an environment
 
    ::
-   
+
       $ module restore data_analysis
 
 List all your environments
 
    ::
-   
+
       $ module savelist
 
 Remove an environment
 
    ::
-   
+
       $ rm ~/.lmod.d/data_analysis
 
 
@@ -324,13 +324,13 @@ Specialized software stacks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The list of software available on a particular cluster can be
-unwieldingly long and the information that ``module av`` produces
+unwieldingly long and the information that ``module av`` produces can be
 overwhelming. Therefore the administrators may have chosen to only show
 the most relevant packages by default, and not show, e.g., packages that
 aim at a different cluster, a particular node type or a less complete
 toolchain. Those additional packages can then be enabled by loading
-another module first. E.g., to get access to the modules in 
-the (at the time of writing) incomplete 2019a toolchain on UAntwerpen's 
+another module first. E.g., to get access to the modules in
+the (at the time of writing) incomplete 2019a toolchain on UAntwerpen's
 leibniz cluster, one should first enter
 
    ::
