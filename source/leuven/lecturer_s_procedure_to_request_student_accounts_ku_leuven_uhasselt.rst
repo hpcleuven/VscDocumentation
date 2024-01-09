@@ -52,7 +52,9 @@ take the following actions:
 
 #. In case your workflow requires extra access to the cluster with other applications (such as NX,
    FileZilla, etc.) the students need to :ref:`generate private-public key pair <generic access procedure>`,
-   and add the public key it to their VSC account via the `VSC account page`_.
+   and add the public key it to their VSC account via the `VSC account page`_. Then, the students need to
+   :ref:`configure NoMachine client <NX start guide>` to use NX, and/or :ref:`configure FileZilla <_FileZilla>` for
+   the file transfer
 #. If you are not using Open OnDemand, make sure that the software to connect to the cluster
    (Putty, MobaXterm, Xming, FileZilla, NX) is available in the PC-class that will be used during the
    course. For KU Leuven courses, please follow the procedure at
