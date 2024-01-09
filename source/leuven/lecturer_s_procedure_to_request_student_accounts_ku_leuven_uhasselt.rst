@@ -20,16 +20,18 @@ take the following actions:
    of students with their full names, KU Leuven/UHasselt email addresses, and their student number.
    For KU Leuven students, you may convert the students' q-number to their r-/s-number using the export
    tool on Toledo (Administrations -> Convert user-ids (q-numbers))
-#. We advise to use :ref:`Open OnDemand <ood_t2_leuven>` service for the student to get access to the
-   login nodes, file browser and the job submission. For using Open OnDemand only, the accounts
-   are provisioned without students being involved in the procedure. Hence, students login only 
-   through the KU Leuven :ref:`Multi Factor Authentication (MFA) <mfa_leuven>`
+#. For all students on the list a VSC-account will be created without any further action required by the student. 
+   The students will receive a mail when the account is created. 
+   This account wil have no associated ssh-key. If needed the students can create and upload one, but for most usage this will be no longer needed.
 #. We encourage to create a specific project for the course, with the project name starting with
    ``p_edu_``. We will assign compute credits to this project, and add the students to the account. The
    course lecturer will be the moderator of the project. This gives the lecturer an opportunity
    to track the use of the Tier-2 clusters by individual users during the course.
    For more information about the procedure of requesting the project please refer to the page
    :ref:`Slurm accounting <accounting_leuven>`.
+#. We advise to use :ref:`Open OnDemand <ood_t2_leuven>` service for the student to get access to the
+   login nodes, file browser and the job submission. The student will only need to use a browser and does not need to install any other software.
+   Students will login through the KU Leuven :ref:`Multi Factor Authentication (MFA) <mfa_leuven>`, no additional ssh-agent is required.
 #. To ensure that students jobs do not wait in the queue during the hands-on sessions, we offer
    to reserve some limited resources during the session. In that case, please submit your exact
    resource requirements one week before the training, by latest.
@@ -44,6 +46,7 @@ take the following actions:
    where ``project_name`` refers to the project created by the lecturer for
    the purpose of the course, and the ``<reservation_name>`` refers to an 
    existing reservation on the system for the spcific course.
+   The reservation name can also be passed as a parameter in the OpenOnDemand form.
 
 
 #. In case your workflow requires extra access to the cluster with other applications (such as NX,
