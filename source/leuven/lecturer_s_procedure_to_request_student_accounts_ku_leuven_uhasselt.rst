@@ -18,8 +18,7 @@ take the following actions:
    Please provide a short description of the course, and explain why the HPC
    facilities are necessary for teaching the course. It is mandatory to provide a list
    of students with their full names, KU Leuven/UHasselt email addresses, and their student number.
-   For KU Leuven students, you have to convert the students' q-number to their r-/s-number using the export
-   tool on Toledo (Administrations -> Convert user-ids (q-numbers))
+   For KU Leuven an export from the participants in Toledo is fine.
 #. For all students on the list a VSC-account will be created without any further action required by the student. 
    The students will receive a mail when the account is created. 
    This account wil have no associated ssh-key. If needed the students can create and upload one,
