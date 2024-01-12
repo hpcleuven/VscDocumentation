@@ -132,7 +132,7 @@ Using the 'Job Options' button, you can add some more specifications to your job
 - Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
-- Job array: we do not recommend using this. If you would like to use job arrays, have a look :ref:`here <worker or atools>`.
+- Job array: we do not recommend using this. If you would like to use job arrays, have a look :ref:`here <worker_or_atools>`.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
