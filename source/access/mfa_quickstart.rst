@@ -1,6 +1,6 @@
 .. _mfa quick start:
 
-Quickstart guide for MFA
+Quick start guide for MFA
 ========================
 
 General
