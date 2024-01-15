@@ -7,7 +7,7 @@ Multi Factor Authentication (MFA)
 the name suggests, requires multiple steps when authenticating. The following
 two factors are necessary to connect to the KU Leuven clusters:
 
-- A valid private key
+- A valid private key (except when connecting via :ref:`Open OnDemand portal<ood_t2_leuven>`)
 - Access to a VSC-associated university/institution account
 
 This approach ensures that if your private key is compromised, the person who
