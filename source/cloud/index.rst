@@ -30,4 +30,5 @@ the OpenStack VSC Tutorial.
    launch_instance
    shares
    gpus
+   windows
    appendix
