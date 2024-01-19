@@ -45,7 +45,7 @@ Jobs
 All jobs submitted from Open OnDemand can run on Genius and wICE. 
 This also means that all your jobs should be submitted as **Slurm** jobs.
 For more detail on how to run jobs on wICE, check out our 
-:ref:`quick start guide <wice_quick_start>`.
+:ref:`quick start guide<wice_t2_leuven>`.
 
 The jobs tab has two menus, 'Active Jobs' and 'Job Composer':
 
@@ -132,7 +132,7 @@ Using the 'Job Options' button, you can add some more specifications to your job
 - Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
-- Job array: we do not recommend using this. If you would like to use job arrays, have a look at `worker or atools`_.
+- Job array: we do not recommend using this. If you would like to use job arrays, have a look at :ref:`the worker framework<worker or atools>`.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
@@ -178,7 +178,7 @@ Choosing your resources
 =======================
 
 Choosing the correct resources for your interactive session is mostly the same as selecting them when launching regular batch jobs. For this reason we strongly
-recommend you to have a look at how to specify your resources both on :ref:`Genius <genius_quick_start#running-jobs-on-genius>` and `wICE <wice_quick_start#running-jobs-on-wice>`.
+recommend you to have a look at how to specify your resources both on :ref:`Genius <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
 
 As mentioned above, in most cases we recommend using the ``interactive`` partition on wICE for the interactive apps. This partition is meant for lighter work, like
 visualisations, testing and pre- and postprocessing. Using this partition is also free, mainly to encourage you to request these resources for such work, instead
@@ -210,11 +210,11 @@ Jupyter Lab
 
 With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding. There are two kernels already available, being a Python and a
 R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
-to work with these. It is better to work with conda environments in this case. You can `install miniconda <python_package_management#install-miniconda>` if you have not installed it yet.
+to work with these. It is better to work with conda environments in this case. You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
 When you do not have any conda environments and their associated kernels, both the Python and R installation will default to the ``~/miniconda3/bin/...`` installation.
 
-To create any other kernels, first create a  `Python <python_package_management#create-an-environment>` or 
-`R <r_package_management#creating-an-environment>` conda environment. The second step consists out of effectively
+To create any other kernels, first create a  :ref:`Python <create_python_conda_env>` or 
+:ref:`R <create_r_conda_env>` conda environment. The second step consists out of effectively
 creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location. The following commands should be excecuted from a shell, 
 and only need to be done once for the set-up of each new kernel. This starts with activating your conda
 environment::
@@ -291,7 +291,7 @@ to 'Python'. If you click that, a window will appear where you can select your P
 versions (/bin/python). You can also load other modules, or you can also use conda environments here (if you have any conda environments already, you should see
 them here as well).
 
-If you need more information about creating your customized Python environments, have a look `here <python_package_management>`.
+If you need more information about creating your customized Python environments, have a look :ref:`here <Python packages>`.
 
 **Remarks:**
 
@@ -307,7 +307,9 @@ functionalities, like plotting.
 There are some package requirements if you want to use R in code-server. The following command creates a functional environment (of course, add any other
 packages you need):
 
-`conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite`
+        .. code-block:: bash
+
+         conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite
 
 Once you've created your environment, go ahead and start a code-server session on Open Ondemand. On the lefthand side, go to the extension menu and search
 for 'R'. You should install the 'R' extension of 'REditorSupport'.
@@ -320,15 +322,5 @@ Now there are two ways to use the R installation inside your conda environment:
 **Remarks:**
 
 - Running lines of code is 'ctrl+enter' for R.
-
-cryo-sparc
-----------
-
-**Work in progress**
-
-ParaViewWeb
------------
-
-**Work in progress**
 
 .. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/ 

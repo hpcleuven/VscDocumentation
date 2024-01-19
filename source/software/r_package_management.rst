@@ -65,6 +65,7 @@ Installing R packages using conda
 
 The easiest way to install and manage your own R environment(s) is conda.
 
+.. _install_miniconda_r:
 
 Installing Miniconda
 ~~~~~~~~~~~~~~~~~~~~
@@ -89,6 +90,7 @@ that you know what you are doing in either case. The line to add to your
 
    export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
 
+.. _create_r_conda_env:
 
 Creating an environment
 ~~~~~~~~~~~~~~~~~~~~~~~
