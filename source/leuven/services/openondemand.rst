@@ -36,8 +36,8 @@ This menu provides a file explorer that allows you to navigate files by clicking
 available here. General file explorer options like moving, deleting, modifying and creating files or directories are available as well. You can also use this interface
 to download and upload files to and from your local machine. Be aware that this is not recommended for very large files.
 
-**Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a quite 
-obvious save button on the editor page.
+**Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a 
+save button in the upper left corner on the editor page.
 
 Jobs
 ====
@@ -53,7 +53,7 @@ Active jobs
 -----------
 
 This lists all your running, queued and completed jobs. 
-Completed jobs will disappear from here after a couple of minutes. 
+Completed jobs will disappear from this view after a couple of minutes. 
 You have a handy overview of multiple job details by clicking the large arrow next 
 to the job id, including things like the node list, the account you used, and 
 the status of the job. 
