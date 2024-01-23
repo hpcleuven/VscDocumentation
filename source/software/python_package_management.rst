@@ -84,6 +84,7 @@ Intel MPI and optimized versions of packages such as scikit-learn and TensorFlow
 You will find `installation instructions <https://software.intel.com/content/www/us/en/develop/articles/using-intel-distribution-for-python-with-anaconda.html>`_
 provided by Intel.
 
+.. _install_miniconda_python:
 
 Install Miniconda
 ~~~~~~~~~~~~~~~~~
@@ -113,6 +114,7 @@ that you know what you are doing in either case. The line to add to your
 
    export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
 
+.. _create_python_conda_env:
 
 Create an environment
 ~~~~~~~~~~~~~~~~~~~~~

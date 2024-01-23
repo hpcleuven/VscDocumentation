@@ -9,14 +9,12 @@ About
 
 Open OnDemand provides a user interface to HPC clusters from within a web browser. 
 This tool supports a range of different apps and features that not only allow the
-user to easily submit jobs from within the browser session, but also provide different 
+user to easily submit jobs from within the browser, but also provide different 
 coding GUIs, tools for plotting and more.
 Open OnDemand is available for the Tier-2 Genius and wICE clusters.
 
 You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. 
 You can log in using your KU Leuven or VSC credentials. 
-Access is only granted to VSC3 users at the moment.
-Once logged in, you'll notice you are connected with your VSC account. 
 
 Use
 ===
@@ -28,7 +26,7 @@ The KU Leuven Open OnDemand page provides a range of functions:
 - Opening a shell on one of the login nodes
 - Using interactive apps
 
-All of these functionalities can be used by accessing them through the tabs at the top of the page. In the following, we will describe the different parts in 
+All of these functionalities can be used by accessing them through the tabs at the top of the page. In the following, we will describe these in
 some more detail.
 
 Files
@@ -38,8 +36,8 @@ This menu provides a file explorer that allows you to navigate files by clicking
 available here. General file explorer options like moving, deleting, modifying and creating files or directories are available as well. You can also use this interface
 to download and upload files to and from your local machine. Be aware that this is not recommended for very large files.
 
-**Good to know:** the standard 'ctrl+s' sadly does not store your files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a quite 
-obvious save button on the editor page.
+**Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a 
+save button in the upper left corner on the editor page.
 
 Jobs
 ====
@@ -47,19 +45,19 @@ Jobs
 All jobs submitted from Open OnDemand can run on Genius and wICE. 
 This also means that all your jobs should be submitted as **Slurm** jobs.
 For more detail on how to run jobs on wICE, check out our 
-:ref:`quickstart guide <wice_t2_leuven>`.
+:ref:`quick start guide<wice_t2_leuven>`.
 
-The jobs tab has two menus: 'Active Jobs' and 'Job Composer':
+The jobs tab has two menus, 'Active Jobs' and 'Job Composer':
 
 Active jobs
 -----------
 
-This lists all of your running, queued and completed jobs. 
-Completed jobs will disappear after a couple of minutes. 
-You have a handy overview of some job details by clicking the large arrow next 
+This lists all your running, queued and completed jobs. 
+Completed jobs will disappear from this view after a couple of minutes. 
+You have a handy overview of multiple job details by clicking the large arrow next 
 to the job id, including things like the node list, the account you used, and 
 the status of the job. 
-It also gives you the option to open the folder of the job script in the file 
+It also gives you the option to open the job script directory in the file 
 manager, and thus inspect the created output and error files. 
 
 If your job is still running, you can also delete it by clicking the bin under 'Actions'. The 'Active jobs' menu does not allow re-submission of your job. How to
@@ -68,15 +66,15 @@ If your job is still running, you can also delete it by clicking the bin under '
 Job Composer
 ------------
 
-The Job Composer contains the tools that allow you to set everything up for launching your jobs. This goes from basic job script building, adding necessary files, 
+The Job Composer contains all the tools that allow you to launch your jobs. This goes from basic job script building, adding necessary files, 
 to building and using templates for easier job creation. Under the job composer tab you can find two other menus, namely 'Jobs' and 'Templates'. As templates are the 
-backbone of job creation in Open OnDemand, we will start by explaining this. The 'Jobs' menu is pretty much self-explanatory once understanding this.
+backbone of job creation in Open OnDemand, we will start by explaining these. The 'Jobs' menu is pretty much self-explanatory once understanding this.
 
 Templates
 ~~~~~~~~~
 
 To enter the Templates menu, you can click on 'Templates' at the top once you are in the 'Job Composer' menu. You can also access this menu by clicking the button 'New 
-Job'-'From Template'. Once in this menu, you should see a table with 3 System Templates. The resources that are requested in these scripts are the default settings. 
+Job'-'From Template'. Once in this menu, you should see a table with three System Templates. The resources that are requested in these scripts are the default settings. 
 The templates:
 
 - CPU job template: a template for jobs on the thin nodes (the default ``batch`` partition). This is also the default template (which you will get when clicking 'From Default Template' under the 'New Job' button in the 'Jobs' menu).
@@ -86,35 +84,34 @@ The templates:
 You can create your own templates from scratch or by copying one of the existing templates. 
 In both cases you will be redirected to a page where you can provide a
 name, the cluster and add some notes. 
-Once you save this, you will create a new folder in the templates folder 
-``$VSC_DATA/ondemand/data/sys/myjobs/templates/``. 
-This information will be saved in the ``manifest.yml`` file that is always present 
-in each of the template folders. 
-Which other files will be present in this folder depends on how you created your new template. 
-If you use the 'New Template' button, it will also contain the job 
-script of the default template, being the CPU job template. 
-If you use the 'Copy Template' button, the contents of the folder will depend on the 
-template you are copying from. 
-Use the system template that suit your needs the best when starting out. 
+To save this, you will need to provide a path to store it in. Ondemand will create a new subdirectory
+with the name of your template here.
+
+A ``manifest.yml`` file will always be present in a template directory, It contains all the info you provided in the set-up step.
+Which other files will be present in this directory depends on how you created your new template. 
+When using the 'New Template' button, and you don't provide a path, a copy of the default template will be created.
+You can also provide a path to an existing template or job directory. In that case that directory and its contents will be copied.
+This works for **any** directory on your system, so be sure to provide the correct path!
+
+The 'Copy Template' button basically does the same, but with this button, Ondemand will automatically fill in the path of the
+selected template in the template overview.
 Once you use this more often, you can also use your own templates to create new ones. 
 Any file that is present in that folder, will be copied to your new one as well.
 
-Once you've created the new template folder, you can start customizing it to your needs. You could of course immediately create a new job from it, adapt some
-extra options and launch it (which will be explained in the next chapter), but you can still further customize your template folder first. You can view the files in
-the folder using the Folder Explorer (click 'View Files' on top or 'Open Dir' at the bottom). As explained above, you can edit or remove any file, create new files,
-upload new files. 
-These files will be present in each job you create from this template, which means you fully adapt this to the standard set-up you use for your
-jobs.
+Once you've created the new template directory, you can start customizing it. You can view the content in
+the directory using the Folder Explorer (click 'View Files' on top or 'Open Dir' at the bottom). As explained above, you can edit or remove any file, create new files
+or upload new files. 
+These files will be present in each job you create from this template.
 
 Jobs
 ~~~~
 
 The functioning of creating jobs is a bit similar to how you create new templates. 
-Whatever method you choose, you will create a new folder for each job, this time
+Whatever method you choose, you will always create a new directory for each job, this time
 located at ``$VSC_DATA/ondemand/data/projects/default/``.
-The job folders will be numbered in the order you have created them. 
+The job directories will be numbered in the order you have created them. 
 **Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking.** 
-When removing a job, the folder will be deleted as well. 
+**When removing a job, the directory will be deleted as well.**
 
 To create a job, press the 'New Job' button and choose the option that best suits 
 your needs. 
@@ -135,7 +132,7 @@ Using the 'Job Options' button, you can add some more specifications to your job
 - Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
-- Job array: we do not recommend using this. If you would like to use job arrays, have a look `here <https://docs.vscentrum.be/en/latest/jobs/worker_or_atools.html>`__.
+- Job array: we do not recommend using this. If you would like to use job arrays, have a look at :ref:`the worker framework<worker or atools>`.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
@@ -169,7 +166,7 @@ is available in the next chapter.
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. If you request a GPU of the ``gpu`` partition you will get a full A100 GPU. For the ``interactive`` partition on wICE, every GPU is a virtual GPU slice of the available A100 GPUs. One GPU slice is the same as 1/7th of a A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>. Then you will be appointed the first available GPU types. In practice, both methods are the same for now. This might change if we would decide to add extra GPU types. **The interactive partition only allows you to request max 1 GPU (slice) though.**
+- Number of GPUs. Depending on the partition you have requested, you might get a different GPU. The acquired GPU will be the same as the type specified in the partition (e.g. a NVidia V100 for ``gpu_v100``). For wICE, you can also request a GPU from the ``interactive`` partition. One GPU here is a virtual GPU slice of the available A100 GPUs. One GPU slice is the same as 1/7th of an A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>.**The interactive partition only allows you to request max 1 GPU (slice) though.**
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
 - Pre-run scriptlet: this allows you to add bash commands to your job before launching the app. This can be used for example for loading extra modules that you need within the app. **Be aware that this feature is still somewhat experimental, and its functionality also depends on the app you are running (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
   
@@ -181,9 +178,9 @@ Choosing your resources
 =======================
 
 Choosing the correct resources for your interactive session is mostly the same as selecting them when launching regular batch jobs. For this reason we strongly
-recommend you to have a look at how to specify your resources both on `Genius <https://docs.vscentrum.be/en/latest/leuven/genius_quick_start.html#running-jobs-on-genius>`_ and `wICE <https://docs.vscentrum.be/en/latest/leuven/wice_quick_start.html#running-jobs-on-wice>`_.
+recommend you to have a look at how to specify your resources both on :ref:`Genius <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
 
-As mentioned above, in most cases we recommend using the ``interactive`` partition on wICE for your interactive apps. This partition is meant for lighter work, like
+As mentioned above, in most cases we recommend using the ``interactive`` partition on wICE for the interactive apps. This partition is meant for lighter work, like
 visualisations, testing and pre- and postprocessing. Using this partition is also free, mainly to encourage you to request these resources for such work, instead
 of using any of the other partitions. There are however some limitations on the amount of resources you can request here:
 
@@ -205,7 +202,7 @@ your presence to start your code.
 Interactive shell
 -----------------
 
-This app will launch a shell on (one of the) requested nodes, allowing you to use these compute resources from within a Linux terminal. This is different
+This app will launch a shell on (one of) the requested node(s), allowing you to use these compute resources from within a Linux terminal. This is different
 than the shell you get in the "Clusters" menu, which directs you towards one of the login nodes.
 
 Jupyter Lab
@@ -213,13 +210,13 @@ Jupyter Lab
 
 With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding. There are two kernels already available, being a Python and a
 R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
-to work with these. It is better to work with conda environments in this case. You can `install miniconda <https://docs.vscentrum.be/en/latest/software/python_package_management.html#install-miniconda>`_ if you have not installed it yet. When you do not have any conda 
-environments and their associated kernels, both the Python and R installation will default to the ``~/miniconda3/bin/...`` installation.
+to work with these. It is better to work with conda environments in this case. You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
+When you do not have any conda environments and their associated kernels, both the Python and R installation will default to the ``~/miniconda3/bin/...`` installation.
 
-To create any other kernels, first create a  `Python <https://docs.vscentrum.be/en/latest/software/python_package_management.html#create-an-environment>`_ or 
-`R <https://docs.vscentrum.be/en/latest/software/r_package_management.html#creating-an-environment>`_ conda environment. The second step consists out of effectively
+To create any other kernels, first create a  :ref:`Python <create_python_conda_env>` or 
+:ref:`R <create_r_conda_env>` conda environment. The second step consists out of effectively
 creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location. The following commands should be excecuted from a shell, 
-and only need to be done once for the set-up of each new kernel. This starts with first of all activating your conda 
+and only need to be done once for the set-up of each new kernel. This starts with activating your conda
 environment::
 
       source activate <env_name>
@@ -252,7 +249,7 @@ avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument
 
 **Remarks:**
 
-- Navigating between your different directories is possible using the file explorer. If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the three dots on the right (...) and enter your file location.
+- Navigating between your different directories is possible using the file explorer. If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the three dots on the right (...) and enter your path.
 - The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``. It is recommended to use the ``install.packages`` function instead.
 - RStudioServer will by default store the RStudio cache in ``$VSC_HOME/.local/share/rstudio``. This cache can get very large and cause you to  exceed the quota of your home directory. To avoid this, you can redirect this cache to your data directory by setting ``$XDG_DATA_HOME`` variables in your ``~/.bashrc``. 
 
@@ -274,11 +271,11 @@ code-server
 This is the browser version of Visual Studio Code. For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_. As a default,
 a Python and a Git module are already loaded, which means you can use both Python and git from a terminal window within code-server. How to open a terminal
 window is probably one of the first things you should know: click on the three horizontal lines in the upper left corner, select 'Terminal - New Terminal'. This will
-open a shell on the node you are running your session on. Notice that you are start in your ``$VSC_DATA`` folder. You can use this as a regular shell, meaning that you
+open a shell on the node you are running your session on. Notice that you are starting in your ``$VSC_DATA`` directory. You can use this as a regular shell, meaning that you
 can submit jobs, load modules and so on. 
 
 Code-server contains many different options and menus, but only a few will be discussed here. Feel free to explore them. We will however discuss how to set up 
-code-server to use, any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of 
+code-server to use any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of 
 the specific interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the 
 steps for both Python and R are described. 
 
@@ -294,7 +291,7 @@ to 'Python'. If you click that, a window will appear where you can select your P
 versions (/bin/python). You can also load other modules, or you can also use conda environments here (if you have any conda environments already, you should see
 them here as well).
 
-If you need more information about creating your customized Python environments, have a look `here <https://docs.vscentrum.be/en/latest/software/python_package_management.html>`__.
+If you need more information about creating your customized Python environments, have a look :ref:`here <Python packages>`.
 
 **Remarks:**
 
@@ -310,7 +307,9 @@ functionalities, like plotting.
 There are some package requirements if you want to use R in code-server. The following command creates a functional environment (of course, add any other
 packages you need):
 
-`conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite`
+        .. code-block:: bash
+
+         conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite
 
 Once you've created your environment, go ahead and start a code-server session on Open Ondemand. On the lefthand side, go to the extension menu and search
 for 'R'. You should install the 'R' extension of 'REditorSupport'.
@@ -323,15 +322,5 @@ Now there are two ways to use the R installation inside your conda environment:
 **Remarks:**
 
 - Running lines of code is 'ctrl+enter' for R.
-
-cryo-sparc
-----------
-
-**Work in progress**
-
-ParaViewWeb
------------
-
-**Work in progress**
 
 .. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/ 

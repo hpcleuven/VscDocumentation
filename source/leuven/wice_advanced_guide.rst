@@ -164,7 +164,7 @@ start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
 
 Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
 requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript, as
-shown in the :ref:`wICE quickstart guide <running jobs on wice>`.
+shown in the :ref:`wICE quick start guide <running jobs on wice>`.
 
 .. _gpu_compute_mode:
 
