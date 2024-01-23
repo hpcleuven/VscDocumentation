@@ -47,23 +47,17 @@ $ python -m pip install -r requirements.txt
 
 #### Conda
 
-A conda environment has be defined to install all the required software
+The required Python modules can also be installed in a Conda environment:
+
+```bash
+$ conda create -n vscdocs python=3.11
+$ source activate vscdocs
+$ pip install -r requirements.txt
+```
 
 Downloads and installation instructions for Miniconda can be found on [conda's
 website](https://docs.conda.io/en/latest/miniconda.html).
 
-The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The
-environment can be created using
-
-```bash
-$ conda env create -f environment.yml
-```
-
-The `sphinx` environment can be activated by
-
-```bash
-$ source activate sphinx
-```
 
 ### Creating a feature branch
 
