@@ -38,18 +38,14 @@ Via the GUI (NoMachine)
 -----------------------
 
 #. Open a NoMachine connection (see the :ref:`NX start guide<NX start guide>`)
-#. Click on ``Places`` -> ``Connect to Server``
-#. Fill in the fields as follows:
-
-   - Server: ``shares.kuleuven.be``
-   - Type: ``Windows share``
-   - Share: ``drivename``
-   - Folder: ``/``
-   - Domain Name: ``luna``
-   - User Name: ``unumber``
-   - Password: password for ``unumber``
-
-#. A file manager window appears, showing the contents of the mounted folder.
+#. Click on e.g. ``Places`` -> ``Home Folder`` to open the default file
+   manager (Thunar).
+#. Replace the ``/user/...`` location with
+   ``smb://unumber@shares.kuleuven.be/drivename``
+   (substituting ``unumber`` and ``drivename`` as explained above).
+#. When asked for the password for your account, also change the
+   domain name from ``SAMBA`` to ``luna``.
+#. The file manager will now show the contents of the drive.
    Mounted drives will remain visible in the file manager's Network section
    in the panel on the left.
 #. To unmount the drive afterwards, right-click on the drive name in the
