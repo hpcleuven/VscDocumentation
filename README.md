@@ -30,13 +30,17 @@ $ git clone git@github.com:hpcleuven/VscDocumentation.git
 ```
 
 Your life will be substantially easier if you can preview your changes locally.
-Install the required packages in a self-contained environment such a Python
-virtual environment (*venv*) or Conda.
+For this you'll need to install the required packages in a self-contained
+environment such as a Python virtual environment (*venv*) or Conda.
+The packages are listed in the `requirements.txt` file in this repo.
+
+Such environments should preferably use the same Python version as the one
+specified in the `.readthedocs.yaml` file. Note that older Python versions
+(<= v3.7 at the time of writing) may not be able to install the requirements.
 
 #### Python venv
 
-All required Python modules can be easily installed in a Python virtual
-environment using the `requirements.txt` file in this repo
+This is an example setup for a Python virtual environment:
 
 ```bash
 $ python -m venv /path/to/new/venv
@@ -47,23 +51,17 @@ $ python -m pip install -r requirements.txt
 
 #### Conda
 
-A conda environment has be defined to install all the required software
+This is an example setup for a Conda environment:
+
+```bash
+$ conda create -n vscdocs python=3.11
+$ source activate vscdocs
+$ pip install -r requirements.txt
+```
 
 Downloads and installation instructions for Miniconda can be found on [conda's
 website](https://docs.conda.io/en/latest/miniconda.html).
 
-The YAML environment description file is [``sphinx.yml``](sphinx.yml).  The
-environment can be created using
-
-```bash
-$ conda env create -f environment.yml
-```
-
-The `sphinx` environment can be activated by
-
-```bash
-$ source activate sphinx
-```
 
 ### Creating a feature branch
 
