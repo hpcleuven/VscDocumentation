@@ -33,8 +33,8 @@ more information on the following pages:
 - :ref:`Genius hardware <Genius hardware>`
 - :ref:`Slurm jobs (basics) <running jobs>`
 - :ref:`Slurm jobs (advanced) <job advanced>`
-- :ref:`Obtaining compute credits <KU Leuven credits>`
-- :ref:`Slurm credit accounting <accounting_leuven>`
+- :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
+
 
 .. _submit_genius_batch:
 

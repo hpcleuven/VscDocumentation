@@ -9,3 +9,4 @@ KU Leuven/UHasselt Tier-2 Infrastructure
    tier2_wice
    tier2_superdome
    tier2_storage
+   slurm_specifics
