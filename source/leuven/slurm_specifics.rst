@@ -21,6 +21,22 @@ For more information, please consult the following pages:
    ./slurm_accounting
 
 
+.. _leuven_job_shell:
+
+Job shell
+---------
+For batch jobs we strongly recommend to use ``#!/bin/bash -l`` as the shebang
+at the top of your jobscript. The ``-l`` option is needed to make sure that
+your ``~/.bashrc`` settings get applied and the appropriate :ref:`cluster
+module <cluster_module>` gets loaded at the start of the job.
+This is not strictly needed for interactive jobs: ``srun ... --pty bash``
+and ``srun ... --pty bash -l`` will give essentially identical environments.
+
+Note that we still discourage loading modules in your ``~/.bashrc`` file and
+recommend to do that in your jobscripts instead (see also the
+:ref:`Compiling software for wICE<wice_compilation>` paragraph for example).
+
+
 .. _leuven_job_monitoring:
 
 Monitoring jobs
@@ -59,18 +75,15 @@ Environment propagation
 
 Slurm jobs start in a clean environment which corresponds to your login
 environment, i.e. with only those additional variables that you defined in your
-``~/.bashrc`` file. Environment variables that happen to be set in the session
-from which you submit the job are no longer propagated to the job.
+``~/.bashrc`` file (see also the `Job shell <job_shell>` paragraph above).
+Environment variables that happen to be set in the session
+from which you submit the job are not propagated to the job.
 
 If needed you can modify this default behaviour with the
 `--export option <https://slurm.schedmd.com/sbatch.html#OPT_export>`__.
 When doing so, keep in mind that you will need to include the default minimal
 environment as well. To e.g. pass an additional environment variable ``FOO``
 with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
-
-Note that we still discourage loading modules in your ``~/.bashrc`` file and
-recommend to do that in your jobscripts instead (see also the
-:ref:`Compiling software for wICE<wice_compilation>` paragraph).
 
 
 .. _gpu_compute_mode:

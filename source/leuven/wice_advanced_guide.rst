@@ -112,5 +112,5 @@ start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
    esac
 
 Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
-requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript, as
-shown in the :ref:`wICE quick start guide <running jobs on wice>`.
+requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript,
+as emphasized in the :ref:`Site-specific Slurm info page <leuven_job_shell>`.
