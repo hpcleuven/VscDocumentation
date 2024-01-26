@@ -37,6 +37,20 @@ recommend to do that in your jobscripts instead (see also the
 :ref:`Compiling software for wICE<wice_compilation>` paragraph for example).
 
 
+.. _leuven_cluster_choice:
+
+Cluster choice
+--------------
+Many Slurm commands (like `sbatch`, `srun`, `scontrol`, `squeue`, `scancel`,
+...) accept a ``-M/--clusters`` option which selects one or more clusters.
+The default value depends on where the command is executed (Genius for the
+Genius compute nodes and login nodes; wICE for the wICE compute nodes).
+This means that if you are connected to a (Genius) login node, you will need
+to add ``-M wice`` in order to select wICE instead of Genius. In order to
+avoid potential mistakes we have made the ``-M/--clusters`` option mandatory
+when submitting jobs.
+
+
 .. _leuven_job_monitoring:
 
 Monitoring jobs
@@ -53,10 +67,8 @@ For monitoring or debugging jobs, you can look into the following Slurm tools:
 
 .. note::
 
-    Our Slurm scheduler is aware of multiple clusters and ``wice`` is not the
-    default one. As a consequence, any Slurm command (such as `scontrol`,
-    `squeue`, `sacct`) needs to be executed with the option ``--clusters=wice``
-    (or ``-M wice`` in short) in order to get information for the wICE cluster.
+    Don't forget the `-M/--clusters`` option for these commands,
+    as mentioned in the `Cluster choice <leuven_cluster_choice>` paragraph.
 
 For convenience, we provide the ``slurm_jobinfo`` tool, which runs and parses
 output from the Slurm tools mentioned above into a format that is easier to
