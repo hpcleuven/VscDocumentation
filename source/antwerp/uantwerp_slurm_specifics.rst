@@ -26,3 +26,14 @@ When requesting memory, keep in mind that no swap space is available in
 case your application runs out of memory. Swapping is disabled because the nodes
 don't have drives suitable for the load caused by swapping and because swapping
 is extremely detrimental to performance.
+
+
+.. _uantwerp_requesting_nodes:
+
+Requesting nodes
+----------------
+On UAntwerp clusters we ask to only use the ``-N/--nodes`` option to request
+(and use) full nodes. This is because in the current Slurm configuration
+the empty cores cannot be used by other jobs. We furthermore ask to abstain
+from the ``--nodes=<minimum number>-<maximum number>`` option without
+consulting us first and discussing why it would make sense for your job.

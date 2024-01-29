@@ -18,7 +18,7 @@ those options should always be used in combination with other options.
 In combination with ``--ntasks`` and ``--cpus-per-task``
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-In addition to specifying the number of tasks and CPUs per task for a job, it is also
+In addition to specifying the number of tasks and cores per task for a job, it is also
 possible to specify the number of nodes that should be used. This is very useful on clusters
 that may spread out your tasks over more nodes than the minimum needed, which can happen
 if you would run your job on clusters (or partitions) that allow multiple users per node
@@ -34,20 +34,17 @@ is the exact number of nodes that will be allocated.
 
 It is also possible to specify both a minimum and a maximum number of nodes
 using either ``--nodes=<minimum number>-<maximum number>`` or
-``-N <minimum number>-<maximum number>``. However, we ask you not to use this option
-without consulting us first and discussing why it would make sense for your job.
+``-N <minimum number>-<maximum number>``.
 
 Note that you should be very careful when specifying the number of nodes:
 
 * Requesting more nodes than really needed is very asocial behaviour as it will decrease
   the efficiency of cluster use and lengthen the waiting time for other users.
 * If you request less nodes than is required to accommodate the tasks (if also specifying
-  the number of tasks and of CPUs per task), your job will be refused by the system.
+  the number of tasks and of cores per task), your job will be refused by the system.
 * If you only request nodes and forget to further specify the number of tasks and
-  CPUs per task, you will get the default of 1 CPU per node.
+  cores per task, you will get the default of 1 core per node.
 
-**Never use this option on the clusters at UAntwerp except to request (and use) full
-nodes as in the current Slurm configuration the empty cores cannot be used by other jobs.**
 
 In combination with ``--ntasks-per-node`` and ``--cpus-per-task``
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -63,26 +60,24 @@ In this scenario, a user specifies:
   line or in the input file to specify the node configuration.
 * The number of tasks per node using ``--ntasks-per-node=<number of tasks per node>``.
   The default is one task per node.
-* The number of CPUs per task using ``--cpus-per-task=<CPUs per task>`` or
-  ``-c <CPUs per task>``. Failing to specify this value results in
-  getting one CPU per task.
+* The number of cores per task using ``--cpus-per-task=<cores per task>`` or
+  ``-c <cores per task>``. Failing to specify this value results in
+  getting one core per task.
 
 In this case also one should be very careful when specifying the parameters:
 
 * Not filling up the nodes optimally is very asocial behaviour as it will decrease
   the efficiency of the cluster use and lengthen the waiting time for others.
-* Requesting a number of tasks per node in combination with a number of CPUs per task
+* Requesting a number of tasks per node in combination with a number of cores per task
   that cannot be accommodated on the cluster, will lead to the job being refused by
   Slurm.
 
-**This option should only be used on the UAntwerp cluster if you can fill nodes completely
-or have a very good reason to leave some cores empty.**
 
 Minimizing distance on the network for faster communications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The nodes in a cluster are connected with each other through a number of switches that
-form a hierarchical network tree (also called a topology). On the UAntwerp clusters,
+form a hierarchical network tree (also called a topology). On typical VSC clusters,
 the topology is a variant of the tree. All nodes are connected to an edge switch and
 hence split up naturally in groups corresponding to the edge switch they are connected
 with. These edge switches are then connected through a number of top level switches
@@ -95,7 +90,7 @@ a higher latency. Slurm tries to minimize network contention by identifying the 
 level switch in the hierarchy that can satisfy a job's request and then allocates the
 requested resources, based on a best-fit algorithm and the currently available resources.
 This may result in an allocation with more than the optimum number of switches when the
-cluster is under a heavy load (as is usually the case on the UAntwerp clusters).
+cluster is under a heavy load.
 
 A user can request a maximum number of switches for a job using the ``--switches=<count>``
 option. Usually, one would specify ``--switches=1`` here to make sure the job runs on
@@ -163,8 +158,8 @@ The command
     sinfo -N -l
 
 will return a more node-oriented output. You'll see node groups, the partition they
-belong to, and the amount of CPUs, memory (in MB), and temporary disk space available
-on that node group. On Vaughan the output is rather boring as all nodes are identical.
+belong to, and the amount of cores, memory (in MB), and temporary disk space available
+on that node group.
 
 By specifying additional command line arguments it is possible to further customize the
 output format. See the `sinfo manual page <https://slurm.schedmd.com/sinfo.html>`_.
@@ -208,8 +203,10 @@ program ``omp_hello`` on the allocated resources:
 
 .. code:: bash
 
+   login$ # Build the environment (UAntwerp example)
    login$ module --force purge
    login$ module load calcua/2020a vsc-tutorial
+   login$ # Launch the program
    login$ srun omp_hello
    login$ exit
 
@@ -230,13 +227,15 @@ and then run the program with
 
 .. code:: bash
 
+   login$ # Build the environment (UAntwerp example)
    login$ module --force purge
    login$ module load calcua/2020a vsc-tutorial
+   login$ # Launch the program
    login$ srun mpi_omp_hello
    login$ exit
 
 Note that since we are using all allocated resources, we don't need to specify the number of tasks
-or virtual CPUs to ``srun``. It will take care of of properly distributing the job according to the
+or cores to ``srun``. It will take care of of properly distributing the job according to the
 options specified when calling ``salloc``.
 
 
