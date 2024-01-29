@@ -6,7 +6,7 @@ Example job types
 Shared memory job
 -----------------
 
-A shared memory program consists of a single task. The number of CPUs you would
+A shared memory program consists of a single task. The number of cores you would
 request for the task corresponds to the number of computational threads
 you want to use for the application. Keep in mind that a single task cannot
 span multiple nodes in the cluster.
@@ -21,9 +21,9 @@ will read the number of threads from the input file and then set it using OpenMP
 But most OpenMP programs simply use the environment variable ``OMP_NUM_THREADS`` to
 determine the number of threads that should be used.
 
-The following job script is an
-example of this. It assumes there is a program ``omp`` in the current directory
-compiled with the intel/2020a toolchain. It will be run on 10 cores.
+The following job script provides an example. It assumes there is a program
+``omp_hello`` in the current directory compiled with the intel/2020a toolchain.
+It will be run on 10 cores.
 
 .. code:: bash
 
@@ -33,7 +33,7 @@ compiled with the intel/2020a toolchain. It will be run on 10 cores.
    #SBATCH --ntasks=1 --cpus-per-task=10 --mem=2g
    #SBATCH --time=05:00
 
-   # Build the environment
+   # Build the environment (UAntwerp example)
    module --force purge
    module load calcua/2020a
    module load vsc-tutorial
@@ -44,10 +44,10 @@ compiled with the intel/2020a toolchain. It will be run on 10 cores.
    # Run the program
    omp_hello
 
-In this example, ``omp_hello`` is a demo program contained in the ``vsc-tutorial``
-module that will simply print a message from each thread. the ``vsc-tutorial``
-module also loads the ``intel/2020a`` module as that compiler was used to compile
-the programs in the module.
+In this example, ``omp_hello`` is a demo program contained in the (UAntwerp)
+``vsc-tutorial`` module that will simply print a message from each thread. The
+``vsc-tutorial`` module also loads the ``intel/2020a`` module as that compiler
+was used to compile the programs in the module.
 
 When using Intel OpenMP, not setting the variable ``OMP_NUM_THREADS``
 works fine in most or even all cases as the runtime seems to recognize Slurm and pick up
@@ -82,8 +82,8 @@ on our cluster), it is also possible to use the
 Slurm ``srun`` command to start the MPI processes. This is the case
 for programs compiled with Intel MPI as the example below shows. The
 example assumes there is a MPI program called ``mpi_hello`` provided by the
-``vsc-tutorial`` module. The ``vsc-tutorial`` module will also load the
-``intel/2020a`` module for the libraries used by the compiler and the
+(UAntwerp) ``vsc-tutorial`` module. The ``vsc-tutorial`` module will also load
+the ``intel/2020a`` module for the libraries used by the compiler and the
 MPI library.
 
 .. code:: bash
@@ -94,7 +94,7 @@ MPI library.
    #SBATCH --ntasks=56 --cpus-per-task=1 --mem-per-cpu=512m
    #SBATCH --time=5:00
 
-   # Build the environment
+   # Build the environment (UAntwerp example)
    module --force purge
    module load calcua/2020a
    module load vsc-tutorial
@@ -145,6 +145,7 @@ per node.
    #SBATCH --time=5:00
    #SBATCH --job-name=hybrid-hello-test
 
+   # Build the environment (UAntwerp example)
    module --force purge
    module load calcua/supported
    module load vsc-tutorial
@@ -201,9 +202,7 @@ submitted using
 
 Within the VSC, the package ``atools`` was developed to ease management of job arrays
 and to start programs using parameter values stored in a CSV file that can be generated
-easily using a spreadsheet program. On the UAntwerp clusters, the most recent version of
-the package is available as the module ``atools/slurm``.
-For information on how to use atools, we refer to the
+easily using a spreadsheet program. For information on how to use atools, we refer to the
 `atools documentation on ReadTheDocs <https://atools.readthedocs.io/en/latest/>`_ and
 `course material from a course at KU Leuven <https://gjbex.github.io/worker-and-atools/>`_.
 Note however that the Worker package which is also mentioned in that course does not work
@@ -306,8 +305,10 @@ denoting the command prompt of the compute node):
 
 .. code:: bash
 
+   r0c00cn0$ # Build the environment (UAntwerp example)
    r0c00cn0$ module --force purge
    r0c00cn0$ module load calcua/2020a vsc-tutorial
+   r0c00cn0$ # Start the application
    r0c00cn0$ srun mpi_hello
    r0c00cn0$ exit
 

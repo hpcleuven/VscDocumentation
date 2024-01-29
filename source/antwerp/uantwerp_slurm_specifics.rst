@@ -37,3 +37,11 @@ On UAntwerp clusters we ask to only use the ``-N/--nodes`` option to request
 the empty cores cannot be used by other jobs. We furthermore ask to abstain
 from the ``--nodes=<minimum number>-<maximum number>`` option without
 consulting us first and discussing why it would make sense for your job.
+
+
+.. _uantwerp_atools_slurm:
+
+Atools module
+-------------
+On UAntwerp clusters the most recent version of the `atools` package is
+available as the module ``atools/slurm``.
