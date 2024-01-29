@@ -39,9 +39,8 @@ to the job script when it executes.
 Requesting compute resources
 ----------------------------
 
-Slurm supports several ways to request CPU cores and/or GPUs for a job.
-
-The easiest way to request CPU cores is by following the "task"-idea
+Slurm supports several ways to request cores and/or GPUs for a job.
+The easiest way to request cores is by following the "task"-idea
 of Slurm and specifying the number of parallel tasks and cores per task
 that you need. By specifying resources this way, it is very easy afterwards
 to start OpenMP, MPI and hybrid MPI/OpenMP programs in the right configuration.
@@ -51,14 +50,17 @@ to start OpenMP, MPI and hybrid MPI/OpenMP programs in the right configuration.
   be replaced by a space, and in the short form (``-n``) the space between
   the flag and the value form can also be omitted (in effect, this holds
   for all options).
-* The number of CPUs (hardware threads) per task is specified by
-  ``--cpus-per-task=<value>`` or ``-c <value>``.  On the UAntwerp clusters,
-  CPUs are physical cores (since hyperthreading is disabled). For each task,
-  all of the CPUs for that task are allocated on a single node. When using
-  multiple nodes, the allocated CPUs for all tasks are distributed equally
-  over all the nodes (except possibly for the last node).
+* The number of cores per task is specified by ``--cpus-per-task=<value>`` or
+  ``-c <value>``. The cores assigned to a task will all reside on the same node.
 
-Make sure to request a valid combination of tasks and/or CPUs per task.
+.. note::
+
+   Slurm uses the term 'CPUs' to refer to processing units which correspond
+   to what we usually refer to as 'cores'. If hyperthreading would be enabled
+   (which is usually not the case on VSC clusters), then these units would
+   correspond to hardware threads.
+
+Make sure to request a valid combination of tasks and/or cores per task.
 Otherwise, your job can be rejected or it could end up in the partition
 queue but it will never start (in that case, check the reason code, as
 explained later in this document in the section on checking the queue).
@@ -67,7 +69,7 @@ If set, the Slurm controller will set the corresponding variables,
 respectively ``SLURM_NTASKS`` and ``SLURM_CPUS_PER_TASK`` in the
 environment of the running job.
 
-If not set, the default values of 1 task and 1 CPU are used.
+If not set, the default values of 1 task and 1 core per task are applied.
 
 .. _gpus:
 
@@ -76,31 +78,25 @@ If not set, the default values of 1 task and 1 CPU are used.
 Requesting memory
 -----------------
 
-Slurm jobs can also request an amount of RAM space (resident memory).
-In case of the UAntwerp clusters, swapping for jobs is
-disabled since the nodes don't have drives suitable for the load caused by
-swapping and since swapping is extremely detrimental to the performance of
-the cluster. Therefore, swap space cannot be requested.
+Jobs can also request an amount of RAM space (resident memory). This is
+commonly done by specifying an amount of memory per core with
+``--mem-per-cpu=<amount><unit>`` (e.g., ``--mem-per-cpu=1g``). The amount is
+an integer, ``<unit>`` can be either ``k`` for kilobytes, ``m`` for megabyte
+or ``g`` for gigabyte. Note that it is not possible in Slurm to specify
+an amount of memory per task (only per core, per node or per gpu).
 
-Slurm has various ways to request memory. Unfortunately, there is currently no
-way to request memory per task. The preferred method for requesting memory in
-Slurm on the UAntwerp clusters is to specify the amount of memory per CPU
-(per core on the UAntwerp clusters):
-``--mem-per-cpu=<amount><unit>`` (e.g., ``--mem-per-cpu=1g``). The amount is an
-integer, ``<unit>`` can be either ``k`` for kilobytes, ``m`` for megabyte or
-``g`` for gigabyte.
+A job will be rejected if the final amount of memory requested cannot be
+satisfied. This can happen if ``--mem-per-cpu`` times the number of cores per
+node is greater than the total memory on that node that is available for job
+allocations. Note that this total amount of allocatable memory is usually
+slightly less than the node's total physical memory to leave sufficient RAM
+for the OS and for file system buffers.
 
-The job will be rejected if the final amount of memory requested cannot be satisfied.
-This could happen if ``--mem-per-cpu`` times the number of CPUs on a node is greater
-than the memory on that node that is available for job allocations. Note that on the
-UAntwerp clusters, the memory available for job allocations is somewhat less than the
-total memory installed on a node (to keep some amount of memory for the OS and file
-system buffers).
+If ``--mem-per-cpu`` is not set, a default value will be used, which is
+usually equal to the total memory available for job allocations of that node
+divided by the number of cores.
 
-If not set, a default value will be used, equal to the total memory available for job
-allocations of that node divided by the number of CPUs.
-
-The amount of available memory per CPU is available via the variable
+The amount of available memory per core is available via the variable
 ``SLURM_MEM_PER_CPU`` as an integer with megabytes as unit in the
 environment of the running job.
 
@@ -226,7 +222,7 @@ be loaded in your job environment. This poses a number of risks:
   work on the cluster, but that implies that some nodes will be running one version while
   other nodes will be running another version of the OS setup.
 
-To alleviate these issues,  we set a minimal environment for jobs by default. This means that, along
+To alleviate these issues, we set a minimal environment for jobs by default. This means that, along
 with the SLURM_* variables, only the HOME, USER and TERM environment variables are exported to the job.
 The PATH environment variable is set to a minimum in the job environment. This implies that the desired
 software modules must be loaded in your job scripts for use during the execution of the job.
@@ -240,8 +236,8 @@ we advise you to apply one of the following solutions to avoid accidental mistak
 
   ``module --force purge``
 
-  and then reloading the right ``calcua`` software stack module and application modules. This should
-  be a common practice in all your job scripts.
+  and then reloading the right software stack and application modules in the job.
+  This should be a common practice in all your job scripts.
 * Use one of the options ``--get-user-env`` or ``--export=NONE`` (either with the ``sbatch``
   command or, preferably, as a ``#SBATCH`` line in the job script).
 
