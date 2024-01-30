@@ -120,9 +120,15 @@ First of all, verify that your agent is running. You can do this by executing::
 
 If the agent is not running, you will get a
 ``Could not open a connection to your authentication agent.`` message. In this
-case you can start the agent with::
+case you can start an instance of the agent with::
 
     eval $(ssh-agent)
+
+.. note::
+   If you start your agent in this way, it is only accessible within the context of your 
+   current shell. If you want to connect with NoMachine NX, you should also start your 
+   NoMachine client from within this shell. Otherwise it will not be able to access the MFA
+   certificate stored in your agent.
 
 (to kill the agent use ``eval "$(ssh-agent -k)"``)
 
