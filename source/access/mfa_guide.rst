@@ -167,9 +167,7 @@ certificate will automatically be stored for as long as your agent lives.
 
 If you want to use apps that use ``ssh`` in the background (NX, FileZilla), you 
 should also first inject an mfa certificate in your agent before trying to connect.
-This can be done via a direct ssh to the firewall page with agentforwarding enabled. 
-
-.. note::
+This can be done via a direct ssh to the firewall page with agentforwarding enabled::
 
     ssh -A vsc12345@firewall.vscentrum.be
 
