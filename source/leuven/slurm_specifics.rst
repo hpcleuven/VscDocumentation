@@ -98,6 +98,31 @@ environment as well. To e.g. pass an additional environment variable ``FOO``
 with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
 
 
+.. _leuven_slurm_mpi:
+
+MPI applications
+----------------
+
+MPI launchers
+^^^^^^^^^^^^^
+We recommend to start MPI applications using the launcher that comes with
+the MPI implementation (typically called ``mpirun``). The present Slurm
+installation has not been configured with PMI support, which may cause
+applications to hang when launched via ``srun``. The main use for ``srun``
+on our clusters is to request an interactive job.
+
+Intel MPI pinning
+^^^^^^^^^^^^^^^^^
+The Intel MPI library does not always play well with the Slurm scheduler.
+Specifically, when launching a job from a compute node (for instance from
+inside an interactive job), processes are not pinned correctly. This issue can
+be overcome by setting the environment variable ``I_MPI_PIN_RESPECT_CPUSET=off``
+or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
+``mpirun`` command. To check that processes are pinned correctly to physical
+cores, set the environment variable ``I_MPI_DEBUG=5`` to get more verbose
+output. Note that this issue does not occur with the Open MPI library.
+
+
 .. _gpu_compute_mode:
 
 Setting the GPU compute mode
@@ -145,20 +170,3 @@ A few notes on this features:
   (MIG) is used. This is for instance the case on the wICE Slurm partition
   called ``interactive``. For jobs on that partition this feature is
   irrelevant.
-
-
-.. _known_issues:
-
-Known issues
-------------
-
-Intel MPI pinning
-^^^^^^^^^^^^^^^^^
-The Intel MPI library does not always play well with the Slurm scheduler.
-Specifically, when launching a job from a compute node (for instance from
-inside an interactive job), processes are not pinned correctly. This issue can
-be overcome by setting the environment variable ``I_MPI_PIN_RESPECT_CPUSET=off``
-or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
-``mpirun`` command. To check that processes are pinned correctly to physical
-cores, set the environment variable ``I_MPI_DEBUG=5`` to get more verbose
-output. Note that this issue does not occur with the Open MPI library.
