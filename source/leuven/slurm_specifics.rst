@@ -67,8 +67,8 @@ For monitoring or debugging jobs, you can look into the following Slurm tools:
 
 .. note::
 
-    Don't forget the `-M/--clusters`` option for these commands,
-    as mentioned in the `Cluster choice <leuven_cluster_choice>` paragraph.
+    Don't forget the ``-M/--clusters`` option for these commands, as mentioned
+    in the :ref:`Cluster choice <leuven_cluster_choice>` paragraph.
 
 For convenience, we provide the ``slurm_jobinfo`` tool, which runs and parses
 output from the Slurm tools mentioned above into a format that is easier to
@@ -87,8 +87,8 @@ Environment propagation
 
 Slurm jobs start in a clean environment which corresponds to your login
 environment, i.e. with only those additional variables that you defined in your
-``~/.bashrc`` file (see also the `Job shell <job_shell>` paragraph above).
-Environment variables that happen to be set in the session
+``~/.bashrc`` file (see also the :ref:`Job shell <leuven_job_shell>` paragraph
+above). Environment variables that happen to be set in the session
 from which you submit the job are not propagated to the job.
 
 If needed you can modify this default behaviour with the
