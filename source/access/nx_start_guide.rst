@@ -19,7 +19,7 @@ NX session.
 You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional information.
 
 
-1. Start the NoMachine client and press **Continue** till you see the screen
+1. Start the NoMachine client and press **Continue** until you see the screen
    listing your connections, titled **Machines**.
 
 #. Press **Add** to create a new connection
@@ -43,7 +43,7 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
 
 #. If this is your first login via NX, you will need to enter your VSC username
 
-#. Your private key will be automatically fetched from your SSH agent
+#. Your private key or MFA certificate will be automatically fetched from your SSH agent
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
    Otherwise please refer to the :ref:`section on how to reconnect to an NX session
