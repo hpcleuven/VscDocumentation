@@ -5,7 +5,7 @@ Site-specific Slurm info
 
 While the :ref:`Running jobs in Slurm <running jobs>` pages provide generic
 information regarding Slurm, there are additional points to consider when
-when using Slurm on Tier-2 clusters hosted at KU Leuven.
+using Slurm on Tier-2 clusters hosted at KU Leuven.
 
 
 Compute credits
@@ -161,7 +161,7 @@ An interactive job can be launched as follows:
         --clusters=wice --time=01:00:00 --partition=gpu --gpu_cmode=shared \
         --pty /bin/bash -l
 
-A few notes on this features:
+A few notes on this feature:
 
 * To check the behaviour is as expected, execute ``nvidia-smi`` in your job.
 * Runs with GPUs on multiple nodes are not supported. Contact the helpdesk if
