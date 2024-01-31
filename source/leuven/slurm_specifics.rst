@@ -26,9 +26,9 @@ For more information, please consult the following pages:
 Job shell
 ---------
 For batch jobs we strongly recommend to use ``#!/bin/bash -l`` as the shebang
-at the top of your jobscript. The ``-l`` option is needed to make sure that
-your ``~/.bashrc`` settings get applied and the appropriate :ref:`cluster
-module <cluster_module>` gets loaded at the start of the job.
+at the top of your jobscript. The ``-l`` option (hyphen lowercase L) is needed
+to make sure that your ``~/.bashrc`` settings get applied and the appropriate
+:ref:`cluster module <cluster_module>` gets loaded at the start of the job.
 This is not strictly needed for interactive jobs: ``srun ... --pty bash``
 and ``srun ... --pty bash -l`` will give essentially identical environments.
 
