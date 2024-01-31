@@ -46,9 +46,12 @@ Many Slurm commands (like `sbatch`, `srun`, `scontrol`, `squeue`, `scancel`,
 The default value depends on where the command is executed (Genius for the
 Genius compute nodes and login nodes; wICE for the wICE compute nodes).
 This means that if you are connected to a (Genius) login node, you will need
-to add ``-M wice`` in order to select wICE instead of Genius. In order to
-avoid potential mistakes we have made the ``-M/--clusters`` option mandatory
-when submitting jobs.
+to add ``-M wice`` in order to select wICE instead of Genius. Also note that
+some of these commands (such as `squeue` and `sacct`) accept ``-M all`` which
+selects all available clusters.
+
+In order to avoid potential mistakes we have made the ``-M/--clusters`` option
+mandatory when submitting jobs.
 
 
 .. _leuven_job_monitoring:
