@@ -17,40 +17,9 @@ to compile on any cluster (such as wICE) is to launch an interactive job (with t
 ``srun`` command).
 
 Many dependencies you might need are centrally installed. The modules that are
-optimized for wICE are available in ``/apps/leuven/icelake/2021a/modules/all``.
-This directory has to be in the ``$MODULEPATH`` environment variable in order
-to make those modules available. Normally this should happen automatically, but
-in case of problems it is a good idea to check this. If for some reason it is
-missing, it can be added by executing:
-
-.. code-block:: shell
-
-    $ module use /apps/leuven/icelake/2021a/modules/all
-
-Note that in the future, newer versions of software will be compiled using
-different toolchain versions. In order to use modules from different toolchain
-versions, you can use:
-
-.. code-block:: shell
-
-    $ module use /apps/leuven/icelake/<toolchain-version>/modules/all
-
-where valid choices for ``<toolchain-version`` look like ``2021a``, ``2022b``,
-etc. Older versions of the toolchains will however not be provided because they
-are not compatible with the new cluster. Please contact
-:ref:`support <user support VSC>` if you run into problems arising from using
-newer libraries than the ones provided on Genius.
-
-.. note::
-
-   If you are trying to write scripts that work on several VSC clusters, it can
-   be handy to make use of environment variables like ``$VSC_ARCH_LOCAL``,
-   which is set to the local architecture. As an example, the statement
-   ``module use /apps/leuven/${VSC_ARCH_LOCAL}/2021a/modules/all`` will enable
-   using skylake modules when you are on a Genius SkyLake node, icelake modules
-   when you are on a wICE IceLake node, etc. Another environment variable that
-   can be interesting is ``$VSC_INSTITUTE_CLUSTER``, which resolves to
-   ``genius`` on Genius nodes and to ``wice`` on wICE nodes.
+optimized for wICE are available when the appropriate
+:ref:`cluster module <cluster_module>` is loaded. In most cases this will
+happen automatically, but in case of problems it is a good idea to check.
 
 Similar to other VSC clusters, wICE supports two toolchain flavors:
 :ref:`FOSS <FOSS toolchain>` and :ref:`Intel <Intel toolchain>`. For more
@@ -69,12 +38,11 @@ use a specific module:
 
 .. code-block:: shell
 
-    $ module use /apps/leuven/skylake/2021a/modules/all
     $ module load worker/1.6.12-foss-2021a-wice
 
 If instead you want to launch Worker jobs from an interactive job running on
 wICE, you can use the ``worker/1.6.12-foss-2021a`` module (but do make sure
-this is the version installed in a subdirectory of ``/apps/leuven/icelake``).
+this is the version installed *specifically* for wICE.
 
 Also note that the Worker support for Slurm is not yet complete. Both
 the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
