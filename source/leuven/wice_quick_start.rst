@@ -26,9 +26,6 @@ Only jobs submitted to the ``batch_long`` partition are allowed to have walltime
 7 days (168 hours), as illustrated below.
 
 Similar to Genius, wICE uses Slurm as the workload manager. 
-More information about converting pbs scripts and commands into Slurm can be found 
-:ref:`here <Slurm_convert_from_PBS>`.
-
 A Slurm jobscript for wICE will typically look like this:
 
 ::
@@ -45,6 +42,14 @@ A Slurm jobscript for wICE will typically look like this:
     module load ...
 
     ...
+
+In case you are not yet familiar with Slurm and/or the wICE hardware, you can find
+more information on the following pages:
+
+- :ref:`wICE hardware <wice hardware>`
+- :ref:`Slurm jobs (basics) <running jobs>`
+- :ref:`Slurm jobs (advanced) <job advanced>`
+- :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
 
 For information about using and installing software on wICE, see the 
 :ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
