@@ -127,7 +127,7 @@ case you can start an instance of the agent with::
 .. note::
    If you start your agent in this way, it is only accessible within the context of your 
    current shell. If you want to connect with NoMachine NX, you should also start your 
-   NoMachine client from within this shell. Otherwise it will not be able to access the MFA
+   NoMachine client from within this shell. Otherwise it will not be able to access the
    certificate stored in your agent.
 
 (to kill the agent use ``eval "$(ssh-agent -k)"``)
@@ -166,7 +166,7 @@ If you now connect to the cluster using your standard ``ssh`` command, the
 certificate will automatically be stored for as long as your agent lives. 
 
 If you want to use apps that use ``ssh`` in the background (NX, FileZilla), you 
-should also first inject an mfa certificate in your agent before trying to connect.
+should also first inject an certificate in your agent before trying to connect.
 This can be done via a direct ssh to the firewall page with agentforwarding enabled::
 
     ssh -A vsc12345@firewall.vscentrum.be
