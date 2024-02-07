@@ -43,7 +43,7 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
 
 #. If this is your first login via NX, you will need to enter your VSC username
 
-#. Your private key or MFA certificate will be automatically fetched from your SSH agent
+#. Your private key or certificate will be automatically fetched from your SSH agent
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
    Otherwise please refer to the :ref:`section on how to reconnect to an NX session
