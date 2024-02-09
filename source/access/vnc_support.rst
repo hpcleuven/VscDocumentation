@@ -1,4 +1,4 @@
-All VSC sites offer some form of support for visualization software through
+Most VSC sites offer some form of support for visualization software through
 Virtual Network Computing (VNC). VNC renders images on the cluster and
 transfers the resulting images to your client device. VNC clients are available
 for Windows, macOS, Linux, Android, iOS or can be even used directly on web
@@ -8,7 +8,7 @@ browsers.
 
    .. tab-item:: KU Leuven/UHasselt
 
-      On the KUL clusters, users can follow the :ref:`TurboVNC start guide`.
+      On the KUL clusters, users can use NX :ref:`NX start guide`.
 
    .. tab-item:: UGent
 

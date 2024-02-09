@@ -101,7 +101,6 @@ clusters. See below for guides on available solutions:
          :maxdepth: 1
       
          paraview_remote_visualization
-         turbovnc_start_guide
 
    .. tab-item:: KU Leuven/UHasselt
 
