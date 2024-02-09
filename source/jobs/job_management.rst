@@ -89,7 +89,7 @@ that have finished already. It allows you to see how much CPU time, wall time,
 memory, etc. were used by the application.
 
 By default, ``sacct`` shows the job ID, job name, partition name, account name,
-number of CPUs allocated to the job, the state of the job and the exit code
+number of cores allocated to the job, the state of the job and the exit code
 of completed jobs. Several options can be used to modify the format:
 
 * ``--brief`` or ``-b`` shows only the job ID, state and exit ode.
