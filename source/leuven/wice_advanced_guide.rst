@@ -19,12 +19,17 @@ to compile on any cluster (such as wICE) is to launch an interactive job (with t
 Many dependencies you might need are centrally installed. The modules that are
 optimized for wICE are available when the appropriate
 :ref:`cluster module <cluster_module>` is loaded. In most cases this will
-happen automatically, but in case of problems it is a good idea to check.
+happen automatically, but in case of problems it is a good idea double check
+the ``$MODULEPATH`` environment variable; it should contain paths that look as
+starting with ``/apps/leuven/rocky8/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
+where ``${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}`` indicates the architecture of the
+node in question.
 
-Similar to other VSC clusters, wICE supports two toolchain flavors:
-:ref:`FOSS <FOSS toolchain>` and :ref:`Intel <Intel toolchain>`. For more
-general information on software development on the VSC, have a look at this
-:ref:`overview <software_development>`.
+Similar to other VSC clusters, wICE supports two families of common toolchains:
+:ref:`FOSS <FOSS toolchain>` and :ref:`Intel <Intel toolchain>`. Next to that,
+various `subtoolchains <https://docs.easybuild.io/common-toolchains/>`__ are
+available. For more general information on software development on the VSC,
+have a look at this :ref:`overview <software_development>`.
 
 .. _wice_worker:
 
@@ -41,8 +46,11 @@ use a specific module:
     $ module load worker/1.6.12-foss-2021a-wice
 
 If instead you want to launch Worker jobs from an interactive job running on
-wICE, you can use the ``worker/1.6.12-foss-2021a`` module (but do make sure
-this is the version installed *specifically* for wICE.
+wICE, you can use the ``worker/1.6.12-foss-2021a`` module. But do make sure
+this is the version installed *specifically* for wICE, which you can check
+by looking at the installation directory of worker. For example, the path
+returned by ``which worker`` should start with ``/apps/leuven/rocky8/icelake``
+or ``/apps/leuven/rocky8/sapphirerapids`` or ``/apps/leuven/rocky8/zen4-h100``.
 
 Also note that the Worker support for Slurm is not yet complete. Both
 the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
