@@ -33,9 +33,6 @@ benchmark their application on GPU and regular CPUs.
 Getting access
 --------------
 
-Contact :ref:`the UAntwerp support team <user support VSC>`
-to get access to the GPU compute nodes.
-
 Users of the GPU compute nodes are expected to report back on their
 experiences. We are most interested in users who can also compare with
 running on regular nodes as we will use this information for future

@@ -8,13 +8,19 @@ Vaughan hardware
 
 The Vaughan cluster was installed in the summer of 2020. It is a NEC system consisting of
 152 compute nodes with dual 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_
-Rome generation CPUs connected through a HDR100 InfiniBand network.
-All nodes have 256 GB RAM.
+Rome generation CPUs connected through an HDR100 InfiniBand network.
+All nodes containing Rome CPUs have 256 GB RAM.
 The nodes do not have a sizeable local disk.
 
 Vaughan also contains 2 node types for GPU computing: 1 node with
 four NVIDIA (Tesla) Ampere A100 GPU compute cards and 2 nodes equipped with
 two AMD Instinct (Arcturus) MI100 GPU compute cards.
+
+In the summer of 2023, the Vaughan cluster was extended. This extension
+consists of 24 compute nodes with dual 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_
+Milan generation CPUs and 256 GB. An additional 16 nodes have 512 GB RAM.
+All Milan nodes are connected through an HDR200 InfiniBand network.
+
 
 Access restrictions
 -------------------
@@ -30,7 +36,7 @@ Jobs can have a maximal execution wall time of 3 days (72 hours).
 Vaughan should only be used if you have large enough parallel jobs to or can
 otherwise sufficiently fill up all cores of a compute node. Other jobs should
 be use :ref:`Leibniz<Leibniz hardware>`
-or the older :ref:`Hopper<Hopper hardware>` nodes.
+or the :ref:`Breniac<Breniac hardware UAntwerp>` nodes.
 
 Hardware details
 ----------------
@@ -40,6 +46,18 @@ Hardware details
     - 2 AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ CPUs\@2.35 GHz (Rome), 32 cores each
     - 256 GB RAM
     - 240 GB SSD local disk (for OS, should not be used as main scratch)
+
+- 24 compute nodes
+
+    - 2 AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_ CPUs\@2.80 GHz (Milan), 32 cores each
+    - 256 GB RAM
+    - 500 GB SSD local disk (for OS, should not be used as main scratch)
+
+- 16 compute nodes
+
+    - 2 AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_ CPUs\@2.80 GHz (Milan), 32 cores each
+    - 512 GB RAM
+    - 500 GB SSD local disk (for OS, should not be used as main scratch)
 
 - 1 NVIDIA GPU node
 
@@ -63,8 +81,9 @@ Hardware details
     - 256 GB RAM
     - 2x 480 GB SSD local disk (raid 1)
 
-All nodes are connected using an InfiniBand HDR100 network. The compute nodes are logically
+All nodes are connected using an InfiniBand HDR100 network. The Rome compute nodes are logically
 organised in 4 islands (i.e., nodes connected to a single switch) with respectively 32, 36 and twice 44 nodes each.
+The 40 Milan compute nodes form an additional island.
 Storage is provided through the central :ref:`UAntwerp storage` system.
 
 
@@ -122,8 +141,8 @@ The following partitions are available:
 Partition      Limits
 ============   =========================================================
 *zen2*         Default. Maximum wall time of 3 days.
-debug          Maximum 2 nodes with a maximum wall time of 1 hour.
-short          Maximum wall time of 6 hours, with priority boost.
+zen3           Submit to the 256 GB Milan compute nodes.
+zen3_512       Submit to the 512 GB Milan compute nodes.
 ampere_gpu     Submit to the NVIDIA Ampere GPU node.
 arcturus_gpu   Submit to the AMD Arcturus GPU nodes.
 ============   =========================================================

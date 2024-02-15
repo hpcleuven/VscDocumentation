@@ -5,7 +5,7 @@ Leibniz hardware
 
 The Leibniz cluster was installed in the spring of 2017. It is a NEC system consisting of
 152 compute nodes with dual 14-core Intel `E5-2680v4 <https://ark.intel.com/products/75277>`_ 
-Broadwell generation CPUs connected through a EDR InfiniBand network. 144 of
+Broadwell generation CPUs connected through an EDR InfiniBand network. 144 of
 these nodes have 128 GB RAM, the other
 8 have 256 GB RAM. The nodes do not have a sizeable local disk.
 

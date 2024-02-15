@@ -1,21 +1,18 @@
-.. _Hopper hardware:
+.. _Breniac hardware UAntwerp:
 
-Hopper hardware
-===============
+Breniac hardware
+================
 
-Hopper was a compute cluster at UAntwerp in operation from late 2014 till the
-summer of 2020. The cluster had 168 compute nodes with
-dual 10-core Intel `E5-2680v2 <https://ark.intel.com/products/75277>`_
-Ivy Bridge generation CPUs connected through an InfiniBand FDR10 network.
-144 of those compute nodes had 64 GB RAM and 24 had 256 GB of RAM.
-
-When the cluster was moved out in the summer of 2020 to make space for the
-installation of :ref:`Vaughan<Vaughan hardware>`, the 24 nodes with 256 GB were recovered for further use.
+In 2023, the KU Leuven Tier-1 Breniac cluster was decommissioned. During the summer of 2023, 
+24 of the Breniac compute nodes were recovered for use at UAntwerp, replacing the Hopper compute cluster.    
+The Breniac cluster has 1 login node and 23 compute nodes with
+dual 14-core Intel `Xeon Gold 6132 <https://ark.intel.com/products/123541>`_
+Skylake generation CPUs connected through an EDR InfiniBand network.
 
 Access restrictions
 -------------------
 
-The Hopper compute nodes should be used for:
+The Breniac compute nodes should be used for:
 
   * Jobs that use old software that cannot be properly compiled to benefit from the
     extensions in the instruction sets of Leibniz and Vaughan, or that lack enough
@@ -23,7 +20,7 @@ The Hopper compute nodes should be used for:
     into account that multiple jobs launched nearly simultaneously can still make
     it possible to use the full capacity of a Leibniz or Vaughan compute node).
   * Jobs that need more than 128 GB of memory to run properly and that do not need
-    more than 20 cores per node.
+    more than 28 cores per node.
   * Batches of single core jobs (that cannot be run on your own computer).
   * Jobs that do not fit in a maximum wall time of 3 days and cannot be restarted
     cheaply.
@@ -45,17 +42,17 @@ Hardware details
 
 - 23 compute nodes
 
-    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 10 cores each
-    - 256 GB RAM
-    - 500 GB local disk
+  - 2 Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ CPU\@2.6GHz (Skylake), 14 cores each
+  - 192 GB RAM
+  - 500 GB SSD local disk
 
 - 1 login node
 
-    - 2 Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ CPUs\@2.8 GHz (Ivy Bridge), 10 cores each
-    - 256 GB RAM
-    - 500 GB local disk
+  - 2 Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ CPU\@2.6GHz (Skylake), 14 cores each
+  - 192 GB RAM
+  - 500 GB SSD local disk
 
-The nodes are connected using an InfiniBand FDR10 network.
+The nodes are connected using an InfiniBand EDR network.
 Storage is provided through the central :ref:`UAntwerp storage` system.
 
 
@@ -72,7 +69,7 @@ Direct login is possible to the login node.
 ============   =================================  ============================
 Login node     External interface                 Internal interface
 ============   =================================  ============================
-generic name   login\-hopper.hpc.uantwerpen.be    login.hopper.antwerpen.vsc
+generic name   login\-breniac.hpc.uantwerpen.be    login.breniac.antwerpen.vsc
 ============   =================================  ============================
 
 
@@ -82,7 +79,7 @@ Available resources
 Characteristics of the compute nodes
 """"""""""""""""""""""""""""""""""""
 
-**Hopper is running the Slurm Workload Manager as its resource manager and scheduler.**
+**Breniac is running the Slurm Workload Manager as its resource manager and scheduler.**
 We do not support the PBS compatibility layer but encourage users to develop
 proper Slurm job scripts as one can then fully exploit the Slurm features and
 enjoy the power of the ``srun`` command when starting processes.
@@ -94,7 +91,7 @@ and how to convert your Torque scripts:
 * :ref:`Important differences between Slurm and Torque<Slurm_PBS_differences>`
 * :ref:`Converting PBS/Torque options to Slurm <Slurm_convert_from_PBS>`
 
-Since Hopper is a homogeneous system with respect to CPU type, memory and
+Since Breniac is a homogeneous system with respect to CPU type, memory and
 interconnect, it is not needed to specify any features.
 
 Available partitions
@@ -102,23 +99,19 @@ Available partitions
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
 the partition your job is submitted to.
-When the option is omitted, your job is submitted to the default partition (*ivybridge*).
+When the option is omitted, your job is submitted to the default partition (*skylake*).
 
-For the Hopper nodes, only a single partition is available:
+For the Breniac nodes, only a single partition is available:
 
 ===========   =========================================================
 Partition     Limits
 ===========   =========================================================
-*ivybridge*   Default. Maximum wall time of 7 days.
+*skylake*     Default. Maximum wall time of 7 days.
 ===========   =========================================================
 
 Origin of the name
 ------------------
 
-Hopper is named after `Grace Hopper <https://en.wikipedia.org/wiki/Grace_Hopper>`_.
-Grace Hopper was an American mathematician turned computer scientist and United States Navy
-rear admiral. She worked as a programmer of some of the first computer systems and devised
-the theory of machine independent programming languages. Her work laid at the base of the 
-programming language COBOL. 
+Breniac is named after the decommissioned Tier-1 Breniac cluster.
 
 
