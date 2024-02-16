@@ -19,7 +19,7 @@ to compile on any cluster (such as wICE) is to launch an interactive job (with t
 Many dependencies you might need are centrally installed. The modules that are
 optimized for wICE are available when the appropriate
 :ref:`cluster module <cluster_module>` is loaded. In most cases this will
-happen automatically, but in case of problems it is a good idea double check
+happen automatically, but in case of problems it is a good idea to double check
 the ``$MODULEPATH`` environment variable; it should contain paths that look as
 starting with ``/apps/leuven/rocky8/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
 where ``${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}`` indicates the architecture of the
