@@ -44,3 +44,41 @@ The nodes are connected using an Infiniband HDR-100 network, the islands are ind
 
 .. figure:: wice_hardware/wice.png
    :alt: wICE hardware diagram
+
+
+Hardware details (extension)
+----------------------------
+We are currently installing and testing additional hardware for wICE,
+which will be made accessible during the spring of 2024:
+
+- 68 thin nodes
+
+  - 2 Intel Xeon Platinum 8468 CPUs (Sapphire Rapids),
+    48 cores each :raw-html:`<br />`
+    The base and max CPU frequencies are 2.1 GHz and 3.8 GHz, respectively.
+  - 256 GB RAM
+  - 960 GB SSD local disk
+  - partitions ``batch_sapphirerapids/batch_sapphirerapids_long``
+
+- 4 GPU nodes, 16 GPU devices
+
+  - 2 AMD EPYC 9334 CPUs (Genoa),
+    32 cores each :raw-html:`<br />`
+    The base and max CPU frequencies are 2.7 GHz and 3.9 GHz, respectively.
+  - 770 GB RAM
+  - 4 NVIDIA H100 SXM4, 80 GB HBM3, connected with NVLink
+  - 960 GB SSD local disk
+  - partition ``gpu_h100``
+
+- 1 huge memory node
+
+  - 2 Intel Xeon Platinum 8360Y CPUs (Ice lake),
+    36 cores each :raw-html:`<br />`
+    The base and max CPU frequencies are 2.4 GHz and 3.5 GHz, respectively.
+  - 8192 GB RAM
+  - 960 GB SSD local disk
+  - partition ``hugemem``
+
+The thin nodes and GPU nodes are all in the same Infiniband HDR-100 network
+island. These nodes are furthermore the first ones in the data center
+to be direct liquid cooled.
