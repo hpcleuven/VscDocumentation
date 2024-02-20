@@ -3,8 +3,8 @@
 UAntwerp Intel toolchains
 =========================
 
-From version 2017a on of the Intel toolchains, the setup on the UAntwerp
-is different from the one on some other VSC clusters:
+From version 2017a until 2020a of the Intel toolchains, the setup on the UAntwerp
+was different from the one on some other VSC clusters:
 
 -  A full install of all Intel tools for which we have a license at
    UAntwerp has been performed in a single directory tree as intended by

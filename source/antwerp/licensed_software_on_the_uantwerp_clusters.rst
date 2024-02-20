@@ -8,9 +8,10 @@ restrictions in their licenses and cannot be used by all users. If a
 module does not load, it is very likely that you have no access to the
 package.
 
-Access to such packages is managed by UNIX groups. You can request
-membership to the group, but that membership will only be granted if you
-are eligible for use of the package.
+Access to such packages is managed by UNIX groups. You can :ref:`request
+membership to the group<join groups>` through the VSC account page. 
+However, that membership will only be granted if you are eligible for 
+use of the package.
 
 AMBER
 -----
@@ -19,11 +20,9 @@ Amber is licensed software (through a site license). The license fee is minimal
 for non-profit work but comes at a considerable cost for for-profit research. In
 case of use for a third party that third party needs to have a license too.
 
-Contact `Hans De Winter <https://www.uantwerpen.be/nl/personeel/hans-dewinter/>`_
-for more information on the conditions to use the license.
-
 ANSYS
 -----
+
 
 CPMD
 ----
@@ -56,10 +55,6 @@ Gaussian
 
 To use Gaussian, you should work or study at the University of Antwerp
 and your research group should contribute to the cost of the license.
-
-Contact `Wouter Herrebout <https://www.uantwerpen.be/en/staff/wouter-herrebout/>`_
-for more information.
-
 
 Gurobi
 ------
@@ -99,7 +94,6 @@ use of the Solar Boat Team as sponsoring from NUMECA and cannot be used
 by others. The license has expired, so FINE/Marine though still installed
 on Leibniz can no longer be used until a group renews the license.
 
-
 NUMECA OMNIS/LB
 ---------------
 
@@ -113,9 +107,3 @@ VASP
 
 To use VASP, you should work or study at the University of Antwerp
 and your research group should contribute to the cost of the license.
-
-Contact `Dirk Lamoen <https://www.uantwerpen.be/en/staff/dirk-lamoen/>`_
-or `Erik Neyts <https://www.uantwerpen.be/en/staff/erik-neyts/>`_
-for more information.
-
-

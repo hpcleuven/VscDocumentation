@@ -1,7 +1,15 @@
 .. _uantwerp_slurm_specifics:
 
+########################
 Site-specific Slurm info
-========================
+########################
+
+Make sure to read the following pages which give a lot of information on Slurm
+and how to convert your Torque scripts:
+
+* :ref:`running jobs`
+* :ref:`Important differences between Slurm and Torque<Slurm_PBS_differences>`
+* :ref:`Converting PBS/Torque options to Slurm <Slurm_convert_from_PBS>`
 
 While the :ref:`Running jobs in Slurm <running jobs>` and :ref:`job advanced`
 pages provide basic and advanced information regarding Slurm, there are

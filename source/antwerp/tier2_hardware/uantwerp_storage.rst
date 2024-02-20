@@ -74,17 +74,15 @@ Requesting quota
     which implies that you have to ask for additional quota on those file
     systems at your home institution.
 
-Note
-====
-
-On the previous storage system, UAntwerpen had an additions volume /small
-that was slightly better optimized for storing lots of small files. 
-There is no full equivalent in the current storage system. If the small
-files are the result of installing software yourself, ``$VSC_DATA`` is the 
-ideal place to store those files. If they are the result of your jobs, we 
-encourage you consider switching to better software or reworking your code
-to have a more supercomputer-friendly output pattern (or use databases such
-as SQLite3) and if that is impossible, to contact UAntwerpen user support
-at hpc!uantwerpen to discuss a possible solution and the best place to put
-your data.
+.. comment .. note::
+   On the previous storage system, UAntwerpen had an additions volume /small
+   that was slightly better optimized for storing lots of small files. 
+   There is no full equivalent in the current storage system. If the small
+   files are the result of installing software yourself, ``$VSC_DATA`` is the 
+   ideal place to store those files. If they are the result of your jobs, we 
+   encourage you consider switching to better software or reworking your code
+   to have a more supercomputer-friendly output pattern (or use databases such
+   as SQLite3) and if that is impossible, to contact UAntwerpen user support
+   at hpc!uantwerpen to discuss a possible solution and the best place to put
+   your data.
 

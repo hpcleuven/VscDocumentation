@@ -7,11 +7,12 @@ Python on the UAntwerp clusters
 Available modules
 -----------------
 
-Since Python support for Python 2 officially terminated on December 31, 2019 (even though some
-months later a new bundle, Python 2.7.18, was released containing all patches that were 
-accepted by December 31, 2019), we no longer actively support Python 2 on the UAntwerp clusters.
-The already installed modules on Leibniz remain available on that cluster but will not be ported
-to Vaughan, nor will new versions be installed.
+.. comment
+  Since Python support for Python 2 officially terminated on December 31, 2019 (even though some
+  months later a new bundle, Python 2.7.18, was released containing all patches that were 
+  accepted by December 31, 2019), we no longer actively support Python 2 on the UAntwerp clusters.
+  The already installed modules on Leibniz remain available on that cluster but will not be ported
+  to Vaughan, nor will new versions be installed.
 
 Since the 2020a toolchains, we offer two Python distributions:
   * The regular Python module is compiled from sources with the Intel compilers. The modules also
@@ -35,6 +36,12 @@ The following versions of Python are offered:
 
 +-----------+----------------+--------------+
 | Toolchain | Regular Python | IntelPython3 |
++-----------+----------------+--------------+
+| 2023a     | 3.11.3         | -            |
++-----------+----------------+--------------+
+| 2022a     | 3.10.4         | -            |
++-----------+----------------+--------------+
+| 2021a     | 3.9.5          | -            |
 +-----------+----------------+--------------+
 | 2020a     | 3.8.3          | 3.7.\*       |
 +-----------+----------------+--------------+

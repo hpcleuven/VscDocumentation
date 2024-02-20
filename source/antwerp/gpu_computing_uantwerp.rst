@@ -3,13 +3,13 @@
 GPU computing @ UAntwerp
 ========================
 
-Leibniz has two compute nodes each equipped with two NVIDIA Tesla P100
+:ref:`Leibniz<Leibniz hardware>` has two compute nodes each equipped with two NVIDIA Tesla P100
 GPU compute cards, the most powerful cards available at the time of
 installation of the system. Vaughan has one compute node equipped with 
 four NVIDIA Tesla A100 GPU compute cards. We run the regular NVIDIA software stack on
 those systems.
 
-Additionally, Vaughan has two compute nodes equipped with two AMD Instinct
+Additionally, :ref:`Vaughan<Vaughan hardware>` has two compute nodes equipped with two AMD Instinct
 MI100 GPU compute cards. We run the AMD ROCm software stack on those systems.
 
 The main goal of the system is to assess the performance of GPUs for
@@ -52,31 +52,31 @@ access to a single, dedicated GPU at the same time.
 
 In total, three GPU partitions are available:
 
-=======   ============   ==================================================
-Cluster   Partition      Available nodes
-=======   ============   ==================================================
-Vaughan   arcturus_gpu   2 nodes with 2 AMD Instinct (Arcturus) MI100 cards
-Vaughan   ampere_gpu     1 node with 4 NVIDIA (Tesla) Ampere A100 cards
-Leibniz   pascal_gpu     2 nodes with 2 NVIDIA (Tesla) Pascal P100 cards
-=======   ============   ==================================================
+================================   ============   ==================================================
+Cluster                            Partition      Available nodes
+================================   ============   ==================================================
+:ref:`Vaughan<Vaughan hardware>`   arcturus_gpu   2 nodes with 2 AMD Instinct (Arcturus) MI100 cards
+:ref:`Vaughan<Vaughan hardware>`   ampere_gpu     1 node with 4 NVIDIA (Tesla) Ampere A100 cards
+:ref:`Leibniz<Leibniz hardware>`   pascal_gpu     2 nodes with 2 NVIDIA (Tesla) Pascal P100 cards
+================================   ============   ==================================================
  
 
 To submit a job on a GPU compute node belonging to a certain partition and get a single GPU, use the  ``sbatch`` command
 
 .. code:: bash
    
-    sbatch -p <partition> --gpus=1 <jobscript>
+    sbatch -p <partition> --gpus-per-node=1 <jobscript>
 
 or add the lines
 
 .. code:: bash
    
     #SBATCH -p <partition>
-    #SBATCH --gpus=1
+    #SBATCH --gpus-per-node=1
 
 to your job script.
 
-Using ``gpus=2`` would give you access to both GPU cards on a GPU compute node.
+Using ``gpus-per-node=2`` would give you access to both GPU cards on a GPU compute node.
 
 The defaults for the pascal_gpu nodes are set to ``--cpus-per-gpu=14`` and ``walltime=1:00:00``, so
 that with using only ``-p pascal_gpu --gpus=1`` you would get a single GPU for 1 hour and all

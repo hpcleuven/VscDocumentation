@@ -338,31 +338,30 @@ running on port 5902 (VNC's default port 5900 + your server number).
          or localhost if you will log on to the node running the VNC server.
 
 
-#. Once your tunnel is up-and-running, start your VNC client. The 
+#. Start your VNC client once your tunnel is up-and-running. The 
    procedure depends on the precise client you are using. 
    
    In general, the client will ask for the VNC server address. 
-   The server address is localhost:x where x is the number of your VNC server 
+   The server address is ``localhost:x`` where ``x`` is the number of your VNC server 
    (2 in the example above). Some clients also allow you to use the port number instead
-   (5902 in the example above), and will automatically assume that 
+   (``localhost:5902`` for the example above), and will automatically assume that 
    bigger numbers are port numbers.
   
    The client will then ask you for the password that you have assigned
    when you first started a VNC server.
-#. If all went well, you will now get a window with the desktop
+#. You should now get a window with the desktop
    environment that you have chosen when starting the VNC server
 
-.. note::
-   The first time that you start a Xfce session with TurboVNC,
-   you'll see a panel "Welcome to the first start of the panel". Please
-   select "Use default config" as otherwise you get a very empty
-   desktop.
+   .. note::
+      The first time that you start a Xfce session with TurboVNC,
+      you'll see a panel "Welcome to the first start of the panel". Please
+      select "Use default config" as otherwise you get a very empty
+      desktop.
 
 Step 3: Starting an application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Open a terminal window (if one was not already created when you
-   started your session).
+#. Open a terminal window.
    In the default Xfce-environment, you can open a terminal by selecting
    \"Terminal Emulator\" in the \"Applications\" menu in the top left.
    The first time it will let you choose between selected terminal
@@ -372,20 +371,32 @@ Step 3: Starting an application
 #. 2D applications or applications that use a software renderer for 3D
    start as usual. However, to start an application using the
    hardware-accelerated OpenGL, you'll need to start it through
-   ``vglrun``. Usually adding ``vglrun`` at the start of the command
-   line is sufficient.
-   This however doesn't work with all applications. Some applications
-   require a special setup.
+   ``vglrun``. Adding ``vglrun`` at the start of the command
+   line is usually sufficient.
 
-   #. MATLAB: start MATLAB with the ``-nosoftwareopengl`` option to
-      enable accelerated OpenGL:
+   .. note:: For a quick test of your setup, enter
 
       .. code:: bash
 
-         vglrun matlab -nosoftwareopengl
-      
-      The MATLAB command ``opengl info`` will then show that you are
-      indeed using the GPU.
+         vglrun glxinfo
+         vglrun glxgears
+
+      The first command will print some information about the OpenGL
+      functionality that is supported. The second command will display a set
+      of rotating gears. Don't be fooled if they appear to stand still but
+      look at the \"frames per second\" printed in the terminal window.
+
+   This however doesn't work with all applications. Some applications, like MATLAB,
+   require a special setup.
+
+   |Example| Start MATLAB with hardware-accelerated OpenGL with ``-nosoftwareopengl`` as follows:
+
+   .. code:: bash
+
+      vglrun matlab -nosoftwareopengl
+   
+   The MATLAB command ``opengl info`` will then show that you are
+   indeed using the GPU.
 
 #. When you've finished, don't forget to log out in the Xfce desktop 
    (right mouse click in the desktop, then select \"Application\"
@@ -397,18 +408,6 @@ Step 3: Starting an application
       vncserver -kill :x
        
    with ``x`` the number of the server.
-
-.. note:: For a quick test of your setup, enter
-
-   .. code:: bash
-
-      vglrun glxinfo
-      vglrun glxgears
-
-   The first command will print some information about the OpenGL
-   functionality that is supported. The second command will display a set
-   of rotating gears. Don't be fooled if they appear to stand still but
-   look at the \"frames per second\" printed in the terminal window.
 
 .. warning::
    Do not forget to close your tunnel when you log out from the VNC

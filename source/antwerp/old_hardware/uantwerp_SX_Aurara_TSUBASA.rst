@@ -2,6 +2,18 @@
 
 NEC SX Aurora TSUBASA
 =====================
+UAntwerp has 1 vector computing node:
+
+- 1 vector computing node (NEC SX-Aurora TSUBASA model A300-2)
+
+    - 1 Xeon `Gold 6126 <https://ark.intel.com/products/120483>`_ CPU\@2.60 GHz (Skylake) with 12 cores
+    - 2 `NEC SX-Aurora Vector Engines type 10B <https://www.nec.com/en/global/solutions/hpc/sx/vector_engine.html>`_ 
+      (per card 8 cores \@1.4 GHz, 48 GB HBM2)
+    - 96 GB RAM
+    - 240 GB SSD local disk
+    - :ref:`Instructions for using the NEC SX-Aurora node <UAntwerp NEC SX Aurora>`
+
+This node is currently not integrated in our setup.
 
 NEC vector computing
 --------------------
