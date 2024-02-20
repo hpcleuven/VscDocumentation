@@ -12,7 +12,7 @@ Superdome consists of
 - 8 sockets with
 
     - Xeon Gold 6132 CPU\@2.6 GHz (Skylake), 14 cores each
-    - 750 GB RAM each
+    - 768 GiB RAM each
 
 - a 6 TB local node disk
 

@@ -19,21 +19,21 @@ Hardware details
   - 86 skylake nodes
 
     - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
-    - 192 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
+    - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
     - 200 GB SSD local disk
     - feature skylake
 
   - 144 cascadelake nodes
 
     - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
-    - 192 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
+    - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
     - 200 GB SSD local disk
     - feature cascadelake 
 
 - 10 big memory nodes
 
   - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
-  - 768 GB RAM
+  - 768 GiB RAM
   - 200 GB SSD local disk
   - partition ``bigmem``, specific Slurm :ref:`options <submit_genius_bigmem>` apply
 
@@ -42,23 +42,23 @@ Hardware details
   - 20 P100 nodes
 
     - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
-    - 192 GB RAM
-    - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GB GDDR, connected with NVLink
+    - 192 GiB RAM
+    - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GiB GDDR, connected with NVLink
     - 200 GB SSD local disk
     - partition ``gpu_p100``, specific Slurm :ref:`options <submit_genius_gpu>` apply
 
   - 2 V100 nodes
 
     - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
-    - 768 GB RAM
-    - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GB GDDR, connected with NVLink
+    - 768 GiB RAM
+    - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GiB GDDR, connected with NVLink
     - 200 GB SSD local disk
     - partition ``gpu_v100``, specific Slurm :ref:`options <submit_genius_gpu>` apply
 
 - 4 AMD nodes
 
   - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
-  - 256 GB RAM
+  - 256 GiB RAM
   - 200 GB SSD local disk
   - partition ``amd``, specific Slurm :ref:`options <submit_genius_amd>` apply
 
