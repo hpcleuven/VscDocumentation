@@ -79,6 +79,10 @@ which will be made accessible during the spring of 2024:
   - 960 GB SSD local disk
   - partition ``hugemem``
 
-The thin nodes and GPU nodes are all in the same Infiniband HDR-100 network
-island. These nodes are furthermore the first ones in the data center
+Only the thin nodes are interconnected with Infiniband HDR-100, with all nodes
+inside the same network island. The GPU nodes can only communicate over
+ethernet (no high-performance interconnect). All nodes are however connected
+to the Lustre parallel file system through an Infiniband HDR-100 network.
+
+The thin nodes and GPU nodes are furthermore the first ones in the data center
 to be direct liquid cooled.
