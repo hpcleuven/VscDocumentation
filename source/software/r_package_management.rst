@@ -149,11 +149,12 @@ directory to PATH.
 
 The next step is to create a new conda environment which can be done as follows::
 
-   $ conda create -n science -c conda-forge r-base=4.3.2 r-essentials
+   $ conda search -c conda-forge r-base  # select one of available versions for the step below
+   $ conda create -n science -c conda-forge r-base=<version> r-essentials
    
 
-This command creates a new conda environment called "science", and installs R 4.3.2
-from the conda-forge channel as well as the r-essentials bundle which includes number
+This command creates a new conda environment called "science", and installs your prefered R 
+version from the conda-forge channel as well as the r-essentials bundle which includes number
 of commonly used R packages such as ggplot2, glmnet, dplyr, tidyr, and shiny.
 
 .. note::
