@@ -19,11 +19,11 @@ Running jobs on wICE
 
 There are several type of nodes in the wICE cluster: normal compute nodes, GPU nodes, 
 big memory nodes and nodes configured for interactive use. 
-The resources specifications for jobs have to be tuned to use these nodes properly.
+The resource specifications for jobs have to be tuned to use these nodes properly.
 
 In general, the maximum walltime for wICE jobs is 3 days (72 hours). 
-Only jobs submitted to the ``batch_long`` partition are allowed to have walltimes up to 
-7 days (168 hours), as illustrated below.
+Only jobs submitted to the ``*_long`` partitions are allowed to have
+walltimes up to  7 days (168 hours), as will be illustrated below.
 
 Similar to Genius, wICE uses Slurm as the workload manager. 
 A Slurm jobscript for wICE will typically look like this:
@@ -50,89 +50,84 @@ more information on the following pages:
 - :ref:`Slurm jobs (advanced) <job advanced>`
 - :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
 
-For information about using and installing software on wICE, see the 
-:ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
+For information about using and installing software on wICE (including Conda
+environments), see the :ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
+
+For information about compute credit accounts, see
+:ref:`Leuven accounting <accounting_leuven>` and
+:ref:`KU Leuven credits <KU Leuven credits>` pages.
 
 
 .. _submit to wice compute node:
 
-Submit to a compute node
-~~~~~~~~~~~~~~~~~~~~~~~~
+Submit to a regular compute node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In these examples, the submission will be done from login nodes of the Genius cluster, 
-therefore you always need to explicitly specify the cluster you want to use.
-The relevant option for that is ``-M|--clusters`` which takes ``wice`` or ``genius`` as
-a valid value.
+Submitting a 2-node job on the regular IceLake compute nodes (with 72 cores
+each) can be done like this::
 
-To submit to a compute node you need to provide the required number of nodes and cores. 
-For example to request 2 nodes with each 72 cores for 2 hours you can submit like this::
-
-   $ sbatch --account=lp_myproject --clusters=wice --nodes=2 --ntasks-per-node=72 \
-            --time=2:00:00 myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice \
+            --nodes=2 --ntasks-per-node=72 --time=2:00:00 myjobscript.slurm
    
-More information about accounting used on wice can be found on the :ref:`Leuven accounting <accounting_leuven>`
-page and on :ref:`KU Leuven credits <KU Leuven credits>`.
+This will select the default partition (called ``batch``) which is the
+one containing these IceLake nodes.
 
-Submit a long job to a compute node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To use Sapphire Rapids nodes instead (mind the higher core count)::
 
-To submit to a compute node a job longer than 3 days you need to submit specifically to the ``batch_long`` partition::
+   $ sbatch --account=lp_myproject --clusters=wice --partition=batch_sapphirerapids \
+            --nodes=2 --ntasks-per-node=96 --time=2:00:00 myjobscript.slurm
 
-   $ sbatch --account=lp_myproject --clusters=wice --nodes=2 --ntasks-per-node=72 \
-            --time=6-16:00:00 --partition=batch_long myjobscript.slurm
+For jobs which need more than 3 days of walltime (up to maximum 7 days),
+you need to submit to the respective ``batch_long`` or
+``batch_sapphirerapids_long`` partitions instead.
+
 
 .. _submit to wice interactive node:
 
 Submit to the interactive partition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The interactive nodes are located below the ``interactive`` partition.
-The users are allowed to request a maximum of 8 cores, one (shared portion of a) GPU instance,
-and for a maximum walltime of 16 hours. 
-These nodes are intended for interactive use. 
-Instead of submitting a job script, you open an interactive session on a compute node as 
-follows::
+There is also a small ``interactive`` partition intended for interactive work
+(compiling software, post-processing, small-scale debugging, visualization,
+...). This is typically done via interactive jobs, for example::
 
-   $ srun --account=lp_myproject --ntasks=1 --time=01:00:00 --partition=interactive \
-          --clusters=wice --pty bash -l
+   # A short single-core job:
+   $ srun --account=lp_myproject --clusters=wice --partition=interactive \
+           --ntasks=1 --time=01:00:00 --pty bash -l
 
-If a GPU is necessary for the visualization process, it can be requested (max 1 GPU instance 
-and total of 8 cores for at most 16 hours). 
-The available GPU is a single A100 which has been split in 7 GPU instances (one of which 
-will be allocated to your job). 
-Additionally, X11 forwarding should be enabled::
+   # A longer job with more cores, a GPU instance and X11 forwarding:
+   $ srun --account=lp_myproject --clusters=wice --partition=interactive \
+          --ntasks-per-node=8 --gpus-per-node=1 --time=08:00:00 --x11 --pty bash -l
 
-   $ srun --account=lp_myproject --nodes=1 --time=16:00:00 --ntasks-per-node=8 \
-          --gpus-per-node=1 --partition=interactive --clusters=wice --x11 --pty bash -l
+Users are allowed to request a maximum of 8 cores, one A100 GPU instance
+(equal to 1/7th of the physical device), for walltimes up to 16 hours.
 
 .. note::
 
-   The interactive partition is intended for relatively lightweight interactive work, 
-   such as compiling software, running small preprocessing scripts, small-scale 
-   debugging, or visualization. 
-   This is the reason why the amount of resources you can get in a job is limited on the interactive partition. In case you must do heavy computational work in an interactive way, it is also possible to submit interactive jobs to the other partitions. For instance suppose you need to debug a program using more than 8 cores. In that case you can use the command above to run an interactive job, changing the partition to ``batch``, ``gpu``, or ``bigmem`` and adapting the resources as needed.  Do note that in general it is recommended to run heavy computational work in a script which you run as a batch job (so without opening an interactive terminal on the compute node).
+   It is also possible to submit interactive jobs to the other partitions
+   (e.g. ``batch``, ``gpu`` or ``bigmem``) in case you need more resources.
+   For large amounts of compute resources, however, we recommend to use
+   batch jobs since these will result in fewer idling resources
+   compared to interactive jobs.
 
-.. note::
-
-   We urge our users to recompile their software on wICE.
-   Using a software on wICE which is formerly compiled on Genius can lead to confusing
-   error messages, specifically in case of MPI applications.
-   This is true even for (mini)conda environments.
-   So, as a general rule of thumb, we propose that your software (including conda) be 
-   recompiled on wICE and put in a separate folder to distinguish the build from existing
-   software that suit Genius.
 
 .. _submit to wice big memory node:
 
-Submit to a big memory node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Submit to nodes with more memory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The big memory nodes (2048GB of RAM) are also located in the ``bigmem`` partition. 
-In case of the big memory nodes it is also important to add your memory requirements 
-(the maximum of memory per core that can be requested is 28000MB/core), for example::
+IceLake nodes with 2 TiB of RAM are placed in the ``bigmem`` partition.
+To select the maximum amount of memory per core (28 000 MB, which is also the
+default), you can submit a job as follows::
 
-   $ sbatch --account=lp_myproject --clusters=wice --time=01:00:00 --nodes=2 \
-            --ntasks-per-node=72 --partition=bigmem --mem-per-cpu=28000M myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --partition=bigmem \
+            --nodes=2 --ntasks-per-node=72 --mem-per-cpu=28000M myjobscript.slurm
+
+There is also one IceLake node with even more memory (8 TiB RAM) in the
+``hugemem`` partition (defaulting to ``--mem-per-cpu=111900M``).
+In contrast to :ref:`Superdome <superdome_quick_start>`, you do not need to
+request entire sockets and so the node is more similar to the other large
+memory nodes in this regard.
 
 
 .. _submit to wice GPU node:
@@ -140,19 +135,23 @@ In case of the big memory nodes it is also important to add your memory requirem
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
 
-The GPU nodes are located in the ``gpu`` partition, so you will need to explicitly specify 
-it when submitting your job. 
-Similar to the other nodes, the GPU nodes can be shared by different jobs from different users.
-However every user will have exclusive access to the number of GPUs requested. 
-If you want to use only 1 GPU of type A100 you can submit for example like this::
+The nodes with A100 GPUs are located in the ``gpu`` partition. As for the other
+node types, the GPU nodes can be shared by different jobs from different users
+but each job has exclusive access to its allocated cores and GPU(s).
 
-   $ sbatch --account=lp_myproject --clusters=wice --nodes=1 --ntasks=18 \
-            --gpus-per-node=1 --partition=gpu myjobscript.slurm
-  
-Note that in case of 1 GPU you have to request 18 cores. 
-In case you need more GPUs you have to multiply the 18 cores with the number of GPUs 
-requested, so in case of for example 3 GPUs you will have to specify this::
+If you e.g. need one A100 GPU::
 
-   $ sbatch --account=lp_myproject --clusters=wice --nodes=1 --ntasks=54 \
-            --gpus-per-node=3 --partition=gpu myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu \
+            --nodes=1 --ntasks=18 --gpus-per-node=1 myjobscript.slurm
 
+We recommend to request 18 cores for every GPU, so an example for 3 GPUs
+would look like this::
+
+   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu \
+            --nodes=1 --ntasks=54 --gpus-per-node=3 myjobscript.slurm
+
+There are also nodes with 4 H100 GPUs (and 64 AMD Genoa CPUs) which you
+can select via the ``gpu_h100`` partition, e.g.::
+
+   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_h100 \
+            --nodes=1 --ntasks=16 --gpus-per-node=1 myjobscript.slurm
