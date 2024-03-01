@@ -9,15 +9,68 @@ wICE advanced guide
 Compiling software
 ------------------
 
-The wICE compute nodes feature Intel processors nicknamed IceLake, which are
-the successors of the SkyLake and CascadeLake architectures which you can find
-on Genius. Although architectural differences are rather small, it is highly
-recommended to compile a version of your code specifically for wICE. A good approach
-to compile on any cluster (such as wICE) is to launch an interactive job (with the
-``srun`` command).
+Compared to the SkyLake and CascadeLake CPUs on Genius, the wICE nodes
+feature more recent CPU models such as Intel IceLake, Intel Sapphire Rapids
+and AMD Genoa. While architectural differences between SkyLake and CascadeLake
+CPUs can be neglected, the differences with newer CPU models are more
+substantial. When it comes to GPUs there are also significant differences in
+the capabilities of P100, V100, A100 and H100 GPUs.
 
-Many dependencies you might need are centrally installed. The modules that are
-optimized for wICE are available when the appropriate
+When locally installing software yourself, we therefore recommend to have
+separate installations for the different types of CPUs and (if applicable)
+GPUs on which you intend to run the software. This rule applies most strongly
+to performance-critical code which is compiled from source (and less strongly
+to light-weight tools based on precompiled binaries).
+
+.. note::
+
+    Remember that precompiled binaries (as is often the case when e.g. Conda
+    or PyPI are involved) are not guaranteed to deliver optimal performance
+    for the target device. In case of doubt, performance-critical parts of
+    an application should not rely on precompiled binaries and instead use
+    optimized binaries as provided by the centrally installed modules and/or
+    by local installations from source. See also :ref:`conda for Python` and
+    :ref:`wice_conda`.
+
+To let jobs use the correct installation at runtime, you can make use of
+predefined environment variables such as ``${VSC_ARCH_LOCAL}`` (and possibly
+``${VSC_ARCH_SUFFIX}`` and ``${VSC_INSTITUTE_CLUSTER}``) to organize your
+installations.
+
+For software using CPUs, the different installations would be:
+
+- one for SkyLake and CascadeLake CPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``skylake`` or ``cascadelake``)
+- one for IceLake CPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``icelake``)
+- one for Sapphire Rapids CPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``sapphirerapids``)
+
+For software which also uses GPUs, this would be:
+
+- one for SkyLake CPUs with P100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``skylake``)
+- one for CascadeLake CPUs with V100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``cascadelake``)
+- one for IceLake CPUs with A100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``icelake``)
+- one for AMD Genoa CPUs with H100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``zen4`` and ``${VSC_ARCH_SUFFIX}`` = ``-h100``)
+
+Compiling software for a particular CPU/GPU model can be done in an
+interactive job (``srun ...``) submitted to a partition containing
+the target device(s) (see e.g. :ref:`genius hardware` and
+:ref:`wice hardware`).
+
+Many dependencies you might need are centrally installed. The modules
+that are optimized for wICE are available when the appropriate
 :ref:`cluster module <cluster_module>` is loaded. In most cases this will
 happen automatically, but in case of problems it is a good idea to double check
 the ``$MODULEPATH`` environment variable; it should contain paths that look as
@@ -30,6 +83,7 @@ Similar to other VSC clusters, wICE supports two families of common toolchains:
 various `subtoolchains <https://docs.easybuild.io/common-toolchains/>`__ are
 available. For more general information on software development on the VSC,
 have a look at this :ref:`overview <software_development>`.
+
 
 .. _wice_worker:
 
