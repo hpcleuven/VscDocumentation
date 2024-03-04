@@ -7,27 +7,24 @@
 Vaughan hardware
 ################
 
-************
-Intended use
-************
+The Vaughan compute nodes should be used for sufficiently large parallel jobs,
+or when you can otherwise fill all cores of a compute node.
+The Vaughan cluster also contains 2 node types (NVIDIA and AMD) for GPU computing.
 
-Jobs can have a maximal execution wall time of 3 days (72 hours).
-Vaughan should only be used if you have large enough parallel jobs to or can
-otherwise sufficiently fill up all cores of a compute node. Other jobs should
-be use :ref:`Leibniz<Leibniz hardware>`
-or the :ref:`Breniac<Breniac hardware UAntwerp>` nodes.
+For smaller jobs, consider using the :ref:`Leibniz<Leibniz hardware>` nodes.
+For longer jobs or batches of single-core jobs, consider using the :ref:`Breniac<Breniac hardware UAntwerp>` nodes.
 
 ****************
-Hardware details
+Compute nodes
 ****************
-
-CPU compute nodes
-=================
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
 the partition your job is submitted to. This indicates the type of your job and
 imposes some restrictions, but may let your job start sooner.
 When the option is omitted, your job is submitted to the default partition (**zen2**).
+
+CPU compute nodes
+=================
 
 The maximum execution wall time for jobs is **3 days** (72 hours).
 
@@ -39,46 +36,21 @@ zen3             24      2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/produ
 zen3_512         16      2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_ \@2.80 GHz  512 GB  500 GB SSD  HDR100-IB
 ===============  ======  ==========================================================================================  ======  ==========  =========
 
-To remain compatible with the typical VSC setup, a number of features 
-can be used in job scripts (e.g. with Slurm's ``--constraint`` option).
-However, only the following features are really useful in the current
-setup of Vaughan to select regular compute nodes based on the amount
-of available memory.
-
-=======  ====================================================================================
-Feature  Explanation
-=======  ====================================================================================
-mem256   Use nodes with 256 GB RAM (roughly 240 GB available). 
-         This is the majority of the regular compute nodes on Vaughan.
-         Requesting this as a feature ensures that you only get nodes with 128 GB of memory
-         and keep the nodes with more memory available for other users who really need that
-         feature.
-mem512   Use nodes with 512 GB RAM (roughly 500 GB available). 
-         This property is useful if you submit a batch of jobs that require more than 4 GB of 
-         memory per processor but do not use all cores and you do not want to use a tool
-         such as Worker to bundle jobs yourself, as it helps the scheduler to put those jobs 
-         on nodes that can be further filled with your jobs.
-=======  ====================================================================================
-
-.. comment
-    All nodes are connected using an InfiniBand HDR100 network. The Rome compute nodes are logically
-    organised in 4 islands (i.e., nodes connected to a single switch) with respectively 32, 36 and twice 44 nodes each.
-    The 40 Milan compute nodes form an additional island.
-    Storage is provided through the central :ref:`UAntwerp storage` system.
-
 GPU compute nodes
 =================
 
-The maximum execution wall time for GPU jobs is 1 day (24 hours).
+The maximum execution wall time for GPU jobs is **1 day** (24 hours).
 
-===============  ======  =======================  ==========  ==========================================================================================  ======  ==========  =========
-Slurm partition  nodes   GPUs per node            GPU memory  processors per node                                                                         memory  local disk  network
-===============  ======  =======================  ==========  ==========================================================================================  ======  ==========  =========
-ampere_gpu       1       4x Nvidia A100 (Ampere)  40 GB SXM4  2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  480 GB SSD  HDR100-IB
-arcturus_gpu     2       2x AMD MI100 (Arcturus)  32 GB HBM2  2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  480 GB SSD  HDR100-IB
-===============  ======  =======================  ==========  ==========================================================================================  ======  ==========  =========
+===============  ======  ======================================================================================================  ==========  ==========================================================================================  ======  ==========  =========
+Slurm partition  nodes   GPUs per node                                                                                           GPU memory  processors per node                                                                         memory  local disk  network
+===============  ======  ======================================================================================================  ==========  ==========================================================================================  ======  ==========  =========
+ampere_gpu       1       4x NVIDIA Tesla `A100 (Ampere) <https://www.nvidia.com/en-us/data-center/a100/>`_                       40 GB SXM4  2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  480 GB SSD  HDR100-IB
+arcturus_gpu     2       2x AMD Instinct `MI100 (Arcturus) <https://www.amd.com/en/products/accelerators/instinct/mi100.html>`_  32 GB HBM2  2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  480 GB SSD  HDR100-IB
+===============  ======  ======================================================================================================  ==========  ==========================================================================================  ======  ==========  =========
 
-See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
+.. seealso:: See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
+
+.. _Vaughan login:
 
 ********************
 Login infrastructure
@@ -99,12 +71,11 @@ per node       login1\-vaughan.hpc.uantwerpen.be  login1.vaughan.antwerpen.vsc
 ..             login2\-vaughan.hpc.uantwerpen.be  login2.vaughan.antwerpen.vsc
 ============   =================================  ============================
 
-.. comment
-    ======  ==========================================================================================  ======  ======================  =========
-    nodes   processors per node                                                                         memory  local disk              network
-    ======  ==========================================================================================  ======  ======================  =========
-    2       2x 16-core AMD `Epyc 7282 <https://www.amd.com/en/products/cpu/amd-epyc-7282>`_ \@2.8 GHz   256 GB  2x 480 GB SSD (raid 1)  HDR100-IB
-    ======  ==========================================================================================  ======  ======================  =========
+- 2 login nodes
+
+  - 2 AMD `Epyc 7282 <https://www.amd.com/en/products/cpu/amd-epyc-7282>`_ CPUs\@2.8 GHz (zen2), 16 cores each
+  - 256 GB RAM
+  - 2x 480 GB HDD local disk (raid 1)
 
 *********************
 Compiling for Vaughan
@@ -149,17 +120,13 @@ has improved a lot recently. Never use the default GNU compilers installed
 on the system, but always load one of the ``foss`` or ``GCC`` modules.
 
 To optimize for Vaughan, compile on the Vaughan login
-or compute nodes and combine either the option ``-march=native``
-or ``-march=znver2`` with either optimization
+or compute nodes and combine either the option ``-march=native``, or
+``-march=znver2`` or ``-march=znver3`` for the zen2 and zen3 nodes respectively.
+You can combine this with either optimization
 level ``-O2`` or ``-O3``. In most cases, and especially for
 floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
 (whereas the Intel compilers already offer vectorization at level ``-O2``).
-
-.. comment
-    If you really need to use GCC version prior to version 8, ``-march=znver2``
-    is not yet available. On GCC 6 or 7, ``-march=znver1`` is probably the best
-    choice. However, avoid using GCC versions that are even older.
 
 |Warning| If you forget these options, the default for the GNU compilers is
 to generate unoptimized (level ``-O0``) code for a very generic CPU

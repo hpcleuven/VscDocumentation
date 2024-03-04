@@ -4,26 +4,23 @@
 Leibniz hardware
 ################
 
-************
-Intended use
-************
+The Leibniz cluster is the default UAntwerp cluster.
+Besides regular compute nodes, it contains 2 NVIDIA GPU compute nodes, and a :ref:`visualization node <remote visualization UAntwerp>`.
 
-Jobs can have a maximal execution wall time of 3 days (72 hours).
-On the accelerator nodes, a shorter wall time of 1 day applies.
-For big parallel jobs, consider using the newer cluster :ref:`Vaughan<Vaughan hardware>`,
-which has nodes with 64 cores. For smaller jobs, longer jobs or batches of single core jobs, 
+For larger jobs, consider using the newer :ref:`Vaughan<Vaughan hardware>`.
+For smaller jobs, longer jobs or batches of single core jobs, 
 consider using the :ref:`Breniac<Breniac hardware UAntwerp>` nodes.
 
 *******************
-Hardware details
+Compute nodes
 *******************
-
-CPU compute nodes
-=================
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
 the partition your job is submitted to.
 When the option is omitted, your job is submitted to the default partition (**broadwell**).
+
+CPU compute nodes
+=================
 
 The maximum execution wall time for jobs is **3 days** (72 hours).
 
@@ -34,40 +31,20 @@ Slurm partition  nodes   processors per node                                    
 broadwell_256    8       2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ \@2.4 GHz  256 GB  120 GB SSD  EDR-IB
 ===============  ======  =============================================================================  ======  ==========  =======
 
-.. comment
-  To remain compatible with the typical VSC setup, a number of features 
-  can be used in job scripts (e.g. with Slurm's ``--constraint`` option).
-  However, only the following features are really useful in the current
-  setup of Leibniz to select regular compute nodes based on the amount
-  of available memory.
-
-  =======   ====================================================================================
-  Feature   Explanation
-  =======   ====================================================================================
-  mem128    Use nodes with 128 GB RAM (roughly 112 GB available). 
-            This is the majority of the regular compute nodes on Leibniz.
-            Requesting this as a feature ensures that you only get nodes with 128 GB of memory
-            and keep the nodes with more memory available for other users who really need that
-            feature.
-  mem256    Use nodes with 256 GB RAM (roughly 240 GB available). 
-            This property is useful if you submit a batch of jobs that require more than 4 GB of 
-            memory per processor but do not use all cores and you do not want to use a tool
-            such as Worker to bundle jobs yourself, as it helps the scheduler to put those jobs 
-            on nodes that can be further filled with your jobs.
-  =======   ====================================================================================
-
 GPU compute nodes
 =================
 
-For more detailed instructions, please see :ref:`Instructions for using the GPU nodes <GPU computing UAntwerp>`
+The maximum execution wall time for jobs is **1 day** (24 hours).
 
-The maximum execution wall time for jobs is 1 day (24 hours).
+===============  =====  =======================================================================================  ==========  =============================================================================  ======  ==========  =======
+Slurm partition  nodes  GPUs per node                                                                            GPU memory  processors per node                                                            memory  local disk  network
+===============  =====  =======================================================================================  ==========  =============================================================================  ======  ==========  =======
+pascal_gpu       2      2x NVIDIA Tesla `P100 (Pascal) <https://www.nvidia.com/en-us/data-center/tesla-p100/>`_  16 GB HBM2  2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ \@2.4 GHz  128 GB  120 GB      EDR-IB
+===============  =====  =======================================================================================  ==========  =============================================================================  ======  ==========  =======
 
-===============  =====  =======================  ==========  =============================================================================  ======  ==========  =======
-Slurm partition  nodes  GPUs per node            GPU memory  processors per node                                                            memory  local disk  network
-===============  =====  =======================  ==========  =============================================================================  ======  ==========  =======
-pascal_gpu       2      2x Nvidia P100 (Pascal)  16 GB HBM2  2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ \@2.4 GHz  128 GB  120 GB      EDR-IB
-===============  =====  =======================  ==========  =============================================================================  ======  ==========  =======
+.. seealso:: See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
+
+.. _Leibniz login:
 
 ********************
 Login infrastructure
@@ -91,17 +68,17 @@ Visualisation node         viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwe
 
 - 2 login nodes
 
-    - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
-    - 256 GB RAM
-    - 2x 1 TB HDD local disk (raid 1)
+  - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
+  - 256 GB RAM
+  - 2x 1 TB HDD local disk (raid 1)
 
 - 1 visualization node
 
-    - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
-    - 1 NVIDIA Quadro P5000
-    - 256 GB RAM
-    - 2x 1 TB HDD local disk (raid 1)
-    - :ref:`Instructions for using the visualization node <remote visualization UAntwerp>`
+  - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
+  - 1 NVIDIA Quadro P5000
+  - 256 GB RAM
+  - 2x 1 TB HDD local disk (raid 1)
+  - :ref:`Instructions for using the visualization node <remote visualization UAntwerp>`
     
 *********************
 Compiling for Leibniz
@@ -170,10 +147,8 @@ these nodes have 128 GB RAM, the other
 8 have 256 GB RAM. The nodes do not have a sizeable local disk.
 
 Leibniz also
-contains a node for visualisation and 3 node types for experimenting with accelerators:
-2 nodes for GPU computing with two NVIDIA Tesla P100 GPU compute cards,
-1 node with dual NEC SX-Aurora TSUBASA vector processors
-and 1 node with an Intel Xeon Phi expansion board.
+contains a node for visualisation and 
+2 GPU nodes with two NVIDIA Tesla P100 GPU compute cards for experimenting with accelerators.
 
 All nodes are connected using an InfiniBand EDR network. The regular compute nodes
 are logically organised in 5 islands with 24 nodes, 1 island with 22 nodes and 1 island

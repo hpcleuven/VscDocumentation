@@ -6,7 +6,7 @@
 
        * Tier-2 :ref:`Vaughan <Vaughan hardware>`
        * Tier-2 :ref:`Leibniz <Leibniz hardware>`
-       * Tier-2 :ref:`Hopper <Hopper hardware>`
+       * Tier-2 :ref:`Breniac <Breniac hardware UAntwerp>`
 
     .. grid-item-card:: KU Leuven/UHasselt
        :columns: 12 4 4 4

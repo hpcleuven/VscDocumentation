@@ -4,19 +4,7 @@
 Breniac hardware
 ################
 
-
-************
-Intended use
-************
-
 The Breniac compute nodes should be used for:
-
-.. comment
-  * Jobs that use old software that cannot be properly compiled to benefit from the
-  extensions in the instruction sets of Leibniz and Vaughan, or that lack enough
-  parallelism to fully exploit the Leibniz or Vaughan compute nodes (even taking 
-  into account that multiple jobs launched nearly simultaneously can still make
-  it possible to use the full capacity of a Leibniz or Vaughan compute node).
 
 * Jobs that need more than 128 GB of memory to run properly and that do not need
   more than 28 cores per node.
@@ -24,8 +12,11 @@ The Breniac compute nodes should be used for:
 * Jobs that do not fit in a maximum wall time of 3 days and cannot be restarted
   cheaply.
 
+For bigger parallel jobs, consider using the :ref:`Leibniz<Leibniz hardware>` and 
+:ref:`Vaughan<Vaughan hardware>` nodes.
+
 ****************
-Hardware details
+Compute nodes
 ****************
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
@@ -36,11 +27,13 @@ The maximum execution wall time for jobs is **7 days** (168 hours). Note however
 this feature should not be abused as there is only very little software that really
 needs this.
 
-===============  ======  =============================================================================  ======  ==========  =======
-Slurm partition  nodes   processors per node                                                            memory  local disk  network
-===============  ======  =============================================================================  ======  ==========  =======
-skylake          23      2x 14-core Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ \@2.6GHz  192 GB  500 GB      EDR-IB
-===============  ======  =============================================================================  ======  ==========  =======
+===============  ======  ===================================================================================  ======  ==========  =======
+Slurm partition  nodes   processors per node                                                                  memory  local disk  network
+===============  ======  ===================================================================================  ======  ==========  =======
+skylake          23      2x 14-core Intel Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ \@2.6GHz  192 GB  500 GB      EDR-IB
+===============  ======  ===================================================================================  ======  ==========  =======
+
+.. _Breniac login UAntwerp:
 
 ********************
 Login infrastructure
@@ -59,26 +52,11 @@ Login node     External interface                 Internal interface
 generic name   login\-breniac.hpc.uantwerpen.be    login.breniac.antwerpen.vsc
 ============   =================================  ============================
 
-=============================================================================  ======  ==========  =======
-processors per node                                                            memory  local disk  network
-=============================================================================  ======  ==========  =======
-2x 14-core Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ \@2.6GHz  192 GB  500 GB      EDR-IB
-=============================================================================  ======  ==========  =======
+- 2 login nodes
 
-Available partitions
-====================
-
-When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
-the partition your job is submitted to.
-When the option is omitted, your job is submitted to the default partition (*skylake*).
-
-For the Breniac nodes, only a single partition is available:
-
-===========   =========================================================
-Partition     Limits
-===========   =========================================================
-**skylake**   Default. Maximum wall time of 7 days.
-===========   =========================================================
+  - 2 Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ CPUs\@2.6GHz (Skylake), 14 cores each
+  - 192 GB RAM
+  - 2x 500 GB HDD local disk (raid 1)
 
 *********************
 Compiling for Breniac
@@ -120,12 +98,13 @@ floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
 whereas the Intel compilers already offer vectorization at level ``-O2``.
 
-|Warning| If you forget to specify these options, the default for the GNU compilers is
-to generate unoptimized (level ``-O0``) code for a very generic CPU 
-(``-march=x86-64``), which doesn't exploit the performance potential of
-the Breniac CPUs at all. Always specify an appropriate
-architecture (the ``-march`` flag) and appropriate optimization level
-(the ``-O`` flag) as explained in the previous paragraph.
+.. warning::
+  If you forget to specify these options, the default for the GNU compilers is
+  to generate unoptimized (level ``-O0``) code for a very generic CPU 
+  (``-march=x86-64``), which doesn't exploit the performance potential of
+  the Breniac CPUs at all. Always specify an appropriate
+  architecture (the ``-march`` flag) and appropriate optimization level
+  (the ``-O`` flag) as explained in the previous paragraph.
 
 
 *******
