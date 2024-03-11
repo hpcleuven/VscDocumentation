@@ -19,8 +19,10 @@ the capabilities of P100, V100, A100 and H100 GPUs.
 When locally installing software yourself, we therefore recommend to have
 separate installations for the different types of CPUs and (if applicable)
 GPUs on which you intend to run the software. This rule applies most strongly
-to performance-critical code which is compiled from source (and less strongly
-to light-weight tools based on precompiled binaries).
+to performance-critical code which is compiled from source. It applies less
+strongly to precompiled binaries or interpreted code such as pure Python
+scripts (meaning that it is typically not necessary to e.g. create different
+Conda environments for different CPU types).
 
 .. note::
 
@@ -29,8 +31,7 @@ to light-weight tools based on precompiled binaries).
     for the target device. In case of doubt, performance-critical parts of
     an application should not rely on precompiled binaries and instead use
     optimized binaries as provided by the centrally installed modules and/or
-    by local installations from source. See also :ref:`conda for Python` and
-    :ref:`wice_conda`.
+    by local installations from source.
 
 To let jobs use the correct installation at runtime, you can make use of
 predefined environment variables such as ``${VSC_ARCH_LOCAL}`` (and possibly
@@ -114,33 +115,3 @@ All the resources furthermore need to be specified inside the Slurm script
 used as input for Worker (passing resources via the command line is not
 supported). Various examples can be found in a `development branch
 <https://github.com/gjbex/worker/tree/development_slurm/examples/>`__.
-
-
-.. _wice_conda:
-
-Conda on wICE
--------------
-
-As the hardware is different on Genius and wICE, we advise
-to have two separate :ref:`Conda installations <conda for Python>` (one for each
-cluster). The :ref:`interactive Slurm partition on wICE<submit to wice interactive node>` 
-can be used as an equivalent of the Genius login nodes for wICE, making it suited 
-for Conda environment management.
-
-To select the correct Conda installation when you log in and at the
-start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
-
-.. code-block:: shell
-   
-   case ${VSC_INSTITUTE_CLUSTER} in
-       genius)
-           export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
-           ;;
-        wice)
-           export PATH="${VSC_DATA}/miniconda3-wice/bin:${PATH}"
-           ;;
-   esac
-
-Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
-requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript,
-as emphasized in the :ref:`Site-specific Slurm info page <leuven_job_shell>`.
