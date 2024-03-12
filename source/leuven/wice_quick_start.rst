@@ -150,8 +150,8 @@ would look like this::
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu \
             --nodes=1 --ntasks=54 --gpus-per-node=3 myjobscript.slurm
 
-There are also nodes with 4 H100 GPUs (and 64 AMD Genoa CPUs) which you
-can select via the ``gpu_h100`` partition, e.g.::
+There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
+per node) which you can select via the ``gpu_h100`` partition, e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_h100 \
             --nodes=1 --ntasks=16 --gpus-per-node=1 myjobscript.slurm
