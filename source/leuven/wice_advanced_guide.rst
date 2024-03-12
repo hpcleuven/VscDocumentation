@@ -33,6 +33,15 @@ Conda environments for different CPU types).
     optimized binaries as provided by the centrally installed modules and/or
     by local installations from source.
 
+.. note::
+
+    Older toolchains (compilers, BLAS libraries, ...) may not be able to take
+    full advantage of newer CPU models and so we typically recommend using
+    the most recent available toolchains. Sapphire Rapids CPUs provide new
+    'AMX' instructions, for example, which may be useful for AI applications.
+    When using GNU compilers, however, the GCC version needs to be
+    sufficiently recent (>= v11) in order to generate AMX code.
+
 To let jobs use the correct installation at runtime, you can make use of
 predefined environment variables such as ``${VSC_ARCH_LOCAL}`` (and possibly
 ``${VSC_ARCH_SUFFIX}`` and ``${VSC_INSTITUTE_CLUSTER}``) to organize your
