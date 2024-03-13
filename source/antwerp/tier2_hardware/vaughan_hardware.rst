@@ -73,7 +73,7 @@ per node       login1\-vaughan.hpc.uantwerpen.be  login1.vaughan.antwerpen.vsc
 
 - 2 login nodes
 
-  - 2 AMD `Epyc 7282 <https://www.amd.com/en/products/cpu/amd-epyc-7282>`_ CPUs\@2.8 GHz (zen2), 16 cores each
+  - 2x 16-core AMD `Epyc 7282 <https://www.amd.com/en/products/cpu/amd-epyc-7282>`_ CPUs\@2.8 GHz (zen2)
   - 256 GB RAM
   - 2x 480 GB HDD local disk (raid 1)
 
@@ -85,15 +85,24 @@ To compile code for Vaughan, all ``intel``,
 ``foss`` and ``GCC`` modules can be used (the
 latter being equivalent to ``foss`` but without MPI and the math libraries).
 
+.. note::
+  Do not forget to load one of the ``intel``, ``foss`` or ``GCC`` toolchain modules
+  before compiling software!
+
 Optimization options for the Intel compilers
 ============================================
+
+.. seealso::
+  For more information, please see the shared 
+  :ref:`Intel toolchain<Intel toolchain>` documentation.
 
 As the processors in Vaughan are made by AMD, there is no explicit support
 in the Intel compilers. However, by choosing the appropriate compiler
 options, the Intel compilers still produce very good code for Vaughan that
 will often beat code produced by GCC (certainly for Fortran codes as gfortran
 is a rather weak compiler).
-To optimize specifically for Vaughan, compile on the Vaughan login
+
+To optimize for Vaughan, compile on the Vaughan login
 or compute nodes and combine the option ``-march=core-avx2`` with either optimization
 level ``-O2`` or ``-O3``. For some codes, the additional optimizations at
 level ``-O3`` actually produce slower code (often the case if the code
@@ -104,20 +113,18 @@ is to generate code using optimization level ``-O2`` for architecture ``-march=p
 While ``-O2`` gives pretty good results, compiling for the Pentium 4 architecture uses 
 none of the new instructions nor the vector instructions introduced since 2005.
 
-The ``-x`` and ``-ax``-based options don't function properly on AMD processors.
+|Warning| The ``-x`` and ``-ax``-based options don't function properly on AMD processors.
 These options add CPU detection to the code, and whenever detecting AMD
 processors, binaries refuse to work or switch to code for the ancient
 Pentium 4 architecture. In particular, ``-xCORE-AVX2`` is known to produce
 non-working code.
 
-
 Optimization options for the GNU compilers
 ==========================================
 
-We suggest to use the newest GNU compilers available on Vaughan
-(preferably version 9 or more recent) as the support for AMD processors
-has improved a lot recently. Never use the default GNU compilers installed
-on the system, but always load one of the ``foss`` or ``GCC`` modules.
+.. seealso::
+  For more information, please see the shared 
+  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
 
 To optimize for Vaughan, compile on the Vaughan login
 or compute nodes and combine either the option ``-march=native``, or
@@ -131,15 +138,7 @@ with the GNU compilers as it only activates vectorization at this level
 |Warning| If you forget these options, the default for the GNU compilers is
 to generate unoptimized (level ``-O0``) code for a very generic CPU
 (``-march=x86-64``) which doesn't exploit the performance potential of
-the Vaughan CPUs at all. Always specify an appropriate
-architecture (the ``-march`` flag) and appropriate optimization level
-(the ``-O`` flag) as explained in the previous paragraph.
-
-Further documentation
-=====================
-
-* :ref:`Intel toolchains <Intel toolchain>`
-* :ref:`FOSS toolchains (contains GCC) <FOSS toolchain>`
+the Vaughan CPUs at all.
 
 *******
 History

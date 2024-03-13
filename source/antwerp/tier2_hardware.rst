@@ -1,17 +1,8 @@
+.. _UAntwerp hardware:
+
 ##############################
 UAntwerp Tier-2 Infrastructure
 ##############################
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-  
-   tier2_hardware/vaughan_hardware
-   tier2_hardware/leibniz_hardware
-   tier2_hardware/breniac_hardware
-   tier2_hardware/uantwerp_storage
-   uantwerp_slurm_specifics
-   remote_visualization_uantwerp
 
 ********************
 Login infrastructure
@@ -267,3 +258,13 @@ We discourage the use of Conda-variants for various reasons. It should only be u
   boost for those routines, up to a factor 4 on Leibniz and Vaughan and up to a factor of 7 or so on the
   Skylake partition of the previous Tier-1 cluster BrENIAC.
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+  
+   tier2_hardware/vaughan_hardware
+   tier2_hardware/leibniz_hardware
+   tier2_hardware/breniac_hardware
+   tier2_hardware/uantwerp_storage
+   uantwerp_slurm_specifics
+   remote_visualization_uantwerp

@@ -11,9 +11,9 @@ For larger jobs, consider using the newer :ref:`Vaughan<Vaughan hardware>`.
 For smaller jobs, longer jobs or batches of single core jobs, 
 consider using the :ref:`Breniac<Breniac hardware UAntwerp>` nodes.
 
-*******************
+*************
 Compute nodes
-*******************
+*************
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
 the partition your job is submitted to.
@@ -58,23 +58,23 @@ Direct login is possible to both login nodes and to the visualization node.
   interface names.
 
 =========================  =================================  ============================
-Node                       External interface                 Internal interface
+Login node                 External interface                 Internal interface
 =========================  =================================  ============================
 Login node (generic name)  login\-leibniz.hpc.uantwerpen.be   login.leibniz.antwerpen.vsc
 Login node (per node)      login1\-leibniz.hpc.uantwerpen.be  login1.leibniz.antwerpen.vsc
 ..                         login2\-leibniz.hpc.uantwerpen.be  login2.leibniz.antwerpen.vsc
-Visualisation node         viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
+Visualization node         viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
 =========================  =================================  ============================
 
 - 2 login nodes
 
-  - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
+  - 2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell)
   - 256 GB RAM
   - 2x 1 TB HDD local disk (raid 1)
 
 - 1 visualization node
 
-  - 2 Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell), 14 cores each
+  - 2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell)
   - 1 NVIDIA Quadro P5000
   - 256 GB RAM
   - 2x 1 TB HDD local disk (raid 1)
@@ -88,9 +88,16 @@ To compile code for Leibniz, all ``intel``,
 ``foss`` and ``GCC`` modules can be used (the 
 latter being equivalent to ``foss`` but without MPI and the math libraries).
 
+.. note::
+  Do not forget to load one of the ``intel``, ``foss`` or ``GCC`` toolchain modules
+  before compiling software!
 
 Optimization options for the Intel compilers
 ============================================
+
+.. seealso::
+  For more information, please see the shared 
+  :ref:`Intel toolchain<Intel toolchain>` documentation.
 
 To optimize for Leibniz, compile on the Leibniz login 
 or compute nodes. Use either ``-xHost`` or Broadwell architecture specific options.
@@ -104,12 +111,12 @@ is to generate code using optimization level ``-O2`` for architecture ``-march=p
 While ``-O2`` gives pretty good results, compiling for the Pentium 4 architecture uses 
 none of the new instructions nor the vector instructions introduced since 2005.
 
-
 Optimization options for the GNU compilers
 ==========================================
 
-|Warning| Never use the default GNU compilers installed
-on the system, but always load one of the ``foss`` or ``GCC`` modules.
+.. seealso::
+  For more information, please see the shared 
+  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
 
 To optimize for Leibniz, compile on the Leibniz login 
 or compute nodes.
@@ -123,15 +130,7 @@ whereas the Intel compilers already offer vectorization at level ``-O2``.
 |Warning| If you forget to specify these options, the default for the GNU compilers is
 to generate unoptimized (level ``-O0``) code for a very generic CPU 
 (``-march=x86-64``), which doesn't exploit the performance potential of
-the Leibniz CPUs at all. Always specify an appropriate
-architecture (the ``-march`` flag) and appropriate optimization level
-(the ``-O`` flag) as explained in the previous paragraph.
-
-
-Further documentation
-======================
-* :ref:`Intel toolchains <Intel toolchain>`
-* :ref:`FOSS toolchains (contains GCC) <FOSS toolchain>`
+the Leibniz CPUs at all.
 
 *******
 History
@@ -147,7 +146,7 @@ these nodes have 128 GB RAM, the other
 8 have 256 GB RAM. The nodes do not have a sizeable local disk.
 
 Leibniz also
-contains a node for visualisation and 
+contains a node for visualization and 
 2 GPU nodes with two NVIDIA Tesla P100 GPU compute cards for experimenting with accelerators.
 
 All nodes are connected using an InfiniBand EDR network. The regular compute nodes

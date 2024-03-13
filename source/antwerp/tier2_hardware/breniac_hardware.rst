@@ -15,9 +15,9 @@ The Breniac compute nodes should be used for:
 For bigger parallel jobs, consider using the :ref:`Leibniz<Leibniz hardware>` and 
 :ref:`Vaughan<Vaughan hardware>` nodes.
 
-****************
+*************
 Compute nodes
-****************
+*************
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
 the partition your job is submitted to.
@@ -30,7 +30,7 @@ needs this.
 ===============  ======  ===================================================================================  ======  ==========  =======
 Slurm partition  nodes   processors per node                                                                  memory  local disk  network
 ===============  ======  ===================================================================================  ======  ==========  =======
-skylake          23      2x 14-core Intel Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ \@2.6GHz  192 GB  500 GB      EDR-IB
+**skylake**      23      2x 14-core Intel Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ \@2.6GHz  192 GB  500 GB      EDR-IB
 ===============  ======  ===================================================================================  ======  ==========  =======
 
 .. _Breniac login UAntwerp:
@@ -66,9 +66,16 @@ To compile code for Breniac, all ``intel``,
 ``foss`` and ``GCC`` modules can be used (the 
 latter being equivalent to ``foss`` but without MPI and the math libraries).
 
+.. note::
+  Do not forget to load one of the ``intel``, ``foss`` or ``GCC`` toolchain modules
+  before compiling software!
 
 Optimization options for the Intel compilers
 ============================================
+
+.. seealso::
+  For more information, please see the shared 
+  :ref:`Intel toolchain<Intel toolchain>` documentation.
 
 To optimize for Breniac, compile on the Breniac login 
 or compute nodes. Use either ``-xHost`` or Skylake architecture specific options.
@@ -82,12 +89,12 @@ is to generate code using optimization level ``-O2`` for architecture ``-march=p
 While ``-O2`` gives pretty good results, compiling for the Pentium 4 architecture uses 
 none of the new instructions nor the vector instructions introduced since 2005.
 
-
 Optimization options for the GNU compilers
 ==========================================
 
-|Warning| Never use the default GNU compilers installed
-on the system, but always load one of the ``foss`` or ``GCC`` modules.
+.. seealso::
+  For more information, please see the shared 
+  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
 
 To optimize for Breniac, compile on the Breniac login 
 or compute nodes.
@@ -98,14 +105,10 @@ floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
 whereas the Intel compilers already offer vectorization at level ``-O2``.
 
-.. warning::
-  If you forget to specify these options, the default for the GNU compilers is
-  to generate unoptimized (level ``-O0``) code for a very generic CPU 
-  (``-march=x86-64``), which doesn't exploit the performance potential of
-  the Breniac CPUs at all. Always specify an appropriate
-  architecture (the ``-march`` flag) and appropriate optimization level
-  (the ``-O`` flag) as explained in the previous paragraph.
-
+|Warning| If you forget to specify these options, the default for the GNU compilers is
+to generate unoptimized (level ``-O0``) code for a very generic CPU 
+(``-march=x86-64``), which doesn't exploit the performance potential of
+the Breniac CPUs at all.
 
 *******
 History

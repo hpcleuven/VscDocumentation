@@ -9,3 +9,4 @@ Archive of Old Clusters
 
    leuven/tier1_breniac
    leuven/old_hardware/thinking_hardware
+   antwerp/old_hardware/hopper_hardware
