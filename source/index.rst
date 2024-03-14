@@ -36,51 +36,84 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 .. grid:: 3
    :gutter: 4
 
-   .. grid-item-card:: :fas:`user-circle` Accounts and access
+   .. grid-item-card:: :fas:`user-circle` Accounts
       :columns: 12
       :link: access/index
       :link-type: doc
       :class-title: h3
 
-      How to get your VSC account and access the different VSC services and platforms.
+      How to get your VSC account to use the different VSC services and platforms.
 
-   .. grid-item-card:: :fas:`floppy-disk` Research Data
-      :columns: 12
-      :link: data/index
-      :link-type: doc
+   .. grid-item-card:: :fas:`rocket` :doc:`Compute <compute>`
+      :columns: 12 12 4 4
       :class-title: h3
-
-      Data transfer and storage in the VSC infrastructure.
-
-   .. grid-item-card:: :fas:`rocket` Compute
-      :columns: 12 4 4 4
-      :link: compute
-      :link-type: doc
-      :class-title: h3
-
+   
       The high-performance computing (HPC) platform provides multiple tiers
       of parallel processing enabling researchers to run advanced application
       programs efficiently, reliably and quickly.
 
-   .. grid-item-card:: :fas:`cloud` Tier-1 Cloud
-      :columns: 12 4 4 4
-      :link: cloud/index
-      :link-type: doc
+      +++
+
+      .. grid:: 2
+         :gutter: 2
+
+         .. grid-item-card:: Tier-1
+            :text-align: center
+            :class-card: text-dark bg-warning opacity-75
+            :link: hardware-tier1
+            :link-type: doc
+   
+         .. grid-item-card:: Tier-2
+            :text-align: center
+            :class-card: text-dark bg-info opacity-75
+            :link: hardware-tier2
+            :link-type: doc
+   
+         .. grid-item-card:: Web
+            :text-align: center
+            :class-card: text-dark bg-danger opacity-75
+            :link: leuven/services/openondemand
+            :link-type: doc
+   
+   .. grid-item-card:: :fas:`floppy-disk` :doc:`Data <data/index>`
+      :columns: 12 12 4 4
       :class-title: h3
-
-      The VSC Cloud component provides *on-demand* resources in a more
-      flexible and cloud-like manner.
-
-   .. grid-item-card:: :fas:`database` Tier-1 Data
-      :columns: 12 4 4 4
-      :link: data/tier1_data_service
-      :link-type: doc
-      :class-title: h3
-
+   
       The VSC Data component enables research data to remain close to the
       computing infrastructure during the active phase of the data life
       cycle.
 
+      +++
+
+      .. grid:: 2
+         :gutter: 2
+
+         .. grid-item-card:: Tier-1
+            :text-align: center
+            :class-card: text-dark bg-warning opacity-75
+            :link: data/tier1_data_service
+            :link-type: doc
+
+   
+         .. grid-item-card:: Tier-2
+            :text-align: center
+            :class-card: text-dark bg-info opacity-75
+            :link: data/storage
+            :link-type: doc
+   
+         .. grid-item-card:: Globus
+            :text-align: center
+            :class-card: text-dark bg-success opacity-75
+            :link: globus/index
+            :link-type: doc
+   
+   .. grid-item-card:: :fas:`cloud` :doc:`Cloud <cloud/index>`
+      :columns: 12 12 4 4
+      :class-title: h3
+   
+      The VSC Cloud component provides *on-demand* resources in a more
+      flexible and cloud-like manner.
+   
    .. grid-item-card:: :fas:`question-circle` FAQs
        :columns: 12
        :link: faq
