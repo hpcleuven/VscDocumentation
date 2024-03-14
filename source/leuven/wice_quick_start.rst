@@ -70,7 +70,8 @@ each) can be done like this::
             --nodes=2 --ntasks-per-node=72 --time=2:00:00 myjobscript.slurm
    
 This will select the default partition (called ``batch``) which is the
-one containing these IceLake nodes.
+one containing these IceLake nodes. The ``batch_icelake`` partition is
+equivalent to the ``batch`` one.
 
 To use Sapphire Rapids nodes instead (mind the higher core count)::
 
@@ -78,8 +79,8 @@ To use Sapphire Rapids nodes instead (mind the higher core count)::
             --nodes=2 --ntasks-per-node=96 --time=2:00:00 myjobscript.slurm
 
 For jobs which need more than 3 days of walltime (up to maximum 7 days),
-you need to submit to the respective ``batch_long`` or
-``batch_sapphirerapids_long`` partitions instead.
+you need to submit to the respective ``batch_long``/``batch_icelake_long``
+or ``batch_sapphirerapids_long`` partitions instead.
 
 
 .. _submit to wice interactive node:
@@ -135,19 +136,20 @@ memory nodes in this regard.
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
 
-The nodes with A100 GPUs are located in the ``gpu`` partition. As for the other
+The nodes with A100 GPUs are located in the ``gpu_a100`` partition (the
+``gpu`` partition also covers the same nodes). As for the other
 node types, the GPU nodes can be shared by different jobs from different users
 but each job has exclusive access to its allocated cores and GPU(s).
 
 If you e.g. need one A100 GPU::
 
-   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu \
+   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
             --nodes=1 --ntasks=18 --gpus-per-node=1 myjobscript.slurm
 
 We recommend to request 18 cores for every GPU, so an example for 3 GPUs
 would look like this::
 
-   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu \
+   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
             --nodes=1 --ntasks=54 --gpus-per-node=3 myjobscript.slurm
 
 There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
