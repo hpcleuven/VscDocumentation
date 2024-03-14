@@ -252,12 +252,12 @@ Step 3: Starting an application
 
    |Example| Start MATLAB with hardware-accelerated OpenGL with ``-nosoftwareopengl`` as follows:
 
-    .. code:: bash
+   .. code:: bash
  
-       vglrun matlab -nosoftwareopengl
+      vglrun matlab -nosoftwareopengl
     
-    The MATLAB command ``opengl info`` will then show that you are
-    indeed using the GPU.
+   The MATLAB command ``opengl info`` will then show that you are
+   indeed using the GPU.
 
 4. When you've finished, don't forget to log out in the Xfce desktop 
    (right mouse click in the desktop, then select \"Application\"
