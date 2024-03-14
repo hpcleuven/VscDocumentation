@@ -45,13 +45,15 @@ Conda environments for different CPU types).
 To let jobs use the correct installation at runtime, you can make use of
 predefined environment variables such as ``${VSC_ARCH_LOCAL}`` (and possibly
 ``${VSC_ARCH_SUFFIX}`` and ``${VSC_INSTITUTE_CLUSTER}``) to organize your
-installations.
+installations (see the examples below).
 
 For software using CPUs, the different installations would be:
 
 - one for SkyLake and CascadeLake CPUs
   :raw-html:`<br />`
-  (``${VSC_ARCH_LOCAL}`` = ``skylake`` or ``cascadelake``)
+  (``${VSC_ARCH_LOCAL}`` = ``skylake`` or ``cascadelake``; :raw-html:`<br />`
+  if needed you can control this for your jobs by e.g. adding a
+  ``--constraint=cascadelake`` Slurm option)
 - one for IceLake CPUs
   :raw-html:`<br />`
   (``${VSC_ARCH_LOCAL}`` = ``icelake``)
@@ -74,10 +76,9 @@ For software which also uses GPUs, this would be:
   :raw-html:`<br />`
   (``${VSC_ARCH_LOCAL}`` = ``zen4`` and ``${VSC_ARCH_SUFFIX}`` = ``-h100``)
 
-Compiling software for a particular CPU/GPU model can be done in an
-interactive job (``srun ...``) submitted to a partition containing
-the target device(s) (see e.g. :ref:`genius hardware` and
-:ref:`wice hardware`).
+Unless mentioned otherwise, the ``${VSC_ARCH_SUFFIX}`` corresponds to an
+empty string. You can check which CPU and GPU models are present in which
+partitions on the :ref:`genius hardware` and :ref:`wice hardware` pages.
 
 Many dependencies you might need are centrally installed. The modules
 that are optimized for wICE are available when the appropriate
@@ -93,6 +94,38 @@ Similar to other VSC clusters, wICE supports two families of common toolchains:
 various `subtoolchains <https://docs.easybuild.io/common-toolchains/>`__ are
 available. For more general information on software development on the VSC,
 have a look at this :ref:`overview <software_development>`.
+
+The following jobscripts show one of the ways you can put this into practice
+to compile and then run your software (to be repeated for each CPU model that
+you intend to use):
+
+::
+
+    #!/bin/bash -l
+    #SBATCH --clusters=...
+    #SBATCH --partition=...
+    #SBATCH ...
+
+    module load intel/2022b  # just an example
+
+    installdir=${VSC_DATA}/your_software/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/intel-2022b
+    mkdir -p ${installdir}
+
+    # build the software, installing the binaries in ${installdir}/bin
+
+::
+
+    #!/bin/bash -l
+    #SBATCH --clusters=...
+    #SBATCH --partition=...
+    #SBATCH ...
+
+    module load intel/2022b
+
+    installdir=${VSC_DATA}/your_software/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/intel-2022b
+    export PATH=${installdir}/bin:${PATH}
+
+    # run the software
 
 
 .. _wice_memory_hierarchy:
