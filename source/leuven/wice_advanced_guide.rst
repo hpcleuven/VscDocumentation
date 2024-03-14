@@ -95,6 +95,30 @@ available. For more general information on software development on the VSC,
 have a look at this :ref:`overview <software_development>`.
 
 
+.. _wice_memory_hierarchy:
+
+Memory hierarchy
+----------------
+
+When running applications in parallel it is often a good idea to take the
+memory hierarchy into account (for example when pinning MPI processes
+in :ref:`hybrid MPI/OpenMP calculations <hybrid_mpi_openmp_programs>`).
+The nodes in the ``batch`` partition on Genius and wICE are the simpler ones
+with a single NUMA domain and L3 cache per CPU, with the usual core-private
+L1 and L2 caches. Other node types may feature more than one NUMA domain per
+CPU and (in the case of AMD CPUs) more than one L3 cache per CPU.
+The 48 cores in a Sapphire Rapids CPU, for example, share a large L3 cache
+but are organized in 4 groups of 12 cores, each group associated with one
+NUMA domain. For a complete overview, please consult the
+:ref:`genius hardware` and :ref:`wice hardware` pages.
+
+.. note::
+
+    You can also retrieve this information using the ``lstopo-no-graphics``
+    command. When on a compute node, keep in mind that the output will only
+    be complete if all available cores have been allocated to your job.
+
+
 .. _wice_worker:
 
 Worker
