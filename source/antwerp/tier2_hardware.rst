@@ -202,25 +202,26 @@ on VSC_DATA or VSC_SCRATCH, depending on the circumstances.
 
 * |UA| **Users with a vsc2xxxx account**
    
-   When working on the UAntwerp clusters, VSC_DATA is a local file
-   system for you. We expect that for :ref:`Python <Python packages>` packages 
-   (and similarly for :ref:`R <R_package_management>` and :ref:`Perl <Perl packages>`), 
-   **VSC_DATA** will give better performance than VSC_SCRATCH due to the amount of file 
-   metadata accesses that occur when running Python.
+  When working on the UAntwerp clusters, VSC_DATA is a local file
+  system for you. We expect that for :ref:`Python <Python packages>` packages 
+  (and similarly for :ref:`R <R_package_management>` and :ref:`Perl <Perl packages>`), 
+  **VSC_DATA** will give better performance than VSC_SCRATCH due to the amount of file 
+  metadata accesses that occur when running Python.
 
-   |Example| To install the ``sphinx`` Python package, you can use the following command
+  |Example| To install the ``sphinx`` Python package, you can use the following command
    
-   .. code-block:: bash
+  .. code-block:: bash
 
-      pip install --prefix=${VSC_DATA}/python_lib sphinx
+     pip install --prefix=${VSC_DATA}/python_lib sphinx
+
 * |VUB| |UG| |KUL| **Users with a different home institution**
         
-   VSC_DATA is a file system at your local
-   institution. Due to the distance between our clusters and your home institution, file access to 
-   VSC_DATA will have a high latency. 
+  VSC_DATA is a file system at your local
+  institution. Due to the distance between our clusters and your home institution, file access to 
+  VSC_DATA will have a high latency. 
    
-   Installing the packages that you need locally on **VSC_SCRATCH**
-   will give much better performance.
+  Installing the packages that you need locally on **VSC_SCRATCH**
+  will give much better performance.
 
 Conda
 =====
