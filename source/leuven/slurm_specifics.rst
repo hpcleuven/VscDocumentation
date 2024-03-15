@@ -161,7 +161,7 @@ An interactive job can be launched as follows:
 .. code-block:: shell
 
    srun --ntasks-per-node=9 --nodes=1 --gpus-per-node=1 --account=<YOUR_ACCOUNT> \
-        --clusters=wice --time=01:00:00 --partition=gpu --gpu_cmode=shared \
+        --clusters=wice --time=01:00:00 --partition=gpu_a100 --gpu_cmode=shared \
         --pty /bin/bash -l
 
 A few notes on this feature:

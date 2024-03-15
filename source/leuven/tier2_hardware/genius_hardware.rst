@@ -18,21 +18,27 @@ Hardware details
    
   - 86 skylake nodes
 
-    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
+    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
+      18 cores each :raw-html:`<br />`
+      (1 NUMA domain and 1 L3 cache per CPU)
     - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
     - 200 GB SSD local disk
     - feature skylake
 
   - 144 cascadelake nodes
 
-    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
+    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake),
+      18 cores each :raw-html:`<br />`
+      (1 NUMA domain and 1 L3 cache per CPU)
     - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
     - 200 GB SSD local disk
     - feature cascadelake 
 
 - 10 big memory nodes
 
-  - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
+  - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
+    18 cores each :raw-html:`<br />`
+    (1 NUMA domain and 1 L3 cache per CPU)
   - 768 GiB RAM
   - 200 GB SSD local disk
   - partition ``bigmem``, specific Slurm :ref:`options <submit_genius_bigmem>` apply
@@ -41,7 +47,9 @@ Hardware details
 
   - 20 P100 nodes
 
-    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake), 18 cores each
+    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
+      18 cores each :raw-html:`<br />`
+      (1 NUMA domain and 1 L3 cache per CPU)
     - 192 GiB RAM
     - 4 NVIDIA P100 SXM2\@1.3 GHz, 16 GiB GDDR, connected with NVLink
     - 200 GB SSD local disk
@@ -49,7 +57,9 @@ Hardware details
 
   - 2 V100 nodes
 
-    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake), 18 cores each
+    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake),
+      18 cores each :raw-html:`<br />`
+      (1 NUMA domain and 1 L3 cache per CPU)
     - 768 GiB RAM
     - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GiB GDDR, connected with NVLink
     - 200 GB SSD local disk
@@ -57,7 +67,9 @@ Hardware details
 
 - 4 AMD nodes
 
-  - 2 EPYC 7501 CPUs\@2.0 GHz, 32 cores each
+  - 2 EPYC 7501 CPUs\@2.0 GHz,
+    32 cores each :raw-html:`<br />`
+    (4 NUMA domains and 8 L3 caches per CPU)
   - 256 GiB RAM
   - 200 GB SSD local disk
   - partition ``amd``, specific Slurm :ref:`options <submit_genius_amd>` apply
