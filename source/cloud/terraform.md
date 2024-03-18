@@ -103,141 +103,53 @@ file in a public place.
 chmod 600 ~/.config/openstack/clouds.yaml
 ```
 
-## Generate Terraform template variables
+## Terraform modules
 
-Terraform
-requires some variables to know which resources are available from the
-cloud provider for the user or project. You do not have to include these
-variables manually, we have included a script to gather these variable
-IDs automatically. From the Terraform directory cloned from git in the
-previous step (see previous
-[section](#getting-terraform-examples)), go to the scripts directory:
+We've provided two examples of how to use the terraform modules.
 
-```shell
-cd ~/openstack-templates/terraform/scripts
-```
-
-And now run the script (usually you only have to run this script once).
-
-```shell
-./modify_variable.sh
-```
-
-This step will take some seconds. The script will contact the VSC
-OpenStack public API to gather all the resources available for your
-project and fetch all the resource's IDs. Usually you only have to run
-this script once, unless something was changed/updated for your
-project's resources (like a new network or floating IPs) or if you want
-to deploy a new Terraform template from scratch.
-
-You will see some messages like this (IDs and IPs may change depending
-on your project's resources).
-
-```console
-Image id: 3313f95f-634c-4127-b65f-cde6d6f797cf. (Image name: Rocky-9)
-Flavor name: CPUv1.medium.
-Image id: 0684c8d3-15c7-4a6e-8fd6-3850e62f3ad4. (Image name: Windows10)
-Flavor name: CPUv1.medium.
-Root FS volume size based on flavor disk size: 30.
-VM network id: 4d72c0ec-c000-429e-89c6-8c3607a28b3d.
-VM subnet id: f0bc8307-568f-457d-adff-219005a054e2.
-NFS network id: 119d8617-4000-47c0-9c6e-589b3afce144.
-NFS subnet id: e4e07edd-39cf-42ea-9fe4-5bf2891d2592.
-VSC network id: f6eba915-06ad-4e50-bc4b-1538cdc39296.
-VSC subnet id: b5ed8dc2-6d3f-42d4-87f8-3ffee19c1a9c.
-Using first ssh access key "ssh-ed25519".
-Using floating ip id: 64f2705c-43ec-4bdf-864e-d18fee013e3f. (floating ip: 193.190.80.3)
-Using VSC floating ip: 172.24.49.7.
-Modifying ../environment/main.tf file.
-Using ssh forwarded ports: 59604 58458 55222 51217.
-Using http forwarded port: 56871.
-Using rdp forwarded port: 53557.
-Modifying provider.tf files.
-
-SSH commands for VMs access:
-
-(MyVM)           ssh -p 59604 <user>@193.190.80.3
-(MyVM-nginx)     ssh -p 58458 <user>@193.190.80.3
-(MyVM-vsc_net)   ssh -p 55222 <user>@193.190.80.3
-(MyVM-nfs_share) ssh -p 51217 <user>@193.190.80.3
-(MyVM-windows)   xfreerdp /u:admin /port:53557 /v:193.190.80.3
-```
-
-After this step your Terraform templates will be ready to be deployed.
-
-:::{note}
-Please note that the script shows you the ssh command to connect to each
-VM after instantiation (including the port which is generated
-automatically by the script). You can copy this list or you can review
-it later. Also note that you should use a valid user to connect to the
-VM, for instance for CentOS images is *centos*, for Ubuntu images is
-*ubuntu* and so on. You can also try to connect as *root* user, in that
-case the system will show you a message with the user that you should
-use.
-:::
-
-## Modify default Terraform modules
-
-In [section](#getting-terraform-examples) we have downloaded the
-Terraform module examples from the VSC repository. If you deploy these
-modules as it is it will deploy several VM examples by default such as:
-
-1.  **MyVM:** simple VM with 20Gb persistent volume and ssh access with port
-    forwarding.
-
-2.  **MyVM-nginx:** Like previous example but with an ansible playbook to install nginx
-    and access to port 80 besides ssh.
-
-3.  **MyVM-vsc_net:** Similar to the first example but also includes a VSC network
-    interface (only available for some projects).
-
-4.  **MyVM-nfs_share:** Similar to the first example but it creates a NFS share filesystem
-    and it mounts it during instantiation (only available for some
-    projects).
-
-5.  **MyVM-windows:** Windows VM with Remote Desktop access.
-
-But usually you do not want to deploy all these examples, you can just
-keep the required module and comment out the rest. You can do this from
-environment directory:
+navigate to the environment directory first:
 
 ```shell
 cd ~/openstack-templates/terraform/environment
 ```
 
-And edit *`main.tf`* Terraform file with any text editor like vim or
-nano. If you want to deploy just the simple VM (first example) only keep
-these lines (remenber variable IDs may change depending on your
-project's resources):
-
-```
-module "vm_with_pf_rules_with_ssh_access" {
-  source   = "../modules/vm_with_pf_rules_with_ssh_access"
-
-  vm_name              = "MyVM"
-  floating_ip_id       = "64f2705c-43ec-4bdf-864e-d18fee013e3f"
-  vm_network_id        = "4d72c0ec-c000-429e-89c6-8c3607a28b3d"
-  vm_subnet_id         = "f0bc8307-568f-457d-adff-219005a054e2"
-  access_key           = "ssh-ed25519 AAAAC3Nz_A02TxLd9 lsimngar_varolaptop"
-  image_id             = "d00d6dfd-998c-4bcb-bbf4-496ef84d5b64"
-  flavor_name          = "CPUv1.small"
-  ssh_forwarded_port   = "56469"
-  root_fs_volume_size  = "20"
-}
+### Single VM(s)
+This module deploys one VM with a public IP address and can be configured with extra options
+Copy the `single.tf.example` code to the `main.tf` file like so:
+```shell
+cat single.tf >> main.tf
 ```
 
-And remove or comment out the rest of the lines. In the previous example
-Terraform will deploy a simple VM and use 20Gb for a persistent volume
-and port 56469 to connect via ssh (it also creates all required security
-groups).
+The file now contains the definition for one VM with several options you can customize:
+| variable      | explanation | Possible values
+----------------|-------------|----
+| vm_name       | Sets the name of the virtual machine. | (string)
+| image_name    | Sets the operating system image for the machine. | See `OS_CLOUD=openstack openstack image list`
+| flavor_name   | Sets the machine flavor. | see `OS_CLOUD openstack openstack flavor list`.
+| nginx_enabled | Installs nginx and exposes port 80. | true, false
+| nfs_enabled   | Connects the vfm to the NFS network. Only set true if you requested access. | true, false
+| vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false
+
+More advanced options are described further on.
+### Cluster of VMs
+You can also deploy a public VM and multiple private VMs (without a public IP) in one go by using the cluster template:
+```shell 
+cat cluster.tf.example >> main.tf
+```
+The customization options are similar to the single vm template:
+| Variable | Explanation
+|--|--|
+| private count | How many private instances you want |
+| public_flavor | The flavor for the public instances (and private instances by default)|
+| public_image | The OS image for the public instances (and private instances by default)|
+| cluster_name | The basename for the vms. Public instance will be called `MyCluster-public` and private instances `MyCluster-private-x` |
 
 ## Deploy Terraform templates
 
 If you have followed the previous steps now you can init and deploy your
 infrastucture to Tier-1 VSC cloud.
 
-You have to inititate Terraform first, if you didnt have deployed any
-template yet do this just once.
+If you haven't deployed any template yet, you need to initiate terraform:
 
 Move to environment directory first:
 
@@ -286,19 +198,47 @@ you a message after creating all the required resources.
 ```console
 ..
 ..
-module.vm_with_pf_rules_with_ssh_access.openstack_compute_instance_v2.instance_01:
-Still creating... [1m30s elapsed]
-module.vm_with_pf_rules_with_ssh_access.openstack_compute_instance_v2.instance_01:
-Creation complete after 1m35s [id=88c7d037-5c44-45b7-acce-f5e4e58b1c35]
-Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
-```
+Apply complete! Resources: 6 added, 0 changed, 0 destroyed.
 
+Outputs:
+
+MyVM = "SSH: ssh -A -p 56315 rocky@193.190.80.3"
+```
+For a cluster it might look like this:
+```
+..
+..
+
+Outputs:
+
+cluster = <<EOT
+Main:
+SSH: ssh -A -p 59619 rocky@193.190.80.3
+
+Private:
+Note: SSH to main server first
+MyCluster-private-0:
+ SSH: ssh -A rocky@10.113.1.135
+MyCluster-private-1:
+ SSH: ssh -A rocky@10.113.1.229
+MyCluster-private-2:
+ SSH: ssh -A rocky@10.113.1.213
+
+EOT
+```
+:::{tip}
+To access your private VMs you need to ssh to your public VM first, then ssh from your main vm to your private VMs.
+:::
 Your cloud infrastructure is ready to be used.
 
 :::{tip}
 It is important to keep a backup of your terraform directory, specially
 all the files within the environment directory:
 `~/openstack-templates/terraform/environment`
+:::
+
+:::{tip}
+If you make any changes to the template, just run `terraform apply` again.
 :::
 
 
@@ -309,16 +249,46 @@ plan (only directly from OpenStack).
 
 
 :::{warning}
-It is possible to execute `./modify_variable.sh` script several times,
-(for instance, if you have changed the variables within
-`modify_variable.config` file). This will update your current Terraform
-deployment. Any Terraform variables change may affect to your current
-running VM(s) as well, `terrafrom apply` will inform you about this and
-it will request confirmation. The external ports for port forwarding
-are generated randomly when you run `modify_variable.sh` by default, but
-you can keep the current port forwarding rules if you add `-k` option:
-`./modify_variable.sh -k`
+Do not remove or modify the port_something_ssh.json files. These keep track of the external ports used. Deleting them _will_ break Terraform.
 :::
+## Making changes to module variables
+### Adding NFS Or Nginx
+:::{tip}
+If you enabled these options upon initial creation of the VM, you don't have to do these steps
+:::
+
+If you added NFS or Nginx after initial creation, you need to run a script **on your openstack VM** to mount the NFS volume or install nginx, respectively.
+
+First ssh to your instance. You can get the command with
+```shell
+terraform output
+```
+Then run the command you got from terraform.
+After connecting to your instance, run:
+```shell
+curl http://169.254.169.254/2009-04-04/user-data | sudo bash
+```
+### Advanced variables
+There's some extra variables you can configure:
+| Variable | Explanation | Values
+|---|---|---|
+| access_key | the name of the ssh key you want to associate with the vm/cluster | (string)
+| playbook_url | A url to an ansible playbook that gets applied when nginx_enabled = true | (string) |
+| project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
+| nfs_size | Size of the NFS share if nfs_enabled=true | (number) |
+
+#### Single VM only
+| Variable | Explanation | Values |
+| --- | --- | --- |
+| public | Add a public IP if true | true/false|
+#### Cluster only
+| Variable | Explanation | Values |
+| --- | --- | ---|
+| private_image | Sets a different OS name for the private VMs | See `OS_CLOUD=openstack openstack image list |
+| private_flavor | Sets a different flavor for the private VMs | see `OS_CLOUD=openstack openstack flavor list` |
+| public_nginx_enabled | enables nginx on the public instance | true/false |
+| public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
+
 
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
