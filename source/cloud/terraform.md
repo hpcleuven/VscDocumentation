@@ -287,8 +287,8 @@ There's some extra variables you can configure:
 #### Cluster only
 | Variable | Explanation | Values |
 | --- | --- | ---|
-| private_image | Sets a different OS name for the private VMs | See `OS_CLOUD=openstack openstack image list |
-| private_flavor | Sets a different flavor for the private VMs | see `OS_CLOUD=openstack openstack flavor list` |
+| private_image | Sets a different OS name for the private VMs | See [Image list](https://cloud.vscentrum.be/dashboard/project/images) |
+| private_flavor | Sets a different flavor for the private VMs | see [Flavor list](https://cloud.vscentrum.be/dashboard/project/images) |
 | public_nginx_enabled | enables nginx on the public instance | true/false |
 | public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
 
