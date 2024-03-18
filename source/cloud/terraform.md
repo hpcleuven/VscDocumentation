@@ -232,14 +232,17 @@ To access your private VMs you need to ssh to your public VM first, then ssh fro
 Your cloud infrastructure is ready to be used.
 
 :::{tip}
+If you forgot your VM's details, just run `terraform output`
+
+If you make any changes to the template, just run `terraform apply` again.
+:::
+
+:::{tip}
 It is important to keep a backup of your terraform directory, specially
 all the files within the environment directory:
 `~/openstack-templates/terraform/environment`
 :::
 
-:::{tip}
-If you make any changes to the template, just run `terraform apply` again.
-:::
 
 
 Terraform generates several files in this directory to keep track of any
