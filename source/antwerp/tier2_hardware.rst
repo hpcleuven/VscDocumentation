@@ -14,17 +14,17 @@ This will connect you to one of the Leibniz login nodes.
 +---------------------------------------------------+--------------------------------+--------------------------------+
 | Cluster                                           | Generic                        | Direct                         |
 +===================================================+================================+================================+
-|:ref:`Vaughan<Vaughan login>`                      |login-vaughan.hpc.uantwerpen.be |login1-vaughan.hpc.uantwerpen.be|
+|:ref:`Vaughan<Vaughan hardware>`                   |login-vaughan.hpc.uantwerpen.be |login1-vaughan.hpc.uantwerpen.be|
 +                                                   +                                +--------------------------------+
 |                                                   |                                |login1-vaughan.hpc.uantwerpen.be|
 +---------------------------------------------------+--------------------------------+--------------------------------+
-|:ref:`Leibniz<Leibniz login>`                      |login-leibniz.hpc.uantwerpen.be |login1-leibniz.hpc.uantwerpen.be|
-+                                                   +                                +--------------------------------+
-|                                                   |                                |login2-leibniz.hpc.uantwerpen.be|
+|:ref:`Leibniz<Leibniz hardware>`                   |login-leibniz.hpc.uantwerpen.be |login1-leibniz.hpc.uantwerpen.be|
++                                                   +--------------------------------+--------------------------------+
+|                                                   |**login.hpc.uantwerpen.be**     |login2-leibniz.hpc.uantwerpen.be|
 +---------------------------------------------------+--------------------------------+--------------------------------+
 |:ref:`Visualization<remote visualization UAntwerp>`|viz1-leibniz.hpc.uantwerpen.be  |                                |
 +---------------------------------------------------+--------------------------------+--------------------------------+
-|:ref:`Breniac<Breniac login UAntwerp>`             |login-breniac.hpc.uantwerpen.be |                                |
+|:ref:`Breniac<Breniac hardware UAntwerp>`          |login-breniac.hpc.uantwerpen.be |                                |
 +---------------------------------------------------+--------------------------------+--------------------------------+
 
 .. note:: Direct login is possible to all login nodes and to the visualization
