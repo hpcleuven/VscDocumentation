@@ -117,7 +117,7 @@ cd ~/openstack-templates/terraform/environment
 This module deploys one VM with a public IP address and can be configured with extra options
 Copy the `single.tf.example` code to the `main.tf` file like so:
 ```shell
-cat single.tf >> main.tf
+cat single.tf.example >> main.tf
 ```
 
 The file now contains the definition for one VM with several options you can customize:
