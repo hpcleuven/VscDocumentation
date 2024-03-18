@@ -124,8 +124,8 @@ The file now contains the definition for one VM with several options you can cus
 | variable      | explanation | Possible values
 ----------------|-------------|----
 | vm_name       | Sets the name of the virtual machine. | (string)
-| image_name    | Sets the operating system image for the machine. | See `OS_CLOUD=openstack openstack image list`
-| flavor_name   | Sets the machine flavor. | see `OS_CLOUD openstack openstack flavor list`.
+| image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
+| flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
 | nginx_enabled | Installs nginx and exposes port 80. | true, false
 | nfs_enabled   | Connects the vfm to the NFS network. Only set true if you requested access. | true, false
 | vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false
