@@ -176,6 +176,23 @@ infrastructure, Terraform also checks if there is any systax error in
 your templates. Your infrastructure is not deployed yet, review the plan
 and then just deploy it to VSC Tier-1 Cloud running:
 
+
+You might see something like:
+```
+╷
+│ Warning: Argument is deprecated
+│ 
+│   with provider["registry.terraform.io/terraform-provider-openstack/openstack"],
+│   on provider.tf line 9, in provider "openstack":
+│    9: provider "openstack" {
+│ 
+│ Users not using loadbalancer resources can ignore this message. Support for neutron-lbaas will be removed on next major release. Octavia
+│ will be the only supported method for loadbalancer resources. Users using octavia will have to remove 'use_octavia' option from the
+│ provider configuration block. Users using neutron-lbaas will have to migrate/upgrade to octavia.
+╵
+```
+You can safely ignore this warning.
+
 ```shell
 terraform apply
 ```
