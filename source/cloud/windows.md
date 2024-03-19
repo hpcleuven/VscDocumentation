@@ -1,9 +1,9 @@
 # Running Windows VMs
 
 It is possible to deploy Windows VMs in VSC Tier-1 Cloud infrastructure.
-VSC [Terraform modules](terraform.md#modify-default-terraform-modules) 
-include a Windows template ready to be used. Please read our
-[Terraform section](terraform.md) first to know how to use and modify
+VSC [Terraform modules](terraform.md#terraform-modules) 
+provides a terraform module with an option for Windows. Simply use the `Windows10` image. Please read our
+[Terraform section](terraform.md#terraform-modules) first to know how to use and modify
 Terraform modules.
 
 :::{note}
@@ -57,7 +57,7 @@ by the metadata and reset the password again.
 At this point you can use Windows Remote Desktop (RDP) with your new admin user and password
 to connect to your VM.
 Make sure you use the correct port to connect to your Windows Remote Desktop,
-(please see [Terraform section](terraform.md#generate-terraform-template-variables) for more details).
+(please see [Terraform section](terraform.md) for more details).
 
 :::{note}
 Take into account you should upgrade your Windows OS after the first boot.

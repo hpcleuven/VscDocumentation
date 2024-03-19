@@ -223,7 +223,7 @@ MyVM = "SSH: ssh -A -p 56315 rocky@193.190.80.3"
 ```
 
 :::{tip}
-Generally the username (rocky/ubuntu/...) will be provided by `terraform output`. If you forget or arent sure what username to use, just connect with `root` and a message will appear telling you the correct.
+Usually the username (rocky/ubuntu/...) will be provided by `terraform output`. If you forget or are not sure what username to use, just connect with `root` and a message will appear telling you the correct user.
 :::
 For a cluster it might look like this:
 ```
@@ -254,10 +254,7 @@ Your cloud infrastructure is ready to be used.
 
 :::{tip}
 If you forgot your VM's details, just run `terraform output`
-
 If you make any changes to the template, just run `terraform apply` again.
-
-
 :::
 
 :::{tip}
