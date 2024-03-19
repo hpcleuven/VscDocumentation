@@ -107,7 +107,7 @@ chmod 600 ~/.config/openstack/clouds.yaml
 
 We've provided two examples of how to use the terraform modules.
 
-navigate to the environment directory first:
+Navigate to the environment directory first:
 
 ```shell
 cd ~/openstack-templates/terraform/environment
@@ -131,6 +131,7 @@ The file now contains the definition for one VM with several options you can cus
 | vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false
 
 More advanced options are described further on.
+
 ### Cluster of VMs
 You can also deploy a public VM and multiple private VMs (without a public IP) in one go by using the cluster template:
 ```shell 
@@ -248,7 +249,7 @@ MyCluster-private-2:
 EOT
 ```
 :::{tip}
-To access your private VMs you need to ssh to your public VM first, then ssh from your main vm to your private VMs.
+To access your private VMs you need to ssh to your public VM first, then ssh from your public vm to your private VMs.
 :::
 Your cloud infrastructure is ready to be used.
 
@@ -272,15 +273,15 @@ plan (only directly from OpenStack).
 
 
 :::{warning}
-Do not remove or modify the port_something_ssh.json files. These keep track of the external ports used. Deleting them _will_ break Terraform.
+Do not remove or modify the `port_something_ssh.json` files. These keep track of the external ports used. Deleting them _will_ break Terraform.
 :::
 ## Making changes to module variables
-### Adding NFS Or Nginx
+### Adding NFS or Nginx
 :::{tip}
 If you enabled these options upon initial creation of the VM, you don't have to do these steps
 :::
 
-If you added NFS or Nginx after initial creation, you need to run a script **on your openstack VM** to mount the NFS volume or install nginx, respectively.
+If you added NFS or Nginx after initial creation, you need to run a script **on your VM** to mount the NFS volume or install nginx, respectively.
 
 First ssh to your instance. You can get the command with
 ```shell
@@ -304,11 +305,12 @@ There's some extra variables you can configure:
 | Variable | Explanation | Values |
 | --- | --- | --- |
 | public | Add a public IP if true | true/false|
+
 #### Cluster only
 | Variable | Explanation | Values |
 | --- | --- | ---|
 | private_image | Sets a different OS name for the private VMs | See [Image list](https://cloud.vscentrum.be/dashboard/project/images) |
-| private_flavor | Sets a different flavor for the private VMs | see [Flavor list](https://cloud.vscentrum.be/dashboard/project/images) |
+| private_flavor | Sets a different flavor for the private VMs | see [Flavor list](flavors.md) |
 | public_nginx_enabled | enables nginx on the public instance | true/false |
 | public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
 
