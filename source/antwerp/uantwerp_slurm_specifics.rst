@@ -4,6 +4,11 @@
 Site-specific Slurm info
 ########################
 
+.. seealso::
+  For basic and advanced Slurm instructions, please see :ref:`Running jobs in Slurm <running jobs>` and :ref:`job advanced`.
+
+  For more specific information on Slurm use on the UAntwerp clusters, 
+  please see our :ref:`site-specific Slurm info<uantwerp_slurm_specifics>`.
 
 While the :ref:`Running jobs in Slurm <running jobs>` and :ref:`job advanced`
 pages provide basic and advanced information regarding Slurm, there are

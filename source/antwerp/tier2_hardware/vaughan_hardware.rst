@@ -19,8 +19,7 @@ Compute nodes
 ****************
 
 When submitting a job with ``sbatch`` or using ``srun``, you can choose to specify
-the partition your job is submitted to. This indicates the type of your job and
-imposes some restrictions, but may let your job start sooner.
+the partition your job is submitted to.
 When the option is omitted, your job is submitted to the default partition (**zen2**).
 
 CPU compute nodes
@@ -56,20 +55,23 @@ arcturus_gpu     2       2x AMD Instinct `MI100 (Arcturus) <https://www.amd.com/
 Login infrastructure
 ********************
 
-Direct login is possible to both login nodes.
+You can log in to the Vaughan cluster using SSH via ``login-vaughan.hpc.uantwerpen.be``.
 
-- From outside the VSC network: use the external interface names. Note that from outside of
-  Belgium, a :ref:`VPN connection <vpn>` to the UAntwerp network is required.
-- From inside the VSC network (e.g., another VSC cluster): use the internal
-  interface names.
+Alternatively, you can also log in directly to the login nodes using one of the following hostnames.
+From inside the VSC network (e.g., when connecting from another VSC cluster), use the internal interface names.
 
-============   =================================  ============================
-Login node     External interface                 Internal interface
-============   =================================  ============================
-generic name   login\-vaughan.hpc.uantwerpen.be   login.vaughan.antwerpen.vsc
-per node       login1\-vaughan.hpc.uantwerpen.be  login1.vaughan.antwerpen.vsc
-..             login2\-vaughan.hpc.uantwerpen.be  login2.vaughan.antwerpen.vsc
-============   =================================  ============================
++--------------+-------------------------------------+--------------------------------+
+| Login node   | External interface                  | Internal interface             |
++==============+=====================================+================================+
+| generic name | login\-vaughan.hpc.uantwerpen.be    | login.vaughan.antwerpen.vsc    |
++--------------+-------------------------------------+--------------------------------+
+| per node     | | login1\-vaughan.hpc.uantwerpen.be | | login1.vaughan.antwerpen.vsc |
+|              | | login2\-vaughan.hpc.uantwerpen.be | | login2.vaughan.antwerpen.vsc |
++--------------+-------------------------------------+--------------------------------+
+
+.. note:: Direct login is possible to all login nodes *from within Belgium only*.
+  From outside of Belgium, a :ref:`VPN connection <vpn>` to the UAntwerp network is required.
+
 
 - 2 login nodes
 
@@ -85,16 +87,13 @@ To compile code for Vaughan, all ``intel``,
 ``foss`` and ``GCC`` modules can be used (the
 latter being equivalent to ``foss`` but without MPI and the math libraries).
 
-.. note::
-  Do not forget to load one of the ``intel``, ``foss`` or ``GCC`` toolchain modules
-  before compiling software!
+.. seealso::
+  For general information about the compiler toolchains, please see the shared
+  :ref:`Intel toolchain<Intel toolchain>` and
+  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
 
 Optimization options for the Intel compilers
 ============================================
-
-.. seealso::
-  For more information, please see the shared 
-  :ref:`Intel toolchain<Intel toolchain>` documentation.
 
 As the processors in Vaughan are made by AMD, there is no explicit support
 in the Intel compilers. However, by choosing the appropriate compiler
@@ -122,10 +121,6 @@ non-working code.
 Optimization options for the GNU compilers
 ==========================================
 
-.. seealso::
-  For more information, please see the shared 
-  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
-
 To optimize for Vaughan, compile on the Vaughan login
 or compute nodes and combine either the option ``-march=native``, or
 ``-march=znver2`` or ``-march=znver3`` for the zen2 and zen3 nodes respectively.
@@ -144,22 +139,15 @@ the Vaughan CPUs at all.
 History
 *******
 
-Deployment
-==========
-
 The Vaughan cluster was installed in the summer of 2020. It is a NEC system consisting of
 152 compute nodes with dual 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_
-Rome generation CPUs connected through an HDR100 InfiniBand network.
-All nodes containing Rome CPUs have 256 GB RAM.
-The nodes do not have a sizeable local disk.
+Rome generation CPUs with 256 GB RAM, connected through an HDR100 InfiniBand network.
+It also has 1 node with four NVIDIA (Tesla) Ampere A100 GPU compute cards and
+2 nodes equipped with two AMD Instinct (Arcturus) MI100 GPU compute cards.
 
-Vaughan also contains 2 node types for GPU computing: 1 node with
-four NVIDIA (Tesla) Ampere A100 GPU compute cards and 2 nodes equipped with
-two AMD Instinct (Arcturus) MI100 GPU compute cards.
-
-In the summer of 2023, the Vaughan cluster was extended. This extension
-consists of 24 compute nodes with dual 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_
-Milan generation CPUs and 256 GB. An additional 16 nodes have 512 GB RAM.
+In the summer of 2023, the Vaughan cluster was extended with
+40 compute nodes with dual 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_
+Milan generation CPUs, 24 nodes with 256 GB RAM and 16 nodes 512 GB RAM.
 All Milan nodes are connected through an HDR200 InfiniBand network.
 
 Origin of the name

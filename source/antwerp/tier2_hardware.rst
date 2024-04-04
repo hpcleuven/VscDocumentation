@@ -9,27 +9,26 @@ Login infrastructure
 ********************
 
 You can log in to the CalcUA infrastructure using SSH via ``login.hpc.uantwerpen.be``.
-This will connect you to one of the Leibniz login nodes.
 
-+---------------------------------------------------+--------------------------------+--------------------------------+
-| Cluster                                           | Generic                        | Direct                         |
-+===================================================+================================+================================+
-|:ref:`Vaughan<Vaughan hardware>`                   |login-vaughan.hpc.uantwerpen.be |login1-vaughan.hpc.uantwerpen.be|
-+                                                   +                                +--------------------------------+
-|                                                   |                                |login1-vaughan.hpc.uantwerpen.be|
-+---------------------------------------------------+--------------------------------+--------------------------------+
-|:ref:`Leibniz<Leibniz hardware>`                   |login-leibniz.hpc.uantwerpen.be |login1-leibniz.hpc.uantwerpen.be|
-+                                                   +--------------------------------+--------------------------------+
-|                                                   |**login.hpc.uantwerpen.be**     |login2-leibniz.hpc.uantwerpen.be|
-+---------------------------------------------------+--------------------------------+--------------------------------+
-|:ref:`Visualization<remote visualization UAntwerp>`|viz1-leibniz.hpc.uantwerpen.be  |                                |
-+---------------------------------------------------+--------------------------------+--------------------------------+
-|:ref:`Breniac<Breniac hardware UAntwerp>`          |login-breniac.hpc.uantwerpen.be |                                |
-+---------------------------------------------------+--------------------------------+--------------------------------+
+Alternatively, you can also log in directly to the login nodes of the individual clusters
+using one of the following hostnames. 
 
-.. note:: Direct login is possible to all login nodes and to the visualization
-  node. However, from outside of Belgium, a :ref:`VPN connection <vpn>` to 
-  the UAntwerp network is required.
++---------------------------------------------------+-----------------------------------+-----------------------------------+
+| Cluster                                           | Generic login name                | Individual login node             |
++===================================================+===================================+===================================+
+|:ref:`Vaughan<Vaughan hardware>`                   |login-vaughan.hpc.uantwerpen.be    | | login1-vaughan.hpc.uantwerpen.be|
+|                                                   |                                   | | login1-vaughan.hpc.uantwerpen.be|
++---------------------------------------------------+-----------------------------------+-----------------------------------+
+|:ref:`Leibniz<Leibniz hardware>`                   | | login-leibniz.hpc.uantwerpen.be | | login1-leibniz.hpc.uantwerpen.be|
+|                                                   | | **login.hpc.uantwerpen.be**     | | login2-leibniz.hpc.uantwerpen.be|
++---------------------------------------------------+-----------------------------------+-----------------------------------+
+|:ref:`Visualization<remote visualization UAntwerp>`|viz1-leibniz.hpc.uantwerpen.be     |                                   |
++---------------------------------------------------+-----------------------------------+-----------------------------------+
+|:ref:`Breniac<Breniac hardware UAntwerp>`          |login-breniac.hpc.uantwerpen.be    |                                   |
++---------------------------------------------------+-----------------------------------+-----------------------------------+
+
+.. note:: Direct login is possible to all login nodes and to the visualization node *from within Belgium only*.
+  From outside of Belgium, a :ref:`VPN connection <vpn>` to the UAntwerp network is required.
 
 ****************
 Compute clusters
@@ -41,39 +40,35 @@ Partitions in **bold** are the default partition for the corresponding cluster.
 :ref:`Vaughan <Vaughan hardware>`
 =================================
 
-+--------------+-------+----------------------------------------------------------------------------------------------------------+----------------------+---------------------+
-| Partition    | Nodes |  CPU-GPU                                                                                                 | Memory               | Maximum wall time   |
-+==============+=======+==========================================================================================================+======================+=====================+
-| **zen2**     | 152   | 2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_                          |  256 GB              | 3 days              |
-+--------------+-------+----------------------------------------------------------------------------------------------------------+----------------------+                     +
-| zen3         | 24    | 2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_                          |  256 GB              |                     |
-+--------------+-------+----------------------------------------------------------------------------------------------------------+----------------------+                     +
-| zen3_512     | 16    | 2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_                          |  512 GB              |                     |
-+--------------+-------+----------------------------------------------------------------------------------------------------------+----------------------+---------------------+
-| ampere_gpu   | 1     | 2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_                          |  256 GB              | 1 day               |
-+              +       +                                                                                                          +                      +                     +
-|              |       | 4x NVIDIA `A100 (Ampere) <https://www.nvidia.com/en-us/data-center/a100/>`_ 40 GB SXM4                   |                      |                     |
-+--------------+-------+----------------------------------------------------------------------------------------------------------+----------------------+                     +
-| arcturus_gpu | 2     | 2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_                          |  256 GB              |                     |
-+              +       +                                                                                                          +                      +                     +
-|              |       | 2x AMD `MI100 (Arcturus) <https://www.amd.com/en/products/accelerators/instinct/mi100.html>`_  32 GB HBM2|                      |                     |
-+--------------+-------+----------------------------------------------------------------------------------------------------------+----------------------+---------------------+
-
++--------------+-------+------------------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| Partition    | Nodes |  CPU-GPU                                                                                                   | Memory               | Maximum wall time   |
++==============+=======+============================================================================================================+======================+=====================+
+| **zen2**     | 152   | 2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_                            |  256 GB              | 3 days              |
++--------------+-------+------------------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| zen3         | 24    | 2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_                            |  256 GB              | 3 days              |
++--------------+-------+------------------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| zen3_512     | 16    | 2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_                            |  512 GB              | 3 days              |
++--------------+-------+------------------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| ampere_gpu   | 1     | | 2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_                          |  256 GB              | 1 day               |
+|              |       | | 4x NVIDIA `A100 (Ampere) <https://www.nvidia.com/en-us/data-center/a100/>`_ 40 GB SXM4                   |                      |                     |
++--------------+-------+------------------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| arcturus_gpu | 2     | | 2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_                          |  256 GB              | 1 day               |
+|              |       | | 2x AMD `MI100 (Arcturus) <https://www.amd.com/en/products/accelerators/instinct/mi100.html>`_  32 GB HBM2|                      |                     |
++--------------+-------+------------------------------------------------------------------------------------------------------------+----------------------+---------------------+
 
 :ref:`Leibniz <Leibniz hardware>`
 =================================
 
-+---------------+-------+----------------------------------------------------------------------------------------------+----------------------+---------------------+
-| Partition     | Nodes |  CPU-GPU                                                                                     | Memory               | Maximum wall time   |
-+===============+=======+==============================================================================================+======================+=====================+
-| **broadwell** | 144   | 2x 14-core Intel Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_                    | 128 GB               | 3 days              |
-+---------------+-------+----------------------------------------------------------------------------------------------+----------------------+                     +
-| broadwell_256 | 8     | 2x 14-core Intel Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_                    | 256 GB               |                     |
-+---------------+-------+----------------------------------------------------------------------------------------------+----------------------+---------------------+
-| pascal_gpu    | 2     | 2x 14-core Intel Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_                    | 128 GB               | 1 day               |
-+               +       +                                                                                              +                      +                     +
-|               |       | 2x NVIDIA `P100 (Pascal) <https://www.nvidia.com/en-us/data-center/tesla-p100/>`_ 16 GB HBM2 |                      |                     |
-+---------------+-------+----------------------------------------------------------------------------------------------+----------------------+---------------------+
++---------------+-------+------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| Partition     | Nodes |  CPU-GPU                                                                                       | Memory               | Maximum wall time   |
++===============+=======+================================================================================================+======================+=====================+
+| **broadwell** | 144   | 2x 14-core Intel Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_                      | 128 GB               | 3 days              |
++---------------+-------+------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| broadwell_256 | 8     | 2x 14-core Intel Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_                      | 256 GB               | 3 days              |
++---------------+-------+------------------------------------------------------------------------------------------------+----------------------+---------------------+
+| pascal_gpu    | 2     | | 2x 14-core Intel Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_                    | 128 GB               | 1 day               |
+|               |       | | 2x NVIDIA `P100 (Pascal) <https://www.nvidia.com/en-us/data-center/tesla-p100/>`_ 16 GB HBM2 |                      |                     |
++---------------+-------+------------------------------------------------------------------------------------------------+----------------------+---------------------+
 
 :ref:`Breniac <Breniac hardware UAntwerp>`
 ==========================================
@@ -83,12 +78,6 @@ Partitions in **bold** are the default partition for the corresponding cluster.
 +==============+=======+============================================================================+========+=====================+
 | **skylake**  | 23    | 2x 14-core Intel Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ | 192 GB | 7 days              |
 +--------------+-------+----------------------------------------------------------------------------+--------+---------------------+
-
-.. seealso::
-  For basic and advanced Slurm instructions, please see :ref:`Running jobs in Slurm <running jobs>` and :ref:`job advanced`.
-
-  For more specific information on Slurm use on the UAntwerp clusters, 
-  please see our :ref:`site-specific Slurm info<uantwerp_slurm_specifics>`.
 
 **********************
 Storage infrastructure

@@ -50,21 +50,25 @@ pascal_gpu       2      2x NVIDIA Tesla `P100 (Pascal) <https://www.nvidia.com/e
 Login infrastructure
 ********************
 
-Direct login is possible to both login nodes and to the visualization node.
+You can log in to the Leibniz cluster using SSH via ``login-leibniz.hpc.uantwerpen.be``.
 
-- From outside the VSC network: use the external interface names. Note that from outside of
-  Belgium, a :ref:`VPN connection <vpn>` to the UAntwerp network is required.
-- From inside the VSC network (e.g., another VSC cluster): use the internal
-  interface names.
+Alternatively, you can also log in directly to the login nodes or the visualization node
+using one of the following hostnames.
+From inside the VSC network (e.g., when connecting from another VSC cluster), use the internal interface names.
 
-=========================  =================================  ============================
-Login node                 External interface                 Internal interface
-=========================  =================================  ============================
-Login node (generic name)  login\-leibniz.hpc.uantwerpen.be   login.leibniz.antwerpen.vsc
-Login node (per node)      login1\-leibniz.hpc.uantwerpen.be  login1.leibniz.antwerpen.vsc
-..                         login2\-leibniz.hpc.uantwerpen.be  login2.leibniz.antwerpen.vsc
-Visualization node         viz1\-leibniz.hpc.uantwerpen.be    viz1.leibniz.antwerpen.vsc
-=========================  =================================  ============================
++--------------------+-------------------------------------+--------------------------------+
+| Login node         | External interface                  | Internal interface             |
++====================+=====================================+================================+
+| generic name       | login\-leibniz.hpc.uantwerpen.be    | login.leibniz.antwerpen.vsc    |
++--------------------+-------------------------------------+--------------------------------+
+| per node           | | login1\-leibniz.hpc.uantwerpen.be | | login1.leibniz.antwerpen.vsc |
+|                    | | login2\-leibniz.hpc.uantwerpen.be | | login2.leibniz.antwerpen.vsc |
++--------------------+-------------------------------------+--------------------------------+
+| visualization node | viz1\-leibniz.hpc.uantwerpen.be     | viz1.leibniz.antwerpen.vsc     |
++--------------------+-------------------------------------+--------------------------------+
+
+.. note:: Direct login is possible to all login nodes and to the visualization node *from within Belgium only*.
+  From outside of Belgium, a :ref:`VPN connection <vpn>` to the UAntwerp network is required.
 
 - 2 login nodes
 
@@ -88,20 +92,17 @@ To compile code for Leibniz, all ``intel``,
 ``foss`` and ``GCC`` modules can be used (the 
 latter being equivalent to ``foss`` but without MPI and the math libraries).
 
-.. note::
-  Do not forget to load one of the ``intel``, ``foss`` or ``GCC`` toolchain modules
-  before compiling software!
+.. seealso::
+  For general information about the compiler toolchains, please see the shared
+  :ref:`Intel toolchain<Intel toolchain>` and
+  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
 
 Optimization options for the Intel compilers
 ============================================
 
-.. seealso::
-  For more information, please see the shared 
-  :ref:`Intel toolchain<Intel toolchain>` documentation.
-
 To optimize for Leibniz, compile on the Leibniz login 
-or compute nodes. Use either ``-xHost`` or Broadwell architecture specific options.
-Combine this with either optimization 
+or compute nodes. Use either ``-xHost`` or Broadwell architecture specific options,
+and combine this with either optimization 
 level ``-O2`` or ``-O3``. For some codes, the additional optimizations at
 level ``-O3`` actually produce slower code (often the case if the code
 contains many short loops).
@@ -114,14 +115,10 @@ none of the new instructions nor the vector instructions introduced since 2005.
 Optimization options for the GNU compilers
 ==========================================
 
-.. seealso::
-  For more information, please see the shared 
-  :ref:`FOSS toolchain<FOSS toolchain>` documentation.
-
 To optimize for Leibniz, compile on the Leibniz login 
 or compute nodes.
-Use the ``-march=native`` or ``-march=broadwell`` architecture options.
-Combine this with either optimization 
+Sse the ``-march=native`` or ``-march=broadwell`` architecture options,
+and combine this with either optimization 
 level ``-O2`` or ``-O3``. In most cases, and especially for
 floating point intensive code, ``-O3`` will be the preferred optimization level
 with the GNU compilers as it only activates vectorization at this level
@@ -136,23 +133,13 @@ the Leibniz CPUs at all.
 History
 *******
 
-Deployment
-==========
-
 The Leibniz cluster was installed in the spring of 2017. It is a NEC system consisting of
 152 compute nodes with dual 14-core Intel `E5-2680v4 <https://ark.intel.com/products/75277>`_ 
-Broadwell generation CPUs connected through an EDR InfiniBand network. 144 of
-these nodes have 128 GB RAM, the other
-8 have 256 GB RAM. The nodes do not have a sizeable local disk.
-
-Leibniz also
-contains a node for visualization and 
-2 GPU nodes with two NVIDIA Tesla P100 GPU compute cards for experimenting with accelerators.
-
-All nodes are connected using an InfiniBand EDR network. The regular compute nodes
-are logically organised in 5 islands with 24 nodes, 1 island with 22 nodes and 1 island
-with 10 nodes (including the 8 nodes with 256 GB RAM).
-Storage is provided through the central :ref:`UAntwerp storage` system.
+Broadwell generation CPUs connected through an EDR InfiniBand network, 144 of
+these nodes having 128 GB RAM and the other 8 nodes having 256 GB RAM. 
+Leibniz also contains a node for visualization and 
+2 GPU nodes with two NVIDIA Tesla P100 GPU compute cards.
+All nodes are connected using an InfiniBand EDR network.
 
 Origin of the name
 ==================
