@@ -17,8 +17,8 @@ Availability
 
 The Parallel Computing Toolbox has been enabled for all Matlab versions on the KU Leuven Tier-2 clusters.
 
-The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not part of our Matlab group and would like to use this
-software, we kindly ask you to contact our helpdesk and request access.
+The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not yet member of our `lli_matlab` group, you can request
+access via the VSC account page (Use the 'New/Join Group' button.
 
 Configuring Matlab for parallel computing
 +++++++++++++++++++++++++++++++++++++++++
@@ -34,7 +34,7 @@ Now you can load your preferred Matlab module:
 
     $ module load <matlab_module>
 
-We have Matlab modules available for wICE (in the 2021a toolchain) and for Genius (in the 2021a and 2018a toolchain).
+We have Matlab modules available for wICE (in the 2021a toolchain) and for Genius (in the 2021a and 2018a toolchains).
 
 Now, start Matlab and use the function  `configCluster` to set up the cluster profile. If you do not do this, the cluster profile will default to the 'local
 cluster', basically meaning that it will only detect the cores on the node you are currently on.
@@ -65,7 +65,7 @@ You can then view and edit the additional properties:
 One of these properties, you will always have to set, namely `AccountName`. Set this to the name of your credit account.
 
 Next to this, it is also possible to change the more standard parameters of the cluster profile. One of these is the `JobStorageLocation` parameter. This defaults
-to a location in your `$VSC_HOME`. If you are producing a lot of output, it might be good to change this location to e.g. `$VSC_DATA`. Changing this, or any of
+to a location in your `$VSC_HOME`. It is however strongly recommended to change this to another location, e.g. `$VSC_DATA`. Changing this, or any of
 the other cluster profile parameters can be done as follows:
 
 ::
