@@ -52,20 +52,7 @@ Environment variables
 The environment variables point to your directories on the different
 storage locations.
 
-+----------------------+---------------------------------+
-| Environment variable | Path                            |
-+======================+=================================+
-| $VSC_HOME            | /user/antwerpen/2../vsc2....    |
-+----------------------+---------------------------------+
-| $VSC_DATA            | /data/antwerpen/2../vsc2....    |
-+----------------------+---------------------------------+
-| | $VSC_SCRATCH       | /scratch/antwerpen/2../vsc2.... |
-| | $VSC_SCRATCH_SITE  |                                 |
-+----------------------+---------------------------------+
-| $VSC_SCRATCH_NODE    | /tmp                            |
-+----------------------+---------------------------------+
-
-The dots are wildcards that match single digits.
+.. include:: uantwerp_storage_paths_table.rst
 
 For users with a different home institution, the path names
 will be similar to those above with trivial modifications
