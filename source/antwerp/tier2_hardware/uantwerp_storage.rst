@@ -11,8 +11,8 @@ File systems
 
 .. include:: uantwerp_storage_quota_table.rst
 
-.. Guidelines for using storage
-.. ----------------------------
+UAntwerp storage guidelines
+---------------------------
 
 * ``$VSC_HOME`` should only be used
   for all **configuration files** that Linux programs use.
@@ -36,8 +36,11 @@ File systems
 
 * ``$VSC_SCRATCH`` is stored on a parallel file system,
   which is optimized for **large I/O transfers** to **large files**.
-   
-.. note::
+
+  * It should be used to temporary or transient data (unless told otherwise).
+  * There is no backup.
+
+.. warning::
   The VSC storage is not meant for backup purposes.
   You should not rely on it to store all data of your PhD or postdoc.
   It is the individual user's responsibility to store that data on reliable
@@ -49,28 +52,26 @@ Environment variables
 The environment variables point to your directories on the different
 storage locations.
 
-+---------------------+---------------------------------+
-| Variable            | Name                            |
-+=====================+=================================+
-| $VSC_HOME           | /user/antwerpen/2../vsc2....    |
-+---------------------+---------------------------------+
-| $VSC_DATA           | /data/antwerpen/2../vsc2....    |
-+---------------------+---------------------------------+
-| | $VSC_SCRATCH      | /scratch/antwerpen/2../vsc2.... |
-| | $VSC_SCRATCH_SITE |                                 |
-+---------------------+---------------------------------+
-| $VSC_SCRATCH_NODE   | /tmp                            |
-+---------------------+---------------------------------+
++----------------------+---------------------------------+
+| Environment variable | Path                            |
++======================+=================================+
+| $VSC_HOME            | /user/antwerpen/2../vsc2....    |
++----------------------+---------------------------------+
+| $VSC_DATA            | /data/antwerpen/2../vsc2....    |
++----------------------+---------------------------------+
+| | $VSC_SCRATCH       | /scratch/antwerpen/2../vsc2.... |
+| | $VSC_SCRATCH_SITE  |                                 |
++----------------------+---------------------------------+
+| $VSC_SCRATCH_NODE    | /tmp                            |
++----------------------+---------------------------------+
 
 The dots are wildcards that match single digits.
 
-.. note::
-  |VUB| |UG| |KUL| For users with a different home institution, 
-  the path names will be
-  similar to those above for UAntwerpen users with trivial modifications
-  based on your home institution and VSC account number.
+For users with a different home institution, the path names
+will be similar to those above with trivial modifications
+based on your home institution and VSC account number.
 
-Requesting quota
+About quota
 ================
 
 Additional quota can be requested via the UAntwerp support team 
@@ -80,9 +81,8 @@ When requesting additional quota, please state clearly what you
 would like the new quota to be and provide a motivation on why 
 you would need that increase.
 
-.. note::
-  |VUB| |UG| |KUL| For users with a different home institution,
-  your ``$VSC_HOME`` and ``$VSC_DATA`` directories are exported
-  from your home institution
-  which implies that you have to ask for additional quota on those file
-  systems at your home institution.
+For users with a different home institution, the quota on
+``$VSC_HOME`` and ``$VSC_DATA`` directories are determined
+by the local policy of your home institution, as these file
+systems are mounted from there. This implies that you have
+to ask for additional quota at your home institution.
