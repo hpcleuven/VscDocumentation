@@ -76,7 +76,7 @@ Hardware details
       (4 NUMA domains and 4 L3 caches per CPU) :raw-html:`<br />`
       The base and max CPU frequencies are 2.7 GHz and 3.9 GHz, respectively.
     - 768 GiB RAM
-    - 4 NVIDIA H100 SXM4, 80 GiB HBM3, connected with NVLink
+    - 4 NVIDIA H100 SXM5, 80 GiB HBM3, connected with NVLink
     - 960 GB SSD local disk
     - partition ``gpu_h100``,
       :ref:`submit options <submit to wice GPU node>`
