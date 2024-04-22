@@ -104,7 +104,14 @@ chmod 600 ~/.config/openstack/clouds.yaml
 ```
 
 ## Terraform modules
-
+:::{tip}
+If you are **not** using the VSC login node, you need to make sure to:
+1) [Install Terraform](https://developer.hashicorp.com/terraform/install)
+2) Install openstack client:
+    * Ubuntu: `sudo apt install python3-openstackclient`
+    * [RHEL/CentOS](https://docs.openstack.org/install-guide/environment-packages-rdo.html)
+    * [Others](https://docs.openstack.org/ocata/user-guide/common/cli-install-openstack-command-line-clients.html)
+:::
 We've provided two examples of how to use the terraform modules.
 
 Navigate to the environment directory first:
