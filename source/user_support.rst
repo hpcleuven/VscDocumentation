@@ -12,7 +12,7 @@ What information should I provide when contacting user support?
 
 When you submit a support request, it helps if you always provide:
 
-#. your VSC user ID (or VUB netID),
+#. your VSC user ID,
 #. contact information - it helps to specify your preferred mail address
    and phone number for contact,
 #. an informative subject line for your request,
@@ -57,7 +57,7 @@ Please provide the following information:
 #. the name of the cluster your are working on,
 #. the name of the application (e.g., Ansys, Matlab, R, ...),
 #. the module(s) you load to use the software (e.g.,
-   R/3.1.2-intel-2015a),
+   R/4.3.2-intel-2024a),
 #. the error message the application produces, as well as the location of the
    output and error files if this ran as a job,
 #. whether the error is reproducible,
@@ -74,7 +74,7 @@ Please provide the following information:
 #. the error message produced at build time or runtime, as well as the location
    of the output and error files if this ran as a job,
 #. the toolchain and other module(s) you load to build the software
-   (e.g., intel/2015a with HDF5/1.8.4-intel-2015a),
+   (e.g., intel/2024a with HDF5/1.14.0-intel-2024a),
 #. if possible and applicable, a procedure and data to reproduce the
    problem,
 #. if the software was run as a job, the jobID(s) of (un)successful
