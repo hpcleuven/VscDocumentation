@@ -34,7 +34,7 @@ Now you can load your preferred Matlab module:
 
     $ module load <matlab_module>
 
-We have Matlab modules available for wICE (in the 2021a toolchain) and for Genius (in the 2021a and 2018a toolchains).
+We have Matlab modules available for both wICE and Genius. Use the command `module av MATLAB` on the compute node to check for available versions.
 
 Now, start Matlab and use the function  `configCluster` to set up the cluster profile. If you do not do this, the cluster profile will default to the 'local
 cluster', basically meaning that it will only detect the cores on the node you are currently on.
