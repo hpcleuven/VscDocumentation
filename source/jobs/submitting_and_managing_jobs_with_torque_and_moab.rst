@@ -182,28 +182,6 @@ use the ``-f`` or ``-f1`` option::
 The ``-n`` or ``-n1`` will just show you the nodes allocated to each running job in
 addition to regular output.
 
-
-.. _checkjob:
-
-checkjob
-~~~~~~~~
-
-The ``checkjob`` command also provides details about a job, but from
-the perspective of the scheduler, so  that you get different information.
-
-The command below will produce information about the job with jobid 323323::
-
-   $ checkjob 323323
-
-Adding the ``-v`` option (for verbose) gives you even more information::
-
-   $ checkjob -v 323323
-
-For a running job, checkjob will give you an overview of the allocated
-resources and the wall time consumed so far. For blocked jobs, the end
-of the output typically contains clues about why a job is blocked.
-
-
 .. _qdel:
 
 Deleting a queued or running job: qdel
@@ -216,53 +194,3 @@ job with ID 323323::
 
 If the job is already running, the processes will be killed and the resources
 will be returned to the scheduler for another job.
-
-
-.. _showstart:
-
-Getting a start time estimate for your job: showstart
------------------------------------------------------
-
-This is a very simple tool that will tell you, based on the current
-status of the cluster, when your job is scheduled to start::
-
-   $ showstart 20030021
-   job 20030021 requires 896 procs for 1:00:00
-   Earliest start in       5:20:52:52 on Tue Mar 24 07:36:36
-   Earliest completion in  5:21:52:52 on Tue Mar 24 08:36:36
-   Best Partition: DEFAULT
-
-.. note::
-
-   This is only an estimate, based on the jobs that are currently running or
-   queued and the walltime that users gave for these jobs.
-
-   - Jobs may always end sooner than requested, so your job may start sooner.
-   - On the other hand, jobs with a higher priority may also enter the queue and
-     delay the start of your job.
-
-
-   .. _showbf:
-
-Checking free resources for a short job: showbf
------------------------------------------------
-
-When the scheduler performs its task, there is bound to be
-some gaps between jobs on a node. These gaps can be back filled with
-small jobs. To get an overview of these gaps, you can execute the
-command ``showbf``::
-
-   $ showbf
-   backfill window (user: 'vsc30001' group: 'vsc30001' partition: ALL) Wed Mar 18 10:31:02
-   323 procs available for      21:04:59
-   136 procs available for   13:19:28:58
-
-To check whether a job can run in a specific partition, add the ``-p <partition>`` option.
-
-.. note::
-
-   There is however no guarantee that if you submit a job that would fit in
-   the available resources, it will also run immediately. Another user
-   might be doing the same thing at the same time, or you may simply be
-   blocked from running more jobs because you already have too many jobs
-   running or have made heavy use of the cluster recently.
