@@ -13,7 +13,7 @@ consult the respective documentation sources:
 
    .. tab-item:: UAntwerp (AUHA)
 
-      Leibniz cluster: :ref:`GPU computing @ UAntwerp <GPU computing UAntwerp>`
+      Leibniz and Vaughan clusters: :ref:`GPU computing UAntwerp`
 
    .. tab-item:: VUB
 
