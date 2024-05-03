@@ -95,7 +95,9 @@ is best to do this via a NoMachine connection. If you then need to launch the Ma
 interactive job, don't forget to add ``-X`` option to your `srun` or `salloc` command and keep in mind
 that the GUI will necessarily be less responsive.
 
-Now you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a job.
+Now you can start both interactive and independent batch jobs with the previously configured cluster profile. In both cases, you request a number of threads, either using the `parpool` or `batch` function.
+Under the hood, Matlab launches a Slurm job to request resources of the system. Different from submitting a Slurm job yourself, there is no direct way to specify the number of nodes and cores. Matlab just
+requests a number of tasks, and the system gives whatever available, meaning that cores could be spread out over a number of nodes, while they could easily fit in a single node.
 
 Interactive job
 ***************
