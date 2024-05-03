@@ -304,7 +304,9 @@ There's some extra variables you can configure:
 #### Single VM only
 | Variable | Explanation | Values |
 | --- | --- | --- |
-| public | Add a public IP if true | true/false|
+| public | Add a public IP if true | true/false |
+| custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
+| volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
 
 #### Cluster only
 | Variable | Explanation | Values |
@@ -313,7 +315,49 @@ There's some extra variables you can configure:
 | private_flavor | Sets a different flavor for the private VMs | see [Flavor list](flavors.md) |
 | public_nginx_enabled | enables nginx on the public instance | true/false |
 | public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
+(volumes)=
+##### Volumes
+if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `volume.example`).
+The `size` represents the volume size in gigabytes.
+:::{tip}
+This variable will create and attach the volume, but it will **not** create a filesystem or mount it. 
+:::
+```terraform
+volumes = {
+  vol1 = {
+    size = 100
+  }
+}
+```
 
+This is one way to create a filesystem on such a volume:
+:::{warning}
+Do **not** select /dev/vda or any device with existing partitions to avoid data loss.
+:::
+```shell
+# Find the volume to mount (/dev/vdb, dev/vdc, ...)
+sudo fdisk -l
+# Save as a variable (replace with the value you found in the previous step)
+export DEVICE="/dev/xxx"
+# Assuming the volume is /dev/vdb, create a gpt partition table and partition that fills the volume
+sudo parted --script $DEVICE mklabel gpt mkpart primary ext4 0% 100%
+# Create ext4 filesystem on the first partition
+sudo mkfs.ext4 "$DEVICE"1
+```
+And mount it:
+```shell
+# Choose a name
+export MOUNT_NAME="vol1"
+# Create mountpoint
+sudo mkdir "/mnt/$MOUNT_NAME"
+# Make ourselves owner
+sudo chown "$USER":"$USER" "/mnt/$MOUNT_NAME"
+# Mount the volume
+sudo mount "$DEVICE"1 "/mnt/$MOUNT_NAME"
+```
+(firewall)=
+##### Firewall
+With the single VM module you can add open ports to the VM. These wont export ports to the internet but it will allow other VMs to connect to that port. See the `custom_secgroup.example` file for an example.
 
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
