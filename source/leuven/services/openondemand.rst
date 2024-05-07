@@ -220,15 +220,15 @@ and only need to be done once for the set-up of each new kernel. This starts wit
 environment::
 
       source activate <env_name>
-      
+
 For Python you will need the ``ipykernel`` package installed in your conda environment. Then you create the kernel as follows::
 
-      python -m ipykernel install  --prefix=${VSC_HOME}/.local/ --name '<env_name>'
-      
+      python -m ipykernel install --user --name '<env_name>' --display-name '<kernel_name>'
+
 For R, you need both the ``jupyter_client`` and the ``irkernel`` package installed. With the following command you can create the kernel::
-      
-      Rscript -e 'IRkernel::installspec(prefix="${VSC_HOME}/.local/", name="<env_name>", displayname="<kernel_name>")'
-      
+
+      Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
+
 Once the kernel is created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
 
 For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`__.
