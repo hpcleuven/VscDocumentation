@@ -26,27 +26,53 @@ Configuration of FileZilla to connect to a login node
 #. In the tab marked General, enter the following values (all other
    fields remain blank):
 
-   -  Host: fill in the hostname of the VSC login node of your home
-      institution. You can find this information in the :ref:`overview
-      of available hardware on this site <hardware>`.
-   -  Servertype: SFTP - SSH File Transfer Protocol
-   -  Logontype: Normal
-   -  User: *your own* VSC user ID, e.g., vsc98765;
+   .. tab-set::
+
+      .. tab-item:: KU Leuven/UHasselt
+
+         - Host: ``login.hpc.kuleuven.be``
+         - Server Type: SFTP - SSH File Transer Protocol
+         - Logon Type: Interactive
+         - User: *your own* VSC user ID, starting as ``vsc3``
+
+           .. figure:: filezilla/site_manager_kul.png
+              :alt: FileZilla's site manager for KU Leuven/UHasselt site 
+
+      .. tab-item:: UGent, VUB, UAntwerpen
+
+         -  Host: fill in the hostname of the VSC login node of your home
+            institution. You can find this information in the :ref:`overview
+            of available hardware on this site <hardware>`.
+         -  Server Type: SFTP - SSH File Transfer Protocol
+         -  Logon Type: Normal
+         -  User: *your own* VSC user ID, e.g., vsc98765;
+
+            .. figure:: filezilla/site_manager_non_kul.png
+               :alt: FileZilla's site manager for UGent, VUB, UAntwerpen
 
 #. Optionally, rename this setting to your liking by pressing the
    'Rename' button;
 #. Press 'Connect' and enter your passphrase when requested.
 
-.. figure:: filezilla/site_manager.png
-   :alt: FileZilla's site manager
 
-Note that recent versions of FileZilla have a screen in the settings to
-manage private keys. The path to the private key must be provided in
-options (Edit Tab -> options -> connection -> SFTP):
+.. tab-set::
 
-.. figure:: filezilla/prefs_private_key.jpg
-   :alt: FileZilla site manager with settings
+   .. tab-item:: KU Leuven/UHasselt
 
-After that you should be able to connect after being asked for
-passphrase. As an alternative you can choose to use putty pageant.
+      As long as your SSH agent is running and keeping a valid SSH certificate,
+      you stay connected via FileZilla and you do not require additional
+      configuration.
+
+   .. tab-item:: UGent, VUB, UAntwerpen
+
+      Recent versions of FileZilla have a screen in the settings to
+      manage private keys. The path to the private key must be provided in
+      options (Edit Tab -> options -> connection -> SFTP):
+
+      .. figure:: filezilla/prefs_private_key.jpg
+         :alt: FileZilla site manager with settings
+
+      After that you should be able to connect after being asked for
+      passphrase. As an alternative you can choose to use putty pageant.
+
 
