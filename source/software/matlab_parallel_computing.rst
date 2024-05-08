@@ -18,7 +18,7 @@ Availability
 The Parallel Computing Toolbox has been enabled for all Matlab versions on the KU Leuven Tier-2 clusters.
 
 The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not yet member of our `lli_matlab` group, you can request
-access via the VSC account page (Use the 'New/Join Group' button.
+access via the VSC account page (Use the 'New/Join Group' button).
 
 Configuring Matlab for parallel computing
 +++++++++++++++++++++++++++++++++++++++++
@@ -41,11 +41,13 @@ cluster', basically meaning that it will only detect the cores on the node you a
 
 ::
 
-    $ matlab -nodisplay          # this will avoid launching the GUI, but you can do this if you prefer (slow)
+    $ matlab -nodisplay          # the '-nodisplay' option avoids launching the GUI, but you leave this out if you prefer (slow)
     $ # Within Matlab
     $ >> configCluster;
 
-There is a range of additional properties that you can set on the cluster profile. Before you can edit these, you first need to get a handle on the cluster
+The `configCluster` function will request you to specify a cluster (`wice` or `genius`). Please use the one you are on already.
+
+There is a range of additional properties you can set for the cluster profile. Before you can edit these, you first need to get a handle on the cluster
 profile:
 
 ::
@@ -62,7 +64,7 @@ You can then view and edit the additional properties:
     $ #edit
     $ c.AdditionalProperties.<property_name> = '<property_value>'
 
-One of these properties, you will always have to set, namely `AccountName`. Set this to the name of your credit account.
+One of these properties you will always have to set, namely `AccountName`. Set this to the name of your credit account.
 
 Next to this, it is also possible to change the more standard parameters of the cluster profile. One of these is the `JobStorageLocation` parameter. This defaults
 to a location in your `$VSC_HOME`. It is however strongly recommended to change this to another location, e.g. `$VSC_DATA`. Changing this, or any of
@@ -86,7 +88,7 @@ Submitting jobs
 
 Submitting jobs will happen from within Matlab. There are two ways to do this. You can start a Matlab session on a login node, or you can first request an
 interactive job, where you launch your Matlab session. Which one you choose will depend on the workload you plan to have on the node before submitting a job.
-As for any other work on the cluster, you can always do minor work on the login node, but for heavier calculations (before submitting your multinode job), you should
+As for any other work on the cluster, you can always do minor work on the login node, but for heavier calculations (before submitting your effective job), you should
 use an interactive job.
 
 In general, we recommend to carry out the examples below via Matlab's command line interface
@@ -95,9 +97,9 @@ is best to do this via a NoMachine connection. If you then need to launch the Ma
 interactive job, don't forget to add ``-X`` option to your `srun` or `salloc` command and keep in mind
 that the GUI will necessarily be less responsive.
 
-Now you can start both interactive and independent batch jobs with the previously configured cluster profile. In both cases, you request a number of threads, either using the `parpool` or `batch` function.
-Under the hood, Matlab launches a Slurm job to request resources of the system. Different from submitting a Slurm job yourself, there is no direct way to specify the number of nodes and cores. Matlab just
-requests a number of tasks, and the system gives whatever available, meaning that cores could be spread out over a number of nodes, while they could easily fit in a single node.
+Now you can start both interactive and independent batch jobs with the previously configured cluster profile. In both cases, you request a number of threads, either using the `parpool` or `batch`
+function. Under the hood, Matlab launches a Slurm job to request resources of the system. Different from submitting a Slurm job yourself, there is no direct way to specify the number of nodes and cores.
+Matlab just requests a number of tasks, and the system gives whatever is available, meaning that cores could be spread out over a number of nodes.
 
 Interactive job
 ***************
