@@ -25,7 +25,7 @@ Configuring Matlab for parallel computing
 
 If you want to use the parallel toolbox, there are a couple of steps you have to do yourself:
 
-Running Matlab is best done from a compute node. Request an interactive job with minimum 4 cores (Matlab loading is quite slow with only a single core) with the
+Running Matlab with Parallel Server should be done from a compute node. Request an interactive job with minimum 4 cores (Matlab loading is quite slow with only a single core) with the
 ``srun`` or ``salloc`` command.
 
 Now you can load your preferred Matlab module:
@@ -64,7 +64,8 @@ You can then view and edit the additional properties:
     $ #edit
     $ c.AdditionalProperties.<property_name> = '<property_value>'
 
-One of these properties you will always have to set, namely ``AccountName``. Set this to the name of your credit account.
+There are two properties that have to be set to be able to submit jobs, namely ``AccountName`` and ``partition``. ``AccountName`` is the name
+of your credit account.
 
 Next to this, it is also possible to change the more standard parameters of the cluster profile. One of these is the ``JobStorageLocation`` parameter. This defaults
 to a location in your ``$VSC_HOME``. It is however strongly recommended to change this to another location, e.g. ``$VSC_DATA``. Changing this, or any of
@@ -86,12 +87,11 @@ session:
 Submitting jobs
 +++++++++++++++
 
-Submitting jobs will happen from within Matlab. This means you will have to start a Matlab instance first. As explained above, this means you first load your preferred module,
-and then launch the Matlab command line (with ``matlab -nodisplay``) or the Matlab GUI (with ``matlab``). It is best to launch the GUI in a NX session. If you are not
-immediately submitting jobs from within Matlab, but would like to carry out some computing steps first, you can also first connect to an interactive job on one of our clusters,
-and then start Matlab. This will also allow you to use some more cores and/or memory compared to what's available on the login nodes. If you then need to launch the Matlab GUI in an
-interactive job, don't forget to add ``-X`` option to your ``srun`` or ``salloc`` command and keep in mind
-that the GUI will necessarily be less responsive.
+Submitting jobs will happen from within Matlab. This means you will have to start a Matlab instance first. You can only use the Parallel Server Toolbox (and thus submit jobs from
+within Matlab) from a compute node. You can also not use the GUI from a compute node, so this means that you cannot use the GUI together with Parallel Server. 
+
+First of all, request an interactive job. Once you are inside the interactive job, you can load your preferred module, as
+explained above. You can then load the Matlab and then launch the Matlab command line (with ``matlab -nodisplay``).
 
 With the parallel toolbox, you can now submit jobs from within Matlab to the cluster. You can start both interactive and independent batch jobs with the previously configured
 cluster profile. In both cases, you request a number of threads, either using the ``parpool`` or ``batch``
