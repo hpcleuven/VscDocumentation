@@ -37,10 +37,10 @@ job will therefore get two sockets (and so 28 cores in total)::
            --ntasks=2 myscript.slurm
 
 If you want to get multiple Slurm tasks per socket you will need to use the
-``--ntasks-per-socket`` option, for example::
+``--ntasks-per-socket`` option. For example, to exploit all 8 sockets on the node::
 
   $ sbatch --account=lp_my_project --clusters=genius --partition=superdome \
-           --ntasks=28 --ntasks-per-socket=14 myscript.slurm
+           --ntasks=8 --ntasks-per-socket=14 myscript.slurm
 
 .. note::
 
