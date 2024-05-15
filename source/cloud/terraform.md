@@ -320,7 +320,7 @@ There's some extra variables you can configure:
 if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `volume.example`).
 The `size` represents the volume size in gigabytes.
 :::{tip}
-This variable will create and attach the volume, but it will **not** create a filesystem or mount it. 
+This variable will create and attach the volume as a regular disk, but it will **not** create a filesystem or mount it. 
 :::
 ```terraform
 volumes = {
@@ -329,35 +329,11 @@ volumes = {
   }
 }
 ```
-
-This is one way to create a filesystem on such a volume:
-:::{warning}
-Do **not** select /dev/vda or any device with existing partitions to avoid data loss.
-:::
-```shell
-# Find the volume to mount (/dev/vdb, dev/vdc, ...)
-sudo fdisk -l
-# Save as a variable (replace with the value you found in the previous step)
-export DEVICE="/dev/xxx"
-# Assuming the volume is /dev/vdb, create a gpt partition table and partition that fills the volume
-sudo parted --script $DEVICE mklabel gpt mkpart primary ext4 0% 100%
-# Create ext4 filesystem on the first partition
-sudo mkfs.ext4 "$DEVICE"1
-```
-And mount it:
-```shell
-# Choose a name
-export MOUNT_NAME="vol1"
-# Create mountpoint
-sudo mkdir "/mnt/$MOUNT_NAME"
-# Make ourselves owner
-sudo chown "$USER":"$USER" "/mnt/$MOUNT_NAME"
-# Mount the volume
-sudo mount "$DEVICE"1 "/mnt/$MOUNT_NAME"
-```
 (firewall)=
 ##### Firewall
-With the single VM module you can add open ports to the VM. These wont export ports to the internet but it will allow other VMs to connect to that port. See the `custom_secgroup.example` file for an example.
+With the single VM module you can add open ports to the VM. 
+These wont export ports to the internet but it will allow other VMs to connect to that port. 
+See the `custom_secgroup.example` file for an example.
 
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
