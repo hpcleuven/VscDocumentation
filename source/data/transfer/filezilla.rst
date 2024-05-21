@@ -17,8 +17,7 @@ Configuration of FileZilla to connect to a login node
 
 .. note::
 
-   Pageant should be running and your private key should be loaded first (more
-   info in our ":ref:`using Pageant`" page).
+   The UGent, VUB, and UAntwerpen users need to start Pageant first and load their private key to Pageant (more info in our ":ref:`using Pageant`" page). The KU Leuven/UHasselt users do not necessarily require SSH key pairs.
 
 #. Start FileZilla;
 #. Open the Site Manager using the 'File' menu;
