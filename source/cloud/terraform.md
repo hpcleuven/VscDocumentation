@@ -128,9 +128,9 @@ The file now contains the definition for one VM with several options you can cus
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
 | nginx_enabled | Installs nginx and exposes port 80. | true, false
 | nfs_enabled   | Connects the vfm to the NFS network. Only set true if you requested access. | true, false
-| vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false
-
-More advanced options are described further on.
+| vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false |
+| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (number)
+More advanced options are described further on. |
 
 ### Cluster of VMs
 You can also deploy a public VM and multiple private VMs (without a public IP) in one go by using the cluster template:
@@ -176,23 +176,6 @@ You will see a list of the resources required to deploy your
 infrastructure, Terraform also checks if there is any systax error in
 your templates. Your infrastructure is not deployed yet, review the plan
 and then just deploy it to VSC Tier-1 Cloud running:
-
-
-You might see something like:
-```
-╷
-│ Warning: Argument is deprecated
-│ 
-│   with provider["registry.terraform.io/terraform-provider-openstack/openstack"],
-│   on provider.tf line 9, in provider "openstack":
-│    9: provider "openstack" {
-│ 
-│ Users not using loadbalancer resources can ignore this message. Support for neutron-lbaas will be removed on next major release. Octavia
-│ will be the only supported method for loadbalancer resources. Users using octavia will have to remove 'use_octavia' option from the
-│ provider configuration block. Users using neutron-lbaas will have to migrate/upgrade to octavia.
-╵
-```
-You can safely ignore this warning.
 
 ```shell
 terraform apply
@@ -305,6 +288,7 @@ There's some extra variables you can configure:
 | Variable | Explanation | Values |
 | --- | --- | --- |
 | public | Add a public IP if true | true/false|
+| is_windows | useful for custom windows images. Configures windows-specific behavior if `true` | true/false |
 
 #### Cluster only
 | Variable | Explanation | Values |
