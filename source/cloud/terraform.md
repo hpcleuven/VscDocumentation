@@ -104,7 +104,14 @@ chmod 600 ~/.config/openstack/clouds.yaml
 ```
 
 ## Terraform modules
-
+:::{tip}
+If you are **not** using the VSC login node, you need to make sure to:
+1) [Install Terraform](https://developer.hashicorp.com/terraform/install)
+2) Install openstack client:
+    * Ubuntu: `sudo apt install python3-openstackclient`
+    * [RHEL/CentOS](https://docs.openstack.org/install-guide/environment-packages-rdo.html)
+    * [Others](https://docs.openstack.org/ocata/user-guide/common/cli-install-openstack-command-line-clients.html)
+:::
 We've provided two examples of how to use the terraform modules.
 
 Navigate to the environment directory first:
@@ -288,6 +295,9 @@ There's some extra variables you can configure:
 | Variable | Explanation | Values |
 | --- | --- | --- |
 | public | Add a public IP if true | true/false|
+| public | Add a public IP if true | true/false |
+| custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
+| volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
 | is_windows | useful for custom windows images. Configures windows-specific behavior if `true` | true/false |
 
 #### Cluster only
@@ -297,7 +307,25 @@ There's some extra variables you can configure:
 | private_flavor | Sets a different flavor for the private VMs | see [Flavor list](flavors.md) |
 | public_nginx_enabled | enables nginx on the public instance | true/false |
 | public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
-
+(volumes)=
+##### Volumes
+if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `volume.example`).
+The `size` represents the volume size in gigabytes.
+:::{tip}
+This variable will create and attach the volume as a regular disk, but it will **not** create a filesystem or mount it. 
+:::
+```terraform
+volumes = {
+  vol1 = {
+    size = 100
+  }
+}
+```
+(firewall)=
+##### Firewall
+With the single VM module you can add open ports to the VM. 
+These wont export ports to the internet but it will allow other VMs to connect to that port. 
+See the `custom_secgroup.example` file for an example.
 
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
