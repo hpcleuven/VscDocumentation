@@ -138,7 +138,7 @@ The file now contains the definition for one VM with several options you can cus
 | vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false |
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (number)
 More advanced options are described further on. |
-
+| is_windows | Configures windows-specific behavior if `true` | true/false |
 ### Cluster of VMs
 You can also deploy a public VM and multiple private VMs (without a public IP) in one go by using the cluster template:
 ```shell 
@@ -298,7 +298,6 @@ There's some extra variables you can configure:
 | public | Add a public IP if true | true/false |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
-| is_windows | useful for custom windows images. Configures windows-specific behavior if `true` | true/false |
 
 #### Cluster only
 | Variable | Explanation | Values |
