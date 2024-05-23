@@ -175,7 +175,11 @@ be shared, and improve reproducibility.
 
 Conda environment in a definition file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+`Conda environments
+<https://docs.vscentrum.be/software/python_package_management.html#install-python-packages-using-conda>`_
+are a convinient solution when it comes to handling own Python-dependent
+software installations. Having a containerized Conda environment is often
+useful for groups when working collectively on a common project.
 One way to have a Conda environment in a container is to create it from
 an existing environment YAML file. If we have a Conda environment exported
 in a YAML format file called, e.g., ``user_conda_environment.yml``, then
