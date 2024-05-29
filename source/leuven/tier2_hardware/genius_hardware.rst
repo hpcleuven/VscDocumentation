@@ -14,25 +14,25 @@ since 2018. It has thin nodes, large memory nodes, as well as GPU nodes.
 Hardware details
 ----------------
 
-- 230 thin nodes 
-   
-  - 86 skylake nodes
+- 144 thin nodes
 
-    - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
-      18 cores each :raw-html:`<br />`
-      (1 NUMA domain and 1 L3 cache per CPU)
-    - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
-    - 200 GB SSD local disk
-    - feature skylake
+  - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake),
+    18 cores each :raw-html:`<br />`
+    (1 NUMA domain and 1 L3 cache per CPU)
+  - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
+  - 200 GB SSD local disk
+  - partition ``batch/batch_long``,
+    specific Slurm :ref:`options <submit_genius_batch>` apply
 
-  - 144 cascadelake nodes
+- 12 interactive nodes
 
-    - 2 Xeon Gold 6240 CPUs\@2.6 GHz (Cascadelake),
-      18 cores each :raw-html:`<br />`
-      (1 NUMA domain and 1 L3 cache per CPU)
-    - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency cascadelake tier2>`)
-    - 200 GB SSD local disk
-    - feature cascadelake 
+  - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
+    18 cores each :raw-html:`<br />`
+    (1 NUMA domain and 1 L3 cache per CPU)
+  - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
+  - 200 GB SSD local disk
+  - partition ``interactive``,
+    specific Slurm :ref:`options <submit_genius_interactive>` apply
 
 - 10 big memory nodes
 
@@ -74,7 +74,7 @@ Hardware details
   - 200 GB SSD local disk
   - partition ``amd``, specific Slurm :ref:`options <submit_genius_amd>` apply
 
-The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands 
+The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands
 are indicated on the diagram below.
 
 .. figure:: genius_hardware/genius.png

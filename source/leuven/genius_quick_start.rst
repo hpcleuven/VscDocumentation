@@ -3,15 +3,15 @@
 Genius quick start guide
 ========================
 :ref:`Genius <Genius hardware>` is one of the two KU Leuven/UHasselt Tier-2 clusters,
-besides :ref:`wICE <wice hardware>`. 
-Given the architectural diversity of compute nodes on Genius, this cluster is suited  
+besides :ref:`wICE <wice hardware>`.
+Given the architectural diversity of compute nodes on Genius, this cluster is suited
 for most HPC workloads.
 
 Access to the cluster
 ---------------------
 
-Access to Genius follows the common :ref:`access guidelines for KU Leuven/UHasselt Tier-2 clusters <tier2_login_nodes>`. 
-  
+Access to Genius follows the common :ref:`access guidelines for KU Leuven/UHasselt Tier-2 clusters <tier2_login_nodes>`.
+
 For example, you can log in to any of the login node using SSH::
 
    $ ssh vscXXXXX@login.hpc.kuleuven.be
@@ -21,7 +21,7 @@ For example, you can log in to any of the login node using SSH::
 Running jobs on Genius
 ----------------------
 Genius is equipped with regular (thin) compute nodes, two kinds of big memory nodes,
-and GPU nodes.  The resource specifications for jobs have to be tuned to use these 
+and GPU nodes.  The resource specifications for jobs have to be tuned to use these
 nodes properly.
 
 The `Slurm Workload Manager <https://slurm.schedmd.com>`_ is the scheduler,
@@ -77,7 +77,7 @@ you may submit your job like this::
 .. note::
 
    If you do not specify the number of tasks and cores per task for your job,
-   then it will default to a single task running on a single core.  
+   then it will default to a single task running on a single core.
 
 .. note::
 
@@ -92,13 +92,42 @@ you may submit your job like this::
 
 Advanced node usage
 ^^^^^^^^^^^^^^^^^^^
-In certain cases (such as performance tests) you may want to be sure that your job runs 
-on a specific type of node (i.e. only Skylake nodes or only Cascadelake nodes). 
-You can do this by additionally specifying ``--constraint=skylake|cascadelake``.
-Otherwise, your job will land on the first available node(s) as decided by Slurm.
+The ``batch(_long)`` partitions used to contain both Skylake and Cascadelake
+nodes, which meant that ``--constraint=skylake|cascadelake``-like options
+were needed when you wanted to ensure that your job runs on a specific type
+of node. As the Skylake nodes from this partitions have been decommissioned,
+only the Cascadelake nodes remain and ``--constraint=skylake`` no longer works.
 
 By default, all nodes are shared among all jobs and users, unless the resource specifications
 would imply an exclusive access to a node by a job or user.
+
+
+.. _submit_genius_interactive:
+
+Submit to the interactive partition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is also a small ``interactive`` partition intended for interactive work
+(compiling software, post-processing, small-scale debugging, visualization,
+...). This is typically done via interactive jobs, for example::
+
+   # A short single-core job:
+   $ srun --account=lp_myproject --clusters=genius --partition=interactive \
+           --ntasks=1 --time=01:00:00 --pty bash -l
+
+   # A longer job with more cores and X11 forwarding:
+   $ srun --account=lp_myproject --clusters=genius --partition=interactive \
+          --ntasks-per-node=8 --time=08:00:00 --x11 --pty bash -l
+
+Users are allowed to request a maximum of 8 cores for walltimes up to 16 hours.
+
+.. note::
+
+   It is also possible to submit interactive jobs to the other partitions
+   (``batch``, ``gpu_v100``, ``bigmem``, ...) in case you need more resources.
+   For large amounts of compute resources, however, we recommend to use
+   batch jobs since these will result in fewer idling resources
+   compared to interactive jobs.
 
 
 .. _submit_genius_gpu:
@@ -119,16 +148,16 @@ The GPU nodes are accessible via the following partitions:
 | gpu_v100_long | 7 days   |                                        |             |
 +---------------+----------+----------------------------------------+-------------+
 
-Similar to the other nodes, the GPU nodes can be shared by different jobs from 
+Similar to the other nodes, the GPU nodes can be shared by different jobs from
 different users.
-However, every user will have exclusive access to the number of GPUs requested. 
+However, every user will have exclusive access to the number of GPUs requested.
 If you want to use only 1 GPU of type P100 you can submit for example like this::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 \
             --gpus-per-node=1 --partition=gpu_p100 myjobscript.slurm
-  
-Note that in case of 1 GPU you have to request 9 cores. 
-In case you need more GPUs you have to multiply the 9 cores with the number of GPUs 
+
+Note that in case of 1 GPU you have to request 9 cores.
+In case you need more GPUs you have to multiply the 9 cores with the number of GPUs
 requested, so in case of for example 3 GPUs you will have to specify this::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=27 \
@@ -138,8 +167,8 @@ To specifically request V100 GPUs, you can submit for example like this::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=4 \
             --gpus-per-node=1 --mem-per-cpu=20000M --partition=gpu_v100 myjobscript.slurm
-  
-For the V100 type of GPU, it is required that you request 4 cores for each GPU. 
+
+For the V100 type of GPU, it is required that you request 4 cores for each GPU.
 Also notice that these nodes offer a much larger amount of CPU memory.
 
 
@@ -147,8 +176,8 @@ Also notice that these nodes offer a much larger amount of CPU memory.
 
 Submitting to a big memory node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The big memory nodes are located in the ``bigmem`` and ``bigmem_long`` partitions. 
-In case of the big memory nodes it is also important to add your memory requirements, 
+The big memory nodes are located in the ``bigmem`` and ``bigmem_long`` partitions.
+In case of the big memory nodes it is also important to add your memory requirements,
 for example::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=36 \
@@ -165,7 +194,7 @@ per core in this partition is 3800 MB, and each node contains 64 cores.
 For example, to request two full nodes::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=64 \
-            --partition=amd myjobscript.slurm 
+            --partition=amd myjobscript.slurm
 
 
 .. _submit_genius_debug:
@@ -173,10 +202,9 @@ For example, to request two full nodes::
 Running debug jobs
 ------------------
 Debugging on a busy cluster can be taxing due to long queue times.
-To mitigate this, two Skylake CPU nodes and a Skylake GPU node have been reserved 
-for debugging purposes.
-To use these debug nodes, you have to select the ``batch_debug`` or ``gpu_p100_debug`` 
-partition, respectively.
+To mitigate this, two Cascadelake CPU nodes and a Skylake GPU node have been
+reserved for debugging purposes. To use these debug nodes, you have to select
+the ``batch_debug`` or ``gpu_p100_debug`` partition, respectively.
 
 A few restrictions apply to a debug job:
 
