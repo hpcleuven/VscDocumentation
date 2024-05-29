@@ -5,3 +5,4 @@
    info on the `CalcUA Core Facility web
    page <https://www.uantwerpen.be/en/research-and-innovation/expertise/core-facilities/core-facilities/calcua/>`_
 -  Vrije Universiteit Brussel: hpc@vub.be, see also our `website <https://hpc.vub.be>`_ for VUB-HPC specific info.
+-  For questions and problems related to Tier-1 Hortense: compute@vscentrum.be.
