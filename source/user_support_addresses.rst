@@ -5,3 +5,4 @@
    info on the `CalcUA Core Facility web
    page <https://www.uantwerpen.be/en/research-and-innovation/expertise/core-facilities/core-facilities/calcua/>`_
 -  Vrije Universiteit Brussel: hpc@vub.be, see also our `website <https://hpc.vub.be>`_ for VUB-HPC specific info.
+-  Tier-1 compute: compute@vscentrum.be, Tier-1 cloud: cloud@vscentrum.be, Tier-1 data: data@vscentrum.be.
