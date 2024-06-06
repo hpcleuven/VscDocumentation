@@ -120,6 +120,9 @@ There is also a small ``interactive`` partition intended for interactive work
           --ntasks-per-node=8 --time=08:00:00 --x11 --pty bash -l
 
 Users are allowed to request a maximum of 8 cores for walltimes up to 16 hours.
+Note that the nodes in this partition do not contain GPUs. The ``ìnteractive``
+partition on wICE is therefore better suited if you need GPU acceleration for
+e.g. data visualization.
 
 .. note::
 
