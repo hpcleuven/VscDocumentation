@@ -83,7 +83,7 @@ In an interactive session you might want to replace the with statement above wit
 
    session = iRODSSession(irods_env_file=env_file, **ssl_settings)
 
-At the end of your session, you should clean up with:
+In that case, you should clean up your session at the end:
 
 .. code-block:: python
 
