@@ -93,13 +93,15 @@ Help! I want to collaborate with an external researcher
 -------------------------------------------------------
 
 As demonstrated earlier, you can add collaborators to your group if they have a VSC account
-If you want to work together with someone from outside the VSC, there are two options:
+If you want to work together with someone who doesn't have a VSC account, there are two options:
 
 1) Applying for a VSC account
 
 You can let your collaborators apply for a VSC account.
 This is the best solution if you have a small group of close collaborators.
-When they have a VSC-account, externals can get access to all functionalities of Tier-1 Data
+When they have a VSC-account, externals can get access to all functionalities of Tier-1 Data.
+
+For more information about requesting a VSC account, see :ref:`apply for account`.
 
 2) Sharing data via Globus
 
