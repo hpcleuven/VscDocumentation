@@ -54,8 +54,7 @@ has several disadvantages.
 - It will make your job harder to schedule, so it will spend more time in the queue.
 - Short jobs may benefit from back fill, i.e., if the scheduler finds a gap
   (based on the estimated end time of the running jobs) that is long enough to run
-  that job before it has enough resources to start a large higher-priority parallel job
-  (cf. :ref:`showbf`).
+  that job before it has enough resources to start a large higher-priority parallel job.
 - To make sure that the cluster cannot be monopolized by one or
   a few users, many of our clusters have a stricter limit on the number of
   long-running jobs than on the number of jobs with a shorter walltime.
