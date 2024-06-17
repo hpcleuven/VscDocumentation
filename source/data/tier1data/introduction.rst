@@ -102,10 +102,15 @@ User Access to Tier-1 Data
 **************************
 
 If your research group is interested in using Tier-1 Data, you need to request a Tier-1 Data project.
-This is done by submitting a project application before one of the cut-off dates each year. 
+This is done by submitting a project application, in which you explain your research, your workflow, and how the capabilities of Tier-1 Data may improve your workflow.
 Importantly, each collaborator should have a VSC-account. 
 
+Unlike Tier-1 Compute applications, Tier-1 Data applications do not have a cut-off date.
+You can apply for a Tier-1 Data project at any time. 
+
 For more information on this procedure, see https://www.vscentrum.be/data. 
+
+
 
 Users can connect to Tier-1 Data by using different clients from any computer after logging in with their institutional account.
 For example, VSC users from UAntwerpen will be forwarded to the UAntwerpen login page.
