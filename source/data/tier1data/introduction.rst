@@ -95,6 +95,7 @@ From each of these systems, access is facilitated by a variety of clients:
 
 Finally, data exchange between zones and externally is possible thanks to Globus. More information can be found in the :ref:`Globus <globus platform>` documentation.
 
+.. _user_access:
 
 **************************
 User Access to Tier-1 Data
