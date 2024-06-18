@@ -4,12 +4,12 @@
 wICE quick start guide
 ======================
 
-:ref:`wICE <wice hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.  
-It can be used for most workloads, and has nodes with a lot of memory, as well as 
+:ref:`wICE <wice hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.
+It can be used for most workloads, and has nodes with a lot of memory, as well as
 nodes with GPUs.
 
-wICE does not have separate login nodes and can be accessed either from the 
-:ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the 
+wICE does not have separate login nodes and can be accessed either from the
+:ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the
 :ref:`Open On-Demand <ood_t2_leuven>` service.
 
 .. _running jobs on wice:
@@ -17,19 +17,19 @@ wICE does not have separate login nodes and can be accessed either from the
 Running jobs on wICE
 --------------------
 
-There are several type of nodes in the wICE cluster: normal compute nodes, GPU nodes, 
-big memory nodes and nodes configured for interactive use. 
+There are several type of nodes in the wICE cluster: normal compute nodes, GPU nodes,
+big memory nodes and nodes configured for interactive use.
 The resource specifications for jobs have to be tuned to use these nodes properly.
 
-In general, the maximum walltime for wICE jobs is 3 days (72 hours). 
+In general, the maximum walltime for wICE jobs is 3 days (72 hours).
 Only jobs submitted to the ``*_long`` partitions are allowed to have
 walltimes up to  7 days (168 hours), as will be illustrated below.
 
-Similar to Genius, wICE uses Slurm as the workload manager. 
+Similar to Genius, wICE uses Slurm as the workload manager.
 A Slurm jobscript for wICE will typically look like this:
 
 ::
-   
+
     #!/bin/bash -l
     #SBATCH --clusters=wice
     #SBATCH --partition=...
@@ -68,7 +68,7 @@ each) can be done like this::
 
    $ sbatch --account=lp_myproject --clusters=wice \
             --nodes=2 --ntasks-per-node=72 --time=2:00:00 myjobscript.slurm
-   
+
 This will select the default partition (called ``batch``) which is the
 one containing these IceLake nodes. The ``batch_icelake`` partition is
 equivalent to the ``batch`` one.
@@ -157,3 +157,14 @@ per node) which you can select via the ``gpu_h100`` partition, e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_h100 \
             --nodes=1 --ntasks=16 --gpus-per-node=1 myjobscript.slurm
+
+For easier development and testing with a full GPU, also a ``gpu_a100_debug``
+partition is available which accepts jobs with walltimes up to 30 minutes,
+e.g.::
+
+   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100_debug \
+            --nodes=1 --ntasks=64 --gpus-per-node=1 --walltime=00:10:00 \
+            myjobscript.slurm
+
+The node in this partition is of the same type as those in the ``interactive``
+partition except that its A100 GPU is not divided into smaller instances.
