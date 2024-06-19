@@ -21,23 +21,28 @@ Use
 
 The KU Leuven Open OnDemand page provides a range of functions:
 
-- Exploring, adapting and creating files
+- Browsing, creating, transferring, viewing and/or editing files
 - Submitting and monitoring jobs, creating job templates
 - Opening a shell on one of the login nodes
 - Using interactive apps
 
-All of these functionalities can be used by accessing them through the tabs at the top of the page. In the following, we will describe these in
-some more detail.
+All of these functionalities can be used by accessing them through the tabs at the top of the page.
+In the following, we will describe these in some more detail.
 
 Files
 =====
 
-This menu provides a file explorer that allows you to navigate files by clicking. You can access your ``$VSC_HOME`` and ``$VSC_DATA`` folders. Other storage is not
-available here. General file explorer options like moving, deleting, modifying and creating files or directories are available as well. You can also use this interface
-to download and upload files to and from your local machine. Be aware that this is not recommended for very large files.
+This menu provides a file explorer that allows you to navigate through your files and folders.
+You can access your ``$VSC_HOME`` and ``$VSC_DATA`` folders. Other storages are not available here.
+General file explorer options like moving, deleting, modifying and creating files or directories are available as well.
+You can also use this interface to download and upload files to and from your local machine. Be aware that this is not recommended for very large files.
 
 **Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a 
 save button in the upper left corner on the editor page.
+
+The ``Globus`` button takes you directly to the Globus login page, and upon a successful login to your Globus account
+(using your KU Leuven credentials), you will land at the same sub-directory from which you clicked on the Globus button.
+For more information about Globus, please refer to :ref:`Globus Platform documentation<globus platform>`_.
 
 Jobs
 ====
