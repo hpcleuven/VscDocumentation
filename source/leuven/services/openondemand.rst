@@ -157,6 +157,8 @@ calculation.
 If you would like to perform calculations in an interactive job, you should be 
 using the :ref:`interactive shell app<interactive_shell>`.
 
+.. _interactive-apps:
+
 Interactive apps
 ================
 
@@ -201,11 +203,14 @@ Once you've selected all your resources, just press 'Launch' and your job will b
 Choosing your resources
 =======================
 
-Choosing the correct resources for your interactive session is mostly the same as selecting them when launching regular batch jobs. For this reason we strongly
-recommend you to have a look at how to specify your resources both on :ref:`Genius <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
+Choosing the correct resources for your interactive session is mostly the same as selecting them when
+launching regular batch jobs.
+For this reason, we strongly recommend you to have a look at how to specify your resources both in
+:ref:`Genius <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
 
-As mentioned above, in most cases we recommend using the ``interactive`` partition on wICE for the interactive apps. This partition is meant for lighter work, like
-visualisations, testing and pre- and postprocessing. Using this partition is also free, mainly to encourage you to request these resources for such work, instead
+As mentioned above, in most cases we recommend using the ``interactive`` partition on wICE for the interactive apps.
+This partition is meant for lighter work, like visualisations, testing and pre- and post-processing.
+Using this partition is also free, mainly to encourage you to request these resources for such work, instead
 of using any of the other partitions. There are however some limitations on the amount of resources you can request here:
 
 - Max 1 node
@@ -215,11 +220,13 @@ of using any of the other partitions. There are however some limitations on the 
 
 This is put in place to ensure that these resources are kept for their original purpose, namely the interactive work.
 
-If for some reason some of these limitations are too strict for you, or you need resources that are not available on the interactive nodes (e.g. a full GPU, big 
-memory nodes), you can always request nodes from another partition. Remember however that these interactive apps are not meant for running full jobs. If you
-indeed need multiple nodes or full GPUs to test your code/program, go ahead and request the resources for your interactive app. In the case that you have passed
-the testing phase and you want to start conducting experiments, we recommend that you make the switch to batch jobs instead, as they will not require
-your presence to start your code.
+If for some reason some of these limitations are too strict for you, or you need resources that are not available on
+the interactive nodes (e.g. a full GPU, big memory nodes), you can always request nodes from another partition.
+Remember however that these interactive apps are not meant for running full jobs.
+If you indeed need multiple nodes or full GPUs to test your code/program, go ahead and request the resources for your interactive app from
+a more suited partition.
+In the case that you have passed the testing phase, and you want to start conducting experiments;
+we recommend that you make the switch to batch jobs instead, as they will not require your presence to start your code.
 
 .. _interactive_shell:
 
@@ -227,13 +234,26 @@ Interactive shell
 -----------------
 
 This app will launch a shell on (one of) the requested node(s), allowing you to use these compute resources from within a Linux terminal. This is different
-than the shell you get in the "Clusters" menu, which directs you towards one of the login nodes.
+than the shell you get in the "Clusters - Login Server Shell Access" menu, which directs you towards one of the login nodes.
 
-Jupyter Lab
+JupyterLab
 -----------
 
-With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding. There are two kernels already available, being a Python and a
-R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
+With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding.
+In the app resource form, besides the normal choices (:ref:`see above <interactive-apps>`), you can also choose
+a 'Toolchain year' from a drop-down menu, like `2023a`.
+Based on that choice, a correct JupyterLab module will be loaded together with its dependencies (specifically Python).
+To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain year'.
+
+Furthermore, you may optionally choose to load ``SciPy-bundle`` (for ``scipy``, ``numpy``, ``pandas`` packages and more)
+and/or ``matplotlib`` in your environment from the same 'Toolchain year'.
+
+Once you launch a JupyterLab session, you get a default kernel called ``Python 3 (ipykernel)``.
+This kernel, in addition to the Python standard API, would enable using extra packages from from
+``SciPy-bundle`` and/or ``matplotlib``, if you already selected them.
+However, for using other 
+
+There are two kernels already available, being a Python and a R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
 to work with these. It is better to work with conda environments in this case. You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
 When you do not have any conda environments and their associated kernels, both the Python and R installation will default to the ``~/miniconda3/bin/...`` installation.
 
