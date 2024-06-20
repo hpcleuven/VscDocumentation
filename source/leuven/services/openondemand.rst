@@ -9,7 +9,7 @@ About
 
 Open OnDemand provides a user interface to HPC clusters from within a web browser. 
 This tool supports a range of different apps and features that not only allow the
-user to easily submit jobs from within the browser, but also provide different 
+user to easily submit jobs from within the browser, but also provide different
 coding GUIs, tools for plotting and more.
 Open OnDemand is available for the Tier-2 Genius and wICE clusters.
 
@@ -37,12 +37,12 @@ You can access your ``$VSC_HOME`` and ``$VSC_DATA`` folders. Other storages are 
 General file explorer options like moving, deleting, modifying and creating files or directories are available as well.
 You can also use this interface to download and upload files to and from your local machine. Be aware that this is not recommended for very large files.
 
-**Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a 
+**Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a
 save button in the upper left corner on the editor page.
 
 The ``Globus`` button takes you directly to the Globus login page, and upon a successful login to your Globus account
-(using your KU Leuven credentials), you will land at the same sub-directory from which you clicked on the Globus button.
-For more information about Globus, please refer to :ref:`Globus Platform documentation<globus platform>`_.
+(using your KU Leuven credentials), you will land on the same sub-directory from which you clicked on the Globus button.
+For more information about Globus, please refer to our documentation about :ref:`Globus Platform<globus platform>`_.
 
 Jobs
 ====
@@ -52,7 +52,8 @@ This also means that all your jobs should be submitted as **Slurm** jobs.
 For more detail on how to run jobs on wICE, check out our 
 :ref:`quick start guide<wice_t2_leuven>`.
 
-The jobs tab has two menus, 'Active Jobs' and 'Job Composer':
+The jobs tab has three menus, 'Active Jobs', 'Job Composer' and 'Projects' (which you cannot do much with it
+and we are skipping it here):
 
 Active jobs
 -----------
@@ -65,15 +66,17 @@ the status of the job.
 It also gives you the option to open the job script directory in the file 
 manager, and thus inspect the created output and error files. 
 
-If your job is still running, you can also delete it by clicking the bin under 'Actions'. The 'Active jobs' menu does not allow re-submission of your job. How to
-(re-)submit jobs will be made clear in the next chapter.
+If your job is still running, you can also delete it by clicking the bin under 'Actions'.
+The 'Active jobs' menu does not allow re-submission of your job.
+How to (re-)submit jobs will be made clear in the next chapter.
 
 Job Composer
 ------------
 
 The Job Composer contains all the tools that allow you to launch your jobs. This goes from basic job script building, adding necessary files, 
-to building and using templates for easier job creation. Under the job composer tab you can find two other menus, namely 'Jobs' and 'Templates'. As templates are the 
-backbone of job creation in Open OnDemand, we will start by explaining these. The 'Jobs' menu is pretty much self-explanatory once understanding this.
+to building and using templates for easier job creation. Under the job composer tab you can find two other menus, namely 'Jobs' and 'Templates'.
+As templates are the backbone of job creation in Open OnDemand, we will start by explaining these.
+The 'Jobs' menu is pretty much self-explanatory once understanding this.
 
 Templates
 ~~~~~~~~~
@@ -146,34 +149,50 @@ the folder that it is associated with.
 Clusters
 ========
 
-When selecting 'Clusters - Login Server Shell Access' you will get a terminal 
-window in a new browser tab. 
+When selecting 'Clusters - Login Server Shell Access' you will get a terminal window in a new browser tab.
 You will arrive on one of the Genius login nodes, which
-you can use as you are used to, including the option to submit jobs to Genius or wICE. 
+you can use as you are used to, including the option to submit jobs to Genius or wICE.
 As with the Genius login nodes, this means that this shell is not meant for any 
-calculations. 
+calculation.
 If you would like to perform calculations in an interactive job, you should be 
-using the :ref:`interactive shell app<interactive_shell>`
+using the :ref:`interactive shell app<interactive_shell>`.
 
 Interactive apps
 ================
 
-This menu provides a range of different apps that provide a GUI. In the background this means that you are submitting an interactive job to the cluster, in which the
-app will be running.
+This menu provides a range of different apps that provide a GUI.
+In the background this means that you are submitting an interactive job to the cluster, in which the app will be running.
 
-To launch any of the interactive apps, you need to fill in the resources form. Be aware that you will end up in a regular queue, so requesting a large amount of 
-resources might result in a long queue time. Between all the apps, most of these options are the same. Some apps require specific information. These will be 
-explained in the specific paragraph about the app. A general overview of the others can be found below. A more detailed guide on how to choose your resources
-is available in the next chapter.
+To launch any of the interactive apps, you need to fill in the resources form.
+Most of the options in the resource forms are similar across all apps, but some apps require additional input from the user.
+These will be explained in the specific paragraph about the apps.
+A more detailed guide on how to choose your resources is available in the next chapter.
+Beware that by launching any app you will end up in a regular queue, so requesting a large amount of resources might result in a long queue time.
 
-- Account: the credit account you want to deduct the credits from. The accounts associated with your VSC number will be displayed in a dropdown.
-- Partition: you can choose any of the existing partitions on both clusters. We recommend using the ``interactive`` partition for most interactive work on wICE. Be aware that this partition is not available on Genius. There it is recommended to just request the regular ``batch`` partition (see the :ref:`Choosing your resources<choosing_your_resources>` section for more detail on how to choose your partition).
+- Cluster: allows choosing between one of our Tier-2 clusters in production, namely :ref:`Genius or wICE <kul_tier2>`_
+- Account: the credit account you want to deduct the credits from.
+  The accounts associated with your VSC number will be displayed in a dropdown menu.
+- Partition: you can choose any of the existing partitions on both clusters.
+  The partition names depend on your choice of cluster.
+  We recommend using the ``interactive`` partition for most interactive work.
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. Depending on the partition you have requested, you might get a different GPU. The acquired GPU will be the same as the type specified in the partition (e.g. a NVidia V100 for ``gpu_v100``). For wICE, you can also request a GPU from the ``interactive`` partition. One GPU here is a virtual GPU slice of the available A100 GPUs. One GPU slice is the same as 1/7th of an A100 GPU. The default is 0. You can specify the type of GPU as well: [Type]:<number> (e.g. A100:2). You can also just request a number of GPUs as <number>.**The interactive partition only allows you to request max 1 GPU (slice) though.**
+- Number of GPUs. Depending on the partition you have requested, you might get a different GPU.
+  The default is 0.
+  The acquired GPU will be the same as the type specified in the partition (e.g. a NVidia H100 for ``gpu_h100`` on wICE).
+  For wICE, you can also request a GPU from the ``interactive`` partition.
+  One GPU here is a virtual GPU slice of the available A100 GPUs.
+  One GPU slice is the same as 1/7th of an A100 GPU.
+  You can specify the type of GPU as well: ``[Type]:<number>`` (e.g. ``A100:2``).
+  You can also just request a number of GPUs as ``<number>``.
+  **The interactive partition only allows you to request max 1 GPU (slice) though.**
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
-- Pre-run scriptlet: this allows you to add bash commands to your job before launching the app. This can be used for example for loading extra modules that you need within the app. **Be aware that this feature is still somewhat experimental, and its functionality also depends on the app you are running (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
+- Pre-run scriptlet: this allows you to add bash commands to your job before launching the app.
+  This can be used for example for loading extra modules that you need within the app, sourcing a specific script
+  or defining specific environment variable(s).
+  **Beware that this feature is still somewhat experimental, and its functionality also depends on the app you are running
+  (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
   
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
