@@ -1,7 +1,7 @@
 KU Leuven/UHasselt Tier-2 Infrastructure
 ========================================
 
-.. _kul_tier2
+.. _kul_tier2:
 
 .. toctree::
    :maxdepth: 2
