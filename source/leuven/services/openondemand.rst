@@ -239,47 +239,55 @@ than the shell you get in the "Clusters - Login Server Shell Access" menu, which
 JupyterLab
 -----------
 
-With this app you can use and create Jupyter Notebooks. This can be handy both for R and Python coding.
-In the app resource form, besides the normal choices (:ref:`see above <interactive-apps>`), you can also choose
-a 'Toolchain year' from a drop-down menu, like `2023a`.
+With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
+In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`), you can also choose
+a 'Toolchain year' such as `2023a` from a drop-down menu.
 Based on that choice, a correct JupyterLab module will be loaded together with its dependencies (specifically Python).
 To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain year'.
 
-Furthermore, you may optionally choose to load ``SciPy-bundle`` (for ``scipy``, ``numpy``, ``pandas`` packages and more)
+Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``, ``numpy``, ``pandas`` and more)
 and/or ``matplotlib`` in your environment from the same 'Toolchain year'.
 
-Once you launch a JupyterLab session, you get a default kernel called ``Python 3 (ipykernel)``.
-This kernel, in addition to the Python standard API, would enable using extra packages from from
+Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipykernel)`` is already available in your session.
+This kernel, in addition to the Python standard library, would enable using extra packages from
 ``SciPy-bundle`` and/or ``matplotlib``, if you already selected them.
-However, for using other 
 
-There are two kernels already available, being a Python and a R kernel. The Python and R versions that are used for this, are the versions located in ``/usr/bin``. While you can use these to do some testing, it is not recommended 
-to work with these. It is better to work with conda environments in this case. You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
-When you do not have any conda environments and their associated kernels, both the Python and R installation will default to the ``~/miniconda3/bin/...`` installation.
+If the "standard" environment explained above does not provide all packages that you need, then
+it is recommended to manage your custom-made R or Python environments using Conda.
+You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
 
-To create any other kernels, first create a  :ref:`Python <create_python_conda_env>` or 
+To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or 
 :ref:`R <create_r_conda_env>` conda environment. The second step consists out of effectively
-creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location. The following commands should be excecuted from a shell, 
-and only need to be done once for the set-up of each new kernel. This starts with activating your conda
-environment::
+creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location.
+The following commands should be excecuted from a shell (e.g. using `Login Server Shell Access'), and only need
+to be done once for the set-up of each new kernel.
+If you already have an existing Python kernel, but your JupyterLab session freeses/craches when choosing your
+old kernel, you also need to repeat the following steps only once.
+This starts with activating your conda environment::
 
       source activate <env_name>
 
-For Python you will need the ``ipykernel`` package installed in your conda environment. Then you create the kernel as follows::
+For Python you will need the ``ipykernel`` package installed in your conda environment::
 
-      python -m ipykernel install --user --name '<env_name>' --display-name '<kernel_name>'
+      conda install ipykernel
+
+Then you create the kernel as follows::
+
+      python -m ipykernel install --user --env PYTHONPATH "" --name '<env_name>' --display-name '<kernel_name>'
 
 For R, you need both the ``jupyter_client`` and the ``irkernel`` package installed. With the following command you can create the kernel::
 
       Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
 
-Once the kernel is created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
+Once the kernel is (re)created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
+Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``, but we strongly advice you
+to stay away from modifying the contents of this folder, unless you are aware of the consequences.
 
 For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`__.
 
 **Remarks:**
 
-- The start location is `$VSC_DATA`
+- The top-level notebook directory is `$VSC_DATA`
 - At the moment, we do not support installing extensions in Jupyter Lab
 
 RStudio Server
