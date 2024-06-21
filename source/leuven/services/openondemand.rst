@@ -195,7 +195,6 @@ Beware that by launching any app you will end up in a regular queue, so requesti
   or defining specific environment variable(s).
   **Beware that this feature is still somewhat experimental, and its functionality also depends on the app you are running
   (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
-  
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
 .. _choosing_your_resources:
@@ -223,8 +222,8 @@ This is put in place to ensure that these resources are kept for their original 
 If for some reason some of these limitations are too strict for you, or you need resources that are not available on
 the interactive nodes (e.g. a full GPU, big memory nodes), you can always request nodes from another partition.
 Remember however that these interactive apps are not meant for running full jobs.
-If you indeed need multiple nodes or full GPUs to test your code/program, go ahead and request the resources for your interactive app from
-a more suited partition.
+If you indeed need multiple nodes or full GPUs to test your code/program, go ahead and request the resources for
+your interactive app from a more suited partition.
 In the case that you have passed the testing phase, and you want to start conducting experiments;
 we recommend that you make the switch to batch jobs instead, as they will not require your presence to start your code.
 
@@ -233,8 +232,10 @@ we recommend that you make the switch to batch jobs instead, as they will not re
 Interactive shell
 -----------------
 
-This app will launch a shell on (one of) the requested node(s), allowing you to use these compute resources from within a Linux terminal. This is different
-than the shell you get in the "Clusters - Login Server Shell Access" menu, which directs you towards one of the login nodes.
+This app will launch a shell on (one of) the requested node(s), allowing you to use these compute resources
+from within a Linux terminal.
+This is different than the shell you get in the "Clusters - Login Server Shell Access" menu,
+which directs you towards one of the login nodes.
 
 JupyterLab
 -----------
@@ -245,8 +246,8 @@ a 'Toolchain year' such as `2023a` from a drop-down menu.
 Based on that choice, a correct JupyterLab module will be loaded together with its dependencies (specifically Python).
 To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain year'.
 
-Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``, ``numpy``, ``pandas`` and more)
-and/or ``matplotlib`` in your environment from the same 'Toolchain year'.
+Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``,
+``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same 'Toolchain year'.
 
 Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipykernel)`` is already available in your session.
 This kernel, in addition to the Python standard library, would enable using extra packages from
@@ -256,7 +257,7 @@ If the "standard" environment explained above does not provide all packages that
 it is recommended to manage your custom-made R or Python environments using Conda.
 You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
 
-To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or 
+To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or
 :ref:`R <create_r_conda_env>` conda environment. The second step consists out of effectively
 creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location.
 The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
@@ -287,94 +288,176 @@ For more general information concerning JupyterLab, go to their `official docume
 
 **Remarks:**
 
-- The top-level notebook directory is `$VSC_DATA`
-- At the moment, we do not support installing extensions in Jupyter Lab
-- Once may create a customized kernel starting from a Python virtual environment, using one of Python modules.
-  If you are interested in this route, contact your local HPC support for step-by-step instructions
+- The top-level notebook directory is ``$VSC_DATA``.
+- At the moment, we do not support installing extensions in JupyterLab.
+- One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
+  This approach has interesting advantages, such as isolating a specific work environment, and also
+  installing packages into a specific directory using ``pip install --prefix=${VSC_DATA}/<project-folder> <package-names
+  If you are interested in this approach, contact your local HPC support for step-by-step instructions.
 
 RStudio Server
 --------------
 
-This interactive app allows you to run an RStudio session on the cluster. You will be running RStudio with R 4.2.1. For more information on how to use RStudio, check 
-out the `official documentation <https://docs.rstudio.com/>`__.
+This interactive app allows you to run an RStudio session as a compute job.
+You will be running RStudio with R version 4.2.1.
+For more information on how to use RStudio, check out the `official documentation <https://docs.rstudio.com/>`_.
 
-The use is very similar to regular RStudio. It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though, to
-avoid clogging your ``$VSC_HOME``. You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
+The use is very similar to regular RStudio.
+It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though,
+to avoid clogging your ``$VSC_HOME``.
+You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
 
 **Remarks:**
 
-- Navigating between your different directories is possible using the file explorer. If you are navigating by clicking the folder, you will notice that you can see all user folders. You do not have access to these, and you will receive an error when you try to open them. You will also notice that you cannot use the same way of navigating after this. Another solution is to click the three dots on the right (...) and enter your path.
-- The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``. It is recommended to use the ``install.packages`` function instead.
-- RStudioServer will by default store the RStudio cache in ``$VSC_HOME/.local/share/rstudio``. This cache can get very large and cause you to  exceed the quota of your home directory. To avoid this, you can redirect this cache to your data directory by setting ``$XDG_DATA_HOME`` variables in your ``~/.bashrc``. 
+- Navigating between your different directories is possible using the file explorer.
+  If you are navigating by clicking the folder, you will notice that you can see all user folders.
+  You do not have access to these, and you will receive an error when you try to open them.
+  You will also notice that you cannot use the same way of navigating after this.
+  Another solution is to click the three dots on the right (...) and enter your path.
+- The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``.
+  It is recommended to use the ``install.packages`` function instead.
+- RStudioServer will by default store the RStudio cache in ``$VSC_HOME/.local/share/rstudio``.
+  This cache can get very large, and cause you to exceed the quota of your home directory.
+  To avoid this, you can redirect this cache to your data directory by setting ``$XDG_DATA_HOME``
+  variables in your ``~/.bashrc``.
 
   .. code-block:: bash
-    
+
     echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
 Tensorboard
 -----------
 
-Tensorboard is an app that allows you to visualize and measure different aspects of your machine learning workflow. Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_ for more detailed information. 
+Tensorboard is an app that allows you to visualize and measure different aspects of your machine learning workflow.
+Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_ for more detailed information.
 
-The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options. This is a relative directory starting from your 
-``$VSC_DATA``. It is not possible to navigate to the correct folder from within the app.
+The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options.
+This is a relative directory starting from your ``$VSC_DATA``.
+It is not possible to navigate to the correct folder from within the app.
 
 code-server
 -----------
 
-This is the browser version of Visual Studio Code. For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_. As a default,
-a Python and a Git module are already loaded, which means you can use both Python and git from a terminal window within code-server. How to open a terminal
-window is probably one of the first things you should know: click on the three horizontal lines in the upper left corner, select 'Terminal - New Terminal'. This will
-open a shell on the node you are running your session on. Notice that you are starting in your ``$VSC_DATA`` directory. You can use this as a regular shell, meaning that you
-can submit jobs, load modules and so on. 
+This is the browser version of Visual Studio Code.
+For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_.
+As a default, a Python and a Git module are already loaded, which means you can use both Python and git
+from a terminal window within code-server.
 
-Code-server contains many different options and menus, but only a few will be discussed here. Feel free to explore them. We will however discuss how to set up 
-code-server to use any of the compatible languages and use code-server as an IDE. For each of the languages you want to use you need two things: an installation of 
-the specific interpreter and an extension in code-server that allows you to connect to it. The extensions can be found in the 'extensions' menu. In what follows, the 
-steps for both Python and R are described. 
+How to open a terminal window is probably one of the first things you should know: click on the three
+horizontal lines in the upper left corner, select 'Terminal - New Terminal'
+This will open a shell on the node you are running your session on.
+Notice that you are starting in your ``$VSC_DATA`` directory.
+You can use this as a regular shell, meaning that you can submit jobs, load modules and so on.
+
+Code-server contains many different options and menus, but only a few will be discussed here.
+Feel free to explore them.
+We will however discuss how to set up code-server to use any of the compatible languages,
+and use code-server as an IDE.
+For each of the languages you want to use you need two things: an installation of
+the specific interpreter, and an extension in code-server that allows you to connect to it.
+The extensions can be found in the 'extensions' menu.
+In what follows, the steps for both Python and R are described.
 
 Python
 ~~~~~~
 
-There are multiple Python extensions available, so feel free to try and install the extension that suits you the best. This comes with the warning that only the
-Microsoft Python extension has been tested by our team. To install this extension, go to 'Extensions' and search for 'Python'. Install the one with as developer
-'ms-python'. If you now open a script, you can now use code-server as an IDE and run the lines of code from within the script (the shortkey is shift+enter).
-Code-server will start a Python session with the currently selected Python interpreter. If you did not specify another one, this should default to the loaded Python
-module. This Python extension gives you the possibility to choose other interpreters as well. In the right down corner, you can see <python-version-number> right next
-to 'Python'. If you click that, a window will appear where you can select your Python version. Next to the module version, you should see at least some system Python
-versions (/bin/python). You can also load other modules, or you can also use conda environments here (if you have any conda environments already, you should see
-them here as well).
+There are multiple Python extensions available, so feel free to try and install the extension that suits you the best.
+This comes with the warning that only the Microsoft Python extension has been tested by our team.
+To install this extension, go to 'Extensions' and search for 'Python'.
+Install the one with as developer 'ms-python'.
+If you now open a script, you can now use code-server as an IDE and run the lines of code from within
+the script (the shortkey is shift+enter).
+Code-server will start a Python session with the currently selected Python interpreter.
+If you did not specify another one, this should default to the loaded Python module.
+This Python extension gives you the possibility to choose other interpreters as well.
+In the right down corner, you can see <python-version-number> right next to 'Python'.
+If you click that, a window will appear where you can select your Python version.
+Next to the module version, you should see at least some system Python versions (e.g. ``/bin/python``).
+You can also load other modules, or you can also use conda environments here (if you have any conda environments
+already, you should see them here as well).
 
 If you need more information about creating your customized Python environments, have a look :ref:`here <Python packages>`.
 
 **Remarks:**
 
-- Whenever loading a new Python interpreter,you will have to kill your current Python terminal before you will be able to use this new interpreter.
+- Whenever loading a new Python interpreter, you will have to kill your current Python terminal before
+  you will be able to use this new interpreter.
 
 
 R
 ~
 
-For full functionality, it is recommended to work with conda environments. For the time being, there are some issues with using modules together with
-functionalities, like plotting. 
+For full functionality, it is recommended to work with conda environments.
+For the time being, there are some issues with using modules together with functionalities, like plotting.
 
-There are some package requirements if you want to use R in code-server. The following command creates a functional environment (of course, add any other
-packages you need):
+There are some package requirements if you want to use R in code-server.
+The following command creates a functional environment (of course, add any other packages you need):
 
         .. code-block:: bash
 
          conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite
 
-Once you've created your environment, go ahead and start a code-server session on Open Ondemand. On the lefthand side, go to the extension menu and search
-for 'R'. You should install the 'R' extension of 'REditorSupport'.
+Once you've created your environment, go ahead and start a code-server session on Open Ondemand.
+On the lefthand side, go to the extension menu and search for 'R'.
+You should install the 'R' extension of 'REditorSupport'.
 
 Now there are two ways to use the R installation inside your conda environment:
 
-- Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal), and activate your conda environment. Now type 'R' in the terminal and you will be able to use your scripts interactively (R gets attached as soon as you start it).
-- You can also set the path to the R version that needs to be attached (better if you always use the same conda environment). Go to 'Extensions', and click the settings wheel next to the R extension. Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting. Paste the path to your conda env there (`/path/to/miniconda/envs/<env_name>/lib/R`)
+- Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal),
+  and activate your conda environment.
+  Now type ``R`` in the terminal and you will be able to use your scripts interactively
+  (R gets attached as soon as you start it).
+- You can also set the path to the R version that needs to be attached (better if you always
+  use the same conda environment).
+  Go to 'Extensions', and click the settings wheel next to the R extension.
+  Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting.
+  Paste the path to your conda env there (``/path/to/miniconda/envs/<env_name>/lib/R``)
 
 **Remarks:**
 
-- Running lines of code is 'ctrl+enter' for R.
+- To run your script line-by-line, place your cursor on a desired line, and press the key combination of
+  'ctrl+enter' on your keyboard.
 
-.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/ 
+.. _ood_matlab_app:
+
+MATLAB
+------
+
+To launch MATLAB via OnDemand, you need to additionally specify your desired version of the software
+from the drop-down menu on the resource form.
+Given that our current MATLAB installations automatically detect GPUs and CUDA libraries, you may also
+request GPU(s) as resources, if needed.
+
+Once you launch the session, a remote `noVNC <https://novnc.com>`_ desktop will be launched
+on a compute node.
+Before clicking on the 'Launch MATLAB' button, one may still change the compression level and resolution
+of the transferred TurboVNC frames.
+E.g. opting for the lowest compression level and highest image quality can give you a crisp VNC desktop.
+Once the session starts, the selected MATLAB module will be loaded, and eventually the MATLAB GUI
+will pop up (after waiting for few seconds).
+
+While your session is running, you can provide a view-only access to other VSC users.
+For that, click on the 'View Only (Share-able Link)' button to copy the URL in your clipboard,
+and be able to share it with others.
+
+.. warning::
+
+   As the end-user, you are responsible for all consequences of sharing your MATLAB session with other
+   VSC users.
+   So, think twice before sharing your sensitive data and information in this way with others.
+
+
+ParaView
+--------
+
+For visualization purposes, you may use the ParaView app.
+Similar to :ref:`MATLAB app <ood_matlab_app>`, ParaView also runs inside a `noVNC <https://novnc.com/info.html>`_
+desktop as a compute job. An additional similarity to the :ref:`MATLAB app <ood_matlab_app>` is the choice for
+controlling the desktop resolution.
+
+**Remarks:**
+
+- Currently, using GPUs in ParaVies is not supported yet, and just the CPU-only modules are offered.
+
+
+.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
