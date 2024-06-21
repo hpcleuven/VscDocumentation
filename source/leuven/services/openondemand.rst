@@ -259,7 +259,7 @@ You should :ref:`install miniconda <install_miniconda_python>` if you have not i
 To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or 
 :ref:`R <create_r_conda_env>` conda environment. The second step consists out of effectively
 creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location.
-The following commands should be excecuted from a shell (e.g. using `Login Server Shell Access'), and only need
+The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
 to be done once for the set-up of each new kernel.
 If you already have an existing Python kernel, but your JupyterLab session freeses/craches when choosing your
 old kernel, you also need to repeat the following steps only once.
@@ -283,7 +283,7 @@ Once the kernel is (re)created, you will see it in the 'Launcher' menu. You can 
 Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``, but we strongly advice you
 to stay away from modifying the contents of this folder, unless you are aware of the consequences.
 
-For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`__.
+For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`_.
 
 **Remarks:**
 
