@@ -42,7 +42,7 @@ save button in the upper left corner on the editor page.
 
 The ``Globus`` button takes you directly to the Globus login page, and upon a successful login to your Globus account
 (using your KU Leuven credentials), you will land on the same sub-directory from which you clicked on the Globus button.
-For more information about Globus, please refer to our documentation about :ref:`Globus Platform<globus platform>`_.
+For more information about Globus, please refer to our documentation about :ref:`Globus Platform<globus platform>`.
 
 Jobs
 ====
@@ -171,7 +171,7 @@ These will be explained in the specific paragraph about the apps.
 A more detailed guide on how to choose your resources is available in the next chapter.
 Beware that by launching any app you will end up in a regular queue, so requesting a large amount of resources might result in a long queue time.
 
-- Cluster: allows choosing between one of our Tier-2 clusters in production, namely :ref:`Genius or wICE <kul_tier2>`_
+- Cluster: allows choosing between one of our Tier-2 clusters in production, namely :ref:`Genius or wICE <kul_tier2>`
 - Account: the credit account you want to deduct the credits from.
   The accounts associated with your VSC number will be displayed in a dropdown menu.
 - Partition: you can choose any of the existing partitions on both clusters.
