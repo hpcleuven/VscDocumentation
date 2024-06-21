@@ -195,6 +195,7 @@ Beware that by launching any app you will end up in a regular queue, so requesti
   or defining specific environment variable(s).
   **Beware that this feature is still somewhat experimental, and its functionality also depends on the app you are running
   (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
+
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
 .. _choosing_your_resources:
