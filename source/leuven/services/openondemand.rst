@@ -171,7 +171,7 @@ These will be explained in the specific paragraph about the apps.
 A more detailed guide on how to choose your resources is available in the next chapter.
 Beware that by launching any app you will end up in a regular queue, so requesting a large amount of resources might result in a long queue time.
 
-- Cluster: allows choosing between one of our Tier-2 clusters in production, namely :ref:`Genius or wICE <kul_tier2>`
+- Cluster: allows choosing between one of our :ref:`Tier-2 clusters <kul_tier2>` in production, namely Genius or wICE
 - Account: the credit account you want to deduct the credits from.
   The accounts associated with your VSC number will be displayed in a dropdown menu.
 - Partition: you can choose any of the existing partitions on both clusters.
@@ -243,7 +243,7 @@ JupyterLab
 
 With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
 In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`), you can also choose
-a 'Toolchain year' such as `2023a` from a drop-down menu.
+a 'Toolchain year' such as '2023a' from a drop-down menu.
 Based on that choice, a correct JupyterLab module will be loaded together with its dependencies (specifically Python).
 To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain year'.
 
@@ -256,20 +256,20 @@ This kernel, in addition to the Python standard library, would enable using extr
 
 If the "standard" environment explained above does not provide all packages that you need, then
 it is recommended to manage your custom-made R or Python environments using Conda.
-You should :ref:`install miniconda <install_miniconda_python>` if you have not installed it yet.
+You should :ref:`install Miniconda <install_miniconda_python>` if you have not installed it yet.
 
 To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or
-:ref:`R <create_r_conda_env>` conda environment. The second step consists out of effectively
+:ref:`R <create_r_conda_env>` Conda environment. The second step consists out of effectively
 creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location.
 The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
 to be done once for the set-up of each new kernel.
 If you already have an existing Python kernel, but your JupyterLab session freeses/craches when choosing your
 old kernel, you also need to repeat the following steps only once.
-This starts with activating your conda environment::
+This starts with activating your Conda environment::
 
       source activate <env_name>
 
-For Python you will need the ``ipykernel`` package installed in your conda environment::
+For Python you will need the ``ipykernel`` package installed in your Conda environment::
 
       conda install ipykernel
 
@@ -285,7 +285,7 @@ Once the kernel is (re)created, you will see it in the 'Launcher' menu. You can 
 Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``, but we strongly advice you
 to stay away from modifying the contents of this folder, unless you are aware of the consequences.
 
-For more general information concerning JupyterLab, go to their `official documentation <https://docs.jupyter.org/en/latest/>`_.
+For more general information, please refer to the `official JupyterLab documentation`_.
 
 **Remarks:**
 
@@ -293,15 +293,16 @@ For more general information concerning JupyterLab, go to their `official docume
 - At the moment, we do not support installing extensions in JupyterLab.
 - One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
   This approach has interesting advantages, such as isolating a specific work environment, and also
-  installing packages into a specific directory using ``pip install --prefix=${VSC_DATA}/<project-folder> <package-names
+  installing packages into your data directory using ``pip install --prefix=${VSC_DATA}/<project-folder> <package-names>``.
   If you are interested in this approach, contact your local HPC support for step-by-step instructions.
+
 
 RStudio Server
 --------------
 
 This interactive app allows you to run an RStudio session as a compute job.
 You will be running RStudio with R version 4.2.1.
-For more information on how to use RStudio, check out the `official documentation <https://docs.rstudio.com/>`_.
+For more information on how to use RStudio, check out the `RStudio official documentation`_.
 
 The use is very similar to regular RStudio.
 It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though,
@@ -326,6 +327,7 @@ You can do this by using the ``lib`` argument for both the ``install.packages`` 
 
     echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
+
 Tensorboard
 -----------
 
@@ -336,11 +338,12 @@ The Tensorboard interactive session requires you to specify a project (or log) d
 This is a relative directory starting from your ``$VSC_DATA``.
 It is not possible to navigate to the correct folder from within the app.
 
-code-server
+
+Code Server
 -----------
 
 This is the browser version of Visual Studio Code.
-For more information, check out `the official guidelines <https://code.visualstudio.com/docs>`_.
+For more information, check out `VSCode official guidelines <https://code.visualstudio.com/docs>`_.
 As a default, a Python and a Git module are already loaded, which means you can use both Python and git
 from a terminal window within code-server.
 
@@ -359,8 +362,8 @@ the specific interpreter, and an extension in code-server that allows you to con
 The extensions can be found in the 'extensions' menu.
 In what follows, the steps for both Python and R are described.
 
-Python
-~~~~~~
+Setup Python in Code Server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are multiple Python extensions available, so feel free to try and install the extension that suits you the best.
 This comes with the warning that only the Microsoft Python extension has been tested by our team.
@@ -374,7 +377,7 @@ This Python extension gives you the possibility to choose other interpreters as 
 In the right down corner, you can see <python-version-number> right next to 'Python'.
 If you click that, a window will appear where you can select your Python version.
 Next to the module version, you should see at least some system Python versions (e.g. ``/bin/python``).
-You can also load other modules, or you can also use conda environments here (if you have any conda environments
+You can also load other modules, or you can also use Conda environments here (if you have any Conda environments
 already, you should see them here as well).
 
 If you need more information about creating your customized Python environments, have a look :ref:`here <Python packages>`.
@@ -385,10 +388,10 @@ If you need more information about creating your customized Python environments,
   you will be able to use this new interpreter.
 
 
-R
-~
+Setup R in Code Server
+~~~~~~~~~~~~~~~~~~~~~~
 
-For full functionality, it is recommended to work with conda environments.
+For full functionality, it is recommended to work with Conda environments.
 For the time being, there are some issues with using modules together with functionalities, like plotting.
 
 There are some package requirements if you want to use R in code-server.
@@ -402,22 +405,23 @@ Once you've created your environment, go ahead and start a code-server session o
 On the lefthand side, go to the extension menu and search for 'R'.
 You should install the 'R' extension of 'REditorSupport'.
 
-Now there are two ways to use the R installation inside your conda environment:
+Now there are two ways to use the R installation inside your Conda environment:
 
 - Open a terminal (three horizontal lines in the upper left corner - Terminal - New Terminal),
-  and activate your conda environment.
+  and activate your Conda environment.
   Now type ``R`` in the terminal and you will be able to use your scripts interactively
   (R gets attached as soon as you start it).
 - You can also set the path to the R version that needs to be attached (better if you always
-  use the same conda environment).
+  use the same Conda environment).
   Go to 'Extensions', and click the settings wheel next to the R extension.
   Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting.
-  Paste the path to your conda env there (``/path/to/miniconda/envs/<env_name>/lib/R``)
+  Paste the path to your Conda env there (``/path/to/miniconda/envs/<env_name>/lib/R``)
 
 **Remarks:**
 
 - To run your script line-by-line, place your cursor on a desired line, and press the key combination of
   'ctrl+enter' on your keyboard.
+
 
 .. _ood_matlab_app:
 
@@ -426,33 +430,32 @@ MATLAB
 
 To launch MATLAB via OnDemand, you need to additionally specify your desired version of the software
 from the drop-down menu on the resource form.
-Given that our current MATLAB installations automatically detect GPUs and CUDA libraries, you may also
-request GPU(s) as resources, if needed.
+Given that our current MATLAB installations automatically detect GPU devices and CUDA libraries,
+you may also request GPU(s) as resources, if needed.
 
-Once you launch the session, a remote `noVNC <https://novnc.com>`_ desktop will be launched
-on a compute node.
-Before clicking on the 'Launch MATLAB' button, one may still change the compression level and resolution
-of the transferred TurboVNC frames.
+Once you launch the session, a remote `noVNC`_ desktop will start on a compute node.
+Before clicking on the 'Launch MATLAB' button, one may still change the compression level and
+the image quality of the transferred noVNC frames.
 E.g. opting for the lowest compression level and highest image quality can give you a crisp VNC desktop.
 Once the session starts, the selected MATLAB module will be loaded, and eventually the MATLAB GUI
 will pop up (after waiting for few seconds).
 
 While your session is running, you can provide a view-only access to other VSC users.
-For that, click on the 'View Only (Share-able Link)' button to copy the URL in your clipboard,
+For that, click on the 'View Only (Share-able Link)' button to copy the URL into your clipboard,
 and be able to share it with others.
 
 .. warning::
 
    As the end-user, you are responsible for all consequences of sharing your MATLAB session with other
    VSC users.
-   So, think twice before sharing your sensitive data and information in this way with others.
+   So, think twice before sharing your sensitive data, sources and information by all means.
 
 
 ParaView
 --------
 
-For visualization purposes, you may use the ParaView app.
-Similar to :ref:`MATLAB app <ood_matlab_app>`, ParaView also runs inside a `noVNC <https://novnc.com/info.html>`_
+For visualization purposes, you may use the `ParaView app <https://www.paraview.org/>`_.
+Similar to the :ref:`MATLAB app <ood_matlab_app>`, ParaView also runs inside a `noVNC`_
 desktop as a compute job. An additional similarity to the :ref:`MATLAB app <ood_matlab_app>` is the choice for
 controlling the desktop resolution.
 
@@ -462,3 +465,7 @@ controlling the desktop resolution.
 
 
 .. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
+.. _official JupyterLab documentation: https://docs.jupyter.org/en/latest/
+.. _RStudio official documentation: https://docs.rstudio.com/
+.. _noVNC: https://novnc.com/
+
