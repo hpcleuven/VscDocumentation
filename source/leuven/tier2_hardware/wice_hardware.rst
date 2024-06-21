@@ -3,7 +3,7 @@
 wICE hardware
 ===============
 
-wICE is KU Leuven/UHasselt's latest Tier-2 cluster. 
+wICE is KU Leuven/UHasselt's latest Tier-2 cluster.
 It has thin nodes, large memory nodes, interactive nodes and GPU nodes.
 This cluster is in production since February 2023
 and has been extended with additional compute nodes in early 2024.
@@ -81,7 +81,7 @@ Hardware details
     - partition ``gpu_h100``,
       :ref:`submit options <submit to wice GPU node>`
 
-- 5 interactive nodes
+- 4 interactive nodes and 1 debug node
 
   - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
     32 cores each :raw-html:`<br />`
@@ -89,8 +89,11 @@ Hardware details
   - 512 GiB RAM
   - 1 NVIDIA A100, 80 GiB GDDR
   - 960 GB SSD local disk
-  - partition ``interactive``,
+  - partitions ``interactive``,
     :ref:`submit options <submit to wice interactive node>`
+    :raw-html:`<br />`
+    and ``gpu_a100_debug``,
+    :ref:`submit options <submit to wice GPU node>`
 
 All nodes of the same type are interconnected using an Infiniband HDR-100
 network, except the H100 GPU and hugemem nodes which can only communicate
