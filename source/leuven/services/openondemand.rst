@@ -289,6 +289,8 @@ For more general information concerning JupyterLab, go to their `official docume
 
 - The top-level notebook directory is `$VSC_DATA`
 - At the moment, we do not support installing extensions in Jupyter Lab
+- Once may create a customized kernel starting from a Python virtual environment, using one of Python modules.
+  If you are interested in this route, contact your local HPC support for step-by-step instructions
 
 RStudio Server
 --------------
