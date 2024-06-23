@@ -13,23 +13,7 @@ programs, it is a powerful and easy to use tool.
 Installation
 ************
 
-iCommands are already installed on the following HPC clusters:
-
-.. grid:: 2
-    :gutter: 4
-
-    .. grid-item-card:: KU Leuven/UHasselt
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Genius <Genius hardware>`
-       * Tier-2 :ref:`wICE <wICE hardware>`
-
-    .. grid-item-card:: VUB
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Hydra <Hydra hardware>`
-
-
+iCommands are currently installed on **all HPC clusters of the VSC.**   
 
 You can of course also install iCommands on your local system. 
 However, iCommands is only available for Linux environments. 
