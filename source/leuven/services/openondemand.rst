@@ -53,7 +53,7 @@ For more detail on how to run jobs on wICE, check out our
 :ref:`quick start guide<wice_t2_leuven>`.
 
 The jobs tab has three menus, 'Active Jobs', 'Job Composer' and 'Projects' (which we skip here, because at the time
-of this writing, it is still in development by the upstream):
+of this writing, it is still in development by the upstream).
 
 Active jobs
 -----------
