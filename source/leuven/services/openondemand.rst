@@ -52,8 +52,8 @@ This also means that all your jobs should be submitted as **Slurm** jobs.
 For more detail on how to run jobs on wICE, check out our 
 :ref:`quick start guide<wice_t2_leuven>`.
 
-The jobs tab has three menus, 'Active Jobs', 'Job Composer' and 'Projects' (which you cannot do much with it
-and we are skipping it here):
+The jobs tab has three menus, 'Active Jobs', 'Job Composer' and 'Projects' (which we skip here, because at the time
+of this writing, it is still in development by the upstream):
 
 Active jobs
 -----------
@@ -180,14 +180,12 @@ Beware that by launching any app you will end up in a regular queue, so requesti
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. Depending on the partition you have requested, you might get a different GPU.
+- Number of GPUs. Depending on the partition you have requested, you get a different device type.
   The default is 0.
   The acquired GPU will be the same as the type specified in the partition (e.g. a NVidia H100 for ``gpu_h100`` on wICE).
   For wICE, you can also request a GPU from the ``interactive`` partition.
   One GPU here is a virtual GPU slice of the available A100 GPUs.
   One GPU slice is the same as 1/7th of an A100 GPU.
-  You can specify the type of GPU as well: ``[Type]:<number>`` (e.g. ``A100:2``).
-  You can also just request a number of GPUs as ``<number>``.
   **The interactive partition only allows you to request max 1 GPU (slice) though.**
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
 - Pre-run scriptlet: this allows you to add bash commands to your job before launching the app.
@@ -195,6 +193,14 @@ Beware that by launching any app you will end up in a regular queue, so requesti
   or defining specific environment variable(s).
   **Beware that this feature is still somewhat experimental, and its functionality also depends on the app you are running
   (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
+- Screem resolution: for apps which run inside a remote `noVNC`_ desktop (e.g. MATLAB, ParaView, etc), one
+  may choose a resolution between 'FullHD', '2K' or '4K'.
+  After launching the app, one may still change the compression level and the image quality of the
+  transferred noVNC frames.
+  E.g. opting for the lowest compression level and highest image quality can give you a crisp VNC desktop.
+- View Only (Share-able Link): for `noVNC`_ apps, you can provide a view-only access to other VSC users.
+  For that, click on the 'View Only (Share-able Link)' button to copy the URL into your clipboard,
+  and be able to share it with others.
 
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
@@ -263,7 +269,7 @@ To create any other kernel, first create a  :ref:`Python <create_python_conda_en
 creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location.
 The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
 to be done once for the set-up of each new kernel.
-If you already have an existing Python kernel, but your JupyterLab session freeses/craches when choosing your
+If you already have an existing Python kernel, but your JupyterLab session freezes/craches when choosing your
 old kernel, you also need to repeat the following steps only once.
 This starts with activating your Conda environment::
 
@@ -434,15 +440,8 @@ Given that our current MATLAB installations automatically detect GPU devices and
 you may also request GPU(s) as resources, if needed.
 
 Once you launch the session, a remote `noVNC`_ desktop will start on a compute node.
-Before clicking on the 'Launch MATLAB' button, one may still change the compression level and
-the image quality of the transferred noVNC frames.
-E.g. opting for the lowest compression level and highest image quality can give you a crisp VNC desktop.
 Once the session starts, the selected MATLAB module will be loaded, and eventually the MATLAB GUI
 will pop up (after waiting for few seconds).
-
-While your session is running, you can provide a view-only access to other VSC users.
-For that, click on the 'View Only (Share-able Link)' button to copy the URL into your clipboard,
-and be able to share it with others.
 
 .. warning::
 
@@ -456,12 +455,11 @@ ParaView
 
 For visualization purposes, you may use the `ParaView app <https://www.paraview.org/>`_.
 Similar to the :ref:`MATLAB app <ood_matlab_app>`, ParaView also runs inside a `noVNC`_
-desktop as a compute job. An additional similarity to the :ref:`MATLAB app <ood_matlab_app>` is the choice for
-controlling the desktop resolution.
+desktop as a compute job.
 
 **Remarks:**
 
-- Currently, using GPUs in ParaVies is not supported yet, and just the CPU-only modules are offered.
+- Currently, using GPUs in ParaView is not supported yet, and just the CPU-only modules are offered.
 
 
 .. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
