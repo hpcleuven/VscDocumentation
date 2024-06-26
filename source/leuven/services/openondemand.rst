@@ -193,7 +193,7 @@ Beware that by launching any app you will end up in a regular queue, so requesti
   or defining specific environment variable(s).
   **Beware that this feature is still somewhat experimental, and its functionality also depends on the app you are running
   (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
-- Screem resolution: for apps which run inside a remote `noVNC`_ desktop (e.g. MATLAB, ParaView, etc), one
+- Screen resolution: for apps which run inside a remote `noVNC`_ desktop (e.g. MATLAB, ParaView, etc), one
   may choose a resolution between 'FullHD', '2K' or '4K'.
   After launching the app, one may still change the compression level and the image quality of the
   transferred noVNC frames.
