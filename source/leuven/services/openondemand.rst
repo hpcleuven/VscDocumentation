@@ -16,8 +16,8 @@ Open OnDemand is available for the Tier-2 Genius and wICE clusters.
 You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. 
 You can log in using your KU Leuven or VSC credentials. 
 
-Use
-===
+General features
+================
 
 The KU Leuven Open OnDemand page provides a range of functions:
 
@@ -40,17 +40,17 @@ You can also use this interface to download and upload files to and from your lo
 **Good to know:** the standard 'ctrl+s' does not save your edited files on Open OnDemand, but will trigger a save on your local machine. Luckily, there is a
 save button in the upper left corner on the editor page.
 
-The ``Globus`` button takes you directly to the Globus login page, and upon a successful login to your Globus account
+The 'Globus' button takes you directly to the Globus login page, and upon a successful login to your Globus account
 (using your KU Leuven credentials), you will land on the same sub-directory from which you clicked on the Globus button.
-For more information about Globus, please refer to our documentation about :ref:`Globus Platform<globus platform>`.
+For more information about Globus, please refer to our documentation about the :ref:`Globus Platform<globus platform>`.
 
 Jobs
 ====
 
 All jobs submitted from Open OnDemand can run on Genius and wICE. 
 This also means that all your jobs should be submitted as **Slurm** jobs.
-For more detail on how to run jobs on wICE, check out our 
-:ref:`quick start guide<wice_t2_leuven>`.
+For more detail on how to run jobs on wICE, check out the
+:ref:`wICE quick start guide<wice_t2_leuven>`.
 
 The jobs tab has three menus, 'Active Jobs', 'Job Composer' and 'Projects' (which we skip here, because at the time
 of this writing, it is still in development by the upstream).
@@ -118,8 +118,12 @@ The functioning of creating jobs is a bit similar to how you create new template
 Whatever method you choose, you will always create a new directory for each job, this time
 located at ``$VSC_DATA/ondemand/data/projects/default/``.
 The job directories will be numbered in the order you have created them. 
-**Do not change this folder name as long as you plan on using it from the job menus, as this will break the linking.** 
-**When removing a job, the directory will be deleted as well.**
+
+.. warning::
+
+   Do not change this folder name as long as you plan on using it from the job menus,
+   as this will break the linking.
+   When removing a job, the directory will be deleted as well.
 
 To create a job, press the 'New Job' button and choose the option that best suits 
 your needs. 
@@ -139,7 +143,7 @@ Using the 'Job Options' button, you can add some more specifications to your job
   ``sbatch`` in the 'Active Jobs' menu.
 - Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
-- Account: here you can specify which account to use. **Be aware that this will overwrite the account you might have specified in your job script.**
+- Account: here you can specify which account to use. Be aware that this will overwrite the account you might have specified in your job script.
 - Job array: we do not recommend using this. If you would like to use job arrays, have a look at :ref:`the worker framework<worker or atools>`.
 
 Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
@@ -155,7 +159,7 @@ you can use as you are used to, including the option to submit jobs to Genius or
 As with the Genius login nodes, this means that this shell is not meant for any 
 calculation.
 If you would like to perform calculations in an interactive job, you should be 
-using the :ref:`interactive shell app<interactive_shell>`.
+using the :ref:`interactive shell<interactive_shell>` app.
 
 .. _interactive-apps:
 
@@ -168,7 +172,8 @@ In the background this means that you are submitting an interactive job to the c
 To launch any of the interactive apps, you need to fill in the resources form.
 Most of the options in the resource forms are similar across all apps, but some apps require additional input from the user.
 These will be explained in the specific paragraph about the apps.
-A more detailed guide on how to choose your resources is available in the next chapter.
+A more detailed guide on how to choose your resources is available in the
+:ref:`next section <choosing_your_resources>`.
 Beware that by launching any app you will end up in a regular queue, so requesting a large amount of resources might result in a long queue time.
 
 - Cluster: allows choosing between one of our :ref:`Tier-2 clusters <kul_tier2>` in production, namely Genius or wICE
@@ -180,24 +185,27 @@ Beware that by launching any app you will end up in a regular queue, so requesti
 - Numbers of hours: your walltime (min 1h).
 - Number of cores: the amount of cores per node. This defaults to 1.
 - Required memory per core in megabytes. This defaults to 3400 MB.
-- Number of GPUs. Depending on the partition you have requested, you get a different device type.
+- Number of GPUs. Depending on the GPU partition you have requested, you get a different device type.
   The default is 0.
   The acquired GPU will be the same as the type specified in the partition (e.g. a NVidia H100 for ``gpu_h100`` on wICE).
   For wICE, you can also request a GPU from the ``interactive`` partition.
   One GPU here is a virtual GPU slice of the available A100 GPUs.
-  One GPU slice is the same as 1/7th of an A100 GPU.
-  **The interactive partition only allows you to request max 1 GPU (slice) though.**
+  One GPU slice is the same as 1/7th of CUDA cores and memory of an A100 GPU.
+  The interactive partition only allows you to request max 1 GPU (slice) though.
 - Reservation: if you are part of a reservation, you can also use these nodes with Open Ondemand by specifying your reservation name here.
 - Pre-run scriptlet: this allows you to add bash commands to your job before launching the app.
   This can be used for example for loading extra modules that you need within the app, sourcing a specific script
   or defining specific environment variable(s).
-  **Beware that this feature is still somewhat experimental, and its functionality also depends on the app you are running
-  (mainly RStudio Server has some issues here). If you would like to use this feature, but you run into problems, please contact our helpdesk.**
+
+  .. warning::
+
+     Be careful in using this feature, because you will be modifying the behavior of your session.
+
 - Screen resolution: for apps which run inside a remote `noVNC`_ desktop (e.g. MATLAB, ParaView, etc), one
   may choose a resolution between 'FullHD', '2K' or '4K'.
   After launching the app, one may still change the compression level and the image quality of the
   transferred noVNC frames.
-  E.g. opting for the lowest compression level and highest image quality can give you a crisp VNC desktop.
+  E.g. opting for the lowest compression level and highest image quality can give you a crisp noVNC desktop.
 - View Only (Share-able Link): for `noVNC`_ apps, you can provide a view-only access to other VSC users.
   For that, click on the 'View Only (Share-able Link)' button to copy the URL into your clipboard,
   and be able to share it with others.
@@ -208,12 +216,12 @@ Beware that by launching any app you will end up in a regular queue, so requesti
      VSC users.
      So, think twice before sharing your sensitive data, sources and information by all means.
 
-Once you've selected all your resources, just press 'Launch' and your job will be queued.
+Once you've specified all your resources, just press 'Launch' and your job will be queued.
 
 .. _choosing_your_resources:
 
 Choosing your resources
-=======================
+-----------------------
 
 Choosing the correct resources for your interactive session is mostly the same as selecting them when
 launching regular batch jobs.
@@ -253,11 +261,13 @@ which directs you towards one of the login nodes.
 JupyterLab
 -----------
 
+Pure module environment
+~~~~~~~~~~~~~~~~~~~~~~~
+
 With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
 In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`), you can also choose
 a 'Toolchain version' such as '2023a' from a drop-down menu.
 Based on that choice, the corresponding JupyterLab module will be loaded together with its dependencies (specifically Python).
-To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain version'.
 
 Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``,
 ``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same 'Toolchain version'.
@@ -266,11 +276,21 @@ Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipyker
 This kernel, in addition to the Python standard library, would enable using extra packages from
 ``SciPy-bundle`` and/or ``matplotlib``, if you selected them in the resource form.
 
-If the "standard" environment explained above does not provide all packages that you need, then
-it is recommended to manage your custom-made R or Python environments using Conda.
-You should :ref:`install Miniconda <install_miniconda_python>` if you have not installed it yet.
+.. warning::
 
-To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or
+   If you use JupyterLab as explained above, and you need to reproduce your numerical results 
+   at any time in the future, make sure you stick to choosing the same 'Toolchain version'.
+
+If the module-based environment explained above does not provide all packages that you need, then
+it is recommended to manage your custom-made R or Python environments by creating custom Jupyter kernels.
+
+Custom Conda environments
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have not installed Conda in your account yet, please refer to the
+:ref:`install Miniconda <install_miniconda_python>` page.
+
+To create a custom kernel, first create a  :ref:`Python <create_python_conda_env>` or
 :ref:`R <create_r_conda_env>` Conda environment. The second step consists of effectively
 creating the kernel in your ``$VSC_HOME/.local/share`` folder (which is a defalt value for the
 ``$XDG_DATA_HOME`` environment variable), as Jupyter will look for kernels in this location.
@@ -290,17 +310,21 @@ Then you create the kernel as follows::
 
       python -m ipykernel install --user --env PYTHONPATH "" --name '<env_name>' --display-name '<kernel_name>'
 
+
+Custom virtual environments for Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
 Eventhough this approach can have advantages, but we do not recommend it, due to the fact that Python
 virtual environments are architecture specific.
 Hence, on our current Tier-2 machines, this approach needs to be handled with care.
-If you are interested in this approach, follow these steps to create and use your kernel::
+If you are interested in this approach, follow these steps to create and use your kernel:
 
 - Pick a specific Python from a specific 'Toolchain version', e.g. ``Python/3.11.3-GCCcore-12.3.0``
   from ``2023a``
 - Choose a specific architecture, e.g. Sapphire Rapids nodes on wICE
 - Start an :ref:`interactive shell app<interactive_shell>` on the targeted architecture,
-  and execute the following::
+  and execute the following:
 
   .. code-block :: bash
 
@@ -323,6 +347,9 @@ If you are interested in this approach, follow these steps to create and use you
 - Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
   To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
   and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
+
+Custom R environments
+~~~~~~~~~~~~~~~~~~~~~
 
 For R, you need both the ``jupyter_client`` and the ``irkernel`` package installed. With the following command you can create the kernel::
 
