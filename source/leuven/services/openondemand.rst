@@ -202,6 +202,12 @@ Beware that by launching any app you will end up in a regular queue, so requesti
   For that, click on the 'View Only (Share-able Link)' button to copy the URL into your clipboard,
   and be able to share it with others.
 
+  .. warning::
+
+     As the end-user, you are responsible for all consequences of sharing your application with other
+     VSC users.
+     So, think twice before sharing your sensitive data, sources and information by all means.
+
 Once you've selected all your resources, just press 'Launch' and your job will be queued.
 
 .. _choosing_your_resources:
@@ -230,8 +236,8 @@ If for some reason some of these limitations are too strict for you, or you need
 the interactive nodes (e.g. a full GPU, big memory nodes), you can always request nodes from another partition.
 Remember however that these interactive apps are not meant for running full jobs.
 If you indeed need multiple nodes or full GPUs to test your code/program, go ahead and request the resources for
-your interactive app from a more suited partition.
-In the case that you have passed the testing phase, and you want to start conducting experiments;
+your interactive app from a more suitable partition.
+In the case that you have passed the testing phase, and you want to start conducting experiments,
 we recommend that you make the switch to batch jobs instead, as they will not require your presence to start your code.
 
 .. _interactive_shell:
@@ -249,24 +255,25 @@ JupyterLab
 
 With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
 In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`), you can also choose
-a 'Toolchain year' such as '2023a' from a drop-down menu.
-Based on that choice, a correct JupyterLab module will be loaded together with its dependencies (specifically Python).
-To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain year'.
+a 'Toolchain version' such as '2023a' from a drop-down menu.
+Based on that choice, the corresponding JupyterLab module will be loaded together with its dependencies (specifically Python).
+To reproduce your numerical results at any time in the future, make sure you stick to choosing the same 'Toolchain version'.
 
 Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``,
-``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same 'Toolchain year'.
+``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same 'Toolchain version'.
 
 Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipykernel)`` is already available in your session.
 This kernel, in addition to the Python standard library, would enable using extra packages from
-``SciPy-bundle`` and/or ``matplotlib``, if you already selected them.
+``SciPy-bundle`` and/or ``matplotlib``, if you selected them in the resource form.
 
 If the "standard" environment explained above does not provide all packages that you need, then
 it is recommended to manage your custom-made R or Python environments using Conda.
 You should :ref:`install Miniconda <install_miniconda_python>` if you have not installed it yet.
 
 To create any other kernel, first create a  :ref:`Python <create_python_conda_env>` or
-:ref:`R <create_r_conda_env>` Conda environment. The second step consists out of effectively
-creating the kernel in your ``$VSC_HOME/.local`` folder, as Jupyter will look for kernels in this location.
+:ref:`R <create_r_conda_env>` Conda environment. The second step consists of effectively
+creating the kernel in your ``$VSC_HOME/.local/share`` folder (which is a defalt value for the
+``$XDG_DATA_HOME`` environment variable), as Jupyter will look for kernels in this location.
 The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
 to be done once for the set-up of each new kernel.
 If you already have an existing Python kernel, but your JupyterLab session freezes/craches when choosing your
@@ -283,13 +290,50 @@ Then you create the kernel as follows::
 
       python -m ipykernel install --user --env PYTHONPATH "" --name '<env_name>' --display-name '<kernel_name>'
 
+One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
+Eventhough this approach can have advantages, but we do not recommend it, due to the fact that Python
+virtual environments are architecture specific.
+Hence, on our current Tier-2 machines, this approach needs to be handled with care.
+If you are interested in this approach, follow these steps to create and use your kernel::
+
+- Pick a specific Python from a specific 'Toolchain version', e.g. ``Python/3.11.3-GCCcore-12.3.0``
+  from ``2023a``
+- Choose a specific architecture, e.g. Sapphire Rapids nodes on wICE
+- Start an :ref:`interactive shell app<interactive_shell>` on the targeted architecture,
+  and execute the following::
+
+  .. code-block :: bash
+
+     TOOLCHAIN='2023a'
+     DIR_VENV=${VSC_DATA}/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}
+     mkdir -p ${DIR_VENV}
+     module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/modules/all
+     module load Python/3.11.3-GCCcore-12.3.0
+     python -m venv ${DIR_VENV}
+     source ${DIR_VENV}/bin/activate
+     pip install --prefix=${DIR_VENV} ipykernel <additional packages>
+     # note that below, --env is not needed
+     python -m ipykernel install --user --name '<env_name>' --display-name '<kernel_name>'
+     # you need this below
+     echo ${DIR_VENV}
+
+- On the JupyterLab form, choose a partition that matches your choice of architecture;
+  also, pick the same 'Toolchain version' as above.
+  In the 'Pre-run scriptlet' box, insert ``source <path/pointing/to/DIR_VENV>``.
+- Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
+  To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
+  and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
+
 For R, you need both the ``jupyter_client`` and the ``irkernel`` package installed. With the following command you can create the kernel::
 
       Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
 
-Once the kernel is (re)created, you will see it in the 'Launcher' menu. You can now start working in your own customized environment.
-Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``, but we strongly advice you
-to stay away from modifying the contents of this folder, unless you are aware of the consequences.
+Once the kernel is (re)created, you will see it in the 'Launcher' menu.
+You can now start working in your own customized environment.
+Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``
+(where ``${VSC_HOME}/.local/share`` is the default value for ``$XDG_DATA_HOME``);
+we strongly advice you to stay away from modifying the contents of this folder, unless you are
+aware of the consequences.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
 
@@ -297,11 +341,6 @@ For more general information, please refer to the `official JupyterLab documenta
 
 - The top-level notebook directory is ``$VSC_DATA``.
 - At the moment, we do not support installing extensions in JupyterLab.
-- One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
-  This approach has interesting advantages, such as isolating a specific work environment, and also
-  installing packages into your data directory using ``pip install --prefix=${VSC_DATA}/<project-folder> <package-names>``.
-  If you are interested in this approach, contact your local HPC support for step-by-step instructions.
-
 
 RStudio Server
 --------------
@@ -337,8 +376,10 @@ You can do this by using the ``lib`` argument for both the ``install.packages`` 
 Tensorboard
 -----------
 
-Tensorboard is an app that allows you to visualize and measure different aspects of your machine learning workflow.
-Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_ for more detailed information.
+Tensorboard is an app that allows you to visualize and measure different aspects of
+your machine learning workflow.
+Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_
+for more detailed information.
 
 The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options.
 This is a relative directory starting from your ``$VSC_DATA``.
@@ -442,13 +483,6 @@ you may also request GPU(s) as resources, if needed.
 Once you launch the session, a remote `noVNC`_ desktop will start on a compute node.
 Once the session starts, the selected MATLAB module will be loaded, and eventually the MATLAB GUI
 will pop up (after waiting for few seconds).
-
-.. warning::
-
-   As the end-user, you are responsible for all consequences of sharing your MATLAB session with other
-   VSC users.
-   So, think twice before sharing your sensitive data, sources and information by all means.
-
 
 ParaView
 --------
