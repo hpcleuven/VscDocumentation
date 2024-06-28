@@ -225,11 +225,12 @@ Choosing your resources
 
 Choosing the correct resources for your interactive session is mostly the same as selecting them when
 launching regular batch jobs.
-For this reason, we strongly recommend you to have a look at how to specify your resources both in
-:ref:`Genius <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
+For this reason, we strongly recommend you to have a look at how to specify your resources for using
+both :ref:`Genius <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
 
-As mentioned above, in most cases we recommend using the ``interactive`` partition on wICE for the interactive apps.
-This partition is meant for lighter work, like visualisations, testing and pre- and post-processing.
+As mentioned above, in most cases we recommend using the 'interactive' partition on wICE for the interactive apps.
+This partition is meant for lighter work, like code development, testing, debugging, visualisations,
+pre- and post-processing.
 Using this partition is also free, mainly to encourage you to request these resources for such work, instead
 of using any of the other partitions. There are however some limitations on the amount of resources you can request here:
 
@@ -261,10 +262,13 @@ which directs you towards one of the login nodes.
 JupyterLab
 -----------
 
+With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
+One of the benefits of using JupyterLab is the flexibility it offers in customizing user environments,
+which we explain below.
+
 Pure module environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
 In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`), you can also choose
 a 'Toolchain version' such as '2023a' from a drop-down menu.
 Based on that choice, the corresponding JupyterLab module will be loaded together with its dependencies (specifically Python).
@@ -302,7 +306,8 @@ This starts with activating your Conda environment::
 
       source activate <env_name>
 
-For Python you will need the ``ipykernel`` package installed in your Conda environment::
+For Python you will need the ``ipykernel`` package installed in your Conda environment.
+The minimum supported version for Python is 3.7 and for ``ipykernel`` package is 6.19.2::
 
       conda install ipykernel
 
@@ -323,7 +328,7 @@ If you are interested in this approach, follow these steps to create and use you
 - Pick a specific Python from a specific 'Toolchain version', e.g. ``Python/3.11.3-GCCcore-12.3.0``
   from ``2023a``
 - Choose a specific architecture, e.g. Sapphire Rapids nodes on wICE
-- Start an :ref:`interactive shell app<interactive_shell>` on the targeted architecture,
+- Start an :ref:`Interactive Shell<interactive_shell>` on the targeted architecture,
   and execute the following:
 
   .. code-block :: bash
@@ -343,7 +348,7 @@ If you are interested in this approach, follow these steps to create and use you
 
 - On the JupyterLab form, choose a partition that matches your choice of architecture;
   also, pick the same 'Toolchain version' as above.
-  In the 'Pre-run scriptlet' box, insert ``source <path/pointing/to/DIR_VENV>``.
+  In the 'Pre-run scriptlet' box, insert ``source <path/pointing/to/DIR_VENV>/bin/activate``.
 - Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
   To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
   and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
@@ -351,11 +356,12 @@ If you are interested in this approach, follow these steps to create and use you
 Custom R environments
 ~~~~~~~~~~~~~~~~~~~~~
 
-For R, you need both the ``jupyter_client`` and the ``irkernel`` package installed. With the following command you can create the kernel::
+For R, you need both the ``jupyter_client`` and the ``irkernel`` packages installed.
+With the following command you can create the kernel::
 
       Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
 
-Once the kernel is (re)created, you will see it in the 'Launcher' menu.
+Once the kernel is created, you will see it in the 'Launcher' menu.
 You can now start working in your own customized environment.
 Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``
 (where ``${VSC_HOME}/.local/share`` is the default value for ``$XDG_DATA_HOME``);
@@ -366,7 +372,7 @@ For more general information, please refer to the `official JupyterLab documenta
 
 **Remarks:**
 
-- The top-level notebook directory is ``$VSC_DATA``.
+- The top-level notebook directory is by default ``$VSC_DATA``.
 - At the moment, we do not support installing extensions in JupyterLab.
 
 RStudio Server
@@ -403,12 +409,13 @@ You can do this by using the ``lib`` argument for both the ``install.packages`` 
 Tensorboard
 -----------
 
-Tensorboard is an app that allows you to visualize and measure different aspects of
+Tensorboard is an interactive app that allows you to visualize and measure different aspects of
 your machine learning workflow.
 Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_
 for more detailed information.
 
-The Tensorboard interactive session requires you to specify a project (or log) directory in your submission options.
+The Tensorboard interactive session requires you to specify a project (or log) directory in 
+your submission options.
 This is a relative directory starting from your ``$VSC_DATA``.
 It is not possible to navigate to the correct folder from within the app.
 
