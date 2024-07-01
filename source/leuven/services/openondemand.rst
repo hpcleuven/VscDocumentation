@@ -269,12 +269,14 @@ which we explain below.
 Pure module environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`), you can also choose
-a 'Toolchain version' such as '2023a' from a drop-down menu.
-Based on that choice, the corresponding JupyterLab module will be loaded together with its dependencies (specifically Python).
+In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`),
+you can also choose from different 'Toolchain and Python versions' from a drop-down menu.
+An example would be '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
+Based on that choice, the corresponding JupyterLab module will be loaded together with its
+dependencies (specifically Python).
 
 Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``,
-``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same 'Toolchain version'.
+``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same toolchain.
 
 Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipykernel)`` is already available in your session.
 This kernel, in addition to the Python standard library, would enable using extra packages from
@@ -283,7 +285,7 @@ This kernel, in addition to the Python standard library, would enable using extr
 .. warning::
 
    If you use JupyterLab as explained above, and you need to reproduce your numerical results 
-   at any time in the future, make sure you stick to choosing the same 'Toolchain version'.
+   at any time in the future, make sure you stick to choosing the same toolchain.
 
 If the module-based environment explained above does not provide all packages that you need, then
 it is recommended to manage your custom-made R or Python environments by creating custom Jupyter kernels.
@@ -296,8 +298,7 @@ If you have not installed Conda in your account yet, please refer to the
 
 To create a custom kernel, first create a  :ref:`Python <create_python_conda_env>` or
 :ref:`R <create_r_conda_env>` Conda environment. The second step consists of effectively
-creating the kernel in your ``$VSC_HOME/.local/share`` folder (which is a defalt value for the
-``$XDG_DATA_HOME`` environment variable), as Jupyter will look for kernels in this location.
+creating the kernel. 
 The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
 to be done once for the set-up of each new kernel.
 If you already have an existing Python kernel, but your JupyterLab session freezes/craches when choosing your
@@ -325,30 +326,29 @@ virtual environments are architecture specific.
 Hence, on our current Tier-2 machines, this approach needs to be handled with care.
 If you are interested in this approach, follow these steps to create and use your kernel:
 
-- Pick a specific Python from a specific 'Toolchain version', e.g. ``Python/3.11.3-GCCcore-12.3.0``
-  from ``2023a``
+- Pick a specific 'Toolchain and Python versions', e.g. '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
 - Choose a specific architecture, e.g. Sapphire Rapids nodes on wICE
 - Start an :ref:`Interactive Shell<interactive_shell>` on the targeted architecture,
-  and execute the following:
+  and execute the following to create an environment called ``venv_science``:
 
   .. code-block :: bash
 
      TOOLCHAIN='2023a'
-     DIR_VENV=${VSC_DATA}/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}
+     DIR_VENV=${VSC_DATA}/apps/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/venv_science
      mkdir -p ${DIR_VENV}
+     # the line below is needed if you use 'Interactive Shell' app
      module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/modules/all
      module load Python/3.11.3-GCCcore-12.3.0
      python -m venv ${DIR_VENV}
      source ${DIR_VENV}/bin/activate
      pip install --prefix=${DIR_VENV} ipykernel <additional packages>
-     # note that below, --env is not needed
-     python -m ipykernel install --user --name '<env_name>' --display-name '<kernel_name>'
+     # note that below, the "--env ..." argument is not needed
+     python -m ipykernel install --user --name venv_science --display-name venv_science
      # you need this below
      echo ${DIR_VENV}
 
 - On the JupyterLab form, choose a partition that matches your choice of architecture;
-  also, pick the same 'Toolchain version' as above.
-  In the 'Pre-run scriptlet' box, insert ``source <path/pointing/to/DIR_VENV>/bin/activate``.
+  also, pick the same toolchain as above.
 - Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
   To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
   and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
@@ -363,10 +363,6 @@ With the following command you can create the kernel::
 
 Once the kernel is created, you will see it in the 'Launcher' menu.
 You can now start working in your own customized environment.
-Note that all user kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``
-(where ``${VSC_HOME}/.local/share`` is the default value for ``$XDG_DATA_HOME``);
-we strongly advice you to stay away from modifying the contents of this folder, unless you are
-aware of the consequences.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
 
@@ -374,6 +370,21 @@ For more general information, please refer to the `official JupyterLab documenta
 
 - The top-level notebook directory is by default ``$VSC_DATA``.
 - At the moment, we do not support installing extensions in JupyterLab.
+
+.. note::
+
+   User kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``.
+   To override this and store your kernel specifications in a non-default location,
+   you may drop the following line in your ``${VSC_HOME}/.bashrc``::
+
+      export XDG_DATA_HOME=${VSC_DATA}/.local/share
+
+   If you have created multiple kernels (for Python and R), you find the corresponding
+   directories under ``${XDG_DATA_HOME}/jupyter/kernels``.
+   To remove a kernel, find and delte the corresponding folder inside the ``kernels``
+   subdirectory.
+   We strongly advice you to stay away from modifying the contents of this folder,
+   unless you are aware of the consequences.
 
 RStudio Server
 --------------
