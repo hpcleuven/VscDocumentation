@@ -259,6 +259,15 @@ from within a Linux terminal.
 This is different than the shell you get in the "Clusters - Login Server Shell Access" menu,
 which directs you towards one of the login nodes.
 
+Currently, the :ref:`cluster modules <cluster_module>` are not automatically loaded when your session starts.
+In order to use modules, one needs to explicitly load the cluster module that adheres to the choice of
+cluster and partition for his or her job.
+For instance, if your job starts on wICE interactive partition, one needs to execute the following command::
+
+    module load cluster/wice/interactive
+
+The same applies for other choices of partitions on Genius or wICE clusters.
+
 JupyterLab
 -----------
 
