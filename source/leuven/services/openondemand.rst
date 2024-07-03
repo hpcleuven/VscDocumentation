@@ -338,12 +338,13 @@ If you are interested in this approach, follow these steps to create and use you
 - Pick a specific 'Toolchain and Python versions', e.g. '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
 - Choose a specific architecture, e.g. Sapphire Rapids nodes on wICE
 - Start an :ref:`Interactive Shell<interactive_shell>` on the targeted architecture,
-  and execute the following to create an environment called ``venv_science``:
+  and execute the following to create an environment called ``<kernel_name>``; you may choose a ``<kernel_name>``
+  which represents your project scope:
 
   .. code-block :: bash
 
      TOOLCHAIN='2023a'
-     DIR_VENV=${VSC_DATA}/apps/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/venv_science
+     DIR_VENV=${VSC_DATA}/apps/venv/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/<kernel_name>
      mkdir -p ${DIR_VENV}
      # the line below is needed if you use 'Interactive Shell' app
      module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/modules/all
@@ -352,7 +353,7 @@ If you are interested in this approach, follow these steps to create and use you
      source ${DIR_VENV}/bin/activate
      pip install --prefix=${DIR_VENV} ipykernel <additional packages>
      # note that below, the "--env ..." argument is not needed
-     python -m ipykernel install --user --name venv_science --display-name venv_science
+     python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
      # you need this below
      echo ${DIR_VENV}
 
