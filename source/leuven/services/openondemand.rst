@@ -330,9 +330,8 @@ Custom virtual environments for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
-Eventhough this approach can have advantages, but we do not recommend it, due to the fact that Python
-virtual environments are architecture specific.
-Hence, on our current Tier-2 machines, this approach needs to be handled with care.
+Such kernels can be created once (e.g. on a login or compute node), and later on be used on any of the
+partitions of Genius and wICE clusters (see the remark below).
 If you are interested in this approach, follow these steps to create and use your kernel:
 
 - Pick a specific 'Toolchain and Python versions', e.g. '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
@@ -362,6 +361,11 @@ If you are interested in this approach, follow these steps to create and use you
 - Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
   To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
   and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
+
+**Remarks:**
+
+- If your ``pip install`` step involves compiling a package from source (instead of using precompiled wheels),
+  then your virtual environment must be only used on the same arhitecture which you created it on.
 
 Custom R environments
 ~~~~~~~~~~~~~~~~~~~~~
