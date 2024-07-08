@@ -296,8 +296,9 @@ This kernel, in addition to the Python standard library, would enable using extr
    If you use JupyterLab in this way, remember to be consistent in your choice of toolchain version
    as this e.g. determines the version of Python that will be used.
 
-If the module-based environment explained above does not provide all packages that you need, then
-it is recommended to manage your custom-made R or Python environments by creating custom Jupyter kernels.
+If these modules does not provide all Python packages that you need, then you can locally install
+these extra packages, followed by installing the corresponding Jupyter kernel  (see
+"Custom virtual environments for Python" below).
 
 Custom Conda environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~
