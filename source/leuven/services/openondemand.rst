@@ -367,10 +367,10 @@ If you are interested in this approach, follow these steps to create and use you
   This remark does not apply to typical ``pip`` usage where precompiled 'wheels' get downloaded and installed
   and which can therefore be used on any architecture.
 
-Custom R environments
-~~~~~~~~~~~~~~~~~~~~~
+Conda environments for R
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-For R, you need both the ``jupyter_client`` and the ``irkernel`` packages installed.
+For R, you need both the ``jupyter_client`` and the ``irkernel`` Conda packages installed.
 With the following command you can create the kernel::
 
       Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
