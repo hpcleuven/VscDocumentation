@@ -355,16 +355,17 @@ If you are interested in this approach, follow these steps to create and use you
      # note that below, the "--env ..." argument is not needed
      python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
 
-- On the JupyterLab form, choose a partition that matches your choice of architecture;
-  also, pick the same toolchain as above.
+- On the JupyterLab form, choose a partition to your liking and select the same toolchain as above.
 - Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
   To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
   and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
 
 **Remarks:**
 
-- If your ``pip install`` step involves compiling a package from source (instead of using precompiled wheels),
-  then your virtual environment must be only used on the same arhitecture which you created it on.
+- If one your package installation steps involves compiling source code, then you might only be able to
+  use your virtual environment on the same architecture where the compilation was carried out. 
+  This remark does not apply to typical ``pip`` usage where precompiled 'wheels' get downloaded and installed
+  and which can therefore be used on any architecture.
 
 Custom R environments
 ~~~~~~~~~~~~~~~~~~~~~
