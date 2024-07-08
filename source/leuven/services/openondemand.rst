@@ -354,8 +354,6 @@ If you are interested in this approach, follow these steps to create and use you
      pip install --prefix=${DIR_VENV} ipykernel <additional packages>
      # note that below, the "--env ..." argument is not needed
      python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
-     # you need this below
-     echo ${DIR_VENV}
 
 - On the JupyterLab form, choose a partition that matches your choice of architecture;
   also, pick the same toolchain as above.
