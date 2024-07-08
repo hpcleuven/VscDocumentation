@@ -327,8 +327,8 @@ Then you create the kernel as follows::
       python -m ipykernel install --user --env PYTHONPATH "" --name '<env_name>' --display-name '<kernel_name>'
 
 
-Custom virtual environments for Python
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Python virtual environments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
 Such kernels can be created once (e.g. on a login or compute node), and later on be used on any of the
