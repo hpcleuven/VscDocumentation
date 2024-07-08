@@ -300,8 +300,8 @@ If these modules does not provide all Python packages that you need, then you ca
 these extra packages, followed by installing the corresponding Jupyter kernel  (see
 "Custom virtual environments for Python" below).
 
-Custom Conda environments
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Conda environments for Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have not installed Conda in your account yet, please refer to the
 :ref:`install Miniconda <install_miniconda_python>` page.
