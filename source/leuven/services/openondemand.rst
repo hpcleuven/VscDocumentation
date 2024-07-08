@@ -395,7 +395,7 @@ For more general information, please refer to the `official JupyterLab documenta
 
    If you have created multiple kernels (for Python and R), you find the corresponding
    directories under ``${XDG_DATA_HOME}/jupyter/kernels``.
-   To remove a kernel, find and delte the corresponding folder inside the ``kernels``
+   To remove a kernel, find and delete the corresponding folder inside the ``kernels``
    subdirectory.
    We strongly advice you to stay away from modifying the contents of this folder,
    unless you are aware of the consequences.
