@@ -293,8 +293,8 @@ This kernel, in addition to the Python standard library, would enable using extr
 
 .. warning::
 
-   If you use JupyterLab as explained above, and you need to reproduce your numerical results 
-   at any time in the future, make sure you stick to choosing the same toolchain.
+   If you use JupyterLab in this way, remember to be consistent in your choice of toolchain version
+   as this e.g. determines the version of Python that will be used.
 
 If the module-based environment explained above does not provide all packages that you need, then
 it is recommended to manage your custom-made R or Python environments by creating custom Jupyter kernels.
