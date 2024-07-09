@@ -282,10 +282,10 @@ In the app resource form, besides the normal choices (:ref:`listed above <intera
 you can also choose from different 'Toolchain and Python versions' from a drop-down menu.
 An example would be '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
 Based on that choice, the corresponding JupyterLab module will be loaded together with its
-dependencies (specifically Python).
+dependencies (such as the listed Python module).
 
-Furthermore, you may optionally choose to load ``SciPy-bundle`` (for widely-used packages like ``scipy``,
-``numpy``, ``pandas`` and more) and/or ``matplotlib`` in your environment from the same toolchain.
+Furthermore, you may choose to load ``SciPy-bundle`` (for widely used packages like ``scipy``,
+``numpy``, ``pandas`` and more) and/or ``matplotlib`` modules from the same toolchain.
 
 Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipykernel)`` is already available in your session.
 This kernel, in addition to the Python standard library, would enable using extra packages from
