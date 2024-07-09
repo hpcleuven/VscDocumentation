@@ -395,8 +395,8 @@ For more general information, please refer to the `official JupyterLab documenta
 
       export XDG_DATA_HOME=${VSC_DATA}/.local/share
 
-   If you have created multiple kernels (for Python and R), you find the corresponding
-   directories under ``${XDG_DATA_HOME}/jupyter/kernels``.
+   When the ``${XDG_DATA_HOME}`` variable is set, subsequent kernel installations
+   (for both Python and R) will reside in ``${XDG_DATA_HOME}/jupyter/kernels``.
    To remove a kernel, find and delete the corresponding folder inside the ``kernels``
    subdirectory.
    We strongly advice you to stay away from modifying the contents of this folder,
