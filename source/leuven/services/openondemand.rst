@@ -330,42 +330,44 @@ Then you create the kernel as follows::
 Python virtual environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One may create a customized kernel starting from a Python virtual environment, using one of Python modules.
-Such kernels can be created once (e.g. on a login or compute node), and later on be used on any of the
-partitions of Genius and wICE clusters (see the remark below).
-If you are interested in this approach, follow these steps to create and use your kernel:
+A similar procedure applies for Python virtual environments associated with
+a centrally installed Python module. Note that the chosen Python module needs
+to be in the list of 'Toolchain and Python versions' of the JupyterLab form
+(e.g. ``2023a and Python/3.11.3-GCCcore-12.3.0``). The commands below show
+how creating such a virtual environment and installing the corresponding kernel
+would typically look like (to be done from a shell, e.g. using 'Login Server Shell Access'):
 
-- Pick a specific 'Toolchain and Python versions', e.g. '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
-- Choose a specific architecture, e.g. Sapphire Rapids nodes on wICE
-- Start an :ref:`Interactive Shell<interactive_shell>` on the targeted architecture,
-  and execute the following to create an environment called ``<kernel_name>``; you may choose a ``<kernel_name>``
-  which represents your project scope:
+.. code-block :: bash
 
-  .. code-block :: bash
+    cd ${VSC_DATA}
+    # the line below is needed if you use the 'Interactive Shell' app
+    module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/2023a/modules/all
+    module load Python/3.11.3-GCCcore-12.3.0
+    python -m venv <venv_name>
+    source <venv_name>/bin/activate
+    pip install ipykernel <any additional packages you may need>
+    # note that unlike for Conda environments the "--env ..." argument is not needed below
+    python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
 
-     TOOLCHAIN='2023a'
-     DIR_VENV=${VSC_DATA}/apps/venv/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/<kernel_name>
-     mkdir -p ${DIR_VENV}
-     # the line below is needed if you use 'Interactive Shell' app
-     module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/${TOOLCHAIN}/modules/all
-     module load Python/3.11.3-GCCcore-12.3.0
-     python -m venv ${DIR_VENV}
-     source ${DIR_VENV}/bin/activate
-     pip install --prefix=${DIR_VENV} ipykernel <additional packages>
-     # note that below, the "--env ..." argument is not needed
-     python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
-
-- On the JupyterLab form, choose a partition to your liking and select the same toolchain as above.
-- Once you connect to your session, your new ``<kernel_name>`` is ready to be used.
-  To verify your setup, you can execute ``import sys; sys.executable`` in your notebook,
-  and the resulting path shall point at ``DIR_VENV`` where you installed your virtual environment.
+On the JupyterLab form, choose a partition to your liking and select the same
+toolchain as above. Once you connect to your session, your new kernel will be
+ready to use. To verify your setup, you can execute ``import sys; sys.executable``
+in your notebook, and the resulting path should point to the location of your
+virtual environment.
 
 **Remarks:**
 
-- If one your package installation steps involves compiling source code, then you might only be able to
-  use your virtual environment on the same architecture where the compilation was carried out. 
-  This remark does not apply to typical ``pip`` usage where precompiled 'wheels' get downloaded and installed
-  and which can therefore be used on any architecture.
+- The above example assumes that your virtual environment can be used on
+  different CPU and/or GPU architectures than the ones present on the node
+  on which you created the environment and installed the extra packages.
+  This is normally the case for typical ``pip`` usage where precompiled 'wheels'
+  get downloaded and installed and which can therefore be used on any
+  architecture.
+- If however one your package installation steps involves compiling source code,
+  then you might only be able to use your virtual environment on the same
+  architecture where the compilation was carried out. If this is the case we
+  recommend to consider the suggestions in the
+  :ref:`wICE advanced guide<wice_compilation>`.
 
 Conda environments for R
 ~~~~~~~~~~~~~~~~~~~~~~~~
