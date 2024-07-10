@@ -275,6 +275,11 @@ With this app you can create or (re)run Jupyter Notebooks. This can be handy bot
 One of the benefits of using JupyterLab is the flexibility it offers in customizing user environments,
 which we explain below.
 
+**Remarks:**
+
+- The top-level notebook directory is by default ``$VSC_DATA``.
+- At the moment, we do not support installing extensions in JupyterLab.
+
 Pure module environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -385,11 +390,6 @@ Once the kernel is created, you will see it in the 'Launcher' menu.
 You can now start working in your own customized environment.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
-
-**Remarks:**
-
-- The top-level notebook directory is by default ``$VSC_DATA``.
-- At the moment, we do not support installing extensions in JupyterLab.
 
 .. note::
 
