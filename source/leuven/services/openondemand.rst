@@ -296,9 +296,13 @@ This kernel, in addition to the Python standard library, would enable using extr
    If you use JupyterLab in this way, remember to be consistent in your choice of toolchain version
    as this e.g. determines the version of Python that will be used.
 
-If these modules does not provide all Python packages that you need, then you can locally install
-these extra packages, followed by installing the corresponding Jupyter kernel  (see
-"Custom virtual environments for Python" below).
+If these modules do not provide all Python packages that you need, then you can locally install
+these extra packages, followed by installing the corresponding Jupyter kernel either
+from a :ref:`Python Conda environment<py-conda-kernel>`, or from a 
+:ref:`Python virtual environment<py-venv-kernel>`.
+For R, you may create your customized environment using :ref:`Conda environments for R<r-conda-kernel>`.
+
+.. _py-conda-kernel:
 
 Conda environments for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -326,6 +330,8 @@ Then you create the kernel as follows::
 
       python -m ipykernel install --user --env PYTHONPATH "" --name '<env_name>' --display-name '<kernel_name>'
 
+
+.. _py-venv-kernel:
 
 Python virtual environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -368,6 +374,8 @@ virtual environment.
   architecture where the compilation was carried out. If this is the case we
   recommend to consider the suggestions in the
   :ref:`wICE advanced guide<wice_compilation>`.
+
+.. _r-conda-kernel:
 
 Conda environments for R
 ~~~~~~~~~~~~~~~~~~~~~~~~
