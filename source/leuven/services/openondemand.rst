@@ -310,26 +310,22 @@ Conda environments for Python
 If you have not installed Conda in your account yet, please refer to the
 :ref:`install Miniconda <install_miniconda_python>` page.
 
-To create a custom kernel, first create a  :ref:`Python <create_python_conda_env>` or
-:ref:`R <create_r_conda_env>` Conda environment. The second step consists of effectively
-creating the kernel. 
-The following commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'), and only need
-to be done once for the set-up of each new kernel.
-If you already have an existing Python kernel, but your JupyterLab session freezes/craches when choosing your
-old kernel, you also need to repeat the following steps only once.
-This starts with activating your Conda environment::
+Assuming you have created a Conda environment for :ref:`Python <create_python_conda_env>`,
+the corresponding kernel needs to be installed for use with JupyterLab.
+Note that the minimum supported version for Python for our JupyterLab setup is Python 3.7.
+First activate the Conda environment, install the ``ipykernel`` package (which should be at
+least version 6.19.2) and finally the kernel itself::
 
-      source activate <env_name>
+    source activate <env_name>
+    conda install ipykernel
+    python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
 
-For Python you will need the ``ipykernel`` package installed in your Conda environment.
-The minimum supported version for Python is 3.7 and for ``ipykernel`` package is 6.19.2::
-
-      conda install ipykernel
-
-Then you create the kernel as follows::
-
-      python -m ipykernel install --user --env PYTHONPATH "" --name '<env_name>' --display-name '<kernel_name>'
-
+These commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'),
+and only need to be done once for a given environment.
+When launching a new JupyterLab session, this kernel should then show up in the overview
+of available kernels.
+In case you encounter issues such as freezing or crashing JupyterLab sessions with a previously
+existing kernel, then reinstalling that kernel may help.
 
 .. _py-venv-kernel:
 
