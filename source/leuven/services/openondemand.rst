@@ -301,11 +301,29 @@ This kernel, in addition to the Python standard library, would enable using extr
    If you use JupyterLab in this way, remember to be consistent in your choice of toolchain version
    as this e.g. determines the version of Python that will be used.
 
-If these modules do not provide all Python packages that you need, then you can locally install
-these extra packages, followed by installing the corresponding Jupyter kernel either
-from a :ref:`Python Conda environment<py-conda-kernel>`, or from a 
+User-defined kernels
+~~~~~~~~~~~~~~~~~~~~
+
+If the pure module environment does not provide all Python packages that you need,
+then you can locally install these extra packages, followed by installing the corresponding
+Jupyter kernel either from a :ref:`Python Conda environment<py-conda-kernel>`, or from a 
 :ref:`Python virtual environment<py-venv-kernel>`.
 For R, you may create your customized environment using :ref:`Conda environments for R<r-conda-kernel>`.
+
+.. note::
+
+   User kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``.
+   To override this and store your kernel specifications in a non-default location,
+   you may drop the following line in your ``${VSC_HOME}/.bashrc``::
+
+      export XDG_DATA_HOME=${VSC_DATA}/.local/share
+
+   When the ``${XDG_DATA_HOME}`` variable is set, subsequent kernel installations
+   (for both Python and R) will reside in ``${XDG_DATA_HOME}/jupyter/kernels``.
+   To remove a kernel, find and delete the corresponding folder inside the ``kernels``
+   subdirectory.
+   We strongly advice you to stay away from modifying the contents of this folder,
+   unless you are aware of the consequences.
 
 .. _py-conda-kernel:
 
@@ -390,21 +408,6 @@ Once the kernel is created, you will see it in the 'Launcher' menu.
 You can now start working in your own customized environment.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
-
-.. note::
-
-   User kernels are stored by default in ``${VSC_HOME}/.local/share/jupyter/kernels``.
-   To override this and store your kernel specifications in a non-default location,
-   you may drop the following line in your ``${VSC_HOME}/.bashrc``::
-
-      export XDG_DATA_HOME=${VSC_DATA}/.local/share
-
-   When the ``${XDG_DATA_HOME}`` variable is set, subsequent kernel installations
-   (for both Python and R) will reside in ``${XDG_DATA_HOME}/jupyter/kernels``.
-   To remove a kernel, find and delete the corresponding folder inside the ``kernels``
-   subdirectory.
-   We strongly advice you to stay away from modifying the contents of this folder,
-   unless you are aware of the consequences.
 
 RStudio Server
 --------------
