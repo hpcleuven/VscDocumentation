@@ -1,8 +1,10 @@
 .. _ood_t2_leuven:
 
-===========================================
 Open OnDemand on the KULeuven Tier2 cluster
 ===========================================
+
+.. sectnum::
+   :depth: 3
 
 About
 =====
