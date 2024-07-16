@@ -202,4 +202,33 @@ This feature is a proof of concept, and this information can currently not be ad
 Searching
 =========
 
-**Work in progress**
+The ManGO portal contains both a quick search bar and an advanced search form. 
+
+The quick search bar is located on top of the webpage.   
+You can easily find data objects and collections with it that match any of the following criteria:
+
+- Name of the object
+- Owner of the object
+- Metadata fields containing the keyword 'name', 'title', 'description', 'comment' or 'summary'
+
+To search, just type your search term in the search bar and press the key 'enter'.
+You will get a list with links to the matching data objects/collections.
+
+.. figure:: ../images/mango_portal/mango_portal_search_bar.png
+  :alt: Searching via the search bar
+  :width: 800
+
+The advanced search tab is located on the left side of the screen.
+This brings you to a form where you can search for data objects and collection based on several criteria.
+You can also search based on any metadata fields.
+
+If you want to search based on schema metadata, you will need to use the following convention:
+
+- Attribute name: ``mgs.<schema_id>.<field_id>``
+- Attribute value: ``<value>``
+
+For example, if you want to search based on the field 'instrument' from the schema 'chemistry', you will need to search for attribute name 'mgs.chemistry.instrument'.
+
+.. figure:: ../images/mango_portal/mango_portal_search_advanced.png
+  :alt: Searching via the search tab
+  :width: 800
