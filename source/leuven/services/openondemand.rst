@@ -419,9 +419,16 @@ For more general information, please refer to the `official JupyterLab documenta
 RStudio Server
 --------------
 
-This interactive app allows you to run an RStudio session as a compute job.
-You will be running RStudio with R version 4.2.1.
-For more information on how to use RStudio, check out the `RStudio official documentation`_.
+This interactive app allows you to run an RStudio session on the cluster. 
+This R session makes use of the R/4.2.2-foss-2022b module. 
+Additionally, the R-bundle-CRAN and R-bundle-Bioconductor modules can be loaded 
+on top of the base R to provide easy access to hundreds of preinstalled packages.
+
+You can use your own personal R libraries with Studio, see :ref:`R package management<r_package_management_standard_lib>`. 
+While the use of R projects is also available within RStudio, loading such project may affect your module library paths as well as your personal R library path.
+We therefore recommend to only use R projects with renv, ensuring a completely isolated library for your project.
+
+For more information on how to use RStudio, check out the `official documentation <https://docs.rstudio.com/>`__.
 
 The use is very similar to regular RStudio.
 It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though,
@@ -436,16 +443,15 @@ You can do this by using the ``lib`` argument for both the ``install.packages`` 
   You will also notice that you cannot use the same way of navigating after this.
   Another solution is to click the three dots on the right (...) and enter your path.
 - The 'Tools-Install packages' interface does not allow you to select any other path than the default in your ``$VSC_HOME``.
-  It is recommended to use the ``install.packages`` function instead.
+  It is recommended to use the ``install.packages()`` function instead.
 - RStudioServer will by default store the RStudio cache in ``$VSC_HOME/.local/share/rstudio``.
   This cache can get very large, and cause you to exceed the quota of your home directory.
-  To avoid this, you can redirect this cache to your data directory by setting ``$XDG_DATA_HOME``
+  To avoid this, you can redirect this cache to your scratch directory by setting ``$XDG_DATA_HOME``
   variables in your ``~/.bashrc``.
 
   .. code-block:: bash
 
-    echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
-
+    echo "export XDG_DATA_HOME=$VSC_SCRATCH/.local/share" >> ~/.bashrc
 
 Tensorboard
 -----------
