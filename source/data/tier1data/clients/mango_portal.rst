@@ -204,7 +204,7 @@ Searching
 
 The ManGO portal contains both a quick search bar and an advanced search form. 
 
-The search bar is located on top of the webpage.   
+The quick search bar is located on top of the webpage.   
 You can find data objects and collections with it, by searching based on one of the following criteria:
 
 - Name of the object
@@ -227,7 +227,7 @@ If you want to search based on schema metadata, you will need to use the followi
 - Attribute name: mgs.<schema_id>.<field_id>
 - Attribute value: <value>
 
-For example, if you want to search based on the field 'instrument' from the schema 'chemistry', you will need to search for attribute name 'mgs.chemistry.experiment'.
+For example, if you want to search based on the field 'instrument' from the schema 'chemistry', you will need to search for attribute name 'mgs.chemistry.instrument'.
 
 .. figure:: ../images/mango_portal/mango_portal_search_advanced.png
   :alt: Searching via the search tab

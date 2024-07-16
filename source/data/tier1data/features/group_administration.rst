@@ -35,7 +35,7 @@ The support role is meant for support staff from the VSC.
 They might temporarily join projects when they are actively involved, or for debugging purposes.
 
 To manage project members, reponsibles/managers need to go to the web page of their project, 
-by going to https://mango.vscentrum.be/, clicking on their zone to expand the list of projects they are, and clicking on their project name.
+by going to https://mango.vscentrum.be/, clicking on their zone to expand the list of projects they are member of, and clicking on their project name.
 Alternatively, they can go straight to *https://mango.vscentrum.be/data-platform/project/<project_name>*.
 
 On this page, you get an overview of all members in the project:
@@ -58,7 +58,7 @@ Click on this button to finalize your changes.
 Managing subgroups
 ******************
 
-Subgroups are used to gives permissions to a specific group of members from your project.
+Subgroups are used to give permissions to a specific group of members from your project.
 Managers can create and manage subgroups by going to the Group Administration tab of the ManGO portal.
 
 After selecting your project, you will see an overview of all subgroups. 
