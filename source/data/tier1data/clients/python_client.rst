@@ -50,8 +50,8 @@ There are three ways to authenticate with the Python-iRODSclient:
 3. Linux users can first authenticate with :ref:`icommands`. 
    The user is also authenticated for the Python-iRODSClient.
 
-
-Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
+.. note::
+  Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
 
 Creating a session
 ------------------
