@@ -6,51 +6,110 @@ R package management
 Introduction
 ------------
 
-Most of the useful R packages can be installed separately. Some of those are 
-part of the centrally installed R modules. However, given the astounding number of 
-packages, it is not sustainable to install each and everyone of them system wide. 
-Fortunately, it is very easy for users to install R packages themselves.
-If you do encounter problems when doing so, do not hesitate to contact support.
+There exist thousands of R packages, available from online repositories like CRAN,
+Bioconductor or github. The more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
+are included in the centrally installed R modules or can be accessed by simply 
+loading the R-bundle-CRAN and R-bundle-Bioconductor modules. 
+
+.. code:: r
+
+       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2    
+
+However, perhaps you want a more recent version of one specific package or the
+package you need is not provided via our modules, in that case you may need to
+set up your own personal R library to install those packages yourself.
+Below you can find extensive documentation on how to manage your own R library
+on our HPC infrastructure. If you do encounter problems when doing so, do not 
+hesitate to contact support.
 
 .. _r_package_management_standard_lib:
 
 Standard R package installation
 -------------------------------
 
-Setting up your own package repository for R is straightforward.
+It is important to realize that R will use by default the `$VSC_HOME/R` path
+to install new packages. Since the home directory is only 3GB in size, it is not
+the recommended location to install software. So, before we can begin with 
+installing our packages, it is important to prepare our library location first.
 
-#. Load the appropriate R module, i.e., the one you want the R package
-   to be available for::
+R packages are compiled during the installation and as a result, they are optimized
+for the hardware they were installed on. Packages installed on the one partition
+may thus perform worse when used on another partition. R packages are often also
+version specific and may not work with other versions of R. With this in mind,
+we will first create a directory structure providing a unique path for each OS
+version, hardware architecture and R version.
 
-      $ module load R/3.2.1-foss-2014a-x11-tcl
+In this example we assume you will primarily compute on icelake with R version 4.2.2.
 
-#. Start R and install the package (preferably in your $VSC_DATA directory)::
+.. code-block:: bash
 
-      > install.packages("DEoptim", lib="/data/leuven/304/vsc30468/R/")
+      $ mkdir -p ${VSC_DATA}/Rlibs/rocky8/icelake/R-4.2.2
 
-#. Alternatively you can download the desired package::
+Now that we've setup this directory, the next step is to make sure it is used 
+by default when starting an R session. We can use the R_LIBS_USER variable to
+specify our prefered install path in the ~/.Renviron file. By usesing system
+variables such as `${VSC_ARCH_LOCAL}` or `${EBVERSIONR}` we can ensure that this
+path always matches the OS and architecture of the compute node as well as the
+R version of the currently loaded R module.
 
-      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+The following command creates the ~/.Renviron file and sets the R_LIBS_USER variable:
 
-      and install it with::
-  
-      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
-      
-#. These packages might depend on the specific R version, so you may
-   need to reinstall them for the other version.
-   
-Some R packages depend on libraries installed on the system.  In that case,
-you first have to load the modules for these libraries, and only then proceed
-to the R package installation.  For instance, if you would like to install
-the `gsl` R package, you would first have to load the module for the GSL
-library, .e.g., ::
+.. code-block:: bash
 
-   $ module load GSL/2.5-GCC-6.4.0-2.28
+      $ echo "R_LIBS_USER=\${VSC_DATA}/Rlibs/\${VSC_OS_LOCAL}/\${VSC_ARCH_LOCAL}/R-\${EBVERSIONR}" > ~/.Renviron
+
+R will now use this path as default install path, ensuring you are always installing
+your packages in the appropriate R library folder.
 
 .. note::
 
-  R packages often depend on the specific R version they were installed
-  for, so you may need to reinstall them for other versions of R.
+  This setup also works with the Open OnDemand RStudio Server app.
+
+The next step is to load the appropriate R module and launch R.
+
+.. code-block:: bash
+
+      $ module load R/4.2.2-foss-2022b
+      $ R
+
+From here, installing packages can be as simple as:
+
+.. code-block:: r
+
+      > install.packages("DEoptim")
+
+
+If you are unsure if R will install in the correct location, you can check where 
+R will install your packages using the `.libPaths()` command in your R console.
+This will list all known library locations, the first one being the default 
+location.
+
+.. code-block:: r
+
+      > .libPaths()
+
+You can also specify your desired library path as an extra argument in the install command.
+This will take precedent over any defaults.
+
+.. code-block:: r
+
+      > Rlibs <- "/path/to/my/R_library"
+      > install.packages("DEoptim", lib = Rlibs)
+
+Alternatively you can download the desired package
+
+.. code-block:: bash
+
+      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+
+and install it from the commandline with
+
+.. code-block:: bash
+  
+      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/rocky8/icelake/R-4.2.2
+
+If the installation of a package requires devtools, please review the :ref:`devtools documentation<r_devtools>`.
+
 
 .. _r_package_management_conda:
 
