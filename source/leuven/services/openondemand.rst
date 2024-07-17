@@ -556,6 +556,13 @@ Once you launch the session, a remote `noVNC`_ desktop will start on a compute n
 Once the session starts, the selected MATLAB module will be loaded, and eventually the MATLAB GUI
 will pop up (after waiting for few seconds).
 
+.. note::
+
+   Only vsc3* users (affiliated with KU Leuven) who are members of the ``lli_matlab`` group
+   have rights to use the MATLAB module (hence the MATLAB app). If you are not already member
+   of the group, contact the :ref:`KU Leuven supprt team<user support VSC>` for an invitation,
+   or :ref:`request joining this group<join groups>` via your VSC account page.
+
 ParaView
 --------
 
