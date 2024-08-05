@@ -132,7 +132,7 @@ first two steps have to be modified:
    vscXXXXX@vsc.login.node:<full path to the repository>, e.g., if
    you're vsc20XYZ (a UANtwerpen account) and the repository is in the
    subdirectory testrepository of your data directory, the URL is
-   vsc20XYZ@login.hp.uantwerpen.be:/data/antwerpen/20X/vsc20XYZ/testrepository.
+   vsc20XYZ@login.hpc.uantwerpen.be:/data/antwerpen/20X/vsc20XYZ/testrepository.
    So use this URL in the git remote add command. You don't need to
    specify ``ssh://`` in the URL if you use the scp-syntax as we did in this
    example above.
