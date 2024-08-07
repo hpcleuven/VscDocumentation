@@ -130,7 +130,7 @@ first two steps have to be modified:
    git repository.
 #. The URL to the repository will be of the form
    vscXXXXX@vsc.login.node:<full path to the repository>, e.g., if
-   you're vsc20XYZ (a UANtwerpen account) and the repository is in the
+   you're vsc20XYZ (a UAntwerpen account) and the repository is in the
    subdirectory testrepository of your data directory, the URL is
    vsc20XYZ@login.hpc.uantwerpen.be:/data/antwerpen/20X/vsc20XYZ/testrepository.
    So use this URL in the git remote add command. You don't need to
