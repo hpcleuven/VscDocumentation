@@ -20,11 +20,11 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
 
 
 1. Start the NoMachine client and press **Continue** until you see the screen
-   listing your connections, titled **Machines**.
+   listing your connections, titled **Machines**
 
 #. Press **Add** to create a new connection
 
-#. In the **Addres** pane,
+#. In the **Addres** pane
 
    #. choose a name for the connection, e.g., "genius"
    #. change the Protocol to **SSH**
@@ -47,13 +47,13 @@ You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional i
 
 #. If you are creating for the first time choose **Create a new virtual desktop**.
    Otherwise please refer to the :ref:`section on how to reconnect to an NX session
-   <nx_reconnect>` for instructions.
+   <nx_reconnect>` for instructions
 
 #. Read the useful information regarding your session displayed on several
    screens. This step is very important in case of mobile devices – once
    you miss the instructions it is not so easy to figure out how to operate
    NoMachine on your device. You can optionally choose not to show these
-   messages again.
+   messages again
 
 Once connected you will see the virtual Linux desktop.
 
@@ -82,23 +82,23 @@ How to start using NX on Genius?
    software that is listed within the Applications menu. Software is
    divided into several groups:
 
-   -  Accessories (e.g. Calculator, Character Map, Emacs, Gedit, GVim),
-   -  Graphics (e.g. gThumb Image Viewer, Xpdf PDF Viewer),
-   -  Internet (e.g. Firefox with pdf support, Filezilla),
+   -  Accessories (e.g. Calculator, Character Map, Emacs, Gedit, GVim)
+   -  Graphics (e.g. gThumb Image Viewer, Xpdf PDF Viewer)
+   -  Internet (e.g. Firefox with pdf support, Filezilla)
    -  **HPC** (modules related to HPC use: **Computation** sub-menu with
-      MATLAB, RStudio and SAS, **Visualisation** sub-menu with Paraview
-      and VisIt),
+      MATLAB and SAS, **Visualisation** sub-menu with ParaView, VisIt,
+      VMD and XCrySDen)
    -  Programming (e.g. Meld Diff Viewer, Microsoft Visual Studio Code),
-   -  System tools (e.g. File Browser, Terminal).
+   -  System tools (e.g. File Browser, Terminal)
 
 #. Running the applications in the text mode requires having a terminal
    open. To launch the terminal please go to Applications -> System
    tools -> Terminal. From Terminal all the commands available on
-   regular login node can be used.
+   regular login node can be used
 #. Some more information can be found on :download:`slides from our lunchbox
    session <nx_start_guide/nx_slides.pdf>`. In the slides you can find the
    information how to **connect the local HDD** to the NX session for
-   easier transfer of data between the cluster and your local computer.
+   easier transfer of data between the cluster and your local computer
 
 Attached documents
 ------------------

@@ -7,7 +7,7 @@ General
 -------
 
 Matlab allows you to use parallel computing on a HPC cluster using the `Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>`_.
-This toolbox may not be included for all Matlab installations. Try ``help distcomp`` to see if the toolbox is installed for the Matlab installation that you are using. The toolbox is needed to create a cluster profile and it is this profile that will allow you to submit multi-node jobs.
+The toolbox is needed to create a cluster profile and it is this profile that will allow you to submit multi-node jobs.
 
 KU Leuven clusters
 ------------------
@@ -15,111 +15,88 @@ KU Leuven clusters
 Availability
 ++++++++++++
 
-The Parallel Computing Toolbox has been enabled for the Matlab 2022a and 2022b modules on Genius. wICE support is under development at the moment. These versions 
-have been installed in the 2021a toolchain. We strongly recommend using the Matlab 2022b installation. 
+The Parallel Computing Toolbox has been enabled for all Matlab versions on the KU Leuven Tier-2 clusters.
 
-The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not part of our Matlab group and would like to use this 
-software, we kindly ask you to contact our helpdesk and request access.
+The Matlab license of KU Leuven covers all academic users. If you would like to use Matlab, but you are not yet member of our ``lli_matlab`` group, you can request
+access via the VSC account page (Use the 'New/Join Group' button).
 
 Configuring Matlab for parallel computing
 +++++++++++++++++++++++++++++++++++++++++
 
-Using parallel computing together with Matlab does not work out of the box. Matlab needs a 'cluster profile', specifically for the 'cluster-matlab version' combination
-you are planning to use. This cluster profile contains information like the amount of nodes, the resource manager, the way to submit jobs on that cluster... 
-Configuring these settings can be done by running the correct script once. Next to this, there are some user-specific options that can be defined. 
+If you want to use the parallel toolbox, there are a couple of steps you have to do yourself:
 
-Configuring a cluster profile
-*****************************
+Running Matlab with Parallel Server should be done from a compute node. Request an interactive job with minimum 4 cores (Matlab loading is quite slow with only a single core) with the
+``srun`` or ``salloc`` command.
 
-We have provided some scripts that will allow to easily set up such a profile. You can download them from this 
-`repository <https://github.com/hpcleuven/matlab-remote>`_. Clone this folder somewhere on your personal storage (e.g. ``$VSC_DATA``). Set your working directory to
-the cloned repository:
-
-::
-    $ cd <your_preferred_location>
-    $ git clone https://github.com/hpcleuven/matlab-remote.git
-    $ cd <your_preferred_location>/matlab-remote
-
-Within the folder, you will see a ``mdcs.rc`` file. This is a configuration file that allows you to adapt the cluster profile to your needs. There is only one setting 
-that needs to be changed here: ``LocalJobStorageLocation``. This will define where your job output will be directed to. This script will not create the folder for you, 
-so be sure to create it yourself if it does not exist yet. There is no need for quotation marks when defining this path. 
-
-> **_NOTE:_**  Be careful: when leaving this field blank, this location will default to your ``$VSC_HOME``, which could result in quickly filling up your home directory.
-
-Next, you'll need to load your preferred module, and start it. It is recommended to do this via an interactive job.
+Now you can load your preferred Matlab module:
 
 ::
 
-   $ # Genius
-   $ module use /apps/leuven/skylake/2021a/modules/all
-   $ module load MATLAB/R2022b #MATLAB/R2022a if you would like to load this version
-    
-Once the module is loaded, start Matlab. You can start it in a terminal without the GUI by using the ``-nodisplay`` flag. Then, run the ``configCluster`` script.
-This will set up the parallel configuration.  
+    $ module load <matlab_module>
+
+We have Matlab modules available for both wICE and Genius. Use the command ``module av MATLAB`` on the compute node to check for available versions.
+
+Now, start Matlab and use the function  ``configCluster`` to set up the cluster profile. If you do not do this, the cluster profile will default to the 'local
+cluster', basically meaning that it will only detect the cores on the node you are currently on.
 
 ::
 
-   $ matlab -nodisplay
+    $ matlab -nodisplay          # the '-nodisplay' option avoids launching the GUI, but you may leave this out (slow)
+    $ # Within Matlab
+    $ >> configCluster;
+
+The ``configCluster`` function will request you to specify a cluster (``wice`` or ``genius``). Please choose the one you are on already.
+
+There is a range of additional properties you can set for the cluster profile. Before you can edit these, you first need to get a handle on the cluster
+profile:
 
 ::
 
-   >> rehash toolbox;
-   >> configCluster;
-   
-You will get a message as follows if it succeeded: 'Complete.  Default cluster profile set to "<cluster_name> <matlab_version>".'. You have now created a cluster
-profile.
+    $ c=parcluster;
 
-Configuring additional properties
-*********************************
-
-It is possible to set some user-specific properties and save them in your cluster profile. You can always adapt these and save the profile again, without performing
-the previous step again. All of these properties are available in the ``AdditionalProperties`` property of your cluster profile. 
-   
-Before you will be able to adapt these properties, you first need to get a handle on the cluster:
+You can then view and edit the additional properties:
 
 ::
 
-   >> c = parcluster;
-   
-``c = parcluster`` will automatically load the correct profile based on the Matlab module you have loaded. So if you would have a profile for both R2022a and R2022b,
-the correct profile will be chosen when using this command.
+    $ # Access
+    $ c.AdditionalProperties
+    $
+    $ #edit
+    $ c.AdditionalProperties.<property_name> = '<property_value>'
 
-If you would prefer to use the local resources (i.e. the resources of the node you are currently on), use:
+There are two properties that have to be set to be able to submit jobs, namely ``AccountName`` and ``partition``. ``AccountName`` is the name
+of your credit account.
+
+Next to this, it is also possible to change the more standard parameters of the cluster profile. One of these is the ``JobStorageLocation`` parameter. This defaults
+to a location in your ``$VSC_HOME``. It is however strongly recommended to change this to another location, e.g. ``$VSC_DATA``. Changing this, or any of
+the other cluster profile parameters can be done as follows:
 
 ::
 
-   >> c = parcluster('local');
+    $ # Access
+    $ c.JobStorageLocation = '</path/to/your/custom/jobdir>'
 
-You can set a range of additional properties on each profile. There are two properties that are required, namely ``AccountName`` and ``WallTime``. Set any 
-other to your preference. Once these are saved, they will be kept in the settings of your cluster profile, but they can always be adapted again later.
+Both after changing any of the additional properties or the standard parameters, you will have to save that profile to keep the changes after closing your
+session:
 
 ::
 
-   >> % View the additional properties
-   >> c.AdditionalProperties
-   >> % set the required properties
-   >> c.AdditionalProperties.AccountName = <account-name>;
-   >> c.AdditionalProperties.WallTime = '05:00:00';
-   >> % save the profile
-   >> c.saveProfile
-   
-Now the profile is ready, and you should be able to submit multi-node jobs with Matlab now.
+    $ c.saveProfile;
+
 
 Submitting jobs
 +++++++++++++++
 
-Submitting jobs will happen from within Matlab. There are two ways to do this. You can start a Matlab session on a login node, or you can first request an
-interactive job, where you launch your Matlab session. Which one you choose will depend on the workload you plan to have on the node before submitting a job.
-As for any other work on the cluster, you can always do minor work on the login node, but for heavier calculations (before submitting your multinode job), you should
-use an interactive job. 
+Submitting jobs will happen from within Matlab. This means you will have to start a Matlab instance first. You can only use the Parallel Server Toolbox (and thus submit jobs from
+within Matlab) from a compute node. You can also not use the GUI from a compute node, so this means that you cannot use the GUI together with Parallel Server. 
 
-In general, we recommend to carry out the examples below via Matlab's command line interface
-(as shown in the configuration section). It is also possible to use the Matlab GUI, in which case it
-is best to do this via a NoMachine connection. If you then need to launch the Matlab GUI in an
-interactive job, don't forget to add ``-X`` option to qsub and keep in mind that the GUI will
-necessarily be less responsive.
+First of all, request an interactive job. Once you are inside the interactive job, you can load your preferred module, as
+explained above. You can then load the Matlab and then launch the Matlab command line (with ``matlab -nodisplay``).
 
-Now you can start both interactive and independent batch jobs with the previously configured cluster profile. Follow the steps below to submit a job.
+With the parallel toolbox, you can now submit jobs from within Matlab to the cluster. You can start both interactive and independent batch jobs with the previously configured
+cluster profile. In both cases, you request a number of threads, either using the ``parpool`` or ``batch``
+function. Under the hood, Matlab launches a Slurm job to request resources of the system. Different from submitting a Slurm job yourself, there is no direct way to specify the number of nodes and cores.
+Matlab just requests a number of tasks, and the system gives whatever is available, meaning that cores could be spread out over a number of nodes.
 
 Interactive job
 ***************
@@ -129,43 +106,15 @@ You can start an interactive job using the ``parpool`` function:
 ::
 
     >> c = parcluster;
-    >> p = parpool(72); % requesting 72 cores
-    
-Once the job has started, you'll receive output like this:
+    >> p = parpool(4); % requesting 4 cores
 
-::
+Once the job starts, all your following commands will be executed on the pool of cores you requested.
 
-    Starting parallel pool (parpool) using the 'genius R2022a' profile ...
 
-    additionalSubmitArgs =
-
-        '-l nodes=2:ppn=36 -l pmem=4gb -A '<account_name>' -l walltime=00:30:00'
-
-    Connected to the parallel pool (number of workers: 72).
-
-    ans =
-
-        ClusterPool with properties:
-
-                Connected: true
-               NumWorkers: 72
-                     Busy: false
-                  Cluster: genius R2022a
-            AttachedFiles: {}
-        AutoAddClientPath: true
-                FileStore: [1x1 parallel.FileStore]
-               ValueStore: [1x1 parallel.ValueStore]
-              IdleTimeout: 30 minutes (30 minutes remaining)
-              SpmdEnabled: true
-     EnvironmentVariables: {}
-
-    >> <start typing your commands here>
-
-    
 Batch job
 *********
 
-Batch jobs are started with the ``batch`` function. Here we will give you an example job where we query the working directories of each of the threads Matlab is using. 
+Batch jobs are started with the ``batch`` function. Here we will give you an example job where we query the working directories of each of the threads Matlab is using.
 Have a look at the `Matlab documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>`_ for more information.
 
 ::
@@ -184,11 +133,11 @@ If you are running multiple jobs, you can get an overview of all jobs as follows
 ::
 
     >> jobs = c.Jobs;
-    
+
 To get for example the output of the second job in this list, you can use the following:
 
 ::
 
     >> job2 = c.Jobs(2);
     >> job2.fetchOutputs{:}
-    
+

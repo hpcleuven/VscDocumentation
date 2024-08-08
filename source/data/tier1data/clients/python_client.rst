@@ -48,14 +48,10 @@ There are three ways to authenticate with the Python-iRODSclient:
    up. You might need to put the file in a folder that doesn't require administrator rights.  
 
 3. Linux users can first authenticate with :ref:`icommands`. 
-   Then, they create a second configuration file as follows:
+   The user is also authenticated for the Python-iRODSClient.
 
-   .. code-block:: sh
-
-      cp ~/.irods/irods_environment.json ~/.irods/irods_environment_python.json
-      sed -i 's/pam_password/PAM/g'  ~/.irods/irods_environment_python.json
-
-Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
+.. note::
+  Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
 
 Creating a session
 ------------------
@@ -81,15 +77,13 @@ In a script, this can be done as follows:
    with iRODSSession(irods_env_file=env_file, **ssl_settings) as session:
        [your code here]
 
-Note: If you used the third login method, replace ``~/.irods/irods_environment.json`` with ``~/.irods/irods_environment_python.json``.
-
 In an interactive session you might want to replace the with statement above with:
 
 .. code-block:: python
 
    session = iRODSSession(irods_env_file=env_file, **ssl_settings)
 
-At the end of your session, you should clean up with:
+In that case, you should clean up your session at the end:
 
 .. code-block:: python
 

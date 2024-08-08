@@ -9,53 +9,148 @@ wICE advanced guide
 Compiling software
 ------------------
 
-The wICE compute nodes feature Intel processors nicknamed IceLake, which are
-the successors of the SkyLake and CascadeLake architectures which you can find
-on Genius. Although architectural differences are rather small, it is highly
-recommended to compile a version of your code specifically for wICE. A good approach
-to compile on any cluster (such as wICE) is to launch an interactive job (with the
-``srun`` command).
+Compared to the SkyLake and CascadeLake CPUs on Genius, the wICE nodes
+feature more recent CPU models such as Intel IceLake, Intel Sapphire Rapids
+and AMD Genoa. While architectural differences between SkyLake and CascadeLake
+CPUs can be neglected, the differences with newer CPU models are more
+substantial. When it comes to GPUs there are also significant differences in
+the capabilities of P100, V100, A100 and H100 GPUs.
 
-Many dependencies you might need are centrally installed. The modules that are
-optimized for wICE are available in ``/apps/leuven/icelake/2021a/modules/all``.
-This directory has to be in the ``$MODULEPATH`` environment variable in order
-to make those modules available. Normally this should happen automatically, but
-in case of problems it is a good idea to check this. If for some reason it is
-missing, it can be added by executing:
-
-.. code-block:: shell
-
-    $ module use /apps/leuven/icelake/2021a/modules/all
-
-Note that in the future, newer versions of software will be compiled using
-different toolchain versions. In order to use modules from different toolchain
-versions, you can use:
-
-.. code-block:: shell
-
-    $ module use /apps/leuven/icelake/<toolchain-version>/modules/all
-
-where valid choices for ``<toolchain-version`` look like ``2021a``, ``2022b``,
-etc. Older versions of the toolchains will however not be provided because they
-are not compatible with the new cluster. Please contact
-:ref:`support <user support VSC>` if you run into problems arising from using
-newer libraries than the ones provided on Genius.
+When locally installing software yourself, we therefore recommend to have
+separate installations for the different types of CPUs and (if applicable)
+GPUs on which you intend to run the software. This rule applies most strongly
+to performance-critical code which is compiled from source. It applies less
+strongly to precompiled binaries or interpreted code such as pure Python
+scripts (meaning that it is typically not necessary to e.g. create different
+Conda environments for different CPU types).
 
 .. note::
 
-   If you are trying to write scripts that work on several VSC clusters, it can
-   be handy to make use of environment variables like ``$VSC_ARCH_LOCAL``,
-   which is set to the local architecture. As an example, the statement
-   ``module use /apps/leuven/${VSC_ARCH_LOCAL}/2021a/modules/all`` will enable
-   using skylake modules when you are on a Genius SkyLake node, icelake modules
-   when you are on a wICE IceLake node, etc. Another environment variable that
-   can be interesting is ``$VSC_INSTITUTE_CLUSTER``, which resolves to
-   ``genius`` on Genius nodes and to ``wice`` on wICE nodes.
+    Remember that precompiled binaries (as is often the case when e.g. Conda
+    or PyPI are involved) are not guaranteed to deliver optimal performance
+    for the target device. In case of doubt, performance-critical parts of
+    an application should not rely on precompiled binaries and instead use
+    optimized binaries as provided by the centrally installed modules and/or
+    by local installations from source.
 
-Similar to other VSC clusters, wICE supports two toolchain flavors:
-:ref:`FOSS <FOSS toolchain>` and :ref:`Intel <Intel toolchain>`. For more
-general information on software development on the VSC, have a look at this
-:ref:`overview <software_development>`.
+.. note::
+
+    Older toolchains (compilers, BLAS libraries, ...) may not be able to take
+    full advantage of newer CPU models and so we typically recommend using
+    the most recent available toolchains. Sapphire Rapids CPUs provide new
+    'AMX' instructions, for example, which may be useful for AI applications.
+    When using GNU compilers, however, the GCC version needs to be
+    sufficiently recent (>= v11) in order to generate AMX code.
+
+To let jobs use the correct installation at runtime, you can make use of
+predefined environment variables such as ``${VSC_ARCH_LOCAL}`` (and possibly
+``${VSC_ARCH_SUFFIX}`` and ``${VSC_INSTITUTE_CLUSTER}``) to organize your
+installations (see the examples below).
+
+For software using CPUs, the different installations would be:
+
+- one for SkyLake and CascadeLake CPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``skylake`` or ``cascadelake``; :raw-html:`<br />`
+  if needed you can control this for your jobs by e.g. adding a
+  ``--constraint=cascadelake`` Slurm option)
+- one for IceLake CPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``icelake``)
+- one for Sapphire Rapids CPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``sapphirerapids``)
+
+For software which also uses GPUs, this would be:
+
+- one for SkyLake CPUs with P100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``skylake``)
+- one for CascadeLake CPUs with V100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``cascadelake``)
+- one for IceLake CPUs with A100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``icelake``)
+- one for AMD Genoa CPUs with H100 GPUs
+  :raw-html:`<br />`
+  (``${VSC_ARCH_LOCAL}`` = ``zen4`` and ``${VSC_ARCH_SUFFIX}`` = ``-h100``)
+
+Unless mentioned otherwise, the ``${VSC_ARCH_SUFFIX}`` corresponds to an
+empty string. You can check which CPU and GPU models are present in which
+partitions on the :ref:`genius hardware` and :ref:`wice hardware` pages.
+
+Many dependencies you might need are centrally installed. The modules
+that are optimized for wICE are available when the appropriate
+:ref:`cluster module <cluster_module>` is loaded. In most cases this will
+happen automatically, but in case of problems it is a good idea to double check
+the ``$MODULEPATH`` environment variable; it should contain paths that look as
+starting with ``/apps/leuven/rocky8/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
+where ``${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}`` indicates the architecture of the
+node in question.
+
+Similar to other VSC clusters, wICE supports two families of common toolchains:
+:ref:`FOSS <FOSS toolchain>` and :ref:`Intel <Intel toolchain>`. Next to that,
+various `subtoolchains <https://docs.easybuild.io/common-toolchains/>`__ are
+available. For more general information on software development on the VSC,
+have a look at this :ref:`overview <software_development>`.
+
+The following jobscripts show one of the ways you can put this into practice
+to compile and then run your software (to be repeated for each CPU model that
+you intend to use):
+
+::
+
+    #!/bin/bash -l
+    #SBATCH --clusters=...
+    #SBATCH --partition=...
+    #SBATCH ...
+
+    module load intel/2022b  # just an example
+
+    installdir=${VSC_DATA}/your_software/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/intel-2022b
+    mkdir -p ${installdir}
+
+    # build the software, installing the binaries in ${installdir}/bin
+
+::
+
+    #!/bin/bash -l
+    #SBATCH --clusters=...
+    #SBATCH --partition=...
+    #SBATCH ...
+
+    module load intel/2022b
+
+    installdir=${VSC_DATA}/your_software/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/intel-2022b
+    export PATH=${installdir}/bin:${PATH}
+
+    # run the software
+
+
+.. _wice_memory_hierarchy:
+
+Memory hierarchy
+----------------
+
+When running applications in parallel it is often a good idea to take the
+memory hierarchy into account (for example when pinning MPI processes
+in :ref:`hybrid MPI/OpenMP calculations <hybrid_mpi_openmp_programs>`).
+The nodes in the ``batch`` partition on Genius and wICE are the simpler ones
+with a single NUMA domain and L3 cache per CPU, with the usual core-private
+L1 and L2 caches. Other node types may feature more than one NUMA domain per
+CPU and (in the case of AMD CPUs) more than one L3 cache per CPU.
+The 48 cores in a Sapphire Rapids CPU, for example, share a large L3 cache
+but are organized in 4 groups of 12 cores, each group associated with one
+NUMA domain. For a complete overview, please consult the
+:ref:`genius hardware` and :ref:`wice hardware` pages.
+
+.. note::
+
+    You can also retrieve this information using the ``lstopo-no-graphics``
+    command. When on a compute node, keep in mind that the output will only
+    be complete if all available cores have been allocated to your job.
+
 
 .. _wice_worker:
 
@@ -69,12 +164,14 @@ use a specific module:
 
 .. code-block:: shell
 
-    $ module use /apps/leuven/skylake/2021a/modules/all
     $ module load worker/1.6.12-foss-2021a-wice
 
 If instead you want to launch Worker jobs from an interactive job running on
-wICE, you can use the ``worker/1.6.12-foss-2021a`` module (but do make sure
-this is the version installed in a subdirectory of ``/apps/leuven/icelake``).
+wICE, you can use the ``worker/1.6.12-foss-2021a`` module. But do make sure
+this is the version installed *specifically* for wICE, which you can check
+by looking at the installation directory of worker. For example, the path
+returned by ``which worker`` should start with ``/apps/leuven/rocky8/icelake``
+or ``/apps/leuven/rocky8/sapphirerapids`` or ``/apps/leuven/rocky8/zen4-h100``.
 
 Also note that the Worker support for Slurm is not yet complete. Both
 the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
@@ -84,33 +181,3 @@ All the resources furthermore need to be specified inside the Slurm script
 used as input for Worker (passing resources via the command line is not
 supported). Various examples can be found in a `development branch
 <https://github.com/gjbex/worker/tree/development_slurm/examples/>`__.
-
-
-.. _wice_conda:
-
-Conda on wICE
--------------
-
-As the hardware is different on Genius and wICE, we advise
-to have two separate :ref:`Conda installations <conda for Python>` (one for each
-cluster). The :ref:`interactive Slurm partition on wICE<submit to wice interactive node>` 
-can be used as an equivalent of the Genius login nodes for wICE, making it suited 
-for Conda environment management.
-
-To select the correct Conda installation when you log in and at the
-start of your jobs, you can set up your ``~/.bashrc`` file in the following way:
-
-.. code-block:: shell
-   
-   case ${VSC_INSTITUTE_CLUSTER} in
-       genius)
-           export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
-           ;;
-        wice)
-           export PATH="${VSC_DATA}/miniconda3-wice/bin:${PATH}"
-           ;;
-   esac
-
-Also keep in mind that applying your ``~/.bashrc`` settings in your Slurm jobs
-requires placing ``#!/bin/bash -l`` at the top of your Slurm jobscript,
-as emphasized in the :ref:`Site-specific Slurm info page <leuven_job_shell>`.
