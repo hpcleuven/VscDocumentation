@@ -423,7 +423,7 @@ rst_prolog += """
 .. _TigerVNC: https://tigervnc.org/
 .. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm 
 .. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
-.. _TurboVNC download page: https://sourceforge.net/projects/turbovnc/files/
+.. _TurboVNC download page: https://github.com/TurboVNC/turbovnc/releases
 .. _TurboVNC: https://www.turbovnc.org/
 .. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
 .. _VSC account page: https://account.vscentrum.be/
