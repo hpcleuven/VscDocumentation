@@ -21,6 +21,6 @@ English version
   Foundation - Flanders (FWO) and the Flemish Government.
 
 |KUL| Moreover, if you are in the KU Leuven association, you are also
-requested to add the relevant papers to the virtual collection "High
-Performance Computing" in Lirias so that we can easily generate the
-publication lists with relevant publications.
+requested to add the relevant papers to the virtual collection "KUL-HPC"
+in Lirias so that we can easily generate the publication lists with relevant
+publications.
