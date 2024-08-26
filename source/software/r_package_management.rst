@@ -97,7 +97,7 @@ Alternatively you can download the desired package
 
       $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
 
-and install it from the commandline with
+and install it from the command line with
 
 .. code-block:: bash
   
