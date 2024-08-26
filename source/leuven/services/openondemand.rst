@@ -422,7 +422,7 @@ RStudio Server
 This interactive app allows you to run an RStudio session on the cluster. 
 This R session makes use of the R/4.2.2-foss-2022b module. 
 Additionally, the R-bundle-CRAN and R-bundle-Bioconductor modules can be loaded 
-on top of the base R to provide easy access to hundreds of preinstalled packages.
+on top of the base R module to provide easy access to hundreds of preinstalled packages.
 
 You can use your own personal R libraries with Studio, see :ref:`R package management<r_package_management_standard_lib>`. 
 While the use of R projects is also available within RStudio, loading such project may affect your module library paths as well as your personal R library path.
