@@ -45,18 +45,17 @@ In this example we assume you will primarily compute on icelake with R version 4
 
       $ mkdir -p ${VSC_DATA}/Rlibs/rocky8/icelake/R-4.2.2
 
-Now that we've setup this directory, the next step is to make sure it is used 
-by default when starting an R session. We can use the R_LIBS_USER variable to
-specify our prefered install path in the ~/.Renviron file. By usesing system
-variables such as `${VSC_ARCH_LOCAL}` or `${EBVERSIONR}` we can ensure that this
-path always matches the OS and architecture of the compute node as well as the
-R version of the currently loaded R module.
-
-The following command creates the ~/.Renviron file and sets the R_LIBS_USER variable:
+The next step is to ensure such install locations are used by default in the R package installation process.
+This can be done by setting the `R_LIBS_USER` variable to in the `~/.Renviron` file as follows:
 
 .. code-block:: bash
 
-      $ echo "R_LIBS_USER=\${VSC_DATA}/Rlibs/\${VSC_OS_LOCAL}/\${VSC_ARCH_LOCAL}/R-\${EBVERSIONR}" > ~/.Renviron
+      $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> ~/.Renviron
+
+The `${VSC_OS_LOCAL}` and `${VSC_ARCH_LOCAL}` environment variables are predefined
+and match the OS version (e.g. `rocky8`) and CPU model (e.g. `icelake`) of the node.
+The `${EBVERSIONR}` variable contains the R version (e.g. `4.2.2`) of the currently loaded
+R module.
 
 R will now use this path as default install path, ensuring you are always installing
 your packages in the appropriate R library folder.
