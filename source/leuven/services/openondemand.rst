@@ -424,7 +424,7 @@ This R session makes use of the R/4.2.2-foss-2022b module.
 Additionally, the R-bundle-CRAN and R-bundle-Bioconductor modules can be loaded 
 on top of the base R module to provide easy access to hundreds of preinstalled packages.
 
-You can use your own personal R libraries with Studio, see :ref:`R package management<r_package_management_standard_lib>`. 
+It is also possible to use locally installed R packages with RStudio, see :ref:`R package management<r_package_management_standard_lib>`. 
 While the use of R projects is also available within RStudio, loading such project may affect your module library paths as well as your personal R library path.
 We therefore recommend to only use R projects with renv, ensuring a completely isolated library for your project.
 
