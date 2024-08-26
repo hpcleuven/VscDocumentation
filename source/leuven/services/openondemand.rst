@@ -420,7 +420,8 @@ RStudio Server
 --------------
 
 This interactive app allows you to run an RStudio session on the cluster. 
-This R session makes use of the R/4.2.2-foss-2022b module. 
+In the 'Toolchain year and R version' drop-down menu, you can control the R installation
+that will be used for this session (e.g. the `R/4.2.2-foss-2022b` module).
 Additionally, the R-bundle-CRAN and R-bundle-Bioconductor modules can be loaded 
 on top of the base R module to provide easy access to hundreds of preinstalled packages.
 
