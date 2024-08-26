@@ -62,7 +62,8 @@ your packages in the appropriate R library folder.
 
 .. note::
 
-  This setup also works with the Open OnDemand RStudio Server app.
+  This `.Renviron` configuration will also work as expected in Open OnDemand apps
+  such as RStudio Server.
 
 The next step is to load the appropriate R module and launch R.
 
