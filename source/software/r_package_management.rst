@@ -78,14 +78,9 @@ From here, installing packages can be as simple as:
       > install.packages("DEoptim")
 
 
-If you are unsure if R will install in the correct location, you can check where 
-R will install your packages using the `.libPaths()` command in your R console.
-This will list all known library locations, the first one being the default 
-location.
-
-.. code-block:: r
-
-      > .libPaths()
+If you are unsure whether R will install in the correct location, you can first list
+the known library locations by executing `.libPaths()`. The first location is the
+default one.
 
 You can also specify your desired library path as an extra argument in the install command.
 This will take precedent over any defaults.
