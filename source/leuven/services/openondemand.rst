@@ -447,8 +447,8 @@ You can do this by using the ``lib`` argument for both the ``install.packages`` 
   It is recommended to use the ``install.packages()`` function instead.
 - RStudioServer will by default store the RStudio cache in ``$VSC_HOME/.local/share/rstudio``.
   This cache can get very large, and cause you to exceed the quota of your home directory.
-  To avoid this, you can redirect this cache to your scratch directory by setting ``$XDG_DATA_HOME``
-  variables in your ``~/.bashrc``.
+  To avoid this, you can redirect this cache to your scratch directory by setting the ``$XDG_DATA_HOME``
+  variable in your ``~/.bashrc``:
 
   .. code-block:: bash
 
