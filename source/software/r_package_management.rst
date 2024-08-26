@@ -103,7 +103,7 @@ and install it from the command line with
   
       $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/rocky8/icelake/R-4.2.2
 
-If the installation of a package requires devtools, please review the :ref:`devtools documentation<r_devtools>`.
+If the installation of a package requires devtools, please consult the :ref:`devtools documentation<r_devtools>`.
 
 
 .. _r_package_management_conda:
