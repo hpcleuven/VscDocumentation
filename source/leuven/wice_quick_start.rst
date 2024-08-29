@@ -159,7 +159,7 @@ per node) which you can select via the ``gpu_h100`` partition, e.g.::
             --nodes=1 --ntasks=16 --gpus-per-node=1 myjobscript.slurm
 
 For easier development and testing with a full GPU, also a ``gpu_a100_debug``
-partition is available which accepts jobs with walltimes up to 30 minutes,
+partition is available which accepts jobs with walltimes up to 1 hour,
 e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100_debug \
