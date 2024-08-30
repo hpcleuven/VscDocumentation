@@ -167,4 +167,6 @@ e.g.::
             myjobscript.slurm
 
 The node in this partition is of the same type as those in the ``interactive``
-partition except that its A100 GPU is not divided into smaller instances.
+partition except that its A100 GPU is not divided into smaller instances. Note
+that you can only have a single ``gpu_a100_debug`` job in the queue at any
+time.
