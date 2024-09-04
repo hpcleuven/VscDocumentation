@@ -25,19 +25,22 @@ to contact support when encountering issues during these local installations.
 Standard R package installation
 -------------------------------
 
-It is important to realize that R will use by default the `$VSC_HOME/R` path
-to install new packages. Since the home directory is only 3GB in size, it is not
-the recommended location to install software. So, before we can begin with 
-installing our packages, it is important to prepare our library location first.
+Firstly, it is important to realize that R will use by default the `$VSC_HOME/R` path
+to install new packages. Since home directories have limited quota, it is not
+the recommended location to install software and e.g. `$VSC_DATA` should be used
+instead.
 
-R packages are compiled during the installation and as a result, they are optimized
-for the hardware they were installed on. Packages installed on the one partition
-may thus perform worse when used on another partition. R packages are often also
-version specific and may not work with other versions of R. With this in mind,
-we will first create a directory structure providing a unique path for each OS
-version, hardware architecture and R version.
+Secondly, it should be kept in mind that R packages often include extensions written in
+compiled languages (e.g. C++ or Fortran) and that the centrally installed R modules are
+configured to compile these extensions with optimizations for the CPU architecture at hand.
+This means that such R packages cannot in general be used on different partitions than the
+one they were created on.
 
-In this example we assume you will primarily compute on icelake with R version 4.2.2.
+Thirdly, R packages may also only work with certain versions of R and not with other version.
+
+With these three considerations in mind, we recommend to use a directory structure which
+provides a unique path for each OS version, hardware architecture and R version.
+The example below creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
 
 .. code-block:: bash
 
