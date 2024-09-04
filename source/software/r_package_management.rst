@@ -15,12 +15,10 @@ loading the R-bundle-CRAN and R-bundle-Bioconductor modules, e.g.:
 
        $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2    
 
-However, perhaps you want a more recent version of one specific package or the
-package you need is not provided via our modules, in that case you may need to
-set up your own personal R library to install those packages yourself.
-Below you can find extensive documentation on how to manage your own R library
-on our HPC infrastructure. If you do encounter problems when doing so, do not 
-hesitate to contact support.
+It is possible, however, that these modules do not contain all R packages you need
+or that the package versions do not meet your requirements. In this case you will
+need to locally install those packages, as will be described below. Do not hesitate
+to contact support when encountering issues during these local installations.
 
 .. _r_package_management_standard_lib:
 
