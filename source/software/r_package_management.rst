@@ -7,9 +7,9 @@ Introduction
 ------------
 
 There exist thousands of R packages, available from online repositories like CRAN,
-Bioconductor or github. The more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
-are included in the centrally installed R modules or can be accessed by simply 
-loading the R-bundle-CRAN and R-bundle-Bioconductor modules. 
+Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
+are either already included in the centrally installed R module or can be accessed by
+loading the R-bundle-CRAN and R-bundle-Bioconductor modules, e.g.:
 
 .. code:: r
 
