@@ -426,8 +426,11 @@ Additionally, the R-bundle-CRAN and R-bundle-Bioconductor modules can be loaded
 on top of the base R module to provide easy access to hundreds of preinstalled packages.
 
 It is also possible to use locally installed R packages with RStudio, see :ref:`R package management<r_package_management_standard_lib>`. 
-While the use of RStudio projects is also available within RStudio, loading such project may affect your module library paths as well as your personal R library path.
-We therefore recommend to only use RStudio projects with `renv <https://rstudio.github.io/renv/articles/renv.html>`__, ensuring a completely isolated library for your project.
+RStudio furthermore allows to create RStudio projects to manage your
+R environments. When doing so, we recommend to select the
+`renv <https://rstudio.github.io/renv/articles/renv.html>`_ option
+to ensure a completely independent R environment. Without `renv`,
+loading an RStudio project may lead to incomplete R library paths.
 
 For more information on how to use RStudio, check out the `official documentation <https://docs.rstudio.com/>`__.
 
