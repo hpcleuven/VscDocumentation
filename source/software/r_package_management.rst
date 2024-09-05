@@ -36,7 +36,7 @@ configured to compile these extensions with optimizations for the CPU architectu
 This means that such R packages cannot in general be used on different partitions than the
 one they were created on.
 
-Thirdly, R packages may also only work with certain versions of R and not with other version.
+Thirdly, R packages may also only work with certain versions of R and not with other versions.
 
 With these three considerations in mind, we recommend to use a directory structure which
 provides a unique path for each OS version, hardware architecture and R version.
