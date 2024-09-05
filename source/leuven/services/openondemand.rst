@@ -431,11 +431,6 @@ We therefore recommend to only use RStudio projects with `renv <https://rstudio.
 
 For more information on how to use RStudio, check out the `official documentation <https://docs.rstudio.com/>`__.
 
-The use is very similar to regular RStudio.
-It is recommended to install packages in a folder on your ``$VSC_DATA`` instead of the default location though,
-to avoid clogging your ``$VSC_HOME``.
-You can do this by using the ``lib`` argument for both the ``install.packages`` and the ``library`` function.
-
 **Remarks:**
 
 - Navigating between your different directories is possible using the file explorer.
