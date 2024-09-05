@@ -432,7 +432,7 @@ R environments. When doing so, we recommend to select the
 to ensure a completely independent R environment. Without `renv`,
 loading an RStudio project may lead to incomplete R library paths.
 
-For more information on how to use RStudio, check out the `official documentation <https://docs.rstudio.com/>`__.
+For more information on how to use RStudio, check out the `official documentation <https://docs.posit.co/ide/user/>`__.
 
 **Remarks:**
 
