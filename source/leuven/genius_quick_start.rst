@@ -212,7 +212,7 @@ the ``batch_debug`` or ``gpu_p100_debug`` partition, respectively.
 A few restrictions apply to a debug job:
 
 - it can only use at most two nodes for CPU jobs, a single node for GPU jobs
-- its walltime is at most 30 minutes
+- its walltime is at most 1 hour
 - you can only have a single debug job in the queue at any time.
 
 To run a debug job for 20 minutes on two CPU nodes, you would use::
