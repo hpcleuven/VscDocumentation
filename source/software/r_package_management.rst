@@ -9,7 +9,7 @@ Introduction
 There exist thousands of R packages, available from online repositories like CRAN,
 Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
 are either already included in the centrally installed R module or can be accessed by
-loading the R-bundle-CRAN and R-bundle-Bioconductor modules, e.g.:
+loading the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules, e.g.:
 
 .. code:: r
 
@@ -18,17 +18,16 @@ loading the R-bundle-CRAN and R-bundle-Bioconductor modules, e.g.:
 It is possible, however, that these modules do not contain all R packages you need
 or that the package versions do not meet your requirements. In this case you will
 need to locally install those packages, as will be described below. Do not hesitate
-to contact support when encountering issues during these local installations.
+to contact your local support team when encountering issues during these local installations.
 
 .. _r_package_management_standard_lib:
 
 Standard R package installation
 -------------------------------
 
-Firstly, it is important to realize that R will use by default the `$VSC_HOME/R` path
-to install new packages. Since home directories have limited quota, it is not
-the recommended location to install software and e.g. `$VSC_DATA` should be used
-instead.
+Firstly, it is important to realize that R by default uses the `$VSC_HOME/R` path
+to install new packages. Since `$VSC_HOME` has limited quota, it is not
+the recommended location to install software. Instead, we recommend to use `$VSC_DATA`.
 
 Secondly, it should be kept in mind that R packages often include extensions written in
 compiled languages (e.g. C++ or Fortran) and that the centrally installed R modules are
@@ -44,7 +43,9 @@ The example below creates such a structure for a Rocky8 OS, Icelake CPU and R ve
 
 .. code-block:: bash
 
-      $ mkdir -p ${VSC_DATA}/Rlibs/rocky8/icelake/R-4.2.2
+      # From within an interactive session on an icelake compute node:
+      $ module load R/4.2.2-foss-2022b
+      $ mkdir -p ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
 
 The next step is to ensure such install locations are used by default in the R package installation process.
 This can be done by setting the `R_LIBS_USER` variable to in the `~/.Renviron` file as follows:
@@ -66,10 +67,11 @@ your packages in the appropriate R library folder.
   This `.Renviron` configuration will also work as expected in Open OnDemand apps
   such as RStudio Server.
 
-The next step is to load the appropriate R module and launch R.
+The next step is to load the appropriate R module and run R.
 
 .. code-block:: bash
 
+      # From within an interactive session on an icelake compute node:
       $ module load R/4.2.2-foss-2022b
       $ R
 
@@ -80,12 +82,12 @@ From here, installing packages can be as simple as:
       > install.packages("DEoptim")
 
 
-If you are unsure whether R will install in the correct location, you can first list
+If you are unsure whether R will install your desired package in the correct location, you can first list
 the known library locations by executing `.libPaths()`. The first location is the
 default one.
 
 You can also specify your desired library path as an extra argument in the install command.
-This will take precedent over any defaults.
+This will take precedence over any defaults.
 
 .. code-block:: r
 
@@ -101,8 +103,10 @@ Alternatively you can download the desired package
 and install it from the command line with
 
 .. code-block:: bash
-  
-      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/rocky8/icelake/R-4.2.2
+
+      # From within an interactive session on an icelake compute node:
+      $ module load R/4.2.2-foss-2022b
+      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
 
 If the installation of a package requires devtools, please consult the :ref:`devtools documentation<r_devtools>`.
 
