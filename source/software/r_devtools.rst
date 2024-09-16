@@ -28,7 +28,7 @@ approach to use and install devtools.
 Installing in a local R library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you manage your R packages in a :ref:`local R library<r_package_management_standard_lib>` under ``$VSC_DATA/R``
+If you manage your R packages in a :ref:`local R library<r_package_management_standard_lib>` under ``$VSC_DATA/Rlibs``
 while using a centrally installed R module, you can use the devtools package included in the module.
 You will need to execute the following commands in the R console:
 
@@ -36,11 +36,11 @@ You will need to execute the following commands in the R console:
 
    > # First check that the R library path points to your local R library:
    > .libPaths()
-   > # Set the R library path if this is not the case.
-   > .libPaths("/data/leuven/XXX/vscXXXXX/R/")
+   > # Set the R library path if this is not the case. e.g.
+   > .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky8/icelake/R-4.2.2")
    > # Load devtools and e.g. install your package from github:
    > library(devtools)
-   > devtools::install_github("Developer/Package")
+   > install_github("Developer/Package")
 
 .. note::
 

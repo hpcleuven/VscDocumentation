@@ -6,51 +6,110 @@ R package management
 Introduction
 ------------
 
-Most of the useful R packages can be installed separately. Some of those are 
-part of the centrally installed R modules. However, given the astounding number of 
-packages, it is not sustainable to install each and everyone of them system wide. 
-Fortunately, it is very easy for users to install R packages themselves.
-If you do encounter problems when doing so, do not hesitate to contact support.
+There exist thousands of R packages, available from online repositories like CRAN,
+Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
+are either already included in the centrally installed R module or can be accessed by
+loading the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules, e.g.:
+
+.. code:: r
+
+       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2    
+
+It is possible, however, that these modules do not contain all R packages you need
+or that the package versions do not meet your requirements. In this case you will
+need to locally install those packages, as will be described below. Do not hesitate
+to contact your local support team when encountering issues during these local installations.
 
 .. _r_package_management_standard_lib:
 
 Standard R package installation
 -------------------------------
 
-Setting up your own package repository for R is straightforward.
+Firstly, it is important to realize that R by default uses the `$VSC_HOME/R` path
+to install new packages. Since `$VSC_HOME` has limited quota, it is not
+the recommended location to install software. Instead, we recommend to use `$VSC_DATA`.
 
-#. Load the appropriate R module, i.e., the one you want the R package
-   to be available for::
+Secondly, it should be kept in mind that R packages often include extensions written in
+compiled languages (e.g. C++ or Fortran) and that the centrally installed R modules are
+configured to compile these extensions with optimizations for the CPU architecture at hand.
+This means that such R packages cannot in general be used on different partitions than the
+one they were created on.
 
-      $ module load R/3.2.1-foss-2014a-x11-tcl
+Thirdly, R packages may also only work with certain versions of R and not with other versions.
 
-#. Start R and install the package (preferably in your $VSC_DATA directory)::
+With these three considerations in mind, we recommend to use a directory structure which
+provides a unique path for each OS version, hardware architecture and R version.
+The example below creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
 
-      > install.packages("DEoptim", lib="/data/leuven/304/vsc30468/R/")
+.. code-block:: bash
 
-#. Alternatively you can download the desired package::
+      # From within an interactive session on an icelake compute node:
+      $ module load R/4.2.2-foss-2022b
+      $ mkdir -p ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
 
-      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+The next step is to ensure such install locations are used by default in the R package installation process.
+This can be done by setting the `R_LIBS_USER` variable to in the `~/.Renviron` file as follows:
 
-      and install it with::
-  
-      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l /$VSC_DATA/R/
-      
-#. These packages might depend on the specific R version, so you may
-   need to reinstall them for the other version.
-   
-Some R packages depend on libraries installed on the system.  In that case,
-you first have to load the modules for these libraries, and only then proceed
-to the R package installation.  For instance, if you would like to install
-the `gsl` R package, you would first have to load the module for the GSL
-library, .e.g., ::
+.. code-block:: bash
 
-   $ module load GSL/2.5-GCC-6.4.0-2.28
+      $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> ~/.Renviron
+
+The `${VSC_OS_LOCAL}` and `${VSC_ARCH_LOCAL}` environment variables are predefined
+and match the OS version (e.g. `rocky8`) and CPU model (e.g. `icelake`) of the node.
+The `${EBVERSIONR}` variable contains the R version (e.g. `4.2.2`) of the currently loaded
+R module.
+
+R will now use this path as default install path, ensuring you are always installing
+your packages in the appropriate R library folder.
 
 .. note::
 
-  R packages often depend on the specific R version they were installed
-  for, so you may need to reinstall them for other versions of R.
+  This `.Renviron` configuration will also work as expected in Open OnDemand apps
+  such as RStudio Server.
+
+The next step is to load the appropriate R module and run R.
+
+.. code-block:: bash
+
+      # From within an interactive session on an icelake compute node:
+      $ module load R/4.2.2-foss-2022b
+      $ R
+
+From here, installing packages can be as simple as:
+
+.. code-block:: r
+
+      > install.packages("DEoptim")
+
+
+If you are unsure whether R will install your desired package in the correct location, you can first list
+the known library locations by executing `.libPaths()`. The first location is the
+default one.
+
+You can also specify your desired library path as an extra argument in the install command.
+This will take precedence over any defaults.
+
+.. code-block:: r
+
+      > Rlibs <- "/path/to/my/R_library"
+      > install.packages("DEoptim", lib = Rlibs)
+
+Alternatively you can download the desired package
+
+.. code-block:: bash
+
+      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+
+and install it from the command line with
+
+.. code-block:: bash
+
+      # From within an interactive session on an icelake compute node:
+      $ module load R/4.2.2-foss-2022b
+      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
+
+If the installation of a package requires devtools, please consult the :ref:`devtools documentation<r_devtools>`.
+
 
 .. _r_package_management_conda:
 
