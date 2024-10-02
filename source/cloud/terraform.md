@@ -323,8 +323,9 @@ volumes = {
 (firewall)=
 ##### Firewall
 With the single VM module you can add open ports to the VM. 
-These wont export ports to the internet but it will allow other VMs to connect to that port. 
+These wont export ports to the internet by default. but it will allow other VMs to connect to that port. 
 See the `custom_secgroup.example` file for an example.
+You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port.
 
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
