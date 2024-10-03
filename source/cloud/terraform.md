@@ -325,8 +325,28 @@ volumes = {
 With the single VM module you can add open ports to the VM. 
 These wont export ports to the internet by default. but it will allow other VMs to connect to that port. 
 See the `custom_secgroup.example` file for an example.
-You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port.
+You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port:
+```
+  custom_secgroup_rules = { 
+    node_exporter = {
+      port = 9100
+      protocol = "tcp"
+      remote_ip_prefix = "0.0.0.0/0"
+      expose   = true
+    }
+  }
+```
+Will output something like:
+```
+MyVM = <<EOT
+SSH: ssh -A -p 51274 rocky@193.190.80.3
 
+node_exporter 9100 -> 193.190.80.3:51273
+EOT
+```
+:::{warning}
+Exposing ports to the internet is potentially dangerous. Make sure that the application you're exporting is properly secured.
+:::
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
 Terraform documentation to add you own changes
