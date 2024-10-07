@@ -6,7 +6,7 @@ sections:
 
 -   Instances must connect to the project's \_vm network in order to get
     external internet access (see section
-    [_vm, _vsc and _nfs_vxlan networks](#the-_vm-_vsc-and-_nfs-networks)).
+    [_vm, _vsc and _nfs_vxlan networks](#the-_vm-_vsc-and-_nfs_vxlan-networks)).
 
 -   Each cloud project can use one floating IP, a public IP address
     which you'll need to link to the resources you want to access.
