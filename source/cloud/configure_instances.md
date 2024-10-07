@@ -6,7 +6,7 @@ sections:
 
 -   Instances must connect to the project's \_vm network in order to get
     external internet access (see section
-    [_vm, _vsc and _nfs networks](#the-_vm-_vsc-and-_nfs-networks)).
+    [_vm, _vsc and _nfs_vxlan networks](#the-_vm-_vsc-and-_nfs_vxlan-networks)).
 
 -   Each cloud project can use one floating IP, a public IP address
     which you'll need to link to the resources you want to access.
@@ -33,11 +33,11 @@ For other access methods, or SSH authentication for a wider set of
 users, you'll need to set up some form of identity management yourself.
 This system administration task is beyond the scope of our tutorial.
 
-## The \_vm, \_vsc and \_nfs networks
+## The \_vm, \_vsc and \_nfs_vxlan networks
 
 Each project in the VSC cloud has its own network *`<projectname>`*`_vm`
 and --- if the project uses shares and/or vsc networks ---
-*`<projectname>`*`_nfs` and *`<projectname>`*`_vsc` respectively. Each
+*`<projectname>`*`_nfs_vxlan` and *`<projectname>`*`_vsc` respectively. Each
 is a subnet of 254 addresses, with an ip range 10.10.x.0/24, where _x_
 is a number that depends on the project and network. To see the subnets
 for your project's networks, open the Network tab, and select Networks.
