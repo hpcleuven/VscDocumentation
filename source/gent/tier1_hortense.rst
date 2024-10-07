@@ -22,6 +22,8 @@ and maintained and supported by the HPC-UGent team.
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
 
+.. _hortense_hardware_details:
+
 Hardware details
 ----------------
 
@@ -524,6 +526,26 @@ By default you'll get 12 cores per requested GPU (an explicit ppn= statement is 
     qsub -l nodes=1:gpus=1
 
 (The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
+
+
+Requesting memory
++++++++++++++++++
+
+The default memory that your job will get access is the proportional
+share of the total avaliable memory on the node:
+If you request a full node, all usable memory will be available.
+If you request ``N`` cores on a partition where nodes have ``M`` cores, you will get ``N/M``
+of the total usable memory on the node. For the number of cores and available memory per cluster, please see our
+:ref:`infrastructure <hortense_hardware_details>`,
+or you can use the :ref:`web portal <hortense_web_portal>`, open
+the desktop app and there you can browse it per partition and core using the
+submission form (there is no need to start an actual desktop).
+
+Please be aware! If you request more memory than the default memory would be,
+you will be billed for the requested memory proportion of a node.
+If you use ``X`` part of the memory on a partition where nodes have ``M`` cores,
+you will be billed for ``X*M`` (rounded up for the next integer) cores,
+even if your requested cores (``N``) are smaller than ``X*M``. 
 
 
 Limitations for jobs
