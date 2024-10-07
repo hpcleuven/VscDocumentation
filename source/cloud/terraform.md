@@ -134,11 +134,12 @@ The file now contains the definition for one VM with several options you can cus
 | image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
 | nginx_enabled | Installs nginx and exposes port 80. | true, false
-| nfs_enabled   | Connects the vfm to the NFS network. Only set true if you requested access. | true, false
-| vsc_enabled   | Connects the vfm to the VSC network. Only set true if you requested access. | true, false |
+| nfs_enabled   | Connects the vm to the NFS network. Only set true if you requested access. | true, false
+| vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (number)
-More advanced options are described further on. |
 | is_windows | Configures windows-specific behavior if `true` | true/false |
+
+More advanced options are described further on. 
 ### Cluster of VMs
 You can also deploy a public VM and multiple private VMs (without a public IP) in one go by using the cluster template:
 ```shell 
@@ -269,6 +270,7 @@ Do not remove or modify the `port_something_ssh.json` files. These keep track of
 ### Adding NFS or Nginx
 :::{tip}
 If you enabled these options upon initial creation of the VM, you don't have to do these steps
+**Since the template update of 8/10/2024**, You also no longer have to do these steps.
 :::
 
 If you added NFS or Nginx after initial creation, you need to run a script **on your VM** to mount the NFS volume or install nginx, respectively.
@@ -282,22 +284,27 @@ After connecting to your instance, run:
 ```shell
 curl http://169.254.169.254/2009-04-04/user-data | sudo bash
 ```
+:::{tip}
+Before 8/10/2024, the nfs share is mounted at `/mnt`. After 8/10/2024, the nfs share is mounted at `/mnt/nfs`.
+:::
 ### Advanced variables
 There's some extra variables you can configure:
 | Variable | Explanation | Values
 |---|---|---|
 | access_key | the name of the ssh key you want to associate with the vm/cluster | (string)
-| playbook_url | A url to an ansible playbook that gets applied when nginx_enabled = true | (string) |
+| playbook_url | A url to an ansible playbook that gets applied when nginx_enabled = true (replaced by `userscript` since 8/10/2024 ) | (string) |
+| userscript | (since 8/10/2024), a shell script that is executed when the VM is first created. | (string) |
 | project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
-| nfs_size | Size of the NFS share if nfs_enabled=true | (number) |
 
 #### Single VM only
 | Variable | Explanation | Values |
 | --- | --- | --- |
-| public | Add a public IP if true | true/false|
 | public | Add a public IP if true | true/false |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
+| cloud_init | (since 8/10/2024) cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
+| nfs_size | Size of the NFS share if nfs_enabled=true | (number) |
+| crontabs | list of crontabs to run | see [Crontabs](crontab) |
 
 #### Cluster only
 | Variable | Explanation | Values |
@@ -306,27 +313,36 @@ There's some extra variables you can configure:
 | private_flavor | Sets a different flavor for the private VMs | see [Flavor list](flavors.md) |
 | public_nginx_enabled | enables nginx on the public instance | true/false |
 | public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
+| public_secgroup_rules | (Since 8/10/2024) security group rules for the public instance | see [Firewall](#firewall)|
 (volumes)=
-##### Volumes
+#### Volumes
 if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `volume.example`).
 The `size` represents the volume size in gigabytes.
 :::{tip}
-This variable will create and attach the volume as a regular disk, but it will **not** create a filesystem or mount it. 
+This variable will create and attach the volume as a regular disk, but it will **not** create a filesystem or mount it. New versions of the template support `automount = true`, see [automount](#automount).
 :::
-```terraform
+```hcl
 volumes = {
   vol1 = {
     size = 100
   }
 }
 ```
+(automount)=
+##### Automount
+Since 8/10/2024, the module supports automatically creating a filesystem, mounting it and resizing it as necessary.
+It adds these arguments to `volumes`:
+| Variable | Explanation | Values |
+| --- | --- | --- |
+| automount | Automatically create a filesystem and mount it | true/false|
+| filesystem | Sets the filesystem to be created | see [here](https://docs.ansible.com/ansible/latest/collections/community/general/filesystem_module.html#parameter-fstype) (default: "ext4") |
 (firewall)=
-##### Firewall
+#### Firewall
 With the single VM module you can add open ports to the VM. 
 These wont export ports to the internet by default. but it will allow other VMs to connect to that port. 
 See the `custom_secgroup.example` file for an example.
 You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port:
-```
+```hcl
   custom_secgroup_rules = { 
     node_exporter = {
       port = 9100
@@ -337,7 +353,7 @@ You can set `expose = true` for a particular port and terraform will select a ra
   }
 ```
 Will output something like:
-```
+```text
 MyVM = <<EOT
 SSH: ssh -A -p 51274 rocky@193.190.80.3
 
@@ -347,6 +363,22 @@ EOT
 :::{warning}
 Exposing ports to the internet is potentially dangerous. Make sure that the application you're exporting is properly secured.
 :::
+(crontab)=
+#### crontabs
+The template can install crontabs to the machine with this syntax:
+```hcl
+  crontabs = {
+    "date"= {
+      cron_time = "* * * * *"
+      cron_user = "root" #optional, default "root"
+      script = <<-EOL
+      #!/bin/bash
+      echo $(date) > /tmp/date.txt
+      EOL
+    }
+  }
+```
+
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
 Terraform documentation to add you own changes
