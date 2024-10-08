@@ -6,15 +6,23 @@ Text-mode access using OpenSSH
 Prerequisite: OpenSSH
 ---------------------
 
-You will need a public/private key pair to request and account, this key pair
-has to be used to authenticate when making a connection.  For information
-on how to create a key pair, see :ref:`the page on generating keys <generating keys linux>`.
+Before connecting with OpenSSH, make sure you have completed the following steps:
+
+#. :ref:`Create a public/private SSH key pair <generating keys linux>`, which
+   will be used to authenticate when making a connection.
+
+#. :ref:`Apply for a VSC account<apply for account>` and upload your public SSH
+   key to the `VSC accountpage <https://account.vscentrum.be>`_.
+
+#. :ref:`Link your private key to your VSC-id <linking key with vsc-id linux>`
+   in your :ref:`SSH configuration file <ssh_config>` at ``~/.ssh/config``.
+
 
 How to connect?
 ---------------
 
 In many cases, a text mode connection to one of the VSC clusters is
-sufficient. To make such a connection, the ssh command is used:
+sufficient. To make such a connection, the ``ssh`` command is used:
 
 ::
 
