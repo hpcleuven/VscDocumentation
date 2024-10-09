@@ -20,6 +20,7 @@ Hardware details
       36 cores each :raw-html:`<br />`
       (1 NUMA domain and 1 L3 cache per CPU)
     - 256 GiB RAM
+    - default memory per core is 3455 MiB
     - 960 GB SSD local disk
     - partitions ``batch/batch_long``,
       :ref:`submit options <submit to wice compute node>`
@@ -31,6 +32,7 @@ Hardware details
       (4 NUMA domains and 1 L3 cache per CPU) :raw-html:`<br />`
       The base and max CPU frequencies are 2.1 GHz and 3.8 GHz, respectively.
     - 256 GiB RAM
+    - default memory per core is 2500 MiB
     - 960 GB SSD local disk
     - partitions ``batch_sapphirerapids/batch_sapphirerapids_long``
       :ref:`submit options <submit to wice compute node>`
@@ -41,6 +43,7 @@ Hardware details
     36 cores each :raw-html:`<br />`
     (2 NUMA domains and 1 L3 cache per CPU)
   - 2048 GiB RAM
+  - default memory per core is 28000 MiB
   - 960 GB SSD local disk
   - partition ``bigmem``,
     :ref:`submit options <submit to wice big memory node>`
@@ -52,6 +55,7 @@ Hardware details
     (1 NUMA domain and 1 L3 cache per CPU) :raw-html:`<br />`
     The base and max CPU frequencies are 2.4 GHz and 3.5 GHz, respectively.
   - 8 TiB RAM
+  - default memory  per core is 111900 MiB
   - 960 GB SSD local disk
   - partition ``hugemem``,
     :ref:`submit options <submit to wice big memory node>`
@@ -64,6 +68,7 @@ Hardware details
       36 cores each :raw-html:`<br />`
       (2 NUMA domains and 1 L3 cache per CPU)
     - 512 GiB RAM
+    - default memory per core is 7000 MiB
     - 4 NVIDIA A100 SXM4, 80 GiB GDDR, connected with NVLink
     - 960 GB SSD local disk
     - partition ``gpu``,
@@ -76,6 +81,7 @@ Hardware details
       (4 NUMA domains and 4 L3 caches per CPU) :raw-html:`<br />`
       The base and max CPU frequencies are 2.7 GHz and 3.9 GHz, respectively.
     - 768 GiB RAM
+    - default memory per core is 11700 MiB
     - 4 NVIDIA H100 SXM5, 80 GiB HBM3, connected with NVLink
     - 960 GB SSD local disk
     - partition ``gpu_h100``,
@@ -87,6 +93,7 @@ Hardware details
     32 cores each :raw-html:`<br />`
     (2 NUMA domains and 1 L3 cache per CPU)
   - 512 GiB RAM
+  - default memory per core is 7500 MiB
   - 1 NVIDIA A100, 80 GiB GDDR
   - 960 GB SSD local disk
   - partitions ``interactive``,
