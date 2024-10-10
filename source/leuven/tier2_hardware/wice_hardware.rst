@@ -20,9 +20,9 @@ Hardware details
       36 cores each :raw-html:`<br />`
       (1 NUMA domain and 1 L3 cache per CPU)
     - 256 GiB RAM
-    - default memory per core is 3455 MiB
+    - default memory per core is 3400 MiB
     - 960 GB SSD local disk
-    - partitions ``batch/batch_long``,
+    - partitions ``batch|batch_long|batch_icelake|batch_icelake_long``,
       :ref:`submit options <submit to wice compute node>`
 
   - 68 Sapphire Rapids nodes
@@ -34,7 +34,7 @@ Hardware details
     - 256 GiB RAM
     - default memory per core is 2500 MiB
     - 960 GB SSD local disk
-    - partitions ``batch_sapphirerapids/batch_sapphirerapids_long``
+    - partitions ``batch_sapphirerapids|batch_sapphirerapids_long``
       :ref:`submit options <submit to wice compute node>`
 
 - 5 big memory nodes
@@ -71,7 +71,7 @@ Hardware details
     - default memory per core is 7000 MiB
     - 4 NVIDIA A100 SXM4, 80 GiB GDDR, connected with NVLink
     - 960 GB SSD local disk
-    - partition ``gpu``,
+    - partition ``gpu|gpu_a100``,
       :ref:`submit options <submit to wice GPU node>`
 
   - 4 nodes with 16 H100 GPUs in total
@@ -87,7 +87,20 @@ Hardware details
     - partition ``gpu_h100``,
       :ref:`submit options <submit to wice GPU node>`
 
-- 4 interactive nodes and 1 debug node
+- 4 interactive nodes
+
+  - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
+    32 cores each :raw-html:`<br />`
+    (2 NUMA domains and 1 L3 cache per CPU)
+  - 512 GiB RAM
+  - default memory per core is 2000 MiB
+  - 1 NVIDIA A100, 80 GiB GDDR
+  - 960 GB SSD local disk
+  - partitions ``interactive``,
+    :ref:`submit options <submit to wice interactive node>`
+    :raw-html:`<br />`
+
+- 1 debug node
 
   - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
     32 cores each :raw-html:`<br />`
@@ -96,10 +109,7 @@ Hardware details
   - default memory per core is 7500 MiB
   - 1 NVIDIA A100, 80 GiB GDDR
   - 960 GB SSD local disk
-  - partitions ``interactive``,
-    :ref:`submit options <submit to wice interactive node>`
-    :raw-html:`<br />`
-    and ``gpu_a100_debug``,
+  - partitions ``gpu_a100_debug``,
     :ref:`submit options <submit to wice GPU node>`
 
 All nodes of the same type are interconnected using an Infiniband HDR-100
