@@ -4,14 +4,10 @@ Multi Factor Authentication (MFA)
 =================================
 
 |KUL| Multi Factor Authentication (MFA) is an augmented level of security which, as
-the name suggests, requires multiple steps when authenticating. The following
-two factors are necessary to connect to the KU Leuven clusters:
+the name suggests, requires multiple steps when authenticating.
+To login to the KU Leuven clusters, you only need to possess an active account
+with a VSC-associated university or institution.
 
-- A valid private key
-- Access to a VSC-associated university/institution account
-
-This approach ensures that if your private key is compromised, the person who
-has unauthorized access to it will still not be able to abuse your VSC account.
 This document provides two methods to connect to the KU Leuven clusters with
 MFA. The first method, *without* an agent, is easier to get started with, but requires
 some repetitive steps with each connection. The second method, *with* an agent,
