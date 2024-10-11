@@ -51,7 +51,7 @@ We discuss this script line by line.
 - Line 7 changes the working directory to the directory in which the job will
   be submitted (that will be the value of the ``$PBS_O_WORKDIR`` environment
   variable when the job runs).
-- Lines 9 and 10 set up the environment by :ref:`loading the appropriate modules 
+- Lines 9 and 10 set up the environment by :ref:`loading the appropriate modules
   <module system basics>`.
 - Line 12 performs the actual computation, i.e., running a Python script.
 
@@ -67,7 +67,7 @@ More information is available on:
 
 .. toctree::
    :maxdepth: 2
-   
+
    Job resources <specifying_resources>
    Job names, output files and notifications <specifying_output_files_and_notifications>
    Starting programs <starting_programs_in_a_job>
@@ -146,14 +146,14 @@ For instance, for the running example, the output file would be
    Queue Name : q1h
    Resource List : walltime=00:05:00,nodes=1:ppn=1,neednodes=1:ppn=1
    ===== end of prologue =======
-   
+
    hello world!
-   
+
    ===== start of epilogue =====
    Date : Mon Aug  5 14:50:29 CEST 2019
    Session ID : 21768
    Resources Used : cput=00:00:00,vmem=0kb,walltime=00:00:02,mem=0kb,energy_used=0
-   Allocated Nodes : r3c08cn1.leibniz 
+   Allocated Nodes : r3c08cn1.leibniz
    Job Exit Code : 0
    ===== end of epilogue =======
 

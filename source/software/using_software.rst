@@ -34,7 +34,7 @@ adjustments and don't always show all packages. Be sure to check out
 
    .. toctree::
       :maxdepth: 2
-   
+
       ../gent/setting_up_the_environment_using_lmod_at_the_hpc_ugent_clusters
 
 Packages with additional documentation

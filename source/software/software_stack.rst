@@ -120,15 +120,15 @@ The ``spider`` sub-command can also be used to provide information on on modules
 ::
 
    $ module spider Python/2.7.14-foss-2018a
-   
+
    ---------------------------------------------
      Python: Python/2.7.14-foss-2018a
    -------------------------------------------
        Description:
            Python is a programming language that lets you work more
-           quickly and integrate your systems more effectively. 
-   
-   
+           quickly and integrate your systems more effectively.
+
+
        This module can be loaded directly: module load Python/2.7.14-foss-2018a
 
 More technical information can be obtained using the ``show`` sub-command, e.g.,
@@ -292,36 +292,36 @@ Define an environment
 
    #. Be sure to start with a clean environment
       ::
-   
+
          $ module purge
-   
+
    #. Load the modules you want in your environment, e.g.,
       ::
-   
+
          $ module load matplotlib/2.1.2-intel-2018a-Python-3.6.4
          $ module load matlab/R2019a
-   
+
    #. save your environment, e.g., as ``data_analysis``
       ::
-     
+
           $ module save data_analysis
 
 Use an environment
 
    ::
-   
+
       $ module restore data_analysis
 
 List all your environments
 
    ::
-   
+
       $ module savelist
 
 Remove an environment
 
    ::
-   
+
       $ rm ~/.lmod.d/data_analysis
 
 
@@ -336,8 +336,8 @@ overwhelming. Therefore the administrators may have chosen to only show
 the most relevant packages by default, and not show, e.g., packages that
 aim at a different cluster, a particular node type or a less complete
 toolchain. Those additional packages can then be enabled by loading
-another module first. E.g., to get access to the modules in 
-the (at the time of writing) incomplete 2019a toolchain on UAntwerpen's 
+another module first. E.g., to get access to the modules in
+the (at the time of writing) incomplete 2019a toolchain on UAntwerpen's
 leibniz cluster, one should first enter
 
    ::
