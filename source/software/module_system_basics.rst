@@ -1,47 +1,16 @@
-Software stack
-==============
+.. _module_system_basics:
 
-Software installation and maintenance on HPC infrastructure such as the
-VSC clusters poses a number of challenges not encountered on a
-workstation or a departmental cluster. For many libraries and programs,
-multiple versions have to installed and maintained as some users require
-specific versions of those. In turn, those libraries or executables sometimes
-rely on specific versions of other libraries, further complicating the
-matter.
+Module system basics
+====================
 
-The way Linux finds the right executable for a command, and a program
-loads the right version of a library or a plug-in, is through so-called
-environment variables. These can, e.g., be set in your shell
-configuration files (e.g., ``.bashrc``), but this requires a certain
-level of expertise. Moreover, getting those variables right is tricky
-and requires knowledge of where all files are on the cluster. Having to
-manage all this by hand is clearly not an option.
+Many software packages are installed as modules. These packages range from
+compilers, interpreters and mathematical libraries to the actual scientific
+software applications.
 
-We deal with this on the VSC clusters in the following way. First, we've
-defined the concept of a :ref:`toolchain <toolchains>`. They consist of
-a set of compilers, MPI library and
-basic libraries that work together well with each other, and then a
-number of applications and other libraries compiled with that set of
-tools and thus often dependent on those. We use tool chains based on the
-Intel and GNU compilers, and refresh them twice a year, leading to
-version numbers like 2014a, 2014b or 2015a for the first and second
-refresh of a given year. Some tools are installed outside a toolchain,
-e.g., additional versions requested by a small group of users for
-specific experiments, or tools that only depend on basic system
-libraries. Second, we use the module system to manage the environment
-variables and all dependencies and possible conflicts between various
-programs and libraries, and that is what this page focuses on.
+All VSC sites use a Lua based implementation called `Lmod`_. Interacting
+with the module system happens via the ``module`` command  or its shorter
+equivalent ``ml``.
 
-
-.. _module system basics:
-
-Using the module system
------------------------
-
-Many software packages are installed as modules. These packages include
-compilers, interpreters, mathematical software such as Matlab and SAS,
-as well as other applications and libraries. This is managed with the
-``module`` command.
 
 Available modules
 ~~~~~~~~~~~~~~~~~
@@ -343,3 +312,4 @@ leibniz cluster, one should first enter
    ::
 
       $ module load leibniz/2019a-experimental
+

@@ -46,7 +46,7 @@ Loading modules
 The next step consists of loading the appropriate modules. This is no
 different from loading the modules on the login nodes to prepare for
 your job or when running programs on interactive nodes, so we refer to
-the :ref:`modules system<module system basics>` page.
+the :ref:`module system <module_system_basics>` page.
 
 Useful Torque environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

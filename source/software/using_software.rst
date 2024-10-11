@@ -1,41 +1,54 @@
 Using software
 ==============
 
-The best way to get a complete list of all available software in a
-particular cluster can be obtained by typing:
+The scientific software stack on the VSC clusters is mainly exposed via
+:ref:`modules <module_system_basics>`. :ref:`Toolchains <toolchains>` are
+an important concept in this context.
 
-::
-
-   $ module av
-
-In order to use the software stack in the HPC cluster, the user should work
-with the :ref:`module system <module system basics>`.
+For basic information on the module system and more site-specific information,
+please consult the following pages:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   software_stack
-
-On the newer systems, we use the same naming conventions for packages on all
-systems. Due to the ever expanding list of packages, we've also made some
-adjustments and don't always show all packages. Be sure to check out
-:ref:`how you can see specialized software modules
-<specialized software stacks>`.
+   module_system_basics
+   ../gent/setting_up_the_environment_using_lmod_at_the_hpc_ugent_clusters
 
 
-.. seealso::
+Background
+----------
 
-   Since August 2016, a different implementation of the module system has been
-   implemented on UGent, VUB, UAntwerpen Tier-2 systems and KU Leuven's Genius
-   cluster, called `Lmod`_. Though highly compatible with the aforementioned
-   module system used on the other clusters, it has some extra capabilities and
-   differences:
+Software installation and maintenance on HPC infrastructure such as the
+VSC clusters poses a number of challenges not encountered on a
+workstation or a departmental cluster. For many libraries and programs,
+multiple versions have to installed and maintained as some users require
+specific versions of those. In turn, those libraries or executables sometimes
+rely on specific versions of other libraries, further complicating the
+matter.
 
+The way Linux finds the right executable for a command, and a program
+loads the right version of a library or a plug-in, is through so-called
+environment variables. These can, e.g., be set in your shell
+configuration files (e.g., ``.bashrc``), but this requires a certain
+level of expertise. Moreover, getting those variables right is tricky
+and requires knowledge of where all files are on the cluster. Having to
+manage all this by hand is clearly not an option.
 
-   .. toctree::
-      :maxdepth: 2
+We deal with this on the VSC clusters in the following way. First, we've
+defined the concept of a :ref:`toolchain <toolchains>`. They consist of
+a set of compilers, MPI library and
+basic libraries that work together well with each other, and then a
+number of applications and other libraries compiled with that set of
+tools and thus often dependent on those. We use tool chains based on the
+Intel and GNU compilers, and refresh them twice a year, leading to
+version numbers like 2014a, 2014b or 2015a for the first and second
+refresh of a given year. Some tools are installed outside a toolchain,
+e.g., additional versions requested by a small group of users for
+specific experiments, or tools that only depend on basic system
+libraries. Second, we use :ref:`modules <module_system_basics>` to manage the
+environment and all dependencies and possible conflicts
+between various programs and libraries.
 
-      ../gent/setting_up_the_environment_using_lmod_at_the_hpc_ugent_clusters
 
 Packages with additional documentation
 --------------------------------------
