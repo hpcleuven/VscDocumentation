@@ -161,6 +161,27 @@ can for example be combined as follows:
    line alternative (so *not* in the shell initialization files either!).
 
 
+Conflicting modules
+~~~~~~~~~~~~~~~~~~~
+
+It is important to note that only modules that are compatible with
+each other should be loaded together. The loaded modules should all
+be associated with either the same toolchain or compatible (sub)toolchains
+(see also https://docs.easybuild.io/common-toolchains/#toolchains_diagram).
+
+For example, once you have loaded one or more modules that use the
+``foss/2023a`` toolchain, all other modules that you load should have been
+installed with the same toolchain or with compatible (sub)toolchains such as
+``GCC/12.3.0`` or ``GCCcore/12.3.0``.
+
+Additionally, two versions of the same software packages can not be loaded
+together. If you e.g. loaded a ``Python/3.11.3-GCCcore-12.3.0`` module, then
+also loading another ``Python`` module (either directly or as a dependency of
+another module) will cause ``Python/3.11.3-GCCcore-12.3.0`` to be unloaded and
+replaced by the new module (the same will happen to the modules which both
+``Python`` modules load as dependencies).
+
+
 List loaded modules
 ~~~~~~~~~~~~~~~~~~~
 
