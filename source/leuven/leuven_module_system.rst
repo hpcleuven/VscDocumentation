@@ -6,13 +6,6 @@ The module system on Leuven clusters
 This page offers additional information about the module system used on the
 HPC clusters hosted at KU Leuven.
 
-A lot of scientific software is centrally available on the VSC clusters. To
-avoid conflicts between different software packages, the installations are
-offered as modules (specifically, the `Lmod system <https://lmod.readthedocs.io/en/latest/>`__
-is used). The executables, libraries, headers, ... of a certain module can only
-be used after that module has been loaded. By loading a certain set of modules,
-you can easily set up an environment that has precisely the software you need.
-
 
 .. _module_hierarchy:
 
