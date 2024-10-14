@@ -21,20 +21,20 @@ To view a list of available software packages, use the command
 ::
 
    $ module av
+
+   ---------------- /apps/leuven/rocky8/icelake/2023a/modules/all -----------------
+   ATK/2.38.0-GCCcore-12.3.0                               (D)
+   Armadillo/12.6.2-foss-2023a                             (D)
+   Bison/3.8.2                                             (D)
+   ...
+   CP2K/2023.1-foss-2023a                                  (D)
+   CP2K/2023.1-intel-2023a
+   ...
+   zlib/1.2.13                                             (D)
+
    ---------------- /apps/leuven/rocky8/icelake/2022b/modules/all -----------------
-   ATK/2.38.0-GCCcore-12.2.0                   (D)
-   Armadillo/11.4.3-foss-2022b
-   Autoconf/2.71-GCCcore-12.2.0
-   Automake/1.16.5-GCCcore-12.2.0
+   ATK/2.38.0-GCCcore-12.2.0                               (D)
    ...
-   ---------------- /apps/leuven/rocky8/icelake/2021a/modules/all -----------------
-   ABAQUS/2023-hotfix-2306
-   ANTLR/2.7.7-GCCcore-10.3.0-Java-11
-   ASE/3.22.0-intel-2021a
-   ...
-   zlib/1.2.11
-   zlib/1.2.12
-   zstd/1.4.9-GCCcore-10.3.0
 
 
 Module names
@@ -46,21 +46,18 @@ In general, the anatomy of a module name is
 
    <package>/<version>-<toolchain>[-<extra>]
 
-For example  for ``Boost/1.66.0-intel-2018a-Python-3.6.4``, we
-have
+For e.g. ``GROMACS/2023.3-foss-2023a-PLUMED-2.9.0``, we have
 
-- ``<package>``: Boost, the name of the library,
-- ``<version>``: 1.66.0, the version of the Boost library,
-- ``<toolchain>``: intel-2018a, the toolchain Boost was built with, and
-- ``<extra>``: ``Python-3.6.4``, the version of Python this Boost version
-  can inter-operate with.
+- ``<package>``: GROMACS, the name of the software package,
+- ``<version>``: 2023.3, the GROMACS Version,
+- ``<toolchain>``: foss-2023a, the toolchain GROMACS was built with, and
+- ``<extra>``: ``PLUMED-2.9.0``, the version of PLUMED this GROMACS installation
+  can inter-operate with and will load as a dependency.
 
-Some packages in the list above include ``intel-2014a`` or ``foss-2014a`` in their name.
-These are packages installed with the 2014a versions of the :ref:`toolchains <toolchains>`
-based on the Intel and GNU compilers respectively. The other packages do
-not belong to a particular toolchain. The name of the packages also
-includes a version number (right after the /) and sometimes other
-packages they need.
+Toolchains such as ``intel-2023a`` or ``foss-2023a`` refer to the 2023a
+versions of the :ref:`toolchains <toolchains>` based on the Intel and GNU
+compilers respectively. Certain modules may not belong to a particular toolchain.
+
 
 Searching modules
 ~~~~~~~~~~~~~~~~~
@@ -90,68 +87,71 @@ The ``spider`` sub-command can also be used to provide information on on modules
 
 ::
 
-   $ module spider Python/2.7.14-foss-2018a
+   $ module spider Python/3.11.3-GCCcore-12.3.0
 
-   ---------------------------------------------
-     Python: Python/2.7.14-foss-2018a
-   -------------------------------------------
-       Description:
-           Python is a programming language that lets you work more
-           quickly and integrate your systems more effectively.
+   ----------------------------------------------------------------------------
+   Python: Python/3.11.3-GCCcore-12.3.0
+   ----------------------------------------------------------------------------
+    Description:
+      Python is a programming language that lets you work more quickly and
+      integrate your systems more effectively.
+
+      ...
+
+      More information
+      ================
+       - Homepage: https://python.org/
+
+      Included extensions
+      ===================
+      flit_core-3.9.0, packaging-23.1, pip-23.1.2, setuptools-67.7.2,
+      setuptools_scm-7.1.0, tomli-2.0.1, typing_extensions-4.6.3, wheel-0.40.0
 
 
-       This module can be loaded directly: module load Python/2.7.14-foss-2018a
-
-More technical information can be obtained using the ``show`` sub-command, e.g.,
+More technical information can be obtained using the ``show`` sub-command.
+It will show which other modules will be loaded and what environment paths
+will be set, e.g.:
 
 ::
 
-   $ module show Python/2.7.14-foss-2018a
+   $ module show Python/3.11.3-GCCcore-12.3.0
 
 
 Loading modules
 ~~~~~~~~~~~~~~~
 
-A module is loaded using the command ``module load`` with the name of
-the package, e.g., with the above list of modules,
+A module is loaded using the ``module load`` command, e.g.:
 
 ::
 
-   $ module load BEAST
+   $ module load CP2K
 
-will load the ``BEAST/2.1.2`` package.
+will load the default ``CP2K`` module (``CP2K/2023.1-foss-2023a`` in this
+example).
 
-For some packages, e.g., ``zlib`` in the above list, multiple versions
-are installed; the ``module load`` command will automatically choose the
-lexicographically last, which is typically, but not always, the most
-recent version. In the above example,
-
-::
-
-    $ module load zlib
-
-will load the module ``zlib/1.2.8-intel-2014a``. This may not be the
-module that you want if you're using the GNU compilers. In that case,
-the user should specify a particular version, e.g.,
+If multiple versions are installed; the ``module load`` command will
+automatically choose the default version, which is typically, but not always,
+the most recent version. If, in this example, you would prefer to use same
+version of CP2K but built with the ``intel-2023a`` toolchain, you would need
+to specify:
 
 ::
 
-   $ module load zlib/1.2.8-foss-2014a
+   $ module load CP2K/2023.1-intel-2023a
 
 .. note::
 
-   Loading modules with explicit versions is considered best practice.  It ensures
+   Loading modules with explicit versions is considered as best practice. It ensures
    that your scripts will use the expected version of the software, regardless of
-   newly installed software.  Failing to do this may jeopardize the reproducibility
+   newly installed software. Failing to do this may jeopardize the reproducibility
    of your results!
 
-Modules need not be loaded one by one; the two 'load' commands
-can be combined as follows::
+Modules need not be loaded one by one; two ``load`` sub-commands
+can for example be combined as follows:
 
-   $ module load  BEAST/2.1.2  zlib/1.2.8-foss-2014a
+::
 
-This will load the two modules and, automatically, the respective
-toolchains with just one command.
+   $ module load CP2K/2023.1-foss-2023a GROMACS/2023.3-foss-2023a-PLUMED-2.9.0
 
 .. warning::
 
@@ -165,39 +165,27 @@ List loaded modules
 ~~~~~~~~~~~~~~~~~~~
 
 Obviously, the user needs to keep track of the modules that are
-currently loaded. After executing the above two load commands, the list
-of loaded modules will be very similar to:
+currently loaded. After executing the above load command, the list
+of loaded modules will look similar to:
 
 ::
 
    $ module list
    Currently Loaded Modulefiles:
-     1) /thinking/2014a
-     2) Java/1.7.0_51
-     3) icc/2013.5.192
-     4) ifort/2013.5.192
-     5) impi/4.1.3.045
-     6) imkl/11.1.1.106
-     7) intel/2014a
-     8) beagle-lib/20140304-intel-2014a
-     9) BEAST/2.1.2
-    10) GCC/4.8.2
-    11) OpenMPI/1.6.5-GCC-4.8.2
-    12) gompi/2014a
-    13) OpenBLAS/0.2.8-gompi-2014a-LAPACK-3.5.0
-    14) FFTW/3.3.3-gompi-2014a
-    15) ScaLAPACK/2.0.2-gompi-2014a-OpenBLAS-0.2.8-LAPACK-3.5.0
-    16) foss/2014a
-    17) zlib/1.2.8-foss-2014a
+     1) cluster/wice/batch
+     2) GCCcore/10.3.0
+     ...
+     16) OpenMPI/4.1.1-GCC-10.3.0
+     17) OpenBLAS/0.3.15-GCC-10.3.0
+     ...
+     46) PLUMED/2.9.0-foss-2023a
+     47) CP2K/2023.1-foss-2023a
+     48) GROMACS/2023.3-foss-2023a-PLUMED-2.9.0
 
-It is important to note at this point that, e.g., ``icc/2013.5.192`` is
-also listed, although it was not loaded explicitly by the user. This is
-because ``BEAST/2.1.2`` depends on it, and the system administrator
-specified that the ``intel`` toolchain module that contains this
-compiler should be loaded whenever the ``BEAST`` module is loaded. There
-are advantages and disadvantages to this, so be aware of automatically
-loaded modules whenever things go wrong: they may have something to do
-with it!
+Note that this does not just show the two requested modules, but also all
+the modules that got loaded automatically in order to satisfy (runtime)
+dependencies of the explicitly loaded ``CP2K`` and ``GROMACS`` installations
+(``PLUMED``, ``OpenMPI``, ``OpenBLAS``, etcetera).
 
 
 Unloading modules
@@ -210,7 +198,7 @@ debug some problem.
 
 ::
 
-   $ module unload BEAST
+   $ module unload CP2K
 
 Notice that the version was not specified: the module system is
 sufficiently clever to figure out what the user intends. However,
@@ -230,7 +218,7 @@ a clean slate, use:
 
 .. note::
 
-   It is a good habit to use this command in PBS scripts, prior to loading
+   It is a good habit to use this command in jobscripts, prior to loading
    the modules specifically needed by applications in that job script. This
    ensures that no version conflicts occur if the user loads module using
    his ``.bashrc`` file.
@@ -269,8 +257,8 @@ Define an environment
    #. Load the modules you want in your environment, e.g.,
       ::
 
-         $ module load matplotlib/2.1.2-intel-2018a-Python-3.6.4
-         $ module load matlab/R2019a
+         $ module load matplotlib/3.7.2-gfbf-2023a
+         $ module load MATLAB/2023b
 
    #. save your environment, e.g., as ``data_analysis``
       ::
