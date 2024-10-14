@@ -206,22 +206,23 @@ checking the list of currently loaded modules is always a good idea,
 just to make sure...
 
 
+.. _module_purge:
+
 Purging modules
 ~~~~~~~~~~~~~~~
 
-In order to unload all modules at once, and hence be sure to start with
-a clean slate, use:
+In order to unload all modules at once and start with a clean slate, use:
 
 ::
 
    $ module purge
 
-.. note::
-
-   It is a good habit to use this command in jobscripts, prior to loading
-   the modules specifically needed by applications in that job script. This
-   ensures that no version conflicts occur if the user loads module using
-   his ``.bashrc`` file.
+This will not unload so-called `sticky modules
+<https://lmod.readthedocs.io/en/latest/240_sticky_modules.html>`__, which
+are special modules that do not normally need to be unloaded (for example
+because they define the appropriate module paths and possibly other environment
+variables). If really needed, sticky modules can be unloaded with
+``module --force purge``.
 
 
 Getting help

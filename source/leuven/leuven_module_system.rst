@@ -76,9 +76,8 @@ exceptional case).
    load the correct cluster module or set your ``$MODULEPATH`` in another way.
    This is why we advise to not use ``module --force purge`` in your jobs,
    unless you are well aware of the consequences. Note that it is ok to
-   execute ``module purge``, since the cluster module is a
-   `sticky module <https://lmod.readthedocs.io/en/latest/240_sticky_modules.html>`__
-   , which means it is not unloaded with ``module purge``.
+   execute ``module purge``, since the cluster modules are
+   :ref:`sticky <module_purge>`.
 
 A common scenario is that you want to search through the installed modules for
 a software package you need, while you are on a login node. There are two ways
