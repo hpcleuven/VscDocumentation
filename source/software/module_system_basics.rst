@@ -21,18 +21,20 @@ To view a list of available software packages, use the command
 ::
 
    $ module av
-   ----- /apps/leuven/skylake/2018a/modules/all ------
-   Autoconf/2.69-GCC-4.8.2
-   Autoconf/2.69-intel-2018a
-   Automake/1.14-GCC-4.8.2
-   Automake/1.14-intel-2018a
-   BEAST/2.1.2
+   ---------------- /apps/leuven/rocky8/icelake/2022b/modules/all -----------------
+   ATK/2.38.0-GCCcore-12.2.0                   (D)
+   Armadillo/11.4.3-foss-2022b
+   Autoconf/2.71-GCCcore-12.2.0
+   Automake/1.16.5-GCCcore-12.2.0
    ...
-   pyTables/2.4.0-intel-2018a-Python-2.7.6
-   timedrun/1.0.1
-   worker/1.4.2-foss-2018a
-   zlib/1.2.8-foss-2018a
-   zlib/1.2.8-intel-2018a
+   ---------------- /apps/leuven/rocky8/icelake/2021a/modules/all -----------------
+   ABAQUS/2023-hotfix-2306
+   ANTLR/2.7.7-GCCcore-10.3.0-Java-11
+   ASE/3.22.0-intel-2021a
+   ...
+   zlib/1.2.11
+   zlib/1.2.12
+   zstd/1.4.9-GCCcore-10.3.0
 
 
 Module names
