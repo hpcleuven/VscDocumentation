@@ -13,6 +13,7 @@ please consult the following pages:
 
    module_system_basics
    ../gent/setting_up_the_environment_using_lmod_at_the_hpc_ugent_clusters
+   ../leuven/leuven_module_system
 
 
 Background
