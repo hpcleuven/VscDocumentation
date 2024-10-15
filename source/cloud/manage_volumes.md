@@ -6,7 +6,11 @@ volume to a running instance or detach a volume and attach it to another
 instance at any time. You can also create a snapshot from a volume, or
 delete it.
 
-## Create a volume
+## Terraform
+The terraform templates support volume provisioning for VMs.
+Since DATE, it can also mount and resize them automatically. See {ref}`volumes`
+
+## Create a volume manually
 
 1.  Open the Volumes tab and select the Volumes category.
 
