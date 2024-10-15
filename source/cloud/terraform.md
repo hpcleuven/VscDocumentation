@@ -295,7 +295,7 @@ There's some extra variables you can configure:
 | playbook_url | A url to an ansible playbook that gets applied when nginx_enabled = true (replaced by `userscript` since 8/10/2024 ) | (string) |
 | userscript | (since 8/10/2024), a shell script that is executed when the VM is first created. | (string) |
 | project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
-
+| alt_http | Use a randomly generated port for http instead of port 80/443 | true/false (default false)|
 #### Single VM only
 | Variable | Explanation | Values |
 | --- | --- | --- |
@@ -305,7 +305,6 @@ There's some extra variables you can configure:
 | cloud_init | (since 8/10/2024) cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
 | nfs_size | Size of the NFS share if nfs_enabled=true | (number) |
 | crontabs | list of crontabs to run | see [Crontabs](crontab) |
-
 #### Cluster only
 | Variable | Explanation | Values |
 | --- | --- | ---|
