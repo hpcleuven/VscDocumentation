@@ -183,7 +183,13 @@ With MobaXTerm users can connect to VSC in two ways: by creating a new session, 
       :alt: mobaxterm_create_new_session
 
    Upon successful connection attempt you will be prompted to copy/paste the firewall URL in your browser as part
-   of the MFA login procedure. Once the MFA has been completed your MobaXTerm session will connect to VSC.
+   of the MFA login procedure:
+
+   .. _vsc_firewall_certificate_authentication:
+   .. figure:: mfa_quickstart/vsc_firewall_certificate_authentication.PNG
+      :alt: vsc_firewall_certificate_authentication
+
+   Confirm by clicking 'Yes'. Once the MFA has been completed your MobaXTerm session will connect to VSC.
 
 #. If you have already configured remote sessions within Putty then MobaXTerm, upon installing it, will automatically
    import them and they will appear on the left side the window.
@@ -217,6 +223,8 @@ PuTTY
 #. Save the profile under ‘Session’
 
 .. _mfa for nx:
+
+
 
 NX
 ~~
