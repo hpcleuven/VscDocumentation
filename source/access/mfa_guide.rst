@@ -3,6 +3,16 @@
 MFA Guide
 =========
 
+General information
+-------------------
+
+Mutli-Factor Authentication (MFA) is mandatory when connecting to the VSC network.
+In the context of SSH connections it sets an increased level of security by requiring
+an additional verification step. MFA ensures that even if an attacker obtains your SSH login
+credentials, such as username and password, they won’t be able to access the VSC netowrk
+without that additional authentication factor.
+
+
 MFA without an agent
 --------------------
 
