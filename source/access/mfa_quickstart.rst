@@ -35,9 +35,10 @@ Getting started
    If you are already connected to the internal network then you will asked to only set the
    SSH certificates with the MFA of your choice, e.g, via a code sent to your registered phone,
    or an authenticator app:
-   .. _idp_page:
+
+   .. _reauthenticate_phone:
    .. figure:: mfa_quickstart/reauthenticate_phone.PNG
-      :alt: idp_page
+      :alt: reauthenticate_phone
 
 #. Log in as usual. You should now end up on a page that tells you that your VSC 
    identity is confirmed. 
