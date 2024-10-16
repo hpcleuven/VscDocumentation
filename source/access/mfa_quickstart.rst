@@ -222,7 +222,7 @@ PuTTY
 
 #. Save the profile under ‘Session’
 
-#. To start a session load it from 'Saved Session' under 'Session' and click 'Open'.
+#. To start a session load it from 'Saved Sessions' under 'Session' and click 'Open'.
 
    .. _putty_load_saved_session:
    .. figure:: mfa_quickstart/putty_load_saved_session.PNG
