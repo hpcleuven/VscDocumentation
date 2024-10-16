@@ -265,4 +265,4 @@ FileZilla
    .. figure:: mfa_quickstart/filezilla_sitemanager_setup.PNG
       :alt: filezilla_sitemanager_setup
 
-Under the ‘Advanced’ tab you can also set the directory you wish to open by default upon login, e.g, your 'VSC_DATA' by typing its full linux path - '/data/<antwerpen/brussel/gent/leuven>/xxx/vscxxxxx'
+Under the ‘Advanced’ tab you can also set the directory you wish to open by default upon login, e.g, your 'VSC_DATA' by typing its full linux path.
