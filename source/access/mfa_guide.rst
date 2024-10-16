@@ -27,9 +27,9 @@ and you want to log in to the cluster with an ssh client like PuTTY or
 MobaXTerm. It also applies when using the ssh command in a terminal on Linux,
 Mac, or WSL.
 
-#. Visit the `VSC firewall page`_ in a browser and login with your
-   institution credentials. This step is optional when connecting from a
-   white-listed IP address, e.g., the Flemish universities internal networks.
+#. Visit the `VSC firewall page`_ and login with your institution credentials.
+   This step is optional when connecting from a white-listed IP address,
+   e.g., the Flemish universities internal networks.
    It is **mandatory** for other IP addresses (for instance when you are connecting
    from home or abroad).
 
