@@ -169,6 +169,22 @@ Here, we shortly show you how to set up MobaXTerm, PuTTY and NX correctly.
 MobaXTerm
 ~~~~~~~~~
 
+With MobaXTerm users can connect to VSC in two ways: by creating a new session, or by using existing Putty sessions.
+
+#. To create a new session either click on the 'Session' icon, or under the 'Sessions' menu click on 'New session'.
+   Under the 'SSH' tab enter the remote hostname for the VSC site you want to connect to in the field 'Remote host'.
+   Type your username if you wish. If you leave that field emtpy they you will be prompted to enter your VSC username
+   each time you connect to the cluster.
+   Ensure that in the 'Advanced SSH settings' 'X11' forwarding is active and the protocol is SFTP. Do not use private
+   SSH keys. Click 'OK' and save the session.
+
+   .. _mobaxterm_create_new_session:
+   .. figure:: mfa_quickstart/mobaxterm_create_new_session.PNG
+      :alt: mobaxterm_create_new_session
+
+   Upon successful connection attempt you will be prompted to copy/paste the firewall URL in your browser as part
+   of the MFA login procedure. Once the MFA has been completed your MobaXTerm session will connect to VSC.
+
 #. Right-click on the correct session and click on ‘edit session’
 
    .. _moba_edit_session:
