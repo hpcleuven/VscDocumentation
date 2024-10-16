@@ -222,9 +222,17 @@ PuTTY
 
 #. Save the profile under ‘Session’
 
+#. To start a session load it from 'Saved Session' under 'Session' and click 'Open'.
+
+   .. _putty_load_saved_session:
+   .. figure:: mfa_quickstart/putty_load_saved_session.PNG
+      :alt: putty_load_saved_session
+
+   You will be then prompted to copy/paste the firewall link into your browser and complete
+   the MFA procedure. As mentioned, with Putty users only need to highlight the link with their
+   mouse in order to copy it.
+
 .. _mfa for nx:
-
-
 
 NX
 ~~
