@@ -21,7 +21,7 @@ Getting started
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
       :alt: firewall_link_mfa
 
-#. Cop-paste the provided link in a browser and follow it;
+#. Copy-paste the provided link in a browser and follow it;
    highlighting the link with your mouse is sufficient to copy the URL to your
    clipboard. Avoid using CTRL-C, or it will send a SIGINT signal interrupting
    your process, instead of performing a copy operation.
