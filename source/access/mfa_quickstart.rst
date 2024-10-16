@@ -25,12 +25,18 @@ Getting started
    Note that if using Putty then simply highlighting the link with your mouse will copy the URL to your
    clipboard; avoid using CTRL-C, or it will send a SIGINT signal interrupting
    your process instead of performing a copy operation.
-   Once you paste the link in your browser, you end up on a login page of your 
-   university or association. 
+   Once you paste the link in your browser and you are not connected to the univerisity network, 
+   e.g,. via VPN, you end up on a login page of your university or association. 
    For KU Leuven this will be the idp page:
 
    .. _idp_page:
    .. figure:: mfa_quickstart/idp_page.PNG
+      :alt: idp_page
+   If you are already connected to the internal network then you will asked to only set the
+   SSH certificates with the MFA of your choice, e.g, via a code sent to your registered phone,
+   or an authenticator app:
+   .. _idp_page:
+   .. figure:: mfa_quickstart/reauthenticate_phone.PNG
       :alt: idp_page
 
 #. Log in as usual. You should now end up on a page that tells you that your VSC 
