@@ -9,7 +9,7 @@ General
 |KUL| Multi factor authentication (MFA) has been activated for all users that
 try to log in to the KU Leuven cluster. This guide will quickly take you
 through the steps of correctly using and setting up MFA. For a more detailed
-guide check :ref:`mfa_guide`. 
+guide check :ref:`<mfa_guide>`. 
 
 Getting started
 ---------------
