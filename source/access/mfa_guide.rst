@@ -12,6 +12,12 @@ an additional verification step. MFA ensures that even if an attacker obtains yo
 credentials, such as username and password, they won’t be able to access the VSC netowrk
 without that additional authentication factor.
 
+Currently, there are two ways to connect to VSC: via the `VSC firewall page`_ and via
+SSH certificates. The firewall page method can be used without the need to set SSH
+certificates with help of a certificates agent. The second method requires that first
+the user gets a valid SSH session certificate and then proceeds with connecting to VSC.
+Both methods employ MFA.
+
 
 MFA without an agent
 --------------------
@@ -21,11 +27,15 @@ and you want to log in to the cluster with an ssh client like PuTTY or
 MobaXTerm. It also applies when using the ssh command in a terminal on Linux,
 Mac, or WSL.
 
-#. |Optional| Visit the `VSC firewall page`_ in a browser and login with your
+#. Visit the `VSC firewall page`_ in a browser and login with your
    institution credentials. This step is optional when connecting from a
-   white-listed IP address (among which are the KU Leuven address range, Flemish
-   universities, most Belgian Internet providers,...). It is **mandatory** for
-   other IP addresses (for instance when you are connecting from abroad).
+   white-listed IP address, e.g., the Flemish universities internal networks.
+   It is **mandatory** for other IP addresses (for instance when you are connecting
+   from home or abroad).
+
+MFA with an agent
+-----------------
+
 #. Launch your ssh client and choose your private VSC key for authentication as
    usual.
 #. If the private key is accepted, your ssh client will now prompt you with an
