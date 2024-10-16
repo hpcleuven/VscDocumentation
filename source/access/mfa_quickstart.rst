@@ -32,7 +32,7 @@ Getting started
    .. _idp_page:
    .. figure:: mfa_quickstart/idp_page.PNG
       :alt: idp_page
-   If you are already connected to the internal network then you will asked to only set the
+   If you are already connected to the internal network then you will be asked to only set the
    SSH certificates with the MFA of your choice, e.g, via a code sent to your registered phone,
    or an authenticator app:
 
