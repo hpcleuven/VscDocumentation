@@ -193,9 +193,9 @@ With MobaXTerm users can connect to VSC in two ways: by creating a new session, 
 
 #. Under advanced settings. Be sure that ‘Use private key’ is not selected
 
-   .. _moba_priv:
-   .. figure:: mfa_quickstart/moba_priv.PNG
-      :alt: moba_priv
+   .. _mobaxterm_putty_imported_sessions:
+   .. figure:: mfa_quickstart/mobaxterm_putty_imported_sessions.PNG
+      :alt: mobaxterm_putty_imported_sessions
 
 #. Click ‘Ok’
 
