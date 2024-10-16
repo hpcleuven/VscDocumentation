@@ -185,19 +185,17 @@ With MobaXTerm users can connect to VSC in two ways: by creating a new session, 
    Upon successful connection attempt you will be prompted to copy/paste the firewall URL in your browser as part
    of the MFA login procedure. Once the MFA has been completed your MobaXTerm session will connect to VSC.
 
-#. Right-click on the correct session and click on ‘edit session’
-
-   .. _moba_edit_session:
-   .. figure:: mfa_quickstart/moba_edit_session.png
-      :alt: moba_edit_session
-
-#. Under advanced settings. Be sure that ‘Use private key’ is not selected
+#. If you have already configured remote sessions within Putty then MobaXTerm, upon installing it, will automatically
+   import them and they will appear on the left side the window.
+   To edit a session right-click on and click on ‘edit session'. Ensure that all settings are correct
+   under the 'SSH' tab and the 'Advanced SSH settings' sub-tab:
 
    .. _mobaxterm_putty_imported_sessions:
    .. figure:: mfa_quickstart/mobaxterm_putty_imported_sessions.PNG
       :alt: mobaxterm_putty_imported_sessions
 
-#. Click ‘Ok’
+   If the session has been properly imported you will see that all the necessary fields are already filled in.
+   Click 'OK' to close the 'edit session' window.
 
 PuTTY
 ~~~~~
