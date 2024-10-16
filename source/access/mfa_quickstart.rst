@@ -24,7 +24,7 @@ Getting started
 #. Copy-paste the provided link in a browser and follow it.
    Note that if using Putty then simply highlighting the link with your mouse will copy the URL to your
    clipboard; avoid using CTRL-C, or it will send a SIGINT signal interrupting
-   your process, instead of performing a copy operation.
+   your process instead of performing a copy operation.
    Once you paste the link in your browser, you end up on a login page of your 
    university or association. 
    For KU Leuven this will be the idp page:
