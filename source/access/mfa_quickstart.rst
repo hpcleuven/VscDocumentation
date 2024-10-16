@@ -21,9 +21,9 @@ Getting started
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
       :alt: firewall_link_mfa
 
-#. Copy-paste the provided link in a browser and follow it;
-   highlighting the link with your mouse is sufficient to copy the URL to your
-   clipboard. Avoid using CTRL-C, or it will send a SIGINT signal interrupting
+#. Copy-paste the provided link in a browser and follow it.
+   Note that if using Putty then simply highlighting the link with your mouse will copy the URL to your
+   clipboard; avoid using CTRL-C, or it will send a SIGINT signal interrupting
    your process, instead of performing a copy operation.
    Once you paste the link in your browser, you end up on a login page of your 
    university or association. 
