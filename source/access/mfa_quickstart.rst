@@ -229,7 +229,7 @@ NX
 FileZilla
 ~~~~~~~~~
 
-#. Under ‘File’ open the ‘Site Manager’ and click on ‘New Site’. Set the protocol to 'SFTP - SHH File Transfer Protocol', enter the VSC hostname you wish to connect to, e.g., 'login.hpc.kuleuven.be', set the logon type to 'Ask for password', and type your VSC username. The port field can be left empty. Usually for SFTP/SSH protocols the port is 22:
+#. Under ‘File’ open the ‘Site Manager’ and click on ‘New Site’. Set the protocol to 'SFTP - SHH File Transfer Protocol', enter the VSC hostname you wish to connect to, set the logon type to 'Ask for password', and type your VSC username. The port field can be left empty. Usually for SFTP/SSH protocols the port is 22:
 
    .. _filezilla_sitemanager_setup:
    .. figure:: mfa_quickstart/filezilla_sitemanager_setup.PNG
