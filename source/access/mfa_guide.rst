@@ -22,6 +22,7 @@ asked to visit the VSC firewall page upon every subsequent connection attempt.
 With the help of an SSH agent the proper certificates are valid for much longer and that
 adds a lot of flexibility in using various applications used to connect to VSC.
 
+.. _mfa_no_agent:
 
 MFA without an agent
 --------------------
@@ -45,6 +46,8 @@ Mac, or WSL.
 #. Proceed with the SSH terminal client of your choice to connect to VSC.
 
 Note: The firewall authentication is **mandatory** when you are connecting from abroad.
+
+.. _mfa_agent:
 
 MFA with an agent
 -----------------
@@ -74,35 +77,21 @@ Some applications such as MobaXTerm and FileZilla provide a Graphical User Inter
 such an application may not always prompt you to copy/paste the VSC firewall link to
 set up the necessary SSH certificate.
 
-Therefore, one way to connect to VSC is
-to first connect with an ssh-client on your machine as explained in the previous sections.
+Therefore, one way to connect to VSC is to first connect with an ssh-client 
+on your machine as explained in the previous sections.
 In the case of not having an SSH certificate agent running then as long as you
 keep that connection open you can connect with the other apps as well.
 In case you have already stored the SSH certificate in a running agent
 you can then proceed with connecting to VSC with the application.
 
-Note that some GUI applications may not always work when connecting to VSC
-without an agent. Therefore, it is highly recommended in that case to use agent
-connection method.
-
 .. note::
 
-   This method will not always work for NX. It is highly recommended to use
-   the method with an :ref:`ssh agent<mfa_agent>` when using MFA with NX.
+Some GUI applications may not always work when connecting to VSC
+without an agent. For example, NX is one of them.
+Therefore, it is highly recommended in such cases to use agent connection
+method :ref:`ssh agent<mfa_agent>`.
 
 
-.. _mfa_agent:
-
-Authentication with an ssh agent
---------------------------------
-
-In order to circumvent the annoyance of multiple MFA prompts or connecting to
-the cluster with an ssh client before being able to use certain apps like FileZilla,
-you can use an agent. This agent will store a certificate that contains the
-identity verification you did when following the firewall link. This way, you
-will only be asked to verify your identity once. Of course this certificate
-does not live forever. When using the built-in ssh-agent of Linux and Mac this
-will be as long as your agent lives. 
 
 Authentication with an agent on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
