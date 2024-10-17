@@ -82,7 +82,7 @@ partitions on the :ref:`genius hardware` and :ref:`wice hardware` pages.
 
 Many dependencies you might need are centrally installed. The modules
 that are optimized for wICE are available when the appropriate
-:ref:`cluster module <cluster_module>` is loaded. In most cases this will
+:ref:`cluster module <cluster_modules>` is loaded. In most cases this will
 happen automatically, but in case of problems it is a good idea to double check
 the ``$MODULEPATH`` environment variable; it should contain paths that look as
 starting with ``/apps/leuven/rocky8/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``

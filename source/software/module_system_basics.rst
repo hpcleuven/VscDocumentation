@@ -59,8 +59,8 @@ versions of the :ref:`toolchains <toolchains>` based on the Intel and GNU
 compilers respectively. Certain modules may not belong to a particular toolchain.
 
 
-Searching modules
-~~~~~~~~~~~~~~~~~
+Searching for modules
+~~~~~~~~~~~~~~~~~~~~~
 
 Often, when looking for some specific software, you will want to filter
 the list of available modules, since it tends to be rather large. The
@@ -83,7 +83,8 @@ For more comprehensive searches, you can use ``module spider``, e.g.,
 Info on modules
 ~~~~~~~~~~~~~~~
 
-The ``spider`` sub-command can also be used to provide information on on modules, e.g.,
+The ``spider`` sub-command can also be used to provide information on a specific
+module, e.g.
 
 ::
 
@@ -109,8 +110,9 @@ The ``spider`` sub-command can also be used to provide information on on modules
 
 
 More technical information can be obtained using the ``show`` sub-command.
-It will show which other modules will be loaded and what environment paths
-will be set, e.g.:
+It will show which other modules will get loaded and in which ways various
+environment variables (``PATH``, ``LD_LIBRARY_PATH``, ...) will be modified,
+e.g.:
 
 ::
 
@@ -169,9 +171,9 @@ each other should be loaded together. The loaded modules should all
 be associated with either the same toolchain or compatible (sub)toolchains
 (see also https://docs.easybuild.io/common-toolchains/#toolchains_diagram).
 
-For example, once you have loaded one or more modules that use the
-``foss/2023a`` toolchain, all other modules that you load should have been
-installed with the same toolchain or with compatible (sub)toolchains such as
+For example, once you have loaded a module that uses the ``foss/2023a``
+toolchain, all other modules that you load next should have been installed
+with the same toolchain or with compatible (sub)toolchains such as
 ``GCC/12.3.0`` or ``GCCcore/12.3.0``.
 
 Additionally, two versions of the same software packages can not be loaded
@@ -212,8 +214,8 @@ dependencies of the explicitly loaded ``CP2K`` and ``GROMACS`` installations
 Unloading modules
 ~~~~~~~~~~~~~~~~~
 
-To unload a module, one can use the ``module unload`` command. It works
-consistently with the ``load`` command, and reverses the latter's
+To unload a specific module, use the ``module unload`` command.
+It works consistently with the ``load`` command, and reverses the latter's
 effect. One can however unload automatically loaded modules manually, to
 debug some problem.
 
@@ -224,7 +226,7 @@ debug some problem.
 Notice that the version was not specified: the module system is
 sufficiently clever to figure out what the user intends. However,
 checking the list of currently loaded modules is always a good idea,
-just to make sure...
+just to make sure.
 
 
 .. _module_purge:

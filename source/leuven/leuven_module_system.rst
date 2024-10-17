@@ -16,24 +16,24 @@ When a cluster is not completely homogeneous (for instance there are
 differences regarding architecture or operating system between nodes), it is
 important to use the appropriate modules in your jobs. Using a module that is
 not suited for the node on which the job is running, can give suboptimal
-performance, or even completely fail to work.
+performance or may even completely fail to work.
 
 This is why modules are organized in different *software stacks*,
 differentiated by the operating system, the architecture, and the toolchain
 version. The good news is that in general you do not need to worry too much
 about this, as in most cases the correct software stack will be made available
-in a job automatically thanks to the *cluster modules*, as explained in the
-:ref:`next section <cluster_module>`.
+in a job automatically thanks to the *cluster* modules, as explained in the
+:ref:`next section <cluster_modules>`.
 
 If you are interested in more technical details, you can read the section on
 :ref:`manually modifying the modulepath <manually_modifying_modulepath>`,
 which is oriented towards advanced users.
 
 
-.. _cluster_module:
+.. _cluster_modules:
 
-The cluster module
-~~~~~~~~~~~~~~~~~~
+The cluster modules
+~~~~~~~~~~~~~~~~~~~
 
 Background: a given module will only be available if it is located inside a
 directory contained in the ``$MODULEPATH`` environment variable.
@@ -43,15 +43,15 @@ with the ``module avail`` command. The different software stacks mentioned
 earlier are located in different directories (see the
 :ref:`next section <manually_modifying_modulepath>` for more details), so in
 order to make sure you are loading modules from the appropriate software stack,
-the ``$MODULEPATH`` variable needs to contains the appropriate paths for the
+the ``$MODULEPATH`` variable needs to contain the appropriate paths for the
 node where you want to use a module.
 
 Because working with the different directories containing different software
-stacks is cumbersome, we advise users to rely on the *cluster* module to set
-the ``$MODULEPATH`` variable. The *cluster* module can be handled identically
+stacks is cumbersome, we advise users to rely on the cluster module to set
+the ``$MODULEPATH`` variable. The cluster module can be handled identically
 as other modules, but instead of making executables or libraries available,
 its only purpose is to set up your environment to make the correct modules
-available. The *cluster* module is always available and you can see which
+available. The cluster module is always available and you can see which
 versions can be loaded by executing ``module avail cluster``.
 
 On the login nodes and inside a job environment, the correct version of the
@@ -94,7 +94,7 @@ run jobs on the wICE batch partition, the commmand is:
    $ module load cluster/wice/batch
 
 Note that the previously loaded cluster module will be automatically unloaded:
-at most 1 cluster module can be loaded at a time. Now you can search for
+at most one cluster module can be loaded at a time. Now you can search for
 modules containing ``CP2K`` by executing (the search is not case sensitive):
 
 .. code-block:: shell
