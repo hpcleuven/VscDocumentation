@@ -160,9 +160,9 @@ This can be done by connecting to the VSC firewall page with agent forwarding::
 
 .. note::
 
-    You might have to adapt some options in the configuration of your
-    connection profiles in some apps. Have a look at
-    :ref:`Configuration of ssh-clients and UI apps<mfa_client_config>` below. 
+   You might have to adapt some options in the configuration of your
+   connection profiles in some apps. Have a look at
+   :ref:`Configuration of ssh-clients and UI apps<mfa_client_config>` below. 
    
 .. _secure_ssh_agent:   
 
@@ -248,8 +248,8 @@ Here below we shortly show what to do for PuTTY, MobaXTerm, NX, and FileZilla:
 
   .. note::
   
-  MobaXTerm can also import existing Putty Sessions. You can then right-click
-  on an imported session to edit it. Make sure that the SSH settings are correct.
+     MobaXTerm can also import existing Putty Sessions. You can then right-click
+     on an imported session to edit it. Make sure that the SSH settings are correct.
     
 - NX
 
