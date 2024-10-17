@@ -44,8 +44,7 @@ Mac, or WSL.
 #. You will now see a confirmation that you have successfully logged in.
 #. Proceed with the SSH terminal client of your choice to connect to VSC.
 
-Note: The firewall authentication is **mandatory** for other IP addresses
-(for instance when you are connecting from home or abroad).
+Note: The firewall authentication is **mandatory** when you are connecting from abroad.
 
 MFA with an agent
 -----------------
