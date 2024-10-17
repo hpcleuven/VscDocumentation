@@ -49,21 +49,19 @@ Note: The firewall authentication is **mandatory** when you are connecting from 
 MFA with an agent
 -----------------
 
-#. Launch your ssh client and choose your private VSC key for authentication as
-   usual.
-#. If the private key is accepted, your ssh client will now prompt you with an
-   URL. Visit this URL in a browser and authenticate with your institution
-   credentials. Note that this link is dynamically generated, you cannot use it
-   more than once.
+Here we will show how users can acticate and store the SSH certificate in and SSH
+agent. The VSC firewall and insiitutional login described above are also valid here.
+The difference is that user will be required to perform them only once in order to 
+set an active SSH certificate and which certificate will be stored in the running
+SSH agent.
 
-The last step is the second factor in the authentication process. When following
-that link, you will be asked to choose your university/association and log in.
-If you already did this in the same browser session (for instance when accessing
-another university-related web sites or during step 1), the login will proceed
-automatically. If the login was successful, you will be redirected to a page
-with the message that your VSC identity was confirmed.
-
-Your ssh connection is now completed!
+#. Make sure agent is running.
+#. Open your SSH client and connect to the cluster.
+#. You will be asked, depending on your system and network settings, to perform
+   the authentication steps described above.
+#. Upon successful connection the agent will automatically store your SSH certificate.
+   The certificate will be active for a maximum of 16 hours. If you quit the agent
+   before that then the stored certificates will be removed.
 
 .. note::
 
