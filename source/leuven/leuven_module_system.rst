@@ -213,3 +213,7 @@ To remove the entry again:
 
    module unuse /apps/leuven/rocky8/skylake/2018a/modules/all
 
+Keep in mind that also ``/apps/leuven/common/modules/all`` is part of your
+default ``$MODULEPATH``. This module collection is intended for packages which
+have no operating system or toolchain dependencies. Typical examples are
+packages which are distributed as precompiled binaries such as FLUENT.
