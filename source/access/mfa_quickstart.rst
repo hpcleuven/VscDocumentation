@@ -42,7 +42,7 @@ Getting started
 
 #. Log in as usual. You should now end up on a page that tells you that your VSC 
    identity is confirmed. 
-   If you already performed the previous login in that browser session, you will 
+   If you have already performed the previous login in that browser session, you will 
    immediately end up on this page.
 
    .. _firewall_confirmed:
