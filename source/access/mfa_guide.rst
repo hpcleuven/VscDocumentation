@@ -69,30 +69,6 @@ Here are the necessary steps:
 For a more thorough explanation on how to set up an agent on Windows and Mac OSx/Linux
 machines please take a look at the :ref:`mfa quick start`.
 
-GUI applications with SSH connection in the background
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Some applications such as MobaXTerm and FileZilla provide a Graphical User Interface
-(GUI) which makes them very useful when connecting to remote sites. However,
-such an application may not always prompt you to copy/paste the VSC firewall link to
-set up the necessary SSH certificate.
-
-Therefore, one way to connect to VSC is to first connect with an ssh-client 
-on your machine as explained in the previous sections.
-In the case of not having an SSH certificate agent running then as long as you
-keep that connection open you can connect with the other apps as well.
-In case you have already stored the SSH certificate in a running agent
-you can then proceed with connecting to VSC with the application.
-
-.. note::
-
-Some GUI applications may not always work when connecting to VSC
-without an agent. For example, NX is one of them.
-Therefore, it is highly recommended in such cases to use agent connection
-method :ref:`ssh agent<mfa_agent>`.
-
-
-
 Authentication with an agent on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -210,6 +186,28 @@ manually have to click ``ok`` before. You might have to install the package ``ss
 on your local machine first.
 
 .. _mfa_client_config:
+
+GUI applications with SSH connection in the background
+------------------------------------------------------
+
+Some applications such as MobaXTerm and FileZilla provide a Graphical User Interface
+(GUI) which makes them very useful when connecting to remote sites. However,
+such an application may not always prompt you to copy/paste the VSC firewall link to
+set up the necessary SSH certificate.
+
+Therefore, one way to connect to VSC is to first connect with an ssh-client 
+on your machine as explained in the previous sections.
+In the case of not having an SSH certificate agent running then as long as you
+keep that connection open you can connect with the other apps as well.
+In case you have already stored the SSH certificate in a running agent
+you can then proceed with connecting to VSC with the application.
+
+.. note::
+
+Some GUI applications may not always work when connecting to VSC
+without an agent. For example, NX is one of them.
+Therefore, it is highly recommended in such cases to use agent connection
+method :ref:`ssh agent<mfa_agent>`.
 
 Configuration of ssh-clients and GUI apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
