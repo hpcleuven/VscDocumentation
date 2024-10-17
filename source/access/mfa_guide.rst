@@ -212,10 +212,10 @@ you can then proceed with connecting to VSC with the application.
 
 .. note::
 
-Some GUI applications may not always work when connecting to VSC
-without an agent. For example, NX is one of them.
-Therefore, it is highly recommended in such cases to use the agent
-connection method :ref:`ssh agent<mfa_agent>`.
+   Some GUI applications may not always work when connecting to VSC
+   without an agent. For example, NX is one of them.
+   Therefore, it is highly recommended in such cases to use the agent
+   connection method :ref:`ssh agent<mfa_agent>`.
 
 Configuration of ssh-clients and GUI apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
