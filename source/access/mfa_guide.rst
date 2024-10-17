@@ -17,10 +17,10 @@ SSH certificates agent. The firewall page method can be used without the need to
 certificates with help of a certificates agent. The second method requires that first
 the user gets a valid SSH session certificate and then proceeds with connecting to VSC.
 Both methods employ MFA. The difference between the two is that the firewall authentication
-will establish an active SSH certificate for relatively short time and the user will be
-asked to visit the VSC firewall page upon every connection attempt. With the help of an
-SSH agent the proper certificates are valid for longer and that adds a lot of
-flexibility in using various applications used to connect to VSC.
+will establish an active SSH certificate for a relatively short time and the user will be
+asked to visit the VSC firewall page upon every subsequent connection attempt.
+With the help of an SSH agent the proper certificates are valid for much longer and that
+adds a lot of flexibility in using various applications used to connect to VSC.
 
 
 MFA without an agent
