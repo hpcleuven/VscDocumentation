@@ -67,7 +67,10 @@ Here are the necessary steps:
    before that then the stored certificates will be removed.
 
 For a more thorough explanation on how to set up an agent on Windows and Mac OSx/Linux
-machines please take a look at the :ref:`mfa quick start`.
+machines please take a look at the following section below.
+The necessary steps ahve also been described in details in :ref:`mfa quick start`.
+
+.. _mfa_agent_windows:
 
 Authentication with an agent on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,6 +81,8 @@ together with PuTTY. Make sure you install version 0.78 or later.
 Pageant stores the certificates together with your private SSH keys, which allows you
 to use VSC facilities whenever you are prompted for your identity.
 To setup your Pageant, please refer to :ref:`Using Pageant <using Pageant>`.
+
+.. _mfa_agent_nix:
 
 Authentication with an agent on Linux/Mac/WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +190,7 @@ else in your name) tries to use the agent to connect to a remote server. You wil
 manually have to click ``ok`` before. You might have to install the package ``ssh-askpass``
 on your local machine first.
 
-.. _mfa_client_config:
+.. _mfa_gui_app_config:
 
 GUI applications with SSH connection in the background
 ------------------------------------------------------
@@ -206,8 +211,8 @@ you can then proceed with connecting to VSC with the application.
 
 Some GUI applications may not always work when connecting to VSC
 without an agent. For example, NX is one of them.
-Therefore, it is highly recommended in such cases to use agent connection
-method :ref:`ssh agent<mfa_agent>`.
+Therefore, it is highly recommended in such cases to use the agent
+connection method :ref:`ssh agent<mfa_agent>`.
 
 Configuration of ssh-clients and GUI apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
