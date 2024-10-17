@@ -49,7 +49,7 @@ Note: The firewall authentication is **mandatory** when you are connecting from 
 MFA with an agent
 -----------------
 
-Here we will show how users can acticate and store the SSH certificate in and SSH
+Here we will show how users can acticate and store the SSH certificate in an SSH
 agent. The VSC firewall and insiitutional login described above are also valid here.
 The difference is that user will be required to perform them only once in order to 
 set an active SSH certificate and which certificate will be stored in the running
