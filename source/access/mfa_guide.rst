@@ -63,6 +63,9 @@ SSH agent.
    The certificate will be active for a maximum of 16 hours. If you quit the agent
    before that then the stored certificates will be removed.
 
+For a more thorough explanation on how to set up an agent on Windows and Mac OSx/Linux
+machines please take a look at the :ref:`mfa quick start`.
+
 .. note::
 
     For `login[-tier1].hpc.kuleuven.be` only, a successful connection will
