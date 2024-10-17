@@ -82,6 +82,8 @@ Pageant stores the certificates together with your private SSH keys, which allow
 to use VSC facilities whenever you are prompted for your identity.
 To setup your Pageant, please refer to :ref:`Using Pageant <using Pageant>` in
 the :ref:`mfa quick start`, or go to the respecitive section further below :ref:`mfa_client_config`.
+Reminder: in order to store the session SSH certificate make sure Pageant
+is already up and running in the background before attempting a conneciton with Putty.
 
 .. _mfa_agent_nix:
 
