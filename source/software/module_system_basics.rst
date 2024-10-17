@@ -186,7 +186,9 @@ be associated with either the same toolchain or compatible (sub)toolchains
 For example, once you have loaded a module that uses the ``foss/2023a``
 toolchain, all other modules that you load next should have been installed
 with the same toolchain or with compatible (sub)toolchains such as
-``GCC/12.3.0`` or ``GCCcore/12.3.0``.
+``GCCcore/12.3.0``, ``GCC/12.3.0`` and ``gompi/2023a``. Subtoolchains
+compatible with e.g. ``intel/2023a`` include ``GCCcore/12.3.0``,
+``intel-compilers/2023.1.0`` and ``iimpi/2023a``.
 
 Additionally, two versions of the same software packages can not be loaded
 together. If you e.g. loaded a ``Python/3.11.3-GCCcore-12.3.0`` module, then
