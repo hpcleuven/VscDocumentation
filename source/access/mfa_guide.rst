@@ -190,7 +190,7 @@ else in your name) tries to use the agent to connect to a remote server. You wil
 manually have to click ``ok`` before. You might have to install the package ``ssh-askpass``
 on your local machine first.
 
-.. _mfa_gui_app_config:
+.. _mfa_client_config:
 
 GUI applications with SSH connection in the background
 ------------------------------------------------------
