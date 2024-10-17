@@ -80,7 +80,8 @@ together with PuTTY. Make sure you install version 0.78 or later.
 
 Pageant stores the certificates together with your private SSH keys, which allows you
 to use VSC facilities whenever you are prompted for your identity.
-To setup your Pageant, please refer to :ref:`Using Pageant <using Pageant>`.
+To setup your Pageant, please refer to :ref:`Using Pageant <using Pageant>` in
+the :ref:`mfa quick start`, or go to the respecitive section further below :ref:`mfa_client_config`.
 
 .. _mfa_agent_nix:
 
@@ -219,22 +220,34 @@ Configuration of ssh-clients and GUI apps
 
 If you have not yet set up your ssh-client or other apps that use ssh to be
 able to use an agent, you might have to make some changes in your connection
-profiles. Different apps will need different changes, but here we shortly show
-what to do for MobaXTerm, PuTTY and NX:
+profiles. Different apps will need different changes. For an explanation
+with screenshots for the various GUI apps please refer to :ref:`mfa quick start`.
+Here below we shortly show what to do for PuTTY, MobaXTerm, NX, and FileZilla:
+
+- PuTTY
+
+  - Under 'Session' in the tree menu enter the remote hostname. The port is usually 22.
+  - Under 'Connection/SSH' ensure the protocol is set to SSH.
+  - Under 'Connection/SSH/Auth' ensure that using Pageant and agent forwarding are active.
+  - Under 'Connection/SSH/Auth/Credentials' make sure that there are no private keys specified
+    in the 'Private key file for authentication' field.
+  - Go back to 'Session' and save your newly created session.
+  - Now you can load and open it to connect to VSC.
 
 - MobaXTerm
 
-  - right-click on the user session you have created to connect to the Tier-2 cluster and choose 'Edit Session'
-  - Select the 'Advanced SSH settings' tab
+  - From the menu click on 'New session'.
+  - Click on the 'SSH' tab and fill in the remote server hostname. The username 
+  - can be left empty but then you will have to type it every time you want to connect.
+  - Under the 'SSH' tab select the 'Advanced SSH settings' sub-tab and set the
+    'SSH-Browser type' to 'SFTP protocol'.
   - Uncheck 'Use private key' if selected
   - click 'Ok'
-    
-- PuTTY
 
-  - Load your profile to connect to the Tier-2 cluster
-  - Go to 'Auth' under 'Connection'
-  - Be sure that 'Allow agent forwarding' is checked
-  - If you have a private key file stored under 'Private key file for authentication', remove it
+  .. note::
+  
+  MobaXTerm can also import existing Putty Sessions. You can then right-click
+  on an imported session to edit it. Make sure that the SSH settings are correct.
     
 - NX
 
@@ -244,10 +257,20 @@ what to do for MobaXTerm, PuTTY and NX:
   - Select 'Use key-based authentication with a SSH agent'
   - Click 'Modify' and verify that 'Forward authentication' is checked
 
+- FileZilla
+
+  - Under ‘File’ open the ‘Site Manager’ and click on ‘New Site’.
+  - Set the protocol to 'SFTP - SHH File Transfer Protocol', enter the VSC hostname you wish to connect to,
+  - set the logon type to 'Ask for password', and type your VSC username. The port field can be left empty.
+    Usually for SFTP/SSH protocols the port is 22.
+  - [optional] Under the ‘Advanced’ tab you can also set the directory you wish to open by default
+    upon login, e.g, your 'VSC_DATA' by typing its full linux path.
+  - Click 'Connect' to connect to VSC. You may be prompted to enter your SSH passphrase.
+
 Known issues - General remarks
 ------------------------------
 
-- It has happened that users cannot properly load the MFA URL. If that would
+- It has happened that some users cannot properly load the MFA URL. If that would
   happen to you, it is worth trying to paste the URL in an incognito browser
   window. This has only been verified to work in Chrome and does not seem to
   work in Firefox.
