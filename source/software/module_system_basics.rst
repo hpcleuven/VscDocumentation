@@ -19,7 +19,7 @@ equivalent ``ml``. To get a list of all available module commands, type:
 Available modules
 ~~~~~~~~~~~~~~~~~
 
-To view a list of available software packages, use the command
+To view the list of all available software packages, use the command
 ``module av``. The output will look similar to this:
 
 ::
@@ -39,6 +39,9 @@ To view a list of available software packages, use the command
    ---------------- /apps/leuven/rocky8/icelake/2022b/modules/all -----------------
    ATK/2.38.0-GCCcore-12.2.0                               (D)
    ...
+
+As such lists tend to be rather long, it is common to use more specific queries
+(see :ref:`Searching for modules <module_search>` below).
 
 
 Module names
@@ -66,6 +69,8 @@ When different modules exist for the same package, for example because it has
 been compiled with two different toolchains, please consider trying out the
 different modules so as to choose the one that performs best for your workloads.
 
+
+.. _module_search:
 
 Searching for modules
 ~~~~~~~~~~~~~~~~~~~~~
