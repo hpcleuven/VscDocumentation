@@ -41,7 +41,7 @@ Mac, or WSL.
    session settings (e.g., accepted cookies). In that case you will only be
    asked to confirm the firewall login via your selected choice for MFA.
 #. You will be asked to authorize the firewall request. Click 'Authorize'.
-#. You will see now a confirmation that you have successfully logged in.
+#. You will now see a confirmation that you have successfully logged in.
 #. Proceed with the SSH terminal client of your choice to connect to VSC.
 
 Note: The firewall authentication is **mandatory** for other IP addresses
