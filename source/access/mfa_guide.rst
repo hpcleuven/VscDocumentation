@@ -49,13 +49,13 @@ Note: The firewall authentication is **mandatory** when you are connecting from 
 MFA with an agent
 -----------------
 
-Here we will show how users can acticate and store the SSH certificate in an SSH
-agent. The VSC firewall and insiitutional login described above are also valid here.
-The difference is that user will be required to perform them only once in order to 
-set an active SSH certificate and which certificate will be stored in the running
-SSH agent.
+Users can also, upon establishing an SSH connection, store the SSH certificate in an SSH agent.
+The VSC firewall and insiitutional login steps described above are also valid here.
+The difference is that the user will be required to perform them only once in order to 
+set an active SSH certificate which will be then stored in the running SSH agent.
+Here are the necessary steps:
 
-#. Make sure agent is running.
+#. Make sure the agent is running.
 #. Open your SSH client and connect to the cluster.
 #. You will be asked, depending on your system and network settings, to perform
    the authentication steps described above.
@@ -66,50 +66,30 @@ SSH agent.
 For a more thorough explanation on how to set up an agent on Windows and Mac OSx/Linux
 machines please take a look at the :ref:`mfa quick start`.
 
-.. note::
-
-    For `login[-tier1].hpc.kuleuven.be` only, a successful connection will
-    white list your IP address for 90 days. Within that time frame, the first
-    step mentioned above becomes optional.
-    
-.. note::
-
-    The above method works fine to create the connection through MobaXTerm.
-    The included file explorer will show you the files, but opening, downloading
-    and uploading files from here does not work without the agent. If you would 
-    like to use the file explorer, have a look at :ref:`Authentication with an ssh agent<mfa_agent>` . 
-
-.. note::
-
-    If you use PuTTY to login, highlighting the URL with your mouse/cursor will copy 
-    it to your clipboard, and make it ready to paste into your browser.
-    Therefore, do not use the Ctrl+C combination on your keyboard, or it will cancel 
-    your login attempt.
-
 GUI applications with SSH connection in the background
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some applications such as FileZilla provide a Graphical User Interface
-(GUI) that will setup an ssh connection under the hood. This leads to a problem
-with step 3 from the last section, as those applications will typically not
-prompt you the firewall URL (some applications like WinSCP will do this however).
-To work around this, you should first login to the KU Leuven cluster with an
-ssh-client on your machine as explained in the previous section. As long as you
-keep this connection open, you can connect with the other apps as well. This
-extra step can however also be avoided by using an ssh agent, which will be
-explained in the next part.
+Some applications such as MobaXTerm and FileZilla provide a Graphical User Interface
+(GUI) which makes them very useful when connecting to remote sites. However,
+such an application may not always prompt you to copy/paste the VSC firewall link to
+set up the necessary SSH certificate.
+
+Therefore, one way to connect to VSC is
+to first connect with an ssh-client on your machine as explained in the previous sections.
+In the case of not having an SSH certificate agent running then as long as you
+keep that connection open you can connect with the other apps as well.
+In case you have already stored the SSH certificate in a running agent
+you can then proceed with connecting to VSC with the application.
+
+Note that some GUI applications may not always work when connecting to VSC
+without an agent. Therefore, it is highly recommended in that case to use agent
+connection method.
 
 .. note::
 
    This method will not always work for NX. It is highly recommended to use
    the method with an :ref:`ssh agent<mfa_agent>` when using MFA with NX.
 
-.. note::
-
-   It is currently not possible to connect to NX when using a ED25519 keytype.
-   The RSA4096 keytype does allow you to connect. As this is the recommended
-   keytype for connections to the HPC clusters, this should not be an issue for
-   most users.
 
 .. _mfa_agent:
 
