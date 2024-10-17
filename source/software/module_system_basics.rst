@@ -67,21 +67,29 @@ Searching for modules
 ~~~~~~~~~~~~~~~~~~~~~
 
 Often, when looking for some specific software, you will want to filter
-the list of available modules, since it tends to be rather large. The
-module command writes its output to standard error, rather than standard
-output, which is somewhat confusing when using pipes to filter. The
-following command would show only the modules that have the string
-'python' in their name, regardless of the case.
+the list of available modules, since it tends to be rather large.
+For a (case-insensitive) search for modules containing the word ``python``,
+you can either try
 
 ::
 
-   $ module av |& grep -i python
+   $ module av python
 
-For more comprehensive searches, you can use ``module spider``, e.g.,
+or, for a more comprehensive search
 
 ::
 
    $ module spider python
+
+
+To restrict the search to modules where the package name ends with ``python``,
+add a trailing slash (e.g. ``module av python/``).
+
+.. note:
+
+   The module command writes its output to standard error, rather than standard
+   output. If you want to use pipes for filtering, consider using ``2>&1``
+   or ``|&`` (e.g. ``module av |& grep -i python``).
 
 
 Info on modules
