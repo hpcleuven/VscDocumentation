@@ -58,6 +58,10 @@ Toolchains such as ``intel-2023a`` or ``foss-2023a`` refer to the 2023a
 versions of the :ref:`toolchains <toolchains>` based on the Intel and GNU
 compilers respectively. Certain modules may not belong to a particular toolchain.
 
+When different modules exist for the same package, for example because it has
+been compiled with two different toolchains, please consider trying out the
+different modules so as to choose the one that performs best for your workloads.
+
 
 Searching for modules
 ~~~~~~~~~~~~~~~~~~~~~
