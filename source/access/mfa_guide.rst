@@ -13,10 +13,14 @@ credentials, such as username and password, they won’t be able to access the V
 without that additional authentication factor.
 
 Currently, there are two ways to connect to VSC: via the `VSC firewall page`_ and via
-SSH certificates. The firewall page method can be used without the need to set SSH
+SSH certificates agent. The firewall page method can be used without the need to set SSH
 certificates with help of a certificates agent. The second method requires that first
 the user gets a valid SSH session certificate and then proceeds with connecting to VSC.
-Both methods employ MFA.
+Both methods employ MFA. The difference between the two is that the firewall authentication
+will establish an active SSH certificate for relatively short time and the user will be
+asked to visit the VSC firewall page upon every connection attempt. With the help of an
+SSH agent the proper certificates are valid for longer and that adds a lot of
+flexibility in using various applications used to connect to VSC.
 
 
 MFA without an agent
@@ -27,11 +31,21 @@ and you want to log in to the cluster with an ssh client like PuTTY or
 MobaXTerm. It also applies when using the ssh command in a terminal on Linux,
 Mac, or WSL.
 
-#. Visit the `VSC firewall page`_ and login with your institution credentials.
-   This step is optional when connecting from a white-listed IP address,
-   e.g., the Flemish universities internal networks.
-   It is **mandatory** for other IP addresses (for instance when you are connecting
-   from home or abroad).
+#. Visit the `VSC firewall page`_ 
+#. [optional] Login with your institution credentials.
+   This step may not be necessary when connecting from a white-listed IP address,
+   e.g., the Flemish universities internal networks such as static on-site
+   IP as well as the insututional VPN.
+   For example, if you have already logged upfront into your institution network
+   then you might not be required to log in again depending on your browser
+   session settings (e.g., accepted cookies). In that case you will only be
+   asked to confirm the firewall login via your selected choice for MFA.
+#. You will be asked to authorize the firewall request. Click 'Authorize'.
+#. You will see now a confirmation that you have successfully logged in.
+#. Proceed with the SSH terminal client of your choice to connect to VSC.
+
+Note: The firewall authentication is **mandatory** for other IP addresses
+(for instance when you are connecting from home or abroad).
 
 MFA with an agent
 -----------------
