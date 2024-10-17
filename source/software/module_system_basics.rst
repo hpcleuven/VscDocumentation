@@ -9,7 +9,11 @@ software applications.
 
 All VSC sites use a Lua based implementation called `Lmod`_. Interacting
 with the module system happens via the ``module`` command  or its shorter
-equivalent ``ml``.
+equivalent ``ml``. To get a list of all available module commands, type:
+
+::
+
+   $ module help
 
 
 Available modules
@@ -261,16 +265,6 @@ are special modules that do not normally need to be unloaded (for example
 because they define the appropriate module paths and possibly other environment
 variables). If really needed, sticky modules can be unloaded with
 ``module --force purge``.
-
-
-Getting help
-~~~~~~~~~~~~
-
-To get a list of all available module commands, type:
-
-::
-
-   $ module help
 
 
 .. _collections of modules:
