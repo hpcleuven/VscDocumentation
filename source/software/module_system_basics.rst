@@ -228,10 +228,7 @@ dependencies of the explicitly loaded ``CP2K`` and ``GROMACS`` installations
 Unloading modules
 ~~~~~~~~~~~~~~~~~
 
-To unload a specific module, use the ``module unload`` command.
-It works consistently with the ``load`` command, and reverses the latter's
-effect. One can however unload automatically loaded modules manually, to
-debug some problem.
+To unload a specific module, use the ``module unload`` command, e.g.:
 
 ::
 
@@ -241,6 +238,10 @@ Notice that the version was not specified: the module system is
 sufficiently clever to figure out what the user intends. However,
 checking the list of currently loaded modules is always a good idea,
 just to make sure.
+
+Keep in mind that ``module unload`` only unloads the chosen module.
+It will not unload other modules which were automatically loaded
+as dependencies of the chosen module.
 
 
 .. _module_purge:
