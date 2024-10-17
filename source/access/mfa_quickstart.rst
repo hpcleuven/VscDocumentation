@@ -266,3 +266,5 @@ FileZilla
       :alt: filezilla_sitemanager_setup
 
 Under the ‘Advanced’ tab you can also set the directory you wish to open by default upon login, e.g, your 'VSC_DATA' by typing its full linux path.
+Click 'Connect' to connect to VSC. You may be prompted to enter your SSH passphrase. When the connection is established you will see the
+remote cluster directory tree structure.
