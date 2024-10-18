@@ -31,7 +31,7 @@ Hardware details
     18 cores each :raw-html:`<br />`
     (1 NUMA domain and 1 L3 cache per CPU)
   - 192 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency skylake tier2>`)
-  - default memory per core is 5000 MiB
+  - default memory per core is 2000 MiB
   - 200 GB SSD local disk
   - partition ``interactive``,
     specific Slurm :ref:`options <submit_genius_interactive>` apply
@@ -42,7 +42,7 @@ Hardware details
     18 cores each :raw-html:`<br />`
     (1 NUMA domain and 1 L3 cache per CPU)
   - 768 GiB RAM
-  - default memory per core is 5000 MiB
+  - default memory per core is 21000 MiB
   - 200 GB SSD local disk
   - partition ``bigmem|bigmem_long``, specific Slurm :ref:`options <submit_genius_bigmem>` apply
 
