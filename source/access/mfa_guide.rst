@@ -56,6 +56,8 @@ Users can also, upon establishing an SSH connection, store the SSH certificate i
 The VSC firewall and institutional login steps described above are also valid here.
 The difference is that the user will be required to perform them only once in order to 
 set an active SSH certificate which will be then stored in the running SSH agent.
+More information on the use of SSH agents for both Windows and Linux-type machines
+can be found on :ref:`Pageant` and on :ref:`SSH agent`.
 Here are the necessary steps:
 
 #. Make sure the agent is running.
