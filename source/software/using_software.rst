@@ -13,7 +13,7 @@ A toolchain consists of a set of compilers, MPI library and
 basic libraries that work together well with each other, and then a
 number of applications and other libraries compiled with that set of
 tools and thus often dependent on those. We use toolchains based on the
-Intel and GNU compilers, and refresh them twice a year, leading to
+Intel and GNU compilers, and refresh them up to twice a year, leading to
 version numbers like 2023a and 2023b for the first and second
 refresh of a given year. Some tools are installed outside a toolchain,
 e.g., additional versions requested by a small group of users for
