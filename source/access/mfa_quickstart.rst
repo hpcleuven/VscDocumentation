@@ -21,22 +21,30 @@ Getting started
    .. figure:: mfa_quickstart/firewall_link_mfa.PNG
       :alt: firewall_link_mfa
 
-#. Cop-paste the provided link in a browser and follow it;
-   highlighting the link with your mouse is sufficient to copy the URL to your
-   clipboard. Avoid using CTRL-C, or it will send a SIGINT signal interrupting
-   your process, instead of performing a copy operation.
-   Once you paste the link in your browser, you end up on a login page of your 
-   university or association. 
+#. Copy-paste the provided link in a browser and follow it.
+   Note that if using Putty then simply highlighting the link with your mouse will copy the URL to your
+   clipboard; avoid using CTRL-C, or it will send a SIGINT signal interrupting
+   your process instead of performing a copy operation.
+   Once you paste the link in your browser and you are not connected to the univerisity network, 
+   e.g,. via VPN, you end up on a login page of your university or association. 
    For KU Leuven this will be the idp page:
 
    .. _idp_page:
    .. figure:: mfa_quickstart/idp_page.PNG
       :alt: idp_page
 
+   If you are already connected to the internal network then you will be asked to only set the
+   SSH certificates with the MFA of your choice, e.g, via a code sent to your registered phone,
+   or an authenticator app:
+
+   .. _reauthenticate_phone:
+   .. figure:: mfa_quickstart/reauthenticate_phone.PNG
+      :alt: reauthenticate_phone
+
 #. Log in as usual. You should now end up on a page that tells you that your VSC 
    identity is confirmed. 
-   If you already performed the previous login in that browser session, you will 
-   immediately end up on this page.
+   If you have already performed the previous login in that browser session, you will 
+   immediately end up on this page:
 
    .. _firewall_confirmed:
    .. figure:: mfa_quickstart/firewall_confirmed.PNG
@@ -162,19 +170,39 @@ Here, we shortly show you how to set up MobaXTerm, PuTTY and NX correctly.
 MobaXTerm
 ~~~~~~~~~
 
-#. Right-click on the correct session and click on ‘edit session’
+With MobaXTerm users can connect to VSC in two ways: by creating a new session, or by using existing Putty sessions.
 
-   .. _moba_edit_session:
-   .. figure:: mfa_quickstart/moba_edit_session.png
-      :alt: moba_edit_session
+#. To create a new session either click on the 'Session' icon, or under the 'Sessions' menu click on 'New session'.
+   Under the 'SSH' tab enter the remote hostname for the VSC site you want to connect to in the field 'Remote host'.
+   Type your username if you wish. If you leave that field emtpy they you will be prompted to enter your VSC username
+   each time you connect to the cluster.
+   Ensure that in the 'Advanced SSH settings' 'X11' forwarding is active and the protocol is SFTP. Do not use private
+   SSH keys. Click 'OK' and save the session.
 
-#. Under advanced settings. Be sure that ‘Use private key’ is not selected
+   .. _mobaxterm_create_new_session:
+   .. figure:: mfa_quickstart/mobaxterm_create_new_session.PNG
+      :alt: mobaxterm_create_new_session
 
-   .. _moba_priv:
-   .. figure:: mfa_quickstart/moba_priv.PNG
-      :alt: moba_priv
+   Upon successful connection attempt you will be prompted to copy/paste the firewall URL in your browser as part
+   of the MFA login procedure:
 
-#. Click ‘Ok’
+   .. _vsc_firewall_certificate_authentication:
+   .. figure:: mfa_quickstart/vsc_firewall_certificate_authentication.PNG
+      :alt: vsc_firewall_certificate_authentication
+
+   Confirm by clicking 'Yes'. Once the MFA has been completed your MobaXTerm session will connect to VSC.
+
+#. If you have already configured remote sessions within Putty then MobaXTerm, upon installing it, will automatically
+   import them and they will appear on the left side the window.
+   To edit a session right-click on and click on ‘edit session'. Ensure that all settings are correct
+   under the 'SSH' tab and the 'Advanced SSH settings' sub-tab:
+
+   .. _mobaxterm_putty_imported_sessions:
+   .. figure:: mfa_quickstart/mobaxterm_putty_imported_sessions.PNG
+      :alt: mobaxterm_putty_imported_sessions
+
+   If the session has been properly imported you will see that all the necessary fields are already filled in.
+   Click 'OK' to close the 'edit session' window.
 
 PuTTY
 ~~~~~
@@ -194,6 +222,16 @@ PuTTY
       :alt: putty private key
 
 #. Save the profile under ‘Session’
+
+#. To start a session load it from 'Saved Sessions' under 'Session' and click 'Open'.
+
+   .. _putty_load_saved_session:
+   .. figure:: mfa_quickstart/putty_load_saved_session.PNG
+      :alt: putty_load_saved_session
+
+   You will be then prompted to copy/paste the firewall link into your browser and complete
+   the MFA procedure. As mentioned, with Putty users only need to highlight the link with their
+   mouse in order to copy it.
 
 .. _mfa for nx:
 
@@ -219,3 +257,15 @@ NX
    .. figure:: mfa_quickstart/nx_mod.PNG
       :alt: nx_mod
 
+FileZilla
+~~~~~~~~~
+
+#. Under ‘File’ open the ‘Site Manager’ and click on ‘New Site’. Set the protocol to 'SFTP - SHH File Transfer Protocol', enter the VSC hostname you wish to connect to, set the logon type to 'Ask for password', and type your VSC username. The port field can be left empty. Usually for SFTP/SSH protocols the port is 22:
+
+   .. _filezilla_sitemanager_setup:
+   .. figure:: mfa_quickstart/filezilla_sitemanager_setup.PNG
+      :alt: filezilla_sitemanager_setup
+
+Under the ‘Advanced’ tab you can also set the directory you wish to open by default upon login, e.g, your 'VSC_DATA' by typing its full linux path.
+Click 'Connect' to connect to VSC. You may be prompted to enter your SSH passphrase. When the connection is established you will see the
+remote cluster directory tree structure.
