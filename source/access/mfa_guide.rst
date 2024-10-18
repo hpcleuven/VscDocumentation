@@ -30,7 +30,7 @@ MFA without an agent
 The following steps are applicable when you do not have an ssh agent running
 and you want to log in to the cluster with an ssh client like PuTTY or
 MobaXTerm. It also applies when using the ssh command in a terminal on Linux,
-Mac, or WSL.
+Mac, or Windows Subsystem for Linux (WSL).
 
 #. Visit the `VSC firewall page`_ 
 #. [optional] Login with your institution credentials.
@@ -53,7 +53,7 @@ MFA with an agent
 -----------------
 
 Users can also, upon establishing an SSH connection, store the SSH certificate in an SSH agent.
-The VSC firewall and insiitutional login steps described above are also valid here.
+The VSC firewall and institutional login steps described above are also valid here.
 The difference is that the user will be required to perform them only once in order to 
 set an active SSH certificate which will be then stored in the running SSH agent.
 Here are the necessary steps:
@@ -116,8 +116,6 @@ case you can start an instance of the agent with::
    current shell. If you want to connect with NoMachine NX, you should also start your 
    NoMachine client from within this shell via the ``nxplayer`` command. Otherwise it will 
    not be able to access the certificate stored in your agent.
-
-(to kill the agent use ``eval "$(ssh-agent -k)"``)
 
 If your agent is running, the ``ssh-add -l`` will list the identities that were
 added to the ssh-agent. If none are added, the output will state
@@ -228,7 +226,7 @@ Here below we shortly show what to do for PuTTY, MobaXTerm, NX, and FileZilla:
 
 - PuTTY
 
-  - Under 'Session' in the tree menu enter the remote hostname. The port is usually 22.
+  - Under 'Session' in the tree menu enter the remote hostname. The default port is 22.
   - Under 'Connection/SSH' ensure the protocol is set to SSH.
   - Under 'Connection/SSH/Auth' ensure that using Pageant and agent forwarding are active.
   - Under 'Connection/SSH/Auth/Credentials' make sure that there are no private keys specified
