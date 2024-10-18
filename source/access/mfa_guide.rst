@@ -211,7 +211,7 @@ you can then proceed with connecting to VSC with the application.
 .. note::
 
    Some GUI applications may not always work when connecting to VSC
-   without an agent. For example, NX is one of them.
+   without an agent. For example, NoMachine is one of them.
    Therefore, it is highly recommended in such cases to use the agent
    connection method :ref:`ssh agent<mfa_agent>`.
 
@@ -257,6 +257,8 @@ Here below we shortly show what to do for PuTTY, MobaXTerm, NX, and FileZilla:
   - Select 'Use key-based authentication with a SSH agent'
   - Click 'Modify' and verify that 'Forward authentication' is checked
 
+  Please also refer to the :ref:`NX start guide` page.
+
 - FileZilla
 
   - Under ‘File’ open the ‘Site Manager’ and click on ‘New Site’.
@@ -266,6 +268,8 @@ Here below we shortly show what to do for PuTTY, MobaXTerm, NX, and FileZilla:
   - [optional] Under the ‘Advanced’ tab you can also set the directory you wish to open by default
     upon login, e.g, your 'VSC_DATA' by typing its full linux path.
   - Click 'Connect' to connect to VSC. You may be prompted to enter your SSH passphrase.
+
+  Please also refer to the :ref:`FileZilla` page.
 
 Known issues - General remarks
 ------------------------------
