@@ -20,8 +20,9 @@ Hardware details
       36 cores each :raw-html:`<br />`
       (1 NUMA domain and 1 L3 cache per CPU)
     - 256 GiB RAM
+    - default memory per core is 3400 MiB
     - 960 GB SSD local disk
-    - partitions ``batch/batch_long``,
+    - partitions ``batch|batch_long|batch_icelake|batch_icelake_long``,
       :ref:`submit options <submit to wice compute node>`
 
   - 68 Sapphire Rapids nodes
@@ -31,8 +32,9 @@ Hardware details
       (4 NUMA domains and 1 L3 cache per CPU) :raw-html:`<br />`
       The base and max CPU frequencies are 2.1 GHz and 3.8 GHz, respectively.
     - 256 GiB RAM
+    - default memory per core is 2500 MiB
     - 960 GB SSD local disk
-    - partitions ``batch_sapphirerapids/batch_sapphirerapids_long``
+    - partitions ``batch_sapphirerapids|batch_sapphirerapids_long``
       :ref:`submit options <submit to wice compute node>`
 
 - 5 big memory nodes
@@ -41,6 +43,7 @@ Hardware details
     36 cores each :raw-html:`<br />`
     (2 NUMA domains and 1 L3 cache per CPU)
   - 2048 GiB RAM
+  - default memory per core is 28000 MiB
   - 960 GB SSD local disk
   - partition ``bigmem``,
     :ref:`submit options <submit to wice big memory node>`
@@ -52,6 +55,7 @@ Hardware details
     (1 NUMA domain and 1 L3 cache per CPU) :raw-html:`<br />`
     The base and max CPU frequencies are 2.4 GHz and 3.5 GHz, respectively.
   - 8 TiB RAM
+  - default memory  per core is 111900 MiB
   - 960 GB SSD local disk
   - partition ``hugemem``,
     :ref:`submit options <submit to wice big memory node>`
@@ -64,9 +68,10 @@ Hardware details
       36 cores each :raw-html:`<br />`
       (2 NUMA domains and 1 L3 cache per CPU)
     - 512 GiB RAM
+    - default memory per core is 7000 MiB
     - 4 NVIDIA A100 SXM4, 80 GiB GDDR, connected with NVLink
     - 960 GB SSD local disk
-    - partition ``gpu``,
+    - partition ``gpu|gpu_a100``,
       :ref:`submit options <submit to wice GPU node>`
 
   - 4 nodes with 16 H100 GPUs in total
@@ -76,23 +81,35 @@ Hardware details
       (4 NUMA domains and 4 L3 caches per CPU) :raw-html:`<br />`
       The base and max CPU frequencies are 2.7 GHz and 3.9 GHz, respectively.
     - 768 GiB RAM
+    - default memory per core is 11700 MiB
     - 4 NVIDIA H100 SXM5, 80 GiB HBM3, connected with NVLink
     - 960 GB SSD local disk
     - partition ``gpu_h100``,
       :ref:`submit options <submit to wice GPU node>`
 
-- 4 interactive nodes and 1 debug node
+- 4 interactive nodes
 
   - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
     32 cores each :raw-html:`<br />`
     (2 NUMA domains and 1 L3 cache per CPU)
   - 512 GiB RAM
+  - default memory per core is 2000 MiB
   - 1 NVIDIA A100, 80 GiB GDDR
   - 960 GB SSD local disk
   - partitions ``interactive``,
     :ref:`submit options <submit to wice interactive node>`
     :raw-html:`<br />`
-    and ``gpu_a100_debug``,
+
+- 1 debug node
+
+  - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
+    32 cores each :raw-html:`<br />`
+    (2 NUMA domains and 1 L3 cache per CPU)
+  - 512 GiB RAM
+  - default memory per core is 7500 MiB
+  - 1 NVIDIA A100, 80 GiB GDDR
+  - 960 GB SSD local disk
+  - partitions ``gpu_a100_debug``,
     :ref:`submit options <submit to wice GPU node>`
 
 All nodes of the same type are interconnected using an Infiniband HDR-100
