@@ -13,8 +13,8 @@ credentials, such as username and password, they won’t be able to access the V
 without that additional authentication factor.
 
 Currently, there are two ways to connect to VSC: via the `VSC firewall page`_ and via
-SSH certificates agent. The firewall page method can be used without the need to set SSH
-certificates with help of a certificates agent. The second method requires that first
+SSH certificates. The firewall page method can be used without the need to set SSH
+certificates with help of a certificate agent. The second method requires that first
 the user gets a valid SSH session certificate and then proceeds with connecting to VSC.
 Both methods employ MFA. The difference between the two is that the firewall authentication
 will establish an active SSH certificate for a relatively short time and the user will be
