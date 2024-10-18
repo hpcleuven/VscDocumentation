@@ -184,9 +184,9 @@ can for example be combined as follows:
 .. warning::
 
    Do *not* load modules in your ``.bashrc``, ``.bash_profile`` or ``.profile``,
-   you *will* shoot yourself in the foot at some point.  Consider using
-   :ref:`module collections <collections of modules>` ``restore`` as a command
-   line alternative (so *not* in the shell initialization files either!).
+   you *will* shoot yourself in the foot at some point. If you want to avoid
+   typing the same module load commands over and over, we instead recommend to
+   define aliases or functions in your ``.bashrc``.
 
 
 Conflicting modules
@@ -282,49 +282,45 @@ variables). If really needed, sticky modules can be unloaded with
 Collections of modules
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Although it is convenient to set up your working environment by loading
-modules in your ``.bashrc`` or ``.profile`` file, this is error prone and
-you will end up shooting yourself in the foot at some point.
+It is also possible to bundle different modules together as a collection:
 
-The module system provides an alternative approach that lets you set up
-an environment with a single command, offering a viable alternative to
-polluting your ``.bashrc``.
-
-Define an environment
-
-   #. Be sure to start with a clean environment
+   #. Be sure to start with a clean environment:
       ::
 
          $ module purge
 
-   #. Load the modules you want in your environment, e.g.,
+   #. Load the modules you want in your collection, e.g.,
       ::
 
          $ module load matplotlib/3.7.2-gfbf-2023a
          $ module load MATLAB/2023b
 
-   #. save your environment, e.g., as ``data_analysis``
+   #. Save your collection, e.g., as ``data_analysis``
       ::
 
-          $ module save data_analysis
+         $ module save data_analysis
 
-Use an environment
+   #. At a later point, you can load the module collection via:
+      ::
 
-   ::
+         $ module restore data_analysis
 
-      $ module restore data_analysis
+   #. To list all your collections:
+      ::
 
-List all your environments
+         $ module savelist
 
-   ::
+   #. To remove the collection:
+      ::
 
-      $ module savelist
+         $ rm ~/.lmod.d/data_analysis
 
-Remove an environment
 
-   ::
+.. warning::
 
-      $ rm ~/.lmod.d/data_analysis
+   Be aware that module collections stop working when one of the
+   modules in the collection is reinstalled. In such cases the
+   collection needs to be removed and then redefined.
 
 
 .. _specialized software stacks:
