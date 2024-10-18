@@ -68,7 +68,7 @@ Here are the necessary steps:
 
 For a more thorough explanation on how to set up an agent on Windows and Mac OSx/Linux
 machines please take a look at the following section below.
-The necessary steps ahve also been described in details in :ref:`mfa quick start`.
+The necessary steps have also been described in details in :ref:`mfa quick start`.
 
 .. _mfa_agent_windows:
 
