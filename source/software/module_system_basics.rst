@@ -63,7 +63,12 @@ For e.g. ``GROMACS/2023.3-foss-2023a-PLUMED-2.9.0``, we have
 
 Toolchains such as ``intel-2023a`` or ``foss-2023a`` refer to the 2023a
 versions of the :ref:`toolchains <toolchains>` based on the Intel and GNU
-compilers respectively. Certain modules may not belong to a particular toolchain.
+compilers respectively. Modules that do not belong to a particular toolchain
+are called ``system`` modules. For those modules, the module anatomy is simply
+
+::
+
+   <package>/<version>[-<extra>]
 
 When different modules exist for the same package, for example because it has
 been compiled with two different toolchains, please consider trying out the
