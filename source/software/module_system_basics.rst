@@ -195,7 +195,8 @@ Conflicting modules
 It is important to note that only modules that are compatible with
 each other should be loaded together. The loaded modules should all
 be associated with either the same toolchain or compatible (sub)toolchains
-(see also https://docs.easybuild.io/common-toolchains/#toolchains_diagram).
+(see also https://docs.easybuild.io/common-toolchains/#toolchains_diagram)
+or be ``system`` modules.
 
 For example, once you have loaded a module that uses the ``foss/2023a``
 toolchain, all other modules that you load next should have been installed
