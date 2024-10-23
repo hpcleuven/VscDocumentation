@@ -3,92 +3,76 @@
 MFA Guide
 =========
 
+General information
+-------------------
+
+|KUL| Multi-Factor Authentication (MFA) is mandatory when connecting to the VSC network.
+In the context of SSH connections it sets an increased level of security by requiring
+an additional verification step. MFA ensures that even if an attacker obtains your SSH login
+credentials, such as username and password, they won’t be able to access the VSC netowrk
+without that additional authentication factor.
+
+Currently, there are two ways to connect to VSC: via the `VSC firewall page`_ and via
+SSH certificates. The firewall page method can be used without the need to set SSH
+certificates with help of a certificate agent. The second method requires that first
+the user gets a valid SSH session certificate and then proceeds with connecting to VSC.
+Both methods employ MFA. The difference between the two is that the firewall authentication
+will establish an active SSH certificate for a relatively short time and the user will be
+asked to visit the VSC firewall page upon every subsequent connection attempt.
+With the help of an SSH agent the proper certificates are valid for much longer and that
+adds a lot of flexibility in using various applications used to connect to VSC.
+
+.. _mfa_no_agent:
+
 MFA without an agent
 --------------------
 
 The following steps are applicable when you do not have an ssh agent running
 and you want to log in to the cluster with an ssh client like PuTTY or
 MobaXTerm. It also applies when using the ssh command in a terminal on Linux,
-Mac, or WSL.
+Mac, or Windows Subsystem for Linux (WSL).
 
-#. |Optional| Visit the `VSC firewall page`_ in a browser and login with your
-   institution credentials. This step is optional when connecting from a
-   white-listed IP address (among which are the KU Leuven address range, Flemish
-   universities, most Belgian Internet providers,...). It is **mandatory** for
-   other IP addresses (for instance when you are connecting from abroad).
-#. Launch your ssh client and choose your private VSC key for authentication as
-   usual.
-#. If the private key is accepted, your ssh client will now prompt you with an
-   URL. Visit this URL in a browser and authenticate with your institution
-   credentials. Note that this link is dynamically generated, you cannot use it
-   more than once.
+#. Visit the `VSC firewall page`_ 
+#. [optional] Login with your institution credentials.
+   This step may not be necessary when connecting from a white-listed IP address,
+   e.g., the Flemish universities internal networks such as static on-site
+   IP as well as the insututional VPN.
+   For example, if you have already logged upfront into your institution network
+   then you might not be required to log in again depending on your browser
+   session settings (e.g., accepted cookies). In that case you will only be
+   asked to confirm the firewall login via your selected choice for MFA.
+#. You will be asked to authorize the firewall request. Click 'Authorize'.
+#. You will now see a confirmation that you have successfully logged in.
+#. Proceed with the SSH terminal client of your choice to connect to VSC.
 
-The last step is the second factor in the authentication process. When following
-that link, you will be asked to choose your university/association and log in.
-If you already did this in the same browser session (for instance when accessing
-another university-related web sites or during step 1), the login will proceed
-automatically. If the login was successful, you will be redirected to a page
-with the message that your VSC identity was confirmed.
-
-Your ssh connection is now completed!
-
-.. note::
-
-    For `login[-tier1].hpc.kuleuven.be` only, a successful connection will
-    white list your IP address for 90 days. Within that time frame, the first
-    step mentioned above becomes optional.
-    
-.. note::
-
-    The above method works fine to create the connection through MobaXTerm.
-    The included file explorer will show you the files, but opening, downloading
-    and uploading files from here does not work without the agent. If you would 
-    like to use the file explorer, have a look at :ref:`Authentication with an ssh agent<mfa_agent>` . 
-
-.. note::
-
-    If you use PuTTY to login, highlighting the URL with your mouse/cursor will copy 
-    it to your clipboard, and make it ready to paste into your browser.
-    Therefore, do not use the Ctrl+C combination on your keyboard, or it will cancel 
-    your login attempt.
-
-GUI applications with SSH connection in the background
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Some applications such as FileZilla provide a Graphical User Interface
-(GUI) that will setup an ssh connection under the hood. This leads to a problem
-with step 3 from the last section, as those applications will typically not
-prompt you the firewall URL (some applications like WinSCP will do this however).
-To work around this, you should first login to the KU Leuven cluster with an
-ssh-client on your machine as explained in the previous section. As long as you
-keep this connection open, you can connect with the other apps as well. This
-extra step can however also be avoided by using an ssh agent, which will be
-explained in the next part.
-
-.. note::
-
-   This method will not always work for NX. It is highly recommended to use
-   the method with an :ref:`ssh agent<mfa_agent>` when using MFA with NX.
-
-.. note::
-
-   It is currently not possible to connect to NX when using a ED25519 keytype.
-   The RSA4096 keytype does allow you to connect. As this is the recommended
-   keytype for connections to the HPC clusters, this should not be an issue for
-   most users.
+Note: The firewall authentication is **mandatory** when you are connecting from abroad.
 
 .. _mfa_agent:
 
-Authentication with an ssh agent
---------------------------------
+MFA with an agent
+-----------------
 
-In order to circumvent the annoyance of multiple MFA prompts or connecting to
-the cluster with an ssh client before being able to use certain apps like FileZilla,
-you can use an agent. This agent will store a certificate that contains the
-identity verification you did when following the firewall link. This way, you
-will only be asked to verify your identity once. Of course this certificate
-does not live forever. When using the built-in ssh-agent of Linux and Mac this
-will be as long as your agent lives. 
+Users can also, upon establishing an SSH connection, store the SSH certificate in an SSH agent.
+The VSC firewall and institutional login steps described above are also valid here.
+The difference is that the user will be required to perform them only once in order to 
+set an active SSH certificate which will be then stored in the running SSH agent.
+More information on the use of SSH agents for both Windows and Linux-type machines
+can be found on :ref:`using Pageant` and on :ref:`SSH agent`.
+Here are the necessary steps:
+
+#. Make sure the agent is running.
+#. Open your SSH client and connect to the cluster.
+#. You will be asked, depending on your system and network settings, to perform
+   the authentication steps described above.
+#. Upon successful connection the agent will automatically store your SSH certificate.
+   The certificate will be active for a maximum of 16 hours. If you quit the agent
+   before that then the stored certificates will be removed.
+
+For a more thorough explanation on how to set up an agent on Windows and Mac OSx/Linux
+machines please take a look at the following section below.
+The necessary steps have also been described in details in :ref:`mfa quick start`.
+
+.. _mfa_agent_windows:
 
 Authentication with an agent on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,7 +82,12 @@ together with PuTTY. Make sure you install version 0.78 or later.
 
 Pageant stores the certificates together with your private SSH keys, which allows you
 to use VSC facilities whenever you are prompted for your identity.
-To setup your Pageant, please refer to :ref:`Using Pageant <using Pageant>`.
+To setup your Pageant, please refer to :ref:`Using Pageant <using Pageant>` in
+the :ref:`mfa quick start`, or go to the respecitive section further below :ref:`mfa_client_config`.
+Reminder: in order to store the session SSH certificate make sure Pageant
+is already up and running in the background before attempting a conneciton with Putty.
+
+.. _mfa_agent_nix:
 
 Authentication with an agent on Linux/Mac/WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,8 +118,6 @@ case you can start an instance of the agent with::
    current shell. If you want to connect with NoMachine NX, you should also start your 
    NoMachine client from within this shell via the ``nxplayer`` command. Otherwise it will 
    not be able to access the certificate stored in your agent.
-
-(to kill the agent use ``eval "$(ssh-agent -k)"``)
 
 If your agent is running, the ``ssh-add -l`` will list the identities that were
 added to the ssh-agent. If none are added, the output will state
@@ -173,9 +160,9 @@ This can be done by connecting to the VSC firewall page with agent forwarding::
 
 .. note::
 
-    You might have to adapt some options in the configuration of your
-    connection profiles in some apps. Have a look at
-    :ref:`Configuration of ssh-clients and UI apps<mfa_client_config>` below. 
+   You might have to adapt some options in the configuration of your
+   connection profiles in some apps. Have a look at
+   :ref:`Configuration of ssh-clients and UI apps<mfa_client_config>` below. 
    
 .. _secure_ssh_agent:   
 
@@ -208,27 +195,61 @@ on your local machine first.
 
 .. _mfa_client_config:
 
+GUI applications with SSH connection in the background
+------------------------------------------------------
+
+Some applications such as MobaXTerm and FileZilla provide a Graphical User Interface
+(GUI) which makes them very useful when connecting to remote sites. However,
+such an application may not always prompt you to copy/paste the VSC firewall link to
+set up the necessary SSH certificate.
+
+Therefore, one way to connect to VSC is to first connect with an ssh-client 
+on your machine as explained in the previous sections.
+In the case of not having an SSH certificate agent running then as long as you
+keep that connection open you can connect with the other apps as well.
+In case you have already stored the SSH certificate in a running agent
+you can then proceed with connecting to VSC with the application.
+
+.. note::
+
+   Some GUI applications may not always work when attempting to connect to VSC
+   with them without setting up agent first. For example, NoMachine is one of them.
+   Therefore, it is highly recommended in such cases to use the agent
+   connection method :ref:`ssh agent<mfa_agent>`.
+
 Configuration of ssh-clients and GUI apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have not yet set up your ssh-client or other apps that use ssh to be
 able to use an agent, you might have to make some changes in your connection
-profiles. Different apps will need different changes, but here we shortly show
-what to do for MobaXTerm, PuTTY and NX:
+profiles. Different apps will need different changes. For an explanation
+with screenshots for the various GUI apps please refer to :ref:`mfa quick start`.
+Here below we shortly show what to do for PuTTY, MobaXTerm, NX, and FileZilla:
+
+- PuTTY
+
+  - Under 'Session' in the tree menu enter the remote hostname. The default port is 22.
+  - Under 'Connection/SSH' ensure the protocol is set to SSH.
+  - Under 'Connection/SSH/Auth' ensure that using Pageant and agent forwarding are active.
+  - Under 'Connection/SSH/Auth/Credentials' make sure that there are no private keys specified
+    in the 'Private key file for authentication' field.
+  - Go back to 'Session' and save your newly created session.
+  - Now you can load and open it to connect to VSC.
 
 - MobaXTerm
 
-  - right-click on the user session you have created to connect to the Tier-2 cluster and choose 'Edit Session'
-  - Select the 'Advanced SSH settings' tab
+  - From the menu click on 'New session'.
+  - Click on the 'SSH' tab and fill in the remote server hostname. The username 
+  - can be left empty but then you will have to type it every time you want to connect.
+  - Under the 'SSH' tab select the 'Advanced SSH settings' sub-tab and set the
+    'SSH-Browser type' to 'SFTP protocol'.
   - Uncheck 'Use private key' if selected
   - click 'Ok'
-    
-- PuTTY
 
-  - Load your profile to connect to the Tier-2 cluster
-  - Go to 'Auth' under 'Connection'
-  - Be sure that 'Allow agent forwarding' is checked
-  - If you have a private key file stored under 'Private key file for authentication', remove it
+  .. note::
+  
+     MobaXTerm can also import existing Putty Sessions. You can then right-click
+     on an imported session to edit it. Make sure that the SSH settings are correct.
     
 - NX
 
@@ -238,10 +259,24 @@ what to do for MobaXTerm, PuTTY and NX:
   - Select 'Use key-based authentication with a SSH agent'
   - Click 'Modify' and verify that 'Forward authentication' is checked
 
+  Please also refer to the :ref:`NX start guide` page.
+
+- FileZilla
+
+  - Under ‘File’ open the ‘Site Manager’ and click on ‘New Site’.
+  - Set the protocol to 'SFTP - SHH File Transfer Protocol', enter the VSC hostname you wish to connect to,
+  - set the logon type to 'Ask for password', and type your VSC username. The port field can be left empty.
+    Usually for SFTP/SSH protocols the port is 22.
+  - [optional] Under the ‘Advanced’ tab you can also set the directory you wish to open by default
+    upon login, e.g, your 'VSC_DATA' by typing its full linux path.
+  - Click 'Connect' to connect to VSC. You may be prompted to enter your SSH passphrase.
+
+  Please also refer to the :ref:`FileZilla` page.
+
 Known issues - General remarks
 ------------------------------
 
-- It has happened that users cannot properly load the MFA URL. If that would
+- It has happened that some users cannot properly load the MFA URL. If that would
   happen to you, it is worth trying to paste the URL in an incognito browser
   window. This has only been verified to work in Chrome and does not seem to
   work in Firefox.
