@@ -1,84 +1,65 @@
-.. _genius_2_rocky:
+.. _leuven_module_system:
 
-Migration of Genius to Rocky 8
-==============================
+The module system on Leuven clusters
+====================================
 
-The operating system on :ref:`Genius <genius hardware>` nodes was updated
-from CentOS 7 to Rocky 8, the same operating system
-running on :ref:`wICE <wice hardware>` nodes. This update is strictly
-necessary because CentOS 7 will be
-`discontinued <https://www.redhat.com/en/engage/migrate-from-centos-20230404>`__
-and this poses security concerns. We have tried to make the migration as
-transparent as possible for users, but still there are a few changes to take
-into account. The first important item is that the way you can search for and
-load modules has changed. This probably affects all users and you are urged
-to carefully read the section on :ref:`centrally installed modules <impact_on_central_software>`.
-The second item is that users that installed their own software (this includes
-conda environments), will need to reinstall the software for the new OS. More
-details are outlined :ref:`below <impact_on_user_installed_software>`. If you
-still encounter problems *after* reading this documentation page, you can
-contact the :ref:`support team <user support VSC>`.
+This page offers additional information about the module system used on the
+HPC clusters hosted at KU Leuven.
 
-.. _impact_on_central_software:
 
-Searching and loading centrally installed modules
--------------------------------------------------
+.. _module_hierarchy:
 
-Introduction
-~~~~~~~~~~~~
+Module organization
+~~~~~~~~~~~~~~~~~~~
 
-A lot of scientific software is centrally available on the VSC clusters. To
-avoid conflicts between different software packages, the installations are
-offered as modules (specifically, the `Lmod system <https://lmod.readthedocs.io/en/latest/>`__
-is used). The executables, libraries, headers, ... of a certain module can only
-be used after that module has been loaded. By loading a certain set of modules,
-you can easily set up an environment that has precisely the software you need.
-
-When an HPC cluster is not completely homogeneous (for instance there are
+When a cluster is not completely homogeneous (for instance there are
 differences regarding architecture or operating system between nodes), it is
 important to use the appropriate modules in your jobs. Using a module that is
 not suited for the node on which the job is running, can give suboptimal
-performance, or even completely fail to work. This is why modules are
-organized in different *software stacks*, differentiated by the operating
-system, the architecture, and the toolchain version. The good news is that in
-general you do not need to worry too much about this, as in most cases the
-correct software stack will be made available in a job automatically thanks
-to the *cluster modules*, as explained in the :ref:`next section <cluster_module>`.
+performance or may even completely fail to work.
+
+This is why modules are organized in different *software stacks*,
+differentiated by the operating system, the architecture, and the toolchain
+version. The good news is that in general you do not need to worry too much
+about this, as in most cases the correct software stack will be made available
+in a job automatically thanks to the *cluster* modules, as explained in the
+:ref:`next section <cluster_modules>`.
+
 If you are interested in more technical details, you can read the section on
 :ref:`manually modifying the modulepath <manually_modifying_modulepath>`,
 which is oriented towards advanced users.
 
-.. _cluster_module:
 
-The cluster module
-~~~~~~~~~~~~~~~~~~
+.. _cluster_modules:
 
-One crucial point to understand, is that a module is *available* only if it is
-located inside a directory contained in the ``$MODULEPATH`` environment
-variable. The ``$MODULEPATH`` environment variable is a colon-separated list of
+The cluster modules
+~~~~~~~~~~~~~~~~~~~
+
+Background: a given module will only be available if it is located inside a
+directory contained in the ``$MODULEPATH`` environment variable.
+This ``$MODULEPATH`` environment variable is a colon-separated list of
 directories, and you can list all modules located inside those directories
 with the ``module avail`` command. The different software stacks mentioned
 earlier are located in different directories (see the
 :ref:`next section <manually_modifying_modulepath>` for more details), so in
 order to make sure you are loading modules from the appropriate software stack,
-you need to make sure your ``$MODULEPATH`` variable contains the appropriate
-paths for the node where you want to use a module.
+the ``$MODULEPATH`` variable needs to contain the appropriate paths for the
+node where you want to use a module.
 
 Because working with the different directories containing different software
-stacks is cumbersome, we advise users to rely on the *cluster* module to set
-the ``$MODULEPATH`` variable. The *cluster* module can be handled identically
+stacks is cumbersome, we advise users to rely on the cluster module to set
+the ``$MODULEPATH`` variable. The cluster module can be handled identically
 as other modules, but instead of making executables or libraries available,
 its only purpose is to set up your environment to make the correct modules
-available. The *cluster* module is always available and you can see which
+available. The cluster module is always available and you can see which
 versions can be loaded by executing ``module avail cluster``.
 
 On the login nodes and inside a job environment, the correct version of the
-cluster module will be loaded automatically. This means that for these cases, you do
-not need to take any special action: the modules from the appropriate software
-stack will be the only ones available to you. As a result of this change, you
-do not need to do ``module use/unuse`` in your jobscripts. Such lines can be
-perfectly removed from your jobscript (unless you deal with an exceptional
-case).
+cluster module will be loaded automatically. This means that for these cases,
+you do not need to take any special action: the modules from the appropriate
+software stack will be the only ones available to you. There is hence no need
+for ``module use/unuse`` commands in your jobscripts (unless you deal with an
+exceptional case).
 
 .. note::
 
@@ -95,9 +76,8 @@ case).
    load the correct cluster module or set your ``$MODULEPATH`` in another way.
    This is why we advise to not use ``module --force purge`` in your jobs,
    unless you are well aware of the consequences. Note that it is ok to
-   execute ``module purge``, since the cluster module is a
-   `sticky module <https://lmod.readthedocs.io/en/latest/240_sticky_modules.html>`__
-   , which means it is not unloaded with ``module purge``.
+   execute ``module purge``, since the cluster modules are
+   :ref:`sticky <module_purge>`.
 
 A common scenario is that you want to search through the installed modules for
 a software package you need, while you are on a login node. There are two ways
@@ -114,7 +94,7 @@ run jobs on the wICE batch partition, the commmand is:
    $ module load cluster/wice/batch
 
 Note that the previously loaded cluster module will be automatically unloaded:
-at most 1 cluster module can be loaded at a time. Now you can search for
+at most one cluster module can be loaded at a time. Now you can search for
 modules containing ``CP2K`` by executing (the search is not case sensitive):
 
 .. code-block:: shell
@@ -197,6 +177,7 @@ available. For more information about ``module spider``, have a look at the
    software inside a container, but this is only the best option in some
    specific cases.
 
+
 .. _manually_modifying_modulepath:
 
 Manually modifying the modulepath
@@ -232,29 +213,7 @@ To remove the entry again:
 
    module unuse /apps/leuven/rocky8/skylake/2018a/modules/all
 
-.. _impact_on_user_installed_software:
-
-Impact on user-installed software
----------------------------------
-If you have installed a software package yourself in your own account, and you
-did this on a Genius CentOS 7 node, it must be recompiled on Genius on a node
-with the new OS.
-
-Conda environments
-----------------------------
-The Conda environment you installed might need reinstallations. If you already
-have a Conda environment that works on wICE, it also should work on Genius
-after the migration. If you only have a Conda environment working on Genius,
-it is best to create a new Conda installation. If you used ``pip`` to install
-software inside your conda environment and ``pip`` has compiled the package from
-source, you certainly need to recreate your conda environment. In this case,
-it is recommended to recreate your environment for full compatibility with the
-new OS. Best practice is to choose a new installation folder with explicit
-mention of the new OS, e.g.::
-
-   ${VSC_DATA}/miniconda3-rocky8
-
-In order to install miniconda in a new directory you can ::
-
-   bash Miniconda3-latest-Linux-x86_64.sh -b -p ${VSC_DATA}/miniconda3-rocky8
-   export PATH="${VSC_DATA}/miniconda3-rocky8/bin:${PATH}
+Keep in mind that also ``/apps/leuven/common/modules/all`` is part of your
+default ``$MODULEPATH``. This module collection is intended for packages which
+have no operating system or toolchain dependencies. Typical examples are
+packages which are distributed as precompiled binaries such as FLUENT.
