@@ -16,11 +16,11 @@ CPU-only nodes
 ===============  ======  ==========================================  ======  ==========  =======
 Slurm partition  nodes   processors per node                         memory  local disk  network
 ===============  ======  ==========================================  ======  ==========  =======
-broadwell_himem  1       4x 10-core INTEL E7-8891v4 (Broadwell)      1.5 TB  4 TB        10 Gbps
-skylake          22      2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB  1 TB        10 Gbps
-skylake_mpi      32      2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB  1 TB        EDR-IB
-skylake_mpi      16      2x 14-core INTEL Xeon Gold 6132 (Skylake)   192 GB  450 GB      EDR-IB
-zen4             20      2x 32-core AMD EPYC 9384X (Genoa-X)         384 GB  450 GB      25 Gbps
+broadwell_himem  1       4x 10-core INTEL E7-8891v4 (Broadwell)      1.5 TB  4 TB HDD    10 Gbps
+skylake          22      2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB  1 TB HDD    10 Gbps
+skylake_mpi      32      2x 20-core INTEL Xeon Gold 6148 (Skylake)   192 GB  1 TB HDD    EDR-IB
+skylake_mpi      16      2x 14-core INTEL Xeon Gold 6132 (Skylake)   192 GB  450 GB HDD  EDR-IB
+zen4             20      2x 32-core AMD EPYC 9384X (Genoa-X)         384 GB  450 GB SSD  25 Gbps
 ===============  ======  ==========================================  ======  ==========  =======
 
 GPU nodes
