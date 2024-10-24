@@ -305,6 +305,7 @@ There's some extra variables you can configure:
 | cloud_init | (since 8/10/2024) cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
 | nfs_size | Size of the NFS share if nfs_enabled=true | (number) |
 | crontabs | list of crontabs to run | see [Crontabs](crontab) |
+| scripts_enabled | Enables/disables optional ansible scripts | true/false (default true)|
 #### Cluster only
 | Variable | Explanation | Values |
 | --- | --- | ---|
