@@ -338,7 +338,7 @@ rst_prolog += """
 .. _Cygwin: https://www.cygwin.com/
 .. _Docker: https://www.docker.com/
 .. _docs.globus.org: https://docs.globus.org
-.. _download FileZilla: https://filezilla-project.org/download.php?type=client
+.. _download FileZilla: https://filezilla-project.org/download.php?show_all=1
 .. _Eclipse download page: http://www.eclipse.org/downloads
 .. _Eclipse packages download page: https://www.eclipse.org/downloads/packages/
 .. _Eclipse: https://www.eclipse.org/
