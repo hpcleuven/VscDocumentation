@@ -3,21 +3,37 @@
 NX start guide
 ==============
 
+|KUL| NoMachine is a graphical SSH client which allows users to login to the
+HPC Tier-2 clustrs at KU Leuven site.
+
 Installing NX NoMachine client
 ------------------------------
 
 Download the enterprise version of the client from the `NX Client download`_ page.
 
+Steps before configuring NoMachine
+----------------------------------
+
+NoMachine works listens to the SSH agents, such as :ref:`Pageant <using Pageant>` 
+for Windows users, and the default :ref:`agent included with OpenSSH <SSH agent>`
+for Linux/Mac users.
+Using NoMachine client with an SSH agent ensures a convenient workflow.
+Therefore, we strongly advice you to setup your :ref:`SSH agent <SSH agent>`, before
+continuing further.
+
+Once your SSH agent is up and running, you need to issue an SSH certificate to be stored
+in your agent.
+For that, you may opt for any of the following approaches:
+
+- login directly to the `HPC firewall page <https://firewall.vscentrum.be/>`_
+- login to the :ref:`Tier-2 login <tier2_login_nodes>` nodes via 
+  :ref:`PuTTY <text mode access using PuTTY>` or :ref:`MobaXTerm <access using mobaxterm>`
+- login to the :ref:`Open OnDemand portal <ood_t2_leuven>`
+
+Upon a successful login, a SSH certificate is issued and stored in your SSH agent.
+
 NoMachine NX Client Configuration
 ---------------------------------
-
-NoMachine works smoothly with SSH agents, such as :ref:`Pageant <using Pageant>` 
-for Windows users, and the default :ref:`agent included with OpenSSH <SSH agent>` for Linux/Mac users.
-As a result of that, users first need to authenticate themselves, using 
-:ref:`Multi-Factor Authentication (MFA) <mfa_leuven>` before being able to start a new 
-NX session.
-You may also refer to :ref:`MFA Quick Start Guide <mfa for nx>` for additional information.
-
 
 1. Start the NoMachine client and press **Continue** until you see the screen
    listing your connections, titled **Machines**

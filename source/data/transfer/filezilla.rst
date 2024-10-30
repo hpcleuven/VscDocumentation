@@ -56,13 +56,13 @@ Configuration of FileZilla to connect to a login node
 
 .. tab-set::
 
-   .. tab-item:: KU Leuven/UHasselt
+   .. tab-item:: KU Leuven
 
       As long as your SSH agent is running and keeping a valid SSH certificate,
       you stay connected via FileZilla and you do not require additional
       configuration.
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
 
       Recent versions of FileZilla have a screen in the settings to
       manage private keys. The path to the private key must be provided in
@@ -74,4 +74,7 @@ Configuration of FileZilla to connect to a login node
       After that you should be able to connect after being asked for
       passphrase. As an alternative you can choose to use putty pageant.
 
-
+Under the 'Advanced' tab you can also set the directory you wish to open by
+default upon login.
+For example, to set your default path to your ``VSC_DATA`` directory, you need to
+provide the full path, like ``/data/brussels/1xx/vsc1xxxxx``.

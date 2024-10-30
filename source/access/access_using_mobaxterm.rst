@@ -36,26 +36,57 @@ Setup a shortcut for a remote session
 #. In the *Remote host* field introduce the cluster remote address of
    your :ref:`VSC cluster <hardware>`, which should be written in the form ``my-vsc-cluster.example.com``.
    Tick the *Specify username* box and introduce your VSC account username.
-   Click the *Advanced SSH settings* tab and you will see these extra options:
+   Click the *Advanced SSH settings* tab for additional configurations.
 
-   .. figure:: access_using_mobaxterm/mobaxterm_advanced_ssh.png
-      :alt: advanced ssh options
+   The next few steps depends on the choice of VSC site you are trying to connect to.
 
    .. _step-advanced-ssh-settings:
 
-#. Tick the *Use private key* box and click on the file icon in that field.
-   A file browser will be opened; locate the private SSH key file you created when requesting your VSC account.
-   Please keep in mind that these settings have to be updated if the location
-   of the private SSH key ever changes. 
-   Check that the *SSH-browser type* is set as *SFTP protocol*.
-   
-   .. _step-sftp-tab:
+   .. tab-set::
 
-#. Press the OK button and you should be prompted for your **passphrase**.
-   Enter here the passphrase you chose while creating your public/private key pair.
-   The characters will be hidden and nothing at all will appear as you
-   type (no circles, no symbols). You should connect to the cluster and be
-   greeted by a screen similar to this one:
+      .. tab-item:: KU Leuven
+
+         Make sure that the *Use private key* option is disabled.
+         You may additionally opt for enabling the *X11-Forwarding* and the
+         *Compression* options.
+
+         .. figure:: access_using_mobaxterm/mobaxterm_adv_kul.png
+            :alt: advanced ssh options for KUL/UHasselt users
+
+         With this configuration, it is strongly recommended to setup your
+         :ref:`SSH agent in MobaXTerm <mobaxterm-ssh-agent>` which is
+         described below.
+
+         Upon successful connection attempt you will be prompted to copy/paste
+         the firewall URL in your browser as part of the MFA login procedure:
+
+         .. _vsc_firewall_certificate_authentication:
+         .. figure:: access_using_mobaxterm/vsc_firewall_certificate_authentication.PNG
+            :alt: vsc_firewall_certificate_authentication
+
+         Confirm by clicking 'Yes'.
+         Once the MFA has been completed your MobaXTerm session will connect to VSC.
+
+      .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+
+         Tick the *Use private key* box and click on the file icon in that field.
+         A file browser will be opened; locate the private SSH key file you created
+         when requesting your VSC account.
+         Please keep in mind that these settings have to be updated if the location
+         of the private SSH key ever changes. 
+         Check that the *SSH-browser type* is set as *SFTP protocol*.
+
+         .. figure:: access_using_mobaxterm/mobaxterm_advanced_ssh.png
+            :alt: advanced ssh options
+
+         .. _step-sftp-tab:
+
+         Press the OK button and you should be prompted for your **passphrase**.
+         Enter here the passphrase you chose while creating your public/private key pair.
+         The characters will be hidden and nothing at all will appear as you
+         type (no circles, no symbols).
+               
+#. You should connect to the cluster and be greeted by a screen similar to this one:
 
    .. figure:: access_using_mobaxterm/mobaxterm_hydra_login.png
       :alt: hmem greeting
@@ -86,6 +117,25 @@ Setup a shortcut for a remote session
    by repeating these steps and changing the address of the cluster.
    You will have then a shortcut on the Sessions tab of the left sidebar
    for each of them to connect to.
+
+
+Import PuTTY sessions
+---------------------
+
+If you have already configured remote sessions within PuTTY, then MobaXTerm,
+upon the installion, will automatically import them and they will appear on the
+left-side pane.
+To edit a session right-click on and click on *Edit session*.
+Ensure that all settings are correct under the 'SSH' tab and the 
+'Advanced SSH settings' sub-tab:
+
+.. _mobaxterm_putty_imported_sessions:
+.. figure:: access_using_mobaxterm/mobaxterm_putty_imported_sessions.PNG
+   :alt: mobaxterm_putty_imported_sessions
+
+If the session has been properly imported you will see that all the necessary
+fields are already filled in.
+Click *OK* to close the *Edit session* window.
 
 
    .. _copying-files-mobaxterm:
