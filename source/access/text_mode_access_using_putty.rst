@@ -3,11 +3,20 @@
 Text-mode access using PuTTY
 ============================
 
-Prerequisite: PuTTY and WinSCP
-------------------------------
+Prerequisite
+------------
 
-You've :ref:`generated a public/private key pair with PuTTY
-<generating keys putty>` and have an approved account on the VSC clusters.
+.. tab-set::
+
+   .. tab-item:: KU Leuven
+
+      You have an approved :ref:`VSC account <access>`.
+
+   .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+
+      You have already
+      :ref:`generated a public/private key pair with PuTTY <generating keys putty>`,
+      and have an approved :ref:`VSC account <access>` on the VSC clusters.
 
 Connecting to the VSC clusters
 ------------------------------
@@ -44,12 +53,6 @@ VSC clusters.
 
    .. tab-item:: KU Leuven
 
-      Proceed to the SSH > Auth tab.
-      Make sure that the option 'Attept authentication using Pageant' is selected.
-
-      .. figure:: text_mode_access_using_putty/putty_agent_fwd.PNG
-         :alt: putty agent forwarding
-
       Select the SSH > Auth > Credentials' tab, and remove any private key from the
       box 'Private key file for authentication'.
 
@@ -69,8 +72,10 @@ VSC clusters.
       In older versions of Windows, you would have to use
       ``C:\Documents and Settings\Me\Keys``.
 
-- In the category Connection > SSH > Auth, you can enable agent forwarding
-  by ticking the 'Allow agent forwarding' checkbox.
+- In the category Connection > SSH > Auth, make sure that the option
+  'Attept authentication using Pageant' is selected.
+  It is also recommended to enable agent forwarding by ticking the
+  'Allow agent forwarding' checkbox.
 
    .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
 
@@ -81,7 +86,7 @@ VSC clusters.
 - Now go back to the 'Session' tab, and fill in a name in the 'Saved Sessions'
   field and press 'Save' to permanently store the session information.
 
-- To start a session load it from Sessions > Saved Sessions, and click 'Open'.
+- To start a session, load it from Sessions > Saved Sessions, and click 'Open'.
 
    .. _putty_load_saved_session:
    .. figure:: text_mode_access_using_putty/putty_load_saved_session.PNG
@@ -93,7 +98,7 @@ VSC clusters.
 
       You will be then prompted to copy/paste the firewall link into your browser and complete
       the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>` procedure.
-      With Putty, users only need to highlight the link with their mouse in order to copy it to
+      With PuTTY, users only need to highlight the link with their mouse in order to copy it to
       the clipboard.
 
       .. figure:: text_mode_access_using_putty/putty_mfa.PNG

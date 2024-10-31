@@ -6,7 +6,7 @@ Using Pageant
 Getting started with Pageant
 ----------------------------
 
-Pageant is an SSH authentication agent that couples seamlessly with Putty, MobaXTerm,
+Pageant is an SSH authentication agent that couples seamlessly with Putty, MobaXterm,
 NoMachine and FileZilla to make user authentication an easy task.
 Pageant is part of the `PuTTY`_ distribution.
 As of version 0.78, Pageant can hold certificates in addition to SSH private keys.

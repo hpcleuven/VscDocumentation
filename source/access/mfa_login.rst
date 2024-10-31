@@ -12,7 +12,8 @@ MFA is mandatory for accessing KU Leuven infrastructures.
 This document provides two methods to connect to the KU Leuven clusters with MFA.
 
 The first method, *without* an :ref:`SSH agent <SSH agent>`, is easier to get started with,
-but requires some repetitive steps with each connection.
+but requires some repetitive steps with each connection, hence inconvenient on a long run.
+
 The second method, which incorporates an :ref:`SSH agent <SSH agent>`,
 initially requires extra steps for a one-time setup; but, this approach is more convenient in
 a long run, because user intervention is no longer needed per every connection (via terminal,
@@ -30,6 +31,10 @@ has configured an :ref:`SSH agent <SSH agent>`.
 Getting started
 ---------------
 
+First of all, choose whether you want to login to the `VSC firewall page`_,
+:ref:`Open OnDemand portal <ood_t2_leuven>`, or to the :ref:`Tier-2 login <tier2_login_nodes>`
+page using a text-based terminal (such as PuTTY or MobaXterm).
+
 .. tab-set::
 
    .. tab-item:: VSC firewall page
@@ -39,12 +44,12 @@ Getting started
    .. tab-item:: Open OnDemand
 
       Proceed to the :ref:`Open OnDemand portal <ood_t2_leuven>`.
-      If you are affiliated to KU Leuven, click on the KU Leuven logo.
+      If you are affiliated with KU Leuven, click on the KU Leuven logo.
       Otherwise, click on the VSC logo to proceed to the authentication page.
 
    .. tab-item:: text-based terminal
 
-      You login via terminal (or PuTTY or MobaXTerm) to one of the
+      You login via terminal (or PuTTY or MobaXterm) to one of the
       :ref:`Tier-2 login nodes <tier2_login_nodes>`.
       You are prompted with a login link:
 
@@ -53,7 +58,7 @@ Getting started
          :alt: firewall_link_mfa
 
       Copy-paste the provided link in a browser and follow it.
-      Note that when using PuTTY or MobaXTerm, simply highlighting the link with your
+      Note that when using PuTTY or MobaXterm, simply highlighting the link with your
       mouse will copy the URL to your clipboard.
       Avoid using 'CTRL-C', or it will send a ``SIGINT`` signal interrupting
       your process instead of performing a copy operation.
@@ -131,22 +136,23 @@ Now, you have few possibilities:
   click 'YES'. This works for FileZilla, and some versions of NoMachine.
 
 - However, we encourage the users to setup an :ref:`SSH agent <SSH agent>`, because
-  SSH clients can be configured to work seamlessly with an SSH agent.
-  Below, we provide a brief listing of few of such apps.
-  Please refer to the documentation page for each app for a correct setup of your
-  SSH agent with the provided link.
+  SSH clients can be configured to work seamlessly with an agent.
+  
+Below, we provide a brief listing of few SSH clients.
+Please refer to the documentation page for each app for a correct setup of your
+SSH agent with the provided link.
 
 =========================================== ==================== =====================
 SSH Client name                             Purpose              Operating System
 =========================================== ==================== =====================
 :ref:`PuTTY <text mode access using PuTTY>` text-based terminal  Windows
-:ref:`MobaXTerm <access using mobaxterm>`   text-based terminal  Windows
+:ref:`MobaXterm <access using mobaxterm>`   text-based terminal  Windows
 :ref:`NoMachine <NX start guide>`           graphical desktop    Windows, Linux, MacOS
 :ref:`FileZilla <FileZilla>`                file transfer        Windows, Linux, MacOS
 =========================================== ==================== =====================
 
-Setting up an SSH agent
------------------------
+Setting up an SSH agent for MFA
+-------------------------------
 
 The standard login method will prompt you the MFA URL every time you try to connect to the
 :ref:`login nodes <tier2_login_nodes>`. 
@@ -198,8 +204,9 @@ Before using your agent, it is best to verify the state of your agent:
        ChallengeResponseAuthentication yes
        PreferredAuthentications publickey,keyboard-interactive
         
-- You can now ssh to the cluster. The agent will automatically store your certificate. 
-  The certificate will be stored as long as your agent stays alive.
+- You can now ``ssh`` to the cluster.
+  The agent will automatically store your certificate, and he keeps it
+  as long as he stays alive (in the background).
   Bear in mind that the certificates are valid for maximum 16 hours.
 
 If you want to use apps that use the ``ssh`` command in the background
