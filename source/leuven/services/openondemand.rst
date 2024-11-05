@@ -273,14 +273,11 @@ The same applies for other choices of partitions on Genius or wICE clusters.
 JupyterLab
 -----------
 
-.. note::
-
-   This section is prepared for the scheduled migration of JupyterLab on
-   Thursday 25 July 2024. Some features will be available only after the migration.
-
-With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
-One of the benefits of using JupyterLab is the flexibility it offers in customizing user environments,
-which we explain below.
+With this app you can write and run
+`Jupyter <official JupyterLab documentation>`_ notebooks containing
+annotated Python, R or Julia code (among other languages). IPython consoles are
+available as well. One of the benefits of JupyterLab is that it supports
+different types of user-defined environments, as will become clear below.
 
 **Remarks:**
 
