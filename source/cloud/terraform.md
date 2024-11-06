@@ -16,10 +16,13 @@ used to deploy virtual infrastructures within VSC Tier-1 Cloud in an
 automated way
 (<https://github.com/hpcugent/openstack-templates/tree/master/terraform>).
 
-Terraform
-client is available for different Operating Systems like Windows, Linux
+**Terraform**
+The client is available for different Operating Systems like Windows, Linux
 or macOS (<https://www.terraform.io/downloads>) but it is also available
 from UGent login node _login.hpc.ugent.be_.
+
+**Ansible**
+Ansible is a configuration 
 
 ## Create application credentials for Terraform
 
@@ -134,25 +137,19 @@ The file now contains the definition for one VM with several options you can cus
 | image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
 | nginx_enabled | Installs nginx and exposes port 80. | true, false
-| nfs_enabled   | Connects the vm to the NFS network. Only set true if you requested access. | true, false
+| nfs_enabled   | DEPRECATED, Use nfs_network variabe and nfs_share module instead | true, false |
 | vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (number)
 | is_windows | Configures windows-specific behavior if `true` | true/false |
 
 More advanced options are described further on. 
-### Cluster of VMs
-You can also deploy a public VM and multiple private VMs (without a public IP) in one go by using the cluster template:
-```shell 
-cat cluster.tf.example >> main.tf
-```
-The customization options are similar to the single vm template:
-| Variable | Explanation
-|--|--|
-| private count | How many private instances you want |
-| public_flavor | The flavor for the public instances (and private instances by default)|
-| public_image | The OS image for the public instances (and private instances by default)|
-| cluster_name | The basename for the vms. Public instance will be called `MyCluster-public` and private instances `MyCluster-private-x` |
+### Private VMs
+You can also deploy a public VM and multiple private VMs (without a public IP) by defining multiple instance modules and setting `public = false` on the private VMs.
+You can then reach those VMs through your public VMs with ssh-agent forwarding (`ssh -A`). See `frontend_backend_nfs.example` for a complete example.
 
+:::{warning}
+Automated features like auto-mounting volumes will **not** work on private VMs and are automatically disabled.
+:::
 ## Deploy Terraform templates
 
 If you have followed the previous steps now you can init and deploy your
@@ -295,25 +292,14 @@ There's some extra variables you can configure:
 | playbook_url | A url to an ansible playbook that gets applied when nginx_enabled = true (replaced by `userscript` since 8/10/2024 ) | (string) |
 | userscript | (since 8/10/2024), a shell script that is executed when the VM is first created. | (string) |
 | project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
-| alt_http | Use a randomly generated port for http instead of port 80/443 | true/false (default false)|
-#### Single VM only
-| Variable | Explanation | Values |
-| --- | --- | --- |
-| public | Add a public IP if true | true/false |
+| alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
+| public | Add a public IP if true | true/false (default true) |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
 | cloud_init | (since 8/10/2024) cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
-| nfs_size | Size of the NFS share if nfs_enabled=true | (number) |
-| crontabs | list of crontabs to run | see [Crontabs](crontab) |
+| nfs_size | DEPRECATED, use nfs_share module | (number) |
 | scripts_enabled | Enables/disables optional ansible scripts | true/false (default true)|
-#### Cluster only
-| Variable | Explanation | Values |
-| --- | --- | ---|
-| private_image | Sets a different OS name for the private VMs | See [Image list](https://cloud.vscentrum.be/dashboard/project/images) |
-| private_flavor | Sets a different flavor for the private VMs | see [Flavor list](flavors.md) |
-| public_nginx_enabled | enables nginx on the public instance | true/false |
-| public_vsc_enabled | Connects the public vm to the VSC network. Only set true if you requested access | true/false |
-| public_secgroup_rules | (Since 8/10/2024) security group rules for the public instance | see [Firewall](#firewall)|
+| vsc_ip | Manually set a VSC floating ip | ip address (default null)|
 (volumes)=
 #### Volumes
 if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `volume.example`).
@@ -363,22 +349,34 @@ EOT
 :::{warning}
 Exposing ports to the internet is potentially dangerous. Make sure that the application you're exporting is properly secured.
 :::
-(crontab)=
-#### crontabs
-The template can install crontabs to the machine with this syntax:
-```hcl
-  crontabs = {
-    "date"= {
-      cron_time = "* * * * *"
-      cron_user = "root" #optional, default "root"
-      script = <<-EOL
-      #!/bin/bash
-      echo $(date) > /tmp/date.txt
-      EOL
-    }
-  }
-```
 
+## NFS Share
+The latest(06/2024) templates include a module to easily configure an NFS share.
+```hcl
+module "nfs-share" {
+  source = "../modules/nfs_share"
+  name = "MyShare"
+  size = 30 #Size in gigabytes
+}
+```
+By default the NFS share only allows access from your project's NFS subnet.
+You can add additional access rules with the `access_rules` variable:
+```hcl
+  access_rules = [
+    { 
+      access_level = "rw", #optional
+      access_to = "0.0.0.0/0"
+      access_type = "ip" #optional
+    },
+    {
+      access_to = "10.122.148.0/24"
+      access_level = "ro"
+    }
+  ]
+```
+::{warning}
+Setting custom rules disables the default rule.
+::
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
 Terraform documentation to add you own changes
