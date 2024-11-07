@@ -1,5 +1,7 @@
 # Orchestration Using Terraform
-
+:::{warning}
+In November 2024, the terraform templates have been significantly rewritten. Should you be using an older version of the templates, you can find the old version of the documentation [here](https://github.com/hpcleuven/VscDocumentation/blob/cb0d48a0132677a6a70282bb0bf0444208420f69/source/cloud/terraform.md).
+:::
 HashiCorp Terraform <https://www.terraform.io/> is an
 infrastructure as code tool (IaC). Users can deploy a data center
 infrastructure using a declarative configuration language known as
@@ -20,9 +22,6 @@ automated way
 The client is available for different Operating Systems like Windows, Linux
 or macOS (<https://www.terraform.io/downloads>) but it is also available
 from UGent login node _login.hpc.ugent.be_.
-
-**Ansible**
-Ansible is a configuration 
 
 ## Create application credentials for Terraform
 
@@ -123,7 +122,7 @@ Navigate to the environment directory first:
 cd ~/openstack-templates/terraform/environment
 ```
 
-### Single VM(s)
+### Basic VM configuration
 This module deploys one VM with a public IP address and can be configured with extra options
 Copy the `single.tf.example` code to the `main.tf` file like so:
 ```shell
@@ -137,7 +136,8 @@ The file now contains the definition for one VM with several options you can cus
 | image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
 | nginx_enabled | Installs nginx and exposes port 80. | true, false
-| nfs_enabled   | DEPRECATED, Use nfs_network variabe and nfs_share module instead | true, false |
+| nfs_network   | Connects the vm to the NFS network. Only set true if you requested access  | true, false |
+| nfs_enabled   | DEPRECATED, Use nfs_network variable and nfs_share module instead | true, false |
 | vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (number)
 | is_windows | Configures windows-specific behavior if `true` | true/false |
@@ -263,27 +263,24 @@ plan (only directly from OpenStack).
 :::{warning}
 Do not remove or modify the `port_something_ssh.json` files. These keep track of the external ports used. Deleting them _will_ break Terraform.
 :::
-## Making changes to module variables
-### Adding NFS or Nginx
-:::{tip}
-If you enabled these options upon initial creation of the VM, you don't have to do these steps
-**Since the template update of 8/10/2024**, You also no longer have to do these steps.
-:::
+## Automated variables
+The terraform templates include the ability to automatically adapt your VM based on certain variables.
+This is accomplished by installing scripts on the VM when it is first created.
+It requires ssh access to the VM.
 
-If you added NFS or Nginx after initial creation, you need to run a script **on your VM** to mount the NFS volume or install nginx, respectively.
+These features can be disabled by setting `scripts_enabled=false`.
 
-First ssh to your instance. You can get the command with
-```shell
-terraform output
-```
-Then run the command you got from terraform.
-After connecting to your instance, run:
-```shell
-curl http://169.254.169.254/2009-04-04/user-data | sudo bash
-```
-:::{tip}
-Before 8/10/2024, the nfs share is mounted at `/mnt`. After 8/10/2024, the nfs share is mounted at `/mnt/nfs`.
+:::{warning}
+Automated variables will not work if you started using the templates before 11/2024.
+Set `scripts_enabled=false` or contact us for assistance.
 :::
+### Nginx
+`nginx_enabled` will automatically install nginx and start the service.
+It will also expose ports `80` and `443`, or two random ports if `alt_http = true`.
+### Volumes
+If you set `automount = true` on a volume (see [Volumes](#volumes)), volumes will automatically be mounted at `/mnt/volname` and will have a filesystem created. Size changes will result in the filesystem being automatically resized.
+
+
 ### Advanced variables
 There's some extra variables you can configure:
 | Variable | Explanation | Values
@@ -316,7 +313,7 @@ volumes = {
 ```
 (automount)=
 ##### Automount
-Since 8/10/2024, the module supports automatically creating a filesystem, mounting it and resizing it as necessary.
+The module supports automatically creating a filesystem, mounting it and resizing it as necessary.
 It adds these arguments to `volumes`:
 | Variable | Explanation | Values |
 | --- | --- | --- |
@@ -349,9 +346,9 @@ EOT
 :::{warning}
 Exposing ports to the internet is potentially dangerous. Make sure that the application you're exporting is properly secured.
 :::
-
+(terraform_share)=
 ## NFS Share
-The latest(06/2024) templates include a module to easily configure an NFS share.
+The latest templates include a module to easily configure an NFS share.
 ```hcl
 module "nfs-share" {
   source = "../modules/nfs_share"
@@ -374,9 +371,13 @@ You can add additional access rules with the `access_rules` variable:
     }
   ]
 ```
-::{warning}
+Terraform will then output the path to the share:
+```
+nfs-share = "10.131.35.194:/volumes/_nogroup/12b329db-b301-4d15-qbwd-9439e545210a"
+```
+:::{warning}
 Setting custom rules disables the default rule.
-::
+:::
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
 Terraform documentation to add you own changes

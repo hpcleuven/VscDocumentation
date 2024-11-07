@@ -6,6 +6,10 @@ for virtual machines. This service is not automatically enabled for
 every VSC cloud project, so you should contact <cloud@vscentrum.be> if you want
 to use shared file systems in your project.
 
+## Terraform
+The Terraform templates are the recommended way to create an NFS share.
+Find that documentation here: {ref}`terraform_share`
+
 ## Creating a Shared File System
 
 Creating a shared file system using the Horizon interface is quite
