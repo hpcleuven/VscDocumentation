@@ -97,7 +97,7 @@ file in a public place.
 chmod 600 ~/.config/openstack/clouds.yaml
 ```
 
-## Terraform modules
+## Basic VM configuration
 :::{tip}
 If you are **not** using the VSC login node, you need to make sure to:
 1) [Install Terraform](https://developer.hashicorp.com/terraform/install)
@@ -114,8 +114,7 @@ Navigate to the environment directory first:
 cd ~/openstack-templates/terraform/environment
 ```
 
-### Basic VM configuration
-This module deploys one VM with a public IP address and can be configured with extra options
+The `single.tf.example` deploys one VM with a public IP address and can be configured with extra options
 Copy the `single.tf.example` code to the `main.tf` file like so:
 ```shell
 cat examples/single.tf.example >> main.tf
@@ -204,9 +203,9 @@ You can add additional access rules with the `access_rules` variable:
     }
   ]
 ```
-:::{warning}
+```{warning}
 Setting custom rules disables the default rule.
-:::
+```
 :::
 
 ## Deploy Terraform templates
@@ -256,7 +255,7 @@ Only ’yes’ will be accepted to approve.
 Enter a value:
 ```
 
-Type **yes** and press enter and wait a few seconds or minutes. If
+Type **yes** and press enter and wait a few minutes. If
 everything is correct and if you have enough quota Terraform will show
 you a message after creating all the required resources.
 
@@ -393,8 +392,47 @@ Exposing ports to the internet is potentially dangerous. Make sure that the appl
 ```
 
 :::
+## Further customization
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
 Terraform documentation to add you own changes
 <https://www.terraform.io/docs> or ask to VSC Cloud admins via email at
 <cloud@vscentrum.be>.
+
+## Troubleshooting
+This section describes some common errors you may encounter.
+If this section does not help you, don't hesitate to contact <cloud@vscentrum.be> for help.
+
+:::{dropdown} A duplicate port forwarding entry with same attributes already exists
+If you get the error:
+```
+│ Error: Error creating openstack_networking_portforwarding_v2: Bad request with: [POST https://cloud.vscentrum.be:13696/v2.0/floatingips/64f2705c-43ec-4bdf-864e-d18fee013e3f/port_forwardings], error message: {"NeutronError": {"type": "BadRequest", "message": "Bad port_forwarding request: A duplicate port forwarding entry with same attributes already exists, conflicting values are {'floatingip_id': '64f2705c-43ec-4bdf-864e-d18fee013e3f', 'external_port': 80, 'protocol': 'tcp'}.", "detail": ""}}
+```
+This means that a different VM in your project is already using port 80 and/or 443.
+You can have multiple VMs with `nginx_enabled=true` by setting `alt_http=true` for that particular VM.
+:::
+:::{dropdown} remote-exec provisioner error
+If you get the error:
+```
+│ Error: remote-exec provisioner error
+│ 
+│   with module.MyVMExample.null_resource.testconnection[0],
+│   on ../modules/single_instance/ansible.tf line 17, in resource "null_resource" "testconnection":
+│   17:   provisioner "remote-exec" {
+│ 
+│ interrupted - last error: SSH authentication failed (rocky@193.190.80.3:51307): ssh: handshake failed: ssh: unable to authenticate, attempted methods [none], no
+│ supported methods remain
+```
+Then terraform is unable to SSH to your instance. There are a couple of possible reasons:
+* You are on a login node but have not forwarded your ssh-agent with `ssh -A`
+  * If you have, check if your ssh-agent is configured correctly
+* You do not have ssh access to this VM/it was created with the wrong keypair
+  * Ask whoever does have access to add your ssh public key to the VM
+  * If this is a new VM and it is using the wrong keypair, use the [Advanced Variable](#advanced-variables) `access_key` to set the correct one.
+
+```{tip}
+You can also set `scripts_enabled=false` if you do not want any [convenience scripts](#automated-variables) or if there is no better solution
+```
+
+Feel free to contact us <cloud@vscentrum.be> for help.
+:::
