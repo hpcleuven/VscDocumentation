@@ -1,18 +1,9 @@
 # Orchestration Using Terraform
-:::{warning}
-In November 2024, the terraform templates have been significantly rewritten. Should you be using an older version of the templates, you can find the old version of the documentation [here](https://github.com/hpcleuven/VscDocumentation/blob/cb0d48a0132677a6a70282bb0bf0444208420f69/source/cloud/terraform.md).
-:::
 HashiCorp Terraform <https://www.terraform.io/> is an
 infrastructure as code tool (IaC). Users can deploy a data center
 infrastructure using a declarative configuration language known as
-HashiCorp Configuration Language (HCL), or using JSON.
-Terraform has
-some advantages over OpenStack Heat service. It is has a simple syntax, it
-can provision virtual infrastructures across multiple cloud providers
-(not only OpenStack) and it provides important features like network port forwarding rules (see
-[floating-ip](configure_instances.md#floating-ip-addresses)).
-Terraform is
-currently one of the most popular infrastructure automation tools
+HashiCorp Configuration Language (HCL)..
+Terraform is currently one of the most popular infrastructure automation tools
 available. VSC Cloud also provides some template examples that could be
 used to deploy virtual infrastructures within VSC Tier-1 Cloud in an
 automated way
@@ -25,21 +16,20 @@ from UGent login node _login.hpc.ugent.be_.
 
 ## Create application credentials for Terraform
 
-Terraform
-uses OpenStack application credentials to authenticate to VSC Cloud
+Terraform uses OpenStack application credentials to authenticate to VSC Cloud
 Tier-1 public API. It is a good practice to generate a new application
 credential just to be used with Terraformframework. The process is the same
 described in section
 [application credentials](access.md#application-credentials).
 
-:::{note}
+:::{important}
 Make sure you download the new application credential as yaml file
 instead of openRC.
 :::
 
 At this point you should have a _clouds.yaml_ text file with these lines:
 
-```bash
+```yaml
 # This is a clouds.yaml file, which can be used by OpenStack tools as a source
 # of configuration on how to connect to a cloud. If this is your only cloud,
 # just put this file in ~/.config/openstack/clouds.yaml and tools like
@@ -84,10 +74,10 @@ terraform. Login to the login node with your VSC account first:
 ```shell
 ssh -A vscxxxxx@login.hpc.ugent.be
 ```
-:::{tip}
+:::{important}
 It is important to forward your ssh agent with `-A` when SSH-ing to the login node.
 :::
-If this is the first time using Terraform, download the VSC Terraform
+If this is the first time using the templates, download the VSC Terraform
 examples from github from
 <https://github.com/hpcugent/openstack-templates>:
 
@@ -98,7 +88,7 @@ git clone https://github.com/hpcugent/openstack-templates
 Make sure you have *`~/.config/openstack/clouds.yaml`* available from
 the login node (see previous [section](#create-application-credentials-for-terraform)).
 
-:::{warning}
+:::{danger}
 Do not share your application's credential file `clouds.yaml` or put this
 file in a public place.
 :::
@@ -137,25 +127,19 @@ The file now contains the definition for one VM with several options you can cus
 | vm_name       | Sets the name of the virtual machine. | (string)
 | image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
-| nginx_enabled | Installs nginx and exposes port 80. | true, false
-| nfs_network   | Connects the vm to the NFS network. See [NFS_Share](#terraform_share) Only set true if you requested access  | true, false |
+| nginx_enabled | Installs nginx and exposes ports 80 and 443 (See {ref}`tf_automated`)  | true, false
+| nfs_network   | Connects the vm to the NFS network (Does not create a share). (See [NFS_Share](#terraform_share))Only set true if you requested access  | true, false |
 | vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
 | is_windows | Configures windows-specific behavior if `true` | true/false |
 
 More advanced options are described further on. 
-
+(tf_automated)=
 ## Automated variables
 The terraform templates include the ability to automatically adapt your VM based on certain variables.
 This is accomplished by installing scripts on the VM when it is first created.
 It requires ssh access to the VM.
 
 These features can be disabled by setting `scripts_enabled=false`.
-
-:::{tip}
-Automated variables will not work if you started using the templates before November 2024
-Set `scripts_enabled=false` or contact us for assistance.
-They also do not work if `public=false`.
-:::
 ### Nginx
 `nginx_enabled` will automatically install nginx and start the service.
 It will also expose ports `80` and `443`, or two random ports if `alt_http = true`.
@@ -163,11 +147,11 @@ It will also expose ports `80` and `443`, or two random ports if `alt_http = tru
 If you set `automount = true` on a volume (see [Volumes](#volumes)), volumes will automatically be mounted at `/mnt/volname` and will have a filesystem created. Size changes will result in the filesystem being automatically resized.
 
 (volumes)=
-#### Volumes
+## Volumes
 if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `examples/vm_with_volumes.tf.example`).
 The `size` represents the volume size in gigabytes.
-:::{tip}
-This variable will create and attach the volume as a regular disk, but it will **not** create a filesystem or mount it unless you set `automount = true`, see [automount](#automount).
+:::{note}
+This variable will create and attach the volume as a regular disk, but it will **not** create a filesystem or mount it unless you set `automount = true`.
 :::
 ```hcl
 volumes = {
@@ -177,7 +161,7 @@ volumes = {
 }
 ```
 (automount)=
-##### Automount
+### Automount
 The module supports automatically creating a filesystem, mounting it and resizing it as necessary.
 It adds these arguments to `volumes`:
 | Variable | Explanation | Values |
@@ -186,7 +170,7 @@ It adds these arguments to `volumes`:
 | filesystem | Sets the filesystem to be created | see [here](https://docs.ansible.com/ansible/latest/collections/community/general/filesystem_module.html#parameter-fstype) (default: "ext4") |
 (terraform_share)=
 ## NFS Share
-The latest templates include a module to easily configure an NFS share.
+The templates include a module to easily configure an NFS share.
 You can find an example of this in `examples/vm_with_share.tf.example`
 :::{tip}
 In order to use NFS shares, you need to request access.
@@ -199,7 +183,13 @@ module "nfs-share" {
   size = 30 #Size in gigabytes
 }
 ```
-By default the NFS share only allows access from your project's NFS subnet.
+Terraform will then output the path to the share:
+```
+nfs-share = "10.131.35.194:/volumes/_nogroup/12b329db-b301-4d15-qbwd-9439e545210a"
+```
+### Advanced NFS settings
+:::{dropdown} Access rules
+By default the NFS share only allows access from your project's NFS subnet, which will work for most usecases.
 You can add additional access rules with the `access_rules` variable:
 ```hcl
   access_rules = [
@@ -214,13 +204,11 @@ You can add additional access rules with the `access_rules` variable:
     }
   ]
 ```
-Terraform will then output the path to the share:
-```
-nfs-share = "10.131.35.194:/volumes/_nogroup/12b329db-b301-4d15-qbwd-9439e545210a"
-```
 :::{warning}
 Setting custom rules disables the default rule.
 :::
+:::
+
 ## Deploy Terraform templates
 
 If you have followed the previous steps now you can init and deploy your
@@ -306,31 +294,34 @@ If you forgot your VM's details, just run `terraform output`
 If you make any changes to the template, just run `terraform apply` again.
 :::
 
-:::{tip}
+:::{important}
 It is important to keep a backup of your terraform directory, specially
 all the files within the environment directory:
 `~/openstack-templates/terraform/environment`
-:::
 
 Terraform generates several files in this directory to keep track of any
 change in your infrastructure. If for some reason you lost or remove
 these files you will not able to modify or change the current Terraform
 plan (only directly from OpenStack).
+:::
+
+
 
 :::{warning}
 Do not remove or modify the `port_something_ssh.json` files. These keep track of the external ports used. Deleting them _will_ break Terraform.
 :::
 
-### Private VMs
-You can also deploy a public VM and multiple private VMs (without a public IP) by defining multiple instance modules and setting `public = false` on the private VMs.
-You can then reach those VMs through your public VMs with ssh-agent forwarding (`ssh -A`). See `examples/frontend_backend.tf.example` for a complete example.
-
-
-### Advanced variables
+## Private VMs
+If you don't need/want a VM to be exposed to the internet, you can set the `public` variable to `false`.
+You can then reach those VMs through your public VM(s) with ssh-agent forwarding (`ssh -A`). See `examples/frontend_backend.tf.example` for a complete example.
+:::{note}
+Private VMs do not support {ref}`tf_automated`
+:::
+## Advanced variables
 There's some extra variables you can configure:
 | Variable | Explanation | Values
 |---|---|---|
-| access_key | the name of the ssh key you want to associate with the vm/cluster | (string)
+| access_key | the name of the ssh key you want to associate with the vm/cluster | (string) |
 | userscript | A shell script that is executed when the VM is first created. | (string) |
 | project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
 | alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
@@ -339,16 +330,42 @@ There's some extra variables you can configure:
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
 | cloud_init | Cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
 | nfs_size | DEPRECATED, use nfs_share module | (Gigabytes) |
-| scripts_enabled | Enables/disables optional ansible scripts | true/false (default true)|
+| scripts_enabled | Enables/disables optional ansible scripts | true/false (default true) See {ref}`tf_automated`|
 | vsc_ip | Manually set a VSC floating ip | ip address (default null)|
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (Gigabytes)
 
 (firewall)=
-#### Firewall
-With the single VM module you can add open ports to the VM. 
-These wont export ports to the internet by default. but it will allow other VMs to connect to that port. 
+### Firewall
+On a public VM, these ports will be open and exposed to the internet by default:
+* A random ssh port
+* If `nginx_enabled=true`:
+  * Port 80/443
+  * 2 random ports if `http_enabled=true`
+
+You may need to open more ports, either within the vm network or exposed to the internet.
+You can add extra port forwarding rules through the `custom_secgroup_rules` variable.
 See the `/examples/custom_secgroup.tf.example` file for an example.
-You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port:
+
+:::{dropdown} Opening ports
+```{note}
+Ports will not be exposed to the internet by default, but it will allow other VMs to connect to that port.
+```
+```hcl
+  custom_secgroup_rules = { 
+    node_exporter = {
+      port = 9100
+      protocol = "tcp"
+      remote_ip_prefix = "0.0.0.0/0"
+    }
+  }
+```
+```{important}
+Be sure to add the subnet to the `remote_ip_prefix`, and note that this rule does not support individual IPs.
+```
+:::
+
+:::{dropdown} Exposing ports to the internet
+You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port.
 ```hcl
   custom_secgroup_rules = { 
     node_exporter = {
@@ -367,11 +384,14 @@ SSH: ssh -A -p 51274 rocky@193.190.80.3
 node_exporter 9100 -> 193.190.80.3:51273
 EOT
 ```
-:::{tip}
+```{important}
 Be sure to add the subnet to the `remote_ip_prefix`, and note that this rule does not support individual IPs.
-:::
-:::{warning}
+```
+
+```{warning}
 Exposing ports to the internet is potentially dangerous. Make sure that the application you're exporting is properly secured.
+```
+
 :::
 You can also modify and add more resources for the current templates.
 This task is out of the scope of this document, please refer to official
