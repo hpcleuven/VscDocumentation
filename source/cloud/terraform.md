@@ -136,20 +136,12 @@ The file now contains the definition for one VM with several options you can cus
 | image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
 | nginx_enabled | Installs nginx and exposes port 80. | true, false
-| nfs_network   | Connects the vm to the NFS network. Only set true if you requested access  | true, false |
-| nfs_enabled   | DEPRECATED, Use nfs_network variable and nfs_share module instead | true, false |
+| nfs_network   | Connects the vm to the NFS network. See [NFS_Share](#terraform_share) Only set true if you requested access  | true, false |
 | vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
-| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (number)
 | is_windows | Configures windows-specific behavior if `true` | true/false |
 
 More advanced options are described further on. 
-### Private VMs
-You can also deploy a public VM and multiple private VMs (without a public IP) by defining multiple instance modules and setting `public = false` on the private VMs.
-You can then reach those VMs through your public VMs with ssh-agent forwarding (`ssh -A`). See `frontend_backend_nfs.example` for a complete example.
 
-:::{warning}
-Automated features like auto-mounting volumes will **not** work on private VMs and are automatically disabled.
-:::
 ## Deploy Terraform templates
 
 If you have followed the previous steps now you can init and deploy your
@@ -270,9 +262,10 @@ It requires ssh access to the VM.
 
 These features can be disabled by setting `scripts_enabled=false`.
 
-:::{warning}
-Automated variables will not work if you started using the templates before 11/2024.
+:::{tip}
+Automated variables will not work if you started using the templates before November 2024
 Set `scripts_enabled=false` or contact us for assistance.
+They also do not work if `public=false`.
 :::
 ### Nginx
 `nginx_enabled` will automatically install nginx and start the service.
@@ -280,23 +273,27 @@ It will also expose ports `80` and `443`, or two random ports if `alt_http = tru
 ### Volumes
 If you set `automount = true` on a volume (see [Volumes](#volumes)), volumes will automatically be mounted at `/mnt/volname` and will have a filesystem created. Size changes will result in the filesystem being automatically resized.
 
+### Private VMs
+You can also deploy a public VM and multiple private VMs (without a public IP) by defining multiple instance modules and setting `public = false` on the private VMs.
+You can then reach those VMs through your public VMs with ssh-agent forwarding (`ssh -A`). See `frontend_backend_nfs.example` for a complete example.
 
 ### Advanced variables
 There's some extra variables you can configure:
 | Variable | Explanation | Values
 |---|---|---|
 | access_key | the name of the ssh key you want to associate with the vm/cluster | (string)
-| playbook_url | A url to an ansible playbook that gets applied when nginx_enabled = true (replaced by `userscript` since 8/10/2024 ) | (string) |
-| userscript | (since 8/10/2024), a shell script that is executed when the VM is first created. | (string) |
+| userscript | A shell script that is executed when the VM is first created. | (string) |
 | project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
 | alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
 | public | Add a public IP if true | true/false (default true) |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
-| cloud_init | (since 8/10/2024) cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
-| nfs_size | DEPRECATED, use nfs_share module | (number) |
+| cloud_init | Cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
+| nfs_size | DEPRECATED, use nfs_share module | (Gigabytes) |
 | scripts_enabled | Enables/disables optional ansible scripts | true/false (default true)|
 | vsc_ip | Manually set a VSC floating ip | ip address (default null)|
+| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (Gigabytes)
+
 (volumes)=
 #### Volumes
 if you need large amounts of storage and don't want to use an NFS share, you can instead attach an additional block-storage volume with the `volumes` variable (see `volume.example`).
@@ -343,11 +340,18 @@ SSH: ssh -A -p 51274 rocky@193.190.80.3
 node_exporter 9100 -> 193.190.80.3:51273
 EOT
 ```
+:::{tip}
+Be sure to add the subnet to the `remote_ip_prefix`, and note that this rule does not support individual IPs.
+:::
 :::{warning}
 Exposing ports to the internet is potentially dangerous. Make sure that the application you're exporting is properly secured.
 :::
 (terraform_share)=
 ## NFS Share
+:::{tip}
+In order to use NFS shares, you need to request access.
+Your VM(s) must also be connected to the NFS network with `nfs_network=true`
+:::
 The latest templates include a module to easily configure an NFS share.
 ```hcl
 module "nfs-share" {
