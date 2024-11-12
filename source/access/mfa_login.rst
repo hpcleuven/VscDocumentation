@@ -12,10 +12,10 @@ This document provides two methods to connect to the KU Leuven clusters with MFA
 The first method, *without* an :ref:`SSH agent <SSH agent>`, is easier to get started with,
 but requires some repetitive steps with each connection, hence inconvenient on a long run.
 
-The second method, which incorporates an :ref:`SSH agent <SSH agent>`,
-initially requires extra steps for a one-time setup; but, this approach is more convenient in
-a long run, because user intervention is no longer needed per every connection (via terminal,
-SSH client, :ref:`Open OnDemand <ood_t2_leuven>`, or GUIs).
+The second method involves an :ref:`SSH agent <SSH agent>` and requires a few more
+steps to set up. This approach is however more convenient in the long run because
+a single authentication will suffice for multiple connections throughout the day,
+without further intervention.
 
 Below, we elaborate on these two approaches depending on whehter or not a user
 has configured an :ref:`SSH agent <SSH agent>`.
