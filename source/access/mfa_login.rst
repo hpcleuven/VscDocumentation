@@ -21,8 +21,7 @@ Below, we elaborate on these two approaches.
 
 .. note::
 
-   When connecting from abroad, you also need to take into account the
-   :ref:`firewall security measures <security_measures_20200520>`.
+   When connecting from abroad, you first need to login via the `VSC firewall page`_.
 
 .. _mfa quick start:
 
