@@ -22,7 +22,8 @@ has configured an :ref:`SSH agent <SSH agent>`.
 
 .. note::
 
-   The firewall authentication is **mandatory** when you are connecting from abroad.
+   When connecting from abroad, you also need to take into account the
+   :ref:`firewall security measures <security_measures_20200520>`.
 
 .. _mfa quick start:
 
