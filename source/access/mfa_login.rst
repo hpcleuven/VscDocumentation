@@ -115,13 +115,17 @@ That's it! You can continue doing your HPC work as usual.
    your IP address for 90 days.
    Within that time frame, visiting the `VSC firewall page`_ might be optional.
 
-Connecting with an SSH agent
+Using apps with an SSH agent
 ----------------------------
 
 It is a common practice that Windows/Linux/MacOS users use different SSH clients
 or GUI apps in order to interact with the HPC infrastructures.
+The standard login method will prompt you the MFA URL every time you try to connect to the
+:ref:`login nodes <tier2_login_nodes>`. 
 However, not all SSH clients prompt you the firewall link.
-Examples of such are :ref:`FileZilla <FileZilla>` or :ref:`NoMachine <NX start guide>`.
+While this can be cumbersome, setting up an SSH agent and generating an SSH certificate will
+avoid all this.
+Examples of such apps are :ref:`FileZilla <FileZilla>` or :ref:`NoMachine <NX start guide>`.
 Now, you have few possibilities:
 
 - For some apps it is possible to first connect to the cluster (e.g. in text-based terminal)
@@ -152,10 +156,6 @@ SSH Client name                             Purpose              Operating Syste
 Setting up an SSH agent for MFA
 -------------------------------
 
-The standard login method will prompt you the MFA URL every time you try to connect to the
-:ref:`login nodes <tier2_login_nodes>`. 
-While this can be cumbersome, setting up an SSH agent and generating an SSH certificate will
-avoid all this.
 The setup for your SSH agent depends on the choice of the operating system on your local machine,
 and that falls under either of the following two categories:
 
