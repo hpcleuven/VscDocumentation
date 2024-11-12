@@ -17,8 +17,7 @@ steps to set up. This approach is however more convenient in the long run becaus
 a single authentication will suffice for multiple connections throughout the day,
 without further intervention.
 
-Below, we elaborate on these two approaches depending on whehter or not a user
-has configured an :ref:`SSH agent <SSH agent>`.
+Below, we elaborate on these two approaches.
 
 .. note::
 
