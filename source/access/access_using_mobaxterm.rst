@@ -74,7 +74,7 @@ Setup a shortcut for a remote session
             :alt: vsc_firewall_certificate_authentication
 
          Confirm by clicking 'Yes'.
-         Once the MFA has been completed your MobaXterm session will connect to VSC.
+         Once the MFA has been completed you will be connected to a login node.
 
       .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
 
