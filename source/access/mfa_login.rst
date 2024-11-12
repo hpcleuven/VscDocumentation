@@ -115,8 +115,8 @@ That's it! You can continue doing your HPC work as usual.
    your IP address for 90 days.
    Within that time frame, visiting the `VSC firewall page`_ might be optional.
 
-Using apps with SSH connections in the background
--------------------------------------------------
+Connecting with an SSH agent
+----------------------------
 
 It is a common practice that Windows/Linux/MacOS users use different SSH clients
 or GUI apps in order to interact with the HPC infrastructures.
