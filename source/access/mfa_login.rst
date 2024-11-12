@@ -201,8 +201,9 @@ Below, we provide recommendations on incorporating MFA in your new or existing S
        PreferredAuthentications publickey,keyboard-interactive
         
 - You can now ``ssh`` to the cluster.
-  The agent will automatically store your certificate, and he keeps it
-  as long as he stays alive (in the background).
+  Upon the first successful connection, a so-called SSH certificate will be
+  produced and injected back into the SSH agent.
+  The SSH agent keeps the certificate while it runs silently in the background.
   Bear in mind that the certificates are valid for maximum 16 hours.
 
 If you want to use apps that use the ``ssh`` command in the background
