@@ -175,16 +175,14 @@ Linux and Mac machines
 On Linux and MacOS it is common to use OpenSSH, which is commonly integrated in the
 local operating system.
 For detailed information, please refer to :ref:`setting up your SSH agent for Linux and MacOS <SSH agent>`.
+Below, we provide recommendations on incorporating MFA in your new or existing SSH setup.
 
-Before using your agent, it is best to verify the state of your agent:
-
-- Open a terminal
-
-- Verify if your agent is running with ``ssh-add -l``. 
+- Before using your agent, it is best to verify the state of your agent.
+  Open a terminal. Verify if your agent is running with ``ssh-add -l``. 
   If it is not running you will get the following error: 
   ``Could not open a connection to your authentication agent``
 
-- If this is the case, start your agent with ``eval $(ssh-agent)``
+  If this is the case, start your agent with ``eval $(ssh-agent)``
 
 - You now need to create or adapt a profile for the cluster in your
   ~/.shh/config file.
