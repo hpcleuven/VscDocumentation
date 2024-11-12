@@ -26,8 +26,8 @@ Below, we elaborate on these two approaches.
 
 .. _mfa quick start:
 
-Getting started
----------------
+Connecting without an SSH agent
+-------------------------------
 
 First of all, choose whether you want to login to the `VSC firewall page`_,
 :ref:`Open OnDemand portal <ood_t2_leuven>`, or to the :ref:`Tier-2 login <tier2_login_nodes>`
