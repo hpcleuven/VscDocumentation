@@ -134,7 +134,7 @@ Import PuTTY sessions
 If you have already configured remote sessions within PuTTY, then MobaXterm
 will automatically import them upon installation and they will appear on the
 left-side pane.
-To edit a session right-click on and click on 'Edit session'.
+To edit a session, right-click on the session and then choose 'Edit session'.
 Ensure that all settings are correct under the 'SSH' tab and the 
 'Advanced SSH settings' sub-tab:
 
