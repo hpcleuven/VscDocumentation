@@ -98,7 +98,8 @@ page using a text-based terminal (such as PuTTY or MobaXterm).
   session settings (e.g., accepted cookies).
 
 - Go back to your browser, SSH client or terminal.
-  You should now be connected to a login node on the cluster.
+  You should now be connected to a login node on the cluster or to the OnDemand web portal,
+  respectively.
   E.g. for a PuTTY session, a successful login is rewarded with
   a welcome message:
 
