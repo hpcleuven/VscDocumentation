@@ -6,8 +6,6 @@ Multi Factor Authentication (MFA)
 |KUL| Multi Factor Authentication (MFA) is an augmented level of security.
 As the name suggests, MFA requires additional steps with human intervention
 when authenticating.
-The sole purpose of MFA is to secure users' connections to the HPC facilities,
-and keep unauthorised users behind the firewall.
 MFA is mandatory for accessing KU Leuven infrastructures.
 This document provides two methods to connect to the KU Leuven clusters with MFA.
 
