@@ -9,14 +9,14 @@ Open OnDemand on the KULeuven Tier2 cluster
 About
 =====
 
-Open OnDemand provides a user interface to HPC clusters from within a web browser. 
+Open OnDemand provides a user interface to HPC clusters from within a web browser.
 This tool supports a range of different apps and features that not only allow the
 user to easily submit jobs from within the browser, but also provide different
 coding GUIs, tools for plotting and more.
 Open OnDemand is available for the Tier-2 Genius and wICE clusters.
 
-You can use this interface by navigating to the `KU Leuven Open OnDemand page`_. 
-You can log in using your KU Leuven or VSC credentials. 
+You can use this interface by navigating to the `KU Leuven Open OnDemand page`_.
+You can log in using your KU Leuven or VSC credentials.
 
 General features
 ================
@@ -49,7 +49,7 @@ For more information about Globus, please refer to our documentation about the :
 Jobs
 ====
 
-All jobs submitted from Open OnDemand can run on Genius and wICE. 
+All jobs submitted from Open OnDemand can run on Genius and wICE.
 This also means that all your jobs should be submitted as **Slurm** jobs.
 For more detail on how to run jobs on wICE, check out the
 :ref:`wICE quick start guide<wice_t2_leuven>`.
@@ -60,13 +60,13 @@ of this writing, it is still in development by the upstream).
 Active jobs
 -----------
 
-This lists all your running, queued and completed jobs. 
-Completed jobs will disappear from this view after a couple of minutes. 
-You have a handy overview of multiple job details by clicking the large arrow next 
-to the job id, including things like the node list, the account you used, and 
-the status of the job. 
-It also gives you the option to open the job script directory in the file 
-manager, and thus inspect the created output and error files. 
+This lists all your running, queued and completed jobs.
+Completed jobs will disappear from this view after a couple of minutes.
+You have a handy overview of multiple job details by clicking the large arrow next
+to the job id, including things like the node list, the account you used, and
+the status of the job.
+It also gives you the option to open the job script directory in the file
+manager, and thus inspect the created output and error files.
 
 If your job is still running, you can also delete it by clicking the bin under 'Actions'.
 The 'Active jobs' menu does not allow re-submission of your job.
@@ -75,7 +75,7 @@ How to (re-)submit jobs will be made clear in the next chapter.
 Job Composer
 ------------
 
-The Job Composer contains all the tools that allow you to launch your jobs. This goes from basic job script building, adding necessary files, 
+The Job Composer contains all the tools that allow you to launch your jobs. This goes from basic job script building, adding necessary files,
 to building and using templates for easier job creation. Under the job composer tab you can find two other menus, namely 'Jobs' and 'Templates'.
 As templates are the backbone of job creation in Open OnDemand, we will start by explaining these.
 The 'Jobs' menu is pretty much self-explanatory once understanding this.
@@ -83,43 +83,43 @@ The 'Jobs' menu is pretty much self-explanatory once understanding this.
 Templates
 ~~~~~~~~~
 
-To enter the Templates menu, you can click on 'Templates' at the top once you are in the 'Job Composer' menu. You can also access this menu by clicking the button 'New 
-Job'-'From Template'. Once in this menu, you should see a table with three System Templates. The resources that are requested in these scripts are the default settings. 
+To enter the Templates menu, you can click on 'Templates' at the top once you are in the 'Job Composer' menu. You can also access this menu by clicking the button 'New
+Job'-'From Template'. Once in this menu, you should see a table with three System Templates. The resources that are requested in these scripts are the default settings.
 The templates:
 
 - CPU job template: a template for jobs on the thin nodes (the default ``batch`` partition). This is also the default template (which you will get when clicking 'From Default Template' under the 'New Job' button in the 'Jobs' menu).
-- GPU job template: a template for jobs with GPU resources (``gpu`` partition) 
+- GPU job template: a template for jobs with GPU resources (``gpu`` partition)
 - Big memory CPU jobs: a template for jobs with large memory requirements (``bigmem`` partition)
 
-You can create your own templates from scratch or by copying one of the existing templates. 
+You can create your own templates from scratch or by copying one of the existing templates.
 In both cases you will be redirected to a page where you can provide a
-name, the cluster and add some notes. 
+name, the cluster and add some notes.
 To save this, you will need to provide a path to store it in. Ondemand will create a new subdirectory
 with the name of your template here.
 
 A ``manifest.yml`` file will always be present in a template directory, It contains all the info you provided in the set-up step.
-Which other files will be present in this directory depends on how you created your new template. 
+Which other files will be present in this directory depends on how you created your new template.
 When using the 'New Template' button, and you don't provide a path, a copy of the default template will be created.
 You can also provide a path to an existing template or job directory. In that case that directory and its contents will be copied.
 This works for **any** directory on your system, so be sure to provide the correct path!
 
 The 'Copy Template' button basically does the same, but with this button, Ondemand will automatically fill in the path of the
 selected template in the template overview.
-Once you use this more often, you can also use your own templates to create new ones. 
+Once you use this more often, you can also use your own templates to create new ones.
 Any file that is present in that folder, will be copied to your new one as well.
 
 Once you've created the new template directory, you can start customizing it. You can view the content in
 the directory using the Folder Explorer (click 'View Files' on top or 'Open Dir' at the bottom). As explained above, you can edit or remove any file, create new files
-or upload new files. 
+or upload new files.
 These files will be present in each job you create from this template.
 
 Jobs
 ~~~~
 
-The functioning of creating jobs is a bit similar to how you create new templates. 
+The functioning of creating jobs is a bit similar to how you create new templates.
 Whatever method you choose, you will always create a new directory for each job, this time
 located at ``$VSC_DATA/ondemand/data/projects/default/``.
-The job directories will be numbered in the order you have created them. 
+The job directories will be numbered in the order you have created them.
 
 .. warning::
 
@@ -127,30 +127,30 @@ The job directories will be numbered in the order you have created them.
    as this will break the linking.
    When removing a job, the directory will be deleted as well.
 
-To create a job, press the 'New Job' button and choose the option that best suits 
-your needs. 
-You will get a new item in your job list for each job you've created. 
-Again, you can edit, remove and add files like you want to create a custom job by 
-going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking 
-the file names. 
-The 'Open Editor' button in the 'Submit Script' overview also allows you to edit 
+To create a job, press the 'New Job' button and choose the option that best suits
+your needs.
+You will get a new item in your job list for each job you've created.
+Again, you can edit, remove and add files like you want to create a custom job by
+going to the File Explorer (click 'Edit Files' or 'Open Dir') or by directly clicking
+the file names.
+The 'Open Editor' button in the 'Submit Script' overview also allows you to edit
 the job script directly.
 
 Using the 'Job Options' button, you can add some more specifications to your job:
 
-- Name: this will specify a name in the job composer list. 
-  This will not be your job name. 
-  The actual job name is the one that will be specified in the job script. 
-  If you do not specify a name there, you will see that that job gets the name 
+- Name: this will specify a name in the job composer list.
+  This will not be your job name.
+  The actual job name is the one that will be specified in the job script.
+  If you do not specify a name there, you will see that that job gets the name
   ``sbatch`` in the 'Active Jobs' menu.
 - Cluster: You can choose between ``Genius`` and ``wICE`` as a target cluster.
 - Specify job script: if you have multiple job scripts in the directory, you can specify which one to run.
 - Account: here you can specify which account to use. Be aware that this will overwrite the account you might have specified in your job script.
 - Job array: we do not recommend using this. If you would like to use job arrays, have a look at :ref:`the worker framework<worker or atools>`.
 
-Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the 
+Everything should now be set up to start a job. Any job can be started by clicking 'Submit'. You can stop it at any time by clicking 'Stop'. You cannot use the
 'Submit' job to start the exact same job multiple times. You can use the 'New Job - From Selected Job' option for this. If you delete any of the jobs, you also remove
-the folder that it is associated with. 
+the folder that it is associated with.
 
 Clusters
 ========
@@ -158,9 +158,9 @@ Clusters
 When selecting 'Clusters - Login Server Shell Access' you will get a terminal window in a new browser tab.
 You will arrive on one of the Genius login nodes, which
 you can use as you are used to, including the option to submit jobs to Genius or wICE.
-As with the Genius login nodes, this means that this shell is not meant for any 
+As with the Genius login nodes, this means that this shell is not meant for any
 calculation.
-If you would like to perform calculations in an interactive job, you should be 
+If you would like to perform calculations in an interactive job, you should be
 using the :ref:`interactive shell<interactive_shell>` app.
 
 .. _interactive-apps:
@@ -273,14 +273,11 @@ The same applies for other choices of partitions on Genius or wICE clusters.
 JupyterLab
 -----------
 
-.. note::
-
-   This section is prepared for the scheduled migration of JupyterLab on
-   Thursday 25 July 2024. Some features will be available only after the migration.
-
-With this app you can create or (re)run Jupyter Notebooks. This can be handy both for R and Python coding.
-One of the benefits of using JupyterLab is the flexibility it offers in customizing user environments,
-which we explain below.
+With this app you can write and run
+`Jupyter <official JupyterLab documentation>`_ notebooks containing
+annotated Python, R or Julia code (among other languages). IPython consoles are
+available as well. One of the benefits of JupyterLab is that it supports
+different types of user-defined environments, as will become clear below.
 
 **Remarks:**
 
@@ -313,7 +310,7 @@ User-defined kernels
 
 If the pure module environment does not provide all Python packages that you need,
 then you can locally install these extra packages, followed by installing the corresponding
-Jupyter kernel either from a :ref:`Python Conda environment<py-conda-kernel>`, or from a 
+Jupyter kernel either from a :ref:`Python Conda environment<py-conda-kernel>`, or from a
 :ref:`Python virtual environment<py-venv-kernel>`.
 For R, you may create your customized environment using :ref:`Conda environments for R<r-conda-kernel>`.
 
@@ -419,13 +416,13 @@ For more general information, please refer to the `official JupyterLab documenta
 RStudio Server
 --------------
 
-This interactive app allows you to run an RStudio session on the cluster. 
-In the 'Toolchain year and R version' drop-down menu, you can choose the version 
+This interactive app allows you to run an RStudio session on the cluster.
+In the 'Toolchain year and R version' drop-down menu, you can choose the version
 of R module that would be loaded for your session (such as `R/4.2.2-foss-2022b`).
-Additionally, the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules can be loaded 
+Additionally, the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules can be loaded
 on top of the base R module to provide easy access to hundreds of preinstalled packages.
 
-It is also possible to use locally installed R packages with RStudio, see :ref:`R package management<r_package_management_standard_lib>`. 
+It is also possible to use locally installed R packages with RStudio, see :ref:`R package management<r_package_management_standard_lib>`.
 RStudio furthermore allows to create RStudio projects to manage your
 R environments. When doing so, we recommend to select the
 `renv <https://rstudio.github.io/renv/articles/renv.html>`_ option
@@ -465,7 +462,7 @@ your machine learning workflow.
 Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_
 for more detailed information.
 
-The Tensorboard interactive session requires you to specify a project (or log) directory in 
+The Tensorboard interactive session requires you to specify a project (or log) directory in
 your submission options.
 This is a relative directory starting from your ``$VSC_DATA``.
 Beware that you cannot change this directory, once the session is launched.
