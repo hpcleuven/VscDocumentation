@@ -206,9 +206,11 @@ Below, we provide recommendations on incorporating MFA in your new or existing S
   The SSH agent keeps the certificate while it runs silently in the background.
   Bear in mind that the certificates are valid for maximum 16 hours.
 
-If you want to use apps that use the ``ssh`` command in the background
-such as NX or FileZilla, you can also first inject a certificate in 
-your agent before trying to connect.
-This can be done by connecting to the VSC firewall page with agent forwarding::
+Getting an SSH certificate in your agent can also be done by contacting the VSC
+firewall page instead of the login nodes::
 
     ssh -A vsc98765@firewall.vscentrum.be
+    
+The main difference is that you will then not proceed to a login node.
+This can be an advantage if you will be using other SSH clients (such as
+NX or FileZilla) and don't need the terminal-based connection.
