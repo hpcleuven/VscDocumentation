@@ -11,6 +11,9 @@ Prerequisite
    .. tab-item:: KU Leuven
 
       You have an approved :ref:`VSC account <access>`.
+      To access KU Leuven/UHasselt site, you are all set.
+      However, to access the UAntwerpen, UGent or VUB sites, you also need to
+      :ref:`generate a public/private key pair with PuTTY <generating keys putty>`.
 
    .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
 
@@ -49,9 +52,12 @@ VSC clusters.
 
    .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
 
+- Based on the destination VSC site that you want to login to, choose one of the
+  tabs below and proceed.
+
 .. tab-set::
 
-   .. tab-item:: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
 
       Select the SSH > Auth > Credentials' tab, and remove any private key from the
       box 'Private key file for authentication'.
@@ -60,7 +66,7 @@ VSC clusters.
       .. figure:: text_mode_access_using_putty/putty_priv_key.PNG
          :alt: putty private key
 
-   .. tab-item :: UHasselt, UGent, VUB, UAntwerpen
+   .. tab-item :: UGent, VUB, UAntwerpen
 
       In the category Connection > SSH > Auth > Credentials, click on 'Browse',
       and select the private key that you generated and saved above.
