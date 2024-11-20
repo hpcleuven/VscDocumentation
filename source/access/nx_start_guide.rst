@@ -14,12 +14,9 @@ Download the enterprise version of the client from the `NX Client download`_ pag
 Steps before configuring NoMachine
 ----------------------------------
 
-NoMachine listens to the SSH agents, such as :ref:`Pageant <using Pageant>` 
-for Windows users, and the default :ref:`agent included with OpenSSH <SSH agent>`
-for Linux/MacOS users.
-Using NoMachine client with an SSH agent ensures a convenient workflow.
-Therefore, we strongly advice you to setup your :ref:`SSH agent <SSH agent>`, before
-continuing further.
+For NoMachine connections to the (KU Leuven) HPC infrastructure, you need to use
+an SSH agent such as :ref:`Pageant <using Pageant>`  for Windows users and the
+default `:ref:`agent included with OpenSSH <SSH agent>` for Linux/MacOS users.
 
 Once your SSH agent is up and running, you need to issue an SSH certificate to be stored
 in your agent.
