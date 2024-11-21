@@ -43,7 +43,7 @@ There are three ways to authenticate with the Python-iRODSclient:
    > 'How to Connect' > 'Python Client on Windows'. This method, despite the
    title, should work for any operating system.
 
-2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.exe>`_.
+2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.signed.exe>`_.
    Double click on the file and enter your zone name in the window that pops
    up. You might need to put the file in a folder that doesn't require administrator rights.  
 
