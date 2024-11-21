@@ -40,9 +40,9 @@ VSC clusters.
       <hardware>`, and replace ``login.hpc.kuleuven.be`` accordingly.
 
 
-- Within the category Session, in the field 'Host Name', type in
-  <vsc-loginnode>, which is the name of the login node of the VSC
-  cluster you want to connect to.
+- Within the category 'Session', in the field 'Host Name', type in
+  <vsc-loginnode>, which is the name of the :ref:`login node of the VSC
+  cluster <hardware>` you want to connect to.
 
    .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_01.png
 
