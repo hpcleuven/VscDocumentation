@@ -81,7 +81,7 @@ page using a text-based terminal (such as PuTTY or MobaXterm).
   .. figure:: mfa_login/reauthenticate_phone.PNG
      :alt: reauthenticate_phone
 
-- Log in as usual. Now, you should end up on a page telling you that your VSC 
+- Once you are successfully authenticated, you end up on a page telling you that your VSC 
   identity is confirmed.
   If you have already performed the previous login in that browser session, you will 
   immediately end up on this page:
@@ -117,7 +117,7 @@ That's it! You can continue doing your HPC work as usual.
 
 .. _mfa-with-ssh-agent:
 
-Using apps with an SSH agent
+Connecting with an SSH agent
 ----------------------------
 
 It is a common practice that Windows/Linux/MacOS users use different SSH clients
@@ -130,9 +130,11 @@ avoid all this.
 Examples of such apps are :ref:`FileZilla <FileZilla>` or :ref:`NoMachine <NX start guide>`.
 Now, you have two possibilities:
 
-- For some apps it is possible to first connect to the cluster (e.g. in text-based terminal)
-  as described above, and keep that connection open;
-  once you launch the app, the authentication succeeds automatically.
+- For using some apps (such as NoMachine and FileZilla), it is possible to first connect to
+  the cluster using PuTTY or terminal.
+  Once your terminal connection succeeds, your :ref:`SSH agent <SSH agent>` will hold your
+  SSH certificate.
+  Eventually, the certificate is used by NoMachine or FileZilla to complete the authentication.
 
 - Another method is contacting the `VSC firewall page <https://firewall.vscentrum.be>`_
   with PuTTY or terminal, while the 'agent forwarding' is enabled.
