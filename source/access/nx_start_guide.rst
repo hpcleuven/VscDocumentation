@@ -20,14 +20,8 @@ default `:ref:`agent included with OpenSSH <SSH agent>` for Linux/MacOS users.
 
 Once your SSH agent is up and running, you need to issue an SSH certificate to be stored
 in your agent.
-For that, you may opt for any of the following approaches:
-
-- login directly to the `HPC firewall page <https://firewall.vscentrum.be/>`_
-- login to the :ref:`Tier-2 login <tier2_login_nodes>` nodes via 
-  :ref:`PuTTY <text mode access using PuTTY>` or :ref:`MobaXterm <access using mobaxterm>`
-- login to the :ref:`Open OnDemand portal <ood_t2_leuven>`
-
-Upon a successful login, a SSH certificate is issued and stored in your SSH agent.
+For that, please refer to the instructions given in
+:ref:`using SSH clients with SSH agent <mfa-with-ssh-agent>`.
 
 NoMachine NX Client Configuration
 ---------------------------------

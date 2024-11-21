@@ -115,6 +115,8 @@ That's it! You can continue doing your HPC work as usual.
    your IP address for 90 days.
    Within that time frame, visiting the `VSC firewall page`_ might be optional.
 
+.. _mfa-with-ssh-agent:
+
 Using apps with an SSH agent
 ----------------------------
 
@@ -126,16 +128,27 @@ However, not all SSH clients prompt you the firewall link.
 While this can be cumbersome, setting up an SSH agent and generating an SSH certificate will
 avoid all this.
 Examples of such apps are :ref:`FileZilla <FileZilla>` or :ref:`NoMachine <NX start guide>`.
-Now, you have few possibilities:
+Now, you have two possibilities:
 
 - For some apps it is possible to first connect to the cluster (e.g. in text-based terminal)
   as described above, and keep that connection open;
   once you launch the app, the authentication succeeds automatically.
 
-- Another method is surfing directly to the `VSC firewall page <https://firewall.vscentrum.be>`_ 
-  while the connection is pending.
+- Another method is contacting the `VSC firewall page <https://firewall.vscentrum.be>`_
+  with PuTTY or terminal, while the 'agent forwarding' is enabled.
+  PuTTY users find the agent forwarding option under the 'Connection -> SSH -> Auth' tab.
+  The Linux/MacOS users can execute the following command:
+
+  .. code-block:: bash
+
+     ssh -A vsc98765@firewall.vscentrum.be
+
+  When authenticating via the VSC firewall page, you will not land on a login node.
+  This has an advantage when using other SSH clients such as NX or FileZilla.
+
+  In either case, while the connection is pending, you need to copy/paste the URL into your browser.
   Once you are asked: 'Are you trying to log in from <IP address>? YES / NO',
-  click 'YES'. This works for FileZilla, and some versions of NoMachine.
+  click 'YES'. This approach is recommended for FileZilla and NoMachine users.
 
 - However, we encourage the users to setup an :ref:`SSH agent <SSH agent>`, because
   SSH clients can be configured to work seamlessly with an agent.
@@ -206,11 +219,3 @@ Below, we provide recommendations on incorporating MFA in your new or existing S
   The SSH agent keeps the certificate while it runs silently in the background.
   Bear in mind that the certificates are valid for maximum 16 hours.
 
-Getting an SSH certificate in your agent can also be done by contacting the VSC
-firewall page instead of the login nodes::
-
-    ssh -A vsc98765@firewall.vscentrum.be
-    
-The main difference is that you will then not proceed to a login node.
-This can be an advantage if you will be using other SSH clients (such as
-NX or FileZilla) and don't need the terminal-based connection.
