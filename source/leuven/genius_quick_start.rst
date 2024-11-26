@@ -10,7 +10,7 @@ for most HPC workloads.
 Access to the cluster
 ---------------------
 
-Access to Genius follows the common :ref:`access guidelines for KU Leuven/UHasselt Tier-2 clusters <tier2_login_nodes>`.
+Genius can be accessed from the :ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the :ref:`Open On-Demand <ood_t2_leuven>` service.
 
 For example, you can log in to any of the login node using SSH::
 

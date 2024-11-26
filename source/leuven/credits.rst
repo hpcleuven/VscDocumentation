@@ -152,16 +152,5 @@ The reported cost is the number of Slurm credits needed per core/GPU per minute.
 +---------+-----------------+------------------------+
 
 
-
-How do I get credits to use the Tier-1 infrastructure
------------------------------------------------------
-
-Access to the Tier-1 is project-based, if you have a starting grant or
-an approved project, or you pay for your compute time, you should have
-received information on your job credits.
-If not, please refer to the `official VSC website <https://www.vscentrum.be/>`_, or
-:ref:`contact your VSC support team <Contact VSC>`.
-
-
 .. _Geert Jan Bex: mailto:geertjan.bex@uhasselt.be
 .. _credit request form:  https://admin.kuleuven.be/icts/onderzoek/hpc/request-project-credits
