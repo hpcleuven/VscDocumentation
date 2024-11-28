@@ -29,7 +29,7 @@ All users need to setup an :ref:`SSH agent <SSH agent>` before proceeding.
       :ref:`PuTTY <text mode access using PuTTY>`/:ref:`MobaXterm <access using mobaxterm>`
       (for Windows users).
 
-   .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+   .. tab-item:: UGent, VUB, UAntwerpen
 
       You need to load your private SSH key into your :ref:`SSH agent <SSH agent>`.
 
