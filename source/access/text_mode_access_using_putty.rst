@@ -110,7 +110,7 @@ VSC clusters.
       Then, with the right-click from your mouse or CTRL-V, you can paste the MFA link
       into your browser to proceed with the authentication.
 
-   .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+   .. tab-item:: UGent, VUB, UAntwerpen
 
        Now pressing 'Open' should ask for your passphrase, and connect
        you to <vsc-loginnode>.
