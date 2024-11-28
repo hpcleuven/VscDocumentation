@@ -7,7 +7,7 @@ Multi Factor Authentication (MFA)
 As the name suggests, MFA requires additional steps with human intervention
 when authenticating.
 MFA is mandatory for accessing KU Leuven infrastructures.
-In this document, we explain how to login to the
+In this page, we explain how to login to the
 :ref:`KU Leuven Open OnDemand portal <ood_t2_leuven>`, and how to use SSH clients
 (such as PuTTY, terminal etc) with and without using an SSH agent.
 
@@ -73,6 +73,13 @@ But, if you opt for this approach, here are the steps to follow:
   .. figure:: mfa_login/reauthenticate_phone.PNG
      :alt: reauthenticate_phone
 
+  This step may not be necessary when connecting from a white-listed IP address,
+  like the internal networks of the Flemish universities, using a static on-site
+  IP as well as the institutional VPN.
+  For example, if you have already logged upfront into your institution's network
+  then you might not be required to log in again depending on your browser
+  session settings (e.g., accepted cookies).
+
 - Once you are successfully authenticated, you end up on a page telling you that your VSC 
   identity is confirmed.
   If you have already performed the previous login in that browser session, you will 
@@ -81,13 +88,6 @@ But, if you opt for this approach, here are the steps to follow:
   .. _firewall_confirmed:
   .. figure:: mfa_login/firewall_confirmed.PNG
      :alt: firewall_confirmed
-
-  This step may not be necessary when connecting from a white-listed IP address,
-  like the internal networks of the Flemish universities, using a static on-site
-  IP as well as the insututional VPN.
-  For example, if you have already logged upfront into your institution network
-  then you might not be required to log in again depending on your browser
-  session settings (e.g., accepted cookies).
 
 - Go back to your browser, SSH client or terminal.
   You should now be connected to a login node on the cluster or to the OnDemand web portal,
