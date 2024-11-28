@@ -35,7 +35,7 @@ into the System tray, which looks like this:
       :alt: pageant_logo
 
 
-Pageant runs silently in the backgroun and does nothing until you load a private key into it.
+Pageant runs silently in the background and does nothing until you load a private key into it.
 If you click the Pageant icon with the right mouse button, you will see a menu.
 Select ‘View Keys’ from this menu. The Pageant main window will appear.
 You can also bring this window up by double-clicking on the Pageant icon.
