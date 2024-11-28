@@ -54,7 +54,7 @@ Configuration of FileZilla to connect to a login node
            .. figure:: filezilla/site_manager_kul.png
               :alt: FileZilla's site manager for KU Leuven/UHasselt site 
 
-      .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+      .. tab-item:: UGent, VUB, UAntwerpen
 
          -  Host: fill in the hostname of the VSC login node of your home
             institution. You can find this information in the :ref:`overview
