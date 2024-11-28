@@ -54,7 +54,7 @@ VSC clusters.
 
 .. tab-set::
 
-   .. tab-item:: KU Leuven/UHasselt
+   .. tab-item:: KU Leuven
 
       Select the SSH > Auth > Credentials' tab, and remove any private key from the
       box 'Private key file for authentication'.
