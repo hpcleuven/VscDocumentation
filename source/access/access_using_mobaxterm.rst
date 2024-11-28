@@ -60,7 +60,7 @@ Setup a shortcut for a remote session
          'Compression' options.
 
          .. figure:: access_using_mobaxterm/mobaxterm_adv_kul.png
-            :alt: advanced ssh options for KUL/UHasselt users
+            :alt: advanced SSH options for KU Leuven clusters
 
          With this configuration, it is strongly recommended to setup your
          :ref:`SSH agent in MobaXterm <mobaxterm-ssh-agent>` which is
