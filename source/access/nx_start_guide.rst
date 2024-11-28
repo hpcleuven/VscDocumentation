@@ -3,8 +3,8 @@
 NX start guide
 ==============
 
-|KUL| NoMachine is a graphical SSH client which allows users to login to the
-HPC Tier-2 clustrs at KU Leuven site.
+|KUL| NoMachine is a remote desktop application which can be used
+in connection with the Tier-2 login infrastructure at KU Leuven.
 
 Installing NX NoMachine client
 ------------------------------
