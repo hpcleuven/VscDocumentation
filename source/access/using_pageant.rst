@@ -69,7 +69,7 @@ authenticate you as a recognized user.
 
 .. tab-set::
 
-   .. tab-item :: KU Leuven/UHasselt
+   .. tab-item :: KU Leuven
 
       Try to connect to one of :ref:`Tier2 login nodes <tier2_login_nodes>`.
       It is mandatory to allow agent forwarding in your ssh client.
