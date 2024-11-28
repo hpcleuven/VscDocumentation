@@ -7,65 +7,58 @@ Multi Factor Authentication (MFA)
 As the name suggests, MFA requires additional steps with human intervention
 when authenticating.
 MFA is mandatory for accessing KU Leuven infrastructures.
-This document provides two methods to connect to the KU Leuven clusters with MFA.
-
-The first method, *without* an :ref:`SSH agent <SSH agent>`, is easier to get started with,
-but requires some repetitive steps with each connection, hence inconvenient on a long run.
-
-The second method involves an :ref:`SSH agent <SSH agent>` and requires a few more
-steps to set up. This approach is however more convenient in the long run because
-a single authentication will suffice for multiple connections throughout the day,
-without further intervention.
-
-Below, we elaborate on these two approaches.
+In this document, we explain how to login to the
+:ref:`KU Leuven Open OnDemand portal <ood_t2_leuven>`, and how to use SSH clients
+(such as PuTTY, terminal etc) with and without using an SSH agent.
 
 .. note::
 
    When connecting from abroad, you first need to login via the `VSC firewall page`_.
+
+Login to Open OnDemand
+----------------------
+
+Users from all VSC sites can access the Open OnDemand portal at KU Leuven site.
+For that, proceed to the :ref:`Open OnDemand portal <ood_t2_leuven>`.
+If you are affiliated with KU Leuven, click on the KU Leuven logo.
+Otherwise, click on the VSC logo to choose your institute.
+You will be then forwarded to the Identity Provider (IdP) of your institute to
+complete the authentication procedure.
+Once that succeeds, you will automatically login to the Open OnDemand homepage.
 
 .. _mfa quick start:
 
 Connecting without an SSH agent
 -------------------------------
 
-First of all, choose whether you want to login to the `VSC firewall page`_,
-:ref:`Open OnDemand portal <ood_t2_leuven>`, or to the :ref:`Tier-2 login <tier2_login_nodes>`
-page using a text-based terminal (such as PuTTY or MobaXterm).
+Using SSH clients (such as PuTTY or terminal) is easier to setup *without*
+an :ref:`SSH agent <SSH agent>`; however, on a long run, it involves repetitive authentication
+which is not convenient.
+Hence, we do not recommend this approach.
+But, if you opt for this approach, here are the steps to follow:
 
-.. tab-set::
+- You login via terminal (or PuTTY or MobaXterm) to one of the
+  :ref:`Tier-2 login nodes <tier2_login_nodes>`.
+  You are prompted with a login link:
 
-   .. tab-item:: VSC firewall page
+  .. _firewall_link_mfa:
+  .. figure:: mfa_login/firewall_link_mfa.PNG
+     :alt: firewall_link_mfa
 
-      Proceed to the `VSC firewall page`_ on your browser.
-
-   .. tab-item:: Open OnDemand
-
-      Proceed to the :ref:`Open OnDemand portal <ood_t2_leuven>`.
-      If you are affiliated with KU Leuven, click on the KU Leuven logo.
-      Otherwise, click on the VSC logo to proceed to the authentication page.
-
-   .. tab-item:: text-based terminal
-
-      You login via terminal (or PuTTY or MobaXterm) to one of the
-      :ref:`Tier-2 login nodes <tier2_login_nodes>`.
-      You are prompted with a login link:
-
-      .. _firewall_link_mfa:
-      .. figure:: mfa_login/firewall_link_mfa.PNG
-         :alt: firewall_link_mfa
-
-      Copy-paste the provided link in a browser and follow it.
-      Note that when using PuTTY or MobaXterm, simply highlighting the link with your
-      mouse will copy the URL to your clipboard.
-      Avoid using 'CTRL-C', or it will send a ``SIGINT`` signal interrupting
-      your process instead of performing a copy operation.
+  Copy-paste the provided link in a browser and follow it.
+  Note that when using PuTTY or MobaXterm, simply highlighting the link with your
+  mouse will copy the URL to your clipboard.
+  Avoid using 'CTRL-C', or it will send a ``SIGINT`` signal interrupting
+  your process instead of performing a copy operation.
 
 - From the drop-down menu, choose the institute you are affiliated with.
+  Below, we show an example of a KU Leuven user, but one has to pick the
+  institute he/she is affiliated with.
 
   .. figure:: mfa_login/vsc_firewall_institute.PNG
      :alt: Choose your institute
 
-- You will be forwarded to the identity provider (IDP) of your institute,
+- You will be forwarded to the Identity Provider (IdP) of your institute,
   and you need to login in a usual way using your registered credentials.
   For KU Leuven users, the page looks like the following:
 
@@ -74,8 +67,7 @@ page using a text-based terminal (such as PuTTY or MobaXterm).
      :alt: idp_page
 
 - If you are already connected to the internal network, then you will be only asked to
-  identify yourself with the MFA of your choice, e.g, via a code sent to your registered
-  phone, or an authenticator app:
+  identify yourself with the MFA authenticator app on your personal phone:
 
   .. _reauthenticate_phone:
   .. figure:: mfa_login/reauthenticate_phone.PNG
@@ -120,14 +112,20 @@ That's it! You can continue doing your HPC work as usual.
 Connecting with an SSH agent
 ----------------------------
 
-It is a common practice that Windows/Linux/MacOS users use different SSH clients
-or GUI apps in order to interact with the HPC infrastructures.
-The standard login method will prompt you the MFA URL every time you try to connect to the
-:ref:`login nodes <tier2_login_nodes>`. 
+We recommend setting up an :ref:`SSH agent <SSH agent>` for two reasons.
+
+Firstly, it offers extra convenience on a long run, because a single authentication
+will suffice for multiple connections throughout the day, without further intervention.
+
+Secondly, it is a common practice that Windows/Linux/MacOS users use different
+SSH clients or GUI apps in order to interact with the HPC infrastructures.
+The standard login method will prompt you the MFA URL every time you try to
+connect to the :ref:`login nodes <tier2_login_nodes>`. 
 However, not all SSH clients prompt you the firewall link.
-While this can be cumbersome, setting up an SSH agent and generating an SSH certificate will
-avoid all this.
-Examples of such apps are :ref:`FileZilla <FileZilla>` or :ref:`NoMachine <NX start guide>`.
+While this can be cumbersome, setting up an SSH agent and generating an
+SSH certificate will avoid all this.
+Examples of such apps are :ref:`FileZilla <FileZilla>` or
+:ref:`NoMachine <NX start guide>`.
 Now, you have two possibilities:
 
 - For using some apps (such as NoMachine and FileZilla), it is possible to first connect to
