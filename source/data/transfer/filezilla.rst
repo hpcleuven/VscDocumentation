@@ -49,7 +49,7 @@ Configuration of FileZilla to connect to a login node
          - Host: ``login.hpc.kuleuven.be``
          - Server Type: 'SFTP - SSH File Transer Protocol'
          - Logon Type: 'Interactive'
-         - User: *your own* VSC user ID, starting as ``vsc3``
+         - User: *your own* VSC user ID
 
            .. figure:: filezilla/site_manager_kul.png
               :alt: FileZilla's site manager for KU Leuven/UHasselt site 
