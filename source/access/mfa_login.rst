@@ -13,7 +13,8 @@ In this page, we explain how to login to the
 
 .. note::
 
-   When connecting from abroad, you first need to login via the `VSC firewall page`_.
+   When connecting from abroad, you first need to login via the
+   `VSC firewall page <https://firewall.vscentrum.be>`_.
 
 Login to Open OnDemand
 ----------------------
@@ -112,50 +113,49 @@ That's it! You can continue doing your HPC work as usual.
 Connecting with an SSH agent
 ----------------------------
 
-We recommend setting up an :ref:`SSH agent <SSH agent>` for two reasons.
+SSH agents can store so-called SSH certificates which various client programs
+(PuTTY, MobaXterm, NoMachine, FileZilla, WinSCP, ...) can then use to
+authenticate.
+Getting an SSH certificate also involves MFA but this only needs
+to performed once since a certificate can be used multiple times as long as it
+remains valid.
+Certain clients (such as :ref:`FileZilla <FileZilla>` or
+:ref:`NoMachine <NX start guide>`) furthermore do not show you the firewall
+link needed for the MFA and hence can only function in combination with an SSH
+agent holding an SSH certificate.
 
-Firstly, it offers extra convenience on a long run, because a single authentication
-will suffice for multiple connections throughout the day, without further intervention.
+You can acquire such an SSH certificate as follows:
 
-Secondly, it is a common practice that Windows/Linux/MacOS users use different
-SSH clients or GUI apps in order to interact with the HPC infrastructures.
-The standard login method will prompt you the MFA URL every time you try to
-connect to the :ref:`login nodes <tier2_login_nodes>`. 
-However, not all SSH clients prompt you the firewall link.
-While this can be cumbersome, setting up an SSH agent and generating an
-SSH certificate will avoid all this.
-Examples of such apps are :ref:`FileZilla <FileZilla>` or
-:ref:`NoMachine <NX start guide>`.
-Now, you have two possibilities:
+- Start up your SSH agent.
+  Windows users are recommended to use :ref:`Pageant <using Pageant>`,
+  while Linux and MacOS users can e.g. rely on :ref:`OpenSSH<SSH agent>`.
 
-- For using some apps (such as NoMachine and FileZilla), it is possible to first connect to
-  the cluster using PuTTY or terminal.
-  Once your terminal connection succeeds, your :ref:`SSH agent <SSH agent>` will hold your
-  SSH certificate.
-  Eventually, the certificate is used by NoMachine or FileZilla to complete the authentication.
-
-- Another method is contacting the `VSC firewall page <https://firewall.vscentrum.be>`_
-  with PuTTY or terminal, while the 'agent forwarding' is enabled.
-  PuTTY users find the agent forwarding option under the 'Connection -> SSH -> Auth' tab.
-  The Linux/MacOS users can execute the following command:
+- Connect to either the cluster's login node or to ``firewall.vscentrum.be``
+  with your terminal application of choice and with agent forwarding enabled.
+  With e.g. OpenSSH you can do:
 
   .. code-block:: bash
 
+     ssh -A vsc98765@login.hpc.kuleuven.be
+     # or
      ssh -A vsc98765@firewall.vscentrum.be
 
-  When authenticating via the VSC firewall page, you will not land on a login node.
-  This has an advantage when using other SSH clients such as NX or FileZilla.
+  PuTTY users can find the agent forwarding option under the
+  'Connection -> SSH -> Auth' tab.
+  OpenSSH users may also automatically
+  enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
 
-  In either case, while the connection is pending, you need to copy/paste the URL into your browser.
-  Once you are asked: 'Are you trying to log in from <IP address>? YES / NO',
-  click 'YES'. This approach is recommended for FileZilla and NoMachine users.
+- This will provide a link to complete the MFA procedure (similar to the
+  'text-based terminal' part of the previous section).
 
-- However, we encourage the users to setup an :ref:`SSH agent <SSH agent>`, because
-  SSH clients can be configured to work seamlessly with an agent.
-  
-Below, we provide a brief listing of few SSH clients.
-Please refer to the documentation page for each app for a correct setup of your
-SSH agent with the provided link.
+- An SSH certificate will now be injected back into the agent.
+
+The certificate can be used as long as the agent remains alive and the
+certificate itself has not expired (they have a lifetime of 16 hours).
+Do not forget to set up your client so that it contacts your SSH agent
+when opening new connections (thereby making use of the certificates).
+For a few common clients the corresponding documentation pages are listed
+below.
 
 =========================================== ==================== =====================
 SSH Client name                             Purpose              Operating System
