@@ -52,7 +52,7 @@ Configuration of FileZilla to connect to a login node
          - User: *your own* VSC user ID
 
            .. figure:: filezilla/site_manager_kul.png
-              :alt: FileZilla's site manager for KU Leuven/UHasselt site 
+              :alt: FileZilla's site manager for KU Leuven clusters
 
       .. tab-item:: UGent, VUB, UAntwerpen
 
