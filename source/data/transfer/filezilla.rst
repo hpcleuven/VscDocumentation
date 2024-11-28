@@ -79,7 +79,7 @@ Configuration of FileZilla to connect to a login node
       you stay connected via FileZilla and you do not require additional
       configuration.
 
-   .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+   .. tab-item:: UGent, VUB, UAntwerpen
 
       Recent versions of FileZilla have a screen in the settings to
       manage private keys. The path to the private key must be provided in
