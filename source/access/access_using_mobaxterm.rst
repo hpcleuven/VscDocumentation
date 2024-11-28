@@ -76,7 +76,7 @@ Setup a shortcut for a remote session
          Confirm by clicking 'Yes'.
          Once the MFA has been completed you will be connected to a login node.
 
-      .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+      .. tab-item:: UGent, VUB, UAntwerpen
 
          Tick the 'Use private key' box and click on the file icon in that field.
          A file browser will be opened; locate the private SSH key file you created
