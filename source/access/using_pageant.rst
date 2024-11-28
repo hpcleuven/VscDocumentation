@@ -13,7 +13,7 @@ As of version 0.78, Pageant can hold certificates in addition to SSH private key
 
 .. tab-set::
 
-   .. tab-item:: KU Leuven/UHasselt
+   .. tab-item:: KU Leuven
 
       You do not necessarily require an SSH key for logging into the Tier-2
       machines, or accessing the clusters using Open Ondemand or FileZilla.
