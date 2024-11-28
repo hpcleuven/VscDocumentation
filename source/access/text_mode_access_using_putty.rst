@@ -10,16 +10,13 @@ Prerequisite
 
    .. tab-item:: KU Leuven
 
-      You have an approved :ref:`VSC account <access>`.
-      To access KU Leuven/UHasselt site, you are all set.
-      However, to access the UAntwerpen, UGent or VUB sites, you also need to
-      :ref:`generate a public/private key pair with PuTTY <generating keys putty>`.
+      To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed.
 
-   .. tab-item:: UHasselt, UGent, VUB, UAntwerpen
+    .. tab-item:: UGent, VUB, UAntwerpen
 
-      You have already
-      :ref:`generated a public/private key pair with PuTTY <generating keys putty>`,
-      and have an approved :ref:`VSC account <access>` on the VSC clusters.
+      To access clusters hosted at these sites, you need a
+      :ref:`public/private key pair <create key pair>` of which the public key
+      needs to be :ref:`uploaded via the VSC account page <upload public key>`.
 
 Connecting to the VSC clusters
 ------------------------------
