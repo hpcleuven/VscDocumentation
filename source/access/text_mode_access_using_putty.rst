@@ -6,13 +6,14 @@ Text-mode access using PuTTY
 Prerequisite
 ------------
 
+
 .. tab-set::
 
    .. tab-item:: KU Leuven
 
       To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed.
 
-    .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UGent, VUB, UAntwerpen
 
       To access clusters hosted at these sites, you need a
       :ref:`public/private key pair <create key pair>` of which the public key
@@ -52,28 +53,29 @@ VSC clusters.
 - Based on the destination VSC site that you want to login to, choose one of the
   tabs below and proceed.
 
-.. tab-set::
 
-   .. tab-item:: KU Leuven
+  .. tab-set::
 
-      Select the SSH > Auth > Credentials' tab, and remove any private key from the
-      box 'Private key file for authentication'.
+     .. tab-item:: KU Leuven
 
-      .. _putty_auth_panel:
-      .. figure:: text_mode_access_using_putty/putty_priv_key.PNG
-         :alt: putty private key
+        Select the SSH > Auth > Credentials' tab, and remove any private key from the
+        box 'Private key file for authentication'.
 
-   .. tab-item :: UGent, VUB, UAntwerpen
+        .. _putty_auth_panel:
+        .. figure:: text_mode_access_using_putty/putty_priv_key.PNG
+           :alt: putty private key
 
-      In the category Connection > SSH > Auth > Credentials, click on 'Browse',
-      and select the private key that you generated and saved above.
+     .. tab-item:: UGent, VUB, UAntwerpen
 
-      .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+        In the category Connection > SSH > Auth > Credentials, click on 'Browse',
+        and select the private key that you generated and saved above.
 
-      Here, the private key was previously saved in the folder
-      ``C:\Users\Me\Keys``.
-      In older versions of Windows, you would have to use
-      ``C:\Documents and Settings\Me\Keys``.
+        .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+
+        Here, the private key was previously saved in the folder
+        ``C:\Users\Me\Keys``.
+        In older versions of Windows, you would have to use
+        ``C:\Documents and Settings\Me\Keys``.
 
 - In the category Connection > SSH > Auth, make sure that the option
   'Attept authentication using Pageant' is selected.
@@ -91,29 +93,30 @@ VSC clusters.
 
 - To start a session, load it from Sessions > Saved Sessions, and click 'Open'.
 
-   .. _putty_load_saved_session:
-   .. figure:: text_mode_access_using_putty/putty_load_saved_session.PNG
-      :alt: putty_load_saved_session
+  .. _putty_load_saved_session:
+  .. figure:: text_mode_access_using_putty/putty_load_saved_session.PNG
+     :alt: putty_load_saved_session
 
-.. tab-set::
 
-   .. tab-item:: KU Leuven
+  .. tab-set::
 
-      You will be then prompted to copy/paste the firewall link into your browser and complete
-      the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>` procedure.
-      With PuTTY, users only need to highlight the link with their mouse in order to copy it to
-      the clipboard.
+     .. tab-item:: KU Leuven
 
-      .. figure:: text_mode_access_using_putty/putty_mfa.PNG
-         :alt: PuTTY MFA URL
+        You will be then prompted to copy/paste the firewall link into your browser and complete
+        the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>` procedure.
+        With PuTTY, users only need to highlight the link with their mouse in order to copy it to
+        the clipboard.
 
-      Then, with the right-click from your mouse or CTRL-V, you can paste the MFA link
-      into your browser to proceed with the authentication.
+        .. figure:: text_mode_access_using_putty/putty_mfa.PNG
+           :alt: PuTTY MFA URL
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+        Then, with the right-click from your mouse or CTRL-V, you can paste the MFA link
+        into your browser to proceed with the authentication.
 
-       Now pressing 'Open' should ask for your passphrase, and connect
-       you to <vsc-loginnode>.
+     .. tab-item:: UGent, VUB, UAntwerpen
+
+        Now pressing 'Open' should ask for your passphrase, and connect
+        you to <vsc-loginnode>.
 
 The first time you make a connection to the login node, a Security Alert
 will appear and you will be asked to verify the authenticity of the
