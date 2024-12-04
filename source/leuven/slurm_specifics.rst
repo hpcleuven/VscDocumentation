@@ -179,12 +179,11 @@ A few notes on this feature:
 GPU, memory and core proportions
 --------------------------------
 
-The Genius and wICE GPU nodes are equipped with either 4 or 8 devices.
-However, different hosts offer different number of cores and RAM memory.
-Consequently, every compute job is allowed to request a maximum amount of memory
-and CPU cores per node for each GPU device.
-The following table gives an overview of the maximum core-to-device and memory-to-device
-proportion for the current ``gpu_*`` partitions:
+Jobs sent to ``gpu_*`` partitions are expected to only request a proportionate
+amount of CPU resources. For example, a single-GPU job sent to a partition
+with 4 GPUs per node should only request up to 1/4th of the available
+CPU cores and CPU memory. An overview of the maximal CPU resources
+per GPU is provided in the table below.
 
 .. list-table:: Memory and cores per GPU
    :widths: 20 20 20 20 20
