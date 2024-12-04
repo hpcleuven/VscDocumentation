@@ -185,44 +185,37 @@ with 4 GPUs per node should only request up to 1/4th of the available
 CPU cores and CPU memory. An overview of the maximal CPU resources
 per GPU is provided in the table below.
 
-.. list-table:: Memory and cores per GPU
-   :widths: 20 20 20 20 20
+.. list-table:: Available CPU cores and CPU memory per GPU
+   :widths: 20 20 20 20
    :header-rows: 2
 
    * - Cluster
      - Partition(s)
-     - CPU cores
-     - ``--mem-per-cpu``
-     - ``--mem``
+     - Cores
+     - Memory
    * -
-     -
      -
      - (MiB)
      - (MiB)
    * - Genius
      - ``gpu_p100*``
      - 9
-     - 5000
      - 45000
    * - Genius
      - ``gpu_v100*``
      - 4
-     - 21000
      - 84000
    * - wICE
      - ``interactive``
      - 8
-     - 7500
      - 60000
    * - wICE
      - ``gpu|gpu_a100``
      - 18
-     - 7000
      - 126000
    * - wICE
      - ``gpu_h100``
      - 16
-     - 11700
      - 187200
 
 The following remarks apply when submitting jobs to the GPU partitions:
