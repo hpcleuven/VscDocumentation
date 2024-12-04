@@ -218,45 +218,27 @@ per GPU is provided in the table below.
      - 16
      - 187200
 
-The following remarks apply when submitting jobs to the GPU partitions:
+The submit filter will issue a warning if a job requests more cores or memory per GPU
+than what is listed above. If this happens, please adjust the Slurm options accordingly
+for your future jobs.
 
-* If a job requests more cores or memory per every GPU as listed above, the job
-  will not be submitted to the queue.
-  Instead, an informative message will be sent to the standard error stream.
-* A job may request less cores and/or memory per GPU than the maximum limit in the table above.
-* Instead of specifying ``--mem`` or ``--mem-per-cpu``, a job may request ``mem-per-gpu``.
-  In that case, the maximum value specified for ``--mem`` applies to ``--mem-per-gpu``, too.
-* For restricting maximum memory for GPU jobs, one has to choose one of the ``--mem``, ``--mem-per-cpu``,
-  or ``--mem-per-gpu`` options.
-* For multi-GPU jobs, the multiple of resouces from the table above applies.
-  E.g. the maximum allowed resources for a two-GPU job on wICE ``gpu_a100`` partition would look like:
+As an example, suppose that you need two A100 GPUs for your calculation, with just
+one core per GPU but with as much CPU memory as you can get. Such a job can be
+submitted as follows:
 
   .. code-block:: bash
-
+     # This job will get less than 18 cores per GPU, so this requirement is satisfied
+     # It will receive 126000 MiB of CPU memory per GPU, which is the maximum
+     # we can get without getting the submit filter warning
      sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=1 --ntasks=36 --gpus-per-node=2 --mem=252000m \
+            --nodes=1 --ntasks-per-node=2 --gpus-per-node=2 --mem=252000 \
             myjobscript.slurm
 
-  Similarly, multi-node multi-GPU jobs can take up the entire cores and memory of the nodes.
-  But, resources can be specified per node and device:
+For more examples of valid GPU jobs, have a look at the
+:ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
+quickstart guides.
 
-
-  .. code-block:: bash
-
-     sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=2 --ntasks-per-gpu=18 --gpus-per-node=4 --mem-per-gpu=126000m \
-            myjobscript.slurm
-
-* Due to the Multi-Instance GPU (MIG) configuration of the Nvidia A100 GPUs on the
-  wICE ``interactive`` partition, specifying ``--gpus-per-node=1`` will result in
-  allocation of 1/7th of the physical device.
-  One cannot request any additional GPU instance from this partition.
-* Slurm supports `GPU sharding <https://slurm.schedmd.com/gres.html#Sharding>`_, and this
-  feature is enabled for all our GPUs.
-  The maximum shards per each GPU is equivalent to the number of cores of the compute host.
-  When requesting GPU shards, *no* resource limits apply.
-  In this case, the user is supposed to request the same number of cores as the requested
-  GPU shards.
-  It is also adviced to leave out memory specifications, and rely on the default memory per core.
-* All the examples given in the :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
-  quick start guides fully comply with the correct resource proportions.
+Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
+(for CPU cores) and ``--mem`` and ``--mem-per-cpu`` (for CPU memory),
+keep in mind that Slurm also offers options like ``--cpus-per-gpu`` and
+``--mem-per-gpu``.
