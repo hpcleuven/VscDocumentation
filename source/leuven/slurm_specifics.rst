@@ -179,8 +179,8 @@ A few notes on this feature:
 CPU resource limits in GPU jobs
 -------------------------------
 
-Jobs sent to ``gpu_*`` partitions are expected to only request a proportionate
-amount of CPU resources. For example, a single-GPU job sent to a partition
+Jobs sent to the ``gpu_*`` partitions are expected to only request a proportionate
+amount of CPU resources. For example, a single-GPU job submitted to a partition
 with 4 GPUs per node should only request up to 1/4th of the available
 CPU cores and CPU memory. An overview of the maximal CPU resources
 per GPU is provided in the table below.
@@ -191,11 +191,11 @@ per GPU is provided in the table below.
 
    * - Cluster
      - Partition(s)
-     - Cores
-     - Memory
+     - Max Cores
+     - Max Memory
    * -
      -
-     - (MiB)
+     -
      - (MiB)
    * - Genius
      - ``gpu_p100*``
@@ -218,27 +218,31 @@ per GPU is provided in the table below.
      - 16
      - 187200
 
-The submit filter will issue a warning if a job requests more cores or memory per GPU
-than what is listed above. If this happens, please adjust the Slurm options accordingly
-for your future jobs.
+If a job requests more cores or memory per GPU than listed above, you will receive a
+warining message.
+In this case, please adjust the Slurm options accordingly for your future jobs.
 
 As an example, suppose that you need two A100 GPUs for your calculation, with just
-one core per GPU but with as much CPU memory as you can get. Such a job can be
-submitted as follows:
+one core per GPU but with as much CPU memory as you can get.
+Such a job can be submitted as follows:
 
-  .. code-block:: bash
-     # This job will get less than 18 cores per GPU, so this requirement is satisfied
-     # It will receive 126000 MiB of CPU memory per GPU, which is the maximum
-     # we can get without getting the submit filter warning
-     sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=1 --ntasks-per-node=2 --gpus-per-node=2 --mem=252000 \
-            myjobscript.slurm
+.. code-block:: bash
+
+   sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
+          --nodes=1 --ntasks-per-node=2 --gpus-per-node=2 --mem=252000m \
+          myjobscript.slurm
+
+In practice, 18 CPU cores and 126000 MiB CPU memory will be allocated per GPU,
+and no warning will be raised.
 
 For more examples of valid GPU jobs, have a look at the
 :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
 quickstart guides.
 
-Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
-(for CPU cores) and ``--mem`` and ``--mem-per-cpu`` (for CPU memory),
-keep in mind that Slurm also offers options like ``--cpus-per-gpu`` and
-``--mem-per-gpu``.
+Slurm offers advanced options for fine-grained resource specifications for GPU jobs.
+For instance, one may combine ``--ntasks`` and ``--cpus-per-gpu`` to limit the maximum
+cores per GPU.
+Similarly, one may specify the (minimum) CPU memory per GPU using the ``--mem-per-gpu``
+option.
+In either case, the maximum CPU limits from the table above shall be respected.
+
