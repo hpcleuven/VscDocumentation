@@ -244,5 +244,5 @@ For instance, one may combine ``--ntasks`` and ``--cpus-per-gpu`` to limit the m
 cores per GPU.
 Similarly, one may specify the (minimum) CPU memory per GPU using the ``--mem-per-gpu``
 option.
-In either case, the maximum CPU limits from the table above shall be respected.
+In either case, the maximum CPU resource limits from the table above shall be respected.
 
