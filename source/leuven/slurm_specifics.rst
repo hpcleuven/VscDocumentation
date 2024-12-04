@@ -174,10 +174,10 @@ A few notes on this feature:
   called ``interactive``. For jobs on that partition this feature is
   irrelevant.
 
-.. _gpu_cores_mem:
+.. _cpu_resource_limits_in_gpu_jobs:
 
-GPU, memory and core proportions
---------------------------------
+CPU resource limits in GPU jobs
+-------------------------------
 
 Jobs sent to ``gpu_*`` partitions are expected to only request a proportionate
 amount of CPU resources. For example, a single-GPU job sent to a partition
