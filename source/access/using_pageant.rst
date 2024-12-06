@@ -11,14 +11,15 @@ NoMachine and FileZilla to make user authentication an easy task.
 Pageant is part of the `PuTTY`_ distribution.
 As of version 0.78, Pageant can hold certificates in addition to SSH private keys.
 
+Prerequisites
+=============
+
 .. tab-set::
 
    .. tab-item:: KU Leuven
 
-      You do not necessarily require an SSH key for logging into the Tier-2
-      machines, or accessing the clusters using Open Ondemand or FileZilla.
-      Instead, you require a certificate which is issued when you go through
-      :ref:`Multi Factor Authentication (MFA) <mfa_leuven>`.
+      To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed
+      as a prerequisite.
 
    .. tab-item:: UGent, VUB, UAntwerpen
 
