@@ -19,7 +19,7 @@ All users need to setup an :ref:`SSH agent <SSH agent>` before proceeding.
 
    .. tab-item:: KU Leuven
    
-      You need to :ref:`get an SSH certificate into your agent <mfa-with-ssh-agent>,
+      You need to :ref:`get an SSH certificate into your agent <mfa-with-ssh-agent>`,
       if you haven't done so already.
 
    .. tab-item:: UGent, VUB, UAntwerpen

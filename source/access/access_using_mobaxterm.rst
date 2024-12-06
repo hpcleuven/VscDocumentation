@@ -1,5 +1,8 @@
 .. _access using mobaxterm:
 
+Text-mode access using MobaXterm
+================================
+
 Prerequisite
 ============
 

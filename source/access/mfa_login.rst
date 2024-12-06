@@ -101,12 +101,6 @@ But, if you opt for this approach, here are the steps to follow:
 
 That's it! You can continue doing your HPC work as usual.
 
-.. note::
-
-   For ``login.hpc.kuleuven.be`` only, a successful connection will whitelist
-   your IP address for 90 days.
-   Within that time frame, visiting the `VSC firewall page`_ might be optional.
-
 .. _mfa-with-ssh-agent:
 
 Connecting with an SSH agent
@@ -118,7 +112,7 @@ authenticate.
 Getting an SSH certificate also involves MFA but this only needs
 to performed once since a certificate can be used multiple times as long as it
 remains valid.
-Certain clients (such as :ref:`FileZilla <FileZilla>` or
+Certain clients (such as :ref:`FileZilla <FileZilla>`, ``sshfs`` or
 :ref:`NoMachine <NX start guide>`) furthermore do not show you the firewall
 link needed for the MFA and hence can only function in combination with an SSH
 agent holding an SSH certificate.
