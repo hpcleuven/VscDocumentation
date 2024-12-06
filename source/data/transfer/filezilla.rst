@@ -21,13 +21,8 @@ All users need to setup an :ref:`SSH agent <SSH agent>` before proceeding.
 
    .. tab-item:: KU Leuven
    
-      You need to inject an SSH certificate into your agent, if not already.
-      For that, you may either visit the
-      `VSC firewall page <https://firewall.vscentrum.be>`_, or login to the
-      :ref:`Open OnDemand portal <ood_t2_leuven>`, or login separately via
-      terminal (for Linux/MacOS users) or
-      :ref:`PuTTY <text mode access using PuTTY>`/:ref:`MobaXterm <access using mobaxterm>`
-      (for Windows users).
+      You need to :ref:`get an SSH certificate into your agent <mfa-with-ssh-agent>,
+      if you haven't done so already.
 
    .. tab-item:: UGent, VUB, UAntwerpen
 
