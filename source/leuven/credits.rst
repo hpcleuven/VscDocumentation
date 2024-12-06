@@ -118,6 +118,16 @@ will be charged::
 
    floor(4.62963 * (2 * 36)) * 150 = 49 950 credits
 
+You can also get such estimates from the ``sam-quote`` tool by providing it
+with your job submission command::
+
+   $ sam-quote sbatch --account=lp_myproject --clusters=genius --nodes=2 \
+                      --ntasks-per-node=36 --time=2:30:00 myjobscript.slurm
+   49950
+
+Note that ``sam-quote`` assumes a worst-case scenario in which the job does
+not stop before reaching its time limit.
+
 
 Charge rates
 ------------
