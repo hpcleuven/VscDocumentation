@@ -239,10 +239,8 @@ For more examples of valid GPU jobs, have a look at the
 :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
 quickstart guides.
 
-Slurm offers advanced options for fine-grained resource specifications for GPU jobs.
-For instance, one may combine ``--ntasks`` and ``--cpus-per-gpu`` to limit the maximum
-cores per GPU.
-Similarly, one may specify the (minimum) CPU memory per GPU using the ``--mem-per-gpu``
-option.
-In either case, the maximum CPU resource limits from the table above shall be respected.
-
+Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
+(for CPU cores) and ``--mem`` and ``--mem-per-cpu`` (for CPU memory),
+Slurm also offers options like ``--cpus-per-gpu`` and ``--mem-per-gpu``.
+When using these options, make sure that the requested CPU cores
+and CPU memory per GPU does not exceed the limits mentioned in the table above.
