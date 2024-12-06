@@ -107,19 +107,16 @@ the price-performance difference between those types of nodes. The total cost
 of a job will be comparable on any compute node, but the
 walltime will be different, depending on the performance of the nodes.
 
-In the examples below, you run your jobs on a ``skylake`` node, for which
-we charge 10 000 Slurm credits per hour.
+As an example, consider a job running on two nodes of the default partition on
+Genius, where ``TRESBillingWeights=CPU=4.62963`` applies::
 
-An example of a job running on multiple nodes and cores is given below::
+   $ sbatch --account=lp_myproject --clusters=genius --nodes=2 \
+            --ntasks-per-node=36 myjobscript.slurm
 
-   $ sbatch --account=lp_astrophysics_014 --clusters=genius --nodes=2 \
-            --ntasks-per-node=36 simulation_3415.slurm
-
-For Genius thin nodes we have ``TRESBillingWeights=CPU=4.62963``.
 If this job finishes in 2.5 hours (i.e., walltime is 150 minutes), the user
 will be charged::
 
-   4.62963 * (2 * 36) * 150 = 50 000 credits
+   floor(4.62963 * (2 * 36)) * 150 = 49 950 credits
 
 
 Charge rates
