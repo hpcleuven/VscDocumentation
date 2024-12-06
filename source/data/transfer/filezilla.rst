@@ -7,8 +7,6 @@ Data transfer with FileZilla
 FileZilla is a free and easy-to-use FTP-style program to
 transfer files to and from your VSC account on the clusters.
 
-You can also put FileZilla with your private key on a USB stick to
-access your files from any internet-connected PC.
 
 You can `download FileZilla`_ from the `FileZilla project page`_.
 
