@@ -72,12 +72,8 @@ authenticate you as a recognized user.
 
    .. tab-item :: KU Leuven
 
-      Try to connect to one of :ref:`Tier2 login nodes <tier2_login_nodes>`.
-      It is mandatory to allow agent forwarding in your ssh client.
-      While connecting, you will be given a URL to validate your identity.
-      Copy that URL in your browser and login to your KU Leuven/UHasselt account.
-      Upon a successful login to your KU Leuven/UHasselt account, the login with 
-      your VSC account will also succeed.
+      Follow the steps in :ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`
+      to get an SSH certificate into your agent.
       At this point, a new certificate will be stored in Pageant that holds your
       identity for a limited period of time.
       You can verify that the certificate is actually stored by right-clicking on
