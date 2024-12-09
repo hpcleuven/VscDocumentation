@@ -27,28 +27,46 @@ You will be then forwarded to the Identity Provider (IdP) of your institute to
 complete the authentication procedure.
 Once that succeeds, you will automatically login to the Open OnDemand homepage.
 
-.. _mfa quick start:
+.. _mfa-with-ssh-agent:
 
-Connecting without an SSH agent
--------------------------------
+Connecting with an SSH agent
+----------------------------
 
-Using SSH clients (such as PuTTY or terminal) is easier to setup *without*
-an :ref:`SSH agent <SSH agent>`; however, on a long run, it involves repetitive authentication
-which is not convenient.
-Hence, we do not recommend this approach.
-But, if you opt for this approach, here are the steps to follow:
+Using an SSH agent allows to store so-called SSH certificates which various
+client programs (PuTTY, MobaXterm, NoMachine, FileZilla, WinSCP, ...)
+can then use to authenticate.
+Getting an SSH certificate involves MFA but this only needs to performed once
+since a certificate can be used multiple times as long as it remains valid.
 
-- You login via terminal (or PuTTY or MobaXterm) to one of the
-  :ref:`Tier-2 login nodes <tier2_login_nodes>`.
-  You are prompted with a login link:
+You can acquire such an SSH certificate as follows:
+
+- Start up your SSH agent.
+  Windows users are recommended to use :ref:`Pageant <using Pageant>`,
+  while Linux and MacOS users can e.g. rely on :ref:`OpenSSH<SSH agent>`.
+
+- Connect to either the cluster's login node or to ``firewall.vscentrum.be``
+  with your terminal application of choice and with agent forwarding enabled.
+  With e.g. OpenSSH you can do:
+
+  .. code-block:: bash
+
+     ssh -A vsc98765@login.hpc.kuleuven.be
+     # or
+     ssh -A vsc98765@firewall.vscentrum.be
+
+  PuTTY users can find the agent forwarding option under the
+  'Connection -> SSH -> Auth' tab.
+  OpenSSH users may also automatically
+  enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
+
+- You will then be shown a URL which you will need to open in a browser:
 
   .. _firewall_link_mfa:
   .. figure:: mfa_login/firewall_link_mfa.PNG
      :alt: firewall_link_mfa
 
-  Copy-paste the provided link in a browser and follow it.
-  Note that when using PuTTY or MobaXterm, simply highlighting the link with your
-  mouse will copy the URL to your clipboard.
+  Note that when using PuTTY or MobaXterm, simply highlighting the link
+  with your mouse will copy the URL to your clipboard.
   Avoid using 'CTRL-C', or it will send a ``SIGINT`` signal interrupting
   your process instead of performing a copy operation.
 
@@ -90,58 +108,9 @@ But, if you opt for this approach, here are the steps to follow:
   .. figure:: mfa_login/firewall_confirmed.PNG
      :alt: firewall_confirmed
 
-- Go back to your browser, SSH client or terminal.
-  You should now be connected to a login node on the cluster or to the OnDemand web portal,
-  respectively.
-  In plain SSH connections a successful login is rewarded with a welcome message:
-
-   .. _login_node:
-   .. figure:: mfa_login/login_node.PNG
-      :alt: login_node
+- An SSH certificate will now be injected back into the agent.
 
 That's it! You can continue doing your HPC work as usual.
-
-.. _mfa-with-ssh-agent:
-
-Connecting with an SSH agent
-----------------------------
-
-SSH agents can store so-called SSH certificates which various client programs
-(PuTTY, MobaXterm, NoMachine, FileZilla, WinSCP, ...) can then use to
-authenticate.
-Getting an SSH certificate also involves MFA but this only needs
-to performed once since a certificate can be used multiple times as long as it
-remains valid.
-Certain clients (such as :ref:`FileZilla <FileZilla>`, ``sshfs`` or
-:ref:`NoMachine <NX start guide>`) furthermore do not show you the firewall
-link needed for the MFA and hence can only function in combination with an SSH
-agent holding an SSH certificate.
-
-You can acquire such an SSH certificate as follows:
-
-- Start up your SSH agent.
-  Windows users are recommended to use :ref:`Pageant <using Pageant>`,
-  while Linux and MacOS users can e.g. rely on :ref:`OpenSSH<SSH agent>`.
-
-- Connect to either the cluster's login node or to ``firewall.vscentrum.be``
-  with your terminal application of choice and with agent forwarding enabled.
-  With e.g. OpenSSH you can do:
-
-  .. code-block:: bash
-
-     ssh -A vsc98765@login.hpc.kuleuven.be
-     # or
-     ssh -A vsc98765@firewall.vscentrum.be
-
-  PuTTY users can find the agent forwarding option under the
-  'Connection -> SSH -> Auth' tab.
-  OpenSSH users may also automatically
-  enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
-
-- This will provide a link to complete the MFA procedure (similar to the
-  'text-based terminal' part of the previous section).
-
-- An SSH certificate will now be injected back into the agent.
 
 The certificate can be used as long as the agent remains alive and the
 certificate itself has not expired (they have a lifetime of 16 hours).
@@ -158,5 +127,36 @@ SSH Client name                             Purpose              Operating Syste
 :ref:`NoMachine <NX start guide>`           graphical desktop    Windows, Linux, MacOS
 :ref:`FileZilla <FileZilla>`                file transfer        Windows, Linux, MacOS
 =========================================== ==================== =====================
+
+
+.. _mfa quick start:
+
+Connecting without an SSH agent
+-------------------------------
+
+Most clients (such as PuTTY or MobaXterm) can also be made to work *without*
+an :ref:`SSH agent <SSH agent>`. Keep in mind, however, that this approach
+tends to be less convenient since each new connection will require multi-factor
+authentication.
+
+Certain clients (such as :ref:`FileZilla <FileZilla>`, ``sshfs`` or
+:ref:`NoMachine <NX start guide>`) furthermore do not show you the firewall
+link needed for the MFA and hence can only function in combination with an SSH
+agent holding an SSH certificate.
+
+This being said, the agentless procedure runs as follows:
+
+- Connect to a :ref:`Tier-2 login node <tier2_login_nodes>`
+  using your chosen client application (e.g. MobaXterm).
+
+- The application is then supposed to show the link to complete the MFA procedure
+  (similar to the the previous section).
+
+- After passing the MFA challenge, you should now be connected to a login node.
+  In plain SSH connections a successful login is rewarded with a welcome message:
+
+   .. _login_node:
+   .. figure:: mfa_login/login_node.PNG
+      :alt: login_node
 
 
