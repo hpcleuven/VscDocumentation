@@ -65,6 +65,12 @@ VSC clusters.
         .. figure:: text_mode_access_using_putty/putty_priv_key.PNG
            :alt: putty private key
 
+        In the category Connection > SSH > Auth, make sure that the option
+        'Attempt authentication using Pageant' is selected.
+        It is also recommended to enable agent forwarding by ticking the
+        'Allow agent forwarding' checkbox.
+
+        .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
      .. tab-item:: UGent, VUB, UAntwerpen
 
         In the category Connection > SSH > Auth > Credentials, click on 'Browse',
