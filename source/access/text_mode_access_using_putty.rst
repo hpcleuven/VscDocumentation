@@ -83,12 +83,6 @@ VSC clusters.
         In older versions of Windows, you would have to use
         ``C:\Documents and Settings\Me\Keys``.
 
-- In the category Connection > SSH > Auth, make sure that the option
-  'Attept authentication using Pageant' is selected.
-  It is also recommended to enable agent forwarding by ticking the
-  'Allow agent forwarding' checkbox.
-
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
 
 - In the category Connection > SSH > X11, click the 'Enable X11 Forwarding' checkbox:
 
