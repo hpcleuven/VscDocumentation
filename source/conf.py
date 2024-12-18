@@ -114,7 +114,7 @@ html_navbar_icon_links = [
     },
     {
         "name": "VSC on Twitter",
-        "url": "https://twitter.com/VSC_HPC",
+        "url": "https://x.com/VSC_HPC",
         "icon": "_static/fa-square-x-twitter.svg",
         "type": "local",
     },

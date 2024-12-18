@@ -3,11 +3,21 @@
 Text-mode access using PuTTY
 ============================
 
-Prerequisite: PuTTY and WinSCP
-------------------------------
+Prerequisite
+------------
 
-You've :ref:`generated a public/private key pair with PuTTY
-<generating keys putty>` and have an approved account on the VSC clusters.
+
+.. tab-set::
+
+   .. tab-item:: KU Leuven
+
+      To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed.
+
+   .. tab-item:: UGent, VUB, UAntwerpen
+
+      To access clusters hosted at these sites, you need a
+      :ref:`public/private key pair <create key pair>` of which the public key
+      needs to be :ref:`uploaded via the VSC account page <upload public key>`.
 
 Connecting to the VSC clusters
 ------------------------------
@@ -28,42 +38,85 @@ VSC clusters.
       <hardware>`, and replace ``login.hpc.kuleuven.be`` accordingly.
 
 
-#. Within the category Session, in the field 'Host Name', type in
-   <vsc-loginnode>, which is the name of the login node of the VSC
-   cluster you want to connect to.
+- Within the category 'Session', in the field 'Host Name', type in
+  a valid hostname of the :ref:`login node of the VSC cluster <hardware>`
+  you want to connect to.
 
    .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_01.png
 
-#. In the category Connection > Data, in the field 'Auto-login
-   username', put in <vsc-account>, which is your VSC username that you
-   have received by mail after your request was approved.
+- In the category Connection > Data, in the field 'Auto-login
+  username', put in <vsc-account>, which is your VSC username that you
+  have received by mail after your request was approved.
 
    .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
 
-#. In the category Connection > SSH > Auth > Credentials, click on 'Browse' and select
-   the private key that you generated and saved above.
+- Based on the destination VSC site that you want to login to, choose one of the
+  tabs below and proceed.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
 
-   Here, the private key was previously saved in the folder
-   ``C:\Users\Me\Keys``. In older versions of Windows, you would have
-   to use ``C:\Documents and Settings\Me\Keys``.
+  .. tab-set::
 
-#. In the category Connection > SSH > X11, click the Enable X11
-   Forwarding checkbox:
+     .. tab-item:: KU Leuven
+
+        Select the SSH > Auth > Credentials' tab, and remove any private key from the
+        box 'Private key file for authentication'.
+
+        .. _putty_auth_panel:
+        .. figure:: text_mode_access_using_putty/putty_priv_key.PNG
+           :alt: putty private key
+
+        In the category Connection > SSH > Auth, make sure that the option
+        'Attempt authentication using Pageant' is selected.
+        It is also recommended to enable agent forwarding by ticking the
+        'Allow agent forwarding' checkbox.
+
+        .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
+     .. tab-item:: UGent, VUB, UAntwerpen
+
+        In the category Connection > SSH > Auth > Credentials, click on 'Browse',
+        and select the private key that you generated and saved above.
+
+        .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+
+        Here, the private key was previously saved in the folder
+        ``C:\Users\Me\Keys``.
+        In older versions of Windows, you would have to use
+        ``C:\Documents and Settings\Me\Keys``.
+
+
+- In the category Connection > SSH > X11, click the 'Enable X11 Forwarding' checkbox:
 
    .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_05.png
 
-#. In the category Connection > SSH > Auth, you can enable agent forwarding
-   by ticking the 'Allow agent forwarding' checkbox.
+- Now go back to the 'Session' tab, and fill in a name in the 'Saved Sessions'
+  field and press 'Save' to permanently store the session information.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
+- To start a session, load it from Sessions > Saved Sessions, and click 'Open'.
 
-#. Now go back to Session, and fill in a name in the 'Saved Sessions'
-   field and press 'Save' to store the session information.
+  .. _putty_load_saved_session:
+  .. figure:: text_mode_access_using_putty/putty_load_saved_session.PNG
+     :alt: putty_load_saved_session
 
-#. Now pressing 'Open' should ask for your passphrase, and connect
-   you to <vsc-loginnode>.
+
+  .. tab-set::
+
+     .. tab-item:: KU Leuven
+
+        You will be then prompted to copy/paste the firewall link into your browser and complete
+        the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>` procedure.
+        With PuTTY, users only need to highlight the link with their mouse in order to copy it to
+        the clipboard.
+
+        .. figure:: text_mode_access_using_putty/putty_mfa.PNG
+           :alt: PuTTY MFA URL
+
+        Then, with the right-click from your mouse or CTRL-V, you can paste the MFA link
+        into your browser to proceed with the authentication.
+
+     .. tab-item:: UGent, VUB, UAntwerpen
+
+        Now pressing 'Open' should ask for your passphrase, and connect
+        you to <vsc-loginnode>.
 
 The first time you make a connection to the login node, a Security Alert
 will appear and you will be asked to verify the authenticity of the
@@ -77,11 +130,14 @@ press 'Open'.
 Managing SSH keys with Pageant
 ------------------------------
 
-:ref:`Pageant <using Pageant>` can be used to manage active keys for
-PuTTY, :ref:`WinSCP<WinSCP>`, :ref:`FileZilla<FileZilla>` as well as
-the :ref:`NX client for Windows<NX start guide>` so that you don't need
-to enter the passphrase all the time.  Pageant is part of the `PuTTY`_
-distribution.
+At this point, we highly recommend setting up an :ref:`SSH agent <SSH agent>`.
+A widely used SSH agent is :ref:`Pageant <using Pageant>` which is installed
+automatically with PuTTY.
+
+Pageant can be used to manage SSH keys and certificates for
+multiple clients, such as PuTTY, :ref:`WinSCP<WinSCP>`, :ref:`FileZilla<FileZilla>`,
+as well as the :ref:`NX client for Windows<NX start guide>` so that you don't need
+to enter the passphrase all the time.
 
 .. toctree::
 
