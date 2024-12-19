@@ -44,12 +44,12 @@ Please contact your VSC coordinator/contact or your :ref:`local support staff
 Job cost calculation
 ~~~~~~~~~~~~~~~~~~~~
 
-On Tier-2 clusters, we use Slurm for accounting purposes (on top of resource and 
+On Tier-2 clusters, we use Slurm for accounting purposes (on top of resource and
 job management).
 See :ref:`Slurm accounting <accounting_leuven>` page for additional information.
 In Slurm terminology, the cost of a job depends on the trackable resources (TRES)
-it consumes. Two distinct TRES are the number of CPU cores and GPU devices. 
-Different types of CPU and GPU nodes are given different weights 
+it consumes. Two distinct TRES are the number of CPU cores and GPU devices.
+Different types of CPU and GPU nodes are given different weights
 (``TRESBillingWeights``) which you can retrieve as follows for e.g. wICE::
 
    scontrol show partitions --clusters=wice
@@ -75,7 +75,7 @@ Where
 The following formula applies::
 
    (CPU TRESBillingWeights * num_cores + GPU TRESBillingWeights * num_gpus) * walltime
-   
+
 Where
 
 - ``CPU TRESBillingWeights`` is the applied weight for CPU resources (see above)
@@ -94,11 +94,11 @@ Where
 .. note::
 
     The Tier-2 cluster has several types of compute nodes.
-    Hence, different ``TRESBillingWeights`` apply to 
+    Hence, different ``TRESBillingWeights`` apply to
     different resources on different partitions of Genius and wICE.
     The difference in cost between different machines/processors reflects
     the performance difference between those types of nodes.
-    For additional information, you may refer to the 
+    For additional information, you may refer to the
     `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/hpc_vsc_page>`_
     (login required).
 
@@ -107,49 +107,64 @@ the price-performance difference between those types of nodes. The total cost
 of a job will be comparable on any compute node, but the
 walltime will be different, depending on the performance of the nodes.
 
-In the examples below, you run your jobs on a ``skylake`` node, for which
-we charge 10 000 Slurm credits per hour.
+As an example, consider a job running on two nodes of the default partition on
+Genius, where ``TRESBillingWeights=CPU=4.62963`` applies::
 
-An example of a job running on multiple nodes and cores is given below::
+   $ sbatch --account=lp_myproject --clusters=genius --nodes=2 \
+            --ntasks-per-node=36 myjobscript.slurm
 
-   $ sbatch --account=lp_astrophysics_014 --clusters=genius --nodes=2 \
-            --ntasks-per-node=36 simulation_3415.slurm
-
-For Genius thin nodes we have ``TRESBillingWeights=CPU=4.62963``.
 If this job finishes in 2.5 hours (i.e., walltime is 150 minutes), the user
 will be charged::
 
-   4.62963 * (2 * 36) * 150 = 50 000 credits
+   floor(4.62963 * (2 * 36)) * 150 = 49 950 credits
+
+You can also get such estimates from the ``sam-quote`` tool by providing it
+with your job submission command::
+
+   $ sam-quote sbatch --account=lp_myproject --clusters=genius --nodes=2 \
+                      --ntasks-per-node=36 --time=2:30:00 myjobscript.slurm
+   49950
+
+Note that ``sam-quote`` assumes a worst-case scenario in which the job does
+not stop before reaching its time limit.
 
 
 Charge rates
 ------------
 
-The charge rate for the various node types of Genius and wICE are listed in the table
-below.  
-The reported cost is the number of Slurm credits needed per core/GPU per minute.
+The table below shows the charge rates for each CPU and GPU type on Genius
+and wICE. These values correspond to the number of Slurm credits needed
+to allocate one core or GPU during one minute.
 
-+---------+-----------------+------------------------+
-| Cluster | node type       | ``TRESBillingWeights`` |
-+=========+=================+========================+
-| Genius  | skylake         | 4.62963                |
-+         +-----------------+------------------------+
-|         | cascadelake     | 4.62963                |
-+         +-----------------+------------------------+
-|         | skylake bigmem  | 5.55556                |
-+         +-----------------+------------------------+
-|         | Nvidia P100 GPU | 41.6667                |
-+         +-----------------+------------------------+
-|         | Nvidia V100 GPU | 59.5833                |
-+         +-----------------+------------------------+
-|         | Superdome       | 18.7500                |
-+---------+-----------------+------------------------+
-| wICE    | icelake         | 2.54630                |
-+         +-----------------+------------------------+
-|         | icelake bigmem  | 4.39815                |
-+         +-----------------+------------------------+
-|         | Nvidia A100 GPU | 141.667                |
-+---------+-----------------+------------------------+
++---------+---------------------+----------+------------------------+
+| Cluster | Resource            | Type     | ``TRESBillingWeights`` |
++=========+=====================+==========+========================+
+| Genius  | Skylake             | CPU core | 4.62963                |
++         +---------------------+----------+------------------------+
+|         | Skylake (bigmem)    | CPU core | 5.55556                |
++         +---------------------+----------+------------------------+
+|         | Skylake (superdome) | CPU core | 18.7500                |
++         +---------------------+----------+------------------------+
+|         | Cascadelake         | CPU core | 4.62963                |
++         +---------------------+----------+------------------------+
+|         | P100                | GPU      | 41.6667                |
++         +---------------------+----------+------------------------+
+|         | V100                | GPU      | 59.5833                |
++---------+---------------------+----------+------------------------+
+| wICE    | Icelake             | CPU core | 2.54630                |
++         +---------------------+----------+------------------------+
+|         | Icelake (bigmem)    | CPU core | 4.39815                |
++         +---------------------+----------+------------------------+
+|         | Icelake (hugemem)   | CPU core | 4.39815                |
++         +---------------------+----------+------------------------+
+|         | Sapphire Rapids     | CPU core | 3.47222                |
++         +---------------------+----------+------------------------+
+|         | Zen4 Genoa          | CPU core | 3.47222                |
++         +---------------------+----------+------------------------+
+|         | A100                | GPU      | 141.667                |
++         +---------------------+----------+------------------------+
+|         | H100                | GPU      | 569.444                |
++---------+---------------------+----------+------------------------+
 
 
 .. _Geert Jan Bex: mailto:geertjan.bex@uhasselt.be
