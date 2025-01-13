@@ -52,7 +52,7 @@ Hortense consists of the following partitions:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
-       - Redhat Enterprise Linux 9.0
+       - Redhat Enterprise Linux 9.4
 - ``dodrio/gpu_rome_a100_40``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
@@ -86,7 +86,7 @@ Hortense consists of the following partitions:
        - 1 NVIDIA L4 (24 GB GPU memory)
        - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
        - 100 GB SSD local disk
-       - Redhat Enterprise Linux 9.0
+       - Redhat Enterprise Linux 9.4
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
 - ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
@@ -766,12 +766,13 @@ Around this time, the 4th VSC Tier-1 cluster will become available at the VUB da
 
 The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
 This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
+Depending on VSC plans, the ``a100_40``partition will also likely disappear. But this is currently not confirmed.
 
 
 .. _hortense_rhel9:
 
-Update to RHEL9 of Milan partition
-----------------------------------
+Update to RHEL9 of Milan partitions
+-----------------------------------
 
 To maintain operational safety, the operating system for the Milan CPU partition will be updated to a new major release.
 Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
