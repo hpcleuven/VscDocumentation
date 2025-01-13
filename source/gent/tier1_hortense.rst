@@ -66,6 +66,13 @@ Hortense consists of the following partitions:
        - 1 NVIDIA V100 (16 GB GPU memory)
        - 256 GiB RAM (~5.2GB/oversubscribed core), no swap
        - 100 GB SSD local disk
+- ``dodrio/debug_milan``: interactive and debug partition:
+   - 3 workernodes, each with:
+       - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
+       - 1 shared NVIDIA L4 (24 GB GPU memory)
+       - 1 NVIDIA L4 (24 GB GPU memory)
+       - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
+       - 100 GB SSD local disk
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
 - ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
@@ -372,30 +379,22 @@ Interactive and debug partitions
 A number of (small) interactive and debug partitions are available: `debug_rome`, `debug_milan` and `debug_milan_rhel9`
 Purpose of these partitions is to quickly get access to a limited number of resources.
 
-The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when the usage is high.
-(XXX check: is this consistently true for all debug partitions? XXX)
-
 The limitations are a maximum of 5 jobs (running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
 a total of 8 CPU cores combined.
+The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when the usage is high.
 
 
 Technical details of debug/interactive partitions
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-* Partition `debug_rome`
-- XXX nodes, with the same specifications as the nodes in the `cpu_rome` partition family
-- The nodes have one NVIDIA V100 GPU that can be requested for exclusive access
+Partition `debug_rome` nodes have one NVIDIA V100 GPU that can be requested for exclusive access
 (as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
 that is always available but shared across all jobs on that node.
 
-* Partition `debug_milan`
-- XXX nodes, with the same specifications as the nodes in the `cpu_milan` partition family
-- XXX GPUs ??? XXX
+Partition `debug_milan` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
+(as with the GPU partitions) and also one GPU NVIDIA L4 that is always available but shared across all jobs on that node.
 
-* Partition `debug_milan_rhel9`
-- See also XXX LINK TO RHEL9 section here XXX
-- XXX nodes, with the same specifications as the nodes in the `cpu_milan_rhel9` partition family
-- XXX GPUs ??? XXX
+XXX TODO - what about Partition `debug_milan_rhel9` ? XXX
 
 
 Using the debug/interactive partitions
