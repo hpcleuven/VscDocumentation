@@ -757,7 +757,7 @@ This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512`
 Update to RHEL9 of Milan partition
 ----------------------------------
 
-To maintain operational safety, the operating system for the Milan CPU partition will be updated to a significant new version.
+To maintain operational safety, the operating system for the Milan CPU partition will be updated to a new major release.
 Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
 This implies that - end 2025 - your software and/or workflow will need to be compliant with this updated OS.
 As of cutoff 2 in 2025, compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
