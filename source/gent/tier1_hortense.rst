@@ -21,7 +21,7 @@ and maintained and supported by the HPC-UGent team.
 
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
-End of 2025, the decommissioning process of cluster Hortense will start (see [Update to RHEL9 of Milan partition](#update-to-rhel9-of-milan-partition)).
+End of 2025, the decommissioning process of cluster Hortense will start (see :ref:`Update to RHEL9 <hortense_rhel9>` ).
 This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from end 2025.
 
 
@@ -767,6 +767,8 @@ Around this time, the 4th VSC Tier-1 cluster will become available at the VUB da
 The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
 This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
 
+
+.. _hortense_rhel9:
 
 Update to RHEL9 of Milan partition
 ----------------------------------
