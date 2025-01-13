@@ -21,7 +21,7 @@ and maintained and supported by the HPC-UGent team.
 
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
-End of 2025, the decommissioning process of cluster Hortense will start (see LINK HERE).
+End of 2025, the decommissioning process of cluster Hortense will start (see [Update to RHEL9 of Milan partition](#update-to-rhel9-of-milan-partition)).
 This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from end 2025.
 
 
