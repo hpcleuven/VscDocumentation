@@ -366,22 +366,42 @@ Trying to make any changes to files that are accessed via ``/readonly`` will res
 
 .. _hortense_interactive_debug:
 
-Interactive and debug partition
-*******************************
+Interactive and debug partitions
+********************************
 
-A (small) interactive and debug partition `debug_rome` is available where you can get
-quick access but only to a limited number of resources. The limitiations are a maximum of 5 jobs
-(running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
+A number of (small) interactive and debug partitions are available: `debug_rome`, `debug_milan` and `debug_milan_rhel9`
+Purpose of these partitions is to quickly get access to a limited number of resources.
+
+The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when the usage is high.
+(XXX check: is this consistently true for all debug partitions? XXX)
+
+The limitations are a maximum of 5 jobs (running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
 a total of 8 CPU cores combined.
 
-The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when
-the usage is high.
 
-The nodes have one NVIDIA V100 GPU that can be requested for exclusive access
+Technical details of debug/interactive partitions
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Partition `debug_rome`
+- XXX nodes, with the same specifications as the nodes in the `cpu_rome` partition family
+- The nodes have one NVIDIA V100 GPU that can be requested for exclusive access
 (as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
 that is always available but shared across all jobs on that node.
 
-To make use of the partition you can select the ``dodrio debug_rome`` option in the `Cluster` field in the
+* Partition `debug_milan`
+- XXX nodes, with the same specifications as the nodes in the `cpu_milan` partition family
+- XXX GPUs ??? XXX
+
+* Partition `debug_milan_rhel9`
+- See also XXX LINK TO RHEL9 section here XXX
+- XXX nodes, with the same specifications as the nodes in the `cpu_milan_rhel9` partition family
+- XXX GPUs ??? XXX
+
+
+Using the debug/interactive partitions
+++++++++++++++++++++++++++++++++++++++
+
+To make use of the partitions you can select the ``dodrio debug_rome``, ``dodrio debug_milan`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
 `Interactive Apps` forms on the webportal, or from the CLI
 
 .. code:: shell
@@ -389,8 +409,14 @@ To make use of the partition you can select the ``dodrio debug_rome`` option in 
     module swap cluster/dodrio/debug_rome
     qsub job_script.sh
 
+    module swap cluster/dodrio/debug_milan
+    qsub job_script.sh
 
-No credits are consumed when using this partition.
+    module swap cluster/dodrio/debug_milan_rhel9
+    qsub job_script.sh
+
+
+No credits are consumed when using these partitions.
 
 For some additional information, see the documentation on the
 HPC-UGent Tier-2 interactive and debug cluster: https://docs.hpc.ugent.be/interactive_debug/.
