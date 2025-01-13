@@ -21,6 +21,9 @@ and maintained and supported by the HPC-UGent team.
 
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
+End of 2025, the decommissioning process of cluster Hortense will start (see LINK HERE).
+This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter.
+
 
 .. _hortense_hardware_details:
 
@@ -714,6 +717,39 @@ With both phases active, the cluster crossed the symbolic threshold of 100,000 c
 However, at the moment there is no partition defined that can be selected to use all cores.
 If users can provide a proper case and motivation, you can contact support to request such partition
 to give you access to all the available resources.
+
+
+Gradual decommissioning
+-----------------------
+
+End 2025, the gradual decommissioning of Tier-1 Compute Hortense will be initiated.
+Around this time, the 4th VSC Tier-1 cluster will become available at the VUB datacenter.
+
+The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
+This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
+
+
+Update to RHEL9 of Milan partition
+----------------------------------
+
+To maintain operational safety, the operating system for the Milan CPU partition will be updated to a significant new version.
+Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
+This implies that - end 2025 - your software and/or workflow will need to be compliant with this updated OS.
+As of cutoff 2 in 2025, compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
+
+Please test your workflow and software as soon as possible and ensure that you are ready for this transition.
+
+To facilitate testing, we have made two small partitions to run your tests.
+
+* partition ``cpu_milan_rhel9``
+* partition ``debug_milan_rhel9``
+
+These partitions are SOLELY intended for testing your software/workflows.
+Do not run production jobs on these partitions.
+
+XXX TODO XXX
+- how to load the modules for these partitions
+- any technical limitations for the _rhel9 partitions?
 
 
 Recent updates
