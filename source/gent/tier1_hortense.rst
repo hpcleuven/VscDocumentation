@@ -22,7 +22,7 @@ and maintained and supported by the HPC-UGent team.
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
 End of 2025, the decommissioning process of cluster Hortense will start (see LINK HERE).
-This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from date_ XXX.
+This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from end 2025.
 
 
 .. _hortense_hardware_details:
@@ -47,6 +47,12 @@ Hortense consists of the following partitions:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
+- ``dodrio/cpu_milan_rhel9``: partition with RHEL9 operating system:
+   - 30 workernodes, each with:
+       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
+       - 256 GiB RAM (~2GB/core), no swap
+       - 480 GB SSD local disk
+       - Redhat Enterprise Linux 9.0
 - ``dodrio/gpu_rome_a100_40``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
@@ -73,6 +79,14 @@ Hortense consists of the following partitions:
        - 1 NVIDIA L4 (24 GB GPU memory)
        - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
        - 100 GB SSD local disk
+- ``dodrio/debug_milan_rhel9``: interactive and debug partition with RHEL9 operating system:
+   - 1 workernode, with:
+       - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
+       - 1 shared NVIDIA L4 (24 GB GPU memory)
+       - 1 NVIDIA L4 (24 GB GPU memory)
+       - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
+       - 100 GB SSD local disk
+       - Redhat Enterprise Linux 9.0
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
 - ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
@@ -766,15 +780,22 @@ Please test your workflow and software as soon as possible and ensure that you a
 
 To facilitate testing, we have made two small partitions to run your tests.
 
-* partition ``cpu_milan_rhel9``
-* partition ``debug_milan_rhel9``
+- partition ``cpu_milan_rhel9``
+- partition ``debug_milan_rhel9``
 
 These partitions are SOLELY intended for testing your software/workflows.
 Do not run production jobs on these partitions.
 
-XXX TODO XXX
-- how to load the modules for these partitions
-- any technical limitations for the _rhel9 partitions?
+To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
+`Interactive Apps` forms on the webportal, or from the CLI
+
+.. code:: shell
+
+    module swap cluster/dodrio/cpu_milan_rhel9
+    qsub job_script.sh
+
+    module swap cluster/dodrio/debug_milan_rhel9
+    qsub job_script.sh
 
 
 Recent updates
