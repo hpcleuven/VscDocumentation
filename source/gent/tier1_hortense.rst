@@ -408,8 +408,6 @@ that is always available but shared across all jobs on that node.
 Partition `debug_milan` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
 (as with the GPU partitions) and also one GPU NVIDIA L4 that is always available but shared across all jobs on that node.
 
-XXX TODO - what about Partition `debug_milan_rhel9` ? XXX
-
 
 Using the debug/interactive partitions
 ++++++++++++++++++++++++++++++++++++++
@@ -766,7 +764,7 @@ Around this time, the 4th VSC Tier-1 cluster will become available at the VUB da
 
 The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
 This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
-Depending on VSC plans, the ``a100_40``partition will also likely disappear. But this is currently not confirmed.
+Depending on VSC plans, the ``a100_40`` partition will also likely disappear. But this is currently not confirmed.
 
 
 Update to RHEL9 of Milan partitions
