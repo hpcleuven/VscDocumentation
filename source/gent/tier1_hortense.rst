@@ -764,7 +764,7 @@ Around this time, the 4th VSC Tier-1 cluster will become available at the VUB da
 
 The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
 This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
-Depending on VSC plans, the ``a100_40`` partition will also likely disappear. But this is currently not confirmed.
+Depending on VSC plans, the ``a100_40`` partition may also disappear. However, there currently is no confirmation regarding this.
 
 
 Update to RHEL9 of Milan partitions
