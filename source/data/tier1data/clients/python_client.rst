@@ -33,9 +33,9 @@ On Hortense and Stevin, the HPC-clusters of UGent, you can load the module as fo
 
     module load python-irodsclient/1.1.4-GCCcore-11.2.0
 
-
-Logging in
-----------
+**************
+Authenticating
+**************
 
 There are three ways to authenticate with the Python-iRODSclient:
 
@@ -235,8 +235,9 @@ However, when you provide a path to the local destination as second argument, it
 
 Here as well, you can just provide the path to a directory, or specify a filename.
 
-Permissions
------------
+********************
+Changing permissions
+********************
 
 In the PRC, you can create iRODSAccess objects, which represent a permission on a certain collection or data object.
 Each iRODSAccess object has an access type, a path it applies to, and the user or group that gets access.
