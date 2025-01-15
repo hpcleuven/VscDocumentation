@@ -248,6 +248,42 @@ date.
    # syncronizing data from a Tier-1 Data collection to a local directory
    irsync -r i:collection local_director
 
+********************
+Changing permissions
+********************
+
+The command ``ichmod`` can be used to give groups or users :ref:`permissions and inheritance<collaboration>` on objects.
+
+You can give a group or user access on an object as follows:
+
+.. code-block:: sh
+
+   ichmod <read/write/own> <group/user> <object_path>
+
+You can remove the access of a group or user on an object by giving them 'null' access:
+
+.. code-block:: sh
+
+   ichmod null <group/user> <object_path>
+
+When giving or removing access to a collection, you can use the ``-r`` flag to apply the permissions recursively.
+That way, they are applied to all contents of the collection:
+
+.. code-block:: sh
+
+   ichmod -r <read/write/own> <group/user> <collection_path>
+
+The command can be used to change the inheritance property of a collection as follows:
+
+.. code-block:: sh
+
+   # changing inheritance for one collection
+   ichmod <inherit/noinherit> <collection_path>
+
+   # changing inheritance recursively
+   ichmod -r <inherit/noinherit> <collection_path>
+
+
 Adding metadata
 ==============================
 
