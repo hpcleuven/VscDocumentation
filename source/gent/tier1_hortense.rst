@@ -772,7 +772,7 @@ Update to RHEL9 of Milan partitions
 
 To maintain operational safety, the operating system for the Milan CPU partition will be updated to a new major release.
 Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
-This implies that - end 2025 - your software and/or workflow will need to be compliant with this updated OS.
+This implies that - end 2025 - your software and/or workflow will need to be compliant with this OS version.
 As of cutoff 2 in 2025, compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
 
 Please test your workflow and software as soon as possible and ensure that you are ready for this transition.
