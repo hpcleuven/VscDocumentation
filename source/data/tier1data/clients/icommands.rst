@@ -227,7 +227,7 @@ directory, you can use the command ``iget``:
 .. code-block:: sh
 
    iget <data_object>
-   iget -r <data_object>
+   iget -r <collection>
 
 ``iget`` downloads data to your current working directory, unless you
 specify another destination as second argument.
@@ -248,9 +248,9 @@ date.
    # syncronizing data from a Tier-1 Data collection to a local directory
    irsync -r i:<collection> <directory>
 
-********************
-Changing permissions
-********************
+***********
+Permissions
+***********
 
 The command ``ichmod`` can be used to give groups or users :ref:`permissions and inheritance<collaboration>` on objects.
 
@@ -284,7 +284,7 @@ The command can be used to change the inheritance property of a collection as fo
    ichmod -r <inherit/noinherit> <collection_path>
 
 ***************
-Adding metadata
+Metadata
 ***************
 
 The command ``imeta`` can be used to add, list, manipulate and remove :ref:`metadata<metadata>` on data objects and collections.

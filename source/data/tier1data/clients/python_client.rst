@@ -235,9 +235,9 @@ However, when you provide a path to the local destination as second argument, it
 
 Here as well, you can just provide the path to a directory, or specify a filename.
 
-********************
-Changing permissions
-********************
+***********
+Permissions
+***********
 
 In the PRC, you can create iRODSAccess objects, which represent a permission on a certain collection or data object.
 Each iRODSAccess object has an access type, a path it applies to, and the user or group that gets access.
