@@ -214,8 +214,8 @@ directories, by using the ``-r`` option, which stands for ‘recursive’.
 
 .. code-block:: sh
 
-   iput my_file.txt 
-   iput -r  my_directory
+   iput <filename>
+   iput -r  <directory>
 
 You can optionally specify a destination as second argument. If you
 leave the destination blank, iput will take the current working
@@ -226,8 +226,8 @@ directory, you can use the command ``iget``:
 
 .. code-block:: sh
 
-   iget my_data_object.txt
-   iget -r my_directory
+   iget <data_object>
+   iget -r <data_object>
 
 ``iget`` downloads data to your current working directory, unless you
 specify another destination as second argument.
@@ -243,10 +243,10 @@ date.
 .. code-block:: sh
 
    # syncronizing data from a local directory to a Tier-1 Data collection
-   irsync -r local_directory i:collection
+   irsync -r <directory> i:<collection>
 
    # syncronizing data from a Tier-1 Data collection to a local directory
-   irsync -r i:collection local_director
+   irsync -r i:<collection> <directory>
 
 ********************
 Changing permissions
@@ -293,7 +293,7 @@ You can add any AVU to a data object as follows:
 
 .. code-block:: sh
 
-   imeta add -d filename attribute value units
+   imeta add -d <filename> <attribute> <value> <units>
 
 As always, the units are optional.
 
@@ -305,19 +305,19 @@ The difference with ``imeta add`` is that it will overwrite if there is an AVU w
 
 .. code-block:: sh
 
-   imeta set -d filename attribute value units
+   imeta set -d <filename> <attribute> <value> <units>
 
 You can list the metadata on an object as follows:
 
 .. code-block:: sh
 
-   imeta ls -d filename
+   imeta ls -d <filename>
 
 Lastly, you can remove a specific AVU as follows:
 
 .. code-block:: sh
 
-   imeta rm -d filename attribute value units
+   imeta rm -d <filename> <attribute> <value> <units>
 
 imeta also has other options, which you can discover by using ``imeta -h``.
 
