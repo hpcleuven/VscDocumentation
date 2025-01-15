@@ -786,7 +786,7 @@ These partitions are SOLELY intended for testing your software/workflows.
 Do not run production jobs on these partitions.
 
 To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
-`Interactive Apps` forms on the webportal, or from the CLI
+`Interactive Apps` forms on the webportal, or from the CLI.
 
 .. code:: shell
 
