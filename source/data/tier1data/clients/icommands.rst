@@ -204,9 +204,9 @@ you try to use autocompletion with iCommands, or use wildcards (*), it
 will be filled in based on the data in your local directory. This can
 yield unexpected results.
 
-******************************
-Uploading and downloading data
-******************************
+*************************
+Uploading and downloading
+*************************
 
 To upload data from your local directory to Tier-1 Data, you can use the
 command ``iput``. You can upload individual files but also whole
@@ -283,9 +283,9 @@ The command can be used to change the inheritance property of a collection as fo
    # changing inheritance recursively
    ichmod -r <inherit/noinherit> <collection_path>
 
-***************
+********
 Metadata
-***************
+********
 
 The command ``imeta`` can be used to add, list, manipulate and remove :ref:`metadata<metadata>` on data objects and collections.
 
