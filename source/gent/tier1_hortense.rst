@@ -395,7 +395,7 @@ Purpose of these partitions is to quickly get access to a limited number of reso
 
 The limitations are a maximum of 5 jobs (running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
 a total of 8 CPU cores combined.
-The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when the usage is high.
+The CPUs are oversubscribed by a factor 4, which may lead to slower than expected run times when the usage is high.
 
 
 Technical details of debug/interactive partitions
