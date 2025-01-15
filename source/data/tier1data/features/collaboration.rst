@@ -169,6 +169,9 @@ If you enable inheritance for a collection, existing subcollections and data obj
 in that case, the permission will be applied to all the existing contents of the collection as well.
 Unlike inheritance, applying permissions recursively does not affect data which is added later.
 
+
+.. warning:: New permissions applied to a data object or collection overwrite existing permissions (including those on their contents, in case of recursive permission changes). There is no automatic way to revert to previous permissions; you must manually reapply them.
+
 Access to parent collection
 ===========================
 
