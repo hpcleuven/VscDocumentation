@@ -10,7 +10,7 @@ nodes with GPUs.
 
 wICE does not have separate login nodes and can be accessed either from the
 :ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the
-:ref:`Open On-Demand <ood_t2_leuven>` service.
+:ref:`Open On-Demand <ood_t2>` service.
 
 .. _running jobs on wice:
 

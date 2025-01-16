@@ -8,7 +8,7 @@ As the name suggests, MFA requires additional steps with human intervention
 when authenticating.
 MFA is mandatory for accessing KU Leuven infrastructures.
 In this page, we explain how to login to the
-:ref:`KU Leuven Open OnDemand portal <ood_t2_leuven>`, and how to use SSH clients
+:ref:`KU Leuven Open OnDemand portal <ood_t2>`, and how to use SSH clients
 (such as PuTTY, terminal etc) with and without using an SSH agent.
 
 .. note::
@@ -20,7 +20,7 @@ Login to Open OnDemand
 ----------------------
 
 Users from all VSC sites can access the Open OnDemand portal at KU Leuven site.
-For that, proceed to the :ref:`Open OnDemand portal <ood_t2_leuven>`.
+For that, proceed to the :ref:`Open OnDemand portal <ood_t2>`.
 If you are affiliated with KU Leuven, click on the KU Leuven logo.
 Otherwise, click on the VSC logo to choose your institute.
 You will be then forwarded to the Identity Provider (IdP) of your institute to

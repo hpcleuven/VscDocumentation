@@ -29,7 +29,7 @@ take the following actions:
    to track the use of the Tier-2 clusters by individual users during the course.
    For more information about the procedure of requesting the project please refer to the page
    :ref:`Slurm accounting <accounting_leuven>`.
-#. We advise to use :ref:`Open OnDemand <ood_t2_leuven>` service for the student to get access to the
+#. We advise to use :ref:`Open OnDemand <ood_t2>` service for the student to get access to the
    login nodes, file browser and the job submission. The student will only need to use a browser and does not need to install any other software.
    Students will login through the KU Leuven :ref:`Multi Factor Authentication (MFA) <mfa_leuven>`, no additional ssh-agent is required.
 #. To ensure that students jobs do not wait in the queue during the hands-on sessions, we offer
