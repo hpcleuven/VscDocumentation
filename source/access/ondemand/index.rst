@@ -45,8 +45,6 @@ detail.
 
    files
    jobs
-   job-composer
-   active-jobs
    clusters
    interactive-apps
    interactive-shell

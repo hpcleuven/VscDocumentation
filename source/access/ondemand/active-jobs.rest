@@ -1,3 +1,5 @@
+.. _ood_active_jobs:
+
 Active jobs
 -----------
 
