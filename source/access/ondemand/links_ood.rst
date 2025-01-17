@@ -6,15 +6,25 @@
 
        (coming soon)
 
+       .. * Tier-2 :ref:`Vaughan <Vaughan hardware>`
+       .. * Tier-2 :ref:`Leibniz <Leibniz hardware>`
+       .. * Tier-2 :ref:`Breniac <Breniac hardware UAntwerp>`
+
     .. grid-item-card:: KU Leuven/UHasselt
        :columns: 12 4 4 4
 
-       `KU Leuven OnDemand`_
+       :fas:`circle-play` `KU Leuven OnDemand`_
+
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
     .. grid-item-card:: VUB
        :columns: 12 4 4 4
 
-       `VUB OnDemand`_
+       :fas:`circle-play` `VUB OnDemand`_
+
+       * Tier-2 :ref:`Hydra <Hydra hardware>`
+       * Tier-2 Anansi
 
 .. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
 .. _VUB OnDemand: https://portal.hpc.vub.be/

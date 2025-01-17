@@ -4,24 +4,15 @@
 :fas:`circle-play` Open OnDemand
 ################################
 
-About
-=====
-
 Open OnDemand provides a user interface to HPC clusters from within a web browser.
 This tool supports a range of different apps and features that not only allow the
 user to easily submit jobs from within the browser, but also provide different
 coding GUIs, tools for plotting and more.
 
-Availability and access
-=======================
-
-Links to the Open OnDemand portals:
+Portals
+=======
 
 .. include:: links_ood.rst
-
-:fas:`server` VSC clusters available via OnDemand:
-
-.. include:: clusters_ood.rst
 
 You can log in using the credentials of your home institution or your VSC
 credentials.
