@@ -1,4 +1,4 @@
-.. _interactive_shell:
+.. _ood_interactive_shell:
 
 Interactive shell
 -----------------

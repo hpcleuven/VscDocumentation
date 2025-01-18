@@ -1,24 +1,27 @@
-.. _interactive-apps:
+.. _ood_interactive_apps:
 
-Interactive apps
-================
+Launching interactive apps
+==========================
 
 The 'Interactive Apps' menu shows a range of different apps that provide a GUI.
-When you launch an interactive app, Open Ondemand uses your account to submit an
-interactive job to the cluster, in which the app will be running.
+When you launch an interactive app, Open Ondemand first submits an interactive
+job to the cluster in your account. Once the interactive job starts, the app is
+automatically launched inside the interactive session.
 
-To launch any of the interactive apps, you need to fill out the resources form.
-Most of the options in the resources form are similar across all apps, but some
-apps require additional input from the user.  These will be explained in the
-app-specific sections.  See also the section on :ref:`choosing your resources
-<choosing_your_resources>` for recommendations.  Beware that by launching any app
-your interactive job will end up in a regular queue, so requesting a large
-amount of resources might result in a long queue time.
+To launch an interactive app, you need to fill out the resources form.
+Most of the options in the resources form are shared across all apps and are
+explained below. The app-specific options will be detailed in their respective
+sections.  See also the section on :ref:`choosing your resources
+<choosing_your_resources>` for resources recommendations.  Beware that by
+launching any app your interactive job will end up in a regular queue, so
+requesting a large amount of resources might result in a long queue time.
 
 Once you've specified all your resources, press the ``Launch`` button and your
 job will be queued.
 
-.. list-table:: Common resources
+.. _shared_resources:
+
+.. list-table:: Shared resources (part 1)
    :header-rows: 1
 
    * - Resource
@@ -30,8 +33,9 @@ job will be queued.
    * - Number of hours
      - Select the time limit (in hours) for your interactive app session.
    * - Number of nodes
-     - Select the amount of nodes. We recommend 1 node in most cases, unless you
-       are sure your app *can and will* use more than 1 node effectively.
+     - Select the amount of nodes. Only 1 node should be used in most cases,
+       unless you are sure your app *can and will* use more than 1 node
+       effectively.
    * - Number of cores
      - Select the amount of cores per node.
    * - Number of GPUs
@@ -51,16 +55,7 @@ job will be queued.
 
    .. tab-item:: KU Leuven/UHasselt
 
-      .. rubric:: Notes on the number of GPUs
-
-      The acquired GPU will be the same as the type specified in the partition
-      (e.g. a NVidia H100 for ``gpu_h100`` on wICE).  For wICE, you can also
-      request a GPU from the ``interactive`` partition.
-      One GPU here is a virtual GPU slice of the available A100 GPUs.
-      One GPU slice is the same as 1/7th of CUDA cores and memory of an A100 GPU.
-      The interactive partition only allows you to request max 1 GPU (slice) though.
-
-      .. list-table:: Site-specific resources
+      .. list-table:: Common resources (part 2)
          :header-rows: 1
 
          * - Resource
@@ -87,6 +82,15 @@ job will be queued.
              to copy the URL into your clipboard, and be able to share it with
              others.
 
+      .. note::
+
+         The acquired GPU will be the same as the type specified in the partition
+         (e.g. a NVidia H100 for ``gpu_h100`` on wICE).  For wICE, you can also
+         request a GPU from the ``interactive`` partition.
+         One GPU here is a virtual GPU slice of the available A100 GPUs.
+         One GPU slice is the same as 1/7th of CUDA cores and memory of an A100 GPU.
+         The interactive partition only allows you to request max 1 GPU (slice) though.
+
       .. warning::
 
          As the end-user, you are responsible for all consequences of sharing
@@ -96,7 +100,7 @@ job will be queued.
 
    .. tab-item:: VUB
 
-      .. list-table:: Site-specific resources
+      .. list-table:: Common resources (part 2)
          :header-rows: 1
 
          * - Resource

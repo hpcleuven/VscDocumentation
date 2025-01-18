@@ -1,9 +1,9 @@
-Code Server
------------
+VS Code Server
+--------------
 
 This is the browser version of Visual Studio Code.
 For more information, check out `VSCode official guidelines <https://code.visualstudio.com/docs>`_.
-As a default, a Python and a Git module are already loaded, which means you can use both Python and git
+By default, a Python and a Git module are already loaded, which means you can use both Python and git
 from a terminal window within code-server.
 
 How to open a terminal window is probably one of the first things you should know: click on the three

@@ -35,14 +35,16 @@ detail.
    :maxdepth: 1
 
    files
-   jobs
-   clusters
+   login-shell
+   active-jobs
+   job-composer
    interactive-apps
+   desktop
    interactive-shell
    jupyterlab
-   rstudio-server
-   tensorboard
-   code-server
    matlab
    paraview
+   rstudio-server
+   tensorboard
+   vscode-server
 

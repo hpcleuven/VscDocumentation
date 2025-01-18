@@ -1,5 +1,5 @@
 JupyterLab
------------
+----------
 
 With this app you can write and run
 `Jupyter <official JupyterLab documentation>`_ notebooks containing
@@ -15,8 +15,8 @@ different types of user-defined environments, as will become clear below.
 Pure module environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In the app resource form, besides the normal choices (:ref:`listed above <interactive-apps>`),
-you can also choose from different 'Toolchain and Python versions' from a drop-down menu.
+In the app resource form, besides the :ref:`shared resources <shared_resources>`,
+you can also choose between different 'Toolchain and Python versions' from a drop-down menu.
 An example would be '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
 Based on that choice, the corresponding JupyterLab module will be loaded together with its
 dependencies (such as the listed Python module).
