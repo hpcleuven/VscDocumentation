@@ -26,9 +26,9 @@ copyright = f"{datetime.now().year}, VSC (Vlaams Supercomputing Center)"
 author = "VSC (Vlaams Supercomputing Center)"
 
 # The short X.Y version
-version = "2.0"
+version = "2.1"
 # The full version, including alpha/beta/rc tags
-release = "2.0"
+release = "2.1"
 
 # -- General configuration ---------------------------------------------------
 
@@ -113,7 +113,7 @@ html_navbar_icon_links = [
         "icon": "fa-brands fa-square-github",
     },
     {
-        "name": "VSC on Twitter",
+        "name": "VSC on X",
         "url": "https://x.com/VSC_HPC",
         "icon": "_static/fa-square-x-twitter.svg",
         "type": "local",
@@ -144,8 +144,8 @@ html_theme_options = {
     "show_prev_next": False,
     "footer_start": ["copyright"],
     "footer_end": [],
-    "pygment_light_style": "manni",  # toned-up comments
-    "pygment_dark_style": "inkpot",  # toned-up comments
+    "pygments_light_style": "manni",  # contrasty readable comments
+    "pygments_dark_style": "monokai",  # contrasty readable comments
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
