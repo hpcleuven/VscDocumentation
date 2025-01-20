@@ -7,5 +7,5 @@ Tier-1 Infrastructure
 .. toctree::
    :maxdepth: 3
 
-   gent/tier1_hortense
+   /gent/tier1_hortense
 

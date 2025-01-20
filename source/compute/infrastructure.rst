@@ -8,7 +8,7 @@
    :maxdepth: 3
    :numbered: 3
 
-   hardware-tier1
-   hardware-tier2
-   hardware-storage
-   hardware-archive
+   tier1
+   tier2
+   storage
+   cluster-archive

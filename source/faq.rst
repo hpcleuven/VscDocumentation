@@ -41,10 +41,10 @@ Running jobs
 .. toctree::
    :maxdepth: 1
 
-   jobs/why_doesn_t_my_job_start
-   jobs/what_if_jobs_fail_after_starting_successfully
-   jobs/worker_or_atools
-   jobs/workflows_using_job_dependencies
+   compute/jobs/why_doesn_t_my_job_start
+   compute/jobs/what_if_jobs_fail_after_starting_successfully
+   compute/jobs/worker_or_atools
+   compute/jobs/workflows_using_job_dependencies
 
 
 .. _software faqs:
@@ -55,8 +55,8 @@ Software
 .. toctree::
    :maxdepth: 2
 
-   software/parallel_software
-   software/singularity
+   compute/software/parallel_software
+   compute/software/singularity
 
 
 Tutorials and additional resources

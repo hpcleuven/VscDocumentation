@@ -172,11 +172,8 @@ Line 11 is the actual output of your job script.
 Troubleshooting
 ---------------
 
-.. toctree::
-   :maxdepth: 2
-
-   Why doesn't my job start immediately? <why_doesn_t_my_job_start>
-   Why does my job fail after a successful start? <what_if_jobs_fail_after_starting_successfully>
+* :ref:`why_not_job_start`
+* :ref:`job failure`
 
 
 Advanced topics

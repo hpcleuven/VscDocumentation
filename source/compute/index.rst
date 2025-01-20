@@ -7,6 +7,6 @@
 .. toctree::
    :maxdepth: 3
 
-   hardware
+   infrastructure
    jobs/index
    software/index

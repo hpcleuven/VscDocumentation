@@ -52,7 +52,7 @@ However, your home directory may unexpectedly fill up in two ways:
 .. _large output:
 
 Large amounts of output or errors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 To deal with the first issue, simply redirect the standard output of the
 command to a file that is in your data or scratch directory, or, if you
@@ -82,7 +82,7 @@ If you don't care for the standard output, simply write::
 .. _core dump:
 
 Core dump
-~~~~~~~~~
+---------
 
 When a program crashes, a core file is generated. This can be used to
 try and analyze the cause of the crash. However, if you don't need cores

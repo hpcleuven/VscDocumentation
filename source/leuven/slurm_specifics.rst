@@ -8,17 +8,16 @@ information regarding Slurm, there are additional points to consider when
 using Slurm on Tier-2 clusters hosted at KU Leuven.
 
 
+.. _leuven_compute_credits:
+
 Compute credits
 ---------------
 When submitting a job, you need to provide a valid Slurm credit account holding
 enough compute credits for the job using the ``-A/--account`` option.
 For more information, please consult the following pages:
 
-.. toctree::
-   :maxdepth: 1
-
-   ./credits
-   ./slurm_accounting
+* :ref:`KU Leuven credits`
+* :ref:`accounting_leuven`
 
 
 .. _leuven_job_shell:

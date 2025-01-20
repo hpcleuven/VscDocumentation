@@ -29,7 +29,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
    contact_vsc
    Accounts <access/index>
    Data <data/index>
-   Compute <compute>
+   Compute <compute/index>
    Cloud <cloud/index>
    FAQs <faq>
 
@@ -44,7 +44,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 
       How to get your VSC account to use the different VSC services and platforms.
 
-   .. grid-item-card:: :fas:`rocket` :doc:`Compute <compute>`
+   .. grid-item-card:: :fas:`rocket` :doc:`Compute <compute/index>`
       :columns: 12 12 4 4
       :class-title: h3
    
@@ -60,13 +60,13 @@ information about the services provided by the `Vlaams Supercomputer Centrum
          .. grid-item-card:: Tier-1
             :text-align: center
             :class-card: text-dark bg-warning opacity-75
-            :link: hardware-tier1
+            :link: compute/tier1
             :link-type: doc
    
          .. grid-item-card:: Tier-2
             :text-align: center
             :class-card: text-dark bg-info opacity-75
-            :link: hardware-tier2
+            :link: compute/tier2
             :link-type: doc
    
          .. grid-item-card:: Web
