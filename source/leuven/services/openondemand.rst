@@ -413,6 +413,28 @@ You can now start working in your own customized environment.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
 
+Exporting Jupyter Notebooks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The native file format for jupyter notebooks is ``.ipynb``, which is already portable.
+However, you may want to convert your notebook to other interesting formats.
+For a correct working of this feature, choose 'Convert notebook to ... formats' on the form.
+Among different possible conversion formats, the following are interesting:
+
+- ``.py`` (to execute it directly as a Python script)
+- ``.md`` (to add to reports or Quarto slides)
+- ``.rst`` (for internal documentation or reports in reStructuredText format)
+- ``.html`` (for blog posts)
+- ``.pdf`` (as a portable document)
+
+For that, you need to go to the 'Files' menu and from the 'Save and Export Notebook As'
+option, and eventually choose your desired format.
+
+However, to convert specifically to PDF format, you need to take additional steps.
+First, save the notebook in your current folder as e.g. ``<notebook>.tex`` by choosing ``LaTeX``.
+Then, from the Terminal on JupyterLab, execute ``xelatex <notebook>.tex``.
+This will produce ``<notebook>.pdf`` in the current folder.
+
 RStudio Server
 --------------
 
