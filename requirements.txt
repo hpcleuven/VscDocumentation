@@ -35,12 +35,12 @@ sphinx-autobuild==2024.10.3
 sphinx-notfound-page==1.0.4
 sphinx-sitemap==2.6.0
 sphinx_design==0.6.1
-sphinx_reredirects==0.1.5
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==2.0.0
 sphinxcontrib-htmlhelp==2.1.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==2.0.0
+sphinxcontrib-redirects==0.2.0
 sphinxcontrib-serializinghtml==2.0.0
 starlette==0.45.2
 tornado==6.4.2
