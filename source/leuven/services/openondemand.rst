@@ -21,7 +21,7 @@ You can log in using your KU Leuven or VSC credentials.
 General features
 ================
 
-The KU Leuven Open OnDemand page provides a range of functions:
+The `KU Leuven Open OnDemand page`_ provides a range of functions:
 
 - Browsing, creating, transferring, viewing and/or editing files
 - Submitting and monitoring jobs, creating job templates
@@ -273,8 +273,7 @@ The same applies for other choices of partitions on Genius or wICE clusters.
 JupyterLab
 -----------
 
-With this app you can write and run
-`Jupyter <official JupyterLab documentation>`_ notebooks containing
+With this app you can write and run `Jupyter`_ notebooks containing
 annotated Python, R or Julia code (among other languages). IPython consoles are
 available as well. One of the benefits of JupyterLab is that it supports
 different types of user-defined environments, as will become clear below.
@@ -320,7 +319,7 @@ For R, you may create your customized environment using :ref:`Conda environments
    To override this and store your kernel specifications in a non-default location,
    you may drop the following line in your ``${VSC_HOME}/.bashrc``::
 
-      export XDG_DATA_HOME=${VSC_DATA}/.local/share
+       export XDG_DATA_HOME=${VSC_DATA}/.local/share
 
    When the ``${XDG_DATA_HOME}`` variable is set, subsequent kernel installations
    (for both Python and R) will reside in ``${XDG_DATA_HOME}/jupyter/kernels``.
@@ -368,15 +367,15 @@ would typically look like (to be done from a shell, e.g. using 'Login Server She
 
 .. code-block :: bash
 
-    cd ${VSC_DATA}
-    # the line below is needed if you use the 'Interactive Shell' app
-    module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/2023a/modules/all
-    module load Python/3.11.3-GCCcore-12.3.0
-    python -m venv <venv_name>
-    source <venv_name>/bin/activate
-    pip install ipykernel <any additional packages you may need>
-    # note that unlike for Conda environments the "--env ..." argument is not needed below
-    python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
+   cd ${VSC_DATA}
+   # the line below is needed if you use the 'Interactive Shell' app
+   module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/2023a/modules/all
+   module load Python/3.11.3-GCCcore-12.3.0
+   python -m venv <venv_name>
+   source <venv_name>/bin/activate
+   pip install ipykernel <any additional packages you may need>
+   # note that unlike for Conda environments the "--env ..." argument is not needed below
+   python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
 
 On the JupyterLab form, choose a partition to your liking and select the same
 toolchain as above. Once you connect to your session, your new kernel will be
@@ -406,12 +405,12 @@ Conda environments for R
 For R, you need both the ``jupyter_client`` and the ``irkernel`` Conda packages installed.
 With the following command you can create the kernel::
 
-      Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
+    Rscript -e 'IRkernel::installspec(name="<env_name>", displayname="<kernel_name>")'
 
 Once the kernel is created, you will see it in the 'Launcher' menu.
 You can now start working in your own customized environment.
 
-For more general information, please refer to the `official JupyterLab documentation`_.
+For more general information, please refer to the `JupyterLab documentation`_.
 
 RStudio Server
 --------------
@@ -422,14 +421,15 @@ of R module that would be loaded for your session (such as `R/4.2.2-foss-2022b`)
 Additionally, the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules can be loaded
 on top of the base R module to provide easy access to hundreds of preinstalled packages.
 
-It is also possible to use locally installed R packages with RStudio, see :ref:`R package management<r_package_management_standard_lib>`.
+It is also possible to use locally installed R packages with RStudio, see
+:ref:`R package management<r_package_management_standard_lib>`.
 RStudio furthermore allows to create RStudio projects to manage your
 R environments. When doing so, we recommend to select the
 `renv <https://rstudio.github.io/renv/articles/renv.html>`_ option
 to ensure a completely independent R environment. Without `renv`,
 loading an RStudio project may lead to incomplete R library paths.
 
-For more information on how to use RStudio, check out the `official documentation <https://docs.posit.co/ide/user/>`__.
+For more information on how to use RStudio, check out the `RStudio documentation`_.
 
 **Remarks:**
 
@@ -447,7 +447,7 @@ For more information on how to use RStudio, check out the `official documentatio
 
   .. code-block:: bash
 
-    echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
+     echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
 - Additionally, it is advised to change the default behaviour of RStudio to not restore .RData
   into the workspace on start up and to never Save the workspace to .RData on exit.
@@ -458,8 +458,7 @@ Tensorboard
 -----------
 
 Tensorboard is an interactive app that allows you to visualize and measure different aspects of
-your machine learning workflow.
-Have a look at the `official guidelines <https://www.tensorflow.org/tensorboard/get_started>`_
+your machine learning workflow. Have a look at the `TensorBoard documentation`_
 for more detailed information.
 
 The Tensorboard interactive session requires you to specify a project (or log) directory in
@@ -474,7 +473,7 @@ Code Server
 -----------
 
 This is the browser version of Visual Studio Code.
-For more information, check out `VSCode official guidelines <https://code.visualstudio.com/docs>`_.
+For more information, check out `VSCode documentation`_.
 As a default, a Python and a Git module are already loaded, which means you can use both Python and git
 from a terminal window within code-server.
 
@@ -528,9 +527,9 @@ For the time being, there are some issues with using modules together with funct
 There are some package requirements if you want to use R in code-server.
 The following command creates a functional environment (of course, add any other packages you need):
 
-        .. code-block:: bash
+.. code-block:: bash
 
-         conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite
+   conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite
 
 Once you've created your environment, go ahead and start a code-server session on Open Ondemand.
 On the lefthand side, go to the extension menu and search for 'R'.
@@ -587,8 +586,4 @@ desktop as a compute job.
 - Currently, using GPUs in ParaView is not supported yet, and just the CPU-only modules are offered.
 
 
-.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
-.. _official JupyterLab documentation: https://docs.jupyter.org/en/latest/
-.. _RStudio official documentation: https://docs.rstudio.com/
-.. _noVNC: https://novnc.com/
 

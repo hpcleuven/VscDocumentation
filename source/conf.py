@@ -328,7 +328,7 @@ rst_prolog += """
 .. _FileZilla project page: https://filezilla-project.org/
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
 .. _get in touch: https://www.vscentrum.be/getintouch
-.. _Globus Web Interface: https://app.globus.org/ 
+.. _Globus Web Interface: https://app.globus.org/
 .. _Globus Management Console: https://www.globus.org/app/login
 .. _Globus Connect Server Installation Guide: https://docs.globus.org/globus-connect-server-installation-guide
 .. _Globus How-To pages: https://docs.globus.org/how-to
@@ -340,6 +340,7 @@ rst_prolog += """
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
+.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
 .. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
 .. _Intel MPI: https://software.intel.com/en-us/intel-mpi-library
 .. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation
@@ -347,12 +348,14 @@ rst_prolog += """
 .. _irods.org: https://irods.org/
 .. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/
 .. _JellyfiSSH: http://www.m-works.co.nz/jellyfissh.php
+.. _Jupyter: https://jupyter.org/
+.. _JupyterLab documentation: https://docs.jupyter.org/en/latest/
 .. _Keras: https://keras.io/
 .. _LAPACK user guide: http://www.netlib.org/lapack/lug/
 .. _LAPACK95 user guide: http://www.netlib.org/lapack95/lug95/
-.. _Linux Basics on Lifewire : https://www.lifewire.com/learn-how-linux-basics-4102692 
+.. _Linux Basics on Lifewire : https://www.lifewire.com/learn-how-linux-basics-4102692
 .. _Linux Newbie Administrator Guide: http://lnag.sourceforge.net/
-.. _Linux Tutorials YouTube Channel: https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ 
+.. _Linux Tutorials YouTube Channel: https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ
 .. _LLNL openMP tutorial: https://computing.llnl.gov/tutorials/openMP
 .. _Lmod documentation: http://lmod.readthedocs.io/en/latest/
 .. _Lmod: http://lmod.readthedocs.io/en/latest/
@@ -370,6 +373,7 @@ rst_prolog += """
 .. _Netlib BLAS repository: http://www.netlib.org/blas/
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
+.. _noVNC: https://novnc.com/
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
@@ -385,6 +389,7 @@ rst_prolog += """
 .. _PuTTY download site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 .. _qsub documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm#topics/torque/commands/qsub.htm
+.. _RStudio documentation: https://docs.posit.co/ide/user/
 .. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
 .. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
 .. _scp manual page: http://man.openbsd.org/scp
@@ -397,17 +402,19 @@ rst_prolog += """
 .. _ssh-keygen manual page: http://man.openbsd.org/ssh-keygen
 .. _ssh_config manual page: http://man.openbsd.org/ssh_config
 .. _Sylabs Singularity: https://sylabs.io/singularity/
+.. _TensorBoard documentation: https://www.tensorflow.org/tensorboard/get_started
 .. _TensorFlow: https://www.tensorflow.org/
 .. _Threading Building Blocks: https://www.threadingbuildingblocks.org
 .. _tier-1 project application: https://www.vscentrum.be/tier1
 .. _TigerVNC: https://tigervnc.org/
-.. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm 
+.. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm
 .. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
 .. _TurboVNC download page: https://github.com/TurboVNC/turbovnc/releases
 .. _TurboVNC: https://www.turbovnc.org/
 .. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
 .. _VSC account page: https://account.vscentrum.be/
 .. _VSC training: https://www.vscentrum.be/training
+.. _VSCode documentation: https://code.visualstudio.com/docs
 .. _WinSCP docs: https://winscp.net/eng/docs/start
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
