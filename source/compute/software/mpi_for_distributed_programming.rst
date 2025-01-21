@@ -65,8 +65,8 @@ specification.
 
 When developing your own software, this is the preferred order to select
 an implementation. The performance should be very similar, however, more
-development tools are available for Intel MPI
-(e.g., ":ref:`ITAC`" for performance monitoring).
+development tools are available for Intel MPI.
+(e.g., `Intel oneAPI VTune Profiler`_ for performance monitoring).
 
 Several other implementations may be installed, e.g., `MVAPICH`_, but we assume
 you know what you're doing if you choose to use them.
@@ -88,7 +88,8 @@ Allinea MAP) are now bundled nito ArmForge, which is available as a
 module on KU Leuven systems. Video tutorials are available on the
 Arm website: `ARM-DDT video`_.  (KU Leuven-only).
 
-When using the Intel toolchain, ":ref:`ITAC`" (ITAC) may also prove useful.
+When using the Intel toolchain, the `Intel oneAPI VTune Profiler`_ may also
+prove useful.
 
 Profiling
 ---------
@@ -99,23 +100,22 @@ MAP) or `Scalasca docs`_.  (KU Leuven-only)
 Further information
 -------------------
 
--  `Intel MPI`_ web site
+* `Intel MPI`_ web site
 
-   -  `Intel MPI Documentation`_ (Latest version)
+  * `Intel MPI Documentation`_ (Latest version)
 
--  `Open MPI`_ web site 
+* `Open MPI`_ web site 
 
-   -  `Open MPI Documentation`_
+  * `Open MPI Documentation`_
 
--  SGI MPT, now HPE Performance Software MPI
+* SGI MPT, now HPE Performance Software MPI
 
-   -  `HPE MPT Documentation`_
+  * `HPE MPT Documentation`_
 
--  `MPI forum`_, where you can also
-   find the standard specifications
+* `MPI Forum`_, where you can also find the standard specifications
 
-   -  `MPI Standard documents`_
+  * `MPI Documents`_
 
--  See also the pages in the tutorials section e.g., for
-   :ref:`books` and online tutorial :ref:`web tutorials`
+See also the pages in the tutorials section e.g., for :ref:`books` and online
+tutorial :ref:`web tutorials`
 

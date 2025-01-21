@@ -1,7 +1,10 @@
-.. _ITAC:
-
 Intel Trace Analyzer & Collector
 ================================
+
+.. warning::
+
+   `Intel discontinued ITAC <https://www.intel.com/content/www/us/en/developer/archive/tools/trace-analyzer-and-collector.html>`_
+   on 2022 with its last version 2022.3. Users are encouraged to transition to `Intel oneAPI VTune Profiler`_.
 
 Purpose
 -------
@@ -32,9 +35,9 @@ however, more sophisticated options are available.
 
 
 .. note::
-          
-   Users of the UAntwerpen clusters should load the inteldevtools module 
-   instead, which makes also available Intel's debugger, VTune, Advisor 
+
+   |UA| Users of the UAntwerpen clusters should load the ``inteldevtools``
+   module instead, which makes also available Intel's debugger, VTune, Advisor 
    and Inspector development tools.
 
 #. Compile your application so that it can generate a trace:
@@ -79,9 +82,4 @@ however, more sophisticated options are available.
 
       $ traceanalyzer myapp.stf
           
-
-Further information
--------------------
-
-Intel's `ITAC documentation`_
 

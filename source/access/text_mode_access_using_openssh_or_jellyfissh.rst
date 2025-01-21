@@ -1,4 +1,4 @@
-.. _JellyfiSSH access:
+.. _mac openssh access:
 
 Text-mode access using OpenSSH
 ==============================
@@ -21,6 +21,7 @@ files:
 * :ref:`ssh <OpenSSH access>` to log on to the cluster
 * :ref:`scp and sftp <scp and sftp>` for file transfer
 
+.. _mac jellyfissh access:
 
 Text-mode access using JellyfiSSH
 =================================
@@ -30,13 +31,13 @@ Text-mode access using JellyfiSSH
 Prerequisites
 -------------
 
-* Install JellyfiSSH. The most recent version is available
-  for a small fee from the Mac App Store, but if you `google for
-  JellyfiSSH 4.5.2 <https://www.google.be/webhp?#q=JellyfiSSH+4.5.2>`_,
-  the version used for the screenshots in this page, you can still find
-  some free downloads for that version. Installation is easy: just drag
-  the program's icon to the Application folder in the Finder, and
-  you're done.
+Install `JellyfiSSH`_. The most recent version is available for a small fee
+from the Mac App Store, but if you search for *JellyfiSSH 4.5.2*, which is the
+version used for the screenshots in this page, you might still find some free
+downloads for that version.
+
+Installation is easy: just drag the program's icon to the Application folder in
+the Finder, and you're done.
 
 Using JellyfiSSH for bookmarking ssh connection settings
 --------------------------------------------------------

@@ -1,9 +1,9 @@
 # GPUs
 
 VSC Tier-1 Cloud users can also deploy VMs with different kind of GPUs.
-A full GPU card is connected directly to the VM via
-[PCI passthrough](https://libvirt.org/docs/libvirt-appdev-guide-python/en-US/html/libvirt_application_development_guide_using_python-Guest_Domains-Device_Config-PCI_Pass.html)
-and it is not shared between VMs.
+A full GPU card is connected directly to the VM via PCI passthrough, which
+means that the VM has direct access to its GPU devices and they not shared
+between VMs.
 
 See section [Instance types and flavors](flavors.md#instance-types-and-flavors)
 for more information about the different GPUs available (`GPUv*` flavors).

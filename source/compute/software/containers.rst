@@ -1,18 +1,21 @@
-Can I run containers on the HPC systems?
-========================================
+#############################
+Containers on the HPC systems
+#############################
 
-The best-known container implementation is doubtlessly `Docker`_.  However,
-due to security concerns HPC sites typically don't allow users to run
+The best-known container implementation is undoubtedly `Docker`_.  However,
+Docker needs to run as the *root* superuser of the system which has several
+security implications. Hence, HPC sites do not typically allow users to run
 Docker containers.
 
-Fortunately, `Singularity`_ addresses container related security issues,
-so Singularity images can be used on the cluster.  Since a Singularity
-image can be built from a Docker container, that should not be a severe
-limitation.
+Fortunately, `Apptainer`_ provides an alternative and safer approach for
+containers that can be used by any regular user without *root* permissions.
+Since Apptainer also provides the options to build images from Docker container
+files, it is a suitable replacement for Docker itself. Therefore, Apptainer is
+fully supported on all VSC clusters.
 
 
 When should I use containers?
------------------------------
+=============================
 
 If the software you intend to use is available on the VSC infrastructure,
 don't use containers.  This software has been built to use specific
@@ -21,42 +24,45 @@ typically built for the common denominator.
 
 Good use cases include:
 
-- Containers can be useful to run software that is hard to install
+* Containers can be useful to run software that is hard to install
   on HPC systems, e.g., GUI applications, legacy software, and so on.
-- Containers can be useful to deal with compatibility issues between
+
+* Containers can be useful to deal with compatibility issues between
   Linux flavors.
-- You want to create a workflow that can run on VSC infrastructure,
+
+* You want to create a workflow that can run on VSC infrastructure,
   but can also be burst to a third-party compute cloud (e.g., AWS
   or Microsoft Azure) when required.
-- You want to maximize the period your software can be run in a
+
+* You want to maximize the period your software can be run in a
   reproducible way.
 
 
-How can I create a Singularity image?
--------------------------------------
+How can I create a Apptainer image?
+===================================
 
 You have three options to build images, locally on your  machine, in the
 cloud or on the VSC infrastructure.
 
 
 Building on VSC infrastructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Given that most build procedures require superuser privileges, your options
 on the VSC infrastructure are limited.  You can build an image from a Docker
 container, e.g., to build an image that contains a version of TensorFlow 
 and has Jupyter as well, use::
 
-   $ export SINGULARITY_TMPDIR=$VSC_SCRATCH/singularity_tmp
-   $ mkdir -p $SINGULARITY_TMPDIR
-   $ export SINGULARITY_CACHEDIR=$VSC_SCRATCH/singularity_cache
-   $ mkdir -p $SINGULARITY_CACHEDIR
-   $ singularity build tensorflow.sif docker://tensorflow/tensorflow:latest-jupyter
+   $ export APPTAINER_TMPDIR=$VSC_SCRATCH/apptainer_tmp
+   $ mkdir -p $APPTAINER_TMPDIR
+   $ export APPTAINER_CACHEDIR=$VSC_SCRATCH/apptainer_cache
+   $ mkdir -p $APPTAINER_CACHEDIR
+   $ apptainer build tensorflow.sif docker://tensorflow/tensorflow:latest-jupyter
 
 .. warning::
 
-   Don't forget to define and create the ``$SINGULARITY_TMPDIR`` and
-   ``$SINGULARITY_CACHEDIR`` since if you fail to do so, Singularity
+   Don't forget to define and create the ``$APPTAINER_TMPDIR`` and
+   ``$APPTAINER_CACHEDIR`` since if you fail to do so, Apptainer
    will use directories in your home directory, and you will exceed
    the quota on that file system.
 
@@ -75,53 +81,53 @@ container, you should consider the alternatives.
 
 
 Local builds
-~~~~~~~~~~~~
+------------
 
 The most convenient way to create an image is on your own machine, since
 you will have superuser privileges, and hence the most options to chose
-from.  At this point, Singularity only runs under Linux, so you would
+from.  At this point, Apptainer only runs under Linux, so you would
 have to use a virtual machine when using Windows or macOS.  For detailed
-instructions, see the `Singularity installation documentation`_.
+instructions, see the `Apptainer Quick Start`_ guide.
 
 Besides building images from Docker containers, you have the option to
 create them from a definition file, which allows you to completely customize
-your image.  We provide a brief :ref:`introduction to Singularity definition files
-<Singularity definition files>`, but for more details, we refer you to the
-`Singularity definition file documentation`_.
+your image.  We provide a brief :ref:`introduction to Apptainer definition files
+<apptainer_definition_files>`, but for more details, we refer you to the
+documentation on `Apptainer Definition Files`_.
 
-When you have a Singularity definition file, e.g., ``my_image.def``, you can
+When you have a Apptainer definition file, e.g., ``my_image.def``, you can
 build your image file ``my_image.sif``::
 
-   your_machine> singularity build my_image.sif my_image.def
+   your_machine> apptainer build my_image.sif my_image.def
 
 Once your image is built, you can :ref:`transfer <data transfer>`
 it to the VSC infrastructure to use it.
 
 .. warning::
 
-   Since Singularity images can be very large, transfer your image
+   Since Apptainer images can be very large, transfer your image
    to a directory where you have sufficient quota, e.g.,
    ``$VSC_DATA``.
 
 
 Remote builds
-~~~~~~~~~~~~~
+-------------
 
-You can build images on the Singularity website, and download
+You can build images on the Apptainer website, and download
 them to the VSC infrastructure.  You will have to create an account
 at Sylabs.  Once this is done, you can use `Sylabs Remote Builder`_
-to create an image based on a :ref:`Singularity definition 
-<Singularity definition files>`.  If the build succeeds, you can
+to create an image based on an `Apptainer definition file
+<apptainer_definition_files>`.  If the build succeeds, you can
 pull the resulting image from the library::
 
-   $ export SINGULARITY_CACHEDIR=$VSC_SCRATCH/singularity_cache
-   $ mkdir -p $SINGULARITY_CACHEDIR
-   $ singularity pull library://gjbex/remote-builds/rb-5d6cb2d65192faeb1a3f92c3:latest
+   $ export APPTAINER_CACHEDIR=$VSC_SCRATCH/apptainer_cache
+   $ mkdir -p $APPTAINER_CACHEDIR
+   $ apptainer pull library://gjbex/remote-builds/rb-5d6cb2d65192faeb1a3f92c3:latest
 
 .. warning::
 
-   Don't forget to define and create the ``$SINGULARITY_CACHEDIR``
-   since if you fail to do so, Singularity will use directories in
+   Don't forget to define and create the ``$APPTAINER_CACHEDIR``
+   since if you fail to do so, Apptainer will use directories in
    your home directory, and you will exceed the quota on that file
    system.
 
@@ -138,12 +144,12 @@ However, local builds still offer more flexibility, especially when
 some interactive setup is required.
 
 
-.. _Singularity definition files:
+.. _apptainer_definition_files:
 
-Singularity definition files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Apptainer definition files
+==========================
 
-Below is an example of a Singularity definition file::
+Below is an example of a Apptainer definition file::
 
    Bootstrap: docker
    From: ubuntu:xenial
@@ -166,24 +172,23 @@ package will be installed.
    is no longer maintained can successfully be run on modern infrastructure.
    It is by no means intended to encourage you to start using Grace.
 
-Singularity definition files are very flexible. For more details,
-we refer you to the `Singularity definition file documentation`_.
+Apptainer definition files are very flexible. For more details,
+we refer you to the documentation on `Apptainer Definition Files`_.
 
 An important advantage of definition files is that they can easily
 be shared, and improve reproducibility.
 
 
 Conda environment in a definition file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`Conda environments
-<https://docs.vscentrum.be/software/python_package_management.html#install-python-packages-using-conda>`_
-are a convinient solution when it comes to handling own Python-dependent
+--------------------------------------
+:ref:`Conda environments<conda for Python>`
+are a convenient solution when it comes to handling own Python-dependent
 software installations. Having a containerized conda environment is often
 useful for groups when working collectively on a common project.
 One way to have a conda environment in a container is to create it from
 an existing environment YAML file. If we have a conda environment exported
 in a YAML format file called, e.g., ``user_conda_environment.yml``, then
-from that file one can recreate the same environment in a Singularity definition file::
+from that file one can recreate the same environment in a Apptainer definition file::
 
    Bootstrap: docker
    From: continuumio/miniconda3
@@ -209,29 +214,29 @@ The ``exec "$@"`` line will accept the user's input command, e.g.,
    on the cluster login nodes.
 
 
-How can I run a Singularity image?
-----------------------------------
+How can I run a Apptainer image?
+================================
 
 Once you have an image, there are several options to run the container.
 
 #. You can invoke any application that is in the ``$PATH`` of the
    container, e.g., for the image containing Grace::
 
-   $ singularity  exec  grace.sif  xmgrace
+   $ apptainer  exec  grace.sif  xmgrace
 
 #. In case the definition file specified a ``%runscript`` directive,
    this can be executed using::
 
-   $ singularity  run  grace.sif
+   $ apptainer  run  grace.sif
 
 #. The container can be run as a shell::
 
-   $ singularity  shell  grace.sif
+   $ apptainer  shell  grace.sif
 
 By default, your home directory in the container will be mounted
 with the same path as it has on the host.  The current working
 directory in the container is that on the host in which you
-invoked ``singularity``.
+invoked ``apptainer``.
 
 .. note::
 
@@ -245,7 +250,7 @@ using the ``-B`` option.  Mount points are created dynamically (using
 overlays), so they do not have to exist in the image.  For example,
 to mount the ``$VSC_SCRATCH`` directory, you would use::
 
-   $ singularity  exec  -B $VSC_SCRATCH:/scratch  grace.sif  xmgrace
+   $ apptainer  exec  -B $VSC_SCRATCH:/scratch  grace.sif  xmgrace
 
 Your ``$VSC_SCRATCH`` directory is now accessible from within the
 image in the directory ``/scratch``.
@@ -257,20 +262,20 @@ image in the directory ``/scratch``.
    mount points in the image and on the host, e.g., for the
    ``$VSC_DATA`` directory::
 
-      $ singularity  exec  -B $VSC_DATA:$VSC_DATA  grace.sif  xmgrace
+      $ apptainer  exec  -B $VSC_DATA:$VSC_DATA  grace.sif  xmgrace
 
    Or, more concisely::
 
-      $ singularity  exec  -B $VSC_DATA  grace.sif  xmgrace
+      $ apptainer  exec  -B $VSC_DATA  grace.sif  xmgrace
 
    The host environment variables are defined in the image, hence
    scripts that use those will work.
 
 
-Can I use singularity images in a job?
---------------------------------------
+Can I use apptainer images in a job?
+------------------------------------
 
-Yes, you can.  Singularity images can be part of any workflow, e.g.,
+Yes, you can.  Apptainer images can be part of any workflow, e.g.,
 the following script would create a plot in the Grace container::
 
    #!/bin/bash -l
@@ -278,14 +283,14 @@ the following script would create a plot in the Grace container::
    #PBS -l walltime=00:30:00
    
    cd $PBS_O_WORKDIR
-   singularity exec grace.sif gracebat -data data.dat \
+   apptainer exec grace.sif gracebat -data data.dat \
                                        -batch plot.bat
    
 Ensure that the container has access to all the required directories
 by providing additional bindings if necessary.
 
 
-Can I run parallel applications using a Singularity image?
+Can I run parallel applications using a Apptainer image?
 ----------------------------------------------------------
 
 For shared memory applications there is absolutely no problem.
@@ -305,17 +310,13 @@ support <user support VSC>`.
    degradation.
 
 
-Can I run a service from a Singularity image?
+Can I run a service from a Apptainer image?
 ---------------------------------------------
 
 Yes, it is possible to run services such as databases or web
-applications that are installed in Singularity images.
+applications that are installed in Apptainer images.
 
 For this type of scenario, it is probably best to contact :ref:`user
 support <user support VSC>`.
 
-
-.. _Singularity installation documentation: https://singularity.hpcng.org/user-docs/3.8/quick_start.html#quick-installation-steps
-.. _Singularity definition file documentation: https://singularity.hpcng.org/user-docs/3.8/definition_files.html
-.. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
 

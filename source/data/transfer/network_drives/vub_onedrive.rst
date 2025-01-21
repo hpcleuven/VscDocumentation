@@ -6,7 +6,7 @@ Your OneDrive in VUB
 
 You can directly copy files between Hydra and your
 `OneDrive in VUB <https://vub-my.sharepoint.com>`_ using the third-party sync app
-`OneDrive Client for Linux <https://github.com/abraunegg/onedrive/blob/master/README.md>`_.
+`OneDrive Client for Linux <https://abraunegg.github.io/>`_.
 This method avoids any additional step to copy the files to/from OneDrive
 to/your your local computer before transferring them to the HPC.
 
@@ -134,5 +134,5 @@ Synchronize with personal OneDrive
 
 .. seealso:: 
 
-   `Onedrive Client for Linux documentation <https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#configuration>`_
+   `Onedrive Client for Linux documentation <https://github.com/abraunegg/onedrive/blob/master/docs/usage.md>`_
 

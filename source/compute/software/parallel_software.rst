@@ -110,7 +110,7 @@ There are a few commonly used approaches to create a multi-threaded application:
    available for compiling and running OpenMP application with the
    :ref:`foss <GCC OpenMP>` and :ref:`Intel <Intel OpenMP>` toolchains.
 
-`Threading Building Blocks`_ (TBB)
+`oneAPI Threading Building Blocks`_ (TBB)
    Originally developed by Intel, this open source library offers many primitives for
    shared memory and data driven programming in C++.
 

@@ -213,31 +213,36 @@ documentation at the bottom of this page <Intel documentation>`.
 
 There are two ways to link the MKL library:
 
--  If you use icc, icpc or ifort to link your code, you can use the -mkl
-   compiler option:
+* If you use icc, icpc or ifort to link your code, you can use the -mkl
+  compiler option:
 
-   -  -mkl=parallel or -mkl: Link the multi-threaded version of the
-      library.
-   -  -mkl=sequential: Link the single-threaded version of the library
-   -  -mkl=cluster: Link the cluster-specific and sequential library,
-      i.e., ScaLAPACK will be included, but assumes one process per core
-      (so no hybrid MPI/multi-threaded approach)
+  * ``-mkl=parallel`` or ``-mkl``: Link the multi-threaded version of the
+     library.
 
-   The Fortran95 interface library for lapack is not automatically
-   included though. You'll have to specify that library seperately. You
-   can get the value from the `MKL Link Line Advisor`_,
-   see also the next item.
--  Or you can specify all libraries explictly. To do this, it is
-   strongly recommended to use Intel's `MKL Link Line Advisor`_,
-   and will also tell you how to link the MKL library with code
-   generated with the GNU and PGI compilers.
-   **Note:** On most VSC systems, the variable MKLROOT has a different
-   value from the one assumed in the Intel documentation. Wherever you
-   see ``$(MKLROOT)`` you may have to replace it with
-   ``$(MKLROOT)/mkl``.
+  *  ``-mkl=sequential``: Link the single-threaded version of the library
+
+  *  ``-mkl=cluster``: Link the cluster-specific and sequential library,
+     i.e., ScaLAPACK will be included, but assumes one process per core
+     (so no hybrid MPI/multi-threaded approach)
+
+  The Fortran95 interface library for LAPACK is not automatically
+  included though. You'll have to specify that library separately. You
+  can get the value from the `Intel oneAPI MKL Link Line Advisor`_,
+  see also the next item.
+
+* Alternatively, you can specify all libraries explicitly. To do this, it is
+  strongly recommended to use `Intel oneAPI MKL Link Line Advisor`_, and will
+  also tell you how to link the MKL library with code generated with the GNU
+  and PGI compilers.
+
+.. note::
+
+   On most VSC systems, the variable MKLROOT has a different value from the one
+   assumed in the Intel documentation. Wherever you see ``$(MKLROOT)`` you may
+   have to replace it with ``$(MKLROOT)/mkl``.
 
 MKL also offers a very fast streaming pseudorandom number generator, see
-the documentation for details.
+the `Intel oneAPI MKL Documentation`_ for details.
 
 Intel toolchain version numbers
 -------------------------------
@@ -269,43 +274,30 @@ Intel toolchain version numbers
 +-----------+----------------+------------+------------+--------+--------+----------+
 
 
-
 .. _Intel documentation:
 
 Further information on Intel tools
 ----------------------------------
 
--  All Intel documentation of recent software versions is available in
-   the `Intel Software Documentation Library`_
-   The documentation is typically available for the most recent version
-   and sometimes one older version of te compiler and libraries.
--  Some other useful documents:
+All Intel documentation of recent software versions is available in the `Intel
+Software Documentation Library`_. The documentation is typically available for
+the most recent version and sometimes one older version of te compiler and
+libraries.
 
-   -  `Quick-Reference Guide to Optimization with Intel® Compilers <https://software.intel.com/content/dam/develop/public/us/en/documents/quick-reference-guide-intel-compilers-v19-1-final-.pdf>`_.
-   -  `Direct link to the C/C++ compiler developer and reference
-      guide <https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference>`_
-   -  `Direct link to the Fortran compiler user and reference
-      guide <https://software.intel.com/en-us/fortran-compiler-developer-guide-and-reference>`_
-   -  `Page with links to the documentation of the most recent version
-      of Intel
-      MPI <https://software.intel.com/en-us/mpi-library/documentation/get-started>`_
+Some other useful documents:
 
--  MKL
+* Compilers:
 
-   -  `Link page to the documentation of MKL on the Intel web
-      site <https://software.intel.com/en-us/articles/intel-math-kernel-library-documentation/>`_
-   -  `MKL Link Line
-      Advisor <https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor>`_
+  * `Intel oneAPI DPC Compiler Documentation`_
+  * `Intel Fortran Compiler Documentation`_
 
--  :ref:`Generic BLAS/LAPACK/ScaLAPACK documentation <BLAS and LAPACK>`
+* MPI:
 
+  * `Intel MPI Documentation`_
 
- .. index::
-    single: compiler
-    single: MPI
-    single: OpenMP
-    single: Intel MPI
-    single: MKL
-    single: BLAS
-    single: LAPACK
+* Numeric libraries:
+
+  * `Intel oneAPI MKL Documentation`_
+  * `Intel oneAPI MKL Link Line Advisor`_
+  * :ref:`Generic BLAS/LAPACK/ScaLAPACK documentation <BLAS and LAPACK>`
 

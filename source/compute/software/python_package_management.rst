@@ -79,10 +79,9 @@ default package is not optimized for the CPUs in our infrastructure, and will
 run sub-optimally.  (Note that this is not the case when you run TensorFlow on
 GPUs, since conda will install the appropriate CUDA libraries.)
 
-These issues can be avoided by using Intel's Python distribution that contains
-Intel MPI and optimized versions of packages such as scikit-learn and TensorFlow.
-You will find `installation instructions <https://software.intel.com/content/www/us/en/develop/articles/using-intel-distribution-for-python-with-anaconda.html>`_
-provided by Intel.
+These issues can be avoided by using the `Intel oneAPI Python Distribution`_
+that contains `Intel MPI`_ and optimized versions of packages such as
+scikit-learn and TensorFlow.
 
 .. _install_miniconda_python:
 
@@ -132,10 +131,11 @@ directory to ``PATH``.
 You can create an environment based on the default conda channels, but
 it is recommended to at least consider the Intel Python distribution.
 
-Intel provides instructions on `how to install the Intel Python distribution
-<https://software.intel.com/content/www/us/en/develop/articles/using-intel-distribution-for-python-with-anaconda.html>`_.
+Intel provides instructions on how to install the `Intel oneAPI Python
+Distribution`_ with conda.
 
-Alternatively, to creating a new conda environment based on the default channels:
+Alternatively, you can create a new conda environment based on the default
+channels::
 
    $ conda create  -n science  numpy scipy matplotlib
 

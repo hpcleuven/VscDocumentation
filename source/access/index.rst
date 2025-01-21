@@ -22,8 +22,8 @@ purchased for.  Contact your `local VSC coordinator <get in touch_>`_ to arrange
 access when required.
 
 For the main Tier-1 compute cluster you need to submit a
-`project application <tier-1 project application_>`_ (or you should be
-covered by a project application within your research group).
+`Tier-1 project application`_ (or you should be covered by a project
+application within your research group).
 
 Before you apply for VSC account, it is useful to first check whether
 the infrastructure is suitable for your application. Windows or macOS

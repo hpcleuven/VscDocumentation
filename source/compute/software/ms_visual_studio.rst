@@ -97,10 +97,3 @@ appropriate main thread in the Threads view.
 
 .. figure:: ms_visual_studio/ms_visual_studio_debugging.png
 
-Useful links
-------------
-
--  A `tutorial on debugging
-   <https://www.codeproject.com/Articles/79508/Mastering-Debugging-in-Visual-Studio-A-Beginn>`_
-   in Microsoft Visual C++
-

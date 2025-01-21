@@ -25,11 +25,11 @@ When the option is omitted, your job is submitted to the only partition (**skyla
 
 The maximum execution wall time for jobs is **7 days** (168 hours). 
 
-===============  ======  ===================================================================================  ======  ==========  =======
-Slurm partition  nodes   processors per node                                                                  memory  local disk  network
-===============  ======  ===================================================================================  ======  ==========  =======
-**skylake**      23      2x 14-core Intel Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ \@2.6GHz  192 GB  500 GB      EDR-IB
-===============  ======  ===================================================================================  ======  ==========  =======
+===============  ======  ===========================================  ======  ==========  =======
+Slurm partition  nodes   processors per node                          memory  local disk  network
+===============  ======  ===========================================  ======  ==========  =======
+**skylake**      23      2x 14-core `Intel Xeon Gold 6132`_ \@2.6GHz  192 GB  500 GB      EDR-IB
+===============  ======  ===========================================  ======  ==========  =======
 
 .. _Breniac login UAntwerp:
 
@@ -53,7 +53,7 @@ From inside the VSC network (e.g., when connecting from another VSC cluster), us
 
 - 1 login node
 
-  - 2 Xeon `Gold 6132 <https://ark.intel.com/products/123541>`_ CPUs\@2.6GHz (Skylake), 14 cores each
+  - 2 `Intel Xeon Gold 6132`_ CPUs\@2.6GHz (Skylake), 14 cores each
   - 192 GB RAM
   - 2x 500 GB HDD local disk (raid 1)
 

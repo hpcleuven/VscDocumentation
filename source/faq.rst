@@ -56,7 +56,7 @@ Software
    :maxdepth: 2
 
    compute/software/parallel_software
-   compute/software/singularity
+   compute/software/containers
 
 
 Tutorials and additional resources

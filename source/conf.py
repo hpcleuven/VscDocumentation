@@ -283,8 +283,11 @@ myst_heading_anchors = 2
 myst_enable_extensions = ["colon_fence"]
 
 # -- RST Prolog --------------------------------------------------------------
-rst_prolog = ""
-
+# Non-brakable space
+rst_prolog = """
+.. |nbsp| unicode:: U+00A0
+   :trim:
+"""
 # Badges
 rst_prolog += """
 .. |Optional| replace:: :bdg-primary:`Optional`
@@ -303,31 +306,38 @@ rst_prolog += """
 .. |VUB| replace:: :bdg-warning:`VUB`
 """
 
-# Links used multiple times across the documentation
+### Links used multiple times across the documentation ###
+# Links to VSC and VSC sites
 rst_prolog += """
-.. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
-.. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
-.. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
-.. _atools documentation: https://atools.readthedocs.io/en/latest/
-.. _Beginning Hybrid MPI/OpenMP Development: https://software.intel.com/en-us/articles/beginning-hybrid-mpiopenmp-development
-.. _CP2K: https://www.cp2k.org/
-.. _CPMD: http://www.cpmd.org/
-.. _CUDA: https://developer.nvidia.com/cuda-zone
-.. _cuDNN: https://developer.nvidia.com/cudnn
-.. _Cyberduck: https://cyberduck.io
-.. _Cygwin: https://www.cygwin.com/
-.. _Docker: https://www.docker.com/
-.. _docs.globus.org: https://docs.globus.org
-.. _download FileZilla: https://filezilla-project.org/download.php?show_all=1
-.. _Eclipse download page: http://www.eclipse.org/downloads
-.. _Eclipse packages download page: https://www.eclipse.org/downloads/packages/
-.. _Eclipse: https://www.eclipse.org/
 .. _eligible users: https://www.vscentrum.be/getaccess
-.. _FFTW documentation: http://www.fftw.org/#documentation
-.. _FFTW: http://www.fftw.org/
-.. _FileZilla project page: https://filezilla-project.org/
-.. _GCC documentation: http://gcc.gnu.org/onlinedocs/
 .. _get in touch: https://www.vscentrum.be/getintouch
+.. _Tier-1 project application: https://www.vscentrum.be/compute
+.. _VSC account page: https://account.vscentrum.be/
+.. _VSC Training: https://www.vscentrum.be/vsctraining
+.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
+.. _Service Catalog: https://icts.kuleuven.be/sc/HPC
+.. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
+"""
+# Links to hardware specifications
+rst_prolog += """
+.. _AMD EPYC 7282: https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7282.html#amd_support_product_spec
+.. _AMD EPYC 7452: https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7452.html#amd_support_product_spec
+.. _AMD EPYC 7543: https://www.amd.com/en/products/processors/server/epyc/7003-series/amd-epyc-7543.html
+.. _AMD EPYC 9384X: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9384x.html
+.. _AMD Instinct MI100: https://www.amd.com/en/products/accelerators/instinct/mi100.html
+.. _Intel Xeon E5-2650v4: https://www.intel.com/content/www/us/en/products/sku/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz/specifications.html
+.. _Intel Xeon E5-2680v2: https://www.intel.com/content/www/us/en/products/sku/75277/intel-xeon-processor-e52680-v2-25m-cache-2-80-ghz/specifications.html
+.. _Intel Xeon E5-2680v4: https://www.intel.com/content/www/us/en/products/sku/91754/intel-xeon-processor-e52680-v4-35m-cache-2-40-ghz/specifications.html
+.. _Intel Xeon E7-8891v4: https://www.intel.com/content/www/us/en/products/sku/93795/intel-xeon-processor-e78891-v4-60m-cache-2-80-ghz/specifications.html
+.. _Intel Xeon Gold 6132: https://www.intel.com/content/www/us/en/products/sku/123541/intel-xeon-gold-6132-processor-19-25m-cache-2-60-ghz/specifications.html
+.. _Intel Xeon Gold 6148: https://www.intel.com/content/www/us/en/products/sku/120489/intel-xeon-gold-6148-processor-27-5m-cache-2-40-ghz/specifications.html
+.. _NVIDIA A100: https://www.nvidia.com/en-us/data-center/a100/
+.. _NVIDIA Tesla P100: https://www.nvidia.com/en-in/data-center/tesla-p100/
+"""
+# Links to Globus
+rst_prolog += """
+.. _Globus: https://www.globus.org
+.. _Globus Documentation: https://docs.globus.org
 .. _Globus Web Interface: https://app.globus.org/
 .. _Globus Management Console: https://www.globus.org/app/login
 .. _Globus Connect Server Installation Guide: https://docs.globus.org/globus-connect-server-installation-guide
@@ -337,36 +347,73 @@ rst_prolog += """
 .. _Globus CLI documentation: https://docs.globus.org/cli/examples
 .. _Globus-Timer-CLI on PyPi: https://pypi.org/project/globus-timer-cli
 .. _Globus Python SDK documentation: https://globus-sdk-python.readthedocs.io/en/stable/index.html
+.. _developers.globus.org: https://developers.globus.org/
+.. _docs.globus.org: https://docs.globus.org
+.. _www.globus.org: https://www.globus.org
+"""
+# Other links
+rst_prolog += """
+.. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
+.. _Apptainer: https://apptainer.org
+.. _Apptainer Documentation: https://apptainer.org/docs/user/main/
+.. _Apptainer Quick Start: https://apptainer.org/docs/user/main/quick_start.html
+.. _Apptainer Definition Files: https://apptainer.org/docs/user/main/definition_files.html
+.. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
+.. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
+.. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
+.. _atools documentation: https://atools.readthedocs.io/en/latest/
+.. _CP2K: https://www.cp2k.org/
+.. _CPMD: http://www.cpmd.org/
+.. _CUDA: https://developer.nvidia.com/cuda-zone
+.. _cuDNN: https://developer.nvidia.com/cudnn
+.. _Cyberduck: https://cyberduck.io
+.. _Cygwin: https://www.cygwin.com/
+.. _Docker: https://www.docker.com/
+.. _download FileZilla: https://filezilla-project.org/download.php?show_all=1
+.. _Eclipse download page: http://www.eclipse.org/downloads
+.. _Eclipse packages download page: https://www.eclipse.org/downloads/packages/
+.. _Eclipse: https://www.eclipse.org/
+.. _EuroHPC: https://eurohpc-ju.europa.eu
+.. _EuroHPC Access Calls: https://eurohpc-ju.europa.eu/access-our-supercomputers/eurohpc-access-calls_en
+.. _FFTW documentation: http://www.fftw.org/#documentation
+.. _FFTW: http://www.fftw.org/
+.. _FileZilla project page: https://filezilla-project.org/
+.. _GCC documentation: http://gcc.gnu.org/onlinedocs/
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
-.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
-.. _Intel MPI Documentation: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
-.. _Intel MPI: https://software.intel.com/en-us/intel-mpi-library
-.. _Intel Software Documentation Library: https://software.intel.com/en-us/documentation
-.. _Interoperability with OpenMP API: https://software.intel.com/en-us/node/528819
+.. _Intel Fortran Compiler Documentation: https://www.intel.com/content/www/us/en/developer/tools/oneapi/fortran-compiler-documentation.html
+.. _Intel MPI: https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html
+.. _Intel MPI Documentation: https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library-documentation.html
+.. _Intel MPI - Beginning Hybrid MPI/OpenMP Development: https://www.intel.com/content/www/us/en/developer/articles/technical/beginning-hybrid-mpiopenmp-development.html
+.. _Intel oneAPI DPC Compiler Documentation: https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler-documentation.html
+.. _Intel oneAPI MKL Documentation: https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-documentation.html
+.. _Intel oneAPI MKL Link Line Advisor: https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html
+.. _Intel oneAPI Python Distribution: https://www.intel.com/content/www/us/en/developer/tools/oneapi/distribution-for-python.html
+.. _Intel oneAPI VTune Profiler: https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html
+.. _Intel Software Documentation Library: https://www.intel.com/content/www/us/en/resources-documentation/developer.html
+.. _Interoperability with OpenMP API: https://www.intel.com/content/www/us/en/docs/mpi-library/developer-reference-linux/2021-14/interoperability-with-openmp-api.html
+.. _DigitalOcean Introduction to Linux Basics: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 .. _irods.org: https://irods.org/
-.. _ITAC documentation: https://software.intel.com/en-us/articles/intel-trace-analyzer-and-collector-documentation/
-.. _JellyfiSSH: http://www.m-works.co.nz/jellyfissh.php
+.. _JellyfiSSH: https://apps.apple.com/gb/app/jellyfissh/id416399476?mt=12
 .. _Jupyter: https://jupyter.org/
 .. _JupyterLab documentation: https://docs.jupyter.org/en/latest/
 .. _Keras: https://keras.io/
 .. _LAPACK user guide: http://www.netlib.org/lapack/lug/
 .. _LAPACK95 user guide: http://www.netlib.org/lapack95/lug95/
-.. _Linux Basics on Lifewire : https://www.lifewire.com/learn-how-linux-basics-4102692
 .. _Linux Newbie Administrator Guide: http://lnag.sourceforge.net/
 .. _Linux Tutorials YouTube Channel: https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ
-.. _LLNL openMP tutorial: https://computing.llnl.gov/tutorials/openMP
+.. _LLNL Tutorials: https://hpc.llnl.gov/documentation/tutorials
+.. _LLNL OpenMP Tutorial: https://hpc-tutorials.llnl.gov/openmp/
+.. _LLNL Parallel Computing Tutorial: https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial
+.. _LLNL Advanced MPI: https://hpc.llnl.gov/sites/default/files/DavidCronkSlides.pdf
 .. _Lmod documentation: http://lmod.readthedocs.io/en/latest/
 .. _Lmod: http://lmod.readthedocs.io/en/latest/
-.. _Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems: http://www.joshuahursey.com/papers/2011/hursey-cluster-poster-2011.pdf
 .. _MathWorks: https://nl.mathworks.com/
 .. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
-.. _MKL Link Line Advisor: https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
 .. _MobaXterm: https://mobaxterm.mobatek.net
-.. _MPI forum: https://www.mpi-forum.org/
-.. _MPI Reference Manual: https://software.intel.com/en-us/articles/intel-mpi-library-documentation
-.. _MPI Standard documents: https://www.mpi-forum.org/docs/
+.. _MPI Forum: https://www.mpi-forum.org/
+.. _MPI Documents: https://www.mpi-forum.org/docs/
 .. _MPICH: https://www.mpich.org/
 .. _MVAPICH: http://mvapich.cse.ohio-state.edu/
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
@@ -375,6 +422,7 @@ rst_prolog += """
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
+.. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
 .. _Open MPI: https://www.open-mpi.org/
@@ -383,9 +431,12 @@ rst_prolog += """
 .. _OpenMP compilers and tools: https://www.openmp.org/resources/openmp-compilers-tools/
 .. _OpenMP: https://www.openmp.org
 .. _OpenSHMEM: http://www.openshmem.org/site/
-.. _Paraview tutorial: https://www.vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
+.. _Paraview tutorial: https://vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
 .. _Paraview website: https://www.paraview.org/
 .. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
+.. _PRACE: https://prace-ri.eu/
+.. _PRACE Training Portal: https://training.prace-ri.eu/
+.. _PRACE Tutorials: https://training.prace-ri.eu/index.php/prace-tutorials/
 .. _PuTTY download site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 .. _qsub documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm#topics/torque/commands/qsub.htm
@@ -393,31 +444,21 @@ rst_prolog += """
 .. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
 .. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
 .. _scp manual page: http://man.openbsd.org/scp
-.. _Service Catalog: https://icts.kuleuven.be/sc/HPC
 .. _sftp manual page: http://man.openbsd.org/sftp
-.. _Singularity documentation: https://singularity.hpcng.org/user-docs/3.8/
-.. _Singularity: https://singularity.hpcng.org/
 .. _sbatch manual page: https://slurm.schedmd.com/sbatch.html
 .. _ssh manual page: http://man.openbsd.org/ssh
 .. _ssh-keygen manual page: http://man.openbsd.org/ssh-keygen
 .. _ssh_config manual page: http://man.openbsd.org/ssh_config
-.. _Sylabs Singularity: https://sylabs.io/singularity/
 .. _TensorBoard documentation: https://www.tensorflow.org/tensorboard/get_started
 .. _TensorFlow: https://www.tensorflow.org/
-.. _Threading Building Blocks: https://www.threadingbuildingblocks.org
-.. _tier-1 project application: https://www.vscentrum.be/tier1
 .. _TigerVNC: https://tigervnc.org/
 .. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm
-.. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
 .. _TurboVNC download page: https://github.com/TurboVNC/turbovnc/releases
 .. _TurboVNC: https://www.turbovnc.org/
 .. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
-.. _VSC account page: https://account.vscentrum.be/
-.. _VSC training: https://www.vscentrum.be/training
 .. _VSCode documentation: https://code.visualstudio.com/docs
 .. _WinSCP docs: https://winscp.net/eng/docs/start
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
-.. _www.globus.org: https://www.globus.org
 .. _Xming website: http://www.straightrunning.com/XmingNotes/
 """

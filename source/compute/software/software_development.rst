@@ -21,8 +21,8 @@ Development tools
    :maxdepth: 2
 
    toolchains
-   intel_toolchain
    foss_toolchain
+   intel_toolchain
    intel_trace_analyzer_collector
    eclipse
    ms_visual_studio

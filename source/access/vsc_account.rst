@@ -150,7 +150,7 @@ Register for an HPC Introduction course. These are organized at all universities
 on a regular basis.
 
 Information on our training program and the schedule is available on the
-`VSC website <VSC training_>`_.
+`VSC Training`_ website.
 
 .. note::
 

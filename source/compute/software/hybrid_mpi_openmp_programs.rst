@@ -226,11 +226,12 @@ Intel documentation on hybrid programming
 Some documents on the Intel web site that contain more information on
 developing and running hybrid programs:
 
--  `Interoperability with OpenMP API`_ in the `MPI Reference Manual`_
-   explains the concept of MPI domains and how they should be used/set
-   for hybrid programs.
--  `Beginning Hybrid MPI/OpenMP Development`_,
-   useful if you develop your own code.
+* `Interoperability with OpenMP API`_ in the `Intel MPI Documentation`_
+  explains the concept of MPI domains and how they should be used/set for
+  hybrid programs.
+
+* `Intel MPI - Beginning Hybrid MPI/OpenMP Development`_ is a *getting started*
+  guide that is useful if you develop your own code.
 
 FOSS toolchain (GCC and Open MPI)
 ---------------------------------
@@ -275,18 +276,20 @@ Open MPI allows a lot of control over process placement and rank
 assignment. The Open MPI mpirun command has several options that
 influence this process:
 
--  ``--map-by`` influences the mapping of processes on the available
-   processing resources
--  ``--rank-by`` influences the rank assignment
--  ``--bind-to`` influences the binding of processes to sets of
-   processing resources
--  ``--report-bindings`` can then be used to report on the process
-   binding.
+* ``--map-by`` influences the mapping of processes on the available
+  processing resources
+
+* ``--rank-by`` influences the rank assignment
+
+* ``--bind-to`` influences the binding of processes to sets of
+  processing resources
+
+* ``--report-bindings`` can then be used to report on the process
+  binding.
 
 More information can be found in the manual pages for ``mpirun`` which
 can be found on the Open MPI webpages `Open MPI Documentation`_ and in the following
 presentations:
 
--  Poster paper \\"`Locality-Aware Parallel Process Mapping for Multi-Core HPC Systems`_\" 
--  Slides from the presentation \\"`Open MPI Explorations in Process Affinity`_\" from EuroMPI'13 
+* Slides from the presentation `Open MPI Explorations in Process Affinity`_ from EuroMPI'13 
 
