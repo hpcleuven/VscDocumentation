@@ -1,1 +1,0 @@
-Kon USER Reidel Breakout Opening Break prospective Auditorium Outreach theinternationalauditorium Presentations 1210 40h 00h 30h DAY supporters afternoon Long 20h Rapporteurs followup Albert laan breakout 50h

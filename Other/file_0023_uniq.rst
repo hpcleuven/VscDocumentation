@@ -1,1 +1,0 @@
-dealing chance top500 unlikely laptops Shortly smartphones nineties extremes intrinsic TOP500 parallellism extent constantly interconnecting cutting pushed criterion Proper 000 extreme Fortunately manufacturer manufacturers uniting subsequently hundred Stating 80386 edge designers collaborated trillion eighties thereafter 1975 interpret

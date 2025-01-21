@@ -1,1 +1,0 @@
-Industrie railway Elisabeth Wet Boudewijn garages Simonis closest Belliardstraat Leopold Kleine walk Bruxelles Rogier 2a North Industriestraat Waterloolaan Kunst spots Station MIVB Koning Portes Regentlaan Troon 1040 Paleizenplein ring Metro Centraal metro
