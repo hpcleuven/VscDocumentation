@@ -115,7 +115,12 @@ html_navbar_icon_links = [
     {
         "name": "VSC on X",
         "url": "https://x.com/VSC_HPC",
-        "icon": "_static/fa-square-x-twitter.svg",
+        "icon": "fa-brands fa-square-x-twitter",
+    },
+    {
+        "name": "VSC on BlueSky",
+        "url": "https://bsky.app/profile/vschpc.bsky.social",
+        "icon": "_static/fa-square-bluesky.svg",
         "type": "local",
     },
     {

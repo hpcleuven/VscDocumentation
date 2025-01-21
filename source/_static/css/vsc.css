@@ -80,6 +80,24 @@ nav.bd-links li > a:hover,
     text-decoration-skip-ink: auto;
 }
 
+/* style local icons on navbar depending on active theme */
+html[data-theme="light"] a.nav-link img.icon-link-image {
+    filter: brightness(0) saturate(100%) invert(31%) sepia(45%) saturate(301%) hue-rotate(176deg) brightness(91%) contrast(85%);
+    height: 1.4em;
+}
+html[data-theme="light"] a.nav-link:hover img.icon-link-image {
+    /* Haddock's Sweater: #2989bc (--pst-color-secondary) */
+    filter: brightness(0) saturate(100%) invert(49%) sepia(51%) saturate(667%) hue-rotate(156deg) brightness(86%) contrast(91%);
+}
+html[data-theme="dark"] a.nav-link img.icon-link-image {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(8%) saturate(362%) hue-rotate(175deg) brightness(91%) contrast(94%);
+    height: 1.4em;
+}
+html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
+    /* Sea serpent blue: #51cbda (--pst-color-secondary) */
+    filter: brightness(0) saturate(100%) invert(72%) sepia(87%) saturate(394%) hue-rotate(147deg) brightness(92%) contrast(85%);
+}
+
 /* make sphinx-design cards slightly non-transparent */
 .sd-card {
     background-color: var(--pst-color-surface);
