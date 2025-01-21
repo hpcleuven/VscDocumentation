@@ -7,10 +7,3 @@
        * Tier-1 :ref:`Hortense <Hortense hardware>`
        * Tier-2 :ref:`All clusters <UGentT2 hardware>`
 
-    .. grid-item-card:: VUB
-       :columns: 12 4 4 4
-
-       (backwards compatibility)
-
-       * Tier-2 :ref:`Hydra <Hydra hardware>`
-

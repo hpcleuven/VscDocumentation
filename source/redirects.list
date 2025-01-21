@@ -8,6 +8,7 @@ access/data_transfer_with_filezilla.html /data/transfer/filezilla.html
 access/data_transfer_with_scp_sftp.html /data/transfer/scp_sftp.html
 access/eclipse_as_a_remote_editor.html /software/eclipse.html
 access/multiplatform_client_tools.html /access/access_methods.html
+brussels/tier2_hardware/hydra_hardware.html brussels/tier2_hardware/hydra.html
 compute.html /compute/index.html
 data/tier1_data_main_index.html /data/tier1_data_service.html
 globus/globus_main_index.html /globus/index.html

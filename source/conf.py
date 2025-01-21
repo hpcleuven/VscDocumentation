@@ -328,11 +328,13 @@ rst_prolog += """
 .. _Intel Xeon E5-2650v4: https://www.intel.com/content/www/us/en/products/sku/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz/specifications.html
 .. _Intel Xeon E5-2680v2: https://www.intel.com/content/www/us/en/products/sku/75277/intel-xeon-processor-e52680-v2-25m-cache-2-80-ghz/specifications.html
 .. _Intel Xeon E5-2680v4: https://www.intel.com/content/www/us/en/products/sku/91754/intel-xeon-processor-e52680-v4-35m-cache-2-40-ghz/specifications.html
+.. _Intel Xeon E5-2683v4: https://www.intel.com/content/www/us/en/products/sku/91766/intel-xeon-processor-e52683-v4-40m-cache-2-10-ghz/specifications.html
 .. _Intel Xeon E7-8891v4: https://www.intel.com/content/www/us/en/products/sku/93795/intel-xeon-processor-e78891-v4-60m-cache-2-80-ghz/specifications.html
 .. _Intel Xeon Gold 6132: https://www.intel.com/content/www/us/en/products/sku/123541/intel-xeon-gold-6132-processor-19-25m-cache-2-60-ghz/specifications.html
 .. _Intel Xeon Gold 6148: https://www.intel.com/content/www/us/en/products/sku/120489/intel-xeon-gold-6148-processor-27-5m-cache-2-40-ghz/specifications.html
 .. _NVIDIA A100: https://www.nvidia.com/en-us/data-center/a100/
 .. _NVIDIA Tesla P100: https://www.nvidia.com/en-in/data-center/tesla-p100/
+.. _NVIDIA GeForce 1080Ti: https://www.nvidia.com/en-us/geforce/10-series/#1080-ti-spec
 """
 # Links to Globus
 rst_prolog += """
