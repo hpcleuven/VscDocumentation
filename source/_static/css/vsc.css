@@ -56,7 +56,7 @@ html[data-theme="dark"] .bd-content {
     html[data-theme="dark"] .bd-container {
         background: var(--pst-color-background);
         /* dark VSC brick: #673527 */
-        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(60, 40, 44) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
+        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(60, 40, 55) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
     }
     html[data-theme="dark"] .bd-sidebar-primary {
         background-color: transparent;
@@ -64,7 +64,7 @@ html[data-theme="dark"] .bd-content {
 }
 
 /* Text decorations on links and buttons*/
-/* replace default underlines with dotted underline on hover only */
+/* replace default underlines with a dotted underline on hover only */
 a,
 a.nav-link,
 html .sd-btn:hover {
@@ -80,7 +80,7 @@ nav.bd-links li > a:hover,
     text-decoration-skip-ink: auto;
 }
 
-/* style local icons on navbar depending on active theme */
+/* fix styling of local icons to match other icons on navbar*/
 html[data-theme="light"] a.nav-link img.icon-link-image {
     filter: brightness(0) saturate(100%) invert(31%) sepia(45%) saturate(301%) hue-rotate(176deg) brightness(91%) contrast(85%);
     height: 1.4em;
@@ -99,8 +99,56 @@ html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
 }
 
 /* make sphinx-design cards slightly non-transparent */
-.sd-card {
-    background-color: var(--pst-color-surface);
+.sd-card { background-color: var(--pst-color-surface); }
+/* add class to handle nested cards */
+.nested-card-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+.nested-card-container .sd-container-fluid .sd-row {
+    height: 100%;
+    align-content: center;
+}
+.nested-card-top { z-index: 20; }
+.nested-card-tier1 .sd-card .sd-card-body {
+    background: #f953c6;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #b91d7333, #f953c655);
+}
+.nested-card-tier2 .sd-card .sd-card-body {
+    background: #2193b0;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #84dcf033, #25a5c655);
+}
+.nested-card-term .sd-card .sd-card-body {
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #4A00E033, #8E2DE255);
+}
+.nested-card-web .sd-card .sd-card-body {
+    background: #ee0979;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #ff6a0033, #ee097955);
+}
+.nested-card-soft .sd-card .sd-card-body {
+    background: #1CD8D2;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #a9f1d333, #2ae3dd55);
+}
+.nested-card-jobs .sd-card .sd-card-body {
+    background: #F09819;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #f0e37433, #f2a13155);
+}
+.nested-card-globus .sd-card .sd-card-body {
+    background: #1488CC;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #1488CC33, #2B32B255);
+}
+.nested-card-vms .sd-card .sd-card-body {
+    background: #00bf8f;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #00f2b633, #00483755);
+}
+.nested-card-vmsgpu .sd-card .sd-card-body {
+    background: #FDFC47;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #e1e16333, #45dd5955);
+}
+.nested-card-orch .sd-card .sd-card-body {
+    background: #FFE000;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #799F0C33, #FFE00055);
 }
 
 /* line numbers in codeblocks on transparent column */

@@ -27,7 +27,7 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 
    about_vsc
    contact_vsc
-   Accounts <access/index>
+   Accounts <accounts/index>
    Data <data/index>
    Compute <compute/index>
    Cloud <cloud/index>
@@ -36,89 +36,134 @@ information about the services provided by the `Vlaams Supercomputer Centrum
 .. grid:: 3
    :gutter: 4
 
-   .. grid-item-card:: :fas:`user-circle` Accounts
+   .. grid-item-card:: :fas:`user-circle` VSC Accounts
       :columns: 12
-      :link: access/index
+      :link: accounts/index
       :link-type: doc
-      :class-title: h3
+      :class-title: fs-3
 
       How to get your VSC account to use the different VSC services and platforms.
 
-   .. grid-item-card:: :fas:`rocket` :doc:`Compute <compute/index>`
+   .. grid-item-card:: :fas:`rocket` Compute
+      :class-body: nested-card-container
       :columns: 12 12 4 4
-      :class-title: h3
-   
+      :link: compute/index
+      :link-type: doc
+      :class-title: fs-3
+
       The high-performance computing (HPC) platform provides multiple tiers
       of parallel processing enabling researchers to run advanced application
       programs efficiently, reliably and quickly.
 
-      +++
-
       .. grid:: 2
          :gutter: 2
 
-         .. grid-item-card:: Tier-1
+         .. grid-item-card:: Tier-1 HPC
+            :class-item: nested-card-top nested-card-tier1
             :text-align: center
-            :class-card: text-dark bg-warning opacity-75
             :link: compute/tier1
             :link-type: doc
-   
-         .. grid-item-card:: Tier-2
+
+         .. grid-item-card:: Tier-2 HPC
+            :class-item: nested-card-top nested-card-tier2
             :text-align: center
-            :class-card: text-dark bg-info opacity-75
             :link: compute/tier2
             :link-type: doc
-   
-         .. grid-item-card:: Web
+
+         .. grid-item-card:: Terminal Interface
+            :columns: 12 12 12 12
+            :class-item: nested-card-top nested-card-term
             :text-align: center
-            :class-card: text-dark bg-danger opacity-75
-            :link: leuven/services/openondemand
+            :link: compute/terminal
             :link-type: doc
-   
-   .. grid-item-card:: :fas:`floppy-disk` :doc:`Data <data/index>`
+
+         .. grid-item-card:: Web Portal
+            :class-item: nested-card-top nested-card-web
+            :text-align: center
+            :link: compute/openondemand
+            :link-type: doc
+
+         .. grid-item-card:: Job Queue
+            :class-item: nested-card-top nested-card-jobs
+            :text-align: center
+            :link: compute/jobs/index
+            :link-type: doc
+
+         .. grid-item-card:: Scientific Software
+            :columns: 12 12 12 12
+            :class-item: nested-card-top nested-card-soft
+            :text-align: center
+            :link: compute/software/index
+            :link-type: doc
+
+   .. grid-item-card:: :fas:`floppy-disk` Data
+      :class-body: nested-card-container
       :columns: 12 12 4 4
-      :class-title: h3
-   
+      :link: data/index
+      :link-type: doc
+      :class-title: fs-3
+
       The VSC Data component enables research data to remain close to the
       computing infrastructure during the active phase of the data life
       cycle.
 
-      +++
-
-      .. grid:: 2
+      .. grid:: 1
          :gutter: 2
 
-         .. grid-item-card:: Tier-1
+         .. grid-item-card:: Tier-1 Data
+            :class-item: nested-card-top nested-card-tier1
             :text-align: center
-            :class-card: text-dark bg-warning opacity-75
             :link: data/tier1_data_service
             :link-type: doc
 
-   
-         .. grid-item-card:: Tier-2
+         .. grid-item-card:: Tier-2 Storage
+            :class-item: nested-card-top nested-card-tier2
             :text-align: center
-            :class-card: text-dark bg-info opacity-75
             :link: data/storage
             :link-type: doc
-   
+
          .. grid-item-card:: Globus
+            :class-item: nested-card-top nested-card-globus
             :text-align: center
-            :class-card: text-dark bg-success opacity-75
             :link: globus/index
             :link-type: doc
-   
-   .. grid-item-card:: :fas:`cloud` :doc:`Cloud <cloud/index>`
+
+   .. grid-item-card:: :fas:`cloud` Cloud
+      :class-body: nested-card-container
       :columns: 12 12 4 4
-      :class-title: h3
-   
+      :link: cloud/index
+      :link-type: doc
+      :class-title: fs-3
+
       The VSC Cloud component provides *on-demand* resources in a more
       flexible and cloud-like manner.
-   
+
+      .. grid:: 1
+         :gutter: 2
+
+         .. grid-item-card:: Virtual Machines
+            :class-item: nested-card-top nested-card-vms
+            :text-align: center
+            :link: cloud/manage_images
+            :link-type: doc
+
+         .. grid-item-card:: VMs with GPUs
+            :class-item: nested-card-top nested-card-vmsgpu
+            :text-align: center
+            :link: cloud/gpus
+            :link-type: doc
+
+         .. grid-item-card:: Orchestration
+            :class-item: nested-card-top nested-card-orch
+            :text-align: center
+            :link: cloud/terraform
+            :link-type: doc
+
    .. grid-item-card:: :fas:`question-circle` FAQs
        :columns: 12
        :link: faq
        :link-type: doc
-       :class-title: h3
+       :class-title: fs-3
 
        Collection of frequently asked questions.
 

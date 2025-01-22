@@ -149,7 +149,7 @@ html_theme_options = {
     "show_prev_next": False,
     "footer_start": ["copyright"],
     "footer_end": [],
-    "pygments_light_style": "manni",  # contrasty readable comments
+    "pygments_light_style": "default",  # contrasty readable comments
     "pygments_dark_style": "monokai",  # contrasty readable comments
 }
 
