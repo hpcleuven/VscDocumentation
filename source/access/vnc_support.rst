@@ -5,25 +5,31 @@ for Windows, macOS, Linux, Android, iOS or can be even used directly on web
 browsers.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       On the KUL clusters, users can use NX :ref:`NX start guide`.
 
-   .. tab-item:: UGent
-
-      VNC is supported through the :ref:`hortense_web_portal` interface.
-
    .. tab-item:: UAntwerp (AUHA)
+      :sync: ua
 
       On the UAntwerp clusters, TurboVNC is supported on all regular login
       nodes (without OpenGL support) and on the visualization node of Leibniz
       (with OpenGL support through VirtualGL).
+
       See the page :ref:`Remote visualization UAntwerp` for instructions.
 
-   .. tab-item:: VUB
+   .. tab-item:: UGent
+      :sync: ug
 
-      On the VUB clusters, TigerVNC is supported on all nodes. See the documentation on
-      `remote desktop sharing <https://hpc.vub.be/docs/software/graphical_apps/#remote-desktop-sharing>`_
+      VNC is supported through the :ref:`hortense_web_portal` interface.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      On the VUB clusters, TigerVNC is supported on all nodes. See the
+      documentation on `remote desktop sharing <https://hpc.vub.be/docs/software/graphical_apps/#remote-desktop-sharing>`_
       for instructions.
 

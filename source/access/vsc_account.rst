@@ -17,8 +17,10 @@ Applying for your VSC account
 =============================
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       UHasselt has an agreement with KU Leuven to run a shared infrastructure.
       Therefore the procedure is the same for both institutions.
@@ -32,19 +34,37 @@ Applying for your VSC account
          Researchers with a regular personnel account (u-number) can use
          the :ref:`generic procedure <generic access procedure>`.
 
-      -  If you are in one of the higher education institutions associated
+      *  If you are in one of the higher education institutions associated
          with KU Leuven, the :ref:`generic procedure <generic access procedure>`
          may not work. In that case, please e-mail hpcinfo@kuleuven.be
          to get an account. You will have to provide a public ssh key generated
          as described above.
-      -  Lecturers of KU Leuven and UHasselt that need HPC access for giving
+
+      *  Lecturers of KU Leuven and UHasselt that need HPC access for giving
          their courses: The procedure requires action both from the lecturers
          and from the students. Lecturers should follow the :ref:`specific
          procedure for lecturers <lecturer procedure leuven>`,
          while the students should simply apply for the account through the
          :ref:`generic procedure <generic access procedure>`.
 
+   .. tab-item:: UAntwerp (AUHA)
+      :sync: ua
+
+      Who?
+         Access is available for faculty students (master's projects under
+         faculty supervision), and researchers of the AUHA.
+
+      How?
+         Researchers can use the :ref:`generic procedure <generic access procedure>`.
+
+      *  Master students can also use the infrastructure for their master
+         thesis work. The promoter of the thesis should first send a
+         motivation to hpc@uantwerpen.be and then the :ref:`generic
+         procedure <generic access procedure>` should be followed (using your
+         student UAntwerpen id) to request the account.
+
    .. tab-item:: UGent
+      :sync: ug
 
       All information about the access policy is available `in
       English <https://www.ugent.be/hpc/en/access>`_ at the `UGent
@@ -55,48 +75,45 @@ Applying for your VSC account
          faculty supervision), and researchers of UGent.
 
       How?
-         Researchers and students can use the :ref:`generic procedure <generic access procedure>`.
-
-   .. tab-item:: UAntwerp (AUHA)
-
-      Who?
-         Access is available for faculty students (master's projects under
-         faculty supervision), and researchers of the AUHA.
-
-      How?
-         Researchers can use the :ref:`generic procedure <generic access procedure>`.
-
-      -  Master students can also use the infrastructure for their master
-         thesis work. The promotor of the thesis should first send a
-         motivation to hpc@uantwerpen.be and then the :ref:`generic
-         procedure <generic access procedure>` should be followed (using your
-         student UAntwerpen id) to request the account.
+         Researchers and students can use the
+         :ref:`generic procedure <generic access procedure>`.
 
    .. tab-item:: VUB
+      :sync: vub
 
-      All information about the access policy is available on the `VUB
-      HPC documentation website <https://hpc.vub.be/docs/access/>`_.
+      All information about the access policy is available on the
+      `VUB-HPC documentation website <https://hpc.vub.be/docs/access/>`_.
 
       Who?
          Access is available for faculty students (under faculty
          supervision), and researchers of VUB and their associations.
 
       How?
-         Researchers with a regular VUB account (`@vub.be`) can use
-         the :ref:`generic procedure <generic access procedure>`.
+         Researchers with a regular VUB account (`@vub.be`) can use the
+         :ref:`generic procedure <generic access procedure>`.
+         VUB and UZB staff, including PhD students, will get automatic approval
+         of their VSC account.
 
-      -  Master students can also use the infrastructure for their master
-         thesis work. The promotor of the thesis should first send a
-         motivation to hpc@vub.be and then the :ref:`generic
-         procedure <generic access procedure>` should be followed to request the account.
+      * Non-PhD students of VUB may get access subject to the specific
+        conditions detailed below. Their VSC account must be requested by their
+        Professor or Promoter by filling out
+        `VUB's VSC account request form <https://hpc.vub.be/welcomemail/vsc_account_request_form>`_.
+        Note that this form is not accessible to students.
+
+        * Courses: All students can use the HPC cluster if required for
+          practical courses.
+
+        * Bachelor or Master Thesis: students working towards a Bachelor or
+          Master thesis can use the HPC cluster for their research.
 
    .. tab-item:: Others
+      :sync: other
 
       Who?
          Check that `you are eligible to use VSC infrastructure <eligible users_>`_.
 
       How?
-         Ask your VSC contact for help.  If you don't have a VSC contact yet, and please
+         Ask your VSC contact for help. If you don't have a VSC contact yet, please
          `get in touch`_ with us.
 
 

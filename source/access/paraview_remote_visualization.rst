@@ -3,8 +3,8 @@
 Paraview remote visualization
 =============================
 
-Prerequisits
-------------
+Prerequisites
+-------------
 
 You should have ParaView installed on your desktop, and know how to use
 it (the latter is outside the scope of this page). **Note**: the client

@@ -7,12 +7,30 @@ Prerequisite
 ============
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven
+      :sync: kuluh
 
-      To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed.
+      To access KU Leuven clusters, only an approved
+      :ref:`VSC account<access>` is needed.
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UAntwerpen
+      :sync: ua
+
+      To access clusters hosted at these sites, you need a
+      :ref:`public/private key pair <create key pair>` of which the public key
+      needs to be :ref:`uploaded via the VSC account page <upload public key>`.
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      To access clusters hosted at these sites, you need a
+      :ref:`public/private key pair <create key pair>` of which the public key
+      needs to be :ref:`uploaded via the VSC account page <upload public key>`.
+
+   .. tab-item:: VUB
+      :sync: vub
 
       To access clusters hosted at these sites, you need a
       :ref:`public/private key pair <create key pair>` of which the public key
@@ -45,22 +63,27 @@ Setup a shortcut for a remote session
    .. figure:: access_using_mobaxterm/mobaxterm_session_settings_ssh.png
       :alt: ssh settings window
 
-#. In the 'Remote host' field introduce the cluster remote address of
-   your :ref:`VSC cluster <hardware>`, which should be written in the form ``my-vsc-cluster.example.com``.
-   Tick the 'Specify username' box and introduce your VSC account username.
-   Click the 'Advanced SSH settings' tab for additional configurations.
-
-   The next few steps depends on the choice of VSC site you are trying to connect to.
+#. The next few steps depends on the choice of VSC site you are trying to connect to.
 
    .. _step-advanced-ssh-settings:
 
    .. tab-set::
+      :sync-group: vsc-sites
 
       .. tab-item:: KU Leuven
+         :sync: kuluh
 
-         Make sure that the 'Use private key' option is disabled.
-         You may additionally opt for enabling the 'X11-Forwarding' and the
-         'Compression' options.
+         In the 'Remote host' field introduce the cluster remote address:
+         ``login.hpc.kuleuven.be``.
+
+         Tick the 'Specify username' box and introduce your VSC account username.
+
+         Click the 'Advanced SSH settings' tab for additional configurations:
+
+         * Check that the 'SSH-browser type' is set to 'SFTP protocol'
+         * Make sure that the 'Use private key' option is disabled
+         * You may additionally opt for enabling the 'X11-Forwarding' and the
+           'Compression' options.
 
          .. figure:: access_using_mobaxterm/mobaxterm_adv_kul.png
             :alt: advanced SSH options for KU Leuven clusters
@@ -72,32 +95,36 @@ Setup a shortcut for a remote session
          Upon successful connection attempt you will be prompted to copy/paste
          the firewall URL in your browser as part of the MFA login procedure:
 
-         .. _vsc_firewall_certificate_authentication:
          .. figure:: access_using_mobaxterm/vsc_firewall_certificate_authentication.PNG
             :alt: vsc_firewall_certificate_authentication
 
-         Confirm by clicking 'Yes'.
-         Once the MFA has been completed you will be connected to a login node.
+         Confirm by clicking 'Yes'. Once the MFA has been completed you will be
+         connected to the login node.
 
-      .. tab-item:: UGent, VUB, UAntwerpen
+      .. tab-item:: UAntwerpen
+         :sync: ua
 
-         Tick the 'Use private key' box and click on the file icon in that field.
-         A file browser will be opened; locate the private SSH key file you created
-         when requesting your VSC account.
-         Please keep in mind that these settings have to be updated if the location
-         of the private SSH key ever changes. 
-         Check that the 'SSH-browser type' is set to 'SFTP protocol'.
+         In the 'Remote host' field introduce the cluster remote address:
+         ``login.hpc.uantwerpen.be``
 
-         .. figure:: access_using_mobaxterm/mobaxterm_advanced_ssh.png
-            :alt: advanced ssh options
+         .. include:: access_using_mobaxterm_advanced_ssh_keys.rst
 
-         .. _step-sftp-tab:
+      .. tab-item:: UGent
+         :sync: ug
 
-         Press the 'OK' button and you should be prompted for your passphrase.
-         Enter here the passphrase you chose while creating your public/private key pair.
-         The characters will be hidden and nothing at all will appear as you
-         type (no circles, no symbols).
-               
+         In the 'Remote host' field introduce the cluster remote address:
+         ``login.hpc.ugent.be``
+
+         .. include:: access_using_mobaxterm_advanced_ssh_keys.rst
+
+      .. tab-item:: VUB
+         :sync: vub
+
+         In the 'Remote host' field introduce the cluster remote address:
+         ``login.hpc.vub.be``
+
+         .. include:: access_using_mobaxterm_advanced_ssh_keys.rst
+
 #. You should connect to the cluster and be greeted by a screen similar to this one:
 
    .. figure:: access_using_mobaxterm/mobaxterm_hydra_login.png

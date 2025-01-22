@@ -553,6 +553,8 @@ A list of available partitions can be obtained using ``module avail cluster/dodr
 
 To check the currently active partition, use ``module list cluster``.
 
+.. _tier1_request_gpus:
+
 Requesting GPU resources
 ++++++++++++++++++++++++
 

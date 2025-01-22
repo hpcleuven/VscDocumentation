@@ -6,14 +6,31 @@ Text-mode access using PuTTY
 Prerequisite
 ------------
 
-
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven
+      :sync: kuluh
 
-      To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed.
+      To access KU Leuven clusters, only an approved
+      :ref:`VSC account<access>` is needed.
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UAntwerpen
+      :sync: ua
+
+      To access clusters hosted at these sites, you need a
+      :ref:`public/private key pair <create key pair>` of which the public key
+      needs to be :ref:`uploaded via the VSC account page <upload public key>`.
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      To access clusters hosted at these sites, you need a
+      :ref:`public/private key pair <create key pair>` of which the public key
+      needs to be :ref:`uploaded via the VSC account page <upload public key>`.
+
+   .. tab-item:: VUB
+      :sync: vub
 
       To access clusters hosted at these sites, you need a
       :ref:`public/private key pair <create key pair>` of which the public key
@@ -30,51 +47,52 @@ VSC clusters.
 
    In the screenshots, we show the setup for user ``vsc98765`` to the
    genius cluster at KU Leuven via the login node ``login.hpc.kuleuven.be``.
-   You will have to
+   Please keep in mind to:
 
-   #. replace ``vsc98765`` with your own VSC user name, and
-   #. find the name of the login node for the cluster you want
-      to login in on in the sections on :ref:`the local VSC clusters
-      <hardware>`, and replace ``login.hpc.kuleuven.be`` accordingly.
+   #. replace ``vsc98765`` with your own VSC user name
+   #. find the name of the login node for the VSC cluster you want to access in
+      :ref:`the local VSC clusters<hardware>`, and replace
+      ``login.hpc.kuleuven.be`` accordingly.
 
-
-- Within the category 'Session', in the field 'Host Name', type in
+* Within the category 'Session', in the field 'Host Name', type in
   a valid hostname of the :ref:`login node of the VSC cluster <hardware>`
   you want to connect to.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_01.png
+  .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_01.png
 
-- In the category Connection > Data, in the field 'Auto-login
+* In the category *Connection* > *Data*, in the field 'Auto-login
   username', put in <vsc-account>, which is your VSC username that you
   have received by mail after your request was approved.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
+  .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_02.png
 
-- Based on the destination VSC site that you want to login to, choose one of the
+* Based on the destination VSC site that you want to login to, choose one of the
   tabs below and proceed.
 
-
   .. tab-set::
+     :sync-group: vsc-sites
 
      .. tab-item:: KU Leuven
+        :sync: kuluh
 
-        Select the SSH > Auth > Credentials' tab, and remove any private key from the
-        box 'Private key file for authentication'.
+        Select the *SSH* > *Auth* > *Credentials* tab, and remove any private
+        key from the box 'Private key file for authentication'.
 
-        .. _putty_auth_panel:
-        .. figure:: text_mode_access_using_putty/putty_priv_key.PNG
+        .. figure:: text_mode_access_using_putty/putty_priv_key.png
            :alt: putty private key
 
-        In the category Connection > SSH > Auth, make sure that the option
-        'Attempt authentication using Pageant' is selected.
+        In the category *Connection* > *SSH* > *Auth*, make sure that the
+        option 'Attempt authentication using Pageant' is selected.
         It is also recommended to enable agent forwarding by ticking the
         'Allow agent forwarding' checkbox.
 
         .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_03.png
-     .. tab-item:: UGent, VUB, UAntwerpen
 
-        In the category Connection > SSH > Auth > Credentials, click on 'Browse',
-        and select the private key that you generated and saved above.
+     .. tab-item:: UAntwerpen
+        :sync: ua
+
+        In the category *Connection* > *SSH* > *Auth* > *Credentials*, click on
+        'Browse', and select the private key that you generated and saved above.
 
         .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
 
@@ -83,40 +101,79 @@ VSC clusters.
         In older versions of Windows, you would have to use
         ``C:\Documents and Settings\Me\Keys``.
 
+     .. tab-item:: UGent
+        :sync: ug
 
-- In the category Connection > SSH > X11, click the 'Enable X11 Forwarding' checkbox:
+        In the category *Connection* > *SSH* > *Auth* > *Credentials*, click on
+        'Browse', and select the private key that you generated and saved above.
 
-   .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_05.png
+        .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
 
-- Now go back to the 'Session' tab, and fill in a name in the 'Saved Sessions'
+        Here, the private key was previously saved in the folder
+        ``C:\Users\Me\Keys``.
+        In older versions of Windows, you would have to use
+        ``C:\Documents and Settings\Me\Keys``.
+
+     .. tab-item:: VUB
+        :sync: vub
+
+        In the category *Connection* > *SSH* > *Auth* > *Credentials*, click on
+        'Browse', and select the private key that you generated and saved above.
+
+        .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_04.png
+
+        Here, the private key was previously saved in the folder
+        ``C:\Users\Me\Keys``.
+        In older versions of Windows, you would have to use
+        ``C:\Documents and Settings\Me\Keys``.
+
+* In the category Connection > SSH > X11, click the 'Enable X11 Forwarding' checkbox:
+
+  .. figure:: text_mode_access_using_putty/text_mode_access_using_putty_05.png
+
+* Now go back to the 'Session' tab, and fill in a name in the 'Saved Sessions'
   field and press 'Save' to permanently store the session information.
 
-- To start a session, load it from Sessions > Saved Sessions, and click 'Open'.
+* To start a session, load it from Sessions > Saved Sessions, and click 'Open'.
 
   .. _putty_load_saved_session:
   .. figure:: text_mode_access_using_putty/putty_load_saved_session.PNG
      :alt: putty_load_saved_session
 
-
   .. tab-set::
+     :sync-group: vsc-sites
 
      .. tab-item:: KU Leuven
+        :sync: kuluh
 
-        You will be then prompted to copy/paste the firewall link into your browser and complete
-        the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>` procedure.
-        With PuTTY, users only need to highlight the link with their mouse in order to copy it to
-        the clipboard.
+        You will be then prompted to copy/paste the firewall link into your
+        browser and complete the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>`
+        procedure. With PuTTY, users only need to highlight the link with their
+        mouse in order to copy it to the clipboard.
 
         .. figure:: text_mode_access_using_putty/putty_mfa.PNG
            :alt: PuTTY MFA URL
 
         Then, with the right-click from your mouse or CTRL-V, you can paste the MFA link
-        into your browser to proceed with the authentication.
+        into your browser to proceed with the authentication to ``login.hpc.kuleuven.be``.
 
-     .. tab-item:: UGent, VUB, UAntwerpen
+     .. tab-item:: UAntwerpen
+        :sync: ua
 
         Now pressing 'Open' should ask for your passphrase, and connect
-        you to <vsc-loginnode>.
+        you to ``login.hpc.uantwerpen.be``.
+
+     .. tab-item:: UGent
+        :sync: ug
+
+        Now pressing 'Open' should ask for your passphrase, and connect
+        you to ``login.hpc.ugent.be``.
+
+     .. tab-item:: VUB
+        :sync: vub
+
+        Now pressing 'Open' should ask for your passphrase, and connect
+        you to ``login.hpc.vub.be``.
 
 The first time you make a connection to the login node, a Security Alert
 will appear and you will be asked to verify the authenticity of the

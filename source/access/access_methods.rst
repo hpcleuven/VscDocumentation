@@ -93,22 +93,17 @@ clusters. See below for guides on available solutions:
    The following options might not be equally supported across all VSC
    clusters.
 
-.. tab-set::
 
-   .. tab-item:: General
+.. toctree::
+   :hidden:
 
-      .. toctree::
-         :maxdepth: 1
-      
-         paraview_remote_visualization
+   paraview_remote_visualization
+   nx_start_guide
+   ../leuven/services/openondemand
 
-   .. tab-item:: KU Leuven/UHasselt
-
-      .. toctree::
-         :maxdepth: 1
-      
-         nx_start_guide
-         ../leuven/services/openondemand
+* :ref:`Paraview`
+* |KUL| :ref:`NX start guide`
+* |KUL| :ref:`ood_t2_leuven`
 
 VPN
 ===

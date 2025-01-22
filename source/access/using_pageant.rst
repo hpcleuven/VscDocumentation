@@ -15,25 +15,44 @@ Prerequisites
 =============
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven
+      :sync: kuluh
 
       To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed
       as a prerequisite.
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UAntwerpen
+      :sync: ua
 
       Before you run Pageant, you need to have a private key in PPK format
-      (filename ends with ``.ppk``). See :ref:`our page on generating keys with
-      PuTTY <generating keys putty>` to find out how to
-      generate and use one.
+      (filename ends with ``.ppk``).
+      See :ref:`our page on generating keys with PuTTY <generating keys putty>`
+      to find out how to generate and use one.
       
+   .. tab-item:: UGent
+      :sync: ug
+
+      Before you run Pageant, you need to have a private key in PPK format
+      (filename ends with ``.ppk``).
+      See :ref:`our page on generating keys with PuTTY <generating keys putty>`
+      to find out how to generate and use one.
+      
+   .. tab-item:: VUB
+      :sync: vub
+
+      Before you run Pageant, you need to have a private key in PPK format
+      (filename ends with ``.ppk``).
+      See :ref:`our page on generating keys with PuTTY <generating keys putty>`
+      to find out how to generate and use one.
+
 When you run Pageant, it will put an icon (of a computer wearing a hat)
 into the System tray, which looks like this: 
 
-   .. _pageant_logo:
-   .. figure:: using_pageant/Pageant_logo.PNG
-      :alt: pageant_logo
+.. _pageant_logo:
+.. figure:: using_pageant/Pageant_logo.PNG
+   :alt: pageant_logo
 
 
 Pageant runs silently in the background and does nothing until you load a private key into it.
@@ -41,9 +60,9 @@ If you click the Pageant icon with the right mouse button, you will see a menu.
 Select ‘View Keys’ from this menu. The Pageant main window will appear.
 You can also bring this window up by double-clicking on the Pageant icon.
 
-   .. _pageant_add_key:
-   .. figure:: using_pageant/Pageant_add_key.PNG
-      :alt: pageant_add_key
+.. _pageant_add_key:
+.. figure:: using_pageant/Pageant_add_key.PNG
+   :alt: pageant_add_key
 
 
 The Pageant window contains a list box.
@@ -59,9 +78,9 @@ you to type the passphrase. When the key has been loaded, it will appear
 in the list in the Pageant window.
 For adding an SSH key, the window dialog looks like this:
 
-   .. _pageant_passphrase:
-   .. figure:: using_pageant/Pageant_passphrase.PNG
-      :alt: pageant_passphrase
+.. _pageant_passphrase:
+.. figure:: using_pageant/Pageant_passphrase.PNG
+   :alt: pageant_passphrase
 
 Now start PuTTY (or FileZilla) and open an SSH session to a site that
 accepts your key or certificate. PuTTY (or Filezilla) will notice that Pageant is
@@ -69,8 +88,10 @@ running; they retrieve the key or certificate automatically from Pageant, and us
 authenticate you as a recognized user.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item :: KU Leuven
+      :sync: kuluh
 
       Follow the steps in :ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`
       to get an SSH certificate into your agent.
@@ -79,13 +100,26 @@ authenticate you as a recognized user.
       You can verify that the certificate is actually stored by right-clicking on
       Pageant and selecting ‘View Keys’:
 
-      .. _pageant_view_keys:
       .. figure:: using_pageant/Pageant_view_keys.PNG
          :alt: pageant_view_keys
 
-   .. tab-item:: UGent, VUB, UAntwerpern
+   .. tab-item:: UAntwerpern
+      :sync: ua
 
-      You can now open as many PuTTY sessions as you like without having to type your passphrase again.
+      You can now open as many PuTTY sessions as you like without having to
+      type your passphrase again.
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      You can now open as many PuTTY sessions as you like without having to
+      type your passphrase again.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      You can now open as many PuTTY sessions as you like without having to
+      type your passphrase again.
 
 Pageant provides your credentials to other applications (such as PuTTY, NoMachine,
 FileZilla, MobaXterm) whenever you are prompted for your identity.
@@ -95,8 +129,10 @@ Pageant icon in the system tray, and select 'Exit' from the menu.
 Closing the Pageant main window does *not* shut down Pageant, because
 a SSH agent sits silently in the background.
 
-You can find more info `in the on-line
-manual <http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html>`_.
+.. seealso::
+
+   You can find more info in the
+   `on-line manual <http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter9.html>`_.
 
 .. warning::
 

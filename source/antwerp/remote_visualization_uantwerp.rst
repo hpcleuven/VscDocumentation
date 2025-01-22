@@ -30,8 +30,10 @@ Furthermore, you'll need a VNC client. In theory, using the TurboVNC client shou
 in the least problems, as that is made by the same people as the server we use.
 
 .. tab-set::
+   :sync-group: operating-system
 
    .. tab-item:: Windows
+      :sync: win
 
       We have tested the setup with four different clients:
 
@@ -64,6 +66,7 @@ in the least problems, as that is made by the same people as the server we use.
       resized.
 
    .. tab-item:: macOS
+      :sync: mac
 
       Here also there are several possible setups:
       
@@ -92,6 +95,7 @@ in the least problems, as that is made by the same people as the server we use.
         TurboVNC-specific compression algorithms.
 
    .. tab-item:: Linux
+      :sync: lin
 
       RPM and Debian packages for TurboVNC can be downloaded from the
       `TurboVNC`_ web site and are available in some Linux distributions. 
