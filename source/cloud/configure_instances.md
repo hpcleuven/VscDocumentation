@@ -1,4 +1,4 @@
-# Configure access and security for instance
+# Instance access and security
 
 The security and accessibility of your cloud resources is governed by a
 few different aspects, which we discuss more detail in the following
@@ -188,7 +188,7 @@ image that the instance is based on must contain the **cloud-init**
 package, or have in place another mechanism in place that will interact
 with the OpenStack metadata server to install the appropriate key. For
 general instructions on SSH keys, we refer to the section
-[Security Keys](/access/generating_keys.rst) of this documentation.
+[Security Keys](/accounts/generating_keys.rst) of this documentation.
 
 If you have generated a key pair with an external tool, you can import
 it into OpenStack. The key pair can be used for multiple instances that
@@ -231,7 +231,7 @@ chmod 0600 yourPrivateKey.pem
 If you are using the OpenStack Dashboard from a Windows computer, use PuTTYgen
 to load the **\*.pem** file and convert and save it as **\*.ppk**.
 For more information see our documentation on
-[Generating keys with PuTTY](/access/generating_keys_with_putty.rst) and also
+[Generating keys with PuTTY](/accounts/generating_keys_with_putty.rst) and also
 the [*WinSCP web page for PuTTYgen*](https://winscp.net/eng/docs/ui_puttygen).
 :::
 

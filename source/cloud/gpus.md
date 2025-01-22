@@ -1,4 +1,4 @@
-# GPUs
+# Instances with GPUs
 
 VSC Tier-1 Cloud users can also deploy VMs with different kind of GPUs.
 A full GPU card is connected directly to the VM via PCI passthrough, which

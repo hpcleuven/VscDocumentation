@@ -25,16 +25,15 @@ For the main Tier-1 compute cluster you need to submit a
 `Tier-1 project application`_ (or you should be covered by a project
 application within your research group).
 
-Before you apply for VSC account, it is useful to first check whether
-the infrastructure is suitable for your application. Windows or macOS
-programs for instance cannot run on our infrastructure as we use the
-Linux operating system on the clusters. The infrastructure also should
-not be used to run applications for which the compute power of a good
-laptop is sufficient. The pages on the :ref:`tier1 hardware` and
-:ref:`tier2 hardware` give a high-level description of our
-infrastructure. You can find more detailed information in the user
-documentation on the user portal. When in doubt, you can also contact
-your `local support team <get in touch_>`_. This does not require a VSC account.
+Before you apply for VSC account, it is useful to first check whether the
+infrastructure is suitable for your application. Windows or macOS programs for
+instance cannot run on our infrastructure as we use the Linux operating system
+on the clusters. The infrastructure also should not be used to run applications
+for which the compute power of a good laptop is sufficient. The pages on the
+:ref:`tier1 hardware` and :ref:`tier2 hardware` give a high-level description
+of our infrastructure. You can find more detailed information in the user
+documentation on the user portal. When in doubt, you can also contact your
+:ref:`local support team <contact VSC>`. This does not require a VSC account.
 
 VSC Accounts
 ============

@@ -70,12 +70,12 @@ present some pointers to that information:
    .. tab-item:: VUB
       :sync: vub
 
-      The `VPN of VUB<https://vubnet.vub.ac.be/en/vpn.html>`__ is accessible
+      The `VPN of VUB <https://vubnet.vub.ac.be/en/vpn.html>`__ is accessible
       upon request for VUB and non-VUB users. Access is subject of approval at
       the discretion of VUB SDC team.
 
       * Users from VUB can can request their VPN access through
-        `VUB's ServiceNow portal <https://vub.service-now.com/sp?id=sc_cat_item&sys_id=5ebd76e81b109450732653dc2d4bcbd1>`__
+        `VUB ServiceNow portal <https://vub.service-now.com/sp?id=sc_cat_item&sys_id=5ebd76e81b109450732653dc2d4bcbd1>`__
 
       * Non-VUB users must apply for an external/partner VPN account
 
