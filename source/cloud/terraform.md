@@ -59,13 +59,17 @@ clouds:
 
 ```
 
-As the file comments state, you should copy the current clouds.yaml to
-your VSC login node **$HOME** _login.hpc.ugent.be:
-~/.config/openstack/clouds.yaml_, or locally if you have installed
-Terraform in
-your own laptop or computer. Terraform will use this file to authenticate to
-OpenStack API automatically.
+```{important}
+You should copy the current clouds.yaml to
+your VSC login node (login.hpc.ugent.be) `$HOME/.config/openstack/clouds.yaml`, or locally if you have installed
+Terraform on your own computer. Terraform will use this file to authenticate to OpenStack API automatically.
+```
+:::{tip}
+You can easily access and edit the files on the login node by going to the [HPC UGent dashboard](https://login.hpc.ugent.be/pun/sys/dashboard/files/). 
+**Enable "Show Dotfiles"** to see the `.config` directory.
 
+You can also access the commandline of the login node there (under `Clusters` dropdown).
+:::
 ## Getting Terraform examples
 
 You can connect to UGent login node `login.hpc.ugent.be` to use
@@ -89,7 +93,7 @@ Make sure you have *`~/.config/openstack/clouds.yaml`* available from
 the login node (see previous [section](#create-application-credentials-for-terraform)).
 
 :::{danger}
-Do not share your application's credential file `clouds.yaml` or put this
+Do not share your application credential file (`clouds.yaml`) or put this
 file in a public place.
 :::
 
