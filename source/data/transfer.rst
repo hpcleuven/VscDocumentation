@@ -9,8 +9,10 @@ that you need for your research from your personal or department computer to
 the :ref:`storage of VSC clusters <data location>`. Then, once you get your
 results, you might want to transfer some files back. 
 
-|Recommended| The preferred way to transfer data to/from the VSC clusters is
-the :ref:`globus platform`.
+.. important::
+
+   |Recommended| The preferred way to transfer data to/from the VSC clusters is
+   the :ref:`globus platform`.
 
 For those systems not supporting Globus, we provide instructions on alternative
 transfer methods that can also be used in VSC clusters:

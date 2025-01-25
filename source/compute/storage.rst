@@ -7,7 +7,7 @@ Storage Infrastructure
 The storage attached to our HPC clusters is organized according to the
 :ref:`VSC storage guidelines <data location>`.
 
-All HPC cluster in VSC have their own shared storage solution accessible
+All HPC clusters in VSC have their own shared storage solution accessible
 from all nodes within that cluster. The so-called ``VSC_DATA`` and
 ``VSC_SCRATCH`` use this type of storage and constitute the main storage of the
 cluster.

@@ -1,11 +1,12 @@
-############################
-:fas:`database` Data Storage
-############################
+###################################
+:fas:`database` Data Storage on HPC
+###################################
 
-Your VSC account comes with certain amount of data storage capacity in at least
-three subdirectories on each VSC cluster. Please check the following sections
-to familiarise yourself with the characteristics of each storage system and how
-to manage your data in them.
+Your VSC account comes with certain amount of data storage capacity on each VSC
+cluster. This storage is provided through (at least) three main directories
+accessible from our clusters. Please check the following sections to
+familiarise yourself with the characteristics of each storage system and how to
+manage your data in them.
 
 .. toctree::
    :maxdepth: 2
