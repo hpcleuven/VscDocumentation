@@ -1,8 +1,8 @@
 .. _access:
 
-######################################
-:fas:`user-circle` Accounts and access
-######################################
+###########################
+:fas:`user-circle` Accounts
+###########################
 
 In order to use the infrastructure of the VSC, you need a VSC user-ID,
 also called a VSC account. Check the `VSC website <eligible users_>`_
@@ -43,10 +43,8 @@ their VSC account and access the VSC infrastructure:
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 1
 
    vsc_account
    authentication
-   access_methods
-   account_management
+   management
 

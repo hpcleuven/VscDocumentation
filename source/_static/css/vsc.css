@@ -112,7 +112,7 @@ html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
 .nested-card-top { z-index: 20; }
 .nested-card-tier1 .sd-card .sd-card-body {
     background: #f953c6;  /* fallback for old browsers */
-    background: linear-gradient(to bottom, #b91d7333, #f953c655);
+    background: linear-gradient(to bottom, #db61a433, #f953c655);
 }
 .nested-card-tier2 .sd-card .sd-card-body {
     background: #2193b0;  /* fallback for old browsers */

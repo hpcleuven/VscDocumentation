@@ -208,39 +208,40 @@ project, each user needs to import it in the OpenStack project.
 
 ### Add a key pair
 
-1.  Open the Compute tab.
+1. Open the Compute tab.
 
-2.  Click the Key Pairs tab, which shows the key pairs that are
-    available for this project.
+2. Click the Key Pairs tab, which shows the key pairs that are
+   available for this project.
 
-3.  Click Create Key Pair.
+3. Click Create Key Pair.
 
-4.  In the Create Key Pair dialog box, enter a name for your key pair,
-    and click Create Key Pair.
+4. In the Create Key Pair dialog box, enter a name for your key pair,
+   and click Create Key Pair.
 
-5.  Respond to the prompt to download the key pair.
+5. Respond to the prompt to download the key pair.
 
-6.  Save the **\*.pem** file locally.
+6. Save the **\*.pem** file locally.
 
-7.  To change its permissions so that only you can read and write to the
-    file, run the following command:
-```shell
-chmod 0600 yourPrivateKey.pem
-```
+7. To change its permissions so that only you can read and write to the
+   file, run the following command:
+
+   ```shell
+   chmod 0600 yourPrivateKey.pem
+   ```
+
 :::{note}
 If you are using the OpenStack Dashboard from a Windows computer, use PuTTYgen
-to load the **\*.pem** file and convert and save it as **\*.ppk**.
+to load the `\*.pem` file and convert and save it as `\*.ppk`.
 For more information see our documentation on
-[Generating keys with PuTTY](/accounts/generating_keys_with_putty.rst) and also
+[Generating keys with PuTTY](/accounts/generating_keys_putty.rst) and also
 the [*WinSCP web page for PuTTYgen*](https://winscp.net/eng/docs/ui_puttygen).
 :::
 
-*  To make the key pair known to SSH, run the **ssh-add** command.
+* To make the key pair known to SSH, run the `ssh-add` command
 
-```shell
-ssh-add yourPrivateKey.pem
-```
-
+  ```shell
+  ssh-add yourPrivateKey.pem
+  ```
 
 ### Import a key pair
 

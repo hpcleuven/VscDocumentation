@@ -41,11 +41,15 @@ Applying for your VSC account
          as described above.
 
       *  Lecturers of KU Leuven and UHasselt that need HPC access for giving
-         their courses: The procedure requires action both from the lecturers
-         and from the students. Lecturers should follow the :ref:`specific
-         procedure for lecturers <lecturer procedure leuven>`,
-         while the students should simply apply for the account through the
-         :ref:`generic procedure <generic access procedure>`.
+         their courses should be aware that the procedure requires action both
+         from the lecturers and from the students.
+         Students can simply apply for the account through the
+         :ref:`generic procedure <generic access procedure>` while lecturers
+         should follow the specific procedure outlined herein:
+
+         .. dropdown:: Lecturer’s procedure to request student accounts 
+
+            .. include:: lecturer_procedure_student_accounts_kuleuven_uhasselt.rst
 
    .. tab-item:: UAntwerp (AUHA)
       :sync: ua
@@ -158,7 +162,6 @@ procedure does not work.
    :hidden:
 
    scientific_domains
-   ../leuven/lecturer_s_procedure_to_request_student_accounts_ku_leuven_uhasselt
 
 Next steps
 ==========
@@ -178,12 +181,12 @@ Information on our training program and the schedule is available on the
 Additional information
 ======================
 
-Your account also includes two “blocks” of disk space: your home
+Your account also includes two *blocks* of disk space: your home
 directory and data directory. Both are accessible from all VSC clusters.
 When you log in to a particular cluster, you will also be assigned one
 or more blocks of temporary disk space, called scratch directories.
 Which directory should be used for which type of data, is explained in
-the page ":ref:`data location`".
+the page :ref:`data location`.
 
 Your VSC account does not give you access to all available software. You
 can use all free software and a number of compilers and other

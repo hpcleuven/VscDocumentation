@@ -12,8 +12,8 @@ the scheduler.
    nodes are shared among all active users, so putting a heavy load on those
    nodes will annoy other users.
 
-Although you can :ref:`work interactively <interactive jobs>` on an HPC system,
-most computations are performed in batch mode. The workflow in batch mode is straightforward:
+Although you can work interactively on an HPC system, most computations are
+performed in batch mode. The workflow in batch mode is straightforward:
 
 #. Create a job script
 #. Submit it as a job to the scheduler
@@ -43,15 +43,4 @@ and monitoring of your jobs in the HPC.
    :maxdepth: 2
 
    running_jobs_torque
-
---------
-
-Linux System
-============
-
-.. toctree::
-   :maxdepth: 2
-
-   basic_linux_usage
-   how_to_get_started_with_shell_scripts
 

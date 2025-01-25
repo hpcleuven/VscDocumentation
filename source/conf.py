@@ -149,7 +149,7 @@ html_theme_options = {
     "show_prev_next": False,
     "footer_start": ["copyright"],
     "footer_end": [],
-    "pygments_light_style": "default",  # contrasty readable comments
+    "pygments_light_style": "gruvbox-light",  # contrasty readable comments
     "pygments_dark_style": "monokai",  # contrasty readable comments
 }
 
@@ -302,15 +302,14 @@ rst_prolog += """
 .. |Warning| replace:: :bdg-warning:`Warning`
 .. |Info| replace:: :bdg-info:`Info`
 """
-
 # VSC Institute Badges
 rst_prolog += """
 .. |KUL| replace:: :bdg-info:`KU Leuven`
+.. |KULUH| replace:: :bdg-info:`KU Leuven/UHasselt`
 .. |UA| replace:: :bdg-danger:`UAntwerp`
-.. |UG| replace:: :bdg-primary:`UGent`
-.. |VUB| replace:: :bdg-warning:`VUB`
+.. |UG| replace:: :bdg-secondary:`UGent`
+.. |VUB| replace:: :bdg-primary:`VUB`
 """
-
 ### Links used multiple times across the documentation ###
 # Links to VSC and VSC sites
 rst_prolog += """
@@ -318,6 +317,10 @@ rst_prolog += """
 .. _get in touch: https://www.vscentrum.be/getintouch
 .. _Tier-1 project application: https://www.vscentrum.be/compute
 .. _VSC account page: https://account.vscentrum.be/
+.. _VSC Account - Edit Account: https://account.vscentrum.be/django/account/edit
+.. _VSC Account - Edit VO: https://account.vscentrum.be/django/vo/edit
+.. _VSC Account - New/Join VO: https://account.vscentrum.be/django/vo/join
+.. _VSC Firewall: https://firewall.vscentrum.be
 .. _VSC Training: https://www.vscentrum.be/vsctraining
 .. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
 .. _Service Catalog: https://icts.kuleuven.be/sc/HPC
@@ -386,6 +389,7 @@ rst_prolog += """
 .. _FFTW: http://www.fftw.org/
 .. _FileZilla project page: https://filezilla-project.org/
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
+.. _GNU: https://www.gnu.org/
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
@@ -408,6 +412,7 @@ rst_prolog += """
 .. _Keras: https://keras.io/
 .. _LAPACK user guide: http://www.netlib.org/lapack/lug/
 .. _LAPACK95 user guide: http://www.netlib.org/lapack95/lug95/
+.. _Linux kernel: https://www.kernel.org/
 .. _Linux Newbie Administrator Guide: http://lnag.sourceforge.net/
 .. _Linux Tutorials YouTube Channel: https://www.youtube.com/channel/UCut99_Fv1YEcpYRXNnUM7LQ
 .. _LLNL Tutorials: https://hpc.llnl.gov/documentation/tutorials
@@ -428,6 +433,7 @@ rst_prolog += """
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
+.. _NoMachine: https://www.nomachine.com/
 .. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
@@ -437,20 +443,25 @@ rst_prolog += """
 .. _OpenBLAS: https://www.openblas.net/
 .. _OpenMP compilers and tools: https://www.openmp.org/resources/openmp-compilers-tools/
 .. _OpenMP: https://www.openmp.org
+.. _Open OnDemand: https://openondemand.org/
 .. _OpenSHMEM: http://www.openshmem.org/site/
+.. _OpenSSH: https://www.openssh.com/
 .. _Paraview tutorial: https://vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
 .. _Paraview website: https://www.paraview.org/
 .. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
+.. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _PRACE: https://prace-ri.eu/
 .. _PRACE Training Portal: https://training.prace-ri.eu/
 .. _PRACE Tutorials: https://training.prace-ri.eu/index.php/prace-tutorials/
 .. _PuTTY download site: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+.. _Red Hat Enterprise Linux: https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux
 .. _qsub documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm#topics/torque/commands/qsub.htm
 .. _RStudio documentation: https://docs.posit.co/ide/user/
 .. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
 .. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
 .. _scp manual page: http://man.openbsd.org/scp
+.. _Secure Shell: https://en.wikipedia.org/wiki/Secure_Shell
 .. _sftp manual page: http://man.openbsd.org/sftp
 .. _sbatch manual page: https://slurm.schedmd.com/sbatch.html
 .. _ssh manual page: http://man.openbsd.org/ssh
@@ -463,9 +474,14 @@ rst_prolog += """
 .. _TurboVNC download page: https://github.com/TurboVNC/turbovnc/releases
 .. _TurboVNC: https://www.turbovnc.org/
 .. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
+.. _VNC: https://en.wikipedia.org/wiki/VNC
 .. _VSCode documentation: https://code.visualstudio.com/docs
+.. _WinSCP: https://winscp.net
 .. _WinSCP docs: https://winscp.net/eng/docs/start
 .. _worker documentation: http://worker.readthedocs.io/en/latest/
 .. _worker framework documentation: https://worker.readthedocs.io/en/latest/
+.. _Windows Subsystem for Linux: https://learn.microsoft.com/en-us/windows/wsl/
 .. _Xming website: http://www.straightrunning.com/XmingNotes/
+.. _X Server: https://en.wikipedia.org/wiki/X.Org_Server
+.. _X Window System: https://en.wikipedia.org/wiki/X_Window_System
 """

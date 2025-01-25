@@ -28,8 +28,8 @@ information about the services provided by the `Vlaams Supercomputer Centrum
    about_vsc
    contact_vsc
    Accounts <accounts/index>
-   Data <data/index>
    Compute <compute/index>
+   Data <data/index>
    Cloud <cloud/index>
    FAQs <faq>
 
@@ -74,13 +74,13 @@ information about the services provided by the `Vlaams Supercomputer Centrum
             :columns: 12 12 12 12
             :class-item: nested-card-top nested-card-term
             :text-align: center
-            :link: compute/terminal
+            :link: compute/terminal/index
             :link-type: doc
 
          .. grid-item-card:: Web Portal
             :class-item: nested-card-top nested-card-web
             :text-align: center
-            :link: compute/openondemand
+            :link: compute/portal/index
             :link-type: doc
 
          .. grid-item-card:: Job Queue

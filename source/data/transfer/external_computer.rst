@@ -25,7 +25,7 @@ three operating systems.
        :columns: 12 4 4 4
 
        * :ref:`FileZilla <FileZilla>`
-       * :ref:`WinSCP <WinSCP>`
+       * :ref:`WinSCP <WinSCP transfer>`
 
     .. grid-item-card:: :fab:`apple` macOS
        :columns: 12 4 4 4

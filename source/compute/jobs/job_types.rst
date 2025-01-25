@@ -315,25 +315,26 @@ denoting the command prompt of the compute node):
 The ``exit`` command at the end ends the shell and hence the interactive job.
 
 
-Running X11 programs
-""""""""""""""""""""
+Running graphical programs
+""""""""""""""""""""""""""
 
-You can also use ``srun`` to start an interactive session with X11 support. However, before
-starting a session you should ensure that you can start X11 programs from the session from
-you will be starting ``srun``. Check the corresponding guide for your operating system:
+You can also use ``srun`` to start an interactive session with support for
+graphical applications. This requires a terminal connection with support for
+the `X Window System`_ protocol (also known as X11) to display graphics
+remotely on your screen.
 
-- :ref:`Windows <windows_gui>`
-- :ref:`Linux <linux_gui>`
-- :ref:`macOS <macos_gui>`
+There are solutions to enable X11 for all operating systems. Please check the
+corresponding guide for your operating system in :ref:`terminal x11`.
 
-X11 programs rarely use distributed memory parallelism, so in most case you will be requesting
-just a single task. To add support for X11, use the ``--x11`` option before ``--pty``:
+X11 programs rarely use distributed memory parallelism, so in most case you
+will be requesting just a single task. To add support for X11, use the
+``--x11`` option before ``--pty``:
 
 .. code:: bash
 
-   login$ srun -n 1 -c 64 -t 1:00:00 --x11 --pty bash
-   r0c00cn0$ xclock
-   r0c00cn0$ exit
+   [login_node] $ srun -n 1 -c 64 -t 1:00:00 --x11 --pty bash
+   [compute_node] $ xclock
+   [compute_node] $ exit
 
-would allocate 64 cores, and the second line starts a simple X11 program, ``xclock``,
-to test if X11 programs work.
+would allocate 64 cores, and the second line starts a simple X11 program,
+``xclock``, to test if X11 programs work.

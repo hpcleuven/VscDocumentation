@@ -1,12 +1,11 @@
-#############
-Security Keys
-#############
+##################
+Cryptographic Keys
+##################
 
 Connections to VSC clusters are always encrypted to secure your data. Hence,
 you will need a personal cryptographic key to connect to the VSC clusters via
-the terminal interface. This secure connection uses the `SSH protocol
-<https://en.wikipedia.org/wiki/Secure_Shell>`_ and we might refer in the
-following to the security keys as SSH keys.
+the terminal interface. This secure connection uses the `Secure Shell`_ (SSH)
+protocol and we might refer in the following to the security keys as SSH keys.
 
 .. _create key pair:
 
@@ -44,36 +43,34 @@ describe the generation of key pairs in the client sections below:
 .. toctree::
    :hidden:
 
-   generating_keys_on_windows
-   generating_keys_with_openssh_on_os_x
-   generating_keys_with_openssh
+   generating_keys_windows
+   generating_keys_macos
+   generating_keys_linux
 
 .. grid:: 3
     :gutter: 4
 
     .. grid-item-card:: :fab:`windows` Windows
        :columns: 12 4 4 4
-       :link: generating_keys_on_windows
+       :link: generating_keys_windows
        :link-type: doc
 
        Generating keys
 
     .. grid-item-card:: :fab:`apple` macOS
        :columns: 12 4 4 4
-       :link: generating_keys_with_openssh_on_os_x
+       :link: generating_keys_macos
        :link-type: doc
 
        Generating keys
 
     .. grid-item-card:: :fab:`linux` Linux
        :columns: 12 4 4 4
-       :link: generating_keys_with_openssh
+       :link: generating_keys_linux
        :link-type: doc
 
        Generating keys
 
-.. _upload public key:
-   
 Upload public key to VSC account page
 =====================================
 
@@ -95,8 +92,7 @@ First key of your account
 You already have an active VSC account and this is the first public key you
 will add to it:
 
-#. Go to the `Edit VO <https://account.vscentrum.be/django/account/edit>`_ tab
-   of your `VSC account page`_
+#. Go to your `VSC Account - Edit Account`_ page
 #. Scroll down to the section *Add public key*
 #. Click *Browse* to select the file of your public key
 #. Click *Upload extra public key* and wait for the upload to complete
@@ -110,8 +106,7 @@ You already have an active VSC account with a public key and want to add an
 additional key to be able to connect to the VSC clusters from a different
 computer:
 
-#. Go to the `Edit VO <https://account.vscentrum.be/django/account/edit>`_ tab
-   of your `VSC account page`_
+#. Go to your `VSC Account - Edit Account`_ page
 #. Scroll down to the section *Add public key*
 #. Click *Browse* to select the file of your public key
 #. Click *Upload extra public key* and wait for the upload to complete
@@ -127,8 +122,7 @@ Replace compromised key
 You already have an active VSC account with a public key, but it got
 compromised and must be replaced with a new one:
 
-#. Go to the `Edit VO <https://account.vscentrum.be/django/account/edit>`_ tab
-   of your `VSC account page`_
+#. Go to your `VSC Account - Edit Account`_ page
 #. Scroll down to *Manage public keys*
 #. Select the *Delete this key* checkbox of the compromised key
 #. Scroll down to the section *Add public key*
@@ -137,3 +131,43 @@ compromised and must be replaced with a new one:
 #. Click *Update*
 #. Verify that the new public key is listed under *Manage public keys*
 
+.. _ssh agent:
+
+SSH Agent
+=========
+
+An SSH agent is a software program that can hold unencrypted keys on memory
+and make those available to other programs. This is useful to minimize user
+interaction and automate any script or program than needs to connect to a VSC
+cluster. The agent will ask for any passphrase needed to unlock your keys once
+and then it will provide those keys to any other program or script requesting
+them.
+
+.. toctree::
+   :hidden:
+
+   SSH Agent: Pageant <pageant>
+   SSH Agent: MobaXterm <ssh_agent_mobaxterm>
+   SSH Agent: OpenSSH <ssh_agent>
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: :fab:`windows` Windows
+       :columns: 12 4 4 4
+
+       * :ref:`Pageant`
+       * :ref:`MobaXterm<mobaxterm ssh agent>`
+
+    .. grid-item-card:: :fab:`apple` macOS
+       :columns: 12 4 4 4
+
+       * :ref:`OpenSSH<OpenSSH agent>`
+
+    .. grid-item-card:: :fab:`linux` Linux
+       :columns: 12 4 4 4
+
+       * :ref:`OpenSSH<OpenSSH agent>`
+
+.. _upload public key:
+   

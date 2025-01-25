@@ -21,7 +21,7 @@ Prerequisites
 -------------
 
 You'll need an ssh client on your desktop that provides port forwarding
-functionality on your desktop. We refer to the :ref:`access methods`
+functionality on your desktop. We refer to the :ref:`terminal interface`
 section for information about ssh clients for various client operating systems.
 PuTTY (Windows) and OpenSSH (macOS, Linux, UNIX-compatibility environment on
 Windows) both provide all required functionality.
@@ -155,7 +155,7 @@ Step 2: Connecting to the server
 In most cases, you will not be able to connect directly to the TurboVNC
 server. Instead, you will need to create an SSH tunnel to forward
 traffic to the VNC server. The exact procedure is explained at length
-in the pages ":ref:`ssh tunnel using PuTTY`" (for Windows) 
+in the pages ":ref:`putty ssh tunnel`" (for Windows) 
 and ":ref:`tunnel OpenSSH`" (for Linux and macOS).
 
 In the following example, we assume the VNC server was started with number 2, 
@@ -193,8 +193,8 @@ running on port 5902 (VNC's default port 5900 + your server number).
 
       .. tab-item:: PuTTY
 
-         Select \"Connections - SSH - Tunnel\" in the left pane.
-         As \"Source port\", use 5900 + the server number (5902 in our
+         Select "Connections - SSH - Tunnel" in the left pane.
+         As "Source port", use 5900 + the server number (5902 in our
          example).
          As destination, use the full name of the node on which the
          VNC server is running, e.g., viz1-leibniz.hpc.uantwerpen.be,

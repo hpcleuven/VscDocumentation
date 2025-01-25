@@ -123,7 +123,9 @@ You can use SSH to connect to the login nodes of the Tier-1 Hortense cluster wit
 * from the public internet, use ``tier1.hpc.ugent.be``
 * from within the VSC network, use ``tier1.gent.vsc``
 
-More general information about SSH login is available at :ref:`access methods`.
+More general information about SSH login is available in the
+:ref:`terminal
+interface` section.
 
 There are 2 login nodes for Hortense: ``login55`` and ``login56``.
 When logging in using SSH, you will be assigned to either of these login nodes,
@@ -178,20 +180,17 @@ The type of fingerprint that will be shown depends on the version and configurat
 Web portal
 **********
 
-To access Tier-1 Hortense you can also use the `Open On-Demand <https://openondemand.org>`_
-web portal https://tier1.hpc.ugent.be.
+To access Tier-1 Hortense you can also use the `Open On-Demand` web portal
+https://tier1.hpc.ugent.be.
 
 More information about the usage of the web portal is available in https://docs.hpc.ugent.be/web_portal/.
-
 
 .. note::
 
    If you are using the Hortense web portal from outside of the network of a Flemish university,
-   you will first need to open the `VSC firewall app <https://firewall.hpc.kuleuven.be>`_
-   and log in via the VSC account page.
+   you will first need to open the `VSC Firewall`_ web app and log in with your VSC account.
 
    Keep the browser tab with firewall app open as long as you want to use the web portal!
-
 
 .. _hortense_scratch_globus:
 
@@ -262,7 +261,7 @@ Do not hesitate to give your feedback on using the Resource Application via comp
 
 Practical usage:
 
-* Open a webbrowser to https://resapp.hpc.ugent.be (The app will redirect you via the VSC firewall application first, if needed.)
+* Open a webbrowser to https://resapp.hpc.ugent.be (The app will redirect you via the `VSC Firewall`_ application first, if needed.)
 * The Resource Application shows you all Tier1-Hortense projects that you are a member of.
 * By clicking on the dropdown arrow on the right in the initial Projects tab, you can consult the raw usage of one of your projects (in CPU hours and GPU hours).
 * You can also view Logs and get more fine-grained usage details.
