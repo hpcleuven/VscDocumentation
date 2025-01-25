@@ -52,6 +52,8 @@ access/wsl.html /compute/terminal/wsl.html
 brussels/tier2_hardware/hydra_hardware.html /brussels/tier2_hardware/hydra.html
 compute.html /compute/index.html
 data/tier1_data_main_index.html /data/tier1_data_service.html
+data/transfer/external_computer.html /data/transfer.html
+data/transfer/network_drives.html /data/transfer.html
 globus/globus_main_index.html /globus/index.html
 globus/globus_platform.html /globus/index.html
 hardware.html /compute/infrastructure.html
