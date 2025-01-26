@@ -16,6 +16,8 @@ computational resources. Not all options may be equally supported across all
 clusters though. In case of doubt, please contact the corresponding
 :ref:`support team <tech support VSC>`.
 
+.. _terminal ssh:
+
 Secure Shell Connection
 =======================
 
@@ -148,6 +150,8 @@ graphics on local or remote screens.
       often installed by default as well. You just need to use the appropriate
       options with the ``ssh`` command to :ref:`connect with support for
       graphics <openssh x11 forwarding>`.
+
+.. _terminal remote desktop:
 
 Remote Desktop Environment
 --------------------------

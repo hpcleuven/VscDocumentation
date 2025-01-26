@@ -1,9 +1,9 @@
-#####################
-:fas:`cubes` Software
-#####################
+################################
+:fas:`cubes` Scientific Software
+################################
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    using_software
    software_development

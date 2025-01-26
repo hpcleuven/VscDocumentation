@@ -59,39 +59,39 @@ information about the services provided by the `Vlaams Supercomputer Centrum
          :gutter: 2
 
          .. grid-item-card:: Tier-1 HPC
-            :class-item: nested-card-top nested-card-tier1
+            :class-item: nested-card-top service-card-tier1
             :text-align: center
             :link: compute/tier1
             :link-type: doc
 
          .. grid-item-card:: Tier-2 HPC
-            :class-item: nested-card-top nested-card-tier2
+            :class-item: nested-card-top service-card-tier2
             :text-align: center
             :link: compute/tier2
             :link-type: doc
 
          .. grid-item-card:: Terminal Interface
             :columns: 12 12 12 12
-            :class-item: nested-card-top nested-card-term
+            :class-item: nested-card-top service-card-term
             :text-align: center
             :link: compute/terminal/index
             :link-type: doc
 
          .. grid-item-card:: Web Portal
-            :class-item: nested-card-top nested-card-web
+            :class-item: nested-card-top service-card-portal
             :text-align: center
             :link: compute/portal/index
             :link-type: doc
 
          .. grid-item-card:: Job Queue
-            :class-item: nested-card-top nested-card-jobs
+            :class-item: nested-card-top service-card-jobs
             :text-align: center
             :link: compute/jobs/index
             :link-type: doc
 
          .. grid-item-card:: Scientific Software
             :columns: 12 12 12 12
-            :class-item: nested-card-top nested-card-soft
+            :class-item: nested-card-top service-card-soft
             :text-align: center
             :link: compute/software/index
             :link-type: doc
@@ -111,19 +111,19 @@ information about the services provided by the `Vlaams Supercomputer Centrum
          :gutter: 2
 
          .. grid-item-card:: Tier-1 Data
-            :class-item: nested-card-top nested-card-tier1
+            :class-item: nested-card-top service-card-tier1
             :text-align: center
             :link: data/tier1_data_service
             :link-type: doc
 
          .. grid-item-card:: Tier-2 Storage
-            :class-item: nested-card-top nested-card-tier2
+            :class-item: nested-card-top service-card-tier2
             :text-align: center
             :link: data/storage
             :link-type: doc
 
          .. grid-item-card:: Globus
-            :class-item: nested-card-top nested-card-globus
+            :class-item: nested-card-top service-card-globus
             :text-align: center
             :link: globus/index
             :link-type: doc
@@ -142,19 +142,19 @@ information about the services provided by the `Vlaams Supercomputer Centrum
          :gutter: 2
 
          .. grid-item-card:: Virtual Machines
-            :class-item: nested-card-top nested-card-vms
+            :class-item: nested-card-top service-card-vms
             :text-align: center
             :link: cloud/manage_images
             :link-type: doc
 
          .. grid-item-card:: VMs with GPUs
-            :class-item: nested-card-top nested-card-vmsgpu
+            :class-item: nested-card-top service-card-vmsgpu
             :text-align: center
             :link: cloud/gpus
             :link-type: doc
 
          .. grid-item-card:: Orchestration
-            :class-item: nested-card-top nested-card-orch
+            :class-item: nested-card-top service-card-orch
             :text-align: center
             :link: cloud/terraform
             :link-type: doc

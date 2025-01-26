@@ -7,4 +7,4 @@
 .. toctree::
    :maxdepth: 2
 
-   openondemand
+   ondemand
