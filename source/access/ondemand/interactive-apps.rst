@@ -23,6 +23,7 @@ job will be queued.
 
 .. list-table:: Shared resources (part 1)
    :header-rows: 1
+   :widths: 20 80
 
    * - Resource
      - Description
@@ -34,13 +35,15 @@ job will be queued.
      - Select the time limit (in hours) for your interactive app session.
    * - Number of nodes
      - Select the amount of nodes. Only 1 node should be used in most cases,
-       unless you are sure your app *can and will* use more than 1 node
+       unless you are sure the app *can and will* use more than 1 node
        effectively.
    * - Number of cores
      - Select the amount of cores per node.
    * - Number of GPUs
      - Select the amount of GPUs per node. Check the :ref:`hardware` section for
-       the device type that corresponds to the selected cluster/partition.
+       the device type that corresponds to the selected cluster/partition. Only
+       request a GPU if you are sure the app *can and will* use the GPU
+       effectively.
    * - Pre-run scriptlet
      - Optionally add shell commands to your job before launching the app.
        Examples: loading extra modules that you need within the app, sourcing a
@@ -57,6 +60,7 @@ job will be queued.
 
       .. list-table:: Common resources (part 2)
          :header-rows: 1
+         :widths: 20 80
 
          * - Resource
            - Description
@@ -102,6 +106,7 @@ job will be queued.
 
       .. list-table:: Common resources (part 2)
          :header-rows: 1
+         :widths: 20 80
 
          * - Resource
            - Description

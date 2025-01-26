@@ -1,11 +1,21 @@
 Files
 =====
 
-This menu provides a file explorer that allows you to navigate through your
-files and folders.  You can access your ``$VSC_HOME`` and ``$VSC_DATA`` folders.
-Depending on the institution, other storages may also be available.  General
-file explorer options like moving, deleting, modifying and creating files or
-directories are available as well.
+The 'Files' menu provides a file explorer that allows you to navigate through
+your files and folders. General file explorer options like moving, deleting,
+modifying and creating files or directories are available as well.
+
+.. tab-set::
+
+   .. tab-item:: KU Leuven/UHasselt
+
+      From the 'Files' menu, you can access your ``$VSC_HOME`` and ``$VSC_DATA``
+      folders.
+
+   .. tab-item:: VUB
+
+      From the 'Files' menu, you can access all ``$VSC_*`` folders available to
+      you.
 
 Download/upload
 ---------------

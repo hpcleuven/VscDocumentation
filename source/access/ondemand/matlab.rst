@@ -10,16 +10,17 @@ Who can use MATLAB
 
    .. tab-item:: KU Leuven/UHasselt
 
-      Only vsc3* users (affiliated with KU Leuven) who are members of the ``lli_matlab`` group
-      have rights to use the MATLAB module (hence the MATLAB app). If you are not already member
-      of the group, contact the :ref:`KU Leuven supprt team<user support VSC>` for an invitation,
-      or :ref:`request joining this group<join groups>` via your VSC account page.
+      Only vsc3* users (affiliated with KU Leuven) who are members of the
+      ``lli_matlab`` group have rights to use the MATLAB module (hence the
+      MATLAB app). If you are not already member of the group, contact the
+      :ref:`KU Leuven supprt team<user support VSC>` for an invitation, or
+      :ref:`request joining this group<join groups>` via your VSC account page.
 
    .. tab-item:: VUB
 
       Only vsc1* users (affiliated with VUB) who are members of the
       ``brusselall`` group have rights to use the MATLAB module (hence the
-      MATLAB app). For more info, please contact the VUB HPC team: hpc@vub.be
+      MATLAB app). For more info, please contact the VUB HPC team at hpc@vub.be.
 
 Launching the MATLAB app
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,8 +41,8 @@ request GPU(s) as resources, if needed.
 
    .. tab-item:: VUB
 
-      Once you launch the session, the selected MATLAB module is loaded,
-      and the matlab-proxy-app is executed, which launches MATLAB and provides
-      web-based access to it (after waiting for a few minutes).
+      Upon launching the session, the selected MATLAB module is loaded and the
+      MATLAB Proxy starts, which then launches MATLAB and provides web-based
+      access to it (after waiting for a few minutes).
 
 .. _noVNC: https://novnc.com/

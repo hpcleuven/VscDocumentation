@@ -27,9 +27,8 @@ The VSC Open OnDemand portals provide a range of functions:
 - Opening a shell on one of the login nodes
 - Using interactive apps
 
-All of these functionalities can be used by accessing them through the tabs at
-the top of the page.  In the following sections, we will describe these in some more
-detail.
+All of these functionalities can be accessed via the menu bar at the top of the
+page.  In the following sections, we will describe them in more detail.
 
 .. toctree::
    :maxdepth: 1
@@ -47,4 +46,5 @@ detail.
    rstudio-server
    tensorboard
    vscode-server
+   vscode-tunnel
 

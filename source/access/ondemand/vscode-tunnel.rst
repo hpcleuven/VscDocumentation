@@ -1,5 +1,5 @@
-Job Composer
-------------
+VS Code Tunnel
+--------------
 
 .. grid:: 3
     :gutter: 4
@@ -9,19 +9,20 @@ Job Composer
 
        (not available now)
 
+
     .. grid-item-card:: KU Leuven/UHasselt
+       :columns: 12 4 4 4
+
+       (not available now)
+
+    .. grid-item-card:: VUB
        :columns: 12 4 4 4
 
        .. toctree::
           :maxdepth: 1
 
-          job-composer-leuven
+          vscode-tunnel-brussel
 
-
-    .. grid-item-card:: VUB
-       :columns: 12 4 4 4
-
-       (not available now)
 
 
 

@@ -15,6 +15,6 @@ ParaView
 
    .. tab-item:: VUB
 
-      (not available at this time)
+      (not available now)
 
 .. _noVNC: https://novnc.com/
