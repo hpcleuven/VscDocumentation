@@ -76,12 +76,12 @@ Running OpenMP programs
 We assume you are already familiar with the job submission
 procedure. If not, check the :ref:`Running jobs` section first.
 
-Since OpenMP is intended for use in a shared memory context, when
-submitting a job to the queue system, remember to request a single node
-and as many processors as you need parallel
-threads (e.g., ``-l nodes=1:ppn=4``). The latter should not exceed the number of
-cores on the machine the job runs on. For relevant hardware information,
-please consult the list of available :ref:`hardware <hardware>`.
+Since OpenMP is intended for use in a shared memory context, when submitting a
+job to the queue system, remember to request a single node and as many
+processors as you need parallel threads (e.g., ``-l nodes=1:ppn=4``).
+The latter should not exceed the number of cores on the machine the job runs
+on. Please consult the description of the VSC :ref:`tier1 hardware` and
+:ref:`tier2 hardware` to find out the hardware specification of your cluster. 
 
 You may have to set the number of cores that the program should use by
 hand, e.g., when you don't use all cores on a node, because the

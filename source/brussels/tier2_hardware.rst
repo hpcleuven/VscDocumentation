@@ -1,5 +1,6 @@
-VUB Tier-2 Infrastructure
-=========================
+###################
+VUB Tier-2 Clusters
+###################
 
 .. toctree::
    :maxdepth: 2

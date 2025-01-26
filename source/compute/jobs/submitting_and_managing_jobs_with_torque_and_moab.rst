@@ -3,7 +3,6 @@
 Submitting and managing jobs with Torque and Moab
 =================================================
 
-
 .. _qsub:
 
 Submitting your job: qsub
@@ -51,8 +50,10 @@ are some facilities for interactive work:
 -  The login nodes can be used for light interactive work. They can
    typically run the same software as the compute nodes. Some sites also
    have special interactive nodes for special tasks, e.g., scientific
-   data visualization. See the ":ref:`hardware`" section
-   where each site documents what is available.
+   data visualization. See the :ref:`tier1 hardware` and :ref:`tier2 hardware`
+   sections for information on the available login/interactive nodes on each
+   VSC cluster.
+
    Examples of work that can be done on the login nodes :
 
    - running a GUI program that generates the input files for your

@@ -161,7 +161,7 @@ Setup a remote session
    terminal tab) you will find on the left sidebar (in the 'Sessions' tab)
    a shortcut to the session you just setup. From now on, when you open
    MobaXterm, you can just double click that shortcut and you will start
-   a remote session on the :ref:`VSC cluster <hardware>` that you used in previous steps.
+   a remote session on the VSC cluster that you used in previous steps.
    
    To create a direct shortcut on your desktop (optional),
    right click on the saved session name and choose
@@ -172,10 +172,10 @@ Setup a remote session
       :alt: session desktop shortcut
 
 
-#. Now you can create connections to other :ref:`VSC clusters <hardware>`
-   by repeating these steps and changing the address of the cluster.
-   You will have then a shortcut on the Sessions tab of the left sidebar
-   for each of them to connect to.
+Now you can create connections to any :ref:`Tier-1<tier1 hardware>` or
+:ref:`Tier-2<tier2 hardware>` VSC cluster by repeating these steps and changing
+the address of the cluster. You will then have a shortcut on the Sessions tab
+of the left sidebar for each of them to connect to.
 
 
 Import PuTTY sessions

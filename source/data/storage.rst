@@ -12,6 +12,7 @@ manage your data in them.
    :maxdepth: 2
 
    storage_locations
+   tier2-infrastructure
    managing_storage_usage
    request_more_storage
 

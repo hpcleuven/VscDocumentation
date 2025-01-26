@@ -81,7 +81,7 @@ spin-off company of the Slurm development.
       command is very easy.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    job_submission
    job_management
@@ -89,7 +89,4 @@ spin-off company of the Slurm development.
    job_advanced
    credits
    slurm_pbs_comparison
-   
-
-
 

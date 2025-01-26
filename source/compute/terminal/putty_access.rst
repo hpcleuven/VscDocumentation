@@ -62,13 +62,14 @@ VSC clusters.
    Please keep in mind to:
 
    #. replace ``vsc98765`` with your own VSC user name
-   #. find the name of the login node for the VSC cluster you want to access in
-      :ref:`the local VSC clusters<hardware>`, and replace
-      ``login.hpc.kuleuven.be`` accordingly.
 
-* Within the category 'Session', in the field 'Host Name', type in
-  a valid hostname of the :ref:`login node of the VSC cluster <hardware>`
-  you want to connect to.
+   #. replace ``login.hpc.kuleuven.be`` with the name of the login node of the
+      VSC cluster you want to access, which can be found in the cluster
+      description on :ref:`tier1 hardware` or :ref:`tier2 hardware`
+
+* Within the category 'Session', in the field 'Host Name', type in a valid
+  hostname of the :ref:`Tier-1<tier1 hardware>` or
+  :ref:`Tier-2<tier2 hardware>` VSC cluster you want to connect to.
 
   .. figure:: putty_access/text_mode_access_using_putty_01.png
 

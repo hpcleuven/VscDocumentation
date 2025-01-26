@@ -33,10 +33,12 @@ connecting and add host key to the cache'; select 'Yes'.
    .. figure:: winscp/winscp_config-new-red.png
 
    #. Fill in the hostname of the VSC login node of your home
-      institution. You can find this information in the :ref:`overview
-      of available hardware on this site <hardware>`.
-   #. Fill in your VSC username.
-   #. Double check that the port number is 22.
+      institution. You can find this information in the
+      :ref:`tier1 hardware` and :ref:`tier2 hardware` sections
+
+   #. Fill in your VSC username
+
+   #. Double check that the port number is 22
 
 #. If you are not using pageant to manage your ssh keys, you have to point
    WinSCP to the private key file (in PuTTY .ppk format) that should be used.

@@ -26,8 +26,8 @@ on the size and usage of these data. Following locations are available:
           Accessible from login nodes, compute nodes and from all clusters in VSC.
 
       Capacity: Low
-          <10 GB, check the :ref:`storage quota of your home institute <storage
-          hardware>`.
+          <10 GB, check the :ref:`storage quota <storage hardware>` of your
+          home institute.
 
       Perfomance: Low
           Jobs must never use files in your home directory.
@@ -49,9 +49,9 @@ on the size and usage of these data. Following locations are available:
           Accessible from login nodes, compute nodes and from all clusters in VSC.
 
       Capacity: Medium
-          <100 GB, check the :ref:`storage quota of your home institute
-          <storage hardware>`. Capacity might be :ref:`expandable upon
-          request <more quota>`.
+          <100 GB, check the :ref:`storage quota <storage hardware>`
+          of your home institute. Capacity might be
+          :ref:`expandable upon request <more quota>`.
 
       Perfomance: Low
           There is no performance guarantee. Depending on the cluster,
@@ -76,9 +76,9 @@ on the size and usage of these data. Following locations are available:
           accessible from other VSC clusters.
 
       Capacity: Medium-High
-          50-500 GB, check the :ref:`storage quota of your home institute
-          <storage hardware>`. Capacity might be :ref:`expandable upon
-          request <more quota>`.
+          50-500 GB, check the :ref:`storage quota <storage hardware>`
+          of your home institute. Capacity might be
+          :ref:`expandable upon request <more quota>`.
 
       Perfomance: High
           Preferred location for all data files read or written during the
@@ -101,8 +101,8 @@ on the size and usage of these data. Following locations are available:
 
       Capacity: Variable
           Maximum data usage depends on the local disk space of the node
-          executing your job. Check the :ref:`storage quota of your home
-          institute <storage hardware>`. Note that the available disk space
+          executing your job. Check the :ref:`storage quota <storage hardware>`
+          of your home institute. Note that the available disk space
           is shared among all jobs running in the node.
 
       Perfomance: High
@@ -121,13 +121,11 @@ by the capacity of the disk system, to prevent that the disk system
 fills up accidentally. You can see your current usage and the current
 limits with the appropriate quota command as explained on the :ref:`page on
 managing disk space <storage usage>`.
-The actual disk capacity, shared by *all* users, can be found on the
-:ref:`Available hardware <hardware>` page.
 
 .. seealso::
 
-   The default quotas on each VSC site are gathered in the :ref:`storage
-   hardware` tables.
+   The actual disk capacity, shared by *all* users, and the default quotas on
+   each VSC site can be found on the :ref:`storage hardware` pages.
 
 You will only receive a warning when you reach the soft limit of either
 quota. You will only start losing data when you reach the hard limit.

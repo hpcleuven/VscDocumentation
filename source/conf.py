@@ -308,6 +308,7 @@ rst_prolog += """
 .. |KULUH| replace:: :bdg-info:`KU Leuven/UHasselt`
 .. |UA| replace:: :bdg-danger:`UAntwerp`
 .. |UG| replace:: :bdg-secondary:`UGent`
+.. |UH| replace:: :bdg-info:`UHasselt`
 .. |VUB| replace:: :bdg-primary:`VUB`
 """
 ### Links used multiple times across the documentation ###

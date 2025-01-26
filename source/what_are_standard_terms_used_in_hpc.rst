@@ -4,20 +4,21 @@ What are standard terms used in HPC?
 ====================================
 
 HPC cluster
-   A relatively tightly coupled collection of compute
-   nodes, the interconnect typically allows for high bandwidth, low
-   latency communication. Access to the cluster is provided through a
-   login node. A resource manager and scheduler provide the logic to
-   schedule jobs efficiently on the cluster. A detailed description of
-   the :ref:`VSC clusters and other
-   hardware <hardware>` is available.
+   A relatively tightly coupled collection of compute nodes, the interconnect
+   typically allows for high bandwidth, low latency communication. Access to
+   the cluster is provided through a login node. A resource manager and
+   scheduler provide the logic to schedule jobs efficiently on the cluster.
+   The pages on :ref:`tier1 hardware` and :ref:`tier2 hardware` provide a
+   detailed description of the technical characteristics of the HPC clusters
+   managed by VSC.
 Compute node
-   An individual computer, part of an HPC cluster.
-   Currently most compute nodes have two sockets, each with a single CPU,
-   volatile working memory (RAM), a hard drive, typically small, and
-   only used to store temporary files, and a network card. The hardware
-   specifications for the various :ref:`VSC compute
-   nodes <hardware>` is available.
+   An individual computer that is part of an HPC cluster. Currently most
+   compute nodes have two sockets, each with a single CPU, volatile working
+   memory (RAM), a hard drive, typically small, and only used to store
+   temporary files, and a network card. 
+   The pages on :ref:`tier1 hardware` and :ref:`tier2 hardware` provide the
+   the technical specifications of the compute nodes found in the HPC clusters
+   managed by VSC.
 CPU
    Central Processing Unit, the chip that performs the actual
    computation in a compute node. A modern CPU is composed of numerous

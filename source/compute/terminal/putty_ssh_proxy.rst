@@ -48,11 +48,13 @@ Setting up a proxy in PuTTY
    You will have to
 
    #. replace ``vscXXXXX`` with your own VSC account
+
    #. replace ``login.muk.gent.vsc`` by the node that is behind a
       a firewall that you want to access
-   #. find the name of the login node for the cluster you want
-      to use use as a proxy in the sections of :ref:`the local VSC
-      clusters <hardware>`, and replace ``vsc.login.node`` accordingly
+
+   #. replace ``vsc.login.node`` with the name of the login node of the VSC
+      cluster you want to use as a proxy, which can be found in the cluster
+      description on :ref:`tier1 hardware` or :ref:`tier2 hardware`
 
 Setting up the connection in PuTTY is a bit more complicated than for a
 simple direct connection to a login node.

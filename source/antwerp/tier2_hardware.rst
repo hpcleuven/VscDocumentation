@@ -1,8 +1,8 @@
 .. _UAntwerp hardware:
 
-##############################
-UAntwerp Tier-2 Infrastructure
-##############################
+########################
+UAntwerp Tier-2 Clusters
+########################
 
 ********************
 Login infrastructure

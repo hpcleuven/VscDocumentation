@@ -92,8 +92,8 @@ You have to adapth the following placeholder elements on this command:
 
 * ``<vsc-loginnode>`` is the name of the login node of the VSC cluster you
   want to connect to. It is of the form ``login.hpc.<institute>.be`` and you
-  can find the exact name of the login node of any VSC cluster in the
-  :ref:`hardware` section.
+  can find the exact name of the login node of any VSC cluster in
+  :ref:`tier1 hardware` or :ref:`tier2 hardware`.
 
 * ``~/.ssh/id_rsa_vsc`` is the path to your private SSH key. This value is the
   default used in our guide about :ref:`generating keys linux`. But the file of

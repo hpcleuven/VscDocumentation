@@ -59,11 +59,10 @@ has several disadvantages.
   a few users, many of our clusters have a stricter limit on the number of
   long-running jobs than on the number of jobs with a shorter walltime.
 
-The maximum allowed walltime for a job is cluster-dependent. Since
-these policies can change over time (as do other properties from
-clusters), we bundle these on one page per cluster in the
-":ref:`hardware`" section.
-
+The maximum allowed walltime for a job can be different from cluster to
+cluster, as it depends on their technical characteristics and policies.
+You can find the maximum walltime of each cluster on their pages in the
+:ref:`tier1 hardware` or :ref:`tier2 hardware` sections.
 
 .. _nodes and ppn:
 
@@ -198,9 +197,9 @@ For example, to run on a node with 36 cores and 192 GB RAM,
   
   -l nodes=1:ppn=36  -l pmem=10gb
 
-Check the :ref:`hardware specification <hardware>` of the cluster/nodes
-you want to run on for the available memory and core count of the nodes.
-
+Check the hardware specification of your :ref:`Tier-1<tier1 hardware>` or
+:ref:`Tier-2<tier2 hardware>` VSC cluster to find the available memory and core
+count of the compute nodes you want to use.
 
 .. warning::
 
@@ -263,8 +262,8 @@ want to use the cascadelake nodes, specify::
 
 Since cascadelake nodes often have 24 cores, you will likely get 2 physical nodes.
 
-The exact list of properties depends on the cluster and is given in the
-page for your cluster in the :ref:`hardware specification pages <hardware>`.
+The exact list of properties depends on each cluster and is available on the
+pages covering :ref:`tier1 hardware` and :ref:`tier2 hardware`.
 
 .. note::
 

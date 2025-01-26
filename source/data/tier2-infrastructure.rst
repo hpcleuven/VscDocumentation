@@ -1,8 +1,8 @@
 .. _storage hardware:
 
-######################
-Storage Infrastructure
-######################
+#############################
+Tier-2 Storage Infrastructure
+#############################
 
 The storage attached to our HPC clusters is organized according to the
 :ref:`VSC storage guidelines <data location>`.

@@ -1,14 +1,13 @@
-.. _hardware:
+.. document not part of any TOC tree, only accessible directly
 
-###########################
-:fa:`server` Infrastructure
-###########################
+:orphan:
+
+######################
+Compute Infrastructure
+######################
 
 .. toctree::
    :maxdepth: 3
-   :numbered: 3
 
    tier1
    tier2
-   storage
-   cluster-archive
