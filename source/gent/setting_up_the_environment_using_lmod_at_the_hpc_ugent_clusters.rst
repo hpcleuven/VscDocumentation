@@ -528,9 +528,10 @@ by the ``lmod`` command.
 
    export EASYBUILD_MODULES_TOOL=Lmod
 
-See `the EasyBuild documentation
-<http://easybuild.readthedocs.io/en/latest/Configuration.html#supported-configuration-types>`_
-for other ways of configuring EasyBuild to use Lmod.
+.. seealso::
+
+   See the documentation on `Configuring EasyBuild <https://docs.easybuild.io/configuration/#supported-configuration-types>`_
+   for other ways of setting up EasyBuild to use Lmod.
 
 You should not be using ``lmod`` directly in other circumstances, use
 either ``ml`` or ``module`` instead.

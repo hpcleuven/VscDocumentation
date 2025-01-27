@@ -16,15 +16,29 @@ Prerequisites
 All users need to setup an :ref:`SSH agent <SSH agent>` before proceeding.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven
+      :sync: kuluh
    
       You need to :ref:`get an SSH certificate into your agent <mfa-with-ssh-agent>`,
       if you haven't done so already.
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UAntwerpen
+      :sync: ua
 
       You need to load your private SSH key into your :ref:`SSH agent <SSH agent>`.
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      You need to load your private SSH key into your :ref:`SSH agent <SSH agent>`.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      You need to load your private SSH key into your :ref:`SSH agent <SSH agent>`.
+
 
 Configuration of FileZilla to connect to a login node
 =====================================================
@@ -36,55 +50,83 @@ Configuration of FileZilla to connect to a login node
    fields remain blank):
 
    .. tab-set::
+      :sync-group: vsc-sites
 
       .. tab-item:: KU Leuven
+         :sync: kuluh
 
-         - Host: ``login.hpc.kuleuven.be``
-         - Server Type: 'SFTP - SSH File Transer Protocol'
-         - Logon Type: 'Interactive'
-         - User: *your own* VSC user ID
+         * Host: ``login.hpc.kuleuven.be``
+         * Server Type: 'SFTP - SSH File Transfer Protocol'
+         * Logon Type: 'Interactive'
+         * User: *your own* VSC user ID
 
-           .. figure:: filezilla/site_manager_kul.png
-              :alt: FileZilla's site manager for KU Leuven clusters
+         .. figure:: filezilla/site_manager_kul.png
+            :alt: FileZilla's site manager for KU Leuven clusters
 
-      .. tab-item:: UGent, VUB, UAntwerpen
+      .. tab-item:: UAntwerpen
+         :sync: ua
 
-         -  Host: fill in the hostname of the VSC login node of your home
-            institution. You can find this information in the :ref:`overview
-            of available hardware on this site <hardware>`.
-         -  Server Type: 'SFTP - SSH File Transfer Protocol'
-         -  Logon Type: 'Normal'
-         -  User: *your own* VSC user ID, e.g. vsc98765
+         * Host: ``login.hpc.uantwerpen.be``
+         * Server Type: 'SFTP - SSH File Transfer Protocol'
+         * Logon Type: 'Normal'
+         * User: *your own* VSC user ID
 
-            .. figure:: filezilla/site_manager_non_kul.png
-               :alt: FileZilla's site manager for UGent, VUB, UAntwerpen
+         .. figure:: filezilla/site_manager_non_kul.png
+            :alt: FileZilla's site manager for UGent, VUB, UAntwerpen
+
+      .. tab-item:: UGent
+         :sync: ug
+
+         * Host: ``login.hpc.ugent.be``
+         * Server Type: 'SFTP - SSH File Transfer Protocol'
+         * Logon Type: 'Normal'
+         * User: *your own* VSC user ID
+
+         .. figure:: filezilla/site_manager_non_kul.png
+            :alt: FileZilla's site manager for UGent, VUB, UAntwerpen
+
+      .. tab-item:: VUB
+         :sync: vub
+
+         * Host: ``login.hpc.vub.be``
+         * Server Type: 'SFTP - SSH File Transfer Protocol'
+         * Logon Type: 'Normal'
+         * User: *your own* VSC user ID
+
+         .. figure:: filezilla/site_manager_non_kul.png
+            :alt: FileZilla's site manager for UGent, VUB, UAntwerpen
 
 #. Optionally, rename this setting to your liking by pressing the
    'Rename' button
+
 #. Press 'Connect' and enter your passphrase when requested
 
-
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven
+      :sync: kuluh
 
       As long as your SSH agent is running and keeping a valid SSH certificate,
       you stay connected via FileZilla and you do not require additional
       configuration.
 
-   .. tab-item:: UGent, VUB, UAntwerpen
+   .. tab-item:: UAntwerpen
+      :sync: ua
 
-      Recent versions of FileZilla have a screen in the settings to
-      manage private keys. The path to the private key must be provided in
-      options (Edit Tab -> options -> connection -> SFTP):
+      .. include:: filezilla-key-management.rst
 
-      .. figure:: filezilla/prefs_private_key.jpg
-         :alt: FileZilla site manager with settings
+   .. tab-item:: UGent
+      :sync: ug
 
-      After that you should be able to connect after being asked for
-      passphrase. As an alternative you can choose to use an :ref:`SSH agent <SSH agent>`.
+      .. include:: filezilla-key-management.rst
 
-Under the 'Advanced' tab you can also set the directory you wish to open by
+   .. tab-item:: VUB
+      :sync: vub
+
+      .. include:: filezilla-key-management.rst
+
+Under the *'Advanced'* tab you can also set the directory you wish to open by
 default upon login.
-For example, to set your default path to your ``VSC_DATA`` directory, you need to
-provide the full path, like ``/data/brussels/1xx/vsc1xxxxx``.
+For example, setting your default path to your ``VSC_DATA`` directory can be done by
+providing its full path, like ``/data/brussels/100/vsc10000``.
