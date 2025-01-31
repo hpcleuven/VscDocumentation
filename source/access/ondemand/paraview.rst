@@ -1,20 +1,25 @@
 ParaView
 --------
 
-.. tab-set::
+`ParaView <https://www.paraview.org/>`_ is an open-source application for interactive, scientific
+visualization. It supports various simulation packages, including OpenFAOM.
 
-   .. tab-item:: KU Leuven/UHasselt
+VSC clusters that support the ParaView app:
 
-      For visualization purposes, you may use the `ParaView app <https://www.paraview.org/>`_.
-      Similar to the :ref:`MATLAB app <ood_matlab>`, ParaView also runs inside a `noVNC`_
-      desktop as a compute job.
+.. grid:: 3
+    :gutter: 4
 
-      .. note::
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
 
-         Currently, using GPUs in ParaView is not supported yet, and just the CPU-only modules are offered.
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
-   .. tab-item:: VUB
+Similar to the :ref:`MATLAB app <ood_matlab>`, ParaView also runs inside a `noVNC`_
+desktop as a compute job.
 
-      (not available now)
+.. note::
+
+   Currently, using GPUs in ParaView is not supported yet, and just the CPU-only modules are offered.
 
 .. _noVNC: https://novnc.com/

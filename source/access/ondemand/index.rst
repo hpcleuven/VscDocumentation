@@ -12,7 +12,31 @@ coding GUIs, tools for plotting and more.
 Portals
 =======
 
-.. include:: links_ood.rst
+VSC clusters that support an Open OnDemand web portal:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       :fas:`circle-play` `KU Leuven OnDemand`_
+
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       :fas:`circle-play` `VUB OnDemand`_
+
+       .. TODO fix links
+
+       * Tier-2 :ref:`Hydra <Hydra hardware>`
+       * Tier-2 Anansi
+
+.. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
+.. _VUB OnDemand: https://portal.hpc.vub.be/
 
 You can log in using the credentials of your home institution or your VSC
 credentials.

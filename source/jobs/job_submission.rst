@@ -110,6 +110,8 @@ or d-hh\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a ty
 
 If not set, a default wall time of 1 hour will be assigned.
 
+.. _slurm_partition:
+
 Specifying a partition
 ----------------------
 

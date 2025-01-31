@@ -58,7 +58,7 @@ job will be queued.
 
    .. tab-item:: KU Leuven/UHasselt
 
-      .. list-table:: Common resources (part 2)
+      .. list-table:: Shared resources (part 2)
          :header-rows: 1
          :widths: 20 80
 
@@ -104,7 +104,7 @@ job will be queued.
 
    .. tab-item:: VUB
 
-      .. list-table:: Common resources (part 2)
+      .. list-table:: Shared resources (part 2)
          :header-rows: 1
          :widths: 20 80
 

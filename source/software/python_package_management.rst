@@ -10,16 +10,15 @@ Python comes with an extensive standard library, and you are strongly
 encouraged to use those packages as much as possible, since this will
 ensure that your code can be run on any platform that supports Python.
 
-However, many useful extensions to and libraries for Python come in the
-form of packages that can be installed separately. Some of those are part
-of the default installation on VSC infrastructure, others have been made
-available through the module system and must be loaded explicitly.
 
-Given the astounding number of packages, it is not sustainable to
-install each and everyone system wide. Since it is very easy for a user
-to install them just for himself, or for his research group, that is not
-a problem though. Do not hesitate to contact support whenever you
-encounter trouble doing so.
+However, many useful extensions to and libraries for Python come in the form of
+packages that can be installed separately. Many Python packages have been made
+available through the module system, but must be loaded explicitly.
+
+Given the astounding number of packages, it is not sustainable to install each
+and everyone system wide. Since it is relatively easy for a user to install them
+just for himself, or for his research group, that is not a problem though. Do
+not hesitate to contact support whenever you encounter trouble doing so.
 
 Checking for installed packages
 -------------------------------
@@ -27,23 +26,152 @@ Checking for installed packages
 To check which Python packages are installed, the ``pip`` utility is
 useful. It will list all packages that are installed for the Python
 distribution you are using, including those installed by you, i.e.,
-those in your ``PYTHONPATH`` environment variable.
+in your account.
 
 #. Load the module for the Python version you wish to use, e.g.,::
 
-      $ module load Python/3.7.0-foss-2018b
+      $ module load Python/3.11.3-GCCcore-12.3.0
 
 #. Run ``pip``::
-   
-      $ pip freeze
 
-Note that some packages, e.g., ``mpi4py``, ``pyh5``, ``pytables``,...,
-are available through the module system, and have to be loaded
-separately. These packages will not be listed by ``pip`` unless you
-loaded the corresponding module.  In recent toolchains, many of the
-packages you need for scientific computing have been bundled into the
-``SciPy-bundle`` module.
+      $ pip list -v
 
+Note that many packages, e.g., ``mpi4py``, ``pyh5``, ``pytables``,..., are
+available through the module system, and have to be loaded separately. These
+packages will not be listed by ``pip`` unless you loaded the corresponding
+module.  In recent toolchains, many of the packages you need for scientific
+computing have been bundled into the ``SciPy-bundle`` module.
+
+.. _venv_python:
+
+Python virtual environments
+---------------------------
+
+A `Python virtual environment <https://docs.python.org/3/tutorial/venv.html>`_
+is an isolated environment in which you can safely install Python packages,
+independent from those installed in the system or in other virtual environments.
+For example, using virtual environments is very convenient for Python developers
+as it allows working on multiple software projects at the same time.
+
+It is recommended to use the software modules already installed in the cluster
+as much as possible. They provide a robust and performant base to build your
+virtual environments.
+
+In this section, we show how you can combine modules with virtual environments
+in the HPC to get the best of two worlds.
+
+#. |Warning| Virtual environments are closely linked to the :ref:`CPU
+   microarchitecture <tier2 hardware>` of the node on which they were created.
+   This is especially important for heterogeneous clusters, where architecture
+   may differ across login nodes and cluster partitions.  To get the
+   architecture of the current node, you can use the ``$VSC_ARCH_LOCAL``
+   environment variable.
+
+   Start by launching an :ref:`interactive shell <interactive jobs>` in the
+   :ref:`cluster partition<slurm_partition>` of choice:
+
+   .. code-block:: shell
+      :caption: Example command to start an interactive shell in the
+                *zen4* partition
+
+      srun --partition=zen4 --pty bash -l
+
+#. Load a Python module as base of the virtual environment. Choose a Python
+   version that is suitable for the additional Python packages that will be
+   installed in the virtual environment:
+
+   .. code-block:: shell
+
+      module load Python/3.11.3-GCCcore-12.3.0
+
+#. |Optional| Load other modules with additional Python packages:
+
+   .. code-block:: shell
+
+      module load SciPy-bundle/2023.07-gfbf-2023a
+
+   The *Python* software modules in the HPC include a very limited list of
+   Python packages, but many other modules are also available. A common
+   software module is ``SciPy-bundle``, a bundle of data science packages such
+   as ``numpy``, ``pandas``, and ``scipy``.
+
+#. Create your virtual environment.
+
+   |Warning| Avoid making your virtual environments in your home directory. The
+   :ref:`storage space of your home <storage hardware>` is very small and can
+   quickly become filled up with installation files. Use a folder in your
+   personal ``$VSC_SCRATCH`` or ``$VSC_DATA`` storage; or in your VO if you are
+   part of one.
+
+   .. code-block:: shell
+      :caption: Example command to create a new virtual environment in the
+                directory ``venv-zen4``
+
+      python3 -m venv venv-zen4 --system-site-packages
+
+   Option ``--system-site-packages`` ensures using the Python packages already
+   available via the loaded modules instead of installing them in the virtual
+   environment.
+
+#. Before we can use the virtual environment, we must `activate` it:
+
+   .. code-block:: shell
+
+      source venv-zen4/bin/activate
+
+   Once the virtual environment is active, its name will be displayed in front
+   of the shell prompt (``(venv-zen4)`` in this example). Make sure to keep this
+   virtual environment activated when executing the following steps.
+
+#. We recommend to always upgrade ``pip`` to the latest version:
+
+   .. code-block:: shell
+
+      (venv-zen4) $ python3 -m pip install pip --upgrade
+
+#. Now we can install additional Python packages inside this virtual
+   environment:
+
+   .. code-block:: shell
+      :caption: Example command to install the ``icecream`` package in the
+                active virtual environment
+
+      (venv-zen4) $ python3 -m pip install icecream --no-cache-dir --no-build-isolation
+
+   Option ``--no-cache-dir`` ensures installing the most recent compatible
+   versions of the dependencies, ignoring the versions available in your cache.
+
+   Option ``--no-build-isolation`` ensures using the Cython compiler and other
+   (build) dependencies from loaded modules instead of building in an isolated
+   environment.
+
+#. Once you finish your work in the virtual environment, use the command
+   ``deactivate`` to exit it:
+
+   .. code-block:: shell
+      :caption: The command ``deactivate`` will bring you back to the standard shell
+
+      (venv-zen4) $ deactivate
+
+Reactivating your virtual environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Whenever you want to go back to any of your virtual environments make sure to:
+
+#. Launch an interactive job in the same partition you used when creating the
+   virtual environment (or add the sbatch ``--partition`` option to your job
+   script)::
+
+    srun --partition=zen4 --pty bash -l
+
+#. Load the same software modules that you used in the creation of the virtual
+   environment::
+
+    module load Python/3.11.3-GCCcore-12.3.0 SciPy-bundle/2023.07-gfbf-2023a
+
+#. Reactivate the virtual environment::
+
+    venv-zen4/bin/activate
 
 .. _conda for Python:
 
@@ -214,88 +342,6 @@ More information
 
 Additional information about conda can be found on its `documentation
 site <https://docs.conda.io/en/latest/>`_.
-
-
-Alternatives to conda
----------------------
-
-Setting up your own package repository for Python is straightforward. 
-`PyPi, the Python Package Index <https://pypi.org/>`_ is a web repository of
-Python packages and you can easily install packages from it using either
-``easy_install`` or ``pip``. In both cases, you'll have to create a 
-subdirectory for Python in your ``${VSC_DATA}`` directory, add this directory
-to your ``PYTHONPATH`` after loading a suitable Python module, and then 
-point ``easy_install`` or ``pip`` to that directory as the install target
-rather then the default (which of course is write-protected on a multi-user
-system). Both commands will take care of dependencies also.
-
-
-Installing packages using easy_install
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you prefer to use ``easy_install``, you can follow these instructions:
-
-#. Load the appropriate Python module, i.e., the one you want the python
-   package to be available for::
-   
-      $ module load Python/3.7.0-foss-2018b
-   
-#. Create a directory to hold the packages you install, the last three
-   directory names are mandatory::
-   
-      $ mkdir -p "${VSC_DATA}/python_lib/lib/python3.7/site-packages/"
-   
-#. Add that directory to the ``PYTHONPATH`` environment variable for the
-   current shell to do the installation::
-   
-      $ export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"
-   
-#. Add the following to your ``.bashrc`` so that Python knows where to
-   look next time you use it::
-   
-      export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"
-   
-#. Install the package, using the ``--prefix`` option to specify the
-   install path (this would install the sphinx package)::
-   
-   $ easy_install --prefix="${VSC_DATA}/python_lib" sphinx
-
-
-Installing packages using  pip
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you prefer using ``pip``, you can perform an install in your own
-directories as well by providing an install option.
-
-#. Load the appropriate Python module, i.e., the one you want the python
-   package to be available for::
-   
-      $ module load Python/3.7.0-foss-2018b
-   
-#. Create a directory to hold the packages you install, the last three
-   directory names are mandatory::
-   
-      $ mkdir -p "${VSC_DATA}/python_lib/lib/python3.7/site-packages/"
-   
-#. Add that directory to the ``PYTHONPATH`` environment variable for the
-   current shell to do the installation::
-   
-      $ export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"
-   
-#. Add the following to your ``.bashrc`` so that Python knows where to
-   look next time you use it::
-   
-      export PYTHONPATH="${VSC_DATA}/python_lib/lib/python3.7/site-packages/:${PYTHONPATH}"
-   
-#. Install the package, using the ``--prefix`` install option to specify
-   the install path (this would install the sphinx package)::
-   
-      $ pip install --install-option="--prefix=${VSC_DATA}/python_lib" sphinx
-
-   For newer version of ``pip``, you would use::
-
-      $ pip install  --prefix="${VSC_DATA}/python_lib" sphinx
-
 
 Installing Anaconda on NX node (KU Leuven Genius)
 -------------------------------------------------

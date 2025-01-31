@@ -1,46 +1,87 @@
 JupyterLab
-----------
+==========
 
-With this app you can write and run
-`Jupyter <official JupyterLab documentation>`_ notebooks containing
-annotated Python, R or Julia code (among other languages). IPython consoles are
-available as well. One of the benefits of JupyterLab is that it supports
-different types of user-defined environments, as will become clear below.
+With this app you can write and run `Jupyter <official JupyterLab
+documentation>`_ notebooks containing annotated Python, R or Julia code (among
+other languages). IPython consoles are available as well. One of the benefits of
+JupyterLab is that it supports different types of user-defined environments, as
+will become clear below.
 
-**Remarks:**
+.. tab-set::
 
-- The top-level notebook directory is by default ``$VSC_DATA``.
-- At the moment, we do not support installing extensions in JupyterLab.
+   .. tab-item:: KU Leuven/UHasselt
+
+      The top-level notebook directory is by default ``$VSC_DATA``.
+
+   .. tab-item:: VUB
+
+      The top-level notebook directory is the selected working directory in the
+      resources form.
+
+Jupyter kernels
+---------------
+
+The following table shows the kernels available in JupyterLab and the
+corresponding modules that have to be loaded to enable them:
+
+.. list-table:: Jupyter kernels provided by software modules
+   :header-rows: 1
+   :align: left
+
+   * - Kernel
+     - Software Module
+   * - Python
+     - *(loaded by default)*
+   * - R
+     - IRkernel
+   * - Julia
+     - IJulia
+
+The default lab environment only loads the Python kernel upon launch. You can
+activate any other kernel by loading its corresponding :ref:`software module
+<software_modules_extension>`. Once a module providing a new kernel is loaded, a
+new icon will automatically appear on your lab launcher to start a notebook with
+that kernel.
 
 Pure module environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In the app resource form, besides the :ref:`shared resources <shared_resources>`,
-you can also choose between different 'Toolchain and Python versions' from a drop-down menu.
-An example would be '2023a and ``Python/3.11.3-GCCcore-12.3.0``'.
-Based on that choice, the corresponding JupyterLab module will be loaded together with its
-dependencies (such as the listed Python module).
+In the app resource form, besides the :ref:`shared resources
+<shared_resources>`, you can also choose between different 'Toolchain and Python
+versions' from a drop-down menu.  An example would be '2023a and
+``Python/3.11.3-GCCcore-12.3.0``'.  Based on that choice, the corresponding
+JupyterLab module will be loaded together with its dependencies (such as the
+listed Python module).
 
-Furthermore, you may choose to load ``SciPy-bundle`` (for widely used packages like ``scipy``,
-``numpy``, ``pandas`` and more) and/or ``matplotlib`` modules from the same toolchain.
+Furthermore, you may choose to tick one of the checkboxes to load popular
+modules from the same toolchain, such as ``SciPy-bundle`` (for widely used
+packages like ``scipy``, ``numpy``, ``pandas`` and more) and/or ``matplotlib``.
 
-Once you launch a JupyterLab session, a default kernel called ``Python 3 (ipykernel)`` is already available in your session.
-This kernel, in addition to the Python standard library, would enable using extra packages from
-``SciPy-bundle`` and/or ``matplotlib``, if you selected them in the resource form.
+Once you launch a JupyterLab session, a default kernel called ``Python 3
+(ipykernel)`` is already available in your session.  This kernel, in addition to
+the Python standard library, would enable using extra packages from
+``SciPy-bundle`` and/or ``matplotlib``, if you selected them in the resource
+form.
+
+If the selected modules do not provide all Python packages that you need, you
+can load extra modules with Python packages via ``module load`` commands in the
+'Pre-run Scriptlet' of the resources form.
 
 .. warning::
 
-   If you use JupyterLab in this way, remember to be consistent in your choice of toolchain version
-   as this e.g. determines the version of Python that will be used.
+   If you use JupyterLab in the pure module environment, remember to be
+   consistent in your choice of toolchain version as this determines the
+   versions of Python and Python packages that will be used.
 
 User-defined kernels
 ~~~~~~~~~~~~~~~~~~~~
 
-If the pure module environment does not provide all Python packages that you need,
-then you can locally install these extra packages, followed by installing the corresponding
-Jupyter kernel either from a :ref:`Python Conda environment<py-conda-kernel>`, or from a
-:ref:`Python virtual environment<py-venv-kernel>`.
-For R, you may create your customized environment using :ref:`Conda environments for R<r-conda-kernel>`.
+If the available modules in the pure module environment do not provide all
+Python packages that you need, then you can locally install these extra
+packages, followed by installing the corresponding Jupyter kernel either from a
+:ref:`Python Conda environment<py-conda-kernel>`, or from a :ref:`Python virtual
+environment<py-venv-kernel>`.  For R, you may create your customized environment
+using :ref:`Conda environments for R<r-conda-kernel>`.
 
 .. note::
 
@@ -54,8 +95,8 @@ For R, you may create your customized environment using :ref:`Conda environments
    (for both Python and R) will reside in ``${XDG_DATA_HOME}/jupyter/kernels``.
    To remove a kernel, find and delete the corresponding folder inside the ``kernels``
    subdirectory.
-   We strongly advice you to stay away from modifying the contents of this folder,
-   unless you are aware of the consequences.
+   We strongly advice against modifying the contents of this folder, unless you
+   are aware of the consequences.
 
 .. _py-conda-kernel:
 
@@ -78,53 +119,75 @@ least version 6.19.2) and finally the kernel itself::
 These commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'),
 and only need to be done once for a given environment.
 When launching a new JupyterLab session, this kernel should then show up in the overview
-of available kernels.
+of available kernels, and as a tile under the 'Notebook' section when opening a new launcher.
+
 In case you encounter issues such as freezing or crashing JupyterLab sessions with a previously
 existing kernel, then reinstalling that kernel may help.
 
 .. _py-venv-kernel:
 
-Python virtual environments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Virtual environments for Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A similar procedure applies for Python virtual environments associated with
-a centrally installed Python module. Note that the chosen Python module needs
-to be in the list of 'Toolchain and Python versions' of the JupyterLab form
-(e.g. ``2023a and Python/3.11.3-GCCcore-12.3.0``). The commands below show
-how creating such a virtual environment and installing the corresponding kernel
-would typically look like (to be done from a shell, e.g. using 'Login Server Shell Access'):
+You can use :ref:`Python virtual environments <venv_python>` to generate custom kernels for your
+notebooks. Virtual environments provide a layer of isolation allowing users to
+install additional Python packages on top of the software modules without
+conflicts.
 
-.. code-block :: bash
+Before using a virtual environment from the lab interface, consider the
+following requirements:
 
-    cd ${VSC_DATA}
-    # the line below is needed if you use the 'Interactive Shell' app
-    module use /apps/leuven/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/2023a/modules/all
-    module load Python/3.11.3-GCCcore-12.3.0
-    python -m venv <venv_name>
-    source <venv_name>/bin/activate
-    pip install ipykernel <any additional packages you may need>
-    # note that unlike for Conda environments the "--env ..." argument is not needed below
-    python -m ipykernel install --user --name <kernel_name> --display-name <kernel_name>
+- The chosen Python module needs to be in the list of 'Toolchain and
+  Python versions' of the JupyterLab form (e.g. ``2023a and
+  Python/3.11.3-GCCcore-12.3.0``).
 
-On the JupyterLab form, choose a partition to your liking and select the same
-toolchain as above. Once you connect to your session, your new kernel will be
-ready to use. To verify your setup, you can execute ``import sys; sys.executable``
-in your notebook, and the resulting path should point to the location of your
+- When using a virtual environment, the same software modules must be
+  loaded as those that were loaded when creating it.
+
+- A virtual environment is only guaranteed to work in the same :ref:`CPU
+  microarchitecture <tier2 hardware>` as the one it was created on.
+
+  |KUL| We recommend to consider the suggestions in the :ref:`wICE advanced
+  guide <wice_compilation>`.
+
+
+#. Open the *Terminal* from your lab interface, ensuring that the requirements
+   listed above requirements are met.
+
+#. Follow the instructions in :ref:`venv_python` to create a new virtual
+   environment and install any Python packages in it. Keep in mind that loading
+   the Python module is not necessary as that is already done by the JupyterLab
+   session. This new virtual environment can be placed anywhere you like in the
+   storage of the cluster.
+
+   .. code-block:: shell
+      :caption: Example sequence of commands to create a new virtual
+                environment in the directory ``venv-zen4``
+
+      $ python3 -m venv venv-zen4 --system-site-packages
+      $ source venv-zen4/bin/activate
+      (venv-zen4) $ python3 -m pip install --upgrade pip
+      (venv-zen4) $ python3 -m pip install <insert_cool_package>
+
+#. Add your new virtual environment as a new Jupyter kernel (from the same
+   terminal shell)
+
+   .. code-block:: shell
+
+      $ python3 -m ipykernel install --user --name=venv-zen4
+
+#. A new launcher will appear in the lab interface to start notebooks using
+   this new virtual environment
+
+   .. figure:: img/jupyterlab-custom-launcher.png
+
+      Launchers for default Python kernel and custom Python kernel from
+      virtual environment
+
+To verify your setup, you can execute ``import sys; sys.executable`` in the new
+kernel notebook, and the resulting path should point to the location of your
 virtual environment.
 
-**Remarks:**
-
-- The above example assumes that your virtual environment can be used on
-  different CPU and/or GPU architectures than the ones present on the node
-  on which you created the environment and installed the extra packages.
-  This is normally the case for typical ``pip`` usage where precompiled 'wheels'
-  get downloaded and installed and which can therefore be used on any
-  architecture.
-- If however one your package installation steps involves compiling source code,
-  then you might only be able to use your virtual environment on the same
-  architecture where the compilation was carried out. If this is the case we
-  recommend to consider the suggestions in the
-  :ref:`wICE advanced guide<wice_compilation>`.
 
 .. _r-conda-kernel:
 
@@ -141,4 +204,87 @@ You can now start working in your own customized environment.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
 
-.. _official JupyterLab documentation: https://docs.jupyter.org/en/latest/
+.. _official JupyterLab documentation: https://jupyterlab.readthedocs.io
+
+
+JupyterLab extensions
+---------------------
+
+Extensions enhance or customize to your JupyterLab session.  You can find the
+list of available extensions in the extension tab on the left panel (*puzzle
+piece icon*) and you can enable or disable any of them.
+
+.. note::
+
+   The store of Jupyter extensions is disabled on the notebook platform as the
+   available extensions for download on the store are unreviewed and they can
+   contain malicious or malfunctioning software. If you need any Jupyter
+   extension that is not yet available, please contact the site admins.
+
+.. _software_modules_extension:
+
+Software modules extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The 'Software Modules' extension allows you to load additional software modules
+within JupyterLab without relaunching your JupyterLab session. This provides a
+more flexible alternative to loading modules via the 'Pre-run Scriptlet' in the
+resources form.
+
+VSC clusters that support the 'Software Modules' extension:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       .. TODO use links
+
+       * Tier-2 Hydra
+       * Tier-2 Anansi
+
+You can load software modules from the tab with a *hexagon* icon on the left
+panel of JupyterLab. This tab opens a list of loaded modules followed by a
+list of available modules.
+
+.. figure:: img/jupyterlab-lmod-tab-2023a.webp
+
+   Software Modules extension in JupyterLab.
+
+Upon launch, the list of loaded modules will already show some modules loaded by
+JupyterLab itself. For example, you will always see a Python module loaded,
+which determines the version of Python of the kernel used by your Python
+notebooks on this session.
+
+.. warning::
+
+   Modules already loaded when your JupyterLab environment starts are necessary
+   for the correct function of the lab and notebooks. They should not be unloaded.
+
+Below the loaded modules, you will find the list of available modules that can
+be loaded on-demand. Point your cursor to the right of the module name and a
+*Load* button will appear (see screenshot on the right). All modules shown in
+the list are compatible with each other, so you can load any combination of
+modules.
+
+.. figure:: img/jupyterlab-lmod-load-2023a.webp
+
+   Loading a module Software Modules extension JupyterLab.
+
+.. note::
+
+   Any change to the list of loaded modules requires rebooting the kernel of
+   your open notebooks. After loading/unloading modules, click the kernel at the top-right
+   of the notebook toolbar, (default = *Python 3 (ipykernel)*) in the
+   screenshot below, and re-select your notebook kernel from the menu.
+
+.. figure:: img/jupyterlab-kernel-reload.png
+
+   Notebook toolbar with default Python kernel
+
+jupyter-matplotlib extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dask-labextension
+~~~~~~~~~~~~~~~~~
