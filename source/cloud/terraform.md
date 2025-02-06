@@ -127,12 +127,12 @@ cat examples/single.tf.example >> main.tf
 The file now contains the definition for one VM with several options you can customize:
 | variable      | explanation | Possible values
 ----------------|-------------|----
-| vm_name       | Sets the name of the virtual machine. | (string)
-| image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
-| flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
-| nginx_enabled | Installs nginx and exposes ports 80 and 443 (See {ref}`tf_automated`)  | true, false
-| nfs_network   | Connects the vm to the NFS network (Does not create a share). (See [NFS_Share](#terraform_share))Only set true if you requested access  | true, false |
-| vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
+| vm_name       | Sets the name of the virtual machine. | string |
+| image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images) |
+| flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md). |
+| nginx_enabled | Installs nginx and exposes ports 80 and 443 (See {ref}`tf_automated`)  | true/false |
+| nfs_network   | Connects the vm to the NFS network (Does not create a share). (See [NFS_Share](#terraform_share))Only set true if you requested access  | true/false |
+| vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true/false |
 | is_windows | Configures windows-specific behavior if `true` | true/false |
 
 More advanced options are described further on. 
@@ -324,18 +324,20 @@ Private VMs do not support {ref}`tf_automated`
 There's some extra variables you can configure:
 | Variable | Explanation | Values
 |---|---|---|
-| access_key | the name of the ssh key you want to associate with the vm/cluster | (string) |
-| userscript | A shell script that is executed when the VM is first created. | (string) |
-| project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
-| alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
+| access_key | the name of the ssh key you want to associate with the vm/cluster | string |
+| userscript | A shell script that is executed when the VM is first created. | string |
+| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | Gigabytes |
+| persistent_root | Makes the rootdisk persistent (will not be destroyed when the VM resource is destroyed) | true/false (default false) |
 | public | Add a public IP if true | true/false (default true) |
+| floatingip_address | Manually define the public floating IP, in case the project has more than one | ip address (default null) |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
 | cloud_init | Cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
-| nfs_size | DEPRECATED, use nfs_share module | (Gigabytes) |
+| alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
+| nfs_size | DEPRECATED, use nfs_share module | Gigabytes |
 | scripts_enabled | Enables/disables optional ansible scripts | true/false (default true) See {ref}`tf_automated`|
 | vsc_ip | Manually set a VSC floating ip | ip address (default null)|
-| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (Gigabytes)
+| project_name | The name VSC of the project you want to create the resource in | VSC_XXXX |
 
 (firewall)=
 ### Firewall
