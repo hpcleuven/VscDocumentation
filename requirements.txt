@@ -37,4 +37,4 @@ sphinxcontrib-serializinghtml==1.1.5
 tornado==6.3.3
 typing_extensions==4.5.0
 urllib3==1.26.19
-zipp==3.10.0
+zipp==3.19.1
