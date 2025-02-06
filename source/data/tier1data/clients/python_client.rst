@@ -33,9 +33,9 @@ On Hortense and Stevin, the HPC-clusters of UGent, you can load the module as fo
 
     module load python-irodsclient/1.1.4-GCCcore-11.2.0
 
-
-Logging in
-----------
+**************
+Authenticating
+**************
 
 There are three ways to authenticate with the Python-iRODSclient:
 
@@ -43,19 +43,15 @@ There are three ways to authenticate with the Python-iRODSclient:
    > 'How to Connect' > 'Python Client on Windows'. This method, despite the
    title, should work for any operating system.
 
-2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.exe>`_.
+2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.signed.exe>`_.
    Double click on the file and enter your zone name in the window that pops
    up. You might need to put the file in a folder that doesn't require administrator rights.  
 
 3. Linux users can first authenticate with :ref:`icommands`. 
-   Then, they create a second configuration file as follows:
+   The user is also authenticated for the Python-iRODSClient.
 
-   .. code-block:: sh
-
-      cp ~/.irods/irods_environment.json ~/.irods/irods_environment_python.json
-      sed -i 's/pam_password/PAM/g'  ~/.irods/irods_environment_python.json
-
-Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
+.. note::
+  Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
 
 Creating a session
 ------------------
@@ -81,15 +77,13 @@ In a script, this can be done as follows:
    with iRODSSession(irods_env_file=env_file, **ssl_settings) as session:
        [your code here]
 
-Note: If you used the third login method, replace ``~/.irods/irods_environment.json`` with ``~/.irods/irods_environment_python.json``.
-
 In an interactive session you might want to replace the with statement above with:
 
 .. code-block:: python
 
    session = iRODSSession(irods_env_file=env_file, **ssl_settings)
 
-At the end of your session, you should clean up with:
+In that case, you should clean up your session at the end:
 
 .. code-block:: python
 
@@ -241,8 +235,9 @@ However, when you provide a path to the local destination as second argument, it
 
 Here as well, you can just provide the path to a directory, or specify a filename.
 
+***********
 Permissions
------------
+***********
 
 In the PRC, you can create iRODSAccess objects, which represent a permission on a certain collection or data object.
 Each iRODSAccess object has an access type, a path it applies to, and the user or group that gets access.

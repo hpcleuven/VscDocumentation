@@ -21,6 +21,11 @@ and maintained and supported by the HPC-UGent team.
 
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
+End of 2025, the decommissioning process of cluster Hortense will start.
+This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from end 2025.
+
+
+.. _hortense_hardware_details:
 
 Hardware details
 ----------------
@@ -42,6 +47,12 @@ Hortense consists of the following partitions:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 256 GiB RAM (~2GB/core), no swap
        - 480 GB SSD local disk
+- ``dodrio/cpu_milan_rhel9``: partition with RHEL9 operating system:
+   - 30 workernodes, each with:
+       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
+       - 256 GiB RAM (~2GB/core), no swap
+       - 480 GB SSD local disk
+       - Redhat Enterprise Linux 9.4
 - ``dodrio/gpu_rome_a100_40``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
@@ -61,6 +72,21 @@ Hortense consists of the following partitions:
        - 1 NVIDIA V100 (16 GB GPU memory)
        - 256 GiB RAM (~5.2GB/oversubscribed core), no swap
        - 100 GB SSD local disk
+- ``dodrio/debug_milan``: interactive and debug partition:
+   - 3 workernodes, each with:
+       - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
+       - 1 shared NVIDIA L4 (24 GB GPU memory)
+       - 1 NVIDIA L4 (24 GB GPU memory)
+       - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
+       - 100 GB SSD local disk
+- ``dodrio/debug_milan_rhel9``: interactive and debug partition with RHEL9 operating system:
+   - 1 workernode, with:
+       - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
+       - 1 shared NVIDIA L4 (24 GB GPU memory)
+       - 1 NVIDIA L4 (24 GB GPU memory)
+       - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
+       - 100 GB SSD local disk
+       - Redhat Enterprise Linux 9.4
 - ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
 - ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
@@ -361,22 +387,32 @@ Trying to make any changes to files that are accessed via ``/readonly`` will res
 
 .. _hortense_interactive_debug:
 
-Interactive and debug partition
-*******************************
+Interactive and debug partitions
+********************************
 
-A (small) interactive and debug partition `debug_rome` is available where you can get
-quick access but only to a limited number of resources. The limitiations are a maximum of 5 jobs
-(running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
+A number of (small) interactive and debug partitions are available: `debug_rome`, `debug_milan` and `debug_milan_rhel9`
+Purpose of these partitions is to quickly get access to a limited number of resources.
+
+The limitations are a maximum of 5 jobs (running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
 a total of 8 CPU cores combined.
+The CPUs are oversubscribed by a factor 4, which may lead to slower than expected run times when the usage is high.
 
-The CPUs are oversubscribed by a factor 4, which may lead to slower then expected run times when
-the usage is high.
 
-The nodes have one NVIDIA V100 GPU that can be requested for exclusive access
+Technical details of debug/interactive partitions
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Partition `debug_rome` nodes have one NVIDIA V100 GPU that can be requested for exclusive access
 (as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
 that is always available but shared across all jobs on that node.
 
-To make use of the partition you can select the ``dodrio debug_rome`` option in the `Cluster` field in the
+Partition `debug_milan` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
+(as with the GPU partitions) and also one GPU NVIDIA L4 that is always available but shared across all jobs on that node.
+
+
+Using the debug/interactive partitions
+++++++++++++++++++++++++++++++++++++++
+
+To make use of the partitions you can select the ``dodrio debug_rome``, ``dodrio debug_milan`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
 `Interactive Apps` forms on the webportal, or from the CLI
 
 .. code:: shell
@@ -384,8 +420,14 @@ To make use of the partition you can select the ``dodrio debug_rome`` option in 
     module swap cluster/dodrio/debug_rome
     qsub job_script.sh
 
+    module swap cluster/dodrio/debug_milan
+    qsub job_script.sh
 
-No credits are consumed when using this partition.
+    module swap cluster/dodrio/debug_milan_rhel9
+    qsub job_script.sh
+
+
+No credits are consumed when using these partitions.
 
 For some additional information, see the documentation on the
 HPC-UGent Tier-2 interactive and debug cluster: https://docs.hpc.ugent.be/interactive_debug/.
@@ -524,6 +566,26 @@ By default you'll get 12 cores per requested GPU (an explicit ppn= statement is 
     qsub -l nodes=1:gpus=1
 
 (The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
+
+
+Requesting memory
++++++++++++++++++
+
+The default memory that your job will get access is the proportional
+share of the total avaliable memory on the node:
+If you request a full node, all usable memory will be available.
+If you request ``N`` cores on a partition where nodes have ``M`` cores, you will get ``N/M``
+of the total usable memory on the node. For the number of cores and available memory per cluster, please see our
+:ref:`infrastructure <hortense_hardware_details>`,
+or you can use the :ref:`web portal <hortense_web_portal>`, open
+the desktop app and there you can browse it per partition and core using the
+submission form (there is no need to start an actual desktop).
+
+Please be aware! If you request more memory than the default memory would be,
+you will be billed for the requested memory proportion of a node.
+If you use ``X`` part of the memory on a partition where nodes have ``M`` cores,
+you will be billed for ``X*M`` (rounded up for the next integer) cores,
+even if your requested cores (``N``) are smaller than ``X*M``. 
 
 
 Limitations for jobs
@@ -692,6 +754,47 @@ With both phases active, the cluster crossed the symbolic threshold of 100,000 c
 However, at the moment there is no partition defined that can be selected to use all cores.
 If users can provide a proper case and motivation, you can contact support to request such partition
 to give you access to all the available resources.
+
+
+Gradual decommissioning
+-----------------------
+
+End 2025, the gradual decommissioning of Tier-1 Compute Hortense will be initiated.
+Around this time, the 4th VSC Tier-1 cluster will become available at the VUB datacenter.
+
+The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
+This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
+Depending on VSC plans, the ``a100_40`` partition may also disappear. However, there currently is no confirmation regarding this.
+
+
+Update to RHEL9 of Milan partitions
+-----------------------------------
+
+To maintain operational safety, the operating system for the Milan CPU partition will be updated to a new major release.
+Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
+This implies that - end 2025 - your software and/or workflow will need to be compliant with this OS version.
+As of cutoff 2 in 2025, compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
+
+Please test your workflow and software as soon as possible and ensure that you are ready for this transition.
+
+To facilitate testing, we have made two small partitions to run your tests.
+
+- partition ``cpu_milan_rhel9``
+- partition ``debug_milan_rhel9``
+
+These partitions are SOLELY intended for testing your software/workflows.
+Do not run production jobs on these partitions.
+
+To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
+`Interactive Apps` forms on the webportal, or from the CLI.
+
+.. code:: shell
+
+    module swap cluster/dodrio/cpu_milan_rhel9
+    qsub job_script.sh
+
+    module swap cluster/dodrio/debug_milan_rhel9
+    qsub job_script.sh
 
 
 Recent updates

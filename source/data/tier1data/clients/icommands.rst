@@ -13,23 +13,7 @@ programs, it is a powerful and easy to use tool.
 Installation
 ************
 
-iCommands are already installed on the following HPC clusters:
-
-.. grid:: 2
-    :gutter: 4
-
-    .. grid-item-card:: KU Leuven/UHasselt
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Genius <Genius hardware>`
-       * Tier-2 :ref:`wICE <wICE hardware>`
-
-    .. grid-item-card:: VUB
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Hydra <Hydra hardware>`
-
-
+iCommands are currently installed on **all HPC clusters of the VSC.**   
 
 You can of course also install iCommands on your local system. 
 However, iCommands is only available for Linux environments. 
@@ -220,9 +204,9 @@ you try to use autocompletion with iCommands, or use wildcards (*), it
 will be filled in based on the data in your local directory. This can
 yield unexpected results.
 
-*********************************
-Uploading and downloading data
-*********************************
+*************************
+Uploading and downloading
+*************************
 
 To upload data from your local directory to Tier-1 Data, you can use the
 command ``iput``. You can upload individual files but also whole
@@ -230,8 +214,8 @@ directories, by using the ``-r`` option, which stands for ‘recursive’.
 
 .. code-block:: sh
 
-   iput my_file.txt 
-   iput -r  my_directory
+   iput <filename>
+   iput -r  <directory>
 
 You can optionally specify a destination as second argument. If you
 leave the destination blank, iput will take the current working
@@ -242,8 +226,8 @@ directory, you can use the command ``iget``:
 
 .. code-block:: sh
 
-   iget my_data_object.txt
-   iget -r my_directory
+   iget <data_object>
+   iget -r <collection>
 
 ``iget`` downloads data to your current working directory, unless you
 specify another destination as second argument.
@@ -259,13 +243,49 @@ date.
 .. code-block:: sh
 
    # syncronizing data from a local directory to a Tier-1 Data collection
-   irsync -r local_directory i:collection
+   irsync -r <directory> i:<collection>
 
    # syncronizing data from a Tier-1 Data collection to a local directory
-   irsync -r i:collection local_director
+   irsync -r i:<collection> <directory>
 
-Adding metadata
-==============================
+***********
+Permissions
+***********
+
+The command ``ichmod`` can be used to give groups or users :ref:`permissions and inheritance<collaboration>` on objects.
+
+You can give a group or user access on an object as follows:
+
+.. code-block:: sh
+
+   ichmod <read/write/own> <group/user> <object_path>
+
+You can remove the access of a group or user on an object by giving them 'null' access:
+
+.. code-block:: sh
+
+   ichmod null <group/user> <object_path>
+
+When giving or removing access to a collection, you can use the ``-r`` flag to apply the permissions recursively.
+That way, they are applied to all contents of the collection:
+
+.. code-block:: sh
+
+   ichmod -r <read/write/own> <group/user> <collection_path>
+
+The command can be used to change the inheritance property of a collection as follows:
+
+.. code-block:: sh
+
+   # changing inheritance for one collection
+   ichmod <inherit/noinherit> <collection_path>
+
+   # changing inheritance recursively
+   ichmod -r <inherit/noinherit> <collection_path>
+
+********
+Metadata
+********
 
 The command ``imeta`` can be used to add, list, manipulate and remove :ref:`metadata<metadata>` on data objects and collections.
 
@@ -273,7 +293,7 @@ You can add any AVU to a data object as follows:
 
 .. code-block:: sh
 
-   imeta add -d filename attribute value units
+   imeta add -d <filename> <attribute> <value> <units>
 
 As always, the units are optional.
 
@@ -285,19 +305,19 @@ The difference with ``imeta add`` is that it will overwrite if there is an AVU w
 
 .. code-block:: sh
 
-   imeta set -d filename attribute value units
+   imeta set -d <filename> <attribute> <value> <units>
 
 You can list the metadata on an object as follows:
 
 .. code-block:: sh
 
-   imeta ls -d filename
+   imeta ls -d <filename>
 
 Lastly, you can remove a specific AVU as follows:
 
 .. code-block:: sh
 
-   imeta rm -d filename attribute value units
+   imeta rm -d <filename> <attribute> <value> <units>
 
 imeta also has other options, which you can discover by using ``imeta -h``.
 

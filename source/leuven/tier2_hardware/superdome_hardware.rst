@@ -13,6 +13,8 @@ Superdome consists of
 
     - Xeon Gold 6132 CPU\@2.6 GHz (Skylake), 14 cores each
     - 768 GiB RAM each
+    - default memory per core is 53500 MiB
+    - partition ``superdome|superdome_long``
 
 - a 6 TB local node disk
 

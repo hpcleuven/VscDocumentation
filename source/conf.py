@@ -114,7 +114,7 @@ html_navbar_icon_links = [
     },
     {
         "name": "VSC on Twitter",
-        "url": "https://twitter.com/VSC_HPC",
+        "url": "https://x.com/VSC_HPC",
         "icon": "_static/fa-square-x-twitter.svg",
         "type": "local",
     },
@@ -338,7 +338,7 @@ rst_prolog += """
 .. _Cygwin: https://www.cygwin.com/
 .. _Docker: https://www.docker.com/
 .. _docs.globus.org: https://docs.globus.org
-.. _download FileZilla: https://filezilla-project.org/download.php?type=client
+.. _download FileZilla: https://filezilla-project.org/download.php?show_all=1
 .. _Eclipse download page: http://www.eclipse.org/downloads
 .. _Eclipse packages download page: https://www.eclipse.org/downloads/packages/
 .. _Eclipse: https://www.eclipse.org/
@@ -423,7 +423,7 @@ rst_prolog += """
 .. _TigerVNC: https://tigervnc.org/
 .. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm 
 .. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
-.. _TurboVNC download page: https://sourceforge.net/projects/turbovnc/files/
+.. _TurboVNC download page: https://github.com/TurboVNC/turbovnc/releases
 .. _TurboVNC: https://www.turbovnc.org/
 .. _VirtualGL: https://en.wikipedia.org/wiki/VirtualGL
 .. _VSC account page: https://account.vscentrum.be/

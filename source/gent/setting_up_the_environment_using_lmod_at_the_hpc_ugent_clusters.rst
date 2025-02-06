@@ -205,8 +205,8 @@ To see how a module would change the environment, use ``module show`` or
 
    $ ml show matplotlib/1.5.1-intel-2016a-Python-2.7.11
    ----------------------------- /apps/gent/CO7/haswell-ib/modules/all -----------------------------
-   whatis(\"Description: matplotlib is a python 2D plotting library which produces publication quality figures in a variety of 
-   hardcopy formats and interactive environments across platforms. matplotlib can be used in python scripts, the python 
+   whatis(\"Description: matplotlib is a python 2D plotting library which produces publication quality figures in a variety of
+   hardcopy formats and interactive environments across platforms. matplotlib can be used in python scripts, the python
    and ipython shell, web application servers, and six graphical user interface toolkits. - Homepage: http://matplotlib.org \")
    conflict(\"matplotlib\")
    load(\"intel/2016a\")
@@ -437,7 +437,7 @@ modules tool you should be aware of:
 -  ``module purge`` does not unload the ``cluster`` module
 -  ``modulecmd`` is not available anymore (only relevant for EasyBuild)
 
-| 
+|
 | See below for more detailed information.
 
 
@@ -462,7 +462,7 @@ message like:
 ::
 
    $ module load Python/2.7.11-intel-2016a
-   $ module load Python/3.5.1-intel-2016a 
+   $ module load Python/3.5.1-intel-2016a
    Lmod has detected the following error:  Your site prevents the automatic swapping of modules with same name.
    You must explicitly unload the loaded version of \"Python\" before you can load the new one. Use swap (or an unload
    followed by a load) to do this:

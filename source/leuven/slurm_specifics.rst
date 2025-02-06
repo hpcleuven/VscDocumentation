@@ -28,7 +28,7 @@ Job shell
 For batch jobs we strongly recommend to use ``#!/bin/bash -l`` as the shebang
 at the top of your jobscript. The ``-l`` option (hyphen lowercase L) is needed
 to make sure that your ``~/.bashrc`` settings get applied and the appropriate
-:ref:`cluster module <cluster_module>` gets loaded at the start of the job.
+:ref:`cluster module <cluster_modules>` gets loaded at the start of the job.
 This is not strictly needed for interactive jobs: ``srun ... --pty bash``
 and ``srun ... --pty bash -l`` will give essentially identical environments.
 
@@ -173,3 +173,74 @@ A few notes on this feature:
   (MIG) is used. This is for instance the case on the wICE Slurm partition
   called ``interactive``. For jobs on that partition this feature is
   irrelevant.
+
+.. _cpu_resource_limits_in_gpu_jobs:
+
+CPU resource limits in GPU jobs
+-------------------------------
+
+Jobs sent to the ``gpu_*`` partitions are expected to only request a proportionate
+amount of CPU resources. For example, a single-GPU job submitted to a partition
+with 4 GPUs per node should only request up to 1/4th of the available
+CPU cores and CPU memory. An overview of the maximal CPU resources
+per GPU is provided in the table below.
+
+.. list-table:: Available CPU cores and CPU memory per GPU
+   :widths: 20 20 20 20
+   :header-rows: 2
+
+   * - Cluster
+     - Partition(s)
+     - Max Cores
+     - Max Memory
+   * -
+     -
+     -
+     - (MiB)
+   * - Genius
+     - ``gpu_p100*``
+     - 9
+     - 45000
+   * - Genius
+     - ``gpu_v100*``
+     - 4
+     - 84000
+   * - wICE
+     - ``interactive``
+     - 8
+     - 60000
+   * - wICE
+     - ``gpu|gpu_a100``
+     - 18
+     - 126000
+   * - wICE
+     - ``gpu_h100``
+     - 16
+     - 187200
+
+If a job requests more cores or memory per GPU than listed above, you will receive a
+warining message.
+In this case, please adjust the Slurm options accordingly for your future jobs.
+
+As an example, suppose that you need two A100 GPUs for your calculation, with just
+one core per GPU but with as much CPU memory as you can get.
+Such a job can be submitted as follows:
+
+.. code-block:: bash
+
+   sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
+          --nodes=1 --ntasks-per-node=2 --gpus-per-node=2 --mem=252000m \
+          myjobscript.slurm
+
+In practice, 18 CPU cores and 126000 MiB CPU memory will be allocated per GPU,
+and no warning will be raised.
+
+For more examples of valid GPU jobs, have a look at the
+:ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
+quickstart guides.
+
+Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
+(for CPU cores) and ``--mem`` and ``--mem-per-cpu`` (for CPU memory),
+Slurm also offers options like ``--cpus-per-gpu`` and ``--mem-per-gpu``.
+When using these options, make sure that the requested CPU cores
+and CPU memory per GPU does not exceed the limits mentioned in the table above.

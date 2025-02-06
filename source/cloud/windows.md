@@ -1,9 +1,9 @@
 # Running Windows VMs
 
 It is possible to deploy Windows VMs in VSC Tier-1 Cloud infrastructure.
-VSC [Terraform modules](terraform.md#terraform-modules) 
+VSC [Terraform modules](terraform.md) 
 provides a terraform module with an option for Windows. Simply use the `Windows10` image and set `is_windows = true`. Please read our
-[Terraform section](terraform.md#terraform-modules) first to know how to use and modify
+[Terraform section](terraform.md) first to know how to use and modify
 Terraform modules.
 
 :::{note}
