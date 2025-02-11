@@ -101,6 +101,17 @@ file in a public place.
 chmod 600 ~/.config/openstack/clouds.yaml
 ```
 
+:::{tip}
+If you want to use the `openstack` CLI, you need to set the `OS_CLOUD` environment variable.
+This command will ensure that it will be set automatically the next time you open a terminal:
+```shell
+export OS_CLOUD=openstack
+echo "export OS_CLOUD=openstack" >> ~/.bashrc
+```
+**You only need to run this command once**.
+This is only required for the CLI, not for terraform.
+:::
+
 ## Basic VM configuration
 :::{tip}
 If you are **not** using the VSC login node, you need to make sure to:
