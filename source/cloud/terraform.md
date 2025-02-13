@@ -328,6 +328,7 @@ There's some extra variables you can configure:
 | userscript | A shell script that is executed when the VM is first created. | (string) |
 | project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
 | alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
+| ssh_user | Override default ssh user (necessary for custom images) | (string) (default "root") |
 | public | Add a public IP if true | true/false (default true) |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
@@ -336,7 +337,6 @@ There's some extra variables you can configure:
 | scripts_enabled | Enables/disables optional ansible scripts | true/false (default true) See {ref}`tf_automated`|
 | vsc_ip | Manually set a VSC floating ip | ip address (default null)|
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (Gigabytes)
-
 (firewall)=
 ### Firewall
 On a public VM, these ports will be open and exposed to the internet by default:
@@ -439,4 +439,21 @@ You can also set `scripts_enabled=false` if you do not want any [convenience scr
 ```
 
 Feel free to contact us <cloud@vscentrum.be> for help.
+:::
+
+:::{dropdown} Failed to upload script: please login as the user...
+If you get the error:
+```
+│ Error: remote-exec provisioner error
+│
+│   with module.RS-GPU[0].null_resource.testconnection[0],
+│   on ../modules/single_instance/ansible.tf line 17, in resource
+"null_resource" "testconnection":
+│   17:   provisioner "remote-exec" {
+│
+│ Failed to upload script: please login as the user "ubuntu" rather than
+the user "root".
+```
+Terraform is using the wrong user to connect to your VM. This can happen if you're using your own OS image.
+You can set the correct user with the `ssh_user` variable.
 :::
