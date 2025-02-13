@@ -177,7 +177,7 @@ Here, science is the name of the environment you want to work in.
 Install an additional package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To install an additional package, e.g., \`rodbc`, first ensure that the
+To install an additional package, e.g., ``rodbc``, first ensure that the
 environment you want to work in is activated.
 
 ::
