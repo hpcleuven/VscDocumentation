@@ -338,6 +338,7 @@ There's some extra variables you can configure:
 | access_key | the name of the ssh key you want to associate with the vm/cluster | string |
 | userscript | A shell script that is executed when the VM is first created. | string |
 | rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | Gigabytes |
+| ssh_user | Override default ssh user (necessary for custom images) | (string) (default "root") |
 | persistent_root | Makes the rootdisk persistent (will not be destroyed when the VM resource is destroyed) | true/false (default false) |
 | public | Add a public IP if true | true/false (default true) |
 | floatingip_address | Manually define the public floating IP, in case the project has more than one | ip address (default null) |
@@ -452,4 +453,21 @@ You can also set `scripts_enabled=false` if you do not want any [convenience scr
 ```
 
 Feel free to contact us <cloud@vscentrum.be> for help.
+:::
+
+:::{dropdown} Failed to upload script: please login as the user...
+If you get the error:
+```
+│ Error: remote-exec provisioner error
+│
+│   with module.RS-GPU[0].null_resource.testconnection[0],
+│   on ../modules/single_instance/ansible.tf line 17, in resource
+"null_resource" "testconnection":
+│   17:   provisioner "remote-exec" {
+│
+│ Failed to upload script: please login as the user "ubuntu" rather than
+the user "root".
+```
+Terraform is using the wrong user to connect to your VM. This can happen if you're using your own OS image.
+You can set the correct user with the `ssh_user` variable.
 :::
