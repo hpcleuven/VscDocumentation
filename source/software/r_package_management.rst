@@ -130,24 +130,7 @@ Installing Miniconda
 ~~~~~~~~~~~~~~~~~~~~
 
 If you have Miniconda already installed, you can skip ahead to the next
-section, if Miniconda is not installed, we start with that. Download the
-Bash script that will install it from
-`conda.io <https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>`_
-using, e.g., ``wget``::
-
-   $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-
-Once downloaded, run the installation script::
-
-   $ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
-
-Optionally, you can add the path to the Miniconda installation to the
-PATH environment variable in your ``.bashrc`` file. This is convenient, but
-may lead to conflicts when working with the module system, so make sure
-that you know what you are doing in either case. The line to add to your
-``.bashrc`` file would be::
-
-   export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
+section, if Miniconda is not installed please follow our :ref:`guide to installing miniconda <install_miniconda_python>`.
 
 .. _create_r_conda_env:
 
@@ -164,17 +147,19 @@ If the result is blank, or reports that conda can not be found, modify
 the \`PATH\` environment variable appropriately by adding miniconda's bin
 directory to PATH.
 
-Creating a new conda environment is straightforward::
+The next step is to create a new conda environment which can be done as follows::
 
-   $ conda create -n science -c r r-essentials r-rodbc
+   $ conda search -c conda-forge r-base  # select one of available versions for the step below
+   $ conda create -n science -c conda-forge r-base=<version> r-essentials
+   
 
-This command creates a new conda environment called science, and
-installs a number of R packages that you will probably want to have
-handy in any case to preprocess, visualize, or postprocess your data.
-You can of course install more, depending on your requirements and
-personal taste.
+This command creates a new conda environment called "science", and installs your prefered R 
+version from the conda-forge channel as well as the r-essentials bundle which includes number
+of commonly used R packages such as ggplot2, glmnet, dplyr, tidyr, and shiny.
 
-A lot of bioconda and bioconductor packages are not in sync with their dependencies, therefore you may need to create a separate environment for each of those packages to avoid conflicts.
+.. note::
+
+   A lot of bioconda and bioconductor packages are not in sync with their dependencies, therefore you may need to create a separate environment for each of those packages to avoid conflicts.
 
 Working with the environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,7 +177,7 @@ Here, science is the name of the environment you want to work in.
 Install an additional package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To install an additional package, e.g., \`pandas`, first ensure that the
+To install an additional package, e.g., ``rodbc``, first ensure that the
 environment you want to work in is activated.
 
 ::
@@ -203,7 +188,7 @@ Next, install the package:
 
 ::
 
-   $ conda install -c r r-ggplot2
+   $ conda install -c conda-forge r-rodbc
 
 Note that conda will take care of all dependencies, including non-R
 libraries. This ensures that you work in a consistent environment.
