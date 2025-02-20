@@ -9,23 +9,31 @@ for more detailed information.
 TensorBoard log directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The TensorBoard interactive session requires you to specify a log (or project)
-directory in your resource options.
+Before starting the TensorBoard interactive session, make sure to specify a log
+(or project) directory in your resource options.
 
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
 
-      This is a relative directory starting from your ``$VSC_DATA``.
+      The log directory is a relative directory starting from your ``$VSC_DATA``.
 
    .. tab-item:: VUB
 
-      This is an absolute path.
+      The log directory is an absolute path.
 
-Beware that, once the session is launched, you cannot change this directory.  If
-you redirect TensorBoard to a wrong folder (typo in path name or missing log
-files), TensorBoard fails to start, and your session lands on an error page
-starting with the message:
+.. note::
 
-   No dashboards are active for the current data set.
+   - Once the session is launched, you cannot change this directory.  If you
+     redirect TensorBoard to a wrong folder (typo in path name or missing log
+     files), TensorBoard fails to start, and your session lands on an error page
+     starting with the message:
+
+        No dashboards are active for the current data set.
+
+   - If you experience problems with using the TensorBoard app, please consult
+     the `Tensorboard FAQ
+     <https://github.com/tensorflow/tensorboard/blob/master/README.md#frequently-asked-questions>`_
+     before you :ref:`contact user support <user support VSC>`.
+
 

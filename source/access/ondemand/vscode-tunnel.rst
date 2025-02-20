@@ -1,5 +1,5 @@
 VS Code Tunnel
---------------
+==============
 
 The VS Code Tunnel app provides tunnel access to an interactive job from your
 *locally installed* VS Code application. This is handy if you already have many
@@ -23,25 +23,12 @@ VSC clusters that support the VS Code Tunnel app:
        * Tier-2 Hydra
        * Tier-2 Anansi
 
-Before you connect
-~~~~~~~~~~~~~~~~~~
-
-VS Code automatically creates folders ``.vscode`` and ``.vscode-server`` in your
-``$VSC_HOME``, which tend to become rather big quickly, especially if you use a
-lot of extensions.  To avoid filling up your ``$VSC_HOME``, we recommend
-replacing those folders with symlinks to your ``$VSC_DATA``:
-
-.. code-block:: bash
-
-   mkdir $VSC_DATA/.vscode $VSC_DATA/.vscode-server
-   ln -s $VSC_DATA/.vscode ~/.vscode
-   ln -s $VSC_DATA/.vscode-server ~/.vscode-server
-
-If you already have folders ``~/.vscode`` and ``~/.vscode-server``, you can move
-them to ``$VSC_DATA`` before symlinking.
+.. include:: vscode-symlink.rst
 
 How to connect
-~~~~~~~~~~~~~~
+--------------
+
+To connect to the VS Code tunnel, follow these steps:
 
 #. In the web portal, under the 'Interactive Apps' menu, choose 'VS Code
    Tunnel', select the resources and launch your job by clicking the ``Launch``

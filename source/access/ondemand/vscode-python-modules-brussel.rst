@@ -1,5 +1,5 @@
-The following steps are required to use Python and packages from :ref:`the
-software modules <module_system_basics>` in the Python IDE:
+To use Python and Python packages provided by :ref:`the software modules
+<module_system_basics>` in the Python IDE, follow these steps:
 
 #. In 'Pre-run Scriptlet' of the resources form, ``module load`` the
    modules that you need. A common software module is ``SciPy-bundle``, a

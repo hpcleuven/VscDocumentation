@@ -5,6 +5,8 @@ This is the browser version of Visual Studio Code (VS Code).
 For more information on VS Code, check out the official `VSCode guidelines
 <https://code.visualstudio.com/docs>`_.
 
+.. include:: vscode-symlink.rst
+
 Terminal in VS Code
 -------------------
 
@@ -46,7 +48,7 @@ environments here (if you have any Conda environments already, you should see
 them here as well).
 
 Python modules and environments
-...............................
+-------------------------------
 
 .. tab-set::
 

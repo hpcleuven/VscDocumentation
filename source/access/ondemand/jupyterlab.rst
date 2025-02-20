@@ -15,8 +15,12 @@ will become clear below.
 
    .. tab-item:: VUB
 
-      The top-level notebook directory is the selected working directory in the
-      resources form.
+      The top-level notebook directory is the selected 'Working directory' in
+      the resources form. Note however, if you have set ``c.ServerApp.root_dir``
+      in your `Jupyter configuration file
+      <https://jupyter-server.readthedocs.io/en/stable/other/full-config.html>`_
+      (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
+      priority over your 'Working directory' in the resources form.
 
 Jupyter kernels
 ---------------
@@ -283,8 +287,73 @@ modules.
 
    Notebook toolbar with default Python kernel
 
-jupyter-matplotlib extension
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+matplotlib extension
+~~~~~~~~~~~~~~~~~~~~
 
-dask-labextension
-~~~~~~~~~~~~~~~~~
+The `matplotlib extension <https://matplotlib.org/ipympl/>`_ (ipympl) enables
+using the interactive features of matplotlib in your JupyterLab sessio session.
+
+VSC clusters that support the matplotlib extension:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       .. TODO use links
+
+       * Tier-2 Hydra
+       * Tier-2 Anansi
+
+To enable the extension, use the ``%matplotlib ipympl`` (or ``%matplotlib
+widget``) magic.  To ensure your plot is always shown, make sure always generate
+a figure object before plotting, either with ``plt.figure()`` or
+``plt.subplots()``.
+
+.. figure:: img/jupyterlab-matplotlib.png
+
+   matplotlib JupyterLab extension example
+
+
+Dask extension
+~~~~~~~~~~~~~~
+
+The `Dask JupyterLab extension
+<https://github.com/dask/dask-labextension/blob/main/README.md>`_
+(dask-labextension) provides tools to manage Dask clusters and embed Dask’s
+dashboard plots directly into your JupyterLab session.
+
+VSC clusters that support the Dask extension:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       .. TODO use links
+
+       * Tier-2 Hydra
+       * Tier-2 Anansi
+
+#. In the resources form, tick the 'Load the dask module' checkbox to make sure
+   the dask-labextension is loaded before starting JupyterLab.
+
+#. In your new JupyterLab session, open a Jupyter notebook or start a new one.
+
+#. In the 'Settings' menu, select 'Auto-Start Dask'.
+
+#. Select the 'Dask' tab at the left side of the JupyterLab window.
+
+#. In the 'Clusters' pane of the 'Dask' tab, click the '+New' button to connect
+   your notebook to the Dask cluster. The default cluster is a *LocalCluster*.
+
+You can now click any of the yellow-colored bars to open its corresponding Dask
+dashboard. Once opened, you can drag-and-drop them anywhere you want.  Some
+useful Dask dashboards include 'Cpu', 'Cluster Memory', 'Task Stream',
+'Workers'.
+
+.. figure:: img/jupyterlab-dask.png
+
+   Dask JupyterLab extension in action

@@ -22,6 +22,21 @@ Who can use MATLAB
       ``brusselall`` group have rights to use the MATLAB module (hence the
       MATLAB app). For more info, please contact the VUB HPC team at hpc@vub.be.
 
+Before you connect
+~~~~~~~~~~~~~~~~~~
+
+MATLAB automatically creates several hidden folders in your ``$VSC_HOME``,
+including the folder ``.MathWorks``, which tends to become rather big over time.
+To avoid filling up your ``$VSC_HOME``, we recommend replacing this folder with
+a symlink to your ``$VSC_DATA``:
+
+.. code-block:: bash
+
+   mkdir $VSC_DATA/.MathWorks
+   ln -s $VSC_DATA/.MathWorks ~/.MathWorks
+
+If you already have folder ``~/.MathWorks``, you can safely delete it.
+
 Launching the MATLAB app
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
