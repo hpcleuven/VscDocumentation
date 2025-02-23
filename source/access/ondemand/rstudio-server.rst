@@ -13,8 +13,8 @@ It is also possible to use locally installed R packages with RStudio, see e.g.
 furthermore allows to create RStudio projects to manage your R environments.
 When doing so, we recommend selecting the `renv
 <https://rstudio.github.io/renv/articles/renv.html>`_ option to ensure a
-completely independent R environment. Without using ``renv``, loading an RStudio project
-may lead to incomplete R library paths.
+completely independent R environment. Without using ``renv``, loading an RStudio
+project may lead to incomplete R library paths.
 
 For more information on how to use RStudio, check out the `official
 documentation <https://docs.posit.co/ide/user/>`__.
@@ -40,16 +40,17 @@ documentation <https://docs.posit.co/ide/user/>`__.
 
         echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
-   - Additionally, it is advised to change the default behaviour of RStudio to
-     not restore ``.RData`` into the workspace on startup and to never Save the
+   - Additionally, we recommend changing the default behaviour of RStudio to
+     *not* restore the ``.RData`` file (which stores your saved R objects from a
+     previous session) into the workspace on startup, and to never Save the
      workspace to ``.RData`` on exit.  You can do this via the RStudio
-     interface: Tools > Global Options > General > Workspace. This setting is
-     persistent across RStudio sessions, and is stored in your preferences file at
-     ``.local/share/rstudio-prefs.json`` as ``"load_workspace": false``.
+     interface: Tools > Global Options > General > Workspace. These user
+     preferences are persistent across RStudio sessions, and are stored in file
+     ``.local/share/rstudio-prefs.json``.
 
      |VUB| Alternatively, you can tick the 'Clean workspace at startup' checkbox
-     in the resources form. Be aware however, that your user preferences in
-     ``.local/share/rstudio-prefs.json`` will take priority over this checkbox
+     in the resources form. Note, however, that your user preferences (stored in
+     ``.local/share/rstudio-prefs.json``) take priority over this checkbox
      option.
 
 .. _RStudio official documentation: https://docs.rstudio.com/

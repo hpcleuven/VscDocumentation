@@ -1,11 +1,29 @@
+.. _vscode_server:
+
 VS Code Server
 ==============
 
-This is the browser version of Visual Studio Code (VS Code).
-For more information on VS Code, check out the official `VSCode guidelines
+The VS Code Server app provides the browser version of Visual Studio Code (VS
+Code).  For more information, check out the official `VS Code guidelines
 <https://code.visualstudio.com/docs>`_.
 
-.. include:: vscode-symlink.rst
+Before you connect
+------------------
+
+VS Code automatically creates hidden folders ``.vscode`` and ``.vscode-server``
+in your ``$VSC_HOME``, which tend to become rather big, especially if you use a
+lot of extensions.  To avoid filling up your ``$VSC_HOME``, we recommend
+replacing those folders with symlinks to your ``$VSC_DATA``:
+
+.. code-block:: bash
+
+   mkdir $VSC_DATA/.vscode $VSC_DATA/.vscode-server
+   ln -s $VSC_DATA/.vscode ~/.vscode
+   ln -s $VSC_DATA/.vscode-server ~/.vscode-server
+
+If you already have folders ``~/.vscode`` and ``~/.vscode-server``, you can move
+them to ``$VSC_DATA`` before symlinking.
+
 
 Terminal in VS Code
 -------------------
@@ -15,6 +33,9 @@ top left corner and select 'Terminal - New Terminal'.  This will open a shell on
 the node you are running your session on.  You can use this as a regular shell,
 meaning that you can submit jobs, load modules and so on. Notice that, by
 default, you are starting in your ``$VSC_HOME`` directory.
+
+|KUL| By default, a Python and a Git module are already loaded, which means you
+can use both Python and git from a terminal window within VS Code.
 
 VS Code as an IDE
 -----------------
@@ -35,40 +56,50 @@ extension has been tested by VSC support.  To install this extension, go to
 'Extensions', search for 'Python', and install the one developed by 'ms-python'.
 
 Once installed, if you open a script, you can use VS Code as an IDE and run the
-lines of code from within the script (the shortkey is shift+enter).  VS Code
-will start a Python session with the currently selected Python interpreter.  If
-you did not specify another one, this should default to the loaded Python
-module.  The 'Python' extension gives you the possibility to choose other
-interpreters as well.  In the right bottom corner, you can see
-<python-version-number> right next to 'Python'.  If you click that, a window
-will appear where you can select your Python version.  Next to the module
-version, you should see at least some system Python versions (e.g.
-``/bin/python``).  You can also load other modules, or you can also use Conda
-environments here (if you have any Conda environments already, you should see
-them here as well).
+lines of code from within the script (keyboard shortcut shift+enter). VS Code
+will start a Python session with the currently selected Python interpreter.
+
+|KUL| If you did not select another one, this should default to the loaded
+Python module.
+
+The 'Python' extension gives you the possibility to choose other interpreters as
+well.  In the right bottom corner, you can see the selected Python version right
+next to 'Python'.  If you click the Python version, a list of Python versions
+and paths will appear in the command palette. You can also use virtual
+environments or Conda environments here (if you have any environments already,
+you should see them here as well). We recommend against using any of the
+'system' Python versions (located under ``/bin`` or ``/usr/bin``), as they are
+quite old.
+
+For more information about creating customized Python environments, have a look
+at the documentation on :ref:`python packages <Python packages>`.
 
 Python modules and environments
--------------------------------
+...............................
 
-.. tab-set::
+To use Python and Python packages provided by :ref:`the software modules
+<module_system_basics>` in the Python IDE, follow these steps:
 
-   .. tab-item:: KU Leuven/UHasselt
+#. In the 'Pre-run Scriptlet' of the resources form, ``module load`` the
+   modules that you need. A commonly used software module is
+   ``SciPy-bundle``, a bundle of data science packages such as ``numpy``,
+   ``pandas``, and ``scipy``.
 
-      By default, a Python module is already loaded, which means you can use
-      both Python and git from a terminal window within VS Code.
+#. In the VS Code interface, select the corresponding Python version +
+   path as outlined above. Make sure to select the exact same path as that
+   of your loaded Python module. To get the path, type the following
+   command in your VS Code terminal:
 
-      For more information about creating customized Python environments,
-      have a look at the documentation on :ref:`python packages <Python packages>`.
+   .. code-block:: bash
 
-      .. note::
+      which python
 
-         When loading a new Python interpreter, you have to kill your current Python
-         terminal before you will be able to use this new interpreter.
-
-
-   .. tab-item:: VUB
-
-      .. include:: vscode-python-modules-brussel.rst
+|VUB| The Steps for using `virtual environments on top of loaded software modules
+<https://hpc.vub.be/docs/software/additional_software/#python-virtual-environments>`_
+are exactly the same. Note that activating the virtual environment in the
+'Pre-run Scriptlet' is not required: just selecting the Python version + path
+located in the virtual environment at ``<path-to-venv>/bin/python3.x`` is
+sufficient.
 
 R IDE
 ~~~~~
@@ -88,7 +119,7 @@ R IDE
                conda create -n <env_name> -c conda-forge r-base r-remotes r-languageserver r-httpgd r-jsonlite
 
       Once you've created your environment, go ahead and start a VS Code session on
-      Open Ondemand.  On the lefthand side, click the extension menu and search for
+      Open Ondemand.  On the left-hand side, click the extension menu and search for
       'R'.  You should install the 'R' extension of 'REditorSupport'.
 
       Now there are two ways to use the R installation inside your Conda environment:
@@ -111,4 +142,27 @@ R IDE
    .. tab-item:: VUB
 
       (documentation not yet available)
+
+
+Running Jupyter inside VS Code
+------------------------------
+
+It’s also possible to edit/run Jupyter notebooks inside VS Code. Below are the
+instructions for Python:
+
+#. If using Jupyter with a :ref:`jupyterlab_pure_module_env`, make sure to load
+   any modules you need in the 'Pre-run scriptlet' in the resources form.
+
+   |VUB| If you also need the :ref:`matplotlib_lab_extension`, make sure to also load
+   a compatible ``ipympl`` module.
+
+#. In your VS Code session, install the 'Jupyter' extension developed by
+   'ms-toolsai'.
+
+#. Open a Jupyter notebook or create a new one.
+
+#. Click 'Select Kernel' at the top right of the window.
+
+#. In the command palette, select 'Python Environments...', next select the
+   Python version and path that you need.
 

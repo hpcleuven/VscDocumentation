@@ -41,7 +41,7 @@ Launching the MATLAB app
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To launch MATLAB via OnDemand, select your desired MATLAB version from the
-drop-down menu on the resource form.  Given that our current MATLAB
+drop-down menu in the resources form.  Given that our current MATLAB
 installations automatically detect GPU devices and CUDA libraries, you may also
 request GPU(s) as resources, if needed.
 

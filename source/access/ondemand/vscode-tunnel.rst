@@ -5,10 +5,9 @@ The VS Code Tunnel app provides tunnel access to an interactive job from your
 *locally installed* VS Code application. This is handy if you already have many
 extensions installed locally, or if you want to easily switch between local and
 remote work within a single application. The downside is the number of steps
-involved to connect (although mostly point-and-click).
+involved to connect (although mostly point-and-click and authentication).
 
-For more information on VS Code, check out the official `VSCode guidelines
-<https://code.visualstudio.com/docs>`_.
+Usage of the VS Code Tunnel app is very similar to the :ref:`vscode_server` app.
 
 VSC clusters that support the VS Code Tunnel app:
 
@@ -23,17 +22,14 @@ VSC clusters that support the VS Code Tunnel app:
        * Tier-2 Hydra
        * Tier-2 Anansi
 
-.. include:: vscode-symlink.rst
-
 How to connect
 --------------
 
 To connect to the VS Code tunnel, follow these steps:
 
 #. In the web portal, under the 'Interactive Apps' menu, choose 'VS Code
-   Tunnel', select the resources and launch your job by clicking the ``Launch``
-   button. Once your job has started, connect by clicking the ``Connect``
-   button.
+   Tunnel', select the resources and click the ``Launch`` button to launch your
+   job. Once your job has started, click the ``Connect`` button to connect.
 
 #. A first browser tab or window opens, showing a terminal session, and you are
    asked 'How would you like to log in to Visual Studio Code?'. Select 'Microsoft
@@ -76,11 +72,4 @@ To connect to the VS Code tunnel, follow these steps:
      form.
    - To close the remote connection, click again the blue button in the bottom
      left, and select 'Close Remote Connection' in the command palette.
-
-Python modules and environments
-...............................
-
-.. include:: vscode-python-modules-brussel.rst
-
-
 

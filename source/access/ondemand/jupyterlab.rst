@@ -47,12 +47,14 @@ activate any other kernel by loading its corresponding :ref:`software module
 new icon will automatically appear on your lab launcher to start a notebook with
 that kernel.
 
+.. _jupyterlab_pure_module_env:
+
 Pure module environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In the app resource form, besides the :ref:`shared resources
-<shared_resources>`, you can also choose between different 'Toolchain and Python
-versions' from a drop-down menu.  An example would be '2023a and
+In the resources form, besides the :ref:`shared resources <shared_resources>`,
+you can also choose between different 'Toolchain and Python versions' from a
+drop-down menu.  An example would be '2023a and
 ``Python/3.11.3-GCCcore-12.3.0``'.  Based on that choice, the corresponding
 JupyterLab module will be loaded together with its dependencies (such as the
 listed Python module).
@@ -120,7 +122,7 @@ least version 6.19.2) and finally the kernel itself::
     conda install ipykernel
     python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
 
-These commands should be excecuted from a shell (e.g. using 'Login Server Shell Access'),
+These commands should be executed from a shell (e.g. using 'Login Server Shell Access'),
 and only need to be done once for a given environment.
 When launching a new JupyterLab session, this kernel should then show up in the overview
 of available kernels, and as a tile under the 'Notebook' section when opening a new launcher.
@@ -149,7 +151,7 @@ following requirements:
   loaded as those that were loaded when creating it.
 
 - A virtual environment is only guaranteed to work in the same :ref:`CPU
-  microarchitecture <tier2 hardware>` as the one it was created on.
+  micro-architecture <tier2 hardware>` as the one it was created on.
 
   |KUL| We recommend to consider the suggestions in the :ref:`wICE advanced
   guide <wice_compilation>`.
@@ -214,28 +216,28 @@ For more general information, please refer to the `official JupyterLab documenta
 JupyterLab extensions
 ---------------------
 
-Extensions enhance or customize to your JupyterLab session.  You can find the
-list of available extensions in the extension tab on the left panel (*puzzle
-piece icon*) and you can enable or disable any of them.
+JupyterLab extensions enhance or customize your JupyterLab session.  You can
+find the list of available extensions in the extension tab on the left panel
+(*puzzle piece icon*) and you can enable or disable any of them.
 
 .. note::
 
-   The store of Jupyter extensions is disabled on the notebook platform as the
-   available extensions for download on the store are unreviewed and they can
-   contain malicious or malfunctioning software. If you need any Jupyter
-   extension that is not yet available, please contact the site admins.
+   The JupyterLab extensions store is disabled because the available extensions
+   in the store are not reviewed and may contain malicious or malfunctioning
+   software. If you need any JupyterLab extension that is not yet available,
+   please contact the site admins.
 
 .. _software_modules_extension:
 
-Software modules extension
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Software modules Lab extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The 'Software Modules' extension allows you to load additional software modules
-within JupyterLab without relaunching your JupyterLab session. This provides a
-more flexible alternative to loading modules via the 'Pre-run Scriptlet' in the
-resources form.
+The 'Software Modules' JupyterLab extension allows you to load additional
+software modules within JupyterLab without relaunching your JupyterLab session.
+This provides a more flexible alternative to loading modules via the 'Pre-run
+Scriptlet' in the resources form.
 
-VSC clusters that support the 'Software Modules' extension:
+VSC clusters that support the 'Software Modules' Lab extension:
 
 .. grid:: 3
     :gutter: 4
@@ -248,18 +250,20 @@ VSC clusters that support the 'Software Modules' extension:
        * Tier-2 Hydra
        * Tier-2 Anansi
 
-You can load software modules from the tab with a *hexagon* icon on the left
-panel of JupyterLab. This tab opens a list of loaded modules followed by a
-list of available modules.
+The 'Software Modules' Lab extension is enabled by default in your JupyterLab
+session.  You can load software modules from the tab with a *hexagon* icon on
+the left panel of JupyterLab. This tab shows a long list of modules: the loaded
+modules at the top, and below that, a list of available modules.
+
 
 .. figure:: img/jupyterlab-lmod-tab-2023a.webp
 
-   Software Modules extension in JupyterLab.
+   Software Modules Lab extension
 
-Upon launch, the list of loaded modules will already show some modules loaded by
-JupyterLab itself. For example, you will always see a Python module loaded,
-which determines the version of Python of the kernel used by your Python
-notebooks on this session.
+Upon launch, the list of loaded modules will already show some modules that have
+been loaded by JupyterLab itself. For example, you will always see a Python
+module loaded, which determines the version of Python of the kernel used by your
+Python notebooks on this session.
 
 .. warning::
 
@@ -267,33 +271,34 @@ notebooks on this session.
    for the correct function of the lab and notebooks. They should not be unloaded.
 
 Below the loaded modules, you will find the list of available modules that can
-be loaded on-demand. Point your cursor to the right of the module name and a
-*Load* button will appear (see screenshot on the right). All modules shown in
-the list are compatible with each other, so you can load any combination of
-modules.
+be loaded on-demand. Move your mouse pointer to the right of the module name and a
+*Load* button will appear (see screenshot on the right).
 
 .. figure:: img/jupyterlab-lmod-load-2023a.webp
 
-   Loading a module Software Modules extension JupyterLab.
+   Loading a module in the Software Modules Lab extension
 
 .. note::
 
    Any change to the list of loaded modules requires rebooting the kernel of
-   your open notebooks. After loading/unloading modules, click the kernel at the top-right
-   of the notebook toolbar, (default = *Python 3 (ipykernel)*) in the
+   your open notebooks. After loading/unloading modules, click the kernel at the
+   top-right of the notebook toolbar, (default = *Python 3 (ipykernel)*) in the
    screenshot below, and re-select your notebook kernel from the menu.
 
 .. figure:: img/jupyterlab-kernel-reload.png
 
    Notebook toolbar with default Python kernel
 
-matplotlib extension
-~~~~~~~~~~~~~~~~~~~~
+.. _matplotlib_lab_extension:
 
-The `matplotlib extension <https://matplotlib.org/ipympl/>`_ (ipympl) enables
-using the interactive features of matplotlib in your JupyterLab sessio session.
+Matplotlib Lab extension
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-VSC clusters that support the matplotlib extension:
+The `matplotlib JupyterLab extension <https://matplotlib.org/ipympl/>`_
+(``ipympl``) enables the interactive features of matplotlib in your JupyterLab
+session.
+
+VSC clusters that support the matplotlib Lab extension:
 
 .. grid:: 3
     :gutter: 4
@@ -306,25 +311,25 @@ VSC clusters that support the matplotlib extension:
        * Tier-2 Hydra
        * Tier-2 Anansi
 
-To enable the extension, use the ``%matplotlib ipympl`` (or ``%matplotlib
-widget``) magic.  To ensure your plot is always shown, make sure always generate
-a figure object before plotting, either with ``plt.figure()`` or
+To enable the Lab extension, use the ``%matplotlib ipympl`` or ``%matplotlib
+widget`` magic command.  To ensure your plot is always shown, make sure always
+generate a figure object before plotting, e.g. with ``plt.figure()`` or
 ``plt.subplots()``.
 
 .. figure:: img/jupyterlab-matplotlib.png
 
-   matplotlib JupyterLab extension example
+   matplotlib Lab extension example
 
 
-Dask extension
-~~~~~~~~~~~~~~
+Dask Lab extension
+~~~~~~~~~~~~~~~~~~
 
 The `Dask JupyterLab extension
 <https://github.com/dask/dask-labextension/blob/main/README.md>`_
 (dask-labextension) provides tools to manage Dask clusters and embed Dask’s
 dashboard plots directly into your JupyterLab session.
 
-VSC clusters that support the Dask extension:
+VSC clusters that support the Dask Lab extension:
 
 .. grid:: 3
     :gutter: 4
@@ -338,22 +343,23 @@ VSC clusters that support the Dask extension:
        * Tier-2 Anansi
 
 #. In the resources form, tick the 'Load the dask module' checkbox to make sure
-   the dask-labextension is loaded before starting JupyterLab.
+   the Dask Lab extension is loaded before starting JupyterLab.
 
 #. In your new JupyterLab session, open a Jupyter notebook or start a new one.
 
 #. In the 'Settings' menu, select 'Auto-Start Dask'.
 
-#. Select the 'Dask' tab at the left side of the JupyterLab window.
+#. Click the *Dask* icon at the left side of the JupyterLab window.
 
-#. In the 'Clusters' pane of the 'Dask' tab, click the '+New' button to connect
-   your notebook to the Dask cluster. The default cluster is a *LocalCluster*.
+#. In the 'Clusters' pane of the 'Dask' tab, click the '+New' button to fire up
+   a Dask cluster and connect your notebook to it. The default cluster is a
+   *LocalCluster*, which is suited for single-node calculations.
 
 You can now click any of the yellow-colored bars to open its corresponding Dask
-dashboard. Once opened, you can drag-and-drop them anywhere you want.  Some
-useful Dask dashboards include 'Cpu', 'Cluster Memory', 'Task Stream',
-'Workers'.
+dashboard. Once opened, you can drag-and-drop it anywhere you want, and you can
+open multiple dashboards in the same session. Some useful Dask dashboards
+include 'Cpu', 'Cluster Memory', 'Task Stream', 'Workers'.
 
 .. figure:: img/jupyterlab-dask.png
 
-   Dask JupyterLab extension in action
+   Dask Lab extension in action

@@ -3,7 +3,7 @@ Desktop
 
 The Desktop app will launch a light-weight (Xfce) desktop environment in an
 interactive job. Its main purpose is to run graphical software for which there
-isn’t (yet) an app available.
+isn’t (yet) a dedicated app available.
 
 VSC clusters that support the Desktop app:
 
@@ -32,8 +32,8 @@ For optimal performance, we recommend the following workflow:
 
 .. tip::
 
-   Once the Desktop app is running, you can provide view-only access to other
-   VSC users. In the 'My Interactive Sessions' menu, right-click the 'View Only
-   (Share-able Link)' button to copy the link and share it with others. This
-   feature can be very useful for tasks like troubleshooting, pair programming,
-   and trainings.
+   Once the Desktop app is active, you can give view-only access to other VSC
+   users. In the 'My Interactive Sessions' menu, right-click the 'View Only
+   (Share-able Link)' button to copy the link and share it with others. Anyone
+   with the link can view your Desktop session in real-time, which is especially
+   helpful for job troubleshooting and hands-on training.

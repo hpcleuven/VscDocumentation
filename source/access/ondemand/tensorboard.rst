@@ -9,8 +9,8 @@ for more detailed information.
 TensorBoard log directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before starting the TensorBoard interactive session, make sure to specify a log
-(or project) directory in your resource options.
+Before starting the TensorBoard session, make sure to specify a log directory in
+the resources form.
 
 .. tab-set::
 
@@ -34,6 +34,6 @@ Before starting the TensorBoard interactive session, make sure to specify a log
    - If you experience problems with using the TensorBoard app, please consult
      the `Tensorboard FAQ
      <https://github.com/tensorflow/tensorboard/blob/master/README.md#frequently-asked-questions>`_
-     before you :ref:`contact user support <user support VSC>`.
+     before :ref:`contacting user support <user support VSC>`.
 
 

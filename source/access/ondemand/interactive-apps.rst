@@ -66,8 +66,8 @@ job will be queued.
            - Description
          * - Account
            - Select the credit account you want to deduct the credits from.  The
-             accounts associated with your VSC number will be displayed in a
-             dropdown menu.
+             accounts associated with your VSC-id will be displayed in a
+             drop-down menu.
          * - Required memory per core in megabytes
            - This defaults to 3400 MB.
          * - Reservation
@@ -89,7 +89,7 @@ job will be queued.
       .. note::
 
          The acquired GPU will be the same as the type specified in the partition
-         (e.g. a NVidia H100 for ``gpu_h100`` on wICE).  For wICE, you can also
+         (e.g. a NVIDIA H100 for ``gpu_h100`` on wICE).  For wICE, you can also
          request a GPU from the ``interactive`` partition.
          One GPU here is a virtual GPU slice of the available A100 GPUs.
          One GPU slice is the same as 1/7th of CUDA cores and memory of an A100 GPU.
@@ -134,7 +134,7 @@ your job resources:
       <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
 
       If requesting a GPU, it will be the same as the type specified in the
-      partition (e.g. a NVidia H100 for ``gpu_h100`` on wICE).  For wICE, you
+      partition (e.g. a NVIDIA H100 for ``gpu_h100`` on wICE).  For wICE, you
       can also request a GPU from the ``interactive`` partition.  One GPU here
       is a virtual GPU slice of the available A100 GPUs.  One GPU slice is the
       same as 1/7th of CUDA cores and memory of an A100 GPU.  The interactive
