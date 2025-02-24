@@ -63,6 +63,7 @@ page.  In the following sections, we will describe them in more detail.
    job-composer
    interactive-apps
    desktop
+   gaussview
    interactive-shell
    jupyterlab
    matlab
