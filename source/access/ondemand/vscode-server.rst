@@ -94,12 +94,11 @@ To use Python and Python packages provided by :ref:`the software modules
 
       which python
 
-|VUB| The Steps for using `virtual environments on top of loaded software modules
-<https://hpc.vub.be/docs/software/additional_software/#python-virtual-environments>`_
-are exactly the same. Note that activating the virtual environment in the
-'Pre-run Scriptlet' is not required: just selecting the Python version + path
-located in the virtual environment at ``<path-to-venv>/bin/python3.x`` is
-sufficient.
+The Steps for using :ref:`virtual environments on top of loaded software modules
+<venv_python>` are exactly the same. Note that activating the virtual
+environment in the 'Pre-run Scriptlet' is not required: just selecting the
+Python version + path located in the virtual environment at
+``<path-to-venv>/bin/python3.x`` is sufficient.
 
 R IDE
 ~~~~~
