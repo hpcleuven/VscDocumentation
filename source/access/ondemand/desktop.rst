@@ -1,3 +1,5 @@
+.. _ood_desktop:
+
 Desktop
 -------
 
