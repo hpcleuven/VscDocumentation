@@ -59,13 +59,17 @@ clouds:
 
 ```
 
-As the file comments state, you should copy the current clouds.yaml to
-your VSC login node **$HOME** _login.hpc.ugent.be:
-~/.config/openstack/clouds.yaml_, or locally if you have installed
-Terraform in
-your own laptop or computer. Terraform will use this file to authenticate to
-OpenStack API automatically.
+```{important}
+You should copy the current clouds.yaml to
+your VSC login node (login.hpc.ugent.be) `$HOME/.config/openstack/clouds.yaml`, or locally if you have installed
+Terraform on your own computer. Terraform will use this file to authenticate to OpenStack API automatically.
+```
+:::{tip}
+You can easily access and edit the files on the login node by going to the [HPC UGent dashboard](https://login.hpc.ugent.be/pun/sys/dashboard/files/). 
+**Enable "Show Dotfiles"** to see the `.config` directory.
 
+You can also access the commandline of the login node there (under `Clusters` dropdown).
+:::
 ## Getting Terraform examples
 
 You can connect to UGent login node `login.hpc.ugent.be` to use
@@ -89,13 +93,24 @@ Make sure you have *`~/.config/openstack/clouds.yaml`* available from
 the login node (see previous [section](#create-application-credentials-for-terraform)).
 
 :::{danger}
-Do not share your application's credential file `clouds.yaml` or put this
+Do not share your application credential file (`clouds.yaml`) or put this
 file in a public place.
 :::
 
 ```shell
 chmod 600 ~/.config/openstack/clouds.yaml
 ```
+
+:::{tip}
+If you want to use the `openstack` CLI, you need to set the `OS_CLOUD` environment variable.
+This command will ensure that it will be set automatically the next time you open a terminal:
+```shell
+export OS_CLOUD=openstack
+echo "export OS_CLOUD=openstack" >> ~/.bashrc
+```
+**You only need to run this command once**.
+This is only required for the CLI, not for terraform.
+:::
 
 ## Basic VM configuration
 :::{tip}
@@ -123,12 +138,12 @@ cat examples/single.tf.example >> main.tf
 The file now contains the definition for one VM with several options you can customize:
 | variable      | explanation | Possible values
 ----------------|-------------|----
-| vm_name       | Sets the name of the virtual machine. | (string)
-| image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images)
-| flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md).
-| nginx_enabled | Installs nginx and exposes ports 80 and 443 (See {ref}`tf_automated`)  | true, false
-| nfs_network   | Connects the vm to the NFS network (Does not create a share). (See [NFS_Share](#terraform_share))Only set true if you requested access  | true, false |
-| vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true, false |
+| vm_name       | Sets the name of the virtual machine. | string |
+| image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images) |
+| flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md). |
+| nginx_enabled | Installs nginx and exposes ports 80 and 443 (See {ref}`tf_automated`)  | true/false |
+| nfs_network   | Connects the vm to the NFS network (Does not create a share). (See [NFS_Share](#terraform_share))Only set true if you requested access  | true/false |
+| vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true/false |
 | is_windows | Configures windows-specific behavior if `true` | true/false |
 
 More advanced options are described further on. 
@@ -320,18 +335,21 @@ Private VMs do not support {ref}`tf_automated`
 There's some extra variables you can configure:
 | Variable | Explanation | Values
 |---|---|---|
-| access_key | the name of the ssh key you want to associate with the vm/cluster | (string) |
-| userscript | A shell script that is executed when the VM is first created. | (string) |
-| project_name | The name VSC of the project you want to create the resurce in | VSC_XXXX |
-| alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
+| access_key | the name of the ssh key you want to associate with the vm/cluster | string |
+| userscript | A shell script that is executed when the VM is first created. | string |
+| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | Gigabytes |
+| ssh_user | Override default ssh user (necessary for custom images) | (string) (default "root") |
+| persistent_root | Makes the rootdisk persistent (will not be destroyed when the VM resource is destroyed) | true/false (default false) |
 | public | Add a public IP if true | true/false (default true) |
+| floatingip_address | Manually define the public floating IP, in case the project has more than one | ip address (default null) |
 | custom_secgroup_rules | A list of security group rules | map of objects (see [Firewall](#firewall) ) |
 | volumes | A list of extra volumes | map of objects (see [Volumes](#volumes)) |
 | cloud_init | Cloud-init "part" to execute when the VM is first created |[cloud-init terraform part](https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/config#nested-schema-for-part) |
-| nfs_size | DEPRECATED, use nfs_share module | (Gigabytes) |
+| alt_http | Use randomly generated ports for http instead of port 80/443 | true/false (default false)|
+| nfs_size | DEPRECATED, use nfs_share module | Gigabytes |
 | scripts_enabled | Enables/disables optional ansible scripts | true/false (default true) See {ref}`tf_automated`|
 | vsc_ip | Manually set a VSC floating ip | ip address (default null)|
-| rootdisk_size | Manually sets the size of the rootdisk, overriding the flavor settings | (Gigabytes)
+| project_name | The name VSC of the project you want to create the resource in | VSC_XXXX |
 
 (firewall)=
 ### Firewall
@@ -435,4 +453,21 @@ You can also set `scripts_enabled=false` if you do not want any [convenience scr
 ```
 
 Feel free to contact us <cloud@vscentrum.be> for help.
+:::
+
+:::{dropdown} Failed to upload script: please login as the user...
+If you get the error:
+```
+│ Error: remote-exec provisioner error
+│
+│   with module.RS-GPU[0].null_resource.testconnection[0],
+│   on ../modules/single_instance/ansible.tf line 17, in resource
+"null_resource" "testconnection":
+│   17:   provisioner "remote-exec" {
+│
+│ Failed to upload script: please login as the user "ubuntu" rather than
+the user "root".
+```
+Terraform is using the wrong user to connect to your VM. This can happen if you're using your own OS image.
+You can set the correct user with the `ssh_user` variable.
 :::
