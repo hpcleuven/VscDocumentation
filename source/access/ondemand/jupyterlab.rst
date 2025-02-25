@@ -1,9 +1,9 @@
 JupyterLab
 ==========
 
-With this app you can write and run `Jupyter <official JupyterLab
-documentation>`_ notebooks containing annotated Python, R or Julia code (among
-other languages). IPython consoles are available as well. One of the benefits of
+With this app you can write and run `Jupyter notebooks <official JupyterLab
+documentation_>`_ containing annotated Python, R or Julia code (among other
+languages). IPython consoles are available as well. One of the benefits of
 JupyterLab is that it supports different types of user-defined environments, as
 will become clear below.
 

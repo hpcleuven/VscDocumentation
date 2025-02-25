@@ -33,7 +33,7 @@ To connect to the VS Code tunnel, follow these steps:
 
 #. A first browser tab or window opens, showing a terminal session, and you are
    asked 'How would you like to log in to Visual Studio Code?'. Select 'Microsoft
-   Account' using the arrow keys on your keyboard and click Enter.
+   Account' using the arrow keys on your keyboard and press Enter.
 
 #. An URL and an authentication code are shown, which you will need to sign in
    to VS Code. Copy the code by holding the Shift key while selecting it, and
