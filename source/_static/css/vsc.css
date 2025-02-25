@@ -1,22 +1,30 @@
 html[data-theme="light"] {
     --pst-color-primary: #d96c31;  /* VSC orange */
-    --pst-color-link: #40807D;  /* dark teal (complementary) */
+    --pst-color-secondary: #2989bc;  /* Haddock’s Sweater (VSC orange complementary) */
+    --pst-color-link: var(--pst-color-secondary);
     --pst-color-link-hover: #f28e24;  /* VSC secondary orange */
     --pst-color-background: #ffffff;  /* actual white */
     --pst-color-on-background: #f9f9f9;  /* lighter VSC white */
     --pst-color-surface: #f5f5f5;  /* cards background */
     --pst-color-border: #dbdbdb;
+    --pst-heading-color: var(--pst-color-light-text);
+    --pst-color-accent: var(--pst-color-primary);
+    --pst-color-table-row-hover-bg: #fcf1dd;  /* very light VSC yellow */
     --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
 
 html[data-theme="dark"] {
     --pst-color-primary: #f28e24;  /* VSC secondary orange */
-    --pst-color-link: #90f2f2;  /* light teal (complementary) */
-    --pst-color-link-hover: #f9bf19;
+    --pst-color-secondary: #51cbda;  /* Sea serpent blue (VSC orange complementary) */
+    --pst-color-link: var(--pst-color-secondary);
+    --pst-color-link-hover: #f9bf19;  /* VSC bright orange */
     --pst-color-background: #282828;  /* darker VSC black */
     --pst-color-on-background: #383839;  /* VSC black */
     --pst-color-surface: #303030;  /* cards background */
     --pst-color-border: #4e4e4e;
+    --pst-heading-color: var(--pst-color-dark-text);
+    --pst-color-accent: var(--pst-color-primary);
+    --pst-color-table-row-hover-bg: #3c282c;  /* very dark VSC brick */
     --sd-color-card-border-hover: var(--pst-color-link-hover);
 }
 
@@ -39,7 +47,7 @@ html[data-theme="light"] .bd-content {
 }
 
 html[data-theme="dark"] .bd-sidebar-primary {
-    background-color: #3c2c28;  /* very dark VSC brick */
+    background-color: #3c282c;  /* very dark VSC brick */
 }
 html[data-theme="dark"] .bd-content {
     background-color: var(--pst-color-background);
@@ -48,47 +56,117 @@ html[data-theme="dark"] .bd-content {
     html[data-theme="dark"] .bd-container {
         background: var(--pst-color-background);
         /* dark VSC brick: #673527 */
-        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(76, 39, 29) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
+        background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(60, 40, 55) 50%, rgb(40, 40, 40) 80%, rgb(40, 40, 40) 100%)
     }
     html[data-theme="dark"] .bd-sidebar-primary {
         background-color: transparent;
     }
 }
 
-/* toctree format */
-.toctree-wrapper .toctree-l1 {
-    font-size: 1.2rem;
-    font-weight: bold;
+/* Text decorations on links and buttons*/
+/* replace default underlines with a dotted underline on hover only */
+a,
+a.nav-link,
+html .sd-btn:hover {
+    text-decoration: none;
 }
-.toctree-wrapper .toctree-l2 {
-    font-size: 1.0rem;
-    font-weight: normal;
+
+a:hover,
+a.nav-link:hover,
+.toc-entry a.nav-link:hover,
+nav.bd-links li > a:hover,
+.bd-content .sd-tab-set > input:not(:checked, :focus-visible) + label:hover {
+    text-decoration: underline dotted 1.5pt;
+    text-decoration-skip-ink: auto;
+}
+
+/* fix styling of local icons to match other icons on navbar*/
+html[data-theme="light"] a.nav-link img.icon-link-image {
+    filter: brightness(0) saturate(100%) invert(31%) sepia(45%) saturate(301%) hue-rotate(176deg) brightness(91%) contrast(85%);
+    height: 1.4em;
+}
+html[data-theme="light"] a.nav-link:hover img.icon-link-image {
+    /* Haddock's Sweater: #2989bc (--pst-color-secondary) */
+    filter: brightness(0) saturate(100%) invert(49%) sepia(51%) saturate(667%) hue-rotate(156deg) brightness(86%) contrast(91%);
+}
+html[data-theme="dark"] a.nav-link img.icon-link-image {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(8%) saturate(362%) hue-rotate(175deg) brightness(91%) contrast(94%);
+    height: 1.4em;
+}
+html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
+    /* Sea serpent blue: #51cbda (--pst-color-secondary) */
+    filter: brightness(0) saturate(100%) invert(72%) sepia(87%) saturate(394%) hue-rotate(147deg) brightness(92%) contrast(85%);
 }
 
 /* make sphinx-design cards slightly non-transparent */
-.sd-card {
-    background-color: var(--pst-color-surface);
+.sd-card { background-color: var(--pst-color-surface); }
+/* add class to handle nested cards */
+.nested-card-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+.nested-card-container .sd-container-fluid .sd-row {
+    height: 100%;
+    align-content: center;
+}
+.nested-card-top { z-index: 20; }
+/* theme of cards displaying services */
+.service-card-toc .sd-card .sd-card-body { padding: 1.5rem }
+.service-card-toc .sd-card .sd-card-body a { color: var(--pst-heading-color); }
+.service-card-toc .toctree-wrapper .toctree-l1 { font-size: 1.2rem; } 
+.service-card-toc .toctree-wrapper .toctree-l1 > ul { font-size: 1.0rem; margin-top: 0.5rem; }
+.service-card-toc .toctree-wrapper .toctree-l1 > ul > li { list-style-type: disc; }
+.service-card-tier1 .sd-card .sd-card-body {
+    background: #83C0C1;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #83C0C133, #83C0C166);
+}
+.service-card-tier2 .sd-card .sd-card-body {
+    background: #6962AD;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #6962AD33, #6962AD66);
+}
+.service-card-term .sd-card .sd-card-body {
+    background: #640D5F;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #640D5F33, #640D5F66);
+}
+.service-card-portal .sd-card .sd-card-body {
+    background: #D91656;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #D9165633, #D9165666);
+}
+.service-card-soft .sd-card .sd-card-body {
+    background: #FFB200;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #FFB20033, #FFB20066);
+}
+.service-card-jobs .sd-card .sd-card-body {
+    background: #EB5B00;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #EB5B0033, #EB5B0066);
+}
+.service-card-globus .sd-card .sd-card-body {
+    background: #0E21A0;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #0E21A033, #0E21A066);
+}
+.service-card-vms .sd-card .sd-card-body {
+    background: #206A5D;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #206A5D33, #206A5D66);
+}
+.service-card-vmsgpu .sd-card .sd-card-body {
+    background: #81B214;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #81B21433, #81B21466);
+}
+.service-card-orch .sd-card .sd-card-body {
+    background: #FFCC29;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #FFCC2933, #FFCC2966);
 }
 
 /* line numbers in codeblocks on transparent column */
 html[data-theme="light"] .highlight span.linenos { background-color: transparent; }
 html[data-theme="dark"] .highlight span.linenos { background-color: transparent; }
 
-/* style x-twitter img icon depending on active theme */
-html[data-theme="light"] a.nav-link:hover img.icon-link-image {
-    /* Dark VSC orange: #d96c31. Equivalent to --pst-color-link-hover */
-    filter: brightness(0) saturate(100%) invert(46%) sepia(89%) saturate(502%) hue-rotate(337deg) brightness(91%) contrast(85%);
-}
-html[data-theme="dark"] a.nav-link img.icon-link-image {
-    filter: brightness(150%) contrast(120%);
-}
-html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
-    /* Light VSC orange: #f28e24. Equivalent to --pst-color-link-hover */
-    filter: brightness(0) saturate(100%) invert(56%) sepia(81%) saturate(1394%) hue-rotate(348deg) brightness(106%) contrast(90%);
-}
-
 /* add space after icons in breadcrumb titles */
 .breadcrumb-item > span.fas {
     margin-right: 0.3rem;
 }
 
+/* fix higlight table row under cursor */
+.table tbody tr:hover {
+    background-color: var(--pst-color-table-row-hover-bg);
+}

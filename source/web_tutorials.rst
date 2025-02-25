@@ -6,32 +6,28 @@ Web tutorials
 PRACE
 -----
 
-| The `PRACE Training
-  Portal <https://www.training.prace-ri.eu/>`__ has a number of
-  `training
-  videos <https://training.prace-ri.eu/index.php/prace-tutorials/>`__
-  online from their courses.
+The `PRACE Training Portal`_ has a number of training
+videos in the `PRACE Tutorials`_ section.
 
 LLNL - Lawrence Livermore National Laboratory (USA)
 ---------------------------------------------------
 
-`LLNL provides several
-tutorials. <https://hpc.llnl.gov/training/tutorials>`__ Not all
-are applicable to the VSC clusters, but some are. E.g.,
+You can find many training materials in the `LLNL Tutorials`_ web page. Not all
+information in there applies to the VSC clusters, but all the basics concepts
+are the same.
 
--  `Introduction to Parallel
-   Computing <https://computing.llnl.gov/tutorials/parallel_comp/>`__
--  `OpenMP <https://computing.llnl.gov/tutorials/openMP/>`__
--  `Advanced
-   MPI <https://computing.llnl.gov/tutorials/mpi_advanced/DavidCronkSlides.pdf>`__
+For instance, the following contain valuable information about parallelization:
+
+* `LLNL OpenMP Tutorial`_
+* `LLNL Parallel Computing Tutorial`_
+* `LLNL Advanced MPI`_
 
 There are also some tutorials on Python.
 
 NCSA - National Center for Supercomputing Applications (USA)
 ------------------------------------------------------------
 
-NCSA runs the `CI-Tutor (Cyberinfrastructure
-Tutor) <https://www.citutor.org/browse.php>`__ service that also
-contains a number of interesting tutorials. At the moment of writing,
-there is no fee and everybody can subscribe.
+NCSA runs `hpc-training.org <https://www.hpc-training.org>`_ that provides free
+online training on HPC. At the moment of writing, there is no fee and everybody
+can subscribe.
 

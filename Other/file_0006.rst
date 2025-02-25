@@ -1,5 +1,0 @@
-Tier-1 infrastructure
-=====================
-
-Central infrastructure for large parallel compute jobs and an
-experimental accelerator system.

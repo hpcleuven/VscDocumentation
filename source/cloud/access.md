@@ -9,7 +9,7 @@ need a separate login or password. In order to use the cloud services,
 -   your account must be a member of one or more OpenStack projects.
 
 New users can obtain an account by following [the procedure described
-here](/access/vsc_account.rst).
+here](/accounts/vsc_account.rst).
 Once you have an account, contact us if you want to start a new OpenStack
 project, or join an existing one.
 

@@ -1,3 +1,5 @@
+.. _t1data_metadata_tech_spec:
+
 ##########################################
 Metadata schemas: technical specifications
 ##########################################

@@ -9,7 +9,7 @@ The access to both machines is possible
 - either via the Genius login nodes (see below), as wICE itself has no 
   dedicated login node
 
-- or via the :ref:`Open On-Demand <ood_t2_leuven>` on your web browser
+- or via the :ref:`Open OnDemand <ood>` on your web browser
 
 Login infrastructure
 --------------------
