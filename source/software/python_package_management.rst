@@ -16,9 +16,10 @@ packages that can be installed separately. Many Python packages have been made
 available through the module system, but must be loaded explicitly.
 
 Given the astounding number of packages, it is not sustainable to install each
-and everyone system wide. Since it is relatively easy for a user to install them
-just for himself, or for his research group, that is not a problem though. Do
-not hesitate to contact support whenever you encounter trouble doing so.
+and every one system wide. Since it is relatively easy for a user to install
+them just for themselves, or for their research group, that is not a problem
+though. Do not hesitate to contact support whenever you encounter trouble doing
+so.
 
 Checking for installed packages
 -------------------------------
