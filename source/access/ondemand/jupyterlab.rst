@@ -22,31 +22,6 @@ will become clear below.
       (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
       priority over your 'Working directory' in the resources form.
 
-Jupyter kernels
----------------
-
-The following table shows the kernels available in JupyterLab and the
-corresponding modules that have to be loaded to enable them:
-
-.. list-table:: Jupyter kernels provided by software modules
-   :header-rows: 1
-   :align: left
-
-   * - Kernel
-     - Software Module
-   * - Python
-     - *(loaded by default)*
-   * - R
-     - IRkernel
-   * - Julia
-     - IJulia
-
-The default lab environment only loads the Python kernel upon launch. You can
-activate any other kernel by loading its corresponding :ref:`software module
-<software_modules_extension>`. Once a module providing a new kernel is loaded, a
-new icon will automatically appear on your lab launcher to start a notebook with
-that kernel.
-
 .. _jupyterlab_pure_module_env:
 
 Pure module environment
@@ -78,6 +53,31 @@ can load extra modules with Python packages via ``module load`` commands in the
    If you use JupyterLab in the pure module environment, remember to be
    consistent in your choice of toolchain version as this determines the
    versions of Python and Python packages that will be used.
+
+Jupyter kernels
+---------------
+
+The following table shows the kernels available in JupyterLab and the
+corresponding modules that have to be loaded to enable them:
+
+.. list-table:: Jupyter kernels provided by software modules
+   :header-rows: 1
+   :align: left
+
+   * - Kernel
+     - Software Module
+   * - Python
+     - *(loaded by default)*
+   * - R
+     - ``IRkernel``
+   * - Julia
+     - ``IJulia``
+
+The default lab environment only loads the Python kernel upon launch. You can
+activate any other kernel by loading its corresponding :ref:`software module
+<software_modules_extension>`. Once a module providing a new kernel is loaded, a
+new icon will automatically appear on your lab launcher page to start a notebook
+with that kernel.
 
 User-defined kernels
 ~~~~~~~~~~~~~~~~~~~~
@@ -114,7 +114,7 @@ If you have not installed Conda in your account yet, please refer to the
 
 Assuming you have created a Conda environment for :ref:`Python <create_python_conda_env>`,
 the corresponding kernel needs to be installed for use with JupyterLab.
-Note that the minimum supported version for Python for our JupyterLab setup is Python 3.7.
+Note that the minimum supported Python version for our JupyterLab setup is Python 3.7.
 First activate the Conda environment, install the ``ipykernel`` package (which should be at
 least version 6.19.2) and finally the kernel itself::
 
@@ -122,7 +122,7 @@ least version 6.19.2) and finally the kernel itself::
     conda install ipykernel
     python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
 
-These commands should be executed from a shell (e.g. using 'Login Server Shell Access'),
+These commands should be executed from a shell (e.g. using 'Login (Server) Shell Access'),
 and only need to be done once for a given environment.
 When launching a new JupyterLab session, this kernel should then show up in the overview
 of available kernels, and as a tile under the 'Notebook' section when opening a new launcher.
@@ -158,7 +158,7 @@ following requirements:
 
 
 #. Open the *Terminal* from your lab interface, ensuring that the requirements
-   listed above requirements are met.
+   listed above are met.
 
 #. Follow the instructions in :ref:`venv_python` to create a new virtual
    environment and install any Python packages in it. Keep in mind that loading
@@ -262,7 +262,7 @@ modules at the top, and below that, a list of available modules.
 
 Upon launch, the list of loaded modules will already show some modules that have
 been loaded by JupyterLab itself. For example, you will always see a Python
-module loaded, which determines the version of Python of the kernel used by your
+module loaded, which determines the Python version of the kernel used by your
 Python notebooks on this session.
 
 .. warning::
@@ -282,7 +282,7 @@ be loaded on-demand. Move your mouse pointer to the right of the module name and
 
    Any change to the list of loaded modules requires rebooting the kernel of
    your open notebooks. After loading/unloading modules, click the kernel at the
-   top-right of the notebook toolbar, (default = *Python 3 (ipykernel)*) in the
+   top-right of the notebook toolbar, (default = ``Python 3 (ipykernel)``) in the
    screenshot below, and re-select your notebook kernel from the menu.
 
 .. figure:: img/jupyterlab-kernel-reload.png
@@ -312,7 +312,7 @@ VSC clusters that support the matplotlib Lab extension:
        * Tier-2 Anansi
 
 To enable the Lab extension, use the ``%matplotlib ipympl`` or ``%matplotlib
-widget`` magic command.  To ensure your plot is always shown, make sure always
+widget`` magic command. To ensure your plot is always shown, make sure to
 generate a figure object before plotting, e.g. with ``plt.figure()`` or
 ``plt.subplots()``.
 
@@ -349,17 +349,18 @@ VSC clusters that support the Dask Lab extension:
 
 #. In the 'Settings' menu, select 'Auto-Start Dask'.
 
-#. Click the *Dask* icon at the left side of the JupyterLab window.
+#. Click the *Dask* icon on the left side of the JupyterLab window.
 
 #. In the 'Clusters' pane of the 'Dask' tab, click the '+New' button to fire up
    a Dask cluster and connect your notebook to it. The default cluster is a
    *LocalCluster*, which is suited for single-node calculations.
 
-You can now click any of the yellow-colored bars to open its corresponding Dask
+You can now click any of the yellow-colored bars to open the corresponding Dask
 dashboard. Once opened, you can drag-and-drop it anywhere you want, and you can
 open multiple dashboards in the same session. Some useful Dask dashboards
-include 'Cpu', 'Cluster Memory', 'Task Stream', 'Workers'.
+include 'Cpu', 'Cluster Memory', 'Task Stream', and 'Workers'.
 
 .. figure:: img/jupyterlab-dask.png
+   :target: ../../_images/jupyterlab-dask.png
 
    Dask Lab extension in action

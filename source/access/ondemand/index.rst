@@ -4,10 +4,10 @@
 :fas:`circle-play` Open OnDemand
 ################################
 
-Open OnDemand provides a user interface to HPC clusters from within a web browser.
-This tool supports a range of different apps and features that not only allow the
-user to easily submit jobs from within the browser, but also provide different
-coding GUIs, tools for plotting and more.
+Open OnDemand web portal provides a user interface to HPC clusters from within a
+web browser.  It supports a range of different apps and features that not only
+allow the user to easily submit jobs from within the browser, but also provide
+different coding GUIs, tools for plotting and more.
 
 Portals
 =======
@@ -39,23 +39,25 @@ VSC clusters that support an Open OnDemand web portal:
 .. _VUB OnDemand: https://portal.hpc.vub.be/
 
 You can log in using the credentials of your home institution or your VSC
-credentials.
+credentials. SSH keys are not required to use the web portal.
 
 General features
 ================
 
-The VSC Open OnDemand portals provide a range of functions:
+The VSC OnDemand web portals provide a range of functions:
 
 - Browsing, creating, transferring, viewing and/or editing files
-- Submitting and monitoring jobs, creating job templates
 - Opening a shell on one of the login nodes
+- Submitting and monitoring jobs, creating job templates
 - Using interactive apps
 
 All of these functionalities can be accessed via the menu bar at the top of the
-page.  In the following sections, we will describe them in more detail.
+web portal. Detailed information can be found in the sections listed in the
+navigation panel on the left.
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    files
    login-shell

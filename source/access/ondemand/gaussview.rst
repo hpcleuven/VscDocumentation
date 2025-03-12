@@ -17,9 +17,16 @@ VSC clusters that support the GaussView app:
        * Tier-2 Hydra
        * Tier-2 Anansi
 
-|VUB| This app is only available for users with a VUB affiliation.
+Who can use GaussView
+~~~~~~~~~~~~~~~~~~~~~
 
-All documentation in the :ref:`ood_desktop` app also applies to this GaussView app.
+|VUB| Only vsc1* users (affiliated with VUB) who are members of the
+``brusselall`` group have rights to use the GaussView app.
+
+Launching GaussView
+~~~~~~~~~~~~~~~~~~~
+
+All documentation for the :ref:`ood_desktop` app also applies to the GaussView app.
 
 .. note::
 

@@ -19,28 +19,28 @@ Who can use MATLAB
    .. tab-item:: VUB
 
       Only vsc1* users (affiliated with VUB) who are members of the
-      ``brusselall`` group have rights to use the MATLAB module (hence the
-      MATLAB app). For more info, please contact the VUB HPC team at hpc@vub.be.
+      ``brusselall`` group have rights to use the MATLAB app.
 
 Before you connect
 ~~~~~~~~~~~~~~~~~~
 
-MATLAB automatically creates several hidden folders in your ``$VSC_HOME``,
-including the folder ``.MathWorks``, which tends to become rather big over time.
-To avoid filling up your ``$VSC_HOME``, we recommend replacing this folder with
-a symlink to your ``$VSC_DATA``:
+MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
+including the folder ``.MathWorks``, which can become quite big over time. To
+prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
+redirect this folder to your ``$VSC_DATA`` directory. If this folder already
+exists, you can safely delete it. Execute the following commands to automate the
+process:
 
 .. code-block:: bash
 
-   mkdir $VSC_DATA/.MathWorks
-   ln -s $VSC_DATA/.MathWorks ~/.MathWorks
+   rm -rv ~/.MathWorks
+   mkdir -pv $VSC_DATA/.MathWorks
+   ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
 
-If you already have folder ``~/.MathWorks``, you can safely delete it.
+Launching MATLAB
+~~~~~~~~~~~~~~~~
 
-Launching the MATLAB app
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-To launch MATLAB via OnDemand, select your desired MATLAB version from the
+To launch MATLAB via the OnDemand web portal, select your desired MATLAB version from the
 drop-down menu in the resources form.  Given that our current MATLAB
 installations automatically detect GPU devices and CUDA libraries, you may also
 request GPU(s) as resources, if needed.

@@ -7,8 +7,6 @@ extensions installed locally, or if you want to easily switch between local and
 remote work within a single application. The downside is the number of steps
 involved to connect (although mostly point-and-click and authentication).
 
-Usage of the VS Code Tunnel app is very similar to the :ref:`vscode_server` app.
-
 VSC clusters that support the VS Code Tunnel app:
 
 .. grid:: 3
@@ -73,3 +71,6 @@ To connect to the VS Code tunnel, follow these steps:
    - To close the remote connection, click again the blue button in the bottom
      left, and select 'Close Remote Connection' in the command palette.
 
+Usage
+-----
+Usage of the VS Code Tunnel app is very similar to the :ref:`vscode_server` app.

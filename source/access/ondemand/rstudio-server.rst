@@ -3,10 +3,9 @@ RStudio Server
 
 The 'RStudio Server' app allows you to run an RStudio session on the cluster.
 In the 'Toolchain year and R version' drop-down menu, you can choose the version
-of R module that would be loaded for your session (such as
-``R/4.2.2-foss-2022b``).  Additionally, the ``R-bundle-CRAN`` and
-``R-bundle-Bioconductor`` modules can be loaded on top of the base R module to
-provide easy access to hundreds of preinstalled packages.
+of R module that would be loaded for your session. Additionally, the
+``R-bundle-CRAN`` and ``R-bundle-Bioconductor`` modules can be loaded on top of
+the base R module to provide easy access to hundreds of preinstalled packages.
 
 It is also possible to use locally installed R packages with RStudio, see e.g.
 :ref:`R package management<r_package_management_standard_lib>`.  RStudio
@@ -33,24 +32,25 @@ documentation <https://docs.posit.co/ide/user/>`__.
    - By default, RStudio Server stores its cache in
      ``$VSC_HOME/.local/share/rstudio``.  This cache can get very large, and
      cause you to exceed the quota of your home directory.  To avoid this, you
-     can redirect this cache to your data directory by setting the
+     can redirect this cache to your ``$VSC_DATA`` directory by setting the
      ``$XDG_DATA_HOME`` variable in your ``~/.bashrc``:
 
      .. code-block:: bash
 
         echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
+     |VUB| The RStudio app already this variable in your app session for you.
+
    - Additionally, we recommend changing the default behaviour of RStudio to
-     *not* restore the ``.RData`` file (which stores your saved R objects from a
-     previous session) into the workspace on startup, and to never Save the
-     workspace to ``.RData`` on exit.  You can do this via the RStudio
+     NOT restore the ``.RData`` file (which stores your saved R objects from a
+     previous session) into the workspace on startup, and to NEVER 'Save the
+     workspace to ``.RData``' on exit.  You can do this via the RStudio
      interface: Tools > Global Options > General > Workspace. These user
-     preferences are persistent across RStudio sessions, and are stored in file
-     ``.local/share/rstudio-prefs.json``.
+     preferences are persistent across RStudio sessions.
 
      |VUB| Alternatively, you can tick the 'Clean workspace at startup' checkbox
      in the resources form. Note, however, that your user preferences (stored in
-     ``.local/share/rstudio-prefs.json``) take priority over this checkbox
-     option.
+     ``$XDG_DATA_HOME/rstudio-prefs.json``, defined by the "load_workspace"
+     parameter) take priority over this checkbox option.
 
 .. _RStudio official documentation: https://docs.rstudio.com/

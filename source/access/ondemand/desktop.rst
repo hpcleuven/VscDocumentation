@@ -25,7 +25,7 @@ For optimal performance, we recommend the following workflow:
 
 #. Launch the app in the ``Anansi`` cluster and request a GPU.
 #. In the desktop environment, open a terminal window and load the module of
-   your graphical software
+   your graphical software.
 #. Launch the executable with ``vglrun`` to enable hardware acceleration:
 
    .. code-block:: bash
@@ -34,8 +34,8 @@ For optimal performance, we recommend the following workflow:
 
 .. tip::
 
-   Once the Desktop app is active, you can give view-only access to other VSC
+   Once the Desktop app is active, you can grant view-only access to other VSC
    users. In the 'My Interactive Sessions' menu, right-click the 'View Only
-   (Share-able Link)' button to copy the link and share it with others. Anyone
-   with the link can view your Desktop session in real-time, which is especially
-   helpful for job troubleshooting and hands-on training.
+   (Share-able Link)' button to copy the link and share it with others. Any VSC
+   user with the link can view your Desktop session in real-time, which is
+   especially helpful for job troubleshooting and hands-on training.

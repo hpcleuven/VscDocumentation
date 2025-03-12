@@ -4,7 +4,7 @@ Launching interactive apps
 ==========================
 
 The 'Interactive Apps' menu shows a range of different apps that provide a GUI.
-When you launch an interactive app, Open Ondemand first submits an interactive
+When you launch an interactive app, Open OnDemand first submits an interactive
 job to the cluster in your account. Once the interactive job starts, the app is
 automatically launched inside the interactive session.
 
@@ -12,8 +12,8 @@ To launch an interactive app, you need to fill out the resources form.
 Most of the options in the resources form are shared across all apps and are
 explained below. The app-specific options will be detailed in their respective
 sections.  See also the section on :ref:`choosing your resources
-<choosing_your_resources>` for resources recommendations.  Beware that by
-launching any app your interactive job will end up in a regular queue, so
+<choosing_your_resources>` for resources recommendations. Beware that launching
+an app will cause your interactive job to end up in a regular queue, so
 requesting a large amount of resources might result in a long queue time.
 
 Once you've specified all your resources, press the ``Launch`` button and your
@@ -34,20 +34,24 @@ job will be queued.
    * - Number of hours
      - Select the time limit (in hours) for your interactive app session.
    * - Number of nodes
-     - Select the amount of nodes. Only 1 node should be used in most cases,
+     - Select the number of nodes. Only 1 node should be used in most cases,
        unless you are sure the app *can and will* use more than 1 node
        effectively.
    * - Number of cores
-     - Select the amount of cores per node.
+     - Select the number of cores per node.
    * - Number of GPUs
-     - Select the amount of GPUs per node. Check the :ref:`hardware` section for
+     - Select the number of GPUs per node. Check the :ref:`hardware` section for
        the device type that corresponds to the selected cluster/partition. Only
        request a GPU if you are sure the app *can and will* use the GPU
        effectively.
    * - Pre-run scriptlet
-     - Optionally add shell commands to your job before launching the app.
-       Examples: loading extra modules that you need within the app, sourcing a
-       specific script, or defining specific environment variable(s).
+     - Add optional shell commands to your job before launching the app.
+       For example, loading extra modules that you need within the app, sourcing a
+       specific script, or defining specific environment variables.
+   * - Working Directory
+     - Specify the working directory for your app, or use the handy
+       ``Select Path`` button below the text field to select it from a
+       file browser.
 
 .. warning::
 

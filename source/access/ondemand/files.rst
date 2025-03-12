@@ -31,10 +31,10 @@ sub-directory from which you clicked on the Globus button.
 File editing
 ------------
 
-You can edit a file via the button with 3 dots and a down arrow on the right
-side of the file.
+You can edit a file via the button with 3 vertical dots and a down arrow on the
+right side of the file.
 
 .. tip:: The standard ``ctrl+s`` keyboard shortcut does **not** save your edited
-   files on Open OnDemand, but will trigger a save on your local machine.
-   Luckily, there is a ``Save`` button in the upper left corner on the editor
+   files on the web portal, but will trigger a save on your local machine.
+   Luckily, there is a ``Save`` button in the upper left corner of the editor
    page.

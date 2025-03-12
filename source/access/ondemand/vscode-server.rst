@@ -10,20 +10,21 @@ Code).  For more information, check out the official `VS Code guidelines
 Before you connect
 ------------------
 
-VS Code automatically creates hidden folders ``.vscode`` and ``.vscode-server``
-in your ``$VSC_HOME``, which tend to become rather big, especially if you use a
-lot of extensions.  To avoid filling up your ``$VSC_HOME``, we recommend
-replacing those folders with symlinks to your ``$VSC_DATA``:
+VS Code automatically generates the hidden folders ``.vscode`` and
+``.vscode-server`` in your ``$VSC_HOME``, which can become quite big, especially
+when installing multiple extensions.  To prevent ``$VSC_HOME`` from filling up,
+we recommend creating symlinks to redirect these folders to your ``$VSC_DATA``
+directory. If these folders already exist, move them to your ``$VSC_DATA``
+directory before creating symlinks. Execute the following commands to automate
+the process:
 
 .. code-block:: bash
 
-   mkdir $VSC_DATA/.vscode $VSC_DATA/.vscode-server
-   ln -s $VSC_DATA/.vscode ~/.vscode
-   ln -s $VSC_DATA/.vscode-server ~/.vscode-server
-
-If you already have folders ``~/.vscode`` and ``~/.vscode-server``, you can move
-them to ``$VSC_DATA`` before symlinking.
-
+   [[ -d ~/.vscode ]] && mv -nv ~/.vscode $VSC_DATA/
+   [[ -d ~/.vscode-server ]] && mv -nv ~/.vscode-server $VSC_DATA/
+   mkdir -pv $VSC_DATA/vscode $VSC_DATA/vscode-server
+   [[ -L ~/.vscode ]] || ln -sv $VSC_DATA/vscode ~/.vscode
+   [[ -L ~/.vscode-server ]] || ln -sv $VSC_DATA/vscode-server ~/.vscode-server
 
 Terminal in VS Code
 -------------------
@@ -94,7 +95,7 @@ To use Python and Python packages provided by :ref:`the software modules
 
       which python
 
-The Steps for using :ref:`virtual environments on top of loaded software modules
+The steps for using :ref:`virtual environments on top of loaded software modules
 <venv_python>` are exactly the same. Note that activating the virtual
 environment in the 'Pre-run Scriptlet' is not required: just selecting the
 Python version + path located in the virtual environment at
@@ -149,7 +150,7 @@ Running Jupyter inside VS Code
 It’s also possible to edit/run Jupyter notebooks inside VS Code. Below are the
 instructions for Python:
 
-#. If using Jupyter with a :ref:`jupyterlab_pure_module_env`, make sure to load
+#. When using Jupyter with a :ref:`jupyterlab_pure_module_env`, make sure to load
    any modules you need in the 'Pre-run scriptlet' in the resources form.
 
    |VUB| If you also need the :ref:`matplotlib_lab_extension`, make sure to also load
