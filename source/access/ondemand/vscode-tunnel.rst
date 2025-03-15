@@ -63,7 +63,7 @@ To connect to the VS Code tunnel, follow these steps:
 
 #. That’s it, you are now connected to your VS Code Tunnel session!
 
-.. note::
+.. admonition:: Notes
 
    - In case of authentication problems, it may be necessary to tick the
      'Cleanup previous VS Code Tunnel login data' checkbox in the resources

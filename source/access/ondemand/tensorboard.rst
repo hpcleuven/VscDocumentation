@@ -22,7 +22,7 @@ the resources form.
 
       The log directory is an absolute path.
 
-.. note::
+.. admonition:: Notes
 
    - Once the session is launched, you cannot change this directory.  If you
      redirect TensorBoard to a wrong folder (typo in path name or missing log

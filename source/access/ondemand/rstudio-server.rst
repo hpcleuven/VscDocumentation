@@ -18,7 +18,7 @@ project may lead to incomplete R library paths.
 For more information on how to use RStudio, check out the `official
 documentation <https://docs.posit.co/ide/user/>`__.
 
-.. note::
+.. admonition:: Notes
 
    - Navigating between your different directories is possible using the file
      explorer.  If you are navigating by clicking the folder, you will notice

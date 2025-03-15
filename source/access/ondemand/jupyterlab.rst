@@ -109,6 +109,9 @@ using :ref:`Conda environments for R<r-conda-kernel>`.
 Conda environments for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Assuming you have created a Conda environment for Python, the corresponding
+kernel needs to be installed for use with JupyterLab.
+
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
@@ -116,39 +119,49 @@ Conda environments for Python
       If you have not installed Conda in your account yet, please refer to the
       :ref:`install Miniconda <install_miniconda_python>` page.
 
-      Assuming you have created a :ref:`Conda environment for Python <create_python_conda_env>`,
-      the corresponding kernel needs to be installed for use with JupyterLab.
-      Note that the minimum supported Python version for our JupyterLab setup is Python 3.7.
+      Please also refer to the docs on :ref:`creating a Conda environment for
+      Python <create_python_conda_env>`.
 
-      First activate the Conda environment::
+      First activate the Conda environment:
 
-          source activate <env_name>
+      .. code-block:: bash
+
+         source activate <env_name>
 
    .. tab-item:: VUB
 
-      Assuming you have created a `Conda environment for Python <https://hpc.vub.be/docs/software/additional_software/#installing-additional-packages-with-conda>`_,
-      the corresponding kernel needs to be installed for use with JupyterLab.
-      Note that the minimum supported Python version for our JupyterLab setup is Python 3.7.
+      Please refer to the docs on `creating a Conda environment for Python
+      <https://hpc.vub.be/docs/software/additional_software/#installing-additional-packages-with-conda>`_.
 
-      First activate the Conda environment::
+      First activate the Conda environment:
 
-          module load Mamba
-          source $EBROOTMAMBA/etc/profile.d/conda.sh
-          conda activate <env_name>
+      .. code-block:: bash
 
-Next, install the ``ipykernel`` package (which should be at
-least version 6.19.2) and the kernel itself::
+         module load Mamba
+         source $EBROOTMAMBA/etc/profile.d/conda.sh
+         conda activate <env_name>
 
-    conda install ipykernel
-    python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
+Next, install the ``ipykernel`` package and the kernel itself:
+
+.. code-block:: bash
+
+   conda install ipykernel
+   python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
 
 These commands should be executed from a shell (e.g. using 'Login (Server) Shell Access'),
 and only need to be done once for a given environment.
 When launching a new JupyterLab session, this kernel should then show up in the overview
-of available kernels, and as a tile under the 'Notebook' section when opening a new launcher.
+of available kernels, and as a new tile under the 'Notebook' section when opening a new launcher.
 
-In case you encounter issues such as freezing or crashing JupyterLab sessions with a previously
-existing kernel, then reinstalling that kernel may help.
+.. admonition:: Notes
+
+   - The minimum supported Python version is Python 3.7.
+   - The minimum supported ipykernel version is ipykernel 6.19.2.
+
+.. tip::
+
+   In case you encounter issues such as freezing or crashing JupyterLab sessions with a previously
+   existing kernel, then reinstalling that kernel may help.
 
 .. _py-venv-kernel:
 
