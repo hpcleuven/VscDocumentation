@@ -109,16 +109,36 @@ using :ref:`Conda environments for R<r-conda-kernel>`.
 Conda environments for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have not installed Conda in your account yet, please refer to the
-:ref:`install Miniconda <install_miniconda_python>` page.
+.. tab-set::
 
-Assuming you have created a Conda environment for :ref:`Python <create_python_conda_env>`,
-the corresponding kernel needs to be installed for use with JupyterLab.
-Note that the minimum supported Python version for our JupyterLab setup is Python 3.7.
-First activate the Conda environment, install the ``ipykernel`` package (which should be at
-least version 6.19.2) and finally the kernel itself::
+   .. tab-item:: KU Leuven/UHasselt
 
-    source activate <env_name>
+      If you have not installed Conda in your account yet, please refer to the
+      :ref:`install Miniconda <install_miniconda_python>` page.
+
+      Assuming you have created a :ref:`Conda environment for Python <create_python_conda_env>`,
+      the corresponding kernel needs to be installed for use with JupyterLab.
+      Note that the minimum supported Python version for our JupyterLab setup is Python 3.7.
+
+      First activate the Conda environment::
+
+          source activate <env_name>
+
+   .. tab-item:: VUB
+
+      Assuming you have created a `Conda environment for Python <https://hpc.vub.be/docs/software/additional_software/#installing-additional-packages-with-conda>`_,
+      the corresponding kernel needs to be installed for use with JupyterLab.
+      Note that the minimum supported Python version for our JupyterLab setup is Python 3.7.
+
+      First activate the Conda environment::
+
+          module load Mamba
+          source $EBROOTMAMBA/etc/profile.d/conda.sh
+          conda activate <env_name>
+
+Next, install the ``ipykernel`` package (which should be at
+least version 6.19.2) and the kernel itself::
+
     conda install ipykernel
     python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
 
