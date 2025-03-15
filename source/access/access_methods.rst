@@ -10,6 +10,7 @@
    windows_client
    macos_client
    linux_client
+   ondemand/index
 
 We provide multiple methods to access the VSC clusters and use their
 computational resources. Not all options may be equally supported across all
@@ -108,7 +109,7 @@ clusters. See below for guides on available solutions:
          :maxdepth: 1
       
          nx_start_guide
-         ../leuven/services/openondemand
+
 
 VPN
 ===
