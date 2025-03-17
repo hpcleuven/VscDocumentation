@@ -34,11 +34,11 @@ When the option was omitted, your job was submitted to the default partition (**
 
 The maximum execution wall time for jobs was **7 days** (168 hours).
 
-===============  ======  ===================================================================================  ======  ==========  ========
-Slurm partition  nodes   processors per node                                                                  memory  local disk  network
-===============  ======  ===================================================================================  ======  ==========  ========
-**ivybridge**    23      2x 10-core Intel Xeon `E5-2680v2 <https://ark.intel.com/products/75277>`_ \@2.8 GHz  256 GB  500 GB      FDR10-IB
-===============  ======  ===================================================================================  ======  ==========  ========
+===============  ======  ============================================  ======  ==========  ========
+Slurm partition  nodes   processors per node                           memory  local disk  network
+===============  ======  ============================================  ======  ==========  ========
+**ivybridge**    23      2x 10-core `Intel Xeon E5-2680v2`_ \@2.8 GHz  256 GB  500 GB      FDR10-IB
+===============  ======  ============================================  ======  ==========  ========
 
 *******
 History
@@ -46,9 +46,9 @@ History
 
 Hopper was a compute cluster at UAntwerp in operation from late 2014 till the
 summer of 2020. The cluster had 168 compute nodes with
-dual 10-core Intel `E5-2680v2 <https://ark.intel.com/products/75277>`_
-Ivy Bridge generation CPUs connected through an InfiniBand FDR10 network,
-144 of these compute nodes having 64 GB RAM and 24 having 256 GB RAM.
+dual 10-core `Intel Xeon E5-2680v2`_ Ivy Bridge generation CPUs connected
+through an InfiniBand FDR10 network, 144 of these compute nodes having 64 GB
+RAM and 24 having 256 GB RAM.
 
 When the cluster was moved out in the summer of 2020 to make space for the
 installation of :ref:`Vaughan<Vaughan hardware>`, the 24 nodes with 256 GB RAM

@@ -27,25 +27,25 @@ CPU compute nodes
 
 The maximum execution wall time for jobs is **3 days** (72 hours).
 
-===============  ======  ==========================================================================================  ======  ==========  =========
-Slurm partition  nodes   processors per node                                                                         memory  local disk  network
-===============  ======  ==========================================================================================  ======  ==========  =========
-**zen2**         152     2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  240 GB SSD  HDR100-IB
-zen3             24      2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_ \@2.80 GHz  256 GB  500 GB SSD  HDR100-IB
-zen3_512         16      2x 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_ \@2.80 GHz  512 GB  500 GB SSD  HDR100-IB
-===============  ======  ==========================================================================================  ======  ==========  =========
+===============  ======  ======================================  ======  ==========  =========
+Slurm partition  nodes   processors |nbsp| per |nbsp| node       memory  local disk  network
+===============  ======  ======================================  ======  ==========  =========
+**zen2**         152     2x 32-core `AMD Epyc 7452`_ \@2.35 GHz  256 GB  240 GB SSD  HDR100-IB
+zen3             24      2x 32-core `AMD Epyc 7543`_ \@2.80 GHz  256 GB  500 GB SSD  HDR100-IB
+zen3_512         16      2x 32-core `AMD Epyc 7543`_ \@2.80 GHz  512 GB  500 GB SSD  HDR100-IB
+===============  ======  ======================================  ======  ==========  =========
 
 GPU compute nodes
 =================
 
 The maximum execution wall time for GPU jobs is **1 day** (24 hours).
 
-===============  ======  ======================================================================================================  ==========  ==========================================================================================  ======  ==========  =========
-Slurm partition  nodes   GPUs per node                                                                                           GPU memory  processors per node                                                                         memory  local disk  network
-===============  ======  ======================================================================================================  ==========  ==========================================================================================  ======  ==========  =========
-ampere_gpu       1       4x NVIDIA Tesla `A100 (Ampere) <https://www.nvidia.com/en-us/data-center/a100/>`_                       40 GB SXM4  2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  480 GB SSD  HDR100-IB
-arcturus_gpu     2       2x AMD Instinct `MI100 (Arcturus) <https://www.amd.com/en/products/accelerators/instinct/mi100.html>`_  32 GB HBM2  2x 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_ \@2.35 GHz  256 GB  480 GB SSD  HDR100-IB
-===============  ======  ======================================================================================================  ==========  ==========================================================================================  ======  ==========  =========
+===============  ======  ===================================  ==========  ======================================  ======  =================  =========
+Slurm partition  nodes   GPUs |nbsp| per |nbsp| node          GPU memory  processors |nbsp| per |nbsp| node       memory  local |nbsp| disk  network
+===============  ======  ===================================  ==========  ======================================  ======  =================  =========
+ampere_gpu       1       4x `NVIDIA A100`_ (Ampere)           40 GB SXM4  2x 32-core `AMD Epyc 7452`_ \@2.35 GHz  256 GB  480 GB SSD         HDR100-IB
+arcturus_gpu     2       2x `AMD Instinct MI100`_ (Arcturus)  32 GB HBM2  2x 32-core `AMD Epyc 7452`_ \@2.35 GHz  256 GB  480 GB SSD         HDR100-IB
+===============  ======  ===================================  ==========  ======================================  ======  =================  =========
 
 .. seealso:: See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
 
@@ -75,7 +75,7 @@ From inside the VSC network (e.g., when connecting from another VSC cluster), us
 
 - 2 login nodes
 
-  - 2x 16-core AMD `Epyc 7282 <https://www.amd.com/en/products/cpu/amd-epyc-7282>`_ CPUs\@2.8 GHz (zen2)
+  - 2x 16-core `AMD EPYC 7282`_ CPUs\@2.8 GHz (zen2)
   - 256 GB RAM
   - 2x 480 GB HDD local disk (raid 1)
 
@@ -140,15 +140,15 @@ History
 *******
 
 The Vaughan cluster was installed in the summer of 2020. It is a NEC system consisting of
-152 compute nodes with dual 32-core AMD `Epyc 7452 <https://www.amd.com/en/products/cpu/amd-epyc-7452>`_
-Rome generation CPUs with 256 GB RAM, connected through an HDR100 InfiniBand network.
-It also has 1 node with four NVIDIA (Tesla) Ampere A100 GPU compute cards and
-2 nodes equipped with two AMD Instinct (Arcturus) MI100 GPU compute cards.
+152 compute nodes with dual 32-core `AMD EPYC 7452`_  Rome generation CPUs with
+256 GB RAM, connected through an HDR100 InfiniBand network.
+It also has 1 node with four `NVIDIA A100`_ (Ampere) GPU compute cards and
+2 nodes equipped with two `AMD Instinct MI100`_ (Arcturus) GPU compute cards.
 
 In the summer of 2023, the Vaughan cluster was extended with
-40 compute nodes with dual 32-core AMD `Epyc 7543 <https://www.amd.com/en/products/cpu/amd-epyc-7543>`_
-Milan generation CPUs, 24 nodes with 256 GB RAM and 16 nodes 512 GB RAM.
-All Milan nodes are connected through an HDR200 InfiniBand network.
+40 compute nodes with dual 32-core `AMD EPYC 7543`_ Milan generation CPUs, 24
+nodes with 256 GB RAM and 16 nodes 512 GB RAM. All Milan nodes are connected
+through an HDR200 InfiniBand network.
 
 Origin of the name
 ==================

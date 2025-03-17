@@ -1,8 +1,8 @@
 .. _KU Leuven network drives:
 
-#########################################
-Data transfer on KU Leuven network drives
-#########################################
+########################
+KU Leuven network drives
+########################
 
 On clusters hosted at KU Leuven it is possible to transfer data to
 and from KU Leuven network drives to which you may have access.

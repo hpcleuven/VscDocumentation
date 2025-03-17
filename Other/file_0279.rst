@@ -1,5 +1,0 @@
--  `Credit system
-   basics <\%22/cluster-doc/running-jobs/credit-system-basics\%22>`__
-   (KU Leuven-only currently, Tier-1 and Tier-2)
-
-"
