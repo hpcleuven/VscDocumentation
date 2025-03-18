@@ -79,6 +79,8 @@ activate any other kernel by loading its corresponding :ref:`software module
 new icon will automatically appear on your lab launcher page to start a notebook
 with that kernel.
 
+.. _jupyter-user-kernel:
+
 User-defined kernels
 ~~~~~~~~~~~~~~~~~~~~
 

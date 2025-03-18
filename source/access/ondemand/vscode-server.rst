@@ -161,8 +161,14 @@ instructions for Python:
 
 #. Open a Jupyter notebook or create a new one.
 
-#. Click 'Select Kernel' at the top right of the window.
+#. Click 'Select Kernel' at the top right of the app.
+
+   .. figure:: img/vscode-jupyter-select-kernel.png
+
+      Click 'Select Kernel' to select a Python environment or Jupyter kernel.
 
 #. In the command palette, select 'Python Environments...', next select the
-   Python version and path that you need.
+   Python version and path that you need. Alternatively, you can also select
+   'Jupyter Kernel...' and select a :ref:`user-defined Jupyter
+   kernel<jupyter-user-kernel>`.
 
