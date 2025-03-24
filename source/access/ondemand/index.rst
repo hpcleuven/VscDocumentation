@@ -25,6 +25,13 @@ VSC clusters that support an Open OnDemand web portal:
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
 
+    .. grid-item-card:: |UG|
+       :columns: 12 4 4 4
+
+       :fas:`circle-play` `UGent OnDemand`_
+
+       Consult the `UGent OnDemand docs <https://docs.hpc.ugent.be/web_portal/>`_
+
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
@@ -36,6 +43,7 @@ VSC clusters that support an Open OnDemand web portal:
        * Tier-2 Anansi
 
 .. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
+.. _UGent OnDemand: https://login.hpc.ugent.be/
 .. _VUB OnDemand: https://portal.hpc.vub.be/
 
 You can log in using the credentials of your home institution or your VSC
