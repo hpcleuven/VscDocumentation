@@ -413,6 +413,16 @@ You can now start working in your own customized environment.
 
 For more general information, please refer to the `official JupyterLab documentation`_.
 
+Exporting Jupyter Notebooks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the native ``.ipynb`` format, Jupyter notebooks can be [exported to various other formats](
+https://jupyterlab.readthedocs.io/en/stable/user/export.html#exporting-notebooks).
+Directly exporting to PDF will however not work in this app. Instead, first export
+the notebook in ``LaTex`` format (to for example a ``notebook.tex`` file) and then execute
+``xelatex notebook.tex`` in a terminal, which will produce the corresponding PDF file.
+You may need to first load a ``texlive`` module in order to get hold of ``xelatex``.
+
 RStudio Server
 --------------
 
