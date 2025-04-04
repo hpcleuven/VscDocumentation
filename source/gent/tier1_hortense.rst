@@ -771,19 +771,19 @@ Update to RHEL9 of Milan partitions
 -----------------------------------
 
 To maintain operational safety, the operating system for the Milan CPU partition will be updated to a new major release.
-Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
-This implies that - end 2025 - your software and/or workflow will need to be compliant with this OS version.
+Red Hat Enterprise Linux version 9, RHEL9, (going up from 8) will be installed.
+
+This implies that - end 2025, when the RHEL8 Rome partition is decommissioned - your software and/or workflow will need to be compliant with this OS version if you still want to run jobs.
 As of cutoff 2 in 2025, compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
 
 Please test your workflow and software as soon as possible and ensure that you are ready for this transition.
 
-To facilitate testing, we have made two small partitions to run your tests.
+To facilitate testing, we have made a small partition to run your tests: partition ``debug_milan_rhel9``
+This partition is SOLELY intended for testing your software/workflows.
+Do not run production jobs on this partition.
 
-- partition ``cpu_milan_rhel9``
-- partition ``debug_milan_rhel9``
-
-These partitions are SOLELY intended for testing your software/workflows.
-Do not run production jobs on these partitions.
+The partition ``cpu_milan_rhel9`` will be gradually increased to contain more nodes of the Milan partition that feature RHEL9.
+A first batch of 128 nodes (out of 384) will be added to RHEL9 after the 5-16 May downtime.
 
 To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
 `Interactive Apps` forms on the webportal, or from the CLI.
@@ -797,11 +797,6 @@ To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or
     qsub job_script.sh
 
 
-Recent updates
---------------
-
-During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
-and MLNX OFED 5.8. This change should be transparent to the users.
 
 Resources
 ---------
