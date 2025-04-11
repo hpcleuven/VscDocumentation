@@ -1,8 +1,8 @@
 .. _UGentT2 hardware:
 
-###############################
-HPC-UGent Tier-2 Infrastructure
-###############################
+#########################
+HPC-UGent Tier-2 Clusters
+#########################
 
 The Stevin computing infrastructure consists of several Tier2 clusters which are hosted in the S10 datacenter of Ghent University.
 This infrastructure is co-financed by FWO and Department of Economy, Science and Innovation (EWI).

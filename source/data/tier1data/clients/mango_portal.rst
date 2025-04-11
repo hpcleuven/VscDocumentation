@@ -108,7 +108,7 @@ A tar file is similar to a Zip folder, and can be extracted with a program like 
 
 Uploads and downloads via the ManGO portal are limited to 5GB and 50GB per file respectively.
 While it is possible to upload/download multiple files at once, it isn't possible to upload a folder or download a collection as a whole at the moment. 
-If you want to transfer larger amounts of data via a graphical interface, you can use `Globus <https://vlaams-supercomputing-centrum-vscdocumentation.readthedocs-hosted.com/en/latest/globus/globus_main_index.html>`_.
+If you want to transfer larger amounts of data via a graphical interface, you can use the :ref:`globus platform`.
 
 .. _edit-permissions:
 

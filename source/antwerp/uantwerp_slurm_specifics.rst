@@ -79,15 +79,15 @@ access to a single, dedicated GPU at the same time.
 
 In total, three GPU partitions are available:
 
-+----------------------------------+--------------+-------------------------------------------------------------------------------------------------------------------------------+
-| Cluster                          | Partition    |  Available nodes                                                                                                              |
-+==================================+==============+===============================================================================================================================+
-| :ref:`Vaughan<Vaughan hardware>` | ampere_gpu   | 2 nodes with 4 NVIDIA Tesla `A100 (Ampere) <https://www.nvidia.com/en-us/data-center/a100/>`_ 40 GB SXM4                      |
-+                                  +--------------+-------------------------------------------------------------------------------------------------------------------------------+
-|                                  | arcturus_gpu | 2 nodes with 2 AMD Instinct `MI100 (Arcturus) <https://www.amd.com/en/products/accelerators/instinct/mi100.html>`_  32 GB HBM2|
-+----------------------------------+--------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Leibniz<Leibniz hardware>` | pascal_gpu   | 2 nodes with 2 NVIDIA Tesla `P100 (Pascal) <https://www.nvidia.com/en-us/data-center/tesla-p100/>`_ 16 GB HBM2                |
-+----------------------------------+--------------+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+--------------+-------------------------------------------------------------+
+| Cluster                          | Partition    |  Available nodes                                            |
++==================================+==============+=============================================================+
+| :ref:`Vaughan<Vaughan hardware>` | ampere_gpu   | 2 nodes with 4 `NVIDIA A100`_ (Ampere) 40 GB SXM4           |
++                                  +--------------+-------------------------------------------------------------+
+|                                  | arcturus_gpu | 2 nodes with 2 `AMD Instinct MI100`_ (Arcturus) 32 GB HBM2  |
++----------------------------------+--------------+-------------------------------------------------------------+
+| :ref:`Leibniz<Leibniz hardware>` | pascal_gpu   | 2 nodes with 2 `NVIDIA Tesla P100`_ (Pascal) 16 GB HBM2     |
++----------------------------------+--------------+-------------------------------------------------------------+
 
 To submit a job on a GPU compute node belonging to a certain partition and get a single GPU, use the  ``sbatch`` command
 

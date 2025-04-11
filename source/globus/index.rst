@@ -4,10 +4,10 @@
 :fa:`cloud-upload-alt` Globus data sharing platform
 ###################################################
 
-The `Globus platform <https://www.globus.org>`__ enables developers to provide
-robust file transfer, sharing and search capabilities within their own research
-data applications and services, while leveraging advanced identity management,
-single sign-on, and authorization capabilities.
+The `Globus`_ platform enables developers to provide robust file transfer,
+sharing and search capabilities within their own research data applications and
+services, while leveraging advanced identity management, single sign-on, and
+authorization capabilities.
 
 This document is a hands-on guide to the Globus file sharing platform. It
 complements the official documentation at `docs.globus.org`_ from the VSC

@@ -1,9 +1,8 @@
 Security measures 20 May 2020
 =============================
 
-In response to reports of security incidents in several high-profile HPC centers
-throughout Europe
-(https://csirt.egi.eu/academic-data-centers-abused-for-crypto-currency-mining/), all
+In response to reports of `security incidents in several high-profile HPC centers
+throughout Europe <https://csirt.egi.eu/attacks-on-multiple-hpc-sites/>`_, all
 VSC sites are taking a number of concerted pre-emptive security actions. These actions
 will affect you, although we are trying to minimize the impact as much as possible. 
 

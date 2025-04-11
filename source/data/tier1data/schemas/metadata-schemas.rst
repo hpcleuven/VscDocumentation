@@ -8,8 +8,7 @@ This article describes the ManGO portal functionalities related to
 metadata schemas: how to design them and how to apply them. Users who
 might want to design their own schemas independently and load them via
 JSON, as well as developers interested in implemented this feature
-outside the portal, are directed to `the technical
-specifications <metadata-schemas-tech.qmd>`__.
+outside the portal, are directed to :ref:`t1data_metadata_tech_spec`.
 
 One crucial principle of the metadata schema functionality in the ManGO
 portal is that schemas that can be used to apply metadata cannot be

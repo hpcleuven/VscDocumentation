@@ -1,2 +1,0 @@
-Below we give information about current downtime (if applicable) and
-planned maintenance of the various VSC clusters.

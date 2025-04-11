@@ -20,8 +20,12 @@ web: Makefile
 check: Makefile
 	$(RM) -r build
 	mkdir build
-	@$(SPHINXBUILD) -b html -a -n -q -N "$(SOURCEDIR)" "$(BUILDDIR)" \
-		$(SPHINXOPTS) $(O)
+	$(SPHINXBUILD) -b html -a -n -q "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+linkcheck: Makefile
+	$(RM) -r build
+	mkdir build
+	$(SPHINXBUILD) -b linkcheck -a -n "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
