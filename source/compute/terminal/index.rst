@@ -1,8 +1,8 @@
 .. _terminal interface:
 
-##################################
-:fas:`terminal` Terminal Interface
-##################################
+##########################################
+:fas:`terminal` Access: Terminal Interface
+##########################################
 
 .. toctree::
    :hidden:
