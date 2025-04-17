@@ -12,10 +12,8 @@ VSC clusters that support the GaussView app:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       .. TODO use links
-
-       * Tier-2 Hydra
-       * Tier-2 Anansi
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 Who can use GaussView
 ~~~~~~~~~~~~~~~~~~~~~

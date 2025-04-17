@@ -280,10 +280,8 @@ VSC clusters that support the 'Software Modules' Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       .. TODO use links
-
-       * Tier-2 Hydra
-       * Tier-2 Anansi
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 The 'Software Modules' Lab extension is enabled by default in your JupyterLab
 session.  You can load software modules from the tab with a *hexagon* icon on
@@ -341,10 +339,8 @@ VSC clusters that support the matplotlib Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       .. TODO use links
-
-       * Tier-2 Hydra
-       * Tier-2 Anansi
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 To enable the Lab extension, use the ``%matplotlib ipympl`` or ``%matplotlib
 widget`` magic command. To ensure your plot is always shown, make sure to
@@ -372,10 +368,8 @@ VSC clusters that support the Dask Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       .. TODO use links
-
-       * Tier-2 Hydra
-       * Tier-2 Anansi
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 #. In the resources form, tick the 'Load the dask module' checkbox to make sure
    the Dask Lab extension is loaded before starting JupyterLab.
@@ -396,6 +390,6 @@ open multiple dashboards in the same session. Some useful Dask dashboards
 include 'Cpu', 'Cluster Memory', 'Task Stream', and 'Workers'.
 
 .. figure:: img/jupyterlab-dask.png
-   :target: ../../_images/jupyterlab-dask.png
+   :target: ../../../_images/jupyterlab-dask.png
 
    Dask Lab extension in action

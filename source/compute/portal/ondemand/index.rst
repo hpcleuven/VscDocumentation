@@ -38,8 +38,8 @@ VSC clusters that support an Open OnDemand web portal:
 
        :fas:`circle-play` `VUB OnDemand`_
 
-       * Tier-2 :ref:`Hydra <Hydra cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 .. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
 .. _UGent OnDemand: https://login.hpc.ugent.be/

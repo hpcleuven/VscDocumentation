@@ -1,8 +1,8 @@
 .. _compute portal:
 
-#############################
-:fas:`eye` Access: Web Portal
-#############################
+###############################
+:fas:`globe` Access: Web Portal
+###############################
 
 .. toctree::
    :maxdepth: 1

@@ -173,9 +173,9 @@ your job resources:
       Documentation on resources is available in the section on `job submission
       <https://hpc.vub.be/docs/job-submission/>`_.
 
-      For light-weight (testing) work, we recommend using the ``Anansi``
-      cluster, which also contains 4 shared GeForce GTX 1080 Ti GPUs for
-      improved rendering performance.
+      For light-weight (testing) work, we recommend using the :ref:`Anansi
+      cluster`, which also contains shared GPUs for improved rendering
+      performance.
 
 Once you have passed the testing phase, and you want to start conducting
 experiments, we recommend that you make the switch to batch jobs instead, as

@@ -33,13 +33,14 @@ documentation <https://docs.posit.co/ide/user/>`__.
      ``$VSC_HOME/.local/share/rstudio``.  This cache can get very large, and
      cause you to exceed the quota of your home directory.  To avoid this, you
      can redirect this cache to your ``$VSC_DATA`` directory by setting the
-     ``$XDG_DATA_HOME`` variable in your ``~/.bashrc``:
+     ``$XDG_DATA_HOME`` environment variable in your ``~/.bashrc``:
 
      .. code-block:: bash
 
         echo "export XDG_DATA_HOME=$VSC_DATA/.local/share" >> ~/.bashrc
 
-     |VUB| The RStudio app already this variable in your app session for you.
+     |VUB| The RStudio app automatically sets this environment variable for you
+     in your app session.
 
    - Additionally, we recommend changing the default behaviour of RStudio to
      NOT restore the ``.RData`` file (which stores your saved R objects from a
