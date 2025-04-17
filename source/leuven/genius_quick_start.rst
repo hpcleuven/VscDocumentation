@@ -10,7 +10,8 @@ for most HPC workloads.
 Access to the cluster
 ---------------------
 
-Genius can be accessed from the :ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the :ref:`Open On-Demand <ood_t2>` service.
+Genius can be accessed from the :ref:`Genius login nodes <tier2_login_nodes>`,
+or from your web browser via the :ref:`Open OnDemand <ood>` service.
 
 For example, you can log in to any of the login node using SSH::
 

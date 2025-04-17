@@ -1,4 +1,0 @@
-The documentation page you visited applies to the Tier-1 cluster Muk
-installed at UGent. Check `the Muk hardware
-description <\%22/infrastructure/hardware/hardware-tier1-muk\%22>`__ for
-more specifics about this system.

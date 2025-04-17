@@ -24,23 +24,23 @@ CPU compute nodes
 
 The maximum execution wall time for jobs is **3 days** (72 hours).
 
-===============  ======  =============================================================================  ======  ==========  =======
-Slurm partition  nodes   processors per node                                                            memory  local disk  network
-===============  ======  =============================================================================  ======  ==========  =======
-**broadwell**    144     2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ \@2.4 GHz  128 GB  120 GB SSD  EDR-IB
-broadwell_256    8       2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ \@2.4 GHz  256 GB  120 GB SSD  EDR-IB
-===============  ======  =============================================================================  ======  ==========  =======
+===============  ======  ============================================  ======  ==========  =======
+Slurm partition  nodes   processors |nbsp| per |nbsp| node             memory  local disk  network
+===============  ======  ============================================  ======  ==========  =======
+**broadwell**    144     2x 14-core `Intel Xeon E5-2680v4`_ \@2.4 GHz  128 GB  120 GB SSD  EDR-IB
+broadwell_256    8       2x 14-core `Intel Xeon E5-2680v4`_ \@2.4 GHz  256 GB  120 GB SSD  EDR-IB
+===============  ======  ============================================  ======  ==========  =======
 
 GPU compute nodes
 =================
 
 The maximum execution wall time for jobs is **1 day** (24 hours).
 
-===============  =====  =======================================================================================  ==========  =============================================================================  ======  ==========  =======
-Slurm partition  nodes  GPUs per node                                                                            GPU memory  processors per node                                                            memory  local disk  network
-===============  =====  =======================================================================================  ==========  =============================================================================  ======  ==========  =======
-pascal_gpu       2      2x NVIDIA Tesla `P100 (Pascal) <https://www.nvidia.com/en-us/data-center/tesla-p100/>`_  16 GB HBM2  2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ \@2.4 GHz  128 GB  120 GB      EDR-IB
-===============  =====  =======================================================================================  ==========  =============================================================================  ======  ==========  =======
+===============  =====  ================================  ==========  =============================================  ======  ==========  =======
+Slurm partition  nodes  GPUs |nbsp| per |nbsp| node       GPU memory  processors |nbsp| per |nbsp| node              memory  local disk  network
+===============  =====  ================================  ==========  =============================================  ======  ==========  =======
+pascal_gpu       2      2x `NVIDIA Tesla P100`_ (Pascal)  16 GB HBM2  2x 14-core `Intel Xeon E5-2680v4`_  \@2.4 GHz  128 GB  120 GB      EDR-IB
+===============  =====  ================================  ==========  =============================================  ======  ==========  =======
 
 .. seealso:: See :ref:`GPU computing UAntwerp` for more information on using the GPU nodes.
 
@@ -72,13 +72,13 @@ From inside the VSC network (e.g., when connecting from another VSC cluster), us
 
 - 2 login nodes
 
-  - 2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell)
+  - 2x 14-core `Intel Xeon E5-2680v4`_ CPUs\@2.4 GHz (Broadwell)
   - 256 GB RAM
   - 2x 1 TB HDD local disk (raid 1)
 
 - 1 visualization node
 
-  - 2x 14-core Xeon `E5-2680v4 <https://ark.intel.com/products/75277>`_ CPUs\@2.4 GHz (Broadwell)
+  - 2x 14-core `Intel Xeon E5-2680v4`_ CPUs\@2.4 GHz (Broadwell)
   - 1 NVIDIA Quadro P5000
   - 256 GB RAM
   - 2x 1 TB HDD local disk (raid 1)

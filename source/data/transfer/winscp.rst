@@ -1,4 +1,4 @@
-.. _WinSCP:
+.. _WinSCP transfer:
 
 ##########################
 Data transfer using WinSCP
@@ -7,20 +7,18 @@ Data transfer using WinSCP
 Prerequisites
 =============
 
-To transfer files to and from the cluster, we recommend the use of
-`WinSCP <https://winscp.net>`__, which is a graphical ftp-style program (but
-than one that uses the ssh protocol to communicate with the cluster rather then
-the less secure ftp) that is also freely available. WinSCP can be downloaded
-both as an installation package and as a standalone portable executable. When
-using the portable version, you can copy WinSCP together with your private key
-on a USB stick to have access to your files from any internet-connected Windows
-PC.
+To transfer files to and from the cluster, we recommend the use of `WinSCP`_,
+which is a graphical ftp-style program (but than one that uses the ssh protocol
+to communicate with the cluster rather than the less secure ftp) that is also
+freely available. WinSCP can be downloaded both as an installation package and
+as a standalone portable executable. When using the portable version, you can
+copy WinSCP together with your private key on a USB stick to have access to
+your files from any internet-connected Windows PC.
 
-WinSCP also works together well with the PuTTY suite of applications. It
-uses the :ref:`keys generated with the PuTTY key generation
-program <generating keys putty>`, can :ref:`launch terminal
-sessions in PuTTY <text mode access using PuTTY>` and :ref:`use
-ssh keys managed by pageant <using Pageant>`.
+WinSCP also works together well with the PuTTY suite of applications. It uses
+:ref:`keys generated with PuTTY <generating keys putty>`, can launch
+:ref:`terminal sessions in PuTTY <terminal putty>` and use ssh keys managed by
+:ref:`Pageant`.
 
 Transfers to and from the VSC clusters
 ======================================
@@ -35,12 +33,17 @@ connecting and add host key to the cache'; select 'Yes'.
    .. figure:: winscp/winscp_config-new-red.png
 
    #. Fill in the hostname of the VSC login node of your home
-      institution. You can find this information in the :ref:`overview
-      of available hardware on this site <hardware>`.
-   #. Fill in your VSC username.
-   #. Double check that the port number is 22.
+      institution. You can find this information in the
+      :ref:`tier1 hardware` and :ref:`tier2 hardware` sections
 
-#. If you are not using pageant to manage your ssh keys, you have to point WinSCP to the private key file (in PuTTY .ppk format) that should be used. You can do that using "Advanced" button and then choose "SSH" "Authentication" from the list. When using pageant, you can leave this field blank.
+   #. Fill in your VSC username
+
+   #. Double check that the port number is 22
+
+#. If you are not using pageant to manage your ssh keys, you have to point
+   WinSCP to the private key file (in PuTTY .ppk format) that should be used.
+   You can do that using "Advanced" button and then choose "SSH Authentication"
+   from the list. When using pageant, you can leave this field blank.
 
    .. figure:: winscp/winscp_config-advanced-new-red.png
 

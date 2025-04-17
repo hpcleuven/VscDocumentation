@@ -6,10 +6,10 @@ Site Tutorials
 ==============
 
 VSC sites carry out regular trainings about Linux and the VSC HPC systems. 
-You may always find the updated list of `VSC trainings <https://www.vscentrum.be/vsctraining>`__ 
-via the VSC website. It is complementary to the information found in this 
-user portal, the latter being the reference manual. Below you can find links 
-to those training materials.
+You may always find the updated list of trainings via the `VSC Training`_
+website. It is complementary to the information found in this user portal, the
+latter being the reference manual. Below you can find links  to those training
+materials.
 
 KULeuven/UHasselt
 -----------------

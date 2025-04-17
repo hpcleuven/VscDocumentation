@@ -5,8 +5,8 @@
 .. toctree::
    :maxdepth: 2
 
+   tier1_data_service
    storage
    transfer
    ../globus/index
-   tier1_data_service
 

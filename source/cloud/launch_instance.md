@@ -217,7 +217,7 @@ If you want to access ports outside the public range, you'll need to
 connect to the UGent login node _login.hpc.ugent.be_ first, and hop to
 your instance from there. To make this work without storing the required
 private key for the instance in your VSC storage space, you need to set
-up an [SSH agent with key forwarding locally](/access/using_ssh_agent.rst),
+up an [SSH agent with key forwarding locally](/accounts/ssh_agent.rst),
 i.e. on the machine where you store the private key of an authorized keypair
 for the instance.
 :::
@@ -327,7 +327,7 @@ fingerprints.
 The following examples show output and commands for OpenSSH, the most
 common client on Linux and macOS. If you are working from a windows
 system using using PuTTY, see our documentation on
-[Generating keys with PuTTY](/access/generating_keys_with_putty.rst). 
+[Generating keys with PuTTY](/accounts/generating_keys_putty.rst). 
 
 #### Connecting for the first time
 
