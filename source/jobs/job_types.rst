@@ -251,7 +251,9 @@ For example, assume that we have two job scripts:
   apply.
 
 To make ``sbatch`` print the job ID after submitting, use the ``--parsable`` option. 
-The --parsable option prints "jobnumber;cluster". We use cut to fetch just the jobnumber.
+
+- In some clusters, the ``--parsable`` option also prints the cluster name in the form "<job ID>;<cluster>". We can use cut to fetch just the job ID.
+
 The following lines automate the launch of the three jobs:
 
 .. code:: bash
