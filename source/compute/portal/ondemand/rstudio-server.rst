@@ -2,10 +2,23 @@ RStudio Server
 --------------
 
 The 'RStudio Server' app allows you to run an RStudio session on the cluster.
-In the 'Toolchain year and R version' drop-down menu, you can choose the version
-of R module that would be loaded for your session. Additionally, the
-``R-bundle-CRAN`` and ``R-bundle-Bioconductor`` modules can be loaded on top of
-the base R module to provide easy access to hundreds of preinstalled packages.
+In the 'R version' drop-down menu, you can choose the R module version
+that will be loaded for your session (such as ``R/4.4.1-gfbf-2023b``).
+
+.. tab-set::
+
+   .. tab-item:: KU Leuven/UHasselt
+
+      The ``R-bundle-CRAN`` module is also loaded by default, providing hundreds
+      of frequently-used R packages. 
+
+   .. tab-item:: VUB
+
+      The ``R-bundle-CRAN`` module can be loaded on top of the base R module,
+      providing hundreds of frequently-used R packages.
+
+If needed, the ``R-bundle-Bioconductor`` module can be loaded as well to get access
+to many preinstalled bioinformatics packages.
 
 It is also possible to use locally installed R packages with RStudio, see e.g.
 :ref:`R package management<r_package_management_standard_lib>`.  RStudio
