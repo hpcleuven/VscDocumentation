@@ -76,9 +76,7 @@ Create new group
 -  Go to the `VSC account page`_.
 -  Click on "New group"
 -  Fill in the group name
--  You will receive a confirmation email
--  After the confirmation, you are now member and moderator of the new
-   group
+-  You will automatically become a member and moderator of the new group within an hour
 -  Once you are a group moderator, you can manage your group by accepting
    requests from users that would like to join the group or inviting
    users to join your group through the `VSC account page`_
