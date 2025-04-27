@@ -201,9 +201,10 @@ following requirements:
    session. This new virtual environment can be placed anywhere you like in the
    storage of the cluster.
 
+   The example code below creates a new virtual environment in the
+   *venv-zen4* directory:
+
    .. code-block:: shell
-      :caption: Example sequence of commands to create a new virtual
-                environment in the directory ``venv-zen4``
 
       $ python3 -m venv venv-zen4 --system-site-packages
       $ source venv-zen4/bin/activate

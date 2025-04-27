@@ -48,10 +48,6 @@ job will be queued.
      - Add optional shell commands to your job before launching the app.
        For example, loading extra modules that you need within the app, sourcing a
        specific script, or defining specific environment variables.
-   * - Working Directory
-     - Specify the working directory for your app, or use the handy
-       ``Select Path`` button below the text field to select it from a
-       file browser.
 
 .. warning::
 
@@ -137,13 +133,6 @@ your job resources:
       Documentation on resources is available for both :ref:`Genius
       <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
 
-      If requesting a GPU, it will be the same as the type specified in the
-      partition (e.g. a NVIDIA H100 for ``gpu_h100`` on wICE).  For wICE, you
-      can also request a GPU from the ``interactive`` partition.  One GPU here
-      is a virtual GPU slice of the available A100 GPUs.  One GPU slice is the
-      same as 1/7th of CUDA cores and memory of an A100 GPU.  The interactive
-      partition only allows you to request max 1 GPU (slice) though.
-
       In most cases we recommend using the ``interactive`` partition on wICE for
       the interactive apps.  This partition is meant for lighter work, like code
       development, testing, debugging, visualisations, pre- and post-processing.
@@ -167,6 +156,13 @@ your job resources:
       running full jobs.  If you indeed need multiple nodes or full GPUs to test
       your code/program, go ahead and request the resources for your interactive
       app from a more suitable partition.
+
+      If requesting a GPU, it will be the same as the type specified in the
+      partition (e.g. a NVIDIA H100 for ``gpu_h100`` on wICE).  For wICE, you
+      can also request a GPU from the ``interactive`` partition.  One GPU here
+      is a virtual GPU slice of the available A100 GPUs.  One GPU slice is the
+      same as 1/7th of CUDA cores and memory of an A100 GPU.  The interactive
+      partition only allows you to request max 1 GPU (slice) though.
 
    .. tab-item:: VUB
 

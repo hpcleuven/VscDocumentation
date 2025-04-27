@@ -69,11 +69,10 @@ in the HPC to get the best of two worlds.
    environment variable.
 
    Start by launching an :ref:`interactive shell <interactive jobs>` in the
-   :ref:`cluster partition<slurm_partition>` of choice:
+   :ref:`cluster partition<slurm_partition>` of choice, for example in the
+   *zen4* partition:
 
    .. code-block:: shell
-      :caption: Example command to start an interactive shell in the
-                *zen4* partition
 
       srun --partition=zen4 --pty bash -l
 
@@ -104,9 +103,10 @@ in the HPC to get the best of two worlds.
    personal ``$VSC_SCRATCH`` or ``$VSC_DATA`` storage; or in your VO if you are
    part of one.
 
+   This example code block creates a new virtual environment in the
+   *venv-zen4* directory:
+
    .. code-block:: shell
-      :caption: Example command to create a new virtual environment in the
-                directory ``venv-zen4``
 
       python3 -m venv venv-zen4 --system-site-packages
 
@@ -130,12 +130,10 @@ in the HPC to get the best of two worlds.
 
       (venv-zen4) $ python3 -m pip install pip --upgrade
 
-#. Now we can install additional Python packages inside this virtual
-   environment:
+#. Now we can install additional Python packages inside the active virtual
+   environment, for example the *icecream* package:
 
    .. code-block:: shell
-      :caption: Example command to install the ``icecream`` package in the
-                active virtual environment
 
       (venv-zen4) $ python3 -m pip install icecream --no-cache-dir --no-build-isolation
 
@@ -146,11 +144,10 @@ in the HPC to get the best of two worlds.
    (build) dependencies from loaded modules instead of building in an isolated
    environment.
 
-#. Once you finish your work in the virtual environment, use the command
-   ``deactivate`` to exit it:
+#. Once your work is finished, use the command ``deactivate`` to deactivate your
+   virtual environment:
 
    .. code-block:: shell
-      :caption: The command ``deactivate`` will bring you back to the standard shell
 
       (venv-zen4) $ deactivate
 

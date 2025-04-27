@@ -24,18 +24,26 @@ Who can use MATLAB
 Before you connect
 ~~~~~~~~~~~~~~~~~~
 
-MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
-including the folder ``.MathWorks``, which can become quite big over time. To
-prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
-redirect this folder to your ``$VSC_DATA`` directory. If this folder already
-exists, you can safely delete it. Execute the following commands to automate the
-process:
+.. tab-set::
 
-.. code-block:: bash
+   .. tab-item:: KU Leuven/UHasselt
 
-   rm -rv ~/.MathWorks
-   mkdir -pv $VSC_DATA/.MathWorks
-   ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
+      (nothing to do)
+
+   .. tab-item:: VUB
+
+      MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
+      including the folder ``.MathWorks``, which can become quite big over time. To
+      prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
+      redirect this folder to your ``$VSC_DATA`` directory. If this folder already
+      exists, you can safely delete it. Execute the following commands to automate the
+      process:
+
+      .. code-block:: bash
+
+         rm -rv ~/.MathWorks
+         mkdir -pv $VSC_DATA/.MathWorks
+         ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
 
 Launching MATLAB
 ~~~~~~~~~~~~~~~~

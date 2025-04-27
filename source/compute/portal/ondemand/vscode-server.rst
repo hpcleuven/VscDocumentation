@@ -10,21 +10,29 @@ Code).  For more information, check out the official `VS Code guidelines
 Before you connect
 ------------------
 
-VS Code automatically generates the hidden folders ``.vscode`` and
-``.vscode-server`` in your ``$VSC_HOME``, which can become quite big, especially
-when installing multiple extensions.  To prevent ``$VSC_HOME`` from filling up,
-we recommend creating symlinks to redirect these folders to your ``$VSC_DATA``
-directory. If these folders already exist, move them to your ``$VSC_DATA``
-directory before creating symlinks. Execute the following commands to automate
-the process:
+.. tab-set::
 
-.. code-block:: bash
+   .. tab-item:: KU Leuven/UHasselt
 
-   [[ -d ~/.vscode ]] && mv -nv ~/.vscode $VSC_DATA/
-   [[ -d ~/.vscode-server ]] && mv -nv ~/.vscode-server $VSC_DATA/
-   mkdir -pv $VSC_DATA/vscode $VSC_DATA/vscode-server
-   [[ -L ~/.vscode ]] || ln -sv $VSC_DATA/vscode ~/.vscode
-   [[ -L ~/.vscode-server ]] || ln -sv $VSC_DATA/vscode-server ~/.vscode-server
+      (nothing to do)
+
+   .. tab-item:: VUB
+
+      VS Code automatically generates the hidden folders ``.vscode`` and
+      ``.vscode-server`` in your ``$VSC_HOME``, which can become quite big, especially
+      when installing multiple extensions.  To prevent ``$VSC_HOME`` from filling up,
+      we recommend creating symlinks to redirect these folders to your ``$VSC_DATA``
+      directory. If these folders already exist, move them to your ``$VSC_DATA``
+      directory before creating symlinks. Execute the following commands to automate
+      the process:
+
+      .. code-block:: bash
+
+         [[ -d ~/.vscode ]] && mv -nv ~/.vscode $VSC_DATA/
+         [[ -d ~/.vscode-server ]] && mv -nv ~/.vscode-server $VSC_DATA/
+         mkdir -pv $VSC_DATA/vscode $VSC_DATA/vscode-server
+         [[ -L ~/.vscode ]] || ln -sv $VSC_DATA/vscode ~/.vscode
+         [[ -L ~/.vscode-server ]] || ln -sv $VSC_DATA/vscode-server ~/.vscode-server
 
 Terminal in VS Code
 -------------------
