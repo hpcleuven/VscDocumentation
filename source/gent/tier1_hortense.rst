@@ -784,7 +784,9 @@ This partition is SOLELY intended for testing your software/workflows.
 Do not run production jobs on this partition.
 
 The partition ``cpu_milan_rhel9`` will be gradually increased to contain more nodes of the Milan partition that feature RHEL9.
-A first batch of 128 nodes (out of 384) will be added to RHEL9 after the 5-16 May downtime.
+A first batch of 128 nodes (out of 384) will be added to RHEL9 after the maintenance in May'25
+(see also https://status.vscentrum.be/tier1_compute.html).
+The Tier-1 login nodes will also be migrated to RHEL9 during the maintenance in May'25.
 
 To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
 `Interactive Apps` forms on the webportal, or from the CLI.
