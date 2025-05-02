@@ -8,11 +8,13 @@ modifying and creating files or directories are available as well.
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       From the 'Files' menu, you can access your ``$VSC_HOME`` and ``$VSC_DATA``
       folders.
 
    .. tab-item:: VUB
+      :sync: vub
 
       From the 'Files' menu, you can access all ``$VSC_*`` folders available to
       you.

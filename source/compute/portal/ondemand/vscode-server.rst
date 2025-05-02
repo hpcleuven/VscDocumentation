@@ -13,10 +13,12 @@ Before you connect
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-      (nothing to do)
+      (NA)
 
    .. tab-item:: VUB
+      :sync: vub
 
       VS Code automatically generates the hidden folders ``.vscode`` and
       ``.vscode-server`` in your ``$VSC_HOME``, which can become quite big, especially
@@ -115,6 +117,7 @@ R IDE
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       For full functionality, it is recommended to work with Conda environments.
       For the time being, there are some issues with using modules together with functionalities, like plotting.
@@ -148,6 +151,7 @@ R IDE
          press the key combination 'ctrl+enter' on your keyboard.
 
    .. tab-item:: VUB
+      :sync: vub
 
       (documentation not yet available)
 

@@ -10,10 +10,12 @@ will become clear below.
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       The top-level notebook directory is by default ``$VSC_DATA``.
 
    .. tab-item:: VUB
+      :sync: vub
 
       The top-level notebook directory is the selected 'Working directory' in
       the resources form. Note however, if you have set ``c.ServerApp.root_dir``
@@ -56,6 +58,17 @@ can load extra modules with Python packages via ``module load`` commands in the
 
 Jupyter kernels
 ---------------
+
+VSC clusters that support different Jupyter kernels:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 The following table shows the kernels available in JupyterLab and the
 corresponding modules that have to be loaded to enable them:
@@ -117,6 +130,7 @@ kernel needs to be installed for use with JupyterLab.
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       If you have not installed Conda in your account yet, please refer to the
       :ref:`install Miniconda <install_miniconda_python>` page.
@@ -131,6 +145,7 @@ kernel needs to be installed for use with JupyterLab.
          source activate <env_name>
 
    .. tab-item:: VUB
+      :sync: vub
 
       Please refer to the docs on `creating a Conda environment for Python
       <https://hpc.vub.be/docs/software/additional_software/#installing-additional-packages-with-conda>`_.

@@ -10,7 +10,7 @@ Prerequisite
 .. tab-set::
    :sync-group: vsc-sites
 
-   .. tab-item:: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
       To access KU Leuven clusters, only an approved
@@ -85,7 +85,7 @@ VSC clusters.
   .. tab-set::
      :sync-group: vsc-sites
 
-     .. tab-item:: KU Leuven
+     .. tab-item:: KU Leuven/UHasselt
         :sync: kuluh
 
         Select the *SSH* > *Auth* > *Credentials* tab, and remove any private
@@ -159,7 +159,7 @@ VSC clusters.
   .. tab-set::
      :sync-group: vsc-sites
 
-     .. tab-item:: KU Leuven
+     .. tab-item:: KU Leuven/UHasselt
         :sync: kuluh
 
         You will be then prompted to copy/paste the firewall link into your

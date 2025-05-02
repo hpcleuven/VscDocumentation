@@ -8,11 +8,13 @@ that will be loaded for your session (such as ``R/4.4.1-gfbf-2023b``).
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       The ``R-bundle-CRAN`` module is also loaded by default, providing hundreds
       of frequently-used R packages. 
 
    .. tab-item:: VUB
+      :sync: vub
 
       The ``R-bundle-CRAN`` module can be loaded on top of the base R module,
       providing hundreds of frequently-used R packages.

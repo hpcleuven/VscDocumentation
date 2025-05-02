@@ -13,7 +13,7 @@ consult the respective documentation sources:
 
       Genius cluster: :ref:`Submit to a GPU node <submit_genius_gpu>`
 
-   .. tab-item:: UAntwerp (AUHA)
+   .. tab-item:: UAntwerpen
       :sync: ua
 
       Leibniz and Vaughan clusters: :ref:`GPU computing UAntwerp`

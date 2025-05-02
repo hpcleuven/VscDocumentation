@@ -57,6 +57,7 @@ job will be queued.
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       .. list-table:: Shared resources (part 2)
          :header-rows: 1
@@ -103,6 +104,7 @@ job will be queued.
 
 
    .. tab-item:: VUB
+      :sync: vub
 
       .. list-table:: Shared resources (part 2)
          :header-rows: 1
@@ -129,6 +131,7 @@ your job resources:
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       Documentation on resources is available for both :ref:`Genius
       <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
@@ -165,6 +168,7 @@ your job resources:
       partition only allows you to request max 1 GPU (slice) though.
 
    .. tab-item:: VUB
+      :sync: vub
 
       Documentation on resources is available in the section on `job submission
       <https://hpc.vub.be/docs/job-submission/>`_.

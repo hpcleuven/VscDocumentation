@@ -14,6 +14,7 @@ Shell environment
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       Currently, the :ref:`cluster modules <cluster_modules>` are not automatically
       loaded when your session starts.  In order to use modules, one needs to
@@ -26,6 +27,7 @@ Shell environment
       The same applies for other choices of partitions on Genius or wICE clusters.
 
    .. tab-item:: VUB
+      :sync: vub
 
       The default environment of your interactive shell is the same as when
       launching an interactive job from the terminal with ``srun --pty bash -l``.

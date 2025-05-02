@@ -9,6 +9,7 @@ Who can use MATLAB
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       Only vsc3* users (affiliated with KU Leuven) who are members of the
       ``lli_matlab`` group have rights to use the MATLAB module (hence the
@@ -17,6 +18,7 @@ Who can use MATLAB
       :ref:`request joining this group<join groups>` via your VSC account page.
 
    .. tab-item:: VUB
+      :sync: vub
 
       Only vsc1* users (affiliated with VUB) who are members of the
       ``brusselall`` group have rights to use the MATLAB app.
@@ -27,10 +29,12 @@ Before you connect
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-      (nothing to do)
+      (NA)
 
    .. tab-item:: VUB
+      :sync: vub
 
       MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
       including the folder ``.MathWorks``, which can become quite big over time. To
@@ -56,6 +60,7 @@ request GPU(s) as resources, if needed.
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       Once you launch the session, a remote `noVNC`_ desktop will start on a
       compute node.  Once the session starts, the selected MATLAB module will be
@@ -63,6 +68,7 @@ request GPU(s) as resources, if needed.
       seconds).
 
    .. tab-item:: VUB
+      :sync: vub
 
       Upon launching the session, the selected MATLAB module is loaded and the
       MATLAB Proxy starts, which then launches MATLAB and provides web-based

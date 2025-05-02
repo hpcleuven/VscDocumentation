@@ -15,10 +15,12 @@ the resources form.
 .. tab-set::
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       The log directory is a relative directory starting from your ``$VSC_DATA``.
 
    .. tab-item:: VUB
+      :sync: vub
 
       The log directory is an absolute path.
 
