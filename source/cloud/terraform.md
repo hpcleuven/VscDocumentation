@@ -383,6 +383,8 @@ Be sure to add the subnet to the `remote_ip_prefix`, and note that this rule doe
 
 :::{dropdown} Exposing ports to the internet
 You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port.
+It is also possible to choose an external port manually, between the range of 51001-59999, by setting `external_port = portnumber`.
+This port must also be unique for your public floating IP. 
 ```hcl
   custom_secgroup_rules = { 
     node_exporter = {
