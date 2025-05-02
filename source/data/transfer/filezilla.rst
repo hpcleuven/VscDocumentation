@@ -18,7 +18,7 @@ All users need to setup an :ref:`SSH agent <SSH agent>` before proceeding.
 .. tab-set::
    :sync-group: vsc-sites
 
-   .. tab-item:: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
    
       You need to :ref:`get an SSH certificate into your agent <mfa-with-ssh-agent>`,
@@ -52,7 +52,7 @@ Configuration of FileZilla to connect to a login node
    .. tab-set::
       :sync-group: vsc-sites
 
-      .. tab-item:: KU Leuven
+      .. tab-item:: KU Leuven/UHasselt
          :sync: kuluh
 
          * Host: ``login.hpc.kuleuven.be``
@@ -104,7 +104,7 @@ Configuration of FileZilla to connect to a login node
 .. tab-set::
    :sync-group: vsc-sites
 
-   .. tab-item:: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
       As long as your SSH agent is running and keeping a valid SSH certificate,

@@ -51,7 +51,7 @@ Applying for your VSC account
 
             .. include:: lecturer_procedure_student_accounts_kuleuven_uhasselt.rst
 
-   .. tab-item:: UAntwerp (AUHA)
+   .. tab-item:: UAntwerpen
       :sync: ua
 
       Who?

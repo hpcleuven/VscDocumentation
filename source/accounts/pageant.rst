@@ -26,7 +26,7 @@ Prerequisites
 .. tab-set::
    :sync-group: vsc-sites
 
-   .. tab-item:: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
       To access KU Leuven clusters, only an approved :ref:`VSC account <access>` is needed
@@ -117,7 +117,7 @@ authenticate you as a recognized user.
 .. tab-set::
    :sync-group: vsc-sites
 
-   .. tab-item :: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
       Follow the steps in :ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`
@@ -130,7 +130,7 @@ authenticate you as a recognized user.
       .. figure:: pageant/Pageant_view_keys.png
          :alt: pageant_view_keys
 
-   .. tab-item:: UAntwerpern
+   .. tab-item:: UAntwerpen
       :sync: ua
 
       You can now open as many PuTTY sessions as you like without having to

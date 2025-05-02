@@ -34,7 +34,7 @@ the node as the most performant option for scratch files.
 
       For more information check: :ref:`HPC-UGent Shared storage <UGent storage>`
 
-   .. tab-item:: UAntwerp (AUHA)
+   .. tab-item:: UAntwerpen
       :sync: ua
 
       .. include:: /antwerp/tier2_hardware/uantwerp_storage_quota_table.rst
