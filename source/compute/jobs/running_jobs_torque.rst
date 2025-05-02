@@ -28,12 +28,12 @@ scheduler.  As an example, consider a file ``hello_world.pbs`` as below.
 
    #PBS -l nodes=1:ppn=1
    #PBS -l walltime=00:05:00
-   #PBS -l pmem=1gb
+   #PBS -l mem=1gb
 
    cd $PBS_O_WORKDIR
 
    module purge
-   module load Python/3.7.2-foss-2018a
+   module load Python/3.12.3-GCCcore-13.3.0
 
    python hello_world.py
 
@@ -46,7 +46,7 @@ We discuss this script line by line.
   - It requires a single node (``nodes=1``), and a single core (``ppn=1``) on
     that node.
   - It will run for at most 5 minutes (``walltime=00:05:00``).
-  - It will use at most 1 GB of RAM (``pmem=1gb``).
+  - It will use at most 1 GB of RAM (``mem=1gb``).
 
 - Line 7 changes the working directory to the directory in which the job will
   be submitted (that will be the value of the ``$PBS_O_WORKDIR`` environment
@@ -85,19 +85,19 @@ if necessary, you can submit your job to the scheduler
 ::
 
    $ qsub hello_world.pbs
-   205814.leibniz
+   11549090
 
 The ``qsub`` returns a job ID, an unique identifier that you can use to manage
-your job.  Only the number, i.e., ``205814`` is significant.
+your job.
 
 Once submitted, you can monitor the status of your job using the ``qstat`` command.
 
 ::
 
    $ qstat
-   Job ID                    Name             User            Time Use S Queue
-   ------------------------- ---------------- --------------- -------- - -----
-   205814.leibniz            hello_world.pbs  vsc30140               0 Q q1h
+   Job ID     Name             User            Time Use S Queue
+   ---------- ---------------- --------------- -------- - -------
+   11549090   hello_world.pbs  vsc30140        0:00:10  C cpu... 
 
 The status of your job is given in the ``S`` column.  The most common values are
 given below.
@@ -130,43 +130,6 @@ By default, the output of your job is saved to two files.
 ``<job_name>.e<jobid>``
    This file contains all text written to standard error, if any.  If your job fails,
    or doesn't produce the expected output, this is the first place to look.
-
-For instance, for the running example, the output file would be
-``hello_world.pbs.o205814`` and contains
-
-.. code-block:: text
-   :linenos:
-
-   ===== start of prologue =====
-   Date : Mon Aug  5 14:50:28 CEST 2019
-   Job ID : 205814
-   Job Name : hello_world.pbs
-   User ID : vsc30140
-   Group ID : vsc30140
-   Queue Name : q1h
-   Resource List : walltime=00:05:00,nodes=1:ppn=1,neednodes=1:ppn=1
-   ===== end of prologue =======
-
-   hello world!
-
-   ===== start of epilogue =====
-   Date : Mon Aug  5 14:50:29 CEST 2019
-   Session ID : 21768
-   Resources Used : cput=00:00:00,vmem=0kb,walltime=00:00:02,mem=0kb,energy_used=0
-   Allocated Nodes : r3c08cn1.leibniz
-   Job Exit Code : 0
-   ===== end of epilogue =======
-
-Lines 1 through 10 are written by the prologue, i.e., the administrative script that
-runs before your job script.  Similarly, lines 12 though 19 are written by the
-epilogue, i.e., the administrative script that runs after your job script.
-
-Line 11 is the actual output of your job script.
-
-.. note::
-
-   The format of the output file differs slightly from cluster to cluster, although
-   the overall structure is the same.
 
 
 Troubleshooting
