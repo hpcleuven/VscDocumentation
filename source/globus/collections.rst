@@ -1,5 +1,7 @@
 .. include:: css.rst
 
+.. _globus-collections:
+
 ===========
 Collections
 ===========
