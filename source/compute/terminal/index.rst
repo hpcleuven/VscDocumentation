@@ -178,7 +178,7 @@ want to use:
 
       On the KUL clusters, users can use NX :ref:`NX start guide`.
 
-   .. tab-item:: UAntwerp
+   .. tab-item:: UAntwerpen
       :sync: ua
 
       On the UAntwerp clusters, TurboVNC is supported on all regular login

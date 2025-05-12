@@ -1,10 +1,10 @@
 .. _compute portal:
 
-#############################
-:fas:`eye` Access: Web Portal
-#############################
+###############################
+:fas:`globe` Access: Web Portal
+###############################
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   ondemand
+   ondemand/index

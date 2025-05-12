@@ -8,7 +8,7 @@ Prerequisites
 .. tab-set::
    :sync-group: vsc-sites
 
-   .. tab-item:: KU Leuven
+   .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
       To access KU Leuven clusters, only an approved
