@@ -30,7 +30,7 @@ Interactive use
 ---------------
 
 -  Interactive use is possible, but is not the preferred way of using
-    on the cluster! Use batch processing of compiled MATLAB code
+   on the cluster! Use batch processing of compiled MATLAB code
    instead.
 -  If there is an X Window System server installed on your PC (as is by
    default the case under :ref:`linux_client`; you can use
