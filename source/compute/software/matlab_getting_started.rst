@@ -30,7 +30,7 @@ Interactive use
 ---------------
 
 -  Interactive use is possible, but is not the preferred way of using
-   MATLAB on the cluster! Use batch processing of compiled MATLAB code
+    on the cluster! Use batch processing of compiled MATLAB code
    instead.
 -  If there is an X Window System server installed on your PC (as is by
    default the case under :ref:`linux_client`; you can use
@@ -214,14 +214,14 @@ The deployed executable is compiled to run using a single thread via
 the option ``-singleCompThread``. This is important when a number of processes
 are to run concurrently on the same node (e.g., worker framework).
 
-In addition to the matlab executable (``main`` in this example``), the compiler
+In addition to the MATLAB executable (``main`` in this example), the compiler
 also generates a wrapper file (``run_main.sh`` in this example) that can be
-used to invoke the matlab executable. It sets environment variable LD_LIBRARY_PATH
-to make sure that the matlab runtime libraries can be found by the executable,
+used to invoke the MATLAB executable. It sets environment variable LD_LIBRARY_PATH
+to make sure that the MATLAB runtime libraries can be found by the executable,
 and next runs the executable.
 
-The wrapper expects a first argument that provides the rootdir of the matlab
-installation that is being used. With a matlab module, that rootdir is given
+The wrapper expects a first argument that provides the rootdir of the MATLAB
+installation that is being used. With a MATLAB module, that rootdir is given
 by environment variable EBROOTMATLAB. Additional arguments are passed on to the 
 compiled executable.
 
@@ -271,7 +271,7 @@ Run the compiler::
 
     $ mcc -m fibonacci
 
-This creates matlab executable file ``fibonacci`` and wrapper file
+This creates MATLAB executable file ``fibonacci`` and wrapper file
 ``run_fibonnacci.sh``.
 
 You can now run your application as follows::
