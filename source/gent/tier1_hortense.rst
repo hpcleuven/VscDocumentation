@@ -807,7 +807,7 @@ With the downtime of May 2025, during which significant maintenance was done on 
 several changes were made:
 
 * RHEL9 login nodes
-* ``cpu_milan_rhel9`` as default partitions
+* ``cpu_milan_rhel9`` as default partition
 * Moving of nodes from ``cpu_milan`` to ``cpu_milan_rhel9`` partition
 * Lower memory limits
 * OS updates (Linux kernel, GPU drivers, Slurm)
