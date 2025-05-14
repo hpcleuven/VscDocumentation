@@ -214,6 +214,18 @@ The deployed executable is compiled to run using a single thread via
 the option ``-singleCompThread``. This is important when a number of processes
 are to run concurrently on the same node (e.g., worker framework).
 
+In addition to the MATLAB executable (``main`` in this example), the compiler
+also generates a wrapper file (``run_main.sh`` in this example) that can be
+used to invoke the MATLAB executable. It sets environment variable LD_LIBRARY_PATH
+to make sure that the MATLAB runtime libraries can be found by the executable,
+and next runs the executable. (The compiler generates a few other files as well,
+these can be ignored.)
+
+The wrapper expects a first argument that provides the rootdir of the MATLAB
+installation that is being used. With a MATLAB module, that rootdir is given
+by environment variable EBROOTMATLAB. Additional arguments are passed on to the 
+compiled executable.
+
 .. note::
 
    -  Parameters are always considered as strings, and thus have to be
@@ -260,15 +272,16 @@ Run the compiler::
 
     $ mcc -m fibonacci
 
-An executable file `fibonacci` is created.
+This creates MATLAB executable file ``fibonacci`` and wrapper file
+``run_fibonnacci.sh``.
 
 You can now run your application as follows::
 
-   ./fibonacci 6
+   $ ./run_fibonacci.sh $EBROOTMATLAB 6
    Fibonacci 6 -> 5
-   $ ./fibonacci 8
+   $ ./run_fibonacci.sh $EBROOTMATLAB 8
    Fibonacci 8 -> 13
-   $ ./fibonacci 45
+   $ ./run_fibonacci.sh $EBROOTMATLAB 45
    Fibonacci 45 -> 701408733
 
 
@@ -305,7 +318,7 @@ Compile the file::
 
 Run the executable::
 
-   ./multi_fibo
+   ./run_multi_fibo.sh $EBROOTMATLAB
    n =
        10    11    12    13    14    15    16    17    18    19    20
    Fibonacci 10 -> 34
