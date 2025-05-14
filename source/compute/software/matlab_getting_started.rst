@@ -218,7 +218,8 @@ In addition to the MATLAB executable (``main`` in this example), the compiler
 also generates a wrapper file (``run_main.sh`` in this example) that can be
 used to invoke the MATLAB executable. It sets environment variable LD_LIBRARY_PATH
 to make sure that the MATLAB runtime libraries can be found by the executable,
-and next runs the executable.
+and next runs the executable. (The compiler generates a few other files as well,
+these can be ignored.)
 
 The wrapper expects a first argument that provides the rootdir of the MATLAB
 installation that is being used. With a MATLAB module, that rootdir is given
