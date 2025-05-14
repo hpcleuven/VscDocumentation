@@ -786,10 +786,7 @@ Update to RHEL9 of Milan partitions
 We have made separate partitions of workernodes that run RHEL9 as operating systems:
 ``debug_milan_rhel9`` and ``cpu_milan_rhel9``.
 
-The partition ``cpu_milan_rhel9`` will be gradually increased to contain more nodes of the Milan partition that feature RHEL9.
-A first batch of 128 nodes (out of 384) will be added to RHEL9 after the maintenance in May'25
-(see also https://status.vscentrum.be/tier1_compute.html).
-The Tier-1 login nodes will also be migrated to RHEL9 during the maintenance in May'25.
+The partition ``cpu_milan_rhel9`` will be gradually increased to contain more nodes of the Milan partition that run RHEL9 as operating system.
 
 To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
 `Interactive Apps` forms on the webportal, or from the command line:
