@@ -783,9 +783,8 @@ Please test your workflow and software as soon as possible and ensure that you a
 Update to RHEL9 of Milan partitions
 ***********************************
 
-To facilitate testing, we have made separate partitions of workernodes that run RHEL9 as operating systems:
+We have made separate partitions of workernodes that run RHEL9 as operating systems:
 ``debug_milan_rhel9`` and ``cpu_milan_rhel9``.
-These partitions are intended for testing your software/workflows on RHEL9.
 
 The partition ``cpu_milan_rhel9`` will be gradually increased to contain more nodes of the Milan partition that feature RHEL9.
 A first batch of 128 nodes (out of 384) will be added to RHEL9 after the maintenance in May'25
