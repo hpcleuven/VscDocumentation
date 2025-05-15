@@ -820,7 +820,7 @@ RHEL9 login nodes
 
 2 new login nodes running the RHEL9 operating system were added (``login57`` and ``login58``)
 
-- By default, you will land on one of these when logging in via ``tier1.login.ugent.be``;
+- By default, you will land on one of these when logging in via ``tier1.hpc.ugent.be``;
 - The RHEL8 login nodes (``login55`` and ``login56``) are still available,
   you can SSH into those via ``ssh tier1-rhel8``;
 - From a RHEL8 login node, you can SSH into a RHEL9 login node via ``ssh tier1-rhel9``;
