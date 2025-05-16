@@ -333,6 +333,7 @@ rst_prolog += """
 .. _AMD EPYC 7452: https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7452.html#amd_support_product_spec
 .. _AMD EPYC 7543: https://www.amd.com/en/products/processors/server/epyc/7003-series/amd-epyc-7543.html
 .. _AMD EPYC 9384X: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9384x.html
+.. _AMD EPYC 9535: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9535.html
 .. _AMD Instinct MI100: https://www.amd.com/en/products/accelerators/instinct/mi100.html
 .. _Intel Xeon E5-2650v4: https://www.intel.com/content/www/us/en/products/sku/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz/specifications.html
 .. _Intel Xeon E5-2680v2: https://www.intel.com/content/www/us/en/products/sku/75277/intel-xeon-processor-e52680-v2-25m-cache-2-80-ghz/specifications.html
