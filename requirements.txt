@@ -43,7 +43,7 @@ sphinxcontrib-qthelp==2.0.0
 sphinxcontrib-redirects==0.2.0
 sphinxcontrib-serializinghtml==2.0.0
 starlette==0.45.2
-tornado==6.4.2
+tornado==6.5.1
 typing_extensions==4.12.2
 urllib3==2.3.0
 uvicorn==0.34.0
