@@ -21,7 +21,7 @@ Slurm partition      nodes           processors |nbsp| per |nbsp| node          
 ``skylake_mpi``      32              2x 20-core `Intel Xeon Gold 6148`_ (Skylake)   192 GB  1 TB HDD    100 Gbps EDR-IB
 ``skylake_mpi``      16              2x 14-core `Intel Xeon Gold 6132`_ (Skylake)   192 GB  450 GB HDD  100 Gbps EDR-IB
 ``zen4``             20              2x 32-core `AMD EPYC 9384X`_ (Genoa-X)         384 GB  450 GB SSD  25 Gbps
-``zen5_mpi``         20+4\ :sup:`a`  2x 64-core `AMD EPYC 9535`_ (Turin)            770 GB  450 GB SSD  200 Gbps NDR-IB
+``zen5_mpi``         20+4\ :sup:`a`  2x 64-core `AMD EPYC 9535`_ (Turin)            768 GB  450 GB SSD  200 Gbps NDR-IB
 ``zen5_himem``       4               2x 64-core `AMD EPYC 9535`_ (Turin)            1.5 TB  450 GB SSD  200 Gbps NDR-IB
 ===================  ==============  ============================================== ======  ==========  ===============
 
