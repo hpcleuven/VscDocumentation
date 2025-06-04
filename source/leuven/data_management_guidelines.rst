@@ -39,7 +39,7 @@ Carefully consider which type(s) of HPC storage are best suited for your work. T
 
 Note that staging (even in the absence of automatic cleanup) should not be considered as a 'safe' storage location. Just like scratch, staging is single-copy and does not offer snapshots or backups. If somebody accidentally removes data or an unexpected system failure removes or corrupts data, this data is gone forever.
 
-Also keep in mind that staging is a paid service (charged based on peak usage per month) while temporarily increasing your scratch quotum can be done for free. If you only need more workspace for your own calculations, it may therefore be more advantageous to ask for a higher scratch quotum than to make more use of staging. For all storage related requests, see the `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/english-version/HPC-storage>`_.
+Also keep in mind that staging is a paid service (charged based on peak usage per month) while temporarily increasing your scratch quotum can be done for free. If you only need more workspace for your own calculations, it may therefore be more advantageous to ask for a higher scratch quotum than to make more use of staging. In general, we recommend to only use staging storage if strictly required and to use scratch storage whenever possible. For all storage related requests, see also the `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/english-version/HPC-storage>`_.
 
 External storage
 ----------------
