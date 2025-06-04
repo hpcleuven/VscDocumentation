@@ -35,7 +35,7 @@ HPC storage
 Carefully consider which type(s) of HPC storage are best suited for your work. The different VSC clusters all offer a :ref:`set of HPC storage locations<data location>`. For the Tier-2 clusters hosted at KU Leuven this is supplemented with so-called 'staging' storage. Staging uses the same (Lustre based) platform as the scratch storage and is also intended for larger amounts of data. Compared to scratch storage, however, staging is better suited for data which:
 
 - either needs to be shared by multiple users in a research project
-- and/or should not be subjected to the automatic cleanup
+- and/or should not be subjected to automatic cleanup (files on scratch get deleted if they have not been accessed during the last month)
 
 Note that staging (even in the absence of automatic cleanup) should not be considered as a 'safe' storage location. Just like scratch, staging is single-copy and does not offer snapshots or backups. If somebody accidentally removes data or an unexpected system failure removes or corrupts data, this data is gone forever.
 
