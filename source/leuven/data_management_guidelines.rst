@@ -28,7 +28,7 @@ Choosing the right types of storage
 You will normally require at least the following two kinds of storage:
 
 - storage which is integrated in the HPC infrastructure
-- external storage where you can move data to on which you are not actively computing anymore
+- external storage: for data on which you are not actively computing anymore
 
 HPC storage
 -----------
@@ -63,7 +63,7 @@ The `RDM Data Management Plan (DMP) documentation pages <https://www.kuleuven.be
 - Estimate your needed storage capacity:
   what is the maximum storage volume you will need at any given point in time? Note that this will be less than the sum of all datasets involved if you plan to (re)move data in between different stages of your project.
 - Identify shared resources to avoid duplication:
-  this could be shared input data, enriched databases, shared software installations, ...
+  this could be shared input data, shared software installations, ...
 - Identify opportunities for automation:
   is it possible to automatically download your input data, process it and then remove the input data all within your compute job? Is it possible to periodically sync to (safe) external storage in an automatic way? Even if such parts of your workflow have not yet been automated, knowing what possibilities exist may allow more informed decisions on for example directory structure.
 
@@ -83,7 +83,7 @@ It is worth spending some time on a suitable directory structure and file naming
 
 Many best practices are already described on the `RDM file organization <https://www.kuleuven.be/rdm/en/guidance/data-standards/file-organisation>`_ page. One of the main points is to have a logical hierarchy with higher level broader topics and more specific folders within. A simple structure that tends to work well is to have a top-level directory for the research project which contains a subdirectory for each collaborator (possibly based on VSC IDs). Individual experiments can then be placed in separate directories within the user's subdirectory. If needed, related projects can be placed in a common parent directory.
 
-As mentioned before, also think about where (shared) data and software are best located. Input datasets, enriched databases and software may be specific to one experiment or be used across different projects (and everything in between) and their position in the hierarchy should reflect this.
+As mentioned before, also think about where (shared) data and software are best located. Input datasets software may be specific to one experiment or be used across different projects (and everything in between) and their position in the hierarchy should reflect this.
 
 Your backup/outflow strategy may also partly determine what is the most appropriate structure. Ideally, such a sync to external storage should be a fairly straightforward operation (e.g. just a single command). In case you want to transfer all project data (inputs, outputs, intermediary files, ...) then that will be easy to do. When you only want to transfer certain types of data (for example only the outputs), however, then certain directory structures might be more convenient than others. This of course also depends on features supported by your transfer tool (rsync / irsync / mango_ingest / Globus / ...) such as the ability to include or exclude certain directory patterns (see e.g. the rsync --include, --exclude and --filter options). Note that e.g. irsync and the Globus web interface do *not* offer such filters. You should therefore make sure that your choice of directory structure is facilitating (and not complicating) your chosen backup/outflow strategy.
 
