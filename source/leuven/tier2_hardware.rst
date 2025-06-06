@@ -13,4 +13,3 @@ KU Leuven/UHasselt Tier-2 Clusters
    tier2_superdome
    tier2_storage
    slurm_specifics
-   data_management_guidelines
