@@ -7,6 +7,18 @@ HPC data management guidelines
 About
 =====
 
+
+This page only concerns the following clusters:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
+
 This page offers guidelines on how to manage your data on the different storage platforms which VSC and KU Leuven have to offer and how to transfer data between them. While most of these guidelines can be applied to any storage available to you, the focus will lie on shared storage related to KU Leuven (e.g. staging storage, Tier-1 Data / Mango, L-drive, other local shared storage).
 
 This page is structured as follows:
