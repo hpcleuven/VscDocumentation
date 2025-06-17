@@ -20,6 +20,32 @@ or that the package versions do not meet your requirements. In this case you wil
 need to locally install those packages, as will be described below. Do not hesitate
 to contact your local support team when encountering issues during these local installations.
 
+
+.. _r_package_management_with_vsc_rproject:
+
+RStudio Projects and HPC
+------------------------
+
+The general recommended way of managing your R projects is by using RStudio Projects.
+RStudio Projects provide a self-contained, organized environment. Each project has 
+its own directory, workspace and history which helps avoid conflicts between different
+analyses. This structure encourages best practices such as modular code, as well as the 
+use of relative filepaths and version control (e.g. git integration). 
+
+However, using RStudio Projects on a heterogenous HPC system posses a couple challenges.
+A first challenge stems from the fact that R packages are version dependent. Therefore you want your
+RStudio Project to be somehow associated with a specific R installation.
+While a package manager like `renv <https://rstudio.github.io/renv/articles/renv.html>`_ does facilitate this, it wasn't developed with heterogenous HPC hardware in mind.
+This also immediately introduces the second challenge. By default, when installing R
+packages, they are compiled with the specific CPU microarchitecture of the host compute node in mind. 
+Ideally you would want your project's package library to be compatible with as many architectures as
+possible without sacrificing performance. 
+
+With these difficulties in mind, we have developed :ref:`vsc-Rproject<vsc-Rproject>` which provides
+a convenient way to manage RStudio Project environments in a way that is compatible with our
+heterogenous HPC infrastructure. 
+
+
 .. _r_package_management_standard_lib:
 
 Standard R package installation
