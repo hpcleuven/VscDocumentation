@@ -45,7 +45,7 @@ sphinxcontrib-serializinghtml==2.0.0
 starlette==0.45.2
 tornado==6.5.1
 typing_extensions==4.12.2
-urllib3==2.3.0
+urllib3==2.5.0
 uvicorn==0.34.0
 watchfiles==1.0.4
 websockets==14.2
