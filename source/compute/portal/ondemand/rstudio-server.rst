@@ -22,13 +22,13 @@ that will be loaded for your session (such as ``R/4.4.1-gfbf-2023b``).
 If needed, the ``R-bundle-Bioconductor`` module can be loaded as well to get access
 to many preinstalled bioinformatics packages.
 
-It is also possible to use locally installed R packages with RStudio, see e.g.
-:ref:`R package management<r_package_management_standard_lib>`.  RStudio
-furthermore allows to create RStudio projects to manage your R environments.
-When doing so, we recommend selecting the `renv
-<https://rstudio.github.io/renv/articles/renv.html>`_ option to ensure a
-completely independent R environment. Without using ``renv``, loading an RStudio
-project may lead to incomplete R library paths.
+It is also possible to use locally installed R packages with RStudio, see:
+:ref:`R package management<r_package_management_standard_lib>`. 
+
+RStudio furthermore allows to create RStudio Projects to manage your R environments.
+When doing so, we recommend using the tool :ref:`vsc-Rproject<vsc-Rproject>` which
+provides a convenient way to manage your R environments when working with RStudio Projects
+on our HPC systems.
 
 For more information on how to use RStudio, check out the `official
 documentation <https://docs.posit.co/ide/user/>`__.
