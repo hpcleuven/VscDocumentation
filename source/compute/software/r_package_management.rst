@@ -35,7 +35,9 @@ use of relative filepaths and version control (e.g. git integration).
 However, using RStudio Projects on a heterogenous HPC system posses a couple challenges.
 A first challenge stems from the fact that R packages are version dependent, which requires
 that each new created project is associated with a specific R installation (or R module).
-While a package manager like `renv <https://rstudio.github.io/renv/articles/renv.html>`_ does facilitate this, it wasn't developed with heterogenous HPC hardware in mind.
+While a package manager like `renv <https://rstudio.github.io/renv/articles/renv.html>`_
+introduce some facilities in this direction compared to basic R, `renv` was not developed
+with heterogeneous HPC hardware in mind.
 This also immediately introduces the second challenge. By default, when installing R
 packages, they are compiled with the specific CPU microarchitecture of the host compute node in mind. 
 Ideally you would want your project's package library to be compatible with as many architectures as
