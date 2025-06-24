@@ -11,9 +11,9 @@ RStudio Projects into our HPC environment. It facilitates the creation, manageme
 and use of such vsc-Rproject environments. 
 
 .. note::
-  In what follows, the term "vsc-Rproject environment" will always refer to
-  the custom RStudio Project environment that is created by the vsc-Rproject tool.
-  When refering to the RStudio Project folder specifically, the term "RStudio Project" will be used instead.
+   In what follows, the term "vsc-Rproject environment" will always refer to
+   the custom RStudio Project environment that is created by the vsc-Rproject tool.
+   When refering to the RStudio Project folder specifically, the term "RStudio Project" will be used instead.
 
 How to use
 ----------
@@ -22,19 +22,18 @@ vsc-Rproject can be used by simply loading the module.
 
 .. code:: bash
 
-       $ module load vsc-Rproject
+   $ module load vsc-Rproject
 
 
 Then, use the ``vsc-rproject`` command to use its different functionalities.
 
 .. code:: bash
 
-       $ vsc-rproject --help
-       $ vsc-rproject --version
+   $ vsc-rproject --help
+   $ vsc-rproject --version
 
 The ``vsc-rproject`` command provides four sub-commands that can be used to ``configure`` default behaviour
 or ``create``, ``activate``, or ``deactivate`` a vsc-Rproject environment.
-In what follows, the use of each of these sub-commands will be further explained.
 
 .. _creating_a_project:
 
@@ -59,18 +58,18 @@ containing the following modules:
 
 .. code:: bash
 
-       $ printf "R/4.4.1-gfbf-2023b\nR-bundle-CRAN/2024.06-foss-2023b\n" > ~/modules.txt
+   $ printf "R/4.4.1-gfbf-2023b\nR-bundle-CRAN/2024.06-foss-2023b\n" > ~/modules.txt
 
 
 .. note::
 
-  When you specify a modules file, it should always contain the R module.
+   When you specify a modules file, it should always contain the R module.
 
 To create a new vsc-Rproject environment using this modules file, run the following command:
 
 .. code:: bash
 
-       $ vsc-rproject create NewProject --modules="$VSC_HOME/modules.txt"
+   $ vsc-rproject create NewProject --modules="$VSC_HOME/modules.txt"
 
 This will create a new RStudio Project named "NewProject" at the default location: ``$VSC_DATA/Rprojects``.
 The modules.txt file will be used when creating the project and stored in 
@@ -78,8 +77,8 @@ The modules.txt file will be used when creating the project and stored in
 
 .. note::
 
-  If you wish to update the modules list for an existing project, you should manually
-  add it to the `.vsc-rproject/modules.env` file.
+   If you wish to update the modules list for an existing project, you should manually
+   add it to the `.vsc-rproject/modules.env` file.
 
 
 Additionally, a project specific ``.Renviron``, ``.Rprofile`` and ``.R/Makevars`` file will be created.
@@ -97,20 +96,20 @@ to "x86-64-v4".
 
 .. note::
 
-  While compiling with "-march=native" will result in better performance for a single
-  type of CPU microarchitecture, the "-march=x86-64-v4" setting marginally compromises
-  performance, to allow for a more generic installation compatible with microarchitectures
-  from skylake or more recent. For most users this will be the more desirable option 
-  as it makes switching between different types of compute nodes a lot easier.
+   While compiling with "-march=native" will result in better performance for a single
+   type of CPU microarchitecture, the "-march=x86-64-v4" setting marginally compromises
+   performance, to allow for a more generic installation compatible with microarchitectures
+   from skylake or more recent. For most users this will be the more desirable option 
+   as it makes switching between different types of compute nodes a lot easier.
 
 .. warning::
 
-  The ``-march=x86-64-v4`` flag is used as the default for microarchitecture optimization 
-  targeting Intel Skylake and newer processors. However, this flag is only supported
-  in GCC version 11 and later. If you are using an older version of R that relies
-  on an earlier GCC version, ``-march=x86-64-v4`` may not be recognized.
-  In such cases, you can run ``gcc --target-help`` to view the list of supported 
-  ``-march`` values and choose a more appropriate setting.
+   The ``-march=x86-64-v4`` flag is used as the default for microarchitecture optimization 
+   targeting Intel Skylake and newer processors. However, this flag is only supported
+   in GCC version 11 and later. If you are using an older version of R that relies
+   on an earlier GCC version, ``-march=x86-64-v4`` may not be recognized.
+   In such cases, you can run ``gcc --target-help`` to view the list of supported 
+   ``-march`` values and choose a more appropriate setting.
 
 
 If you want to enable git within your RStudio Project you can add the ``--enable-git`` flag.
@@ -128,13 +127,13 @@ For more information, see:
 
 .. code:: bash
 
-       $ vsc-rproject create --help
+   $ vsc-rproject create --help
 
 
 .. note::
 
-  Alternatively, you may also want to  modify your default settings more permanently via `vsc-rproject configure`.
-  See :ref:`Default project configuration <default_project_configuration>` for more details.
+   Alternatively, you may also want to  modify your default settings more permanently via `vsc-rproject configure`.
+   See :ref:`Default project configuration <default_project_configuration>` for more details.
 
 .. _activating_a_project:
 
@@ -145,7 +144,7 @@ The ``activate`` sub-command can be used to activate an already existing vsc-Rpr
 
 .. code:: bash
 
-       $ vsc-rproject activate NewProject
+   $ vsc-rproject activate NewProject
 
 Activating a vsc-Rproject environment will load all the relevant modules listed in the modules file and
 set the ``$VSC_RPROJECT`` environment variable which can be used to access the root directory of the project. 
@@ -161,7 +160,7 @@ and the vsc-Rproject module itself. Additionally, it will unset the ``$VSC_RPROJ
  
 .. code:: bash
 
-       $ vsc-rproject deactivate
+   $ vsc-rproject deactivate
 
 
 .. _default_project_configuration:
@@ -174,7 +173,7 @@ personal default settings with the ``configure`` sub-command.
 
 .. note::
 
-  You can at all times check your current default settings with `vsc-rproject --defaults`.
+   You can at all times check your current default settings with `vsc-rproject --defaults`.
 
 ``vsc-rproject configure`` allows you to set your prefered default R with ``--default-r``.
 You may also set a new default location for your RStudio Projects with ``--location``.
@@ -195,6 +194,5 @@ If at any point you wish to reset your configuration to the the original default
 
 .. code:: bash
 
-       $ vsc-rproject configure --reset
-
+   $ vsc-rproject configure --reset
 
