@@ -26,7 +26,7 @@ It is also possible to use locally installed R packages with RStudio, see:
 :ref:`R package management<r_package_management_standard_lib>`. 
 
 RStudio furthermore allows to create RStudio Projects to manage your R environments.
-When doing so, we recommend using the tool :ref:`vsc-Rproject<vsc-Rproject>` which
+When creating RStudio Projects, we recommend using the command-line tool :ref:`vsc-Rproject<vsc-Rproject>` which
 provides a convenient way to manage your R environments when working with RStudio Projects
 on our HPC systems.
 
