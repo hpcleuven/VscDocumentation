@@ -44,10 +44,10 @@ for the specific CPU microarchitecture of the system used for their installation
 Ideally you would want your project's package library to be compatible with as many architectures as
 possible without sacrificing performance. 
 
-With these difficulties in mind, we have developed :ref:`vsc-Rproject<vsc-Rproject>` which provides
-a convenient way to manage RStudio Project environments in a way that is compatible with our
-heterogenous HPC infrastructure. 
-
+With these difficulties in mind, we have developed vsc-Rproject which provides a convenient 
+way to manage RStudio Project environments in a way that is compatible with our heterogenous 
+HPC infrastructure. Check the instructions for :ref:`vsc-Rproject<vsc-Rproject>` and jump onto
+your VSC cluster to start using it. 
 
 .. _r_package_management_standard_lib:
 
