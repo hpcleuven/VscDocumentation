@@ -28,7 +28,7 @@ RStudio Projects and HPC
 
 Researchers that need to use many custom environments in R (`i.e.` with R packages not
 provided in modules) can easily manage such environments with so-called `RStudio Projects`.
-RStudio Projects provide a self-contained, organized environment. Each project has 
+RStudio Projects provide a self-contained, organized environment in R. Each project has 
 its own directory, workspace and history which helps avoid conflicts between different
 analyses. This structure encourages best practices such as modular code, as well as the 
 use of relative filepaths and version control (e.g. git integration). 
