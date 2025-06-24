@@ -26,7 +26,8 @@ to contact your local support team when encountering issues during these local i
 RStudio Projects and HPC
 ------------------------
 
-The general recommended way of managing your R projects is by using RStudio Projects.
+Researchers that need to use many custom environments in R (`i.e.` with R packages not
+provided in modules) can easily manage such environments with so-called `RStudio Projects`.
 RStudio Projects provide a self-contained, organized environment. Each project has 
 its own directory, workspace and history which helps avoid conflicts between different
 analyses. This structure encourages best practices such as modular code, as well as the 
