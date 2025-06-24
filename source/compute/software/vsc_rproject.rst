@@ -70,9 +70,9 @@ To create a new RStudio Project and vsc-Rproject environment using this modules 
 
 .. code:: bash
 
-   $ vsc-rproject create NewProject --modules="$VSC_HOME/modules.txt"
+   $ vsc-rproject create MyProject --modules="$VSC_HOME/modules.txt"
 
-This will create a new RStudio Project named "NewProject" at the default location: ``$VSC_DATA/Rprojects``.
+This will create a new RStudio Project named "MyProject" at the default location: ``$VSC_DATA/Rprojects``.
 The modules.txt file will be used when creating the project and stored in ``$VSC_DATA/Rprojects/.vsc-rproject/modules.env``.
 
 .. note::
@@ -144,7 +144,7 @@ The ``activate`` sub-command can be used to activate an already existing vsc-Rpr
 
 .. code:: bash
 
-   $ vsc-rproject activate NewProject
+   $ vsc-rproject activate MyProject
 
 Activating a vsc-Rproject environment will load all the relevant modules listed in the modules file and
 set the ``$VSC_RPROJECT`` environment variable which can be used to access the root directory of the project.
@@ -196,3 +196,18 @@ If at any point you wish to reset your configuration to the the original default
 
    $ vsc-rproject configure --reset
 
+vsc-Rproject and RStudio Server
+-------------------------------
+
+When launching a new session via :ref:`Studio Server <rstudio-server>`, you can use the ``pre-run scriplet`` to load the vsc-Rproject environment.
+
+.. code::
+
+   module load vsc-Rproject; vsc-rproject activate MyProject
+
+.. warning::
+
+   The R module selected in the OnDemand form must match the R module that was used to create the project!
+   Otherwise dependency conflicts may arise as RStudio Server will replace the modules loaded via the pre-run scriplet.
+
+Once inside the RStudio session, you still need to open the RStudio Project via the interface.

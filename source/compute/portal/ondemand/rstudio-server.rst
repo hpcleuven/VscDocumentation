@@ -1,3 +1,5 @@
+.. _rstudio-server:
+
 RStudio Server
 --------------
 
