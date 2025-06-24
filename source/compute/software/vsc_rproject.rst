@@ -36,10 +36,10 @@ The ``vsc-rproject`` command provides four sub-commands that can be used to ``co
 or ``create``, ``activate``, or ``deactivate`` a vsc-Rproject environment.
 In what follows, the use of each of these sub-commands will be further explained.
 
-.. _sub-command-create:
+.. _creating_a_project:
 
-sub-command: create
-~~~~~~~~~~~~~~~~~~~
+Creating a project
+~~~~~~~~~~~~~~~~~~
 
 The ``create`` sub-command allows you to create a new vsc-Rproject environment.
 
@@ -134,12 +134,12 @@ For more information, see:
 .. note::
 
   Alternatively, you may also want to  modify your default settings more permanently via `vsc-rproject configure`.
-  See :ref:`sub-command-configure` for more details.
+  See :ref:`Default project configuration <default_project_configuration>` for more details.
 
-.. _sub-command-activate:
+.. _activating_a_project:
 
-sub-command: activate
-~~~~~~~~~~~~~~~~~~~~~
+Activating a project
+~~~~~~~~~~~~~~~~~~~~
 
 The ``activate`` sub-command can be used to activate an already existing vsc-Rproject environment.
 
@@ -150,10 +150,10 @@ The ``activate`` sub-command can be used to activate an already existing vsc-Rpr
 Activating a vsc-Rproject environment will load all the relevant modules listed in the modules file and
 set the ``$VSC_RPROJECT`` environment variable which can be used to access the root directory of the project. 
 
-.. _sub-command-deactivate:
+.. _deactivating_a_project:
 
-sub-command: deactivate
-~~~~~~~~~~~~~~~~~~~~~~~
+Deactivating a project
+~~~~~~~~~~~~~~~~~~~~~~
 
 The ``deactivate`` sub-command deactivates the active vsc-Rproject environment. 
 Deactivating a project will purge all loaded modules except for the cluster module 
@@ -164,10 +164,10 @@ and the vsc-Rproject module itself. Additionally, it will unset the ``$VSC_RPROJ
        $ vsc-rproject deactivate
 
 
-.. _sub-command-configure:
+.. _default_project_configuration:
 
-sub-command: configure
-~~~~~~~~~~~~~~~~~~~~~~
+Default project configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you wish to change the default behaviour of vsc-Rproject, you can configure your
 personal default settings with the ``configure`` sub-command.
