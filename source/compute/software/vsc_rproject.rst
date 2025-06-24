@@ -6,7 +6,7 @@ vsc-Rproject
 Introduction
 ------------
 
-vsc-Rproject is an in-house developed command-line tool that integrates the use of
+The software `vsc-Rproject` is an in-house developed command-line tool that integrates the use of
 RStudio Projects into our HPC environment. It facilitates the creation, management
 and use of the RStudio Project and its associates vsc-Rproject environment.
 
@@ -41,14 +41,14 @@ or ``create``, ``activate``, or ``deactivate`` a vsc-Rproject environment.
 Creating a project
 ~~~~~~~~~~~~~~~~~~
 
-The ``create`` sub-command allows you to create a new RStudio Project alongside its vsc-Rproject environment.
+The command ``vsc-rproject create`` allows you to create a new RStudio Project alongside its vsc-Rproject environment.
 
 When creating a new project, the only required argument is a project name.
 
-It is however strongly encouraged to also provide a "modules file".
-This is a simple text file listing one module (full name and version) per line.
-When providing a modules file, vsc-Rproject will ensure that these modules
-are always loaded upon activating the vsc-Rproject environment.
+We recommend to always provide a "modules file" when creating new projects.
+This is a simple text file listing a module (full name and version) per line.
+With a modules file, vsc-Rproject will ensure that these modules are always
+loaded upon activating the corresponding vsc-Rproject environment.
 If no modules file is provided, the default R module will be used instead.
 
 The following command will create a modules.txt file in your home directory,
@@ -91,8 +91,8 @@ and set the ``R_MAKEVARS_USER`` variable to point to the project's ``.R/Makevars
 
 The ``.R/Makevars`` file can be used to control the compilation process when installing
 new R packages by modifying the compiler flags. vsc-Rproject's default behaviour
-is to change the ``-march`` compiler flag for all relevant compilers from "native"
-to "x86-64-v4".
+is to change the ``-march`` compiler flag for all relevant compilers from `native`
+to `x86-64-v4`.
 
 .. note::
 
