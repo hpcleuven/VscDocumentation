@@ -6,15 +6,17 @@ vsc-Rproject
 Introduction
 ------------
 
-The software `vsc-Rproject` is an in-house developed command-line tool that integrates the use of
-RStudio Projects into our HPC environment. It facilitates the creation, management
-and use of the RStudio Project and its associates vsc-Rproject environment.
+`vsc-Rproject` is a command-line tool that facilitates the setup,
+management and use of RStudio Projects in a (VSC) HPC context.
+Two main advantages of `vsc-Rproject` are that project settings and R libraries
+are kept separate for each project and that compiled extensions are easier
+to manage in a cluster with heterogeneous hardware.
 
 .. note::
 
-   In what follows, the term "vsc-Rproject environment" refers to the environment
-   created by vsc-Rproject which enables the use of the associated RStudio Project
-   on our HPC system.
+   In what follows, the term "vsc-Rproject environment" refers to the
+   environment created by vsc-Rproject. This environment enables the use of an
+   associated RStudio Project.
 
 How to use
 ----------
