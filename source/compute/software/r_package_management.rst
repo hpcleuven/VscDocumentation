@@ -30,9 +30,9 @@ If you need a custom R environment (`e.g.` with R packages not provided by modul
 you can easily manage such environments with so-called
 `RStudio Projects <https://docs.posit.co/ide/user/ide/guide/code/projects.html>`_.
 RStudio Projects provide a self-contained, organized environment in R. Each project has 
-its own directory, workspace and history which helps avoid conflicts between different
-analyses. This structure encourages best practices such as modular code, as well as the 
-use of relative filepaths and version control (e.g. git integration). 
+its own working directory, workspace and history which helps to avoid conflicts between different
+projects. This structure encourages best practices such as using relative paths
+and version control (e.g. git).
 
 However, using RStudio Projects on a heterogenous HPC system posses a couple challenges.
 A first challenge stems from the fact that R packages are version dependent, which requires
