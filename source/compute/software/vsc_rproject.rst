@@ -182,11 +182,9 @@ and the default ``-march`` compiler settings with ``--march``.
 
 These personal configurations will be stored in ``$VSC_HOME/.vsc-rproject-config``.
 
-To further support working on a heterogeneous HPC environment the ``$VSC_RPROJECT_CONFIG``
-environment variable can be used to specify an alternative ``.vsc-rproject-config`` file.
-This allows for switching between different configurations depending on your needs.
-e.g. working on different clusters.
-
+You can provide an alternative path for this configuration file by setting
+the `$VSC_RPROJECT_CONFIG` environment variable. This e.g. allows to
+apply different defaults for different clusters.
 If ``$VSC_RPROJECT_CONFIG`` is set, ``vsc-rproject`` will consider it and use it if possible.
 If ``$VSC_RPROJECT_CONFIG`` is not set (default) ``vsc-rproject`` will use the default config file: ``~/.vsc-rproject-config``.
 
