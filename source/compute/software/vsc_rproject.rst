@@ -83,7 +83,9 @@ The modules.txt file will be used when creating the project and stored in ``$VSC
    add it to the `.vsc-rproject/modules.env` file.
 
 
-Within this project folder, a project specific ``.Renviron``, ``.Rprofile`` and ``.R/Makevars`` file will be created.
+The project folder will contain ``.Renviron``, ``.Rprofile`` and
+``.R/Makevars`` configuration files, which are therefore specific to the
+project.
 
 The ``.Renviron`` will set the ``R_LIBS_USER`` variable to point to the project's R package library.
 This can be found at the root of the project, under ``/library/<OS>/R``.
