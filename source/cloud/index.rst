@@ -11,7 +11,7 @@ hands-on introduction to OpenStack. For reference, you should consult
 the OpenStack project's own documentation at
 `docs.openstack.org <https://docs.openstack.org>`_.
 
-Additionally, you can consult this `demo video <https://youtu.be/2d1kYjR4GRc>`
+Additionally, you can consult this `demo video <https://youtu.be/2d1kYjR4GRc>`_.
 It demonstrates how to authenticate and launch a virtual machine, and how to
 deploy Linux and Windows VMs using Terraform.
 
