@@ -96,20 +96,23 @@ to `x86-64-v4`.
 
 .. note::
 
-   While compiling with "-march=native" will result in better performance for a single
-   type of CPU microarchitecture, the "-march=x86-64-v4" setting marginally compromises
-   performance, to allow for a more generic installation compatible with microarchitectures
-   from skylake or more recent. For most users this will be the more desirable option
-   as it makes switching between different types of compute nodes a lot easier.
+   Compared to "-march=native", the "-march=x86-64-v4" setting will discard
+   certain microarchitecture-specific optimizations (potentially with a minor
+   performance impact) to allow for a more generic installation which will run
+   on any AVX512-capable x86-64 CPU (e.g. Skylake and newer for Intel CPUs and
+   Zen4 and newer for AMD CPUs). For most users this will be the more desirable
+   option as it makes switching between different types of compute nodes a lot
+   easier. If some of the node types you want to utilize do not support this
+   microarchitecture level, you can e.g. choose ``-march=x86-64-v3`` instead.
 
 .. warning::
 
-   The ``-march=x86-64-v4`` flag is used as the default for microarchitecture optimization
-   targeting Intel Skylake and newer processors. However, this flag is only supported
-   in GCC version 11 and later. If you are using an older version of R that relies
-   on an earlier GCC version, ``-march=x86-64-v4`` may not be recognized.
-   In such cases, you can run ``gcc --target-help`` to view the list of supported
-   ``-march`` values and choose a more appropriate setting.
+   Compiler options such as ``-march=x86-64-v3`` and ``-march=x86-64-v4`` are
+   only supported in GCC version 11 and later. If you are using an older
+   version of R that relies on an earlier GCC version, ``-march=x86-64-v...``
+   will not be recognized. In such cases, you can run ``gcc --target-help``
+   to view the list of supported ``-march`` values and choose a more
+   appropriate setting.
 
 
 If you want to enable git within the RStudio Project you can add the ``--enable-git`` flag.
