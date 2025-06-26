@@ -7,19 +7,19 @@ Introduction
 ------------
 
 There exist thousands of R packages, available from online repositories like CRAN,
-Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
+Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr`
 are either already included in the centrally installed R module or can be accessed by
 loading the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules, e.g.:
 
 .. code:: r
 
-       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2    
+       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2
 
 It is possible, however, that these modules do not contain all R packages you need
 or that the package versions do not meet your requirements. In this case you will
-need to locally install those packages, as will be described below. Do not hesitate
-to contact your local support team when encountering issues during these local installations.
+need to locally install those packages, as will be described below.
 
+Do not hesitate to contact your local support team when encountering issues during these local installations.
 
 .. _r_package_management_with_vsc_rproject:
 
@@ -29,26 +29,26 @@ RStudio Projects and HPC
 If you need a custom R environment (`e.g.` with R packages not provided by modules),
 you can easily manage such environments with so-called
 `RStudio Projects <https://docs.posit.co/ide/user/ide/guide/code/projects.html>`_.
-RStudio Projects provide a self-contained, organized environment in R. Each project has 
+RStudio Projects provide a self-contained, organized environment in R. Each project has
 its own working directory, workspace and history which helps to avoid conflicts between different
 projects. This structure encourages best practices such as using relative paths
 and version control (e.g. git).
 
-However, using RStudio Projects on a heterogenous HPC system posses a couple challenges.
-A first challenge stems from the fact that R packages are version dependent, which requires
-that each newly created project is associated with a specific R installation (or R module).
-While a package manager like `renv <https://rstudio.github.io/renv/articles/renv.html>`_
-introduce some facilities in this direction compared to basic R, `renv` was not developed
-with heterogeneous HPC hardware in mind.
-This also immediately introduces the second challenge. By default, R packages are compiled
-for the specific CPU microarchitecture of the system used for their installation.
-Ideally you would want your project's package library to be compatible with as many architectures as
-possible without sacrificing performance. 
+However, using RStudio Projects on a heterogenous HPC system posses some challenges.
+The first challenge arrises when installing packages in your project's package library.
+By default, these R packages are compiled with ``"-march=native"``.
+As a result, the package will be installed in a way that is optimal for the CPU microarchitecture
+of the node used for the installation. However, when you try to use that same package on
+a node with a different architecture, it may give worse performance or even break entirely.
 
-With these difficulties in mind, we have developed vsc-Rproject which provides a convenient 
-way to manage RStudio Project environments in a way that is compatible with our heterogenous 
-HPC infrastructure. Check the instructions for :ref:`vsc-Rproject<vsc-Rproject>` and jump onto
-your VSC cluster to start using it. 
+It is also important to be aware that R packages are version specific. A package installed for
+``R/4.2.2`` may not work when used with ``R/4.4.1`` or visversa. Since there are many R versions
+available on our HPC system, as a user you should always be aware of which version to use for which project.
+
+With these difficulties in mind, we have developed `vsc-Rproject` which provides a convenient
+way to manage RStudio Project environments in a way that is compatible with our heterogenous HPC infrastructure.
+
+Check the instructions for :ref:`vsc-Rproject <vsc-Rproject>` and jump onto your VSC cluster to start using it.
 
 .. _r_package_management_standard_lib:
 
@@ -181,9 +181,9 @@ The next step is to create a new conda environment which can be done as follows:
 
    $ conda search -c conda-forge r-base  # select one of available versions for the step below
    $ conda create -n science -c conda-forge r-base=<version> r-essentials
-   
 
-This command creates a new conda environment called "science", and installs your prefered R 
+
+This command creates a new conda environment called "science", and installs your prefered R
 version from the conda-forge channel as well as the r-essentials bundle which includes number
 of commonly used R packages such as ggplot2, glmnet, dplyr, tidyr, and shiny.
 
