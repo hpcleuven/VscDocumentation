@@ -1,3 +1,5 @@
+.. _hpc containers:
+
 #############################
 Containers on the HPC systems
 #############################

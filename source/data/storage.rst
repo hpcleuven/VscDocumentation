@@ -15,4 +15,5 @@ manage your data in them.
    tier2-infrastructure
    managing_storage_usage
    request_more_storage
+   data_management_guidelines
 
