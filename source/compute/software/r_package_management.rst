@@ -3,43 +3,83 @@
 R package management
 ====================
 
+.. _r_package_management_intro:
+
 Introduction
 ------------
 
 There exist thousands of R packages, available from online repositories like CRAN,
-Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr` 
+Bioconductor or github. Depending on the R version, the more commonly used packages like `ggplot2`, `tidyverse` or `readr`
 are either already included in the centrally installed R module or can be accessed by
 loading the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules, e.g.:
 
 .. code:: r
 
-       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2    
+       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2
 
-It is possible, however, that these modules do not contain all R packages you need
-or that the package versions do not meet your requirements. In this case you will
-need to locally install those packages, as will be described below. Do not hesitate
-to contact your local support team when encountering issues during these local installations.
+It is possible, however, that these modules do not contain all R packages you
+need or that the package versions do not meet your requirements. In this case
+you will need to install those packages locally. Do not hesitate to contact
+your local support team when encountering issues along the way.
+
+The sections below explain different ways to go about these installations.
+These assume that you are either using a centrally installed R module
+(:ref:`Using RStudio Projects<r_package_management_with_vsc_rproject>`,
+:ref:`Standard R package installation<r_package_management_standard_lib>`)
+or Conda (:ref:`Installing R packages using Conda<r_package_management_conda>`).
+In all cases, however, it best to keep the following in mind:
+
+* By default, R uses the `$VSC_HOME/R` path to install new packages.
+  Since `$VSC_HOME` has limited quota, it is not the recommended location
+  to install software. Instead, we recommend to use `$VSC_DATA`.
+
+* R packages often include extensions written in compiled languages (e.g.
+  C++ or Fortran). The centrally installed R modules are configured to compile
+  these extensions with optimizations for the CPU architecture at hand
+  (the ``"-march=native"`` option when using GCC compilers).
+  This means that R extensions compiled in this way may not work
+  on other partitions than the one they were created on.
+
+* A given version of an R package may only work with certain R versions.
+  For example, a package installed with R 4.2.2 may not work when used with
+  R 4.4.1. Since typically many different R versions are available,
+  as a user you should always be aware of the correct version to use for
+  your project(s).
+
+
+.. _r_package_management_with_vsc_rproject:
+
+Using RStudio Projects with vsc-Rproject
+----------------------------------------
+
+When using a centrally installed R module, you can easily manage your own
+R environments with custom packages using so-called
+`RStudio Projects <https://docs.posit.co/ide/user/ide/guide/code/projects.html>`_.
+RStudio Projects provide a self-contained, organized environment in R. Each project has
+its own working directory, workspace and history which helps to avoid conflicts between different
+projects. This structure encourages best practices such as using relative paths
+and version control (e.g. git).
+
+The :ref:`vsc-Rproject tool <vsc-Rproject>` helps you create RStudio Projects
+and allows to compile extensions in a more portable way. The tool furthermore
+simplifies setting up your R environment (including selecting the correct R
+module). Once activated, commands such as `install.packages(...)` or
+`devtools::install_github(...)` will yield portable installations in a
+well-defined, project specific location.
+
 
 .. _r_package_management_standard_lib:
 
 Standard R package installation
 -------------------------------
 
-Firstly, it is important to realize that R by default uses the `$VSC_HOME/R` path
-to install new packages. Since `$VSC_HOME` has limited quota, it is not
-the recommended location to install software. Instead, we recommend to use `$VSC_DATA`.
+In case `vsc-Rproject` does not suit your needs, then you can still go about
+your local package installations as follows.
 
-Secondly, it should be kept in mind that R packages often include extensions written in
-compiled languages (e.g. C++ or Fortran) and that the centrally installed R modules are
-configured to compile these extensions with optimizations for the CPU architecture at hand.
-This means that such R packages cannot in general be used on different partitions than the
-one they were created on.
-
-Thirdly, R packages may also only work with certain versions of R and not with other versions.
-
-With these three considerations in mind, we recommend to use a directory structure which
-provides a unique path for each OS version, hardware architecture and R version.
-The example below creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
+Considering the possible dependencies on the OS version, CPU microarchitecture
+and R version (see the :ref:`Intro<r_package_management_intro>`), we recommend
+to use a directory structure that makes these distinctions. The example below
+creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
 
 .. code-block:: bash
 
@@ -122,7 +162,8 @@ Installing R packages using conda
     Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
     and VUB.
 
-The easiest way to install and manage your own R environment(s) is conda.
+The paragraphs below illustrate how to install and use R and R packages
+in a Conda environment.
 
 .. _install_miniconda_r:
 
@@ -151,9 +192,9 @@ The next step is to create a new conda environment which can be done as follows:
 
    $ conda search -c conda-forge r-base  # select one of available versions for the step below
    $ conda create -n science -c conda-forge r-base=<version> r-essentials
-   
 
-This command creates a new conda environment called "science", and installs your prefered R 
+
+This command creates a new conda environment called "science", and installs your prefered R
 version from the conda-forge channel as well as the r-essentials bundle which includes number
 of commonly used R packages such as ggplot2, glmnet, dplyr, tidyr, and shiny.
 
