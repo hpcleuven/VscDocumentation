@@ -2,13 +2,12 @@
 
 It is possible to deploy Windows VMs in VSC Tier-1 Cloud infrastructure.
 VSC [Terraform modules](terraform.md) 
-provides a terraform module with an option for Windows. Simply use the `Windows10` image and set `is_windows = true`. Please read our
+provides a terraform module with an option for Windows. Simply use the `Windows11` image and set `is_windows = true`. Please read our
 [Terraform section](terraform.md) first to know how to use and modify
 Terraform modules.
 
 :::{note}
-At this moment VSC Tier-1 Cloud only provides a Windows 10 public image.
-Windows 11 will be available soon.
+The Windows11 image that VSC Cloud provides ignores the TPM Requirement. Any functionality that requires a TPM module will not function.
 :::
 
 ## Deploy Windows VM with Terraform
