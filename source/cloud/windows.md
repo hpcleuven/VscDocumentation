@@ -2,13 +2,12 @@
 
 It is possible to deploy Windows VMs in VSC Tier-1 Cloud infrastructure.
 VSC [Terraform modules](terraform.md) 
-provides a terraform module with an option for Windows. Simply use the `Windows10` image and set `is_windows = true`. Please read our
+provides a terraform module with an option for Windows. Simply use the `Windows11` image and set `is_windows = true`. Please read our
 [Terraform section](terraform.md) first to know how to use and modify
 Terraform modules.
 
 :::{note}
-At this moment VSC Tier-1 Cloud only provides a Windows 10 public image.
-Windows 11 will be available soon.
+The Windows11 image that VSC Cloud provides ignores the TPM Requirement. Any functionality that requires a TPM module will not function.
 :::
 
 ## Deploy Windows VM with Terraform
@@ -63,7 +62,7 @@ https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/
 3) Save as `virtio-win.iso`
 4) Download the latest windows iso, save as `Windows.iso`
 * [Win10](https://www.microsoft.com/en-us/software-download/windows10ISO)
-5) Configure/Download the unattended install iso: [https://schneegans.de/windows/unattend-generator/](https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&UserLocale=nl-BE&KeyboardLayout=0409%3A00000409&GeoLocation=21&ProcessorArchitecture=amd64&BypassRequirementsCheck=true&ComputerNameMode=Custom&ComputerName=openstack&TimeZoneMode=Implicit&PartitionMode=Interactive&WindowsEditionMode=Unattended&WindowsEdition=pro&UserAccountMode=Unattended&AccountName0=Admin&AccountPassword0=&AccountGroup0=Administrators&AutoLogonMode=None&PasswordExpirationMode=Unlimited&LockoutMode=Default&EnableRemoteDesktop=true&DisableAppSuggestions=true&DisableWidgets=true&PreventDeviceEncryption=true&WifiMode=Skip&ExpressSettings=DisableAll&SystemScript0=Set-Content+-Path+C%3A%5CWindows%5Ccloudconfig.ps1+-Value+%22Add-Content+-Path+%27C%3A%5CProgram+Files%5CCloudbase+Solutions%5CCloudbase-Init%5Cconf%5Ccloudbase-init*%27+-Value+%27first_logon_behaviour%3Dno%27%22&SystemScriptType0=Ps1&SystemScript1=pnputil+-i+-a+F%3A%5Cviostor%5Cwin10%5Camd64%5C*.INF&SystemScriptType1=Cmd&SystemScript2=pnputil+-i+-a+F%3A%5Cqxl%5Cw7%5Camd64%5C*.INF&SystemScriptType2=Cmd&SystemScript3=Remove-Partition+-Disknumber+0+-PartitionNumber+%24%28Get-Partition+%7C+Select-Object+-Last+1%29.PartitionNumber+-Confirm%3A%24false&SystemScriptType3=Ps1&FirstLogonScript0=Set-ExecutionPolicy+Unrestricted&FirstLogonScriptType0=Ps1&FirstLogonScript1=Invoke-WebRequest+-UseBasicParsing+https%3A%2F%2Fgithub.com%2Fcloudbase%2Fcloudbase-init%2Freleases%2Fdownload%2F1.1.4%2FCloudbaseInitSetup_1_1_4_x64.msi+-OutFile+cloudbaseinit.msi%3B+cloudbaseinit.msi+&FirstLogonScriptType1=Ps1&WdacMode=Skip)(link includes current configuration)
+5) Configure/Download the unattended install iso: [https://schneegans.de/windows/unattend-generator/](https://tinyurl.com/yzdhv4p9) (link includes recommended configuration)
 
 ![image](img/download_iso.png)
 
