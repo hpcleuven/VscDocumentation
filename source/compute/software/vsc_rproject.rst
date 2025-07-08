@@ -87,7 +87,7 @@ The project folder will contain ``.Renviron``, ``.Rprofile`` and
 ``.R/Makevars`` configuration files, which are therefore specific to the
 project.
 
-The ``.Renviron`` will set the ``R_LIBS_USER`` variable to point to the project's R package library.
+The ``.Renviron`` file will set the ``R_LIBS_USER`` variable to point to the project's R package library.
 This can be found at the root of the project, under ``/library/<OS>/R``.
 
 The ``.Rprofile`` will be configured to set the CRAN mirror to ``"https://cloud.r-project.org"`` (default)
