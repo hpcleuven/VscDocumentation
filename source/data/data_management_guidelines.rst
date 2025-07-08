@@ -58,7 +58,7 @@ External storage
 As a general rule, data should be removed from HPC storage once it is no longer needed in further computations or postprocessing. Usually at least part of this data needs to be preserved for e.g. possible future reanalysis, sharing with other researchers, publication, et cetera. Such data then first needs to be copied to external storage (a process typically referred to as 'outflow'). Carefully consider your choice of external storage, in particular when it comes to (long-term) data safety, pricing, and how well it can be reached from within the HPC environment. Your options may include:
 
 - 'in-house' storage managed in your research group or department
-- :ref:`Tier-1 data <_tier1_data_service>`
+- :ref:`Tier-1 data <tier1_data_service>`
 - Archive storage (K-drive) or large volume storage (L-drive) (KU Leuven specific)
 - ManGO (KU Leuven specific)
 - Cold storage (like for example the upcoming platform `FriGO <https://rdm-docs.icts.kuleuven.be/frigo/index.html>`_, KU Leuven specific)
