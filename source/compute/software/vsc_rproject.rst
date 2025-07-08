@@ -204,7 +204,7 @@ If at any point you wish to reset your configuration to the the original default
 vsc-Rproject and RStudio Server
 -------------------------------
 
-When launching a new session via :ref:`Studio Server <rstudio-server>`, you can use the ``pre-run scriplet`` to load the vsc-Rproject environment.
+When launching a new session via the :ref:`Studio Server <rstudio-server>` app in the Open Ondemand portal, you can use the ``pre-run scriplet`` to load the vsc-Rproject environment.
 
 .. code::
 
