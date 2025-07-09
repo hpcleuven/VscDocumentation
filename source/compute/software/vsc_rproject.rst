@@ -126,7 +126,7 @@ If you are not satisfied with the default behaviour, you can modify the behaviou
 of ``vsc-rproject create`` by providing additional command-line arguments.
 You can specify ``--location`` to create your project in a different location.
 The ``--cran`` argument can be used to provide a specific CRAN mirror for your project.
-Finally ``--march`` allows you to choose a different the microarchitecture optimization
+Finally ``--march`` allows you to choose a different microarchitecture optimization
 for your project.
 
 
