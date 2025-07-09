@@ -29,7 +29,7 @@ These assume that you are either using a centrally installed R module
 or Conda (:ref:`Installing R packages using Conda<r_package_management_conda>`).
 In all cases, however, it is best to keep the following in mind:
 
-* By default, R uses the `$VSC_HOME/R` path to install new packages.
+* By default, R uses the ``$VSC_HOME/R`` path to install new packages.
   Since `$VSC_HOME` has limited quota, it is not the recommended location
   to install software. Instead, we recommend to use `$VSC_DATA`.
 
