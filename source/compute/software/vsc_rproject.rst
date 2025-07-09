@@ -139,7 +139,7 @@ For more information, see:
 
 .. note::
 
-   Alternatively, you may also want to  modify your default settings more permanently via `vsc-rproject configure`.
+   Alternatively, you may also want to  modify your default settings more permanently via ``vsc-rproject configure``.
    See :ref:`Default project configuration <default_project_configuration>` for more details.
 
 .. _activating_a_project:
