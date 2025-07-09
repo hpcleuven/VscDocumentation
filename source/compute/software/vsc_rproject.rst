@@ -100,7 +100,7 @@ to `x86-64-v4`.
 
 .. note::
 
-   Compared to "-march=native", the "-march=x86-64-v4" setting will discard
+   Compared to ``-march=native``, the ``-march=x86-64-v4`` compiler flag will discard
    certain microarchitecture-specific optimizations (potentially with a minor
    performance impact) to allow for a more generic installation which will run
    on any AVX512-capable x86-64 CPU (e.g. Skylake and newer for Intel CPUs and
