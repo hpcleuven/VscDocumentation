@@ -9,7 +9,7 @@ Introduction
 ``vsc-Rproject`` is a command-line tool that facilitates the setup,
 management and use of RStudio Projects on VSC HPC clusters.
 Two main advantages of using ``vsc-Rproject`` are that the project settings and R libraries
-are kept separate for each project and that compiled extensions are easier
+are kept separate for each project, and that compiled extensions are easier
 to manage in a cluster with heterogeneous hardware.
 
 .. note::
