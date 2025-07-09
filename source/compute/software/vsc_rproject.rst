@@ -28,7 +28,7 @@ vsc-Rproject can be used by simply loading the corresponding module.
    $ module load vsc-Rproject
 
 
-Then, use the ``vsc-rproject`` command to use its different functionalities.
+Then, use the ``vsc-rproject`` command for its different functionalities.
 
 .. code:: bash
 
