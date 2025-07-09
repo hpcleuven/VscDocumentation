@@ -43,7 +43,7 @@ or ``create``, ``activate``, or ``deactivate`` a vsc-Rproject environment.
 Creating a project
 ~~~~~~~~~~~~~~~~~~
 
-The command ``vsc-rproject create`` allows you to create a new RStudio Project alongside its vsc-Rproject environment.
+The command ``vsc-rproject create`` allows you to create a new RStudio Project together with a vsc-Rproject environment.
 
 When creating a new project, the only required argument is a project name.
 
