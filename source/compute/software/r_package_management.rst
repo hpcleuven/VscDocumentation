@@ -36,7 +36,7 @@ In all cases, however, it is best to keep the following in mind:
 * R packages often include extensions written in compiled languages (e.g.
   C++ or Fortran). The centrally installed R modules are configured to compile
   these extensions with optimizations for the CPU architecture at hand
-  (the ``"-march=native"`` option when using GCC compilers).
+  (specifically the ``"-march=native"`` option when using GCC compilers).
   This means that R extensions compiled in this way may not work
   on other partitions than the one they were created on.
 
