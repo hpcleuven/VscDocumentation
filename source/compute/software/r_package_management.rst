@@ -194,7 +194,7 @@ The next step is to create a new conda environment which can be done as follows:
    $ conda create -n science -c conda-forge r-base=<version> r-essentials
 
 
-This command creates a new conda environment called "science", and installs your prefered R
+This command creates a new Conda environment called ``science``, and installs your preferred R
 version from the conda-forge channel as well as the r-essentials bundle which includes number
 of commonly used R packages such as ggplot2, glmnet, dplyr, tidyr, and shiny.
 
