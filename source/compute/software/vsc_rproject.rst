@@ -180,7 +180,7 @@ personal default settings with the ``configure`` sub-command.
 
 .. note::
 
-   You can at all times check your current default settings with `vsc-rproject --defaults`.
+   You can at all times check your current default settings with ``vsc-rproject --defaults``.
 
 ``vsc-rproject configure`` allows you to set your prefered default R with ``--default-r``.
 You may also set a new default location for your RStudio Projects with ``--location``.
