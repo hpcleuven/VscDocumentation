@@ -60,7 +60,7 @@ its own working directory, workspace and history which helps to avoid conflicts 
 projects. This structure encourages best practices such as using relative paths
 and version control (e.g. git).
 
-The :ref:`vsc-Rproject tool <vsc-Rproject>` helps you create RStudio Projects
+The :ref:`vsc-Rproject tool <vsc-Rproject>` helps you create RStudio Projects,
 and allows to compile extensions in a more portable way. The tool furthermore
 simplifies setting up your R environment (including selecting the correct R
 module). Once activated, commands such as `install.packages(...)` or
