@@ -21,7 +21,7 @@ to manage in a cluster with heterogeneous hardware.
 How to use
 ----------
 
-vsc-Rproject can be used by simply loading the module.
+vsc-Rproject can be used by simply loading the corresponding module.
 
 .. code:: bash
 
