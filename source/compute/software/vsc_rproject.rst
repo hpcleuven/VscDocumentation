@@ -80,7 +80,7 @@ The modules.txt file will be used when creating the project, and is stored in ``
 .. note::
 
    If you wish to update the modules list for an existing project, you should manually
-   add it to the `.vsc-rproject/modules.env` file.
+   add it to the ``$VSC_DATA/Rprojects/.vsc-rproject/modules.env`` file.
 
 
 The project folder will contain ``.Renviron``, ``.Rprofile`` and
