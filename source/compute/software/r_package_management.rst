@@ -31,7 +31,7 @@ In all cases, however, it is best to keep the following in mind:
 
 * By default, R uses the ``$VSC_HOME/R`` path to install new packages.
   Since ``$VSC_HOME`` has limited quota, it is not the recommended location
-  to install software. Instead, we recommend to use `$VSC_DATA`.
+  to install software. Instead, we recommend to use ``$VSC_DATA``.
 
 * R packages often include extensions written in compiled languages (e.g.
   C++ or Fortran). The centrally installed R modules are configured to compile
