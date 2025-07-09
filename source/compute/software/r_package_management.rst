@@ -27,7 +27,7 @@ These assume that you are either using a centrally installed R module
 (:ref:`Using RStudio Projects<r_package_management_with_vsc_rproject>`,
 :ref:`Standard R package installation<r_package_management_standard_lib>`)
 or Conda (:ref:`Installing R packages using Conda<r_package_management_conda>`).
-In all cases, however, it best to keep the following in mind:
+In all cases, however, it is best to keep the following in mind:
 
 * By default, R uses the `$VSC_HOME/R` path to install new packages.
   Since `$VSC_HOME` has limited quota, it is not the recommended location
