@@ -193,7 +193,7 @@ You can provide an alternative path for this configuration file by setting
 the ``$VSC_RPROJECT_CONFIG`` environment variable. This e.g. allows to
 apply different defaults for different clusters.
 If ``$VSC_RPROJECT_CONFIG`` is set, ``vsc-rproject`` will consider it and use it if possible.
-If ``$VSC_RPROJECT_CONFIG`` is not set (default) ``vsc-rproject`` will use the default config file: ``~/.vsc-rproject-config``.
+If ``$VSC_RPROJECT_CONFIG`` is not set (default) ``vsc-rproject`` will use the default config file in ``$VSC_HOME/.vsc-rproject-config``.
 
 If at any point you wish to reset your configuration to the the original default settings, simply run:
 
