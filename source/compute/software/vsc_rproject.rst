@@ -61,7 +61,7 @@ containing the following modules:
 
 .. code:: bash
 
-   $ printf "R/4.4.1-gfbf-2023b\nR-bundle-CRAN/2024.06-foss-2023b\n" > ~/modules.txt
+   $ printf "R/4.4.1-gfbf-2023b\nR-bundle-CRAN/2024.06-foss-2023b\n" > $VSC_DATA/modules.txt
 
 
 .. note::
