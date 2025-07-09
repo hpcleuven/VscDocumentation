@@ -77,7 +77,7 @@ In case `vsc-Rproject` does not suit your needs, then you can still go about
 your local package installations as follows.
 
 Considering the dependence of the compiled package on the host OS version, CPU microarchitecture
-and R version (see the :ref:`Intro<r_package_management_intro>`), we recommend
+and R version (see :ref:`above<r_package_management_intro>`), we recommend
 to use a directory structure that makes these distinctions. The example below
 creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
 
