@@ -53,7 +53,7 @@ With a modules file, vsc-Rproject will ensure that these modules are always
 loaded upon activating the corresponding vsc-Rproject environment.
 If no modules file is provided, the default R module will be used instead.
 
-The following command will create a modules.txt file in your home directory,
+The following command will create a ``modules.txt`` file in your data directory,
 containing the following modules:
 
 - ``R/4.4.1-gfbf-2023b``
