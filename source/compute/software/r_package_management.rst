@@ -41,7 +41,7 @@ In all cases, however, it is best to keep the following in mind:
   on other partitions than the one they were created on.
 
 * A given version of an R package may only work with certain R versions.
-  For example, a package installed with R 4.2.2 may not work when used with
+  For example, a package installed with R version 4.2.2 may not work when used with
   R 4.4.1. Since typically many different R versions are available,
   as a user you should always be aware of the correct version to use for
   your project(s).
