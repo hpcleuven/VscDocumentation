@@ -14,7 +14,7 @@ to manage in a cluster with heterogeneous hardware.
 
 .. note::
 
-   In what follows, the term "vsc-Rproject environment" refers to the
+   In what follows, the term 'vsc-Rproject environment' refers to the
    environment created by vsc-Rproject. This environment enables the use of an
    associated RStudio Project.
 
