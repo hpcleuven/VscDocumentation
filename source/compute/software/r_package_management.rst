@@ -15,7 +15,7 @@ loading the `R-bundle-CRAN` and `R-bundle-Bioconductor` modules, e.g.:
 
 .. code:: r
 
-       $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2
+   $ module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2
 
 It is possible, however, that these modules do not contain all R packages you
 need or that the package versions do not meet your requirements. In this case
@@ -83,16 +83,16 @@ creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
 
 .. code-block:: bash
 
-      # From within an interactive session on an icelake compute node:
-      $ module load R/4.2.2-foss-2022b
-      $ mkdir -p ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
+   # From within an interactive session on an icelake compute node:
+   $ module load R/4.2.2-foss-2022b
+   $ mkdir -p ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
 
 The next step is to ensure such install locations are used by default in the R package installation process.
 This can be done by setting the ``R_LIBS_USER`` variable to in the ``$VSC_HOME/.Renviron`` file as follows:
 
 .. code-block:: bash
 
-      $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> $VSC_HOME/.Renviron
+   $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> $VSC_HOME/.Renviron
 
 The ``${VSC_OS_LOCAL}`` and ``${VSC_ARCH_LOCAL}`` environment variables are predefined
 and match the OS version (e.g. ``rocky8``) and CPU model (e.g. ``icelake``) of the node.
@@ -104,22 +104,22 @@ your packages in the appropriate R library folder.
 
 .. note::
 
-  This ``.Renviron`` configuration will also work as expected in Open OnDemand apps
-  such as RStudio Server.
+   This ``.Renviron`` configuration will also work as expected in Open OnDemand apps
+   such as RStudio Server.
 
 The next step is to load the appropriate R module and run R.
 
 .. code-block:: bash
 
-      # From within an interactive session on an icelake compute node:
-      $ module load R/4.2.2-foss-2022b
-      $ R
+   # From within an interactive session on an icelake compute node:
+   $ module load R/4.2.2-foss-2022b
+   $ R
 
 From here, installing packages can be as simple as:
 
 .. code-block:: r
 
-      > install.packages("DEoptim")
+   > install.packages("DEoptim")
 
 
 If you are unsure whether R will install your desired package in the correct location, you can first list
@@ -131,22 +131,22 @@ This will take precedence over any defaults.
 
 .. code-block:: r
 
-      > Rlibs <- "/path/to/my/R_library"
-      > install.packages("DEoptim", lib = Rlibs)
+   > Rlibs <- "/path/to/my/R_library"
+   > install.packages("DEoptim", lib = Rlibs)
 
 Alternatively you can download the desired package
 
 .. code-block:: bash
 
-      $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
+   $ wget cran.r-project.org/src/contrib/Archive/DEoptim/DEoptim_2.0-0.tar.gz
 
 and install it from the command line with
 
 .. code-block:: bash
 
-      # From within an interactive session on an icelake compute node:
-      $ module load R/4.2.2-foss-2022b
-      $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
+   # From within an interactive session on an icelake compute node:
+   $ module load R/4.2.2-foss-2022b
+   $ R CMD INSTALL DEoptim_2.0-0.tar.gz  -l ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
 
 If the installation of a package requires devtools, please consult the :ref:`devtools documentation<r_devtools>`.
 
@@ -158,9 +158,9 @@ Installing R packages using conda
 
 .. note::
 
-    Conda packages are incompatible with the software modules.
-    Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
-    and VUB.
+   Conda packages are incompatible with the software modules.
+   Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
+   and VUB.
 
 The paragraphs below illustrate how to install and use R and R packages
 in a Conda environment.
@@ -180,7 +180,9 @@ Creating an environment
 
 First, ensure that the Miniconda installation is in your PATH
 environment variable. The following command should return the full path
-to the conda command::
+to the conda command:
+
+.. code-block:: bash
 
    $ which conda
 
@@ -188,7 +190,9 @@ If the result is blank, or reports that conda can not be found, modify
 the ``PATH`` environment variable appropriately by adding miniconda's ``bin``
 directory to ``PATH``.
 
-The next step is to create a new conda environment which can be done as follows::
+The next step is to create a new conda environment which can be done as follows:
+
+.. code-block:: bash
 
    $ conda search -c conda-forge r-base  # select one of available versions for the step below
    $ conda create -n science -c conda-forge r-base=<version> r-essentials
@@ -200,7 +204,8 @@ of commonly used R packages such as ``ggplot2``, ``glmnet``, ``dplyr``, ``tidyr`
 
 .. note::
 
-   A lot of bioconda and bioconductor packages are not in sync with their dependencies, therefore you may need to create a separate environment for each of those packages to avoid conflicts.
+   A lot of bioconda and bioconductor packages are not in sync with their dependencies,
+   therefore you may need to create a separate environment for each of those packages to avoid conflicts.
 
 Working with the environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,7 +213,7 @@ Working with the environment
 To work with an environment, you have to activate it. This is done with,
 e.g.,
 
-::
+.. code-block:: bash
 
    $ source activate science
 
@@ -221,13 +226,13 @@ Install an additional package
 To install an additional package, e.g., ``rodbc``, first ensure that the
 environment you want to work in is activated.
 
-::
+.. code-block:: bash
 
    $ source activate science
 
 Next, install the package:
 
-::
+.. code-block:: bash
 
    $ conda install -c conda-forge r-rodbc
 
@@ -240,19 +245,19 @@ Updating/removing
 Using conda, it is easy to keep your packages up-to-date. Updating a
 single package (and its dependencies) can be done using:
 
-::
+.. code-block:: bash
 
    $ conda update r-rodbc
 
 Updating all packages in the environment is trivial:
 
-::
+.. code-block:: bash
 
    $ conda update --all
 
 Removing an installed package:
 
-::
+.. code-block:: bash
 
    $ conda remove r-mass
 
@@ -262,7 +267,7 @@ Deactivating an environment
 To deactivate a conda environment, i.e., return the shell to its
 original state, use the following command
 
-::
+.. code-block:: bash
 
    $ source deactivate
 
