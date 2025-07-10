@@ -88,15 +88,15 @@ creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
       $ mkdir -p ${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}
 
 The next step is to ensure such install locations are used by default in the R package installation process.
-This can be done by setting the `R_LIBS_USER` variable to in the `~/.Renviron` file as follows:
+This can be done by setting the ``R_LIBS_USER`` variable to in the ``$VSC_HOME/.Renviron`` file as follows:
 
 .. code-block:: bash
 
-      $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> ~/.Renviron
+      $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> $VSC_HOME/.Renviron
 
-The `${VSC_OS_LOCAL}` and `${VSC_ARCH_LOCAL}` environment variables are predefined
-and match the OS version (e.g. `rocky8`) and CPU model (e.g. `icelake`) of the node.
-The `${EBVERSIONR}` variable contains the R version (e.g. `4.2.2`) of the currently loaded
+The ``${VSC_OS_LOCAL}`` and ``${VSC_ARCH_LOCAL}`` environment variables are predefined
+and match the OS version (e.g. ``rocky8``) and CPU model (e.g. ``icelake``) of the node.
+The ``${EBVERSIONR}`` variable contains the R version (e.g. 4.2.2) of the currently loaded
 R module.
 
 R will now use this path as default install path, ensuring you are always installing
@@ -104,7 +104,7 @@ your packages in the appropriate R library folder.
 
 .. note::
 
-  This `.Renviron` configuration will also work as expected in Open OnDemand apps
+  This ``.Renviron`` configuration will also work as expected in Open OnDemand apps
   such as RStudio Server.
 
 The next step is to load the appropriate R module and run R.
@@ -123,7 +123,7 @@ From here, installing packages can be as simple as:
 
 
 If you are unsure whether R will install your desired package in the correct location, you can first list
-the known library locations by executing `.libPaths()`. The first location is the
+the known library locations by executing ``.libPaths()``. The first location is the
 default one.
 
 You can also specify your desired library path as an extra argument in the install command.
@@ -185,8 +185,8 @@ to the conda command::
    $ which conda
 
 If the result is blank, or reports that conda can not be found, modify
-the \`PATH\` environment variable appropriately by adding miniconda's bin
-directory to PATH.
+the ``PATH`` environment variable appropriately by adding miniconda's ``bin``
+directory to ``PATH``.
 
 The next step is to create a new conda environment which can be done as follows::
 
