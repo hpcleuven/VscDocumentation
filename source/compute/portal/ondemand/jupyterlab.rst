@@ -8,6 +8,7 @@ JupyterLab is that it supports different types of user-defined environments, as
 will become clear below.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -128,6 +129,7 @@ Assuming you have created a Conda environment for Python, the corresponding
 kernel needs to be installed for use with JupyterLab.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh

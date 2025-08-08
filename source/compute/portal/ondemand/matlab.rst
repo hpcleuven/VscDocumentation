@@ -7,6 +7,7 @@ Who can use MATLAB
 ~~~~~~~~~~~~~~~~~~
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -27,6 +28,7 @@ Before you connect
 ~~~~~~~~~~~~~~~~~~
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -58,6 +60,7 @@ installations automatically detect GPU devices and CUDA libraries, you may also
 request GPU(s) as resources, if needed.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh

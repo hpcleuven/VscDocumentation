@@ -12,6 +12,7 @@ Shell environment
 ~~~~~~~~~~~~~~~~~
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
