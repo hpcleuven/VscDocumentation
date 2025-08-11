@@ -41,6 +41,10 @@ In order to create your collection, provide:
 
 The page contains other settings and information, but these are optional. 
 
+For UGent you should be able to create guest collections on $VSC_DATA/$VSC_DATA_VO and $VSC_SCRATCH/$VSC_SCRATCH_VO for subdirs of the GUESTSHARED directory.
+So you should make a directory called 'GUESTSHARED' in either $VSC_DATA/$VSC_DATA_VO or $VSC_SCRATCH/$VSC_SCRATCH_VO. (The topdirectory GUESTSHARED itself can not be shared) You can then make a subdirectory that can be shared
+
+
 
 Setting permissions
 -------------------
