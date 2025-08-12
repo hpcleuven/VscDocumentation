@@ -6,6 +6,7 @@ your files and folders. General file explorer options like moving, deleting,
 modifying and creating files or directories are available as well.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh

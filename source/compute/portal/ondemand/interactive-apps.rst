@@ -55,6 +55,7 @@ job will be queued.
    the behavior of your session.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -129,6 +130,7 @@ strongly recommend consulting the documentation on how to effectively choose
 your job resources:
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh

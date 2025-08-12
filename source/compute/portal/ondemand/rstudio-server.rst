@@ -8,6 +8,7 @@ In the 'R version' drop-down menu, you can choose the R module version
 that will be loaded for your session (such as ``R/4.4.1-gfbf-2023b``).
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh

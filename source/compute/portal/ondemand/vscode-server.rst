@@ -11,6 +11,7 @@ Before you connect
 ------------------
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -115,6 +116,7 @@ R IDE
 ~~~~~
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh

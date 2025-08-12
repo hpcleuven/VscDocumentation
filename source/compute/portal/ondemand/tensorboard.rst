@@ -13,6 +13,7 @@ Before starting the TensorBoard session, make sure to specify a log directory in
 the resources form.
 
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
