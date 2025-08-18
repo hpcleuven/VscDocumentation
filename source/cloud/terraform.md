@@ -473,3 +473,12 @@ the user "root".
 Terraform is using the wrong user to connect to your VM. This can happen if you're using your own OS image.
 You can set the correct user with the `ssh_user` variable.
 :::
+
+:::{dropdown} (Web UI) "You are not allowed to start instance..."
+If you powered off a VM it is possible that it was automatically _shelved_ to conserve resources (see [Difference between suspend, pause...](launch_instance.md#difference-between-suspend-pause-shelve-shut-off-delete)).
+
+If you try and start a `shelved, offloaded` VM in the web dashboard, you will get the error `You are not allowed to start instance....`.
+
+You must first use the dropdown menu to unshelve the vm. Then it will be started automatically. Alternatively, you can run `terraform apply` again, which will set the vm to `active`.
+
+:::

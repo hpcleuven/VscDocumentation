@@ -468,6 +468,11 @@ disk, and the server is stopped.
 
 **Shut off**
 
+```{important}
+Powered-off VMs may be automatically _shelved_ at any time to conserve resources.
+Should you find your VM shelved, all you need to do is unshelve it in the UI or run `terraform apply` to set it back to `active`.
+```
+
 The server is powered down by the user, either through the OpenStack
 Compute API, or from within the server by issuing a *shutdown -h*
 command. In this state the user retains all computational resources
