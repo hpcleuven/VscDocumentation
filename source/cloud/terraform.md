@@ -475,7 +475,7 @@ You can set the correct user with the `ssh_user` variable.
 :::
 
 :::{dropdown} (Web UI) "You are not allowed to start instance..."
-If you powered off a VM it is possible that it was automatically _shelved_ to conserve resources (see [Difference between suspend, pause...](launch_instance.md#difference-between-suspend-pause-shelve-shut-off-delete)).
+If you powered off a VM it is possible that it was automatically _shelved_ to conserve resources (see [Difference between suspend, pause...](launch_instance.md)).
 
 If you try and start a `shelved, offloaded` VM in the web dashboard, you will get the error `You are not allowed to start instance....`.
 
