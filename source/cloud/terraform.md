@@ -141,6 +141,7 @@ The file now contains the definition for one VM with several options you can cus
 | vm_name       | Sets the name of the virtual machine. | string |
 | image_name    | Sets the operating system image for the machine. | See [Image list](https://cloud.vscentrum.be/dashboard/project/images) |
 | flavor_name   | Sets the machine flavor. | see [Flavors list](flavors.md). |
+| expose_web    | Exposes ports 80 and 443 | true/false |
 | nginx_enabled | Installs nginx and exposes ports 80 and 443 (See {ref}`tf_automated`)  | true/false |
 | nfs_network   | Connects the vm to the NFS network (Does not create a share). (See [NFS_Share](#terraform_share))Only set true if you requested access  | true/false |
 | vsc_enabled   | Connects the vm to the VSC network. Only set true if you requested access. | true/false |
@@ -382,6 +383,7 @@ Be sure to add the subnet to the `remote_ip_prefix`, and note that this rule doe
 :::
 
 :::{dropdown} Exposing ports to the internet
+For ports `80` and `443`, you can use either `expose_web` or `nginx_enabled` to expose them to the internet. The latter wil also install nginx for you.
 You can set `expose = true` for a particular port and terraform will select a random external port to forward to your chosen local port.
 It is also possible to choose an external port manually, between the range of 51001-59999, by setting `external_port = portnumber`.
 This port must also be unique for your public floating IP. 
