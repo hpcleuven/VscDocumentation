@@ -890,7 +890,7 @@ Planning for migration to RHEL9
 *******************************
 
 * End of June'25: migrate more Milan nodes to RHEL9 (256 nodes in ``cpu_milan_rhel9``, rest in ``cpu_milan``);
-* End of Aug'25: complete migration of Milan nodes to RHEL9 (all Milan nodes in ``cpu_milan_rhel9``, none in ``cpu_milan``);
+* **Thu 28 Aug 2025: complete migration of Milan nodes to RHEL9** (all Milan nodes in ``cpu_milan_rhel9``, none in ``cpu_milan``);
 * Nov'25: decommissioning of Rome partition (``cpu_rome``, ``cpu_rome_512``, ``cpu_rome_all``);
 
 Resources
