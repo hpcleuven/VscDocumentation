@@ -67,6 +67,7 @@ navigation panel on the left.
    :hidden:
 
    files
+   fluent
    login-shell
    active-jobs
    job-composer
