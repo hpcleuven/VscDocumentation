@@ -1,0 +1,9 @@
+############
+Tier-2 2025 
+############
+
+
+.. toctree::
+   :maxdepth: 3
+
+   tier2_hardware/2025_hardware
