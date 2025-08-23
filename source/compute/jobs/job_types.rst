@@ -250,12 +250,15 @@ For example, assume that we have two job scripts:
   It uses the environment variable ``perturbation_size`` to determine the perturbation to
   apply.
 
-To make ``sbatch`` print simply the job ID after submitting, use the ``--parsable`` option.
+To make ``sbatch`` print the job ID after submitting, use the ``--parsable`` option. 
+
+- In some clusters, the ``--parsable`` option also prints the cluster name in the form "<job ID>;<cluster>". We can use cut to fetch just the job ID.
+
 The following lines automate the launch of the three jobs:
 
 .. code:: bash
 
-    first=$(sbatch --parsable --job-name job_leader job_first.slurm)
+    first=$((sbatch --parsable --job-name job_leader job_first.slurm)| cut -d ';' -f1)
     perturbation_size='0.05' sbatch --job-name job_pert_0_05 --dependency=afterok:$first job_depend.slurm
     perturbation_size='0.1'  sbatch --job-name job_pert_0_1  --dependency=afterok:$first job_depend.slurm
 
