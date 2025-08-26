@@ -33,7 +33,29 @@ Before you connect
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      (NA)
+      MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
+      including the folder ``.MathWorks``, which can become quite big over time. To
+      prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
+      redirect this folder to your ``$VSC_DATA`` directory. If this folder already
+      exists, you can safely delete it. Execute the following commands to automate the
+      process:
+
+      .. code-block:: bash
+
+         rm -rv ~/.MathWorks
+         mkdir -pv $VSC_DATA/.MathWorks
+         ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
+
+      In case you're trying this on a login node and you previously ran Matlab
+      on that login node, you might have to kill any existing MathWorksServiceHost
+      processes running there:
+
+      .. code-block:: bash
+          
+         # look for the PID of the MathWorksServiceHost process
+         ps x
+         kill <process_id>
+
 
    .. tab-item:: VUB
       :sync: vub
