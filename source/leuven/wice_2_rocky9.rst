@@ -35,7 +35,7 @@ in order to avoid interrupting your workflow.
 
 .. note::
 
-   Be aware that with the decommissioning of Genius toolchains older that 2021a will not be available anymore.
+   Be aware that toolchains older than 2021a will no longer be available after Genius has been decommissioned.
 
 As always you can contact hpcinfo@kuleuven in case you have questions or remarks.
 
