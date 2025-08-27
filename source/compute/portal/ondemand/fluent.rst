@@ -3,7 +3,7 @@
 ANSYS Fluent
 ------------
 
-The Fluent app launches a session limited to a single node for computational fluid dynamics (CFD) simulations using `ANSYS Fluent <https://www.ansys.com/products/fluids/ansys-fluent>`_.
+The Fluent app launches a session limited to a single node for computational fluid dynamics (CFD) simulations using `ANSYS Fluent <https://www.ansys.com/products/fluids/ansys-fluent>`_. Using this app is more interesting for interactive runs or when visualization is involved. If you need to use more than one node, please consider launching Fluent via :ref:`batch jobs <job submission>`.
 
 The VSC clusters that support the Fluent app are:
 
