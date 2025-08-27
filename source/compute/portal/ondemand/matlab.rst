@@ -37,8 +37,7 @@ Before you connect
       including the folder ``.MathWorks``, which can become quite big over time. To
       prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
       redirect this folder to your ``$VSC_DATA`` directory. If this folder already
-      exists, you can safely delete it. Execute the following commands to automate the
-      process:
+      exists, you can safely delete it. Execute the following commands to accomplish this:
 
       .. code-block:: bash
 
@@ -53,7 +52,7 @@ Before you connect
       .. code-block:: bash
           
          # look for the PID of the MathWorksServiceHost process
-         ps x
+         ps aux | grep MathWorksServiceHost
          kill <process_id>
 
 
@@ -64,8 +63,7 @@ Before you connect
       including the folder ``.MathWorks``, which can become quite big over time. To
       prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
       redirect this folder to your ``$VSC_DATA`` directory. If this folder already
-      exists, you can safely delete it. Execute the following commands to automate the
-      process:
+      exists, you can safely delete it. Execute the following commands to accomplish this:
 
       .. code-block:: bash
 
