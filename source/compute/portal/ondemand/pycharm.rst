@@ -5,7 +5,7 @@ PyCharm
 
 PyCharm is a well-known integrated development environment (IDE) for Python offered by `JetBrains <https://www.jetbrains.com/pycharm/>`_. We offer the PyCharm community edition (based on PyCharm modules) as a web-based app via Open OnDemand.
 
-VSC clusters that support the Desktop app:
+VSC clusters that support this app are:
 
 .. grid:: 3
     :gutter: 4
@@ -29,4 +29,4 @@ PyCharm ships with a default Python (whose version depends also on the version o
 Launching PyCharm
 -----------------
 
-To start a session, you may choose your desired version of PyCharm module. For developing a Python software and for testing a serial Python script, sticking to a single core is sufficient. However, to run, test, debug or benchmark a multi-threaded or multi-processing Python script, you may request additional cores.
+To start a session, you may choose your desired version of PyCharm module. For developing a Python software and for testing a serial Python script, sticking to a single core is sufficient. However, to run, test, debug or benchmark a multi-threaded or multi-processing Python script, you may request additional cores. For running jobs using more than one node (with e.g. `mpi4py` or `dask`), we recommend :ref:`submitting batch jobs <job submission>`.
