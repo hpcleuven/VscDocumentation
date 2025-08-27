@@ -77,6 +77,7 @@ navigation panel on the left.
    jupyterlab
    matlab
    paraview
+   pycharm
    rstudio-server
    tensorboard
    vscode-server
