@@ -26,7 +26,7 @@ All VSC users who are member of one of the KU Leuven/UHasselt license groups for
 Before you connect
 ------------------
 
-|KUL| You need to know the address of an ANSYS license server in the form of ``port@hostname``. The license server must be reachable from KU Leuven Tier-2 clusters. Contact your supervisor and/or your local IT services to provide you with such details. You also need to make sure that the license server can deliver sufficient tokens for your compute job (depending on the number of cores/processes you want to launch).
+|KUL| You need to know the address of an ANSYS license server in the form of ``port@hostname``. The license server must be reachable from KU Leuven Tier-2 clusters. Contact your supervisor and/or your local IT services to provide you with such details. Make sure that your license allows you to run Fluent on the KU Leuven Tier-2 hardware. You also need to make sure that the license server can deliver sufficient tokens for your compute job (depending on the number of cores/processes you want to launch).
 
 
 Launching Fluent
