@@ -30,7 +30,7 @@ The wICE nodes will be migrated to the new OS in November. We forsee a test peri
 The Genius cluster will be decommissioned with the arrival of a new Tier-2 cluster at the end of the year. Genius will not be migrated to Rock9 anymore.
 The new Tier-2 cluster will be launched with Rocky9.
 
-Please take the opportunity of the test periode to start to test out the new operating system timely
+Please use the test period to try out the new OS before the actual migration
 in order to avoid interrupting your workflow. 
 
 .. note::
