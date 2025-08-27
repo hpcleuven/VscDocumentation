@@ -30,3 +30,5 @@ Launching PyCharm
 -----------------
 
 To start a session, you may choose your desired version of PyCharm module. For developing a Python software and for testing a serial Python script, sticking to a single core is sufficient. However, to run, test, debug or benchmark a multi-threaded or multi-processing Python script, you may request additional cores. For running jobs using more than one node (with e.g. `mpi4py` or `dask`), we recommend :ref:`submitting batch jobs <job submission>`.
+
+Once your session starts, you may `configure your Python interpreter <https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html>`_, and eventually change it to that of your custom environment from the bottom-right menu.
