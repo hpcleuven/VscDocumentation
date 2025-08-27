@@ -1,4 +1,4 @@
-.. _wice_t2_leuven:
+.. _wice_t2_leuven_rocky9:
 
 =================
 Rocky 9 migration
