@@ -19,7 +19,7 @@ Important differences at the system level are listed below.
 | glibc       | 2.28             | 2.34                |
 +-------------+------------------+---------------------+
 
-Please note that central installed modules are already available for Rocky 9, starting from toolchain 2021a.
+Please note that centrally installed modules are already available for Rocky 9, starting from toolchain 2021a.
 
 .. _timing:
 
@@ -27,11 +27,13 @@ Timing
 ------
 
 The wICE nodes will be migrated to the new OS in November. We forsee a test period for all users until end of October.
-The Genius cluster will be decommissioned with the arrival of a new Tier-2 cluster at the end of the year. Genius will not be migrated to Rock9 anymore.
-The new Tier-2 cluster will be launched with Rocky9.
+The Genius cluster will be decommissioned with the arrival of a new Tier-2 cluster at the end of the year. Genius will not be migrated to Rocky 9 anymore.
+The new Tier-2 cluster will be launched with Rocky 9.
 
 Please use the test period to try out the new OS before the actual migration
 in order to avoid interrupting your workflow. 
+
+If you are a non-vsc3* user and want to do testing on wICE, please sent a message to the helpdesk to make the test nodes accessible for you.
 
 .. note::
 
@@ -47,24 +49,28 @@ How to test
 In order to give users the chance to test out the new operating system,
 some nodes of the batch, batch_sapphirerapids, gpu_a100 and gpu_h100 partitions
 have alreay been upgraded. To submit jobs to the upgraded nodes,
-simply submit your job with the **--reservation=rocky9_pilot** option to one of the partitions.
-::
+simply submit your job with the **--reservation=rocky9_pilot** option to one of the partitions::
+
    $ sbatch --account=lp_myproject --clusters=wice --reservation=rocky9_pilot\
             --nodes=2 --ntasks-per-node=72 --time=2:00:00 myjobscript.slurm
 
-Without mentioning a partition you will arrive on the default batch partitions wich contains icelake nodes.
+Without mentioning a partition you will arrive on the default batch partition which contains IceLake nodes.
 
 +-----------------------+-------------------+-----------------+
 + partition             + CPU/GPU type      + number of nodes +
 +=======================+===================+=================+
-+ batch,batch_icelake   + icelake           +               8 +
++ batch,batch_icelake   + IceLake           +              12 +
 +-----------------------+-------------------+-----------------+
-+ batch_sapphirerapids  + sapphire rapids   +              16 +
++ batch_sapphirerapids  + Sapphire Rapids   +              12 +
 +-----------------------+-------------------+-----------------+
-+ gpu_a100              + icelake / A100    +               1 +
++ gpu_a100              + IceLake / A100    +               1 +
 +-----------------------+-------------------+-----------------+
 + gpu_h100              + genoa / H100      +               1 +
 +-----------------------+-------------------+-----------------+
+
+This number of nodes is at the start of the test phase. To get an up-to-date overview you can query the system::
+
+   $ scontrol -M wice show reservation rocky9_pilot --json | jq ".reservations[0].node_list"
 
 .. _expected impact:
 
