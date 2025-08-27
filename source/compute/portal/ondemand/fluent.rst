@@ -20,13 +20,13 @@ The VSC clusters that support the Fluent app are:
 Who can use Fluent
 ------------------
 
-|KUL| Only vsc3* users (affiliated with KU Leuven) who are member of one of the Fluent license groups have the rights to use Fluent. Once a vsc3* user joins one of such groups, he/she will also be automatically added to the ``leuven_fluent`` autogroup. You may verify that by executing the ``groups | grep leuven_fluent`` command. As soon as the user is in the ``leuven_fluent`` group, the logo of the Fluent app will appear in his/her OnDemand dashboard.
+All VSC users who are member of one of the KU Leuven/UHasselt license groups for Fluent have the rights to use Fluent. Once a VSC user joins one of such groups, he/she will also be automatically added to the ``leuven_fluent`` autogroup. You may verify that by executing the ``groups | grep leuven_fluent`` command. Once that happens, the logo of the ANSYS Fluent app will appear in the user's OnDemand dashboard.
 
 
 Before you connect
 ------------------
 
-|KUL| You need to know the address of an ANSYS license server in the form of ``port@hostname``. The license server must be reachable from KU Leuven Tier-2 clusters. Contact your supervisor and/or your local IT services to provide you with such details.You also need to make sure that the license server can deliver sufficient tokens for your compute job (depending on the number of cores/processes you want to launch).
+|KUL| You need to know the address of an ANSYS license server in the form of ``port@hostname``. The license server must be reachable from KU Leuven Tier-2 clusters. Contact your supervisor and/or your local IT services to provide you with such details. You also need to make sure that the license server can deliver sufficient tokens for your compute job (depending on the number of cores/processes you want to launch).
 
 
 Launching Fluent
