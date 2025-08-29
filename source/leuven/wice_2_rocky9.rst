@@ -26,20 +26,20 @@ Please note that centrally installed modules are already available for Rocky 9, 
 Timing
 ------
 
-The wICE nodes will be migrated to the new OS in November. We forsee a test period for all users until end of October.
+The wICE nodes will be migrated to the new OS in November. We foresee a test period for all users until end of October.
 The Genius cluster will be decommissioned with the arrival of a new Tier-2 cluster at the end of the year. Genius will not be migrated to Rocky 9 anymore.
 The new Tier-2 cluster will be launched with Rocky 9.
 
 Please use the test period to try out the new OS before the actual migration
 in order to avoid interrupting your workflow. 
 
-If you are a non-vsc3* user and want to do testing on wICE, please sent a message to the helpdesk to make the test nodes accessible for you.
+If you are a non-vsc3* user and want to do testing on wICE, please send a message to the helpdesk to make the test nodes accessible for you.
 
 .. note::
 
    Be aware that toolchains older than 2021a will no longer be available after Genius has been decommissioned.
 
-As always you can contact hpcinfo@kuleuven in case you have questions or remarks.
+As always you can contact hpcinfo@kuleuven.be in case you have questions or remarks.
 
 .. _how to test:
 
@@ -92,4 +92,13 @@ see :ref:`module system<leuven_module_system>`.
    executables will still work. In case of doubt, we recommend to recompile.
    It can be handy to make use of the ${VSC_OS_LOCAL} variable, which will
    be set to rocky8 or rocky9 depending on the node you are on.
+
+Known issues
+------------
+
+In this section all issues are mentioned that we are aware off. 
+We'll update this section in the course of the test period.
+
+* At the moment we still observe a that we are not getting the maximum expected performance for single core tests.
+  The turbo frequency is not reaching it's limit. If you have single core workloads, you might see a performance degradation. We are still looking into the issue, but it is not keeping us from making the system available for testing.
 
