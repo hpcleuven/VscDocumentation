@@ -99,6 +99,7 @@ Known issues
 In this section all issues are mentioned that we are aware off. 
 We'll update this section in the course of the test period.
 
-* At the moment we still observe a that we are not getting the maximum expected performance for single core tests.
-  The turbo frequency is not reaching it's limit. If you have single core workloads, you might see a performance degradation. We are still looking into the issue, but it is not keeping us from making the system available for testing.
-
+* Currently the CPU cores are unable to reach the maximal ('turbo') frequency.
+  Compared to nodes with Rocky 8, you may therefore see somewhat lower performance
+  if only a few cores are active while the other cores are idling.
+  This issue is still being investigated.
