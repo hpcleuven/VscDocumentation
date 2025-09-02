@@ -20,9 +20,12 @@ VSC clusters that support this app are:
 Before you connect
 ------------------
 
-In case you would like to only develop your Python code or software, you can use PyCharm as a pure editor.
-However, if you want to execute your Python scripts interactively, then you need to choose a Python interpreter that contains all the packages which you need at runtime.
-For that, you need to consider :ref:`creating and using a Python environment <pycharm_env>` which suits you best.
+Aside from code editing, PyCharm also allows you to run your Python scripts
+and use a Python console from within the IDE. For this you will need to choose
+a suitable Python interpreter (typically one that is associated with a
+Python environment providing the Python packages that you need).
+See the :ref:`creating and using a Python environment <pycharm_env>`
+paragraph below for how you can prepare suitable environments.
 
 
 Launching PyCharm
