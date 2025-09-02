@@ -17,32 +17,16 @@ VSC clusters that support this app are:
        * Tier-2 :ref:`wICE <wice hardware>`
 
 
-Before you connect
-------------------
-
-Aside from code editing, PyCharm also allows you to run your Python scripts
-and use a Python console from within the IDE. For this you will need to choose
-a suitable Python interpreter (typically one that is associated with a
-Python environment providing the Python packages that you need).
-See the :ref:`creating and using a Python environment <pycharm_env>`
-paragraph below for how you can prepare suitable environments.
-
-
-Launching PyCharm
------------------
-
-To start a session, you may choose your desired version of PyCharm module.
-For long-running jobs or for jobs using more than one node (with e.g. ``mpi4py`` or ``dask.distributed``), we recommend :ref:`submitting batch jobs <job submission>`.
-
-
-.. _pycharm_env:
-
-Setting up a PyCharm Python environment
+Selecting a suitable Python environment
 ---------------------------------------
 
-Once your PyCharm session starts, you need to choose a Python interpreter.
-This would allow you to use and/or add all the necessary Python packages (and their dependencies) needed for your project at runtime.
-For that purpose, there are multiple possibilities which are elaborated below: 
+Aside from code editing, PyCharm also allows you to run your Python scripts
+and use a Python console from within the IDE. By default, PyCharm will
+use an available system Python installation for this purpose
+(such as the Python 3.9 installation currently present in the OnDemand
+container for PyCharm). Depending on your needs you can either accept this
+default choice (and make other configuration changes) or select or create
+a different Python environment:
 
 * Creating a new virtual environment using the :ref:`default Python interpreter <pycharm_default_python>`
 * Use an :ref:`existing Python virtual environment <pycharm_venv>` based on Python modules
@@ -52,6 +36,12 @@ For that purpose, there are multiple possibilities which are elaborated below:
 .. note::
 
    Make sure you do not use your ``VSC_HOME`` (starting with e.g. ``/user/leuven``) for storing your virtual environment, Mamba or Conda, because your home directory can get quickly filled up leading to possible issues with your login and/or job submission. Instead, we recommend using your ``VSC_DATA`` directory (starting with e.g. ``/data/leuven``).
+
+.. note::
+
+   For long-running jobs or for jobs using more than one node (with e.g.
+   ``mpi4py`` or ``dask.distributed``), we recommend :ref:`submitting batch
+   jobs <job submission>` instead.
 
 
 .. _pycharm_default_python:
