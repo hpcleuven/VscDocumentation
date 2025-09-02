@@ -39,7 +39,7 @@ For long-running jobs or for jobs using more than one node (with e.g. ``mpi4py``
 Setting up a PyCharm Python environment
 ---------------------------------------
 
-Once you PyCharm session starts, you need to choose a Python interpreter.
+Once your PyCharm session starts, you need to choose a Python interpreter.
 This would allow you to use and/or add all the necessary Python packages (and their dependencies) needed for your project at runtime.
 For that purpose, there are multiple possibilities which are elaborated below: 
 
@@ -50,7 +50,7 @@ For that purpose, there are multiple possibilities which are elaborated below:
 
 .. note::
 
-   Make sure you do not use your ``VSC_HOME`` (starting with e.g. ``/user/leuven``) for storing your virtual environment, Mamba or Conda, because your home directory can get quickly filled up leading to possible issues with your loging and/or job submission. Instead, we recommend using your ``VSC_DATA`` directory (starting with e.g. ``/data/leuven``).
+   Make sure you do not use your ``VSC_HOME`` (starting with e.g. ``/user/leuven``) for storing your virtual environment, Mamba or Conda, because your home directory can get quickly filled up leading to possible issues with your login and/or job submission. Instead, we recommend using your ``VSC_DATA`` directory (starting with e.g. ``/data/leuven``).
 
 
 .. _pycharm_default_python:
@@ -58,8 +58,8 @@ For that purpose, there are multiple possibilities which are elaborated below:
 Using default Python interpreter
 ================================
 
-PyCharm automatically detects the Python interpreter from the OnDemand container (currently version 3.9);
-however, this default environment contains only the Python standard library.
+PyCharm automatically detects the Python interpreter from the OnDemand container (currently version 3.9).
+Beware that this default interpreter is outdated, and the environment contains only the Python standard library.
 In order to extend this environment, you need to create a new virtual environment to add new packages.
 Here are the steps to take `(adopted from the official PyCharm documentation) <https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html>`_:
 
@@ -94,9 +94,8 @@ PyCharm cannot trivially detect a loaded Python module; hence, you cannot readil
 * For the 'Type' of the environment choose 'Python'.
 * For the 'Python path' use the browse button to choose ``bin/python`` from the location where you have saved your virtual environment.
 * Click on the 'OK' button. 
-  You notice that the interpreter name at the bottom right tray changes to e.g. ``Python 3.13 virtualenv .../pandas``
+  You notice that the interpreter name at the bottom right tray changes to e.g. ``Python 3.13 virtualenv .../pandas``.
 * To add more packages like ``pandas`` to your virtual environment (in addition to what is already in there), you can follow :ref:`the last steps above <pycharm_default_python>`.
-
 
 
 .. _pycharm_new_conda:
