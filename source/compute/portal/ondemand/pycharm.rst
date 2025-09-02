@@ -32,8 +32,6 @@ Launching PyCharm
 -----------------
 
 To start a session, you may choose your desired version of PyCharm module.
-For developing a Python software and for testing a serial Python script, sticking to a single core is sufficient.
-However, to run, test, debug or benchmark a multi-threaded or multi-processing Python script, you can request additional cores.
 For long-running jobs or for jobs using more than one node (with e.g. ``mpi4py`` or ``dask.distributed``), we recommend :ref:`submitting batch jobs <job submission>`.
 
 
