@@ -34,7 +34,7 @@ However, to run, test, debug or benchmark a multi-threaded or multi-processing P
 For long-running jobs or for jobs using more than one node (with e.g. ``mpi4py`` or ``dask.distributed``), we recommend :ref:`submitting batch jobs <job submission>`.
 
 
-: _pycharm_env:
+.. _pycharm_env:
 
 Setting up a PyCharm Python environment
 ---------------------------------------
