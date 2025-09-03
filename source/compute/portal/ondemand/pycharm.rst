@@ -100,9 +100,6 @@ system Python installation automatically detected by PyCharm.
   of dependencies and preparation of the virtual environment may take a minute
   or two.
 
-Once your environment is created, you can select it in any later session
-from the list of interpreters.
-
 
 .. _pycharm_venv:
 
@@ -145,8 +142,6 @@ after you start a 'New Project' by following the steps below. Make sure you
   location would be ``/data/leuven/xxx/xxxxx/miniconda3/bin/conda``).
 * Click on the 'Create' button and wait for a minute. Eventually,
   the interpreter at the bottom right tray will show e.g. ``conda-pandas``.
-
-Once your environment is created, you may use it in any later session.
 
 
 .. _pycharm_conda:
