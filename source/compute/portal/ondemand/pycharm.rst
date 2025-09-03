@@ -31,7 +31,10 @@ a different Python environment:
 * Creating a new virtual environment using the :ref:`default Python interpreter <pycharm_default_python>`
 * Use an :ref:`existing Python virtual environment <pycharm_venv>` based on Python modules
 * Creating a :ref:`new Conda environment <pycharm_new_conda>`
-* Using an :ref:`existing Conda/Mamba environment <pycharm_conda>`
+* Using an :ref:`existing Conda environment <pycharm_conda>`
+
+For more advanced configuration options, see also the `JetBrains documentation
+<https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html>`_.
 
 .. note::
 
@@ -101,46 +104,38 @@ PyCharm cannot trivially detect a loaded Python module; hence, you cannot readil
 Creating a new Conda environment in PyCharm
 ===========================================
 
-You may create a new Conda environment in PyCharm after you start a 'New Project' by following these steps:
+Assuming you e.g. have a :ref:`local Miniconda installation <install_miniconda_python>`,
+you may create a new Conda environment in PyCharm after you start a 'New Project'
+by following the steps below. Make sure you *do not* install Miniconda
+via PyCharm because it will end up in your ``VSC_HOME`` which is strongly discouraged.
 
-* Select a 'Location' starting from your ``VSC_DATA``.
+* Select a 'Location' starting in your ``VSC_DATA``.
 * For the 'Interpreter type' choose 'Custom environment'.
 * For the 'Environment' choose 'Generate new'.
 * For the 'Type' choose 'Conda'.
-* For the 'Python version' pick e.g. the latest.
-* For the 'Name' put a representative name for your environment which distinguishes its purpose and its way of creation, such as ``conda-pandas``.
-  If you see the 'No conda executable found' warning, then 'Select path' to your existing ``conda`` executable. Make sure you *do not* 'Install Miniconda' via PyCharm, because such new installations end up by default in your ``VSC_HOME`` which is strongly discouraged.
-* Click on the 'Create' button and wait for a minute. Eventually, the interpreter at the bottom right tray will show e.g. ``conda-pandas``. 
+* For the 'Python version' pick one that suits your needs.
+* For the 'Name' again choose a unique and representative (e.g. ``conda-pandas``).
+* For the 'Path to conda' set the path to your ``conda`` executable
+  (a typical location would be ``/data/leuven/xxx/xxxxx/miniconda3/bin/conda``).
+* Click on the 'Create' button and wait for a minute.
+  Eventually, the interpreter at the bottom right tray will show e.g. ``conda-pandas``.
 
 Once your environment is created, you may use it in any later session.
 
 
 .. _pycharm_conda:
 
-Using an existing Conda/Mamba environment
-=========================================
+Using an existing Conda environment
+===================================
 
-You can use an existing Conda/Mamba environment inside PyCharm.
-For that, first :ref:`create a custom Conda environment <conda for Python>` outside PyCharm, or use :ref:`PyCharm to create a new Conda environment <pycharm_new_conda>`.
+You can also let PyCharm use Conda (or
+`Mamba <https://mamba.readthedocs.io/en/latest/index.html>`_) environments
+that you :ref:`created outside PyCharm <conda for Python>`. The steps are
+the same as in the previous paragraph, except:
 
-
-* Click on the bottom right tray and choose a relevant Conda environment by name from the list. 
-* If the Conda/Mamba environment name is not listed, then 
-  
-    * select 'Add Python Interpreter'
-    * Choose the 'Select existing' option.
-    * For the 'Python path', click on the browse button and choose the ``bin/python`` executable file from inside your Conda/Mamba environment directory. Click on 'OK'.
-
-
-.. note::
-
-   `Mamba <https://mamba.readthedocs.io/en/latest/index.html>`_ is a Python package manager similar to Conda.
-   Creating a new Mamba environment is similar to that of Conda by substituting the ``conda`` command with ``mamba`` or ``micromamba`` depending on which variants of Mamba you have installed.
-
-
-.. note::
-
-   For more advanced configurations regarding your Python interpreter or for switching your Python interpreter when needed, please refer to the `official PyCharm documentation <https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html>`_.
+* For the first 'Environment' box, choose 'Select existing'.
+* For the second 'Environment' box, choose your Conda or Mamba
+  environment from the list.
 
 
 .. _pycharm_terminal:
