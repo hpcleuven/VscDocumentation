@@ -43,11 +43,11 @@ For more advanced configuration options, see also the `JetBrains documentation
 
 .. note::
 
-   Make sure you do not use your ``VSC_HOME`` (starting with e.g.
-   ``/user/leuven``) for storing your virtual environment, Mamba or Conda,
+   Make sure you do not use your ``VSC_HOME`` (starting with ``/user/...``)
+   for storing your virtual environment, Mamba or Conda,
    because your home directory can get quickly filled up leading to possible
    issues with your login and/or job submission. Instead, we recommend using
-   your ``VSC_DATA`` directory (starting with e.g. ``/data/leuven``).
+   your ``VSC_DATA`` directory (starting with ``/data/...``).
 
 .. note::
 
@@ -77,7 +77,7 @@ system Python installation automatically detected by PyCharm.
   -> 'New Project'.
 * Choose a 'Location' for your project hierarchy, preferably in your
   ``VSC_DATA`` (such as
-  ``/data/leuven/3xx/vsc3xxxx/python-projects/pre-processing``).
+  ``/data/<institute>/xxx/vscxxxxx/python-projects/pre-processing``).
 * For the 'Interpreter type' choose 'Custom environment'.
 * For the 'Environment' select 'Generate new' (and you only need to do this
   once).
@@ -86,7 +86,7 @@ system Python installation automatically detected by PyCharm.
   pointing to ``/usr/bin/python3``.
 * For the 'location' of your Python virual environment, choose a new folder
   in your ``VSC_DATA``, such as
-  ``/data/leuven/3xx/vsc3xxxx/pycharm-venvs/pandas``.
+  ``/data/<institute>/xxx/vscxxxxx/pycharm-venvs/pandas``.
 * It is OK to select 'Inherit packages from base interpreter'.
 * Click on 'Create'. At the bottom right, you see the environment name
   ``Python 3.9 (pandas)`` appearing.
@@ -110,7 +110,7 @@ PyCharm cannot trivially detect a loaded Python module; hence, you cannot readil
 
 * Create a custom :ref:`Python virtual environment <venv_python>` under your ``VSC_DATA`` (e.g. in an Interactive Shell)
 * Click on the 'New Project' on the welcome screen, or choose 'File' -> 'New Project'.
-* Choose a 'Location' for your project hierarchy starting from your ``VSC_DATA`` directory such as ``/data/leuven/3xx/vsc3xxxx/python-projects/pre-processing``.
+* Choose a 'Location' for your project hierarchy starting from your ``VSC_DATA`` directory such as ``/data/<institute>/xxx/vscxxxxx/python-projects/pre-processing``.
 * For the 'Interpreter type' choose 'Custum environment'.
 * For the 'Environment' choose 'Select existing'.
 * For the 'Type' of the environment choose 'Python'.
@@ -139,7 +139,7 @@ after you start a 'New Project' by following the steps below. Make sure you
 * For the 'Name' again choose a unique and representative
   (e.g. ``conda-pandas``).
 * For the 'Path to conda' set the path to your ``conda`` executable (a typical
-  location would be ``/data/leuven/xxx/xxxxx/miniconda3/bin/conda``).
+  location would be ``/data/<institute>/xxx/xxxxx/miniconda3/bin/conda``).
 * Click on the 'Create' button and wait for a minute. Eventually,
   the interpreter at the bottom right tray will show e.g. ``conda-pandas``.
 
