@@ -143,15 +143,6 @@ For that, first :ref:`create a custom Conda environment <conda for Python>` outs
    For more advanced configurations regarding your Python interpreter or for switching your Python interpreter when needed, please refer to the `official PyCharm documentation <https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html>`_.
 
 
-.. _pycharm_console:
-
-Using PyCharm Python console
-----------------------------
-
-To work interactively with Python in PyCharm, you may open the Python console from the left tray.
-In this console, the selected :ref:`Python interpreter <pycharm_env>` will be used, and the additional packages from your custom environment will be ready for ``import``.
-
-
 .. _pycharm_terminal:
 
 Using the terminal
