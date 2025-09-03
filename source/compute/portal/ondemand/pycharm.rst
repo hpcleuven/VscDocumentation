@@ -85,7 +85,7 @@ Once your environment is created, you can select it in any later session from th
 Using an existing Python virtual environment
 ============================================
 
-PyCharm cannot trivially detect a loaded Python module; hence, you cannot readily create a Python virtual environment in PyCharm. Instead, you need to use an existing Python virtual environment (based on a Python module), and you may optionally add/remove packages to/from this environment using PyCharm. 
+PyCharm cannot trivially detect a loaded Python module; hence, you cannot readily create a Python virtual environment in PyCharm. Instead, you need to use an existing Python virtual environment (based on a Python module), and you may optionally add/remove packages to/from this environment using PyCharm.
 
 * Create a custom :ref:`Python virtual environment <venv_python>` under your ``VSC_DATA`` (e.g. in an Interactive Shell)
 * Click on the 'New Project' on the welcome screen, or choose 'File' -> 'New Project'.
@@ -94,7 +94,7 @@ PyCharm cannot trivially detect a loaded Python module; hence, you cannot readil
 * For the 'Environment' choose 'Select existing'.
 * For the 'Type' of the environment choose 'Python'.
 * For the 'Python path' use the browse button to choose ``bin/python`` from the location where you have saved your virtual environment.
-* Click on the 'OK' button. 
+* Click on the 'OK' button.
   You notice that the interpreter name at the bottom right tray changes to e.g. ``Python 3.13 virtualenv .../pandas``.
 * To add more packages like ``pandas`` to your virtual environment (in addition to what is already in there), you can follow :ref:`the last steps above <pycharm_default_python>`.
 
@@ -143,6 +143,9 @@ the same as in the previous paragraph, except:
 Using the terminal
 ------------------
 
-If you enter the PyCharm terminal, you land on your (default) project directory.
-This terminal offers minimal functionality specifically because the :ref:`cluster modules <leuven_module_system>` are unavailable there.
-For that reason, we recommend starting an :ref:`Interactive Shell <ood_interactive_shell>` session or using the integrated terminal from :ref:`VS Code Server <vscode_server>`, instead.
+PyCharm also offers a Bash terminal, but it will lack some functionalities.
+Loading and using the centrally installed modules will not work, for example,
+and neither will Slurm commands such as ``squeue``. For a more fully
+featured environment we recommend to use the :ref:`Interactive Shell
+<ood_interactive_shell>` app or the integrated terminal from the
+:ref:`VS Code Server <vscode_server>` app instead.
