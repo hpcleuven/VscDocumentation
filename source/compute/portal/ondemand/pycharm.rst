@@ -3,7 +3,10 @@
 PyCharm
 -------
 
-PyCharm is a well-known integrated development environment (IDE) for Python offered by `JetBrains <https://www.jetbrains.com/pycharm/>`_. We offer the PyCharm community edition (based on PyCharm modules) as a web-based app via Open OnDemand.
+PyCharm is a well-known integrated development environment (IDE) for Python
+offered by `JetBrains <https://www.jetbrains.com/pycharm/>`_. We offer the
+PyCharm community edition (based on PyCharm modules) as a web-based app via
+Open OnDemand.
 
 VSC clusters that support this app are:
 
@@ -28,8 +31,10 @@ container for PyCharm). Depending on your needs you can either accept this
 default choice (and make other configuration changes) or select or create
 a different Python environment:
 
-* Creating a new virtual environment using the :ref:`default Python interpreter <pycharm_default_python>`
-* Use an :ref:`existing Python virtual environment <pycharm_venv>` based on Python modules
+* Creating a new virtual environment using the
+  :ref:`default Python interpreter <pycharm_default_python>`
+* Use an :ref:`existing Python virtual environment <pycharm_venv>`
+  based on Python modules
 * Creating a :ref:`new Conda environment <pycharm_new_conda>`
 * Using an :ref:`existing Conda environment <pycharm_conda>`
 
@@ -38,7 +43,11 @@ For more advanced configuration options, see also the `JetBrains documentation
 
 .. note::
 
-   Make sure you do not use your ``VSC_HOME`` (starting with e.g. ``/user/leuven``) for storing your virtual environment, Mamba or Conda, because your home directory can get quickly filled up leading to possible issues with your login and/or job submission. Instead, we recommend using your ``VSC_DATA`` directory (starting with e.g. ``/data/leuven``).
+   Make sure you do not use your ``VSC_HOME`` (starting with e.g.
+   ``/user/leuven``) for storing your virtual environment, Mamba or Conda,
+   because your home directory can get quickly filled up leading to possible
+   issues with your login and/or job submission. Instead, we recommend using
+   your ``VSC_DATA`` directory (starting with e.g. ``/data/leuven``).
 
 .. note::
 
@@ -64,20 +73,35 @@ system Python installation automatically detected by PyCharm.
    at some point since the container's Python installation will upgrade
    as part of the maintenance cycle of the OnDemand infrastructure.
 
-* Click on the 'New Project' on the welcome screen, or choose 'File' -> 'New Project'.
-* Choose a 'Location' for your project hierarchy, preferably in your ``VSC_DATA``
-  (such as ``/data/leuven/3xx/vsc3xxxx/python-projects/pre-processing``).
+* Click on the 'New Project' on the welcome screen, or choose 'File'
+  -> 'New Project'.
+* Choose a 'Location' for your project hierarchy, preferably in your
+  ``VSC_DATA`` (such as
+  ``/data/leuven/3xx/vsc3xxxx/python-projects/pre-processing``).
 * For the 'Interpreter type' choose 'Custom environment'.
-* For the 'Environment' select 'Generate new' (and you only need to do this once).
+* For the 'Environment' select 'Generate new' (and you only need to do this
+  once).
 * For the 'Type' of the environment choose 'Virtualenv'.
-  At this point, the 'Base python' is already selected as ``Python 3.9`` pointing at ``/usr/bin/python3``.
-* For the 'location' of your Python virual environment, choose a new folder in your ``VSC_DATA``, such as ``/data/leuven/3xx/vsc3xxxx/pycharm-venvs/pandas``.
+  At this point, the 'Base python' is already selected as ``Python 3.9``,
+  pointing to ``/usr/bin/python3``.
+* For the 'location' of your Python virual environment, choose a new folder
+  in your ``VSC_DATA``, such as
+  ``/data/leuven/3xx/vsc3xxxx/pycharm-venvs/pandas``.
 * It is OK to select 'Inherit packages from base interpreter'.
-* Click on 'Create'. At the bottom right, you see the environment name ``Python 3.9 (pandas)`` appearing.
-* If you are asked about how to open the new project, you may select 'New Window'.
-* To e.g. add the ``pandas`` package from `Scikit-Learn <https://pypi.org/project/sklearn-pandas>`_, click on the 'Python Packages' icon on the left tray, and put ``pandas`` in the search box. From the long list of available packages, choose the ``sklearn-pandas`` package and click on the 'Install' button. You may choose the latest version. The installation of dependencies and preparation of the virtual environment may take a minute or two.
+* Click on 'Create'. At the bottom right, you see the environment name
+  ``Python 3.9 (pandas)`` appearing.
+* If you are asked about how to open the new project, you may select
+  'New Window'.
+* To e.g. add the ``pandas`` package from `Scikit-Learn
+  <https://pypi.org/project/sklearn-pandas>`_, click on the 'Python Packages'
+  icon on the left tray, and put ``pandas`` in the search box. From the long
+  list of available packages, choose the ``sklearn-pandas`` package and click
+  on the 'Install' button. You may choose the latest version. The installation
+  of dependencies and preparation of the virtual environment may take a minute
+  or two.
 
-Once your environment is created, you can select it in any later session from the list of interpreters.
+Once your environment is created, you can select it in any later session
+from the list of interpreters.
 
 
 .. _pycharm_venv:
@@ -104,21 +128,23 @@ PyCharm cannot trivially detect a loaded Python module; hence, you cannot readil
 Creating a new Conda environment in PyCharm
 ===========================================
 
-Assuming you e.g. have a :ref:`local Miniconda installation <install_miniconda_python>`,
-you may create a new Conda environment in PyCharm after you start a 'New Project'
-by following the steps below. Make sure you *do not* install Miniconda
-via PyCharm because it will end up in your ``VSC_HOME`` which is strongly discouraged.
+Assuming you e.g. have a :ref:`local Miniconda installation
+<install_miniconda_python>`, you may create a new Conda environment in PyCharm
+after you start a 'New Project' by following the steps below. Make sure you
+*do not* install Miniconda via PyCharm because it will end up in your
+``VSC_HOME`` which is strongly discouraged.
 
 * Select a 'Location' starting in your ``VSC_DATA``.
 * For the 'Interpreter type' choose 'Custom environment'.
 * For the 'Environment' choose 'Generate new'.
 * For the 'Type' choose 'Conda'.
 * For the 'Python version' pick one that suits your needs.
-* For the 'Name' again choose a unique and representative (e.g. ``conda-pandas``).
-* For the 'Path to conda' set the path to your ``conda`` executable
-  (a typical location would be ``/data/leuven/xxx/xxxxx/miniconda3/bin/conda``).
-* Click on the 'Create' button and wait for a minute.
-  Eventually, the interpreter at the bottom right tray will show e.g. ``conda-pandas``.
+* For the 'Name' again choose a unique and representative
+  (e.g. ``conda-pandas``).
+* For the 'Path to conda' set the path to your ``conda`` executable (a typical
+  location would be ``/data/leuven/xxx/xxxxx/miniconda3/bin/conda``).
+* Click on the 'Create' button and wait for a minute. Eventually,
+  the interpreter at the bottom right tray will show e.g. ``conda-pandas``.
 
 Once your environment is created, you may use it in any later session.
 
