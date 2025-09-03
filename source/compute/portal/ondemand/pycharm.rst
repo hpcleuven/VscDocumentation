@@ -46,28 +46,35 @@ a different Python environment:
 
 .. _pycharm_default_python:
 
-Using default Python interpreter
-================================
+Using the default Python interpreter
+====================================
 
-PyCharm automatically detects the Python interpreter from the OnDemand container (currently version 3.9).
-Beware that this default interpreter is outdated, and the environment contains only the Python standard library.
-In order to extend this environment, you need to create a new virtual environment to add new packages.
-Here are the steps to take `(adopted from the official PyCharm documentation) <https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html>`_:
+The following steps (`adopted from the official PyCharm documentation
+<https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html>`_)
+show how you can create a PyCharm Project using the
+system Python installation automatically detected by PyCharm.
+
+.. note::
+
+   Keep in mind that this will typically be a fairly old version of Python.
+   You furthermore run the risk that your environment will no longer work
+   at some point since the container's Python installation will upgrade
+   as part of the maintenance cycle of the OnDemand infrastructure.
 
 * Click on the 'New Project' on the welcome screen, or choose 'File' -> 'New Project'.
-* Choose a 'Location' for your project hierarchy starting from your ``VSC_DATA`` directory such as ``/data/leuven/3xx/vsc3xxxx/python-projects/pre-processing``.
-* For the 'Interpreter type' choose 'Custum environment'.
+* Choose a 'Location' for your project hierarchy, preferably in your ``VSC_DATA``
+  (such as ``/data/leuven/3xx/vsc3xxxx/python-projects/pre-processing``).
+* For the 'Interpreter type' choose 'Custom environment'.
 * For the 'Environment' select 'Generate new' (and you only need to do this once).
 * For the 'Type' of the environment choose 'Virtualenv'.
   At this point, the 'Base python' is already selected as ``Python 3.9`` pointing at ``/usr/bin/python3``.
-* For the 'location' of your Python virual environment, choose a unique folder under your ``VSC_DATA`` directory, such as ``/data/leuven/3xx/vsc3xxxx/pycharm-venvs/pandas``.
+* For the 'location' of your Python virual environment, choose a new folder in your ``VSC_DATA``, such as ``/data/leuven/3xx/vsc3xxxx/pycharm-venvs/pandas``.
 * It is OK to select 'Inherit packages from base interpreter'.
-* Click on 'Create'. At the bottom right, you see the environment name ``Python 3.9 (pandas)`` appearning.
+* Click on 'Create'. At the bottom right, you see the environment name ``Python 3.9 (pandas)`` appearing.
 * If you are asked about how to open the new project, you may select 'New Window'.
-* To add the ``pandas`` package from `Scikit-Learn <https://pypi.org/project/sklearn-pandas>`_, click on the 'Python Packages' icon on the left tray, and put ``pandas`` in the search box. From the long list of available packages, choose the ``sklearn-pandas`` package and click on the 'Install' button. You may choose the latest version. The installation of dependencies and preparation of the virtual environment may take a minute or two.
+* To e.g. add the ``pandas`` package from `Scikit-Learn <https://pypi.org/project/sklearn-pandas>`_, click on the 'Python Packages' icon on the left tray, and put ``pandas`` in the search box. From the long list of available packages, choose the ``sklearn-pandas`` package and click on the 'Install' button. You may choose the latest version. The installation of dependencies and preparation of the virtual environment may take a minute or two.
 
-
-Once your environment is created, you may reuse it in any later session from the list of interpreters.
+Once your environment is created, you can select it in any later session from the list of interpreters.
 
 
 .. _pycharm_venv:
