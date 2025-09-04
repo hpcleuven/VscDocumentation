@@ -38,7 +38,9 @@ job will be queued.
        unless you are sure the app *can and will* use more than 1 node
        effectively.
    * - Number of cores
-     - Select the number of cores per node.
+     - Select the number of cores per node. In many cases a single core
+       will be sufficient. For computationally intensive work
+       you can request additional cores here.
    * - Number of GPUs
      - Select the number of GPUs per node. Check the :ref:`tier2 hardware` section for
        the device type that corresponds to the selected cluster/partition. Only
