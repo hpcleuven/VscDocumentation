@@ -106,18 +106,40 @@ system Python installation automatically detected by PyCharm.
 Using an existing Python virtual environment
 ============================================
 
-PyCharm cannot trivially detect a loaded Python module; hence, you cannot readily create a Python virtual environment in PyCharm. Instead, you need to use an existing Python virtual environment (based on a Python module), and you may optionally add/remove packages to/from this environment using PyCharm.
+PyCharm also supports :ref:`virtual environments <venv_python>` which were
+created outside of PyCharm. Due to limitations regarding the use of centrally
+installed modules in the PyCharm container, however, this will only work under
+specific conditions:
 
-* Create a custom :ref:`Python virtual environment <venv_python>` under your ``VSC_DATA`` (e.g. in an Interactive Shell)
-* Click on the 'New Project' on the welcome screen, or choose 'File' -> 'New Project'.
-* Choose a 'Location' for your project hierarchy starting from your ``VSC_DATA`` directory such as ``/data/<institute>/xxx/vscxxxxx/python-projects/pre-processing``.
-* For the 'Interpreter type' choose 'Custum environment'.
+* The Python module (from which the virtual environment has been derived)
+  needs to have been built using RPATH linking. On the Tier-2 clusters hosted
+  at KU Leuven this is only the case starting from the ``2025a`` toolchain
+  generation.
+* The environment doesn't require any other modules except for ``Python``.
+
+Even if these conditions are met, there is no guarantee that the environment
+will continue to work across OS and other upgrades of the PyCharm container.
+We would therefore usually recommend to consider other apps such as
+:ref:`JupyterLab <jupyterlab_pure_module_env>` for this use case.
+
+With this in mind, these are the steps to set up a PyCharm project with
+such a virtual environment:
+
+* Click on the 'New Project' on the welcome screen, or choose 'File'
+  -> 'New Project'.
+* Choose a 'Location' for your project hierarchy, preferably in your
+  ``VSC_DATA`` (such as
+  ``/data/<institute>/xxx/vscxxxxx/python-projects/pre-processing``).
+* For the 'Interpreter type' choose 'Custom environment'.
 * For the 'Environment' choose 'Select existing'.
 * For the 'Type' of the environment choose 'Python'.
-* For the 'Python path' use the browse button to choose ``bin/python`` from the location where you have saved your virtual environment.
-* Click on the 'OK' button.
-  You notice that the interpreter name at the bottom right tray changes to e.g. ``Python 3.13 virtualenv .../pandas``.
-* To add more packages like ``pandas`` to your virtual environment (in addition to what is already in there), you can follow :ref:`the last steps above <pycharm_default_python>`.
+* For the 'Python path' use the browse button to select the interpreter
+  in your virtual environment (``/path/to/your/venv/bin/python``).
+* Click on 'Create'. The interpreter name at the bottom right will
+  refer to your chosen virtual environment.
+* To install more packages in your virtual environment from within PyCharm,
+  see the last steps from :ref:`the previous paragraph
+  <pycharm_default_python>`.
 
 
 .. _pycharm_new_conda:
