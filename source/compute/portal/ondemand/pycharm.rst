@@ -24,12 +24,8 @@ Selecting a suitable Python environment
 ---------------------------------------
 
 Aside from code editing, PyCharm also allows you to run your Python scripts
-and use a Python console from within the IDE. By default, PyCharm will
-use an available system Python installation for this purpose
-(such as the Python 3.9 installation currently present in the OnDemand
-container for PyCharm). Depending on your needs you can either accept this
-default choice (and make other configuration changes) or select or create
-a different Python environment:
+and use a Python console from within the IDE.
+You have multiple possibilities to setup your Python environment:
 
 * Creating a new virtual environment using the
   :ref:`default Python interpreter <pycharm_default_python>`
@@ -61,17 +57,23 @@ For more advanced configuration options, see also the `JetBrains documentation
 Using the default Python interpreter
 ====================================
 
-The following steps (`adopted from the official PyCharm documentation
-<https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html>`_)
-show how you can create a PyCharm Project using the
-system Python installation automatically detected by PyCharm.
+By default, PyCharm detects the system Python installation
+(such as the Python 3.9 installation currently present in the OnDemand
+container for PyCharm). Depending on your needs you can either accept this
+default choice (and make other configuration changes) or choose another
+approach elaborated in the sections below.
 
 .. note::
 
-   Keep in mind that this will typically be a fairly old version of Python.
-   You furthermore run the risk that your environment will no longer work
+   Keep in mind that the system Python is typically a fairly old version of Python.
+   You evidently run the risk that your environment will no longer work
    at some point since the container's Python installation will upgrade
    as part of the maintenance cycle of the OnDemand infrastructure.
+
+The following steps (`adopted from the official PyCharm documentation
+<https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html>`_)
+show how you can create a PyCharm project using the
+system Python installation automatically detected by PyCharm.
 
 * Click on the 'New Project' on the welcome screen, or choose 'File'
   -> 'New Project'.
