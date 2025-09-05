@@ -16,7 +16,10 @@ Before you connect
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      (NA)
+      If you use VS Code only for developing or editing code (or any generic ASCII file),
+      it is strongly recommended to use a single core on the 
+      :ref:`wICE interactive partition <wice hardware>`. For testing, debugging and eventually
+      executing your code, you may request resources from any other relevant partitions.
 
    .. tab-item:: VUB
       :sync: vub
