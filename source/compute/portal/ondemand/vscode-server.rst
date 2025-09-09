@@ -19,7 +19,9 @@ Before you connect
       If you use VS Code only for developing or editing code (or any generic ASCII file),
       it is strongly recommended to use a single core on the 
       :ref:`wICE interactive partition <wice hardware>`. For testing, debugging and eventually
-      executing your code, you may request resources from any other relevant partitions.
+      executing your code, you may request resources from any other relevant partition, as long
+      as you remember that these resources are meant for intensive loads. So, limit interactive
+      usage on these partitions to not waste compute cycles that someone else might be waiting for.
 
    .. tab-item:: VUB
       :sync: vub
