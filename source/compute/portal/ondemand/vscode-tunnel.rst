@@ -18,11 +18,11 @@ VSC clusters that support the VS Code Tunnel app:
       .. grid:: 3
          :gutter: 4
 
-         .. grid-item-card:: |KUL| |UH|
+         .. grid-item-card:: |KUL|
             :columns: 12 4 4 4
 
-            * Tier-2 :ref:`Genius <Genius cluster>`
-            * Tier-2 :ref:`wICE <Wice cluster>`
+            * Tier-2 :ref:`Genius <Genius hardware>`
+            * Tier-2 :ref:`wICE <wICE hardware>`
 
    .. tab-item:: VUB
       :sync: vub
