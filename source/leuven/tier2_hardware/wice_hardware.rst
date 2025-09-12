@@ -17,8 +17,10 @@ Hardware details
   - 172 IceLake nodes
 
     - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (IceLake),
-      36 cores each :raw-html:`<br />`
-      (1 NUMA domain and 1 L3 cache per CPU)
+
+      - 36 cores each 
+      - (1 NUMA domain and 1 L3 cache per CPU) 
+
     - 256 GiB RAM
     - default memory per core is 3400 MiB
     - 960 GB SSD local disk
@@ -28,9 +30,11 @@ Hardware details
   - 68 Sapphire Rapids nodes
 
     - 2 Intel Xeon Platinum 8468 CPUs (Sapphire Rapids),
-      48 cores each :raw-html:`<br />`
-      (4 NUMA domains and 1 L3 cache per CPU) :raw-html:`<br />`
-      The base and max CPU frequencies are 2.1 GHz and 3.8 GHz, respectively.
+
+      - 48 cores each
+      - (4 NUMA domains and 1 L3 cache per CPU)
+      - The base and max CPU frequencies are 2.1 GHz and 3.8 GHz, respectively.
+
     - 256 GiB RAM
     - default memory per core is 2500 MiB
     - 960 GB SSD local disk
@@ -40,8 +44,10 @@ Hardware details
 - 5 big memory nodes
 
   - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (Ice lake),
-    36 cores each :raw-html:`<br />`
-    (2 NUMA domains and 1 L3 cache per CPU)
+
+    - 36 cores each 
+    - (2 NUMA domains and 1 L3 cache per CPU)
+
   - 2048 GiB RAM
   - default memory per core is 28000 MiB
   - 960 GB SSD local disk
@@ -51,9 +57,10 @@ Hardware details
 - 1 huge memory node
 
   - 2 Intel Xeon Platinum 8360Y CPUs (Ice lake),
-    36 cores each :raw-html:`<br />`
-    (1 NUMA domain and 1 L3 cache per CPU) :raw-html:`<br />`
-    The base and max CPU frequencies are 2.4 GHz and 3.5 GHz, respectively.
+
+    - 36 cores each 
+    - (1 NUMA domain and 1 L3 cache per CPU) 
+    - The base and max CPU frequencies are 2.4 GHz and 3.5 GHz, respectively.
   - 8 TiB RAM
   - default memory  per core is 111900 MiB
   - 960 GB SSD local disk
@@ -65,8 +72,9 @@ Hardware details
   - 4 nodes with 16 A100 GPUs in total
 
     - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (Ice lake),
-      36 cores each :raw-html:`<br />`
-      (2 NUMA domains and 1 L3 cache per CPU)
+
+      - 36 cores each 
+      - (2 NUMA domains and 1 L3 cache per CPU)
     - 512 GiB RAM
     - default memory per core is 7000 MiB
     - 4 NVIDIA A100 SXM4, 80 GiB GDDR, connected with NVLink
@@ -77,9 +85,10 @@ Hardware details
   - 4 nodes with 16 H100 GPUs in total
 
     - 2 AMD EPYC 9334 CPUs (Genoa),
-      32 cores each :raw-html:`<br />`
-      (4 NUMA domains and 4 L3 caches per CPU) :raw-html:`<br />`
-      The base and max CPU frequencies are 2.7 GHz and 3.9 GHz, respectively.
+
+      - 32 cores each 
+      - (4 NUMA domains and 4 L3 caches per CPU)
+      - The base and max CPU frequencies are 2.7 GHz and 3.9 GHz, respectively.
     - 768 GiB RAM
     - default memory per core is 11700 MiB
     - 4 NVIDIA H100 SXM5, 80 GiB HBM3, connected with NVLink
@@ -90,21 +99,24 @@ Hardware details
 - 4 interactive nodes
 
   - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
-    32 cores each :raw-html:`<br />`
-    (2 NUMA domains and 1 L3 cache per CPU)
+
+    - 32 cores each 
+    - (2 NUMA domains and 1 L3 cache per CPU)
   - 512 GiB RAM
   - default memory per core is 2000 MiB
   - 1 NVIDIA A100, 80 GiB GDDR
   - 960 GB SSD local disk
   - partitions ``interactive``,
     :ref:`submit options <submit to wice interactive node>`
-    :raw-html:`<br />`
+
 
 - 1 debug node
 
   - 2 Intel Xeon Gold 8358 CPUs\@2.6 GHz (Ice lake),
-    32 cores each :raw-html:`<br />`
-    (2 NUMA domains and 1 L3 cache per CPU)
+
+    - 32 cores each 
+    - (2 NUMA domains and 1 L3 cache per CPU)
+
   - 512 GiB RAM
   - default memory per core is 7500 MiB
   - 1 NVIDIA A100, 80 GiB GDDR
