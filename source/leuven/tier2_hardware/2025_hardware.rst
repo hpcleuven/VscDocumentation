@@ -3,9 +3,9 @@
 Tier-2 2025 new cluster 
 =======================
 
-This year a new cluster will be added to the KU Leuven/UHasselt's environment.
+Toward the end of 2025 a new cluster will be added to the KU Leuven/UHasselt's Tier-2 infrastructure.
 Inline with wICE it features thin nodes, large memory nodes, interactive nodes and GPU nodes.
-This cluster will be installed at the end of 2025, below you can already checkout the specs.
+The cluster will be operational in Q1 2026.
 
 
 Hardware details
@@ -45,9 +45,7 @@ Hardware details
 
 - 2 interactive nodes
 
-  - 2 Intel  Xeon Intel Xeon 6972P CPUs\@2.4 GHz,
-    96 cores each :raw-html:`<br />`
-    (2 NUMA domains and 1 L3 cache per CPU)
+  - 2 Intel  Xeon Intel Xeon 6972P CPUs\@2.4 GHz,96 cores each 
   - 768 GiB RAM
   - default memory per core is TBA
   - 2 NVIDIA RTX 5000, 32 GiB GDDR
@@ -55,20 +53,18 @@ Hardware details
   - partitions TBA ``interactive``,
 
 All nodes are interconnected using an Infiniband NDR 
-network
+network.
 All nodes are connected to the Lustre parallel file system
 through an Infiniband HDR-100 network.
 
-Just as wICE Sapphire Rapids, the new cluster is direct liquid cooled.
+Similar to the wICE Sapphire Rapids and the H100 nodes, the new cluster is direct liquid cooled.
 
 Storage
 -------
 
-A new parallel filesystem will be installed together with the cluster.
-IBM Storage Scale, 5.8 PB . This filesystem will be connected over NDR.
-
-A connection to the existing Lustre filesystem will be setup, 
-to make sure your existing data is accessible from the new cluster.
-
-Scratch will be provided on the new filesystem and also project storage equivalent with current staging functionality.
-
+A new parallel filesystem will be installed together with the cluster 
+(IBM Storage Scale, 5.8 PB, connected over NDR).
+We will assign scratch storage on this new filesystem and also offer project storage 
+(similar to the current `staging` storage).
+The compute nodes will also be connected to the existing Lustre filesystem, 
+so all your existing data will be accessible from the new cluster.
