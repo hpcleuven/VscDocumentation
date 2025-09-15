@@ -12,8 +12,7 @@
     
        * :ref:`Genius <Genius hardware>`
        * :ref:`Superdome <Superdome hardware>`
-       * :ref:`wICE <wice hardware>`
-       * :ref:`upcoming Tier-2 <2025 hardware>`
+       * :ref:`wICE <wICE hardware>`
 
     .. grid-item-card:: |UA|
        :columns: 6 6 3 3
