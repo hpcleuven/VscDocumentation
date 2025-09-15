@@ -51,7 +51,7 @@ For more advanced configuration options, see also the `JetBrains documentation
 
 .. note::
 
-   For long-running jobs or for jobs using more than one node (with e.g.
+   For long-running jobs or for jobs using more than one node (with e.g.,
    ``mpi4py`` or ``dask.distributed``), we recommend :ref:`submitting batch
    jobs <job submission>` instead.
 
@@ -92,7 +92,7 @@ system Python installation automatically detected by PyCharm.
   ``Python 3.9 (pandas)`` appearing.
 * If you are asked about how to open the new project, you may select
   'New Window'.
-* To e.g. add the ``pandas`` package from `Scikit-Learn
+* As an example, to add the ``pandas`` package from `Scikit-Learn
   <https://pypi.org/project/sklearn-pandas>`_, click on the 'Python Packages'
   icon on the left tray, and put ``pandas`` in the search box. From the long
   list of available packages, choose the ``sklearn-pandas`` package and click
@@ -115,7 +115,7 @@ specific conditions:
   needs to have been built using RPATH linking. On the Tier-2 clusters hosted
   at KU Leuven this is only the case starting from the ``2025a`` toolchain
   generation.
-* The environment doesn't require any other modules except for ``Python``.
+* The environment doesn't require any other module except for ``Python``.
 
 Even if these conditions are met, there is no guarantee that the environment
 will continue to work across OS and other upgrades of the PyCharm container.
@@ -147,7 +147,7 @@ such a virtual environment:
 Creating a new Conda environment in PyCharm
 ===========================================
 
-Assuming you e.g. have a :ref:`local Miniconda installation
+Assuming for instance, you have a :ref:`local Miniconda installation
 <install_miniconda_python>`, you may create a new Conda environment in PyCharm
 after you start a 'New Project' by following the steps below. Make sure you
 *do not* install Miniconda via PyCharm because it will end up in your
@@ -159,11 +159,11 @@ after you start a 'New Project' by following the steps below. Make sure you
 * For the 'Type' choose 'Conda'.
 * For the 'Python version' pick one that suits your needs.
 * For the 'Name' again choose a unique and representative
-  (e.g. ``conda-pandas``).
+  (e.g., ``conda-pandas``).
 * For the 'Path to conda' set the path to your ``conda`` executable (a typical
   location would be ``/data/<institute>/xxx/xxxxx/miniconda3/bin/conda``).
 * Click on the 'Create' button and wait for a minute. Eventually,
-  the interpreter at the bottom right tray will show e.g. ``conda-pandas``.
+  the interpreter at the bottom right tray will show e.g., ``conda-pandas``.
 
 
 .. _pycharm_conda:
