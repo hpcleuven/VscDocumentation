@@ -4,7 +4,7 @@ Tier-2 2025 new cluster
 =======================
 
 Toward the end of 2025 a new cluster will be added to the KU Leuven/UHasselt's Tier-2 infrastructure.
-Inline with wICE it features thin nodes, large memory nodes, interactive nodes and GPU nodes.
+In line with wICE it will feature thin nodes, large memory nodes, interactive nodes and GPU nodes.
 The cluster will be operational in Q1 2026.
 
 
@@ -20,7 +20,7 @@ Hardware details
     - 768 GiB RAM
     - default memory per core is TBA
     - 960 GB NVMe local disk
-    - partitions TBA ``batch_granite``,
+    - partitions TBA ``batch_granite``
 
 - 10 big memory nodes
 
@@ -29,7 +29,7 @@ Hardware details
   - 1536 GiB RAM
   - default memory per core is TBA
   - 3840 GB NVMe local disk
-  - partition TBA ``bigmem``,
+  - partition TBA ``bigmem``
 
 - 3 GPU nodes
 
@@ -41,7 +41,7 @@ Hardware details
     - default memory per core is TBA
     - 8 NVIDIA B200 SXM6, 192 GiB GDDR, connected with NVLink
     - 960 GB NVMe local disk
-    - partition TBA ``gpu|gpu_b200``,
+    - partition TBA ``gpu|gpu_b200``
 
 - 2 interactive nodes
 
@@ -50,7 +50,7 @@ Hardware details
   - default memory per core is TBA
   - 2 NVIDIA RTX 5000, 32 GiB GDDR
   - 960 GB SSD local disk
-  - partitions TBA ``interactive``,
+  - partitions TBA ``interactive``
 
 All nodes are interconnected using an Infiniband NDR 
 network.
