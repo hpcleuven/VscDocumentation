@@ -436,7 +436,7 @@ rst_prolog += """
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
 .. _NoMachine: https://www.nomachine.com/
-.. _NX Client download: https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client
+.. _NX Client download: https://download.nomachine.com/enterprise/?product=enterprise-client
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
