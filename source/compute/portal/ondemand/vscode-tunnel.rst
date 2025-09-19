@@ -86,7 +86,7 @@ To connect to the VS Code tunnel, follow these steps:
      form.
    - To close the remote connection, click again the blue button in the bottom
      left, and select 'Close Remote Connection' in the command palette.
-   - VSCCode SSH Tunnel also  allows users to select 'GitHub Account', but we
+   - VSCode SSH Tunnel also  allows users to select 'GitHub Account', but we
      do recommend using 'Microsoft' login.
 
 Usage
