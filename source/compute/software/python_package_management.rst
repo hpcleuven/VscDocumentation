@@ -37,7 +37,7 @@ in your account.
 
       $ pip list -v
 
-Note that many packages, e.g., ``mpi4py``, ``pyh5``, ``pytables``,..., are
+Note that many packages, e.g., ``mpi4py``, ``h5py``, ``pytables``,..., are
 available through the module system, and have to be loaded separately. These
 packages will not be listed by ``pip`` unless you loaded the corresponding
 module.  In recent toolchains, many of the packages you need for scientific

@@ -155,7 +155,7 @@ There are multiple ways in which you can transfer data to or from HPC storage:
 Keeping track of your data
 ==========================
 
-Once multiple storage locations are involved, you will need to keep an overview of where everything is located (e.g. which input data has been staged in on HPC storage, which data has flowed out, et cetera). We advise to include this topic in your project meetings (e.g. the current status, planned data transfers and cleanups, possible quota constraints, ...) and to monitor disk usage on a regular basis. For HPC storage you can use command-line tools such as ``du`` and ``myquota``. For staging storage we also offer ``duduckdb``, which allows you to query a database with information on the disk usage for your staging directory.
+Once multiple storage locations are involved, you will need to keep an overview of where everything is located (e.g. which input data has been staged in on HPC storage, which data has flowed out, et cetera). We advise to include this topic in your project meetings (e.g. the current status, planned data transfers and cleanups, possible quota constraints, ...) and to monitor disk usage on a regular basis. For HPC storage you can use command-line tools such as ``du`` and ``myquota``. For staging storage we also offer `the duduckdb tool <https://github.com/hpcleuven/duduckdb/>`_, which allows you to query a database with information on the disk usage for your staging directory.
 
 Automating (part of) your data operations can of course be helpful in this regard. One possibility to consider is to automatically transfer and/or clean up data as part of your compute jobs. Automation of course tends to require well-defined directory structures (see above).
 

@@ -67,6 +67,7 @@ navigation panel on the left.
    :hidden:
 
    files
+   fluent
    login-shell
    active-jobs
    job-composer
@@ -77,6 +78,7 @@ navigation panel on the left.
    jupyterlab
    matlab
    paraview
+   pycharm
    rstudio-server
    tensorboard
    vscode-server
