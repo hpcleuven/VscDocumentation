@@ -78,7 +78,7 @@ opposed to the ``login.hpc.kuleuven.be`` server you normally use). Note that
 the ``skylake`` architecture of the current login nodes is different from the
 architectures in the ``rocky9_pilot`` reservation. One consequence is that
 the ``module avail`` command might not show the all modules relevant to
-compute jobs, the ``module spider`` command can be used as an alternative,
+compute jobs. The ``module spider`` command can be used as an alternative,
 but make sure to execute it on a Rocky 9 node to see modules suited for Rocky
 9 (see :ref:`the module system on Leuven clusters <leuven_module_system>` for
 background information).
