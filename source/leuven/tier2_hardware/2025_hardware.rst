@@ -29,7 +29,7 @@ Hardware details
 
 - 10 big memory nodes
 
-  - 2  Intel  Xeon Intel Xeon 6972P CPUs\@2.4 GHz,
+  - 2 Intel Xeon 6972P CPUs \@2.4 GHz,
     96 cores each 
   - 1536 GiB RAM
   - default memory per core is TBA
