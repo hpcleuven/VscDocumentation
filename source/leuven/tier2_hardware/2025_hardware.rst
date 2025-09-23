@@ -50,7 +50,7 @@ Hardware details
 
 - 2 interactive nodes
 
-  - 2 Intel  Xeon Intel Xeon 6972P CPUs\@2.4 GHz,96 cores each 
+  - 2 Intel Xeon 6972P CPUs \@2.4 GHz, 96 cores each 
   - 768 GiB RAM
   - default memory per core is TBA
   - 2 NVIDIA RTX 5000, 32 GiB GDDR
