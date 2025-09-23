@@ -40,7 +40,7 @@ Hardware details
 
   - 3 nodes with 24 B200 GPUs in total
 
-    - 2 AMD EPYC 9655\@2.6 GHz (Ice lake),
+    - 2 AMD EPYC 9655 CPUs \@2.6 GHz (Turin),
       96 cores each 
     - 1536 GiB RAM
     - default memory per core is TBA
