@@ -20,7 +20,7 @@ Hardware details
 
   - 40 Granite Rapids nodes
 
-    - 2 Intel Xeon Intel Xeon 6972P CPUs\@2.4 GHz,
+    - 2 Intel Xeon 6972P CPUs \@2.4 GHz,
       96 cores each 
     - 768 GiB RAM
     - default memory per core is TBA
