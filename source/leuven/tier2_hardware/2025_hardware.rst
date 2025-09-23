@@ -9,8 +9,9 @@ The cluster will be operational in Q1 2026.
 
 .. note::
 
-   The new cluster will have Rocky 9 as OS. You can already prepare for this: 
-   :ref:`migrate to Rocky 9 <wice_t2_leuven_rocky9>`
+   The new compute nodes will run on Rocky Linux 9. 
+   Note that also wICE :ref:`will migrate to this OS <wice_t2_leuven_rocky9>` in November. 
+   Use the reservation as described to prepare for this.
 
 Hardware details
 ----------------
