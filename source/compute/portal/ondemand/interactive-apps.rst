@@ -181,6 +181,12 @@ your job resources:
       cluster`, which also contains shared GPUs for improved rendering
       performance.
 
+      .. note::
+
+         The allocated CPU memory in your session is fixed at a default value
+         per core.  To get more memory, just request additional cores in the
+         resources form.
+
 Once you have passed the testing phase, and you want to start conducting
 experiments, we recommend that you make the switch to batch jobs instead, as
 they will not require your presence to start your code.
