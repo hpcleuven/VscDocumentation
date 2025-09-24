@@ -22,8 +22,8 @@ that will be loaded for your session (such as ``R/4.4.1-gfbf-2023b``).
    .. tab-item:: VUB
       :sync: vub
 
-      A very large number of widely used R packages are available via the
-      following modules, which are loaded by default:
+      A very large number of widely used R packages are already available by
+      default. The following modules are always loaded with RStudio:
 
       - ``R-bundle-CRAN`` - packages for general usage available on the `CRAN
         <https://cran.r-project.org/>`__ website

@@ -50,8 +50,8 @@ listed Python module).
    .. tab-item:: VUB
       :sync: vub
 
-      A large number of widely used Python packages are available via the
-      following modules, which are loaded by default:
+      A large number of widely used Python packages are already available by
+      default. The following modules are always loaded with JupyterLab:
 
       - ``Python-bundle-PyPI`` - packages for general usage
       - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
@@ -60,7 +60,8 @@ listed Python module).
 
 If you need additional Python packages, you can load extra modules with Python
 packages via ``module load`` commands in the 'Pre-run Scriptlet' of the
-resources form.
+resources form, or via the :ref:`software_modules_extension` in your JupyterLab
+session (if supported by the OnDemand portal).
 
 After launch, the ``Python 3 (ipykernel)`` kernel is automatically available in
 your JupyterLab session. Along with the standard Python library, it also gives
