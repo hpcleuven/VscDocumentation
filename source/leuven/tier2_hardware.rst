@@ -13,3 +13,4 @@ KU Leuven/UHasselt Tier-2 Clusters
    tier2_superdome
    tier2_storage
    slurm_specifics
+   tier2_2025 
