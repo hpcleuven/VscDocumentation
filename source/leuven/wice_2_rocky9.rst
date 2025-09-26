@@ -4,13 +4,13 @@
 Rocky 9 migration
 =================
 
-The KU Leuven Tier-2 cluster wICE will migrate to Rocky 9.5 as the operating system.
+The KU Leuven Tier-2 cluster wICE will migrate to Rocky 9.6 as the operating system.
 Important differences at the system level are listed below.
 
 +-------------+------------------+---------------------+
 | Packages    |  Rocky Linux 8   | Rocky Linux 9       |
 +=============+==================+=====================+
-| kernel      | 4.18.0-513.24.1  | 5.14.0-503.38.1     |
+| kernel      | 4.18.0-513.24.1  | 5.14.0-570.42.2     |
 +-------------+------------------+---------------------+
 | bash        | 4.4.20           | 5.1.8               |
 +-------------+------------------+---------------------+
@@ -19,7 +19,8 @@ Important differences at the system level are listed below.
 | glibc       | 2.28             | 2.34                |
 +-------------+------------------+---------------------+
 
-Centrally installed modules have already been made available for Rocky 9, starting from toolchain 2021a.
+Centrally installed modules have already been made available for Rocky 9 for
+compute nodes that will be migrated, starting from toolchain 2021a.
 
 .. _timing:
 
@@ -70,6 +71,17 @@ The following query can be used to look up the currently reserved nodes::
 
 If you are not a ``vsc3*`` user and also want to test, please ask the
 helpdesk to add you to the reservation.
+
+Additionally some of the login nodes have been migrated as well. To land on a
+Rocky 9 login node, you need to connect to ``login-rocky9.hpc.kuleuven.be`` (as
+opposed to the ``login.hpc.kuleuven.be`` server you normally use). Note that
+the ``skylake`` architecture of the current login nodes is different from the
+architectures in the ``rocky9_pilot`` reservation. One consequence is that
+the ``module avail`` command might not show the all modules relevant to
+compute jobs. The ``module spider`` command can be used as an alternative,
+but make sure to execute it on a Rocky 9 node to see modules suited for Rocky
+9 (see :ref:`the module system on Leuven clusters <leuven_module_system>` for
+background information).
 
 .. _expected impact:
 
