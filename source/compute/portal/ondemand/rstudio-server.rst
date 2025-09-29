@@ -74,7 +74,7 @@ documentation <https://docs.posit.co/ide/user/>`__.
 
      |VUB| Alternatively, you can tick the 'Clean workspace at startup' checkbox
      in the resources form.  However, note that this setting is overridden by
-     your user preferences: specifically, the value of the ``"load_workspace"``
+     your user preferences: namely, the value of the ``"load_workspace"``
      parameter in your ``rstudio-prefs.json`` file takes priority. This file (if
      present) is located in ``$XDG_CONFIG_HOME/rstudio`` or
      ``$VSC_HOME/.config/rstudio``.
