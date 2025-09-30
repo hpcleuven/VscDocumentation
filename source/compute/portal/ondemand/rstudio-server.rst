@@ -70,11 +70,13 @@ documentation <https://docs.posit.co/ide/user/>`__.
      previous session) into the workspace on startup, and to NEVER 'Save the
      workspace to ``.RData``' on exit.  You can do this via the RStudio
      interface: Tools > Global Options > General > Workspace. These user
-     preferences are persistent across RStudio sessions.
+     preferences are persistent across RStudio sessions, and are saved in your
+     ``rstudio-prefs.json`` file. This file (if present) is located in
+     ``$XDG_CONFIG_HOME/rstudio`` or ``$VSC_HOME/.config/rstudio``.
 
      |VUB| Alternatively, you can tick the 'Clean workspace at startup' checkbox
-     in the resources form. Note, however, that your user preferences (stored in
-     ``$XDG_DATA_HOME/rstudio-prefs.json``, defined by the "load_workspace"
-     parameter) take priority over this checkbox option.
+     in the resources form.  However, note that this setting is overridden by
+     your user preferences: namely, the value of the ``"load_workspace"``
+     parameter in your ``rstudio-prefs.json`` file takes priority.
 
 .. _RStudio official documentation: https://docs.rstudio.com/
