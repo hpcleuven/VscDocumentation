@@ -4,13 +4,13 @@
 Rocky 9 migration
 =================
 
-The KU Leuven Tier-2 cluster wICE will migrate to Rocky 9.5 as the operating system.
+The KU Leuven Tier-2 cluster wICE will migrate to Rocky 9.6 as the operating system.
 Important differences at the system level are listed below.
 
 +-------------+------------------+---------------------+
 | Packages    |  Rocky Linux 8   | Rocky Linux 9       |
 +=============+==================+=====================+
-| kernel      | 4.18.0-513.24.1  | 5.14.0-503.38.1     |
+| kernel      | 4.18.0-553.58.1  | 5.14.0-570.42.2     |
 +-------------+------------------+---------------------+
 | bash        | 4.4.20           | 5.1.8               |
 +-------------+------------------+---------------------+
