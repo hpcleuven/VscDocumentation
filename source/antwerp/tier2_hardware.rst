@@ -17,7 +17,7 @@ using one of the following hostnames.
 | Cluster                                            | Generic login name                | Individual login node             |
 +====================================================+===================================+===================================+
 |:ref:`Vaughan<Vaughan hardware>`                    |login-vaughan.hpc.uantwerpen.be    | | login1-vaughan.hpc.uantwerpen.be|
-|                                                    |                                   | | login1-vaughan.hpc.uantwerpen.be|
+|                                                    |                                   | | login2-vaughan.hpc.uantwerpen.be|
 +----------------------------------------------------+-----------------------------------+-----------------------------------+
 |:ref:`Leibniz<Leibniz hardware>`                    | | login-leibniz.hpc.uantwerpen.be | | login1-leibniz.hpc.uantwerpen.be|
 |                                                    | | **login.hpc.uantwerpen.be**     | | login2-leibniz.hpc.uantwerpen.be|

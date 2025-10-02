@@ -82,7 +82,7 @@ In total, three GPU partitions are available:
 +----------------------------------+--------------+-------------------------------------------------------------+
 | Cluster                          | Partition    |  Available nodes                                            |
 +==================================+==============+=============================================================+
-| :ref:`Vaughan<Vaughan hardware>` | ampere_gpu   | 2 nodes with 4 `NVIDIA A100`_ (Ampere) 40 GB SXM4           |
+| :ref:`Vaughan<Vaughan hardware>` | ampere_gpu   | 1 node with 4 `NVIDIA A100`_ (Ampere) 40 GB SXM4            |
 +                                  +--------------+-------------------------------------------------------------+
 |                                  | arcturus_gpu | 2 nodes with 2 `AMD Instinct MI100`_ (Arcturus) 32 GB HBM2  |
 +----------------------------------+--------------+-------------------------------------------------------------+
