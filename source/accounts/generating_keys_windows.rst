@@ -44,7 +44,7 @@ openssh_install_firstuse?tabs=gui&pivots=windows-11#install-openssh-server--clie
 System > Optional features > Add an optional feature > OpenSSH Client
 
 Create a public/private key pair
--===============================
+================================
 
 Open PowerShell (or command prompt). To generate a new public/private pair, 
 use the following command (make sure to generate a 4096-bit key):
