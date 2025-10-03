@@ -180,7 +180,7 @@ If you do need to use conda, you should wrap it in a container. This way we can 
 filesystem of a standard conda installation due to the creation of many small files.
 
 `hpc_container_wrapper <https://github.com/CSCfi/hpc-container-wrapper>`_ is a tool that helps you create an 
-Apptainer image and provide wrapper scripts to call executables within the container environment. To containerize 
+Apptainer image and provides wrapper scripts to call executables within the container environment. To containerize 
 your conda environment with ``hpc_container_wrapper``, you need your conda environment file ``environment.yaml``. 
 This is a reproducible collection of packages, dependencies, and channels. Here is an example of such a file:
 
@@ -194,7 +194,7 @@ This is a reproducible collection of packages, dependencies, and channels. Here 
       - beautifulsoup4
       - ...
 
-To create the container in the directory ``$VSC_SCRATCH/bsoup``:
+To create the container in the directory ``$VSC_SCRATCH/containers/bsoup``:
 
 .. code-block :: bash
     
@@ -207,7 +207,7 @@ You can now use your containerized installation by prepending your path:
     
     $ export PATH="$VSC_SCRATCH/containers/bsoup/bin:$PATH"
     $ which python
-     $VSC_SCRATCH/bsoup/bin/python
+     $VSC_SCRATCH/containers/bsoup/bin/python
 
 If you still miss packages, you can update the container with a post-install script:
 
