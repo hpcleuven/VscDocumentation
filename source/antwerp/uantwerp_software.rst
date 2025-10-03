@@ -128,14 +128,22 @@ on VSC_DATA or VSC_SCRATCH, depending on the circumstances.
   Installing the packages that you need locally on **VSC_SCRATCH**
   will give much better performance.
 
-Conda
-=====
+Easybuild
+=========
 
+TODO ``init-easybuild-user.sh``
+
+
+Python packages
+===============
 
 The preferred method of installing additional Python packages on the UAntwerp cluster is using ``pip``, ``easy_install``
 or ``python setup``, depending on what the package supports. This does require that all non-Python and in
 some cases Python dependencies are already installed. However, it makes maximum use of what is already
 installed on the systems, with a minimal number of additional files.
+
+.. seealso::
+  For more detailed instructions on how to install additional python packages using ``pip``, see :ref:`python packages`.
 
 .. warning::
   Like with Conda, when you install from binaries available on
@@ -143,6 +151,9 @@ installed on the systems, with a minimal number of additional files.
   Moreover, not all binary wheels are compatible with the Linux version that we use. The CalcUA support team
   always tries to compile packages from source using up-to-date compilers and only uses binary wheels when
   nothing else works in a reasonable time.
+
+Conda
+=====
 
 We discourage the use of Conda-variants for various reasons. It should only be used if nothing else works.
 
@@ -164,3 +175,46 @@ We discourage the use of Conda-variants for various reasons. It should only be u
   dense linear algebra and FFT, using the newer instructions of more recent processors can give a big speed
   boost for those routines, up to a factor 4 on Leibniz and Vaughan and up to a factor of 7 or so on the
   Skylake partition of the previous Tier-1 cluster BrENIAC.
+
+If you do need to use conda, you should wrap it in a container. This way we can at least mitigate the stress on the 
+filesystem of a standard conda installation due to the creation of many small files.
+
+`hpc_container_wrapper <https://github.com/CSCfi/hpc-container-wrapper>`_ is a tool that helps you create an 
+Apptainer image and provide wrapper scripts to call executables within the container environment. To containerize 
+your conda environment with ``hpc_container_wrapper``, you need your conda environment file ``environment.yaml``. 
+This is a reproducible collection of packages, dependencies, and channels. Here is an example of such a file:
+
+.. code-block :: bash
+
+    # environment.yaml
+    name: bsoup4
+    channels:
+      - conda-forge
+    dependencies:
+      - beautifulsoup4
+      - ...
+
+To create the container in the directory ``$VSC_SCRATCH/bsoup``:
+
+.. code-block :: bash
+    
+    $ module load hpc-container-wrapper
+    $ conda-containerize new --prefix "$VSC_SCRATCH/containers/bsoup" environment.yaml
+
+You can now use your containerized installation by prepending your path:
+
+.. code-block :: bash
+    
+    $ export PATH="$VSC_SCRATCH/containers/bsoup/bin:$PATH"
+    $ which python
+     $VSC_SCRATCH/bsoup/bin/python
+
+If you still miss packages, you can update the container with a post-install script:
+
+.. code-block :: bash
+
+    $ echo 'conda install -c bioconda pyfaidx' > post.sh
+    $ conda-containerize update --post-install  post.sh "$VSC_SCRATCH/containers/bsoup"
+
+.. seealso::
+  For the general use of `Apptainer`_ (without hpc_container_wrapper), see :ref:`hpc containers`.
