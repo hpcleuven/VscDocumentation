@@ -108,7 +108,7 @@ The requested compute time is specified using ``--time=<time>`` or ``-t <time>``
 (hours, minutes and seconds), d-hh (days and hours), d-hh\:mm (days, hours and minutes)
 or d-hh\:mm\:ss (days, hours, minutes and seconds) format. The ``-`` is not a typo!
 
-If not set, a default wall time of 1 hour will be assigned.
+If not set, a default wall time will be assigned (typically 1 hour).
 
 .. _slurm_partition:
 
