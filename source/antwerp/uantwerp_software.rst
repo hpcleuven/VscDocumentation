@@ -128,11 +128,26 @@ on VSC_DATA or VSC_SCRATCH, depending on the circumstances.
   Installing the packages that you need locally on **VSC_SCRATCH**
   will give much better performance.
 
-Easybuild
+EasyBuild
 =========
 
-TODO ``init-easybuild-user.sh``
+If the package you like to install is `supported by EasyBuild <https://docs.easybuild.io/version-specific/supported-software/>`_, 
+you can modify (if needed) and use an existing build script or *easyconfig*. 
+We offer a helper script to setup an Easybuild environment.
 
+.. code-block:: bash
+
+   $ init-easybuild-user.sh
+
+This script loads the easybuild module and sets some of the respective environment variables. It also makes the 
+personal modules available to the current session by adding them to the module path.
+
+By default, your personal installation directory is ``${VSC_DATA}/easybuild`` unless you specify otherwise by 
+setting ``EASYBUILD_PREFIX`` before running the script. The installation directories will be further organized in
+subdirectories of the form cluster-arch-os: ``${VSC_INSTITUTE_CLUSTER}-${VSC_ARCH_LOCAL}-${VSC_OS_LOCAL}``.
+
+.. seealso::
+  How to use EasyBuild to install supported software: `EasyBuild documentation <https://docs.easybuild.io/using-easybuild/>`_
 
 Python packages
 ===============
