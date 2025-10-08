@@ -116,6 +116,7 @@ After this period expires, the users of this project lose access to all resource
 This includes storage in addition to compute resources (CPU and GPU).
 
 As soon as a project expires, project members:
+
 * will no longer be able to use any remaining CPU cycles, GPU cycles or credits
 * will no longer have access to the dedicated project folders
 
