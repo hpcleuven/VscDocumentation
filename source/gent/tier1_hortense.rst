@@ -111,7 +111,16 @@ Access policy
 
 **The Hortense VSC Tier-1 cluster can only be accessed by people with an active Tier-1 compute project.**
 
-See https://www.vscentrum.be/compute for more information on requesting access.
+Tier-1 compute project resources are always allocated for a given period.
+After this period expires, the users of this project loose access to all resources granted within that project.
+This includes storage in addition to compute resources (CPU and GPU).
+
+As soon as a project expires, project members:
+* will no longer be able to use any remaining CPU cycles, GPU cycles or credits
+* will no longer have access to the dedicated project folders
+
+See https://www.vscentrum.be/compute for more information on requesting access, rules and regulations.
+
 
 .. _hortense_login_nodes:
 
@@ -325,6 +334,13 @@ Project scratch directories
   cd $VSC_SCRATCH_PROJECTS_BASE/your_project_name
 
 In this command, you should change '``your_project_name``' to the actual name of your project.
+
+
+**As soon as a project expires, project scratch directories will NO LONGER be accessible.**
+Please take this into account when planning your project execution.
+Plan ahead and offload your data well before your project expires.
+
+**Clean up and remove any remaining data in the project scratch folders before the project expires.**
 
 
 .. _hortense_scratch_storage_quota_usage:
