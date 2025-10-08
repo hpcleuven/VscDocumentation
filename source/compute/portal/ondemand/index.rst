@@ -14,7 +14,7 @@ Portals
 
 VSC clusters that support an Open OnDemand web portal:
 
-.. grid:: 3
+.. grid:: 4
     :gutter: 4
 
     .. grid-item-card:: |KUL|
@@ -41,9 +41,19 @@ VSC clusters that support an Open OnDemand web portal:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
+    .. grid-item-card:: |UA|
+       :columns: 12 4 4 4
+
+       :fas:`circle-play` `UAntwerp OnDemand`_
+
+       * Tier-2 :ref:`Vaughan <Vaughan hardware>`
+       * Tier-2 :ref:`Leibniz <Leibniz hardware>`
+       * Tier-2 :ref:`Breniac <Breniac hardware UAntwerp>`
+
 .. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
 .. _UGent OnDemand: https://login.hpc.ugent.be/
 .. _VUB OnDemand: https://portal.hpc.vub.be/
+.. _UAntwerp OnDemand: https://portal.hpc.uantwerpen.be/
 
 You can log in using the credentials of your home institution or your VSC
 credentials. SSH keys are not required to use the web portal.
