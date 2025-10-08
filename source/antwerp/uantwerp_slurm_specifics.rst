@@ -1,8 +1,8 @@
 .. _uantwerp_slurm_specifics:
 
-########################
+############################
 UAntwerp-specific Slurm info
-########################
+############################
 
 .. seealso::
   For basic and advanced Slurm instructions, please see :ref:`Running jobs in Slurm <running jobs>` and :ref:`job advanced`.
