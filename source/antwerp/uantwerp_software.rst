@@ -137,7 +137,7 @@ We offer a helper script to setup an Easybuild environment.
 
 .. code-block:: bash
 
-   $ init-easybuild-user.sh
+   $ source init-easybuild-user.sh
 
 This script loads the easybuild module and sets some of the respective environment variables. It also makes the 
 personal modules available to the current session by adding them to the module path.
@@ -154,7 +154,7 @@ Python packages
 
 The preferred method of installing additional Python packages on the UAntwerp cluster is using ``pip``, ``easy_install``
 or ``python setup``, depending on what the package supports. This does require that all non-Python and in
-some cases Python dependencies are already installed. However, it makes maximum use of what is already
+some cases Python dependencies are already installed (and loaded). However, it makes maximum use of what is already
 installed on the systems, with a minimal number of additional files.
 
 .. seealso::
