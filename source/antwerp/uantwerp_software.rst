@@ -1,7 +1,7 @@
 .. _UAntwerp software:
 
 ##############################
-UAntwerp software instructions
+UAntwerp Software instructions
 ##############################
 
 ********************************
