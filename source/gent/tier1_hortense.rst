@@ -342,6 +342,9 @@ Plan ahead and offload your data well before your project expires.
 
 **Clean up and remove any remaining data in the project scratch folders before the project expires.**
 
+Remaining data in project scratch folders for projects that have expired are earmarked for deletion.
+The Tier1 operational team can delete this data without further notification.
+
 
 .. _hortense_scratch_storage_quota_usage:
 
