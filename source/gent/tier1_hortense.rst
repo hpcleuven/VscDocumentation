@@ -112,7 +112,7 @@ Access policy
 **The Hortense VSC Tier-1 cluster can only be accessed by people with an active Tier-1 compute project.**
 
 Tier-1 compute project resources are always allocated for a given period.
-After this period expires, the users of this project loose access to all resources granted within that project.
+After this period expires, the users of this project lose access to all resources granted within that project.
 This includes storage in addition to compute resources (CPU and GPU).
 
 As soon as a project expires, project members:
