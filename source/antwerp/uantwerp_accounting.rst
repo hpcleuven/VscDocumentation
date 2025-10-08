@@ -14,7 +14,7 @@ If you do not have access to any project account, please ask your supervisor to 
 Project accounts
 ================
 
-Project accounts are mandatory when submitting jobs. You may belong to different project accounts, 
+Project accounts are mandatory when submitting jobs. You may have access to different project accounts, 
 so it is important to use the appropriate account for every job you submit. You can get a list of 
 valid project accounts you are a member of using the ``myprojectaccounts`` command.
 
@@ -78,7 +78,7 @@ by your actual use. Quota requests are still reviewed, despite being paid for, a
 shared scratch system impact the performance for all users. 
 
 Your storage usage is calculated each month (by the maximum daily use during that month) at 1/12th of the yearly price.
-You can monitor your storage usage with the ``myquota`` command (option ``-g`` for the shared group folders):
+You can monitor your current storage usage with the ``myquota`` command (option ``-g`` for the shared group folders):
 
 .. code-block :: bash
 
