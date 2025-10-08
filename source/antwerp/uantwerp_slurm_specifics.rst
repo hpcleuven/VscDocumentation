@@ -1,7 +1,7 @@
 .. _uantwerp_slurm_specifics:
 
 ########################
-Site-specific Slurm info
+UAntwerp-specific Slurm info
 ########################
 
 .. seealso::

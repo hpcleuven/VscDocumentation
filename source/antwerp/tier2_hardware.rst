@@ -8,8 +8,11 @@ UAntwerp Tier-2 Clusters
 Login infrastructure
 ********************
 
-You can log in to the CalcUA infrastructure in 2 ways: using SSH via ``login.hpc.uantwerpen.be``,
-or using the :ref:`webportal<ood>` at ``portal.hpc.uantwerpen.be``. 
+You can log in to the CalcUA infrastructure in 2 ways: 
+
+-  using SSH via ``login.hpc.uantwerpen.be``,
+-  or using the :ref:`webportal<ood>` at ``portal.hpc.uantwerpen.be``. 
+
 Note that webportal access at CalcUA is still in its testing stage: please report any problems to 
 hpc@uantwerpen.be. 
 

@@ -192,7 +192,12 @@ We discourage the use of Conda-variants for various reasons. It should only be u
   Skylake partition of the previous Tier-1 cluster BrENIAC.
 
 If you do need to use conda, you should wrap it in a container. This way we can at least mitigate the stress on the 
-filesystem of a standard conda installation due to the creation of many small files.
+filesystem of a standard conda installation due to the creation of many small files. See :ref:`hpc-container-wrapper`
+to build one from an existing conda environment.yaml file, or :ref:`hpc containers` to build the container yourself.
+
+.. _hpc-container-wrapper:
+hpc-container-wrapper
+=====================
 
 `hpc_container_wrapper <https://github.com/CSCfi/hpc-container-wrapper>`_ is a tool that helps you create an 
 Apptainer image and provides wrapper scripts to call executables within the container environment. To containerize 
