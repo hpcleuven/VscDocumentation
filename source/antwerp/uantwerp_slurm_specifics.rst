@@ -66,8 +66,8 @@ Given that modern clusters tend to be built with nodes with
 even 4 or 8 GPUs, we would also like to learn from those users who can use only
 a single GPU in a node what is restricting them to use multiple GPUs.
 
-Starting jobs
-=============
+Starting GPU jobs
+=================
 
 The GPU compute nodes are managed through a separate partition, so you will need
 to explicitly specify it when submitting your job. We also configured the GPU
