@@ -163,6 +163,23 @@ With the following command you can find out what those limits are::
    $ sacctmgr show qos debug,interactive,long,normal format=Name%20,MaxSubmitJobsPerUser%15,MaxTRESPerUser%30
 
 
+.. _leuven_batch_job_header:
+
+Batch job header
+----------------
+We have configured Slurm to print the values of important Slurm environment
+variables at the start of the standard output of each batch job (such as
+``SLURM_JOB_ID: ...``). These lines will not be present, however, if the batch
+job was itself submitted from within another Slurm job.
+
+For GPU jobs this output includes the
+`SLURM_JOB_GPUS <https://slurm.schedmd.com/sbatch.html#OPT_SLURM_JOB_GPUS>`__
+variable. Keep in mind that this value refers to the index (or indices)
+of the GPU(s) that were allocated on the job's master node.
+A value of ``0`` therefore means that the GPU device with index 0 got
+allocated (not that the job did not get any GPUs).
+
+
 .. _leuven_slurm_mpi:
 
 MPI applications
