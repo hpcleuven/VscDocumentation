@@ -119,6 +119,7 @@ As soon as a project expires, project members:
 
 * will no longer be able to use any remaining CPU cycles, GPU cycles or credits
 * will no longer have access to the dedicated project folders
+* will loose access to the Tier-1 cluster, unless they have another active project
 
 See https://www.vscentrum.be/compute for more information on requesting access, rules and regulations.
 
