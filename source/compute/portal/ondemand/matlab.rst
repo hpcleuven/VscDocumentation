@@ -70,6 +70,11 @@ request GPU(s) as resources, if needed.
       loaded, and eventually the MATLAB GUI will pop up (after waiting for a few
       seconds).
 
+      Note that this setup does not allow to use MATLAB's
+      :ref:`parallel computing toolbox <MATLAB parallel computing>`.
+      If you require this toolbox you will need to use regular compute jobs
+      instead of this OnDemand app.
+
    .. tab-item:: VUB
       :sync: vub
 
