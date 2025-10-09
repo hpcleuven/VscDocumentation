@@ -275,17 +275,16 @@ to start a parallel application. ``srun`` integrates well with major MPI impleme
 can be used instead of ``mpirun`` or ``mpiexec`` to start a parallel MPI application. It then
 takes your resource requests and allocated resources into account and does a very good job
 of starting each MPI rank on the right set of cores even without having to use additional
-command line options. Further down this section/page there are a couple of examples that
-demonstrate the power of the ``srun`` command. The advantage of this way of working is that
-all processes run under the strict control of Slurm, ensuring that if something goes wrong,
-they are also cleaned up properly.
+command line options. The advantage of this way of working is that all processes run under
+the strict control of Slurm, ensuring that if something goes wrong, they are also cleaned up
+properly. For such ``srun`` examples, see for example :ref:`job_type_mpi`.
 
 The ``srun`` command can also be used outside of a resource allocation, i.e., at the command
 line of the login nodes, outside a job script or an allocation obtained with ``salloc`` (see
 further in the text). It will then first create the resource allocation before executing the
-command given as an argument to ``srun``. One useful case which we discuss further down in this
-text is to start an interactive session. Most of the command line options of
-``sbatch`` to specify the properties of the allocation can also be used with ``srun``.
+command given as an argument to ``srun``. One useful case which we discuss in
+:ref:`job_type_interactive` is to start an interactive session. Most of the command line options
+of ``sbatch`` to specify the properties of the allocation can also be used with ``srun``.
 
 Just as ``sbatch``, ``srun`` will propagate the environment. When ``srun`` is used in
 a job script to start a parallel application, this is also very sensible and desired

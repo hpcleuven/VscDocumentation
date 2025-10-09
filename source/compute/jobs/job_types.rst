@@ -65,6 +65,7 @@ really short running threads (as is the case in this example) the Linux schedule
 usually rather quickly distribute the threads across the cores and keep them pinned. Yet
 there are cases where ``OMP_PROC_BIND=true`` turns out to be beneficial for performance.
 
+.. _job_type_mpi:
 
 MPI program
 -----------
@@ -258,6 +259,9 @@ The following lines automate the launch of the three jobs:
     first=$(sbatch --parsable --job-name job_leader job_first.slurm)
     perturbation_size='0.05' sbatch --job-name job_pert_0_05 --dependency=afterok:$first job_depend.slurm
     perturbation_size='0.1'  sbatch --job-name job_pert_0_1  --dependency=afterok:$first job_depend.slurm
+
+
+.. _job_type_interactive:
 
 Interactive job
 ---------------
