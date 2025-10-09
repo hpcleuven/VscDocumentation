@@ -36,6 +36,12 @@ more information on the following pages:
 - :ref:`Slurm jobs (advanced) <job advanced>`
 - :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
 
+.. note::
+
+   The examples given on this page only serve as illustrations.
+   We expect that you adapt the number of nodes, cores, memory, walltime, ...
+   depending on what your compute task requires.
+
 
 .. _submit_genius_batch:
 

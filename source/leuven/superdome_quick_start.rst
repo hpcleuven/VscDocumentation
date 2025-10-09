@@ -11,6 +11,13 @@ As Superdome is part of the Genius cluster, please also see the
 :ref:`Tier-2 access page<tier2_login_nodes>` for general information
 on how to access Genius.
 
+.. note::
+
+   The examples given on this page only serve as illustrations.
+   We expect that you adapt the number of nodes, cores, memory, walltime, ...
+   depending on what your compute task requires.
+
+
 How to run a job on Superdome?
 ------------------------------
 

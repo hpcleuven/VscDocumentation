@@ -57,6 +57,12 @@ For information about compute credit accounts, see
 :ref:`Leuven accounting <accounting_leuven>` and
 :ref:`KU Leuven credits <KU Leuven credits>` pages.
 
+.. note::
+
+   The examples given on this page only serve as illustrations.
+   We expect that you adapt the number of nodes, cores, memory, walltime, ...
+   depending on what your compute task requires.
+
 
 .. _submit to wice compute node:
 
