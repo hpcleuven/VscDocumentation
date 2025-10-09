@@ -306,3 +306,15 @@ Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
 Slurm also offers options like ``--cpus-per-gpu`` and ``--mem-per-gpu``.
 When using these options, make sure that the requested CPU cores
 and CPU memory per GPU does not exceed the limits mentioned in the table above.
+
+
+.. _leuven_join_job:
+
+Joining a job
+-------------
+For debugging purposes it can sometimes be useful to connect to one of the
+compute nodes allocated to your job (for example to inspect its processes
+using GDB). In such cases we recommend to 'join' the job as follows::
+
+   $ srun -M <cluster> -j <jobid> --overlap --pty bash -l
+
