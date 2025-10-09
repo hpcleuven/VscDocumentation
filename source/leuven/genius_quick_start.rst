@@ -80,16 +80,6 @@ you may submit your job like this::
    If you do not specify the number of tasks and cores per task for your job,
    then it will default to a single task running on a single core.
 
-.. note::
-
-   Each partition also has a default amount of memory that is provided for
-   every allocated core. For e.g. the `batch` partition, this is 5000 MB,
-   which corresponds to the ``--mem-per-cpu=5000M`` Slurm option.
-   You may choose higher values if your application requires more memory
-   than what is provided by default. When doing so, keep in mind that e.g.
-   specifying ``--mem-per-cpu=10G`` will be interpreted as a request for
-   10240 MB and not 10000 MB.
-
 
 Advanced node usage
 ^^^^^^^^^^^^^^^^^^^

@@ -41,6 +41,8 @@ Please contact your VSC coordinator/contact or your :ref:`local support staff
 <Contact VSC>`.
 
 
+.. _leuven_job_cost_calculation:
+
 Job cost calculation
 ~~~~~~~~~~~~~~~~~~~~
 
