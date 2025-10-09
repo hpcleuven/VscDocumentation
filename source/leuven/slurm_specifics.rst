@@ -131,6 +131,38 @@ environment as well. To e.g. pass an additional environment variable ``FOO``
 with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
 
 
+.. _leuven_job_limits:
+
+Job limits
+----------
+We set limits to the number of concurrent jobs that a user can have
+(in any active state, i.e. pending plus running). If you reach this limit,
+you will not be able to submit additional jobs. There may also be limits to the
+total sum of resources that your running jobs can occupy. Slurm will not let
+any of your pending jobs start if that would cause this limit to be exceeded.
+
+These two limits have different values depending on which partitions are
+involved, through so-called partition QoSs:
+
+.. list-table:: Partitions and their QoS
+   :widths: 10 10
+
+   * - Partitions
+     - Partition QoS
+   * - ``*_debug``
+     - ``debug``
+   * - ``interactive``
+     - ``interactive``
+   * - ``*_long``
+     - ``long``
+   * - other partitions (e.g. ``batch``)
+     - ``normal``
+
+With the following command you can find out what those limits are::
+
+   $ sacctmgr show qos debug,interactive,long,normal format=Name%20,MaxSubmitJobsPerUser%15,MaxTRESPerUser%30
+
+
 .. _leuven_slurm_mpi:
 
 MPI applications
