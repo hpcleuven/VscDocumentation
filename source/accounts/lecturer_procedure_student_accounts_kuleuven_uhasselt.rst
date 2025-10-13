@@ -9,7 +9,7 @@ take the following actions:
 
 #. Submit a request to
    `hpcinfo@.kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
-   at least 2 weeks before the beginning of the course.
+   at least 2 weeks before the course needs to make use of the HPC resources.
    Please provide a short description of the course, and explain why the HPC
    facilities are necessary for teaching the course. It is mandatory to provide a list
    of students with their full names, KU Leuven/UHasselt email addresses, and their student number.
