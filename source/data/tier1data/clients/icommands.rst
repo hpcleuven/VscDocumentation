@@ -121,6 +121,17 @@ and log in. Click on ‘How to connect’ next to your zone, copy the code
 under ‘iCommands for Linux’ and paste it into your terminal. This should
 authenticate your for 168 hours.
 
+Alternatively, you can use one of the following commands to log in: 
+
+- On HPC clusters of the KU Leuven, use the command ``irods-setup --zone <zone> | bash``.  
+  This command can also be used at the beginning of your job script to authenticate.
+  This is especially recommended for long running jobs, since if they spend a lot of time in the queue and a long time running, this may exceed the standard 7 day authentication.  
+
+- On other HPC clusters in Flanders, you can log in with ``ssh login.hpc.kuleuven.be irods-setup --zone <zone> | bash``.  
+  This command can currently not be included in job scripts, since it requires interaction from the user.  
+
+For most users, the ``<zone>`` will be the default zone 'vsc'.
+
 ************
 Getting help
 ************
