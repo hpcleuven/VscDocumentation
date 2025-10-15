@@ -14,7 +14,6 @@ The current plan is to retire the following hardware:
 - all Cascadelake CPU nodes (`batch*` partitions)
 - all V100 GPU nodes (`gpu_v100*` partitions)
 - all Skylake CPU nodes (`interactive` and `bigmem*` partitions)
-- all Naples CPU nodes (`amd*` partitions)
 - all nodes in the `dedicated*` partitions
 - Superdome (`superdome*` partitions)
 

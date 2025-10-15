@@ -153,9 +153,9 @@ of the available versions of the ``CP2K`` module by executing:
     You will need to load all module(s) on any one of the lines below before
     the "CP2K/8.2-intel-2021a" module is available to load
 
-      cluster/genius/amd
-      cluster/genius/amd_long
       cluster/genius/batch
+      cluster/genius/batch_debug
+      cluster/genius/batch_long
       ...
       cluster/wice/batch
       ...
