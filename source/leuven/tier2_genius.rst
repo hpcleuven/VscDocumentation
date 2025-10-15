@@ -8,3 +8,4 @@ Tier-2 Genius
 
    tier2_hardware/genius_hardware
    genius_quick_start
+   genius_decommissioning

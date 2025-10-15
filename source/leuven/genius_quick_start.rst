@@ -7,6 +7,12 @@ besides :ref:`wICE <wice hardware>`.
 Given the architectural diversity of compute nodes on Genius, this cluster is suited
 for most HPC workloads.
 
+
+.. note::
+
+   Most of Genius will be :ref:`decommissioned <genius_decommissioning>`
+   in early 2026.
+
 Access to the cluster
 ---------------------
 
