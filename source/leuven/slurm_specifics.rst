@@ -222,7 +222,7 @@ plugin for our Slurm job scheduler:
    $ sbatch --help
    ...
    Options provided by plugins:
-   
+
          --gpu_cmode=<shared|exclusive|prohibited>
                                  Set the GPU compute mode on the allocated GPUs to
                                  shared, exclusive or prohibited. Default is

@@ -7,6 +7,12 @@ besides :ref:`wICE <wice hardware>`.
 Given the architectural diversity of compute nodes on Genius, this cluster is suited
 for most HPC workloads.
 
+
+.. note::
+
+   Most of Genius will be :ref:`decommissioned <genius_decommissioning>`
+   in early 2026.
+
 Access to the cluster
 ---------------------
 
@@ -182,19 +188,6 @@ for example::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=36 \
             --mem-per-cpu=20000M --partition=bigmem myjobscript.slurm
-
-
-.. _submit_genius_amd:
-
-Submitting to an AMD node
-~~~~~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are accessible via the ``amd`` and ``amd_long`` partitions.
-Besides specifying the partition, it is also important to note that the default memory
-per core in this partition is 3800 MB, and each node contains 64 cores.
-For example, to request two full nodes::
-
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=64 \
-            --partition=amd myjobscript.slurm
 
 
 .. _submit_genius_debug:
