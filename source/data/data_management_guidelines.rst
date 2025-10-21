@@ -88,6 +88,10 @@ We recommend to gather your research team to draw the outlines of the DMP. Espec
 - at least some of the researchers using the HPC: they understand the day-to-day needs on the cluster
 - data support staff: for their technical expertise
 
+In case you collaborate with other VSC users and would like to share some files and folders
+with your team, you need to make extra changes in the group ownership and permissions.
+This is only possible using VSC groups; for more information please refer to 
+:ref:`sharing files and folders with other VSC users <sharing_via_vsc_groups>`.
 
 Structuring your files and directories
 ======================================
