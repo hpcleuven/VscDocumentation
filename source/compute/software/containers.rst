@@ -239,8 +239,8 @@ Once you have an image, there are several options to run the container.
       $ apptainer exec grace.sif xmgrace
 
 #. If the ``xmgrace`` command is executed in the Apptainer ``runscript`` (as
-   can be specified in the ``%runscript`` directive of Apptainer definition
-   file), you can run the container as follows:
+   specified in the ``%runscript`` directive of the :ref:`Apptainer definition
+   file <apptainer_definition_files>`), you can run the container as follows:
 
    .. code-block:: bash
 
