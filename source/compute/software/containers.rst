@@ -50,31 +50,49 @@ cloud or on the VSC infrastructure.
 Building on VSC infrastructure
 ------------------------------
 
-Given that most build procedures require superuser privileges, your options
-on the VSC infrastructure are limited.  You can build an image from a Docker
-container, e.g., to build an image that contains a version of TensorFlow 
-and has Jupyter as well, use::
+Before starting, let's first set environment variables for the Apptainer cache
+and temporary directories:
+
+.. code-block:: bash
 
    $ export APPTAINER_TMPDIR=$VSC_SCRATCH/apptainer_tmp
    $ mkdir -p $APPTAINER_TMPDIR
    $ export APPTAINER_CACHEDIR=$VSC_SCRATCH/apptainer_cache
    $ mkdir -p $APPTAINER_CACHEDIR
-   $ apptainer build tensorflow.sif docker://tensorflow/tensorflow:latest-jupyter
 
 .. warning::
 
    Don't forget to define and create the ``$APPTAINER_TMPDIR`` and
    ``$APPTAINER_CACHEDIR`` since if you fail to do so, Apptainer
    will use directories in your home directory, and you will exceed
-   the quota on that file system.
+   the quota on that file system. It’s recommended to add this to your
+   ``~/.bashrc``.
 
    Also, images tend to be very large, so store them in a directory
    where you have sufficient quota, e.g., ``$VSC_DATA``.
 
+You can build an immutable SIF image from a Docker container. For example, to
+build an image that contains a version of TensorFlow and has Jupyter as well,
+use:
 
-This approach will serve you well if you can use either prebuilt images
-or Docker containers.  If you need to modify an existing image or
-container, you should consider the alternatives.
+.. code-block:: bash
+
+   $ apptainer build tensorflow.sif docker://tensorflow/tensorflow:latest-jupyter
+
+If you need to modify an existing image or container, we recommend building it
+from a definition file, which allows you to completely customize your image in a
+reproducible way.  We provide a brief :ref:`introduction to Apptainer definition
+files <apptainer_definition_files>`, but for more details, we refer you to the
+documentation on `Apptainer Definition Files`_.
+
+When you have a Apptainer definition file, e.g., ``my_image.def``, you can build
+your image file ``my_image.sif``. While users don’t have root priviliges on VSC
+infrastructure, you can use the ``--fakeroot`` option to build your container as
+a normal user with the effect of building as root:
+
+.. code-block:: bash
+
+   $ apptainer build --fakeroot my_image.sif my_image.def
 
 .. note::
 
@@ -85,22 +103,12 @@ container, you should consider the alternatives.
 Local builds
 ------------
 
-The most convenient way to create an image is on your own machine, since
-you will have superuser privileges, and hence the most options to chose
-from.  At this point, Apptainer only runs under Linux, so you would
-have to use a virtual machine when using Windows or macOS.  For detailed
-instructions, see the `Apptainer Quick Start`_ guide.
-
-Besides building images from Docker containers, you have the option to
-create them from a definition file, which allows you to completely customize
-your image.  We provide a brief :ref:`introduction to Apptainer definition files
-<apptainer_definition_files>`, but for more details, we refer you to the
-documentation on `Apptainer Definition Files`_.
-
-When you have a Apptainer definition file, e.g., ``my_image.def``, you can
-build your image file ``my_image.sif``::
-
-   your_machine> apptainer build my_image.sif my_image.def
+If the ``--fakeroot`` build option fails because of certain `known limitations
+<https://apptainer.org/docs/user/latest/fakeroot.html#restrictions-security>`_,
+you can instead build the image on a local machine where you have superuser
+privileges.  Apptainer only runs under Linux, so you’ll have to use a virtual
+machine when using Windows or macOS.  For detailed instructions, see the
+`Apptainer Quick Start`_ guide.
 
 Once your image is built, you can :ref:`transfer <data transfer>`
 it to the VSC infrastructure to use it.
@@ -115,12 +123,14 @@ it to the VSC infrastructure to use it.
 Remote builds
 -------------
 
-You can build images on the Apptainer website, and download
-them to the VSC infrastructure.  You will have to create an account
-at Sylabs.  Once this is done, you can use `Sylabs Remote Builder`_
-to create an image based on an `Apptainer definition file
-<apptainer_definition_files>`.  If the build succeeds, you can
-pull the resulting image from the library::
+You can build images on the Sylabs cloud website, and download them to the VSC
+infrastructure. You will have to create an account at Sylabs.  Once this is
+done, you can use `Sylabs Remote Builder`_ to create an image based on an
+`Apptainer definition file <apptainer_definition_files>`.  This service uses
+SingularityCE, an fork of Apptainer that is highly compatible with Apptainer. If
+the build succeeds, you can pull the resulting image from the library:
+
+.. code-block:: bash
 
    $ export APPTAINER_CACHEDIR=$VSC_SCRATCH/apptainer_cache
    $ mkdir -p $APPTAINER_CACHEDIR
@@ -161,7 +171,7 @@ Below is an example of a Apptainer definition file::
        apt-get install -y grace
                
    %runscript
-       /usr/bin/grace
+       /usr/bin/xmgrace
 
 The resulting image will be based on the Ubuntu Xenial Xerus distribution
 (16.04).  Once it is bootstrapped, the command in the ``%post`` section of
@@ -222,18 +232,25 @@ How can I run a Apptainer image?
 Once you have an image, there are several options to run the container.
 
 #. You can invoke any application that is in the ``$PATH`` of the
-   container, e.g., for the image containing Grace::
+   container, e.g., for the image containing Grace:
 
-   $ apptainer  exec  grace.sif  xmgrace
+   .. code-block:: bash
 
-#. In case the definition file specified a ``%runscript`` directive,
-   this can be executed using::
+      $ apptainer exec grace.sif xmgrace
 
-   $ apptainer  run  grace.sif
+#. If the ``xmgrace`` command is executed in the Apptainer ``runscript`` (as
+   can be specified in the ``%runscript`` directive of Apptainer definition
+   file), you can run the container as follows:
 
-#. The container can be run as a shell::
+   .. code-block:: bash
 
-   $ apptainer  shell  grace.sif
+      $ apptainer run grace.sif
+
+#. You can also run an interactive shell inside the container:
+
+   .. code-block:: bash
+
+      $ apptainer shell grace.sif
 
 By default, your home directory in the container will be mounted
 with the same path as it has on the host.  The current working
@@ -250,9 +267,11 @@ invoked ``apptainer``.
 Additional host directories can be mounted in the container as well by
 using the ``-B`` option.  Mount points are created dynamically (using
 overlays), so they do not have to exist in the image.  For example,
-to mount the ``$VSC_SCRATCH`` directory, you would use::
+to mount the ``$VSC_SCRATCH`` directory, you would use:
 
-   $ apptainer  exec  -B $VSC_SCRATCH:/scratch  grace.sif  xmgrace
+.. code-block:: bash
+
+   $ apptainer exec -B $VSC_SCRATCH:/scratch grace.sif xmgrace
 
 Your ``$VSC_SCRATCH`` directory is now accessible from within the
 image in the directory ``/scratch``.
@@ -262,13 +281,17 @@ image in the directory ``/scratch``.
    If you want existing scripts to work from within the image without
    having to change paths, it may be convenient to use identical
    mount points in the image and on the host, e.g., for the
-   ``$VSC_DATA`` directory::
+   ``$VSC_DATA`` directory:
 
-      $ apptainer  exec  -B $VSC_DATA:$VSC_DATA  grace.sif  xmgrace
+   .. code-block:: bash
 
-   Or, more concisely::
+      $ apptainer exec -B $VSC_DATA:$VSC_DATA grace.sif xmgrace
 
-      $ apptainer  exec  -B $VSC_DATA  grace.sif  xmgrace
+   Or, more concisely:
+
+   .. code-block:: bash
+
+      $ apptainer exec -B $VSC_DATA grace.sif xmgrace
 
    The host environment variables are defined in the image, hence
    scripts that use those will work.
@@ -278,15 +301,16 @@ Can I use apptainer images in a job?
 ------------------------------------
 
 Yes, you can.  Apptainer images can be part of any workflow, e.g.,
-the following script would create a plot in the Grace container::
+the following script would create a plot in the Grace container:
+
+.. code-block:: bash
 
    #!/bin/bash -l
    #PBS -l nodes=1:ppn=1
    #PBS -l walltime=00:30:00
    
    cd $PBS_O_WORKDIR
-   apptainer exec grace.sif gracebat -data data.dat \
-                                       -batch plot.bat
+   apptainer exec grace.sif gracebat -data data.dat -batch plot.bat
    
 Ensure that the container has access to all the required directories
 by providing additional bindings if necessary.
