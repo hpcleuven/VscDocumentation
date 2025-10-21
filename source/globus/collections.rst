@@ -59,6 +59,10 @@ The VSC hosts a number of collections:
      - `VSC KU Leuven data directories <https://app.globus.org/file-manager/collections/38948f53-d4f5-4e94-afa5-ad364c7a66b8/overview>`_
      - No
      - Yes
+   * - KU Leuven Tier-2 (archive directories)  
+     - `VSC KU Leuven archive directories <https://app.globus.org/file-manager/collections/64cb7bf2-492b-4489-ab7f-f80c252a7d92/overview>`_
+     - No  
+     - No  
 
 .. Note::
       The collection 'VSC KU Leuven tier2 scratch' also contains the staging directories, under :bgrnd1:`/project`
