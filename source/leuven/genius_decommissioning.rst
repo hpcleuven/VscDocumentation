@@ -12,15 +12,14 @@ at the latest. In December we should be able to set a more specific date.
 The current plan is to retire the following hardware:
 
 - all Cascadelake CPU nodes (`batch*` partitions)
-- all V100 GPU nodes (`gpu_v100*` partitions)
 - all Skylake CPU nodes (`interactive` and `bigmem*` partitions)
 - all nodes in the `dedicated*` partitions
 - Superdome (`superdome*` partitions)
 
-We are currently evaluating whether the P100 GPU nodes (`gpu_p100*` partitions)
-should be kept online for e.g. one more year. If your compute tasks rely on
-these older GPUs because they cannot efficiently use more powerful devices,
-you are welcome to reach out to us at mailto:hpcinfo@kuleuven.be
-(in case you haven't been contacted by us already).
+We are currently evaluating whether the P100 and V100 GPU nodes need to be
+kept online for a longer period (`gpu_p100*` and `gpu_v100*` partitions).
+If your compute tasks rely on these older GPUs because they cannot efficiently
+use more powerful devices, you are welcome to reach out to us at
+mailto:hpcinfo@kuleuven.be (in case you haven't been contacted by us already).
 
 Note that the Tier-2 login nodes will remain in service until the end of 2026.
