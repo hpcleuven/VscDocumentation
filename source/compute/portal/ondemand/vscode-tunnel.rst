@@ -9,14 +9,32 @@ involved to connect (although mostly point-and-click and authentication).
 
 VSC clusters that support the VS Code Tunnel app:
 
-.. grid:: 3
-    :gutter: 4
+.. tab-set::
+   :sync-group: vsc-sites
 
-    .. grid-item-card:: |VUB|
-       :columns: 12 4 4 4
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-       * Tier-2 :ref:`Anansi <Anansi cluster>`
-       * Tier-2 :ref:`Hydra <Hydra cluster>`
+      .. grid:: 3
+         :gutter: 4
+
+         .. grid-item-card:: |KUL|
+            :columns: 12 4 4 4
+
+            * Tier-2 :ref:`Genius <Genius hardware>`
+            * Tier-2 :ref:`wICE <wICE hardware>`
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      .. grid:: 3
+         :gutter: 4
+
+         .. grid-item-card:: |VUB|
+            :columns: 12 4 4 4
+
+            * Tier-2 :ref:`Anansi <Anansi cluster>`
+            * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 How to connect
 --------------
@@ -68,6 +86,8 @@ To connect to the VS Code tunnel, follow these steps:
      form.
    - To close the remote connection, click again the blue button in the bottom
      left, and select 'Close Remote Connection' in the command palette.
+   - VSCode SSH Tunnel also  allows users to select 'GitHub Account', but we
+     do recommend using 'Microsoft' login.
 
 Usage
 -----
