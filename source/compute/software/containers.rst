@@ -161,28 +161,27 @@ some interactive setup is required.
 Apptainer definition files
 ==========================
 
-Below is an example of a Apptainer definition file::
+Below is a minimal example of an Apptainer definition file::
 
    Bootstrap: docker
-   From: ubuntu:xenial
-   
+   From: ubuntu:22.04
+
    %post
        apt-get update
        apt-get install -y grace
-               
+
    %runscript
        /usr/bin/xmgrace
 
-The resulting image will be based on the Ubuntu Xenial Xerus distribution
-(16.04).  Once it is bootstrapped, the command in the ``%post`` section of
-the definition file will be executed.  For this example, the Grace plotting
-package will be installed.
+The resulting image will be based on Ubuntu 22.04.  Once it is bootstrapped,
+the command in the ``%post`` section of the definition file will be executed.
+For this example, the Grace plotting package will be installed.
 
 .. note::
 
-   This example is intended to illustrate that very old software that
-   is no longer maintained can successfully be run on modern infrastructure.
-   It is by no means intended to encourage you to start using Grace.
+   This example is intended to illustrate that very old software that is no
+   longer maintained can successfully be run on modern infrastructure.  It is
+   not intended to encourage you to use Grace in this container.
 
 Apptainer definition files are very flexible. For more details,
 we refer you to the documentation on `Apptainer Definition Files`_.
