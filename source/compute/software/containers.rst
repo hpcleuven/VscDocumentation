@@ -126,8 +126,8 @@ Remote builds
 You can build images on the Sylabs cloud website, and download them to the VSC
 infrastructure. You will have to create an account at Sylabs.  Once this is
 done, you can use `Sylabs Remote Builder`_ to create an image based on an
-`Apptainer definition file <apptainer_definition_files>`.  This service uses
-SingularityCE, an fork of Apptainer that is highly compatible with Apptainer. If
+:ref:`Apptainer definition file <apptainer_definition_files>`.  This service uses
+SingularityCE, a fork of Apptainer that is highly compatible with Apptainer. If
 the build succeeds, you can pull the resulting image from the library:
 
 .. code-block:: bash
