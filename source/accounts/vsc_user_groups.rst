@@ -136,7 +136,7 @@ Sharing files and folders with other VSC users
 VSC users can share files/folders with other VSC users via `VSC groups <vsc_groups>`.
 This applies to any file and folder stored in the `VSC storage locations <data location>`.
 Imagine a VSC user who wants to share his post-processed data stored below the
-``$VSC_DATA/results/post-processed`` folder with another VSC user(s).
+``$VSC_DATA/collab/post-processed`` folder with another VSC user(s).
 Then, these are the steps to take:
 
 - Create a `new VSC group <create groups>` (if existing groups do not serve your purpose).
@@ -147,19 +147,19 @@ Then, these are the steps to take:
   ::
 
      chgrp lp_shared_data $VSC_DATA
-     chgrp lp_shared_data $VSC_DATA/results
+     chgrp lp_shared_data $VSC_DATA/collab
      # change group name recursively below the top hierarchy you want to share
-     chgrp -R lp_shared_data $VSC_DATA/results/post-processed
+     chgrp -R lp_shared_data $VSC_DATA/collab/post-processed
 
 - Make sure that the shared directories in this hirarchy have read ``r`` and execute ``x`` 
   access bits recursively, and at least read access for all files:
 
   ::
 
-     chmod -R g+r $VSC_DATA/results/post-processed
+     chmod -R g+r $VSC_DATA/collab/post-processed
      chmod g+x $VSC_DATA
-     chmod g+x $VSC_DATA/results
-     find $VSC_DATA/results/post-processed -type d -exec chmod g+x {} +
+     chmod g+x $VSC_DATA/collab
+     find $VSC_DATA/collab/post-processed -type d -exec chmod g+x {} +
 
 - Depending on the internal agreement within the collaborating team, you may choose to additionally
   allow the group members to add/remove files to/from the shared hierarchy. If so, the group
@@ -167,4 +167,16 @@ Then, these are the steps to take:
 
   ::
 
-     chmod -R g+w $VSC_DATA/results/post-processed
+     chmod -R g+w $VSC_DATA/collab/post-processed
+
+- If the collaborators are expected to overwrite the existing files and/or add new files/folders
+  inside the shared hierarchy, you can also set the setgid bit mentioned above on the ``post-processed``
+  folder:
+
+  ::
+
+     chmod -R g+s $VSC_DATA/collab/post-processed
+
+- When communicating the path to the shared data with your collaborators, make sure you provide the
+  full path where environment variables such as ``$VSC_DATA`` are expanded to their values, such as
+  ``/data/leuven/3xx/vsc3xxxx``.
