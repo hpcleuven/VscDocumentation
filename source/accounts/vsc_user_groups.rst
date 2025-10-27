@@ -33,7 +33,8 @@ organise themselves. Each VSC group has members and moderators:
    -  When you create a new group, you become both the first member and
       the moderator of that group.
 
-.. warn::
+.. warning::
+
    You should not exaggerate in creating new groups. Mounting
    file systems over NFS doesn't work properly if you belong to more than
    32 different groups, and so far we have not found a solution. This
