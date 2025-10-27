@@ -134,6 +134,7 @@ Sharing files and folders with other VSC users
 ----------------------------------------------
 
 VSC users can share files/folders with other VSC users via `VSC groups <vsc_groups>`.
+This applies to any file and folder stored in the `VSC storage locations <data location>`.
 Imagine a VSC user who wants to share his post-processed data stored below the
 ``$VSC_DATA/results/post-processed`` folder with another VSC user(s).
 Then, these are the steps to take:
