@@ -4,11 +4,24 @@
 Rocky 9 migration
 =================
 
-The KU Leuven Tier-2 cluster wICE will migrate to Rocky 9.6 as the operating system.
-Important differences at the system level are listed below.
+.. note::
+
+   The wICE OS update to Rocky 9 was originally planned for November 2025.
+   We have however decided to postpone it until the performance issues with
+   Intel Turbo Boost have been resolved (see the bottom of this page).
+
+   Once we are confident that these performance issues can be resolved,
+   we will plan a new (short) test phase.
+
+   In the meantime, nodes where Rocky 9 has been deployed for testing purposes
+   will be gradually reverted to Rocky 8. The associated ``rocky9_pilot``
+   Slurm reservation will eventually be removed.
+
+We plan to update the KU Leuven Tier-2 cluster wICE to Rocky Linux 9 as the
+operating system. Important differences at the system level are listed below.
 
 +-------------+------------------+---------------------+
-| Packages    |  Rocky Linux 8   | Rocky Linux 9       |
+| Packages    | Rocky Linux 8    | Rocky Linux 9       |
 +=============+==================+=====================+
 | kernel      | 4.18.0-553.58.1  | 5.14.0-570.42.2     |
 +-------------+------------------+---------------------+
@@ -19,57 +32,22 @@ Important differences at the system level are listed below.
 | glibc       | 2.28             | 2.34                |
 +-------------+------------------+---------------------+
 
-Centrally installed modules have already been made available for Rocky 9, starting from toolchain 2021a.
+Centrally installed modules have already been made available for Rocky 9,
+starting from toolchain 2021a.
 
 .. _timing:
 
 Timing
 ------
 
-The wICE nodes will be migrated to the new OS in November 2025. We foresee a test period for all users until the end of October.
-The Genius cluster will be decommissioned with the arrival of a new Tier-2 cluster at the end of the year. Genius will not be migrated to Rocky 9 anymore.
-The new Tier-2 cluster will be launched with Rocky 9.
-
-Please use the test period to try out the new OS before the actual migration
-in order to avoid interrupting your workflow.
-
-.. note::
-
-   Be aware that toolchains older than 2021a will no longer be available after Genius has been decommissioned.
-
-As always you can contact hpcinfo@kuleuven.be in case you have questions or remarks.
+(To be decided)
 
 .. _how to test:
 
 How to test
 -----------
 
-We have reserved several nodes of the ``batch``, ``batch_sapphirerapids``,
-``gpu_a100`` and ``gpu_h100`` partitions for testing purposes.
-To send jobs to these test nodes with Rocky 9, simply submit your job
-with the **--reservation=rocky9_pilot** option, for example::
-
-   $ sbatch --reservation=rocky9_pilot myjobscript.slurm
-
-+-----------------------+-------------------+-----------------+
-+ Partition             + CPU/GPU type      + Number of nodes +
-+=======================+===================+=================+
-+ batch,batch_icelake   + IceLake           +              12 +
-+-----------------------+-------------------+-----------------+
-+ batch_sapphirerapids  + Sapphire Rapids   +              12 +
-+-----------------------+-------------------+-----------------+
-+ gpu_a100              + IceLake / A100    +               1 +
-+-----------------------+-------------------+-----------------+
-+ gpu_h100              + Genoa / H100      +               1 +
-+-----------------------+-------------------+-----------------+
-
-As the pilot phase continues we may add more nodes to this reservation.
-The following query can be used to look up the currently reserved nodes::
-
-   $ scontrol -M wice show reservation rocky9_pilot --json | jq ".reservations[0].node_list"
-
-If you are not a ``vsc3*`` user and also want to test, please ask the
-helpdesk to add you to the reservation.
+(To be revisited)
 
 .. _expected impact:
 
