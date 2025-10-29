@@ -7,12 +7,6 @@ Toward the end of 2025 a new cluster will be added to the KU Leuven/UHasselt's T
 In line with wICE it will feature thin nodes, large memory nodes, interactive nodes and GPU nodes.
 The cluster will be operational in Q1 2026.
 
-.. note::
-
-   The new compute nodes will run on Rocky Linux 9. 
-   Note that also wICE :ref:`will migrate to this OS <wice_t2_leuven_rocky9>` in November. 
-   Use the reservation as described to prepare for this.
-
 Hardware details
 ----------------
 
