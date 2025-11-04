@@ -135,6 +135,8 @@ Sharing files and folders with other VSC users
 
 VSC users can share files/folders with other VSC users via `VSC groups <vsc_groups>`.
 This applies to any file and folder stored in the `VSC storage locations <data location>`.
+However, we discourage using your home directory for such purposes.
+
 Imagine a VSC user who wants to share his post-processed data stored below the
 ``$VSC_DATA/collab/post-processed`` folder with another VSC user(s).
 Then, these are the steps to take:
@@ -176,6 +178,9 @@ Then, these are the steps to take:
   ::
 
      chmod -R g+s $VSC_DATA/collab/post-processed
+
+  This has the added value that your new files and folders will also inherit the group name from
+  the parent directory.
 
 - When communicating the path to the shared data with your collaborators, make sure you provide the
   full path where environment variables such as ``$VSC_DATA`` are expanded to their values, such as
