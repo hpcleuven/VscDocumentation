@@ -153,8 +153,8 @@ Then, these are the steps to take:
      # change group name recursively below the top hierarchy you want to share
      chgrp -R lp_shared_data $VSC_DATA/collab/post-processed
 
-- Make sure that the shared directories in this hirarchy have read ``r`` and execute ``x`` 
-  access bits recursively, and at least read access for all files:
+- Make sure that the shared directories in this hierarchy have read ``r`` and execute ``x`` 
+  permissions for the group recursively, and at least read access for all files:
 
   ::
 
