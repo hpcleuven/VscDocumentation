@@ -18,6 +18,8 @@ VSC clusters that support the VS Code Tunnel app:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
+.. include:: vscode-warning-extensions.rst
+
 How to connect
 --------------
 
