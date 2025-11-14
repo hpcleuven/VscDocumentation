@@ -18,6 +18,10 @@ Who can use MATLAB
       :ref:`KU Leuven supprt team<user support VSC>` for an invitation, or
       :ref:`request joining this group<join groups>` via your VSC account page.
 
+      If you have joined the license group but MATLAB still does not show up
+      in the available apps, try clicking on ``Help`` on the top right side
+      and select ``Restart Web Server``.
+
    .. tab-item:: VUB
       :sync: vub
 
