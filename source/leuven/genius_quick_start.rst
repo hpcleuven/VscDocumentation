@@ -157,26 +157,18 @@ The GPU nodes are accessible via the following partitions:
 Similar to the other nodes, the GPU nodes can be shared by different jobs from
 different users.
 However, every user will have exclusive access to the number of GPUs requested.
-If you want to use only 1 GPU of type P100 you can submit for example like this::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 \
-            --gpus-per-node=1 --partition=gpu_p100 myjobscript.slurm
+If you e.g. want to get one P100 GPU and two CPU cores::
 
-Note that in case of 1 GPU you have to request 9 cores.
-In case you need more GPUs you have to multiply the 9 cores with the number of GPUs
-requested, so in case of for example 3 GPUs you will have to specify this::
+   $ sbatch --account=lp_myproject --clusters=genius --partition=gpu_p100 \
+            --nodes=1 --ntasks=2 --gpus-per-node=1 myjobscript.slurm
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=27 \
-            --gpus-per-node=3 -p gpu_p100 myjobscript.slurm
+For a V100 GPU, select the `gpu_v100` partition instead. Note that these nodes
+also offer :ref:`a much larger amount of CPU memory <Genius hardware>`.
 
-To specifically request V100 GPUs, you can submit for example like this::
-
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=4 \
-            --gpus-per-node=1 --mem-per-cpu=20000M --partition=gpu_v100 myjobscript.slurm
-
-For the V100 type of GPU, it is required that you request 4 cores for each GPU.
-Also notice that these nodes offer a much larger amount of CPU memory.
-
+You are free to request more GPU devices and/or CPU cores if needed,
+but take note of the :ref:`limits on CPU resources per allocated GPU
+<cpu_resource_limits_in_gpu_jobs>`).
 
 .. _submit_genius_bigmem:
 

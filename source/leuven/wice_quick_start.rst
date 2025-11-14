@@ -147,29 +147,27 @@ The nodes with A100 GPUs are located in the ``gpu_a100`` partition (the
 node types, the GPU nodes can be shared by different jobs from different users
 but each job has exclusive access to its allocated cores and GPU(s).
 
-If you e.g. need one A100 GPU::
+If you e.g. need one A100 GPU and two CPU cores::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=1 --ntasks=18 --gpus-per-node=1 myjobscript.slurm
+            --nodes=1 --ntasks=2 --gpus-per-node=1 myjobscript.slurm
 
-We recommend to request 18 cores for every GPU, so an example for 3 GPUs
-would look like this::
-
-   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=1 --ntasks=54 --gpus-per-node=3 myjobscript.slurm
+You are free to request more GPU devices and/or CPU cores if needed,
+but take note of the :ref:`limits on CPU resources per allocated GPU
+<cpu_resource_limits_in_gpu_jobs>`).
 
 There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
 per node) which you can select via the ``gpu_h100`` partition, e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_h100 \
-            --nodes=1 --ntasks=16 --gpus-per-node=1 myjobscript.slurm
+            --nodes=1 --gpus-per-node=1 myjobscript.slurm
 
 For easier development and testing with a full GPU, also a ``gpu_a100_debug``
 partition is available which accepts jobs with walltimes up to 1 hour,
 e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100_debug \
-            --nodes=1 --ntasks=64 --gpus-per-node=1 --time=00:10:00 \
+            --nodes=1 --gpus-per-node=1 --time=00:10:00 \
             myjobscript.slurm
 
 The node in this partition is of the same type as those in the ``interactive``
