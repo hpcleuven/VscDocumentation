@@ -1,6 +1,6 @@
 .. _breniac hardware:
 
-Breniac infrastructure
+BrENIAC infrastructure
 ======================
 
 .. toctree::
@@ -35,45 +35,20 @@ Hardware details
 The nodes were connected using an Infiniband EDR network.
 
 .. figure:: breniac_hardware/breniac.png
-   :alt: Breniac hardware diagram
+   :alt: BrENIAC hardware diagram
 
-Breniac storage
+BrENIAC storage
 ---------------
 
-Your ``$VSC_HOME`` and ``$VSC_DATA`` directory are mounted on the Breniac
-login and compute nodes.  See your VSC institute's information on local
-storage about policies and quota.
-
-.. note::
-
-   ``$VSC_HOME`` and ``$VSC_DATA`` are mounted using NFS, so they can not
-   be used for parallel I/O.  If your software benefits from using a
-   parallel file system, please use ``$VSC_SCRATCH``.
-
+Aside from VSC_HOME and VSC_DATA, the following storage locations
+were available on this cluster:
 
 +--------------------------+--------+----------+--------+----------------+
 |Variable                  | Type   |  Access  |Backup  | Default quota  |
 +==========================+========+==========+========+================+
-|$VSC_SCRATCH              | GPFS   |  breniac |NO      | 1 TB           |
+|$VSC_SCRATCH              | GPFS   |  BrENIAC |NO      | 1 TB           |
 |$VSC_SCRATCH_SITE         |        |          |        |                |
 +--------------------------+--------+----------+--------+----------------+
-|$VSC_SCRATCH_NODE         | ext4   | breniac, |NO      | 75 GB          |
+|$VSC_SCRATCH_NODE         | ext4   | BrENIAC, |NO      | 75 GB          |
 |                          |        | job only |        |                |
 +--------------------------+--------+----------+--------+----------------+
-
-The path names given below should be adapted to reflect your home
-institution and VSC account number.
-
-+--------------------------+------------------------------+
-|Variable                  |Name                          |
-+==========================+==============================+
-|$VSC_HOME                 |/user/leuven/30X/vsc30XYZ     |
-+--------------------------+------------------------------+
-|$VSC_DATA                 |/data/leuven/30X/vsc30XYZ     |
-+--------------------------+------------------------------+
-|$VSC_SCRATCH              |/scratch/leuven/30X/vsc30XYZ  |
-|$VSC_SCRATCH_SITE         |                              |
-+--------------------------+------------------------------+
-|$VSC_SCRATCH_NODE         |/local_scratch                |
-+--------------------------+------------------------------+
-

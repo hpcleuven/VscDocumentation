@@ -217,3 +217,12 @@ Further information on FOSS components
     single: OpenMP
     single: Open MPI
 
+Known issues
+------------
+
+- On some VSC clusters, Open MPI jobs may encounter the following type of
+  error: ``Failed to modify UD QP to INIT on mlx5_0: Operation not permitted``.
+  The MPI program may then either hang or crash altogether. For more
+  information, including possible solutions, please see
+  `the following HPC-UGent documentation page
+  <https://docs.hpc.ugent.be/Linux/known_issues/#openmpi_libfabric_operation_not_permitted>`_.

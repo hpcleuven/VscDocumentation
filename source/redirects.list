@@ -31,7 +31,6 @@ access/messed_up_keys.html /accounts/messed_up_keys.html
 access/mfa_login.html /accounts/mfa_login.html
 access/multiplatform_client_tools.html /compute/terminal/index.html
 access/nx_start_guide.html /compute/terminal/nx_start_guide.html
-access/paraview_remote_visualization.html /compute/software/paraview_remote_visualization.html
 access/scientific_domains.html /accounts/scientific_domains.html
 access/setting_up_a_ssh_proxy.html /accounts/setting_up_a_ssh_proxy.html
 access/setting_up_a_ssh_proxy_with_putty.html /compute/terminal/putty_ssh_proxy.html
@@ -100,7 +99,6 @@ leuven/tier1_breniac.html /leuven/old_hardware/breniac/breniac_hardware.html
 software/eclipse_with_ptp_and_version_control.html /compute/software/eclipse_with_ptp_and_version_control.html
 software/parameterweaver.html /compute/software/parameterweaver.html
 software/perl_package_management.html /compute/software/perl_package_management.html
-software/postprocessing_tools.html /compute/software/postprocessing_tools.html
 software/r_command_line_arguments_in_scripts.html /compute/software/r_command_line_arguments_in_scripts.html
 software/r_integrating_c_functions.html /compute/software/r_integrating_c_functions.html
 software/specific_eclipse_issues_on_os_x.html /compute/software/specific_eclipse_issues_on_os_x.html

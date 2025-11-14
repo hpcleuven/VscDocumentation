@@ -259,10 +259,11 @@ time in the queue.
 
 Typically, worker will be effective when
 
--  work items, i.e., individual computations, are neither too short,
-   nor too long (i.e., from a few minutes to a few hours); and,
--  when the number of work items is larger than the number of cores
-   involved in the job (e.g., more than 30 for 8 cores).
+- work items, i.e., individual computations, are :ref:`neither too short,
+  nor too long (i.e., from a few minutes to a few hours)
+  <walltime_per_work_item>`; and,
+- when the number of work items is larger than the number of cores
+  involved in the job (e.g., more than 30 for 8 cores).
 
 Too few work items per core will lead to bad load balance, and hence
 inefficient use of the compute resources.  To analyse the load balance

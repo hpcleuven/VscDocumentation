@@ -87,10 +87,18 @@ MPI API.
 Walltime per work item
 ~~~~~~~~~~~~~~~~~~~~~~
 
-When work items take only a short time to complete, the overhead for starting
-new work items will be considerable for atools since it relies on the scheduler
-to start individual work items.  This is much more efficient for worker since
-all work items are executed by a single job, so the scheduler is not involved.
+For both atools and worker, we emphasize that the average time to complete
+a work item must amount to at least several minutes. If work items take very
+little time, there will be a significant overhead from the atools or worker
+framework itself. For atools in particular this overhead will be considerable
+since it relies on the scheduler to start individual work items.
+
+With both atools and worker, short work items furthermore risk putting a large
+pressure on shared file systems (especially if many processes are active at
+the same time and if modules need to be loaded as part of the workload).
+If small scale tests indicate that many work items take less than 3-4 minutes
+to complete, we strongly strongly recommend that you merge multiple work items
+together into larger ones.
 
 On the other side of the spectrum, i.e., work items that take a very long time 
 complete, atools may be the better choice since work items are executed

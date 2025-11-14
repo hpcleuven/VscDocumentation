@@ -333,5 +333,5 @@ For debugging purposes it can sometimes be useful to connect to one of the
 compute nodes allocated to your job (for example to inspect its processes
 using GDB). In such cases we recommend to 'join' the job as follows::
 
-   $ srun -M <cluster> -j <jobid> --overlap --pty bash -l
+   $ srun -M <cluster> --jobid=<jobid> --overlap --pty bash -l
 
