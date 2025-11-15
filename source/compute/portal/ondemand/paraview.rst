@@ -30,15 +30,18 @@ VSC clusters that support the ParaView app:
       Similar to the :ref:`MATLAB app <ood_matlab>`, ParaView also runs inside a `noVNC`_
       desktop as a compute job.
 
+      .. note::
+
+         Currently, using GPUs in ParaView is not supported yet, and just the CPU-only modules are offered.
+
    .. tab-item:: VUB
       :sync: vub
 
       ParaView runs in a graphical desktop environment, similar to the
       :ref:`Desktop app <ood_desktop>`.
 
+      .. note::
 
-.. note::
-
-   Currently, using GPUs in ParaView is not supported yet, and just the CPU-only modules are offered.
+         Selecting a GPU or GPU shard enables improved graphics performance via hardware acceleration.
 
 .. _noVNC: https://novnc.com/
