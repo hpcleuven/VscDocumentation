@@ -20,7 +20,7 @@ VSC clusters that support the Desktop app:
 
 For improved graphics performance, we recommend the following workflow:
 
-#. Launch the app in the ``Anansi`` cluster and request a GPU or GPU shard.
+#. Launch the app in the ``Anansi`` cluster and request some fraction of GPU.
 #. In the desktop environment, open a terminal window and load the module of
    your graphical software.
 #. Launch the executable with ``vglrun`` to enable hardware acceleration:
