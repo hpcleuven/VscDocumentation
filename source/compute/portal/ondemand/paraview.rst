@@ -42,6 +42,6 @@ VSC clusters that support the ParaView app:
 
       .. note::
 
-         Selecting a GPU or GPU shard enables improved graphics performance via hardware acceleration.
+         Selecting a GPU or fraction of GPU enables improved graphics performance via hardware acceleration.
 
 .. _noVNC: https://novnc.com/
