@@ -18,9 +18,9 @@ VSC clusters that support the Desktop app:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
-For optimal performance, we recommend the following workflow:
+For improved graphics performance, we recommend the following workflow:
 
-#. Launch the app in the ``Anansi`` cluster and request a GPU.
+#. Launch the app in the ``Anansi`` cluster and request some fraction of GPU.
 #. In the desktop environment, open a terminal window and load the module of
    your graphical software.
 #. Launch the executable with ``vglrun`` to enable hardware acceleration:
