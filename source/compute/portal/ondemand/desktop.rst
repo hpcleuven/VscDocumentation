@@ -43,3 +43,11 @@ For improved graphics performance, we recommend the following workflow:
    (Share-able Link)' button to copy the link and share it with others. Any VSC
    user with the link can view your Desktop session in real-time, which is
    especially helpful for job troubleshooting and hands-on training.
+
+.. tip::
+
+   In certain browsers (e.g. Google Chrome), the clipboard in the Desktop app
+   will have the same content as your device, meaning that you can copy-paste
+   text to and from the Desktop as expected. Other browsers, like Firefox,
+   do not currently support this and in that case you will need to transfer
+   text through the clipboard in the panel on the left hand side.
