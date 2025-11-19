@@ -51,3 +51,10 @@ For improved graphics performance, we recommend the following workflow:
    text to and from the Desktop as expected. Other browsers, like Firefox,
    do not currently support this and in that case you will need to transfer
    text through the clipboard in the panel on the left hand side.
+
+.. tip::
+
+   The Applications menu on the top left will offer a number of shortcuts.
+   Note that some may be missing in case you have changed the value of the
+   ``XDG_DATA_HOME`` environment variable in your ``~/.bashrc`` to something
+   other than ``$VSC_HOME/.local/share``.
