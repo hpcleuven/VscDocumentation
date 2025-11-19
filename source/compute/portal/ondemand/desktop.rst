@@ -18,9 +18,16 @@ VSC clusters that support the Desktop app:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius hardware>`
+       * Tier-2 :ref:`wICE <wice hardware>`
+
 For improved graphics performance, we recommend the following workflow:
 
-#. Launch the app in the ``Anansi`` cluster and request some fraction of GPU.
+#. Select the ``Anansi`` cluster (VUB) or the ``interactive`` partition on
+   ``wICE`` (KU Leuven / UHasselt) and request some fraction of a GPU.
 #. In the desktop environment, open a terminal window and load the module of
    your graphical software.
 #. Launch the executable with ``vglrun`` to enable hardware acceleration:
