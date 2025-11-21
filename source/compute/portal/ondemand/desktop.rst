@@ -60,69 +60,82 @@ For improved graphics performance, we recommend the following workflow:
    other than ``$VSC_HOME/.local/share``.
 
 
-Limitations specific to KU Leuven
----------------------------------
+.. _ood_desktop_kuleuven_limitations:
 
-Mainly due to security concerns, the KU Leuven OOD Desktop app is run within
-a minimalistic container. As a result some functionality is deliberately
-missing:
+Limitations
+===========
 
-- Slurm-related commands such as ``squeue``, ``sbatch``, ``srun``, ...
-  and ``sam-balance``, ``sam-statement``, ... are unavailable.
+.. grid:: 3
+    :gutter: 4
 
-- No browser is provided within the Desktop app (see :ref:`the subsection below
-  <ood_desktop_local_browser_tips>` for alternatives).
+    .. grid-item-card:: |KUL|
+        :columns: 12
 
-Some applications are currently unavailable but may be enabled in the future
-(such as ``myquota``, ``apptainer`` and archive managers such as
-``xarchiver``).
+        Mainly due to security concerns, the KU Leuven OOD Desktop app is run
+        within a minimalistic container. As a result some functionality is
+        deliberately missing:
+
+        - Slurm-related commands such as ``squeue``, ``sbatch``, ``srun``, ...
+          and ``sam-balance``, ``sam-statement``, ... are unavailable.
+
+        - No browser is provided within the Desktop app (see alternatives
+          below).
+
+        Some applications are currently unavailable but may be enabled in the
+        future (such as ``myquota``, ``apptainer`` and archive managers such as
+        ``xarchiver``).
+
+        |
+
+        **Using your local browser where needed**
+
+        Certain applications expect that you have a browser at your disposal.
+
+        The more common case is where the application starts a server to which
+        you are expected to connect with a browser (examples: JupyterLab,
+        Streamlit, CryoSparc). To use your local browser for this purpose,
+        you only need to set up a suitable SSH tunnel with for example
+        :ref:`OpenSSH <tunnel OpenSSH>` or :ref:`PuTTY <putty ssh tunnel>`.
+
+        Some applications may produce static HTML files instead (example:
+        LinaroForge). Other than simply transferring these files to your local
+        device, you can also view these by starting a local HTTP server and
+        applying the SSH tunnel approach described in the previous paragraph.
+        An easy way to start such a server is the Python ``http`` module
+        (added in Python 3.5):
+
+        ::
+
+            /usr/bin/python3 -m http.server -b localhost <port>
 
 
-.. _ood_desktop_local_browser_tips:
-
-Using your local browser where needed
-=====================================
-
-Certain applications expect that you have a browser at your disposal.
-
-The more common case is where the application starts a server to which
-you are expected to connect with a browser (examples: JupyterLab,
-Streamlit, CryoSparc). To use your local browser for this purpose,
-you only need to set up a suitable SSH tunnel with for example
-:ref:`OpenSSH <tunnel OpenSSH>` or :ref:`PuTTY <putty ssh tunnel>`.
-
-Some applications may produce static HTML files instead (example: LinaroForge).
-Other than simply transferring these files to your local device, you can also
-view these by starting a local HTTP server and applying the SSH tunnel
-approach described in the previous paragraph. An easy way to start such a
-server is the Python ``http`` module (added in Python 3.5):
-
-::
-
-    /usr/bin/python3 -m http.server -b localhost <port>
-
-
-.. _tips_for_nomachine_users:
+.. _ood_desktop_tips_for_nx_users:
 
 Tips for NoMachine users
 ========================
 
-If you have been using the :ref:`NoMachine <NX start guide>` desktop,
-you may need to do a few things differently when switching to the OnDemand
-Desktop:
+.. grid:: 3
+    :gutter: 4
 
-- For browser-related applications, see :ref:`the subsection above
-  <ood_desktop_local_browser_tips>`. Note that in certain cases this means
-  the :ref:`Interactive Shell <ood_interactive_shell>` app may suffice
-  and you may not need the Desktop app.
+    .. grid-item-card:: |KUL|
+        :columns: 12
 
-- If your graphical application is available as a dedicated Interactive App
-  we recommend using that instead of the Desktop app (examples:
-  :ref:`MATLAB <ood_matlab>`, :ref:`ParaView <ood_paraview>`,
-  :ref:`Fluent <ood_fluent>`).
+        If you have been using the :ref:`NoMachine <NX start guide>` desktop,
+        you may need to do a few things differently when switching to the
+        OnDemand Desktop:
 
-- The standard text editor is ``Mousepad`` (not ``Gedit``).
+        - For browser-related applications, see :ref:`the section above
+          <ood_desktop_kuleuven_limitations>`. Note that in certain cases this
+          means the :ref:`Interactive Shell <ood_interactive_shell>` app may
+          suffice and you may not need the Desktop app.
 
-- As an image viewer you may use the ``display`` command provided by the
-  ``ImageMagick`` modules, but we would rather recommend the viewer
-  that is integrated in the :ref:`File Explorer <ood_files>`.
+        - If your graphical application is available as a dedicated Interactive
+          App we recommend using that instead of the Desktop app (examples:
+          :ref:`MATLAB <ood_matlab>`, :ref:`ParaView <ood_paraview>`,
+          :ref:`Fluent <ood_fluent>`).
+
+        - The standard text editor is ``Mousepad`` (not ``Gedit``).
+
+        - As an image viewer you may use the ``display`` command provided by
+          the ``ImageMagick`` modules, but we would rather recommend the viewer
+          that is integrated in the :ref:`File Explorer <ood_files>`.
