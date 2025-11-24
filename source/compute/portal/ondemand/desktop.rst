@@ -34,11 +34,12 @@ VSC clusters that support the Desktop app:
 
 .. tip::
 
-   In certain browsers (e.g. Google Chrome), the clipboard in the Desktop app
-   will have the same content as your device, meaning that you can copy-paste
-   text to and from the Desktop as expected. Other browsers, like Firefox,
-   do not currently support this and in that case you will need to transfer
-   text through the clipboard in the panel on the left hand side.
+   In Chromium-based browsers such as Google Chrome and Microsoft Edge,
+   the clipboard in the Desktop app will have the same content as your device,
+   meaning that you can copy-paste text to and from the Desktop as expected.
+   Other browsers, like Firefox and Safari, do not currently support this
+   and in that case you will need to transfer text through the clipboard
+   in the panel on the left hand side.
 
 
 .. _ood_desktop_using_applications:
