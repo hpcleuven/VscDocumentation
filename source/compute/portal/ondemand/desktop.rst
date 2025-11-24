@@ -24,18 +24,6 @@ VSC clusters that support the Desktop app:
        * Tier-2 :ref:`Genius <genius hardware>`
        * Tier-2 :ref:`wICE <wice hardware>`
 
-For improved graphics performance, we recommend the following workflow:
-
-#. Select the ``Anansi`` cluster (VUB) or the ``interactive`` partition on
-   ``wICE`` (KU Leuven / UHasselt) and request some fraction of a GPU.
-#. In the desktop environment, open a terminal window and load the module of
-   your graphical software.
-#. Launch the executable with ``vglrun`` to enable hardware acceleration:
-
-   .. code-block:: bash
-
-      vglrun <executable>
-
 .. tip::
 
    Once the Desktop app is active, you can grant view-only access to other VSC
@@ -58,57 +46,98 @@ For improved graphics performance, we recommend the following workflow:
 Using applications in the Desktop
 =================================
 
-.. grid:: 3
-    :gutter: 4
 
-    .. grid-item-card:: |KUL|
-        :columns: 12
+For improved graphics performance, we recommend the following workflow:
 
-        Mainly due to security concerns, the KU Leuven OOD Desktop app is run
-        within a minimalistic container. As a result some functionality is
-        deliberately missing:
+.. tab-set::
+   :sync-group: vsc-sites
 
-        - Slurm-related commands such as ``squeue``, ``sbatch``, ``srun``, ...
-          and ``sam-balance``, ``sam-statement``, ... are unavailable.
+   .. tab-item:: VUB
+      :sync: vub
 
-        - No browser is provided within the Desktop app (see alternatives
-          below).
+      #. Select the ``Anansi`` cluster and request some fraction of a GPU.
+      #. In the desktop environment, open a terminal window and load the
+         module of your graphical software.
+      #. Launch the executable with ``vglrun`` to enable hardware
+         acceleration:
 
-        Some applications are currently unavailable but may be enabled in the
-        future (such as ``myquota``, ``apptainer`` and archive managers such as
-        ``xarchiver``).
+         .. code-block:: bash
 
-        |
+            vglrun <executable>
 
-        **Using your local browser where needed**
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-        Certain applications expect that you have a browser at your disposal.
+      #. Select the ``interactive`` partition on the ``wICE`` cluster
+         and request one GPU instance.
+      #. In the desktop environment, open a terminal window and load the
+         module of your graphical software.
+      #. Launch the executable with ``vglrun`` to enable hardware
+         acceleration:
 
-        The more common case is where the application starts a server to which
-        you are expected to connect with a browser (examples: JupyterLab,
-        Streamlit, CryoSparc). To use your local browser for this purpose,
-        you only need to set up a suitable SSH tunnel with for example
-        :ref:`OpenSSH <tunnel OpenSSH>` or :ref:`PuTTY <putty ssh tunnel>`.
+         .. code-block:: bash
 
-        Some applications may produce static HTML files instead (example:
-        LinaroForge). Other than simply transferring these files to your local
-        device, you can also view these by starting a local HTTP server and
-        applying the SSH tunnel approach described in the previous paragraph.
-        An easy way to start such a server is the Python ``http`` module
-        (added in Python 3.5):
+            vglrun <executable>
 
-        ::
 
-            /usr/bin/python3 -m http.server -b localhost <port>
+Additional site-specific constraints are listed below.
 
-        |
+.. tab-set::
+   :sync-group: vsc-sites
 
-        **Applications menu**
+   .. tab-item:: VUB
+      :sync: vub
 
-        The Applications menu on the top left will offer a number of shortcuts.
-        Note that some may be missing in case you have changed the value of the
-        ``XDG_DATA_HOME`` environment variable in your ``~/.bashrc`` to
-        something other than ``$VSC_HOME/.local/share``.
+      (N/A)
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      Mainly due to security concerns, the KU Leuven OOD Desktop app is run
+      within a minimalistic container. As a result some functionality is
+      deliberately missing:
+
+      - Slurm-related commands such as ``squeue``, ``sbatch``, ``srun``, ...
+        and ``sam-balance``, ``sam-statement``, ... are unavailable.
+
+      - No browser is provided within the Desktop app (see alternatives
+        below).
+
+      Some applications are currently unavailable but may be enabled in the
+      future (such as ``myquota``, ``apptainer`` and archive managers such as
+      ``xarchiver``).
+
+      |
+
+      **Using your local browser where needed**
+
+      Certain applications expect that you have a browser at your disposal.
+
+      The more common case is where the application starts a server to which
+      you are expected to connect with a browser (examples: JupyterLab,
+      Streamlit, CryoSparc). To use your local browser for this purpose,
+      you only need to set up a suitable SSH tunnel with for example
+      :ref:`OpenSSH <tunnel OpenSSH>` or :ref:`PuTTY <putty ssh tunnel>`.
+
+      Some applications may produce static HTML files instead (example:
+      LinaroForge). Other than simply transferring these files to your local
+      device, you can also view these by starting a local HTTP server and
+      applying the SSH tunnel approach described in the previous paragraph.
+      An easy way to start such a server is the Python ``http`` module
+      (added in Python 3.5):
+
+      ::
+
+          /usr/bin/python3 -m http.server -b localhost <port>
+
+      |
+
+      **Applications menu**
+
+      The Applications menu on the top left will offer a number of shortcuts.
+      Note that some may be missing in case you have changed the value of the
+      ``XDG_DATA_HOME`` environment variable in your ``~/.bashrc`` to
+      something other than ``$VSC_HOME/.local/share``.
 
 
 .. _ood_desktop_tips_for_nx_users:
