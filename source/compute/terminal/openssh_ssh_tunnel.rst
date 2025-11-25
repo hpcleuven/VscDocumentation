@@ -36,11 +36,10 @@ tuneling. There are serveral cases where this is usefull:
    hostname of the cluster's login node you are using.
 
 -  Running a server application on the cluster that a client on the
-   desktop connects to. One example of this scenario is :ref:`ParaView in
-   remote visualization mode <Paraview>`,
-   with the interactive client on the desktop and the data processing
-   and image rendering on the cluster. Setting up a tunnel for this
-   scenario is also :ref:`explained on that page <Paraview>`.
+   desktop connects to. One example of this scenario is when you
+   want to launch a Jupyter server on a compute node and connect
+   to it through your browser.
+
 -  Running clients on the cluster and a server on your desktop. In this
    case, the source port is a port on the cluster and the destination
    port is on the desktop.

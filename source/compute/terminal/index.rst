@@ -207,8 +207,6 @@ remote servers through SSH. This can be used to run the GUI of such
 applications locally while the heavy lifting of the computation is done on a
 VSC cluster.
 
-* :ref:`Paraview for remote visualization <Paraview remote>`
-
 * :ref:`Eclipse for remote development <Eclipse as remote editor>`
 
 VPN
