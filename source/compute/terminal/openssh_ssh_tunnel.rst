@@ -3,13 +3,13 @@
 SSH tunnel using OpenSSH
 ========================
 
-Prerequisits
-------------
+Prerequisites
+-------------
 
--  A ssh key pair, properly installed in your VSC account, see the :ref:`page
+-  An SSH key pair (optional for KU Leuven clusters), see :ref:`page
    on generating keys <create key pair>`.
 -  Additionally, you should be able to :ref:`connect to the cluster's login
-   node <OpenSSH access>` using ssh.
+   node <OpenSSH access>` using SSH.
 
 Background
 ----------
@@ -53,7 +53,7 @@ command:
 
 ::
 
-   ssh  -L11111:r1i3n5:44444  -N  <vsc-account>@<vsc-loginnode>
+   ssh -L 11111:r1i3n5:44444 -N <vsc-account>@<vsc-loginnode>
 
 where <vsc-account> is your VSC-number and <vsc-loginnode> is the
 hostname of the cluster's login node you are using. The local port is
