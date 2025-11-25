@@ -12,17 +12,18 @@ VSC clusters that support the Desktop app:
 .. grid:: 3
     :gutter: 4
 
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius hardware>`
+       * Tier-2 :ref:`wICE <wice hardware>`
+
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
-    .. grid-item-card:: |KUL|
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Genius <genius hardware>`
-       * Tier-2 :ref:`wICE <wice hardware>`
 
 .. tip::
 
@@ -47,24 +48,10 @@ VSC clusters that support the Desktop app:
 Using applications in the Desktop
 =================================
 
-
 For improved graphics performance, we recommend the following workflow:
 
 .. tab-set::
    :sync-group: vsc-sites
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      #. Select the ``Anansi`` cluster and request some fraction of a GPU.
-      #. In the desktop environment, open a terminal window and load the
-         module of your graphical software.
-      #. Launch the executable with ``vglrun`` to enable hardware
-         acceleration:
-
-         .. code-block:: bash
-
-            vglrun <executable>
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -80,16 +67,23 @@ For improved graphics performance, we recommend the following workflow:
 
             vglrun <executable>
 
+   .. tab-item:: VUB
+      :sync: vub
+
+      #. Select the ``Anansi`` cluster and request some fraction of a GPU.
+      #. In the desktop environment, open a terminal window and load the
+         module of your graphical software.
+      #. Launch the executable with ``vglrun`` to enable hardware
+         acceleration:
+
+         .. code-block:: bash
+
+            vglrun <executable>
 
 Additional site-specific constraints are listed below.
 
 .. tab-set::
    :sync-group: vsc-sites
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      (N/A)
 
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
@@ -139,6 +133,11 @@ Additional site-specific constraints are listed below.
       Note that some may be missing in case you have changed the value of the
       ``XDG_DATA_HOME`` environment variable in your ``~/.bashrc`` to
       something other than ``$VSC_HOME/.local/share``.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      (N/A)
 
 
 .. _ood_desktop_tips_for_nx_users:
