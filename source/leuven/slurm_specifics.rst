@@ -212,10 +212,11 @@ Setting the GPU compute mode
 
 NVIDIA GPUs support multiple `compute modes
 <https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-modes>`_.
-By default, the compute mode is set to `Exclusive-process` on our clusters
-(which is the best setting in the majority of cases), but you can choose
-another compute mode at job submission time. This is done by making use of a
-plugin for our Slurm job scheduler:
+By default, the compute mode is set to `shared` on our clusters, meaning that
+multiple host threads and/or processes can use the device at the same time (NVIDIA refers to
+this as `DEFAULT` mode). This setting covers the majority of cases, but you
+can choose another compute mode at job submission time. This is done by making
+use of a plugin for our Slurm job scheduler:
 
 .. code-block:: shell
 
@@ -226,21 +227,21 @@ plugin for our Slurm job scheduler:
          --gpu_cmode=<shared|exclusive|prohibited>
                                  Set the GPU compute mode on the allocated GPUs to
                                  shared, exclusive or prohibited. Default is
-                                 exclusive
+                                 shared
 
 Submitting a batch job where you want to set the compute mode of your NVIDIA
-GPU(s) to be `shared` can be done with:
+GPU(s) to be `exclusive` can be done with:
 
 .. code-block:: shell
 
-   sbatch --export=ALL --gpu_cmode=shared jobscript.slurm
+   sbatch --export=ALL --gpu_cmode=exclusive jobscript.slurm
 
 An interactive job can be launched as follows:
 
 .. code-block:: shell
 
    srun --ntasks-per-node=9 --nodes=1 --gpus-per-node=1 --account=<YOUR_ACCOUNT> \
-        --clusters=wice --time=01:00:00 --partition=gpu_a100 --gpu_cmode=shared \
+        --clusters=wice --time=01:00:00 --partition=gpu_a100 --gpu_cmode=exclusive \
         --pty /bin/bash -l
 
 A few notes on this feature:
