@@ -1,7 +1,7 @@
 .. _memory bandwidth and latency tier2:
 
-Memory bandwith and latency measurements KU Leuven Tier-2
-=========================================================
+Memory bandwidth and latency measurements KU Leuven Tier-2
+==========================================================
 
 Memory bandwidth and latencies for main memory, as well as latencies for L2
 and LLC cache.  Measurements have been performed using Intel's Memory Latency

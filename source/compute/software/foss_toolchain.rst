@@ -63,7 +63,7 @@ use the appropriate option listed in the table below.
 +------------------+---------------------------+
 | Cascade Lake     | ``-march=cascadelake``    |
 +------------------+---------------------------+
-| Napels/Rome (AMD)| ``-march=znver2``         |
+| Naples/Rome (AMD)| ``-march=znver2``         |
 +------------------+---------------------------+
 | detect host CPU  | ``-march=native``         |
 +------------------+---------------------------+
