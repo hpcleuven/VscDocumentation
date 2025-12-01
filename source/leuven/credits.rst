@@ -110,22 +110,22 @@ of a job will be comparable on any compute node, but the
 walltime will be different, depending on the performance of the nodes.
 
 As an example, consider a job running on two nodes of the default partition on
-Genius, where ``TRESBillingWeights=CPU=4.62963`` applies::
+wICE, where ``TRESBillingWeights=CPU=2.546296296`` applies::
 
-   $ sbatch --account=lp_myproject --clusters=genius --nodes=2 \
-            --ntasks-per-node=36 myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --nodes=2 \
+            --ntasks-per-node=72 myjobscript.slurm
 
 If this job finishes in 2.5 hours (i.e., walltime is 150 minutes), the user
 will be charged::
 
-   floor(4.62963 * (2 * 36)) * 150 = 49 950 credits
+   floor(2.546296296 * (2 * 72)) * 150 = 54 900 credits
 
 You can also get such estimates from the ``sam-quote`` tool by providing it
 with your job submission command::
 
-   $ sam-quote sbatch --account=lp_myproject --clusters=genius --nodes=2 \
-                      --ntasks-per-node=36 --time=2:30:00 myjobscript.slurm
-   49950
+   $ sam-quote sbatch --account=lp_myproject --clusters=wice --nodes=2 \
+                      --ntasks-per-node=72 --time=2:30:00 myjobscript.slurm
+   54900
 
 Note that ``sam-quote`` assumes a worst-case scenario in which the job does
 not stop before reaching its time limit.
@@ -142,8 +142,6 @@ to allocate one core or GPU during one minute.
 | Cluster | Resource            | Type     | ``TRESBillingWeights`` |
 +=========+=====================+==========+========================+
 | Genius  | Skylake             | CPU core | 4.62963                |
-+         +---------------------+----------+------------------------+
-|         | Skylake (bigmem)    | CPU core | 5.55556                |
 +         +---------------------+----------+------------------------+
 |         | Cascadelake         | CPU core | 4.62963                |
 +         +---------------------+----------+------------------------+

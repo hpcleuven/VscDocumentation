@@ -11,9 +11,9 @@ operation.
 Hardware details
 ----------------
 
-- 17 GPU nodes, 76 GPU devices
+- 16 GPU nodes, 72 GPU devices
 
-  - 15 P100 nodes
+  - 14 P100 nodes
 
     - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
       18 cores each :raw-html:`<br />`

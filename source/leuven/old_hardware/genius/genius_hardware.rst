@@ -63,9 +63,9 @@ Hardware details
   - default memory per core is 53500 MiB
   - partition ``superdome|superdome_long``
 
-- 5 GPU nodes, 20 GPU devices
+- 6 GPU nodes, 24 GPU devices
 
-  - 5 P100 nodes
+  - 6 P100 nodes
 
     - 2 Xeon Gold 6140 CPUs\@2.3 GHz (Skylake),
       18 cores each :raw-html:`<br />`
