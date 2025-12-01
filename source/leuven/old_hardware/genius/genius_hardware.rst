@@ -31,7 +31,14 @@ Hardware details
     - 200 GB SSD local disk
     - partition ``amd``
 
-- GPU nodes
+- the huge memory node ``Superdome`` has been decommissioned
+
+  - 8 Xeon Gold 6132 CPUs\@2.6 GHz (Skylake), 14 cores each
+  - 6 TiB RAM
+  - default memory per core is 53500 MiB
+  - partition ``superdome|superdome_long``
+
+- decommissioned GPU nodes
 
   - 5 P100 nodes
 
