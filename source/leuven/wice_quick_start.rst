@@ -131,9 +131,6 @@ default), you can submit a job as follows::
 
 There is also one IceLake node with even more memory (8 TiB RAM) in the
 ``hugemem`` partition (defaulting to ``--mem-per-cpu=111900M``).
-In contrast to :ref:`Superdome <superdome_quick_start>`, you do not need to
-request entire sockets and so the node is more similar to the other large
-memory nodes in this regard.
 
 
 .. _submit to wice GPU node:
