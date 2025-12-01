@@ -204,6 +204,12 @@ or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
 cores, set the environment variable ``I_MPI_DEBUG=5`` to get more verbose
 output. Note that this issue does not occur with the Open MPI library.
 
+Multi-node jobs with Intel MPI and SSH bootstrapping
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some packages such as Fluent will hang at startup when using multiple nodes.
+In that case, try adding ``export -n I_MPI_HYDRA_BOOTSTRAP_EXEC_EXTRA_ARGS``
+in your jobscript before the application gets launched.
+
 
 .. _gpu_compute_mode:
 
