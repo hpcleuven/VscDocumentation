@@ -8,6 +8,11 @@ It has thin nodes, large memory nodes, interactive nodes and GPU nodes.
 This cluster is in production since February 2023
 and has been extended with additional compute nodes in early 2024.
 
+.. toctree::
+   :hidden:
+
+   memory_bandwidth_and_latency_wice.rst
+
 
 Hardware details
 ----------------
@@ -19,7 +24,7 @@ Hardware details
     - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (IceLake),
       36 cores each :raw-html:`<br />`
       (1 NUMA domain and 1 L3 cache per CPU)
-    - 256 GiB RAM
+    - 256 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency wice icelake>`)
     - default memory per core is 3400 MiB
     - 960 GB SSD local disk
     - partitions ``batch|batch_long|batch_icelake|batch_icelake_long``,
