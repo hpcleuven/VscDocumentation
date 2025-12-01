@@ -4,13 +4,8 @@ Genius quick start guide
 ========================
 
 :ref:`Genius <genius hardware>` is a KU Leuven/UHasselt Tier-2 cluster
-which entered production in 2018. Aside from regular CPU nodes, Genius also
-contains large memory nodes and GPU nodes.
-
-.. note::
-
-   Most of Genius will be :ref:`decommissioned <genius_decommissioning>`
-   in early 2026.
+which entered production in 2018. Currently only its login nodes and most of
+its GPU nodes remain in production.
 
 Access to the cluster
 ---------------------
