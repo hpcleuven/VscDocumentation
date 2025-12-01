@@ -2,6 +2,11 @@
 Thinking Cluster
 ################
 
+.. toctree::
+   :hidden:
+
+   thinking_hardware/memory_bandwidth_and_latency_thinking
+
 .. note::
 
    Thinking was a KU Leuven/UHasselt Tier-2 cluster which was decomissioned
@@ -63,13 +68,13 @@ Hardware details
 - 10 ivybridge nodes
 
   - 2 Xeon E5-2680 v2 CPUs@2.8 GHz, 10 cores each
-  - 64 GB RAM (4) / 128 GB RAM (6)
+  - 64 GB RAM (4) / 128 GB RAM (6) (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency thinking ivybridge>`)
   - feature ``ivybridge``
 
 - 10 haswell nodes
 
   - 2 Xeon E5\-2680 v3 CPUs\@2.5 GHz, 12 cores each
-  - 128 GB RAM
+  - 128 GB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency thinking haswell>`)
   - feature ``haswell``
 
 In the older partition of the cluster, nodes are connected via a QDR infiniband
