@@ -9,8 +9,8 @@ Thinking Cluster
 
 .. note::
 
-   Thinking was a KU Leuven/UHasselt Tier-2 cluster which was decomissioned
-   in 2018. This page is only for any possible future reference.
+   Thinking was a KU Leuven/UHasselt Tier-2 cluster which operated between
+   2014 and 2021. This page is only for any possible future reference.
 
 Thinking had thin nodes, large memory nodes, GPGPU nodes and dedicated login
 nodes. This cluster was running CentOS 6, but was gradually being migraged to
