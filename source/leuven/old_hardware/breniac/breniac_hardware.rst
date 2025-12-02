@@ -1,7 +1,7 @@
 .. _breniac hardware:
 
-BrENIAC infrastructure
-======================
+BrENIAC
+=======
 
 .. toctree::
    :hidden:
@@ -34,7 +34,7 @@ Hardware details
 
 The nodes were connected using an Infiniband EDR network.
 
-.. figure:: breniac_hardware/breniac.png
+.. figure:: breniac.png
    :alt: BrENIAC hardware diagram
 
 BrENIAC storage

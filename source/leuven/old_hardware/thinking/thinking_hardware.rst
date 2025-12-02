@@ -1,11 +1,11 @@
-################
-Thinking Cluster
-################
+########
+Thinking
+########
 
 .. toctree::
    :hidden:
 
-   thinking_hardware/memory_bandwidth_and_latency_thinking
+   memory_bandwidth_and_latency_thinking
 
 .. note::
 
@@ -57,7 +57,7 @@ In the older partition of the cluster, nodes are connected via a QDR infiniband
 interconnect, while the newer partition has a faster FDR interconnect.  See the
 diagram below.
 
-.. figure:: thinking_hardware/thinking.png
+.. figure:: thinking.png
   :alt: Thinking hardware diagram
 
 Thinking CentOS 7
@@ -81,6 +81,6 @@ In the older partition of the cluster, nodes are connected via a QDR infiniband
 interconnect, while the newer partition has a faster FDR interconnect.  See the
 diagram below.
 
-.. figure:: thinking_hardware/thinking_centos7.png
+.. figure:: thinking_centos7.png
   :alt: Thinking CentOS 7 hardware diagram
 

@@ -4,10 +4,11 @@
 Archive of Tier-1 Clusters
 ##########################
 
-The following Tier-1 clusters are old VSC clusters already decomissioned. Their
-documentation is kept for preservation and historical purposes.
+The following VSC Tier-1 clusters existed in the past but have since been
+wholy or partially decommissioned. Parts of their documentation are preserved
+for historical purposes.
 
 .. toctree::
    :maxdepth: 2
 
-   /leuven/old_hardware/breniac/breniac_hardware
+   /leuven/old_hardware/old_hardware_tier1
