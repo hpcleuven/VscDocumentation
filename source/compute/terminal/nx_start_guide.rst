@@ -17,6 +17,12 @@ the Tier-2 login infrastructure at KU Leuven.
        * Tier-2 :ref:`Superdome <Superdome hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
 
+.. note::
+
+   In March 2026, NoMachine access will be discontinued
+   in favor of the :ref:`Desktop app in Open OnDemand <ood_desktop>`.
+
+
 Installing NX client
 --------------------
 

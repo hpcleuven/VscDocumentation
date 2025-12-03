@@ -3,13 +3,13 @@
 SSH tunnel using OpenSSH
 ========================
 
-Prerequisits
-------------
+Prerequisites
+-------------
 
--  A ssh key pair, properly installed in your VSC account, see the :ref:`page
+-  An SSH key pair (optional for KU Leuven clusters), see :ref:`page
    on generating keys <create key pair>`.
 -  Additionally, you should be able to :ref:`connect to the cluster's login
-   node <OpenSSH access>` using ssh.
+   node <OpenSSH access>` using SSH.
 
 Background
 ----------
@@ -36,11 +36,10 @@ tuneling. There are serveral cases where this is usefull:
    hostname of the cluster's login node you are using.
 
 -  Running a server application on the cluster that a client on the
-   desktop connects to. One example of this scenario is :ref:`ParaView in
-   remote visualization mode <Paraview>`,
-   with the interactive client on the desktop and the data processing
-   and image rendering on the cluster. Setting up a tunnel for this
-   scenario is also :ref:`explained on that page <Paraview>`.
+   desktop connects to. One example of this scenario is when you
+   want to launch a Jupyter server on a compute node and connect
+   to it through your browser.
+
 -  Running clients on the cluster and a server on your desktop. In this
    case, the source port is a port on the cluster and the destination
    port is on the desktop.
@@ -53,7 +52,7 @@ command:
 
 ::
 
-   ssh  -L11111:r1i3n5:44444  -N  <vsc-account>@<vsc-loginnode>
+   ssh -L 11111:r1i3n5:44444 -N <vsc-account>@<vsc-loginnode>
 
 where <vsc-account> is your VSC-number and <vsc-loginnode> is the
 hostname of the cluster's login node you are using. The local port is

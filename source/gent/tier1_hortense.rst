@@ -111,7 +111,18 @@ Access policy
 
 **The Hortense VSC Tier-1 cluster can only be accessed by people with an active Tier-1 compute project.**
 
-See https://www.vscentrum.be/compute for more information on requesting access.
+Tier-1 compute project resources are always allocated for a given period.
+After this period expires, the users of this project lose access to all resources granted within that project.
+This includes storage in addition to compute resources (CPU and GPU).
+
+As soon as a project expires, project members:
+
+* will no longer be able to use any remaining CPU cycles, GPU cycles or credits
+* will no longer have access to the dedicated project folders
+* will lose access to the Tier-1 cluster, unless they have another active project
+
+See https://www.vscentrum.be/compute for more information on requesting access, rules and regulations.
+
 
 .. _hortense_login_nodes:
 
@@ -325,6 +336,16 @@ Project scratch directories
   cd $VSC_SCRATCH_PROJECTS_BASE/your_project_name
 
 In this command, you should change '``your_project_name``' to the actual name of your project.
+
+
+**As soon as a project expires, project scratch directories will NO LONGER be accessible.**
+Please take this into account when planning your project execution.
+Plan ahead and offload your data well before your project expires.
+
+**Clean up and remove any remaining data in the project scratch folders before the project expires.**
+
+Remaining data in project scratch folders for projects that have expired are earmarked for deletion.
+The Tier1 operational team can delete this data without further notification.
 
 
 .. _hortense_scratch_storage_quota_usage:
@@ -763,10 +784,16 @@ Gradual decommissioning
 End 2025, the gradual decommissioning of Tier-1 Compute Hortense will be initiated.
 Around this time, the 4th VSC Tier-1 cluster will become available at the VUB datacenter.
 
-The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
-This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
-Depending on VSC plans, the ``a100_40`` partition may also disappear. However, there currently is no confirmation regarding this.
+T̵h̵e̵ ̵e̵n̵t̵i̵r̵e̵ ̵R̵o̵m̵e̵ ̵p̵a̵r̵t̵i̵t̵i̵o̵n̵ ̵i̵s̵ ̵e̵n̵d̵ ̵o̵f̵ ̵l̵i̵f̵e̵ ̵N̵o̵v̵e̵m̵b̵e̵r̵ ̵2̵0̵2̵5̵,̵ ̵a̵n̵d̵ ̵w̵i̵l̵l̵ ̵b̵e̵ ̵s̵h̵u̵t̵
+d̵o̵w̵n̵ ̵b̵y̵ ̵e̵n̵d̵ ̵2̵0̵2̵5̵.̵
+̵T̵h̵i̵s̵ ̵i̵m̵p̵l̵i̵e̵s̵ ̵t̵h̵a̵t̵ ̵t̵h̵e̵ ̵p̵a̵r̵t̵i̵t̵i̵o̵n̵s̵ c̵p̵u̵_̵r̵o̵m̵e̵, c̵p̵u̵_̵r̵o̵m̵e̵_̵a̵l̵l̵,
+c̵p̵u̵_̵r̵o̵m̵e̵_̵5̵1̵2̵, d̵e̵b̵u̵g̵_̵r̵o̵m̵e̵ w̵i̵l̵l̵ ̵a̵l̵l̵ ̵d̵i̵s̵a̵p̵p̵e̵a̵r̵.̵
+̵D̵e̵p̵e̵n̵d̵i̵n̵g̵ ̵o̵n̵ ̵V̵S̵C̵ ̵p̵l̵a̵n̵s̵,̵ ̵t̵h̵e̵ a̵1̵0̵0̵_̵4̵0̵ p̵a̵r̵t̵i̵t̵i̵o̵n̵ ̵m̵a̵y̵ ̵a̵l̵s̵o̵ ̵d̵i̵s̵a̵p̵p̵e̵a̵r̵.̵
+H̵o̵w̵e̵v̵e̵r̵,̵ ̵t̵h̵e̵r̵e̵ ̵c̵u̵r̵r̵e̵n̵t̵l̵y̵ ̵i̵s̵ ̵n̵o̵ ̵c̵o̵n̵f̵i̵r̵m̵a̵t̵i̵o̵n̵ ̵r̵e̵g̵a̵r̵d̵i̵n̵g̵ ̵t̵h̵i̵s̵.̵
 
+Update 1 November 2025: The operational phase of the 4th Tier-1 has, unfortunately, 
+suffered a delay. As a result, the VSC is considering to keep the entire Rome 
+partition active for a longer time. We are currently awaiting official confirmation on this plan.
 
 Migration to RHEL9 operating system
 -----------------------------------

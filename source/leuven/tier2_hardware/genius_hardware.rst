@@ -11,6 +11,11 @@ Genius hardware
 Genius is one of KU Leuven/UHasselt's Tier-2 clusters, which is in production
 since 2018. It has thin nodes, large memory nodes, as well as GPU nodes.
 
+.. note::
+
+   Most of Genius will be :ref:`decommissioned <genius_decommissioning>`
+   in early 2026.
+
 Hardware details
 ----------------
 
@@ -69,16 +74,6 @@ Hardware details
     - 8 NVIDIA V100 SXM2\@1.5 GHz, 32 GiB GDDR, connected with NVLink
     - 200 GB SSD local disk
     - partition ``gpu_v100|gpu_v100_long``, specific Slurm :ref:`options <submit_genius_gpu>` apply
-
-- 4 AMD nodes
-
-  - 2 EPYC 7501 CPUs\@2.0 GHz,
-    32 cores each :raw-html:`<br />`
-    (4 NUMA domains and 8 L3 caches per CPU)
-  - 256 GiB RAM
-  - default memory per core is 3800 MiB
-  - 200 GB SSD local disk
-  - partition ``amd``, specific Slurm :ref:`options <submit_genius_amd>` apply
 
 The nodes are connected using an Infiniband EDR network (bandwidth 25 Gb/s), the islands
 are indicated on the diagram below.

@@ -222,8 +222,8 @@ case, you can directly open a shell in the compute node with an SSH connection
 using the login node as a proxy or, alternatively, you can also open a network
 tunnel to the compute node which will allow direct communication from software
 in your computer to certain ports in the remote system. This is also useful to
-run client software on your Windows machine, e.g., ParaView or Jupyter
-notebooks that run on a compute node.
+run client software on your Windows machine, such as a Jupyter server running
+on a compute node.
 
 .. toctree::
 

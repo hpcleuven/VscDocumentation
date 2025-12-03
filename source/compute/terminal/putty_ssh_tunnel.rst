@@ -19,7 +19,7 @@ managers have given you explicit permission (which for security reasons
 is not often done). One way to work around this limitation is SSH
 tunneling.
 
-There are several cases where this is usefull:
+There are several cases where this is useful:
 
 * Running X applications on the cluster: The X program cannot directly
   communicate with the X server on your local system. In this case, the
@@ -28,11 +28,9 @@ There are several cases where this is usefull:
   :ref:`page about text-mode access using PuTTY <terminal putty>`.
 
 * Running a server application on the cluster that a client on the
-  desktop connects to. One example of this scenario is :ref:`ParaView in
-  remote visualization mode <Paraview>`,
-  with the interactive client on the desktop and the data processing
-  and image rendering on the cluster. How to set up the tunnel for that
-  scenario is also :ref:`explained on that page <Paraview>`.
+  desktop connects to. One example of this scenario is when you
+  want to launch a Jupyter server on a compute node and connect
+  to it through your browser.
 
 * Running clients on the cluster and a server on your desktop. In this
   case, the source port is a port on the cluster and the destination
