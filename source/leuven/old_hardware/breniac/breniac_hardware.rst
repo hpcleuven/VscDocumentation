@@ -1,12 +1,12 @@
 .. _breniac hardware:
 
-BrENIAC infrastructure
-======================
+BrENIAC
+=======
 
 .. toctree::
    :hidden:
 
-   memory_bandwidth_and_latency_tier1
+   memory_bandwidth_and_latency_breniac
 
 .. include:: breniac_login_nodes.rst
 
@@ -14,19 +14,19 @@ BrENIAC infrastructure
 Hardware details
 ----------------
 
-- 408 skylake nodes
+- 408 Skylake nodes
 
   - 2 Xeon Gold 6132 CPU\@2.6GHz, 14 cores each
-  - 192 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency skylake tier1>`)
+  - 192 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency breniac skylake>`)
   - 75 GB SSD local disk
 
-- 436 broadwell nodes
+- 436 Broadwell nodes
 
   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
-  - 128 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency broadwell tier1>`)
+  - 128 GB RAM (:ref:`memory bandwith and latency measurements <memory bandwidth and latency breniac broadwell>`)
   - 75 GB SSD local disk
 
-- 144 broadwell nodes
+- 144 Broadwell nodes
 
   - 2 Xeon E5-2680v4 CPUs\@2.4GHz, 14 cores each
   - 256 GB RAM
@@ -34,7 +34,7 @@ Hardware details
 
 The nodes were connected using an Infiniband EDR network.
 
-.. figure:: breniac_hardware/breniac.png
+.. figure:: breniac.png
    :alt: BrENIAC hardware diagram
 
 BrENIAC storage

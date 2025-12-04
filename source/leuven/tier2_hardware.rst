@@ -1,7 +1,7 @@
 .. _kul_tier2:
 
 ##################################
-KU Leuven/UHasselt Tier-2 Clusters
+KU Leuven/UHasselt Tier-2 clusters
 ##################################
 
 .. toctree::
@@ -14,3 +14,4 @@ KU Leuven/UHasselt Tier-2 Clusters
    tier2_storage
    slurm_specifics
    tier2_2025
+

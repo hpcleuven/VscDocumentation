@@ -1,12 +1,11 @@
 .. _wice_t2_leuven:
 
-======================
 wICE quick start guide
 ======================
 
-:ref:`wICE <wice hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.
-It can be used for most workloads, and has nodes with a lot of memory, as well as
-nodes with GPUs.
+:ref:`wICE <wice hardware>` is a KU Leuven/UHasselt Tier-2 cluster
+which entered production in 2022. Aside from regular CPU nodes, wICE also
+contains large memory nodes and GPU nodes.
 
 wICE does not have separate login nodes and can be accessed either from the
 :ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the

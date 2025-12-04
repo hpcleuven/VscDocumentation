@@ -250,6 +250,7 @@ following requirements:
 
    .. code-block:: shell
 
+      $ python3 -m pip install ipykernel
       $ python3 -m ipykernel install --user --name=venv-zen4
 
 #. A new launcher will appear in the lab interface to start notebooks using

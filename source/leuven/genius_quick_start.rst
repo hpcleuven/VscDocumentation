@@ -2,11 +2,10 @@
 
 Genius quick start guide
 ========================
-:ref:`Genius <Genius hardware>` is one of the two KU Leuven/UHasselt Tier-2 clusters,
-besides :ref:`wICE <wice hardware>`.
-Given the architectural diversity of compute nodes on Genius, this cluster is suited
-for most HPC workloads.
 
+:ref:`Genius <genius hardware>` is a KU Leuven/UHasselt Tier-2 cluster
+which entered production in 2018. Aside from regular CPU nodes, Genius also
+contains large memory nodes and GPU nodes.
 
 .. note::
 

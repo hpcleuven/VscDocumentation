@@ -11,27 +11,24 @@ The goal of the PRC is to offer researchers means to manage their data in Tier-1
 Installation
 ************
 
-The Python-iRODSclient can be installed with pip as follows:
+You can install the Python-iRODSclient in a local environment using pip:
 
 .. code-block:: sh
 
    pip install python-irodsclient
 
-On Genius and wICE, the Tier-2 HPC clusters of the KU Leuven, the Python-irodsclient (version 1.1.4.) is already installed as a module. You can install this module as follows:
+On the Tier-2 and Tier-1 clusters hosted at KU Leuven and UGent, a version
+of the Python-irodsclient is also already installed as a module
+which you can load as follows:
 
 .. code-block:: sh
 
-   module use /apps/leuven/<node_architecture>/2021a/modules/all
+   # For Genius and wICE
    module load python-irodsclient/1.1.4-GCCcore-10.3.0
 
-You should replace <node_architecture> with the architecture of the
-(login) node you are on ('cascadelake', 'skylake' or 'broadwell').
+   # For Stevin and Hortense
+   module load python-irodsclient/1.1.4-GCCcore-11.2.0
 
-On Hortense and Stevin, the HPC-clusters of UGent, you can load the module as follows:
-
-.. code-block:: sh
-
-    module load python-irodsclient/1.1.4-GCCcore-11.2.0
 
 **************
 Authenticating
