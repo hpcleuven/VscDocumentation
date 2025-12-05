@@ -49,11 +49,6 @@ installations (see the examples below).
 
 For software using CPUs, the different installations would be:
 
-- one for SkyLake and CascadeLake CPUs
-  :raw-html:`<br />`
-  (``${VSC_ARCH_LOCAL}`` = ``skylake`` or ``cascadelake``; :raw-html:`<br />`
-  if needed you can control this for your jobs by e.g. adding a
-  ``--constraint=cascadelake`` Slurm option)
 - one for IceLake CPUs
   :raw-html:`<br />`
   (``${VSC_ARCH_LOCAL}`` = ``icelake``)
@@ -136,7 +131,7 @@ Memory hierarchy
 When running applications in parallel it is often a good idea to take the
 memory hierarchy into account (for example when pinning MPI processes
 in :ref:`hybrid MPI/OpenMP calculations <hybrid_mpi_openmp_programs>`).
-The nodes in the ``batch`` partition on Genius and wICE are the simpler ones
+The Genius GPU nodes and wICE CPU nodes are the simpler ones
 with a single NUMA domain and L3 cache per CPU, with the usual core-private
 L1 and L2 caches. Other node types may feature more than one NUMA domain per
 CPU and (in the case of AMD CPUs) more than one L3 cache per CPU.

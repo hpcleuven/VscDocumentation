@@ -1,7 +1,7 @@
 .. _memory bandwidth and latency genius:
 
-Memory bandwith and latency measurements (Genius)
-=================================================
+Memory bandwidth and latency measurements (Genius)
+==================================================
 
 Memory bandwidth and latencies for main memory, as well as latencies for L2
 and LLC cache. Measurements have been performed using Intel's Memory Latency
