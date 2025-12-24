@@ -70,7 +70,6 @@ navigation panel on the left.
    fluent
    login-shell
    active-jobs
-   job-composer
    interactive-apps
    desktop
    gaussview

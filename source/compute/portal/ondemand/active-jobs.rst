@@ -14,6 +14,5 @@ button), and thus inspect the created output and error files.
 
 If your job is still running, you can also cancel it by clicking the bin under
 'Actions'. (Refresh the page to confirm it actually stopped running).
-Re-submitting a previous job can be done via the 'My Interactive Sessions' menu
-or in the :ref:`ood_job_composer`.
+Re-submitting a previous job can be done via the 'My Interactive Sessions' menu.
 
