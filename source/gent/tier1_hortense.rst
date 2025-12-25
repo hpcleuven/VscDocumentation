@@ -274,12 +274,21 @@ Practical usage:
 
 * Open a webbrowser to https://resapp.hpc.ugent.be (The app will redirect you via the `VSC Firewall`_ application first, if needed.)
 * The Resource Application shows you all Tier1-Hortense projects that you are a member of.
-* By clicking on the dropdown arrow on the right in the initial Projects tab, you can consult the raw usage of one of your projects (in CPU hours and GPU hours).
+* By clicking on the dropdown arrow on the right in the initial Projects tab, you can consult the raw usage of one of your projects (in credits, CPU hours, and GPU hours).
 * You can also view Logs and get more fine-grained usage details.
 * When you click on the project name, you enter a new screen giving you information on allocation and cutoff. The orange box and number in the box refer to the 20% cutoff.
 
 The 20% cutoff is for academic non-starting grant projects only, referring to paragraph 9(4) of the 'Regulations Governing Applications For Use of the Flemish Tier-1 Supercomputing Platform' (see https://www.vscentrum.be/_files/ugd/5446c2_21daee40839244c5a099a6d6bffaedb5.pdf).
 This is 20% of the initial allocated compute time a project is at risk of losing, if that 20% has not yet been used during the first 3 months of the project.
+
+Resource types:
+
+* credits: These are the consumable units in CPU-hour equivalents for CPU, memory, and GPU allocation in the job. This means that requesting e.g., all the memory of a node
+  will cost you the equivalent of using all the cores on this node. Similarly for each GPU hours consumed, 12 credits are allocated. These are also the 
+  limiting factor w.r.t. total awarded compute time on the system for your project (limited hard by the resource scheduler). The cost is computed as the maximum of all three 
+  resource-equivalents.
+* CPU hours: These are the awarded CPU hours in your project request. They are counted on CPU-only partitions. 
+* GPU hours: These are the awarded GPU hours in your project request. They are counted on GPU-only partitions.
 
 
 .. _hortense_system_specific_aspects:
