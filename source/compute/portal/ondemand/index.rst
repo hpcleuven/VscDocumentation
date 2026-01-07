@@ -18,7 +18,7 @@ VSC clusters that support an Open OnDemand web portal:
     :gutter: 4
 
     .. grid-item-card:: |KUL|
-       :columns: 12 4 4 4
+       :columns: 6 6 3 3
 
        :fas:`circle-play` `KU Leuven OnDemand`_
 
@@ -26,23 +26,8 @@ VSC clusters that support an Open OnDemand web portal:
        * Tier-2 :ref:`Superdome <Superdome hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
 
-    .. grid-item-card:: |UG|
-       :columns: 12 4 4 4
-
-       :fas:`circle-play` `UGent OnDemand`_
-
-       Consult the `UGent OnDemand docs <https://docs.hpc.ugent.be/web_portal/>`_
-
-    .. grid-item-card:: |VUB|
-       :columns: 12 4 4 4
-
-       :fas:`circle-play` `VUB OnDemand`_
-
-       * Tier-2 :ref:`Anansi <Anansi cluster>`
-       * Tier-2 :ref:`Hydra <Hydra cluster>`
-
     .. grid-item-card:: |UA|
-       :columns: 12 4 4 4
+       :columns: 6 6 3 3
 
        :fas:`circle-play` `UAntwerp OnDemand`_
 
@@ -50,10 +35,25 @@ VSC clusters that support an Open OnDemand web portal:
        * Tier-2 :ref:`Leibniz <Leibniz hardware>`
        * Tier-2 :ref:`Breniac <Breniac hardware UAntwerp>`
 
+    .. grid-item-card:: |UG|
+       :columns: 6 6 3 3
+
+       :fas:`circle-play` `UGent OnDemand`_
+
+       Consult the `UGent OnDemand docs <https://docs.hpc.ugent.be/web_portal/>`_
+
+    .. grid-item-card:: |VUB|
+       :columns: 6 6 3 3
+
+       :fas:`circle-play` `VUB OnDemand`_
+
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
+
 .. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
+.. _UAntwerp OnDemand: https://portal.hpc.uantwerpen.be/
 .. _UGent OnDemand: https://login.hpc.ugent.be/
 .. _VUB OnDemand: https://portal.hpc.vub.be/
-.. _UAntwerp OnDemand: https://portal.hpc.uantwerpen.be/
 
 You can log in using the credentials of your home institution or your VSC
 credentials. SSH keys are not required to use the web portal.
