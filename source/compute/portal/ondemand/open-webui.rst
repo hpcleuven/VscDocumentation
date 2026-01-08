@@ -15,7 +15,6 @@ VSC clusters that support the Open WebUI app:
        :columns: 12 4 4 4
 
        * Tier-2 :ref:`Anansi <Anansi cluster>`
-       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 .. tab-set::
    :sync-group: vsc-sites
