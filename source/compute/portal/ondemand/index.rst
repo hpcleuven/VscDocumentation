@@ -77,6 +77,7 @@ navigation panel on the left.
    interactive-shell
    jupyterlab
    matlab
+   open-webui
    paraview
    pycharm
    rstudio-server
