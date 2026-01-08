@@ -439,6 +439,7 @@ rst_prolog += """
 .. _noVNC: https://novnc.com/
 .. _NoMachine: https://www.nomachine.com/
 .. _NX Client download: https://download.nomachine.com/enterprise/?product=enterprise-client
+.. _ollama: https://ollama.com
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
@@ -450,6 +451,7 @@ rst_prolog += """
 .. _Open OnDemand: https://openondemand.org/
 .. _OpenSHMEM: http://www.openshmem.org/site/
 .. _OpenSSH: https://www.openssh.com/
+.. _Open WebUI: https://openwebui.com
 .. _Paraview tutorial: https://vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
 .. _Paraview website: https://www.paraview.org/
 .. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
