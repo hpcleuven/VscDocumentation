@@ -3,8 +3,6 @@
 Python package management
 =========================
 
-TODO-GSSI
-
 Introduction
 ------------
 
@@ -12,45 +10,94 @@ Python comes with an extensive standard library, and you are strongly
 encouraged to use those packages as much as possible, since this will
 ensure that your code can be run on any platform that supports Python.
 
-
 However, many useful extensions to and libraries for Python come in the form of
-packages that can be installed separately. Many Python packages have been made
-available through the module system, but must be loaded explicitly.
+packages that can be installed separately. There are a few different supported
+approaches to using and installing Python packages on the VSC clusters.
 
-Given the astounding number of packages, it is not sustainable to install each
-and every one system wide. Since it is relatively easy for a user to install
-them just for themselves, or for their research group, that is not a problem
-though. Do not hesitate to contact support whenever you encounter trouble doing
-so.
+Since many Python packages have been made available through the module system,
+using :ref:`python_packages_from_modules` is usually the best starting point.
+Given the astounding number of packages, it is however not sustainable to
+install each and every one system wide, so if you need a somewhat exotic
+package and/or a specific version of a package that is not available, you will
+need to install it yourself.
 
-Checking for installed packages
--------------------------------
+The recommended approach in that case is to
+:ref:`manage a virtual environment with pip <venv_python>` or
+alternatively to make use of :ref:`the uv package manager <uv_python>`.
+In order to automate support for different architectures and facilitate
+building environments on top of modules, the section introducing
+:ref:`vsc-venv <vsc-venv_python>` is worth reading. Finally, you can also consider to
+:ref:`conda for Python`.
 
-To check which Python packages are installed, the ``pip`` utility is
-useful. It will list all packages that are installed for the Python
-distribution you are using, including those installed by you, i.e.,
-in your account.
+.. _python_packages_from_modules:
 
-#. Load the module for the Python version you wish to use, e.g.,::
+Python packages from modules
+----------------------------
 
-      $ module load Python/3.11.3-GCCcore-12.3.0
+Before attempting to install a Python package yourself, it is worth checking
+if an appropriate version of the package is already installed on the cluster.
+For ``numpy`` (a package commonly used in scientific computing), the search
+query and example output look as follows:
 
-#. Run ``pip``::
+.. code-block:: shell
 
-      $ pip list -v
+   $ module spider numpy
 
-Note that many packages, e.g., ``mpi4py``, ``h5py``, ``pytables``,..., are
-available through the module system, and have to be loaded separately. These
-packages will not be listed by ``pip`` unless you loaded the corresponding
-module.  In recent toolchains, many of the packages you need for scientific
-computing have been bundled into the ``SciPy-bundle`` module.
+   ----------------------
+     numpy:
+   ----------------------
+     Versions:
+        numpy/1.25.1 (E)
+        numpy/1.26.4 (E)
+        numpy/2.3.1 (E)
+   ...
+     For detailed information about a specific "numpy" package (including how
+     to load the modules) use the modules full name. Note that names that
+     have a trailing (E) are extensions provided by other modules. For
+     example:
+
+     $ module spider numpy/2.3.1
+
+The trailing ``(E)`` after the listed versions indicates that there is no
+module named ``numpy``, but instead it is provided as an
+`extension <https://lmod.readthedocs.io/en/latest/330_extensions.html>`_ of
+another module, which is quite common in the case of Python packages. To get
+information on which module should be loaded in order to make a specific
+version of ``numpy``  available, you can use:
+
+.. code-block:: shell
+
+   $ module spider numpy/2.3.1
+
+   ------------------------
+     numpy: numpy/2.3.1 (E)
+   ------------------------
+       This extension is provided by the following modules. To access the
+       extension you must load one of the following modules. Note that any
+       module names in parentheses show the module location in the software
+       hierarchy.
+
+          SciPy-bundle/2025.06-gfbf-2025a
+
+This output tells us that the module ``SciPy-bundle/2025.06-gfbf-2025a`` has
+to be loaded in order to make ``numpy/2.3.1`` available. The ``SciPy-bundle``
+provides many packages needed for scientific computing.
+
+To check which Python packages are currently available, you can execute::
+
+ python3 -m pip list -v
+
+It will list all packages that are installed for the Python distribution you
+are using, which could include those installed by you.
 
 .. _venv_python:
 
-Python virtual environments
----------------------------
+Managing Python virtual environments with pip
+---------------------------------------------
 
-A `Python virtual environment <https://docs.python.org/3/tutorial/venv.html>`_
+In case the Python package you need is not available from a module, you need
+to install it yourself and this can be done in a Python virtual environment or
+venv. A `Python virtual environment <https://docs.python.org/3/tutorial/venv.html>`_
 is an isolated environment in which you can safely install Python packages,
 independent from those installed in the system or in other virtual environments.
 For example, using virtual environments is very convenient for Python developers
@@ -63,16 +110,31 @@ virtual environments.
 In this section, we show how you can combine modules with virtual environments
 in the HPC to get the best of two worlds.
 
-#. |Warning| Virtual environments are closely linked to the :ref:`CPU
-   microarchitecture <tier2 hardware>` of the node on which they were created.
-   This is especially important for heterogeneous clusters, where architecture
-   may differ across login nodes and cluster partitions.  To get the
-   architecture of the current node, you can use the ``$VSC_ARCH_LOCAL``
-   environment variable.
+.. warning::
 
-   Start by launching an :ref:`interactive shell <interactive jobs>` in the
+   Since Python is an interpreted language, pure Python code is independent of
+   the :ref:`CPU microarchitecture <tier2 hardware>`, i.e., Python
+   scripts are identical on each machine where they are installed. There is
+   however a very important caveat: many scientific Python packages do their
+   heavy computational lifting inside libraries written in a lower-level
+   language (typically C, C++ or Fortran) and those libraries will typically
+   target one or more speficic architectures. As a consequence, installed Python
+   packages **can** be different depending on the hardware on which they are
+   installed. To make sure your installation works and gives good performance,
+   we recommend to create a virtual environment on a node with the same
+   architecture as the nodes where the virtual environment will be used. This
+   is especially important for heterogeneous clusters, where architecture may
+   differ across login nodes and cluster partitions. To get the architecture
+   of the current node, you can use the ``$VSC_ARCH_LOCAL`` environment
+   variable. If you need to use an environment on multiple architectures,
+   create a separate one for each. :ref:`vsc-venv_python` can help with this.
+
+#. Start by launching an interactive job (click :ref:`here <job_type_interactive>`
+   when working on a Slurm cluster and :ref:`here <interactive jobs>` when
+   working on a Torque cluster for more information) in the
    :ref:`cluster partition<slurm_partition>` of choice, for example in the
-   *zen4* partition:
+   *zen4* partition. Make sure to apply the options appropriate for the
+   specific cluster you are working on.
 
    .. code-block:: shell
 
@@ -95,24 +157,33 @@ in the HPC to get the best of two worlds.
    The *Python* software modules in the HPC include a very limited list of
    Python packages, but many other modules are also available. A common
    software module is ``SciPy-bundle``, a bundle of data science packages such
-   as ``numpy``, ``pandas``, and ``scipy``.
+   as ``numpy``, ``pandas``, and ``scipy``. Use the method discussed in
+   :ref:`python_packages_from_modules` to search for packages you need as
+   dependencies.
 
 #. Create your virtual environment.
 
-   |Warning| Avoid making your virtual environments in your home directory. The
-   :ref:`storage space of your home <storage hardware>` is very small and can
-   quickly become filled up with installation files. Use a folder in your
-   personal ``$VSC_SCRATCH`` or ``$VSC_DATA`` storage; or in your VO if you are
-   part of one.
+   .. warning::
+
+      Avoid creating your virtual environments in your home directory. The
+      :ref:`storage space of your home <storage hardware>` is very small and can
+      quickly become filled up with installation files. Use a folder in your
+      personal ``$VSC_SCRATCH`` or ``$VSC_DATA`` storage; or in your VO if you are
+      part of one. Also take into account that a virtual environment typically
+      contains many small files and parallel file systems are not suited to
+      handle this well. If the large number of files becomes problematic, it
+      is worthwhile to look into :ref:`containerizing <hpc containers>` your
+      virtual environment.
 
    This example code block creates a new virtual environment in the
-   *venv-zen4* directory:
+   *venv-zen4* directory. The *-zen4* suffix in the name is used to indicate
+   the architecture on and for which architecture this environment was created.
 
    .. code-block:: shell
 
       python3 -m venv venv-zen4 --system-site-packages
 
-   Option ``--system-site-packages`` ensures using the Python packages already
+   The option ``--system-site-packages`` ensures using the Python packages already
    available via the loaded modules instead of installing them in the virtual
    environment.
 
@@ -139,12 +210,20 @@ in the HPC to get the best of two worlds.
 
       (venv-zen4) $ python3 -m pip install icecream --no-cache-dir --no-build-isolation
 
-   Option ``--no-cache-dir`` ensures installing the most recent compatible
+   The option ``--no-cache-dir`` ensures installing the most recent compatible
    versions of the dependencies, ignoring the versions available in your cache.
 
-   Option ``--no-build-isolation`` ensures using the Cython compiler and other
+   The option ``--no-build-isolation`` ensures using the Cython compiler and other
    (build) dependencies from loaded modules instead of building in an isolated
    environment.
+
+   It is possible to specify a specific version of package, for instance to
+   install *tblite* version *0.4.0* the command becomes:
+
+   .. code-block:: shell
+
+      (venv-zen4) $ python3 -m pip install tblite==0.4.0 --no-cache-dir --no-build-isolation
+
 
 #. Once your work is finished, use the command ``deactivate`` to deactivate your
    virtual environment:
@@ -171,209 +250,173 @@ Whenever you want to go back to any of your virtual environments make sure to:
 
 #. Reactivate the virtual environment::
 
-    venv-zen4/bin/activate
+    source venv-zen4/bin/activate
 
-.. _conda for Python:
-
-Install Python packages using conda
------------------------------------
-
-.. note::
-
-    Conda packages are incompatible with the software modules.
-    Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
-    and VUB.
-
-The easiest way to install and manage your own Python environment is
-conda.  Using conda has some major advantages.
-
--  You can create project-specific environments that can be shared with
-   others and (up to a point) across platforms.  This makes it easier to
-   ensure that your experiments are reproducible.
--  conda takes care of the dependencies, up to the level of system libraries.
-   This makes it very easy to install packages.
-
-However, this last advantage is also a potential drawback: you have to
-review the libraries that conda installs because they may not have
-been optimized for the hardware you are using.  For linear algebra, conda
-will typically use Intel MKL runtime libraries, giving you performance that
-is on par with the Python modules for `numpy` and `scipy`.
-
-However, care has to be taken in a number of situations.  When you require
-``mpi4py``, conda will typically use a library that is not configured and
-optimized for the networks used in our clusters, and the performance impact
-is quite severe.  Another example is TensorFlow when running on CPUs, the
-default package is not optimized for the CPUs in our infrastructure, and will
-run sub-optimally.  (Note that this is not the case when you run TensorFlow on
-GPUs, since conda will install the appropriate CUDA libraries.)
-
-These issues can be avoided by using the `Intel oneAPI Python Distribution`_
-that contains `Intel MPI`_ and optimized versions of packages such as
-scikit-learn and TensorFlow.
-
-.. _install_miniconda_python:
-
-Install Miniconda
-~~~~~~~~~~~~~~~~~
-
-If you have Miniconda already installed, you can skip ahead to the next
-section, if Miniconda is not installed, we start with that. Download the
-Bash script that will install it from `conda.io <https://conda.io/>`_
-using, e.g., ``wget``::
-
-   $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-
-Once downloaded, run the installation script::
-
-   $ bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
-
-.. warning::
-
-   It is important to use ``$VSC_DATA`` to store your conda installation
-   since environments tend to be large, and your quota in ``$VSC_HOME``
-   would be exceeded soon.
-
-Optionally, you can add the path to the Miniconda installation to the
-``PATH`` environment variable in your ``.bashrc`` file. This is convenient, but
-may lead to conflicts when working with the module system, so make sure
-that you know what you are doing in either case. The line to add to your
-``.bashrc`` file would be::
-
-   export PATH="${VSC_DATA}/miniconda3/bin:${PATH}"
-
-.. _create_python_conda_env:
-
-Create an environment
-~~~~~~~~~~~~~~~~~~~~~
-
-First, ensure that the Miniconda installation is in your PATH
-environment variable. The following command should return the full path
-to the conda command::
-
-   $ which conda
-
-If the result is blank, or reports that conda can not be found, modify
-the ``PATH`` environment variable appropriately by adding Miniconda's ``bin``
-directory to ``PATH``.
-
-You can create an environment based on the default conda channels, but
-it is recommended to at least consider the Intel Python distribution.
-
-Intel provides instructions on how to install the `Intel oneAPI Python
-Distribution`_ with conda.
-
-Alternatively, you can create a new conda environment based on the default
-channels::
-
-   $ conda create  -n science  numpy scipy matplotlib
-
-This command creates a new conda environment called science, and
-installs a number of Python packages that you will probably want to have
-handy in any case to preprocess, visualize, or postprocess your data.
-You can of course install more, depending on your requirements and
-personal taste.
-
-This will default to the latest Python 3 version, if you need a specific
-version, e.g., Python 2.7.x, this can be specified as follows::
-
-   $ conda create -n science  python=2.7  numpy scipy matplotlib
-
-
-Work with the environment
+Recreating an environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To work with an environment, you have to activate it. This is done with,
-e.g.,
+It is common that you want to recreate an environment, for instance to install
+it for a different architecture or to allow other people to have exactly the
+same package versions. This can be easily achieved by making use of
+*pip list*, which produces a list of currently available packages and their
+version:
 
-::
+.. code-block:: shell
 
-   $ source activate science
+   $ source venv-zen4/bin/activate
+   (venv-zen4) $ python3 -m pip list --format=freeze
+   ...
+   icecream==2.1.8
+   ...
+   numpy==1.25.1
+   ...
 
-Here, ``science`` is the name of the environment you want to work in.
+By saving the listed packages to a file::
 
+ (venv-zen4) $ python3 -m pip list --format=freeze > requirements.txt
 
-Install an additional package
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+it becomes easy to recreate the environment, in the following example for
+another architecture:
 
-To install an additional package, e.g., \`pandas`, first ensure that the
-environment you want to work in is activated.
+.. code-block:: shell
 
-::
+   $ srun --partition=zen5 --pty bash -l
+   $ module load Python/3.11.3-GCCcore-12.3.0 SciPy-bundle/2023.07-gfbf-2023a
+   $ python3 -m venv venv-zen5 --system-site-packages
+   $ source venv-zen5/bin/activate
+   (venv-zen5) $ python3 -m pip install -r requirements.txt
 
-   $ source activate science
+.. _vsc-venv_python:
 
-Next, install the package::
+The vsc-venv utility
+--------------------
 
-   $ conda install tensorflow-gpu
+As discussed earlier, it is recommend to create separate Python virtual
+environments for separate architectures. Together with the fact that exactly
+the same modules that were used during the environment creation need to be
+loaded whenever the environment is used, managing Python virtual environments
+on VSC clusters can become tedious. This is where the ``vsc-venv`` script
+comes to the rescue: it encapsulates the creation and management of Python
+virtual environments and avoids multiple issues with the default ``venv``
+included in Python. The ``vsc-venv`` command manages multiple virtual
+environments for different clusters in a transparent way, while guaranteeing
+the same module environment.
 
-Note that conda will take care of all dependencies, including
-non-Python libraries (e.g., cuDNN and CUDA for the example above). This
-ensures that you work in a consistent environment.
+Usage
+~~~~~
 
+A virtual environment can be activated by running the following command:
 
-Update/remove a package
-~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: shell
 
-Using conda, it is easy to keep your packages up-to-date. Updating a
-single package (and its dependencies) can be done using::
+   $ module load vsc-venv
+   $ source vsc-venv --activate --requirements requirements.txt [--modules modules.txt]
 
-   $ conda update pandas
+Here, ``requirements.txt`` is the path to a file containing the Python
+dependencies to install in the virtual environment. For more information on
+the ``requirements.txt`` file, see the `pip documentation <https://pip.pypa.io/en/stable/reference/requirements-file-format/>`_
+The optional ``--modules`` option can be used to provide a ``modules.txt`` file
+that lists the modules to load before activating the virtual environment.
 
-Updating all packages in the environment is trivial::
+Automatically, the modules are loaded and the environment is activated.
+When running this command for the first time, the dependencies from the
+requirements file are installed.
 
-   $ conda update --all
+Now, the software can be run and Python packages installed in the virtual
+environment can be used, along with software provided via centrally
+installed modules.
 
-Removing an installed package::
+You can get insights on the current environment using the following commands:
 
-   $ conda remove tensorflow-gpu
+.. code-block:: shell
 
+   $ python --version    # Python version
+   $ pip list            # List of installed Python packages
+   $ module list         # List of loaded modules
 
-Deactivate an environment
-~~~~~~~~~~~~~~~~~~~~~~~~~
+To deactivate the virtual environment, run:
 
-To deactivate a conda environment, i.e., return the shell to its
-original state, use the following command::
+.. code-block:: shell
 
-   $ source deactivate
+   $ source vsc-venv --deactivate
 
+Example
+~~~~~~~
 
-More information
-~~~~~~~~~~~~~~~~
+For this example, it is assumed the following files are present in the current
+directory:
 
-Additional information about conda can be found on its `documentation
-site <https://docs.conda.io/en/latest/>`_.
+**modules.txt:**
 
-Installing Anaconda on NX node (KU Leuven Genius)
--------------------------------------------------
+.. code-block:: shell
 
-#. Before installing make sure that you do not have a ``.local/lib``
-   directory in your ``$VSC_HOME``. In case it exists, please move it to
-   some other location or temporary archive. It creates conflicts with
-   Anaconda.
-#. Download appropriate (64-Bit (x86) Linux Installer) version of Anaconda
-   from `https://www.anaconda.com/products/individual#Downloads <https://www.anaconda.com/products/individual#Downloads>`_
-#. Change the permissions of the file (if necessary)::
+   SciPy-bundle/2023.11-gfbf-2023b
+   Pillow/10.2.0-GCCcore-13.2.0
 
-      $ chmod u+x Anaconda3-2019.07-Linux-x86_64.sh
+and **requirements.txt:**
 
-#. Execute the installer::
-  
-      $ ./Anaconda3-2019.07-Linux-x86_64.sh 
+.. code-block:: shell
 
-   You will be asked for to accept the license agreement, choose the location where
-   it should be installed (please choose your ``$VSC_DATA``). After installation is
-   done you can choose to installer to add the Anaconda path to your ``.bashrc``.
-   We recommend not to do that as it will prevent creating NX desktops. Instead of
-   that you can manually (or in another script) modify your path when you want to
-   use Anaconda::
+   beautifulsoup4==4.12.3
 
-      export PATH="${VSC_DATA}/anaconda3/bin:$PATH"
+We run the following commands create and activate the environment:
 
-#. Go to the directory where Anaconda is installed and check for updates, e.g.,::
+.. code-block:: shell
 
-      $ cd anaconda3/bin/
-      $ conda update anaconda-navigator
+   $ module load vsc-venv
+   $ source vsc-venv --activate --requirements requirements.txt --modules modules.txt
 
-#. You can start the navigator from that directory with::
+As this creates the virtual environment for the first time, a ``venvs``
+subdirectory is created in the current directory. Within ``venvs/``, an
+additional subdirectory is created for the virtual environment:
+for example ``venv-RHEL8-zen2`` (note that the name will depend on the cluster
+you are working on, it is automatically determined based on environment
+variables like ``$VSC_ARCH_LOCAL`` and ``$VSC_OS_LOCAL``).
 
-      $ ./anaconda-navigator
+Now, Python 3.12 is loaded and the ``numpy`` (provided by the ``SciPy-bundle``
+module), ``PIL`` (provided by the ``Pillow`` module), and ``bs4`` Python
+packages can be used.
+
+To deactivate the virtual environment, run:
+
+.. code-block:: shell
+
+   $ source vsc-venv --deactivate
+
+If we want to create a virtual environment for another architecture, simply
+repeat the steps above on a node of that architecture. After this, the
+``venvs`` directory will contain an additional subdirectory with the virtual
+environment for the new architecture.
+
+.. _uv_python:
+
+uv as Python package manager
+----------------------------
+
+The discussion thus far made use of *pip* as the package manager, but there
+other options available. This section will in particular show how
+`uv <https://docs.astral.sh/uv/>`_ (an extremely fast Python package and
+project manager written in Rust) can be used. Some advantages of uv over pip
+are that it can resolve dependencies much faster and that it can provide any
+desired Python version (whereas pip relies on existing Python installations).
+
+The first step is getting uv itself, which usually can be done conveniently
+on the cluster by loading a module, for instance::
+
+ $ module load uv/0.4.20-GCCcore-13.3.0
+
+uv provides a so-called `pip interface <https://docs.astral.sh/uv/pip/>`_,
+which makes it very easy to use uv if you are familiar with pip. For instance
+to create a virtual environment with uv similar to the one discussed in a
+:ref:`previous section <venv_python>`, you can use the following commands:
+
+.. code-block:: shell
+
+   $ uv venv venv-zen4 --python 3.11
+   $ source venv-zen4/bin/activate
+   $ uv pip install icecream --no-cache-dir --no-build-isolation
+   $ deactivate
+
+Most of the remarks and warnings from before apply to uv as
+well. For more specific uv information, please consult the
+`uv documentation pages <https://docs.astral.sh/uv>`_
