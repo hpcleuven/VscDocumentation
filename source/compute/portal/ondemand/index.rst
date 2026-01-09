@@ -19,24 +19,27 @@ VSC clusters that support an Open OnDemand web portal:
 
     .. grid-item-card:: |KUL|
        :columns: 6 6 3 3
+       :padding: 2 2 1 1
 
        :fas:`circle-play` `KU Leuven OnDemand`_
 
-       * Tier-2 :ref:`Genius <Genius hardware>`
-       * Tier-2 :ref:`Superdome <Superdome hardware>`
-       * Tier-2 :ref:`wICE <wICE hardware>`
+       | Tier-2 :ref:`Genius <Genius hardware>`
+       | Tier-2 :ref:`Superdome <Superdome hardware>`
+       | Tier-2 :ref:`wICE <wICE hardware>`
 
     .. grid-item-card:: |UA|
        :columns: 6 6 3 3
+       :padding: 2 2 1 1
 
        :fas:`circle-play` `UAntwerp OnDemand`_
 
-       * Tier-2 :ref:`Vaughan <Vaughan hardware>`
-       * Tier-2 :ref:`Leibniz <Leibniz hardware>`
-       * Tier-2 :ref:`Breniac <Breniac hardware UAntwerp>`
+       | Tier-2 :ref:`Vaughan <Vaughan hardware>`
+       | Tier-2 :ref:`Leibniz <Leibniz hardware>`
+       | Tier-2 :ref:`Breniac <Breniac hardware UAntwerp>`
 
     .. grid-item-card:: |UG|
        :columns: 6 6 3 3
+       :padding: 2 2 1 1
 
        :fas:`circle-play` `UGent OnDemand`_
 
@@ -44,11 +47,12 @@ VSC clusters that support an Open OnDemand web portal:
 
     .. grid-item-card:: |VUB|
        :columns: 6 6 3 3
+       :padding: 2 2 1 1
 
        :fas:`circle-play` `VUB OnDemand`_
 
-       * Tier-2 :ref:`Anansi <Anansi cluster>`
-       * Tier-2 :ref:`Hydra <Hydra cluster>`
+       | Tier-2 :ref:`Anansi <Anansi cluster>`
+       | Tier-2 :ref:`Hydra <Hydra cluster>`
 
 .. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
 .. _UAntwerp OnDemand: https://portal.hpc.uantwerpen.be/
