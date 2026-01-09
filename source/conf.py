@@ -393,10 +393,12 @@ rst_prolog += """
 .. _FFTW: http://www.fftw.org/
 .. _FileZilla project page: https://filezilla-project.org/
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
+.. _ghcr: https://ghcr.io/
 .. _GNU: https://www.gnu.org/
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
+.. _Hugging Face: https://huggingface.co
 .. _Intel Fortran Compiler Documentation: https://www.intel.com/content/www/us/en/developer/tools/oneapi/fortran-compiler-documentation.html
 .. _Intel MPI: https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html
 .. _Intel MPI Documentation: https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library-documentation.html
