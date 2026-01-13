@@ -281,6 +281,25 @@ Practical usage:
 The 20% cutoff is for academic non-starting grant projects only, referring to paragraph 9(4) of the 'Regulations Governing Applications For Use of the Flemish Tier-1 Supercomputing Platform' (see https://www.vscentrum.be/_files/ugd/5446c2_21daee40839244c5a099a6d6bffaedb5.pdf).
 This is 20% of the initial allocated compute time a project is at risk of losing, if that 20% has not yet been used during the first 3 months of the project.
 
+Workshops/trainings
+*******************
+
+It is possible to organize research-oriented workshops or trainings using Tier1 Hortense resources, but this is solely the responsibility of the organizers. Organizers should be very much aware that availability of Tier1 or support staff can never be guaranteed. Organizers should therefore always have a backup plan at hand, which should include accepting the possibility that the workshop has to be cancelled due to unavailability of Tier1. The VSC or its staff can never be held accountable in case of problems.
+
+Organizers should be moderator of an active Tier-1 compute project. This can be a starting grant or collaboration grant, but only if all participants of the workshop are academic users and no entrance fee is charged. If the workshop is open for industry participants or an entrance fee is charged, a paid-for compute project should be requested (see https://www.vscentrum.be/vsc4business). Do include a link to the public website with information about the workshop/training in your Tier-1 compute request.
+
+It remains the responsibility of the organizers:
+
+* to populate the active Tier-1 compute project with the vsc-ids of all participants
+* to make sure participants without a vsc-id request one well in time (at least 2 weeks before the start of the workshop)
+* to make sure that any required software is available and working as expected, tested at least 2 weeks before the start of the workshop
+* to prepare and have at hand a fallback solution or strategy, should the Tier-1 resources be unavailable.
+
+If the interactive partitions (debug_ *) of Tier-1 are not sufficient, specific resource requests or reservations may be made. However, these should be clearly indicated up front in the project request. Additionally, for reservations the Tier1 support staff should be informed via compute@vscentrum.be at least 2 weeks before the workshop with the project group containing all vsc-ids that should be included in the reservation. Later additions will not be accepted.
+
+These requirements may be adjusted as needed in the future, please make sure you take into account the latest requirements when organising workshops or trainings.
+All communication regarding trainings or workshops should go via compute@vscentrum.be. 
+
 
 .. _hortense_system_specific_aspects:
 
