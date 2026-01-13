@@ -295,7 +295,7 @@ It remains the responsibility of the organizers:
 * to make sure that any required software is available and working as expected, tested at least 2 weeks before the start of the workshop
 * to prepare and have at hand a fallback solution or strategy, should the Tier-1 resources be unavailable.
 
-If the interactive partitions (debug_\*) of Tier-1 are not sufficient, specific resource requests or reservations may be made. However, these should be clearly indicated up front in the project request. Additionally, for reservations the Tier1 support staff should be informed via compute@vscentrum.be at least 2 weeks before the workshop with the project group containing all vsc-ids that should be included in the reservation. Later additions will not be accepted.
+If the interactive partitions (debug) of Tier-1 are not sufficient, specific resource requests or reservations may be made. However, these should be clearly indicated up front in the project request. Additionally, for reservations the Tier1 support staff should be informed via compute@vscentrum.be at least 2 weeks before the workshop with the project group containing all vsc-ids that should be included in the reservation. Later additions will not be accepted.
 
 These requirements may be adjusted as needed in the future, please make sure you take into account the latest requirements when organising workshops or trainings.
 All communication regarding trainings or workshops should go via compute@vscentrum.be. 
