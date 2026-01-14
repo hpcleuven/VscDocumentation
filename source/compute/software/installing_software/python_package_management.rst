@@ -11,7 +11,7 @@ encouraged to use those packages as much as possible, since this will
 ensure that your code can be run on any platform that supports Python.
 
 However, many useful extensions to and libraries for Python come in the form of
-packages that can be installed separately. There are a few different supported
+packages that have to be installed separately. There are a few different supported
 approaches to using and installing Python packages on the VSC clusters.
 
 Since many Python packages have been made available through the module system,
@@ -24,7 +24,7 @@ need to install it yourself.
 The recommended approach in that case is to
 :ref:`manage a virtual environment with pip <venv_python>` or
 alternatively to make use of :ref:`the uv package manager <uv_python>`.
-In order to automate support for different architectures and facilitate
+In order to automate support for different (micro)architectures and facilitate
 building environments on top of modules, the section introducing
 :ref:`vsc-venv <vsc-venv_python>` is worth reading. Finally, you can also consider to
 :ref:`conda for Python`.
@@ -118,15 +118,15 @@ in the HPC to get the best of two worlds.
    however a very important caveat: many scientific Python packages do their
    heavy computational lifting inside libraries written in a lower-level
    language (typically C, C++ or Fortran) and those libraries will typically
-   target one or more speficic architectures. As a consequence, installed Python
+   target one or more specific (micro)architectures. As a consequence, installed Python
    packages **can** be different depending on the hardware on which they are
    installed. To make sure your installation works and gives good performance,
    we recommend to create a virtual environment on a node with the same
-   architecture as the nodes where the virtual environment will be used. This
-   is especially important for heterogeneous clusters, where architecture may
-   differ across login nodes and cluster partitions. To get the architecture
+   (micro)architecture as the nodes where the virtual environment will be used. This
+   is especially important for heterogeneous clusters, where (micro)architecture may
+   differ across login nodes and cluster partitions. To get the (micro)architecture
    of the current node, you can use the ``$VSC_ARCH_LOCAL`` environment
-   variable. If you need to use an environment on multiple architectures,
+   variable. If you need to use an environment on multiple (micro)architectures,
    create a separate one for each. :ref:`vsc-venv_python` can help with this.
 
 #. Start by launching an interactive job (click :ref:`here <job_type_interactive>`
@@ -177,7 +177,7 @@ in the HPC to get the best of two worlds.
 
    This example code block creates a new virtual environment in the
    *venv-zen4* directory. The *-zen4* suffix in the name is used to indicate
-   the architecture on and for which architecture this environment was created.
+   the (micro)architecture on and for which (micro)architecture this environment was created.
 
    .. code-block:: shell
 
@@ -256,7 +256,7 @@ Recreating an environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is common that you want to recreate an environment, for instance to install
-it for a different architecture or to allow other people to have exactly the
+it for a different (micro)architecture or to allow other people to have exactly the
 same package versions. This can be easily achieved by making use of
 *pip list*, which produces a list of currently available packages and their
 version:
@@ -276,7 +276,7 @@ By saving the listed packages to a file::
  (venv-zen4) $ python3 -m pip list --format=freeze > requirements.txt
 
 it becomes easy to recreate the environment, in the following example for
-another architecture:
+another (micro)architecture:
 
 .. code-block:: shell
 
@@ -291,7 +291,7 @@ another architecture:
 The vsc-venv utility
 --------------------
 
-As discussed earlier, it is recommend to create separate Python virtual
+As discussed earlier, it is recommended to create separate Python virtual
 environments for separate architectures. Together with the fact that exactly
 the same modules that were used during the environment creation need to be
 loaded whenever the environment is used, managing Python virtual environments
@@ -369,7 +369,7 @@ We run the following commands create and activate the environment:
 As this creates the virtual environment for the first time, a ``venvs``
 subdirectory is created in the current directory. Within ``venvs/``, an
 additional subdirectory is created for the virtual environment:
-for example ``venv-RHEL8-zen2`` (note that the name will depend on the cluster
+for example ``venv-RHEL8-zen2`` (note that the name will depend on the type of node
 you are working on, it is automatically determined based on environment
 variables like ``$VSC_ARCH_LOCAL`` and ``$VSC_OS_LOCAL``).
 
@@ -383,10 +383,10 @@ To deactivate the virtual environment, run:
 
    $ source vsc-venv --deactivate
 
-If we want to create a virtual environment for another architecture, simply
-repeat the steps above on a node of that architecture. After this, the
+If we want to create a virtual environment for another (micro)architecture, simply
+repeat the steps above on a node of that (micro)architecture. After this, the
 ``venvs`` directory will contain an additional subdirectory with the virtual
-environment for the new architecture.
+environment for the new (micro)architecture.
 
 .. _uv_python:
 
