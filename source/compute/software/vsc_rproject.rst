@@ -215,4 +215,7 @@ When launching a new session via the :ref:`Studio Server <rstudio-server>` app i
    The R module selected in the OnDemand form must match the R module that was used to create the project!
    Otherwise dependency conflicts may arise as RStudio Server will replace the modules loaded via the pre-run scriplet.
 
-Once inside the RStudio session, you still need to open the RStudio Project via the interface.
+Once inside the RStudio session, you still need to open the RStudio Project via the interface:
+File > Open Project... 
+
+After loading the RStudio Project, any packages you install — via install.packages(), devtools::install(), or other methods — will be installed into the project’s local R package library.
