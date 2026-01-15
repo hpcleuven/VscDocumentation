@@ -343,3 +343,13 @@ leibniz cluster, one should first enter
 
       $ module load leibniz/2019a-experimental
 
+TODO-GSSI: The following toctree is included because otherwise the build gives
+warnings these pages are not included anywhere. The content of those pages can
+probably be merged with the "module system basics" and "cluster modules" pages.
+
+.. toctree::
+   :maxdepth: 2
+
+   /gent/setting_up_the_environment_using_lmod_at_the_hpc_ugent_clusters
+   /leuven/leuven_module_system
+
