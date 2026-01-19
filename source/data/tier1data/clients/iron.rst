@@ -8,13 +8,15 @@ Introduction
 
 iron is a Go-based client for interacting with Tier-1 Data (and other iRODS systems) that provides both a programmatic API and a command-line interface. This documentation covers the CLI usage for end users.
 
-Iron is a platform-independent command-line interface that provides reliable data transfer and serves as both an alternative iRODS client and a generic Tier-1 Data authentication tool. Its built-in PAM interactive authentication eliminates the need for extra packages, making a single installation sufficient for all requirements.
+This tool is a platform-independent command-line interface that provides reliable data transfer and serves as both an alternative iRODS client and a generic Tier-1 Data authentication tool. Its built-in PAM interactive authentication eliminates the need for extra packages, making a single installation sufficient for all requirements.
 
 
 Installation
 ------------
 
-The CLI binary can be downloaded from https://github.com/kuleuven/iron/releases/latest. e.g. on a Linux system, macOS or Windows WSL. Linux users can execute the snippet below to install iron CLI.
+iron is currently installed on **all KU Leuven HPC clusters**.
+
+You may also install iron locally by downloading the CLI binary from from https://github.com/kuleuven/iron/releases/latest. e.g. on a Linux system, macOS or Windows WSL. Linux users can execute the snippet below to install iron CLI.
 
 .. code:: sh
 
@@ -24,7 +26,7 @@ The CLI binary can be downloaded from https://github.com/kuleuven/iron/releases/
 
 Linux and Windows users can install iron directly using the dedicated installer.
 
-Installation Steps for Linux(Debian) Uers:
+Installation Steps for Linux(Debian) Users:
 
 - Download the installer (iron_{VERSION}_amd64.deb ) from: https://icts-p-coz-iron-releases.cloud.icts.kuleuven.be/
 
