@@ -8,7 +8,7 @@ Introduction
 
 iron is a Go-based client for interacting with Tier-1 Data (and other iRODS systems) that provides both a programmatic API and a command-line interface. This documentation covers the CLI usage for end users.
 
-Iron is a platform-independent command-line interface that provides reliable data transfer and serves as both an alternative iRODS client and a generic ManGO authentication tool. Its built-in PAM interactive authentication eliminates the need for extra packages, making a single installation sufficient for all requirements.
+Iron is a platform-independent command-line interface that provides reliable data transfer and serves as both an alternative iRODS client and a generic Tier-1 Data authentication tool. Its built-in PAM interactive authentication eliminates the need for extra packages, making a single installation sufficient for all requirements.
 
 
 Installation
@@ -70,7 +70,7 @@ To authenticate using iron, first obtain your connection details from the `ManGO
 
    iron auth irods_user_name irods_zone_name irods_host
 
-If you connected earlier to a ManGO zone already, you can simply run
+If you connected earlier to a Tier-1 Data zone already, you can simply run
  
 .. code:: sh
 
