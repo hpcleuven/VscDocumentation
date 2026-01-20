@@ -116,12 +116,31 @@ Ubuntu 22:
 Authenticating
 **************
 
-To authenticate, go to the `ManGO portal <https://mango.vscentrum.be>`__
-and log in. Click on ‘How to connect’ next to your zone, copy the code
-under ‘iCommands for Linux’ and paste it into your terminal. This should
-authenticate your for 168 hours.
+Since the Tier-1 Data service requires PAM interactive authentication, you can authenticate using either:
 
-Alternatively, you can use one of the following commands to log in: 
+- The standard iron client (see ::ref:`iron<iron-CLI>`), or
+
+- iCommands following the steps below.
+
+For iCommands authentication:
+
+- Install the `irods-auth-plugin-pam-interactive-client`` package where iCommands (release 5.0.0 or later) is installed.
+
+Ubuntu/Debian (local machines):
+
+.. code:: sh
+
+   sudo apt update
+   sudo apt install irods-auth-plugin-pam-interactive-client
+
+**Note:** For VSC login nodes, the package is already (or will be) installed centrally.
+
+- Go to the `ManGO portal <https://mango.vscentrum.be/>`__ and log in. Click on "How to connect" next to your zone, copy the code under "With iCommands only for Linux operating systems" and paste it into your terminal. 
+
+
+- Click the authentication link displayed in your terminal and complete the steps on https://auth.vscentrum.be/.
+
+Alternatively, you can use one of the following commands to log in from HPC nodes: 
 
 - On HPC clusters of the KU Leuven, use the command ``irods-setup --zone <zone> | bash``.  
   This command can also be used at the beginning of your job script to authenticate.

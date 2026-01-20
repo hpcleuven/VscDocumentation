@@ -34,21 +34,33 @@ which you can load as follows:
 Authenticating
 **************
 
-There are three ways to authenticate with the Python-iRODSclient:
+Logging in
+----------
 
-1. Follow the instructions on the `ManGO portal <https://mango.vscentrum.be/>`_
-   > 'How to Connect' > 'Python Client on Windows'. This method, despite the
-   title, should work for any operating system.
+In order to log in to the Tier-1 Data service via the PAM interactive authentication, you can authenticate either using the standardized :ref:`iron<iron-CLI>` client or following the PRC specific steps below.
 
-2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.signed.exe>`_.
-   Double click on the file and enter your zone name in the window that pops
-   up. You might need to put the file in a folder that doesn't require administrator rights.  
+1. Install the required authentication package:
 
-3. Linux users can first authenticate with :ref:`icommands`. 
-   The user is also authenticated for the Python-iRODSClient.
+.. code:: sh
 
-.. note::
-  Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
+   pip install mango_auth
+
+2. Go to the “How to connect” page in `ManGO portal <https://mango.vscentrum.be/>`__ to get your `irods_user_name`, `irods_zone_name` and `irods_host` information.
+
+3. Execute the command below with your own information in your terminal:
+
+.. code:: sh
+
+   mango_auth <irods_user_name> <irods_zone_name> <irods_host>
+
+- To authenticate in a Python shell or within a script file, run the following snippet:
+
+.. code:: sh
+
+   from mango_auth import iinit
+   iinit('user_name', 'zone_name', 'host')
+
+4. Click the authentication link when displayed in your terminal and complete the steps on https://auth.vscentrum.be/.  
 
 Creating a session
 ------------------
