@@ -116,14 +116,24 @@ Ubuntu 22:
 Authenticating
 **************
 
-Since the Tier-1 Data service requires PAM interactive authentication, you can authenticate either using the standardized :ref:`iron<iron-CLI>` client or following the iCommands specific steps below.
+Since the Tier-1 Data service requires PAM interactive authentication, you can authenticate using either:
 
-- First, install the `irods-auth-plugin-pam-interactive-client` package:
+- The standard iron client (see ::ref:`iron<iron-CLI>`), or
+
+- iCommands following the steps below.
+
+For iCommands authentication:
+
+- Install the `irods-auth-plugin-pam-interactive-client`` package where iCommands (release 5.0.0 or later) is installed.
+
+Ubuntu/Debian (local machines):
 
 .. code:: sh
 
    sudo apt update
    sudo apt install irods-auth-plugin-pam-interactive-client
+
+**Note:** For VSC login nodes, the package is already installed centrally.
 
 - Go to the `ManGO portal <https://mango.vscentrum.be/>`__ and log in. Click on "How to connect" next to your zone, copy the code under "With iCommands only for Linux operating systems" and paste it into your terminal. 
 
