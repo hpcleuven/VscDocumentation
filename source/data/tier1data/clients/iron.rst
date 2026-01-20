@@ -24,9 +24,18 @@ You may also install iron locally by downloading the CLI binary from from https:
    mkdir -p .local/bin/
    curl -L -s "https://github.com/kuleuven/iron/releases/download/v${VERSION}/iron_${VERSION}_linux_amd64.tar.gz" | tar zxvf - -C .local/bin/
 
-**Note:** If you are installing iron on a VSC cluster where it is not installed by default, we recommend changing to the $VSC_DATA directory before running the commands above. This ensures the software is installed in the correct location.
+If you are installing iron on a VSC cluster where it is not installed by default, we recommend changing to the $VSC_DATA directory before running the commands above. This ensures the software is installed in the correct location.
 
-**Note:** After installation, Linux users make sure `~/.local/bin/` is in your `$PATH`. You can add it permanently by running `echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc`. Then restart your shell or run source `~/.bashrc`
+.. code:: sh
+
+   cd ${VSC_DATA}
+
+   VERSION=$(curl -Ls -w %{url_effective} -o /dev/null https://github.com/kuleuven/iron/releases/latest | sed 's/.*\/v//')
+   mkdir -p .local/bin/
+   curl -L -s "https://github.com/kuleuven/iron/releases/download/v${VERSION}/iron_${VERSION}_linux_amd64.tar.gz" | tar zxvf - -C .local/bin/
+
+   # Append path in bashrc if necessary
+   echo "export PATH='$VSC_DATA/.local/bin:$PATH' >> ~/.bashrc
 
 Linux and Windows users can install iron directly using the dedicated installer.
 
