@@ -1,8 +1,10 @@
 .. _hpc containers:
 
-#############################
-Containers on the HPC systems
-#############################
+##################################
+Containers (Singularity/Apptainer)
+##################################
+
+TODO-GSSI
 
 The best-known container implementation is undoubtedly `Docker`_.  However,
 Docker needs to run as the *root* superuser of the system which has several
