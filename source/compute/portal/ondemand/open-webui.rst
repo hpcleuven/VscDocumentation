@@ -32,7 +32,12 @@ Using new models
 
 The easiest way to populate your custom models directory is by pulling models from the `Ollama library <https://ollama.com/library>`_ or from `Hugging Face <https://huggingface.co>`_. Note that Ollama only supports GGUF models, so Hugging Face models in a different format will not work.
 
-In order to pull these models, load an Ollama module, e.g., by doing ``ml ollama/0.11.10-GCCcore-14.2.0``, set the ``OLLAMA_MODELS`` environment variable to your custom directory, e.g., ``OLLAMA_MODELS=$VSC_SCRATCH/ollama``, and run the Ollama server by executing ``ollama serve``. Once the server is running open a new shell on the same node, load the Ollama module and use ``ollama pull`` to pull in new models.
+To download new models, follow these steps:
+
+#. load an Ollama module, e.g. ``module load ollama/0.11.10-GCCcore-14.2.0``
+#. set the ``$OLLAMA_MODELS`` environment variable to your custom directory, e.g., ``OLLAMA_MODELS=$VSC_SCRATCH/ollama``
+#. run the Ollama server by executing ``ollama serve``.
+#. once the server is running, open a new shell on the same node, load the Ollama module and run ``ollama pull`` to pull in new models.
 
 - From the `Ollama library <https://ollama.com/library>`_: find the model you want, e.g., deepseek-r1:1.5b, and run ``ollama pull deepseek-r1:1.5b``.
 - From `Hugging Face <https://huggingface.co>`_: find any GGUF model, e.g., microsoft/Phi-3-mini-4k-instruct-gguf, and run ``ollama pull hf.co/microsoft/Phi-3-mini-4k-instruct-gguf``.
