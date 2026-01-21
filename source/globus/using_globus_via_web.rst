@@ -66,7 +66,10 @@ Transferring files between collections
 
 The main goal of Globus is to transfer data from one collection to another.  
 
-To do this, you first need to open a second panel inside the file manager by clicking the middle button next to 'Panel' in the top right corner. 
+A standard Globus transfer will copy data between locations. If data should be moved, you can consider first copying the data and then removing it yourself from the source.
+
+To do a transfer, you first need to open a second panel inside the file manager by clicking the middle button next to 'Panel' in the top right corner. 
+
 Next, you can use the collection search bar on the right side to search for a second collection:
 
 .. figure:: using_globus_via_web/dual_pane.png
