@@ -62,6 +62,17 @@ For information about compute credit accounts, see
    We expect that you adapt the number of nodes, cores, memory, walltime, ...
    depending on what your compute task requires.
 
+.. note::
+
+   If you do not provide a walltime for your job, then a default walltime will
+   be applied. This is 1 hour for all partitions, except for the ``*_debug``
+   partitions where it is 30 minutes.
+
+.. note::
+
+   If you do not specify the number of tasks and cores per task for your job,
+   then it will default to a single task running on a single core.
+
 
 .. _submit to wice compute node:
 
@@ -131,9 +142,6 @@ default), you can submit a job as follows::
 
 There is also one IceLake node with even more memory (8 TiB RAM) in the
 ``hugemem`` partition (defaulting to ``--mem-per-cpu=111900M``).
-In contrast to :ref:`Superdome <superdome_quick_start>`, you do not need to
-request entire sockets and so the node is more similar to the other large
-memory nodes in this regard.
 
 
 .. _submit to wice GPU node:

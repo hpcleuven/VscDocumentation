@@ -153,11 +153,9 @@ of the available versions of the ``CP2K`` module by executing:
     You will need to load all module(s) on any one of the lines below before
     the "CP2K/8.2-intel-2021a" module is available to load
 
-      cluster/genius/batch
-      cluster/genius/batch_debug
-      cluster/genius/batch_long
-      ...
       cluster/wice/batch
+      cluster/wice/batch_icelake
+      cluster/wice/batch_icelake_long
       ...
 
 This command shows which cluster modules will make the ``CP2K/8.2-intel-2021a``
@@ -197,21 +195,21 @@ e.g.:
 
 .. code-block:: shell
 
-   /apps/leuven/rocky8/skylake/2018a/modules/all
+   /apps/leuven/rocky8/sapphirerapids/2024a/modules/all
 
-This convention is in line with other VSC sites and will also be used on wICE
-and future clusters. In order to add such a directory to your modulepath, the
+This convention is in line with other VSC sites and will also be used on
+future clusters. In order to add such a directory to your modulepath, the
 following command can be used:
 
 .. code-block:: shell
 
-   module use /apps/leuven/rocky8/skylake/2018a/modules/all
+   module use /apps/leuven/rocky8/sapphirerapids/2024a/modules/all
 
 To remove the entry again:
 
 .. code-block:: shell
 
-   module unuse /apps/leuven/rocky8/skylake/2018a/modules/all
+   module unuse /apps/leuven/rocky8/sapphirerapids/2024a/modules/all
 
 Keep in mind that also ``/apps/leuven/common/modules/all`` is part of your
 default ``$MODULEPATH``. This module collection is intended for packages which
