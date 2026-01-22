@@ -7,21 +7,23 @@
 Recent versions of Windows come with `OpenSSH`_ installed, so you do not 
 need to install other software.
 
-This documentation covers the use of OpenSSH on Windows to generate keys, 
-which will be similar to the Linux documentation. 
-(If you use WSL on Windows, please refer to the :ref:`Linux documentation 
-<generating keys linux>`)
+.. seealso::
+   This documentation covers the use of OpenSSH on Windows to generate keys, 
+   which will be similar to the Linux documentation. 
+   If you use WSL on Windows, please refer to the :ref:`Linux documentation 
+   <generating keys linux>`.
 
-Alternatively, if your installation does not come with OpenSSH, or you want 
-to use a different SSH client, we provide documentation for two SSH legacy 
-clients, :ref:`PuTTY <terminal putty>` and :ref:`MobaXterm <terminal mobaxterm>`,
-both of which require a public/private key pair in a different format:
+.. seealso::
+   Alternatively, if your installation does not come with OpenSSH, or you want 
+   to use a different SSH client, we provide documentation for two SSH legacy 
+   clients, :ref:`PuTTY <terminal putty>` and :ref:`MobaXterm <terminal mobaxterm>`,
+   both of which require a public/private key pair in a different format:
 
-.. toctree::
-   :maxdepth: 1
+   .. toctree::
+      :maxdepth: 1
 
-   generating_keys_putty
-   generating_keys_mobaxterm
+      generating_keys_putty
+      generating_keys_mobaxterm
 
 
 Requirements
@@ -38,7 +40,11 @@ by opening `PowerShell`_ (or command prompt) and typing:
    $ ssh -V
    OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2
 
-If it is not installed, `you need to add it in you settings 
+You want the ``ssh -V`` command to return a version string without errors. 
+This assures that the OpenSSH client is correctly installed and available. 
+Often the SSL library version is printed, like the example, but not necessarily.
+
+If OpenSSH is not installed, `you need to add it in you settings 
 <https://learn.microsoft.com/en-us/windows-server/administration/openssh/
 openssh_install_firstuse?tabs=gui&pivots=windows-11#install-openssh-server--client>`__ : 
 System > Optional features > Add an optional feature > OpenSSH Client
@@ -63,12 +69,12 @@ and a passphrase to protect your private key.
 
 .. _ssh agent windows:
 
-(optional) Add the key to the SSH agent
-=======================================
+Add the key to the SSH agent
+============================
 
-The system will ask you for your passphrase every time you want to use the 
-private key, that is, every time you want to access the cluster or transfer 
-your files, unless you use an :ref:`SSH agent<SSH agent>`.
+|Optional| The system will ask you for your passphrase every time you want to 
+use the private key, that is, every time you want to access the cluster or 
+transfer your files, unless you use an :ref:`SSH agent<SSH agent>`.
 
 .. code-block:: bash
   
@@ -80,14 +86,15 @@ your files, unless you use an :ref:`SSH agent<SSH agent>`.
     # Add your private key
    $ ssh-add $HOME\.ssh\id_rsa_vsc
 
-Note: You may need to run PowerShell as Administrator.
+.. note::
+   Note: You may need to run PowerShell as Administrator.
 
-(optional) Create or edit SSH config
-====================================
+Create or edit SSH config
+=========================
 
-Next, make sure to configure your OpenSSH client to automatically 
-:ref:`link your key with your VSC ID <ssh config link key vsc>`. You can apply all 
-the information about SSH on the Linux pages to OpenSSH on Windows, though you 
-will need to replace the paths, as ``~`` does not expand in PowerShell.
+|Optional| Next, make sure to configure your OpenSSH client to automatically 
+:ref:`link your key with your VSC ID <ssh config link key vsc>`. You can apply 
+all the information about SSH on the Linux pages to OpenSSH on Windows, though 
+you will need to replace the paths, as ``~`` does not expand in PowerShell.
 
 
