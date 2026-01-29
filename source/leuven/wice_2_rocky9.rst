@@ -52,7 +52,7 @@ Note that we do not plan to reserve H100 GPU nodes for piloting.
 Prepare before testing
 ----------------------
 
-If you are only using centrally-installed modules, your ``module load`` commands
+If you are only using centrally installed modules, your ``module load`` commands
 will automatically load the appropriate modules (e.g. the ones installed for Rocky 9 if you are
 on a node with Rocky 9). Note that this may not apply if you are manually modifying your module
 path (if in doubt, please consult
