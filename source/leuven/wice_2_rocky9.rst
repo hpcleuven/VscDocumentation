@@ -38,8 +38,8 @@ Timing
 Reserved hardware
 -----------------
 
-During the open pilot phase, the following reservations will allow you test your application
-on dedicated hardware. Each ``<ReservationName>`` targets a specific hardware on wICE:
+During the open pilot phase, you can use the following reservations
+to test your application on nodes which already have the new OS:
 
 * ``rocky9_icelake`` allows you to use up to 12 Icelake nodes
 * ``rocky9_sapphirerapids`` allows you to use up to 12 Sapphire Rapids nodes
