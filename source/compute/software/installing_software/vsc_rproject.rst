@@ -171,8 +171,8 @@ set the ``$VSC_RPROJECT`` environment variable which can be used to access the r
       R
 
 Once your project has been opened in R (either in :ref:`RStudio <vsc_rproject_and_rstudio_server>`  or via the commandline),
-you should see a welcome message pointing you to the project folder and listing all known library paths. The
-first library path should point to the project's own library itself. When loading packages 
+you should see a welcome message pointing you to the project folder and listing all known library paths. 
+The first library path should point to the project's own library itself. When loading packages 
 (e.g. ``library(<packagename>)``) or installing packages (e.g. ``install.packages(<packagename>)``) R prioritizes
 the first library path.
 
