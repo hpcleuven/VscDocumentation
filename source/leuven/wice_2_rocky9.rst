@@ -43,7 +43,7 @@ to test your application on nodes which already have the new OS:
 
 * ``rocky9_icelake`` allows you to use up to 12 Icelake nodes
 * ``rocky9_sapphirerapids`` allows you to use up to 12 Sapphire Rapids nodes
-* ``rocky9_a100`` allows you to use one GPU A100 node
+* ``rocky9_a100`` allows you to use one A100 GPU node
 * no reservation is already created for the H100 GPU nodes
 
 .. _how_to_prepare:
