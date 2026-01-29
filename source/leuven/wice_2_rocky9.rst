@@ -6,18 +6,11 @@ Rocky 9 migration
 
 .. note::
 
-   The wICE OS update to Rocky 9 was originally planned for November 2025.
-   We have however decided to postpone it until the performance issues with
-   Intel Turbo Boost have been resolved (see the bottom of this page).
+   The wICE OS migration to Rocky Linux 9.6 is scheduled on Wednesday 18
+   February 2026. During this day, you can submit jobs to wICE, but the job
+   execution pends until the cluster is released. 
 
-   Once we are confident that these performance issues can be resolved,
-   we will plan a new (short) test phase.
-
-   In the meantime, nodes where Rocky 9 has been deployed for testing purposes
-   will be gradually reverted to Rocky 8. The associated ``rocky9_pilot``
-   Slurm reservation will eventually be removed.
-
-We plan to update the KU Leuven Tier-2 cluster wICE to Rocky Linux 9 as the
+We plan to update the KU Leuven Tier-2 cluster wICE to Rocky Linux 9.6 as the
 operating system. Important differences at the system level are listed below.
 
 +-------------+------------------+---------------------+
@@ -40,48 +33,71 @@ starting from toolchain 2021a.
 Timing
 ------
 
-(To be decided)
+* Open pilot phase is planned starting from Wednesday 4th until Tuesday 17th of February
+2026. 
+
+* The actual migration will take place on Wednesday 18 February 2026. On this day, wICE
+  will be unavailable, but the jobs in the queue stay in pending state until the migration
+  is completed and the machine is released.
+
+.. _reserved_hardware:
+
+Reserved hardware
+-----------------
+
+During the open pilot phase, the following reservations will allow you test your application
+on dedicated hardware; each ``<ReservationName>`` targets a specific hardware on wICE:
+
+* ``rocky9_icelake`` allows you to use up to 12 Icelake nodes
+* ``rocky9_sapphirerapids`` allows you to use up to 12 Sapphire Rapids nodes
+* ``rocky9_a100`` allows you to use one GPU A100 node
+* no reservation is already created for the H100 GPU nodes
+
+.. _how_to_prepare:
+
+Prepare before testing
+----------------------
+
+If you have been compiling your own software on Rocky 8, it is possible
+that this software will not run on Rocky 9. If this is the case or
+if you have any doubts, we recommend to recompile on a node with the new OS.
+When doing so, it can be convenient to use the ${VSC_OS_LOCAL} variable
+which describes the node's operating system (i.e. "rocky8" or "rocky9").
+
+Keep in mind that also Python or R package installations may involve
+compiling steps for extensions and so may need to be redone for Rocky 9.
+
+Conda environments created on Rocky 8 will normally continue to work
+on Rocky 9 (at least if the compiled components are provided by
+Conda packages, as is normally the case).
 
 .. _how to test:
 
-How to test
------------
+Using reserved nodes
+--------------------
 
-(To be revisited)
+In order to :ref:`prepare your software <how_to_prepare>`, you need to use one of the
+:ref:`target reservations <reserved_hardware>`:
+
+  * add ``--reservation=<ReservationName>`` to your ``srun`` or ``sbatch`` commands
+    on the command line, or
+  * add ``#SBATCH --reservation=<ReservationName>`` to your jobscripts, or
+  * specify the ``<ReservationName>`` in the text field 'Reservation' in the
+    :ref:`Open OnDemand <ood>` form for any app
 
 .. _expected impact:
 
 Expected impact
 ---------------
 
-The impact of this upgrade will be small for most users. If you are only using
-centrally installed modules, your ``module load`` commands will automatically
-load the appropriate modules (e.g. the ones installed for Rocky 9 if you are
-on a node with Rocky 9). Note that this may not apply if you are
-manually modifying your module path (if in doubt, please consult
+We have learned from the first migration attempt that the impact of this upgrade will be small
+for most users. If you are only using centrally installed modules, your ``module load`` commands
+will automatically load the appropriate modules (e.g. the ones installed for Rocky 9 if you are
+on a node with Rocky 9). Note that this may not apply if you are manually modifying your module
+path (if in doubt, please consult
 :ref:`The module system on Leuven clusters <leuven_module_system>`).
 
-.. note::
-
-   If you have been compiling your own software on Rocky 8, it is possible
-   that this software will not run on Rocky 9. If this is the case or
-   if you have any doubts, we recommend to recompile on a node with the new OS.
-   When doing so, it can be convenient to use the ${VSC_OS_LOCAL} variable
-   which describes the node's operating system (i.e. "rocky8" or "rocky9").
-
-.. note::
-   Keep in mind that also Python or R package installations may involve
-   compiling steps for extensions and so may need to be redone for Rocky 9.
-
-.. note::
-   Conda environments created on Rocky 8 will normally continue to work
-   on Rocky 9 (at least if the compiled components are provided by
-   Conda packages, as is normally the case).
-
-Known issues
-------------
-
-* Currently the CPU cores are unable to reach the maximal ('turbo') frequency.
-  Compared to nodes with Rocky 8, you may therefore see somewhat lower performance
-  if only a few cores are active while the other cores are idling.
-  This issue is still being investigated.
+Currently the CPU cores are unable to reach the maximal ('turbo') frequency.
+Compared to nodes with Rocky 8, you may therefore see somewhat lower performance
+if only a few cores are active while the other cores are idling.
+This issue is still being investigated.
