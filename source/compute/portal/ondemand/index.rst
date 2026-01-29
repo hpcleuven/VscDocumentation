@@ -83,4 +83,5 @@ navigation panel on the left.
    tensorboard
    vscode-server
    vscode-tunnel
+   igv-web
 
