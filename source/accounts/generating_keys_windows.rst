@@ -4,19 +4,18 @@
 :fab:`windows` Generating keys on Windows
 #########################################
 
-Recent versions of Windows come with `OpenSSH`_ installed, so you do not 
-need to install other software.
+Recent versions of Windows come with `OpenSSH`_ installed, so you do not need 
+to install other software. It is therefore the recommended way to generate 
+SSH keys on Windows, unless you already use WSL. 
 
 .. seealso::
-   This documentation covers the use of OpenSSH on Windows to generate keys, 
-   which will be similar to the Linux documentation. 
-   If you use WSL on Windows, please refer to the :ref:`Linux documentation 
-   <generating keys linux>`.
+   If you use WSL on Windows, you can instead refer to the :ref:`Linux 
+   documentation <generating keys linux>`.
 
 .. seealso::
    Alternatively, if your installation does not come with OpenSSH, or you want 
-   to use a different SSH client, we provide documentation for two SSH legacy 
-   clients, :ref:`PuTTY <terminal putty>` and :ref:`MobaXterm <terminal mobaxterm>`,
+   to use a different SSH client, we provide documentation for two SSH clients, 
+   :ref:`PuTTY <terminal putty>` and :ref:`MobaXterm <terminal mobaxterm>`,
    both of which require a public/private key pair in a different format:
 
    .. toctree::
@@ -29,7 +28,7 @@ need to install other software.
 Requirements
 ============
 
-* Windows operating system
+*  Windows 11 or Windows 10 (build 1809 or newer)  
 * `OpenSSH`_
 
 You can check whether the OpenSSH software is installed on your computer
@@ -57,12 +56,12 @@ use the following command (make sure to generate a 4096-bit key):
 
 .. code-block:: bash
 
-   $ ssh-keygen -t rsa -b 4096 -f $HOME\.ssh\id_rsa_vsc
+   $ ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/d_rsa_vsc
    Generating public/private rsa key pair.
    Enter passphrase (empty for no passphrase):
    Enter same passphrase again:
-   Your identification has been saved in C:\Users\<user>\.ssh\id_rsa_vsc
-   Your public key has been saved in C:\Users\<user>\.ssh\id_rsa_vsc.pub
+   Your identification has been saved in C:\Users\<user>/.ssh/id_rsa_vsc
+   Your public key has been saved in C:\Users\<user>/.ssh/id_rsa_vsc.pub
 
 This will ask you for a file name to store the private and public key, 
 and a passphrase to protect your private key.
@@ -84,7 +83,7 @@ transfer your files, unless you use an :ref:`SSH agent<SSH agent>`.
    $ Start-Service ssh-agent  
 
     # Add your private key
-   $ ssh-add $HOME\.ssh\id_rsa_vsc
+   $ ssh-add $env:USERPROFILE\.ssh\id_rsa_vsc
 
 .. note::
    Note: You may need to run PowerShell as Administrator.
