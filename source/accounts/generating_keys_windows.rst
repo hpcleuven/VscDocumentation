@@ -32,9 +32,9 @@ Requirements
 * `OpenSSH`_
 
 You can check whether the OpenSSH software is installed on your computer
-by opening `PowerShell`_ (or command prompt) and typing:
+by opening `PowerShell`_ and typing:
 
-.. code-block:: bash
+.. code-block:: PowerShell
 
    $ ssh -V
    OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2
@@ -51,12 +51,12 @@ System > Optional features > Add an optional feature > OpenSSH Client
 Create a public/private key pair
 ================================
 
-Open PowerShell (or command prompt). To generate a new public/private pair, 
-use the following command (make sure to generate a 4096-bit key):
+Open PowerShell. To generate a new public/private pair, use the following 
+command (make sure to generate a 4096-bit key):
 
-.. code-block:: bash
+.. code-block:: PowerShell
 
-   $ ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/d_rsa_vsc
+   $ ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa_vsc
    Generating public/private rsa key pair.
    Enter passphrase (empty for no passphrase):
    Enter same passphrase again:
@@ -75,18 +75,23 @@ Add the key to the SSH agent
 use the private key, that is, every time you want to access the cluster or 
 transfer your files, unless you use an :ref:`SSH agent<SSH agent>`.
 
-.. code-block:: bash
+.. code-block:: PowerShell
   
-    # By default, the ssh-agent service is disabled. Configure it to start automatically. 
+    # The ssh-agent service is disabled by default. Configure it to start automatically. 
+    # Run the following command as an administrator.
    $ Set-Service -Name ssh-agent -StartupType Automatic
+
     # Start the ssh-agent service
    $ Start-Service ssh-agent  
+    # The following command should return a status of Running
+   $ Get-Service ssh-agent
 
-    # Add your private key
-   $ ssh-add $env:USERPROFILE\.ssh\id_rsa_vsc
+    # Add your private key. Fill in the path to your private key correctly.
+   $ ssh-add C:\Users\<user>/.ssh/id_rsa_vsc
 
 .. note::
-   Note: You may need to run PowerShell as Administrator.
+   Note: You need to run PowerShell as Administrator for the ``Set-Service`` 
+   command.
 
 Create or edit SSH config
 =========================
