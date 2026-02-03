@@ -39,11 +39,11 @@ Hortense consists of the following partitions:
        - 480 GB SSD local disk
 - ``dodrio/cpu_rome_512_rhel9``: large-memory partition:
    - 42 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
        - 488 GiB usable RAM (~3.8GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/cpu_milan_rhel9``: partition with RHEL9 operating system:
-   - 30 workernodes, each with:
+- ``dodrio/cpu_milan_rhel9``: phase 2 main partition:
+   - 384 workernodes, each with:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 238 GiB usable RAM (~1.85GB/core), no swap
        - 480 GB SSD local disk
@@ -59,8 +59,8 @@ Hortense consists of the following partitions:
        - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
        - 488 GiB usable RAM (~10GB/CPU core), no swap
        - 480 GB SSD local disk
-- ``dodrio/debug_milan_rhel9``: interactive and debug partition with RHEL9 operating system:
-   - 1 workernode, with:
+- ``dodrio/debug_milan_rhel9``: interactive and debug partition:
+   - 4 workernodes, each with:
        - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
        - 1 shared NVIDIA L4 (24 GB GPU memory)
        - 1 NVIDIA L4 (24 GB GPU memory)
