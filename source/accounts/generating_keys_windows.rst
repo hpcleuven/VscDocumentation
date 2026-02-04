@@ -119,4 +119,20 @@ all the same instructions about SSH configuration on Linux on your Windows syste
 Just keep in mind to replace any paths with the corresponding format in Windows,
 as ``~`` does not expand in PowerShell.
 
+The following is an example of how to create and edit the SSH config file on Windows:
 
+.. code-block:: PowerShell
+  
+   $ New-Item $HOME\.ssh\config
+   $ notepad $HOME\.ssh\config
+
+.. code-block:: PowerShell
+  
+   Match final User <vscXXXXX>
+     IdentityFile C:\Users\<user>\.ssh\id_rsa_vsc
+   
+   Host hortense
+     User <vscXXXXX>
+     HostName tier1.hpc.ugent.be
+     ForwardAgent yes
+     ForwardX11 yes
