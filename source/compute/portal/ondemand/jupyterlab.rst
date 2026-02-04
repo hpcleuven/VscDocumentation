@@ -37,19 +37,36 @@ drop-down menu.  An example would be '2023a and
 JupyterLab module will be loaded together with its dependencies (such as the
 listed Python module).
 
-Furthermore, you may choose to tick one of the checkboxes to load popular
-modules from the same toolchain, such as ``SciPy-bundle`` (for widely used
-packages like ``scipy``, ``numpy``, ``pandas`` and more) and/or ``matplotlib``.
+.. tab-set::
+   :sync-group: vsc-sites
 
-Once you launch a JupyterLab session, a default kernel called ``Python 3
-(ipykernel)`` is already available in your session.  This kernel, in addition to
-the Python standard library, would enable using extra packages from
-``SciPy-bundle`` and/or ``matplotlib``, if you selected them in the resource
-form.
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-If the selected modules do not provide all Python packages that you need, you
-can load extra modules with Python packages via ``module load`` commands in the
-'Pre-run Scriptlet' of the resources form.
+      Furthermore, you may choose to tick one of the checkboxes to load popular
+      modules from the same toolchain, such as ``SciPy-bundle`` (for widely used
+      packages like ``scipy``, ``numpy``, ``pandas`` and more) and/or ``matplotlib``.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      A large number of widely used Python packages are already available by
+      default. The following modules are always loaded with JupyterLab:
+
+      - ``Python-bundle-PyPI`` - packages for general usage
+      - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
+      - ``matplotlib`` - plotting library and :ref:`matplotlib_lab_extension`
+
+
+If you need additional Python packages, you can load extra modules with Python
+packages via ``module load`` commands in the 'Pre-run Scriptlet' of the
+resources form, or via the :ref:`software_modules_extension` in your JupyterLab
+session (if supported by the OnDemand portal).
+
+After launch, the ``Python 3 (ipykernel)`` kernel is automatically available in
+your JupyterLab session. Along with the standard Python library, it also gives
+you access to Python packages from any modules that are loaded by default or in
+the 'Pre-run Scriptlet' of the resources form.
 
 .. warning::
 
@@ -233,6 +250,7 @@ following requirements:
 
    .. code-block:: shell
 
+      $ python3 -m pip install ipykernel
       $ python3 -m ipykernel install --user --name=venv-zen4
 
 #. A new launcher will appear in the lab interface to start notebooks using
@@ -360,9 +378,9 @@ VSC clusters that support the matplotlib Lab extension:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
-To enable the Lab extension, use the ``%matplotlib ipympl`` or ``%matplotlib
-widget`` magic command. To ensure your plot is always shown, make sure to
-generate a figure object before plotting, e.g. with ``plt.figure()`` or
+To activate the Lab extension in your notebook, use the ``%matplotlib ipympl`` or
+``%matplotlib widget`` magic command. To ensure your plot is always shown, make
+sure to generate a figure object before plotting, e.g. with ``plt.figure()`` or
 ``plt.subplots()``.
 
 .. figure:: img/jupyterlab-matplotlib.png

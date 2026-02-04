@@ -53,6 +53,37 @@ In order to avoid potential mistakes we have made the ``-M/--clusters`` option
 mandatory when submitting jobs.
 
 
+.. _leuven_job_memory:
+
+CPU memory requirements
+-----------------------
+Each partition also defines a default amount of CPU memory that is provided
+per allocated core. For e.g. the wICE `batch_sapphirerapids` partition
+this amounts to 2500 MB (equivalent to the ``--mem-per-cpu=2500M`` Slurm
+option). For all partitions except the `interactive` ones, this default amount
+per core is furthermore equal to the *maximum* amount per core. You may
+therefore request more memory per core if needed, but it will cause additional
+cores to be allocated to your job. This is to ensure that memory is not
+oversubscribed.
+
+On the wICE `batch_sapphirerapids` partition, for example, you can get twice
+as much memory per core by specifying ``--mem-per-cpu=5000M`` but the job will
+then also require twice as many cores and cost twice as many credits.
+Note that in this example the same also applies if you would only specify
+``--mem-per-cpu=4000M`` because Slurm takes ``ceil(4000/2500) = 2``.
+
+Also be careful with multipliers such as ``G``. If in the above example
+you would specify ``--mem-per-cpu=5G``, you will be tripling the number of
+cores (because ``ceil(5*1024/2500) = 3``).
+
+Note that similar considerations apply for other CPU memory options such
+as `--mem <https://slurm.schedmd.com/srun.html#OPT_mem>`__.
+
+Finally, in case of doubt, see the :ref:`leuven_job_monitoring` paragraph for
+tips on how to check your past jobs, as well as the
+:ref:`sam-quote tool<leuven_job_cost_calculation>`.
+
+
 .. _leuven_job_monitoring:
 
 Monitoring jobs
@@ -100,6 +131,55 @@ environment as well. To e.g. pass an additional environment variable ``FOO``
 with value ``bar``, use ``--export=HOME,USER,TERM,PATH=/bin:/sbin,FOO=bar``.
 
 
+.. _leuven_job_limits:
+
+Job limits
+----------
+We set limits to the number of concurrent jobs that a user can have
+(in any active state, i.e. pending plus running). If you reach this limit,
+you will not be able to submit additional jobs. There may also be limits to the
+total sum of resources that your running jobs can occupy. Slurm will not let
+any of your pending jobs start if that would cause this limit to be exceeded.
+
+These two limits have different values depending on which partitions are
+involved, through so-called partition QoSs:
+
+.. list-table:: Partitions and their QoS
+   :widths: 10 10
+
+   * - Partitions
+     - Partition QoS
+   * - ``*_debug``
+     - ``debug``
+   * - ``interactive``
+     - ``interactive``
+   * - ``*_long``
+     - ``long``
+   * - other partitions (e.g. ``batch``)
+     - ``normal``
+
+With the following command you can find out what those limits are::
+
+   $ sacctmgr show qos debug,interactive,long,normal format=Name%20,MaxSubmitJobsPerUser%15,MaxTRESPerUser%30
+
+
+.. _leuven_batch_job_header:
+
+Batch job header
+----------------
+We have configured Slurm to print the values of important Slurm environment
+variables at the start of the standard output of each batch job (such as
+``SLURM_JOB_ID: ...``). These lines will not be present, however, if the batch
+job was itself submitted from within another Slurm job.
+
+For GPU jobs this output includes the
+`SLURM_JOB_GPUS <https://slurm.schedmd.com/sbatch.html#OPT_SLURM_JOB_GPUS>`__
+variable. Keep in mind that this value refers to the index (or indices)
+of the GPU(s) that were allocated on the job's master node.
+A value of ``0`` therefore means that the GPU device with index 0 got
+allocated (not that the job did not get any GPUs).
+
+
 .. _leuven_slurm_mpi:
 
 MPI applications
@@ -124,6 +204,12 @@ or equivalently adding the option ``-env I_MPI_PIN_RESPECT_CPUSET=off`` to your
 cores, set the environment variable ``I_MPI_DEBUG=5`` to get more verbose
 output. Note that this issue does not occur with the Open MPI library.
 
+Multi-node jobs with Intel MPI and SSH bootstrapping
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some packages such as Fluent will hang at startup when using multiple nodes.
+In that case, try adding ``export -n I_MPI_HYDRA_BOOTSTRAP_EXEC_EXTRA_ARGS``
+in your jobscript before the application gets launched.
+
 
 .. _gpu_compute_mode:
 
@@ -132,35 +218,36 @@ Setting the GPU compute mode
 
 NVIDIA GPUs support multiple `compute modes
 <https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-modes>`_.
-By default, the compute mode is set to `Exclusive-process` on our clusters
-(which is the best setting in the majority of cases), but you can choose
-another compute mode at job submission time. This is done by making use of a
-plugin for our Slurm job scheduler:
+By default, the compute mode is set to `shared` on our clusters, meaning that
+multiple host threads and/or processes can use the device at the same time (NVIDIA refers to
+this as `DEFAULT` mode). This setting covers the majority of cases, but you
+can choose another compute mode at job submission time. This is done by making
+use of a plugin for our Slurm job scheduler:
 
 .. code-block:: shell
 
    $ sbatch --help
    ...
    Options provided by plugins:
-   
+
          --gpu_cmode=<shared|exclusive|prohibited>
                                  Set the GPU compute mode on the allocated GPUs to
                                  shared, exclusive or prohibited. Default is
-                                 exclusive
+                                 shared
 
 Submitting a batch job where you want to set the compute mode of your NVIDIA
-GPU(s) to be `shared` can be done with:
+GPU(s) to be `exclusive` can be done with:
 
 .. code-block:: shell
 
-   sbatch --export=ALL --gpu_cmode=shared jobscript.slurm
+   sbatch --export=ALL --gpu_cmode=exclusive jobscript.slurm
 
 An interactive job can be launched as follows:
 
 .. code-block:: shell
 
    srun --ntasks-per-node=9 --nodes=1 --gpus-per-node=1 --account=<YOUR_ACCOUNT> \
-        --clusters=wice --time=01:00:00 --partition=gpu_a100 --gpu_cmode=shared \
+        --clusters=wice --time=01:00:00 --partition=gpu_a100 --gpu_cmode=exclusive \
         --pty /bin/bash -l
 
 A few notes on this feature:
@@ -243,3 +330,15 @@ Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
 Slurm also offers options like ``--cpus-per-gpu`` and ``--mem-per-gpu``.
 When using these options, make sure that the requested CPU cores
 and CPU memory per GPU does not exceed the limits mentioned in the table above.
+
+
+.. _leuven_join_job:
+
+Joining a job
+-------------
+For debugging purposes it can sometimes be useful to connect to one of the
+compute nodes allocated to your job (for example to inspect its processes
+using GDB). In such cases we recommend to 'join' the job as follows::
+
+   $ srun -M <cluster> --jobid=<jobid> --overlap --pty bash -l
+

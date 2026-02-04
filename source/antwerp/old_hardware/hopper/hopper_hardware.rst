@@ -1,8 +1,8 @@
 .. _Hopper hardware:
 
-########################
-UAntwerp Hopper hardware
-########################
+######
+Hopper
+######
 
 .. note:: Hopper was a UAntwerp Tier-2 cluster, which was decommissioned in 2023. 
  This page is obsolete, and we keep it only for future reference.

@@ -11,47 +11,56 @@ The goal of the PRC is to offer researchers means to manage their data in Tier-1
 Installation
 ************
 
-The Python-iRODSclient can be installed with pip as follows:
+You can install the Python-iRODSclient in a local environment using pip:
 
 .. code-block:: sh
 
    pip install python-irodsclient
 
-On Genius and wICE, the Tier-2 HPC clusters of the KU Leuven, the Python-irodsclient (version 1.1.4.) is already installed as a module. You can install this module as follows:
+On the Tier-2 and Tier-1 clusters hosted at KU Leuven and UGent, a version
+of the Python-irodsclient is also already installed as a module
+which you can load as follows:
 
 .. code-block:: sh
 
-   module use /apps/leuven/<node_architecture>/2021a/modules/all
+   # For Genius and wICE
    module load python-irodsclient/1.1.4-GCCcore-10.3.0
 
-You should replace <node_architecture> with the architecture of the
-(login) node you are on ('cascadelake', 'skylake' or 'broadwell').
+   # For Stevin and Hortense
+   module load python-irodsclient/1.1.4-GCCcore-11.2.0
 
-On Hortense and Stevin, the HPC-clusters of UGent, you can load the module as follows:
-
-.. code-block:: sh
-
-    module load python-irodsclient/1.1.4-GCCcore-11.2.0
 
 **************
 Authenticating
 **************
 
-There are three ways to authenticate with the Python-iRODSclient:
+Logging in
+----------
 
-1. Follow the instructions on the `ManGO portal <https://mango.vscentrum.be/>`_
-   > 'How to Connect' > 'Python Client on Windows'. This method, despite the
-   title, should work for any operating system.
+In order to log in to the Tier-1 Data service via the PAM interactive authentication, you can authenticate either using the standardized :ref:`iron<iron-CLI>` client or following the PRC specific steps below.
 
-2. Windows users can download `iinit.exe <https://rdmrepo-proxy.icts.kuleuven.be/artifactory/coz-p-foz-generic-public/iinit.signed.exe>`_.
-   Double click on the file and enter your zone name in the window that pops
-   up. You might need to put the file in a folder that doesn't require administrator rights.  
+1. Install the required authentication package:
 
-3. Linux users can first authenticate with :ref:`icommands`. 
-   The user is also authenticated for the Python-iRODSClient.
+.. code:: sh
 
-.. note::
-  Method 1 and 2 authenticate you for approximately 60 hours, and method 3 for approximately 7 days.  
+   pip install mango_auth
+
+2. Go to the “How to connect” page in `ManGO portal <https://mango.vscentrum.be/>`__ to get your `irods_user_name`, `irods_zone_name` and `irods_host` information.
+
+3. Execute the command below with your own information in your terminal:
+
+.. code:: sh
+
+   mango_auth <irods_user_name> <irods_zone_name> <irods_host>
+
+- To authenticate in a Python shell or within a script file, run the following snippet:
+
+.. code:: sh
+
+   from mango_auth import iinit
+   iinit('user_name', 'zone_name', 'host')
+
+4. Click the authentication link when displayed in your terminal and complete the steps on https://auth.vscentrum.be/.  
 
 Creating a session
 ------------------

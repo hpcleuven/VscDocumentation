@@ -2,10 +2,15 @@
 
 Genius quick start guide
 ========================
-:ref:`Genius <Genius hardware>` is one of the two KU Leuven/UHasselt Tier-2 clusters,
-besides :ref:`wICE <wice hardware>`.
-Given the architectural diversity of compute nodes on Genius, this cluster is suited
-for most HPC workloads.
+
+:ref:`Genius <genius hardware>` is a KU Leuven/UHasselt Tier-2 cluster
+which entered production in 2018. Aside from regular CPU nodes, Genius also
+contains large memory nodes and GPU nodes.
+
+.. note::
+
+   Most of Genius will be :ref:`decommissioned <genius_decommissioning>`
+   in early 2026.
 
 Access to the cluster
 ---------------------
@@ -35,6 +40,12 @@ more information on the following pages:
 - :ref:`Slurm jobs (basics) <running jobs>`
 - :ref:`Slurm jobs (advanced) <job advanced>`
 - :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
+
+.. note::
+
+   The examples given on this page only serve as illustrations.
+   We expect that you adapt the number of nodes, cores, memory, walltime, ...
+   depending on what your compute task requires.
 
 
 .. _submit_genius_batch:
@@ -79,16 +90,6 @@ you may submit your job like this::
 
    If you do not specify the number of tasks and cores per task for your job,
    then it will default to a single task running on a single core.
-
-.. note::
-
-   Each partition also has a default amount of memory that is provided for
-   every allocated core. For e.g. the `batch` partition, this is 5000 MB,
-   which corresponds to the ``--mem-per-cpu=5000M`` Slurm option.
-   You may choose higher values if your application requires more memory
-   than what is provided by default. When doing so, keep in mind that e.g.
-   specifying ``--mem-per-cpu=10G`` will be interpreted as a request for
-   10240 MB and not 10000 MB.
 
 
 Advanced node usage
@@ -155,26 +156,18 @@ The GPU nodes are accessible via the following partitions:
 Similar to the other nodes, the GPU nodes can be shared by different jobs from
 different users.
 However, every user will have exclusive access to the number of GPUs requested.
-If you want to use only 1 GPU of type P100 you can submit for example like this::
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=9 \
-            --gpus-per-node=1 --partition=gpu_p100 myjobscript.slurm
+If you e.g. want to get one P100 GPU and two CPU cores::
 
-Note that in case of 1 GPU you have to request 9 cores.
-In case you need more GPUs you have to multiply the 9 cores with the number of GPUs
-requested, so in case of for example 3 GPUs you will have to specify this::
+   $ sbatch --account=lp_myproject --clusters=genius --partition=gpu_p100 \
+            --nodes=1 --ntasks=2 --gpus-per-node=1 myjobscript.slurm
 
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=27 \
-            --gpus-per-node=3 -p gpu_p100 myjobscript.slurm
+For a V100 GPU, select the `gpu_v100` partition instead. Note that these nodes
+also offer :ref:`a much larger amount of CPU memory <Genius hardware>`.
 
-To specifically request V100 GPUs, you can submit for example like this::
-
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=4 \
-            --gpus-per-node=1 --mem-per-cpu=20000M --partition=gpu_v100 myjobscript.slurm
-
-For the V100 type of GPU, it is required that you request 4 cores for each GPU.
-Also notice that these nodes offer a much larger amount of CPU memory.
-
+You are free to request more GPU devices and/or CPU cores if needed,
+but take note of the :ref:`limits on CPU resources per allocated GPU
+<cpu_resource_limits_in_gpu_jobs>`).
 
 .. _submit_genius_bigmem:
 
@@ -186,19 +179,6 @@ for example::
 
    $ sbatch --account=lp_my_project --clusters=genius --nodes=1 --ntasks=36 \
             --mem-per-cpu=20000M --partition=bigmem myjobscript.slurm
-
-
-.. _submit_genius_amd:
-
-Submitting to an AMD node
-~~~~~~~~~~~~~~~~~~~~~~~~~
-The AMD nodes are accessible via the ``amd`` and ``amd_long`` partitions.
-Besides specifying the partition, it is also important to note that the default memory
-per core in this partition is 3800 MB, and each node contains 64 cores.
-For example, to request two full nodes::
-
-   $ sbatch --account=lp_my_project --clusters=genius --nodes=2 --ntasks-per-node=64 \
-            --partition=amd myjobscript.slurm
 
 
 .. _submit_genius_debug:

@@ -7,6 +7,8 @@ The VS Code Server app provides the browser version of Visual Studio Code (VS
 Code).  For more information, check out the official `VS Code guidelines
 <https://code.visualstudio.com/docs>`_.
 
+.. include:: vscode-warning-extensions.rst
+
 Before you connect
 ------------------
 

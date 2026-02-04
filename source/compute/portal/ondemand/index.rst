@@ -70,17 +70,18 @@ navigation panel on the left.
    fluent
    login-shell
    active-jobs
-   job-composer
    interactive-apps
    desktop
    gaussview
    interactive-shell
    jupyterlab
    matlab
+   open-webui
    paraview
    pycharm
    rstudio-server
    tensorboard
    vscode-server
    vscode-tunnel
+   igv-web
 
