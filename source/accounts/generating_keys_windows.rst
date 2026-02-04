@@ -4,25 +4,35 @@
 :fab:`windows` Generating keys on Windows
 #########################################
 
-Recent versions of Windows come with `OpenSSH`_ installed, so you do not need 
-to install other software. It is therefore the recommended way to generate 
-SSH keys on Windows, unless you already use WSL. 
+Recent versions of Windows come with `OpenSSH`_ installed, so you do not need
+to install any other software to connect to the terminal interface of VSC
+clusters. It is therefore the **recommended** method to generate SSH keys on
+Windows.
 
-.. seealso::
-   If you use WSL on Windows, you can instead refer to the :ref:`Linux 
-   documentation <generating keys linux>`.
+There are multiple options to generate keys on Windows though, and depending on
+your case you might need to check some of the alternative methods:
 
-.. seealso::
-   Alternatively, if your installation does not come with OpenSSH, or you want 
-   to use a different SSH client, we provide documentation for two SSH clients, 
-   :ref:`PuTTY <terminal putty>` and :ref:`MobaXterm <terminal mobaxterm>`,
-   both of which require a public/private key pair in a different format:
+Windows OpenSSH
+    |Recommended| Default option for all users using the terminal interface on recent
+    Windows computers. Instructions found below in this document.
 
-   .. toctree::
-      :maxdepth: 1
+Windows Subsystem for Linux (WSL)
+    Users of :ref:`WSL<wsl>` should instead refer to
+    the :ref:`Linux documentation <generating keys linux>`.
 
-      generating_keys_putty
-      generating_keys_mobaxterm
+Alternative SSH clients
+    Older Windows systems without OpenSSH, or users needing to use SSH keys on
+    third-party graphical applications should instead consider using
+    :ref:`PuTTY <generating keys putty>` or
+    :ref:`MobaXterm <generating keys mobaxterm>`, both of which require a
+    public/private key pair in a different format.
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   generating_keys_putty
+   generating_keys_mobaxterm
 
 
 Requirements
@@ -39,20 +49,23 @@ by opening `PowerShell`_ and typing:
    $ ssh -V
    OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2
 
-You want the ``ssh -V`` command to return a version string without errors. 
+The ``ssh -V`` command should return a version string without errors. 
 This assures that the OpenSSH client is correctly installed and available. 
 Often the SSL library version is printed, like the example, but not necessarily.
 
-If OpenSSH is not installed, `you need to add it in you settings 
-<https://learn.microsoft.com/en-us/windows-server/administration/openssh/
-openssh_install_firstuse?tabs=gui&pivots=windows-11#install-openssh-server--client>`__ : 
-System > Optional features > Add an optional feature > OpenSSH Client
+.. note ::
+
+   If OpenSSH is not enabled but you have the minimum required version of
+   Windows, you need to add it in you settings by going to your system
+   settings: System > Optional features > Add an optional feature > OpenSSH
+   Client. More information in the `Microsoft documentation page about
+   OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-11#install-openssh-server--client>`__
 
 Create a public/private key pair
 ================================
 
-Open PowerShell. To generate a new public/private pair, use the following 
-command (make sure to generate a 4096-bit key):
+Open PowerShell and use the following command to generate a new public/private
+pair (make sure to generate a 4096-bit key):
 
 .. code-block:: PowerShell
 
@@ -73,7 +86,11 @@ Add the key to the SSH agent
 
 |Optional| The system will ask you for your passphrase every time you want to 
 use the private key, that is, every time you want to access the cluster or 
-transfer your files, unless you use an :ref:`SSH agent<SSH agent>`.
+transfer your files. You can use an :ref:`SSH agent<SSH agent>` to hold your
+unlocked keys and avoid being asked for the passphrase on each connection.
+
+The following commands will enable and automatically start the SSH Agent
+service on your system. You only need to do this once:
 
 .. code-block:: PowerShell
   
@@ -90,15 +107,16 @@ transfer your files, unless you use an :ref:`SSH agent<SSH agent>`.
    $ ssh-add C:\Users\<user>/.ssh/id_rsa_vsc
 
 .. note::
-   Note: You need to run PowerShell as Administrator for the ``Set-Service`` 
-   command.
+   You need to run PowerShell as Administrator to be able to use
+   the ``Set-Service`` command.
 
 Create or edit SSH config
 =========================
 
-|Optional| Next, make sure to configure your OpenSSH client to automatically 
-:ref:`link your key with your VSC ID <ssh config link key vsc>`. You can apply 
-all the information about SSH on the Linux pages to OpenSSH on Windows, though 
-you will need to replace the paths, as ``~`` does not expand in PowerShell.
+|Optional| You can configure your OpenSSH client to automatically 
+:ref:`link your key with your VSC ID <ssh config link key vsc>`. You can follow 
+all the same instructions about SSH configuration on Linux on your Windows system.
+Just keep in mind to replace any paths with the corresponding format in Windows,
+as ``~`` does not expand in PowerShell.
 
 
