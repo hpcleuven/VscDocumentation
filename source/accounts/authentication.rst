@@ -79,3 +79,23 @@ abroad, it is necessary that you first authorize your own connection on the
    Keep the `VSC Firewall`_ page open for the duration of your session on the
    VSC cluster.
 
+Additional Firewall layer
+=========================
+
+Beginning of March 2026 an extra firewall layeter will be introdcued to connect to VSC clusters at KU Leuven:
+
+.. include:: clusters_mfa.rst
+
+There will be a difference between connecting from a managed Ku Leuven laptop and unmanaged laptops. KU Leuven managed laptops will use only the MFA (certificate) for connections both from Belgium and from abroad (without requesting :ref:`additional firewall login <additional_firewall>`).
+
+On the other (non-KU Leuven managed laptops) there are several possibilities to connect to the Ku Leuven VSC clusters:
+
+* Certificate only connection is possible from VSC network (other VSC clusters),
+
+* Certificate and firewall will be nessary for all other cases: connecting from VPN B zone, from other VSC usniversities, from other Belgian IP addresses and from abroad.
+
+Opening the connection to `VSC Firewall`_ will allow to request a certificate and will open a firewall for a short duration of 5 min.
+
+
+
+

@@ -45,6 +45,8 @@ a new SSH public key.
   Take into account that it takes a while before a new SSH public key becomes active on the system
   (it should not take longer than 1 hour after uploading the public key to the VSC account page).
 
+.. _additional_firewall:
+
 Additional Firewall layer 
 -------------------------
 
