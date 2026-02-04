@@ -86,4 +86,5 @@ Beginning of March 2026 an extra firewall layeter will be introdcued to connect 
 
 .. include:: clusters_mfa.rst
 
-There will be a difference between connecting from a managed Ku Leuven laptop and unmanaged laptops. Ku Leuven managed laptops will use only the MFA (certificate) for connections both from Belgium and from abroad (without requesting extra firewall login)
+There will be a difference between connecting from a managed Ku Leuven laptop and unmanaged laptops. Ku Leuven managed laptops will use only the MFA (certificate) for connections both from Belgium and from abroad (without requesting extra firewall login, :ref:`can be found here <upload_new_ssh_key>`).
+
