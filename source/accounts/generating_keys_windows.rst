@@ -81,8 +81,8 @@ and a passphrase to protect your private key.
 
 .. _ssh agent windows:
 
-Add the key to the SSH agent
-============================
+Add key to SSH agent
+====================
 
 |Optional| The system will ask you for your passphrase every time you want to 
 use the private key, that is, every time you want to access the cluster or 
