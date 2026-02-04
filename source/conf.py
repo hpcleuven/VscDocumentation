@@ -82,8 +82,14 @@ exclude_patterns = []
 # To render double dashes in text as double dashes (and not as an "en dash"):
 smartquotes_action = 'qe'  # instead of default 'qDe'
 
-# Automatic numbering of figures
+# Automatic numbering
+# always includes figures, tables and code-blocks (see sphinx-doc/sphinx#10316)
 numfig = True
+numfig_format = {
+    'code-block': 'Code %s',
+    'figure': 'Fig. %s:',
+    'table': 'Table %s:',
+}
 
 # -- Options for HTML output -------------------------------------------------
 
