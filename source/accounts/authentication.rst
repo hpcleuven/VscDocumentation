@@ -79,3 +79,6 @@ abroad, it is necessary that you first authorize your own connection on the
    Keep the `VSC Firewall`_ page open for the duration of your session on the
    VSC cluster.
 
+Additional Firewall layer
+=======================
+
