@@ -17,46 +17,71 @@ to create the initial version yourself.
 
       $ chmod 600 ~/.ssh/config
 
-Basic configuration
--------------------
+Basic configuration for VSC
+---------------------------
 
 The main usage of the OpenSSH configuration is to automatically set options for
 the ``ssh`` connections based on the hostname of the server. Avoiding having to
 type the same options over and over again.
 
-The following is an example that simplifies the connection to a KU Leuven
-cluster to just a ``ssh hpc`` command. The full hostname of the login node and
-the VSC ID of the user will be automatically filled in by OpenSSH.
+The following file is an example configuration for SSH that simplifies the
+connection to all VSC clusters. Once added to your ``~/.ssh/config``, you will
+be able to login to any VSC cluster with a simple command of the form ``ssh
+<name_of_cluster>`` without having to specify your VSC ID or path the key
+file.
 
 .. code-block:: text
 
-   Host *
-       ServerAliveInterval 60
+   ServerAliveInterval 60
 
-   Host hpc
+   Host vsc.vub
+       HostName login.hpc.vub.be
+       User vsc00000
+   Host vsc.ugent
+       HostName login.hpc.ugent.be
+       User vsc00000
+   Host vsc.kuleuven
        HostName login.hpc.kuleuven.be
-       User vsc50005
+       User vsc00000
+   Host vsc.uantwerpen
+       HostName login.hpc.uantwerpen.be
+       User vsc00000
+   Host vsc.hortense
+       HostName tier1.hpc.ugent.be
+       User vsc00000
+
+   Match User vsc00000
+       IdentityFile ~/.ssh/id_rsa_vsc
        ForwardAgent yes
        ForwardX11 yes
 
-Here, you should replace ``login.hpc.kuleuven.be`` by the hostname of the
-remote host you want to login to, and ``vsc50005`` by your user name on that
-system.  You can have as many host definitions as you want in the configuration
-file.
 
-The first entry, i.e., ``Host *`` ensures that for any host you connect to,
-the server keep-alive interval is set to 60 seconds.
+Here, you should replace ``vsc00000`` with your VSC ID and ``~/.ssh/id_rsa_vsc``
+with the actual path to your SSH private key.
 
-The second entry, i.e., ``Host hpc`` specifies that every SSH connection to
-``login.hpc.kuleuven.be`` established using the ``hpc`` alias has agent
-and X forwarding enabled, so you don't need to specify the ``-A`` and ``-X``
-flags respectively.
+This ``.ssh/config`` file is composed with the following entries:
 
-Now you can simply log in to ``login.hpc.kuleuven.be`` using the ``hpc`` alias:
+ServerAliveInterval
+    Global parameter that makes your SSH client to send a keep-alive message in
+    all established connections every 60 seconds to prevent the connection from
+    timing out.
+
+Host
+    Define connection settings based on the name of the target host (i.e. VSC
+    cluster). For instance, we use this entry to define the real public
+    hostname of the cluster and our username for that connection.
+
+Match User
+    Define connection settings based on the name of the user set in the
+    connection. For instance, we use this entry to define that all connections
+    using our VSC ID should also enable the SSH Agent forwarding and X
+    forwarding, so you don't need to manually specify the ``-A`` and ``-X``
+    flags respectively.
 
 .. code-block:: bash
+   :caption: Command to connect to Tier-2 cluster in KU Leuven
 
-   $ ssh hpc
+   $ ssh vsc.kuleuven
 
 
 .. _ssh config link key vsc:
@@ -64,82 +89,75 @@ Now you can simply log in to ``login.hpc.kuleuven.be`` using the ``hpc`` alias:
 Link private key with VSC ID
 ----------------------------
 
-You can avoid having to specify your VSC private key on your ``ssh`` command
-every time with the option ``-i ~/.ssh/id_rsa_vsc`` by configuring OpenSSH to
-automatically link link your private key to your VSC ID. Hence, whenever you
-connect to any VSC cluster (or other server) with your VSC ID, the correct SSH
-key will be used.
+You can configure OpenSSH to automatically link your private key whenever you
+connect with your VSC ID. This avoids having to manually specify the path to
+your VSC private key with the option ``-i ~/.ssh/id_rsa_vsc`` on your ``ssh``
+command.
 
-Assuming your private key is ``~/.ssh/id_rsa_vsc``, add the following
-lines to the end of your ``~/.ssh/config``:
+This can be achieved with the ``IdentityFile`` option under a ``Match User``
+condition defined for your VSC ID. Assuming your private key is
+``~/.ssh/id_rsa_vsc``, add the following lines to the end of your
+``~/.ssh/config``:
 
 .. code-block:: text
 
-   Match User vscXXXXX
+   Match User vsc00000
        IdentityFile ~/.ssh/id_rsa_vsc
 
-Replace ``vscXXXXX`` with your VSC ID.
+Replace ``vsc00000`` with your VSC ID.
 
 Link key with a host
 --------------------
 
 As alternative to linking your key with your VSC ID, you can also link your key
-with a specific host.  Specifying identity files allows you to have distinct
-keys for different hosts, e.g., you can use one key pair to connect to VSC
+with a specific host. Specifying identity files allows you to have distinct
+keys for different hosts, *e.g.* you can use one key pair to connect to VSC
 infrastructure, and a different one for your departmental server.
 
-Assuming your private key is ``~/.ssh/id_rsa_vsc``, then you can
-use it to connect by specifying the ``IdentityFile`` attribute, i.e.,
+This can be achieved with the ``IdentityFile`` option under a ``Host``
+entry defined for target cluster/server. Assuming your private key is
+``~/.ssh/id_rsa_another``, then you can write the ``Host`` entry as:
 
 .. code-block:: text
 
-   Host hpc
+   Host vsc.kuleuven
        HostName login.hpc.kuleuven.be
-       User vsc50005
-       ForwardAgent yes
-       ForwardX11 yes
-       IdentityFile ~/.ssh/id_rsa_vsc
+       User vsc00000
+       IdentityFile ~/.ssh/id_rsa_another
 
 
 Using a proxy host
 ------------------
 
-To use a host as a proxy, but log in through it on another node, the
-following entry can be added:
+You can configure SSH to connect to a host through some intermediate proxy
+server. For instance, this can be useful to connect to a compute node through
+the login nodes of your VSC cluster.
 
 .. code-block:: text
 
-    Host leibniz
+    Host leibniz-via-kuleuven
         Hostname login.leibniz.antwerpen.vsc
-        User vsc50005
-        ProxyJump hpc
-        ForwardAgent yes
-        ForwardX11 yes
+        User vsc00000
+        ProxyJump vsc.kuleuven
 
 In this example, ``login.leibniz.antwerpen.vsc`` is the host you actually
-want to log in to, and ``login.hpc.kuleuven.be`` is the host you are using
-as a proxy jump host, i.e., you will log in to that one, but it will log
+want to log in to, and ``vsc.kuleuven`` is the host you are using as a proxy
+jump host, i.e. you will log in to that one, but it will log
 you through to the leibniz login node.
-
-.. note::
-
-   The alias ``hpc`` previously defined for ``login.hpc.kuleuven.be`` can
-   be used to specify the proxy jump host.
-
 
 Setting up a tunnel
 -------------------
 
 If you require a tunnel to a remote host on a regular basis, you can
-define a connection in the SSH configuration file, e.g.,
+define such a connection in the SSH configuration file. For instance, to
+forward the port 50005 on the target VSC cluster to port 50005 in your local
+computer, you can do:
 
 .. code-block:: text
 
-   Host hpc_tunnel
+   Host vsc.kuleuven.tunnel
        HostName login.hpc.kuleuven.be
-       User vsc50005
-       ForwardAgent yes
-       ForwardX11 yes
+       User vsc00000
        LocalForward 50005 login.hpc.kuleuven.be:50005
 
 This ensures that a process on the login node that uses port 50005 can be
@@ -148,14 +166,13 @@ accessed from your computer on that same port number.
 .. note::
 
    When choosing a port on a remote VSC system, it is good practice to
-   use your VSC-number, since that would be unique.  In the example above,
-   the port number would be 50005 for VSC user ``vsc50005``.
+   use your VSC-number, since that would be unique.
 
 The tunnel can now be established as follows:
 
 .. code-block:: bash
 
-   $ ssh -N hpc_tunnel
+   $ ssh -N vsc.kuleuven.tunnel
 
 
 Modular configuration file
@@ -163,9 +180,10 @@ Modular configuration file
 
 If you access many hosts, your ``.ssh/config`` file can grow very long.  In
 that case, it might be convenient to group hosts into distinct files, and
-include those into your main ``.ssh/config`` file, e.g.,
+include those into your main ``.ssh/config`` file.
 
 .. code-block:: text
+   :caption: Example *Include* entry in SSH configuration
 
    Include ~/.ssh/config_vsc
 
