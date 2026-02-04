@@ -20,6 +20,14 @@ client to connect to remote machines. You need to have such a tool to connect
 to the login nodes of our HPC clusters. The following are the main options
 supported by VSC.
 
+Windows PowerShell
+    Recent versions of Windows come with OpenSSH installed. This means that you
+    can use it from `PowerShell`_ or the Windows Command Prompt as you would in
+    the terminal of a Linux system. All information about SSH and data transfer
+    on the :ref:`Linux client <linux_client>` pages apply to OpenSSH on
+    Windows in the same way, though you may need to adjust the file paths so 
+    they work correctly on Windows.
+
 PuTTY
     PuTTY  is a simple-to-use and freely available GUI SSH client for Windows that
     is :ref:`easy to set up <terminal PuTTY>`.
@@ -38,13 +46,6 @@ MobaXterm
        :maxdepth: 2
 
        mobaxterm_access
-
-Windows PowerShell
-    Recent versions of Windows come with OpenSSH installed. This means that you
-    can use it from `PowerShell`_ or the Windows Command Prompt as you would in
-    the terminal of a Linux system. All information about SSH and data transfer
-    on the :ref:`Linux client <linux_client>` pages apply to OpenSSH on
-    Windows in the same way.
 
 WSL2
     The `Windows Subsystem for Linux`_ (WSL2) can be an alternative if you are

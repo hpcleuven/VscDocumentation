@@ -156,6 +156,7 @@ them.
     .. grid-item-card:: :fab:`windows` Windows
        :columns: 12 4 4 4
 
+       * :ref:`OpenSSH<ssh agent windows>`
        * :ref:`Pageant`
        * :ref:`MobaXterm<mobaxterm ssh agent>`
 
