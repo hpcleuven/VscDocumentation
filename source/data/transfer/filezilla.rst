@@ -21,8 +21,8 @@ All users need to setup an :ref:`SSH agent <SSH agent>` before proceeding.
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
    
-      You need to :ref:`get an SSH certificate into your agent <mfa-with-ssh-agent>`,
-      if you haven't done so already.
+      You need to login via the `VSC Firewall`_ page,
+      and keep your browser page open to receive a push notification from FileZilla.
 
    .. tab-item:: UAntwerpen
       :sync: ua
@@ -107,9 +107,12 @@ Configuration of FileZilla to connect to a login node
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      As long as your SSH agent is running and keeping a valid SSH certificate,
-      you stay connected via FileZilla and you do not require additional
-      configuration.
+      You receive a push notification on the `VSC Firewall`_
+      page with a 'Yes/No' question to confirm the purpose of your identity verification request.
+      After you click on 'Yes', FileZilla will connect to your account automatically.
+      If run an SSH agent, a valid SSH certificate will be injected into it; the latter can be
+      reused anytime later by FileZilla to keep you connected.
+      At this point, you can safely close the VSC firewall webpage.
 
    .. tab-item:: UAntwerpen
       :sync: ua
