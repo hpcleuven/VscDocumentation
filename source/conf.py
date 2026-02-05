@@ -332,6 +332,7 @@ rst_prolog += """
 .. _AMD EPYC 7282: https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7282.html#amd_support_product_spec
 .. _AMD EPYC 7452: https://www.amd.com/en/support/downloads/drivers.html/processors/epyc/epyc-7002-series/amd-epyc-7452.html#amd_support_product_spec
 .. _AMD EPYC 7543: https://www.amd.com/en/products/processors/server/epyc/7003-series/amd-epyc-7543.html
+.. _AMD EPYC 9275F: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9275f.html
 .. _AMD EPYC 9384X: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9384x.html
 .. _AMD EPYC 9535: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9535.html
 .. _AMD EPYC 9335: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9335.html
@@ -344,6 +345,7 @@ rst_prolog += """
 .. _Intel Xeon Gold 6132: https://www.intel.com/content/www/us/en/products/sku/123541/intel-xeon-gold-6132-processor-19-25m-cache-2-60-ghz/specifications.html
 .. _Intel Xeon Gold 6148: https://www.intel.com/content/www/us/en/products/sku/120489/intel-xeon-gold-6148-processor-27-5m-cache-2-40-ghz/specifications.html
 .. _NVIDIA A100: https://www.nvidia.com/en-us/data-center/a100/
+.. _NVIDIA H200: https://www.nvidia.com/en-us/data-center/h200/
 .. _NVIDIA L40S: https://www.nvidia.com/en-us/data-center/l40s/
 .. _NVIDIA Tesla P100: https://www.nvidia.com/en-in/data-center/tesla-p100/
 .. _NVIDIA GeForce 1080Ti: https://www.nvidia.com/en-us/geforce/10-series/#1080-ti-spec
