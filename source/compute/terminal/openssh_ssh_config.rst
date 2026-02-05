@@ -31,6 +31,7 @@ be able to login to any VSC cluster with a simple command of the form ``ssh
 file.
 
 .. code-block:: text
+   :caption: Example SSH config file for VSC clusters
 
    ServerAliveInterval 60
 
