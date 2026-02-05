@@ -24,6 +24,8 @@ VSC clusters that support the VS Code Tunnel app:
             * Tier-2 :ref:`Genius <Genius hardware>`
             * Tier-2 :ref:`wICE <wICE hardware>`
 
+      Note: Currently, at KU Leuven only regular ``batch`` and ``interactive`` partitions are available. Requesting a GPU is not possible.
+
    .. tab-item:: VUB
       :sync: vub
 
