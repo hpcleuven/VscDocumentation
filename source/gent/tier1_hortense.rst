@@ -32,27 +32,21 @@ Hardware details
 
 Hortense consists of the following partitions:
 
-- ``dodrio/cpu_rome``: phase 1 main partition:
+- ``dodrio/cpu_rome_rhel9``: phase 1 main partition:
    - 342 workernodes, each with:
        - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
        - 238 GiB usable RAM (~1.85GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/cpu_rome_512``: large-memory partition:
+- ``dodrio/cpu_rome_512_rhel9``: large-memory partition:
    - 42 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
        - 488 GiB usable RAM (~3.8GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/cpu_milan``: phase 2 main partition:
+- ``dodrio/cpu_milan_rhel9``: phase 2 main partition:
    - 384 workernodes, each with:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 238 GiB usable RAM (~1.85GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/cpu_milan_rhel9``: partition with RHEL9 operating system:
-   - 30 workernodes, each with:
-       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
-       - 238 GiB usable RAM (~1.85GB/core), no swap
-       - 480 GB SSD local disk
-       - Redhat Enterprise Linux 9.4
 - ``dodrio/gpu_rome_a100_40``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
@@ -65,29 +59,14 @@ Hortense consists of the following partitions:
        - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
        - 488 GiB usable RAM (~10GB/CPU core), no swap
        - 480 GB SSD local disk
-- ``dodrio/debug_rome``: interactive and debug partition:
-   - 3 workernodes, each with:
-       - 12-core AMD Epyc 7402 CPU 2.8 GHz (48 oversubscribed cores as seen by scheduler)
-       - 1 shared NVIDIA Quadro P1000 (4 GB GPU memory)
-       - 1 NVIDIA V100 (16 GB GPU memory)
-       - 224 GiB usable RAM (~4.6GB/oversubscribed core), no swap
-       - 100 GB SSD local disk
-- ``dodrio/debug_milan``: interactive and debug partition:
-   - 3 workernodes, each with:
+- ``dodrio/debug_milan_rhel9``: interactive and debug partition:
+   - 4 workernodes, each with:
        - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
        - 1 shared NVIDIA L4 (24 GB GPU memory)
        - 1 NVIDIA L4 (24 GB GPU memory)
        - 488 GiB usable RAM (~3.8GB/oversubscribed core), no swap
        - 100 GB SSD local disk
-- ``dodrio/debug_milan_rhel9``: interactive and debug partition with RHEL9 operating system:
-   - 1 workernode, with:
-       - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
-       - 1 shared NVIDIA L4 (24 GB GPU memory)
-       - 1 NVIDIA L4 (24 GB GPU memory)
-       - 488 GiB usable RAM (~3.8GB/oversubscribed core), no swap
-       - 100 GB SSD local disk
-       - Redhat Enterprise Linux 9.4
-- ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
+- ``dodrio/cpu_rome_all_rhel9``: combination of ``cpu_rome_rhel9`` and ``cpu_rome_512_rhel9``
 - ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
 
 Shared infrastructure:
@@ -138,13 +117,13 @@ More general information about SSH login is available in the
 :ref:`terminal
 interface` section.
 
-There are 2 login nodes for Hortense: ``login55`` and ``login56``.
+There are 2 login nodes for Hortense: ``login57`` and ``login58``, both having Red Hat Enterprise Linux release 9.4 as operating system.
 When logging in using SSH, you will be assigned to either of these login nodes,
 based on the IP address of the host you are connecting from.
 
 If you need to access a *specific* login node (for example because you have a ``screen`` or ``tmux`` session
-running there), just run "``ssh login56``" to jump to ``login56`` if you were logged in to ``login55``,
-or use "``ssh login55``" to jump to ``login55`` from ``login56``.
+running there), just run "``ssh login58``" to jump to ``login58`` if you were logged in to ``login57``,
+or use "``ssh login57``" to jump to ``login57`` from ``login58``.
 
 .. note::
   The available resources on the Hortense login nodes are very limited:
@@ -956,4 +935,3 @@ Getting help
 
 For questions and problems related to Tier-1 Hortense, please contact the central
 support address for Tier-1 compute: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
-
