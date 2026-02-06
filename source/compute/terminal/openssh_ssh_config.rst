@@ -60,20 +60,20 @@ file.
 Here, you should replace ``vsc00000`` with your VSC ID and ``~/.ssh/id_rsa_vsc``
 with the actual path to your SSH private key.
 
-This ``.ssh/config`` file is composed with the following entries:
+The ``~/.ssh/config`` file is composed of the following entries:
 
 ServerAliveInterval
-    Global parameter that makes your SSH client to send a keep-alive message in
+    Global parameter that makes your SSH client send a keep-alive message in
     all established connections every 60 seconds to prevent the connection from
-    timing out.
+    timing out when it's idle.
 
 Host
-    Define connection settings based on the name of the target host (i.e. VSC
+    Defines connection settings based on the name of the target host (i.e. VSC
     cluster). For instance, we use this entry to define the real public
     hostname of the cluster and our username for that connection.
 
 Match User
-    Define connection settings based on the name of the user set in the
+    Defines connection settings based on the name of the user set in the
     connection. For instance, we use this entry to define that all connections
     using our VSC ID should also enable the SSH Agent forwarding and X
     forwarding, so you don't need to manually specify the ``-A`` and ``-X``
@@ -151,7 +151,7 @@ Setting up a tunnel
 
 If you require a tunnel to a remote host on a regular basis, you can
 define such a connection in the SSH configuration file. For instance, to
-forward the port 50005 on the target VSC cluster to port 50005 in your local
+forward port 50005 on the target VSC cluster to port 50005 in your local
 computer, you can do:
 
 .. code-block:: text
