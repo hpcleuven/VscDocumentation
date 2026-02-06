@@ -30,8 +30,10 @@ be able to login to any VSC cluster with a simple command of the form ``ssh
 <name_of_cluster>`` without having to specify your VSC ID or path the key
 file.
 
+.. _ssh_config_vsc:
+
 .. code-block:: text
-   :caption: Example SSH config file for VSC clusters
+   :caption: Example SSH configuration file for VSC clusters
 
    ServerAliveInterval 60
 
@@ -75,9 +77,9 @@ Host
 Match User
     Defines connection settings based on the name of the user set in the
     connection. For instance, we use this entry to define that all connections
-    using our VSC ID should also enable the SSH Agent forwarding and X
-    forwarding, so you don't need to manually specify the ``-A`` and ``-X``
-    flags respectively.
+    using our VSC ID should also enable the :ref:`SSH Agent <OpenSSH agent>`
+    forwarding and X forwarding, so you don't need to manually specify the
+    ``-A`` and ``-X`` flags respectively.
 
 .. code-block:: bash
    :caption: Command to connect to Tier-2 cluster in KU Leuven
@@ -127,24 +129,31 @@ entry defined for target cluster/server. Assuming your private key is
        IdentityFile ~/.ssh/id_rsa_another
 
 
-Using a proxy host
-------------------
+Jumping throug a proxy host
+---------------------------
 
-You can configure SSH to connect to a host through some intermediate proxy
-server. For instance, this can be useful to connect to a compute node through
-the login nodes of your VSC cluster.
+You can configure SSH to connect to a host through some intermediate
+server, so-called *proxy host*. For instance, this can be useful to connect to
+a compute node through the login nodes of your VSC cluster (if that is allowed
+by your cluster).
 
 .. code-block:: text
 
-    Host leibniz-via-kuleuven
-        Hostname login.leibniz.antwerpen.vsc
-        User vsc00000
-        ProxyJump vsc.kuleuven
+   Host leibniz-via-kuleuven
+      Hostname login.leibniz.antwerpen.vsc
+      User vsc00000
+      ProxyJump vsc.kuleuven
+      ForwardAgent yes
 
-In this example, ``login.leibniz.antwerpen.vsc`` is the host you actually
-want to log in to, and ``vsc.kuleuven`` is the host you are using as a proxy
-jump host, i.e. you will log in to that one, but it will log
-you through to the leibniz login node.
+In this example, whenever we execute the command ``ssh leibniz-via-kuleuven``
+we will access the login node of Leibniz ``login.leibniz.antwerpen.vsc``
+through the login node for KU Leuven ``vsc.kuleuven``. Which we
+:ref:`already configured in our SSH conifg file <ssh_config_vsc>`.
+
+|Warning| Jumping between VSC clusters needs having your SSH keys available
+on every *proxy* host. This can be easily achieved by adding your keys to the
+:ref:`SSH Agent <OpenSSH agent>` and then forwarding the agent with your SSH
+connection along each jump by enabling the ``ForwardAgent`` setting.
 
 Setting up a tunnel
 -------------------
