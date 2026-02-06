@@ -11,8 +11,8 @@ web browser.  It supports a range of different apps and features that not only
 allow the user to easily submit jobs from within the browser, but also provide
 different coding GUIs, tools for plotting and more.
 
-Portals
-=======
+VSC OnDemand Portals
+====================
 
 VSC clusters that support an Open OnDemand web portal:
 
@@ -50,8 +50,8 @@ VSC clusters that support an Open OnDemand web portal:
 You can log in using the credentials of your home institution or your VSC
 credentials. SSH keys are not required to use the web portal.
 
-General features
-================
+Portal features
+===============
 
 The VSC OnDemand web portals provide a range of functions:
 
@@ -61,29 +61,37 @@ The VSC OnDemand web portals provide a range of functions:
 - Using interactive apps
 
 All of these functionalities can be accessed via the menu bar at the top of the
-web portal. Detailed information can be found in the sections listed in the
-navigation panel on the left.
+web portal.
+
+General features
+----------------
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
 
-   files
-   fluent
-   login-shell
-   active-jobs
-   interactive-apps
-   desktop
-   gaussview
-   interactive-shell
-   jupyterlab
-   matlab
-   open-webui
-   paraview
-   pycharm
-   rstudio-server
-   tensorboard
-   vscode-server
-   vscode-tunnel
-   igv-web
+   ondemand/files
+   ondemand/login-shell
+   ondemand/active-jobs
+   ondemand/interactive-apps
+
+Interactive apps
+----------------
+
+.. toctree::
+   :maxdepth: 1
+
+   ondemand/desktop
+   ondemand/fluent
+   ondemand/gaussview
+   ondemand/igv-web
+   ondemand/interactive-shell
+   ondemand/jupyterlab
+   ondemand/matlab
+   ondemand/open-webui
+   ondemand/paraview
+   ondemand/pycharm
+   ondemand/rstudio-server
+   ondemand/tensorboard
+   ondemand/vscode-server
+   ondemand/vscode-tunnel
 
