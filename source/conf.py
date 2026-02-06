@@ -85,11 +85,6 @@ smartquotes_action = 'qe'  # instead of default 'qDe'
 # Automatic numbering
 # always includes figures, tables and code-blocks (see sphinx-doc/sphinx#10316)
 numfig = True
-numfig_format = {
-    'code-block': 'Code %s',
-    'figure': 'Fig. %s:',
-    'table': 'Table %s:',
-}
 
 # -- Options for HTML output -------------------------------------------------
 
