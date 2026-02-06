@@ -24,8 +24,6 @@ VSC clusters that support the VS Code Tunnel app:
             * Tier-2 :ref:`Genius <Genius hardware>`
             * Tier-2 :ref:`wICE <wICE hardware>`
 
-      Note: Currently, at KU Leuven only regular ``batch`` and ``interactive`` partitions are available. Requesting a GPU is not possible.
-
    .. tab-item:: VUB
       :sync: vub
 
@@ -46,6 +44,19 @@ To connect to the VS Code tunnel, follow these steps:
 #. In the web portal, under the 'Interactive Apps' menu, choose 'VS Code
    Tunnel', select the resources and click the ``Launch`` button to launch your
    job. Once your job has started, click the ``Connect`` button to connect.
+
+   .. tab-set::
+      :sync-group: vsc-sites
+
+      .. tab-item:: KU Leuven/UHasselt
+         :sync: kuluh
+
+         On KU Leuven Tier-2 clusters, you can request CPU-only resources.
+
+      .. tab-item:: VUB
+         :sync: vub
+
+         You may proceed to the next steps.
 
 #. A first browser tab or window opens, showing a terminal session, and you are
    asked 'How would you like to log in to Visual Studio Code?'. Select 'Microsoft
