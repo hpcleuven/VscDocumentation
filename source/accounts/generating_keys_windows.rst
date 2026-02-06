@@ -53,7 +53,7 @@ The ``ssh -V`` command should return a version string without errors.
 This assures that the OpenSSH client is correctly installed and available. 
 Often the SSL library version is printed, like the example, but not necessarily.
 
-.. note ::
+.. note::
 
    If OpenSSH is not enabled but you have the minimum required version of
    Windows, you need to add it in you settings by going to your system
@@ -81,8 +81,8 @@ and a passphrase to protect your private key.
 
 .. _ssh agent windows:
 
-Add the key to the SSH agent
-============================
+Add key to SSH agent
+====================
 
 |Optional| The system will ask you for your passphrase every time you want to 
 use the private key, that is, every time you want to access the cluster or 
@@ -93,7 +93,7 @@ The following commands will enable and automatically start the SSH Agent
 service on your system. You only need to do this once:
 
 .. code-block:: PowerShell
-  
+
     # The ssh-agent service is disabled by default. Configure it to start automatically. 
     # Run the following command as an administrator.
    $ Set-Service -Name ssh-agent -StartupType Automatic
@@ -119,18 +119,20 @@ all the same instructions about SSH configuration on Linux on your Windows syste
 Just keep in mind to replace any paths with the corresponding format in Windows,
 as ``~`` does not expand in PowerShell.
 
-The following is an example of how to create and edit the SSH config file on Windows:
+The following is an example of how to create and edit the SSH config file on
+Windows:
 
 .. code-block:: PowerShell
-  
+
    $ New-Item $HOME\.ssh\config
    $ notepad $HOME\.ssh\config
 
 .. code-block:: PowerShell
-  
+   :caption: Example SSH configuration file in Windows format
+
    Match final User <vscXXXXX>
      IdentityFile C:\Users\<user>\.ssh\id_rsa_vsc
-   
+
    Host hortense
      User <vscXXXXX>
      HostName tier1.hpc.ugent.be
