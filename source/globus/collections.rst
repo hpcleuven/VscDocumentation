@@ -44,7 +44,7 @@ The VSC hosts a number of collections:
      - No
      - No
    * - UAntwerpen Tier-2
-     - `VSC UAntwerpen Tier2 <https://app.globus.org/file-manager/collections/6a13242d-6506-4b3d-a49c-ac981b35ab7d/overview>`_
+     - `VSC UAntwerpen Tier2 filesystems <https://app.globus.org/file-manager/collections/6a13242d-6506-4b3d-a49c-ac981b35ab7d/overview>`_
      - No
      - No
    * - KU Leuven Tier-2 (scratch)
