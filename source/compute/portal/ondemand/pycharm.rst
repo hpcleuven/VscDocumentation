@@ -21,7 +21,7 @@ VSC clusters that support this app are:
 
 
 Selecting a suitable Python environment
----------------------------------------
+=======================================
 
 Aside from code editing, PyCharm also allows you to run your Python scripts
 and use a Python console from within the IDE. By default, PyCharm will
@@ -184,7 +184,7 @@ the same as in the previous paragraph, except:
 .. _pycharm_terminal:
 
 Using the terminal
-------------------
+==================
 
 PyCharm also offers a Bash terminal, but it will lack some functionalities.
 Loading and using the centrally installed modules will not work, for example,

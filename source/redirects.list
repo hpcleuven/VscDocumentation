@@ -51,6 +51,7 @@ access/wsl.html /compute/terminal/wsl.html
 brussels/tier2_hardware/hydra_hardware.html /brussels/tier2_hardware/hydra.html
 compute.html /compute/index.html
 compute/cluster-archive.html /compute/tier2-archive.html
+compute/portal/ondemand/index.html /compute/portal/index.html
 compute/storage.html /data/tier2-infrastructure.html
 data/tier1_data_main_index.html /data/tier1_data_service.html
 data/transfer/external_computer.html /data/transfer.html
@@ -94,7 +95,7 @@ leuven/data_transfer_kuleuven_network_drives.html /data/transfer/network_drives/
 leuven/lecturer_s_procedure_to_request_student_accounts_ku_leuven_uhasselt.html accounts/lecturer_procedure_student_accounts_kuleuven_uhasselt.html
 leuven/mfa_quickstart.html /access/mfa_quickstart.html
 leuven/tier2_hardware/mfa_login.html /access/mfa_login.html
-leuven/services/openondemand.html /compute/portal/ondemand.html
+leuven/services/openondemand.html /compute/portal/index.html
 leuven/tier1_breniac.html /leuven/old_hardware/breniac/breniac_hardware.html
 software/eclipse_with_ptp_and_version_control.html /compute/software/eclipse_with_ptp_and_version_control.html
 software/parameterweaver.html /compute/software/parameterweaver.html
