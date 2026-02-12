@@ -9,32 +9,20 @@ involved to connect (although mostly point-and-click and authentication).
 
 VSC clusters that support the VS Code Tunnel app:
 
-.. tab-set::
-   :sync-group: vsc-sites
+.. grid:: 3
+    :gutter: 4
 
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
 
-      .. grid:: 3
-         :gutter: 4
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
-         .. grid-item-card:: |KUL|
-            :columns: 12 4 4 4
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
 
-            * Tier-2 :ref:`Genius <Genius hardware>`
-            * Tier-2 :ref:`wICE <wICE hardware>`
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      .. grid:: 3
-         :gutter: 4
-
-         .. grid-item-card:: |VUB|
-            :columns: 12 4 4 4
-
-            * Tier-2 :ref:`Anansi <Anansi cluster>`
-            * Tier-2 :ref:`Hydra <Hydra cluster>`
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 .. include:: vscode-warning-extensions.rst
 
@@ -47,18 +35,7 @@ To connect to the VS Code tunnel, follow these steps:
    Tunnel', select the resources and click the ``Launch`` button to launch your
    job. Once your job has started, click the ``Connect`` button to connect.
 
-   .. tab-set::
-      :sync-group: vsc-sites
-
-      .. tab-item:: KU Leuven/UHasselt
-         :sync: kuluh
-
-         On KU Leuven Tier-2 clusters, you can request CPU-only resources.
-
-      .. tab-item:: VUB
-         :sync: vub
-
-         You may proceed to the next steps.
+   |KUL| On KU Leuven Tier-2 clusters, you can request CPU-only resources.
 
 #. A first browser tab or window opens, showing a terminal session, and you are
    asked 'How would you like to log in to Visual Studio Code?'. Select 'Microsoft
