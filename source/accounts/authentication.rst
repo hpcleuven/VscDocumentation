@@ -77,15 +77,15 @@ Location Access Restrictions
 
       Beginning of March 2026 an extra firewall layer will be introduced to connect to VSC clusters at KU Leuven:
      
-      There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops. KU Leuven managed laptops will use only the MFA (certificate) for connections both from Belgium and from abroad (without requesting :ref:`additional firewall login <additional_firewall>`).
+      There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops. 
 
-      On the other (non-KU Leuven managed) laptops there are several possibilities to connect to the Ku Leuven VSC clusters:
+      KU Leuven managed laptops
+            Use MFA (certificate) for connections both from Belgium and from abroad. No need to request :ref:`additional firewall login <additional_firewall>`.
 
-      * Certificate only connection is possible from VSC network (other VSC clusters),
-
-      * Certificate and firewall will be necessary for all other cases: connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad.
-
-      Opening the connection to `VSC Firewall`_ will allow to request a certificate and will open a firewall for a short duration of 5 min.
+      Non-managed laptops
+         There are several possibilities to connect to the KU Leuven VSC clusters:
+             *  Certificate only connection is possible from the VSC network (_i.e._ other VSC clusters)
+             *  Certificate and firewall will be necessary for all other cases: connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad
 
 
 .. tab-item:: UAntwerpen
