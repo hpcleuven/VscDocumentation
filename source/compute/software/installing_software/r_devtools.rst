@@ -21,7 +21,7 @@ approach to use and install devtools.
   It should match the devtools version included in the R module. To check which devtools version is installed:
 
   .. code-block:: r
-    
+
     library(devtools)
     sessioninfo::session_info()
 
@@ -46,18 +46,19 @@ You will need to execute the following commands in the R console:
 
   The devtools package is **not** included in "-bare" R modules, e.g. R/4.0.2-foss-2018a-bare.
 
-Installing in a conda environment
+Installing in a Conda environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are using conda to manage your R packages, you should first install
-devtools in your conda environment. The following steps assume that you 
-already have a conda environment named "science". If you do not yet have
-a conda environment, First create a :ref:`conda environment<r_package_management_conda>`. 
-In the following example, it is assumed that your miniconda environment is installed in ``$VSC_DATA/miniconda3``.
+If you are using Conda to manage your R packages, you should first install
+devtools in your Conda environment. The following steps assume that you
+already have a Conda environment named "science". If you do not yet have one,
+first create :ref:`such a Conda environment <r_package_management_conda>`.
+In the following example, it is assumed that your Conda environment is
+installed in ``$VSC_DATA/conda_envs``.
 
 .. code-block:: bash
 
-   $ # Activate your conda environment and install devtools
+   $ # Activate your Conda environment and install devtools
    $ source activate science
    $ conda install -c conda-forge r-devtools
    $ # Launch R
@@ -65,10 +66,10 @@ In the following example, it is assumed that your miniconda environment is insta
 
 .. code-block:: r
 
-   > # Check that the R library path points to your conda R library
+   > # Check that the R library path points to your Conda environment's R library
    > .libPaths()
    > # Set the R library path if this was not the case.
-   > .libPaths("/data/leuven/XXX/vscXXXXX/miniconda3/envs/science/lib/R/library")
+   > .libPaths("/data/leuven/xxx/vscxxxxx/conda_envs/envs/science/lib/R/library")
    > # Load devtools and e.g. install your package from github:
    > library(devtools)
    > devtools::install_github("Developer/Package")

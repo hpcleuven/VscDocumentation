@@ -9,7 +9,7 @@ TODO-GSSI
    :maxdepth: 1
 
    r_devtools
-   vsc_rproject   
+   vsc_rproject
 
 .. _r_package_management_intro:
 
@@ -161,127 +161,60 @@ If the installation of a package requires devtools, please consult the :ref:`dev
 
 .. _r_package_management_conda:
 
-Installing R packages using conda
+Installing R packages using Conda
 ---------------------------------
 
 .. note::
 
    Conda packages are incompatible with the software modules.
-   Usage of conda is discouraged in the clusters at UAntwerpen, UGent,
+   Usage of Conda is discouraged in the clusters at UAntwerpen, UGent,
    and VUB.
 
 The paragraphs below illustrate how to install and use R and R packages
-in a Conda environment.
-
-.. _install_miniconda_r:
-
-Installing Miniconda
-~~~~~~~~~~~~~~~~~~~~
-
-If you have Miniconda already installed, you can skip ahead to the next
-section, if Miniconda is not installed please follow our :ref:`guide to installing miniconda <install_miniconda_python>`.
+in a Conda environment. Please take a look at the :ref:`conda_based_managers`
+page if you haven't used Conda before.
 
 .. _create_r_conda_env:
 
 Creating an environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-First, ensure that the Miniconda installation is in your PATH
-environment variable. The following command should return the full path
-to the conda command:
-
-.. code-block:: bash
-
-   $ which conda
-
-If the result is blank, or reports that conda can not be found, modify
-the ``PATH`` environment variable appropriately by adding miniconda's ``bin``
-directory to ``PATH``.
-
-The next step is to create a new conda environment which can be done as follows:
+Assuming you have a working Conda setup, a typical way to create a new
+environment with R would be as follows:
 
 .. code-block:: bash
 
    $ conda search -c conda-forge r-base  # select one of available versions for the step below
    $ conda create -n science -c conda-forge r-base=<version> r-essentials
+   $ source activate science
 
-
-This command creates a new Conda environment called ``science``, and installs your preferred R
-version from the conda-forge channel as well as the r-essentials bundle which includes number
-of commonly used R packages such as ``ggplot2``, ``glmnet``, ``dplyr``, ``tidyr``, and ``shiny``.
+The second command will create a new Conda environment called ``science`` and
+install your chosen R version from the conda-forge channel, as well as the
+r-essentials bundle which includes number of commonly used R packages such as
+``ggplot2``, ``glmnet``, ``dplyr``, ``tidyr``, and ``shiny``.
 
 .. note::
 
    A lot of bioconda and bioconductor packages are not in sync with their dependencies,
    therefore you may need to create a separate environment for each of those packages to avoid conflicts.
 
-Working with the environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To work with an environment, you have to activate it. This is done with,
-e.g.,
-
-.. code-block:: bash
-
-   $ source activate science
-
-Here, science is the name of the environment you want to work in.
-
-
 Install an additional package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To install an additional package, e.g., ``rodbc``, first ensure that the
-environment you want to work in is activated.
+environment you want to work in is activated and then add the package
+using ``conda install``:
 
 .. code-block:: bash
 
    $ source activate science
-
-Next, install the package:
-
-.. code-block:: bash
-
    $ conda install -c conda-forge r-rodbc
 
-Note that conda will take care of all dependencies, including non-R
-libraries. This ensures that you work in a consistent environment.
-
-Updating/removing
-~~~~~~~~~~~~~~~~~
-
-Using conda, it is easy to keep your packages up-to-date. Updating a
-single package (and its dependencies) can be done using:
-
-.. code-block:: bash
-
-   $ conda update r-rodbc
-
-Updating all packages in the environment is trivial:
-
-.. code-block:: bash
-
-   $ conda update --all
-
-Removing an installed package:
-
-.. code-block:: bash
-
-   $ conda remove r-mass
-
-Deactivating an environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To deactivate a conda environment, i.e., return the shell to its
-original state, use the following command
-
-.. code-block:: bash
-
-   $ source deactivate
+Note that Conda will take care of all dependencies, including non-R
+packages.
 
 More information
 ~~~~~~~~~~~~~~~~
 
-Additional information about conda can be found on its `documentation site <https://docs.conda.io/en/latest/>`__.
-
-For installing R packages from github or other repositories see also :ref:`R devtools<r_devtools>`:
+For installing R packages from GitHub or other repositories see also
+:ref:`R devtools<r_devtools>`.

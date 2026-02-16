@@ -191,20 +191,23 @@ we refer you to the documentation on `Apptainer Definition Files`_.
 An important advantage of definition files is that they can easily
 be shared, and improve reproducibility.
 
+.. _conda_containers:
 
 Conda environment in a definition file
 --------------------------------------
-:ref:`Conda environments<conda for Python>`
-are a convenient solution when it comes to handling own Python-dependent
-software installations. Having a containerized conda environment is often
-useful for groups when working collectively on a common project.
-One way to have a conda environment in a container is to create it from
-an existing environment YAML file. If we have a conda environment exported
+:ref:`Conda environments<conda_based_managers>` can be a convenient solution
+to handle certain software installations. Containerizing such environments
+can make it easier to share a software stack with others and also allows to
+reduce the number of files that are taken up on the file system.
+
+One way to have a Conda environment in a container is to create it from
+an existing environment YAML file. If we have a Conda environment exported
 in a YAML format file called, e.g., ``user_conda_environment.yml``, then
-from that file one can recreate the same environment in a Apptainer definition file::
+from that file one can recreate the same environment in an Apptainer
+definition file::
 
    Bootstrap: docker
-   From: continuumio/miniconda3
+   From: condaforge/miniforge3
 
    %files
        user_conda_environment.yml
@@ -222,7 +225,7 @@ The ``exec "$@"`` line will accept the user's input command, e.g.,
 
 .. note::
 
-   Creating a container with a conda environment in it can ask for a lot of memory.
+   Creating a container with a Conda environment in it can ask for a lot of memory.
    Therefore, that procedure might be best done on a compute node and not
    on the cluster login nodes.
 
@@ -309,10 +312,10 @@ the following script would create a plot in the Grace container:
    #!/bin/bash -l
    #PBS -l nodes=1:ppn=1
    #PBS -l walltime=00:30:00
-   
+
    cd $PBS_O_WORKDIR
    apptainer exec grace.sif gracebat -data data.dat -batch plot.bat
-   
+
 Ensure that the container has access to all the required directories
 by providing additional bindings if necessary.
 
