@@ -105,6 +105,6 @@ Location Access Restrictions
       If you want to access any VSC cluster from abroad, it is necessary that you first authorize your own connection on the `VSC Firewall`_.
       Once your connection is authorized, you can proceed as usual.
 
-        .. note::
+      .. note::
 
-        Keep the `VSC Firewall`_ page open for the duration of your session on the VSC cluster. 
+             Keep the `VSC Firewall`_ page open for the duration of your session on the VSC cluster. 
