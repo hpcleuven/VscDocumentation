@@ -67,7 +67,7 @@ clusters.
    mfa_login   
 
 Location Access Restrictions
-=======================
+============================
 
 .. tab-set::
    :sync-group: vsc-sites
