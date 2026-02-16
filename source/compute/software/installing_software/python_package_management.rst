@@ -26,8 +26,8 @@ The recommended approach in that case is to
 alternatively to make use of :ref:`the uv package manager <uv_python>`.
 In order to automate support for different (micro)architectures and facilitate
 building environments on top of modules, the section introducing
-:ref:`vsc-venv <vsc-venv_python>` is worth reading. Finally, you can also consider to
-:ref:`conda for Python`.
+:ref:`vsc-venv <vsc-venv_python>` is worth reading. Finally, you can also
+consider :ref:`conda_based_managers`.
 
 .. _python_packages_from_modules:
 
