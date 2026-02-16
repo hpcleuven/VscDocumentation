@@ -19,7 +19,7 @@ Before you connect
       :sync: kuluh
 
       If you use VS Code only for developing or editing code (or any generic ASCII file),
-      it is strongly recommended to use a single core on the 
+      it is strongly recommended to use a single core on the
       :ref:`wICE interactive partition <wice hardware>`. For testing, debugging and eventually
       executing your code, you may request resources from any other relevant partition, as long
       as you remember that these resources are meant for intensive loads. So, limit interactive
@@ -128,7 +128,8 @@ R IDE
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      For full functionality, it is recommended to work with Conda environments.
+      For full functionality, it is recommended to work with
+      :ref:`Conda environments <conda_based_managers>`.
       For the time being, there are some issues with using modules together with functionalities, like plotting.
 
       There are some package requirements if you want to use R in VS Code.
@@ -152,7 +153,7 @@ R IDE
         use the same Conda environment).
         Go to 'Extensions', and click the settings wheel next to the R extension.
         Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting.
-        Paste the path to your Conda env there (``/path/to/miniconda/envs/<env_name>/lib/R``)
+        Paste the path to your Conda env there (``/data/leuven/xxx/xxxxx/conda_envs/<env_name>/lib/R``)
 
       .. note::
 

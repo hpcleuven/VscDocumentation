@@ -44,7 +44,7 @@ For more advanced configuration options, see also the `JetBrains documentation
 .. note::
 
    Make sure you do not use your ``VSC_HOME`` (starting with ``/user/...``)
-   for storing your virtual environment, Mamba or Conda,
+   for storing virtual environments or Conda environments,
    because your home directory can get quickly filled up leading to possible
    issues with your login and/or job submission. Instead, we recommend using
    your ``VSC_DATA`` directory (starting with ``/data/...``).
@@ -147,21 +147,27 @@ such a virtual environment:
 Creating a new Conda environment in PyCharm
 ===========================================
 
-Assuming for instance, you have a :ref:`local Miniconda installation
-<install_miniconda_python>`, you may create a new Conda environment in PyCharm
-after you start a 'New Project' by following the steps below. Make sure you
-*do not* install Miniconda via PyCharm because it will end up in your
-``VSC_HOME`` which is strongly discouraged.
+Using :ref:`a Conda-based package manager <conda_based_managers>` you may create
+a new Conda environment in PyCharm after you start a 'New Project' by following
+the steps below. Note that PyCharm does not yet support Micromamba or Pixi out
+of the box and we would therefore recommend to rely on a
+:ref:`centrally installed Miniforge3 module <conda_miniforge>`.
 
-* Select a 'Location' starting in your ``VSC_DATA``.
+.. note::
+
+   Make sure you *do not* install Miniforge or other Conda distributions via
+   PyCharm because it will end up in your ``VSC_HOME``, which is to be avoided.
+
+* Select a suitable project 'Location' in your ``VSC_DATA``.
 * For the 'Interpreter type' choose 'Custom environment'.
 * For the 'Environment' choose 'Generate new'.
 * For the 'Type' choose 'Conda'.
 * For the 'Python version' pick one that suits your needs.
 * For the 'Name' again choose a unique and representative
   (e.g., ``conda-pandas``).
-* For the 'Path to conda' set the path to your ``conda`` executable (a typical
-  location would be ``/data/<institute>/xxx/xxxxx/miniconda3/bin/conda``).
+* For the 'Path to conda' set the path to the ``conda`` executable from a
+  suitable module, for example
+  ``/apps/leuven/rocky9/sapphirerapids/2024a/software/Miniforge3/25.3.0-3/bin/conda``.
 * Click on the 'Create' button and wait for a minute. Eventually,
   the interpreter at the bottom right tray will show e.g., ``conda-pandas``.
 
@@ -171,14 +177,12 @@ after you start a 'New Project' by following the steps below. Make sure you
 Using an existing Conda environment
 ===================================
 
-You can also let PyCharm use Conda (or
-`Mamba <https://mamba.readthedocs.io/en/latest/index.html>`_) environments
-that you :ref:`created outside PyCharm <conda for Python>`. The steps are
-the same as in the previous paragraph, except:
+You can also let PyCharm use Conda environments that you created outside
+of PyCharm. The steps are the same as in the previous paragraph, except:
 
 * For the first 'Environment' box, choose 'Select existing'.
-* For the second 'Environment' box, choose your Conda or Mamba
-  environment from the list.
+* For the second 'Environment' box, choose your Conda environment from the
+  list.
 
 
 .. _pycharm_terminal:
