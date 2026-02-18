@@ -100,7 +100,7 @@ modules containing ``CP2K`` by executing (the search is not case sensitive):
 .. code-block:: shell
 
    $ module avail CP2K
-   -- /apps/leuven/rocky8/icelake/2021a/modules/all --
+   -- /apps/leuven/rocky9/icelake/2021a/modules/all --
       CP2K/8.2-foss-2021a         Libint/2.6.0-GCC-10.3.0-lmax-6-cp2k
       CP2K/8.2-intel-2021a (D)    Libint/2.6.0-iimpi-2021a-lmax-6-cp2k
       Libint/2.6.0-intel-compilers-2021.2.0-lmax-6-cp2k (D)
@@ -201,7 +201,7 @@ e.g.:
 
 This convention is in line with other VSC sites and will also be used on wICE
 and future clusters. In order to add such a directory to your modulepath, the
-following command can be used:
+following command can be used (e.g. for Genius):
 
 .. code-block:: shell
 
