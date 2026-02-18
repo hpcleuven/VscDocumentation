@@ -3,6 +3,14 @@
 R package management
 ====================
 
+TODO-GSSI
+
+.. toctree::
+   :maxdepth: 1
+
+   r_devtools
+   vsc_rproject   
+
 .. _r_package_management_intro:
 
 Introduction
