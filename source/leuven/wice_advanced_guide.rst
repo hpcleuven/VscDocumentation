@@ -85,7 +85,7 @@ that are optimized for wICE are available when the appropriate
 :ref:`cluster module <cluster_modules>` is loaded. In most cases this will
 happen automatically, but in case of problems it is a good idea to double check
 the ``$MODULEPATH`` environment variable; it should contain paths that look as
-starting with ``/apps/leuven/rocky8/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
+starting with ``/apps/leuven/rocky9/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
 where ``${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}`` indicates the architecture of the
 node in question.
 
@@ -154,26 +154,17 @@ NUMA domain. For a complete overview, please consult the
 
 .. _wice_worker:
 
-Worker
-------
+Worker (Next-Gen)
+-----------------
 
-The :ref:`Worker framework <worker framework>`, which allows to conveniently
-parameterize simulations, is available on wICE. An attention point is that
-if you want to lauch Worker jobs from the Genius login nodes, you will need to
-use a specific module:
+The :ref:`(next generation) Worker framework <worker framework>`,
+which allows to conveniently parameterize simulations, is available on wICE:
 
 .. code-block:: shell
 
-    $ module load worker/1.6.12-foss-2021a-wice
+    $ module load  worker-ng/1.0.11-GCCcore-10.3.0
 
-If instead you want to launch Worker jobs from an interactive job running on
-wICE, you can use the ``worker/1.6.12-foss-2021a`` module. But do make sure
-this is the version installed *specifically* for wICE, which you can check
-by looking at the installation directory of worker. For example, the path
-returned by ``which worker`` should start with ``/apps/leuven/rocky8/icelake``
-or ``/apps/leuven/rocky8/sapphirerapids`` or ``/apps/leuven/rocky8/zen4-h100``.
-
-Also note that the Worker support for Slurm is not yet complete. Both
+Note that the Worker support for Slurm is not yet complete. Both
 the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
 only work for PBS/Torque and hence should not be used in the case of Slurm.
 
@@ -181,3 +172,14 @@ All the resources furthermore need to be specified inside the Slurm script
 used as input for Worker (passing resources via the command line is not
 supported). Various examples can be found in a `development branch
 <https://github.com/gjbex/worker/tree/development_slurm/examples/>`__.
+
+
+.. _wice_rocky9_turbo:
+
+Turbo frequency
+---------------
+
+With wICE running on Rocky Linux 9, the CPU cores are no longer able to reach the maximal
+('turbo') frequency. Compared to nodes with Rocky 8, you may therefore see somewhat lower
+performance if only a few cores are active while the other cores are idling. This issue is
+still being investigated.

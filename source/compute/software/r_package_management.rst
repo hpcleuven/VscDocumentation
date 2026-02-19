@@ -79,7 +79,7 @@ your local package installations as follows.
 Considering the dependence of the compiled package on the host OS version, CPU microarchitecture
 and R version (see :ref:`above<r_package_management_intro>`), we recommend
 to use a directory structure that makes these distinctions. The example below
-creates such a structure for a Rocky8 OS, Icelake CPU and R version 4.2.2:
+creates such a structure for a Rocky9 OS, Icelake CPU and R version 4.2.2:
 
 .. code-block:: bash
 
@@ -95,7 +95,7 @@ This can be done by setting the ``R_LIBS_USER`` variable to in the ``$VSC_HOME/.
    $ echo 'R_LIBS_USER=${VSC_DATA}/Rlibs/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}/R-${EBVERSIONR}' >> $VSC_HOME/.Renviron
 
 The ``${VSC_OS_LOCAL}`` and ``${VSC_ARCH_LOCAL}`` environment variables are predefined
-and match the OS version (e.g. ``rocky8``) and CPU model (e.g. ``icelake``) of the node.
+and match the OS version (e.g. ``rocky9``) and CPU model (e.g. ``icelake``) of the node.
 The ``${EBVERSIONR}`` variable contains the R version (e.g. 4.2.2) of the currently loaded
 R module.
 

@@ -37,7 +37,7 @@ You will need to execute the following commands in the R console:
    > # First check that the R library path points to your local R library:
    > .libPaths()
    > # Set the R library path if this is not the case. e.g.
-   > .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky8/icelake/R-4.2.2")
+   > .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky9/icelake/R-4.2.2")
    > # Load devtools and e.g. install your package from github:
    > library(devtools)
    > install_github("Developer/Package")
