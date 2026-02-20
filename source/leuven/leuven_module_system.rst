@@ -226,16 +226,19 @@ Using modules from EESSI
 The `European Environment for Scientific Software Installations <https://www.eessi.io>`_
 (EESSI, pronounced as "easy") provides an additional stack of scientific
 software, next to installations which are done locally and located in the
-``/apps/leuven`` directory. The advantages of EESSI over the local
-installations for VSC users are:
+``/apps/leuven`` directory. Compared to the local installations, the advantages
+of EESSI for VSC users are:
 
 * Since EESSI is a collaboration between many partners of the HPC community, a
   wide range of scientific software is readily available and can be streamed
   on-demand. This means users no longer need to wait for a support team to do
-  the local installation, provided the required modules
+  the local installation, provided the required modules are
   `available in EESSI <https://www.eessi.io/docs/available_software/overview>`_.
 * EESSI distributes software using the CernVM File System, which provides good
   performance when accessing software
+* Because EESSI works on a large range of systems, including laptops, HPC
+  clusters and cloud infrastructure, workflows making use of EESSI software
+  are portable
 
 If you want to know more details, you can have a look at the
 `introductory EESSI documentation <https://www.eessi.io/docs/overview>`_. The
@@ -245,13 +248,12 @@ on the VSC clusters.
 Althought EESSI is installed on all nodes of the KU Leuven Tier-2 cluster,
 the EESSI modules are not available by default and some commands need to be
 run to set up EESSI in your session. Also note that modules from EESSI are not
-compatible with locally installed modules, to the recommended commands to set
+compatible with locally installed modules, so the recommended commands to set
 up EESSI first make the locally installed modules unavailable:
 
 .. code-block:: shell
 
-   # Force unload any cluster module, which is normally use to select the
-   # correct local module path
+   # Force unload any cluster module
    module --force purge
    # Make EESSI available as a module
    export MODULEPATH=/cvmfs/software.eessi.io/init/modules/
