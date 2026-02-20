@@ -257,13 +257,14 @@ up EESSI first make the locally installed modules unavailable:
    module --force purge
    # Make EESSI available as a module
    export MODULEPATH=/cvmfs/software.eessi.io/init/modules/
-   # Load the default EESSI module
-   module load EESSI
+   # Load an EESSI module
+   module load EESSI/2023.06
 
 These setup commands need to be executed in each session where you want to use
-EESSI. After this, you can use the ``module`` commands as described above, but
-now those commands will interact with EESSI instead of locally installed
-modules. For example:
+EESSI. Note that you can search for other EESSI versions by running
+``module avail EESSI``. After loading the EESSI module, you can use the
+``module`` commands as described above, but now those commands will interact
+with the EESSI software stack instead of locally installed modules. For example:
 
 .. code-block:: shell
 
