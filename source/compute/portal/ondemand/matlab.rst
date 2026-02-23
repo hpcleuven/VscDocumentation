@@ -58,6 +58,10 @@ Before you connect
 Launching MATLAB
 ~~~~~~~~~~~~~~~~
 
+|kul| Currently, MATLAB releases after ``R2024b`` will be made available.
+      If older MATLAB versions are needed, you may start a :ref:`noVNC desktop <ood_desktop>`
+      session and load your desired MATLAB version from the terminal.
+
 To launch MATLAB via the OnDemand web portal, select your desired MATLAB version from the
 drop-down menu in the resources form.  Given that our current MATLAB
 installations automatically detect GPU devices and CUDA libraries, you may also
