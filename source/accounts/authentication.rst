@@ -77,7 +77,7 @@ Location Access Restrictions
 
       Beginning of March 2026 the firewall access to the HPC cluster will be resolved by the global KU Leuven firewall rules. This will have some impact in connections to the Tier-2 cluster::
      
-      There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops. 
+      There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops.
 
       KU Leuven managed laptops
             Use MFA (certificate) for connections both from Belgium and from abroad. No need to request :ref:`additional firewall login <additional_firewall>`.
