@@ -37,7 +37,9 @@ Before you connect
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      (NA)
+      Currently MATLAB ``R2024b`` is the only available version for this app.
+      If older MATLAB versions are needed, you may start a :ref:`noVNC desktop <ood_desktop>`
+      session instead, and load your desired MATLAB version from the terminal.
 
    .. tab-item:: VUB
       :sync: vub
@@ -57,11 +59,6 @@ Before you connect
 
 Launching MATLAB
 ~~~~~~~~~~~~~~~~
-
-|KUL|
-Currently MATLAB ``R2024b`` is the oldest available version for this app.
-If older MATLAB versions are needed, you may start a :ref:`noVNC desktop <ood_desktop>`
-session and load your desired MATLAB version from the terminal.
 
 To launch MATLAB via the OnDemand web portal, select your desired MATLAB version from the
 drop-down menu in the resources form.  Given that our current MATLAB
