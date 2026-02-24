@@ -88,7 +88,7 @@ Location Access Restrictions
                   *  From all locations (connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad):open the firewall access (https://firewall.vscentrum.be) and request a certificate.
 
  
-.. tab-item:: UAntwerpen
+   .. tab-item:: UAntwerpen
       :sync: ua
 
       All VSC clusters are behind a firewall, which is configured by default to block all traffic from abroad.
