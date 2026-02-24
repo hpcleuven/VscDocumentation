@@ -62,7 +62,9 @@ options to get access to VSC login nodes:
 * use an official institution managed laptop;
 
 * register your IP address by accessing (https://firewall.vscentrum.be/) and logging
-  in with your institutional account. 
+  in with your institutional account. While this web connection is active a new
+  SSH-session can be started.
+  Active SSH sessions will remain active even when this web page is closed.
 
 * contact your HPC support team and ask them to whitelist your IP-range (e.g., for
   industry access, automated processes). 
