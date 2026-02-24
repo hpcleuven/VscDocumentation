@@ -59,7 +59,7 @@ Launching MATLAB
 ~~~~~~~~~~~~~~~~
 
 |KUL|
-Only MATLAB releases after ``R2024b`` are made available.
+Currently MATLAB ``R2024b`` is the oldest available version for this app.
 If older MATLAB versions are needed, you may start a :ref:`noVNC desktop <ood_desktop>`
 session and load your desired MATLAB version from the terminal.
 
