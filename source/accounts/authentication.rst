@@ -75,7 +75,7 @@ Location Access Restrictions
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Beginning of March 2026 the firewall access to the HPC cluster will be resolved by the global KU Leuven firewall rules. This will have some impact in connections to the Tier-2 cluster::
+      Beginning of March 2026 the firewall access to the HPC cluster will be resolved by the global KU Leuven firewall rules. This will have some impact in connections to the Tier-2 cluster:
      
       There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops.
 
