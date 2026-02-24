@@ -45,6 +45,8 @@ a new SSH public key.
   Take into account that it takes a while before a new SSH public key becomes active on the system
   (it should not take longer than 1 hour after uploading the public key to the VSC account page).
 
+.. _additional_firewall:
+
 Additional Firewall layer 
 -------------------------
 
@@ -57,7 +59,9 @@ options to get access to VSC login nodes:
 
 * use an VPN connection to your university network;  
 
-* register your IP address by accessing (https://firewall.hpc.kuleuven.be/) and logging
+* use an official institution managed laptop;
+
+* register your IP address by accessing (https://firewall.vscentrum.be/) and logging
   in with your institutional account. While this web connection is active a new
   SSH-session can be started.
   Active SSH sessions will remain active even when this web page is closed.

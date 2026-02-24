@@ -66,16 +66,59 @@ clusters.
 
    mfa_login   
 
-Connections from Abroad
-=======================
+Location Access Restrictions
+============================
 
-All VSC clusters are behind a firewall, which is configured by default to block
-all traffic from abroad. If you want to access any VSC cluster from
-abroad, it is necessary that you first authorize your own connection on the
-`VSC Firewall`_. Once your connection is authorized, you can proceed as usual.
+.. tab-set::
+   :sync-group: vsc-sites
 
-.. note::
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-   Keep the `VSC Firewall`_ page open for the duration of your session on the
-   VSC cluster.
+      Beginning of March 2026 the firewall access to the HPC cluster will be resolved by the global KU Leuven firewall rules. This will have some impact in connections to the Tier-2 cluster:
+     
+      There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops.
 
+      KU Leuven managed laptops
+            Use MFA (certificate) for connections both from Belgium and from abroad. No need to request :ref:`additional firewall login <additional_firewall>`.
+
+      Non-managed laptops
+            There are several possibilities to connect to the KU Leuven VSC clusters:
+                  *  From all locations (connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad):open the firewall access (https://firewall.vscentrum.be) and request a certificate. The firewall page only needs to be active when making new connections to the cluster.
+                  *  Exception for connections from within VSC network (_i.e._ other VSC clusters) - certificate is sufficient 
+
+ 
+   .. tab-item:: UAntwerpen
+      :sync: ua
+
+      All VSC clusters are behind a firewall, which is configured by default to block all traffic from abroad.
+      If you want to access any VSC cluster from abroad, it is necessary that you first authorize your own connection on the `VSC Firewall`_.
+      Once your connection is authorized, you can proceed as usual.
+
+      .. note::
+
+             Keep the `VSC Firewall`_ page open for the duration of your session on the VSC cluster. 
+
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      All VSC clusters are behind a firewall, which is configured by default to block all traffic from abroad.
+      If you want to access any VSC cluster from abroad, it is necessary that you first authorize your own connection on the `VSC Firewall`_.
+      Once your connection is authorized, you can proceed as usual.
+
+      .. note::
+
+             Keep the `VSC Firewall`_ page open for the duration of your session on the VSC cluster. 
+
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      All VSC clusters are behind a firewall, which is configured by default to block all traffic from abroad.
+      If you want to access any VSC cluster from abroad, it is necessary that you first authorize your own connection on the `VSC Firewall`_.
+      Once your connection is authorized, you can proceed as usual.
+
+      .. note::
+
+             Keep the `VSC Firewall`_ page open for the duration of your session on the VSC cluster. 
