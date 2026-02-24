@@ -84,8 +84,8 @@ Location Access Restrictions
 
       Non-managed laptops
             There are several possibilities to connect to the KU Leuven VSC clusters:
-                  *  Exception for connections from within VSC network (_i.e._ other VSC clusters) - certificate is sufficient 
                   *  From all locations (connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad):open the firewall access (https://firewall.vscentrum.be) and request a certificate.
+                  *  Exception for connections from within VSC network (_i.e._ other VSC clusters) - certificate is sufficient 
 
  
    .. tab-item:: UAntwerpen
