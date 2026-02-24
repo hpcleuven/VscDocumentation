@@ -75,7 +75,7 @@ Location Access Restrictions
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Beginning of March 2026 an extra firewall layer will be introduced to connect to VSC clusters at KU Leuven:
+      Beginning of March 2026 the firewall access to the HPC cluster will be resolved by the global KU Leuven firewall rules. This will have some impact in connections to the Tier-2 cluster::
      
       There will be a difference between connecting from a managed KU Leuven laptop and unmanaged laptops. 
 
@@ -84,11 +84,11 @@ Location Access Restrictions
 
       Non-managed laptops
          There are several possibilities to connect to the KU Leuven VSC clusters:
-             *  Certificate only connection is possible from the VSC network (_i.e._ other VSC clusters)
-             *  Certificate and firewall will be necessary for all other cases: connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad
+             *  Exception for connections from within VSC network (_i.e._ other VSC clusters) - certificate is sufficient 
+             *  From all locations (connecting from VPN B zone, from other VSC universities, from other Belgian IP addresses and from abroad) : open the firewall access (https://firewall.vscentrum.be) and request a certificate.
 
-
-   .. tab-item:: UAntwerpen
+ 
+.. tab-item:: UAntwerpen
       :sync: ua
 
       All VSC clusters are behind a firewall, which is configured by default to block all traffic from abroad.
