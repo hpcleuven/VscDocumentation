@@ -217,3 +217,76 @@ Keep in mind that also ``/apps/leuven/common/modules/all`` is part of your
 default ``$MODULEPATH``. This module collection is intended for packages which
 have no operating system or toolchain dependencies. Typical examples are
 packages which are distributed as precompiled binaries such as FLUENT.
+
+.. _using_eessi_leuven:
+
+Using modules from EESSI
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `European Environment for Scientific Software Installations <https://www.eessi.io>`_
+(EESSI, pronounced as "easy") provides an additional stack of scientific
+software, next to installations which are done locally and located in the
+``/apps/leuven`` directory. Compared to the local installations, the advantages
+of EESSI for VSC users are:
+
+* Since EESSI is a collaboration between many partners of the HPC community, a
+  wide range of scientific software is readily available and can be streamed
+  on-demand. This means users no longer need to wait for a support team to do
+  the local installation, provided the required modules are
+  `available in EESSI <https://www.eessi.io/docs/available_software/overview>`_.
+* EESSI distributes software using the CernVM File System, which provides good
+  performance when accessing software
+* Because EESSI works on a large range of systems, including laptops, HPC
+  clusters and cloud infrastructure, workflows making use of EESSI software
+  are portable
+
+If you want to know more details, you can have a look at the
+`introductory EESSI documentation <https://www.eessi.io/docs/overview>`_. The
+remainder of this section will focus on the practical aspects of using EESSI
+on the VSC clusters.
+
+Althought EESSI is installed on all nodes of the KU Leuven Tier-2 cluster,
+the EESSI modules are not available by default and some commands need to be
+run to set up EESSI in your session. Also note that modules from EESSI are not
+compatible with locally installed modules, so the recommended commands to set
+up EESSI first make the locally installed modules unavailable:
+
+.. code-block:: shell
+
+   # Force unload any cluster module
+   module --force purge
+   # Make EESSI available as a module
+   export MODULEPATH=/cvmfs/software.eessi.io/init/modules/
+   # Load an EESSI module
+   module load EESSI/2023.06
+
+These setup commands need to be executed in each session where you want to use
+EESSI. Note that you can search for other EESSI versions by running
+``module avail EESSI``. After loading the EESSI module, you can use the
+``module`` commands as described above, but now those commands will interact
+with the EESSI software stack instead of locally installed modules. For example:
+
+.. code-block:: shell
+
+   $ module avail PyTorch
+   -- /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/icelake/modules/all --
+      PyTorch/2.1.2-foss-2023a
+
+As you can see, the path above the listed module indicates this module indeed
+comes from EESSI. Also note how EESSI automatically figured out the most
+appropriate module based on the architecture of the node where these commands
+are executed.
+
+If for any reason you want to switch back to locally installed modules, you
+can execute the following commands:
+
+.. code-block:: shell
+
+   # Unload EESSI
+   module purge
+   # Restore your original modulepath
+   export MODULEPATH=/apps/leuven/etc/modules:/apps/leuven/common/modules/all:/usr/share/lmod/lmod/modulefiles/Core
+   # Restore the cluster module, the version depends on the node you are working on
+   module load cluster/wice/batch
+
+or simply start a new session on the cluster.
