@@ -25,19 +25,23 @@ u-number and ``drivename`` with the drive you want to access:
 GIO
 ===
 
-Mounting the drives via GIO can be convenient but only works on specific
-login nodes and not on the compute nodes. Keep in mind that the CPU time
-limitations on the login nodes may cause long transfers to get interrupted.
-GIO can be used both via a GUI and the CLI.
+Mounting the drives via GIO can be convenient but only works:
+
+- on specific login nodes (``tier2-p-login-3`` and ``tier2-p-login-4``)
+- on all compute nodes when using the :ref:`OnDemand Desktop app <ood_desktop>`
+
+Keep in mind that the CPU time limitations on the login nodes may cause long
+transfers to get interrupted. GIO can be used both via a GUI and the CLI.
 
 .. note::
 
    Don't forget to unmount the drives after your transfers have finished.
 
-Via the GUI (NoMachine)
------------------------
+Via the GUI
+-----------
 
-#. Open a NoMachine connection (see the :ref:`NX start guide<NX start guide>`)
+#. Start an :ref:`OnDemand Desktop session <ood_desktop>`
+   or a :ref:`NoMachine connection <NX start guide>`.
 #. Click on e.g. ``Places`` -> ``Home Folder`` to open the default file
    manager (Thunar).
 #. Replace the ``/user/...`` location with
@@ -54,12 +58,14 @@ Via the GUI (NoMachine)
 Via the CLI
 -----------
 
-#. Open an SSH connection to ``login3-tier2.hpc.kuleuven.be`` or
-   ``login4-tier2.hpc.kuleuven.be`` or start a terminal in your NoMachine
-   session.
-#. Start a D-Bus session and then mount the network drive::
+#. If you are using the :ref:`OnDemand Desktop <ood_desktop>`
+   or :ref:`NoMachine <NX start guide>`, open a terminal there.
+   If you are using plain SSH, make sure that you are connected to either
+   ``tier2-p-login-3`` or ``tier2-p-login-4`` (possibly by connecting
+   to one of these nodes after landing on a different login node).
 
-     dbus-run-session bash
+#. Mount the network drive as follows::
+
      gio mount smb://unumber@shares.kuleuven.be/drivename
 
 #. When asked for the domain name, enter ``luna``.
