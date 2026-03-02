@@ -16,7 +16,7 @@ MATLAB allows you to use parallel computing on a HPC cluster using the `Parallel
    .. tab-item:: VUB
       :sync: vub
 
-        The VUB cluster is not setup to submit slurm jobs using the parallel computing toolbox or to run multinode jobs. It can however still be used to spawn workers that make use of the resources of your single-node job.
+        The VUB cluster is not set up to submit Slurm jobs using the parallel computing toolbox or to run multi-node jobs. It can however still be used to spawn workers that make use of the resources of your single-node job.
 
 
 Availability
@@ -36,7 +36,7 @@ Availability
    .. tab-item:: VUB
       :sync: vub
 
-        MATLAB and the Parallel Computing Toolbox is available to all users and on all nodes of the Hydra and Anansi clusters.
+        MATLAB and the Parallel Computing Toolbox are available to all users and on all nodes of the Hydra and Anansi clusters.
 
 Configuring MATLAB for parallel computing
 +++++++++++++++++++++++++++++++++++++++++
@@ -85,7 +85,7 @@ Configuring MATLAB for parallel computing
             >> % Access
             >> c.AdditionalProperties
             >>
-            >> %edit
+            >> % Edit
             >> c.AdditionalProperties.<property_name> = '<property_value>'
 
         There are two properties that have to be set to be able to submit jobs, namely ``AccountName`` and ``partition``. ``AccountName`` is the name
@@ -112,6 +112,15 @@ Configuring MATLAB for parallel computing
 
         If you want to use the parallel toolbox, there are a couple of steps you have to do yourself:
 
+        Running MATLAB should be done from a compute node. Request an interactive job with minimum 4 cores (MATLAB loading is quite slow with only a single core) with the
+        ``srun`` or ``salloc`` command or load the Open OnDemand MATLAB app.
+
+        Now you can load your preferred MATLAB module:
+
+        ::
+
+            $ module load <matlab_module>
+
         The first thing needed to configure MATLAB for parallel computing is to create a `parallel.Cluster <https://nl.mathworks.com/help/parallel-computing/parallel.cluster.html>`_ object. This object allows us to create pools of workers or independent batch jobs.
 
         .. code-block:: matlabsession
@@ -131,7 +140,7 @@ Configuring MATLAB for parallel computing
 
         .. code-block:: matlabsession
 
-            >> % Access
+            >> % Edit
             >> c.JobStorageLocation = '</path/to/your/custom/jobdir>'
 
         Useful parameters to set:
@@ -211,7 +220,7 @@ Interactive job
         .. code-block:: matlabsession
 
             >> c = parcluster("MyProfile");
-            >> p = parpool(4); % requesting 4 cores
+            >> p = c.parpool(4); % requesting 4 cores
 
         Starts a pool with 4 workers. Omit the number of cores to start a pool with ``c.PreferredPoolNumWorkers`` workers or if this is set to ``Inf`` with ``c.NumWorkers`` workers (which by default is the number of cores in your Slurm job.)
 
