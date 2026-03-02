@@ -175,7 +175,7 @@ Submitting jobs
         within MATLAB) from a compute node. You can also not use the GUI from a compute node, so this means that you cannot use the GUI together with Parallel Server. 
 
         First of all, request an interactive job. Once you are inside the interactive job, you can load your preferred module, as
-        explained above. You can then load the MATLAB and then launch the MATLAB command line (with ``matlab -nodisplay``).
+        explained above. You can then launch the MATLAB command line (with ``matlab -nodisplay``).
 
         With the parallel toolbox, you can now submit jobs from within MATLAB to the cluster. You can start both interactive and independent batch jobs with the previously configured
         cluster profile. In both cases, you request a number of threads, either using the ``parpool`` or ``batch``
@@ -188,7 +188,7 @@ Submitting jobs
         .. note:: Using the ``"Processes"`` profile will not submit **Slurm jobs** but will create **MATLAB batch jobs** that use the resources available to the current job.
 
         First of all, request an interactive job. Once you are inside the interactive job, you can load your preferred module, as
-        explained above. You can then load the MATLAB module and launch the MATLAB command line (with ``matlab -nodisplay``). Alternatively, you can use the Open OnDemand MATLAB app and use the GUI.
+        explained above. You can then launch the MATLAB command line (with ``matlab -nodisplay``). Alternatively, you can use the Open OnDemand MATLAB app and use the GUI.
 
         With the parallel toolbox, you can now start both interactive and independent batch jobs with the previously configured
         cluster profile. In both cases, you request a number of threads, either using the ``parpool`` or ``batch``
