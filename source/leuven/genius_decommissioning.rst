@@ -3,17 +3,30 @@
 Genius decommissioning
 ======================
 
-Most remaining parts of :ref:`Genius <Genius hardware>`  will be
-decommissioned when we start the acceptance tests for the
+Most remaining parts of :ref:`Genius <Genius hardware>` will be
+decommissioned when we start the pilot phases for the
 :ref:`new Tier-2 cluster <2025 hardware>`. This should happen
-sometime between the second week and the fourth week of March.
+sometime between the third week and the fourth week of March.
 
-The following hardware will then be retired:
+.. note::
+
+   Starting from the second week of March, many nodes from the `batch*`
+   and `interactive` partitions on Genius will already be blocked to allow
+   large-scale benchmarks to run on the new cluster. You will still be able
+   to send jobs to those Genius partitions, but they may spend more time in
+   the queue because of the reduced capacity.
+
+The decommissioning will consist of retiring the following hardware:
 
 - all Cascadelake CPU nodes (`batch*` partitions)
 - all Skylake CPU nodes (`interactive` and `bigmem*` partitions)
 - all nodes in the `dedicated*` partitions
 - Superdome (`superdome*` partitions)
+
+If you are still using the Genius CPU partitions, be prepared to switch
+to the :ref:`wICE <wICE hardware>` CPU partitions since the final
+decommissioning of this hardware is drawing near (towards the end of March,
+as mentioned above).
 
 The P100 and V100 GPU nodes will be kept online for a longer period
 (`gpu_p100*` and `gpu_v100*` partitions).
