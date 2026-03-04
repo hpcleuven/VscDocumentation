@@ -105,7 +105,7 @@ Configuring MATLAB for parallel computing
       If you want to use the parallel toolbox, there are a couple of steps you have to do yourself:
 
       Running MATLAB should be done from a compute node. Request an interactive job with minimum 4 cores (MATLAB loading is quite slow with only a single core) with the
-      ``srun`` or ``salloc`` command or load the Open OnDemand MATLAB app.
+      ``srun`` command or load the Open OnDemand MATLAB app.
 
       Now you can load your preferred MATLAB module:
 
