@@ -5,18 +5,10 @@ MATLAB parallel computing
 
 MATLAB allows you to use parallel computing on a HPC cluster using the `Parallel Computing Toolbox <https://www.mathworks.com/products/parallel-computing.html>`_.
 
-.. tab-set::
-   :sync-group: vsc-sites
 
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+|kuluh| The toolbox is needed to create a cluster profile and it is this profile that will allow you to submit multi-node jobs.
 
-        The toolbox is needed to create a cluster profile and it is this profile that will allow you to submit multi-node jobs.
-
-   .. tab-item:: VUB
-      :sync: vub
-
-        The VUB cluster is not set up to submit Slurm jobs using the parallel computing toolbox or to run multi-node jobs. It can however still be used to spawn workers that make use of the resources of your single-node job.
+|vub| The VUB cluster is not set up to submit Slurm jobs using the parallel computing toolbox or to run multi-node jobs. It can however still be used to spawn workers that make use of the resources of your single-node job.
 
 
 Availability
