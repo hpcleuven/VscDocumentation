@@ -186,65 +186,6 @@ Submitting jobs
       cluster profile. In both cases, you request a number of threads, either using the ``parpool`` or ``batch``
       function. The ``"Processes"`` profile is able to use the resources you requested for the Slurm job that is running MATLAB.
 
-Interactive job
-***************
-
-.. tab-set::
-   :sync-group: vsc-sites
-
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
-
-      You can start an interactive job using the ``parpool`` function:
-
-      .. code-block:: matlabsession
-
-          >> c = parcluster;
-          >> p = parpool(4); % requesting 4 cores
-
-      Once the job starts, all your following commands will be executed on the pool of cores you requested.
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      You can start an interactive MATLAB job using the ``parpool`` function with the profile ``MyProfile`` that we saved earlier.
-
-      .. code-block:: matlabsession
-
-          >> c = parcluster("MyProfile");
-          >> p = c.parpool(4); % requesting 4 cores
-
-      Starts a pool with 4 workers.
-
-      You can then execute commands on these workers using for example the `parfeval <https://www.mathworks.com/help/matlab/ref/parfeval.html>`_ and the `parfor <https://www.mathworks.com/help/matlab/ref/parfor.html>`_ commands.
-
-      For example, using the worker to populate an array:
-
-      .. code-block:: matlabsession
-
-          >> % Run a parfor over 4 iterations
-          >> parfor idx = 1:4
-              a(idx) = idx
-          end
-
-      The parallel pool can be deleted as follows.
-
-      .. code-block:: matlabsession
-
-         >> p.delete
-
-      .. note::
-          If you use a ``parallel.Cluster`` object with the ``Processes`` profile inside your single-node job and only use ``parpool``, then a threads pool is often the better choice since in such a parallel pool the workers share memory.
-          See the following `blogpost <https://blogs.mathworks.com/matlab/2025/03/27/parallel-computing-in-matlab-have-you-tried-threadpools-yet>`_ for more information.
-
-          A threads pool can be started with:
-
-          .. code-block:: matlabsession
-
-              >> p = parpool("Threads", 4) % 4 workers
-
-          Note that you do not need to (and cannot) use a ``parallel.Cluster`` object to initialise a threads pool.
-
 Batch job
 *********
 
@@ -310,4 +251,72 @@ Batch job
 
           >> job2 = c.Jobs(2);
           >> job2.fetchOutputs{:}
+
+
+Interactive job
+***************
+
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      You can start an interactive job using the ``parpool`` function:
+
+      .. code-block:: matlabsession
+
+          >> c = parcluster;
+          >> p = parpool(4); % requesting 4 cores
+
+      Once the job starts, all your following commands will be executed on the pool of cores you requested.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      There are two ways to start an interactive MATLAB job. The first is to create a threads pool. The second is to create a
+      parallel pool with a ``Processes`` profile (or your custom profile derived from ``Processes``). We recommend the former.
+
+      You can start an interactive MATLAB job using the ``parpool`` function.
+
+      Since you can only use MATLAB with single node jobs, a threads pool is often the better choice since in such a parallel pool the workers share memory.
+      See the following `blogpost <https://blogs.mathworks.com/matlab/2025/03/27/parallel-computing-in-matlab-have-you-tried-threadpools-yet>`_ for more information.
+
+      A threads pool can be started with:
+
+      .. code-block:: matlabsession
+
+          >> p = parpool("Threads", 4) % requesting 4 cores
+
+      This starts a pool with 4 workers.
+
+      Note that you do not need to (and cannot) use a ``parallel.Cluster`` object to initialise a threads pool.
+
+      Alternatively, if you want to create a parallel pool with a cluster profile such as ``MyProfile`` it can be done as follows.
+
+      .. code-block:: matlabsession
+
+          >> c = parcluster("MyProfile");
+          >> p = c.parpool(4); % requesting 4 cores
+
+      Note that this is a parallel pool based on the ``Processes`` profile and therefore its workers are independent processes, this is usually
+      slower than a threads pool.
+
+      Once you have created a (threads) pool, you can then execute commands on these workers using for example the
+      `parfeval <https://www.mathworks.com/help/matlab/ref/parfeval.html>`_ and the `parfor <https://www.mathworks.com/help/matlab/ref/parfor.html>`_ commands.
+
+      For example, using the workers to populate an array in parallel:
+
+      .. code-block:: matlabsession
+
+          >> % Run a parfor over 4 iterations
+          >> parfor idx = 1:4
+              a(idx) = idx
+          end
+
+      The parallel pool can be deleted as follows.
+
+      .. code-block:: matlabsession
+
+         >> p.delete
 
