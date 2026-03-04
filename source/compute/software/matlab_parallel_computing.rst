@@ -123,7 +123,7 @@ Configuring MATLAB for parallel computing
 
       .. code-block:: matlabsession
 
-          >> % Access
+          >> % View
           >> c.JobStorageLocation
 
       One of the parameters is the ``JobStorageLocation`` parameter. This defaults
@@ -132,7 +132,7 @@ Configuring MATLAB for parallel computing
 
       .. code-block:: matlabsession
 
-          >> % Edit
+          >> % Change
           >> c.JobStorageLocation = '</path/to/your/custom/jobdir>'
 
       Useful parameters to set:
@@ -179,10 +179,10 @@ Submitting jobs
 
       .. note:: Using the ``"Processes"`` profile will not submit **Slurm jobs** but will create **MATLAB batch jobs** that use the resources available to the current job.
 
-      First of all, request an interactive job. Once you are inside the interactive job, you can load your preferred module, as
+      First of all, request a single-node interactive job. Once you are inside the interactive job, you can load your preferred module, as
       explained above. You can then launch the MATLAB command line (with ``matlab -nodisplay``). Alternatively, you can use the Open OnDemand MATLAB app and use the GUI.
 
-      With the parallel toolbox, you can now start both interactive and independent batch jobs with the previously configured
+      With the parallel toolbox, you can now start both interactive and independent MATLAB batch jobs with the previously configured
       cluster profile. In both cases, you request a number of threads, either using the ``parpool`` or ``batch``
       function. The ``"Processes"`` profile is able to use the resources you requested for the Slurm job that is running MATLAB.
 
@@ -207,14 +207,14 @@ Interactive job
    .. tab-item:: VUB
       :sync: vub
 
-      You can start an interactive job using the ``parpool`` function with the profile ``MyProfile`` that we saved earlier.
+      You can start an interactive MATLAB job using the ``parpool`` function with the profile ``MyProfile`` that we saved earlier.
 
       .. code-block:: matlabsession
 
           >> c = parcluster("MyProfile");
           >> p = c.parpool(4); % requesting 4 cores
 
-      Starts a pool with 4 workers. Omit the number of cores to start a pool with ``c.PreferredPoolNumWorkers`` workers or if this is set to ``Inf`` with ``c.NumWorkers`` workers (which by default is the number of cores in your Slurm job.)
+      Starts a pool with 4 workers.
 
       You can then execute commands on these workers using for example the `parfeval <https://www.mathworks.com/help/matlab/ref/parfeval.html>`_ and the `parfor <https://www.mathworks.com/help/matlab/ref/parfor.html>`_ commands.
 
@@ -222,7 +222,7 @@ Interactive job
 
       .. code-block:: matlabsession
 
-          % Run a parfor over 4 iterations
+          >> % Run a parfor over 4 iterations
           >> parfor idx = 1:4
               a(idx) = idx
           end
@@ -243,7 +243,7 @@ Interactive job
 
               >> p = parpool("Threads", 4) % 4 workers
 
-          Note that you do not need (and cannot use) a ``parallel.Cluster`` object to initialise a threads pool.
+          Note that you do not need to (and cannot) use a ``parallel.Cluster`` object to initialise a threads pool.
 
 Batch job
 *********
@@ -284,7 +284,7 @@ Batch job
    .. tab-item:: VUB
       :sync: vub
 
-      Batch jobs are started with the ``batch`` function. Here we will give you an example job where we query the working directories of each of the threads MATLAB is using.
+      MATLAB batch jobs are started with the ``batch`` function. Here we will give you an example job where we query the working directories of each of the threads MATLAB is using.
       Have a look at the `MATLAB documentation <https://www.mathworks.com/help/parallel-computing/run-a-batch-job.html>`_ for more information.
 
       .. code-block:: matlabsession
