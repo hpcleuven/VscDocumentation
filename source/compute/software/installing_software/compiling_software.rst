@@ -276,7 +276,8 @@ The table below shows some common examples, but real projects may vary.
 | requirements.txt /            |                           |                              |                              |                  |
 | pyproject.toml                |                           |                              |                              |                  |
 +-------------------------------+---------------------------+------------------------------+------------------------------+------------------+
-*Not available on all VSC clusters
+
+\*Not available on all VSC clusters
 
 Example: building with CMake and Ninja
 --------------------------------------
