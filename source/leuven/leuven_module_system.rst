@@ -256,9 +256,10 @@ up EESSI first make the locally installed modules unavailable:
    # Force unload any cluster module
    module --force purge
    # Make EESSI available as a module
-   export MODULEPATH=/cvmfs/software.eessi.io/init/modules/
+   unset MODULEPATH
+   module use /cvmfs/software.eessi.io/init/modules/
    # Load an EESSI module
-   module load EESSI/2023.06
+   module load EESSI/2025.06
 
 These setup commands need to be executed in each session where you want to use
 EESSI. Note that you can search for other EESSI versions by running
@@ -268,9 +269,9 @@ with the EESSI software stack instead of locally installed modules. For example:
 
 .. code-block:: shell
 
-   $ module avail PyTorch
-   -- /cvmfs/software.eessi.io/versions/2023.06/software/linux/x86_64/intel/icelake/modules/all --
-      PyTorch/2.1.2-foss-2023a
+   $ module av GROMACS
+   -- /cvmfs/software.eessi.io/versions/2025.06/software/linux/x86_64/intel/skylake_avx512/modules/all --
+      GROMACS/2025.2-foss-2025a
 
 As you can see, the path above the listed module indicates this module indeed
 comes from EESSI. Also note how EESSI automatically figured out the most
@@ -285,8 +286,18 @@ can execute the following commands:
    # Unload EESSI
    module purge
    # Restore your original modulepath
-   export MODULEPATH=/apps/leuven/etc/modules:/apps/leuven/common/modules/all:/usr/share/lmod/lmod/modulefiles/Core
+   unset MODULEPATH
+   module use /apps/leuven/etc/modules:/apps/leuven/common/modules/all:/usr/share/lmod/lmod/modulefiles/Core
    # Restore the cluster module, the version depends on the node you are working on
    module load cluster/wice/batch
 
 or simply start a new session on the cluster.
+
+Additional links:
+
+- Overview of available software: https://eessi.io/docs/available_software/
+- Systems where EESSI is available: https://eessi.io/docs/systems/
+- Adding software to EESSI: https://eessi.io/docs/adding_software/overview/
+- Using EESSI in CI environments like GitHub Actions: https://eessi.io/docs/using_eessi/eessi_in_ci/
+- Recording of "Introduction to EESSI" talk: https://www.youtube.com/watch?v=1AZZqhvQIgo
+- EESSI "Happy Hour" weekly community online meetings: https://eessi.io/docs/training-events/happy-hours-sessions/
