@@ -45,22 +45,22 @@ In case you are not yet familiar with Slurm and/or the wICE hardware, you can fi
 more information on the following pages:
 
 - :ref:`wICE hardware <wice hardware>`
-- :ref:`Slurm jobs (basics) <running jobs>`
+- Slurm jobs (basics): :ref:`running jobs` and :ref:`job_types`
 - :ref:`Slurm jobs (advanced) <job advanced>`
 - :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
 
 For information about using and installing software on wICE (including Conda
 environments), see the :ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
 
-For information about compute credit accounts, see
+For information about compute credit accounts, see the
 :ref:`Leuven accounting <accounting_leuven>` and
 :ref:`KU Leuven credits <KU Leuven credits>` pages.
 
 .. note::
 
    The examples given on this page only serve as illustrations.
-   We expect that you adapt the number of nodes, cores, memory, walltime, ...
-   depending on what your compute task requires.
+   We expect that you adapt the number of nodes, tasks, cores, memory,
+   walltime, ... depending on what your compute task requires.
 
 
 .. _submit to wice compute node:

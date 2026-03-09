@@ -78,7 +78,8 @@ spin-off company of the Slurm development.
       process. Specifying the number of tasks one wants to run simultaneously and the
       number of cores per task is a very convenient way to request resources to Slurm
       as afterwards starting a MPI or hybrid MPI/OpenMP program using the ``srun``
-      command is very easy.
+      command is very easy. Note that shared memory programs are
+      :ref:`best run with a single task <job_type_sharedmem>`.
 
 .. toctree::
    :maxdepth: 2
