@@ -789,6 +789,13 @@ In the course of 2025, all Rome and Milan nodes and all login nodes were migrate
 During the maintenance of March 2026, all GPU nodes were migrated to RHEL9, making the transition of Hortense from RHEL8 to RHEL9 complete.
 Due to technical reasons, it was not possible to keep any RHEL8 GPU nodes in the system.
 
+.. note::
+
+   Only software that was installed with a sufficiently recent compiler toolchain (at least ``2023a`` generation, based on GCC 12.3.0)
+   was re-installed when migrating from RHEL8 to RHEL9.
+
+   If you were still using older software modules, you will need to update your workflow and/or job scripts.
+
 
 Resources
 ---------
