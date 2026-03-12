@@ -405,25 +405,21 @@ Trying to make any changes to files that are accessed via ``/readonly`` will res
 
 .. _hortense_interactive_debug:
 
-Interactive and debug partitions
-********************************
+Interactive and debug partition
+*******************************
 
-A number of (small) interactive and debug partitions are available: `debug_rome`, `debug_milan` and `debug_milan_rhel9`
-Purpose of these partitions is to quickly get access to a limited number of resources.
+A (small) interactive debug partitions is available: `debug_milan_rhel9`.
+The purpose of this partition is to quickly get access to a limited number of resources.
 
 The limitations are a maximum of 5 jobs (running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
 a total of 8 CPU cores combined.
 The CPUs are oversubscribed by a factor 4, which may lead to slower than expected run times when the usage is high.
 
 
-Technical details of debug/interactive partitions
-+++++++++++++++++++++++++++++++++++++++++++++++++
+Technical details of debug/interactive partition
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-Partition `debug_rome` nodes have one NVIDIA V100 GPU that can be requested for exclusive access
-(as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
-that is always available but shared across all jobs on that node.
-
-Partition `debug_milan` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
+The `debug_milan_rhel9` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
 (as with the GPU partitions) and also one GPU NVIDIA L4 that is always available but shared across all jobs on that node.
 
 
