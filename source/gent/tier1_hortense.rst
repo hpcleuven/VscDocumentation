@@ -427,19 +427,13 @@ Partition `debug_milan` nodes have one NVIDIA L4 GPU that can be requested for e
 (as with the GPU partitions) and also one GPU NVIDIA L4 that is always available but shared across all jobs on that node.
 
 
-Using the debug/interactive partitions
-++++++++++++++++++++++++++++++++++++++
+Using the debug/interactive partition
++++++++++++++++++++++++++++++++++++++
 
-To make use of the partitions you can select the ``dodrio debug_rome``, ``dodrio debug_milan`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
-`Interactive Apps` forms on the webportal, or from the CLI
+To make use of the debug partition you can select the ``dodrio debug_milan_rhel9`` option in the `Cluster` field in the
+`Interactive Apps` forms on the web portal, or from the CLI
 
 .. code:: shell
-
-    module swap cluster/dodrio/debug_rome
-    qsub job_script.sh
-
-    module swap cluster/dodrio/debug_milan
-    qsub job_script.sh
 
     module swap cluster/dodrio/debug_milan_rhel9
     qsub job_script.sh
@@ -457,7 +451,7 @@ Software
 Operating system
 ****************
 
-Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 8 (RHEL8)* as operating system.
+Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 9 (RHEL9)* as operating system.
 
 .. _hortense_resource_manager:
 
@@ -577,7 +571,7 @@ Requesting GPU resources
 ++++++++++++++++++++++++
 
 Don't forget to actively request GPU resources in your jobs or from the commandline.
-Only loading the cluster/dodrio/gpu_rome_a100_rhel9 module is not sufficient.
+Only loading the ``cluster/dodrio/gpu_rome_a100_rhel9`` module is not sufficient.
 By default you'll get 12 cores per requested GPU (an explicit ppn= statement is not required).
 
 .. code:: shell
