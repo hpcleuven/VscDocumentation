@@ -47,13 +47,13 @@ Hortense consists of the following partitions:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 238 GiB usable RAM (~1.85GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100_40``: GPU partition:
+- ``dodrio/gpu_rome_a100_40_rhel9``: GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
        - 238 GiB usable RAM (~4.95GB/CPU core), no swap
        - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100_80``: phase 2 GPU partition:
+- ``dodrio/gpu_rome_a100_80_rhel9``: phase 2 GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
@@ -67,7 +67,7 @@ Hortense consists of the following partitions:
        - 488 GiB usable RAM (~3.8GB/oversubscribed core), no swap
        - 100 GB SSD local disk
 - ``dodrio/cpu_rome_all_rhel9``: combination of ``cpu_rome_rhel9`` and ``cpu_rome_512_rhel9``
-- ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
+- ``dodrio/gpu_rome_a100_rhel9``: combination of ``gpu_rome_a100_40_rhel9`` and ``gpu_rome_a100_80_rhel9``
 
 Shared infrastructure:
 
@@ -564,7 +564,7 @@ For example, to submit a GPU job:
 
 .. code:: shell
 
-    module swap cluster/dodrio/gpu_rome_a100
+    module swap cluster/dodrio/gpu_rome_a100_rhel9
     qsub job_script.sh
 
 A list of available partitions can be obtained using ``module avail cluster/dodrio``.
@@ -577,12 +577,12 @@ Requesting GPU resources
 ++++++++++++++++++++++++
 
 Don't forget to actively request GPU resources in your jobs or from the commandline.
-Only loading the cluster/dodrio/gpu_rome_a100 module is not sufficient.
+Only loading the cluster/dodrio/gpu_rome_a100_rhel9 module is not sufficient.
 By default you'll get 12 cores per requested GPU (an explicit ppn= statement is not required).
 
 .. code:: shell
 
-    module swap cluster/dodrio/gpu_rome_a100
+    module swap cluster/dodrio/gpu_rome_a100_rhel9
     qsub -l nodes=1:gpus=1
 
 (The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
@@ -745,29 +745,20 @@ please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 Phase 2
 -------
 
-In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
-20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition,
-and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``. The `debug_rome` partition was
-also made generally available.
+In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome_rhel9`` partition (previously ``cpu_rome``),
+20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80_rhel9`` partition (previously ``gpu_rome_a100_80``,
+and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan_rhel9`` (previously ``cpu_milan``).
 
 The Lustre based scratch storage was also also doubled in volume to a total of 5.4 PB
 while increasing the overal throughput as well.
 
 With the new GPU nodes, a renaming of the gpu node partitions occured. Users can most likely
-still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
-``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when requiring the
-larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
+still use the same ``gpu_rome_a100_rhel9`` partition that now includes all GPU nodes (and only select the
+``gpu_rome_a100_40_rhel9`` or ``gpu_rome_a100_80_rhel9`` for specific cases, e.g. when requiring the
+larger amount of GPU/CPU memory of the ``gpu_rome_a100_80_rhel9`` nodes).
 
-In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
-and overal functioning with the ``cpu_rome`` partitions. No credits will be billed for the usage of the ``cpu_milan``
-partition during this period.
-
-Once in production (July 7th 2023, when the June 2023 cut-off becomes active),
-projects will be given access to either the ``cpu_rome`` partitions or the ``cpu_milan`` partition
-(with billing of used credits on both partitions).
-
-The support team will try to keep the list of available software modules the same on the ``cpu_rome`` and
-``cpu_milan`` partitions. If you notice modules are missing or not functioning properly,
+The support team will try to keep the list of available software modules the same on the ``cpu_rome_rhel9`` and
+``cpu_milan_rhel9`` partitions. If you notice modules are missing or not functioning properly,
 please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
 
 With both phases active, the cluster crossed the symbolic threshold of 100,000 cores.
@@ -790,133 +781,20 @@ c̵p̵u̵_̵r̵o̵m̵e̵_̵5̵1̵2̵, d̵e̵b̵u̵g̵_̵r̵o̵m̵e̵ w̵i̵l̵l�
 H̵o̵w̵e̵v̵e̵r̵,̵ ̵t̵h̵e̵r̵e̵ ̵c̵u̵r̵r̵e̵n̵t̵l̵y̵ ̵i̵s̵ ̵n̵o̵ ̵c̵o̵n̵f̵i̵r̵m̵a̵t̵i̵o̵n̵ ̵r̵e̵g̵a̵r̵d̵i̵n̵g̵ ̵t̵h̵i̵s̵.̵
 
 Update 1 November 2025: The operational phase of the 4th Tier-1 has, unfortunately, 
-suffered a delay. As a result, the VSC is considering to keep the entire Rome 
-partition active for a longer time. We are currently awaiting official confirmation on this plan.
+suffered a delay. As a result, the VSC has decided to keep the entire Rome partition active until end July 2026.
+
 
 Migration to RHEL9 operating system
 -----------------------------------
 
-To maintain operational safety, the operating system of Hortense will be updated to **Red Hat Enterprise Linux version 9 (RHEL9)**
-(going up from RHEL8).
+To maintain operational safety, the operating system of Hortense was gradually updated to **Red Hat Enterprise Linux version 9.6 (RHEL9)**
+(going up from RHEL8). 
 
-This implies that by November 2025, when the RHEL8 Rome partition is decommissioned, your software and/or workflow will need to be compliant with the RHEL9 OS if you still want to run jobs.
-As of the 2nd cutoff in 2025 (June'25), compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
+In the course of 2025, all Rome and Milan nodes and all login nodes were migrated to RHEL9.
 
-Please test your workflow and software as soon as possible and ensure that you are ready for this transition.
+During the maintenance of March 2026, all GPU nodes were migrated to RHEL9, making the transition of Hortense from RHEL8 to RHEL9 complete.
+Due to technical reasons, it was not possible to keep any RHEL8 GPU nodes in the system.
 
-
-Update to RHEL9 of Milan partitions
-***********************************
-
-We have made separate partitions of workernodes that run RHEL9 as operating systems:
-``debug_milan_rhel9`` and ``cpu_milan_rhel9``.
-
-The partition ``cpu_milan_rhel9`` will be gradually increased to contain more nodes of the Milan partition that run RHEL9 as operating system.
-
-To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
-`Interactive Apps` forms on the webportal, or from the command line:
-
-.. code:: shell
-
-    module swap cluster/dodrio/cpu_milan_rhel9
-    qsub job_script.sh
-
-    module swap cluster/dodrio/debug_milan_rhel9
-    qsub job_script.sh
-
-
-Impact of changes during maintenance of May 2025
-************************************************
-
-With the downtime of May 2025, during which significant maintenance was done on the cooling infrastructure,
-several changes were made:
-
-* RHEL9 login nodes
-* ``cpu_milan_rhel9`` as default partition
-* Moving of nodes from ``cpu_milan`` to ``cpu_milan_rhel9`` partition
-* Lower memory limits
-* OS updates (Linux kernel, GPU drivers, Slurm)
-
-More info in the subsections below.
-
-
-RHEL9 login nodes
-+++++++++++++++++
-
-2 new login nodes running the RHEL9 operating system were added (``login57`` and ``login58``)
-
-- By default, you will land on one of these when logging in via ``tier1.hpc.ugent.be``;
-- The RHEL8 login nodes (``login55`` and ``login56``) are still available,
-  you can SSH into those via ``ssh tier1-rhel8``;
-- From a RHEL8 login node, you can SSH into a RHEL9 login node via ``ssh tier1-rhel9``;
-- Warnings will be printed when you swap to a RHEL8 partition on a RHEL9 login node (and vice versa),
-  since the software provided via the ``module`` system will not be compatible with the login node
-  you are working on:
-
-.. code::
-
-   [vsc40000@login57 ~]$ module swap cluster/dodrio/cpu_rome
-
-    We advise you to log in to a RHEL 8 login node when using the cpu_rome partition.
-
-    The cpu_rome partition is using RHEL 8 as operating system,
-    while the login node you are logged in to is using RHEL 9.
-
-    To avoid problems with testing installed software or submitting jobs,
-    it is recommended to switch to a RHEL 8 login node by running 'ssh tier1-rhel8'
-
-
-``cpu_milan_rhel9`` as default partition
-++++++++++++++++++++++++++++++++++++++++
-
-The ``cpu_milan_rhel9`` partition was made the default partition (it was ``cpu_rome`` before the maintenance of May'25).
-
-To submit jobs to a Rome partition, you first need to swap to a corresponding partition:
-
-.. code::
-
-   module swap cluster/dodrio/cpu_rome
-
-Moving of nodes from ``cpu_milan`` to ``cpu_milan_rhel9`` partition
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Additional nodes in the Milan partition have been migrated to RHEL9.
-
-Hence, the ``cpu_milan_rhel9`` partition has grown to 128 nodes,
-and fewer nodes are available in the ``cpu_milan`` partition now.
-
-Over the next couple of months, additional Milan nodes will be migrated to RHEL9 (see planning below).
-
-Lower memory limits
-+++++++++++++++++++
-
-The maximum amount of RAM memory that can be used by jobs has been lowered a bit,
-to ensure more memory is available for the operating system (filesystem cache, monitoring, Slurm, etc.).
-
-.. csv-table::
-
-    "**partition**", "**max. mem per node**"
-
-    ``cpu_rome``, ~238GB
-    ``cpu_rome_512``, ~488GB
-    ``cpu_milan`` + ``cpu_milan_rhel9``, ~238GB
-    ``gpu_rome_a100_40``, ~238GB
-    ``gpu_rome_a100_80``, ~488GB
-    ``debug_rome``, ~224GB
-    ``debug_milan`` + ``debug_milan_rhel9``, ~488GB
-
-OS updates (May 2025)
-+++++++++++++++++++++
-
-Operating system updates were performed on both RHEL8 and RHEL9 nodes, including a more recent Linux kernel,
-updated GPU drivers, and the latest Slurm version (24.05).
-
-Planning for migration to RHEL9
-*******************************
-
-* End of June'25: migrate more Milan nodes to RHEL9 (256 nodes in ``cpu_milan_rhel9``, rest in ``cpu_milan``);
-* **Thu 28 Aug 2025: complete migration of Milan nodes to RHEL9** (all Milan nodes in ``cpu_milan_rhel9``, none in ``cpu_milan``);
-* Nov'25: decommissioning of Rome partition (``cpu_rome``, ``cpu_rome_512``, ``cpu_rome_all``);
 
 Resources
 ---------
