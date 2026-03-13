@@ -4,7 +4,7 @@ Job scripts: Advanced topics
 ============================
 
 This page contains some more advanced commands and additional ways to request resources.
-Make sure to first read our :ref:`running jobs` page.
+Make sure to first read our :ref:`running jobs` and :ref:`job_types` pages.
 
 Requesting resources
 --------------------
@@ -215,7 +215,9 @@ it would be running on the login node rather than on the allocated resources. Al
 to leave the shell when you have finished your interactive work!
 
 For an MPI or hybrid MPI/OpenMP program you would proceed in exactly the same way, except that the
-resource request is different to allocate all MPI tasks. E.g., to run the demo program
+resource request is different to allocate all MPI tasks (see also the
+`Example job types <job_type_hybrid>`_ page).
+E.g., to run the demo program
 ``mpi_omp_hello`` in an interactive shell and using 16 MPI processes and 8 threads per MPI
 rank, you'd allocate the resources through
 
