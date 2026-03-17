@@ -186,7 +186,8 @@ can for example be combined as follows:
    Do *not* load modules in your ``.bashrc``, ``.bash_profile`` or ``.profile``,
    you *will* shoot yourself in the foot at some point. If you want to avoid
    typing the same module load commands over and over, we instead recommend to
-   define aliases or functions in your ``.bashrc``.
+   define aliases or functions in your ``.bashrc`` or working with
+   :ref:`collections of modules<collections of modules>`.
 
 
 Conflicting modules
@@ -239,6 +240,23 @@ the modules that got loaded automatically in order to satisfy (runtime)
 dependencies of the explicitly loaded ``CP2K`` and ``GROMACS`` installations
 (``PLUMED``, ``OpenMPI``, ``OpenBLAS``, etcetera).
 
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      The very first listed module is a so-called "cluster module", see the
+      page on :ref:`cluster modules <cluster_modules_general>` for more
+      information.
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      The very first listed module is a so-called "cluster module", see the
+      page on :ref:`cluster modules <cluster_modules_general>` for more
+      information.
+
 
 Unloading modules
 ~~~~~~~~~~~~~~~~~
@@ -274,8 +292,8 @@ This will not unload so-called `sticky modules
 <https://lmod.readthedocs.io/en/latest/240_sticky_modules.html>`__, which
 are special modules that do not normally need to be unloaded (for example
 because they define the appropriate module paths and possibly other environment
-variables). If really needed, sticky modules can be unloaded with
-``module --force purge``.
+variables, see the section on :ref:`cluster modules<cluster_modules>`). If
+really needed, sticky modules can be unloaded with ``module --force purge``.
 
 
 .. _collections of modules:
@@ -322,34 +340,3 @@ It is also possible to bundle different modules together as a collection:
    Be aware that module collections stop working when one of the
    modules in the collection is reinstalled. In such cases the
    collection needs to be removed and then redefined.
-
-
-.. _specialized software stacks:
-
-Specialized software stacks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The list of software available on a particular cluster can be
-unwieldingly long and the information that ``module av`` produces
-overwhelming. Therefore the administrators may have chosen to only show
-the most relevant packages by default, and not show, e.g., packages that
-aim at a different cluster, a particular node type or a less complete
-toolchain. Those additional packages can then be enabled by loading
-another module first. E.g., to get access to the modules in
-the (at the time of writing) incomplete 2019a toolchain on UAntwerpen's
-leibniz cluster, one should first enter
-
-   ::
-
-      $ module load leibniz/2019a-experimental
-
-TODO-GSSI: The following toctree is included because otherwise the build gives
-warnings these pages are not included anywhere. The content of those pages can
-probably be merged with the "module system basics" and "cluster modules" pages.
-
-.. toctree::
-   :maxdepth: 2
-
-   /gent/setting_up_the_environment_using_lmod_at_the_hpc_ugent_clusters
-   /leuven/leuven_module_system
-
