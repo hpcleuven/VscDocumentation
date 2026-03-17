@@ -1,15 +1,19 @@
-.. _job types:
+.. _job_types:
 
 Example job types
 =================
 
+This page describes common types of Slurm jobs in more detail.
+
+.. _job_type_sharedmem:
+
 Shared memory job
 -----------------
 
-A shared memory program consists of a single task. The number of cores you would
-request for the task corresponds to the number of computational threads
-you want to use for the application. Keep in mind that a single task cannot
-span multiple nodes in the cluster.
+Running a shared memory program is best done by requesting a single task with
+a number of cores per task that typically corresponds to the number of
+computational threads you want to use for the application. Keep in mind that a
+single task cannot span multiple nodes in the cluster.
 
 Shared memory programs often need to be told how many threads they should use.
 Unfortunately, there is no standard way that works for all programs. Some programs
@@ -117,6 +121,7 @@ it would be started using
 
 and of course you'd have to load a module with MPI support.
 
+.. _job_type_hybrid:
 
 Hybrid MPI/OpenMP program
 -------------------------
