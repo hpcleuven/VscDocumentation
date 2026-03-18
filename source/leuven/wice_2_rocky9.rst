@@ -59,7 +59,7 @@ centrally installed modules, your ``module load`` commands will automatically
 load the appropriate modules (e.g. the ones installed for Rocky 9 if you are
 on a node with Rocky 9). Note that this may not apply if you are
 manually modifying your module path (if in doubt, please consult
-:ref:`The module system on Leuven clusters <leuven_module_system>`).
+the section on :ref:`cluster modules <cluster_modules>`).
 
 .. note::
 
