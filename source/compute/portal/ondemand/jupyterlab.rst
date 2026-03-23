@@ -2,10 +2,11 @@ JupyterLab
 ==========
 
 With this app you can write and run `Jupyter notebooks <official JupyterLab
-documentation_>`_ containing annotated Python, R or Julia code (among other
+documentation_>`_ containing annotated Python, R, Julia and Bash code (among other
 languages). IPython consoles are available as well. One of the benefits of
 JupyterLab is that it supports different types of user-defined environments, as
-will become clear below.
+will become clear below. The includded plugins are additional assets in the notebook
+environment (as elaborated below).
 
 .. tab-set::
    :sync-group: vsc-sites
@@ -13,7 +14,9 @@ will become clear below.
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      The top-level notebook directory is by default ``$VSC_DATA``.
+      The top-level notebook directory is by default ``$VSC_DATA``. But, you may
+      switch to other cluster storages (including scratch and staging) by providing
+      its full path in the 'Top-level work directory' text field.
 
    .. tab-item:: VUB
       :sync: vub
@@ -429,3 +432,111 @@ include 'Cpu', 'Cluster Memory', 'Task Stream', and 'Workers'.
    :target: ../../../_images/jupyterlab-dask.png
 
    Dask Lab extension in action
+
+
+Bash kernel extension
+~~~~~~~~~~~~~~~~~~~~~
+
+Despite the fact Jupyter notebooks are best known for running Python, R and Julia code,
+it is also possile to execute Bash commands inside your notebook if your Jupyter kernel
+is well integrated with the underlying Bash kernel of your operating system.
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius cluster>`
+       * Tier-2 :ref:`wICE <wice cluster>`
+
+By default, the 'Bash' kernel is loaded in your environment, starting from the 2023a toolchain.
+To use it in a notebook, you need to choose the 'Bash' or 'Python 3 (ipykernel)' jupyter  kernels
+which appears automatically among your list of kernels.
+
+.. note::
+
+   If you have loaded additional modules via the 'Pre-run scriptlet', you have to choose the
+   'Python 3 (ipykernel)' as your Jupyter kernel. Only then, the Bash kernel and additional
+   packages from the loaded module(s) are all exposed in your notebook environment.
+
+
+Jupyter resource usage extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When prototyping, debugging and testing your application, it is crucial to have a realistic
+estimate of CPU and memory utilization at runtime.
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius cluster>`
+       * Tier-2 :ref:`wICE <wice cluster>`
+
+Starting from the 2023a toolchain, you may inspect the aggregated CPU and memory resource usage by your kernel.
+This is shown in your bottom tray (for CPU and memory), in the top tray (for memory)  and in the right sidebar
+of your Notebook (for a summary).
+
+
+JupyterLab git extension
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Version control is an integral part of software development and management of your intellectual property,
+with a focus on preserving the incremental changes made to the software code base. This topic is extensively
+explained in the :ref:`Version Control Systems <version control systems>` section.
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius cluster>`
+       * Tier-2 :ref:`wICE <wice cluster>`
+
+Similar to many modern interactive development envrionments (IDEs), JupyterLab integrates seamlessly with 'git'
+using the JupyterLab-git extension powered by the ``JupyterLab-git`` module which is automatically loaded if you choose more recent toolchains starting from 2023a. Once the session starts, a new 'Git' drop-down menu is added to the top bar,
+in addition to a "version control" logo on the left sidebar.
+
+Using this extension you can create or clone a new git repository, manage your (new) branches, track
+your changed files in your trunk, commit your changes and push your changes to an upstream repository, in addition
+to more advanced functionalities.
+
+
+.. _jupyter-irods-client:
+
+Python iRODS Client
+~~~~~~~~~~~~~~~~~~~
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius cluster>`
+       * Tier-2 :ref:`wICE <wice cluster>`
+
+You can use the :ref:`Python iRODS client (PRC) <python-client>` to transfer data between
+your local storage, :ref:`ManGO <https://mango.vscentrum.be/>` platform and/or the
+:ref:`Tier-1 Data platform <tier1_data_service>`.
+
+To integrate the authentication and data transfer steps together with your computation directly in
+JupyterLab, you can choose to load the PRC module in the form. 
+The benefit of this choice is that you can skip loading the ``mango-auth`` and ``python-irodsclient``
+modules or install them locally, because they will be automatically loaded in your environment.
+You will not need the :ref:`iron CLI client <iron-CLI>` either.
+
+:ref:`Authenticating to ManGO <mango-login>` in your Jupyter notebook boils down to the following
+two lines of code:
+
+.. code-block:: python
+
+   from mango_auth import iinit
+   iinit('user_name', 'zone_name', 'host')
+
+For details about the broad functionalities of the PRC in your Python or Jupyter notebook environment,
+please refer to the :ref:`Python iRODS client <python-client>` documentation.
