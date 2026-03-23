@@ -16,7 +16,7 @@ environment (as elaborated below).
 
       The top-level notebook directory is by default ``$VSC_DATA``. But, you may
       switch to other cluster storages (including scratch and staging) by providing
-      its full path in the 'Top-level work directory' text field.
+      the corresponding full path in the 'Top-level work directory' text field.
 
    .. tab-item:: VUB
       :sync: vub
