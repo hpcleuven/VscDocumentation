@@ -1,8 +1,8 @@
 .. _python-client:
 
-########################
+#########################
 Python iRODS Client - PRC
-########################
+#########################
 
 The Python iRODS Client (PRC) is an API to iRODS, the underlying system behind Tier-1 Data.
 The goal of the PRC is to offer researchers means to manage their data in Tier-1 Data through python.
