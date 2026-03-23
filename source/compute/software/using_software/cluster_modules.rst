@@ -51,8 +51,8 @@ The cluster modules
    .. tab-item:: VUB
       :sync: vub
 
-      This site does not make use of cluster modules, the following section
-      is not relevant.
+      This site makes use of cluster modules, but not to set the
+      ``$MODULEPATH`` variable. The following section is thus irrelevant.
 
 
 A given module will only be available if it is located inside a
