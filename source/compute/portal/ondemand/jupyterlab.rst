@@ -471,7 +471,9 @@ Jupyter resource usage extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When prototyping, debugging and testing your application, it is crucial to have a realistic
-estimate of CPU and memory utilization at runtime.
+estimate of resource utilization at runtime. More specifically, monitoring CPU usage can
+help debugging parallel code blocks, and monitoring the memory usage can help estimating
+the lower bound of memory resources needed for your application.
 
 Starting from the 2023a toolchain, you may inspect the aggregated CPU and memory resource
 usage by your kernel. This is shown in your bottom tray (for CPU and memory), in the top tray
@@ -486,6 +488,12 @@ support this extension are:
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+
+To monitor the host CPU and memory utilization at runtime, click on the
+'Kernel Usage' tab on the right tray. Among the various fields, you may like
+to keep eye on the 'CPU' and 'Memory' metrics for aggreggated resource usage of
+your kernel. Then, execute the cell(s) of interest which might be resource intensive;
+you will see that the CPU and memory metrics are updated in real time.
 
 
 JupyterLab git extension
