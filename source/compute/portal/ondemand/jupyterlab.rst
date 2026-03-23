@@ -14,9 +14,9 @@ environment (as elaborated below).
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      The top-level notebook directory is by default ``$VSC_DATA``. But, you may
-      switch to other cluster storages (including scratch and staging) by providing
-      the corresponding full path in the 'Top-level work directory' text field.
+      The top-level notebook directory points by default to your ``$VSC_DATA``.
+      But, you may switch to other cluster storages (including scratch and staging)
+      by providing the corresponding full path in the 'Top-level work directory' text field.
 
    .. tab-item:: VUB
       :sync: vub
@@ -28,6 +28,7 @@ environment (as elaborated below).
       (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
       priority over your 'Working directory' in the resources form.
 
+
 .. _jupyterlab_pure_module_env:
 
 Pure module environment
@@ -35,8 +36,9 @@ Pure module environment
 
 In the resources form, besides the :ref:`shared resources <shared_resources>`,
 you can also choose between different 'Toolchain and Python versions' from a
-drop-down menu.  An example would be '2023a and
-``Python/3.11.3-GCCcore-12.3.0``'.  Based on that choice, the corresponding
+drop-down menu. At the moment, we support the most recent toolchains starting from
+2023a up to 2025a. An example would be '2025a and
+``Python/3.13.1-GCCcore-14.2.0``'.  Based on that choice, the corresponding
 JupyterLab module will be loaded together with its dependencies (such as the
 listed Python module).
 
@@ -288,15 +290,15 @@ For more general information, please refer to the `official JupyterLab documenta
 
 
 JupyterLab extensions
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
-JupyterLab extensions enhance or customize your JupyterLab session.  You can
+JupyterLab extensions enhance or customize your JupyterLab session. You can
 find the list of available extensions in the extension tab on the left panel
 (*puzzle piece icon*) and you can enable or disable any of them.
 
 .. note::
 
-   The JupyterLab extensions store is disabled because the available extensions
+   |VUB| The JupyterLab extensions store is disabled because the available extensions
    in the store are not reviewed and may contain malicious or malfunctioning
    software. If you need any JupyterLab extension that is not yet available,
    please contact the site admins.
@@ -304,7 +306,7 @@ find the list of available extensions in the extension tab on the left panel
 .. _software_modules_extension:
 
 Software modules Lab extension
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 The 'Software Modules' JupyterLab extension allows you to load additional
 software modules within JupyterLab without relaunching your JupyterLab session.
@@ -437,7 +439,7 @@ include 'Cpu', 'Cluster Memory', 'Task Stream', and 'Workers'.
 Bash kernel extension
 ~~~~~~~~~~~~~~~~~~~~~
 
-Despite the fact Jupyter notebooks are best known for running Python, R and Julia code,
+Despite the fact that Jupyter notebooks are best known for running Python, R and Julia code,
 it is also possile to execute Bash commands inside your notebook if your Jupyter kernel
 is well integrated with the underlying Bash kernel of your operating system.
 
@@ -447,12 +449,12 @@ is well integrated with the underlying Bash kernel of your operating system.
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <genius cluster>`
-       * Tier-2 :ref:`wICE <wice cluster>`
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
 By default, the 'Bash' kernel is loaded in your environment, starting from the 2023a toolchain.
 To use it in a notebook, you need to choose the 'Bash' or 'Python 3 (ipykernel)' jupyter  kernels
-which appears automatically among your list of kernels.
+which appear automatically among your list of kernels.
 
 .. note::
 
@@ -467,18 +469,19 @@ Jupyter resource usage extension
 When prototyping, debugging and testing your application, it is crucial to have a realistic
 estimate of CPU and memory utilization at runtime.
 
+Starting from the 2023a toolchain, you may inspect the aggregated CPU and memory resource
+usage by your kernel. This is shown in your bottom tray (for CPU and memory), in the top tray
+(for memory)  and in the right sidebar of your Notebook (for a summary). The VSC clusters that
+support this extension are:
+
 .. grid:: 3
     :gutter: 4
 
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <genius cluster>`
-       * Tier-2 :ref:`wICE <wice cluster>`
-
-Starting from the 2023a toolchain, you may inspect the aggregated CPU and memory resource usage by your kernel.
-This is shown in your bottom tray (for CPU and memory), in the top tray (for memory)  and in the right sidebar
-of your Notebook (for a summary).
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
 
 JupyterLab git extension
@@ -488,18 +491,20 @@ Version control is an integral part of software development and management of yo
 with a focus on preserving the incremental changes made to the software code base. This topic is extensively
 explained in the :ref:`Version Control Systems <version control systems>` section.
 
+Similar to many modern interactive development envrionments (IDEs), JupyterLab integrates seamlessly with 'git'
+using the 'JupyterLab-git' extension powered by the ``JupyterLab-git`` module; this module is automatically
+loaded if you choose more recent toolchains starting from 2023a. Once the session starts, a new 'Git' drop-down
+menu is added to the top bar, in addition to a "version control" logo on the left sidebar. The VSC clusters where
+this extension is supported are:
+
 .. grid:: 3
     :gutter: 4
 
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <genius cluster>`
-       * Tier-2 :ref:`wICE <wice cluster>`
-
-Similar to many modern interactive development envrionments (IDEs), JupyterLab integrates seamlessly with 'git'
-using the JupyterLab-git extension powered by the ``JupyterLab-git`` module which is automatically loaded if you choose more recent toolchains starting from 2023a. Once the session starts, a new 'Git' drop-down menu is added to the top bar,
-in addition to a "version control" logo on the left sidebar.
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
 Using this extension you can create or clone a new git repository, manage your (new) branches, track
 your changed files in your trunk, commit your changes and push your changes to an upstream repository, in addition
@@ -517,18 +522,19 @@ Python iRODS Client
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <genius cluster>`
-       * Tier-2 :ref:`wICE <wice cluster>`
+       * Tier-2 :ref:`Genius <Genius hardware>`
+       * Tier-2 :ref:`wICE <wICE hardware>`
 
 You can use the :ref:`Python iRODS client (PRC) <python-client>` to transfer data between
-your local storage, :ref:`ManGO <https://mango.vscentrum.be/>` platform and/or the
+your local storage, `KU Leuven ManGO portal`_ and/or the
 :ref:`Tier-1 Data platform <tier1_data_service>`.
 
 To integrate the authentication and data transfer steps together with your computation directly in
 JupyterLab, you can choose to load the PRC module in the form. 
 The benefit of this choice is that you can skip loading the ``mango-auth`` and ``python-irodsclient``
 modules or install them locally, because they will be automatically loaded in your environment.
-You will not need the :ref:`iron CLI client <iron-CLI>` either.
+You will not need the :ref:`iron CLI client <iron-CLI>` either. The aforementioned modules are
+available starting from the 2023a toolchain.
 
 :ref:`Authenticating to ManGO <mango-login>` in your Jupyter notebook boils down to the following
 two lines of code:

@@ -79,7 +79,7 @@ After installation is completed, you verify with:
 Authentication
 --------------
 
-To authenticate using iron, first obtain your connection details from the `ManGO portal <https://mango.vscentrum.be/>`__ and then run the snippet below.
+To authenticate using iron, first obtain your connection details from the `KU Leuven ManGO portal`_ and then run the snippet below.
 
 .. code:: sh
 

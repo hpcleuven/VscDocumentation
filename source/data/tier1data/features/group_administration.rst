@@ -39,7 +39,7 @@ The support role is meant for support staff from the VSC.
 They might temporarily join projects when they are actively involved, or for debugging purposes.
 
 To manage project members, reponsibles/managers need to go to the web page of their project, 
-by going to the `ManGO portal <https://mango.vscentrum.be/>`_, clicking on their zone to expand the list of projects they are member of, and clicking on their project name.
+by going to the `KU Leuven ManGO portal`_, clicking on their zone to expand the list of projects they are member of, and clicking on their project name.
 Alternatively, they can go straight to ``https://mango.vscentrum.be/data-platform/project/<project_name>``.
 
 On this page, you get an overview of all members in the project:

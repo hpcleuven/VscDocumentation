@@ -317,6 +317,7 @@ rst_prolog += """
 rst_prolog += """
 .. _eligible users: https://www.vscentrum.be/getaccess
 .. _get in touch: https://www.vscentrum.be/getintouch
+.. _KU Leuven ManGO portal: https://mango.vscentrum.be/
 .. _Tier-1 project application: https://www.vscentrum.be/compute
 .. _VSC account page: https://account.vscentrum.be/
 .. _VSC Account - Edit Account: https://account.vscentrum.be/django/account/edit
@@ -430,8 +431,8 @@ rst_prolog += """
 .. _LLNL Advanced MPI: https://hpc.llnl.gov/sites/default/files/DavidCronkSlides.pdf
 .. _Lmod documentation: http://lmod.readthedocs.io/en/latest/
 .. _Lmod: http://lmod.readthedocs.io/en/latest/
-.. _MathWorks: https://nl.mathworks.com/
 .. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
+.. _MathWorks: https://nl.mathworks.com/
 .. _MobaXterm: https://mobaxterm.mobatek.net
 .. _MPI Forum: https://www.mpi-forum.org/
 .. _MPI Documents: https://www.mpi-forum.org/docs/
