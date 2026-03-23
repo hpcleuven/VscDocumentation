@@ -456,6 +456,10 @@ By default, the 'Bash' kernel is loaded in your environment, starting from the 2
 To use it in a notebook, you need to choose the 'Bash' or 'Python 3 (ipykernel)' jupyter  kernels
 which appear automatically among your list of kernels.
 
+.. figure:: img/jupyterlab-bash-kernel.png
+
+   Jupyter Bash kernel
+
 .. note::
 
    If you have loaded additional modules via the 'Pre-run scriptlet', you have to choose the
