@@ -5,7 +5,7 @@ With this app you can write and run `Jupyter notebooks <official JupyterLab
 documentation_>`_ containing annotated Python, R, Julia and Bash code (among other
 languages). IPython consoles are available as well. One of the benefits of
 JupyterLab is that it supports different types of user-defined environments, as
-will become clear below. The includded plugins are additional assets in the notebook
+will become clear below. The included plugins are additional assets in the notebook
 environment (as elaborated below).
 
 .. tab-set::
