@@ -298,10 +298,10 @@ find the list of available extensions in the extension tab on the left panel
 
 .. note::
 
-   |VUB| The JupyterLab extensions store is disabled because the available extensions
+   The JupyterLab extensions store is disabled because the available extensions
    in the store are not reviewed and may contain malicious or malfunctioning
    software. If you need any JupyterLab extension that is not yet available,
-   please contact the site admins.
+   please :ref:`contact your site admins <contact VSC>`.
 
 .. _software_modules_extension:
 
