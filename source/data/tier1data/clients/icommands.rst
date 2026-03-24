@@ -135,7 +135,7 @@ Ubuntu/Debian (local machines):
 
 **Note:** For VSC login nodes, the package is already (or will be) installed centrally.
 
-- Go to the `KU Leuven ManGO portal`_ and log in. 
+- Go to the `ManGO portal`_ and log in. 
   Click on "How to connect" next to your zone, copy the code under "With iCommands only 
   for Linux operating systems" and paste it into your terminal.
 
