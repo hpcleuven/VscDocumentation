@@ -48,7 +48,7 @@ Authenticating
 Logging in
 ----------
 
-Go to the “How to connect” page in `KU Leuven ManGO portal`_ to get your `irods_user_name`, `irods_zone_name` and `irods_host` information.
+Go to the “How to connect” page in `ManGO portal`_ to get your `irods_user_name`, `irods_zone_name` and `irods_host` information.
 
 Execute the command below with your own information in your terminal:
 

@@ -317,7 +317,7 @@ rst_prolog += """
 rst_prolog += """
 .. _eligible users: https://www.vscentrum.be/getaccess
 .. _get in touch: https://www.vscentrum.be/getintouch
-.. _KU Leuven ManGO portal: https://mango.vscentrum.be/
+.. _ManGO portal: https://mango.vscentrum.be/
 .. _Tier-1 project application: https://www.vscentrum.be/compute
 .. _VSC account page: https://account.vscentrum.be/
 .. _VSC Account - Edit Account: https://account.vscentrum.be/django/account/edit

@@ -16,7 +16,7 @@ environment (as elaborated below).
 
       By default, your top-level notebook directory points to $VSC_DATA. You can
       switch to other available cluster storage (such as scratch) by entering the 
-      full path into the 'Top-level work directory' or 'Working Directory' text field.
+      full path into the 'Working Directory' text field.
 
    .. tab-item:: VUB
       :sync: vub
@@ -538,7 +538,7 @@ Python iRODS Client
        * Tier-2 :ref:`wICE <wICE hardware>`
 
 You can use the :ref:`Python iRODS client (PRC) <python-client>` to transfer data between
-your local storage, `KU Leuven ManGO portal`_ and/or the
+your local storage, `ManGO portal`_ and/or the
 :ref:`Tier-1 Data platform <tier1_data_service>`.
 
 To integrate the authentication and data transfer steps together with your computation directly in
