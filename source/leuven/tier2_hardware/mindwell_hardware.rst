@@ -1,4 +1,4 @@
-.. _2025 hardware:
+.. _mindwell hardware:
 
 Tier-2 2025 new cluster
 =======================
