@@ -6,7 +6,7 @@ Cluster modules
 Background
 ~~~~~~~~~~
 
-It is common for HPC cluster to be inhomogeneous, meaning there are
+It is common for HPC clusters to be heterogeneous, meaning there are
 differences regarding architecture or operating system between nodes. In that
 case it is important to use modules appropriate for the nodes in your job.
 Using a module that is not suited for the node on which the job is running,
