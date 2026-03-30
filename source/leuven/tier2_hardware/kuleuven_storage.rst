@@ -6,6 +6,23 @@ KU Leuven storage
 
 The storage is organized according to the :ref:`VSC storage guidelines<data location>`
 
+Environment variables
+=====================
+
+The table below lists the path to different storages that KU Leuven users can
+by default access.
+
+.. include:: kuleuven_storage_paths_table.rst
+
+.. note::
+
+   All KU Leuven VSC accounts start with the digit ``3``.
+   Also the dots ``.`` are wildcards that match single digits.
+
+The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
+recover data that was accidentally deleted or modified.  You can retrieve data by
+referring to :ref:`restoring a snapshot <restoring_snapshot>`.
+
 File systems
 ============
 
@@ -30,20 +47,3 @@ For users from other universities, the quota on ``$VSC_HOME`` and ``$VSC_DATA``
 will be determined by the local policy of your home institution as these file
 systems are mounted from there. The path names will be similar with trivial
 modifications based on your home institution and VSC account number.
-
-Environment variables
-=====================
-
-The table below lists the path to different storages that KU Leuven users can
-by default access.
-
-.. include:: kuleuven_storage_paths_table.rst
-
-.. note::
-
-   All KU Leuven VSC accounts start with the digit ``3``.
-   Also the dots ``.`` are wildcards that match single digits.
-
-The ``$VSC_HOME`` and ``$VSC_DATA`` file systems have snapshots, so it is possible to
-recover data that was accidentally deleted or modified.  You can retrieve data by
-referring to :ref:`restoring a snapshot <restoring_snapshot>`.
