@@ -130,11 +130,6 @@ jobscripts (unless you deal with an exceptional case).
    execute ``module purge``, since the ``cluster`` modules are
    :ref:`sticky <module_purge>`.
 
-.. _searching_for_software:
-
-Searching for software
-~~~~~~~~~~~~~~~~~~~~~~
-
 
 .. _searching_for_software:
 
