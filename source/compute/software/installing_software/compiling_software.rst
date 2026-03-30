@@ -62,17 +62,17 @@ It is recommended to load a build environment module before compiling software:
 Loading a build environment typically:
 
 * Loads the compiler and common libraries (MPI, math libraries, etc.)
-* Defines optimized compiler flags such as ``CFLAGS`` and ``FFLAGS``
-* Sets environment variables such as ``CPATH`` and ``LIBRARY_PATH`` so build systems can find headers and libraries
+* Defines optimized compiler flags such as ``$CFLAGS`` and ``$FFLAGS``
+* Sets environment variables such as ``$CPATH`` and ``$LIBRARY_PATH`` so build systems can find headers and libraries
 * Ensures a controlled and reproducible build setup
 
 Additional build tools can also be loaded if needed, for example ``CMake``, ``Ninja``, ``Meson``, or ``pkgconf``.
 
-Adding binaries to your PATH
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding binaries to your `$PATH`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the software is compiled and the executable is available, you may want to run it from any directory without specifying its full path.
-This can be done by adding the directory containing the binary to your ``PATH``.
+This can be done by adding the directory containing the binary to your ``$PATH``.
 
 For example:
 
