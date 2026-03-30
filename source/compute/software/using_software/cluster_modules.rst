@@ -86,7 +86,7 @@ or
    cluster/<cluster_name>
 
 A few examples are ``cluster/wice/batch``, ``cluster/wice/gpu_h100``,
-``cluster/gallade`` and ``cluster/dodrio/gpu_rome_a100_rhel9``.
+``cluster/shinx`` and ``cluster/dodrio/gpu_rome_a100_rhel9``.
 
 On the login nodes and inside a job environment, the correct version of the
 ``cluster`` module will be loaded automatically.
@@ -129,6 +129,11 @@ jobscripts (unless you deal with an exceptional case).
    unless you are well aware of the consequences. Note that it is ok to
    execute ``module purge``, since the ``cluster`` modules are
    :ref:`sticky <module_purge>`.
+
+.. _searching_for_software:
+
+Searching for software
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. _searching_for_software:
