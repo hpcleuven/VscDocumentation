@@ -66,6 +66,8 @@ clusters.
 
    mfa_login   
 
+.. _auth_location_access_restrictions:
+
 Location Access Restrictions
 ============================
 
