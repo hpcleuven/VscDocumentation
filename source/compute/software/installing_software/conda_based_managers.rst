@@ -6,12 +6,10 @@ Conda-based environment managers
 `Conda <https://docs.conda.io/en/latest/>`_ is a package and environment
 manager which has become relatively popular for scientific software stacks.
 With proper care, it can be used to install software yourself that you
-want to run on HPC hardware.
-
-.. warning::
-
-   Using Conda is discouraged on the clusters at UAntwerpen, UGent,
-   and VUB.
+want to run on HPC hardware. Note that using Conda requires knowledge
+of potential :ref:`license <conda_channels>`,
+:ref:`performance <conda_performance>` and :ref:`storage <conda_storage>`
+pitfalls.
 
 .. warning::
 
@@ -158,8 +156,14 @@ using tools other than ``conda install``, such as ``pip``. However, it is
 `recommended to use conda install wherever possible
 <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages>`_.
 
+
+.. _conda_performance:
+
+Potential performance pitfalls
+------------------------------
+
 Microarchitectural optimizations
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``conda install`` will select Conda packages that have been precompiled for
 the platform you are working on, i.e., the combination of the operating system
@@ -188,7 +192,7 @@ optimization:
   which is used by some Conda packages.
 
 GPU acceleration
-----------------
+^^^^^^^^^^^^^^^^
 
 Conda packages may offer GPU acceleration `either as a compile-time or as a
 run-time choice
@@ -202,7 +206,7 @@ Keep in mind that newer CUDA versions also tend to require sufficiently recent
 NVIDIA drivers. This should however rarely be an issue on the VSC clusters.
 
 BLAS and LAPACK implementations
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If a Conda package depends on libraries such as BLAS or LAPACK,
 then these will typically be provided by OpenBLAS. While this is a reasonable
@@ -211,7 +215,7 @@ Conda makes it fairly easy to `switch between BLAS/LAPACK implementations
 <https://conda-forge.org/docs/maintainer/knowledge_base/#switching-blas-implementation>`_.
 
 MPI programs
-------------
+^^^^^^^^^^^^
 
 Along the same lines, we recommend to verify the communication overhead in the
 case of MPI applications. MPI binaries installed by Conda may for example
@@ -224,6 +228,8 @@ as with BLAS, for example to change to Open MPI:
 .. code-block:: shell
 
    conda install "mpi=*=openmpi*"
+
+.. _conda_storage:
 
 Storage requirements
 --------------------
