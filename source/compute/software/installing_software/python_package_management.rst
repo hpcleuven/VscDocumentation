@@ -11,15 +11,15 @@ encouraged to use those packages as much as possible, since this will
 ensure that your code can be run on any platform that supports Python.
 
 However, many useful extensions to and libraries for Python come in the form of
-packages that have to be installed separately. There are a few different supported
+packages that have to be installed separately. There are a couple of different supported
 approaches to using and installing Python packages on the VSC clusters.
 
 Since many Python packages have been made available through the module system,
 using :ref:`python_packages_from_modules` is usually the best starting point.
 Given the astounding number of packages, it is however not sustainable to
 install each and every one system wide, so if you need a somewhat exotic
-package and/or a specific version of a package that is not available, you will
-need to install it yourself.
+package and/or a specific version of a package that is not available via the
+module system, you will need to install it yourself.
 
 The recommended approach in that case is to
 :ref:`manage a virtual environment with pip <venv_python>` or
@@ -80,32 +80,35 @@ version of ``numpy``  available, you can use:
           SciPy-bundle/2025.06-gfbf-2025a
 
 This output tells us that the module ``SciPy-bundle/2025.06-gfbf-2025a`` has
-to be loaded in order to make ``numpy/2.3.1`` available. The ``SciPy-bundle``
-provides many packages needed for scientific computing.
+to be loaded in order to make ``numpy`` version 2.3.1 available. The
+``SciPy-bundle`` provides many packages needed for scientific computing.
 
 To check which Python packages are currently available, you can execute::
 
  python3 -m pip list -v
 
 It will list all packages that are installed for the Python distribution you
-are using, which could include those installed by you.
+are using. This can include Python packages from loaded modules as well as
+Python packages you installed yourself.
 
 .. _venv_python:
 
 Managing Python virtual environments with pip
 ---------------------------------------------
 
-In case the Python package you need is not available from a module, you need
-to install it yourself and this can be done in a Python virtual environment or
-venv. A `Python virtual environment <https://docs.python.org/3/tutorial/venv.html>`_
+In case the Python package you need is not available from a module, you can
+either :ref:`request a central installation <requesting-software>` or install
+it yourself. This section shows how you can install packages yourself in a
+Python virtual environment or venv. A
+`Python virtual environment <https://docs.python.org/3/tutorial/venv.html>`_
 is an isolated environment in which you can safely install Python packages,
 independent from those installed in the system or in other virtual environments.
 For example, using virtual environments is very convenient for Python developers
 as it allows working on multiple software projects at the same time.
 
-It is recommended to use the software modules already installed in the cluster
-as much as possible. They provide a robust and performant base to build your
-virtual environments.
+It is recommended to use centrally installed modules already as much as
+possible. They provide a robust and performant base to build your virtual
+environments.
 
 In this section, we show how you can combine modules with virtual environments
 in the HPC to get the best of two worlds.
@@ -157,9 +160,10 @@ in the HPC to get the best of two worlds.
    The *Python* software modules in the HPC include a very limited list of
    Python packages, but many other modules are also available. A common
    software module is ``SciPy-bundle``, a bundle of data science packages such
-   as ``numpy``, ``pandas``, and ``scipy``. Use the method discussed in
-   :ref:`python_packages_from_modules` to search for packages you need as
-   dependencies.
+   as ``numpy``, ``pandas``, and ``scipy``. Also the ``Python-bundle-PyPI``
+   modules provides a number of popular Python packages. Use the method
+   discussed in :ref:`python_packages_from_modules` to search for packages you
+   need as dependencies.
 
 #. Create your virtual environment.
 
@@ -181,7 +185,7 @@ in the HPC to get the best of two worlds.
 
    .. code-block:: shell
 
-      python3 -m venv venv-zen4 --system-site-packages
+      python3 -m venv venv-${VSC_ARCH_LOCAL} --system-site-packages
 
    The option ``--system-site-packages`` ensures using the Python packages already
    available via the loaded modules instead of installing them in the virtual
@@ -201,14 +205,14 @@ in the HPC to get the best of two worlds.
 
    .. code-block:: shell
 
-      (venv-zen4) $ python3 -m pip install pip --upgrade
+      (venv-zen4) $ pip install pip --upgrade
 
 #. Now we can install additional Python packages inside the active virtual
    environment, for example the *icecream* package:
 
    .. code-block:: shell
 
-      (venv-zen4) $ python3 -m pip install icecream --no-cache-dir --no-build-isolation
+      (venv-zen4) $ pip install icecream --no-cache-dir --no-build-isolation
 
    The option ``--no-cache-dir`` ensures installing the most recent compatible
    versions of the dependencies, ignoring the versions available in your cache.
@@ -222,7 +226,7 @@ in the HPC to get the best of two worlds.
 
    .. code-block:: shell
 
-      (venv-zen4) $ python3 -m pip install tblite==0.4.0 --no-cache-dir --no-build-isolation
+      (venv-zen4) $ pip install tblite==0.4.0 --no-cache-dir --no-build-isolation
 
 
 #. Once your work is finished, use the command ``deactivate`` to deactivate your
@@ -264,7 +268,7 @@ version:
 .. code-block:: shell
 
    $ source venv-zen4/bin/activate
-   (venv-zen4) $ python3 -m pip list --format=freeze
+   (venv-zen4) $ pip list --format=freeze
    ...
    icecream==2.1.8
    ...
@@ -273,7 +277,7 @@ version:
 
 By saving the listed packages to a file::
 
- (venv-zen4) $ python3 -m pip list --format=freeze > requirements.txt
+ (venv-zen4) $ pip list --format=freeze > requirements.txt
 
 it becomes easy to recreate the environment, in the following example for
 another (micro)architecture:
@@ -284,7 +288,7 @@ another (micro)architecture:
    $ module load Python/3.11.3-GCCcore-12.3.0 SciPy-bundle/2023.07-gfbf-2023a
    $ python3 -m venv venv-zen5 --system-site-packages
    $ source venv-zen5/bin/activate
-   (venv-zen5) $ python3 -m pip install -r requirements.txt
+   (venv-zen5) $ pip install -r requirements.txt
 
 .. _vsc-venv_python:
 
