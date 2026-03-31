@@ -92,8 +92,8 @@ Basic usage of EasyBuild
 The basic usage workflow of EasyBuild is as follows:
 
 #. Find an `easyconfig file <https://docs.easybuild.io/terminology/#easyconfig_files>`_ to install with ``eb --search``, or create one;
-#. Assess what will be installed first using ``eb --missing`` (see also `here <https://docs.easybuild.io/using-easybuild#eb_missing>`_), ``eb -x`` (see also `here <https://docs.easybuild.io/extended-dry-run>`_), etc.
-#. Use the ``eb`` command to install the easyconfig file, use ``--robot`` to enable dependency resolution (see also `here <https://docs.easybuild.io/using-easybuild/#use_robot>`_).
+#. Assess what will be installed first using `eb --missing <https://docs.easybuild.io/using-easybuild#eb_missing>`_, `eb -x <https://docs.easybuild.io/extended-dry-run>`_, etc.
+#. Use the ``eb`` command to install the easyconfig file, use `--robot <https://docs.easybuild.io/using-easybuild/#use_robot>`_ to enable dependency resolution.
 #. Load the environment module that was generated to start using the installed software.
 
 For example, to install & use ``tblite``:
