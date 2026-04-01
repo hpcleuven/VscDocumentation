@@ -204,24 +204,24 @@ Running commands in a container
 
 * Executing a command inside a container can be done with ``apptainer exec``:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   apptainer exec ubuntu-24.04.sif <command>
-   # or (if the runscript supports it)
-   apptainer run ubuntu-24.04.sif <command>
+      apptainer exec ubuntu-24.04.sif <command>
+      # or (if the runscript supports it)
+      apptainer run ubuntu-24.04.sif <command>
 
-   # example: get info about the container OS
-   apptainer exec ubuntu-24.04.sif cat /etc/lsb-release
+      # example: get info about the container OS
+      apptainer exec ubuntu-24.04.sif cat /etc/lsb-release
 
 * Starting an interactive shell inside the container can be done with
   ``apptainer shell``.  When inside the container, the prompt changes to
   ``Apptainer>``, indicating that the container shell is ready to accept
   commands:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   apptainer shell ubuntu-24.04.sif
-   Apptainer>
+      apptainer shell ubuntu-24.04.sif
+      Apptainer>
 
 Bind mounts
 -----------
