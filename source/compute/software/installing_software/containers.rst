@@ -607,7 +607,7 @@ is used to create a Conda environment in an Apptainer container:
 .. code-block:: none
 
    Bootstrap: docker
-   From: continuumio/miniconda3
+   From: condaforge/miniforge3
 
    %files
        user_conda_environment.yml
