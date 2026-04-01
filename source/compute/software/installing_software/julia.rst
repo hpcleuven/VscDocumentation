@@ -12,7 +12,7 @@ How to find available Julia packages?
 * The software module called ``Julia`` provides a standard installation of
   Julia without any extra packages
 * Some specific Julia packages can be provided with their own software modules
-  (*e.g.* IJulia)
+  (*e.g.* ``IJulia``)
 
 Installing Julia packages
 -------------------------
