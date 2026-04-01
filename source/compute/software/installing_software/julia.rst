@@ -46,17 +46,17 @@ created with the same major and minor version of Julia as the loaded module.
 For example, if you load ``Julia/1.10.3-linux-x86_64``, all project
 environments for version 1.10 will be usable.
 
-|Recommended| Software installations of Julia packages can be heavy. Installing
-many packages or a single package that pulls many dependencies can quickly fill
-the :ref:`storage quota of your home directory <quota>`.
-We recommend to move your personal *depot* to your ``$VSC_SCRATCH`` and link
+|Recommended| Software installations of Julia packages can take up a lot of
+disk space. Installing many packages or a single package that pulls many
+dependencies can quickly fill the :ref:`storage quota of your home directory <quota>`.
+We recommend to move your personal *depot* to your ``$VSC_DATA`` and link
 ``~/.julia`` to it.
 
 .. code-block:: bash
 
    mkdir -p ~/.julia
-   mv -i ~/.julia $VSC_SCRATCH/julia
-   ln -s $VSC_SCRATCH/julia ~/.julia
+   mv -i ~/.julia $VSC_DATA/julia
+   ln -s $VSC_DATA/julia ~/.julia
 
 Julia environments
 ------------------
