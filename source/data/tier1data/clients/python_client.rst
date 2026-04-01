@@ -293,7 +293,8 @@ Lastly, you can give someone 'null' permissions to revoke their permissions on a
    access = iRODSAccess("null", "/path/to/collection/or/data/object", "Chris")
    session.acls.set(access)
 
-Note that ``session.acls.set()`` and ``sessions.acls.get()`` only work for the most recent releases of the Python-iRODS Client.
+Note that ``session.acls.set()`` and ``sessions.acls.get()`` only work for the most recent
+releases of the Python iRODS Client.
 For older releases, you should replace 'acls' with 'permissions'.
 
 ********

@@ -14,9 +14,9 @@ environment (as elaborated below).
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      By default, your top-level notebook directory points to $VSC_DATA. You can
+      By default, your top-level notebook directory points to ``$VSC_DATA``. You can
       switch to other available cluster storage (such as scratch) by entering the 
-      full path into the 'Working Directory' text field.
+      full path into the 'Working directory' text field.
 
    .. tab-item:: VUB
       :sync: vub
