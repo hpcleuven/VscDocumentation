@@ -3,23 +3,17 @@
 vsc-Rproject
 ============
 
-Introduction
-------------
-
-``vsc-Rproject`` is a command-line tool that facilitates the setup,
-management and use of RStudio Projects on VSC HPC clusters.
-Two main advantages of using ``vsc-Rproject`` are that the project settings and R libraries
-are kept separate for each project, and that compiled extensions are easier
-to manage in a cluster with heterogeneous hardware.
+**vsc-Rproject** is a command-line tool that facilitates the setup, management
+and use of RStudio Projects on VSC HPC clusters. Two main advantages of using
+vsc-Rproject are that the project settings and R libraries are kept
+separate for each project, and that compiled extensions are easier to manage in
+a cluster with heterogeneous hardware.
 
 .. note::
 
    In what follows, the term 'vsc-Rproject environment' refers to the
    environment created by vsc-Rproject. This environment enables the use of an
    associated RStudio Project.
-
-How to use
-----------
 
 vsc-Rproject can be used by simply loading the corresponding module.
 
@@ -35,26 +29,31 @@ Then, use the ``vsc-rproject`` command for its different functionalities.
    $ vsc-rproject --help
    $ vsc-rproject --version
 
-The ``vsc-rproject`` command provides four sub-commands that can be used to ``configure`` default behaviour
-or ``create``, ``activate``, or ``deactivate`` a vsc-Rproject environment.
+The ``vsc-rproject`` command provides four sub-commands that can be used to
+``configure`` its default behaviour or ``create``, ``activate``, or
+``deactivate`` a vsc-Rproject environment.
 
 .. _creating_a_project:
 
 Creating a project
-~~~~~~~~~~~~~~~~~~
+------------------
 
-The command ``vsc-rproject create`` allows you to create a new RStudio Project together with a vsc-Rproject environment.
+The command ``vsc-rproject create`` allows you to create a new RStudio Project
+together with a vsc-Rproject environment. The only required argument to create
+a new project is a project name.
 
-When creating a new project, the only required argument is a project name.
+Modules in the project
+~~~~~~~~~~~~~~~~~~~~~~
 
-We recommend to always provide a "modules file" when creating new projects.
-This is a simple text file listing a module (full name and version) per line.
-With a modules file, vsc-Rproject will ensure that these modules are always
-loaded upon activating the corresponding vsc-Rproject environment.
-If no modules file is provided, the default R module will be used instead.
+We recommend to always provide a *modules file* to create a new projects.
+This is a simple text file listing a software module (full name and version)
+per line. vsc-Rproject will ensure that the modules defined in the *modules
+file* of the project are always loaded upon activating the corresponding
+vsc-Rproject environment. If no modules file is provided, the default R module
+available in the system will be used instead.
 
-The following command will create a ``modules.txt`` file in your data directory,
-containing the following modules:
+The following command will create a ``modules.txt`` file in your data
+directory, containing the following modules:
 
 - ``R/4.4.1-gfbf-2023b``
 - ``R-bundle-CRAN/2024.06-foss-2023b``
@@ -63,10 +62,9 @@ containing the following modules:
 
    $ printf "R/4.4.1-gfbf-2023b\nR-bundle-CRAN/2024.06-foss-2023b\n" > $VSC_DATA/modules.txt
 
-
 .. note::
 
-   When you specify a modules file, it should always contain the R module.
+   A *modules file* should always contain a software module for R.
 
 To create a new RStudio Project and vsc-Rproject environment using this modules file, run the following command:
 
@@ -74,24 +72,30 @@ To create a new RStudio Project and vsc-Rproject environment using this modules 
 
    $ vsc-rproject create MyProject --modules="$VSC_DATA/modules.txt"
 
-This will create a new RStudio Project named 'MyProject' at the default location: ``$VSC_DATA/Rprojects``.
-The modules.txt file will be used when creating the project, and is stored in ``$VSC_DATA/Rprojects/.vsc-rproject/modules.env``.
+This will create a new RStudio Project named *MyProject* at the default
+location: ``$VSC_DATA/Rprojects``.
+The file ``modules.txt`` will be used to create the project, and is stored in
+``$VSC_DATA/Rprojects/.vsc-rproject/modules.env``.
 
 .. note::
 
    If you wish to update the modules list for an existing project, you should manually
    add it to the ``$VSC_DATA/Rprojects/.vsc-rproject/modules.env`` file.
 
+Project configuration
+~~~~~~~~~~~~~~~~~~~~~
 
 The project folder will contain ``.Renviron``, ``.Rprofile`` and
 ``.R/Makevars`` configuration files, which are therefore specific to the
 project.
 
-The ``.Renviron`` file will set the ``R_LIBS_USER`` variable to point to the project's R package library.
-This can be found at the root of the project, under ``/library/<OS>/R``.
+The ``.Renviron`` file will set the ``R_LIBS_USER`` variable to point to the
+project's R package library. This can be found at the root of the project,
+under ``/library/<OS>/R``.
 
-The ``.Rprofile`` file will be configured to set the CRAN mirror to ``"https://cloud.r-project.org"`` (default)
-and set the ``R_MAKEVARS_USER`` variable to point to the project's ``.R/Makevars`` file.
+The ``.Rprofile`` file will be configured to set the CRAN mirror to
+``"https://cloud.r-project.org"`` (default) and set the ``R_MAKEVARS_USER``
+variable to point to the project's ``.R/Makevars`` file.
 
 The ``.R/Makevars`` file can be used to control the compilation process when installing
 new R packages by modifying the compiler flags. vsc-Rproject's default behaviour
@@ -145,7 +149,7 @@ For more information, see:
 .. _activating_a_project:
 
 Activating a project
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 The ``activate`` sub-command can be used to activate an already existing vsc-Rproject environment.
 
@@ -159,7 +163,7 @@ set the ``$VSC_RPROJECT`` environment variable which can be used to access the r
 .. _deactivating_a_project:
 
 Deactivating a project
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 The ``deactivate`` sub-command deactivates the active vsc-Rproject environment.
 Doing so will purge all loaded modules except for the cluster module and the vsc-Rproject module itself.
@@ -173,7 +177,7 @@ Additionally, it will unset the ``$VSC_RPROJECT`` variable.
 .. _default_project_configuration:
 
 Default project configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 If you wish to change the default behaviour of vsc-Rproject, you can configure your
 personal default settings with the ``configure`` sub-command.
@@ -216,3 +220,4 @@ When launching a new session via the :ref:`Studio Server <rstudio-server>` app i
    Otherwise dependency conflicts may arise as RStudio Server will replace the modules loaded via the pre-run scriplet.
 
 Once inside the RStudio session, you still need to open the RStudio Project via the interface.
+
