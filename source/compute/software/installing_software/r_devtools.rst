@@ -1,76 +1,94 @@
 .. _r_devtools:
 
-Installing R packages with devtools
-===================================
+R packages with devtools
+========================
 
-Introduction
-~~~~~~~~~~~~
+The installation of some R packages may require the use of `devtools
+<https://devtools.r-lib.org/>`__. The devtools package facilitates the
+development of your own R packages as well as the installation of R packages
+from Git repositories such as GitHub, Gitlab or Bitbucket.
 
-The installation of some R packages may require the use of devtools.
-Devtools is an R package that facilitates the installation of other
-R packages from github, gitlab, bitbucket or other repositories.
-In what follows github will be used as an example. Please consult the
-devtools_ documentation for examples of other repositories.
+In the following we will use GitHub as example. Please consult the
+`devtools documentation`_ for examples with other repositories.
 
-Depending on how your R library is managed, you will need a slightly different
-approach to use and install devtools.
+The devtools package is already available in all software modules of R
+found in the central libraries of VSC clusters.
 
-.. note::
+.. code-block:: console
 
-  When consulting the devtools documentation, make sure that it is the correct version!
-  It should match the devtools version included in the R module. To check which devtools version is installed:
-
-  .. code-block:: r
-    
-    library(devtools)
-    sessioninfo::session_info()
-
-Installing in a local R library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you manage your R packages in a :ref:`local R library<r_package_management_standard_lib>` under ``$VSC_DATA/Rlibs``
-while using a centrally installed R module, you can use the devtools package included in the module.
-You will need to execute the following commands in the R console:
-
-.. code-block:: r
-
-   > # First check that the R library path points to your local R library:
-   > .libPaths()
-   > # Set the R library path if this is not the case. e.g.
-   > .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky8/icelake/R-4.2.2")
-   > # Load devtools and e.g. install your package from github:
-   > library(devtools)
-   > install_github("Developer/Package")
-
-.. note::
-
-  The devtools package is **not** included in "-bare" R modules, e.g. R/4.0.2-foss-2018a-bare.
-
-Installing in a conda environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you are using conda to manage your R packages, you should first install
-devtools in your conda environment. The following steps assume that you 
-already have a conda environment named "science". If you do not yet have
-a conda environment, First create a :ref:`conda environment<r_package_management_conda>`. 
-In the following example, it is assumed that your miniconda environment is installed in ``$VSC_DATA/miniconda3``.
-
-.. code-block:: bash
-
-   $ # Activate your conda environment and install devtools
-   $ source activate science
-   $ conda install -c conda-forge r-devtools
-   $ # Launch R
+   $ module load R/4.5.1-gfbf-2025a
    $ R
+   > library(devtools)
+   > sessioninfo::session_info()
+   ## ─ Session info ────────────────────
+   ##  setting  value
+   ##  version  R version 4.5.1 (2025-06-13)
+   ##  [...]
+   ## ─ Packages ────────────────────────
+   ##  package     * version date (UTC) lib source
+   ##  cachem        1.1.0   2024-05-16 [2] CRAN (R 4.5.1)
+   ##  cli           3.6.5   2025-04-23 [2] CRAN (R 4.5.1)
+   ##  devtools    * 2.4.6   2025-10-03 [2] CRAN (R 4.5.1)
+   ##  [...]
+
+Installs in local R library
+---------------------------
+
+Installations with devtools in a :ref:`local R library <r_package_management_standard_lib>`
+follow the same :ref:`location rules <r_package_management_location>`
+as for the default package manager in R.
+
+You can check and control the list of library paths with ``.libPaths()`` as usual:
 
 .. code-block:: r
 
-   > # Check that the R library path points to your conda R library
-   > .libPaths()
-   > # Set the R library path if this was not the case.
-   > .libPaths("/data/leuven/XXX/vscXXXXX/miniconda3/envs/science/lib/R/library")
-   > # Load devtools and e.g. install your package from github:
-   > library(devtools)
-   > devtools::install_github("Developer/Package")
+   # First check that the R library path points to your local R library:
+   .libPaths()
+   # Set the R library path if this is not the case. e.g.
+   .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky8/icelake/R-4.2.2")
 
-.. _devtools: https://www.rdocumentation.org/packages/devtools
+Once the target location is set, then you can install a package from GitHub
+with devtools as follows:
+
+.. code-block:: r
+
+   library(devtools)
+   install_github("Developer/Package")
+
+Devtools in a Conda environment
+-------------------------------
+
+If you are using Conda to manage your R packages, you should first install
+devtools in your :ref:`Conda environment <conda_based_managers>`.
+The following steps assume that you already have a working Conda environment
+with R named *science*. If you do not yet have such an environment, you can
+create one by following the instructions in :ref:`r_package_management_conda`. 
+
+In the following example, it is assumed that your miniconda environment is
+installed in ``$VSC_DATA/miniconda3``.
+
+1. Activate your conda environment and install devtools
+
+   .. code-block:: console
+
+      $ source activate science
+      $ conda install -c conda-forge r-devtools
+
+2. Launch R and load devtools
+
+   .. code-block:: r
+
+      ## Check that the R library path points to your conda R library
+      .libPaths()
+      ## Set the R library path if this was not the case.
+      .libPaths("/data/<vsc-site>/xxx/vscxxxxx/miniconda3/envs/science/lib/R/library")
+      ## Load devtools and e.g. install your package from github:
+      library(devtools)
+
+3. Install some R package with devtools
+
+   .. code-block:: r
+
+      devtools::install_github("Developer/Package")
+
+.. _devtools documentation: https://www.rdocumentation.org/packages/devtools
