@@ -376,7 +376,7 @@ the VSC infrastructure.
 Alternatively, you can use remote build services to build your images. The
 :ref:`sylabs_remote_builder` builds images from a user-provided definition
 file. The `Seqera platform <https://seqera.io/containers>`_ allows to simply
-select any Conda or python packages to be built into an image.
+select a set of Conda or Python packages to be built into an image.
 
 In the following sections, we will build the `tblite
 <https://tblite.readthedocs.io>`_ software package with Python bindings on the VSC
@@ -545,14 +545,11 @@ Example wrappers usage
    export PATH="$PWD/tblite-0.4.0/bin:$PATH"
 
    # Verify that tblite and python executables from the image are used
-   which tblite
-     $PWD/tblite-0.4.0/bin/tblite
-   which python
-     $PWD/tblite-0.4.0/bin/python
+   which tblite  # $PWD/tblite-0.4.0/bin/tblite
+   which python  # $PWD/tblite-0.4.0/bin/python
 
    # Verify that tblite python package from image is used
-   python -c 'import tblite; print(tblite.__file__)'
-     /LOCAL_TYKKY_QcubNaZ/miniforge/envs/env1/lib/python3.13/site-packages/tblite/__init__.py
+   python -c 'import tblite; print(tblite.__file__)'  # /LOCAL_TYKKY_QcubNaZ/miniforge/envs/env1/lib/python3.13/site-packages/tblite/__init__.py
 
 If needed, we can also update an image created with ``hpc-container-wrapper``.
 The following example adds the ``beautifulsoup4`` conda package:
@@ -691,9 +688,9 @@ Hybrid model
    * The MPI implementation inside the container and on the host must be
      compatible.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   mpirun -n $SLURM_NTASKS apptainer exec <image_name> <executable>
+      mpirun -n $SLURM_NTASKS apptainer exec <image_name> <executable>
 
 Bind model
    * The MPI library is not included in the container but is bind-mounted
@@ -701,10 +698,10 @@ Bind model
    * The MPI library used to compile the application in the container
      must be compatible with the host library.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   MPI_DIR=/path/to/MPI-libraries
-   mpirun -n $SLURM_NTASKS apptainer exec --bind "$MPI_DIR" <image_name> <executable>
+      MPI_DIR=/path/to/MPI-libraries
+      mpirun -n $SLURM_NTASKS apptainer exec --bind "$MPI_DIR" <image_name> <executable>
 
 For help with MPI-enabled containers, contact :ref:`user
 support <user support VSC>`.
