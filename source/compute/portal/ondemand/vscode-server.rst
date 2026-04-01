@@ -153,7 +153,7 @@ R IDE
         use the same Conda environment).
         Go to 'Extensions', and click the settings wheel next to the R extension.
         Select 'Extension Settings' and search for the 'R > RTerm: Linux' setting.
-        Paste the path to your Conda env there (``/data/leuven/xxx/xxxxx/conda_envs/<env_name>/lib/R``)
+        Paste the path to your Conda env there (usually it will look like ``/data/<vsc_institute>/xxx/vscxxxxx/conda_envs/<env_name>/lib/R``)
 
       .. note::
 
