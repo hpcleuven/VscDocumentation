@@ -69,7 +69,7 @@ installed in ``$VSC_DATA/conda_envs``.
    > # Check that the R library path points to your Conda environment's R library
    > .libPaths()
    > # Set the R library path if this was not the case.
-   > .libPaths("/data/leuven/xxx/vscxxxxx/conda_envs/envs/science/lib/R/library")
+   > .libPaths("/data/<vsc-institute>/xxx/vscxxxxx/conda_envs/envs/science/lib/R/library")
    > # Load devtools and e.g. install your package from github:
    > library(devtools)
    > devtools::install_github("Developer/Package")
