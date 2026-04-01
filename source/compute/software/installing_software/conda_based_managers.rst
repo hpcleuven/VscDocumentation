@@ -56,7 +56,7 @@ This has the following advantages:
 
       alias loadminiforge='module load Miniforge3/25.3.0-3'
 
-The next paragraph will show how to get started with Miniforge, followed
+In the next sections, we will show how to get started with Miniforge, followed
 by more advanced topics, including possible pitfalls and information on other
 Conda distributions.
 
