@@ -61,4 +61,6 @@ and best practices:
 
 - We strongly recommend to exclusively use the scratch file system local to the
   cluster running your job. In other words, jobs running on Genius or wICE have to use
-  the Lustre file system, and jobs running on Mindwell have to use the GPFS file system.
+  the Lustre file system ``$VSC_SCRATCH_LUSTRE``, and jobs running on Mindwell have to
+  use the GPFS file system ``$VSC_SCRATCH_GPFS``. Compute jobs with I/O pattern other than
+  that can be cancelled by the system administrators without prior notice.
