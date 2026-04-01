@@ -67,7 +67,9 @@ Getting started with Miniforge
 
 Assuming you have loaded a ``Miniforge3`` module, you will first need to
 configure the environment and package cache directories. Otherwise Miniforge
-will use default locations in your ``$VSC_HOME``, which is clearly not ideal.
+will use default locations in your ``$VSC_HOME``, which can easily fill
+up all space in your home directory. The environments directory should
+be placed in ``$VSC_DATA`` and the cache can go into ``$VSC_SCRATCH``.
 You will probably also want to shorten the prompt prefix. So a typical
 configuration would proceed as follows:
 
