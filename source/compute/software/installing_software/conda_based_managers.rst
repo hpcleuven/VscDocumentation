@@ -13,8 +13,8 @@ pitfalls.
 
 .. warning::
 
-   As a rule, Conda packages cannot be used together with software that has
-   been installed as a module.
+   As a general rule, Conda packages cannot be used together with software
+   provided by :ref:`software modules <cluster_modules_general>`.
 
 Conda distributions
 -------------------
