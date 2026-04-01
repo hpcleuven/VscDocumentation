@@ -571,57 +571,51 @@ The following example adds the ``beautifulsoup4`` conda package:
 Example Apptainer definition files
 ----------------------------------
 
-Minimal example
-~~~~~~~~~~~~~~~
+* Minimal example of an Apptainer definition file:
 
-Below is a minimal example of an Apptainer definition file:
+  .. code-block:: none
 
-.. code-block:: none
+     Bootstrap: docker
+     From: ubuntu:22.04
 
-   Bootstrap: docker
-   From: ubuntu:22.04
+     %post
+         apt-get update
+         apt-get install -y grace
 
-   %post
-       apt-get update
-       apt-get install -y grace
+     %runscript
+         /usr/bin/xmgrace
 
-   %runscript
-       /usr/bin/xmgrace
+  The resulting image will be based on Ubuntu 22.04. Once bootstrapped,
+  the commands in the ``%post`` section are executed to install the
+  Grace plotting package.
 
-The resulting image will be based on Ubuntu 22.04. Once bootstrapped,
-the commands in the ``%post`` section are executed to install the
-Grace plotting package.
+  .. note::
 
-.. note::
+     This example is intended to illustrate that very old software that is no
+     longer maintained can successfully be run on modern infrastructure.  It is
+     not intended to encourage you to use Grace in this container.
 
-   This example is intended to illustrate that very old software that is no
-   longer maintained can successfully be run on modern infrastructure.  It is
-   not intended to encourage you to use Grace in this container.
+* Example definition file using Conda environment file ``conda_env.yml``
+  to create a Conda environment in an Apptainer container:
 
-Conda environment
-~~~~~~~~~~~~~~~~~
+  .. code-block:: none
 
-In the following example, the Conda environment file ``user_conda_environment.yml``
-is used to create a Conda environment in an Apptainer container:
+     Bootstrap: docker
+     From: condaforge/miniforge3
 
-.. code-block:: none
+     %files
+         conda_env.yml
 
-   Bootstrap: docker
-   From: condaforge/miniforge3
+     %post
+         /opt/conda/bin/conda env create -n conda_env -f conda_env.yml
 
-   %files
-       user_conda_environment.yml
+     %runscript
+         . /opt/conda/etc/profile.d/conda.sh
+         conda activate conda_env
+         exec "$@"
 
-   %post
-       /opt/conda/bin/conda env create -n user_conda_environment -f user_conda_environment.yml
-
-   %runscript
-       . /opt/conda/etc/profile.d/conda.sh
-       conda activate user_conda_environment
-       exec "$@"
-
-The ``exec "$@"`` line at the bottom of the runscript allows ``apptainer run``
-to accept user commands, such as ``python --version``.
+  The ``exec "$@"`` line at the bottom of the runscript allows ``apptainer run``
+  to accept user commands, such as ``python --version``.
 
 .. _sylabs_remote_builder:
 
