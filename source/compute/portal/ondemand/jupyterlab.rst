@@ -143,40 +143,15 @@ Conda environments for Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assuming you have created a Conda environment for Python, the corresponding
-kernel needs to be installed for use with JupyterLab.
+kernel needs to be installed for use with JupyterLab. If you have not used
+Conda before, please take a look at the :ref:`conda_based_managers` page.
 
-.. tab-set::
-   :sync-group: vsc-sites
-
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
-
-      Please take a look at the :ref:`conda_based_managers` page if you have
-      not used Conda before. Then activate the Conda environment that you want
-      to configure for use with JupyterLab:
-
-      .. code-block:: bash
-
-         source activate <env_name>
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      Please refer to the docs on `creating a Conda environment for Python
-      <https://hpc.vub.be/docs/software/additional_software/#installing-additional-packages-with-conda>`_.
-
-      First activate the Conda environment:
-
-      .. code-block:: bash
-
-         module load Mamba
-         source $EBROOTMAMBA/etc/profile.d/conda.sh
-         conda activate <env_name>
-
-Next, install the ``ipykernel`` package and the kernel itself:
+Activate the Conda environment that you want to configure for use with
+JupyterLab and then install the ``ipykernel`` package and the kernel itself:
 
 .. code-block:: bash
 
+   source activate <env_name>
    conda install ipykernel
    python -m ipykernel install --user --env PYTHONPATH "" --name <env_name> --display-name <kernel_name>
 
