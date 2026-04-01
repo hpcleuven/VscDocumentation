@@ -668,7 +668,7 @@ Recommendations for VSC clusters:
 
 * Use a prebuilt CUDA or ROCm container image as a base image, which can be
   obained by pulling from a suitable :ref:`container registry <apptainer_pulling_images>`.
-* Select a container built for a CUDA version that matches one of the available CUDA
+* Select a container built for a CUDA version that matches one of the available ``CUDA``
   environment modules on the cluster.
 
 By default, all GPUs visible on the host node are also visible inside the
