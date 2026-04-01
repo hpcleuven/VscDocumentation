@@ -156,7 +156,8 @@ of the box and we would therefore recommend to rely on a
 .. note::
 
    Make sure you *do not* install Miniforge or other Conda distributions via
-   PyCharm because it will end up in your ``VSC_HOME``, which is to be avoided.
+   PyCharm because it will end up in your ``VSC_HOME``, which can easily fill
+   the storage quota of your home directory.
 
 * Select a suitable project 'Location' in your ``VSC_DATA``.
 * For the 'Interpreter type' choose 'Custom environment'.
