@@ -135,8 +135,8 @@ packages installed in your *depot* will continue to be usable as well with
 Julia environment on top of software module
 -------------------------------------------
 
-Julia environments can be created on top of a software module, inheriting all
-Julia packages available in it.
+Julia environments can be created on top of a software module and be made to
+*inherit* all Julia packages available in that module.
 
 1. Load the *base* software module
 
