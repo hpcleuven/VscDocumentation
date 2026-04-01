@@ -144,12 +144,20 @@ Julia environments can be created on top of a software module and be made to
 
       $ module load Circuitscape/5.12.3-Julia-1.9.2
 
-2. Create a new environment based on the module's environment
+2. Create a new environment based on the module's environment by copying the
+   files ``Manifest.toml`` and ``Project.toml`` from the module
 
    .. code-block:: console
 
-      $ base_project=$(julia -E 'Base.load_path()[end]')
-      $ cp -r "$(dirname ${base_project:1:-1})" myNewEnv
+      $ mkdir myNewEnv
+      $ base_project="$(julia -E 'Base.load_path()[1]')"
+      $ base_project_dir="$(dirname ${base_project:1:-1})"
+      $ cp "${base_project_dir}/Manifest.toml" myNewEnv/
+      $ cp "${base_project_dir}/Project.toml" myNewEnv/
+
+   For instance, for ``Circuitscape/5.12.3-Julia-1.9.2``
+   these environment files can be found in a directory such as
+   ``/apps/brussel/<OS>/<arch>/software/Circuitscape/5.12.3-Julia-1.9.2/environments/v1.9``.
 
 3. Check that the new environment does have the packages from the module
 
