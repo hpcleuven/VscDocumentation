@@ -706,11 +706,6 @@ Bind model
    MPI_DIR=/path/to/MPI-libraries
    mpirun -n $SLURM_NTASKS apptainer exec --bind "$MPI_DIR" <image_name> <executable>
 
-.. note::
-
-   For MPI applications you may expect some mild performance
-   degradation.
-
 For help with MPI-enabled containers, contact :ref:`user
 support <user support VSC>`.
 
