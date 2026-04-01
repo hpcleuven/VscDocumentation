@@ -50,11 +50,9 @@ Installing in a Conda environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are using Conda to manage your R packages, you should first install
-devtools in your Conda environment. The following steps assume that you
-already have a Conda environment named "science". If you do not yet have one,
-first create :ref:`such a Conda environment <r_package_management_conda>`.
-In the following example, it is assumed that your Conda environment is
-installed in ``$VSC_DATA/conda_envs``.
+devtools in your Conda environment. The following steps use an
+example :ref:`Conda environment for R <r_package_management_conda>`
+with the name "science" and located in ``$VSC_DATA/conda_envs``.
 
 .. code-block:: bash
 
