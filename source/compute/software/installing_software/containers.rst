@@ -11,13 +11,12 @@ What are containers?
 --------------------
 
 Containers provide a way to package software together with all required
-dependencies so it can run in a reproducible environment.
-Containers use OS virtualization to isolate processes and control their
-access to system resources. They contain the application, libraries,
-and runtime environment, while the host system provides the kernel.
-
-The **container** itself is stored in a container **image**, which is simply
-a set of files that defines the runtime environment.
+dependencies so it can run in a reproducible environment.  Containers use OS
+virtualization to isolate processes and control their access to system
+resources.  A **container** is stored in a container **image**, which is simply
+a set of files that defines the runtime environment. A container image contains
+the applications, libraries, and runtime environment, while the host system
+provides the kernel.
 
 Why Apptainer?
 --------------
@@ -47,17 +46,18 @@ container images on top of base Docker images.
 When should I use containers?
 -----------------------------
 
-If the software you want to use is already available on the HPC system,
-it is usually preferable to use the provided installation. HPC software
-is often compiled specifically for the hardware and may offer better
-performance. Containers are particularly useful in the following situations:
+If the software you want to use is already available on the HPC system as a
+:ref:`module <module_system_basics>`, it is usually preferable to use the
+provided installation. HPC software is often compiled specifically for the
+hardware and may offer better performance. Containers are particularly useful
+in the following situations:
 
 * Quickly testing a containerized application before starting a
   performance-optimized installation.
 * Running software that is difficult to install on HPC systems.
 * Using legacy applications that require outdated dependencies.
 * Ensuring reproducibility of a workflow developed elsewhere.
-* Running software built for a different Linux distribution.
+* Running software built for a different (version of a) Linux distribution.
 * Creating portable workflows that can run both on HPC systems and
   cloud platforms.
 * Reducing the number of files (inodes) by packaging software into a single
@@ -74,8 +74,10 @@ Containers are not always the best solution. Potential drawbacks include:
   and the container.
 * To maximize portability, containers are often built for generic CPU
   architectures, which may reduce performance compared to optimized HPC builds.
-* Containers built for one CPU architecture (e.g. x86-64) cannot run on
-  another architecture (e.g. AArch64).
+* Containers built for one CPU architecture (e.g. x86-64, Intel/AMD CPUs) cannot run on
+  another architecture (e.g. AArch64, Arm CPUs).
+* :ref:`Security risks <apptainer_pulling_images>` arise when you don’t know
+  who created a container image or exactly what software is inside it.
 
 .. _apptainer_vsc_clusters:
 
@@ -170,7 +172,7 @@ Containers contain startup scripts that define their environment and behavior:
 
 Environment scripts
   * located inside the container at ``/.singularity.d/env/``
-  * always executed: ``apptainer run/exec/shell``
+  * always executed: ``apptainer shell``, ``apptainer exec``, ``apptainer run``
 
 Container runscript
   * located inside the container at ``/.singularity.d/runscript``
@@ -200,7 +202,7 @@ inspect``:
 Running commands in a container
 -------------------------------
 
-* Executing a command inside a container:
+* Executing a command inside a container can be done with ``apptainer exec``:
 
 .. code-block:: bash
 
@@ -211,22 +213,23 @@ Running commands in a container
    # example: get info about the container OS
    apptainer exec ubuntu-24.04.sif cat /etc/lsb-release
 
-* Starting an interactive shell inside the container:
-  When inside the container, the prompt changes to ``Apptainer>``, indicating
-  that the container shell is ready to accept commands:
+* Starting an interactive shell inside the container can be done with
+  ``apptainer shell``.  When inside the container, the prompt changes to
+  ``Apptainer>``, indicating that the container shell is ready to accept
+  commands:
 
 .. code-block:: bash
 
    apptainer shell ubuntu-24.04.sif
-   Apptainer> <command>
+   Apptainer>
 
 Bind mounts
 -----------
 
-By default, the user's home directory and the current working directory
-are bind-mounted inside the container. Additional host directories can
-be mounted using the ``-B`` option. For example, to mount the
-``$VSC_SCRATCH`` directory:
+By default, the user's home directory and the current working directory are
+bind-mounted so they can be accessed from inside the container.  Additional
+host directories can be mounted using the ``--bind`` or ``-B`` option.  For
+example, to mount the ``$VSC_SCRATCH`` directory:
 
 .. code-block:: bash
 
@@ -239,8 +242,8 @@ mount ``$VSC_SCRATCH`` as ``/scratch``:
 
    apptainer exec -B $VSC_SCRATCH:/scratch ubuntu-24.04.sif <command>
 
-VSC sites may have enabled additional default mount points, so we don't always
-have to add them ourselves. We can use the following command to see which paths
+VSC sites may have enabled additional default mount points, so you don't always
+have to add them yourself. We can use the following command to see which paths
 are currently mounted inside the container:
 
 .. code-block:: bash
@@ -357,7 +360,7 @@ Containers can be built in several ways:
 * :ref:`from an Apptainer definition file <apptainer_build_definition_file>`
 * :ref:`from a Docker image via a Dockerfile <apptainer_build_dockerfile>`
 * using :ref:`hpc-container-wrapper <apptainer_hpc-container-wrapper>`
-* using remote build services such as the `Seqera platform <https://seqera.io/containers>`_
+* using remote build services
 
 Many containers can be built on the VSC clusters without root privileges
 using the ``--fakeroot`` build option. However, due to `inherent limitations of
@@ -370,8 +373,10 @@ WSL) or macOS.  For detailed instructions, see the `Apptainer Quick Start`_
 guide.  Once your image is built, you can :ref:`transfer <data transfer>` it to
 the VSC infrastructure.
 
-Alternatively, you can use the :ref:`sylabs_remote_builder` service to build
-images from a definition file.
+Alternatively, you can use remote build services to build your images. The
+:ref:`sylabs_remote_builder` builds images from a user-provided definition
+file. The `Seqera platform <https://seqera.io/containers>`_ allows to simply
+select any Conda or python packages to be built into an image.
 
 In the following sections, we will build the `tblite
 <https://tblite.readthedocs.io>`_ software package with Python bindings on the VSC
@@ -383,41 +388,41 @@ variables as explained in the :ref:`apptainer_vsc_clusters` section.
 Building interactively from base image
 --------------------------------------
 
-#. Download a base image and store it as a sandbox
+#. Download a base image and store it as a sandbox.
    A sandbox is a writable container directory structure. The following example
    creates a directory called ``my_sandbox`` and installs an Ubuntu container
    image in it:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   apptainer build --sandbox my_sandbox docker://ubuntu:24.04
+      apptainer build --sandbox my_sandbox docker://ubuntu:24.04
 
-#. Start an interactive shell in the container
+#. Start an interactive shell in the container.
    The ``--fakeroot`` option is required when building as non-root user on the
    VSC clusters. Inside the container, the ``my_sandbox`` directory becomes the root directory
    (``/``).  We can now make changes, such as installing packages:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   apptainer shell --writable --fakeroot my_sandbox
-   Apptainer> apt-get update && apt-get install python3
-   Apptainer> exit  # exit the container
+      apptainer shell --writable --fakeroot my_sandbox
+      Apptainer> apt-get update && apt-get install python3
+      Apptainer> exit  # exit the container
 
-#. Make changes from the host
+#. Make changes from the host.
    From the host, we can also make changes by traversing the sandbox directory
    structure (e.g. updating the ``runscript``):
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   nano my_sandbox/.singularity.d/runscript
+      nano my_sandbox/.singularity.d/runscript
 
-#. Create immutable SIF image from sandbox
+#. Create immutable SIF image from sandbox.
    When we’re finished making changes, we can convert the sandbox to a SIF
    image:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   apptainer build my_image.sif my_sandbox
+      apptainer build my_image.sif my_sandbox
 
 .. _apptainer_build_definition_file:
 
@@ -435,26 +440,28 @@ Another advantage of definition files is that they can be shared easily.
 
    A definition file does not guarantee reproducibility by itself. It is
    important to specify the exact versions for the base container and any
-   installed software packages.
+   installed software packages. Additionally, downloading files during
+   installation risks breaking reproducibility if those external resources
+   become unavailable.
 
 In the example below, we’ll create a container for tblite. The definition file
 can be found in the *gssi-training* repo at `tblite-0.4.0.def
-<https://github.com/vscentrum/gssi-training/blob/latest/tblite/building_apptainer_containers/apptainer_definition_file/tblite-0.4.0.def>`_.
+<https://github.com/vscentrum/gssi-training/blob/main/tblite/building_apptainer_containers/apptainer_definition_file/tblite-0.4.0.def>`_.
 
-#. Write Apptainer definition file
+#. Create or download Apptainer definition file.
 
-#. Create Apptainer image from the definition file
+#. Create Apptainer image from the definition file.
    We can create the image in one step, or in two steps via a sandbox to verify
    the container before finalizing the SIF image file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   # option1: in one step
-   apptainer build --fakeroot tblite-0.4.0.sif tblite-0.4.0.def
+      # option1: in one step
+      apptainer build --fakeroot tblite-0.4.0.sif tblite-0.4.0.def
 
-   # option2: in two steps via sandbox
-   apptainer build --fakeroot --sandbox my_sandbox tblite-0.4.0.def
-   apptainer build tblite-0.4.0.sif my_sandbox
+      # option2: in two steps via sandbox
+      apptainer build --fakeroot --sandbox my_sandbox tblite-0.4.0.def
+      apptainer build tblite-0.4.0.sif my_sandbox
 
 .. _apptainer_build_dockerfile:
 
@@ -471,29 +478,29 @@ WSL.
 
 #. Create Docker image from the Dockerfile
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   sudo docker build . -t my_docker_image
+      sudo docker build . -t my_docker_image
 
 #. Create Docker archive from Docker image
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   sudo docker save my_docker_image -o my_docker_archive.tar
-   sudo chown $USER:$USER my_docker_archive.tar
+      sudo docker save my_docker_image -o my_docker_archive.tar
+      sudo chown $USER:$USER my_docker_archive.tar
 
 #. Create Apptainer image from Docker archive
    We can create the image in one step, or in two steps via a sandbox to verify
    the container before finalizing the SIF image file:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   # option1: in one step
-   apptainer build my_image.sif docker-archive:my_docker_archive.tar
+      # option1: in one step
+      apptainer build my_image.sif docker-archive:my_docker_archive.tar
 
-   # option2: in two steps via sandbox
-   apptainer build --sandbox my_sandbox docker-archive:my_docker_archive.tar
-   apptainer build my_image.sif my_sandbox
+      # option2: in two steps via sandbox
+      apptainer build --sandbox my_sandbox docker-archive:my_docker_archive.tar
+      apptainer build my_image.sif my_sandbox
 
 .. _apptainer_hpc-container-wrapper:
 
@@ -507,28 +514,28 @@ Conda and Pip packages.
 
 In the example below, we’ll create a container for ``tblite`` with conda.
 
-#. Write Conda environment file ``environment.yml``:
+#. Create Conda environment file ``environment.yml``:
 
-.. code-block:: yaml
+   .. code-block:: yaml
 
-   # environment.yaml
-   name: tblite
-   channels:
-   - conda-forge
-   dependencies:
-   - tblite-python=0.4.0
+      # environment.yaml
+      name: tblite
+      channels:
+      - conda-forge
+      dependencies:
+      - tblite-python=0.4.0
 
 #. Load ``hpc-container-wrapper`` environment module:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   module load hpc-container-wrapper/<VERSION>
+      module load hpc-container-wrapper/<VERSION>
 
 #. Create Apptainer container and wrappers in new ``tblite-0.4.0`` directory:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   conda-containerize new --prefix tblite-0.4.0 environment.yml
+      conda-containerize new --prefix tblite-0.4.0 environment.yml
 
 Example wrappers usage
 
@@ -552,16 +559,16 @@ The following example adds the ``beautifulsoup4`` conda package:
 
 #. Write ``update.sh`` script:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   # update.sh
-   conda install -c conda-forge beautifulsoup4
+      # update.sh
+      conda install -c conda-forge beautifulsoup4
 
 #. Update image installed in ``tblite-0.4.0`` directory:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   conda-containerize update --post-install update.sh tblite-0.4.0
+      conda-containerize update --post-install update.sh tblite-0.4.0
 
 .. _example_apptainer_definition_files:
 
@@ -668,7 +675,7 @@ Recommendations for VSC clusters:
 * Select a container built for a CUDA version that matches one of the available CUDA
   environment modules on the cluster.
 
-By default, all GPUs available on the host node are visible inside the
+By default, all GPUs visible on the host node are also visible inside the
 container.
 
 MPI-enabled containers (advanced)
