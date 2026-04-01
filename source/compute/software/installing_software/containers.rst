@@ -202,26 +202,25 @@ inspect``:
 Running commands in a container
 -------------------------------
 
-* Executing a command inside a container can be done with ``apptainer exec``:
+Executing a command inside a container can be done with ``apptainer exec``:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      apptainer exec ubuntu-24.04.sif <command>
-      # or (if the runscript supports it)
-      apptainer run ubuntu-24.04.sif <command>
+   apptainer exec ubuntu-24.04.sif <command>
+   # or (if the runscript supports it)
+   apptainer run ubuntu-24.04.sif <command>
 
-      # example: get info about the container OS
-      apptainer exec ubuntu-24.04.sif cat /etc/lsb-release
+   # example: get info about the container OS
+   apptainer exec ubuntu-24.04.sif cat /etc/lsb-release
 
-* Starting an interactive shell inside the container can be done with
-  ``apptainer shell``.  When inside the container, the prompt changes to
-  ``Apptainer>``, indicating that the container shell is ready to accept
-  commands:
+Starting an interactive shell inside the container can be done with ``apptainer
+shell``.  When inside the container, the prompt changes to ``Apptainer>``,
+indicating that the container shell is ready to accept commands:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      apptainer shell ubuntu-24.04.sif
-      Apptainer>
+   apptainer shell ubuntu-24.04.sif
+   Apptainer>
 
 Bind mounts
 -----------
@@ -474,22 +473,22 @@ image from a Dockerfile and then convert it to Apptainer. This method requires
 a machine with Docker (and root privileges) or Podman.  Windows users can use
 WSL.
 
-#. Write Dockerfile
+#. Write Dockerfile.
 
-#. Create Docker image from the Dockerfile
+#. Create Docker image from the Dockerfile.
 
    .. code-block:: bash
 
       sudo docker build . -t my_docker_image
 
-#. Create Docker archive from Docker image
+#. Create Docker archive from Docker image.
 
    .. code-block:: bash
 
       sudo docker save my_docker_image -o my_docker_archive.tar
       sudo chown $USER:$USER my_docker_archive.tar
 
-#. Create Apptainer image from Docker archive
+#. Create Apptainer image from Docker archive.
    We can create the image in one step, or in two steps via a sandbox to verify
    the container before finalizing the SIF image file:
 
