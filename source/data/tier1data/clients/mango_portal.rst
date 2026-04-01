@@ -4,18 +4,18 @@
 ManGO Portal
 ############
 
-The `ManGO portal <https://mango.vscentrum.be/>`_ is a graphical web interface for Tier-1 Data.
+The `ManGO portal`_ is a graphical web interface for Tier-1 Data.
 It allows users to manage their data in an intuitive way, without any installations,
 with a strong focus on managing :ref:`metadata<metadata>`.
 
 When logging in, you will be redirected to the login page of your institution. 
 This takes you to an overview with one or multiple zones with at least one of the following options:
 
-- Select 'Enter portal' to enter that zone via the ManGO portal.
+- Select 'Enter portal' to enter that zone via the `ManGO portal`_.
 - Select 'How to Connect' to get credentials for logging in to other clients, like :ref:`iCommands` or the :ref:`the PRC<python-client>`.
 - Selecting the downward arrow opens an overview of all projects you are member of in that zone. Clicking on the project name sends you to the project management page. 
 
-If you select the first option, you will be sent to the ManGO Portal home page:
+If you select the first option, you will be sent to the `ManGO portal`_ home page:
 
 .. figure:: ../images/mango_portal/mango_portal_main_page.png
   :width: 1000

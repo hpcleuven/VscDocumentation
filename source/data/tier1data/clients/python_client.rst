@@ -1,34 +1,45 @@
 .. _python-client:
 
-########################
-Python-iRODSClient - PRC
-########################
+#########################
+Python iRODS Client - PRC
+#########################
 
-The Python-iRODSClient (PRC) is an API to iRODS, the underlying system behind Tier-1 Data.
+The Python iRODS Client (PRC) is an API to iRODS, the underlying system behind Tier-1 Data.
 The goal of the PRC is to offer researchers means to manage their data in Tier-1 Data through python.
+
 
 ************
 Installation
 ************
 
-You can install the Python-iRODSclient in a local environment using pip:
+In order to log in to the Tier-1 Data service via the PAM interactive authentication,
+you can take up one of the possible routes below for authentication:
 
-.. code-block:: sh
+#. Using the standardized :ref:`iron<iron-CLI>` client, or
+#. Using the PAM authentication through the `'mango_auth' <https://github.com/kuleuven/mango-auth/>`_
+   Python client. In this case, you either
 
-   pip install python-irodsclient
+   #. choose to install the PRC and 'mango_auth' packages locally in your Python environment:
 
-On the Tier-2 and Tier-1 clusters hosted at KU Leuven and UGent, a version
-of the Python-irodsclient is also already installed as a module
-which you can load as follows:
+   .. code-block:: sh
+   
+      pip install python-irodsclient
+      pip install mango_auth
 
-.. code-block:: sh
+   #. or use the following modules on Tier-1 (at UGent) and Tier-2 (at KU Leuven) clusters, which
+      are available for both 2024a and 2025a toolchains:
 
-   # For Genius and wICE
-   module load python-irodsclient/1.1.4-GCCcore-10.3.0
+   .. code-block:: sh
+   
+      module load python-irodsclient/3.2.0-GCCcore-14.2.0
+      module load mango-auth/0.0.11-GCCcore-14.2.0
 
-   # For Stevin and Hortense
-   module load python-irodsclient/1.1.4-GCCcore-11.2.0
+   We recommend using the modules because you can integrate them in your Python environment
+   or in your :ref:`JupyterLab sessions via Open OnDemand <jupyter-irods-client>` if you opt for
+   the same toolchain.
 
+
+.. _mango-login:
 
 **************
 Authenticating
@@ -37,30 +48,23 @@ Authenticating
 Logging in
 ----------
 
-In order to log in to the Tier-1 Data service via the PAM interactive authentication, you can authenticate either using the standardized :ref:`iron<iron-CLI>` client or following the PRC specific steps below.
+Go to the “How to connect” page in `ManGO portal`_ to get your `irods_user_name`, `irods_zone_name` and `irods_host` information.
 
-1. Install the required authentication package:
+Execute the command below with your own information in your terminal:
 
-.. code:: sh
-
-   pip install mango_auth
-
-2. Go to the “How to connect” page in `ManGO portal <https://mango.vscentrum.be/>`__ to get your `irods_user_name`, `irods_zone_name` and `irods_host` information.
-
-3. Execute the command below with your own information in your terminal:
-
-.. code:: sh
+.. code-block:: sh
 
    mango_auth <irods_user_name> <irods_zone_name> <irods_host>
 
-- To authenticate in a Python shell or within a script file, run the following snippet:
+To authenticate in a Python shell or within a script file or inside the :ref:`Jupyter notebook <jupyter-irods-client>`,
+run the following snippet:
 
-.. code:: sh
+.. code-block:: python
 
    from mango_auth import iinit
    iinit('user_name', 'zone_name', 'host')
 
-4. Click the authentication link when displayed in your terminal and complete the steps on https://auth.vscentrum.be/.  
+Click the authentication link when displayed in your terminal and complete the steps on https://auth.vscentrum.be/.  
 
 Creating a session
 ------------------
@@ -289,7 +293,8 @@ Lastly, you can give someone 'null' permissions to revoke their permissions on a
    access = iRODSAccess("null", "/path/to/collection/or/data/object", "Chris")
    session.acls.set(access)
 
-Note that ``session.acls.set()`` and ``sessions.acls.get()`` only work for the most recent releases of the Python-iRODSclient.
+Note that ``session.acls.set()`` and ``sessions.acls.get()`` only work for the most recent
+releases of the Python iRODS Client.
 For older releases, you should replace 'acls' with 'permissions'.
 
 ********
