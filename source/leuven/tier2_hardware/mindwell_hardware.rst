@@ -12,43 +12,42 @@ Hardware details
 
 - 40 thin nodes
 
-  - 40 Granite Rapids nodes
-
-    - 2 Intel Xeon 6972P CPUs \@2.4 GHz,
-      96 cores each
-    - 768 GiB RAM
-    - default memory per core is 3900 MiB
-    - 960 GB NVMe local disk
-    - partitions ``batch_graniterapids|batch_graniterapids_long``
+  - 2 Intel Xeon Platinum 6972P CPUs\@2.4 GHz (Granite Rapids),
+    96 cores each
+  - 768 GiB RAM
+  - default memory per core is 3900 MiB
+  - 960 GB NVMe local disk
+  - partitions ``batch_graniterapids|batch_graniterapids_long``
 
 - 10 big memory nodes
 
-  - 2 Intel Xeon 6972P CPUs \@2.4 GHz,
+  - 2 Intel Xeon 6972P CPUs \@2.4 GHz (Granite Rapids),
     96 cores each
   - 1536 GiB RAM
   - default memory per core is 8100 MiB
   - 3840 GB NVMe local disk
   - partition ``bigmem``
 
-- 3 GPU nodes
+- 3 GPU nodes with 24 B200 GPUs in total
 
-  - 3 nodes with 24 B200 GPUs in total
-
-    - 2 AMD EPYC 9655 CPUs \@2.6 GHz (Turin),
-      96 cores each
-    - 1536 GiB RAM
-    - default memory per core is 8100 MiB
-    - 8 NVIDIA B200 SXM6, 192 GiB GDDR, connected with NVLink
-    - 960 GB NVMe local disk
-    - partition ``gpu_b200``
+  - 2 AMD EPYC 9655 CPUs \@2.6 GHz (Turin),
+    96 cores each
+  - 1536 GiB RAM
+  - default memory per core is 8100 MiB
+  - 8 NVIDIA B200 SXM6 (Blackwell),
+    192 GiB GDDR, connected with NVLink
+  - 960 GB NVMe local disk
+  - partition ``gpu_b200``
 
 - 2 interactive nodes
 
-  - 2 Intel Xeon 6972P CPUs \@2.4 GHz, 96 cores each
+  - 2 Intel Xeon 6972P CPUs \@2.4 GHz,
+    96 cores each
   - 768 GiB RAM
   - default memory per core is 2000 MiB
-  - maximum memory per core is 3900 MiB (requesting more memory leads to extra core allocation)
-  - 2 NVIDIA RTX 5000, 32 GiB GDDR
+  - maximum memory per core is 3900 MiB
+    (requesting more memory leads to extra core allocation)
+  - 2 NVIDIA RTX 5000 (Ada), 32 GiB GDDR
   - 960 GB SSD local disk
   - partition ``interactive``
 
