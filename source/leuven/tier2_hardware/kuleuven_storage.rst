@@ -74,8 +74,8 @@ Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To facilitate data transfers between the Lustre and GPFS storage,
-Lustre is accessible from Mindwell and GFPS is accessible from Genius and
-wICE. To for example copy a file from your Lustre scratch to your GFPS scratch,
+Lustre is accessible from Mindwell and GPFS is accessible from Genius and
+wICE. For instance, to copy a file from your Lustre scratch to your GPFS scratch,
 you could go about it as follows:
 
 .. code-block:: bash
@@ -86,14 +86,16 @@ you could go about it as follows:
    # If initiating the transfer from Mindwell:
    cp ${VSC_SCRATCH_LUSTRE}/myfile ${VSC_SCRATCH}
 
-These connections must however not be abused. We strongly recommend that compute
-jobs only use the parallel file system associated with the cluster where the job
-is running. In other words, compute jobs running on Genius and wICE have to use
-Lustre and jobs running on Mindwell have to use GPFS. Compute jobs that do not
-comply can be cancelled by the system administrators without prior notice.
+.. warning::
 
-It is of course OK to carry out transfers through 'transfer' jobs
-where you for example only request a few cores on an ``interactive`` partition.
+   The Lustre and GPFS mounts must not be abused. We strongly recommend that compute
+   jobs only use the parallel file system associated with the cluster where the job
+   is running on. In other words, compute jobs running on Genius and wICE have to use
+   Lustre and jobs running on Mindwell have to use GPFS. Compute jobs that do not
+   comply can be cancelled by the system administrators without prior notice.
+
+As a best practice, data transfers between Lustre and GPFS should be performed through
+'transfer' jobs, where you for example only request a few cores on an ``interactive`` partition.
 Short transfers which don't take more than a couple of minutes can also
 be performed from a Genius login node. You may also use the
 :ref:`globus platform` for transferring data.

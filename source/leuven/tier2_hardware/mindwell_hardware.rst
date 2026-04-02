@@ -55,7 +55,8 @@ Hardware details
 Storage
 -------
 
-A new parallel filesystem will be installed together with the cluster
+As part of the :ref:`KU Leuven storage <KU Leuven storage>` infrastructure,
+a new parallel filesystem will be installed together with the cluster
 (IBM Storage Scale, 5.8 PB, connected over NDR).
 We will assign scratch storage on this new filesystem and also offer project storage
 (similar to the current `staging` storage).
