@@ -67,6 +67,6 @@ Additional highlights
 ---------------------
 
 - The (Slurm) job ids on Mindwell start from 80000000.
-- We support cluster modules starting from the 2024a toolchain.
+- Software modules will only be installed for toolchains starting from 2024a.
 - All nodes are interconnected using an Infiniband NDR network.
 - Similar to the wICE Sapphire Rapids and the H100 nodes, the new cluster is direct liquid cooled.
