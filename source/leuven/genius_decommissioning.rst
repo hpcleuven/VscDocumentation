@@ -4,9 +4,9 @@ Genius decommissioning
 ======================
 
 Most remaining parts of :ref:`Genius <Genius hardware>` will be
-decommissioned when we start the pilot phases for the
-:ref:`Tier-2 Mindwell cluster <mindwell hardware>`. This should happen
-towards end of April.
+decommissioned when we start the open pilot phase for the
+:ref:`Tier-2 cluster Mindwell <mindwell hardware>`. This should happen
+towards the middle of May.
 
 .. note::
 
