@@ -38,10 +38,10 @@ installed ``Miniforge3`` module, for example:
 
 This has the following advantages:
 
-* The same base installation does not get duplicated by every user.
-* You will not be able to add packages to the ``base`` environment,
-  which is generally considered good practice.
-* By default, Miniforge will only include the (unrestricted) ``conda-forge``
+* The base installation is shared, so it isn’t duplicated for each user.
+* You cannot install additional packages into the ``base`` environment,
+  enforcing the recommended practice of keeping it unchanged.
+* By default, Miniforge only includes the (unrestricted) ``conda-forge``
   community channel and not the default channels which are subject to
   :ref:`Anaconda's terms of service <conda_channels>`.
 
@@ -90,18 +90,19 @@ from eachother. As a basic example with the *icecream* package:
 .. code-block:: shell
 
    conda create --name mycondaenv
-   source activate mycondaenv
+   source $(conda info --base)/etc/profile.d/conda.sh
+   conda activate mycondaenv
    (mycondaenv) $ conda install icecream
 
-Once the virtual environment is active, its name will be displayed in front
+Once the Conda environment is active, its name will be displayed in front
 of the shell prompt (``(mycondaenv)`` in this example).
 
-You can also ask for a specific package version. To install *tblite* version
-*0.4.0*  for instance, the install command would be:
+You can also ask for a specific package version. For example, to install *tblite* version
+*0.4.0* with Python bindings, the install command would be:
 
 .. code-block:: shell
 
-   (mycondaenv) $ conda install tblite=0.4.0
+   (mycondaenv) $ conda install tblite-python=0.4.0
 
 Once your work is finished, use ``conda deactivate`` to exit your Conda
 environment:
@@ -130,6 +131,24 @@ Other typical Conda commands include:
    conda clean --all
 
 .. _conda_channels:
+
+Running Conda packages in a job
+-------------------------------
+
+The following job script runs
+an example `tblite script
+<https://github.com/vscentrum/gssi-training/blob/main/tblite/demoscripts/tblite-single-point-GFN2-xTB.py>`_
+with the previously installed ``tblite-python`` Conda package in the ``mycondaenv`` Conda environment:
+
+.. code-block:: shell
+
+   #!/bin/bash
+   #SBATCH --ntasks=1
+   #SBATCH --time=30:00
+
+   module load Miniforge3/25.3.0-3
+
+   conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
 
 Conda channels
 --------------
