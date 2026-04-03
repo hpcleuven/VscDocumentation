@@ -30,12 +30,7 @@ of which the most common are:
   environments
 
 Barring any special requirements, we would recommend to use a centrally
-installed ``Miniforge3`` module, for example:
-
-.. code-block:: shell
-
-   module load Miniforge3/25.3.0-3
-
+installed ``Miniforge3`` module, for example ``Miniforge3/25.3.0-3``.
 This has the following advantages:
 
 * The base installation is shared, so it isn’t duplicated for each user.
@@ -44,17 +39,6 @@ This has the following advantages:
 * By default, Miniforge only includes the (unrestricted) ``conda-forge``
   community channel and not the default channels which are subject to
   :ref:`Anaconda's terms of service <conda_channels>`.
-
-.. note::
-
-   As you presumably know, loading modules in your startup source files
-   :ref:`is to be avoided <module_system_basics>`. If you search a convenient
-   way to enable Miniforge, consider adding an alias to your ``~/.bashrc``
-   instead:
-
-   .. code-block:: shell
-
-      alias loadminiforge='module load Miniforge3/25.3.0-3'
 
 In the next sections, we will show how to get started with Miniforge, followed
 by more advanced topics, including possible pitfalls and information on other
@@ -65,13 +49,32 @@ Conda distributions.
 Getting started with Miniforge
 ------------------------------
 
-Assuming you have loaded a ``Miniforge3`` module, you will first need to
-configure the environment and package cache directories. Otherwise Miniforge
-will use default locations in your ``$VSC_HOME``, which can easily fill
-up all space in your home directory. The environments directory should
-be placed in ``$VSC_DATA`` and the cache can go into ``$VSC_SCRATCH``.
-You will probably also want to shorten the prompt prefix. So a typical
-configuration would proceed as follows:
+Start by loading a ``Miniforge3`` module and initializing the ``conda``
+shell function, for example in the following way:
+
+.. code-block:: shell
+
+   module load Miniforge3/25.3.0-3
+   source $(conda info --base)/etc/profile.d/conda.sh
+
+We recommend that you define an alias for this in your ``~/.bashrc``:
+
+.. code-block:: shell
+
+   alias loadminiforge='module load Miniforge3/25.3.0-3 && source $(conda info --base)/etc/profile.d/conda.sh'
+
+.. note::
+
+   Avoid ``conda init bash`` as this will modify your ~/.bashrc
+   such that Conda is always enabled, which is not recommended
+   as it may lead to conflicts with other, non-Conda environments.
+
+Next, you will need to configure the environment and package cache directories.
+Otherwise Miniforge will use default locations in your ``$VSC_HOME``,
+which can easily fill up all space in your home directory. The environments
+directory should be placed in ``$VSC_DATA`` and the cache can go into
+``$VSC_SCRATCH``. You will probably also want to shorten the prompt prefix.
+So a typical configuration would proceed as follows:
 
 .. code-block:: shell
 
@@ -90,7 +93,6 @@ from eachother. As a basic example with the *icecream* package:
 .. code-block:: shell
 
    conda create --name mycondaenv
-   source $(conda info --base)/etc/profile.d/conda.sh
    conda activate mycondaenv
    (mycondaenv) $ conda install icecream
 
@@ -144,8 +146,7 @@ with the previously installed ``tblite-python`` Conda package in the ``mycondaen
    #SBATCH --ntasks=1
    #SBATCH --time=30:00
 
-   module load Miniforge3/25.3.0-3
-
+   loadminiforge
    conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
 
 .. _conda_channels:
