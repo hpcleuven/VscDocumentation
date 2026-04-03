@@ -130,8 +130,6 @@ Other typical Conda commands include:
    # Empty the various caches (which can easily grow to tens of GBs):
    conda clean --all
 
-.. _conda_channels:
-
 Running Conda packages in a job
 -------------------------------
 
@@ -149,6 +147,8 @@ with the previously installed ``tblite-python`` Conda package in the ``mycondaen
    module load Miniforge3/25.3.0-3
 
    conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
+
+.. _conda_channels:
 
 Conda channels
 --------------
