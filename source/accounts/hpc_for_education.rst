@@ -2,8 +2,7 @@
 :fas:`person-chalkboard` HPC for education
 ##########################################
 
-HPC as an educational asset
----------------------------
+.. _hpc for education:
 
 |KUL| We support using HPC for educational purposes, such as in the classroom or
 for hackathons. We assist the lecturers with all aspects of using HPC in the classroom,
