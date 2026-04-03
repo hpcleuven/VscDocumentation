@@ -140,117 +140,27 @@ The following job script illustrates how `a tblite example script
 can be run in the previously defined ``mycondaenv`` Conda environment containing the ``tblite-python``
 Conda package:
 
-.. tab-set::
-   :sync-group: vsc-sites
+.. code-block:: shell
 
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+   #!/bin/bash -l
+   #SBATCH --ntasks=1
+   #SBATCH --time=00:30:00
 
-      .. code-block:: shell
-
-         #!/bin/bash -l
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda activate mycondaenv
-         python tblite-single-point-GFN2-xTB.py
-         conda deactivate
-
-   .. tab-item:: UAntwerpen
-      :sync: ua
-
-      .. code-block:: shell
-
-         #!/bin/bash
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda activate mycondaenv
-         python tblite-single-point-GFN2-xTB.py
-         conda deactivate
-
-   .. tab-item:: UGent
-      :sync: ug
-
-      .. code-block:: shell
-
-         #!/bin/bash
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda activate mycondaenv
-         python tblite-single-point-GFN2-xTB.py
-         conda deactivate
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      .. code-block:: shell
-
-         #!/bin/bash
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda activate mycondaenv
-         python tblite-single-point-GFN2-xTB.py
-         conda deactivate
+   loadminiforge
+   conda activate mycondaenv
+   python tblite-single-point-GFN2-xTB.py
+   conda deactivate
 
 Using ``conda run`` this can be simplified to:
 
-.. tab-set::
-   :sync-group: vsc-sites
+.. code-block:: shell
 
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+   #!/bin/bash -l
+   #SBATCH --ntasks=1
+   #SBATCH --time=00:30:00
 
-      .. code-block:: shell
-
-         #!/bin/bash -l
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
-
-   .. tab-item:: UAntwerpen
-      :sync: ua
-
-      .. code-block:: shell
-
-         #!/bin/bash
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
-
-   .. tab-item:: UGent
-      :sync: ug
-
-      .. code-block:: shell
-
-         #!/bin/bash
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      .. code-block:: shell
-
-         #!/bin/bash
-         #SBATCH --ntasks=1
-         #SBATCH --time=00:30:00
-
-         loadminiforge
-         conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
+   loadminiforge
+   conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
 
 .. _conda_channels:
 
