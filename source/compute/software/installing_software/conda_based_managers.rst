@@ -30,31 +30,15 @@ of which the most common are:
   environments
 
 Barring any special requirements, we would recommend to use a centrally
-installed ``Miniforge3`` module, for example:
-
-.. code-block:: shell
-
-   module load Miniforge3/25.3.0-3
-
+installed ``Miniforge3`` module, for example ``Miniforge3/25.3.0-3``.
 This has the following advantages:
 
-* The same base installation does not get duplicated by every user.
-* You will not be able to add packages to the ``base`` environment,
-  which is generally considered good practice.
-* By default, Miniforge will only include the (unrestricted) ``conda-forge``
+* The base installation is shared, so it isn’t duplicated for each user.
+* You cannot install additional packages into the ``base`` environment,
+  enforcing the recommended practice of keeping it unchanged.
+* By default, Miniforge only includes the (unrestricted) ``conda-forge``
   community channel and not the default channels which are subject to
   :ref:`Anaconda's terms of service <conda_channels>`.
-
-.. note::
-
-   As you presumably know, loading modules in your startup source files
-   :ref:`is to be avoided <module_system_basics>`. If you search a convenient
-   way to enable Miniforge, consider adding an alias to your ``~/.bashrc``
-   instead:
-
-   .. code-block:: shell
-
-      alias loadminiforge='module load Miniforge3/25.3.0-3'
 
 In the next sections, we will show how to get started with Miniforge, followed
 by more advanced topics, including possible pitfalls and information on other
@@ -65,13 +49,32 @@ Conda distributions.
 Getting started with Miniforge
 ------------------------------
 
-Assuming you have loaded a ``Miniforge3`` module, you will first need to
-configure the environment and package cache directories. Otherwise Miniforge
-will use default locations in your ``$VSC_HOME``, which can easily fill
-up all space in your home directory. The environments directory should
-be placed in ``$VSC_DATA`` and the cache can go into ``$VSC_SCRATCH``.
-You will probably also want to shorten the prompt prefix. So a typical
-configuration would proceed as follows:
+Start by loading a ``Miniforge3`` module and initializing the ``conda``
+shell function, for example in the following way:
+
+.. code-block:: shell
+
+   module load Miniforge3/25.3.0-3
+   source $(conda info --base)/etc/profile.d/conda.sh
+
+We recommend that you define an alias for this in your ``~/.bashrc``:
+
+.. code-block:: shell
+
+   alias loadminiforge='module load Miniforge3/25.3.0-3 && source $(conda info --base)/etc/profile.d/conda.sh'
+
+.. note::
+
+   Avoid ``conda init bash`` as this will modify your ~/.bashrc
+   such that Conda is always enabled, which is not recommended
+   as it may lead to conflicts with other, non-Conda environments.
+
+Next, you will need to configure the environment and package cache directories.
+Otherwise Miniforge will use default locations in your ``$VSC_HOME``,
+which can easily fill up all space in your home directory. The environments
+directory should be placed in ``$VSC_DATA`` and the cache can go into
+``$VSC_SCRATCH``. You will probably also want to shorten the prompt prefix.
+So a typical configuration would proceed as follows:
 
 .. code-block:: shell
 
@@ -85,23 +88,23 @@ using ``conda info`` or by inspecting the ``~/.condarc`` file.
 Using Conda typically involves creating and activating a new Conda environment
 followed by installing a set of Conda packages in it. Each environment
 is self-contained, which allows to keep different software stacks isolated
-from eachother. As a basic example with the *icecream* package:
+from eachother. As a basic example with the *tblite-python* package:
 
 .. code-block:: shell
 
    conda create --name mycondaenv
-   source activate mycondaenv
-   (mycondaenv) $ conda install icecream
+   conda activate mycondaenv
+   (mycondaenv) $ conda install tblite-python
 
-Once the virtual environment is active, its name will be displayed in front
+Once the Conda environment is active, its name will be displayed in front
 of the shell prompt (``(mycondaenv)`` in this example).
 
-You can also ask for a specific package version. To install *tblite* version
-*0.4.0*  for instance, the install command would be:
+You can also ask for a specific package version. For example, to install
+*tblite-python* version *0.4.0*, the install command would be:
 
 .. code-block:: shell
 
-   (mycondaenv) $ conda install tblite=0.4.0
+   (mycondaenv) $ conda install tblite-python=0.4.0
 
 Once your work is finished, use ``conda deactivate`` to exit your Conda
 environment:
@@ -128,6 +131,36 @@ Other typical Conda commands include:
    conda remove ...
    # Empty the various caches (which can easily grow to tens of GBs):
    conda clean --all
+
+Using Conda environments in a job
+---------------------------------
+
+The following job script illustrates how `a tblite example script
+<https://github.com/vscentrum/gssi-training/blob/main/tblite/demoscripts/tblite-single-point-GFN2-xTB.py>`_
+can be run in the previously defined ``mycondaenv`` Conda environment containing the ``tblite-python``
+Conda package:
+
+.. code-block:: shell
+
+   #!/bin/bash -l
+   #SBATCH --ntasks=1
+   #SBATCH --time=00:30:00
+
+   loadminiforge
+   conda activate mycondaenv
+   python tblite-single-point-GFN2-xTB.py
+   conda deactivate
+
+Using ``conda run`` this can be simplified to:
+
+.. code-block:: shell
+
+   #!/bin/bash -l
+   #SBATCH --ntasks=1
+   #SBATCH --time=00:30:00
+
+   loadminiforge
+   conda run -n mycondaenv python tblite-single-point-GFN2-xTB.py
 
 .. _conda_channels:
 
@@ -314,7 +347,7 @@ Compared to Miniforge, using Micromamba mostly boils down to replacing
    loadmicromamba
    micromamba create --name mycondaenv
    micromamba activate mycondaenv
-   (mycondaenv) $ micromamba install icecream
+   (mycondaenv) $ micromamba install tblite-python
    (mycondaenv) $ micromamba deactivate
 
 Pixi
@@ -372,10 +405,10 @@ the Pixi environments in ``$VSC_DATA/myworkspace_envs``.
    pixi config set detached-environments $VSC_DATA/myworkspace_envs
 
    # Add a package to the default environment of the workspace
-   pixi add icecream
+   pixi add tblite-python
 
    # To e.g. run some command that needs the default environment:
-   pixi run python -c 'import icecream'
+   pixi run python -c 'import tblite'
 
 If needed, you can create additional environments for this workspace.
 Pixi bundles the packages for such non-default environments together in
