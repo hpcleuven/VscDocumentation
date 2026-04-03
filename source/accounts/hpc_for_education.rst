@@ -27,7 +27,8 @@ take the following actions:
 #. For all students on the list a VSC-account will be created without any further action required by the student. 
    The students will receive a mail when the account is created. 
 #. We encourage to create a :ref:`specific VSC group <groups>` for the course, with the name starting 
-   with ``p_edu_``. We will assign compute credits to this project, and add the students to the account.
+   with ``p_edu_``. We call it the ``project_name`` and assign compute credits to this project.
+   The students will be added to this project, allowing them to submit compute jobs. 
    The course lecturer will be the moderator of the project. This gives the lecturer an opportunity
    to track the use of the Tier-2 clusters by individual users during the course, and add/remove students
    as needed.
