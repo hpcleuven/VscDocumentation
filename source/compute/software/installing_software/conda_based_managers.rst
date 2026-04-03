@@ -88,19 +88,19 @@ using ``conda info`` or by inspecting the ``~/.condarc`` file.
 Using Conda typically involves creating and activating a new Conda environment
 followed by installing a set of Conda packages in it. Each environment
 is self-contained, which allows to keep different software stacks isolated
-from eachother. As a basic example with the *icecream* package:
+from eachother. As a basic example with the *tblite-python* package:
 
 .. code-block:: shell
 
    conda create --name mycondaenv
    conda activate mycondaenv
-   (mycondaenv) $ conda install icecream
+   (mycondaenv) $ conda install tblite-python
 
 Once the Conda environment is active, its name will be displayed in front
 of the shell prompt (``(mycondaenv)`` in this example).
 
-You can also ask for a specific package version. For example, to install *tblite* version
-*0.4.0* with Python bindings, the install command would be:
+You can also ask for a specific package version. For example, to install
+*tblite-python* version *0.4.0*, the install command would be:
 
 .. code-block:: shell
 
@@ -334,7 +334,7 @@ Compared to Miniforge, using Micromamba mostly boils down to replacing
    loadmicromamba
    micromamba create --name mycondaenv
    micromamba activate mycondaenv
-   (mycondaenv) $ micromamba install icecream
+   (mycondaenv) $ micromamba install tblite-python
    (mycondaenv) $ micromamba deactivate
 
 Pixi
@@ -392,10 +392,10 @@ the Pixi environments in ``$VSC_DATA/myworkspace_envs``.
    pixi config set detached-environments $VSC_DATA/myworkspace_envs
 
    # Add a package to the default environment of the workspace
-   pixi add icecream
+   pixi add tblite-python
 
    # To e.g. run some command that needs the default environment:
-   pixi run python -c 'import icecream'
+   pixi run python -c 'import tblite'
 
 If needed, you can create additional environments for this workspace.
 Pixi bundles the packages for such non-default environments together in
