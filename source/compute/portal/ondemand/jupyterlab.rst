@@ -442,6 +442,7 @@ Bash kernel extension
 Despite the fact that Jupyter notebooks are best known for running Python, R and Julia code,
 it is also possile to execute Bash commands inside your notebook if your Jupyter kernel
 is well integrated with the underlying Bash kernel of your operating system.
+VSC clusters that support the Bash kernel extension:
 
 .. grid:: 3
     :gutter: 4
@@ -451,6 +452,12 @@ is well integrated with the underlying Bash kernel of your operating system.
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
 By default, the 'Bash' kernel is loaded in your environment, starting from the 2023a toolchain.
 To use it in a notebook, you need to choose the 'Bash' or 'Python 3 (ipykernel)' jupyter  kernels
