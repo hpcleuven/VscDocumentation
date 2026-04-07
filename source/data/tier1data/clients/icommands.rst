@@ -135,8 +135,9 @@ Ubuntu/Debian (local machines):
 
 **Note:** For VSC login nodes, the package is already (or will be) installed centrally.
 
-- Go to the `ManGO portal <https://mango.vscentrum.be/>`__ and log in. Click on "How to connect" next to your zone, copy the code under "With iCommands only for Linux operating systems" and paste it into your terminal. 
-
+- Go to the `ManGO portal`_ and log in. 
+  Click on "How to connect" next to your zone, copy the code under "With iCommands only 
+  for Linux operating systems" and paste it into your terminal.
 
 - Click the authentication link displayed in your terminal and complete the steps on https://auth.vscentrum.be/.
 

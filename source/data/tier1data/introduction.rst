@@ -115,8 +115,8 @@ For more information on this procedure, see https://www.vscentrum.be/data.
 Users can connect to Tier-1 Data by using different clients from any computer after logging in with their institutional account.
 For example, VSC users from UAntwerpen will be forwarded to the UAntwerpen login page.
 
-The landing page for all Tier-1 Data clients is our web front-end, the `ManGO portal <https://mango.vscentrum.be/>`_.  
-After logging in, you will get an overview of all zones you have access to.  
+The landing page for all Tier-1 Data clients is our web front-end, the `ManGO portal`_.
+After logging in, you will get an overview of all zones you have access to.
 By clicking on 'Enter portal', you will go to the ManGO portal for that zone.
 If you prefer to access Tier-1 Data via a different client, you can find the necessary credentials or code under 'How to Connect'.
 
