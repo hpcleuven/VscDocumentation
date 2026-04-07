@@ -41,9 +41,8 @@ Applying for your VSC account
          as described above.
 
       *  Lecturers of KU Leuven and UHasselt that need HPC access for giving
-         their courses can request support (with student accounts, credits, storage,
-         resources, etc.). The procedure is elaborated as part of our 
-         the :ref:`HPC support for education <hpc for education>`.
+         their courses are encouraged to :ref:`request support for obtaining VSC accounts,
+         Slurm credits and compute and storage resources <hpc for education>`.
 
    .. tab-item:: UAntwerpen
       :sync: ua
