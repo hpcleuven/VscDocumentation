@@ -46,7 +46,7 @@ takes the following actions:
    We will communicate the ``<reservation_name>`` with you for every exercise session.
    To start and OnDemand session on a reserved node, please specify the ``<reservation_name>`` in the 
    'Reservation' text field of the desired app.
-   To submit batch jobs using reserved resources, the ``--reservation`` argument needs to be used, e.g.:
+   To let batch jobs use the reserved resources, the ``--reservation`` argument needs to be applied, e.g.:
 
    ::
 
