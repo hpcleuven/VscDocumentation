@@ -30,7 +30,7 @@ takes the following actions:
 #. For all students on the list a VSC account will be created.
    No further action will be required by the students. 
    The students will receive a mail when the account is created. 
-#. We encourage to create a :ref:`specific VSC group <groups>` for the course, with the name starting 
+#. We encourage to create a :ref:`specific VSC group <groups>` for the course, with a name starting 
    with ``p_edu_``. We call it the ``project_name`` and assign compute credits to this project.
    The students will be added to this project, allowing them to submit compute jobs. 
    The course lecturer will be the moderator of the project. This gives the lecturer an opportunity
