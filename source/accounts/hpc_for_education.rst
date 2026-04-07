@@ -55,6 +55,6 @@ takes the following actions:
    where ``project_name`` refers to the project credit assigned to your training.
 
 #. If you are not using Open OnDemand, make sure that the software to connect to the cluster
-   (Putty, MobaXterm, Xming, FileZilla) is available in the PC-class that will be used during the
+   (Putty, MobaXterm, Xming, FileZilla) is available in the PC class that will be used during the
    course. For KU Leuven courses, please follow the procedure at
    https://icts.kuleuven.be/sc/pcklas/ictspcklassen (1 month before the beginning of the course).
