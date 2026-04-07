@@ -6,8 +6,12 @@
 
 |KUL| We support using HPC for educational purposes, such as in the classroom or
 for hackathons. We assist the lecturers with all aspects of using HPC in the classroom,
-such as creating student accounts, granting credits, providing storage, resource reservation 
-(if needed), and also in-situ technical support during the trainings, where applicable.
+such as:
+* creating student accounts
+* granting compute credits
+* providing storage
+* reserving compute resources
+* technical support during the trainings (either on-site or remote)
 
 Practical steps
 ===============
