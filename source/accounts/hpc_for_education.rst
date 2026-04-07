@@ -42,7 +42,7 @@ takes the following actions:
    need a web browser and will normally not need to install any other software.
 #. To ensure that students jobs do not wait in the queue during the hands-on sessions, we offer
    to reserve some limited resources during the session. In that case, please submit your exact
-   resource requirements one week before the training, by latest.
+   resource requirements one week before the training, at the latest.
    We will communicate the ``<reservation_name>`` with you for every exercise session.
    To start and OnDemand session on a reserved node, please specify the ``<reservation_name>`` in the 
    'Reservation' text field of the desired app.
