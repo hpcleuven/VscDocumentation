@@ -17,8 +17,8 @@ Practical steps
 ===============
 
 In order to make this experience as convenient as possible for the students and the
-for the lecturer, it is requested that the lecturer (or any course responsible) would
-take the following actions:
+for the lecturer, we ask that the lecturer (or any of the course coordinators)
+takes the following actions:
 
 #. Submit a request to
    `hpcinfo@.kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
