@@ -27,7 +27,8 @@ takes the following actions:
    facilities are necessary for teaching the course. It is mandatory to provide a list
    of students with their full names, KU Leuven/UHasselt email addresses, and their student number.
    For KU Leuven an export from the participants in Toledo is sufficient.
-#. For all students on the list a VSC-account will be created without any further action required by the student. 
+#. For all students on the list a VSC account will be created.
+   No further action will be required by the students. 
    The students will receive a mail when the account is created. 
 #. We encourage to create a :ref:`specific VSC group <groups>` for the course, with the name starting 
    with ``p_edu_``. We call it the ``project_name`` and assign compute credits to this project.
