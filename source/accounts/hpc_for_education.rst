@@ -39,7 +39,7 @@ takes the following actions:
    For more information about the procedure of requesting the project please refer to the
    :ref:`Slurm accounting <accounting_leuven>` page.
 #. Throughout your course, we recommend to use the :ref:`Open OnDemand portal <ood>`. The students will only
-   need to use a web browser and do not need to install any other software.
+   need a web browser and will normally not need to install any other software.
 #. To ensure that students jobs do not wait in the queue during the hands-on sessions, we offer
    to reserve some limited resources during the session. In that case, please submit your exact
    resource requirements one week before the training, by latest.
