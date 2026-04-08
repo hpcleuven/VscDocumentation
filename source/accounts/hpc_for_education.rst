@@ -22,7 +22,7 @@ for the lecturer, we ask that the lecturer (or any of the course coordinators)
 takes the following actions:
 
 #. Submit a request to
-   `hpcinfo@.kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
+   `hpcinfo@kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
    at least 2 weeks before the course needs the HPC resources.
    Please provide a short description of the course, and explain why the HPC
    facilities are necessary for teaching the course. It is mandatory to provide a list
@@ -56,6 +56,6 @@ takes the following actions:
    where ``project_name`` refers to the project credit assigned to your training.
 
 #. If you are not using Open OnDemand, make sure that the software to connect to the cluster
-   (Putty, MobaXterm, Xming, FileZilla) is available in the PC class that will be used during the
-   course. For KU Leuven courses, please follow the procedure at
+   (Putty, MobaXterm, Xming, FileZilla) is available in the PC class and/or on students laptops.
+   For KU Leuven courses, please follow the procedure at
    https://icts.kuleuven.be/sc/pcklas/ictspcklassen (1 month before the beginning of the course).
