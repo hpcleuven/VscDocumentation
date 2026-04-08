@@ -7,11 +7,12 @@
 |KUL| We support using HPC for educational purposes, such as in the classroom or
 for hackathons. We assist the lecturers with all aspects of using HPC in the classroom,
 such as:
-* creating student accounts
-* granting compute credits
-* providing storage
-* reserving compute resources
-* technical support during the trainings (either on-site or remote)
+
+#. creating student accounts
+#. granting compute credits
+#. providing storage
+#. reserving compute resources (only if neccessary and upon decision by site admins) 
+#. technical support during the trainings (either on-site or remote)
 
 Practical steps
 ===============
@@ -31,7 +32,7 @@ takes the following actions:
    No further action will be required by the students. 
    The students will receive a mail when the account is created. 
 #. We encourage to create a :ref:`specific VSC group <groups>` for the course, with a name starting 
-   with ``p_edu_``. We call it the ``project_name`` and assign compute credits to this project.
+   with ``p_edu_``. We call it the ``<project_name>`` and assign compute credits to this project.
    The students will be added to this project, allowing them to submit compute jobs. 
    The course lecturer will be the moderator of the project. This gives the lecturer an opportunity
    to track the use of the Tier-2 clusters by individual users during the course, and add/remove students
