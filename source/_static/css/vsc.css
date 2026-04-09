@@ -157,6 +157,8 @@ html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
     background: linear-gradient(to bottom, #FFCC2933, #FFCC2966);
 }
 
+/* hide caption lable in code-blocks */
+.code-block-caption .caption-number { display: none; }
 /* line numbers in codeblocks on transparent column */
 html[data-theme="light"] .highlight span.linenos { background-color: transparent; }
 html[data-theme="dark"] .highlight span.linenos { background-color: transparent; }

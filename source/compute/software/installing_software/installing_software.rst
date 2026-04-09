@@ -12,4 +12,5 @@ Installing software
    conda_based_managers
    python_package_management
    r_package_management
-   other_package_managers
+   julia
+   perl_package_management

@@ -26,7 +26,7 @@ To view the list of all available software packages, use the command
 
    $ module av
 
-   ---------------- /apps/leuven/rocky8/icelake/2023a/modules/all -----------------
+   ---------------- /apps/leuven/rocky9/icelake/2023a/modules/all -----------------
    ATK/2.38.0-GCCcore-12.3.0                               (D)
    Armadillo/12.6.2-foss-2023a                             (D)
    Bison/3.8.2                                             (D)
@@ -36,7 +36,7 @@ To view the list of all available software packages, use the command
    ...
    zlib/1.2.13                                             (D)
 
-   ---------------- /apps/leuven/rocky8/icelake/2022b/modules/all -----------------
+   ---------------- /apps/leuven/rocky9/icelake/2022b/modules/all -----------------
    ATK/2.38.0-GCCcore-12.2.0                               (D)
    ...
 

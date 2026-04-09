@@ -16,7 +16,6 @@ CPU-only nodes
 ===================  ==============  ============================================== ======  ==========  ===============
 Slurm partition      nodes           processors |nbsp| per |nbsp| node              memory  local disk  network
 ===================  ==============  ============================================== ======  ==========  ===============
-``broadwell_himem``  1               4x 10-core `Intel Xeon E7-8891v4`_ (Broadwell) 1.5 TB  4 TB HDD    10 Gbps
 ``zen4``             20              2x 32-core `AMD EPYC 9384X`_ (Genoa-X)         384 GB  450 GB SSD  25 Gbps
 ``zen5_mpi``         20+4\ :sup:`a`  2x 64-core `AMD EPYC 9535`_ (Turin)            768 GB  450 GB SSD  200 Gbps NDR-IB
 ``zen5_himem``       4               2x 64-core `AMD EPYC 9535`_ (Turin)            1.5 TB  450 GB SSD  200 Gbps NDR-IB
@@ -33,6 +32,7 @@ Slurm partition   features           nodes    GPUs |nbsp| per |nbsp| node       
 ``pascal_gpu``                         4      2x `NVIDIA Tesla P100`_ (Pascal)  16 GB       2x 12-core `Intel Xeon E5-2650v4`_ (Broadwell)  256 GB      2 TB HDD           10 Gbps
 ``ampere_gpu``                         6      2x `NVIDIA A100`_ (Ampere)        40 GB       2x 16-core `AMD EPYC 7282`_ (Zen2 - Rome)       256 GB      2 TB SSD           100 Gbps EDR-IB
 ``ampere_gpu``    ``big_local_ssd``    4      2x `NVIDIA A100`_ (Ampere)        40 GB       2x 16-core `AMD EPYC 7282`_ (Zen2 - Rome)       256 GB      5.9 TB SSD         100 Gbps EDR-IB
+``hopper_gpu``                         5      2x `NVIDIA H200`_ (Hopper)        140 GB      2x 24-core `AMD EPYC 9275F`_ (Zen5 - Turin)     754 GB      447 GB SSD         400 Gbps NDR-IB
 ===============   =================  =====    ================================  ==========  ==============================================  ==========  =================  ===============
 
 .. _Hydra login nodes:

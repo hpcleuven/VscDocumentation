@@ -4,12 +4,22 @@ Tier-2 access
 -------------
 
 Currently, Genius and wICE are the two Tier-2 clusters in production at KU Leuven.
+The Genius cluster runs on Rocky Linux 8.10 operating system, whereas wICE runs on
+Rocky Linux 9.6.
 The access to both machines is possible
 
 - either via the Genius login nodes (see below), as wICE itself has no
   dedicated login node
 
 - or via the :ref:`Open OnDemand <ood>` on your web browser
+
+.. warning::
+
+   Currently, the operating system of the login nodes is Rocky Linux 8.10,
+   which is different from that of wICE nodes. To compile your own software,
+   we strongly recommend to follow the best practices in
+   :ref:`compiling software <wice_compilation>`. 
+
 
 Login infrastructure
 --------------------

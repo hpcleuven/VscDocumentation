@@ -263,7 +263,7 @@ Differences between EasyBuild & Spack
 - EasyBuild strongly prefers building software from source code (when possible), Spack also has support for using a binary cache (pre-built binary packages);
 - Both have specific features:
 
-  - EasyBuild has integration with `Slurm <https://docs.easybuild.io/submitting-jobs/>`_, `GitHub <https://docs.easybuild.io/integration-with-github/>`_, and other tools;
+  - EasyBuild has `Slurm integration <https://docs.easybuild.io/submitting-jobs/>`_, `GitHub integration <https://docs.easybuild.io/integration-with-github/>`_, and integration with other tools;
   - The functionality of EasyBuild can be customized via `hooks <https://docs.easybuild.io/hooks/>`_;
   - Spack has support for `environments <https://spack.readthedocs.io/en/latest/environments_basics.html>`_.
   - Spack has good support for building `container images <https://spack.readthedocs.io/en/latest/containers.html>`_;

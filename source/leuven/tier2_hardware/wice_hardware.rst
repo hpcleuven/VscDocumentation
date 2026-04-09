@@ -65,7 +65,7 @@ Hardware details
   - partition ``hugemem``,
     :ref:`submit options <submit to wice big memory node>`
 
-- 8 GPU nodes
+- 9 GPU nodes
 
   - 4 nodes with 16 A100 GPUs in total
 
@@ -79,7 +79,7 @@ Hardware details
     - partition ``gpu|gpu_a100``,
       :ref:`submit options <submit to wice GPU node>`
 
-  - 4 nodes with 16 H100 GPUs in total
+  - 5 nodes with 20 H100 GPUs in total
 
     - 2 AMD EPYC 9334 CPUs (Genoa),
       32 cores each :raw-html:`<br />`
