@@ -75,12 +75,12 @@ To create a new RStudio Project and vsc-Rproject environment using this modules 
 This will create a new RStudio Project named *MyProject* at the default
 location: ``$VSC_DATA/Rprojects``.
 The file ``modules.txt`` will be used to create the project, and is stored in
-``$VSC_DATA/Rprojects/.vsc-rproject/modules.env``.
+``$VSC_DATA/Rprojects/MyProject/.vsc-rproject/modules.env``.
 
 .. note::
 
    If you wish to update the modules list for an existing project, you should manually
-   add it to the ``$VSC_DATA/Rprojects/.vsc-rproject/modules.env`` file.
+   add it to the ``$VSC_DATA/Rprojects/MyProject/.vsc-rproject/modules.env`` file.
 
 Project configuration
 ~~~~~~~~~~~~~~~~~~~~~

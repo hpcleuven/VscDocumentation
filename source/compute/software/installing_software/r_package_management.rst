@@ -4,8 +4,8 @@ R package management
 ====================
 
 There are thousands of R packages available online. The most popular
-indexed repositories are `CRAN`_ and `Bioconductor`_. While you can also many
-single package repositories on `GitHub`_.
+indexed repositories are `CRAN`_ and `Bioconductor`_. While you can also find
+many single package repositories on `GitHub`_.
 
 How to find available R packages in modules?
 --------------------------------------------
@@ -141,10 +141,11 @@ installations in a well-defined location.
 R package manager
 -----------------
 
-R provides a simple package manager that can be used to install basic R
-packages without compiled code and with a small amount of dependencies.
+R provides a package manager that can be used to install basic R
+packages with a small amount of dependencies.
 
-|Warning| The simplicity of the default R package manager is its strength and
+|Warning| The simplicity of the ``install.packages()`` method which is
+typically used in this context, is both its strength and
 weakness. Its easy to use but you should be aware of its limitations before
 using it on complex projects:
 
@@ -192,8 +193,8 @@ packages and it can be used to install packages from local or remote sources.
    The method ``install.packages()`` does **not control the version** of the
    installed package in the system, which can be dangerous and result in
    non-working environments. To control which version of the package is
-   installed we recommend to use :ref:`vsc-Rproject`, or alternatively you can
-   use ``install_version()`` from the *remotes* library
+   installed we recommend to use ``install_version()`` from the *remotes*
+   library (or alternatively have a look at :ref:`vsc-Rproject`).
 
    .. code-block:: r
 
@@ -227,7 +228,9 @@ to install new packages in the top directory reported by the method ``libPaths()
 In the previous example:
 
 * *[1]* is your personal R library. Can be changed with environment variable
-  ``$R_LIBS_USER``. By default located at ``~/R/R.version$platform-library/x.y``.
+  ``$R_LIBS_USER`` (but only for command-line usage, see the explanation about
+  ``~/.Renviron`` further down for usage in for example RStudio). By default,
+  your personal library is located at ``~/R/R.version$platform-library/x.y``.
 
 * *[2]*  Site libraries added by module files. Read-only.
 

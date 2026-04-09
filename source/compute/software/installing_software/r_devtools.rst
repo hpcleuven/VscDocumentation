@@ -45,7 +45,7 @@ You can check and control the list of library paths with ``.libPaths()`` as usua
    # First check that the R library path points to your local R library:
    .libPaths()
    # Set the R library path if this is not the case. e.g.
-   .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky8/icelake/R-4.2.2")
+   .libPaths("/data/leuven/XXX/vscXXXXX/Rlibs/rocky9/icelake/R-4.2.2")
 
 Once the target location is set, then you can install a package from GitHub
 with devtools as follows:
