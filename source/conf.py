@@ -376,8 +376,10 @@ rst_prolog += """
 .. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
 .. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
 .. _atools documentation: https://atools.readthedocs.io/en/latest/
+.. _Bioconductor: https://bioconductor.org
 .. _CP2K: https://www.cp2k.org/
 .. _CPMD: http://www.cpmd.org/
+.. _CRAN: http://cran.r-project.org
 .. _CUDA: https://developer.nvidia.com/cuda-zone
 .. _cuDNN: https://developer.nvidia.com/cudnn
 .. _Cyberduck: https://cyberduck.io
@@ -392,6 +394,7 @@ rst_prolog += """
 .. _FFTW documentation: http://www.fftw.org/#documentation
 .. _FFTW: http://www.fftw.org/
 .. _FileZilla project page: https://filezilla-project.org/
+.. _GitHub: https://github.com
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
 .. _GNU: https://www.gnu.org/
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
