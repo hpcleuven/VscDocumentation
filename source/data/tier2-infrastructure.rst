@@ -44,7 +44,7 @@ the node as the most performant option for scratch files.
    .. tab-item:: VUB
       :sync: vub
 
-      .. include:: /brussels/tier2_hardware/vub_storage_quota_table.rst
+      .. include:: /brussel/tier2_hardware/vub_storage_quota_table.rst
 
       For more information check: :ref:`VUB storage`
 
