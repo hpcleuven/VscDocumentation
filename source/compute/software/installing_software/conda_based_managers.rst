@@ -272,7 +272,7 @@ Storage requirements
 Be aware that Conda environments tend to grow rather large, both in terms of
 disk usage and number of files (easily reaching several GB and tens of
 thousands of files). :ref:`Containerizing your Conda environment
-<conda_containers>` may help with the latter, though not with the former.
+<apptainer_building>` may help with the latter, though not with the former.
 
 Exporting and importing environments
 ------------------------------------
