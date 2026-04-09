@@ -48,7 +48,7 @@ access/vsc_account.html /accounts/vsc_account.html
 access/where_can_i_store_what_kind_of_data.html /accounts/where_can_i_store_what_kind_of_data.html
 access/windows_client.html /compute/terminal/windows_client.html
 access/wsl.html /compute/terminal/wsl.html
-brussels/tier2_hardware/hydra_hardware.html /brussels/tier2_hardware/hydra.html
+brussel/tier2_hardware/hydra_hardware.html /brussel/tier2_hardware/hydra.html
 compute.html /compute/index.html
 compute/cluster-archive.html /compute/tier2-archive.html
 compute/portal/ondemand/index.html /compute/portal/index.html
