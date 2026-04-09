@@ -7,6 +7,10 @@ EasyBuild and Spack
 that can be used to automate the installation of software from source code on HPC systems.
 
 Both tools significantly facilitate software installation, and tap into the broad expertise of their respective communities.
+On the other hand, there is an *initial learning curve* for both. Unless you
+have some experience with compilers and manually installing software, you should
+consider other approaches to installing your software (see the other pages in
+this section).
 
 EasyBuild
 ---------
@@ -20,22 +24,31 @@ environment module files so they can be used easily.
 
 EasyBuild has strong focus on scientific software, collaboration, software performance, and HPC systems.
 
-The `EasyBuild Slack <https://easybuild.io/join-slack>`_ is used as the main communication channel for worldwide community,
+The `EasyBuild Slack <https://easybuild.io/join-slack>`_ is used as the main communication channel for the worldwide community,
 along with the `EasyBuild mailing list <https://lists.ugent.be/sympa/info/easybuild>`_.
 
-EasyBuild is to the tool of choice for managing the central software stack on various HPC systems,
+EasyBuild is the tool of choice for managing the central software stack on various HPC systems,
 including the Tier-2 and Tier-1 clusters of the VSC, and various `EuroHPC JU <https://www.eurohpc-ju.europa.eu>`_ supercomputers (LUMI, JUPITER, ...).
 
 Installing EasyBuild
 ~~~~~~~~~~~~~~~~~~~~
 
-To install EasyBuild, use:
+On VSC clusters, ``EasyBuild`` is available as a module so instead of
+installing it yourself, you can make it available with:
+
+.. code-block:: bash
+
+   module load EasyBuild/5.2.1
+
+It is recommended to use a recent EasyBuild version.
+
+If you prefer to install EasyBuild yourself, use:
 
 .. code-block:: bash
 
   pip install easybuild
 
-We recommended to install EasyBuild a Python virtual environment.
+We recommended to install EasyBuild in a :ref:`Python virtual environment <venv_python>`.
 
 After installing EasyBuild, you can run the ``eb`` command, for example to check the EasyBuild version:
 
@@ -43,7 +56,7 @@ After installing EasyBuild, you can run the ``eb`` command, for example to check
 
     eb --version
 
-Some addtional Python packages can be installed as optional dependencies for EasyBuild:
+Some additional Python packages can be installed as optional dependencies for EasyBuild:
 
 - ``rich`` (colors)
 - ``archspec`` (CPU detection)
@@ -71,7 +84,7 @@ To see *all* configuration options, use:
 
 .. warning::
 
-  Do not use default configuration!
+  Do not use the default configuration!
 
   By default, EasyBuild will (ab)use a hidden directory in your home directory (``$HOME/.local/easybuild``).
 
@@ -79,8 +92,9 @@ An example minimal configuration via environment variables that is suitable to u
 
 .. code-block:: bash
 
-  # configure EasyBuild to use $VSC_DATA/easybuild for everything (sources, software installations, etc.)
-  export EASYBUILD_PREFIX=$VSC_DATA/easybuild
+  # configure EasyBuild to use a subdirectory of $VSC_DATA for everything (sources, software installations, etc.)
+  # that is specific to the operating system and architecture of choice
+  export EASYBUILD_PREFIX=$VSC_DATA/easybuild/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}
   # make an exception for the (temporary) build directories, which should be on local disk
   export EASYBUILD_BUILDPATH=/tmp/$USER
 
@@ -105,12 +119,13 @@ For example, to install & use ``tblite``:
   # build+install tblite (incl. dependencies)
   eb tblite-0.4.0-gfbf-2024a.eb --robot
   # make module available to load
-  module use /path/to/modules/all
+  module use $VSC_DATA/easybuild/${VSC_OS_LOCAL}/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}/modules/all
   # load tblite for usage
   module load tblite/0.4.0-gfbf-2024a
 
 Note that existing environment module files will automatically be used for dependencies if they are visible via ``module avail``.
-
+If a module is already installed, EasyBuild will skip the installation unless
+the ``--force`` option is provided.
 
 Links
 ~~~~~
@@ -132,8 +147,8 @@ Spack
 Spack is a package manager for supercomputers, which was originally created
 by Lawrence Livermore National Lab (LLNL) in the US in 2014.
 
-It automates software installation procedures, and can install pre-built software from binary cache,
-and it particularly popular with software developers due to its usage model & specific features.
+It automates software installation procedures, can install pre-built software from binary cache,
+and it is particularly popular with software developers due to its usage model & specific features.
 
 It can generate environment module files for software installations, but also has its own mechanism
 for *activating* software (via ``spack load``).
@@ -156,7 +171,7 @@ You can "install" Spack by cloning the Git repository:
    This implies using the (potentially unstable) development version,
    so you may want to download a `specific version <https://github.com/spack/spack/releases>`_ of Spack instead.
 
-By default, Spack will installed software in the ``spack/opt/spack`` subdirectory of where it was installed,
+By default, Spack will install software in the ``spack/opt/spack`` subdirectory of where it was installed,
 so pick a good location (*not* your home directory in your VSC account).
 
 Before using Spack, you need to set up your shell environment by sourcing the provided script,
@@ -181,30 +196,32 @@ For more information on installing and configuring Spack, see https://spack.read
 Basic usage of Spack
 ~~~~~~~~~~~~~~~~~~~~
 
-Tbe basic usage workflow of Spack is as follows (using ``tblite`` as example software):
+The basic usage workflow of Spack is as follows (using ``tblite`` as example software):
 
 #. Check whether software is supported: ``spack list tblite``
 #. Show details of specific software: ``spack info tblite``
 #. Show dependency graph of specific software: ``spack graph tblite``
 #. Install the software with ``spack install``, for example:
-    - Instal tblite version 0.4.0 incl. Python bindings with system compiler:
 
-      .. code-block:: bash
+   - Install tblite version 0.4.0 incl. Python bindings with system compiler:
 
-        spack install tblite@0.4.0 +python
+     .. code-block:: bash
 
-    - Install tblite version 0.4.0 with GCC 13 as compiler:
+       spack install tblite@0.4.0 +python
 
-      .. code-block:: bash
+   - Install tblite version 0.4.0 with GCC 13 as compiler:
 
-        # first install GCC 13
-        spack install gcc@13
-        # install tblite 0.4.0, incl. Python bindings, with GCC 13
-        spack install tblite@0.4.0 +python %gcc@13
+     .. code-block:: bash
 
-#. Load the software to starting using it:
-    - ``spack find tblite``
-    - ``spack load tblite``
+       # first install GCC 13
+       spack install gcc@13
+       # install tblite 0.4.0, incl. Python bindings, with GCC 13
+       spack install tblite@0.4.0 +python %gcc@13
+
+#. Load the software to start using it:
+
+   - ``spack find tblite``
+   - ``spack load tblite``
 
 Links
 ~~~~~
@@ -226,7 +243,7 @@ Similarities between EasyBuild & Spack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Both are open source software implemented in Python;
-- Both are Developed & supported by a worldwide community;
+- Both are developed & supported by a worldwide community;
 - Both focus on scientific software, performance, HPC systems;
 - Both require *no* admin privileges to build & install software;
 - Both are highly configurable: you can tune them to your preferences;
@@ -245,22 +262,23 @@ Differences between EasyBuild & Spack
 - EasyBuild has published frequent stable releases since 2012, Spack 1.0 was released in summer of 2025;
 - EasyBuild strongly prefers building software from source code (when possible), Spack also has support for using a binary cache (pre-built binary packages);
 - Both have specific features:
-    - EasyBuild has integration with `Slurm <https://docs.easybuild.io/submitting-jobs/>`_, `GitHub <https://docs.easybuild.io/integration-with-github/>`_, and other tools;
-    - The functionality of EasyBuild can be customized via `hooks <https://docs.easybuild.io/hooks/>`_;
-    - Spack has support for `environments <https://spack.readthedocs.io/en/latest/environments_basics.html>`_.
-    - Spack has good support for building `container images <https://spack.readthedocs.io/en/latest/containers.html>`_;
+
+  - EasyBuild has integration with `Slurm <https://docs.easybuild.io/submitting-jobs/>`_, `GitHub <https://docs.easybuild.io/integration-with-github/>`_, and other tools;
+  - The functionality of EasyBuild can be customized via `hooks <https://docs.easybuild.io/hooks/>`_;
+  - Spack has support for `environments <https://spack.readthedocs.io/en/latest/environments_basics.html>`_.
+  - Spack has good support for building `container images <https://spack.readthedocs.io/en/latest/containers.html>`_;
 
 When (not to) use EasyBuild or Spack
 ------------------------------------
 
 Both EasyBuild and Spack provide a uniform way of installing software, regardless of specifics of installation procedure. They automate (complex) software installation procedures, including required dependencies.
 They can both be used to build a consistent (central) software stack, with software performance in mind,
-and install same software stack across different systems/partitions.
+and install the same software stack across different systems/partitions.
 
 Both leverage efforts by experienced people who contributed to these tools,
 and you can get help through community channels (there's a dedicated Slack for both).
 
 However, there is a *steep initial learning curve* for both. Some experience with compilers
-& manually installing software can be helpful. You should take you some time to learn how
+& manually installing software can be helpful. You should take some time to learn how
 to use the tool you picked (docs, tutorial, etc.).
 
