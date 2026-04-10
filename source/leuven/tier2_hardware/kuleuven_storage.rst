@@ -14,8 +14,8 @@ VSC home and data storage
 
 The table below summarizes the VSC home and data storage locations, which are shared
 between all VSC clusters. They are intended for long term storage of files that are not
-accessed at high frequency by compute jobs. Note that in what follows, the five decimal
-digits in the user's VSC IDs are used to construct a unique path pointing at their home
+accessed at high frequency by compute jobs. Note that in what follows, the five digits
+in the user's VSC IDs are used to construct a unique path pointing at their home
 and data storages (as well as scratch storage below).
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
@@ -50,22 +50,21 @@ on the Tier-2 clusters.
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 |Variable               | Path                             | Type   | Access        |Backup | Default quota |
 +=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Local         | No    | 500 GiB       |
-|                       | ``/scratch/leuven/3../vsc3....`` | Lustre |               |       |               |
-|                       | ``/gpfs1/scratch/3../vsc3....``  | GPFS   |               |       |               |
+|``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Genius & wICE | No    | 500 GiB       |
+|                       | ``/gpfs1/scratch/3../vsc3....``  | GPFS   | Mindwell      |       |               |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 |``$VSC_SCRATCH_LUSTRE``|``/scratch/leuven/3../vsc3....``  | Lustre | Mindwell      | No    | 500 GiB       |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 |``$VSC_SCRATCH_GPFS``  |``/gpfs1/scratch/3../vsc3....``   | GPFS   | Genius & wICE | No    | 500 GiB       |
++-----------------------+----------------------------------+--------+---------------+-------+---------------+
+|``$VSC_SCRATCH_SITE``  | ``$VSC_SCRATCH_LUSTRE``          | Lustre | Genius & wICE | No    | 500 GiB       |
+|                       | ``$VSC_SCRATCH_GPFS``            | GPFS   | Mindwell      |       |               |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 |``$VSC_SCRATCH_NODE``  | ``/local_scratch``               | ext4   | Genius        | No    | 200 GiB       |
 +                       +----------------------------------+--------+---------------+-------+---------------+
 |                       | ``/tmp``                         | ext4   | wICE          | No    | 600 GiB       |
 +                       +----------------------------------+--------+---------------+-------+---------------+
 |                       | ``/tmp``                         | ext4   | Mindwell      | No    | 600 GiB       |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|``$VSC_SCRATCH_SITE``  | ``$VSC_SCRATCH_LUSTRE``          | Lustre | Genius & wICE | No    | 500 GiB       |
-|                       | ``$VSC_SCRATCH_GPFS``            | GPFS   | Mindwell      |       |               |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 
 .. note::
