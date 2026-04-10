@@ -143,5 +143,5 @@ original file is a long time in the past, the file on scratch will be considered
 to be inactive and automatically removed. A similar thing happens when using
 ``rsync`` with the option to preserve timestamps. To avoid this problem,
 the ``cp`` command (without ``-a`` argument) should be used to copy files to the
-scratch directory, followed by removing of the sources using  the ``rm`` command
-upon a successful transfer.
+scratch directory, followed by removing the sources (if needed) using  the ``rm``
+command upon a successful transfer.
