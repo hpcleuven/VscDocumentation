@@ -86,7 +86,7 @@ intensive I/O patterns, specially for intermediate files (which can be garbaged 
 
 To facilitate that, the :ref:`Mindwell <mindwell hardware>` cluster comes with its local GPFS scratch filesystem,
 and the :ref:`Genius <genius hardware>` and :ref:`wICE <wice hardware>` clusters come with their local Lustre
-scratch filesystem.
+scratch filesystem. The ``$VSC_SCRATCH`` environment variable points to the local scratch storage on each cluster.
 
 .. warning::
 
