@@ -76,7 +76,7 @@ Using scratch in compute jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When your workflow interacts with the filesystem at high frequency for read-write operations,
-it is recommended to use the *local* scratch storage for your compute jobs.
+it is recommended to use the scratch storage which is *local* to the cluster you are computing on.
 The reason is that both GPFS and Lustre filesystems are designed to handle intensive input/output
 (I/O) operations (where NFS can lag significantly behind in performance).
 Furthermore, these filesystems handle parallel I/O operations (i.e. when multiple processes/threads
