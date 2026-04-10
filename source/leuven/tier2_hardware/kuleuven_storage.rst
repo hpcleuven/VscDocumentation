@@ -7,7 +7,7 @@ KU Leuven storage
 Storage on the clusters hosted at KU Leuven is organized
 :ref:`in a similar way as on other VSC clusters <data location>`.
 Currently, we use the NFS filesystem for home and data complemented with
-the Lustre and GPFS parallel filesystems for scratch storage.
+the Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage.
 
 VSC home and data storage
 --------------------------

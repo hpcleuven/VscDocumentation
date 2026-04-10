@@ -5,7 +5,7 @@ Mindwell hardware
 
 Before mid 2026, a new cluster will be added to the KU Leuven/UHasselt's Tier-2 infrastructure.
 In line with its predecessor :ref:`wICE <wice hardware>`, it will feature thin nodes,
-large memory nodes, interactive nodes and GPU nodes. The cluster will be operational in Q2 2026.
+large memory nodes, interactive nodes and GPU nodes.
 
 Hardware details
 ----------------
@@ -65,7 +65,6 @@ Infiniband HDR-100 network), so all your existing data will be accessible from t
 Additional highlights
 ---------------------
 
-- The (Slurm) job ids on Mindwell start from 80000000.
 - Software modules will only be installed for toolchains starting from 2024a.
 - All nodes are interconnected using an Infiniband NDR network.
 - Similar to the wICE Sapphire Rapids and the H100 nodes, the new cluster is direct liquid cooled.
