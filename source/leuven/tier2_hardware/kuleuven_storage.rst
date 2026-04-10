@@ -131,9 +131,8 @@ the :ref:`globus platform`. for transferring data.
 Automatic scratch cleanup
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``$VSC_SCRATCH`` at KU Leuven is not for long term storage, as files older
-than 30 days are cleaned up regularly. To be more specific, the automatic file
-removal is based on the moment a file was accessed for the last time.
+``$VSC_SCRATCH`` at KU Leuven is not for long term storage, as files not accessed
+for more than 30 days are automatically removed.
 The reasoning behind this is that as long as you are actively using a file
 (so accessing it), the file will not be removed.
 
