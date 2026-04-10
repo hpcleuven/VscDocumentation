@@ -4,58 +4,93 @@
 
 .. _hpc for education:
 
-|KUL| We support using HPC for educational purposes, such as in the classroom or
-for hackathons. We assist the lecturers with all aspects of using HPC in the classroom,
-such as:
+.. tab-set::
+   :sync-group: vsc-sites
 
-#. creating student accounts
-#. granting compute credits
-#. providing storage
-#. reserving compute resources (only if neccessary and upon decision by site admins) 
-#. technical support during the trainings (either on-site or remote)
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-Practical steps
-===============
+      We support using HPC for educational purposes, such as in the classroom or
+      for hackathons. We assist the lecturers with all aspects of using HPC in the classroom,
+      such as:
 
-In order to make this experience as convenient as possible for the students and the
-for the lecturer, we ask that the lecturer (or any of the course coordinators)
-takes the following actions:
+      #. creating student accounts
+      #. granting compute credits
+      #. providing storage
+      #. reserving compute resources (only if neccessary and upon decision by site admins) 
+      #. technical support during the trainings (either on-site or remote)
 
-#. Submit a request to
-   `hpcinfo@kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
-   at least 2 weeks before the course needs the HPC resources.
-   Please provide a short description of the course, and explain why the HPC
-   facilities are necessary for teaching the course. It is mandatory to provide a list
-   of students with their full names, KU Leuven/UHasselt email addresses, and their student number.
-   For KU Leuven an export from the participants in Toledo is sufficient.
-#. For all students on the list a VSC account will be created.
-   No further action will be required by the students. 
-   The students will receive a mail when the account is created. 
-#. We encourage to create a :ref:`specific VSC group <groups>` for the course, with a name starting 
-   with ``p_edu_``. We call it the ``<project_name>`` and assign compute credits to this project.
-   The students will be added to this project, allowing them to submit compute jobs. 
-   The course lecturer will be the moderator of the project. This gives the lecturer an opportunity
-   to track the use of the Tier-2 clusters by individual users during the course, and add/remove students
-   as needed.
-   For more information about the procedure of requesting the project please refer to the
-   :ref:`Slurm accounting <accounting_leuven>` page.
-#. Throughout your course, we recommend to use the :ref:`Open OnDemand portal <ood>`. The students will only
-   need a web browser and will normally not need to install any other software.
-#. To ensure that students jobs do not wait in the queue during the hands-on sessions, we offer
-   to reserve some limited resources during the session. In that case, please submit your exact
-   resource requirements one week before the training, at the latest.
-   We will communicate the ``<reservation_name>`` with you for every exercise session.
-   To start and OnDemand session on a reserved node, please specify the ``<reservation_name>`` in the 
-   'Reservation' text field of the desired app.
-   To let batch jobs use the reserved resources, the ``--reservation`` argument needs to be applied, e.g.:
+      To start the procedure, follow the :ref:`practical steps for the lecturer <steps for lecturer>` below.
 
-   ::
+   .. tab-item:: UAntwerpen
+      :sync: ua
 
-      $ sbatch --account=<project_name> --reservation=<reservation_name> jobscript.slurm
+      To request HPC support for education, please contact the :ref:`UAntwerpen support team <contact VSC>`.
+      
+   .. tab-item:: UGent
+      :sync: ug
 
-   where ``project_name`` refers to the project credit assigned to your training.
+      The procedure for requesting HPC support for education is elaborated in the
+      `UGent internal pages on teaching and training <https://docs.hpc.ugent.be/Windows/teaching_training/>`_.
 
-#. If you are not using Open OnDemand, make sure that the software to connect to the cluster
-   (Putty, MobaXterm, Xming, FileZilla) is available in the PC class and/or on students laptops.
-   For KU Leuven courses, please follow the procedure at
-   https://icts.kuleuven.be/sc/pcklas/ictspcklassen (1 month before the beginning of the course).
+      
+   .. tab-item:: VUB
+      :sync: vub
+
+      To request HPC support for education, please contact the :ref:`VUB support team <contact VSC>`.
+
+
+.. _steps for lecturer:
+
+Practical steps for the lecturer
+================================
+
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+       #. Submit a request to
+          `hpcinfo@kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
+          at least 2 weeks before the course needs the HPC resources.
+          Please provide a short description of the course, and explain why the HPC
+          facilities are necessary for teaching the course. It is mandatory to provide a list
+          of students with their full names, KU Leuven/UHasselt email addresses, and their student number.
+          For KU Leuven an export from the participants in Toledo is sufficient.
+
+       #. For all students on the list a VSC account will be created.
+          No further action will be required by the students. 
+          The students will receive a mail when the account is created. 
+
+       #. We encourage to create a :ref:`specific VSC group <groups>` for the course, with a name starting 
+          with ``p_edu_``. We call it the ``<project_name>`` and assign compute credits to this project.
+          The students will be added to this project, allowing them to submit compute jobs. 
+          The course lecturer will be the moderator of the project. This gives the lecturer an opportunity
+          to track the use of the Tier-2 clusters by individual users during the course, and add/remove students
+          as needed.
+
+          For more information about the procedure of requesting the project please refer to the
+          :ref:`Slurm accounting <accounting_leuven>` page.
+
+       #. Throughout your course, we recommend to use the :ref:`Open OnDemand portal <ood>`. The students will only
+          need a web browser and will normally not need to install any other software.
+
+       #. To ensure that students jobs do not wait in the queue during the hands-on sessions, we offer
+          to reserve some limited resources during the session. In that case, please submit your exact
+          resource requirements one week before the training, at the latest.
+          We will communicate the ``<reservation_name>`` with you for every exercise session.
+          To start an OnDemand session on a reserved node, please specify the ``<reservation_name>`` in the 
+          'Reservation' text field of the desired app.
+          To let batch jobs use the reserved resources, the ``--reservation`` argument needs to be applied, e.g.:
+
+          ::
+
+             $ sbatch --account=<project_name> --reservation=<reservation_name> jobscript.slurm
+
+          where ``project_name`` refers to the project credit assigned to your training.
+
+       #. If you are not using Open OnDemand, make sure that the software to connect to the cluster
+          (Putty, MobaXterm, Xming, FileZilla) is available in the PC class and/or on students laptops.
+          For KU Leuven courses, please follow the procedure at
+          https://icts.kuleuven.be/sc/pcklas/ictspcklassen (1 month before the beginning of the course).
