@@ -9,14 +9,19 @@ Storage on the clusters hosted at KU Leuven is organized
 Currently, we use the NFS filesystem for home and data complemented with
 the Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage.
 
+.. note::
+
+   We use environment variables to point at your different storage locations, as
+   demonstrated in the tables below. These paths are constructed based on the 5 digits
+   in your VSC ID. As mentioned in :ref:`data location`, you should always (try to)
+   use the environment variables rather than the paths shown in the tables.
+
 VSC home and data storage
 --------------------------
 
 The table below summarizes the VSC home and data storage locations, which are shared
 between all VSC clusters. They are intended for long term storage of files that are not
-accessed at high frequency by compute jobs. Note that in what follows, the five digits
-in the user's VSC IDs are used to construct a unique path pointing at their home
-and data storages (as well as scratch storage below).
+accessed at high frequency by compute jobs.
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 |Variable               | Path                             | Type   | Access        |Backup | Default quota |
@@ -34,11 +39,6 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
 
 - quota for non-``vsc3*`` users are determined by the policy of the user's
   home institution.
-
-.. note::
-
-   As mentioned in :ref:`data location`,  you should always (try to) use the
-   environment variables rather than the paths shown in the table.
 
 Scratch storage
 ----------------
