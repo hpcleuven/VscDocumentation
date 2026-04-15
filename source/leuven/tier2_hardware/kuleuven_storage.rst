@@ -43,35 +43,21 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
 Parallel scratch storage
 ------------------------
 
-Scratch storage is provided via the Lustre (Genius, wICE) and GPFS (Mindwell)
-parallel file systems. The table below lists their properties and the
-associated environment variables.
+For workflows requiring frequent read or write operations (especially those
+involving intermediate files), it is recommended to use scratch storage.
+Compared to NFS, the GPFS and Lustre filesystems are better designed to handle
+intensive serial and parallel input/output (IO) operations.
+:ref:`Genius <genius hardware>` and :ref:`wICE <wice hardware>` share the same
+(Lustre based) scratch storage, while :ref:`Mindwell <mindwell hardware>` comes
+with its own (GPFS based) scratch storage:
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 | Variable              | Path                             | Type   | Access        |Backup | Default quota |
 +=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Genius & wICE | No    | 500 GiB       |
-|                       | ``/gpfs1/scratch/3../vsc3....``  | GPFS   | Mindwell      |       |               |
+|``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Genius, wICE  | No    | 500 GiB       |
+|                       |                                  +--------+---------------+       |               |
+|                       |                                  | GPFS   | Mindwell      |       |               |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|``$VSC_SCRATCH_LUSTRE``|``/scratch/leuven/3../vsc3....``  | Lustre | Mindwell      | No    | 500 GiB       |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|``$VSC_SCRATCH_GPFS``  |``/gpfs1/scratch/3../vsc3....``   | GPFS   | Genius & wICE | No    | 500 GiB       |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-
-.. note::
-
-   Non-``vsc3*`` users need to `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
-   to receive scratch storage, as it is not set up by default.
-
-Using scratch in compute jobs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For workflows requiring frequent read or write operations, it is recommended
-to use scratch storage (specially for intermediate files). Compared to NFS,
-the GPFS and Lustre filesystems are better designed to handle intensive serial
-and parallel input/output (IO) operations. :ref:`Genius <genius hardware>`
-and :ref:`wICE <wice hardware>` share the same (Lustre based) scratch storage,
-while Mindwell comes with its own (GPFS based) scratch storage.
 
 On each node, the ``$VSC_SCRATCH`` environment variable will point to the
 scratch storage associated with the node (GPFS scratch on the Mindwell nodes,
@@ -85,21 +71,31 @@ Lustre scratch on the nodes of Genius and wICE).
    and jobs running on Mindwell have to use GPFS. Compute jobs that do not
    comply can be cancelled by the system administrators without prior notice.
 
+.. note::
+
+   Non-``vsc3*`` users need to `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
+   to receive scratch storage, as it is not set up by default.
+
 Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To facilitate data transfers between the Lustre and GPFS storage,
 Lustre is accessible from Mindwell and GPFS is accessible from Genius and
-wICE. For instance, to copy a file from your Lustre scratch to your GPFS scratch,
+wICE. Two more environment variables (``$VSC_SCRATCH_LUSTRE1`` and
+``$VSC_SCRATCH_GPFS1``) have been defined for this purpose, so that you can
+easily find the mount location of your scratch directory on the "other"
+parallel file system.
+
+For instance, to copy a file from your Lustre scratch to your GPFS scratch,
 you could go about it as follows:
 
 .. code-block:: bash
 
    # If initiating the transfer from Genius or wICE:
-   cp ${VSC_SCRATCH}/myfile ${VSC_SCRATCH_GPFS}
+   cp ${VSC_SCRATCH}/myfile ${VSC_SCRATCH_GPFS1}
 
    # If initiating the transfer from Mindwell:
-   cp ${VSC_SCRATCH_LUSTRE}/myfile ${VSC_SCRATCH}
+   cp ${VSC_SCRATCH_LUSTRE1}/myfile ${VSC_SCRATCH}
 
 As a best practice, data transfers between Lustre and GPFS should be performed through
 'transfer' jobs, where you for example only request a few cores on an ``interactive`` partition.
