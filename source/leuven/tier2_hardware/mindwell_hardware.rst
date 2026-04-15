@@ -66,6 +66,7 @@ for more information.
 Additional highlights
 ---------------------
 
-- Software modules will only be installed for toolchains starting from 2024a.
+- Software modules will only be installed for toolchains starting from 2024a
+  (CPU partitions) or 2025a (GPU partitions).
 - All nodes are interconnected using an Infiniband NDR network.
 - Similar to the wICE Sapphire Rapids and the H100 nodes, the new cluster is direct liquid cooled.
