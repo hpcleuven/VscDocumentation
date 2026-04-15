@@ -6,8 +6,8 @@ KU Leuven storage
 
 Storage on the clusters hosted at KU Leuven is organized
 :ref:`in a similar way as on other VSC clusters <data location>`.
-Currently, we use the NFS filesystem for home and data complemented with
-the Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage.
+Currently, we use an NFS filesystem for home and data complemented with
+Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage.
 
 .. note::
 
@@ -17,19 +17,19 @@ the Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage
    use the environment variables rather than the paths shown in the tables.
 
 VSC home and data storage
---------------------------
+-------------------------
 
-The table below summarizes the VSC home and data storage locations, which are shared
-between all VSC clusters. They are intended for long term storage of files that are not
-accessed at high frequency by compute jobs.
+The table below describes the VSC home and data storage locations, which
+can be acessed on all VSC clusters. These are intended for long term storage
+of files that are not accessed at high frequency by compute jobs.
 
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|Variable               | Path                             | Type   | Access        |Backup | Default quota |
-+=======================+==================================+========+===============+=======+===============+
-|``$VSC_HOME``          | ``/user/leuven/3../vsc3....``    | NFS    | VSC           |Yes    | 3 GiB         |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|``$VSC_DATA``          | ``/data/leuven/3../vsc3....``    | NFS    | VSC           |Yes    | 75 GiB        |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
++-----------------------+----------------------------------+--------+------------------+-------+---------------+
+| Variable              | Path                             | Type   | Access           |Backup | Default quota |
++=======================+==================================+========+==================+=======+===============+
+| ``$VSC_HOME``         | ``/user/leuven/3../vsc3....``    | NFS    | All VSC clusters | Yes   | 3 GiB         |
++-----------------------+----------------------------------+--------+------------------+-------+---------------+
+| ``$VSC_DATA``         | ``/data/leuven/3../vsc3....``    | NFS    | All VSC clusters | Yes   | 75 GiB        |
++-----------------------+----------------------------------+--------+------------------+-------+---------------+
 
 Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
 
@@ -41,14 +41,14 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
   home institution.
 
 Scratch storage
-----------------
+---------------
 
 Scratch storage is provided via the Lustre (Genius, wICE) and GPFS (Mindwell)
 parallel file systems. The table below lists all the scratch storage locations
 on the Tier-2 clusters.
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|Variable               | Path                             | Type   | Access        |Backup | Default quota |
+| Variable              | Path                             | Type   | Access        |Backup | Default quota |
 +=======================+==================================+========+===============+=======+===============+
 |``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Genius & wICE | No    | 500 GiB       |
 |                       | ``/gpfs1/scratch/3../vsc3....``  | GPFS   | Mindwell      |       |               |
@@ -75,34 +75,32 @@ on the Tier-2 clusters.
 Using scratch in compute jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When your workflow interacts with the filesystem at high frequency for read-write operations,
-it is recommended to use the scratch storage which is *local* to the cluster you are computing on.
-The reason is that both GPFS and Lustre filesystems are designed to handle intensive input/output
-(I/O) operations (where NFS can lag significantly behind in performance).
-Furthermore, these filesystems handle parallel I/O operations (i.e. when multiple processes/threads
-access the same file at the same time) very well.
-Therefore, it is a good practice to exploit the parallel filesystem for handling parallel and/or
-intensive I/O patterns, specially for intermediate files (which can be garbaged after the job finishes).
+For workflows requiring frequent read or write operations, it is recommended
+to use scratch storage (specially for intermediate files). Compared to NFS,
+the GPFS and Lustre filesystems are better designed to handle intensive serial
+and parallel input/output (IO) operations. :ref:`Genius <genius hardware>`
+and :ref:`wICE <wice hardware>` share the same (Lustre based) scratch storage,
+while Mindwell comes with its own (GPFS based) scratch storage.
 
-To facilitate that, the :ref:`Mindwell <mindwell hardware>` cluster comes with its local GPFS scratch filesystem,
-and the :ref:`Genius <genius hardware>` and :ref:`wICE <wice hardware>` clusters come with their local Lustre
-scratch filesystem. The ``$VSC_SCRATCH`` environment variable points to the local scratch storage on each cluster.
+On each node, the ``$VSC_SCRATCH`` environment variable will point to the
+scratch storage associated with the node (GPFS scratch on the Mindwell nodes,
+Lustre scratch on the nodes of Genius and wICE).
 
 .. warning::
 
-   The Lustre and GPFS mounts must not be abused. We strongly recommend that compute
-   jobs only use the parallel file system associated with the cluster where the job
-   is running on. In other words, compute jobs running on Genius and wICE have to use
-   Lustre and jobs running on Mindwell have to use GPFS. Compute jobs that do not
+   It is *crucial* that intensive IO operations in your compute jobs are done
+   on the scratch storage associated with the cluster where the job is running.
+   In other words, compute jobs running on Genius and wICE have to use Lustre
+   and jobs running on Mindwell have to use GPFS. Compute jobs that do not
    comply can be cancelled by the system administrators without prior notice.
 
 .. tip::
 
-   If your data fit into the local node scratch, that can potentially provide the highest
-   throughput, because of avoiding the network overhead for I/O operations.
-   But, keep in mind that the ``$VSC_SCRATCH_NODE`` is cleaned up as soon as your job ends.
-   Therefore, you have to copy out the results to a more permanent storage location at the
-   end of your job should you need to keep them for a longer time.
+   If you need temporary scratch that does not need to be shared across
+   compute nodes, you may also consider using the local node disks
+   (``$VSC_SCRATCH_NODE``), which has the advantage that no network traffic
+   is involved. The content of ``$VSC_SCRATCH_NODE`` is always removed when
+   the job ends and therefore results need to be copied elsewhere if needed.
 
 Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,8 +123,8 @@ As a best practice, data transfers between Lustre and GPFS should be performed t
 Short transfers which don't take more than a couple of minutes can also
 be performed from a Genius login node.
 
-There are Globus endpoints defined on both Lustre and GPFS filesystems, and you can exploit
-the :ref:`globus platform`. for transferring data.
+Globus endpoints have been defined on both Lustre and GPFS filesystems,
+so you can use the :ref:`globus platform` for these data transfers.
 
 Automatic scratch cleanup
 ^^^^^^^^^^^^^^^^^^^^^^^^^
