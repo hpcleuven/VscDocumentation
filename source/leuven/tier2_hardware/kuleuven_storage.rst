@@ -104,6 +104,8 @@ be performed from a Genius login node.
 
 Globus endpoints have been defined on both Lustre and GPFS filesystems,
 so you can use the :ref:`globus platform` for these data transfers.
+For transferring large volumes of data (> 1 TB), however, we recommend using
+'transfer' jobs instead of Globus for performance reasons.
 
 Automatic scratch cleanup
 ^^^^^^^^^^^^^^^^^^^^^^^^^
