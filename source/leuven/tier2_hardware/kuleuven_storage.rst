@@ -40,12 +40,12 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
 - quota for non-``vsc3*`` users are determined by the policy of the user's
   home institution.
 
-Scratch storage
----------------
+Parallel scratch storage
+------------------------
 
 Scratch storage is provided via the Lustre (Genius, wICE) and GPFS (Mindwell)
-parallel file systems. The table below lists all the scratch storage locations
-on the Tier-2 clusters.
+parallel file systems. The table below lists their properties and the
+associated environment variables.
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 | Variable              | Path                             | Type   | Access        |Backup | Default quota |
@@ -59,12 +59,6 @@ on the Tier-2 clusters.
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 |``$VSC_SCRATCH_SITE``  | ``$VSC_SCRATCH_LUSTRE``          | Lustre | Genius & wICE | No    | 500 GiB       |
 |                       | ``$VSC_SCRATCH_GPFS``            | GPFS   | Mindwell      |       |               |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|``$VSC_SCRATCH_NODE``  | ``/local_scratch``               | ext4   | Genius        | No    | 200 GiB       |
-+                       +----------------------------------+--------+---------------+-------+---------------+
-|                       | ``/tmp``                         | ext4   | wICE          | No    | 600 GiB       |
-+                       +----------------------------------+--------+---------------+-------+---------------+
-|                       | ``/tmp``                         | ext4   | Mindwell      | No    | 600 GiB       |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 
 .. note::
@@ -93,14 +87,6 @@ Lustre scratch on the nodes of Genius and wICE).
    In other words, compute jobs running on Genius and wICE have to use Lustre
    and jobs running on Mindwell have to use GPFS. Compute jobs that do not
    comply can be cancelled by the system administrators without prior notice.
-
-.. tip::
-
-   If you need temporary scratch that does not need to be shared across
-   compute nodes, you may also consider using the local node disks
-   (``$VSC_SCRATCH_NODE``), which has the advantage that no network traffic
-   is involved. The content of ``$VSC_SCRATCH_NODE`` is always removed when
-   the job ends and therefore results need to be copied elsewhere if needed.
 
 Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,3 +129,24 @@ to be inactive and automatically removed. A similar thing happens when using
 the ``cp`` command (without ``-a`` argument) should be used to copy files to the
 scratch directory, followed by removing the sources (if needed) using  the ``rm``
 command upon a successful transfer.
+
+Node scratch
+------------
+
+If your jobs require temporary storage that does not need to be shared across
+compute nodes, you may also consider using the local node disks:
+
++-----------------------+----------------------------------+--------+---------------+-------+---------------+
+|Variable               | Path                             | Type   | Access        |Backup | Default quota |
++=======================+==================================+========+===============+=======+===============+
+|``$VSC_SCRATCH_NODE``  | ``/tmp``                         | ext4   | Genius        | No    | 200 GiB       |
+|                       |                                  |        +---------------+       +---------------+
+|                       |                                  |        | wICE          |       | 600 GiB       |
+|                       |                                  |        +---------------+       +---------------+
+|                       |                                  |        | Mindwell      |       | 600 GiB       |
++-----------------------+----------------------------------+--------+---------------+-------+---------------+
+
+Though limited in storage capacity, ``$VSC_SCRATCH_NODE`` has the advantage
+that no network traffic is involved. The contents of this temporary storage
+location are always removed when the job ends. Results therefore need to be
+copied elsewhere if needed.
