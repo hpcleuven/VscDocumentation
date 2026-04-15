@@ -40,6 +40,8 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
 - quota for non-``vsc3*`` users are determined by the policy of the user's
   home institution.
 
+.. _leuven_scratch:
+
 Parallel scratch storage
 ------------------------
 

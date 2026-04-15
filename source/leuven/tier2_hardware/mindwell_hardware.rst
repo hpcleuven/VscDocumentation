@@ -54,13 +54,14 @@ Hardware details
 Storage
 -------
 
-As part of the :ref:`KU Leuven storage <KU Leuven storage>` infrastructure,
-a new parallel filesystem will be installed together with the cluster
-(IBM Storage Scale, 5.8 PB, connected over NDR).
-We will assign scratch storage on this new filesystem and also offer project storage
-(similar to the current `staging` storage).
-The compute nodes will also be connected to the existing Lustre filesystem (through an
-Infiniband HDR-100 network), so all your existing data will be accessible from the new cluster.
+A new parallel filesystem will be installed together with the cluster
+(IBM Storage Scale, 5.8 PB, connected over NDR). We will assign scratch storage
+on this new filesystem and also offer project storage (similar to the current
+`staging` storage). The compute nodes will also be connected to the existing
+Lustre filesystem (through an Infiniband HDR-100 network), so all your existing
+data will be accessible from the new cluster. Please read the
+:ref:`paragraph on the available scratch filesystems <leuven_scratch>`
+for more information.
 
 Additional highlights
 ---------------------
