@@ -15,7 +15,7 @@ Hardware details
   - 2 Intel Xeon Platinum 6972P CPUs\@2.4 GHz (Granite Rapids),
     96 cores each
   - 768 GiB RAM
-  - default memory per core is 3900 MiB
+  - default memory per core is 4000 MiB
   - 960 GB NVMe local disk
   - partitions ``batch_graniterapids|batch_graniterapids_long``
 
