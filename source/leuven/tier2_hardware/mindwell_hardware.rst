@@ -24,7 +24,7 @@ Hardware details
   - 2 Intel Xeon 6972P CPUs \@2.4 GHz (Granite Rapids),
     96 cores each
   - 1536 GiB RAM
-  - default memory per core is 8040 MiB
+  - default memory per core is 8000 MiB
   - 3840 GB NVMe local disk
   - partition ``bigmem``
 
@@ -33,7 +33,7 @@ Hardware details
   - 2 AMD EPYC 9655 CPUs \@2.6 GHz (Turin),
     96 cores each
   - 1536 GiB RAM
-  - default memory per core is 8040 MiB
+  - default memory per core is 8000 MiB
   - 8 NVIDIA B200 SXM6 (Blackwell),
     192 GiB GDDR, connected with NVLink
   - 960 GB NVMe local disk

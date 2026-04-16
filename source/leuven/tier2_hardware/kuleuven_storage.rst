@@ -145,5 +145,5 @@ compute nodes, you may also consider using the local node disks:
 
 Though limited in storage capacity, ``$VSC_SCRATCH_NODE`` has the advantage
 that no network traffic is involved. The contents of this temporary storage
-location are always removed when the job ends. Results therefore need to be
+location are always removed when the job ends. Therefore, results need to be
 copied elsewhere if needed.
