@@ -41,15 +41,8 @@ Applying for your VSC account
          as described above.
 
       *  Lecturers of KU Leuven and UHasselt that need HPC access for giving
-         their courses should be aware that the procedure requires action both
-         from the lecturers and from the students.
-         Students can simply apply for the account through the
-         :ref:`generic procedure <generic access procedure>` while lecturers
-         should follow the specific procedure outlined herein:
-
-         .. dropdown:: Lecturer’s procedure to request student accounts 
-
-            .. include:: lecturer_procedure_student_accounts_kuleuven_uhasselt.rst
+         their courses are encouraged to :ref:`request support for obtaining VSC accounts,
+         Slurm credits and compute and storage resources <hpc for education>`.
 
    .. tab-item:: UAntwerpen
       :sync: ua
