@@ -20,36 +20,7 @@
       #. reserving compute resources (only if neccessary and upon decision by site admins) 
       #. technical support during the trainings (either on-site or remote)
 
-      To start the procedure, follow the :ref:`practical steps for the lecturer <steps for lecturer>` below.
-
-   .. tab-item:: UAntwerpen
-      :sync: ua
-
-      To request HPC support for education, please contact the :ref:`UAntwerpen support team <contact VSC>`.
-      
-   .. tab-item:: UGent
-      :sync: ug
-
-      The procedure for requesting HPC support for education is elaborated in the
-      `UGent internal pages on teaching and training <https://docs.hpc.ugent.be/Windows/teaching_training/>`_.
-
-      
-   .. tab-item:: VUB
-      :sync: vub
-
-      To request HPC support for education, please contact the :ref:`VUB support team <contact VSC>`.
-
-
-.. _steps for lecturer:
-
-Practical steps for the lecturer
-================================
-
-.. tab-set::
-   :sync-group: vsc-sites
-
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+      To ask for support, follow the steps below:
 
        #. Submit a request to
           `hpcinfo@kuleuven.be <mailto:hpcinfo@kuleuven.be?subject=Accounts%20requests%20for%20students%20attending%20the%20course>`_
@@ -94,3 +65,21 @@ Practical steps for the lecturer
           (Putty, MobaXterm, Xming, FileZilla) is available in the PC class and/or on students laptops.
           For KU Leuven courses, please follow the procedure at
           https://icts.kuleuven.be/sc/pcklas/ictspcklassen (1 month before the beginning of the course).
+
+
+   .. tab-item:: UAntwerpen
+      :sync: ua
+
+      To request HPC support for education, please contact the :ref:`UAntwerpen support team <contact VSC>`.
+      
+   .. tab-item:: UGent
+      :sync: ug
+
+      The procedure for requesting HPC support for education is elaborated in the
+      `UGent internal pages on teaching and training <https://docs.hpc.ugent.be/Windows/teaching_training/>`_.
+
+      
+   .. tab-item:: VUB
+      :sync: vub
+
+      To request HPC support for education, please contact the :ref:`VUB support team <contact VSC>`.
