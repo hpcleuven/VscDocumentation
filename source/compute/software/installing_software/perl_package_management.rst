@@ -16,13 +16,11 @@ ensure that your code can be run on any platform that supports Perl.
 
 However, many useful extensions to and libraries for Perl come in the
 form of packages that can be installed separately. Some of those are part
-of the default installation on VSC infrastructure.
+of the Perl modules available on VSC infrastructure.
 
 Given the astounding number of packages, it is not sustainable to
-install each and everyone system wide. Since it is very easy for a user
-to install them just for himself, or for his research group, that is not
-a problem though. Do not hesitate to contact support whenever you
-encounter trouble doing so.
+install each and everyone system wide. :ref:`This section <perl-install-own-packages>`
+explains shows how users can install Perl packages themselves.
 
 Checking for installed Perl packages
 ------------------------------------
@@ -34,31 +32,43 @@ those in your ``PERL5LIB`` environment variable.
 
 #. Load the module for the Perl version you wish to use, e.g., ::
 
-      $ module load Perl/5.28.2-foss-2018a
+      $ module load Perl/5.40.0-GCCcore-14.2.0
 
-#. Run cpan: ::
+#. In general it is recommended to also load the corresponding
+   ``Perl-bundle-CPAN`` module, which makes a lot of Perl packages available
+   (note it is also sufficient to only load this module, since the correct
+   ``Perl`` module will be loaded automatically as a dependency) ::
+
+      $ module load Perl-bundle-CPAN/5.40.0-GCCcore-14.2.0
+
+#. Run cpan (this will provide a lot of output): ::
 
       $ cpan  -l
+
+.. _perl-install-own-packages:
 
 Installing your own Perl packages
 ---------------------------------
 
 Setting up your own package repository for Perl is straightforward. For
-this purpose, the ``cpan`` utility first needs to be configured. Replace
-the paths ``/user/leuven/301/vsc30140`` and ``/data/leuven/301/vsc30140``
-by the ones to your own home and data directories.
+this purpose, the ``cpan`` utility first needs to be configured.
 
-#. Load the appropriate Perl module, e.g., ::
+#. Load the appropriate Perl module(s), e.g., ::
 
-      $ module load Perl/5.28.2-foss-2018a
+      $ module load Perl-bundle-CPAN/5.40.0-GCCcore-14.2.0
 
 #. Create a directory to install in, i.e., ::
 
-      $ mkdir $VSC_DATA/perl5
+      $ mkdir ${VSC_DATA}/perl5
 
 #. Run cpan: ::
 
       $ cpan
+
+   The first time you run ``cpan`` it will propose to configure as much as
+   possible automatically. This should be largely fine, but be careful when
+   the script proposes to add environment variables to your ``~/.bashrc`` file,
+   since the steps below will still modify those variables.
 
 #. Configure internet access and mirror sites: ::
    
@@ -66,13 +76,11 @@ by the ones to your own home and data directories.
 
 #. Set the install base, i.e., directory created above: ::
 
-      cpan[2]> o conf makepl_arg INSTALL_BASE=/data/leuven/301/vsc30140/perl5
-
-   Note that you can not use an environment variable for the path.
+      cpan[2]> o conf makepl_arg INSTALL_BASE=${VSC_DATA}/perl5
 
 #. Set the preference directory path: ::
 
-      cpan[3]> o conf prefs_dir /user/leuven/301/vsc30140/.cpan/prefs
+      cpan[3]> o conf prefs_dir ${VSC_HOME}/.cpan/prefs
 
 #. Commit changes so that they are stored in ``~/.cpan/CPAN/MyConfig.pm``, i.e., ::
 
@@ -84,13 +92,16 @@ by the ones to your own home and data directories.
 
 Now Perl packages can be installed easily, e.g., ::
 
-   $ cpan IO::Scalar
+   $ cpan Acme::Meta
 
 Note that this will install all dependencies as needed, though you may
 be prompted.
 
-To effortlessly use locally installed packages, install the local::lib
-package first, and use the following code fragment in Perl scripts that
-depend on locally installed packages.  ::
+In order to make Perl pick up your locally installed packages, execute ::
 
-   use local::lib;
+   $ export PERL5LIB=${VSC_DATA}/perl5/lib/perl5:${PERL5LIB}
+   $ export PATH=${VSC_DATA}/perl5/bin:${PATH}
+
+After this you can use locally installed packages ::
+
+   $ perl -e "use Acme::Meta"
