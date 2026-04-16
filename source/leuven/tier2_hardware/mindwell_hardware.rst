@@ -59,9 +59,9 @@ A new parallel filesystem will be installed together with the cluster
 on this new filesystem and also offer project storage (similar to the current
 `staging` storage). The compute nodes will also be connected to the existing
 Lustre filesystem (through an Infiniband HDR-100 network), so all your existing
-data will be accessible from the new cluster. Please read the
-:ref:`paragraph on the available scratch filesystems <leuven_scratch>`
-for more information.
+data will be accessible from the new cluster. Please read more about the
+:ref:`available scratch filesystems <leuven_scratch>` for detailed information and
+best practices.
 
 Additional highlights
 ---------------------
