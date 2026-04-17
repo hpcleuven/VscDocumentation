@@ -12,11 +12,6 @@ VSC clusters:
 
 .. include:: clusters_mfa.rst
 
-.. note::
-
-   If you are connecting from abroad, it is necessary that you first authorize
-   your own connection on the `VSC Firewall`_
-
 Login to Open OnDemand
 ----------------------
 
@@ -32,6 +27,13 @@ Once that succeeds, you will automatically login to the Open OnDemand homepage.
 
 Connecting with an SSH agent
 ----------------------------
+
+.. note::
+
+   Additional access restrictions (for instance when connecting from abroad
+   or from a non-managed laptop) may apply, which require that you first
+   authorize your connection on the `VSC Firewall`_. See
+   :ref:`this page <auth_location_access_restrictions>` for more information.
 
 Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
 are made available to any other client program needing to use that same connection.

@@ -24,8 +24,11 @@ The access to both machines is possible
 Login infrastructure
 --------------------
 
-Direct login using SSH is possible to all login infrastructure without
-restrictions.
+.. note::
+
+   Restrictions apply for direct login using SSH. Make sure to read the
+   section on :ref:`access restrictions <auth_location_access_restrictions>`
+   before proceeding.
 
 You can access the KU Leuven Tier-2 either through ``login.hpc.kuleuven.be`` or
 ``login-genius.hpc.kuleuven.be``.
