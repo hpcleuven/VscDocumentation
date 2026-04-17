@@ -86,7 +86,11 @@ Login nodes (SSH)
 
 You can use SSH to connect to the login nodes of the Tier-1 **sofia** cluster with your VSC account:
 
-* from the public internet, use ``sofia.hpc.vub.be``
+* from within your Flemish university network, use ``sofia.hpc.vub.be``
+
+.. note::
+   If you are not inside a Flemish university network you can ssh into **sofia** from the login nodes
+   of your Tier-2 cluster. Do not forget to set up your ssh keys there or to forward your agent.
 
 More general information about SSH login is available in the
 :ref:`terminal
