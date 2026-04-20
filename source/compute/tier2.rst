@@ -37,7 +37,7 @@
    :maxdepth: 2
 
    /antwerp/tier2_hardware
-   /brussels/tier2_hardware
+   /brussel/tier2_hardware
    /gent/tier2_hardware
    /leuven/tier2_hardware
 

@@ -132,4 +132,4 @@ Configuration of FileZilla to connect to a login node
 Under the *'Advanced'* tab you can also set the directory you wish to open by
 default upon login.
 For example, setting your default path to your ``VSC_DATA`` directory can be done by
-providing its full path, like ``/data/brussels/100/vsc10000``.
+providing its full path, like ``/data/brussel/100/vsc10000``.

@@ -55,8 +55,7 @@ Software
 .. toctree::
    :maxdepth: 2
 
-   compute/software/parallel_software
-   compute/software/containers
+   compute/software/developing_software/parallel_software
 
 
 Tutorials and additional resources

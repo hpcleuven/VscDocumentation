@@ -47,4 +47,4 @@ their VSC account and access the VSC infrastructure:
    vsc_account
    authentication
    management
-
+   hpc_for_education
