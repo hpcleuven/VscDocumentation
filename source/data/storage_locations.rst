@@ -238,7 +238,7 @@ Each type of scratch has his own use:
   file simultaneously, e.g., through MPI parallel I/O.
   For most jobs, this is the best scratch system to use.
 
-**Site scratch ($VSC_SITE_SCRATCH)**
+**Site scratch ($VSC_SCRATCH_SITE)**
   A variant of the previous one, may or may not be the same. On
   clusters that have access to both a cluster-local scratch and
   site-wide scratch file system, this variable will point to the
@@ -263,4 +263,4 @@ Each type of scratch has his own use:
   We may or may not implement a VSC-wide scratch volume in the
   future, and the environment variable VSC_SCRATCH_GLOBAL is reserved
   to point to that scratch volume. Currently is just points to the same
-  volume as ``$VSC_SCRATCH`` or ``$VSC_SITE_SCRATCH``.
+  volume as ``$VSC_SCRATCH`` or ``$VSC_SCRATCH_SITE``.

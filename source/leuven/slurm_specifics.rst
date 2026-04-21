@@ -303,6 +303,10 @@ per GPU is provided in the table below.
      - ``gpu_h100``
      - 16
      - 187200
+   * - Mindwell
+     - ``gpu_b200``
+     - 24
+     - 194400
 
 If a job requests more cores or memory per GPU than listed above, you will receive a
 warining message.
