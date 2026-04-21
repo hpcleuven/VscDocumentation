@@ -11,8 +11,16 @@ sofia @ VUB-HPC
 General information
 -------------------
 
+.. important::
+
+   **sofia** is currently in **pilot phase**. No starting grants or full
+   project grants will be issued. The VUB-HPC team is working hard to make it
+   production-ready. If all goes well, the cluster will be open for starting
+   grant applications by May 2026, and for full project applications by June
+   2026.
+
 **sofia** is the 4th VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016),
-*BrENIAC* (hosted by HPC-Leuven, 2016-2022) and *Hortense* (hosted by HPC-Ugent, 2021-2026).
+*BrENIAC* (hosted by HPC-Leuven, 2016-2022) and *Hortense* (hosted by HPC-Ugent, 2021-2027).
 
 It will be available in the second half of 2026, is hosted by Vrije Universiteit Brussel,
 and maintained and supported by the VUB-HPC team.
@@ -25,23 +33,23 @@ Hardware details
 The **sofia** cluster consists of the following partitions:
 
 - ``zen5_dense``: CPU partition:
-   - 56 workernodes, each with:
+   - 56 compute nodes, each with:
        - 2x AMD EPYC 9965 192-Core CPU (Turin Dense) 2.25 GHz ("Zen 5c" microarchitecture, 384 cores per node)
        - 770 GiB usable RAM (~2 GiB/core), 7.6 GiB swap (local SSD)
        - 1.4 TiB SSD local disk
 - ``zen5_himem``: large-memory partition:
-   - 16 workernodes, each with:
+   - 16 compute nodes, each with:
        - 2x AMD EPYC 9655 96-Core CPU (Turin) 2.6 GHz ("Zen 5" microarchitecture, 192 cores per node)
        - 1.5 TiB usable RAM (~8 GiB/core), 7.6 GiB swap (local SSD)
        - 1.4 TiB SSD local disk
 - ``zen4_h200``: GPU partition:
-   - 22 workernodes, each with:
+   - 22 compute nodes, each with:
        - 2x AMD EPYC 9654 96-Core CPU (Genoa) 2.4 GHz (192 cores per node)
        - 8x NVIDIA H200-SXM5 (141 GiB GPU memory), Nvlink4
        - 1.5 TiB usable RAM (~8 GiB/CPU core), 7.6 GiB swap (local SSD)
        - 1.4 TiB SSD local disk
 - ``zen5_vis``: interactive and debug partition:
-   - 4 workernodes, each with:
+   - 4 compute nodes, each with:
        - 2x AMD EPYC 9655 96-Core CPU (Turin) 2.6 GHz ("Zen 5" microarchitecture, 192 cores per node)
        - 2x NVIDIA RTX 5000 Ada Generation (32 GiB GPU memory)
        - 1.5 TiB usable RAM (~8 GiB/CPU core), 7.6 GiB swap (local SSD)
@@ -49,7 +57,7 @@ The **sofia** cluster consists of the following partitions:
 
 Shared infrastructure:
 
-- *storage*: 4.3 PiB shared scratch storage, IBM Storage Scale System;
+- *storage*: 4.3 PiB shared scratch storage, IBM Storage Scale System
 - *interconnect*: NVIDIA Quantum-2 InfiniBand, fat tree network with 2:1 blocking
    - ~400 Gb/s for GPU and large-memory partition
    - ~200 Gb/s for CPU partition
@@ -86,32 +94,34 @@ Login nodes (SSH)
 
 You can use SSH to connect to the login nodes of the Tier-1 **sofia** cluster with your VSC account:
 
-* from within your Flemish university network, use ``sofia.hpc.vub.be``
+From within the Flemish university network, use your VSC-id to connect to ``sofia.hpc.vub.be``.
 
 .. note::
-   If you are not inside a Flemish university network you can ssh into **sofia** from the login nodes
-   of your Tier-2 cluster. Do not forget to set up your ssh keys there or to forward your agent.
+   If you are not inside the Flemish university network you can ``ssh`` into **sofia** from the login nodes
+   of your Tier-2 cluster. Do not forget to set up your SSH keys there or to forward your SSH agent.
 
 More general information about SSH login is available in the
 :ref:`terminal
 interface` section. Note that for access from abroad an extra step is needed. See the VUB tab at
 :ref:`location_access_restrictions`.
 
-There are 2 login nodes for **sofia**: ``login01`` and ``login02``, both having Rocky Linux release 9.7 as operating system.
+There are 2 login nodes for **sofia**: ``login01`` and ``login02``, both running the Rocky Linux release 9.7 operating system.
 When logging in using SSH, you will be assigned to either of these login nodes,
 based on the IP address of the host you are connecting from.
 
 If you need to access a *specific* login node (for example because you have a ``screen`` or ``tmux`` session
 running there), just run "``ssh login01``" to jump to ``login01`` if you were logged in to ``login02``,
-or vice versa. Make sure your ssh keys are properly configured or forwarded.
+or vice versa. Make sure your SSH keys are properly configured or forwarded.
 
 .. note::
-  The available resources on the **sofia** login nodes are shared by everyone that is logged in there.
+  The available resources on the **sofia** login nodes are shared by everyone who is logged in there.
 
   **Please only use the sofia login nodes as an access portal!**
 
   For resource-intensive interactive tasks, like software compilation, testing software or job scripts, etc.,
-  please use an interactive job, either via ``salloc`` and in the future through the :ref:`sofia_web_portal`.
+  please use an interactive job, preferentially on the ``zen5_vis`` partition,
+  either via ``salloc -p zen5_vis`` or in the future through the
+  :ref:`sofia_web_portal`.
 
 .. _sofia_login_nodes_host_keys:
 
@@ -121,6 +131,8 @@ Host keys
 The first time you log in to the **sofia** login nodes, a fingerprint of the host key will be shown.
 Before confirming the connection, verify the correctness of the host key, to ensure you are
 connecting to the correct system.
+
+The type of fingerprint that will be shown depends on the version and configuration of your SSH client.
 
 **Please verify that the fingerprint of the host key is *one* of the following**:
 
@@ -139,14 +151,12 @@ connecting to the correct system.
   * ``5e:2e:21:11:c6:8e:1e:1f:c9:7c:d2:38:c7:f6:f9:35`` (MD5)
   * ``vS9fAoDO52dWCXS/obPS5u95irhJiKo1PfV4dyJl2Mg`` (SHA256)
 
-The type of fingerprint that will be shown depends on the version and configuration of your SSH client.
-
 .. _sofia_web_portal:
 
 Web portal
 **********
 
-The **sofia** web portal will not yet be available during the pilot phase.
+The **sofia** web portal is not yet be available during the pilot phase.
 
 More information about the usage of the web portal is available at :ref:`compute portal`.
 
@@ -155,7 +165,7 @@ More information about the usage of the web portal is available at :ref:`compute
 sofia scratch via Globus
 ************************
 
-Accessing the **sofia** scratch via Globus will not yet be possible during the pilot phase.
+Accessing the **sofia** scratch via Globus is not yet possible during the pilot phase.
 
 More general information about Globus is available at :ref:`globus platform`.
 
@@ -165,6 +175,6 @@ Getting help
 -------------
 
 For questions and problems related to Tier-1 **sofia**, please contact the central
-support address for Tier-1 support: `support@vscentrum.be <mailto:support@vscentrum.be>`_.
+support address for Tier-1 support: `vsc-support@hpc.vub.be <mailto:vsc-support@hpc.vub.be>`_.
 
 Questions regarding Tier-1 Hortense will need to go to: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
