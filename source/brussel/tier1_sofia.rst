@@ -1,3 +1,13 @@
+.. grid:: 2
+
+   .. grid-item::
+       .. image:: images/sofia.png
+          :width: 100%
+
+   .. grid-item::
+       .. image:: images/sofia-sun.png
+          :width: 90%
+
 .. _sofia cluster:
 
 sofia @ VUB-HPC
