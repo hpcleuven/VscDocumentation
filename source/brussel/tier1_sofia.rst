@@ -160,6 +160,19 @@ The **sofia** web portal is not yet be available during the pilot phase.
 
 More information about the usage of the web portal is available at :ref:`compute portal`.
 
+Storage
+*******
+
+Similar to *Hortense*, the user’s ``$HOME`` directory is located on the scratch
+file system and is distinct from the user’s ``$VSC_HOME``.  The advantage of
+this setup is that **sofia** remains accessible even if the user’s home
+institution cluster is down.
+
+The :ref:`storage hardware`, specifically ``$VSC_HOME`` and ``$VSC_DATA``, is accessible, but **only on the
+login nodes**, and **only during the pilot phase**. These will be removed after
+the pilot phase concludes. We highly recommend using :ref:`Globus <sofia_scratch_globus>`
+for file transfer between **sofia** and Tier-2 storage.
+
 .. _sofia_scratch_globus:
 
 sofia scratch via Globus
