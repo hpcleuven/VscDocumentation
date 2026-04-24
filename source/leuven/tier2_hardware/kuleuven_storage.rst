@@ -78,6 +78,8 @@ Lustre scratch on the nodes of Genius and wICE).
    Non-``vsc3*`` users need to `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
    to receive scratch storage, as it is not set up by default.
 
+.. _leuven_lustre_gpfs_transfer:
+
 Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

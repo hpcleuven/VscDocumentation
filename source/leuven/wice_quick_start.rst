@@ -22,7 +22,7 @@ The resource specifications for jobs have to be tuned to use these nodes properl
 
 In general, the maximum walltime for wICE jobs is 3 days (72 hours).
 Only jobs submitted to the ``*_long`` partitions are allowed to have
-walltimes up to  7 days (168 hours), as will be illustrated below.
+walltimes up to 7 days (168 hours), as will be illustrated below.
 
 Similar to Genius, wICE uses Slurm as the workload manager.
 A Slurm jobscript for wICE will typically look like this:
@@ -153,7 +153,7 @@ If you e.g. need one A100 GPU and two CPU cores::
 
 You are free to request more GPU devices and/or CPU cores if needed,
 but take note of the :ref:`limits on CPU resources per allocated GPU
-<cpu_resource_limits_in_gpu_jobs>`).
+<cpu_resource_limits_in_gpu_jobs>`.
 
 There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
 per node) which you can select via the ``gpu_h100`` partition, e.g.::
