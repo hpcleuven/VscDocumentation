@@ -3,9 +3,9 @@
 Mindwell hardware
 =================
 
-Before mid 2026, a new cluster will be added to the KU Leuven/UHasselt's Tier-2 infrastructure.
-In line with its predecessor :ref:`wICE <wice hardware>`, it will feature thin nodes,
-large memory nodes, interactive nodes and GPU nodes.
+The KU Leuven / UHasselt Tier-2 cluster *Mindwell* is planned to enter
+production around mid 2026. Mindwell contains thin nodes, large memory
+nodes and GPU nodes.
 
 Hardware details
 ----------------

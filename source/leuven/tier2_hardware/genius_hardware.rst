@@ -8,8 +8,8 @@ Genius hardware
 
    memory_bandwidth_and_latency_genius.rst
 
-Genius is one of KU Leuven/UHasselt's Tier-2 clusters, which is in production
-since 2018. It has thin nodes, large memory nodes, as well as GPU nodes.
+The KU Leuven / UHasselt Tier-2 cluster *Genius* has been in production
+since 2018. Genius contains thin nodes, large memory nodes and GPU nodes.
 
 .. note::
 
