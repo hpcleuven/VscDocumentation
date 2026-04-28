@@ -57,8 +57,8 @@ with its own (GPFS based) scratch storage:
 | Variable              | Path                             | Type   | Access        |Backup | Default quota |
 +=======================+==================================+========+===============+=======+===============+
 |``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Genius, wICE  | No    | 500 GiB       |
-|                       |                                  +--------+---------------+       |               |
-|                       |                                  | GPFS   | Mindwell      |       |               |
+|                       |                                  +--------+---------------+-------+---------------+
+|                       |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 
 On each node, the ``$VSC_SCRATCH`` environment variable will point to the
