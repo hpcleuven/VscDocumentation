@@ -84,8 +84,19 @@ Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To facilitate data transfers between the Lustre and GPFS storage,
-Lustre is accessible from Mindwell and GPFS is accessible from Genius and
-wICE. Two more environment variables (``$VSC_SCRATCH_LUSTRE1`` and
+Lustre is accessible from Mindwell and GPFS is accessible from wICE.
+
+.. note::
+
+   GPFS can currently not be accessed from the login nodes and the Genius
+   compute nodes. This will change when the nodes have been migrated to Rocky 9,
+   which is scheduled for the beginning of June. In the meantime you may carry
+   out your data transfers using (interactive or batch) jobs on, for example,
+   the ```interactive``` partitions of
+   :ref:`wICE <submit to wice interactive node>` or
+   :ref:`Mindwell <submit to mindwell interactive node>`.
+
+Two more environment variables (``$VSC_SCRATCH_LUSTRE1`` and
 ``$VSC_SCRATCH_GPFS1``) have been defined for this purpose, so that you can
 easily find the mount location of your scratch directory on the "other"
 parallel file system.
