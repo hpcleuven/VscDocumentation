@@ -134,6 +134,9 @@ e.g. data visualization.
    batch jobs since these will result in fewer idling resources
    compared to interactive jobs.
 
+.. note::
+
+   Jobs on the ``interactive`` partition do not consume any credits.
 
 .. _submit_genius_gpu:
 
