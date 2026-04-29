@@ -114,6 +114,9 @@ for walltimes up to 16 hours.
    we recommend to use batch jobs since these will result in fewer idling
    resources compared to interactive jobs.
 
+.. note::
+
+   Jobs on the ``interactive`` partition do not consume any credits.
 
 .. _submit to mindwell big memory node:
 

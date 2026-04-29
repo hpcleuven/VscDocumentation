@@ -116,6 +116,9 @@ Users are allowed to request a maximum of 8 cores, one A100 GPU instance
    batch jobs since these will result in fewer idling resources
    compared to interactive jobs.
 
+.. note::
+
+   Jobs on the ```interactive``` partition do not consume any credits.
 
 .. _submit to wice big memory node:
 
