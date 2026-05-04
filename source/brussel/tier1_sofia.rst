@@ -183,6 +183,13 @@ login nodes**, and **only during the pilot phase**. These will be removed when
 the pilot phase concludes. We highly recommend using :ref:`Globus <sofia_scratch_globus>`
 for file transfer between **sofia** and Tier-2 storage.
 
+Each node also provides local storage at ``/tmp``, ``/var/tmp`` or ``/dev/shm``.
+
+.. note::
+
+   Local storage is temporary. While the login nodes also provide local storage, any data
+   stored there gets permanently destroyed when logging out.
+
 .. _sofia_scratch_globus:
 
 sofia scratch via Globus
