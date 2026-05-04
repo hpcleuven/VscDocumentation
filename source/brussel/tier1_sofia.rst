@@ -188,7 +188,8 @@ Each node also provides local storage at ``/tmp``, ``/var/tmp`` or ``/dev/shm``.
 .. note::
 
    Local storage is temporary. While the login nodes also provide local storage, any data
-   stored there gets permanently destroyed when logging out.
+   stored there gets permanently destroyed when logging out. On the worker nodes data gets
+   removed once your job terminates.
 
 .. _sofia_scratch_globus:
 
