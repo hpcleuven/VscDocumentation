@@ -183,17 +183,6 @@ login nodes**, and **only during the pilot phase**. These will be removed when
 the pilot phase concludes. We highly recommend using :ref:`Globus <sofia_scratch_globus>`
 for file transfer between **sofia** and Tier-2 storage.
 
-Each node in the cluster, including the login nodes, provides local non-shared storage for temporary data:
-
-* Temporary storage on local node hard drive: ``$VSC_SCRATCH_NODE``, ``$TMPDIR``, ``/tmp`` and ``/var/tmp``;
-* Temporary storage on local node memory (RAM): ``/dev/shm``.
-
-.. note::
-
-   Data placed in any of these temporary storage locations will be **deleted
-   at the end of the active session**. For compute nodes this is at the end
-   of your job and for login nodes whenever you log out of the cluster.
-
 .. _sofia_scratch_globus:
 
 sofia scratch via Globus
