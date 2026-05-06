@@ -5,8 +5,8 @@ Pageant
 #######
 
 Pageant is an SSH authentication agent that couples seamlessly with
-:ref:`Putty<terminal putty>`, :ref:`MobaXterm<terminal mobaxterm>`,
-:ref:`NoMachine<NX start guide>` and :ref:`FileZilla<FileZilla>` to make user
+:ref:`Putty<terminal putty>`, :ref:`MobaXterm<terminal mobaxterm>`
+and :ref:`FileZilla<FileZilla>` to make user
 authentication an easy task. As of version 0.78, Pageant can also hold SSH
 certificates in addition to SSH private keys.
 
@@ -148,7 +148,7 @@ authenticate you as a recognized user.
       You can now open as many PuTTY sessions as you like without having to
       type your passphrase again.
 
-Pageant provides your credentials to other applications (such as PuTTY, NoMachine,
+Pageant provides your credentials to other applications (such as PuTTY,
 FileZilla, MobaXterm) whenever you are prompted for your identity.
 
 Stopping Pageant
