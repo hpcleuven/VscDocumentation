@@ -30,7 +30,6 @@ access/managing_disk_usage.html /accounts/managing_disk_usage.html
 access/messed_up_keys.html /accounts/messed_up_keys.html
 access/mfa_login.html /accounts/mfa_login.html
 access/multiplatform_client_tools.html /compute/terminal/index.html
-access/nx_start_guide.html /compute/terminal/nx_start_guide.html
 access/scientific_domains.html /accounts/scientific_domains.html
 access/setting_up_a_ssh_proxy.html /accounts/setting_up_a_ssh_proxy.html
 access/setting_up_a_ssh_proxy_with_putty.html /compute/terminal/putty_ssh_proxy.html
