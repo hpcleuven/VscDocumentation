@@ -127,7 +127,6 @@ SSH Client name                        Purpose              Operating System
 :ref:`OpenSSH <OpenSSH access>`        text-based terminal  Linux, macOS
 :ref:`PuTTY <terminal putty>`          text-based terminal  Windows
 :ref:`MobaXterm <terminal mobaxterm>`  text-based terminal  Windows
-:ref:`NoMachine <NX start guide>`      graphical desktop    Windows, Linux, macOS
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
 
@@ -142,8 +141,8 @@ an :ref:`ssh agent`. Keep in mind, however, that this approach tends to be
 less convenient since each new connection will require multi-factor
 authentication.
 
-Certain clients (such as :ref:`FileZilla <FileZilla>`, ``sshfs`` or
-:ref:`NoMachine <NX start guide>`) furthermore do not show you the firewall
+Certain clients (such as :ref:`FileZilla <FileZilla>` or ``sshfs``)
+furthermore do not show you the firewall
 link needed for the MFA and hence can only function in combination with an SSH
 agent holding an SSH certificate.
 

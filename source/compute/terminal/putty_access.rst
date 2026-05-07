@@ -207,9 +207,8 @@ At this point, we highly recommend setting up an :ref:`ssh agent`. A widely
 used SSH agent is :ref:`Pageant` which is installed automatically with PuTTY.
 
 Pageant can be used to manage SSH keys and certificates for multiple clients,
-such as PuTTY, :ref:`WinSCP<WinSCP transfer>`, :ref:`FileZilla<FileZilla>`,
-as well as the :ref:`NX client for Windows<NX start guide>` so that you don't
-need to enter the passphrase all the time.
+such as PuTTY, :ref:`WinSCP<WinSCP transfer>` and :ref:`FileZilla<FileZilla>`,
+so that you don't need to enter the passphrase all the time.
 
 :ref:`pageant`
 

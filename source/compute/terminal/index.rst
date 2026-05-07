@@ -109,7 +109,6 @@ graphics on local or remote screens.
    :hidden:
 
    Xming X Server <windows_xming>
-   NoMachine NX <nx_start_guide>
 
 .. tab-set::
    :sync-group: operating-system
@@ -176,7 +175,7 @@ want to use:
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      On the KUL clusters, users can use NX :ref:`NX start guide`.
+      On the KUL clusters, users can use :ref:`Open OnDemand <ood>`
 
    .. tab-item:: UAntwerpen
       :sync: ua

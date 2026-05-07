@@ -445,8 +445,6 @@ rst_prolog += """
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
-.. _NoMachine: https://www.nomachine.com/
-.. _NX Client download: https://download.nomachine.com/enterprise/?product=enterprise-client
 .. _ollama: https://ollama.com
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
