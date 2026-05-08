@@ -225,9 +225,6 @@ twofold:
   between different hardware architectures, ensuring access to the correct and
   optimized software.
 
-Propageting specific environment variables to your job can be done with the
-``--export=<environment_variables>`` option.
-
 If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
 <https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
