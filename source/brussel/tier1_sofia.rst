@@ -203,6 +203,35 @@ Accessing the **sofia** scratch via Globus is not yet possible during the pilot 
 
 More general information about Globus is available at :ref:`globus platform`.
 
+.. _sofia_job_submission:
+
+Job submission
+--------------
+
+sofia uses the :ref:`Slurm job scheduler <running jobs>` . Only Slurm-native
+commands are supported for managing your jobs.
+
+.. _sofia_job_environment:
+
+Job environment
+***************
+
+In sofia, both batch and interactive jobs start in a clean environment. This
+differs from the default Slurm behavior (``--export=ALL``). The reason is
+twofold:
+
+* reproducibility: it ensures your jobs run consistently regardless of your current shell state
+* architecture alignment: it forces software modules to reload when moving
+  between different hardware architectures, ensuring access to the correct and
+  optimized software.
+
+Propagating specific environment variables to your job can be done with the
+``--export=<environment_variables>`` option.
+
+If your workflow requires your full shell environment to be propagated, please
+refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
+<https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
+
 .. _sofia_help:
 
 Getting help
