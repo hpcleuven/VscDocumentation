@@ -232,6 +232,22 @@ If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
 <https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
 
+Job memory
+**********
+
+The CPU memory allocated to Slurm jobs scales linearly with the
+number of allocated CPU cores. See :ref:`sofia_hardware_details` for the
+memory per core available in each partition.
+
+All jobs must use the default memory allocation. Memory overrides ``--mem``,
+``--mem-per-cpu``, and ``--mem-per-gpu`` are not allowed and will cause a job
+submission error.
+
+This policy avoids situations where CPU cores are available but cannot be
+allocated because insufficient memory remains available on the node. It also
+helps keep benchmark results representative of production runs by ensuring that
+all jobs follow the same linear memory-per-core allocation.
+
 .. _sofia_help:
 
 Getting help
