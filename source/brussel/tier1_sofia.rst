@@ -23,11 +23,11 @@ General information
 
 .. important::
 
-   **sofia** is currently in **pilot phase**. No starting grants or full
-   project grants will be issued. The VUB-HPC team is working hard to make it
-   production-ready. If all goes well, the cluster will be open for starting
-   grant applications by May 2026, and for full project applications by June
-   2026.
+   **sofia** is currently in **pilot phase**. The VUB-HPC team is working hard
+   to make it production-ready.  If all goes well, the cluster will be open for
+   full project applications by June 1, 2026.  Please contact :ref:`Tier-1
+   support <sofia_help>` if you would like access to run benchmarks in
+   preparation for the June 1 application cutoff.
 
 **sofia** is the 4th VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016),
 *BrENIAC* (hosted by HPC-Leuven, 2016-2022) and *Hortense* (hosted by HPC-Ugent, 2021-2027).
@@ -231,6 +231,22 @@ Propagating specific environment variables to your job can be done with the
 If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
 <https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
+
+Job memory
+**********
+
+The CPU memory allocated to Slurm jobs scales linearly with the
+number of allocated CPU cores. See :ref:`sofia_hardware_details` for the
+memory per core available in each partition.
+
+All jobs must use the default memory allocation. Memory overrides ``--mem``,
+``--mem-per-cpu``, and ``--mem-per-gpu`` are not allowed and will cause a job
+submission error.
+
+This policy avoids situations where CPU cores are available but cannot be
+allocated because insufficient memory remains available on the node. It also
+helps keep benchmark results representative of production runs by ensuring that
+all jobs follow the same linear memory-per-core allocation.
 
 .. _sofia_help:
 
