@@ -84,17 +84,9 @@ Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To facilitate data transfers between the Lustre and GPFS storage,
-Lustre is accessible from Mindwell and GPFS is accessible from wICE.
-
-.. note::
-
-   GPFS can currently not be accessed from the login nodes and the Genius
-   compute nodes. This will change when the nodes have been migrated to Rocky 9,
-   which is scheduled for the beginning of June. In the meantime you may carry
-   out your data transfers using (interactive or batch) jobs on, for example,
-   the ```interactive``` partitions of
-   :ref:`wICE <submit to wice interactive node>` or
-   :ref:`Mindwell <submit to mindwell interactive node>`.
+Lustre is accessible from Mindwell and GPFS is accessible from wICE
+and from the (Genius) login nodes. Note that GPFS is not reachable
+from the Genius *compute* nodes.
 
 Two more environment variables (``$VSC_SCRATCH_LUSTRE1`` and
 ``$VSC_SCRATCH_GPFS1``) have been defined for this purpose, so that you can
@@ -112,14 +104,17 @@ you could go about it as follows:
    # If initiating the transfer from Mindwell:
    cp ${VSC_SCRATCH_LUSTRE1}/myfile ${VSC_SCRATCH}
 
-As a best practice, data transfers between Lustre and GPFS should be performed through
-'transfer' jobs, where you for example only request a few cores on an ``interactive`` partition.
+As a best practice, data transfers between Lustre and GPFS should be performed
+through 'transfer' jobs submitted to, for example, the ``interactive``
+partition of :ref:`wICE <submit to wice interactive node>` or
+:ref:`Mindwell <submit to mindwell interactive node>`.
 Short transfers which don't take more than a couple of minutes can also
 be performed from a Genius login node.
 
-Globus endpoints are available for Lustre, but not yet for GPFS. It is
-therefore not yet possible to use :ref:`Globus <globus platform>` for these
-data transfers.
+Globus endpoints have been defined on both Lustre and GPFS filesystems,
+so you can use the :ref:`globus platform` for these data transfers.
+For transferring large volumes of data (> 1 TB), however, we recommend using
+'transfer' jobs instead of Globus for performance reasons.
 
 Automatic scratch cleanup
 ^^^^^^^^^^^^^^^^^^^^^^^^^
