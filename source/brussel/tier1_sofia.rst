@@ -208,8 +208,11 @@ More general information about Globus is available at :ref:`globus platform`.
 Job submission
 --------------
 
-sofia uses the :ref:`Slurm job scheduler <running jobs>` . Only Slurm-native
+**sofia** uses the :ref:`Slurm job scheduler<running jobs>`. Only Slurm-native
 commands are supported for managing your jobs.
+
+Users must specify a Slurm partition when submitting jobs. Loading a
+``cluster`` module is not required.
 
 .. _sofia_job_environment:
 
@@ -232,6 +235,8 @@ If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
 <https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
 
+.. _sofia_job_memory:
+
 Job memory
 **********
 
@@ -247,6 +252,20 @@ This policy avoids situations where CPU cores are available but cannot be
 allocated because insufficient memory remains available on the node. It also
 helps keep benchmark results representative of production runs by ensuring that
 all jobs follow the same linear memory-per-core allocation.
+
+.. _sofia_job_gpu:
+
+GPU jobs
+********
+
+In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
+``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
+that do not follow this ratio will be rejected.
+
+This policy avoids situations where GPU credits are available but cannot be used
+because there are insufficient CPU credits. It also helps keep benchmark results
+representative of production runs by ensuring that all jobs use the same
+core-to-GPU ratio.
 
 .. _sofia_help:
 
