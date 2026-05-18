@@ -12,7 +12,7 @@ nodes and GPU nodes.
    All vsc3 users can now try out Mindwell for free by submitting
    jobs using the "lp_mindwell_pilot" credit account.
 
-   Mindwell is planned to enter production on Monday June 22.
+   Mindwell is planned to enter production on Monday June 15.
    From that point onwards, you will need to use your regular
    credit accounts to run on Mindwell.
 
