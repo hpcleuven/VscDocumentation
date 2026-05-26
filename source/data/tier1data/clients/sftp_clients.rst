@@ -16,7 +16,7 @@ the STFP server.
 
 With SFTP, users can transfer files stored in the Tier-1 Data service
 directly to and from their local files. In other words, users can access
-their project collections in the MTier-1 Data service from their local
+their project collections in the Tier-1 Data service from their local
 computers using any SFTP-enabled client applications such as OS built-in
 command-line tool, Cyberduck, WinSCP, and FileZilla. Moreover, some SFTP
 clients allow to mount the Tier-1 Data service as a virtual folder to their
@@ -27,7 +27,7 @@ Windows machines.
 SSH Certificate
 ****************
 
-SSH certificates are required for authenticating SFTP connections to the Tier-1 Data system. For each new connection, the SSH client must present SSH certificates are required for authenticating SFTP connections to the Tier-1 Data service. For each new connection, the SSH client must present a user certificate signed by VSCentrum. 
+SSH certificates are required to authenticate SFTP connections to the Tier-1 Data service. For each new connection, the SSH client must present a user certificate signed by VSCentrum. 
 
 To obtain your SSH certificate, please follow the instructions from the following `link <https://docs.vscentrum.be/accounts/mfa_login.html#connecting-with-an-ssh-agent>`__.
 
@@ -87,7 +87,7 @@ SFPT session in the Tier-1 Data service.
    lftp -u yourUserName, sftp://rdmsftp.icts.kuleuven.be
 
 You will be presented with the lftp prompt. You can type ``help`` to get
-list of available command and their usage.
+list of available commands and their usage.
 
 *************************************
 Connections to Tier-1 Data Using GUI
@@ -270,7 +270,7 @@ environments. To this end the ``sshfs`` command is used. It is a client
 tool for using SSHFS (SSH Filesystem) to mount a remote file system (the
 Tier-1 Data system) locally on your machine.
 
-First of all ``sshfs`` needs to be installed if it doesnt already exists
+First of all ``sshfs`` needs to be installed if it does not already exist
 in your machine. You can check this by runnig ``sshfs --version``. The
 sshfs tool is available from most distributions' standard repositories
 and is most easily installed using that distribution's package manager.
@@ -278,15 +278,20 @@ and is most easily installed using that distribution's package manager.
 Once sshfs is installed, mounting a remote file system safely over SSH
 is as follows.
 
-First specify a mount point or create a new one.
+First, specify an existing mount point or create a new one.
 
 .. code:: sh
 
    mkdir myMountPoint
 
+
+Then, execute the following command to initiate the mount.
+
+
 .. code:: sh
 
    sshfs yourUserName@rdmsftp.icts.kuleuven.be:/ myMountPoint
+
 
 You can now list your mount point to see the existing objects in your
 remote - the ManGO platform - locally.
