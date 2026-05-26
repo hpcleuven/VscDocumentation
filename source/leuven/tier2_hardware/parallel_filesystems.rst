@@ -70,7 +70,7 @@ Setup of parallel filesystems
 -----------------------------
 
 Since mid 2026, there are two parallel file systems in use on the KU Leuven/
-UHasselt Tier-2 clusters:
+UHasselt Tier-2 clusters Mindwell and wICE (for Genius the wICE information applies):
 
 - The ``Lustre1`` file system
 
@@ -220,6 +220,6 @@ post-processing in there. Such a synchronization is preferably done in a job
 requesting a moderate amount of cores and should not be done *too* often, since
 it results in cross-cluster parallel file system access. Also take into
 account that this results in data duplication, which not only consumes
-precious disk space unnecessary, but also requires careful management from
+precious disk space unnecessarily, but also requires careful management from
 your side. Only use this method if no other methods suit your workflow and if
 you are prepared to carefully manage your data!
