@@ -6,7 +6,7 @@
 
    .. grid-item::
        .. image:: images/sofia-sun.png
-          :width: 90%
+          :width: 88%
 
 .. _sofia cluster:
 
