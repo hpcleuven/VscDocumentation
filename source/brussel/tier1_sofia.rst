@@ -262,10 +262,10 @@ In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
 ``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
 that do not follow this ratio will be rejected.
 
-This policy avoids situations where GPU credits are available but cannot be used
-because there are insufficient CPU credits. It also helps keep benchmark results
-representative of production runs by ensuring that all jobs use the same
-core-to-GPU ratio.
+This policy avoids situations where GPUs are available but cannot be allocated
+because insufficient CPU cores available on the node. It also helps keep
+benchmark results representative of production runs by ensuring that all jobs
+use the same core-to-GPU ratio.
 
 .. _sofia_help:
 
