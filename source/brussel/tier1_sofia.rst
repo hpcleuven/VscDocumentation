@@ -171,17 +171,26 @@ The **sofia** web portal is not yet be available during the pilot phase.
 More information about the usage of the web portal is available at :ref:`compute portal`.
 
 Storage
-*******
+-------
+
+Home directory
+**************
 
 Similar to *Hortense*, the user’s ``$HOME`` directory is located on the scratch
 file system and is distinct from the user’s ``$VSC_HOME``.  The advantage of
 this setup is that **sofia** remains accessible even if the user’s home
 institution cluster is down.
 
+$VSC_HOME and $VSC_DATA
+***********************
+
 The :ref:`storage hardware`, specifically ``$VSC_HOME`` and ``$VSC_DATA``, is accessible, but **only on the
 login nodes**, and **only during the pilot phase**. These will be removed when
 the pilot phase concludes. We highly recommend using :ref:`Globus <sofia_scratch_globus>`
 for file transfer between **sofia** and Tier-2 storage.
+
+Node-local scratch and in-memory storage
+****************************************
 
 Each node in the cluster, including the login nodes, provides local non-shared storage for temporary data:
 
@@ -199,7 +208,7 @@ Each node in the cluster, including the login nodes, provides local non-shared s
 sofia scratch via Globus
 ************************
 
-Accessing the **sofia** scratch via Globus is not yet possible during the pilot phase.
+Accessing the **sofia** shared scratch storage via Globus is not yet possible during the pilot phase.
 
 More general information about Globus is available at :ref:`globus platform`.
 
@@ -219,7 +228,7 @@ Users must specify a Slurm partition when submitting jobs. Loading a
 Job environment
 ***************
 
-In sofia, both batch and interactive jobs start in a clean environment. This
+In **sofia**, both batch and interactive jobs start in a clean environment. This
 differs from the default Slurm behavior (``--export=ALL``). The reason is
 twofold:
 
