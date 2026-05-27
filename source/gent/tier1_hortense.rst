@@ -71,7 +71,7 @@ Hortense consists of the following partitions:
 
 Shared infrastructure:
 
-- *storage*: 5.4 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
+- *storage*: 5.4 PB shared scratch storage, based on `Lustre`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
 - *interconnect*: InfiniBand HDR-100 (~12.5GB/sec), 2:1 fat tree topology
 
   - for the GPU partition specifically: dual HDR Infiniband
@@ -361,7 +361,7 @@ Scratch storage quota usage
 Accessing data via ``/readonly``
 ********************************
 
-Due to the fairly aggressive page cache purging policy of the `Lustre <https://www.lustre.org>`_
+Due to the fairly aggressive page cache purging policy of the `Lustre`_
 storage software that is used for the Tier-1 Hortense scratch filesystem, you may need to make some changes
 to how you access data in your job scripts to avoid performance problems.
 

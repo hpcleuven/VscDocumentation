@@ -47,8 +47,16 @@ The VSC hosts a number of collections:
      - `VSC UAntwerpen Tier2 filesystems <https://app.globus.org/file-manager/collections/6a13242d-6506-4b3d-a49c-ac981b35ab7d/overview>`_
      - No
      - No
-   * - KU Leuven Tier-2 (scratch)
-     - `VSC KU Leuven tier2 scratch <https://app.globus.org/file-manager/collections/82c495cc-aef8-40ad-88df-f9c92bee82d3/overview>`_
+   * - KU Leuven Tier-2 (``VSC_SCRATCH_LUSTRE1`` and ``VSC_PROJECT_LUSTRE1``)
+     - `VSC KU Leuven tier2 /lustre1/scratch en /lustre1/project <https://app.globus.org/file-manager/collections/82c495cc-aef8-40ad-88df-f9c92bee82d3/overview>`_
+     - No
+     - Yes
+   * - KU Leuven Tier-2 (``VSC_SCRATCH_GPFS1``)
+     - `VSC KU Leuven tier2 /gpfs1/scratch <https://app.globus.org/file-manager/collections/a6593381-d93d-4543-a3af-89424bcc6555/overview>`_
+     - No
+     - Yes
+   * - KU Leuven Tier-2 (``VSC_PROJECT_GPFS1``)
+     - `VSC KU Leuven tier2 /gpfs1/project <https://app.globus.org/file-manager/collections/49da2af5-d757-4998-8dc1-b5cecb91893d/overview>`_
      - No
      - Yes
    * - KU Leuven Tier-2 (user directories)  
@@ -63,9 +71,6 @@ The VSC hosts a number of collections:
      - `VSC KU Leuven archive directories <https://app.globus.org/file-manager/collections/64cb7bf2-492b-4489-ab7f-f80c252a7d92/overview>`_
      - No  
      - No  
-
-.. Note::
-      The collection 'VSC KU Leuven tier2 scratch' also contains the staging directories, under :bgrnd1:`/project`
 
 .. list-table:: Overview of collections for Tier-1 Data
    :header-rows: 1

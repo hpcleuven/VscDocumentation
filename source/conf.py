@@ -402,6 +402,7 @@ rst_prolog += """
 .. _ghcr: https://ghcr.io/
 .. _GNU: https://www.gnu.org/
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
+.. _GPFS architecture: https://www.ibm.com/docs/en/storage-scale/5.2.3?topic=overview-gpfs-architecture
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
 .. _Hugging Face: https://huggingface.co
@@ -433,6 +434,7 @@ rst_prolog += """
 .. _LLNL Advanced MPI: https://hpc.llnl.gov/sites/default/files/DavidCronkSlides.pdf
 .. _Lmod documentation: http://lmod.readthedocs.io/en/latest/
 .. _Lmod: http://lmod.readthedocs.io/en/latest/
+.. _Lustre: https://www.lustre.org/
 .. _MathWorks: https://nl.mathworks.com/
 .. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
 .. _MobaXterm: https://mobaxterm.mobatek.net

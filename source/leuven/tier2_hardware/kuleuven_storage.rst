@@ -72,6 +72,8 @@ Lustre scratch on the nodes of Genius and wICE).
    In other words, compute jobs running on Genius and wICE have to use Lustre
    and jobs running on Mindwell have to use GPFS. Compute jobs that do not
    comply can be cancelled by the system administrators without prior notice.
+   If you are looking for more information on this, please read the page on
+   :ref:`parallel filesystems <kuluh_parallel_filesystems>`
 
 .. note::
 
@@ -109,7 +111,8 @@ through 'transfer' jobs submitted to, for example, the ``interactive``
 partition of :ref:`wICE <submit to wice interactive node>` or
 :ref:`Mindwell <submit to mindwell interactive node>`.
 Short transfers which don't take more than a couple of minutes can also
-be performed from a Genius login node.
+be performed from a Genius login node. For more advanced examples, please read
+the :ref:`recommendations for managing data on multiple filesystems <kuluh_pfs_practical>`.
 
 Globus endpoints have been defined on both Lustre and GPFS filesystems,
 so you can use the :ref:`globus platform` for these data transfers.
