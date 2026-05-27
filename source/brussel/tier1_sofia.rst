@@ -171,17 +171,26 @@ The **sofia** web portal is not yet be available during the pilot phase.
 More information about the usage of the web portal is available at :ref:`compute portal`.
 
 Storage
-*******
+-------
+
+Home directory
+**************
 
 Similar to *Hortense*, the user’s ``$HOME`` directory is located on the scratch
 file system and is distinct from the user’s ``$VSC_HOME``.  The advantage of
 this setup is that **sofia** remains accessible even if the user’s home
 institution cluster is down.
 
+$VSC_HOME and $VSC_DATA
+***********************
+
 The :ref:`storage hardware`, specifically ``$VSC_HOME`` and ``$VSC_DATA``, is accessible, but **only on the
 login nodes**, and **only during the pilot phase**. These will be removed when
 the pilot phase concludes. We highly recommend using :ref:`Globus <sofia_scratch_globus>`
 for file transfer between **sofia** and Tier-2 storage.
+
+Node-local scratch and in-memory storage
+****************************************
 
 Each node in the cluster, including the login nodes, provides local non-shared storage for temporary data:
 
@@ -199,7 +208,7 @@ Each node in the cluster, including the login nodes, provides local non-shared s
 sofia scratch via Globus
 ************************
 
-Accessing the **sofia** scratch via Globus is not yet possible during the pilot phase.
+Accessing the **sofia** shared scratch storage via Globus is not yet possible during the pilot phase.
 
 More general information about Globus is available at :ref:`globus platform`.
 
@@ -208,15 +217,18 @@ More general information about Globus is available at :ref:`globus platform`.
 Job submission
 --------------
 
-sofia uses the :ref:`Slurm job scheduler <running jobs>` . Only Slurm-native
+**sofia** uses the :ref:`Slurm job scheduler<running jobs>`. Only Slurm-native
 commands are supported for managing your jobs.
+
+Users must specify a Slurm partition when submitting jobs. Loading a
+``cluster`` module is not required.
 
 .. _sofia_job_environment:
 
 Job environment
 ***************
 
-In sofia, both batch and interactive jobs start in a clean environment. This
+In **sofia**, both batch and interactive jobs start in a clean environment. This
 differs from the default Slurm behavior (``--export=ALL``). The reason is
 twofold:
 
@@ -231,6 +243,8 @@ Propagating specific environment variables to your job can be done with the
 If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
 <https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
+
+.. _sofia_job_memory:
 
 Job memory
 **********
@@ -247,6 +261,20 @@ This policy avoids situations where CPU cores are available but cannot be
 allocated because insufficient memory remains available on the node. It also
 helps keep benchmark results representative of production runs by ensuring that
 all jobs follow the same linear memory-per-core allocation.
+
+.. _sofia_job_gpu:
+
+GPU jobs
+********
+
+In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
+``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
+that do not follow this ratio will be rejected.
+
+This policy avoids situations where GPUs are available but cannot be allocated
+because insufficient CPU cores available on the node. It also helps keep
+benchmark results representative of production runs by ensuring that all jobs
+use the same core-to-GPU ratio.
 
 .. _sofia_help:
 
