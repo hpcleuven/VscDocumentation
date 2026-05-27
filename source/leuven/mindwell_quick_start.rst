@@ -9,8 +9,12 @@ nodes and GPU nodes.
 
 .. note::
 
-   Mindwell is currently only available for selected pilot users
-   by means of the ``lp_mindwell_pilot`` credit account.
+   All vsc3 users can now try out Mindwell for free by submitting
+   jobs using the "lp_mindwell_pilot" credit account.
+
+   Mindwell is planned to enter production on Monday June 15.
+   From that point onwards, you will need to use your regular
+   credit accounts to run on Mindwell.
 
 Mindwell does not have separate login nodes and can be accessed from the
 :ref:`Genius login nodes <tier2_login_nodes>`. Access through

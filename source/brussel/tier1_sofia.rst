@@ -273,6 +273,6 @@ Getting help
 -------------
 
 For questions and problems related to Tier-1 **sofia**, please contact the central
-support address for Tier-1 support: `vsc-support@hpc.vub.be <mailto:vsc-support@hpc.vub.be>`_.
+support address for Tier-1 support: `support@vscentrum.be <mailto:support@vscentrum.be>`_.
 
 Questions regarding Tier-1 Hortense will need to go to: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
