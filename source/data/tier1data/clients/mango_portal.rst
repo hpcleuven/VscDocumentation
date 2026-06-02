@@ -199,7 +199,7 @@ Analysis by Apache Tika may also give an OCR (Optical Character Recognition) rea
 This feature is a proof of concept, and this information can currently not be added as metadata. 
 
 Downloading metadata
-===================
+====================
 
 It is possible to download metadata attached to a collection or data object as an interoperable JSON file and use outside of Tier-1 Data. 
 To download metadata go to the tab 'Metadata' and click on the 'Download metadata' button on the right. 
