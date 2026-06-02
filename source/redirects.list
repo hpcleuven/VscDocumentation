@@ -30,7 +30,6 @@ access/managing_disk_usage.html /accounts/managing_disk_usage.html
 access/messed_up_keys.html /accounts/messed_up_keys.html
 access/mfa_login.html /accounts/mfa_login.html
 access/multiplatform_client_tools.html /compute/terminal/index.html
-access/nx_start_guide.html /compute/terminal/nx_start_guide.html
 access/scientific_domains.html /accounts/scientific_domains.html
 access/setting_up_a_ssh_proxy.html /accounts/setting_up_a_ssh_proxy.html
 access/setting_up_a_ssh_proxy_with_putty.html /compute/terminal/putty_ssh_proxy.html
@@ -48,7 +47,7 @@ access/vsc_account.html /accounts/vsc_account.html
 access/where_can_i_store_what_kind_of_data.html /accounts/where_can_i_store_what_kind_of_data.html
 access/windows_client.html /compute/terminal/windows_client.html
 access/wsl.html /compute/terminal/wsl.html
-brussels/tier2_hardware/hydra_hardware.html /brussels/tier2_hardware/hydra.html
+brussels/tier2_hardware/hydra_hardware.html /brussel/tier2_hardware/hydra.html
 compute.html /compute/index.html
 compute/cluster-archive.html /compute/tier2-archive.html
 compute/portal/ondemand/index.html /compute/portal/index.html

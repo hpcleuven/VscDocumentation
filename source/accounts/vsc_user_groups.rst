@@ -55,7 +55,7 @@ Join an existing group
 ~~~~~~~~~~~~~~~~~~~~~~
 
 -  Go to the `VSC account page`_.
--  Click on "New group"
+-  Click on the "New/Join Group" tab
 -  Fill in the name of the group
 
    -  The name of the group will automatically begin with the first

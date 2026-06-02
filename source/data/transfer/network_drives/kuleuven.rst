@@ -41,7 +41,6 @@ Via the GUI
 -----------
 
 #. Start an :ref:`OnDemand Desktop session <ood_desktop>`
-   or a :ref:`NoMachine connection <NX start guide>`.
 #. Click on e.g. ``Places`` -> ``Home Folder`` to open the default file
    manager (Thunar).
 #. Replace the ``/user/...`` location with
@@ -58,8 +57,8 @@ Via the GUI
 Via the CLI
 -----------
 
-#. If you are using the :ref:`OnDemand Desktop <ood_desktop>`
-   or :ref:`NoMachine <NX start guide>`, open a terminal there.
+#. If you are using the :ref:`OnDemand Desktop <ood_desktop>`,
+   open a terminal there.
    If you are using plain SSH, make sure that you are connected to either
    ``tier2-p-login-3`` or ``tier2-p-login-4`` (possibly by connecting
    to one of these nodes after landing on a different login node).

@@ -36,8 +36,3 @@ Libraries
    :maxdepth: 1
 
    blas_and_lapack
-   perl_package_management
-   python_package_management
-   vsc_rproject
-   r_package_management
-   r_devtools

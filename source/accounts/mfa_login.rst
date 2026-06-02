@@ -12,11 +12,6 @@ VSC clusters:
 
 .. include:: clusters_mfa.rst
 
-.. note::
-
-   If you are connecting from abroad, it is necessary that you first authorize
-   your own connection on the `VSC Firewall`_
-
 Login to Open OnDemand
 ----------------------
 
@@ -32,6 +27,13 @@ Once that succeeds, you will automatically login to the Open OnDemand homepage.
 
 Connecting with an SSH agent
 ----------------------------
+
+.. note::
+
+   Additional access restrictions (for instance when connecting from abroad
+   or from a non-managed laptop) may apply, which require that you first
+   authorize your connection on the `VSC Firewall`_. See
+   :ref:`this page <location_access_restrictions>` for more information.
 
 Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
 are made available to any other client program needing to use that same connection.
@@ -127,7 +129,6 @@ SSH Client name                        Purpose              Operating System
 :ref:`OpenSSH <OpenSSH access>`        text-based terminal  Linux, macOS
 :ref:`PuTTY <terminal putty>`          text-based terminal  Windows
 :ref:`MobaXterm <terminal mobaxterm>`  text-based terminal  Windows
-:ref:`NoMachine <NX start guide>`      graphical desktop    Windows, Linux, macOS
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
 
@@ -142,8 +143,8 @@ an :ref:`ssh agent`. Keep in mind, however, that this approach tends to be
 less convenient since each new connection will require multi-factor
 authentication.
 
-Certain clients (such as :ref:`FileZilla <FileZilla>`, ``sshfs`` or
-:ref:`NoMachine <NX start guide>`) furthermore do not show you the firewall
+Certain clients (such as :ref:`FileZilla <FileZilla>` or ``sshfs``)
+furthermore do not show you the firewall
 link needed for the MFA and hence can only function in combination with an SSH
 agent holding an SSH certificate.
 

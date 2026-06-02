@@ -380,8 +380,10 @@ rst_prolog += """
 .. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
 .. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
 .. _atools documentation: https://atools.readthedocs.io/en/latest/
+.. _Bioconductor: https://bioconductor.org
 .. _CP2K: https://www.cp2k.org/
 .. _CPMD: http://www.cpmd.org/
+.. _CRAN: http://cran.r-project.org
 .. _CUDA: https://developer.nvidia.com/cuda-zone
 .. _cuDNN: https://developer.nvidia.com/cudnn
 .. _Cyberduck: https://cyberduck.io
@@ -396,10 +398,12 @@ rst_prolog += """
 .. _FFTW documentation: http://www.fftw.org/#documentation
 .. _FFTW: http://www.fftw.org/
 .. _FileZilla project page: https://filezilla-project.org/
+.. _GitHub: https://github.com
 .. _GCC documentation: http://gcc.gnu.org/onlinedocs/
 .. _ghcr: https://ghcr.io/
 .. _GNU: https://www.gnu.org/
 .. _GNU binutils documentation: https://sourceware.org/binutils/docs/
+.. _GPFS architecture: https://www.ibm.com/docs/en/storage-scale/5.2.3?topic=overview-gpfs-architecture
 .. _GROMACS: http://www.gromacs.org/
 .. _HPE MPT documentation: https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00037728en_us&docLocale=en_US
 .. _Hugging Face: https://huggingface.co
@@ -431,6 +435,8 @@ rst_prolog += """
 .. _LLNL Advanced MPI: https://hpc.llnl.gov/sites/default/files/DavidCronkSlides.pdf
 .. _Lmod documentation: http://lmod.readthedocs.io/en/latest/
 .. _Lmod: http://lmod.readthedocs.io/en/latest/
+.. _Lustre: https://www.lustre.org/
+.. _MathWorks: https://nl.mathworks.com/
 .. _MATLAB compiler documentation: https://nl.mathworks.com/help/compiler/index.html
 .. _MathWorks: https://nl.mathworks.com/
 .. _MobaXterm: https://mobaxterm.mobatek.net
@@ -443,8 +449,6 @@ rst_prolog += """
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
-.. _NoMachine: https://www.nomachine.com/
-.. _NX Client download: https://download.nomachine.com/enterprise/?product=enterprise-client
 .. _ollama: https://ollama.com
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc

@@ -22,7 +22,7 @@ The resource specifications for jobs have to be tuned to use these nodes properl
 
 In general, the maximum walltime for wICE jobs is 3 days (72 hours).
 Only jobs submitted to the ``*_long`` partitions are allowed to have
-walltimes up to  7 days (168 hours), as will be illustrated below.
+walltimes up to 7 days (168 hours), as will be illustrated below.
 
 Similar to Genius, wICE uses Slurm as the workload manager.
 A Slurm jobscript for wICE will typically look like this:
@@ -61,6 +61,17 @@ For information about compute credit accounts, see the
    The examples given on this page only serve as illustrations.
    We expect that you adapt the number of nodes, tasks, cores, memory,
    walltime, ... depending on what your compute task requires.
+
+.. note::
+
+   If you do not provide a walltime for your job, then a default walltime will
+   be applied. This is 1 hour for all partitions, except for the ``*_debug``
+   partitions where it is 30 minutes.
+
+.. note::
+
+   If you do not specify the number of tasks and cores per task for your job,
+   then it will default to a single task running on a single core.
 
 
 .. _submit to wice compute node:
@@ -116,6 +127,9 @@ Users are allowed to request a maximum of 8 cores, one A100 GPU instance
    batch jobs since these will result in fewer idling resources
    compared to interactive jobs.
 
+.. note::
+
+   Jobs on the ```interactive``` partition do not consume any credits.
 
 .. _submit to wice big memory node:
 
@@ -131,9 +145,6 @@ default), you can submit a job as follows::
 
 There is also one IceLake node with even more memory (8 TiB RAM) in the
 ``hugemem`` partition (defaulting to ``--mem-per-cpu=111900M``).
-In contrast to :ref:`Superdome <superdome_quick_start>`, you do not need to
-request entire sockets and so the node is more similar to the other large
-memory nodes in this regard.
 
 
 .. _submit to wice GPU node:
@@ -153,7 +164,7 @@ If you e.g. need one A100 GPU and two CPU cores::
 
 You are free to request more GPU devices and/or CPU cores if needed,
 but take note of the :ref:`limits on CPU resources per allocated GPU
-<cpu_resource_limits_in_gpu_jobs>`).
+<cpu_resource_limits_in_gpu_jobs>`.
 
 There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
 per node) which you can select via the ``gpu_h100`` partition, e.g.::

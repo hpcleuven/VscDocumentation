@@ -11,9 +11,8 @@
        :columns: 6 6 3 3
     
        * :ref:`Genius <Genius hardware>`
-       * :ref:`Superdome <Superdome hardware>`
        * :ref:`wICE <wICE hardware>`
-       * :ref:`upcoming Tier-2 <2025 hardware>`
+       * :ref:`Mindwell <mindwell hardware>`
 
     .. grid-item-card:: |UA|
        :columns: 6 6 3 3
@@ -37,7 +36,7 @@
    :maxdepth: 2
 
    /antwerp/tier2_hardware
-   /brussels/tier2_hardware
+   /brussel/tier2_hardware
    /gent/tier2_hardware
    /leuven/tier2_hardware
 

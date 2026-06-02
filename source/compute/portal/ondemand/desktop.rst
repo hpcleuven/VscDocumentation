@@ -138,35 +138,3 @@ Additional site-specific constraints are listed below.
       :sync: vub
 
       (N/A)
-
-
-.. _ood_desktop_tips_for_nx_users:
-
-Tips for NoMachine users
-========================
-
-.. grid:: 3
-    :gutter: 4
-
-    .. grid-item-card:: |KUL|
-        :columns: 12
-
-        If you have been using the :ref:`NoMachine <NX start guide>` desktop,
-        you may need to do a few things differently when switching to the
-        OnDemand Desktop:
-
-        - For browser-related applications, see :ref:`the section above
-          <ood_desktop_using_applications>`. Note that in certain cases this
-          means the :ref:`Interactive Shell <ood_interactive_shell>` app may
-          suffice and you may not need the Desktop app.
-
-        - If your graphical application is available as a dedicated Interactive
-          App we recommend using that instead of the Desktop app (examples:
-          :ref:`MATLAB <ood_matlab>`, :ref:`ParaView <ood_paraview>`,
-          :ref:`Fluent <ood_fluent>`).
-
-        - The standard text editor is ``Mousepad`` (not ``Gedit``).
-
-        - As an image viewer you may use the ``display`` command provided by
-          the ``ImageMagick`` modules, but we would rather recommend the viewer
-          that is integrated in the :ref:`File Explorer <ood_files>`.
