@@ -73,7 +73,8 @@ For software which also uses GPUs, this would be:
 
 Unless mentioned otherwise, the ``${VSC_ARCH_SUFFIX}`` corresponds to an
 empty string. You can check which CPU and GPU models are present in which
-partitions on the :ref:`genius hardware` and :ref:`wice hardware` pages.
+partitions on the :ref:`genius hardware`, :ref:`wice hardware` and
+:ref:`mindwell hardware` pages.
 
 Many dependencies you might need are centrally installed. The modules
 that are optimized for wICE are available when the appropriate
@@ -138,7 +139,7 @@ CPU and (in the case of AMD CPUs) more than one L3 cache per CPU.
 The 48 cores in a Sapphire Rapids CPU, for example, share a large L3 cache
 but are organized in 4 groups of 12 cores, each group associated with one
 NUMA domain. For a complete overview, please consult the
-:ref:`genius hardware` and :ref:`wice hardware` pages.
+:ref:`genius hardware`, :ref:`wice hardware` and :ref:`mindwell hardware` pages.
 
 .. note::
 

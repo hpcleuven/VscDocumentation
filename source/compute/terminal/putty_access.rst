@@ -57,8 +57,8 @@ VSC clusters.
 
 .. warning::
 
-   In the screenshots, we show the setup for user ``vsc98765`` to the
-   genius cluster at KU Leuven via the login node ``login.hpc.kuleuven.be``.
+   In the screenshots, we show the setup for user ``vsc98765`` to a
+   Tier-2 cluster at KU Leuven via the login node ``login.hpc.kuleuven.be``.
    Please keep in mind to:
 
    #. replace ``vsc98765`` with your own VSC user name

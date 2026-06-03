@@ -137,8 +137,9 @@ your job resources:
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Documentation on resources is available for both :ref:`Genius
-      <running_jobs_on_genius>` and :ref:`wICE <running jobs on wice>`.
+      Documentation on resources is available for :ref:`Genius
+      <running_jobs_on_genius>`, :ref:`wICE <running jobs on wice>` and
+      :ref:`Mindwell <running jobs on mindwell>`.
 
       In most cases we recommend using the ``interactive`` partition on wICE for
       the interactive apps.  This partition is meant for lighter work, like code

@@ -17,6 +17,7 @@ VSC clusters that support this app are:
 
        * Tier-2 :ref:`Genius <genius hardware>`
        * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
 
 Accessing data on HPC storage

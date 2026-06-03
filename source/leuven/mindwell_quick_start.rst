@@ -17,8 +17,7 @@ nodes and GPU nodes.
    credit accounts to run on Mindwell.
 
 Mindwell does not have separate login nodes and can be accessed from the
-:ref:`Genius login nodes <tier2_login_nodes>`. Access through
-:ref:`Open OnDemand <ood>` will be provided in the near future.
+:ref:`Genius login nodes <tier2_login_nodes>`.
 
 .. _running jobs on mindwell:
 

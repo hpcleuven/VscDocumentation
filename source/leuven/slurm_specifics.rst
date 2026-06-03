@@ -42,12 +42,14 @@ Cluster choice
 --------------
 Many Slurm commands (like `sbatch`, `srun`, `scontrol`, `squeue`, `scancel`,
 ...) accept a ``-M/--clusters`` option which selects one or more clusters.
-The default value depends on where the command is executed (Genius for the
-Genius compute nodes and login nodes; wICE for the wICE compute nodes).
+The default value depends on where the command is executed (``genius`` for the
+Genius compute nodes and login nodes, ``wice`` for the wICE compute nodes, and
+``mindwell`` for the Mindwell compute nodes).
 This means that if you are connected to a (Genius) login node, you will need
-to add ``-M wice`` in order to select wICE instead of Genius. Also note that
-some of these commands (such as `squeue` and `sacct`) accept ``-M all`` which
-selects all available clusters.
+to add ``-M wice`` in order to select wICE instead of Genius. Similarly for Mindwell,
+you need to specify ``-M mindwell``.
+Also note that some of these commands (such as `squeue` and `sacct`) accept
+``-M all`` which selects all available clusters.
 
 In order to avoid potential mistakes we have made the ``-M/--clusters`` option
 mandatory when submitting jobs.
@@ -326,8 +328,8 @@ In practice, 18 CPU cores and 126000 MiB CPU memory will be allocated per GPU,
 and no warning will be raised.
 
 For more examples of valid GPU jobs, have a look at the
-:ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
-quickstart guides.
+:ref:`Genius <genius_t2_leuven>`, :ref:`wICE <wice_t2_leuven>`
+and :ref:`Mindwell <mindwell_quick_start>` quickstart guides.
 
 Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
 (for CPU cores) and ``--mem`` and ``--mem-per-cpu`` (for CPU memory),

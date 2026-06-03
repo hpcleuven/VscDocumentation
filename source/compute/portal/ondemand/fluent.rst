@@ -15,6 +15,7 @@ The VSC clusters that support the Fluent app are:
 
        * Tier-2 :ref:`Genius <genius hardware>`
        * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
 
 Who can use Fluent
@@ -35,4 +36,4 @@ Launching Fluent
 |KUL| To start a Fluent session, you may choose your desired version of the Fluent module from the drop-down list.
 Depending on the problem at hand and the desired numerical precision, you may also choose the type of solver from the next drop-down menu.
 It is mandatory to provide the ANSYS license server address in the text box for the ``ANSYSLMD_LICENSE_FILE`` environment variable. Depending on the configuration of the license server, some users might need to additionally specify the ``ANSYSLI_SERVERS`` in the next field.
-Your Fluent sessions will be limited to using a single node, but it can be interesting to test whether your application runs sufficiently faster on different node architectures (see the technical specifications of :ref:`Genius <genius hardware>` and :ref:`wICE <wice hardware>` clusters) and for various core counts.
+Your Fluent sessions will be limited to using a single node, but it can be interesting to test whether your application runs sufficiently faster on different node architectures (see the technical specifications of :ref:`wICE <wice hardware>` and :ref:`Mindwell <mindwell hardware>` clusters) and for various core counts.
