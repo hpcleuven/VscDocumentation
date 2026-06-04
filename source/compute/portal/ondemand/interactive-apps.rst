@@ -141,8 +141,8 @@ your job resources:
       <running_jobs_on_genius>`, :ref:`wICE <running jobs on wice>` and
       :ref:`Mindwell <running jobs on mindwell>`.
 
-      In most cases we recommend using the ``interactive`` partition on wICE for
-      the interactive apps.  This partition is meant for lighter work, like code
+      In most cases we recommend using the ``interactive`` partitions for the
+      interactive apps.  This partition is meant for lighter work, like code
       development, testing, debugging, visualisations, pre- and post-processing.
       Using this partition is also free, mainly to encourage you to request
       these resources for such work, instead of using any of the other
@@ -151,7 +151,8 @@ your job resources:
 
       - Max 1 node
       - Max 8 cores
-      - Max 1 virtual GPU slice
+      - Max 1 virtual GPU slice on wICE, or
+        Max 1 full GPU on Mindwell
       - Max 16h of walltime
 
       This is put in place to ensure that these resources are kept for their
