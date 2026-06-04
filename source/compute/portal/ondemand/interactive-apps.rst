@@ -164,13 +164,17 @@ your job resources:
       running full jobs.  If you indeed need multiple nodes or full GPUs to test
       your code/program, go ahead and request the resources for your interactive
       app from a more suitable partition.
-
       If requesting a GPU, it will be the same as the type specified in the
-      partition (e.g. a NVIDIA H100 for ``gpu_h100`` on wICE).  For wICE, you
-      can also request a GPU from the ``interactive`` partition.  One GPU here
-      is a virtual GPU slice of the available A100 GPUs.  One GPU slice is the
-      same as 1/7th of CUDA cores and memory of an A100 GPU.  The interactive
-      partition only allows you to request max 1 GPU (slice) though.
+      partition (e.g. a NVIDIA H100 for ``gpu_h100`` on wICE).
+      
+      For wICE and Mindwell, you can also request a GPU from the ``interactive`` partition.
+      The wICE interactive GPUs are virtually partitioned as 7 MIGs (Multi-Instance GPU).
+      In this configuration, each GPU slice provides roughly 1/7th of CUDA cores and memory
+      of an A100 GPU.  The interactive partition only allows you to request max 1 GPU (slice)
+      though.
+
+      Each Mindwell interactive node offers two NVIDIA RTX 5000 (Ada), which can be best
+      taken as whole for visualization purposes and lightweight machine learning applications.
 
    .. tab-item:: VUB
       :sync: vub
