@@ -6,6 +6,7 @@
     
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
     .. grid-item-card:: |UA|
        :columns: 12 4 4 4

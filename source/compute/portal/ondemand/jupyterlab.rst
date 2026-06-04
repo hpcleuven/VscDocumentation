@@ -423,6 +423,7 @@ VSC clusters that support the Bash kernel extension:
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
@@ -466,6 +467,7 @@ support this extension are:
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
 To monitor the host CPU and memory utilization at runtime, click on the
 'Kernel Usage' tab on the right tray. Among the various fields, you may like
@@ -495,6 +497,7 @@ this extension is supported are:
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
 Using this extension you can create or clone a new git repository, manage your (new) branches, track
 your changed files in your trunk, commit your changes and push your changes to an upstream repository, in addition
@@ -514,6 +517,7 @@ Python iRODS Client
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
 You can use the :ref:`Python iRODS client (PRC) <python-client>` to transfer data between
 your local storage, `ManGO portal`_ and/or the

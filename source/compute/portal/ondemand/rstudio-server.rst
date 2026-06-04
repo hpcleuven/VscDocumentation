@@ -5,7 +5,7 @@ RStudio Server
 
 The 'RStudio Server' app allows you to run an RStudio session on the cluster.
 In the 'R version' drop-down menu, you can choose the R module version
-that will be loaded for your session (such as ``R/4.4.1-gfbf-2023b``).
+that will be loaded for your session (such as ``R/4.5.1-gfbf-2025a``).
 
 .. tab-set::
    :sync-group: vsc-sites

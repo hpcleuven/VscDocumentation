@@ -3,12 +3,12 @@
 Tier-2 access
 -------------
 
-Currently, Genius and wICE are the two Tier-2 clusters in production at KU Leuven.
+Currently, Genius, wICE and Mindwell are the Tier-2 clusters in production at KU Leuven.
 Both clusters run on the Rocky Linux 9.6 operating system. The access to both
 machines is possible
 
-- either via the Genius login nodes (see below), as wICE itself has no
-  dedicated login node
+- either via the Genius login nodes (see below), as wICE and Mindwell have no
+  dedicated login nodes
 
 - or via the :ref:`Open OnDemand <ood>` portal in your web browser
 
