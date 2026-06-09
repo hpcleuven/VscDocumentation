@@ -271,6 +271,18 @@ In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
 ``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
 that do not follow this ratio will be rejected.
 
+We recommend the following ``#SBATCH`` directives to request GPU resources.
+The example below requests 2 GPUs on a single node, with 1 task allocated per
+GPU (2 tasks in total) and 24 CPU cores per task (48 cores in total):
+
+.. code-block:: bash
+
+   #SBATCH --partition=zen4_h200
+   #SBATCH --nodes=1
+   #SBATCH --gpus-per-node=2
+   #SBATCH --ntasks-per-gpu=1
+   #SBATCH --cpus-per-task=24
+
 This policy avoids situations where GPUs are available but cannot be allocated
 because insufficient CPU cores available on the node. It also helps keep
 benchmark results representative of production runs by ensuring that all jobs
