@@ -23,11 +23,11 @@ General information
 
 .. important::
 
-   **sofia** is currently in **pilot phase**. The VUB-HPC team is working hard
-   to make it production-ready.  If all goes well, the cluster will be open for
-   full project applications by June 1, 2026.  Please contact :ref:`Tier-1
-   support <sofia_help>` if you would like access to run benchmarks in
-   preparation for the June 1 application cutoff.
+   The pilot phase is complete, and **sofia** is currently offline for
+   maintenance as we prepare the system for full production.  Approved
+   applications from the June 1 cut-off will be activated by July 2026, and
+   starting grants will also open in July.  Please contact :ref:`Tier-1 support
+   <sofia_help>` if you have any questions.
 
 **sofia** is the 4th VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016),
 *BrENIAC* (hosted by HPC-Leuven, 2016-2022) and *Hortense* (hosted by HPC-Ugent, 2021-2027).
