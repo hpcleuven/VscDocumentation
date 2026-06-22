@@ -1,12 +1,22 @@
 .. grid:: 2
+   :class-container: bg-transparent
 
    .. grid-item::
-       .. image:: images/sofia.png
-          :width: 100%
+
+      .. image:: images/sofia-supercomputer-logo.png
+         :width: 100%
+         :class: only-light bg-transparent sd-my-2
+
+      .. image:: images/sofia-supercomputer-logo-light.png
+         :width: 100%
+         :class: only-dark bg-transparent sd-my-2
 
    .. grid-item::
-       .. image:: images/sofia-sun.png
-          :width: 88%
+
+      .. image:: images/sofia-sun.png
+         :width: 98%
+         :class: bg-transparent
+
 
 .. _sofia cluster:
 
