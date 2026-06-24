@@ -218,9 +218,17 @@ Each node in the cluster, including the login nodes, provides local non-shared s
 sofia scratch via Globus
 ************************
 
-Accessing the **sofia** shared scratch storage via Globus is not yet possible during the pilot phase.
+The **sofia** shared scratch storage can be accessed via the :ref:`globus platform`.
 
-More general information about Globus is available at :ref:`globus platform`.
+Pilot collection:
+
+* Endpoint: **VSC sofia pilot**
+* Location: ``/scratch/sofia/pilot``
+
+Projects collection:
+
+* Endpoint: **VSC sofia projects**
+* Location: ``/scratch/sofia/projects`` or ``$VSC_SCRATCH_PROJECTS_BASE``
 
 .. _sofia_job_submission:
 
