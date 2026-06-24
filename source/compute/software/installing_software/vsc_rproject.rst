@@ -140,7 +140,6 @@ For more information, see:
 
    $ vsc-rproject create --help
 
-
 .. note::
 
    Alternatively, you may also want to  modify your default settings more permanently via ``vsc-rproject configure``.
@@ -160,6 +159,22 @@ The ``activate`` sub-command can be used to activate an already existing vsc-Rpr
 Activating a vsc-Rproject environment will load all the relevant modules listed in the modules file and
 set the ``$VSC_RPROJECT`` environment variable which can be used to access the root directory of the project.
 
+.. note::
+
+   To open a project via the commandline, you simply need to launch R from within your project root folder: 
+
+   .. code:: bash
+
+      vsc-rproject activate MyProject
+      cd $VSC_RPROJECT
+      R
+
+Once your project has been opened in R (either in :ref:`RStudio <vsc_rproject_and_rstudio_server>`  or via the commandline),
+you should see a welcome message pointing you to the project folder and listing all known library paths. 
+The first library path should point to the project's own library itself. When loading packages 
+(e.g. ``library(<packagename>)``) or installing packages (e.g. ``install.packages(<packagename>)``) R prioritizes
+the first library path.
+
 .. _deactivating_a_project:
 
 Deactivating a project
@@ -172,7 +187,6 @@ Additionally, it will unset the ``$VSC_RPROJECT`` variable.
 .. code:: bash
 
    $ vsc-rproject deactivate
-
 
 .. _default_project_configuration:
 
@@ -205,6 +219,8 @@ If at any point you wish to reset your configuration to the the original default
 
    $ vsc-rproject configure --reset
 
+.. _vsc_rproject_and_rstudio_server:
+
 vsc-Rproject and RStudio Server
 -------------------------------
 
@@ -219,5 +235,5 @@ When launching a new session via the :ref:`Studio Server <rstudio-server>` app i
    The R module selected in the OnDemand form must match the R module that was used to create the project!
    Otherwise dependency conflicts may arise as RStudio Server will replace the modules loaded via the pre-run scriplet.
 
-Once inside the RStudio session, you still need to open the RStudio Project via the interface.
-
+In order to use this  project within the RStudio session, you still need to open the RStudio Project via the interface:
+File > Open Project...
