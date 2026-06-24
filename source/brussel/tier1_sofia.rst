@@ -220,15 +220,21 @@ sofia scratch via Globus
 
 The **sofia** shared scratch storage can be accessed via the :ref:`globus platform`.
 
-Pilot collection:
+Pilot data:
 
-* Endpoint: **VSC sofia pilot**
-* Location: ``/scratch/sofia/pilot``
+* Collection: **VSC sofia pilot**
+* Path: ``/scratch/sofia/pilot``
 
-Projects collection:
+Projects data:
 
-* Endpoint: **VSC sofia projects**
-* Location: ``/scratch/sofia/projects`` or ``$VSC_SCRATCH_PROJECTS_BASE``
+* Collection: **VSC sofia projects**
+* Path: ``/scratch/sofia/projects`` or ``$VSC_SCRATCH_PROJECTS_BASE``
+
+.. note::
+
+   Remember to back up your pilot/project data. As the scratch storage on
+   **sofia** is limited, data will be deleted at some point after the project
+   has expired.
 
 .. _sofia_job_submission:
 
@@ -238,8 +244,9 @@ Job submission
 **sofia** uses the :ref:`Slurm job scheduler<running jobs>`. Only Slurm-native
 commands are supported for managing your jobs.
 
-Users must specify a Slurm partition when submitting jobs. Loading a
-``cluster`` module is not required.
+Users must specify one of the available :ref:`partitions
+<sofia_hardware_details>` when submitting jobs. Loading a ``cluster`` module is
+not required.
 
 .. _sofia_job_environment:
 
