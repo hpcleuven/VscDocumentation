@@ -140,7 +140,6 @@ For more information, see:
 
    $ vsc-rproject create --help
 
-
 .. note::
 
    Alternatively, you may also want to  modify your default settings more permanently via ``vsc-rproject configure``.
@@ -188,7 +187,6 @@ Additionally, it will unset the ``$VSC_RPROJECT`` variable.
 .. code:: bash
 
    $ vsc-rproject deactivate
-
 
 .. _default_project_configuration:
 
