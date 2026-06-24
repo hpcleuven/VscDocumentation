@@ -222,13 +222,13 @@ The **sofia** shared scratch storage can be accessed via the :ref:`globus platfo
 
 Pilot data:
 
-* Collection: **VSC sofia pilot**
+* Collection: `VSC sofia pilot <https://app.globus.org/file-manager?origin_id=a3485425-436e-40cc-9061-31a9c8366ffa&origin_path=%2Fsofia%2Fscratch%2Fpilot%2F>`_
 * Path: ``/scratch/sofia/pilot``
 
 Projects data:
 
-* Collection: **VSC sofia projects**
-* Path: ``/scratch/sofia/projects`` or ``$VSC_SCRATCH_PROJECTS_BASE``
+* Collection: `VSC sofia projects <https://app.globus.org/file-manager?origin_id=d7e3873e-da1f-45ed-8a50-bd943652938e&origin_path=%2Fprojects%2F>`_
+* Path: ``/sofia/projects`` or ``$VSC_SCRATCH_PROJECTS_BASE``
 
 .. note::
 
