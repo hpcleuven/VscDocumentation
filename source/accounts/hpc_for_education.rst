@@ -29,7 +29,7 @@
 
          More importantly, the VSC cannot guarantee that the reserved resources be
          available during the reservation in case of unforeseen circumstances,
-         such as hardware failures or urgent maintenance.
+         such as hardware failures, critical security vulnerabilities or urgent maintenance.
 
       To ask for support, follow the steps below:
 
