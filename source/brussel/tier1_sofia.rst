@@ -1,3 +1,5 @@
+.. _sofia cluster:
+
 .. grid:: 2
    :class-container: bg-transparent
 
@@ -16,9 +18,6 @@
       .. image:: images/sofia-sun.png
          :width: 98%
          :class: bg-transparent
-
-
-.. _sofia cluster:
 
 sofia @ VUB-HPC
 ===============
@@ -140,8 +139,7 @@ or vice versa. Make sure your SSH keys are properly configured or forwarded.
 
   For resource-intensive interactive tasks, like software compilation, testing software or job scripts, etc.,
   please use an interactive job, preferentially on the ``zen5_vis`` partition,
-  either via ``salloc -p zen5_vis`` or in the future through the
-  :ref:`sofia_web_portal`.
+  either via ``salloc -p zen5_vis`` or through the :ref:`sofia_web_portal`.
 
 .. _sofia_login_nodes_host_keys:
 
@@ -176,7 +174,10 @@ The type of fingerprint that will be shown depends on the version and configurat
 Web portal
 **********
 
-The **sofia** web portal is not yet be available during the pilot phase.
+To access Tier-1 **sofia** you can also use the `Open On-Demand` web portal at
+https://portal.sofia.vub.be.
+
+You will need an active project in order to get access.
 
 More information about the usage of the web portal is available at :ref:`compute portal`.
 
