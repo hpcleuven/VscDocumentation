@@ -106,7 +106,7 @@ job will be queued.
          sharing your sensitive data, sources and information by all means.
 
 
-   .. tab-item:: VUB/sofia
+   .. tab-item:: VUB
       :sync: vub
 
       .. list-table:: Shared resources (part 2)
@@ -119,11 +119,24 @@ job will be queued.
            - Specify the working directory for your app, or use the handy
              ``Select Path`` button below the text field to select it from a
              file browser.
-         * - Account (**sofia**)
+
+   .. tab-item:: sofia
+      :sync: sofia
+
+      .. list-table:: Shared resources (part 2)
+         :header-rows: 1
+         :widths: 20 80
+
+         * - Resource
+           - Description
+         * - Working Directory
+           - Specify the working directory for your app, or use the handy
+             ``Select Path`` button below the text field to select it from a
+             file browser.
+         * - Account
            - Select the credit account you want to deduct the credits from.  The
              accounts associated with your VSC-id will be displayed in a
              drop-down menu.
-
 
 .. _choosing_your_resources:
 
@@ -190,6 +203,18 @@ your job resources:
       For light-weight (testing) work, we recommend using the :ref:`Anansi
       cluster`, which also contains shared GPUs for improved rendering
       performance.
+
+      .. note::
+
+         The allocated CPU memory in your session is fixed at a default value
+         per core.  To get more memory, just request additional cores in the
+         resources form.
+
+   .. tab-item:: sofia
+      :sync: sofia
+
+      For light-weight (testing) work, we recommend using the zen5_vis
+      partition.
 
       .. note::
 

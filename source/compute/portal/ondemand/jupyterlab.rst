@@ -28,6 +28,17 @@ environment (as elaborated below).
       (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
       priority over your 'Working directory' in the resources form.
 
+   .. tab-item:: sofia
+      :sync: sofia
+
+      The top-level notebook directory is the selected 'Working directory' in
+      the resources form. Note however, if you have set ``c.ServerApp.root_dir``
+      in your `Jupyter configuration file
+      <https://jupyter-server.readthedocs.io/en/stable/other/full-config.html>`_
+      (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
+      priority over your 'Working directory' in the resources form.
+
+
 
 .. _jupyterlab_pure_module_env:
 
@@ -62,6 +73,15 @@ listed Python module).
       - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
       - ``matplotlib`` - plotting library and :ref:`matplotlib_lab_extension`
 
+   .. tab-item:: sofia
+      :sync: sofia
+
+      A large number of widely used Python packages are already available by
+      default. The following modules are always loaded with JupyterLab:
+
+      - ``Python-bundle-PyPI`` - packages for general usage
+      - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
+      - ``matplotlib`` - plotting library and :ref:`matplotlib_lab_extension`
 
 If you need additional Python packages, you can load extra modules with Python
 packages via ``module load`` commands in the 'Pre-run Scriptlet' of the
@@ -90,6 +110,7 @@ VSC clusters that support different Jupyter kernels:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
+       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
@@ -292,6 +313,7 @@ VSC clusters that support the 'Software Modules' Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
+       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
@@ -351,6 +373,7 @@ VSC clusters that support the matplotlib Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
+       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
@@ -380,6 +403,7 @@ VSC clusters that support the Dask Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
+       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
@@ -428,6 +452,7 @@ VSC clusters that support the Bash kernel extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
+       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 

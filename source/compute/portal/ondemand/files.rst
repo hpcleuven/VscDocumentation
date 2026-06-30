@@ -16,8 +16,14 @@ modifying and creating files or directories are available as well.
       From the 'Files' menu, you can access your ``$VSC_HOME`` and ``$VSC_DATA``
       folders.
 
-   .. tab-item:: VUB/sofia
+   .. tab-item:: VUB
       :sync: vub
+
+      From the 'Files' menu, you can access all ``$VSC_*`` folders available to
+      you.
+
+   .. tab-item:: sofia
+      :sync: sofia
 
       From the 'Files' menu, you can access all ``$VSC_*`` folders available to
       you.
