@@ -174,7 +174,7 @@ The type of fingerprint that will be shown depends on the version and configurat
 Web portal
 **********
 
-To access Tier-1 **sofia** you can also use the `Open On-Demand` web portal at
+To access Tier-1 **sofia** you can also use the `Open OnDemand` web portal at
 https://portal.sofia.vub.be.
 
 You will need an active project in order to get access.
