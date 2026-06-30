@@ -311,6 +311,9 @@ rst_prolog += """
 .. |UG| replace:: :bdg-secondary:`UGent`
 .. |UH| replace:: :bdg-info:`UHasselt`
 .. |VUB| replace:: :bdg-primary:`VUB`
+.. |sofia| raw:: html
+
+   <span class="sd-badge sd-bg-sofia">sofia</span>
 """
 ### Links used multiple times across the documentation ###
 # Links to VSC and VSC sites

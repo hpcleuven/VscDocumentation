@@ -157,6 +157,16 @@ html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
     background: linear-gradient(to bottom, #FFCC2933, #FFCC2966);
 }
 
+/* sofia badge custom color */
+html[data-theme="light"] .sd-bg-sofia {
+    background-color: #003399;
+    color: white;
+}
+html[data-theme="dark"] .sd-bg-sofia {
+    background-color: #75b9e5;
+    color: black;
+}
+
 /* hide caption lable in code-blocks */
 .code-block-caption .caption-number { display: none; }
 /* line numbers in codeblocks on transparent column */

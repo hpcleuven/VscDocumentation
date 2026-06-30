@@ -56,6 +56,8 @@ VSC clusters that support an Open OnDemand web portal:
        | Tier-2 :ref:`Anansi <Anansi cluster>`
        | Tier-2 :ref:`Hydra <Hydra cluster>`
 
+       |sofia|
+
        :fas:`circle-play` `sofia OnDemand`_
 
        | Tier-1 :ref:`sofia <sofia cluster>`
