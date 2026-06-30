@@ -22,6 +22,7 @@ VSC clusters that support the Desktop app:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
+       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 

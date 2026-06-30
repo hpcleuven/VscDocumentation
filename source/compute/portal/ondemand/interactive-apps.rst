@@ -106,7 +106,7 @@ job will be queued.
          sharing your sensitive data, sources and information by all means.
 
 
-   .. tab-item:: VUB
+   .. tab-item:: VUB/sofia
       :sync: vub
 
       .. list-table:: Shared resources (part 2)
@@ -119,6 +119,10 @@ job will be queued.
            - Specify the working directory for your app, or use the handy
              ``Select Path`` button below the text field to select it from a
              file browser.
+         * - Account (**sofia**)
+           - Select the credit account you want to deduct the credits from.  The
+             accounts associated with your VSC-id will be displayed in a
+             drop-down menu.
 
 
 .. _choosing_your_resources:
