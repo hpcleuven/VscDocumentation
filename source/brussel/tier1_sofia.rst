@@ -125,7 +125,7 @@ such an SSH certificate via multi-factor authentication as described
 
 .. note::
    Alternatively, if you are not inside the Flemish university network you can ``ssh`` into **sofia**
-   from the login nodes of any Tier-2 cluster. Do not forget to set up your SSH keys there or
+   from the login nodes of any VSC Tier-2 cluster. Do not forget to set up your SSH keys there or
    to forward your SSH agent.
 
 More general information about SSH login is available in the
@@ -200,6 +200,13 @@ Similar to *Hortense*, the user’s ``$HOME`` directory is located on the scratc
 file system and is distinct from the user’s ``$VSC_HOME``.  The advantage of
 this setup is that **sofia** remains accessible even if the user’s home
 institution cluster is down.
+
+$VSC_HOME and $VSC_DATA
+***********************
+
+``$VSC_HOME`` and ``$VSC_DATA`` are not directly accessible on **sofia**.
+We highly recommend using :ref:`Globus <sofia_scratch_globus>`
+for file transfer between **sofia** and Tier-2 storage.
 
 Node-local scratch and in-memory storage
 ****************************************
