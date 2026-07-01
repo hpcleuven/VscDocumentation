@@ -28,6 +28,17 @@ environment (as elaborated below).
       (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
       priority over your 'Working directory' in the resources form.
 
+   .. tab-item:: sofia
+      :sync: sofia
+
+      The top-level notebook directory is the selected 'Working directory' in
+      the resources form. Note however, if you have set ``c.ServerApp.root_dir``
+      in your `Jupyter configuration file
+      <https://jupyter-server.readthedocs.io/en/stable/other/full-config.html>`_
+      (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
+      priority over your 'Working directory' in the resources form.
+
+
 
 .. _jupyterlab_pure_module_env:
 
@@ -62,6 +73,15 @@ listed Python module).
       - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
       - ``matplotlib`` - plotting library and :ref:`matplotlib_lab_extension`
 
+   .. tab-item:: sofia
+      :sync: sofia
+
+      A large number of widely used Python packages are already available by
+      default. The following modules are always loaded with JupyterLab:
+
+      - ``Python-bundle-PyPI`` - packages for general usage
+      - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
+      - ``matplotlib`` - plotting library and :ref:`matplotlib_lab_extension`
 
 If you need additional Python packages, you can load extra modules with Python
 packages via ``module load`` commands in the 'Pre-run Scriptlet' of the
@@ -92,6 +112,10 @@ VSC clusters that support different Jupyter kernels:
 
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 The following table shows the kernels available in JupyterLab and the
 corresponding modules that have to be loaded to enable them:
@@ -295,6 +319,10 @@ VSC clusters that support the 'Software Modules' Lab extension:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
+
 The 'Software Modules' Lab extension is enabled by default in your JupyterLab
 session.  You can load software modules from the tab with a *hexagon* icon on
 the left panel of JupyterLab. This tab shows a long list of modules: the loaded
@@ -354,6 +382,10 @@ VSC clusters that support the matplotlib Lab extension:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
+
 To activate the Lab extension in your notebook, use the ``%matplotlib ipympl`` or
 ``%matplotlib widget`` magic command. To ensure your plot is always shown, make
 sure to generate a figure object before plotting, e.g. with ``plt.figure()`` or
@@ -382,6 +414,10 @@ VSC clusters that support the Dask Lab extension:
 
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 #. In the resources form, tick the 'Load the dask module' checkbox to make sure
    the Dask Lab extension is loaded before starting JupyterLab.
@@ -430,6 +466,10 @@ VSC clusters that support the Bash kernel extension:
 
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 By default, the 'Bash' kernel is loaded in your environment, starting from the 2023a toolchain.
 To use it in a notebook, you need to choose the 'Bash' or 'Python 3 (ipykernel)' jupyter  kernels

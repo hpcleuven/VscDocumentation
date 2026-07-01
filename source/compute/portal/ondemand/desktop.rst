@@ -25,6 +25,10 @@ VSC clusters that support the Desktop app:
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
 
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
+
 
 .. tip::
 
@@ -72,6 +76,19 @@ For improved graphics performance, we recommend the following workflow:
       :sync: vub
 
       #. Select the ``Anansi`` cluster and request some fraction of a GPU.
+      #. In the desktop environment, open a terminal window and load the
+         module of your graphical software.
+      #. Launch the executable with ``vglrun`` to enable hardware
+         acceleration:
+
+         .. code-block:: bash
+
+            vglrun <executable>
+
+   .. tab-item:: sofia
+      :sync: sofia
+
+      #. Select the ``zen5_vis`` partition and request a GPU.
       #. In the desktop environment, open a terminal window and load the
          module of your graphical software.
       #. Launch the executable with ``vglrun`` to enable hardware
@@ -137,5 +154,10 @@ Additional site-specific constraints are listed below.
 
    .. tab-item:: VUB
       :sync: vub
+
+      (N/A)
+
+   .. tab-item:: sofia
+      :sync: sofia
 
       (N/A)
