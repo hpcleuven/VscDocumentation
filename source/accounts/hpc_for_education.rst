@@ -20,6 +20,17 @@
       - reserving compute resources (only if neccessary and upon decision by site admins) 
       - technical support during the trainings (either on-site or remote)
 
+      .. admonition:: Disclaimer
+         :class: disclaimer
+
+         Requests for reserving resources will be processed by the local support team.
+         It may happen that for technical or administrative reasons, the request cannot
+         be granted.
+
+         More importantly, the VSC cannot guarantee that the reserved resources be
+         available during the reservation in case of unforeseen circumstances,
+         such as hardware failures, critical security vulnerabilities or urgent maintenance.
+
       To ask for support, follow the steps below:
 
       #. Submit a request to
