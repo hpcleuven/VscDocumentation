@@ -201,14 +201,6 @@ file system and is distinct from the user’s ``$VSC_HOME``.  The advantage of
 this setup is that **sofia** remains accessible even if the user’s home
 institution cluster is down.
 
-$VSC_HOME and $VSC_DATA
-***********************
-
-The :ref:`storage hardware`, specifically ``$VSC_HOME`` and ``$VSC_DATA``, is accessible, but **only on the
-login nodes**, and **only during the pilot phase**. These will be removed when
-the pilot phase concludes. We highly recommend using :ref:`Globus <sofia_scratch_globus>`
-for file transfer between **sofia** and Tier-2 storage.
-
 Node-local scratch and in-memory storage
 ****************************************
 
