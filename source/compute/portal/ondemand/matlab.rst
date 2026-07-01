@@ -31,6 +31,30 @@ Who can use MATLAB
 Before you connect
 ~~~~~~~~~~~~~~~~~~
 
+MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
+including the folder ``.MathWorks``, which can become quite big over time. To
+prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
+redirect this folder to your ``$VSC_DATA`` directory. If this folder already
+exists, you can safely delete it. Execute the following commands to accomplish
+this:
+
+.. code-block:: bash
+
+    rm -rf ~/.MathWorks
+    mkdir -pv $VSC_DATA/.MathWorks
+    ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
+
+Please refrain from running MATLAB on the login nodes; but, in case you had
+opened MATLAB on the login nodes, you might have to kill any existing
+MathWorksServiceHost processes running there:
+
+.. code-block:: bash
+
+    # look for the PID of the MathWorksServiceHost process
+    ps aux | grep MathWorksServiceHost
+    kill <process_id>
+
+
 .. tab-set::
    :sync-group: vsc-sites
 
@@ -41,44 +65,6 @@ Before you connect
       If older MATLAB versions are needed, you may start a :ref:`noVNC desktop <ood_desktop>`
       session instead, and load your desired MATLAB version from the terminal.
       
-      MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
-      including the folder ``.MathWorks``, which can become quite big over time. To
-      prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
-      redirect this folder to your ``$VSC_DATA`` directory. If this folder already
-      exists, you can safely delete it. Execute the following commands to accomplish
-      this:
-
-      .. code-block:: bash
-
-         rm -rf ~/.MathWorks
-         mkdir -pv $VSC_DATA/.MathWorks
-         ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
-
-      Please refrain from running MATLAB on the login nodes; but, in case you had
-      opened MATLAB on the login nodes, you might have to kill any existing
-      MathWorksServiceHost processes running there:
-
-      .. code-block:: bash
-          
-         # look for the PID of the MathWorksServiceHost process
-         ps aux | grep MathWorksServiceHost
-         kill <process_id>
-
-   .. tab-item:: VUB
-      :sync: vub
-
-      MATLAB automatically generates several hidden folders in your ``$VSC_HOME``,
-      including the folder ``.MathWorks``, which can become quite big over time. To
-      prevent ``$VSC_HOME`` from filling up, we recommend creating symlinks to
-      redirect this folder to your ``$VSC_DATA`` directory. If this folder already
-      exists, you can safely delete it. Execute the following commands to accomplish
-      this:
-
-      .. code-block:: bash
-
-         rm -rf ~/.MathWorks
-         mkdir -pv $VSC_DATA/.MathWorks
-         ln -sv $VSC_DATA/.MathWorks ~/.MathWorks
 
 Launching MATLAB
 ~~~~~~~~~~~~~~~~
