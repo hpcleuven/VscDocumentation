@@ -110,9 +110,12 @@ VSC clusters that support different Jupyter kernels:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 The following table shows the kernels available in JupyterLab and the
 corresponding modules that have to be loaded to enable them:
@@ -313,9 +316,12 @@ VSC clusters that support the 'Software Modules' Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 The 'Software Modules' Lab extension is enabled by default in your JupyterLab
 session.  You can load software modules from the tab with a *hexagon* icon on
@@ -373,9 +379,12 @@ VSC clusters that support the matplotlib Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 To activate the Lab extension in your notebook, use the ``%matplotlib ipympl`` or
 ``%matplotlib widget`` magic command. To ensure your plot is always shown, make
@@ -403,9 +412,12 @@ VSC clusters that support the Dask Lab extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 #. In the resources form, tick the 'Load the dask module' checkbox to make sure
    the Dask Lab extension is loaded before starting JupyterLab.
@@ -452,9 +464,12 @@ VSC clusters that support the Bash kernel extension:
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 By default, the 'Bash' kernel is loaded in your environment, starting from the 2023a toolchain.
 To use it in a notebook, you need to choose the 'Bash' or 'Python 3 (ipykernel)' jupyter  kernels
