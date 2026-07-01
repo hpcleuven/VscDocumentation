@@ -125,7 +125,7 @@ such an SSH certificate via multi-factor authentication as described
 
 .. note::
    Alternatively, if you are not inside the Flemish university network you can ``ssh`` into **sofia**
-   from the login nodes of any Tier-2 cluster. Do not forget to set up your SSH keys there or 
+   from the login nodes of any Tier-2 cluster. Do not forget to set up your SSH keys there or
    to forward your SSH agent.
 
 More general information about SSH login is available in the
