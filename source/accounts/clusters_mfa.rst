@@ -8,3 +8,9 @@
        * Tier-2 :ref:`wICE <wICE hardware>`
        * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
+    .. grid-item-card:: |vub|
+       :columns: 12 4 4 4
+       
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`

@@ -15,6 +15,7 @@ VSC clusters:
 Login to Open OnDemand
 ----------------------
 
+|KULUH|
 Users from all VSC sites can access the Open OnDemand portal at KU Leuven site.
 For that, proceed to the :ref:`Open OnDemand portal <ood>`.
 If you are affiliated with KU Leuven, click on the KU Leuven logo.
@@ -48,20 +49,36 @@ You can acquire such an SSH certificate as follows:
   * macOS: use the default :ref:`OpenSSH agent`
   * Linux: use the default :ref:`OpenSSH agent`
 
-* Connect to either the cluster's login node or to ``firewall.vscentrum.be``
-  with your terminal application of choice and with agent forwarding enabled.
-  With e.g. OpenSSH you can do:
+.. tab-set::
+   :sync-group: vsc-sites
 
-  .. code-block:: bash
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
-     ssh -A vsc98765@login.hpc.kuleuven.be
-     # or
-     ssh -A vsc98765@firewall.vscentrum.be
+      * Connect to either the cluster's login node or to ``firewall.vscentrum.be``
+        with your terminal application of choice and with agent forwarding enabled.
+        With e.g. OpenSSH you can do:
 
-  PuTTY users can find the agent forwarding option under the
-  'Connection -> SSH -> Auth' tab.
-  OpenSSH users may also automatically
-  enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
+        .. code-block:: bash
+
+           ssh -A vsc98765@login.hpc.kuleuven.be
+           # or
+           ssh -A vsc98765@firewall.vscentrum.be
+
+   .. tab-item:: sofia
+      :sync: sofia
+
+      * Connect to ``firewall.vscentrum.be`` with your terminal application of
+        choice and with agent forwarding enabled. With e.g. OpenSSH you can do:
+
+        .. code-block:: bash
+
+           ssh -A vsc98765@firewall.vscentrum.be
+
+PuTTY users can find the agent forwarding option under the
+'Connection -> SSH -> Auth' tab.
+OpenSSH users may also automatically
+enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
 
 * You will then be shown a URL which you will need to open in a browser:
 
@@ -83,13 +100,14 @@ You can acquire such an SSH certificate as follows:
 
 * You will be forwarded to the Identity Provider (IdP) of your institute,
   and you need to login in a usual way using your registered credentials.
-  For KU Leuven users, the page looks like the following:
+
+  |kuluh| For KU Leuven users, the page looks like the following:
 
   .. _idp_page:
   .. figure:: mfa_login/idp_page.PNG
      :alt: idp_page
 
-* If you are already connected to the internal network, then you will be only asked to
+* |kuluh| If you are already connected to the internal network, then you will be only asked to
   identify yourself with the MFA authenticator app on your personal phone:
 
   .. _reauthenticate_phone:
