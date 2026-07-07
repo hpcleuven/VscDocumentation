@@ -29,7 +29,8 @@ cluster name    # nodes    Processor architecture                               
 =============== ========== =========================================================== ===================== =========================== ======================= ===================
 doduo (default) 128        2 x 48-core AMD EPYC 7552 (Rome @ 2.2 GHz)                  250 GiB               180 GB SSD                  HDR-100 InfiniBand      RHEL 9
 gallade         16         2 x 64-core AMD EPYC 7773X (Milan-X @ 2.2 GHz)              940 GiB               1.5 TB NVME                 HDR-100 InfiniBand      RHEL 9
-shinx           48         2 x 96-core AMD EPYC 9654 (Genoa @ 2.4 GHz)                 370 GiB               500GB NVME 	             NDR-200 InfiniBand 	 RHEL 9
+shinx           48         2 x 96-core AMD EPYC 9654 (Genoa @ 2.4 GHz)                 370 GiB               500GB NVME                  NDR-200 InfiniBand      RHEL 9
+skiddo          28         2 x 128-core AMD EPYC 9755 (Turin @ 2.7 GHz)                720 GiB               900 GB NVME                 NDR-200 InfiniBand      RHEL 9
 =============== ========== =========================================================== ===================== =========================== ======================= ===================
 
 Interactive debug cluster
