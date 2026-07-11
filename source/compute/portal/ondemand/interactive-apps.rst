@@ -120,7 +120,7 @@ job will be queued.
              ``Select Path`` button below the text field to select it from a
              file browser.
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       .. list-table:: Shared resources (part 2)
@@ -210,7 +210,7 @@ your job resources:
          per core.  To get more memory, just request additional cores in the
          resources form.
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       For light-weight (testing) work, we recommend using the zen5_vis

@@ -62,11 +62,6 @@ VSC clusters that support an Open OnDemand web portal:
 
        | Tier-1 :ref:`sofia <sofia cluster>`
 
-.. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
-.. _UAntwerp OnDemand: https://portal.hpc.uantwerpen.be/
-.. _UGent OnDemand: https://login.hpc.ugent.be/
-.. _VUB OnDemand: https://portal.hpc.vub.be/
-.. _sofia OnDemand: https://portal.sofia.vub.be/
 
 You can log in using the credentials of your home institution or your VSC
 credentials. SSH keys are not required to use the web portal.
