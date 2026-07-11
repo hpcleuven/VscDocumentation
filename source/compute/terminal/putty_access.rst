@@ -163,7 +163,7 @@ VSC clusters.
         :sync: kuluh
 
         You will be then prompted to copy/paste the firewall link into your
-        browser and complete the :ref:`Multi Factor Authentication (MFA) <mfa_leuven>`
+        browser and complete the :ref:`Multi Factor Authentication (MFA) <mfa_login>`
         procedure. With PuTTY, users only need to highlight the link with their
         mouse in order to copy it to the clipboard.
 
