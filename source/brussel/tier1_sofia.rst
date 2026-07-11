@@ -5,6 +5,12 @@
 
    .. grid-item::
 
+      .. image:: images/sofia-sun.png
+         :width: 98%
+         :class: bg-transparent
+
+   .. grid-item::
+
       .. image:: images/sofia-supercomputer-logo.png
          :width: 100%
          :class: only-light bg-transparent sd-my-2
@@ -13,155 +19,165 @@
          :width: 100%
          :class: only-dark bg-transparent sd-my-2
 
-   .. grid-item::
-
-      .. image:: images/sofia-sun.png
-         :width: 98%
-         :class: bg-transparent
-
+###############
 sofia @ VUB-HPC
-===============
-
-.. contents::
-    :depth: 3
-    :local:
-    :backlinks: none
-
-General information
--------------------
-
-.. important::
-
-   The pilot phase is complete, and **sofia** is currently offline for
-   maintenance as we prepare the system for full production.  Approved
-   applications from the June 1 cut-off will be activated by July 2026, and
-   starting grants will also open in July.  Please contact :ref:`Tier-1 support
-   <sofia_help>` if you have any questions.
+###############
 
 **sofia** is the 4th VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016),
-*BrENIAC* (hosted by HPC-Leuven, 2016-2022) and *Hortense* (hosted by HPC-Ugent, 2021-2027).
+:ref:`BrENIAC<breniac hardware>` (hosted by HPC-Leuven, 2016-2022) and
+:ref:`Hortense<Hortense hardware>` (hosted by HPC-Ugent, 2021-2027).
 
-It will be available in the second half of 2026, is hosted by Vrije Universiteit Brussel,
-and maintained and supported by the VUB-HPC team.
+It is in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
+
+.. _sofia_help:
+
+Getting help
+============
+
+Any questions, comments or problems related to Tier-1 **sofia** can be addressed to the central
+support for VSC Tier-1 services:
+
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
+
+   .. button-link:: mailto:support@vscentrum.be
+      :color: info
+      :expand:
+
+      :fa:`envelope` **support@vscentrum.be**
+
+Questions regarding Tier-1 Hortense should be send to:
+`compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
 .. _sofia_hardware_details:
 
 Hardware details
-----------------
+================
 
-The **sofia** cluster consists of the following partitions:
+The **sofia** cluster consists of the following compute partitions:
 
-- ``zen5_dense``: CPU partition:
-   - 56 compute nodes, each with:
-       - 2x AMD EPYC 9965 192-Core CPU (Turin Dense) 2.25 GHz ("Zen 5c" microarchitecture, 384 cores per node)
-       - 770 GiB usable RAM (~2 GiB/core), 7.6 GiB swap (local SSD)
-       - 1.4 TiB SSD local disk
-- ``zen5_himem``: large-memory partition:
-   - 16 compute nodes, each with:
-       - 2x AMD EPYC 9655 96-Core CPU (Turin) 2.6 GHz ("Zen 5" microarchitecture, 192 cores per node)
-       - 1.5 TiB usable RAM (~8 GiB/core), 7.6 GiB swap (local SSD)
-       - 1.4 TiB SSD local disk
-- ``zen4_h200``: GPU partition:
-   - 22 compute nodes, each with:
-       - 2x AMD EPYC 9654 96-Core CPU (Genoa) 2.4 GHz (192 cores per node)
-       - 8x NVIDIA H200-SXM5 (141 GiB GPU memory), Nvlink4
-       - 1.5 TiB usable RAM (~8 GiB/CPU core), 7.6 GiB swap (local SSD)
-       - 1.4 TiB SSD local disk
-- ``zen5_vis``: interactive and debug partition:
-   - 4 compute nodes, each with:
-       - 2x AMD EPYC 9655 96-Core CPU (Turin) 2.6 GHz ("Zen 5" microarchitecture, 192 cores per node)
-       - 2x NVIDIA RTX 5000 Ada Generation (32 GiB GPU memory)
-       - 1.5 TiB usable RAM (~8 GiB/CPU core), 7.6 GiB swap (local SSD)
-       - 1.4 TiB SSD local disk
+===================  =============================  ============================  =============================  ===============================
+Slurm partition      ``zen5_dense``                 ``zen5_himem``                ``zen4_h200``                  ``zen5_vis``
+===================  =============================  ============================  =============================  ===============================
+**Nodes**            56                             16                            22                             4
+**GPUs per node**                                                                 8x `NVIDIA H200`_ (Hopper)     2x `NVIDIA RTX 5000 Ada`_ (Ada)
+**GPU memory**                                                                    140 GB                         32 GB
+**CPUs per node**    2x 192-core `AMD EPYC 9965`_   2x 96-core `AMD EPYC 9655`_   2x 96-core `AMD EPYC 9654`_    2x 96-core `AMD EPYC 9655`_ 
+                     |br| (Zen5c Turin)             |br| (Zen5 Turin)             |br| (Zen4 Genoa)              |br| (Zen5 Turin)
+**CPU memory**       742 GB                         1493 GB                       1493 GB                        1493 GB
+                     |br| 1.9 GB/core               |br| 7.7 GB/core              |br| 7.7 GB/core               |br| 7.7 GB/core
+**Local disk**       1.4 TB SDD                     1.4 TB SDD                    1.4 TB SDD                     1.4 TB SDD
+**Interconnect**     200 Gbps                       400 Gbps                      800 Gbps                       400 Gbps
+                     |br| NDR-IB                    |br| NDR-IB                   |br| NDR-IB                    |br| NDR-IB
+===================  =============================  ============================  =============================  ===============================
 
 Shared infrastructure:
 
 - *storage*: 4.3 PiB shared scratch storage, IBM Storage Scale System
 - *interconnect*: NVIDIA Quantum-2 InfiniBand, fat tree network with 2:1 blocking
-   - ~400 Gb/s for GPU and large-memory partition
-   - ~200 Gb/s for CPU partition
 
 .. _sofia_getting_access:
 
 Getting access
---------------
+==============
 
-.. _sofia_access_policy:
+The **sofia** VSC Tier-1 cluster can only be accessed by people with an active
+`Tier-1 compute project <https://www.vscentrum.be/compute>`__ .
+Everyone is welcome to request a *starting grant* or *collaborative grant* to
+apply for their Tier-1 compute project.
 
-Access policy
-*************
+.. _sofia_web_portal:
 
-**The sofia VSC Tier-1 cluster can only be accessed by people with an active Tier-1 compute project.**
+Web portal
+----------
 
-Tier-1 compute project resources are always allocated for a given period.
-After this period expires, the users of this project lose access to all resources granted within that project.
-This includes storage in addition to compute resources (CPU and GPU).
+The Tier-1 cluster **sofia** has its own :ref:`OnDemand Web Portal<compute
+portal>`. Users with an active project in **sofia** can access it at `sofia
+OnDemand`_.
 
-As soon as a project expires, project members:
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
 
-* will no longer be able to use any remaining CPU cycles, GPU cycles or credits
-* will no longer have access to the dedicated project folders
-* will lose access to the Tier-1 cluster, unless they have another active project
+   .. button-link:: https://portal.sofia.vub.be/
+      :color: primary
+      :expand:
 
-See https://www.vscentrum.be/compute for more information on requesting access, rules and regulations.
+      web portal: :fas:`circle-play` **sofia OnDemand**
 
+More information about the usage of the web portal is available at
+:ref:`compute portal`.
 
-.. _sofia_login_nodes:
+.. _sofia_terminal_ssh:
 
-Login nodes (SSH)
-*****************
+Terminal interface
+------------------
 
-You can use SSH to connect to the login nodes of the Tier-1 **sofia** cluster
-with your VSC account, using your VSC-id to connect to ``login.sofia.vub.be``.
+You can use SSH to connect to the :ref:`terminal interface<terminal interface>`
+of the Tier-1 cluster **sofia** with your VSC account. 
 
-.. code-block:: bash
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
 
-   ssh <VSC-id>@login.sofia.vub.be
+   **login.sofia.vub.be**
 
-From within the Flemish university network, you can connect directly using your SSH key.
-From outside the university network, only SSH certificates are accepted. You can set up
-such an SSH certificate via multi-factor authentication as described
-`here <https://docs.vscentrum.be/accounts/mfa_login.html#connecting-with-an-ssh-agent>`__.
+There are two ways to authenticate with SSH to **sofia**, with an :ref:`SSH
+key<ssh keys>` in your VSC account page or with :ref:`Multi-factor
+Authentication (MFA)<mfa_login>`. Different restrictions apply to each:
 
-.. note::
-   Alternatively, if you are not inside the Flemish university network you can ``ssh`` into **sofia**
-   from the login nodes of any VSC Tier-2 cluster. Do not forget to set up your SSH keys there or
-   to forward your SSH agent.
+SSH certificates with MFA
+    Set up your SSH connection to connect to **sofia** with your VSC ID and a
+    SSH certificate via MFA as described in :ref:`mfa-with-ssh-agent`.
+    You can connect to **sofia** from any Belgian public network with this
+    method of authentication.
 
-More general information about SSH login is available in the
-:ref:`terminal
-interface` section. Note that for access from abroad an extra step is needed. See the VUB tab at
-:ref:`location_access_restrictions`.
+SSH keys in VSC Account Page
+    Configure your :ref:`SSH client<terminal ssh>` as you have already done for
+    other VSC Tier-2 clusters to connect to **sofia** with your
+    VSC ID and your SSH key of choice in your VSC account page.
+    This method of authentication is restricted to the Flemish university
+    networks. This means that you need to connect to **sofia** from within your
+    university premises, use your university :ref:`VPN<vpn>` or connect from
+    another VSC Tier-2 compute cluster.
 
-There are 2 login nodes for **sofia**: ``login01`` and ``login02``, both running the Rocky Linux release 9.7 operating system.
-When logging in using SSH, you will be assigned to either of these login nodes,
-based on the IP address of the host you are connecting from.
+.. sealso::
+   
+   Access from abroad requires additional permissions. See the instructions
+   related to VUB at :ref:`location_access_restrictions`.
 
-If you need to access a *specific* login node (for example because you have a ``screen`` or ``tmux`` session
-running there), just run "``ssh login01``" to jump to ``login01`` if you were logged in to ``login02``,
-or vice versa. Make sure your SSH keys are properly configured or forwarded.
+Login nodes
+^^^^^^^^^^^
 
-.. note::
-  The available resources on the **sofia** login nodes are shared by everyone who is logged in there.
+There are 2 login nodes in **sofia**: ``login01`` and ``login02``.
 
-  **Please only use the sofia login nodes as an access portal!**
+Upon login you will be assigned to either of these login nodes. If you need to
+access a *specific* login node (for example because you have a ``screen`` or
+``tmux`` session running there), you can jump between login nodes with the
+commands ``ssh login01`` or ``ssh login02``. Make sure your SSH keys are
+properly forwarded with an :ref:`SSH agent<OpenSSH agent>`.
 
-  For resource-intensive interactive tasks, like software compilation, testing software or job scripts, etc.,
-  please use an interactive job, preferentially on the ``zen5_vis`` partition,
-  either via ``salloc -p zen5_vis`` or through the :ref:`sofia_web_portal`.
+.. warning::
+
+   Compute intensive tasks are not allowed on the login nodes. Please use an
+   interactive job, preferentially on the ``zen5_vis`` partition, either via
+   ``salloc -p zen5_vis`` or through the :ref:`sofia_web_portal`.
 
 .. _sofia_login_nodes_host_keys:
 
-Host keys
-+++++++++
+SSH Host keys
+^^^^^^^^^^^^^
 
-The first time you log in to the **sofia** login nodes, a fingerprint of the host key will be shown.
-Before confirming the connection, verify the correctness of the host key, to ensure you are
-connecting to the correct system.
+The first time you log in to the **sofia** login nodes, a fingerprint of the
+host key will be shown. Before confirming the connection, please verify the
+correctness of the host key to ensure you are connecting to the correct system.
 
-The type of fingerprint that will be shown depends on the version and configuration of your SSH client.
-
-**Please verify that the fingerprint of the host key is *one* of the following**:
+The fingerprint that will be shown depends on the version and configuration of
+your SSH client, check that the one shown corresponds to one of the following:
 
 * for ECDSA host key:
 
@@ -178,43 +194,114 @@ The type of fingerprint that will be shown depends on the version and configurat
   * ``5e:2e:21:11:c6:8e:1e:1f:c9:7c:d2:38:c7:f6:f9:35`` (MD5)
   * ``vS9fAoDO52dWCXS/obPS5u95irhJiKo1PfV4dyJl2Mg`` (SHA256)
 
-.. _sofia_web_portal:
+.. _sofia_access_policy:
 
-Web portal
-**********
+Access and retention policy
+---------------------------
 
-To access Tier-1 **sofia** you can also use the `Open OnDemand` web portal at
-https://portal.sofia.vub.be.
+The resources of a Tier-1 compute project are always allocated for a given
+period of time. Once the project expires, users of the project will not be able
+to use any more resources granted within that project.
 
-You will need an active project in order to get access.
+.. attention::
 
-More information about the usage of the web portal is available at :ref:`compute portal`.
+   Data retention of project data is 90 days.
+
+Use of resources stops at the end of the day of the last day of the project.
+Users of the project will still be able to access their data for 60 days after
+that date. The following details the changes at each stage once a project ends:
+
+End date of the project:
+    * :fas:`times` SSH login to **sofia**
+    * :fas:`times` OnDemand Web portal of **sofia**
+    * :fas:`times` write data to **sofia** project directory
+    * :fas:`check` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
+    * :fas:`check` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
+
+60 days after end of project:
+    * :fas:`times` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
+    * :fas:`times` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
+
+90 days after end of project:
+    * :fas:`times` all project data in **sofia** deleted
+
+.. seealso::
+
+   More information on requesting access, rules and regulations can be found in 
+   https://www.vscentrum.be/compute
+
+.. _sofia_login_nodes:
 
 Storage
--------
+=======
+
+The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This is a shared
+storage available on all login and compute nodes of the cluster. It is used to
+provide scratch storage for jobs (*i.e.* project directories), as well as
+user's home directories and it also holds the installations of scientific
+software.
+
+.. _sofia_globus:
+
+Globus on sofia
+---------------
+
+The **sofia** scratch storage can be accessed via the :ref:`globus platform`.
+You can find the link to the endpoints of **sofia** in Globus in the link
+below.
+
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
+
+   .. button-link:: /globus/collections.html#id3
+      :color: secondary
+      :expand:
+
+      :fas:`cloud-upload-alt` **sofia Globus Collections**
+
+.. note::
+
+   Remember to back up your project data in **sofia**. Data will be deleted 90
+   days after the project has expired. See our
+   :ref:`retention policy<sofia_retention_policy>`.
+
+.. _sofia_job_submission:
 
 Home directory
-**************
+--------------
 
-Similar to *Hortense*, the user’s ``$HOME`` directory is located on the scratch
-file system and is distinct from the user’s ``$VSC_HOME``.  The advantage of
-this setup is that **sofia** remains accessible even if the user’s home
-institution cluster is down.
+The user’s ``$HOME`` directory in **sofia** is located on its own scratch file
+system and is distinct from the user’s ``$VSC_HOME`` found in other Tier-2
+clusters.
 
-$VSC_HOME and $VSC_DATA
-***********************
+Therefore, users will have a default account setup upon their first login to
+**sofia**. If you want copy any configuration files or customizations (*e.g.*
+``.bashrc`` or any other dot files) from your Tier-2 cluster, you can do so
+through :ref:`Globus <sofia_globus>`.
 
-``$VSC_HOME`` and ``$VSC_DATA`` are not directly accessible on **sofia**.
-We highly recommend using :ref:`Globus <sofia_scratch_globus>`
-for file transfer between **sofia** and Tier-2 storage.
+One advantage of this setup is that **sofia** remains accessible even if the
+Tier-2 infrastructure on the user’s home institution is down.
 
-Node-local scratch and in-memory storage
-****************************************
+VSC_DATA
+--------
 
-Each node in the cluster, including the login nodes, provides local non-shared storage for temporary data:
+Your ``$VSC_DATA`` storage, which is hosted in your home institute, is not
+directly accessible from **sofia**.
 
-* Temporary storage on local node hard drive: ``$VSC_SCRATCH_NODE``, ``$TMPDIR``, ``/tmp`` and ``/var/tmp``;
-* Temporary storage on local node memory (RAM): ``/dev/shm``.
+Users can access their ``$VSC_DATA`` storage with  :ref:`Globus <sofia_globus>`
+and transfer any needed data in there to their project directory in the scratch
+storage of **sofia**.
+
+Node-local scratch
+------------------
+
+Each node in the cluster, including the login nodes, provides local storage for
+temporary data that is not shared or visible to other users.
+
+* Temporary storage on local node hard drive: ``$VSC_SCRATCH_NODE``, ``$TMPDIR``, ``/tmp`` and ``/var/tmp``
+* Temporary storage on local node memory (RAM): ``/dev/shm``
 
 .. note::
 
@@ -222,66 +309,41 @@ Each node in the cluster, including the login nodes, provides local non-shared s
    at the end of the active session**. For compute nodes this is at the end
    of your job and for login nodes whenever you log out of the cluster.
 
-.. _sofia_scratch_globus:
-
-sofia scratch via Globus
-************************
-
-The **sofia** shared scratch storage can be accessed via the :ref:`globus platform`.
-
-Pilot data:
-
-* Collection: `VSC sofia pilot <https://app.globus.org/file-manager?origin_id=a3485425-436e-40cc-9061-31a9c8366ffa&origin_path=%2Fsofia%2Fscratch%2Fpilot%2F>`_
-* Path: ``/scratch/sofia/pilot``
-
-Project data:
-
-* Collection: `VSC sofia projects <https://app.globus.org/file-manager?origin_id=d7e3873e-da1f-45ed-8a50-bd943652938e&origin_path=%2Fprojects%2F>`_
-* Path: ``/sofia/projects`` or ``$VSC_SCRATCH_PROJECTS_BASE``
-
-.. note::
-
-   Remember to back up your pilot/project data. As the scratch storage on
-   **sofia** is limited, data will be deleted at some point after the project
-   has expired.
-
-.. _sofia_job_submission:
-
 Job submission
---------------
+==============
 
-**sofia** uses the :ref:`Slurm job scheduler<running jobs>`. Only Slurm-native
-commands are supported for managing your jobs.
+The Tier-1 cluster **sofia** uses the :ref:`Slurm job scheduler<running jobs>`.
+Only Slurm-native commands are supported for managing your jobs.
 
-Users must specify one of the available :ref:`partitions
-<sofia_hardware_details>` when submitting jobs. Loading a ``cluster`` module is
-not required.
+Users must specify one of the available :ref:`partitions <sofia_hardware_details>` when submitting jobs.
+Loading a ``cluster`` module is not required.
 
 .. _sofia_job_environment:
 
 Job environment
-***************
+---------------
 
-In **sofia**, both batch and interactive jobs start in a clean environment. This
-differs from the default Slurm behavior (``--export=ALL``). The reason is
-twofold:
+In **sofia**, both batch and interactive jobs start in a clean session environment. This
+differs from the default Slurm behavior (``--export=ALL``). This approach
+provides the following advantages:
 
-* reproducibility: it ensures your jobs run consistently regardless of your current shell state
-* architecture alignment: it forces software modules to reload when moving
-  between different hardware architectures, ensuring access to the correct and
-  optimized software.
+* **reproducibility**: your jobs run consistently regardless of your current shell state
+* **architecture alignment**: software modules will always be loaded for the
+  hardware architectures in use, ensuring access to the correct and
+  optimized software binaries
 
 Propagating specific environment variables to your job can be done with the
-``--export=<environment_variables>`` option.
+``--export=<environment_variables>`` option in Slurm. See :ref:`slurm_job_env`
+for more information.
 
 If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
-<https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`_.
+<https://hpc.vub.be/docs/faq/advanced/#how-can-i-copy-the-login-shell-environment-to-my-jobs>`__.
 
 .. _sofia_job_memory:
 
 Job memory
-**********
+^^^^^^^^^^
 
 The CPU memory allocated to Slurm jobs scales linearly with the
 number of allocated CPU cores. See :ref:`sofia_hardware_details` for the
@@ -299,7 +361,7 @@ all jobs follow the same linear memory-per-core allocation.
 .. _sofia_job_gpu:
 
 GPU jobs
-********
+^^^^^^^^
 
 In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
 ``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
@@ -322,12 +384,3 @@ because insufficient CPU cores available on the node. It also helps keep
 benchmark results representative of production runs by ensuring that all jobs
 use the same core-to-GPU ratio.
 
-.. _sofia_help:
-
-Getting help
--------------
-
-For questions and problems related to Tier-1 **sofia**, please contact the central
-support address for Tier-1 support: `support@vscentrum.be <mailto:support@vscentrum.be>`_.
-
-Questions regarding Tier-1 Hortense will need to go to: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
