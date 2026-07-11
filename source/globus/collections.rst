@@ -24,7 +24,7 @@ Available collections
 The VSC hosts a number of collections:
 
 
-.. list-table:: Overview of collections for HPC systems
+.. list-table:: Overview of collections for Tier-2 Compute systems
    :header-rows: 1
 
    * - Name
@@ -39,10 +39,6 @@ The VSC hosts a number of collections:
      - `VSC UGent Tier2 filesystems <https://app.globus.org/file-manager/collections/e9247cdf-2c76-42ef-81d4-1c3f772ce719/overview>`_
      - No
      - Yes
-   * - UGent Tier-1
-     - `VSC UGent Tier1 projects <https://app.globus.org/file-manager/collections/ce533ba6-0b81-4640-bdc6-f3a6ff2d4b74/overview>`_
-     - No
-     - No
    * - UAntwerpen Tier-2
      - `VSC UAntwerpen Tier2 filesystems <https://app.globus.org/file-manager/collections/6a13242d-6506-4b3d-a49c-ac981b35ab7d/overview>`_
      - No
@@ -71,6 +67,26 @@ The VSC hosts a number of collections:
      - `VSC KU Leuven archive directories <https://app.globus.org/file-manager/collections/64cb7bf2-492b-4489-ab7f-f80c252a7d92/overview>`_
      - No  
      - No  
+
+.. list-table:: Overview of collections for Tier-1 Compute
+   :header-rows: 1
+
+   * - Name
+     - Collection
+     - High assurance
+     - Guest collections
+   * - Tier-1 Hortense
+     - `VSC UGent Tier1 projects <https://app.globus.org/file-manager/collections/ce533ba6-0b81-4640-bdc6-f3a6ff2d4b74/overview>`_
+     - No
+     - No
+   * - Tier-1 **sofia** (pilot)
+     - `VSC sofia pilot <https://app.globus.org/file-manager?origin_id=a3485425-436e-40cc-9061-31a9c8366ffa&origin_path=%2Fsofia%2Fscratch%2Fpilot%2F>`_
+     - No
+     - Yes
+   * - Tier-1 **sofia** (projects)
+     - `VSC sofia projects <https://app.globus.org/file-manager?origin_id=d7e3873e-da1f-45ed-8a50-bd943652938e&origin_path=%2Fprojects%2F>`_
+     - No
+     - Yes
 
 .. list-table:: Overview of collections for Tier-1 Data
    :header-rows: 1
