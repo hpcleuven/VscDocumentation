@@ -289,10 +289,13 @@ myst_heading_anchors = 2
 myst_enable_extensions = ["colon_fence"]
 
 # -- RST Prolog --------------------------------------------------------------
-# Non-brakable space
+# Special formatting
 rst_prolog = """
 .. |nbsp| unicode:: U+00A0
    :trim:
+.. |br| raw:: html
+
+   <br />
 """
 # Badges
 rst_prolog += """
@@ -328,9 +331,13 @@ rst_prolog += """
 .. _VSC Account - New/Join VO: https://account.vscentrum.be/django/vo/join
 .. _VSC Firewall: https://firewall.vscentrum.be
 .. _VSC Training: https://www.vscentrum.be/vsctraining
-.. _KU Leuven Open OnDemand page: https://ondemand.hpc.kuleuven.be/
 .. _Service Catalog: https://icts.kuleuven.be/sc/HPC
 .. _training waiting list: https://admin.kuleuven.be/icts/onderzoek/hpc/HPCintro-waitinglist
+.. _KU Leuven OnDemand: https://ondemand.hpc.kuleuven.be/
+.. _UAntwerp OnDemand: https://portal.hpc.uantwerpen.be/
+.. _UGent OnDemand: https://login.hpc.ugent.be/
+.. _VUB OnDemand: https://portal.hpc.vub.be/
+.. _sofia OnDemand: https://portal.sofia.vub.be/
 """
 # Links to hardware specifications
 rst_prolog += """
@@ -341,6 +348,9 @@ rst_prolog += """
 .. _AMD EPYC 9384X: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9384x.html
 .. _AMD EPYC 9535: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9535.html
 .. _AMD EPYC 9335: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9335.html
+.. _AMD EPYC 9654: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9654.html
+.. _AMD EPYC 9655: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9655.html
+.. _AMD EPYC 9965: https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9965.html
 .. _AMD Instinct MI100: https://www.amd.com/en/products/accelerators/instinct/mi100.html
 .. _Intel Xeon E5-2650v4: https://www.intel.com/content/www/us/en/products/sku/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz/specifications.html
 .. _Intel Xeon E5-2680v2: https://www.intel.com/content/www/us/en/products/sku/75277/intel-xeon-processor-e52680-v2-25m-cache-2-80-ghz/specifications.html
@@ -354,6 +364,7 @@ rst_prolog += """
 .. _NVIDIA L40S: https://www.nvidia.com/en-us/data-center/l40s/
 .. _NVIDIA Tesla P100: https://www.nvidia.com/en-in/data-center/tesla-p100/
 .. _NVIDIA GeForce 1080Ti: https://www.nvidia.com/en-us/geforce/10-series/#1080-ti-spec
+.. _NVIDIA RTX 5000 Ada: https://www.nvidia.com/en-us/products/workstations/rtx-5000/
 """
 # Links to Globus
 rst_prolog += """
