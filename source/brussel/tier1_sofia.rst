@@ -4,12 +4,14 @@
    :class-container: bg-transparent
 
    .. grid-item::
+      :columns: 12 12 6 6
 
       .. image:: images/sofia-sun.png
          :width: 98%
          :class: bg-transparent
 
    .. grid-item::
+      :columns: 12 12 6 6
 
       .. image:: images/sofia-supercomputer-logo.png
          :width: 100%
@@ -18,6 +20,57 @@
       .. image:: images/sofia-supercomputer-logo-light.png
          :width: 100%
          :class: only-dark bg-transparent sd-my-2
+
+.. grid:: 4
+    :gutter: 4
+
+    .. grid-item-card:: Hardware
+       :columns: 12 6 3 3
+       :link: sofia_hardware
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Storage
+       :columns: 12 6 3 3
+       :link: sofia_storage
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Globus
+       :columns: 12 6 3 3
+       :link: sofia_globus
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Data Retention
+       :columns: 12 6 3 3
+       :link: sofia_retention_policy
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Web Portal
+       :columns: 12 6 3 3
+       :link: sofia_web_portal
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Terminal
+       :columns: 12 6 3 3
+       :link: sofia_terminal_ssh
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Jobs
+       :columns: 12 6 3 3
+       :link: sofia_job_submission
+       :link-type: ref
+       :text-align: center
+
+    .. grid-item-card:: Changelog
+       :columns: 12 6 3 3
+       :link: sofia_changelog
+       :link-type: ref
+       :text-align: center
 
 ###############
 sofia @ VUB-HPC
@@ -51,7 +104,7 @@ support for VSC Tier-1 services:
 Questions regarding Tier-1 Hortense should be send to:
 `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
-.. _sofia_hardware_details:
+.. _sofia_hardware:
 
 Hardware details
 ================
@@ -145,10 +198,12 @@ SSH keys in VSC Account Page
     university premises, use your university :ref:`VPN<vpn>` or connect from
     another VSC Tier-2 compute cluster.
 
-.. sealso::
+.. seealso::
    
    Access from abroad requires additional permissions. See the instructions
    related to VUB at :ref:`location_access_restrictions`.
+
+.. _sofia_login_nodes:
 
 Login nodes
 ^^^^^^^^^^^
@@ -194,7 +249,7 @@ your SSH client, check that the one shown corresponds to one of the following:
   * ``5e:2e:21:11:c6:8e:1e:1f:c9:7c:d2:38:c7:f6:f9:35`` (MD5)
   * ``vS9fAoDO52dWCXS/obPS5u95irhJiKo1PfV4dyJl2Mg`` (SHA256)
 
-.. _sofia_access_policy:
+.. _sofia_retention_policy:
 
 Access and retention policy
 ---------------------------
@@ -230,7 +285,7 @@ End date of the project:
    More information on requesting access, rules and regulations can be found in 
    https://www.vscentrum.be/compute
 
-.. _sofia_login_nodes:
+.. _sofia_storage:
 
 Storage
 =======
@@ -266,8 +321,6 @@ below.
    Remember to back up your project data in **sofia**. Data will be deleted 90
    days after the project has expired. See our
    :ref:`retention policy<sofia_retention_policy>`.
-
-.. _sofia_job_submission:
 
 Home directory
 --------------
@@ -309,13 +362,15 @@ temporary data that is not shared or visible to other users.
    at the end of the active session**. For compute nodes this is at the end
    of your job and for login nodes whenever you log out of the cluster.
 
+.. _sofia_job_submission:
+
 Job submission
 ==============
 
 The Tier-1 cluster **sofia** uses the :ref:`Slurm job scheduler<running jobs>`.
 Only Slurm-native commands are supported for managing your jobs.
 
-Users must specify one of the available :ref:`partitions <sofia_hardware_details>` when submitting jobs.
+Users must specify one of the available :ref:`partitions <sofia_hardware>` when submitting jobs.
 Loading a ``cluster`` module is not required.
 
 .. _sofia_job_environment:
@@ -346,7 +401,7 @@ Job memory
 ^^^^^^^^^^
 
 The CPU memory allocated to Slurm jobs scales linearly with the
-number of allocated CPU cores. See :ref:`sofia_hardware_details` for the
+number of allocated CPU cores. See :ref:`sofia_hardware` for the
 memory per core available in each partition.
 
 All jobs must use the default memory allocation. Memory overrides ``--mem``,
@@ -383,4 +438,9 @@ This policy avoids situations where GPUs are available but cannot be allocated
 because insufficient CPU cores available on the node. It also helps keep
 benchmark results representative of production runs by ensuring that all jobs
 use the same core-to-GPU ratio.
+
+.. toctree::
+   :hidden:
+
+   tier1_sofia_changelog
 
