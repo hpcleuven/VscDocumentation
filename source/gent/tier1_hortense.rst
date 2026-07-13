@@ -21,8 +21,8 @@ and maintained and supported by the HPC-UGent team.
 
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
-End of 2025, the decommissioning process of cluster Hortense will start.
-This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from end 2025.
+Mid 2026, the gradual decommissioning process of cluster Hortense started.
+This is in parallel with the advent of the 4th VSC Tier-1 cluster sofia that became available at the VUB datacenter.
 
 
 .. _hortense_hardware_details:
@@ -32,26 +32,10 @@ Hardware details
 
 Hortense consists of the following partitions:
 
-- ``dodrio/cpu_rome_rhel9``: phase 1 main partition:
-   - 342 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
-       - 238 GiB usable RAM (~1.85GB/core), no swap
-       - 480 GB SSD local disk
-- ``dodrio/cpu_rome_512_rhel9``: large-memory partition:
-   - 42 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
-       - 488 GiB usable RAM (~3.8GB/core), no swap
-       - 480 GB SSD local disk
 - ``dodrio/cpu_milan_rhel9``: phase 2 main partition:
    - 384 workernodes, each with:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
        - 238 GiB usable RAM (~1.85GB/core), no swap
-       - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100_40_rhel9``: GPU partition:
-   - 20 workernodes, each with:
-       - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
-       - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
-       - 238 GiB usable RAM (~4.95GB/CPU core), no swap
        - 480 GB SSD local disk
 - ``dodrio/gpu_rome_a100_80_rhel9``: phase 2 GPU partition:
    - 20 workernodes, each with:
@@ -66,8 +50,7 @@ Hortense consists of the following partitions:
        - 1 NVIDIA L4 (24 GB GPU memory)
        - 488 GiB usable RAM (~3.8GB/oversubscribed core), no swap
        - 100 GB SSD local disk
-- ``dodrio/cpu_rome_all_rhel9``: combination of ``cpu_rome_rhel9`` and ``cpu_rome_512_rhel9``
-- ``dodrio/gpu_rome_a100_rhel9``: combination of ``gpu_rome_a100_40_rhel9`` and ``gpu_rome_a100_80_rhel9``
+- ``dodrio/gpu_rome_a100_rhel9``: same as ``gpu_rome_a100_80_rhel9`` (kept for historical reasons)
 
 Shared infrastructure:
 
@@ -760,18 +743,34 @@ to give you access to all the available resources.
 Gradual decommissioning
 -----------------------
 
-End 2025, the gradual decommissioning of Tier-1 Compute Hortense will be initiated.
-Around this time, the 4th VSC Tier-1 cluster will become available at the VUB datacenter.
+On 11 July 2026, the entire first phase of Tier1 Hortense was decommissioned.
+This phase was actually already end of life November 2025, but was kept online until the advent of the new VSC Tier-1 supercomputer sofia.
 
-T̵h̵e̵ ̵e̵n̵t̵i̵r̵e̵ ̵R̵o̵m̵e̵ ̵p̵a̵r̵t̵i̵t̵i̵o̵n̵ ̵i̵s̵ ̵e̵n̵d̵ ̵o̵f̵ ̵l̵i̵f̵e̵ ̵N̵o̵v̵e̵m̵b̵e̵r̵ ̵2̵0̵2̵5̵,̵ ̵a̵n̵d̵ ̵w̵i̵l̵l̵ ̵b̵e̵ ̵s̵h̵u̵t̵
-d̵o̵w̵n̵ ̵b̵y̵ ̵e̵n̵d̵ ̵2̵0̵2̵5̵.̵
-̵T̵h̵i̵s̵ ̵i̵m̵p̵l̵i̵e̵s̵ ̵t̵h̵a̵t̵ ̵t̵h̵e̵ ̵p̵a̵r̵t̵i̵t̵i̵o̵n̵s̵ c̵p̵u̵_̵r̵o̵m̵e̵, c̵p̵u̵_̵r̵o̵m̵e̵_̵a̵l̵l̵,
-c̵p̵u̵_̵r̵o̵m̵e̵_̵5̵1̵2̵, d̵e̵b̵u̵g̵_̵r̵o̵m̵e̵ w̵i̵l̵l̵ ̵a̵l̵l̵ ̵d̵i̵s̵a̵p̵p̵e̵a̵r̵.̵
-̵D̵e̵p̵e̵n̵d̵i̵n̵g̵ ̵o̵n̵ ̵V̵S̵C̵ ̵p̵l̵a̵n̵s̵,̵ ̵t̵h̵e̵ a̵1̵0̵0̵_̵4̵0̵ p̵a̵r̵t̵i̵t̵i̵o̵n̵ ̵m̵a̵y̵ ̵a̵l̵s̵o̵ ̵d̵i̵s̵a̵p̵p̵e̵a̵r̵.̵
-H̵o̵w̵e̵v̵e̵r̵,̵ ̵t̵h̵e̵r̵e̵ ̵c̵u̵r̵r̵e̵n̵t̵l̵y̵ ̵i̵s̵ ̵n̵o̵ ̵c̵o̵n̵f̵i̵r̵m̵a̵t̵i̵o̵n̵ ̵r̵e̵g̵a̵r̵d̵i̵n̵g̵ ̵t̵h̵i̵s̵.̵
+This implies that all partitions of this phase will disappear and will no longer be available:
+    - cpu_rome_rhel9
+    - cpu_rome_512_rhel9
+    - cpu_rome_all_rhel9
+    - gpu_rome_a100_40_rhel9
 
-Update 1 November 2025: The operational phase of the 4th Tier-1 has, unfortunately, 
-suffered a delay. As a result, the VSC has decided to keep the entire Rome partition active until end June 2026.
+Decommissioned partitions:
+
+- ``dodrio/cpu_rome_rhel9``: phase 1 main partition:
+   - 342 workernodes, each with:
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
+       - 238 GiB usable RAM (~1.85GB/core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/cpu_rome_512_rhel9``: large-memory partition:
+   - 42 workernodes, each with:
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
+       - 488 GiB usable RAM (~3.8GB/core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/gpu_rome_a100_40_rhel9``: GPU partition:
+   - 20 workernodes, each with:
+       - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
+       - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
+       - 238 GiB usable RAM (~4.95GB/CPU core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/cpu_rome_all_rhel9``: combination of ``cpu_rome_rhel9`` and ``cpu_rome_512_rhel9``
 
 
 Migration to RHEL9 operating system
