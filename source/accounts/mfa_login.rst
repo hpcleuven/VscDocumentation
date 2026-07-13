@@ -1,4 +1,4 @@
-.. _mfa_leuven:
+.. _mfa_login:
 
 Multi Factor Authentication (MFA)
 =================================
@@ -65,7 +65,7 @@ You can acquire such an SSH certificate as follows:
            # or
            ssh -A vsc98765@firewall.vscentrum.be
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       * Connect to ``firewall.vscentrum.be`` with your terminal application of

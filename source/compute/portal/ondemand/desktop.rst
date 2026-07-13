@@ -85,7 +85,7 @@ For improved graphics performance, we recommend the following workflow:
 
             vglrun <executable>
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       #. Select the ``zen5_vis`` partition and request a GPU.
@@ -157,7 +157,7 @@ Additional site-specific constraints are listed below.
 
       (N/A)
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       (N/A)

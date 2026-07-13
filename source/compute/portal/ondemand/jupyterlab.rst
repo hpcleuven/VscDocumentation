@@ -28,7 +28,7 @@ environment (as elaborated below).
       (default = ``~/.jupyter/jupyter_server_config.py``), this config will take
       priority over your 'Working directory' in the resources form.
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       The top-level notebook directory is the selected 'Working directory' in
@@ -73,7 +73,7 @@ listed Python module).
       - ``Scipy-bundle`` - data science packages like ``scipy``, ``numpy``, ``pandas``
       - ``matplotlib`` - plotting library and :ref:`matplotlib_lab_extension`
 
-   .. tab-item:: sofia
+   .. tab-item:: Tier-1 sofia
       :sync: sofia
 
       A large number of widely used Python packages are already available by

@@ -15,8 +15,6 @@
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       |sofia|
-
        * Tier-1 :ref:`sofia <sofia cluster>`
 
 .. toctree::
