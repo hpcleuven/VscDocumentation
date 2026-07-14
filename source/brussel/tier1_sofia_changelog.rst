@@ -4,6 +4,12 @@
 Tier-1 sofia changelog
 ######################
 
+2026-07-13
+----------
+* Create new `Globus collection <https://app.globus.org/file-manager/collections/d9e37ac8-6279-45a6-8622-0e7811aa8ace>`__
+  for sofia: the existing one had an incorrect configuration that caused absolute paths to not work.
+  The previous is marked as legacy and will be removed by October 1.
+
 2026-07-09
 ----------
 
