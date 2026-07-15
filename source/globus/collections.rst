@@ -84,7 +84,7 @@ The VSC hosts a number of collections:
      - No
      - Yes
    * - Tier-1 **sofia** (projects)
-     - `VSC sofia projects <https://app.globus.org/file-manager?origin_id=d7e3873e-da1f-45ed-8a50-bd943652938e&origin_path=%2Fprojects%2F>`_
+     - `VSC sofia projects <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fprojects%2F>`_
      - No
      - Yes
 
