@@ -186,7 +186,7 @@ Authentication (MFA)<mfa_login>`. Different restrictions apply to each:
 SSH certificates with MFA
     Set up your SSH connection to connect to **sofia** with your VSC ID and a
     SSH certificate via MFA as described in :ref:`mfa-with-ssh-agent`.
-    You can connect to **sofia** from any Belgian public network with this
+    You can connect to **sofia** from any network with this
     method of authentication.
 
 SSH keys in VSC Account Page
@@ -213,8 +213,7 @@ There are 2 login nodes in **sofia**: ``login01`` and ``login02``.
 Upon login you will be assigned to either of these login nodes. If you need to
 access a *specific* login node (for example because you have a ``screen`` or
 ``tmux`` session running there), you can jump between login nodes with the
-commands ``ssh login01`` or ``ssh login02``. Make sure your SSH keys are
-properly forwarded with an :ref:`SSH agent<OpenSSH agent>`.
+commands ``ssh login01`` or ``ssh login02``.
 
 .. warning::
 
@@ -273,11 +272,11 @@ End date of the project:
     * :fas:`check` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
     * :fas:`check` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
 
-60 days after end of project:
+30 days after end of project:
     * :fas:`times` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
     * :fas:`times` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
 
-90 days after end of project:
+60 days after end of project:
     * :fas:`times` all project data in **sofia** deleted
 
 .. seealso::
@@ -292,8 +291,8 @@ Storage
 
 The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This is a shared
 storage available on all login and compute nodes of the cluster. It is used to
-provide scratch storage for jobs (*i.e.* project directories), as well as
-user's home directories and it also holds the installations of scientific
+provide scratch storage for jobs (*i.e.* `https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects <project directories>`__),
+as well as user's home directories and it also holds the installations of scientific
 software.
 
 .. _sofia_globus:
@@ -318,7 +317,7 @@ below.
 
 .. note::
 
-   Remember to back up your project data in **sofia**. Data will be deleted 90
+   Remember to back up your project data in **sofia**. Data will be deleted 60
    days after the project has expired. See our
    :ref:`retention policy<sofia_retention_policy>`.
 
@@ -327,12 +326,14 @@ Home directory
 
 The user’s ``$HOME`` directory in **sofia** is located on its own scratch file
 system and is distinct from the user’s ``$VSC_HOME`` found in other Tier-2
-clusters.
+clusters. The quota for ``$HOME`` is 50 GB and 256.000 files.
 
-Therefore, users will have a default account setup upon their first login to
+Users will have a default account setup upon their first login to
 **sofia**. If you want copy any configuration files or customizations (*e.g.*
 ``.bashrc`` or any other dot files) from your Tier-2 cluster, you can do so
 through :ref:`Globus <sofia_globus>`.
+The size of the ``$HOME`` is larger so it can be used to install custom
+software or keep tools across projects.
 
 One advantage of this setup is that **sofia** remains accessible even if the
 Tier-2 infrastructure on the user’s home institution is down.
@@ -420,7 +421,8 @@ GPU jobs
 
 In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
 ``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
-that do not follow this ratio will be rejected.
+that do not follow this ratio will be rejected. The allocated CPU memory
+will scale at the same ratio.
 
 We recommend the following ``#SBATCH`` directives to request GPU resources.
 The example below requests 2 GPUs on a single node, with 1 task allocated per
