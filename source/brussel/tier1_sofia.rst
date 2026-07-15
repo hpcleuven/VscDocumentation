@@ -80,7 +80,7 @@ sofia @ VUB-HPC
 :ref:`BrENIAC<breniac hardware>` (hosted by HPC-Leuven, 2016-2022) and
 :ref:`Hortense<Hortense hardware>` (hosted by HPC-Ugent, 2021-2027).
 
-It is in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
+**sofia** is in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
 
 .. _sofia_help:
 
@@ -139,7 +139,7 @@ Getting access
 The **sofia** VSC Tier-1 cluster can only be accessed by people with an active
 `Tier-1 compute project <https://www.vscentrum.be/compute>`__ .
 Everyone is welcome to request a *starting grant* or *collaborative grant* to
-apply for their Tier-1 compute project.
+prepare for their Tier-1 compute project application.
 
 .. _sofia_web_portal:
 
@@ -183,13 +183,13 @@ There are two ways to authenticate with SSH to **sofia**, with an :ref:`SSH
 key<ssh keys>` in your VSC account page or with :ref:`Multi-factor
 Authentication (MFA)<mfa_login>`. Different restrictions apply to each:
 
-SSH certificates with MFA
+SSH certificates with MFA (any Belgian public network)
     Set up your SSH connection to connect to **sofia** with your VSC ID and a
     SSH certificate via MFA as described in :ref:`mfa-with-ssh-agent`.
     You can connect to **sofia** from any Belgian public network with this
     method of authentication.
 
-SSH keys in VSC Account Page
+SSH keys in VSC Account Page (Flemish university networks)
     Configure your :ref:`SSH client<terminal ssh>` as you have already done for
     other VSC Tier-2 clusters to connect to **sofia** with your
     VSC ID and your SSH key of choice in your VSC account page.
@@ -208,7 +208,7 @@ SSH keys in VSC Account Page
 Login nodes
 ^^^^^^^^^^^
 
-There are 2 login nodes in **sofia**: ``login01`` and ``login02``.
+There are two login nodes in **sofia**: ``login01`` and ``login02``.
 
 Upon login you will be assigned to either of these login nodes. If you need to
 access a *specific* login node (for example because you have a ``screen`` or
@@ -260,7 +260,7 @@ to use any more resources granted within that project.
 
 .. attention::
 
-   Data retention of project data is 90 days.
+   Data retention of project data is **90 days**.
 
 Use of resources stops at the end of the day of the last day of the project.
 Users of the project will still be able to access their data for 60 days after
@@ -280,10 +280,66 @@ End date of the project:
 90 days after end of project:
     * :fas:`times` all project data in **sofia** deleted
 
+.. _sofia_project_members:
+
+Managing project members
+-------------------------
+
+Only users who are members of a Tier-1 compute project can access its
+resources on **sofia**. The project manager can add other users to the
+project via the `VSC hub <https://hub.vscentrum.be>`__.
+
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
+
+   .. button-link:: https://hub.vscentrum.be
+      :color: primary
+      :expand:
+
+      :fas:`users` **VSC hub**
+
+#. Log in to the `VSC hub <https://hub.vscentrum.be>`__ with your VSC account.
+#. Open your project and go to its **Team** tab.
+#. Click **Add** and select either **Member**, if the user has already
+   logged in to the VSC hub before, or **Invite by email**, if the user has
+   never logged in there yet.
+
+.. warning::
+
+   Gaining access to the ``bsofia_proj_202x_yyy`` user group through
+   `account.vscentrum.be <https://account.vscentrum.be>`__ is **not**
+   sufficient to access **sofia**. You must instead be added as a member of
+   the project itself in the `VSC hub <https://hub.vscentrum.be>`__.
+
+.. _sofia_resource_usage:
+
+Consult your project resource usage
+-------------------------------------
+
+You can consult your project's resource usage directly in the
+`VSC hub <https://hub.vscentrum.be>`__.
+
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
+
+   .. button-link:: https://hub.vscentrum.be
+      :color: primary
+      :expand:
+
+      :fas:`chart-line` **VSC hub**
+
+Open your project in the `VSC hub <https://hub.vscentrum.be>`__ and go to
+its **Resources** tab to see the compute resources allocated to your
+project and how much of them have been used.
+
 .. seealso::
 
-   More information on requesting access, rules and regulations can be found in 
-   https://www.vscentrum.be/compute
+   More information on requesting access, rules and regulations can be found in
+   https://www.vscentrum.be/compute.
 
 .. _sofia_storage:
 
