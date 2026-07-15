@@ -23,7 +23,7 @@
       .. admonition:: Disclaimer
          :class: disclaimer
 
-         Requests for reserving resources will be processed by the local support team.
+         Requests for reserving resources will be processed by the HPC support team.
          It may happen that for technical or administrative reasons, the request cannot
          be granted.
 
