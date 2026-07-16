@@ -183,7 +183,7 @@ There are two ways to authenticate with SSH to **sofia**, with an :ref:`SSH
 key<ssh keys>` in your VSC account page or with :ref:`Multi-factor
 Authentication (MFA)<mfa_login>`. Different restrictions apply to each:
 
-SSH certificates with MFA (any Belgian public network)
+SSH certificates with MFA (any public network)
     Set up your SSH connection to connect to **sofia** with your VSC ID and a
     SSH certificate via MFA as described in :ref:`mfa-with-ssh-agent`.
     You can connect to **sofia** from any network with this
@@ -198,10 +198,6 @@ SSH keys in VSC Account Page (Flemish university networks)
     university premises, use your university :ref:`VPN<vpn>` or connect from
     another VSC Tier-2 compute cluster.
 
-.. seealso::
-   
-   Access from abroad requires additional permissions. See the instructions
-   related to VUB at :ref:`location_access_restrictions`.
 
 .. _sofia_login_nodes:
 
@@ -259,7 +255,7 @@ to use any more resources granted within that project.
 
 .. attention::
 
-   Data retention of project data is **90 days**.
+   Data retention of project data is **60 days**.
 
 Use of resources stops at the end of the day of the last day of the project.
 Users of the project will still be able to access their data for 60 days after
@@ -269,12 +265,8 @@ End date of the project:
     * :fas:`times` SSH login to **sofia**
     * :fas:`times` OnDemand Web portal of **sofia**
     * :fas:`times` write data to **sofia** project directory
-    * :fas:`check` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
-    * :fas:`check` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
-
-30 days after end of project:
-    * :fas:`times` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
-    * :fas:`times` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
+    * :fas:`check` access data in **sofia** `project directory <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fprojects%2F>`__ via :ref:`Globus <sofia_globus>`
+    * :fas:`check` access data in **sofia** `home directory <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fuser%2F>`__ via :ref:`Globus <sofia_globus>`
 
 60 days after end of project:
     * :fas:`times` all project data in **sofia** deleted
@@ -347,7 +339,7 @@ Storage
 
 The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This is a shared
 storage available on all login and compute nodes of the cluster. It is used to
-provide scratch storage for jobs (*i.e.* `https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects <project directories>`__),
+provide scratch storage for jobs (*i.e.* `project directories <https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects>`__),
 as well as user's home directories and it also holds the installations of scientific
 software.
 
