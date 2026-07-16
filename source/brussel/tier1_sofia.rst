@@ -80,7 +80,7 @@ sofia @ VUB-HPC
 :ref:`BrENIAC<breniac hardware>` (hosted by HPC-Leuven, 2016-2022) and
 :ref:`Hortense<Hortense hardware>` (hosted by HPC-Ugent, 2021-2027).
 
-It is in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
+**sofia** is in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
 
 .. _sofia_help:
 
@@ -139,7 +139,7 @@ Getting access
 The **sofia** VSC Tier-1 cluster can only be accessed by people with an active
 `Tier-1 compute project <https://www.vscentrum.be/compute>`__ .
 Everyone is welcome to request a *starting grant* or *collaborative grant* to
-apply for their Tier-1 compute project.
+prepare for their Tier-1 compute project application.
 
 .. _sofia_web_portal:
 
@@ -183,13 +183,13 @@ There are two ways to authenticate with SSH to **sofia**, with an :ref:`SSH
 key<ssh keys>` in your VSC account page or with :ref:`Multi-factor
 Authentication (MFA)<mfa_login>`. Different restrictions apply to each:
 
-SSH certificates with MFA
+SSH certificates with MFA (any public network)
     Set up your SSH connection to connect to **sofia** with your VSC ID and a
     SSH certificate via MFA as described in :ref:`mfa-with-ssh-agent`.
-    You can connect to **sofia** from any Belgian public network with this
+    You can connect to **sofia** from any network with this
     method of authentication.
 
-SSH keys in VSC Account Page
+SSH keys in VSC Account Page (Flemish university networks)
     Configure your :ref:`SSH client<terminal ssh>` as you have already done for
     other VSC Tier-2 clusters to connect to **sofia** with your
     VSC ID and your SSH key of choice in your VSC account page.
@@ -198,23 +198,18 @@ SSH keys in VSC Account Page
     university premises, use your university :ref:`VPN<vpn>` or connect from
     another VSC Tier-2 compute cluster.
 
-.. seealso::
-   
-   Access from abroad requires additional permissions. See the instructions
-   related to VUB at :ref:`location_access_restrictions`.
 
 .. _sofia_login_nodes:
 
 Login nodes
 ^^^^^^^^^^^
 
-There are 2 login nodes in **sofia**: ``login01`` and ``login02``.
+There are two login nodes in **sofia**: ``login01`` and ``login02``.
 
 Upon login you will be assigned to either of these login nodes. If you need to
 access a *specific* login node (for example because you have a ``screen`` or
 ``tmux`` session running there), you can jump between login nodes with the
-commands ``ssh login01`` or ``ssh login02``. Make sure your SSH keys are
-properly forwarded with an :ref:`SSH agent<OpenSSH agent>`.
+commands ``ssh login01`` or ``ssh login02``.
 
 .. warning::
 
@@ -260,7 +255,7 @@ to use any more resources granted within that project.
 
 .. attention::
 
-   Data retention of project data is 90 days.
+   Data retention of project data is **60 days**.
 
 Use of resources stops at the end of the day of the last day of the project.
 Users of the project will still be able to access their data for 60 days after
@@ -270,20 +265,72 @@ End date of the project:
     * :fas:`times` SSH login to **sofia**
     * :fas:`times` OnDemand Web portal of **sofia**
     * :fas:`times` write data to **sofia** project directory
-    * :fas:`check` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
-    * :fas:`check` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
+    * :fas:`check` access data in **sofia** `project directory <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fprojects%2F>`__ via :ref:`Globus <sofia_globus>`
+    * :fas:`check` access data in **sofia** `home directory <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fuser%2F>`__ via :ref:`Globus <sofia_globus>`
 
 60 days after end of project:
-    * :fas:`times` read data in **sofia** project directory via :ref:`Globus <sofia_globus>`
-    * :fas:`times` read data in **sofia** home directory via :ref:`Globus <sofia_globus>`
-
-90 days after end of project:
     * :fas:`times` all project data in **sofia** deleted
+
+.. _sofia_project_members:
+
+Managing project members
+-------------------------
+
+Only users who are members of a Tier-1 compute project can access its
+resources on **sofia**. The project manager can add other users to the
+project via the `VSC hub <https://hub.vscentrum.be>`__.
+
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
+
+   .. button-link:: https://hub.vscentrum.be
+      :color: primary
+      :expand:
+
+      :fas:`users` **VSC hub**
+
+#. Log in to the `VSC hub <https://hub.vscentrum.be>`__ with your VSC account.
+#. Open your project and go to its **Team** tab.
+#. Click **Add** and select either **Member**, if the user has already
+   logged in to the VSC hub before, or **Invite by email**, if the user has
+   never logged in there yet.
+
+.. warning::
+
+   Gaining access to the ``bsofia_proj_202x_yyy`` user group through
+   `account.vscentrum.be <https://account.vscentrum.be>`__ is **not**
+   sufficient to access **sofia**. You must instead be added as a member of
+   the project itself in the `VSC hub <https://hub.vscentrum.be>`__.
+
+.. _sofia_resource_usage:
+
+Consult your project resource usage
+-------------------------------------
+
+You can consult your project's resource usage directly in the
+`VSC hub <https://hub.vscentrum.be>`__.
+
+.. card::
+   :width: 50%
+   :margin: 2 4 auto auto
+   :text-align: center
+
+   .. button-link:: https://hub.vscentrum.be
+      :color: primary
+      :expand:
+
+      :fas:`chart-line` **VSC hub**
+
+Open your project in the `VSC hub <https://hub.vscentrum.be>`__ and go to
+its **Resources** tab to see the compute resources allocated to your
+project and how much of them have been used.
 
 .. seealso::
 
-   More information on requesting access, rules and regulations can be found in 
-   https://www.vscentrum.be/compute
+   More information on requesting access, rules and regulations can be found in
+   https://www.vscentrum.be/compute.
 
 .. _sofia_storage:
 
@@ -292,8 +339,8 @@ Storage
 
 The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This is a shared
 storage available on all login and compute nodes of the cluster. It is used to
-provide scratch storage for jobs (*i.e.* project directories), as well as
-user's home directories and it also holds the installations of scientific
+provide scratch storage for jobs (*i.e.* `project directories <https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects>`__),
+as well as user's home directories and it also holds the installations of scientific
 software.
 
 .. _sofia_globus:
@@ -318,7 +365,7 @@ below.
 
 .. note::
 
-   Remember to back up your project data in **sofia**. Data will be deleted 90
+   Remember to back up your project data in **sofia**. Data will be deleted 60
    days after the project has expired. See our
    :ref:`retention policy<sofia_retention_policy>`.
 
@@ -327,12 +374,14 @@ Home directory
 
 The user’s ``$HOME`` directory in **sofia** is located on its own scratch file
 system and is distinct from the user’s ``$VSC_HOME`` found in other Tier-2
-clusters.
+clusters. The quota for ``$HOME`` is 50 GB and 256.000 files.
 
-Therefore, users will have a default account setup upon their first login to
+Users will have a default account setup upon their first login to
 **sofia**. If you want copy any configuration files or customizations (*e.g.*
 ``.bashrc`` or any other dot files) from your Tier-2 cluster, you can do so
 through :ref:`Globus <sofia_globus>`.
+The size of the ``$HOME`` is larger so it can be used to install custom
+software or keep tools across projects.
 
 One advantage of this setup is that **sofia** remains accessible even if the
 Tier-2 infrastructure on the user’s home institution is down.
@@ -420,7 +469,8 @@ GPU jobs
 
 In the ``zen4_h200`` partition, Slurm jobs are allocated a fixed ratio of
 ``24`` CPU cores per GPU (1/8 of the CPU cores on a node).  Job requests
-that do not follow this ratio will be rejected.
+that do not follow this ratio will be rejected. The allocated CPU memory
+will scale at the same ratio.
 
 We recommend the following ``#SBATCH`` directives to request GPU resources.
 The example below requests 2 GPUs on a single node, with 1 task allocated per
