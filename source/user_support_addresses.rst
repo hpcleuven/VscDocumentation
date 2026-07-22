@@ -13,7 +13,11 @@
 
 * Tier-1 VSC Services:
 
-  * Tier-1 compute: compute@vscentrum.be
+  * Tier-1 compute:
+
+    * **sofia**: support@vscentrum.be
+
+    * Hortense: compute@vscentrum.be
 
   * Tier-1 cloud: cloud@vscentrum.be
 
