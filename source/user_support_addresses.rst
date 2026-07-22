@@ -1,4 +1,4 @@
-* VSC Sites:
+* VSC sites:
 
   * KU Leuven/Hasselt University: hpcinfo@kuleuven.be
 
@@ -11,9 +11,13 @@
   * Vrije Universiteit Brussel: hpc@vub.be, see also the
     `VUB-HPC website <https://hpc.vub.be>`_ for information specific to VUB
 
-* Tier-1 VSC Services:
+* VSC Tier-1 services:
 
-  * Tier-1 compute: compute@vscentrum.be
+  * Tier-1 compute:
+
+    * **sofia**: support@vscentrum.be
+
+    * Hortense: compute@vscentrum.be
 
   * Tier-1 cloud: cloud@vscentrum.be
 
