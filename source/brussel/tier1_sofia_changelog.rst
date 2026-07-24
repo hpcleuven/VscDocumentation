@@ -4,9 +4,19 @@
 Tier-1 sofia changelog
 ######################
 
+2026-07-24
+----------
+* Updated Open OnDemand to version 4.2.3.
+
+
+2026-07-21
+----------
+* Updated the kernel to version 5.14.0-687.26.1.
+
+
 2026-07-15
 ----------
-* Planning intervention on cooling: firmware upgrade of the CDU and fix the CDU monitoring
+* Planned intervention on cooling: firmware upgrade of the CDU and fix the CDU monitoring.
 
 
 2026-07-13
@@ -19,9 +29,9 @@ Tier-1 sofia changelog
 2026-07-09
 ----------
 
-* planned intervention on the cooling system
-* compute nodes shut down for 6 hours (unscheduled) to fix a new water leak in
-  the cooling system
+* Planned intervention on the cooling system.
+* Compute nodes shut down for 6 hours (unscheduled) to fix a new water leak in
+  the cooling system.
 
 
 2026-07-07
@@ -33,4 +43,4 @@ Tier-1 sofia changelog
 2026-07-06
 ----------
 
-* Operating system upgraded to Rocky Linux 9.8
+* Operating system upgraded to Rocky Linux 9.8.
