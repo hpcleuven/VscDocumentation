@@ -304,6 +304,18 @@ project via the `VSC hub <https://hub.vscentrum.be>`__.
    sufficient to access **sofia**. You must instead be added as a member of
    the project itself in the `VSC hub <https://hub.vscentrum.be>`__.
 
+.. note::
+
+   Users with a single word Full name (Gecos) in
+   `account.vscentrum.be <https://account.vscentrum.be>`__ will not be able
+   to properly use the `VSC hub <https://hub.vscentrum.be>`__ and might see
+   **No association** when attempting to join a project.
+   To resolve this, go to
+   `account.vscentrum.be <https://account.vscentrum.be>`__, click
+   **Edit account**, and change your Full name (Gecos) to be at least two
+   words (e.g. your first name followed by your last name). Then log out
+   and back in again to `VSC hub <https://hub.vscentrum.be>`__.
+
 .. _sofia_resource_usage:
 
 Consult your project resource usage
