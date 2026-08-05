@@ -12,7 +12,7 @@ Who can use MATLAB
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Only vsc3* users (affiliated with KU Leuven) who are members of the
+      Only VSC users affiliated with KU Leuven who are members of the
       ``lli_matlab`` group have rights to use the MATLAB module (hence the
       MATLAB app). If you are not already member of the group, contact the
       :ref:`KU Leuven supprt team<user support VSC>` for an invitation, or
