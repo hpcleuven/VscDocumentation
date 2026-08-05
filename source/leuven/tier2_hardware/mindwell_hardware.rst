@@ -3,7 +3,7 @@
 Mindwell hardware
 =================
 
-The KU Leuven / UHasselt Tier-2 cluster *Mindwell* is planned to enter
+The KU Leuven / UHasselt Tier-2 cluster *Mindwell* entered
 production around mid 2026. Mindwell contains thin nodes, large memory
 nodes and GPU nodes.
 
@@ -54,7 +54,7 @@ Hardware details
 Storage
 -------
 
-A new parallel filesystem will be installed together with the cluster
+A new parallel filesystem is installed together with the cluster
 (IBM Storage Scale, 5.8 PB, connected over NDR). We will assign scratch storage
 on this new filesystem and also offer project storage (similar to the current
 `staging` storage). The compute nodes will also be connected to the existing
