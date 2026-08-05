@@ -4,6 +4,11 @@
 Tier-1 sofia changelog
 ######################
 
+2026-08-04
+----------
+* Planned intervention on the cooling system: water leak on rack 3 fixed
+* Memory module replaced on node hc034
+
 2026-07-24
 ----------
 * Updated Open OnDemand to version 4.2.3.
@@ -28,7 +33,6 @@ Tier-1 sofia changelog
 
 2026-07-09
 ----------
-
 * Planned intervention on the cooling system.
 * Compute nodes shut down for 6 hours (unscheduled) to fix a new water leak in
   the cooling system.
@@ -36,11 +40,9 @@ Tier-1 sofia changelog
 
 2026-07-07
 ----------
-
 * **sofia** enters production
 
 
 2026-07-06
 ----------
-
 * Operating system upgraded to Rocky Linux 9.8.
