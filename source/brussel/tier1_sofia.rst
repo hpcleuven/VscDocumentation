@@ -78,9 +78,9 @@ sofia @ VUB-HPC
 
 **sofia** is the 4th VSC Tier-1 cluster, following *muk* (hosted by HPC-UGent, 2012-2016),
 :ref:`BrENIAC<breniac hardware>` (hosted by HPC-Leuven, 2016-2022) and
-:ref:`Hortense<Hortense hardware>` (hosted by HPC-Ugent, 2021-2027).
+:ref:`Hortense<Hortense hardware>` (hosted by HPC-UGent, 2021-2027).
 
-**sofia** is in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
+**sofia** has been in production since July 7th 2026 and is hosted by Vrije Universiteit Brussel.
 
 .. _sofia_help:
 
@@ -101,7 +101,7 @@ support for VSC Tier-1 services:
 
       :fa:`envelope` **support@vscentrum.be**
 
-Questions regarding Tier-1 Hortense should be send to:
+Questions regarding Tier-1 Hortense should be sent to:
 `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 
 .. _sofia_hardware:
@@ -121,7 +121,7 @@ Slurm partition      ``zen5_dense``                 ``zen5_himem``              
                      |br| (Zen5c Turin)             |br| (Zen5 Turin)             |br| (Zen4 Genoa)              |br| (Zen5 Turin)
 **CPU memory**       742 GB                         1493 GB                       1493 GB                        1493 GB
                      |br| 1.9 GB/core               |br| 7.7 GB/core              |br| 7.7 GB/core               |br| 7.7 GB/core
-**Local disk**       1.4 TB SDD                     1.4 TB SDD                    1.4 TB SDD                     1.4 TB SDD
+**Local disk**       1.4 TB SSD                     1.4 TB SSD                    1.4 TB SSD                     1.4 TB SSD
 **Interconnect**     200 Gbps                       400 Gbps                      800 Gbps                       400 Gbps
                      |br| NDR-IB                    |br| NDR-IB                   |br| NDR-IB                    |br| NDR-IB
 ===================  =============================  ============================  =============================  ===============================
@@ -184,7 +184,7 @@ key<ssh keys>` in your VSC account page or with :ref:`Multi-factor
 Authentication (MFA)<mfa_login>`. Different restrictions apply to each:
 
 SSH certificates with MFA (any public network)
-    Set up your SSH connection to connect to **sofia** with your VSC ID and a
+    Set up your SSH connection to connect to **sofia** with your VSC ID and an
     SSH certificate via MFA as described in :ref:`mfa-with-ssh-agent`.
     You can connect to **sofia** from any network with this
     method of authentication.
@@ -269,7 +269,7 @@ End date of the project:
     * :fas:`check` access data in **sofia** `home directory <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fuser%2F>`__ via :ref:`Globus <sofia_globus>`
 
 60 days after end of project:
-    * :fas:`times` all project data in **sofia** deleted
+    * :fas:`times` all project data in **sofia** is deleted
 
 .. _sofia_project_members:
 
@@ -349,10 +349,10 @@ project and how much of them have been used.
 Storage
 =======
 
-The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This is a shared
-storage available on all login and compute nodes of the cluster. It is used to
+The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This shared
+storage is available on all login and compute nodes of the cluster. It is used to
 provide scratch storage for jobs (*i.e.* `project directories <https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects>`__),
-as well as user's home directories and it also holds the installations of scientific
+as well as users’ home directories and it also holds the installations of scientific
 software.
 
 .. _sofia_globus:
@@ -386,10 +386,10 @@ Home directory
 
 The user’s ``$HOME`` directory in **sofia** is located on its own scratch file
 system and is distinct from the user’s ``$VSC_HOME`` found in other Tier-2
-clusters. The quota for ``$HOME`` is 50 GB and 256.000 files.
+clusters. The quota for ``$HOME`` is 50 GB and 256_000 files.
 
 Users will have a default account setup upon their first login to
-**sofia**. If you want copy any configuration files or customizations (*e.g.*
+**sofia**. If you want to copy any configuration files or customizations (*e.g.*
 ``.bashrc`` or any other dot files) from your Tier-2 cluster, you can do so
 through :ref:`Globus <sofia_globus>`.
 The size of the ``$HOME`` is larger so it can be used to install custom
@@ -405,7 +405,7 @@ Your ``$VSC_DATA`` storage, which is hosted in your home institute, is not
 directly accessible from **sofia**.
 
 Users can access their ``$VSC_DATA`` storage with  :ref:`Globus <sofia_globus>`
-and transfer any needed data in there to their project directory in the scratch
+and transfer any needed data from there to their project directory in the scratch
 storage of **sofia**.
 
 Node-local scratch
@@ -497,7 +497,7 @@ GPU (2 tasks in total) and 24 CPU cores per task (48 cores in total):
    #SBATCH --cpus-per-task=24
 
 This policy avoids situations where GPUs are available but cannot be allocated
-because insufficient CPU cores available on the node. It also helps keep
+because insufficient CPU cores are available on the node. It also helps keep
 benchmark results representative of production runs by ensuring that all jobs
 use the same core-to-GPU ratio.
 
