@@ -404,7 +404,7 @@ VSC_HOME and VSC_DATA
 Your ``$VSC_HOME`` and ``$VSC_DATA`` storages, which are hosted in your home
 institute, are not directly accessible from **sofia**.
 
-Users can access their  ``$VSC_HOME`` and ``$VSC_DATA`` storages with
+Users can access their ``$VSC_HOME`` and ``$VSC_DATA`` storages with
 :ref:`Globus <sofia_globus>` and transfer any needed data from there to their
 project directory in the scratch storage of **sofia**.
 
