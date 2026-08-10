@@ -137,7 +137,7 @@ Getting access
 ==============
 
 The **sofia** VSC Tier-1 cluster can only be accessed by people with an active
-`Tier-1 compute project <https://www.vscentrum.be/compute>`__ .
+`Tier-1 compute project <https://www.vscentrum.be/compute>`__.
 Everyone is welcome to request a *starting grant* or *collaborative grant* to
 prepare for their Tier-1 compute project application.
 
@@ -147,7 +147,7 @@ Web portal
 ----------
 
 The Tier-1 cluster **sofia** has its own :ref:`OnDemand Web Portal<compute
-portal>`. Users with an active project in **sofia** can access it at `sofia
+portal>`. Users with an active project on **sofia** can access it at `sofia
 OnDemand`_.
 
 .. card::
@@ -398,15 +398,15 @@ software or keep tools across projects.
 One advantage of this setup is that **sofia** remains accessible even if the
 Tier-2 infrastructure on the user’s home institution is down.
 
-VSC_DATA
---------
+VSC_HOME and VSC_DATA
+---------------------
 
-Your ``$VSC_DATA`` storage, which is hosted in your home institute, is not
-directly accessible from **sofia**.
+Your ``$VSC_HOME`` and ``$VSC_DATA`` storages, which are hosted in your home
+institute, are not directly accessible from **sofia**.
 
-Users can access their ``$VSC_DATA`` storage with  :ref:`Globus <sofia_globus>`
-and transfer any needed data from there to their project directory in the scratch
-storage of **sofia**.
+Users can access their ``$VSC_HOME`` and ``$VSC_DATA`` storages with
+:ref:`Globus <sofia_globus>` and transfer any needed data from there to their
+project directory in the scratch storage of **sofia**.
 
 Node-local scratch
 ------------------
