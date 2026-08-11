@@ -4,6 +4,10 @@
 Tier-1 sofia changelog
 ######################
 
+2026-08-10
+----------
+* Motherboard replaced on node hm001.
+
 2026-08-04
 ----------
 * Planned intervention on the cooling system: water leak on rack 3 fixed.
