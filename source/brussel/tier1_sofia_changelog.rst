@@ -4,6 +4,10 @@
 Tier-1 sofia changelog
 ######################
 
+2026-08-12
+----------
+* Insulation of the main cooling loop completed.
+
 2026-08-10
 ----------
 * Motherboard replaced on node hm001.
