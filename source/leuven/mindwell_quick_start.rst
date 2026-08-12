@@ -5,8 +5,8 @@ Mindwell quick start guide
 
 The KU Leuven / UHasselt Tier-2 cluster *Mindwell* entered
 production around mid 2026. Mindwell contains thin nodes, large memory
-nodes and GPU nodes. The regular credit accounts can be used on all clusters,
-including Mindwell.
+nodes, nodes intended for interactive work and GPU nodes. The regular credit
+accounts can be used on all clusters, including Mindwell.
 
 Mindwell does not have separate login nodes and can be accessed from the
 :ref:`Genius login nodes <tier2_login_nodes>`.

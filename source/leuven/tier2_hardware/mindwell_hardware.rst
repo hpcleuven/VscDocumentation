@@ -54,19 +54,20 @@ Hardware details
 Storage
 -------
 
-A new parallel filesystem is installed together with the cluster
-(IBM Storage Scale, 5.8 PB, connected over NDR). We will assign scratch storage
-on this new filesystem and also offer project storage (similar to the current
-`staging` storage). The compute nodes will also be connected to the existing
-Lustre filesystem (through an Infiniband HDR-100 network), so all your existing
-data will be accessible from the new cluster. Please read more about the
+A new IBM Storage Scale (also known as GPFS) parallel filesystem with a capacity
+of 5.8 PB is connected over NDR to the Mindwell cluster. Both scratch and project
+storage (the latter being similar to the `staging` storage on the Lustre parallel
+filesystem) are available on this new filesystem.
+The Mindwell compute nodes are also connected to the existing Lustre filesystem
+(through an Infiniband HDR-100 network), so all your existing
+data is accessible from the new cluster. Please read more about the
 :ref:`available scratch filesystems <leuven_scratch>` for detailed information and
 best practices.
 
 Additional highlights
 ---------------------
 
-- Software modules will only be installed for toolchains starting from 2024a
+- Software modules are only provided for toolchains starting from 2024a
   (CPU partitions) or 2025a (GPU partitions).
 - All nodes are interconnected using an Infiniband NDR network.
 - Similar to the wICE Sapphire Rapids and the H100 nodes, the new cluster is direct liquid cooled.
