@@ -150,6 +150,13 @@ SSH Client name                        Purpose              Operating System
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
 
+.. warning::
+
+   |sofia| Connecting to Tier-1 **sofia** using an MFA certificate held in
+   an SSH Agent does not work in the FileZilla client.
+
+   We recommend using the :ref:`Globus platform <globus platform>` instead.
+
 
 .. _mfa quick start:
 
