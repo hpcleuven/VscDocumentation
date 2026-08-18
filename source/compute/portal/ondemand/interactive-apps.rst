@@ -49,7 +49,9 @@ job will be queued.
    * - Pre-run scriptlet
      - Add optional shell commands to your job before launching the app.
        For example, loading extra modules that you need within the app, sourcing a
-       specific script, or defining specific environment variables.
+       specific script, or defining specific environment variables. For multiple commands,
+       separate them with a semi-colon (;), for example:
+       `module load Python; export PYTHONPATH=<path>`
 
 .. warning::
 
