@@ -10,10 +10,13 @@ transfer files to and from your VSC account on the clusters.
 
 You can `download FileZilla`_ from the `FileZilla project page`_.
 
-.. note::
+.. warning::
 
-   |sofia| Connecting to **sofia** using an MFA certificate held in an
-   SSH agent is not possible through FileZilla.
+   |sofia| Connecting to Tier-1 **sofia** using an MFA certificate held in
+   an SSH Agent does not work in the FileZilla client.
+
+   We recommend using the :ref:`Globus platform <globus platform>` instead.
+
 
 Prerequisites
 =============
