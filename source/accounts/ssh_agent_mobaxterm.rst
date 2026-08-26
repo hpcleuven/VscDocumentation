@@ -9,7 +9,7 @@ that you are prompted for the passphrase at each connection you make to a
 cluster. To avoid the need to re-type it each time, you can setup an internal
 SSH agent in :ref:`MobaXterm <terminal mobaxterm>` that will take care of
 unlocking your SSH private key or SSH certificate for
-:ref:`Multi-Factor Authentication <mfa_leuven>` when you open the application.
+:ref:`Multi-Factor Authentication <mfa_login>` when you open the application.
 The SSH agent will save the passphrase after you have introduced it once.
 
 Prerequisites

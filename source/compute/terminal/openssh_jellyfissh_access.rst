@@ -80,7 +80,7 @@ connection settings. To do this, follow these steps:
 #. In the 'Host or IP' field, type in <vsc-loginnode>. In the 'Login
    name' field, type in your <vsc-account>.
    In the screenshot below we have filled in the fields for a connection
-   to the Genius cluster at KU Leuven as user vsc98765.
+   to the Tier-2 clusters at KU Leuven as user vsc98765.
 
    .. figure:: openssh_jellyfissh_access/text_mode_access_using_openssh_or_jellyfissh_01.png 
 

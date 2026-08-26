@@ -53,7 +53,7 @@ software in your computer.
 .. note::
 
    |KUL| Logging in to a KU Leuven cluster with SSH requires
-   :ref:`Multi Factor Authentication<mfa_leuven>`.
+   :ref:`Multi Factor Authentication<mfa_login>`.
 
 .. _terminal linux system:
 

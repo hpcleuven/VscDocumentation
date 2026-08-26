@@ -6,6 +6,7 @@
     
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
     .. grid-item-card:: |UA|
        :columns: 12 4 4 4
@@ -17,6 +18,9 @@
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`

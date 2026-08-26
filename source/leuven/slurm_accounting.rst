@@ -4,8 +4,9 @@
 Slurm Accounting
 ================
 
-To run jobs on :ref:`Genius <genius_t2_leuven>` and :ref:`wICE <wice_t2_leuven>`
-clusters, you will need a valid Slurm credit account with sufficient credits.
+To run jobs on :ref:`Genius <genius_t2_leuven>`, :ref:`wICE <wice_t2_leuven>`
+and :ref:`Mindwell <mindwell_quick_start>` clusters, you will need a valid Slurm
+credit account with sufficient credits.
 To make it easier to e.g. see your current credit balance and past credit usage,
 we have developed a set of ``sam-*`` tools (``sam-balance``, ``sam-list-usagerecords``,
 ``sam-list-allocations`` and ``sam-statement``).

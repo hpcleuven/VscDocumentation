@@ -17,6 +17,7 @@ VSC clusters that support this app are:
 
        * Tier-2 :ref:`Genius <genius hardware>`
        * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
 
 Accessing data on HPC storage
@@ -76,7 +77,7 @@ If needed, you may even share such session URLs and session JSON files with
 co-workers who also use the present ``IGV-Web`` OnDemand app. This will,
 of course, only work if they can also access the associated datasets. On the
 Tier-2 clusters at KU Leuven, this typically means that the data needs to be
-stored in a shared ``staging`` folder.
+stored in a shared project storage folder.
 
 
 Good to know

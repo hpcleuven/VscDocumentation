@@ -50,7 +50,7 @@ Configuring MATLAB for parallel computing
 
           $ module load <matlab_module>
 
-      We have MATLAB modules available for both wICE and Genius. Use the command ``module av MATLAB`` on the compute node to check for available versions.
+      We have MATLAB modules available for all Tier-2 clusters. Use the command ``module av MATLAB`` on the compute node to check for available versions.
 
       Now, start MATLAB and use the function  ``configCluster`` to set up the cluster profile. If you do not do this, the cluster profile will default to the 'local
       cluster', basically meaning that it will only detect the cores on the node you are currently on.
@@ -61,7 +61,7 @@ Configuring MATLAB for parallel computing
           $ # Within MATLAB
           $ >> configCluster;
 
-      The ``configCluster`` function will request you to specify a cluster (``wice`` or ``genius``). Please choose the one you are on already.
+      The ``configCluster`` function will request you to specify a cluster (e.g. ``mindwell``). Please choose the one you are on already.
 
       There is a range of additional properties you can set for the cluster profile. Before you can edit these, you first need to get a handle on the cluster
       profile:

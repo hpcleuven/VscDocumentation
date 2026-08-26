@@ -17,12 +17,17 @@ VSC clusters that support the Desktop app:
 
        * Tier-2 :ref:`Genius <genius hardware>`
        * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4
 
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
 
 .. tip::
@@ -71,6 +76,19 @@ For improved graphics performance, we recommend the following workflow:
       :sync: vub
 
       #. Select the ``Anansi`` cluster and request some fraction of a GPU.
+      #. In the desktop environment, open a terminal window and load the
+         module of your graphical software.
+      #. Launch the executable with ``vglrun`` to enable hardware
+         acceleration:
+
+         .. code-block:: bash
+
+            vglrun <executable>
+
+   .. tab-item:: Tier-1 sofia
+      :sync: sofia
+
+      #. Select the ``zen5_vis`` partition and request a GPU.
       #. In the desktop environment, open a terminal window and load the
          module of your graphical software.
       #. Launch the executable with ``vglrun`` to enable hardware
@@ -136,5 +154,10 @@ Additional site-specific constraints are listed below.
 
    .. tab-item:: VUB
       :sync: vub
+
+      (N/A)
+
+   .. tab-item:: Tier-1 sofia
+      :sync: sofia
 
       (N/A)

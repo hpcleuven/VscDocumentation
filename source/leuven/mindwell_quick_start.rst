@@ -3,22 +3,13 @@
 Mindwell quick start guide
 ==========================
 
-The KU Leuven / UHasselt Tier-2 cluster *Mindwell* is planned to enter
+The KU Leuven / UHasselt Tier-2 cluster *Mindwell* entered
 production around mid 2026. Mindwell contains thin nodes, large memory
-nodes and GPU nodes.
-
-.. note::
-
-   All vsc3 users can now try out Mindwell for free by submitting
-   jobs using the "lp_mindwell_pilot" credit account.
-
-   Mindwell is planned to enter production on Monday June 15.
-   From that point onwards, you will need to use your regular
-   credit accounts to run on Mindwell.
+nodes, nodes intended for interactive work and GPU nodes. The regular credit
+accounts can be used on all clusters, including Mindwell.
 
 Mindwell does not have separate login nodes and can be accessed from the
-:ref:`Genius login nodes <tier2_login_nodes>`. Access through
-:ref:`Open OnDemand <ood>` will be provided in the near future.
+:ref:`Genius login nodes <tier2_login_nodes>`.
 
 .. _running jobs on mindwell:
 

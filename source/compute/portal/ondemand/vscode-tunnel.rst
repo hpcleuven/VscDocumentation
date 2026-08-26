@@ -17,6 +17,7 @@ VSC clusters that support the VS Code Tunnel app:
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
     .. grid-item-card:: |VUB|
        :columns: 12 4 4 4

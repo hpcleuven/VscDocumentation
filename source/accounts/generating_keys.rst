@@ -1,3 +1,5 @@
+.. _ssh keys:
+
 ##################
 Cryptographic Keys
 ##################

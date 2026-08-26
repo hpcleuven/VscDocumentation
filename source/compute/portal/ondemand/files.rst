@@ -22,6 +22,12 @@ modifying and creating files or directories are available as well.
       From the 'Files' menu, you can access all ``$VSC_*`` folders available to
       you.
 
+   .. tab-item:: Tier-1 sofia
+      :sync: sofia
+
+      From the 'Files' menu, you can access all ``$VSC_*`` folders available to
+      you.
+
 Download/upload
 ---------------
 

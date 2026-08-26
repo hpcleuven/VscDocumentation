@@ -18,8 +18,9 @@ This page only concerns the following clusters:
 
        * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <Mindwell hardware>`
 
-This page offers guidelines on how to manage your data on the different storage platforms which VSC and KU Leuven have to offer and how to transfer data between them. While most of these guidelines can be applied to any storage available to you, the focus will lie on shared storage related to KU Leuven (e.g. staging storage, Tier-1 Data / ManGO, L-drive, other local shared storage).
+This page offers guidelines on how to manage your data on the different storage platforms which VSC and KU Leuven have to offer and how to transfer data between them. While most of these guidelines can be applied to any storage available to you, the focus will lie on shared storage related to KU Leuven (e.g. project storage, Tier-1 Data / ManGO, L-drive, other local shared storage).
 
 This page is structured as follows:
 
@@ -44,14 +45,18 @@ You will normally require at least the following two kinds of storage:
 
 HPC storage
 -----------
-Carefully consider which type(s) of HPC storage are best suited for your work. The different VSC clusters all offer a :ref:`set of HPC storage locations<data location>`. For the Tier-2 clusters hosted at KU Leuven this is supplemented with so-called 'staging' storage. Staging uses the same (Lustre based) platform as the scratch storage and is also intended for larger amounts of data. Compared to scratch storage, however, staging is better suited for data which:
+Carefully consider which type(s) of HPC storage are best suited for your work. The different VSC clusters all offer a :ref:`set of HPC storage locations<data location>`. For the Tier-2 clusters hosted at KU Leuven this is supplemented with so-called "project" storage. Project storage uses a :ref:`parallel filesystem <kuluh_parallel_filesystems>` (the same platform used for scratch storage) and is also intended for larger amounts of data. Compared to scratch storage, however, project storage is better suited for data which:
 
 - either needs to be shared by multiple users in a research project
 - and/or should not be subjected to automatic cleanup (files on scratch get deleted if they have not been accessed during the last month)
 
-Note that staging (even in the absence of automatic cleanup) should not be considered as a 'safe' storage location. Just like scratch, staging is single-copy and does not offer snapshots or backups. If somebody accidentally removes data or an unexpected system failure removes, this data is gone forever.
+Note that project storage (even in the absence of automatic cleanup) should not be considered as a "safe" storage location. Just like scratch, project storage is single-copy and does not necessarily offer snapshots or backups. If somebody accidentally removes data or an unexpected system failure removes, this data is gone forever.
 
-Also keep in mind that staging is a paid service (charged based on peak usage per month) while temporarily increasing your scratch quotum can be done for free. If you only need more workspace for your own calculations, it may therefore be more advantageous to ask for a higher scratch quotum than to make more use of staging. In general, we recommend to only use staging storage if strictly required and to use scratch storage whenever possible. For all storage related requests, see also the `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/english-version/HPC-storage>`_.
+Also keep in mind that project storage is a paid service (charged based on peak usage per month) while temporarily increasing your scratch quotum can be done for free. If you only need more workspace for your own calculations, it may therefore be more advantageous to ask for a higher scratch quotum than to make more use of project storage. In general, we recommend to only use project storage if strictly required and to use scratch storage whenever possible. For all storage related requests, see also the `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/english-version/HPC-storage>`_.
+
+.. note::
+
+   Project storage on the GPFS1 file system is still under construction.
 
 External storage
 ----------------
@@ -105,7 +110,7 @@ When working with sensitive data, one more point to consider is that access rest
 
 Location of software
 --------------------
-Aside from regular data, also local software installations can be placed on shared storage such as staging. In general we recommend to only do this when really required, i.e. when a large or complex software installation needs to be shared between different users. Software which is only for your own use is best left in a non-shared location such as your ``$VSC_DATA``. Keep in mind that most software can be offered as centrally installed modules (send your requests to the `service desk <hpcinfo@kuleuven.be>`_).
+Aside from regular data, also local software installations can be placed on shared storage such as project storage. In general we recommend to only do this when really required, i.e. when a large or complex software installation needs to be shared between different users. Software which is only for your own use is best left in a non-shared location such as your ``$VSC_DATA``. Keep in mind that most software can be offered as centrally installed modules (send your requests to the `service desk <hpcinfo@kuleuven.be>`_).
 
 A few more things to keep in mind:
 
@@ -141,7 +146,7 @@ Also keep in mind that external storage can function as a (temporary) intermedia
 - If the data needs to be used on different HPC sites, possibly with some delay in between (e.g. production runs on Tier-1 followed by postprocessing on Tier-2).
 - If the data is publicly available but download times are too high, in which case you would benefit from a nearby 'cache'.
 
-Note you do not need to wait until your data is processed to put it on external storage. You could consider copying any data early to an external location, both for safeguarding or to sharing it with others, while keeping a copy on scratch or staging for further processing.
+Note you do not need to wait until your data is processed to put it on external storage. You could consider copying any data early to an external location, both for safeguarding or to sharing it with others, while keeping a copy on scratch or project storage for further processing.
 
 Data transfer tools
 -------------------
@@ -155,7 +160,7 @@ There are multiple ways in which you can transfer data to or from HPC storage:
 Keeping track of your data
 ==========================
 
-Once multiple storage locations are involved, you will need to keep an overview of where everything is located (e.g. which input data has been staged in on HPC storage, which data has flowed out, et cetera). We advise to include this topic in your project meetings (e.g. the current status, planned data transfers and cleanups, possible quota constraints, ...) and to monitor disk usage on a regular basis. For HPC storage you can use command-line tools such as ``du`` and ``myquota``. For staging storage we also offer `the duduckdb tool <https://github.com/hpcleuven/duduckdb/>`_, which allows you to query a database with information on the disk usage for your staging directory.
+Once multiple storage locations are involved, you will need to keep an overview of where everything is located (e.g. which input data has been staged in on HPC storage, which data has flowed out, et cetera). We advise to include this topic in your project meetings (e.g. the current status, planned data transfers and cleanups, possible quota constraints, ...) and to monitor disk usage on a regular basis. For HPC storage you can use command-line tools such as ``du`` and ``myquota``. For project storage we also offer `the duduckdb tool <https://github.com/hpcleuven/duduckdb/>`_, which allows you to query a database with information on the disk usage for your project storage directory.
 
 Automating (part of) your data operations can of course be helpful in this regard. One possibility to consider is to automatically transfer and/or clean up data as part of your compute jobs. Automation of course tends to require well-defined directory structures (see above).
 

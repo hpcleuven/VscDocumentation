@@ -24,7 +24,7 @@ Available collections
 The VSC hosts a number of collections:
 
 
-.. list-table:: Overview of collections for HPC systems
+.. list-table:: Overview of collections for Tier-2 Compute systems
    :header-rows: 1
 
    * - Name
@@ -39,16 +39,20 @@ The VSC hosts a number of collections:
      - `VSC UGent Tier2 filesystems <https://app.globus.org/file-manager/collections/e9247cdf-2c76-42ef-81d4-1c3f772ce719/overview>`_
      - No
      - Yes
-   * - UGent Tier-1
-     - `VSC UGent Tier1 projects <https://app.globus.org/file-manager/collections/ce533ba6-0b81-4640-bdc6-f3a6ff2d4b74/overview>`_
-     - No
-     - No
    * - UAntwerpen Tier-2
      - `VSC UAntwerpen Tier2 filesystems <https://app.globus.org/file-manager/collections/6a13242d-6506-4b3d-a49c-ac981b35ab7d/overview>`_
      - No
      - No
-   * - KU Leuven Tier-2 (scratch)
-     - `VSC KU Leuven tier2 scratch <https://app.globus.org/file-manager/collections/82c495cc-aef8-40ad-88df-f9c92bee82d3/overview>`_
+   * - KU Leuven Tier-2 (``VSC_SCRATCH_LUSTRE1`` and ``VSC_PROJECT_LUSTRE1``)
+     - `VSC KU Leuven tier2 /lustre1/scratch en /lustre1/project <https://app.globus.org/file-manager/collections/82c495cc-aef8-40ad-88df-f9c92bee82d3/overview>`_
+     - No
+     - Yes
+   * - KU Leuven Tier-2 (``VSC_SCRATCH_GPFS1``)
+     - `VSC KU Leuven tier2 /gpfs1/scratch <https://app.globus.org/file-manager/collections/a6593381-d93d-4543-a3af-89424bcc6555/overview>`_
+     - No
+     - Yes
+   * - KU Leuven Tier-2 (``VSC_PROJECT_GPFS1``)
+     - `VSC KU Leuven tier2 /gpfs1/project <https://app.globus.org/file-manager/collections/49da2af5-d757-4998-8dc1-b5cecb91893d/overview>`_
      - No
      - Yes
    * - KU Leuven Tier-2 (user directories)  
@@ -64,8 +68,25 @@ The VSC hosts a number of collections:
      - No  
      - No  
 
-.. Note::
-      The collection 'VSC KU Leuven tier2 scratch' also contains the staging directories, under :bgrnd1:`/project`
+.. list-table:: Overview of collections for Tier-1 Compute
+   :header-rows: 1
+
+   * - Name
+     - Collection
+     - High assurance
+     - Guest collections
+   * - Tier-1 Hortense
+     - `VSC UGent Tier1 projects <https://app.globus.org/file-manager/collections/ce533ba6-0b81-4640-bdc6-f3a6ff2d4b74/overview>`_
+     - No
+     - No
+   * - Tier-1 **sofia** (pilot)
+     - `VSC sofia pilot <https://app.globus.org/file-manager?origin_id=a3485425-436e-40cc-9061-31a9c8366ffa&origin_path=%2Fsofia%2Fscratch%2Fpilot%2F>`_
+     - No
+     - Yes
+   * - Tier-1 **sofia** (projects)
+     - `VSC sofia projects <https://app.globus.org/file-manager?origin_id=d9e37ac8-6279-45a6-8622-0e7811aa8ace&origin_path=%2Fsofia%2Fprojects%2F>`_
+     - No
+     - Yes
 
 .. list-table:: Overview of collections for Tier-1 Data
    :header-rows: 1

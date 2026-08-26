@@ -200,6 +200,8 @@ Dependency type               What it does
                               This can be useful to collate results after running a batch of related jobs.
 ============================  =====================
 
+.. _slurm_job_env:
+
 The job environment
 -------------------
 
