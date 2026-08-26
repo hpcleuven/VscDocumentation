@@ -38,8 +38,9 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
   :ref:`recover data <restoring_snapshot>` that was accidentally deleted
   or modified,
 
-- quota for VSC accounts that do *not* have KU Leuven as home institution are
-  determined by the policy of the user's home institution.
+- quota for VSC accounts that do *not* have Leuven / Hasselt as home institute are
+  determined by the policy of the user's home institute. Note that you can
+  check the institute of your VSC account on the `VSC account page`_.
 
 .. _leuven_scratch:
 
@@ -78,7 +79,7 @@ Lustre scratch on the nodes of Genius and wICE).
 
 .. note::
 
-   VSC accounts whose home institution is not KU Leuven need to
+   VSC accounts whose home institute is not Leuven / Hasselt need to
    `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
    to receive scratch storage, as it is not set up by default.
 
