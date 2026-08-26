@@ -156,7 +156,10 @@ html[data-theme="dark"] a.nav-link:hover img.icon-link-image {
     background: #FFCC29;  /* fallback for old browsers */
     background: linear-gradient(to bottom, #FFCC2933, #FFCC2966);
 }
-
+.service-card-pilot .sd-card .sd-card-body {
+    background: #40B3D9;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #40B3D933, #40B3D966);
+}
 /* hide caption lable in code-blocks */
 .code-block-caption .caption-number { display: none; }
 /* line numbers in codeblocks on transparent column */
