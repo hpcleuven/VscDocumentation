@@ -90,6 +90,7 @@ The diagram below shows these parallel file systems (at the bottom) and the
 networks that connect them to the compute nodes (at the top).
 
 .. figure:: kuluh_pfs.svg
+   :class: dark-light
    :alt: Parallel file systems at KU Leuven/UHasselt
 
    Diagram of the parallel file systems on the KU Leuven/UHasselt Tier-2
