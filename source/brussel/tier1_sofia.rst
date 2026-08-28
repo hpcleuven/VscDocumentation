@@ -429,7 +429,8 @@ Job submission
 ==============
 
 The Tier-1 cluster **sofia** uses the :ref:`Slurm job scheduler<running jobs>`.
-Only Slurm-native commands are supported for managing your jobs.
+Only Slurm-native commands are supported for managing your jobs. ``#PBS`` and ``#BSUB``
+directives in job scripts are ignored.
 
 Users must specify one of the available :ref:`partitions <sofia_hardware>` when submitting jobs.
 Loading a ``cluster`` module is not required.
