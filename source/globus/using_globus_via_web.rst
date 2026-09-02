@@ -91,7 +91,7 @@ Additionally, Globus has a multitude of options for transfers under the dropdown
 
 .. note::
    One of the options is related to encryption.
-   It can have impact on transfer timie, but check this option if you need encrypted data transfer. 
+   While the control channel (your login and command data) is always encrypted, the data channel between endpoints is authenticated but unencrypted in standard configurations to maximize transfer speeds. If you transfer sensitive data, check if the encryption option is activated. 
 
 .. note::
    Each panel has a 'refresh' button, represented by a circular arrow. 
