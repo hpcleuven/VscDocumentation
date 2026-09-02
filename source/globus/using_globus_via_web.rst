@@ -90,6 +90,10 @@ Conveniently, the arrow on the start button indicated the direction of the trans
 Additionally, Globus has a multitude of options for transfers under the dropdown 'Transfer & Timer Options', between the start buttons. 
 
 .. note::
+   One of the options is related to encryption.
+   Check this option if you need secure transfer. 
+
+.. note::
    Each panel has a 'refresh' button, represented by a circular arrow. 
    If you don't see your files yet after a transfer has been completed, you should refresh the collection. 
 
