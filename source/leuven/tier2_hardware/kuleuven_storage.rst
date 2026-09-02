@@ -13,7 +13,8 @@ Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage.
 
    We use environment variables to point at your different storage locations, as
    demonstrated in the tables below. These paths are constructed based on the 5 digits
-   in your VSC ID. As mentioned in :ref:`data location`, you should always (try to)
+   in your VSC ID, which are represented by "x" characters below. As mentioned in
+   :ref:`data location`, you should always (try to)
    use the environment variables rather than the paths shown in the tables.
 
 VSC home and data storage
@@ -26,9 +27,9 @@ of files that are not accessed at high frequency by compute jobs.
 +-----------------------+----------------------------------+--------+------------------+-------+---------------+
 | Variable              | Path                             | Type   | Access           |Backup | Default quota |
 +=======================+==================================+========+==================+=======+===============+
-| ``$VSC_HOME``         | ``/user/leuven/3../vsc3....``    | NFS    | All VSC clusters | Yes   | 3 GiB         |
+| ``$VSC_HOME``         | ``/user/leuven/xxx/vscxxxxx``    | NFS    | All VSC clusters | Yes   | 3 GiB         |
 +-----------------------+----------------------------------+--------+------------------+-------+---------------+
-| ``$VSC_DATA``         | ``/data/leuven/3../vsc3....``    | NFS    | All VSC clusters | Yes   | 75 GiB        |
+| ``$VSC_DATA``         | ``/data/leuven/xxx/vscxxxxx``    | NFS    | All VSC clusters | Yes   | 75 GiB        |
 +-----------------------+----------------------------------+--------+------------------+-------+---------------+
 
 Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
@@ -37,8 +38,9 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
   :ref:`recover data <restoring_snapshot>` that was accidentally deleted
   or modified,
 
-- quota for non-``vsc3*`` users are determined by the policy of the user's
-  home institution.
+- quota for VSC accounts that do *not* have Leuven / Hasselt as home institute are
+  determined by the policy of the user's home institute. Note that you can
+  check the institute of your VSC account on the `VSC account page`_.
 
 .. _leuven_scratch:
 
@@ -56,7 +58,7 @@ with its own (GPFS based) scratch storage:
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 | Variable              | Path                             | Type   | Access        |Backup | Default quota |
 +=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH``       | ``/scratch/leuven/3../vsc3....`` | Lustre | Genius, wICE  | No    | 500 GiB       |
+|``$VSC_SCRATCH``       | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | Genius, wICE  | No    | 500 GiB       |
 |                       |                                  +--------+---------------+-------+---------------+
 |                       |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
@@ -77,7 +79,8 @@ Lustre scratch on the nodes of Genius and wICE).
 
 .. note::
 
-   Non-``vsc3*`` users need to `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
+   VSC accounts whose home institute is not Leuven / Hasselt need to
+   `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
    to receive scratch storage, as it is not set up by default.
 
 .. _leuven_lustre_gpfs_transfer:
