@@ -467,7 +467,7 @@ USER, TERM, PATH):
 
    sbatch --export=HOME,USER,TERM,PATH=/bin:/sbin,MYENVVAR=myval <job-script>
 
-.. warning:
+.. warning::
 
    Do **NOT** use ``--export=ALL``. This will only work on the exceptional
    case of jobs submitted from within another job on the same cluster partition.
