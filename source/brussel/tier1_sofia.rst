@@ -80,7 +80,7 @@ sofia @ VUB-HPC
 :ref:`BrENIAC<breniac hardware>` (hosted by HPC-Leuven, 2016-2022) and
 :ref:`Hortense<Hortense hardware>` (hosted by HPC-UGent, 2021-2027).
 
-**sofia** has been in production since July 7th 2026 and is hosted by Vrije
+**sofia** has been in production since July 7, 2026, and is operated by Vrije
 Universiteit Brussel.
 
 The name **sofia** is inspired by the Greek name *Sophia* which means wisdom.
