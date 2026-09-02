@@ -88,7 +88,7 @@ This reflects one of the fundamental values of the VUB: the open pursuit of
 knowledge through science.
 **sofia** is a beacon for researchers, students, and innovators, illuminating
 the path, answering complex problems, and uncovering insights in different
-fields. Hence a shinning sun is its symbol. **sofia** empowers the curious, the
+fields. Hence a shining sun is its symbol. **sofia** empowers the curious, the
 critical, and the creative to push the boundaries of what they know, reminding
 everyone that science is not just a tool, but a light to knowledge. 
 
