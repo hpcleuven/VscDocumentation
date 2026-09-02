@@ -91,7 +91,7 @@ Additionally, Globus has a multitude of options for transfers under the dropdown
 
 .. note::
    One of the options is related to encryption.
-   Check this option if you need secure transfer. 
+   It can have impact on transfer timie, but check this option if you need encrypted data transfer. 
 
 .. note::
    Each panel has a 'refresh' button, represented by a circular arrow. 
