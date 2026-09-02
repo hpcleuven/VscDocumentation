@@ -90,6 +90,10 @@ Conveniently, the arrow on the start button indicated the direction of the trans
 Additionally, Globus has a multitude of options for transfers under the dropdown 'Transfer & Timer Options', between the start buttons. 
 
 .. note::
+   One of the options is related to encryption.
+   While the control channel (your login and command data) is always encrypted, the data channel between endpoints is authenticated but unencrypted in standard configurations to maximize transfer speeds. If you transfer sensitive data, check if the encryption option is activated. 
+
+.. note::
    Each panel has a 'refresh' button, represented by a circular arrow. 
    If you don't see your files yet after a transfer has been completed, you should refresh the collection. 
 
