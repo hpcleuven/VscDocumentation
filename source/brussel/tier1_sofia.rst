@@ -467,12 +467,10 @@ USER, TERM, PATH):
 
    sbatch --export=HOME,USER,TERM,PATH=/bin:/sbin,MYENVVAR=myval <job-script>
 
-Importantly, ``--export=ALL`` must **NOT** be used unless the job is submitted
-from within another Slurm job and the new job must run in the same partition:
+.. warning:
 
-.. code-block:: bash
-
-   sbatch --export=ALL --partition=$SLURM_JOB_PARTITION <job-script>
+   Do **NOT** use ``--export=ALL``. This will only work on the exceptional
+   case of jobs submitted from within another job on the same cluster partition.
 
 See :ref:`slurm_job_env` for more information.
 
