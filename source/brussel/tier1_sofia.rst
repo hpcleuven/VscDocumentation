@@ -458,9 +458,23 @@ provides the following advantages:
   hardware architectures in use, ensuring access to the correct and
   optimized software binaries
 
-Propagating specific environment variables to your job can be done with the
-``--export=<environment_variables>`` option in Slurm. See :ref:`slurm_job_env`
-for more information.
+Propagating specific environment variables to the job environment can be done
+with the ``--export=<environment_variables>`` option in Slurm. For example, to
+export ``MYENVVAR=myval`` in the job, add it to the default exports (HOME,
+USER, TERM, PATH):
+
+.. code-block:: bash
+
+   sbatch --export=HOME,USER,TERM,PATH=/bin:/sbin,MYENVVAR=myval <job-script>
+
+Importantly, ``--export=ALL`` must **NOT** be used unless the job is submitted
+from within another Slurm job and the new job must run in the same partition:
+
+.. code-block:: bash
+
+   sbatch --export=ALL --partition=$SLURM_JOB_PARTITION <job-script>
+
+See :ref:`slurm_job_env` for more information.
 
 If your workflow requires your full shell environment to be propagated, please
 refer to the VUB-HPC documentation on `how to copy your full shell environment into your job
