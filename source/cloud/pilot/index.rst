@@ -1,8 +1,8 @@
 .. _pilot:
 
-#########################
+##############################
 :fas:`vial` Tier-1 Cloud Pilot
-#########################
+##############################
 .. warning::
 
    This section of the documentation is WIP and intended for users that signed up for the pilot.
@@ -23,7 +23,7 @@ the documentation.
 
 .. toctree::
    :maxdepth: 2
-   
+
    access
    accessing_vms
    networking

@@ -12,7 +12,7 @@ machine images. For information about creating image files, see the
 You can upload your own image on the [Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
 You can also import images from the [Marketplace] (recommended).
 
-:::{warn}
+:::{warning}
 Your custom image must include the opennebula [contextualization packages](https://github.com/OpenNebula/one-apps/wiki/linux_installation).
 :::
 
