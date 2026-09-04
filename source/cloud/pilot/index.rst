@@ -23,10 +23,10 @@ the documentation.
 
 .. toctree::
    :maxdepth: 2
-
+   
    access
-   dashboard
+   accessing_vms
+   networking
    opentofu
-   manage_images
-   configure_instances
+   custom_images
    shares

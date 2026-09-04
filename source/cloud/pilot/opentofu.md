@@ -1,4 +1,4 @@
-# Orchestration Using OpenTofu
+# Creating VMs Using OpenTofu
 OpenTofu <https://opentofu.org/> is an
 infrastructure as code tool (IaC). It is a fork of [Terraform](https://developer.hashicorp.com/terraform).
 Opentofu is currently one of the most popular infrastructure automation tools
@@ -36,7 +36,7 @@ It is important to forward your ssh agent with `-A` when SSH-ing to the login no
 :::
 If this is the first time. you can download the examples with this snippet:
 ```shell
-export MODULE_VERSION="0.0.5"
+export MODULE_VERSION="0.0.6"
 mkdir -p cloud-examples/
 curl -L https://github.com/hpcugent/terraform-vsc-opennebula/archive/refs/tags/$MODULE_VERSION.tar.gz   | tar -xz --strip-components=2 -C cloud-examples terraform-vsc-opennebula-$MODULE_VERSION/examples
 ```
@@ -66,7 +66,7 @@ mkdir -p MyProject
 cp cloud-examples/simple-server/* MyProject/
 rm -f MyProject/*.tofutest
 ```
-Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.5/examples/simple-server) example's main.tf.
+Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.5/examples/simple-server) example's `main.tf`.
 
 This file contains the most basic configuration for a virtual machine.
 It consists of two **modules**. A module is convenient grouping of opentofu resources. 
@@ -82,7 +82,7 @@ Full router module documentation can be found [here](https://search.opentofu.org
 ```
 module "router" {
   source  = "hpcugent/opennebula/vsc//modules/router"
-  version = "0.0.5"
+  version = "0.0.6"
   # VM Which we can ssh to by default
   access_vm = module.SimpleVM.router_access
 }
@@ -90,9 +90,13 @@ module "router" {
 This will provide network connectivity for all the VMs in your project.
 With the router, you can specify the **access VM**, being the VM exposed to the internet through ssh. It will also be the default target for [port forwarding rules](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/submodule/router/inputs#port_forwards)
 
-```{warning}
+```{note}
 There can only be **one** regular router per Opennebula group, except an optional VSC router.
 ```
+:::{danger}
+If your router is deleted (via `tofu destroy`, for example) your **public IP address** might change.
+Avoid deleting your router(s), as we cannot manually assign/restore a specific IP to your project.
+:::
 #### Port Forwarding
 You can open ports with the port-forwards block:
 ```
@@ -114,7 +118,7 @@ By default these will target the `access_vm`, but you can override `internal_ip`
     }
 ```
 ```{tip}
-`external_port` must be between 51001 and 59999
+`external_port` must be between 51001 and 59999 (Except for the vsc router)
 ```
 ```{warning}
 Changing the port-forward rules will re-create the router VMs, so there may be a network interruption when the changes are applied.
@@ -126,7 +130,7 @@ Full module documentation can be found [here](https://search.opentofu.org/module
 ```
 module "SimpleVM" {
   source     = "hpcugent/opennebula/vsc"
-  version    = "0.0.5"
+  version    = "0.0.6"
   vm_name    = "SimpleExample"
   image_name = "Rocky 10"
   is_windows = false
@@ -239,6 +243,46 @@ It is important to keep a backup of opentofu files.
 Opentofu generates several files in this directory to keep track of any
 change in your infrastructure. If for some reason you lose these files, it will be very difficult to import them into a new OpenTofu configuration.
 :::
+
+
+## Special considerations for multi-user workflows
+If multiple people need to interact with the project independently, there are some additional things to consider.
+Because only one (or two, with VSC access) router can exist per project, the management of the router instance needs to be centralized in some way.
+
+### Tofu state
+OpenTofu uses a [statefile](https://opentofu.org/docs/v1.12/language/state/) to keep track of which resources have been created and their properties. This way, if you add another port forwarding to your router, OpenTofu knows which router to change and what changes to apply. This has the downside that anyone that needs to change the port forwarding rules, needs to have access to the statefile. The statefile may also contain sensitive information (like a password, in the case of a Windows VM), so it is important to keep this file secret. 
+
+### Suggested workflows
+#### One tofu project for all users
+In this workflow, you share the tofu code and the statefile. You could do this on a shared filesystem, for example, if you are careful to avoid collosions (working on the files at the same time).
+A safer way to do this is with a [Remote Backend](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) or [Cloud provider](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/), that stores your backend remotely in a way that ensures no conflicts occur. This is often paired with git, to track changes to the code. There is a list of Remote state providers further down this article.
+:::{note}
+We recommend keeping your OpenTofu code in Git, but **do not put the statefile in a public repository**.
+:::
+#### One "router manager"
+Alternatively, if you do not wish to use a remote state, you could have one person responsible for managing the router and the port-forwarding.
+So you would create an OpenTofu project with just the router defintion, and than the other users in your team can create VMs in their own local OpenTofu projects. You would then have to add any port-forwardings to the router project, using the private ip address of the VM. 
+
+### Remote State Providers
+These online services offer [Remote state](https://opentofu.org/docs/v1.12/language/state/remote/) storage.
+At the time of writing they offer free tiers. This list is non-exhaustive.
+You can also use self-hosted options, s3, a postgres db etc. See the [OpenTofu Docs](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) for more information.
+
+Some of these should be configured with the [Cloud block](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/) and others the [Backend](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) block.
+:::{Note}
+(WIP) Of these I've only tested Gitlab so far.
+:::
+
+#### [Gitlab](https://docs.gitlab.com/user/infrastructure/iac/terraform_state/)
+Gitlab offers free tofu state management with their repositories. There are also [CI/CD Components](https://gitlab.com/components/opentofu) if you want to integrate CI/CD into your workflow.
+#### [HCP Terraform / Terraform Cloud](https://app.terraform.io/)
+Hashicorp offers a free tier up to 500 managed resources, which should be enough for an average usecase. You can find the documentation on their pricing/limits [Here](https://developer.hashicorp.com/terraform/cloud-docs/overview).
+:::{warning}
+Terraform Cloud does not officially support OpenTofu, so we recommend only using it as a state provider and to not use any of their automation features (set execution mode to `remote`).
+:::
+#### [Scalr](https://scalr.com/)
+Scalr also offers a free tier, limited to 50 runs per month (which can be avoided by setting the run mode to local).
+Scalr is also compatible with OpenTofu, so their additional features can be used.
 
 ## Further customization
 You can also use your own opentofu code to deploy your infrastructure.

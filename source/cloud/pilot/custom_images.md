@@ -1,7 +1,6 @@
 # Upload and manage images
 
-A virtual machine image, referred to in this document simply as an
-image, is a single file that contains a virtual disk that has a bootable
+A virtual machine image is a single file that contains a virtual disk that has a bootable
 operating system installed on it. Images are used to create virtual
 machine instances within the cloud. The image files themselves are never
 modified, but you can copy the image into a persistent instance.
@@ -18,7 +17,7 @@ Your custom image must include the opennebula [contextualization packages](https
 :::
 
 
-## Adding images
+## Uploading images
 
 ### Uploading
 1) Go to [Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
