@@ -146,7 +146,6 @@ This code will create a virtual machine with the `Rocky 10` OS image provided by
 We strongly encourage you to consider linux-based alternatives. Our support for Windows is more limited.
 ```
 Setting `is_windows = true` will configure the VM slightly differently for Windows images.
-You can find more information on [this page](windows.md).
 
 ### Full documentation
 ```{warning}
