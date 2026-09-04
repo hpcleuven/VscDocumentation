@@ -36,3 +36,4 @@ the OpenStack VSC Tutorial.
    gpus
    windows
    appendix
+   pilot/index
