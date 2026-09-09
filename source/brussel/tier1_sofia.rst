@@ -360,10 +360,16 @@ Storage
 =======
 
 The Tier-1 cluster **sofia** has 4.3 PiB of very fast storage. This shared
-storage is available on all login and compute nodes of the cluster. It is used to
-provide scratch storage for jobs (*i.e.* `project directories <https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects>`__),
-as well as users’ home directories and it also holds the installations of scientific
-software.
+storage is available on all login and compute nodes of the cluster. It is used
+to provide scratch storage for jobs (*i.e.* `project directories
+<https://portal.sofia.vub.be/pun/sys/dashboard/files/fs/sofia/projects>`__), as
+well as users’ home directories and it also holds the installations of
+scientific software.
+
+.. warning::
+
+   There are currently no backups available for **sofia** scratch. Deleted data
+   cannot be recovered.
 
 .. _sofia_globus:
 
