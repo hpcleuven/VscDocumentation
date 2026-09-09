@@ -8,3 +8,5 @@ Software-specific guidelines
 
    matlab
    R
+
+`VASP (parallelization guide) <https://github.com/hpcuantwerpen/vasp_parallel_guide>`_
