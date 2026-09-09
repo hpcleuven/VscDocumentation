@@ -45,7 +45,7 @@ Submitting a batch job can then look as follows::
 
    $ sbatch --account=lp_my_project run-job.slurm
    or
-   $ sbatch --account=intro_vsc3xxxx run-job.slurm
+   $ sbatch --account=intro_vscxxxxx run-job.slurm
 
 If the account to be charged, i.e., ``lp_my_project``, has insufficient credits for the
 job, the user receives a warning at this point, and the job will not start until the account
