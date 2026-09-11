@@ -158,6 +158,11 @@ information about the services provided by the `Vlaams Supercomputer Centrum
             :text-align: center
             :link: cloud/terraform
             :link-type: doc
+         .. grid-item-card:: New Cloud Pilot
+            :class-item: nested-card-top service-card-pilot
+            :text-align: center
+            :link: cloud/pilot/index
+            :link-type: doc
 
    .. grid-item-card:: :fas:`question-circle` FAQs
        :columns: 12
