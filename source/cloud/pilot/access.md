@@ -47,7 +47,7 @@ Dashboard.
 If you want to use the opennebula CLI (one), or interact with its API (with [OpenTofu](./opentofu.md), for example) you need a "Login token".
 To obtain a login token, follow these steps:
 
-1) Log in on [cloud.vscentrum.be](https://cloud.vscentrum.be)
+1) Log in on [cloudpr4.vscentrum.be](https://cloudpr4.vscentrum.be/
 2) Click on your username in the top right corner
 3) Click "settings"
 4) In this new screen, click "Security".
