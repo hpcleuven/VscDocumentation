@@ -1,4 +1,8 @@
 # NFS Shares
 Unfortunately, OpenNebula does not have a NFS service.
-It is of course possible to set up your own NFS service on a VM, but this is out of scope for our support.
+If you need shared storage, you can create a VM dedicated to that purpose.
+
+Many Linux Distributions will have documentation on how to configure NFS:
+* [Rocky Linux](https://docs.rockylinux.org/10/guides/file_sharing/nfsserver/)
+* [Ubuntu](https://ubuntu.com/server/docs/how-to/networking/install-nfs/)
 
