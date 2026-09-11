@@ -17,6 +17,15 @@ The file should be in this format (replace `vscxxx` with your username and `toke
 ```
 vscxxx:token
 ```
+For additional security, change the file permissions so only you can access it:
+```shell
+chmod 600 ~/.one/one_auth
+```
+:::{danger}
+Do not share your credential file (`~/.one/one_auth`) or put this
+file in a public place.
+:::
+
 :::{tip}
 You can easily access and edit the files on the login node by going to the [HPC-UGent Tier-2 web portal](https://login.hpc.ugent.be/pun/sys/dashboard/files/). 
 **Enable "Show Dotfiles"** to see the `.one` directory. If it is not there, you may have to create it.
