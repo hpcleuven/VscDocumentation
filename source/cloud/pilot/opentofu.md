@@ -4,15 +4,18 @@ infrastructure as code tool (IaC). It is a fork of [Terraform](https://developer
 Opentofu is currently one of the most popular infrastructure automation tools
 available. VSC Cloud provides an OpenTofu module to simplify VM provisioning: https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest.
 
-**OpenTofu**
+
+## Installing OpenTofu
 The client is available for different Operating Systems like Windows, Linux
-or macOS (<https://opentofu.org/docs/intro/install/>) but it is also available
-from the HPC-UGent Tier-2 login nodes at `login.hpc.ugent.be`.
+or macOS (<https://opentofu.org/docs/intro/install/>)
+If you cannot install it, is also available from the HPC-UGent Tier-2 login nodes at `login.hpc.ugent.be`.
+
+If you are using OpenTofu on your local machine, the [VSCode Extension](https://github.com/opentofu/vscode-opentofu) is also recommended.
+
 
 ## Create credentials for OpenTofu
-
 Tofu requires a username and a login token to authenticate to the Opennebula API. Obtaining a login token is explained in: [application credentials](access.md#login-token).
-After obtaining the token, place it in `~/.one/one_auth` on the HPC-UGent Tier-2 login node (`login.hpc.ugent.be`) or on your local machine if you have installed OpenTofu and the One CLI.
+After obtaining the token, place it in `~/.one/one_auth` on the HPC-UGent Tier-2 login node (`login.hpc.ugent.be`) or on your local machine if you have installed OpenTofu and/or the One CLI.
 The file should be in this format (replace `vscxxx` with your username and `token` with your login token):
 ```
 vscxxx:token
@@ -33,7 +36,6 @@ You can easily access and edit the files on the login node by going to the [HPC-
 You can also access the a shell session on one of the login nodes in the HPC-UGent Tier-2 web portal (under `Clusters` dropdown).
 :::
 ## Using the OpenTofu module
-
 You can connect via SSH to a HPC-UGent login node `login.hpc.ugent.be` to use
 OpenTofu. Login to the login node with your VSC account first:
 
@@ -43,42 +45,32 @@ ssh -A vscxxxxx@login.hpc.ugent.be
 :::{important}
 It is important to forward your ssh agent with `-A` when SSH-ing to the login node.
 :::
-If this is the first time. you can download the examples with this snippet:
-```shell
-export MODULE_VERSION="0.0.6"
-mkdir -p cloud-examples/
-curl -L https://github.com/hpcugent/terraform-vsc-opennebula/archive/refs/tags/$MODULE_VERSION.tar.gz   | tar -xz --strip-components=2 -C cloud-examples terraform-vsc-opennebula-$MODULE_VERSION/examples
+
+You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.6/examples) as a starting point.
+Make sure to copy the `providers.tf` and the `main.tf` files into your project directory.
+On linux you can use this snippet:
+```bash
+mkdir -p MyVSCCloudProject
+wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.6/examples/simple-server/main.tf
+wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.6/examples/simple-server/providers.tf
 ```
-You can also browse them on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.5/examples)
-
-Make sure you have *`~/.one/one_auth`* on the login node (see previous [section](#create-credentials-for-opentofu)).
-
-:::{danger}
-Do not share your credential file (`~/.one/one_auth`) or put this
-file in a public place.
+:::{tip}
+Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
 :::
-
-
 ## Basic VM configuration
 :::{tip}
 If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure to:
 1) [Install OpenTofu](https://opentofu.org/docs/intro/install/)
-2) Install Opennebula client (**optional**):
-    1) Add the repository for your linux distro: https://docs.opennebula.io/7.2/software/installation_process/frontend_installation/opennebula_repository_configuration_ce/
+2) {bdg-primary}`Optional` Install Opennebula client:
+    1) [Add the repository for your linux distro](https://docs.opennebula.io/7.2/software/installation_process/frontend_installation/opennebula_repository_configuration_ce/)
     2) Install `opennebula-tools` with your package manager
 :::
 
-In the previous [section](#using-the-opentofu-module) we created a `cloud-examples/` directory.
-You can copy one of the examples to your new project:
-```
-mkdir -p MyProject
-cp cloud-examples/simple-server/* MyProject/
-rm -f MyProject/*.tofutest
-```
-Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.5/examples/simple-server) example's `main.tf`.
+In the previous [section](#using-the-opentofu-module) we created a `MyVSCCloudProject` directory and copied some tofu files into it.
+Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.6/examples/simple-server) example's `main.tf`.
 
 This file contains the most basic configuration for a virtual machine.
-It consists of two **modules**. A module is convenient grouping of opentofu resources. 
+It consists of two **modules**. A module is convenient grouping of OpenTofu resources. 
 A module has a **source** and a **version**. The source points to the [VSC module on the OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest).
 The version determines the version of the module you are using. You can view the documentation specific to the version you're using on the OpenTofu registry.
 
@@ -160,7 +152,7 @@ Setting `is_windows = true` will configure the VM slightly differently for Windo
 ```{warning}
 Be sure to match the version of the documentation/examples to the version of the module that you are using
 ```
-The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.5/examples) 
+The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.6/examples) 
 
 You can also find documentation on all of the variables on the [OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest)
 
