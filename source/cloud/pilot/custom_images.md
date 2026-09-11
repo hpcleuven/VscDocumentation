@@ -30,4 +30,4 @@ Your custom image must include the opennebula [contextualization packages](https
 
 ### Setting permissions
 After uploading, you will see the images overview.
-By default an image can only be used by the user that created them. You can change this by clicking on the image and going to the "info" tab. You likely want to allow your group to "use" the image.
+By default an image can only be used by the user that created it. You can change this by clicking on the image and going to the "info" tab. You likely want to allow your group to "use" the image.

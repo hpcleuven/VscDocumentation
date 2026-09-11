@@ -13,4 +13,4 @@ WIP: Need RDP client recommendations with tunneling support
 UGent Firewall blocks RDP connections for security reasons. 
 You can however, connect to our Windows image with SSH. The [Tofu module](./opentofu.md) will give you the credentials.
 
-Many RDP clients (excluding Windows' own RPD client) support SSH tunneling. This way you can securely access your VM with RDP.
+Many RDP clients (excluding Windows' own RDP client) support SSH tunneling. This way you can securely access your VM with RDP.

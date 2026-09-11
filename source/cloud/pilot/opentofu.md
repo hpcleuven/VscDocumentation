@@ -7,25 +7,25 @@ available. VSC Cloud provides an OpenTofu module to simplify VM provisioning: ht
 **OpenTofu**
 The client is available for different Operating Systems like Windows, Linux
 or macOS (<https://opentofu.org/docs/intro/install/>) but it is also available
-from UGent login node _login.hpc.ugent.be_.
+from the HPC-UGent Tier-2 login nodes at `login.hpc.ugent.be`.
 
 ## Create credentials for OpenTofu
 
 Tofu requires a username and a login token to authenticate to the Opennebula API. Obtaining a login token is explained in: [application credentials](access.md#login-token).
-After obtaining the token, place it in `~/.one/one_auth` on your VSC login node (login.hpc.ugent.be) or on your local machine if you have installed OpenTofu and the One CLI.
+After obtaining the token, place it in `~/.one/one_auth` on the HPC-UGent Tier-2 login node (`login.hpc.ugent.be`) or on your local machine if you have installed OpenTofu and the One CLI.
 The file should be in this format (replace `vscxxx` with your username and `token` with your login token):
 ```
 vscxxx:token
 ```
 :::{tip}
-You can easily access and edit the files on the login node by going to the [HPC UGent dashboard](https://login.hpc.ugent.be/pun/sys/dashboard/files/). 
+You can easily access and edit the files on the login node by going to the [HPC-UGent Tier-2 web portal](https://login.hpc.ugent.be/pun/sys/dashboard/files/). 
 **Enable "Show Dotfiles"** to see the `.one` directory. If it is not there, you may have to create it.
 
-You can also access the commandline of the login node there (under `Clusters` dropdown).
+You can also access the a shell session on one of the login nodes in the HPC-UGent Tier-2 web portal (under `Clusters` dropdown).
 :::
 ## Using the OpenTofu module
 
-You can connect to UGent login node `login.hpc.ugent.be` to use
+You can connect via SSH to a HPC-UGent login node `login.hpc.ugent.be` to use
 OpenTofu. Login to the login node with your VSC account first:
 
 ```shell
@@ -52,7 +52,7 @@ file in a public place.
 
 ## Basic VM configuration
 :::{tip}
-If you are **not** using the VSC login node, you need to make sure to:
+If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure to:
 1) [Install OpenTofu](https://opentofu.org/docs/intro/install/)
 2) Install Opennebula client (**optional**):
     1) Add the repository for your linux distro: https://docs.opennebula.io/7.2/software/installation_process/frontend_installation/opennebula_repository_configuration_ce/
@@ -70,7 +70,7 @@ Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-v
 
 This file contains the most basic configuration for a virtual machine.
 It consists of two **modules**. A module is convenient grouping of opentofu resources. 
-A module has a **source** and a **version**. The source points to our [Module on the OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest).
+A module has a **source** and a **version**. The source points to the [VSC module on the OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest).
 The version determines the version of the module you are using. You can view the documentation specific to the version you're using on the OpenTofu registry.
 
 
@@ -88,7 +88,7 @@ module "router" {
 }
 ```
 This will provide network connectivity for all the VMs in your project.
-With the router, you can specify the **access VM**, being the VM exposed to the internet through ssh. It will also be the default target for [port forwarding rules](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/submodule/router/inputs#port_forwards)
+With the router, you can specify the **access VM**, being the VM exposed to the internet through SSH. It will also be the default target for [port forwarding rules](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/submodule/router/inputs#port_forwards)
 
 ```{note}
 There can only be **one** regular router per Opennebula group, except an optional VSC router.
@@ -121,7 +121,7 @@ By default these will target the `access_vm`, but you can override `internal_ip`
 `external_port` must be between 51001 and 59999 (Except for the vsc router)
 ```
 ```{warning}
-Changing the port-forward rules will re-create the router VMs, so there may be a network interruption when the changes are applied.
+Changing the port-forwarding rules will re-create the router VMs, so there may be a network interruption when the changes are applied.
 ```
 ### The VM
 ```{tip}
@@ -136,7 +136,7 @@ module "SimpleVM" {
   is_windows = false
 }
 ```
-This code will create a virtual machine with the `Rocky 10` OS image provided by us. You can see which other images are available either with the `oneimage list` command or at https://cloudpr4.ugent.be/fireedge/sunstone/image/.
+This code will create a virtual machine with the `Rocky 10` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command or in the [VSC Cloud Opennebula Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/).
 
 
 
@@ -158,8 +158,8 @@ You can also find documentation on all of the variables on the [OpenTofu Registr
 
 ## Deploying your VM
 
-If you have followed the previous steps now you can init and deploy your
-infrastucture to Tier-1 VSC cloud.
+If you have followed the previous steps now you can initialize and deploy your
+infrastucture to VSC Tier-1 cloud.
 
 If you haven't deployed anything yet, you must first initialize the modules.
 
@@ -173,7 +173,7 @@ Edit the file as necessary (change the VM name to something descriptive, for exa
 nano main.tf
 ```
 ```{tip}
-You can also edit the files through [HPC UGent dashboard](https://login.hpc.ugent.be/pun/sys/dashboard/files/)
+You can also edit the files through the [HPC-UGent Tier-2 web portal](https://login.hpc.ugent.be/pun/sys/dashboard/files/)
 ```
 
 
@@ -191,7 +191,7 @@ tofu plan
 ```
 
 You will see a list of the resources required to deploy your
-infrastructure, tofu also checks if there is any systax error in
+infrastructure. Tofu also checks if there is any syntax error in
 your code. Your infrastructure is not deployed yet, review the plan
 and then just deploy it to VSC Tier-1 Cloud running:
 
@@ -253,21 +253,21 @@ OpenTofu uses a [statefile](https://opentofu.org/docs/v1.12/language/state/) to 
 
 ### Suggested workflows
 #### One tofu project for all users
-In this workflow, you share the tofu code and the statefile. You could do this on a shared filesystem, for example, if you are careful to avoid collosions (working on the files at the same time).
+In this workflow, you share the tofu code and the statefile. You could do this on a shared filesystem, for example, if you are careful to avoid collisions (working on the files at the same time).
 A safer way to do this is with a [Remote Backend](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) or [Cloud provider](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/), that stores your backend remotely in a way that ensures no conflicts occur. This is often paired with git, to track changes to the code. There is a list of Remote state providers further down this article.
 :::{note}
 We recommend keeping your OpenTofu code in Git, but **do not put the statefile in a public repository**.
 :::
 #### One "router manager"
 Alternatively, if you do not wish to use a remote state, you could have one person responsible for managing the router and the port-forwarding.
-So you would create an OpenTofu project with just the router defintion, and than the other users in your team can create VMs in their own local OpenTofu projects. You would then have to add any port-forwardings to the router project, using the private ip address of the VM. 
+In that case, the "router manager" creates an OpenTofu project with just the router defintion. Other users in the team can then create VMs in their own local OpenTofu projects. The "router manager" will then have to add any port-forwardings to the router project, using the private IP address of the VMs created by other users in the team. 
 
 ### Remote State Providers
 These online services offer [Remote state](https://opentofu.org/docs/v1.12/language/state/remote/) storage.
 At the time of writing they offer free tiers. This list is non-exhaustive.
 You can also use self-hosted options, s3, a postgres db etc. See the [OpenTofu Docs](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) for more information.
 
-Some of these should be configured with the [Cloud block](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/) and others the [Backend](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) block.
+Some of these should be configured with the [Cloud block](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/) and others with the [Backend block](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/).
 :::{Note}
 (WIP) Of these I've only tested Gitlab so far.
 :::
@@ -284,8 +284,8 @@ Scalr also offers a free tier, limited to 50 runs per month (which can be avoide
 Scalr is also compatible with OpenTofu, so their additional features can be used.
 
 ## Further customization
-You can also use your own opentofu code to deploy your infrastructure.
-This task is out of the scope of this document, please refer to official
+You can also use your own OpenTofu code to deploy your infrastructure.
+This task is out of the scope of this document, please refer to the official
 OpenTofu documentation to add you own changes
 <https://opentofu.org/docs/> or ask to VSC Cloud admins via email at
 <cloud@vscentrum.be>.

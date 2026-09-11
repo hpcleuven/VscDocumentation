@@ -8,15 +8,15 @@ need a separate login or password. In order to use the cloud services,
 
 -   your account must be a member of one or more Opennebula groups.
 
-New users can obtain an account by following [the procedure described
+New users can obtain a VSC account by following [the procedure described
 here](/accounts/vsc_account.rst).
-Once you have an account, contact us if you want to start a new OpenStack
+Once you have a VSC account, contact us via cloud@vscentrum.be if you want to start a new Opennebula
 project, or join an existing one.
 
 You can interact with the VSC Cloud using the Opennebula Dashboard, a web
 interface, or the "one" command line interface, which you can use
-from any system, and which is installed for you on the UGent login node
-**login.hpc.ugent.be**. You can log in to the Dashboard using the VSC
+from any system, and which is installed for you on the HPC-UGent Tier-2 login nodes
+ at `login.hpc.ugent.be`. You can log in to the VSC Opennebula Dashboard using the VSC
 accountpage, as illustrated in the next section. To get access from the
 command line interface, you'll need to obtain a login token,
 as explained in section [Login Token](#login-token).
@@ -28,10 +28,10 @@ themselves who gets access to their VM's, and how.
 ## Dashboard Login
 
 You can access the Opennebula web interface, or Dashboard, via
-[cloudpr4.vscentrum.be](https://cloudpr4.vscentrum.be).
+[cloudpr4.ugent.be](https://cloudpr4.ugent.be).
 
 To log in, choose the (default) authentication method **VSC Accountpage**
-and click .
+and click "Connect".
 
 
 ![image](../img/cloud_login_1.png)
@@ -44,7 +44,7 @@ Dashboard.
 
 ## Login Token
 
-If you want to use the opennebula CLI (one), or interact with it's API (with [OpenTofu](./opentofu.md), for example) you need a "Login token".
+If you want to use the opennebula CLI (one), or interact with its API (with [OpenTofu](./opentofu.md), for example) you need a "Login token".
 To obtain a login token, follow these steps:
 
 1) Log in on [cloud.vscentrum.be](https://cloud.vscentrum.be)
