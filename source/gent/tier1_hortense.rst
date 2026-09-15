@@ -430,7 +430,7 @@ Software
 Operating system
 ****************
 
-Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 9 (RHEL9)* as operating system.
+Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 9.8 (RHEL9.8)* as operating system.
 
 .. _hortense_resource_manager:
 
