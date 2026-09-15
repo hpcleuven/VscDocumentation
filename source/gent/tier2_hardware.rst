@@ -12,6 +12,11 @@ Login nodes
 
 Log in to the HPC-UGent Tier-2 infrastructure via https://login.hpc.ugent.be or using SSH via ``login.hpc.ugent.be``.
 
+On the login nodes, strict limits are in place per user:
+  * max. 2 GB of virtual memory
+  * max. 496 running processes/threads
+  * max. 2 hours of CPU time per process
+
 Compute clusters
 ================
 
