@@ -110,10 +110,17 @@ or use "``ssh login57``" to jump to ``login57`` from ``login58``.
 
 .. note::
   The available resources on the Hortense login nodes are very limited:
-  there are only 8 cores and ~60GB of RAM memory available on each login node,
-  and these resources are shared by everyone that is logged in there.
+  there are only 8 cores and ~60GB of RAM memory available on each login node.
+
+  Since mid-september 2026, per-user resource limits are in place on the Hortense login nodes, 
+  which can be consulted by running the ``ulimit -a`` command.
+  Each user is limited to 2 GB of virtual memory, 496 running processes/threads, and 2 hours of CPU time per process.
+  Processes that exceed any of these limits may be terminated by the operating system or fail to start successfully.
 
   **Please only use the Hortense login nodes as an access portal!**
+
+  We also provide a debug/interactive partition, which is specifically intended for testing, 
+  debugging, and other interactive work that exceeds the login node limits (see also :ref:`hortense_interactive_debug`).
 
   For resource-intensive interactive tasks, like software compilation, testing software or job scripts, etc.,
   please use an interactive job, either via ``qsub -I`` (see also :ref:`hortense_resource_manager`)
