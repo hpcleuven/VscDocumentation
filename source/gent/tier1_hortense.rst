@@ -100,7 +100,7 @@ More general information about SSH login is available in the
 :ref:`terminal
 interface` section.
 
-There are 2 login nodes for Hortense: ``login57`` and ``login58``, both having Red Hat Enterprise Linux release 9.4 as operating system.
+There are 2 login nodes for Hortense: ``login57`` and ``login58``, both having Red Hat Enterprise Linux release 9.8 as operating system.
 When logging in using SSH, you will be assigned to either of these login nodes,
 based on the IP address of the host you are connecting from.
 
