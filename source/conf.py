@@ -494,6 +494,7 @@ rst_prolog += """
 .. _Secure Shell: https://en.wikipedia.org/wiki/Secure_Shell
 .. _sftp manual page: http://man.openbsd.org/sftp
 .. _sbatch manual page: https://slurm.schedmd.com/sbatch.html
+.. _Smallstep installation: https://smallstep.com/docs/step-ca/installation/
 .. _ssh manual page: http://man.openbsd.org/ssh
 .. _ssh-keygen manual page: http://man.openbsd.org/ssh-keygen
 .. _ssh_config manual page: http://man.openbsd.org/ssh_config
