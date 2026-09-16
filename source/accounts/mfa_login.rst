@@ -101,19 +101,7 @@ Smallstep certificate
    .. tab-item:: Windows
       :sync: win
 
-      Start the OpenSSH Authentication Agent service if it is not already
-      running, from an **elevated** (Run as Administrator) PowerShell or
-      Command Prompt:
-
-      .. code-block:: PowerShell
-
-         Start-Service ssh-agent
-
-      |Optional| Have ssh-agent start automatically on every boot:
-
-      .. code-block:: PowerShell
-
-         Set-Service -Name ssh-agent -StartupType Automatic
+      Use the built-in :ref:`Windows OpenSSH agent <ssh agent windows>`.
 
    .. tab-item:: macOS
       :sync: mac

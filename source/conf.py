@@ -475,6 +475,7 @@ rst_prolog += """
 .. _Open OnDemand: https://openondemand.org/
 .. _OpenSHMEM: http://www.openshmem.org/site/
 .. _OpenSSH: https://www.openssh.com/
+.. _OpenSSH Authentication Agent: https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement
 .. _Open WebUI: https://openwebui.com
 .. _Paraview tutorial: https://vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
 .. _Paraview website: https://www.paraview.org/

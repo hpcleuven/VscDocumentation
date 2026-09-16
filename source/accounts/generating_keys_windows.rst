@@ -79,36 +79,14 @@ pair (make sure to generate a 4096-bit key):
 This will ask you for a file name to store the private and public key, 
 and a passphrase to protect your private key.
 
-.. _ssh agent windows:
-
 Add key to SSH agent
 ====================
 
-|Optional| The system will ask you for your passphrase every time you want to 
-use the private key, that is, every time you want to access the cluster or 
+|Optional| The system will ask you for your passphrase every time you want to
+use the private key, that is, every time you want to access the cluster or
 transfer your files. You can use an :ref:`SSH agent<SSH agent>` to hold your
 unlocked keys and avoid being asked for the passphrase on each connection.
-
-The following commands will enable and automatically start the SSH Agent
-service on your system. You only need to do this once:
-
-.. code-block:: PowerShell
-
-    # The ssh-agent service is disabled by default. Configure it to start automatically. 
-    # Run the following command as an administrator.
-   $ Set-Service -Name ssh-agent -StartupType Automatic
-
-    # Start the ssh-agent service
-   $ Start-Service ssh-agent  
-    # The following command should return a status of Running
-   $ Get-Service ssh-agent
-
-    # Add your private key. Fill in the path to your private key correctly.
-   $ ssh-add C:\Users\<user>/.ssh/id_rsa_vsc
-
-.. note::
-   You need to run PowerShell as Administrator to be able to use
-   the ``Set-Service`` command.
+See :ref:`ssh agent windows` for how to enable, start and use it.
 
 Create or edit SSH config
 =========================
