@@ -83,8 +83,8 @@ This is one of the two ways to obtain an SSH certificate described in
 .. note::
 
    You can automatically obtain a certificate when connecting with SSH as a
-   specific user ``vsc98765`` by adding the following to your
-   :ref:`SSH config file <ssh_config>`:
+   specific user (in this example ``vsc98765``) by adding the following to
+   your :ref:`SSH config file <ssh_config>`:
 
    .. code-block:: text
 
