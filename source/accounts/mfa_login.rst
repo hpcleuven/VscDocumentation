@@ -131,6 +131,18 @@ Smallstep certificate
       Match User vsc98765
           ProxyCommand step ssh proxycommand %r %h %p --context VSC
 
+.. note::
+
+   Smallstep can also issue a certificate without using an agent:
+
+   .. code-block:: bash
+
+      step ssh certificate <email> ~/.ssh/smallstep --context VSC --no-agent
+
+   This creates a private key and certificate in your ``~/.ssh`` folder.
+   You will need to pass ``-i ~/.ssh/smallstep`` to ``ssh``, or configure it
+   in your :ref:`SSH config file <ssh_config>`, to use it.
+
 .. _firewall-based-certificate:
 
 Firewall-based certificate
@@ -144,7 +156,8 @@ Firewall-based certificate
    .. tab-item:: Windows
       :sync: win
 
-      We recommend to use :ref:`Pageant`.
+      We recommend using the :ref:`Windows OpenSSH agent <ssh agent windows>`
+      for PowerShell or Command Prompt users, and :ref:`Pageant` otherwise.
 
    .. tab-item:: macOS
       :sync: mac
