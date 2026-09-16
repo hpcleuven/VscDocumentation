@@ -9,7 +9,7 @@ Agent`_ service, commonly referred to as ``ssh-agent``. It holds your
 private keys and SSH certificates in memory so that native Windows OpenSSH
 commands (e.g. ``ssh``, ``scp`` and ``sftp``), and command line tools that
 speak the standard OpenSSH agent protocol, such as ``step`` when obtaining
-a :ref:`Smallstep certificate <mfa-with-ssh-agent>`, do not need your
+a :ref:`Smallstep certificate <smallstep-certificate>`, do not need your
 passphrase or :ref:`Multi Factor Authentication <mfa_login>` on every
 connection.
 

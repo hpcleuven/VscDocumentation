@@ -41,235 +41,70 @@ are made available to any other client program needing to use that same connecti
 Getting an SSH certificate involves MFA but this only needs to be performed
 once since a certificate can be used multiple times as long as it remains valid.
 
-There are two ways to acquire such an SSH certificate.
+Both certificates below are accepted on:
 
-Smallstep certificate
-^^^^^^^^^^^^^^^^^^^^^^
+.. grid:: 3
+    :gutter: 4
 
-.. note::
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
 
-   On Windows, this method only works when connecting to the cluster from
-   Windows PowerShell or the Command Prompt. PuTTy or MobaXterm users need
-   to obtain a :ref:`Firewall-based certificate <firewall-based-certificate>`
-   using Pageant instead.
+       * Tier-2 :ref:`Genius <genius hardware>`
+       * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
-* Install the ``step`` CLI. See the `Smallstep installation`_ documentation
-  for more information.
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
 
-.. tab-set::
-   :sync-group: operating-system
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
-   .. tab-item:: Windows
-      :sync: win
+       |sofia|
 
-      Install ``step-ca.exe`` and ``step.exe`` using Winget.
-      Using Windows PowerShell or Command Prompt:
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
-      .. code-block:: PowerShell
+There are two ways to acquire such an SSH certificate:
 
-         winget install Smallstep.step-ca
+.. toctree::
+   :hidden:
 
-   .. tab-item:: macOS
-      :sync: mac
+   Smallstep certificate <mfa_login_smallstep>
+   Firewall-based certificate <mfa_login_firewall>
 
-      Install ``step-ca`` and ``step`` using homebrew.
-      In the terminal:
+.. grid:: 2
+   :gutter: 4
 
-      .. code-block:: bash
+   .. grid-item-card:: Firewall-based certificate
+      :columns: 12 12 6 6
+      :link: mfa_login_firewall
+      :link-type: doc
 
-         brew install step
+      Works with any SSH client, including PuTTY and MobaXterm.
 
-   .. tab-item:: Linux
-      :sync: lin
+   .. grid-item-card:: Smallstep certificate
+      :columns: 12 12 6 6
+      :link: mfa_login_smallstep
+      :link-type: doc
 
-      Install the ``step-cli`` and ``step-ca`` packages. Instructions for
-      specific Linux distributions can be found on the `Smallstep
-      installation`_ documentation page.
+      Uses the ``step`` CLI. On Windows, only works from PowerShell or the
+      Command Prompt, not from GUI clients such as PuTTY and MobaXterm.
 
-* Set up (bootstrap) the environment. This creates the ``~/.step`` directory
-  and only needs to happen the first time.
-
-  .. code-block:: bash
-
-     step ca bootstrap --context VSC --team VSC --team-url=https://hpc.vub.be/_static/VSC-CA.json
-
-* Start up your SSH agent
-
-.. tab-set::
-   :sync-group: operating-system
-
-   .. tab-item:: Windows
-      :sync: win
-
-      Use the built-in :ref:`Windows OpenSSH agent <ssh agent windows>`.
-
-   .. tab-item:: macOS
-      :sync: mac
-
-      Use the default :ref:`OpenSSH agent`.
-
-   .. tab-item:: Linux
-      :sync: lin
-
-      Use the default :ref:`OpenSSH agent`.
-
-* Obtain a certificate. It has a lifetime of 16 hours.
-
-  .. code-block:: bash
-
-     step ssh login --context VSC
-
-.. note::
-
-   You can automatically obtain a certificate when connecting with SSH as a
-   specific user ``vsc98765`` by adding the following to your
-   :ref:`SSH config file <ssh_config>`:
-
-   .. code-block:: text
-
-      # Use Smallstep to handle the SSH connection and automatically renew/login when the certificate expires
-      Match User vsc98765
-          ProxyCommand step ssh proxycommand %r %h %p --context VSC
-
-.. note::
-
-   Smallstep can also issue a certificate without using an agent:
-
-   .. code-block:: bash
-
-      step ssh certificate <email> ~/.ssh/smallstep --context VSC --no-agent
-
-   This creates a private key and certificate in your ``~/.ssh`` folder.
-   You will need to pass ``-i ~/.ssh/smallstep`` to ``ssh``, or configure it
-   in your :ref:`SSH config file <ssh_config>`, to use it.
-
-.. _firewall-based-certificate:
-
-Firewall-based certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Start up your SSH agent
-
-.. tab-set::
-   :sync-group: operating-system
-
-   .. tab-item:: Windows
-      :sync: win
-
-      We recommend using the :ref:`Windows OpenSSH agent <ssh agent windows>`
-      for PowerShell or Command Prompt users, and :ref:`Pageant` otherwise.
-
-   .. tab-item:: macOS
-      :sync: mac
-
-      Use the default :ref:`OpenSSH agent`.
-
-   .. tab-item:: Linux
-      :sync: lin
-
-      Use the default :ref:`OpenSSH agent`.
-
-.. tab-set::
-   :sync-group: vsc-sites
-
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
-
-      * Connect to either the cluster's login node or to ``firewall.vscentrum.be``
-        with your terminal application of choice and with agent forwarding enabled.
-        With e.g. OpenSSH you can do:
-
-        .. code-block:: bash
-
-           ssh -A vsc98765@login.hpc.kuleuven.be
-           # or
-           ssh -A vsc98765@firewall.vscentrum.be
-
-   .. tab-item:: Tier-1 sofia
-      :sync: sofia
-
-      * Connect to ``firewall.vscentrum.be`` with your terminal application of
-        choice and with agent forwarding enabled. With e.g. OpenSSH you can do:
-
-        .. code-block:: bash
-
-           ssh -A vsc98765@firewall.vscentrum.be
-
-PuTTY users can find the agent forwarding option under the
-'Connection -> SSH -> Auth' tab.
-OpenSSH users may also automatically
-enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
-
-* You will then be shown a URL which you will need to open in a browser:
-
-  .. _firewall_link_mfa:
-  .. figure:: mfa_login/firewall_link_mfa.PNG
-     :alt: firewall_link_mfa
-
-  Note that when using PuTTY or MobaXterm, simply highlighting the link
-  with your mouse will copy the URL to your clipboard.
-  Avoid using 'CTRL-C', or it will send a ``SIGINT`` signal interrupting
-  your process instead of performing a copy operation.
-
-* From the drop-down menu, choose the institute you are affiliated with.
-  Below, we show an example of a KU Leuven user, but one has to pick the
-  institute he/she is affiliated with.
-
-  .. figure:: mfa_login/vsc_firewall_institute.PNG
-     :alt: Choose your institute
-
-* You will be forwarded to the Identity Provider (IdP) of your institute,
-  and you need to login in a usual way using your registered credentials.
-
-  |kuluh| For KU Leuven users, the page looks like the following:
-
-  .. _idp_page:
-  .. figure:: mfa_login/idp_page.PNG
-     :alt: idp_page
-
-* |kuluh| If you are already connected to the internal network, then you will be only asked to
-  identify yourself with the MFA authenticator app on your personal phone:
-
-  .. _reauthenticate_phone:
-  .. figure:: mfa_login/reauthenticate_phone.PNG
-     :alt: reauthenticate_phone
-
-  This step may not be necessary when connecting from a white-listed IP address,
-  like the internal networks of the Flemish universities, using a static on-site
-  IP as well as the institutional VPN.
-  For example, if you have already logged upfront into your institution's network
-  then you might not be required to log in again depending on your browser
-  session settings (e.g., accepted cookies).
-
-* Once you are successfully authenticated, you end up on a page telling you that your VSC 
-  identity is confirmed.
-  If you have already performed the previous login in that browser session, you will 
-  immediately end up on this page:
-
-  .. _firewall_confirmed:
-  .. figure:: mfa_login/firewall_confirmed.PNG
-     :alt: firewall_confirmed
-
-* An SSH certificate will now be injected back into the agent.
-
-That's it! You can continue doing your HPC work as usual.
-
-The certificate can be used as long as the agent remains alive and the
-certificate itself has not expired (they have a lifetime of 16 hours).
-Do not forget to set up your client so that it contacts your SSH agent
-when opening new connections (thereby making use of the certificates).
-For a few common clients the corresponding documentation pages are listed
-below.
+Once you have a certificate loaded into your agent, it can be used as long
+as the agent remains alive and the certificate itself has not expired (they
+have a lifetime of 16 hours). Do not forget to set up your client so that
+it contacts your SSH agent when opening new connections (thereby making use
+of the certificates). For a few common clients the corresponding
+documentation pages are listed below.
 
 ====================================== ==================== =====================
 SSH Client name                        Purpose              Operating System
 ====================================== ==================== =====================
 :ref:`OpenSSH <OpenSSH access>`        text-based terminal  Linux, macOS
+:ref:`OpenSSH <windows_client>`        text-based terminal  Windows
 :ref:`PuTTY <terminal putty>`          text-based terminal  Windows
 :ref:`MobaXterm <terminal mobaxterm>`  text-based terminal  Windows
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
-
 
 .. _mfa quick start:
 
