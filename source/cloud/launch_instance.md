@@ -217,7 +217,7 @@ If you want to access ports outside the public range, you'll need to
 connect to the UGent login node _login.hpc.ugent.be_ first, and hop to
 your instance from there. To make this work without storing the required
 private key for the instance in your VSC storage space, you need to set
-up an [SSH agent with key forwarding locally](/access/using_ssh_agent.rst),
+up an [SSH agent with key forwarding locally](/accounts/ssh_agent.rst),
 i.e. on the machine where you store the private key of an authorized keypair
 for the instance.
 :::
@@ -327,7 +327,7 @@ fingerprints.
 The following examples show output and commands for OpenSSH, the most
 common client on Linux and macOS. If you are working from a windows
 system using using PuTTY, see our documentation on
-[Generating keys with PuTTY](/access/generating_keys_with_putty.rst). 
+[Generating keys with PuTTY](/accounts/generating_keys_putty.rst). 
 
 #### Connecting for the first time
 
@@ -468,19 +468,20 @@ disk, and the server is stopped.
 
 **Shut off**
 
+```{important}
+Powered-off VMs may be automatically _shelved_ at any time to conserve resources.
+Should you find your VM shelved, all you need to do is unshelve it in the UI or run `terraform apply` to set it back to `active`.
+```
+
 The server is powered down by the user, either through the OpenStack
 Compute API, or from within the server by issuing a *shutdown -h*
-command. In this state the user retains all computational resources
-associated with the VM. The instance can be later restarted.
+command. In this state the computational resources associated with the VM stay reserved (it counts towards the user's quota). The instance can be later restarted.
 
 **Shelve**
 
-Shelving stops the instance and takes a snapshot of it. Then
-depending on the value of the *shelved_offload_time* config option,
-the instance is either deleted from the hypervisor (0), never
-deleted (-1), or deleted after some period of time (> 0). Shelve
-preserves all associated data and VM resources but does not retain
-anything in memory.
+Shelving stops the instance and takes a snapshot of it.
+Shelve preserves all associated data and VM configuration but removes any reserved computational resources (memory & CPU).
+The computational resources are then freed up for the user to use on other VMs.
 
 **Delete**
 

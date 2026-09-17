@@ -96,6 +96,10 @@ $ git commit -m "some new stuff added to VSC docs"
 $ git push origin feature/new_stuff
 ```
 
+⚠️ You can also automatically verify that hyperlinks to external websites are in
+working condition. Run the *linkcheker* builder in Sphinx with `make
+linkcheck`.
+
 ### Pull request
 
 When you are done, create a pull request to the `master` branch of this

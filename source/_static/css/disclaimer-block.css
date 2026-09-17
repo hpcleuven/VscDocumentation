@@ -1,0 +1,8 @@
+.admonition.disclaimer {
+    border-left: 4px solid #f25224;
+}
+
+.admonition.disclaimer .admonition-title {
+    background-color: #f25224;
+    color: white;
+}

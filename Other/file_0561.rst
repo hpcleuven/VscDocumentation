@@ -1,3 +1,0 @@
-The documentation page you visited applies to the VUB Hydra cluster. For
-more specifics about the Hydra cluster, check `the VUB hardware
-page <\%22/infrastructure/hardware/hardware-vub\%22>`__.

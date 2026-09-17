@@ -1,4 +1,0 @@
-The documentation page you visited applies to the KU Leuven Tier-2 setup
-(THinking and Cerebro). For more information about these systems, visit
-`the hardware description
-page <\%22/infrastructure/hardware/hardware-kul\%22>`__.

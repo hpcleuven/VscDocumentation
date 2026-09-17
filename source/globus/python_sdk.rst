@@ -15,7 +15,7 @@ Getting started with the Python SDK
 
 Before creating your own scripts or tools on top of Globus, you first need to register them.  
 
-To do so, go to the `developers page <https://developers.globus.org/>`_ and click on 'Register your app with Globus'. 
+To do so, go to `developers.globus.org`_ and click on 'Register your app with Globus'. 
 
 First, you register your project, or select an existing one. 
 A project is a collection of clients with a shared list of administrators. Projects let you share the administrative burden of a collection of apps.

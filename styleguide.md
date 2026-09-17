@@ -100,6 +100,11 @@ some VSC sites:
 
   Example: [Applying for your VSC account](source/access/vsc_account.rst?plain=1#L19)
 
+  Tabs can be synced, which means that whenever the tab of one VSC site is
+  selected, all other tab panels with that same tab will automatically switch
+  to that one as well. This happens not only on the open page, but across the
+  whole documentation website.
+
 * [Badges](#badges) are useful for situations where information that is general
   needs a remark that a applies to one or a few VSC site. We have pre-defined
   one badge for each VSC site: `|KUL|` for KU Leuven, `|UA|` for UAntwerp,
@@ -300,25 +305,40 @@ Figure are automatically centered, scaled and can have captions.
 Information can be organized in tabs using the `tab-set::` directive. This is
 specially useful to show site-specific information in a compact manner.
 
+Tabs can be synced, which means that whenever one tab is selected, all other
+tab panels in that same ``sync-group`` will automatically switch to that same
+tab as well. The title of the tab is irrelevant, and the sync feature is
+controlled with the ``sync`` property. Syncing of tabs happens not only on the
+tab panes on the open page, but across the whole documentation website.
+
 ```
 .. tab-set::
+   :sync-group: vsc-sites
 
    .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
 
       Information specific to KU Leuven/UHasselt 
 
-   .. tab-item:: UGent
-
-      Information specific to UGent
-
-   .. tab-item:: UAntwerp (AUHA)
+   .. tab-item:: UAntwerp
+      :sync: ua
 
       Information specific to UAntwerp
 
+   .. tab-item:: UGent
+      :sync: ug
+
+      Information specific to UGent
+
    .. tab-item:: VUB
+      :sync: vub
 
       Information specific to VUB
 ```
+
+Keep in mind to always include these 4 tabs on tab panels for ``vsc-sites``.
+Even if there is no information for some of the sites. Otherwise users having
+selected the missing tab will get the first one activated.
 
 ## Grids and Cards
 

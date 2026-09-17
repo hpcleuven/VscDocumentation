@@ -4,18 +4,18 @@
 ManGO Portal
 ############
 
-The `ManGO portal <https://mango.vscentrum.be/>`_ is a graphical web interface for Tier-1 Data.
+The `ManGO portal`_ is a graphical web interface for Tier-1 Data.
 It allows users to manage their data in an intuitive way, without any installations,
 with a strong focus on managing :ref:`metadata<metadata>`.
 
 When logging in, you will be redirected to the login page of your institution. 
 This takes you to an overview with one or multiple zones with at least one of the following options:
 
-- Select 'Enter portal' to enter that zone via the ManGO portal.
+- Select 'Enter portal' to enter that zone via the `ManGO portal`_.
 - Select 'How to Connect' to get credentials for logging in to other clients, like :ref:`iCommands` or the :ref:`the PRC<python-client>`.
 - Selecting the downward arrow opens an overview of all projects you are member of in that zone. Clicking on the project name sends you to the project management page. 
 
-If you select the first option, you will be sent to the ManGO Portal home page:
+If you select the first option, you will be sent to the `ManGO portal`_ home page:
 
 .. figure:: ../images/mango_portal/mango_portal_main_page.png
   :width: 1000
@@ -108,7 +108,7 @@ A tar file is similar to a Zip folder, and can be extracted with a program like 
 
 Uploads and downloads via the ManGO portal are limited to 5GB and 50GB per file respectively.
 While it is possible to upload/download multiple files at once, it isn't possible to upload a folder or download a collection as a whole at the moment. 
-If you want to transfer larger amounts of data via a graphical interface, you can use `Globus <https://vlaams-supercomputing-centrum-vscdocumentation.readthedocs-hosted.com/en/latest/globus/globus_main_index.html>`_.
+If you want to transfer larger amounts of data via a graphical interface, you can use the :ref:`globus platform`.
 
 .. _edit-permissions:
 
@@ -197,6 +197,23 @@ Note that you cannot edit metadata added via metadata extraction: you can only d
 
 Analysis by Apache Tika may also give an OCR (Optical Character Recognition) reading, which is an overview of all text recognized in e.g. an image.
 This feature is a proof of concept, and this information can currently not be added as metadata. 
+
+Downloading metadata
+====================
+
+It is possible to download metadata attached to a collection or data object as an interoperable JSON file and use outside of Tier-1 Data. 
+To download metadata go to the tab 'Metadata' and click on the 'Download metadata' button on the right. 
+This will prompt a pop-up box showing the contents of the JSON file to download.
+You can adjust the document by filtering based on schema metadata (Schemas), manual metadata (Other metadata) or automatically extracted metadata (Automatic extraction). 
+Once you are satisfied with your selection you can click 'Download' to download the metadata as a JSON document. 
+To learn more about how the JSON is created you can have a look at the `documentation of our Python module <https://github.com/kuleuven/mango-mdconverter#mango-specific-conversion>`_. 
+
+.. figure:: ../images/mango_portal/metadata_download.png
+  :alt: downloading metadata
+  :width: 500
+
+
+
 
 
 Searching

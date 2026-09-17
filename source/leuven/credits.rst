@@ -41,6 +41,8 @@ Please contact your VSC coordinator/contact or your :ref:`local support staff
 <Contact VSC>`.
 
 
+.. _leuven_job_cost_calculation:
+
 Job cost calculation
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -95,7 +97,7 @@ Where
 
     The Tier-2 cluster has several types of compute nodes.
     Hence, different ``TRESBillingWeights`` apply to
-    different resources on different partitions of Genius and wICE.
+    different resources on different partitions of Genius, wICE and Mindwell.
     The difference in cost between different machines/processors reflects
     the performance difference between those types of nodes.
     For additional information, you may refer to the
@@ -108,22 +110,22 @@ of a job will be comparable on any compute node, but the
 walltime will be different, depending on the performance of the nodes.
 
 As an example, consider a job running on two nodes of the default partition on
-Genius, where ``TRESBillingWeights=CPU=4.62963`` applies::
+wICE, where ``TRESBillingWeights=CPU=2.546296296`` applies::
 
-   $ sbatch --account=lp_myproject --clusters=genius --nodes=2 \
-            --ntasks-per-node=36 myjobscript.slurm
+   $ sbatch --account=lp_myproject --clusters=wice --nodes=2 \
+            --ntasks-per-node=72 myjobscript.slurm
 
 If this job finishes in 2.5 hours (i.e., walltime is 150 minutes), the user
 will be charged::
 
-   floor(4.62963 * (2 * 36)) * 150 = 49 950 credits
+   floor(2.546296296 * (2 * 72)) * 150 = 54 900 credits
 
 You can also get such estimates from the ``sam-quote`` tool by providing it
 with your job submission command::
 
-   $ sam-quote sbatch --account=lp_myproject --clusters=genius --nodes=2 \
-                      --ntasks-per-node=36 --time=2:30:00 myjobscript.slurm
-   49950
+   $ sam-quote sbatch --account=lp_myproject --clusters=wice --nodes=2 \
+                      --ntasks-per-node=72 --time=2:30:00 myjobscript.slurm
+   54900
 
 Note that ``sam-quote`` assumes a worst-case scenario in which the job does
 not stop before reaching its time limit.
@@ -136,35 +138,39 @@ The table below shows the charge rates for each CPU and GPU type on Genius
 and wICE. These values correspond to the number of Slurm credits needed
 to allocate one core or GPU during one minute.
 
-+---------+---------------------+----------+------------------------+
-| Cluster | Resource            | Type     | ``TRESBillingWeights`` |
-+=========+=====================+==========+========================+
-| Genius  | Skylake             | CPU core | 4.62963                |
-+         +---------------------+----------+------------------------+
-|         | Skylake (bigmem)    | CPU core | 5.55556                |
-+         +---------------------+----------+------------------------+
-|         | Skylake (superdome) | CPU core | 18.7500                |
-+         +---------------------+----------+------------------------+
-|         | Cascadelake         | CPU core | 4.62963                |
-+         +---------------------+----------+------------------------+
-|         | P100                | GPU      | 41.6667                |
-+         +---------------------+----------+------------------------+
-|         | V100                | GPU      | 59.5833                |
-+---------+---------------------+----------+------------------------+
-| wICE    | Icelake             | CPU core | 2.54630                |
-+         +---------------------+----------+------------------------+
-|         | Icelake (bigmem)    | CPU core | 4.39815                |
-+         +---------------------+----------+------------------------+
-|         | Icelake (hugemem)   | CPU core | 4.39815                |
-+         +---------------------+----------+------------------------+
-|         | Sapphire Rapids     | CPU core | 3.47222                |
-+         +---------------------+----------+------------------------+
-|         | Zen4 Genoa          | CPU core | 3.47222                |
-+         +---------------------+----------+------------------------+
-|         | A100                | GPU      | 141.667                |
-+         +---------------------+----------+------------------------+
-|         | H100                | GPU      | 569.444                |
-+---------+---------------------+----------+------------------------+
++---------+-----------------------+----------+------------------------+
+| Cluster | Resource              | Type     | ``TRESBillingWeights`` |
++=========+=======================+==========+========================+
+| Genius  | P100                  | GPU      | 41.6667                |
++         +-----------------------+----------+------------------------+
+|         | V100                  | GPU      | 59.5833                |
++---------+-----------------------+----------+------------------------+
+| wICE    | Icelake               | CPU core | 2.54630                |
++         +-----------------------+----------+------------------------+
+|         | Icelake (bigmem)      | CPU core | 4.39815                |
++         +-----------------------+----------+------------------------+
+|         | Icelake (hugemem)     | CPU core | 4.39815                |
++         +-----------------------+----------+------------------------+
+|         | Sapphire Rapids       | CPU core | 3.47222                |
++         +-----------------------+----------+------------------------+
+|         | Zen4 Genoa            | CPU core | 3.47222                |
++         +-----------------------+----------+------------------------+
+|         | A100                  | GPU      | 141.667                |
++         +                       +----------+------------------------+
+|         |                       | CPU      | 2.546296296            |
++         +-----------------------+----------+------------------------+
+|         | H100                  | GPU      | 569.444                |
++         +                       +----------+------------------------+
+|         |                       | CPU      | 3.472222222            |
++---------+-----------------------+----------+------------------------+
+| Mindwell| Graniterapids         | CPU core | 2.60416667             |
++         +-----------------------+----------+------------------------+
+|         | Graniterapids (bigmem)| CPU core | 3.03819444             |
++         +-----------------------+----------+------------------------+
+|         | B200                  | GPU      | 437.50                 |
++         +                       +----------+------------------------+
+|         |                       | CPU      | 3.03819444             |
++---------+-----------------------+----------+------------------------+
 
 
 .. _Geert Jan Bex: mailto:geertjan.bex@uhasselt.be

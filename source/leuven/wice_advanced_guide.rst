@@ -49,11 +49,6 @@ installations (see the examples below).
 
 For software using CPUs, the different installations would be:
 
-- one for SkyLake and CascadeLake CPUs
-  :raw-html:`<br />`
-  (``${VSC_ARCH_LOCAL}`` = ``skylake`` or ``cascadelake``; :raw-html:`<br />`
-  if needed you can control this for your jobs by e.g. adding a
-  ``--constraint=cascadelake`` Slurm option)
 - one for IceLake CPUs
   :raw-html:`<br />`
   (``${VSC_ARCH_LOCAL}`` = ``icelake``)
@@ -78,14 +73,15 @@ For software which also uses GPUs, this would be:
 
 Unless mentioned otherwise, the ``${VSC_ARCH_SUFFIX}`` corresponds to an
 empty string. You can check which CPU and GPU models are present in which
-partitions on the :ref:`genius hardware` and :ref:`wice hardware` pages.
+partitions on the :ref:`genius hardware`, :ref:`wice hardware` and
+:ref:`mindwell hardware` pages.
 
 Many dependencies you might need are centrally installed. The modules
 that are optimized for wICE are available when the appropriate
 :ref:`cluster module <cluster_modules>` is loaded. In most cases this will
 happen automatically, but in case of problems it is a good idea to double check
 the ``$MODULEPATH`` environment variable; it should contain paths that look as
-starting with ``/apps/leuven/rocky8/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
+starting with ``/apps/leuven/rocky9/${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}``
 where ``${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}`` indicates the architecture of the
 node in question.
 
@@ -136,14 +132,14 @@ Memory hierarchy
 When running applications in parallel it is often a good idea to take the
 memory hierarchy into account (for example when pinning MPI processes
 in :ref:`hybrid MPI/OpenMP calculations <hybrid_mpi_openmp_programs>`).
-The nodes in the ``batch`` partition on Genius and wICE are the simpler ones
+The Genius GPU nodes and wICE CPU nodes are the simpler ones
 with a single NUMA domain and L3 cache per CPU, with the usual core-private
 L1 and L2 caches. Other node types may feature more than one NUMA domain per
 CPU and (in the case of AMD CPUs) more than one L3 cache per CPU.
 The 48 cores in a Sapphire Rapids CPU, for example, share a large L3 cache
 but are organized in 4 groups of 12 cores, each group associated with one
 NUMA domain. For a complete overview, please consult the
-:ref:`genius hardware` and :ref:`wice hardware` pages.
+:ref:`genius hardware`, :ref:`wice hardware` and :ref:`mindwell hardware` pages.
 
 .. note::
 
@@ -154,26 +150,17 @@ NUMA domain. For a complete overview, please consult the
 
 .. _wice_worker:
 
-Worker
-------
+Worker (Next-Gen)
+-----------------
 
-The :ref:`Worker framework <worker framework>`, which allows to conveniently
-parameterize simulations, is available on wICE. An attention point is that
-if you want to lauch Worker jobs from the Genius login nodes, you will need to
-use a specific module:
+The :ref:`(next generation) Worker framework <worker framework>`,
+which allows to conveniently parameterize simulations, is available on wICE:
 
 .. code-block:: shell
 
-    $ module load worker/1.6.12-foss-2021a-wice
+    $ module load  worker-ng/1.0.11-GCCcore-10.3.0
 
-If instead you want to launch Worker jobs from an interactive job running on
-wICE, you can use the ``worker/1.6.12-foss-2021a`` module. But do make sure
-this is the version installed *specifically* for wICE, which you can check
-by looking at the installation directory of worker. For example, the path
-returned by ``which worker`` should start with ``/apps/leuven/rocky8/icelake``
-or ``/apps/leuven/rocky8/sapphirerapids`` or ``/apps/leuven/rocky8/zen4-h100``.
-
-Also note that the Worker support for Slurm is not yet complete. Both
+Note that the Worker support for Slurm is not yet complete. Both
 the ``-master`` option for ``wsub`` and the ``wresume`` tool currently
 only work for PBS/Torque and hence should not be used in the case of Slurm.
 
@@ -181,3 +168,14 @@ All the resources furthermore need to be specified inside the Slurm script
 used as input for Worker (passing resources via the command line is not
 supported). Various examples can be found in a `development branch
 <https://github.com/gjbex/worker/tree/development_slurm/examples/>`__.
+
+
+.. _wice_rocky9_turbo:
+
+Turbo frequency
+---------------
+
+With wICE running on Rocky Linux 9, the CPU cores are no longer able to reach the maximal
+('turbo') frequency. Compared to wICE nodes running on Rocky 8 (which was the case before
+February 2026), you may therefore see somewhat lower performance if only a few cores are
+active while the other cores are idling. This issue is still being investigated.

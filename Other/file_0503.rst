@@ -1,6 +1,0 @@
-|\\"More|
-
-"
-
-.. |\\"More| image:: \%22/assets/301\%22
-   :target: \%22/events/userday-2014/pictures\%22

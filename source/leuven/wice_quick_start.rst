@@ -1,16 +1,15 @@
 .. _wice_t2_leuven:
 
-======================
 wICE quick start guide
 ======================
 
-:ref:`wICE <wice hardware>` is the most recent KU Leuven/UHasselt Tier-2 cluster.
-It can be used for most workloads, and has nodes with a lot of memory, as well as
-nodes with GPUs.
+:ref:`wICE <wice hardware>` is a KU Leuven/UHasselt Tier-2 cluster
+which entered production in 2022. Aside from regular CPU nodes, wICE also
+contains large memory nodes and GPU nodes.
 
 wICE does not have separate login nodes and can be accessed either from the
 :ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the
-:ref:`Open On-Demand <ood_t2_leuven>` service.
+:ref:`Open OnDemand <ood>` service.
 
 .. _running jobs on wice:
 
@@ -23,9 +22,9 @@ The resource specifications for jobs have to be tuned to use these nodes properl
 
 In general, the maximum walltime for wICE jobs is 3 days (72 hours).
 Only jobs submitted to the ``*_long`` partitions are allowed to have
-walltimes up to  7 days (168 hours), as will be illustrated below.
+walltimes up to 7 days (168 hours), as will be illustrated below.
 
-Similar to Genius, wICE uses Slurm as the workload manager.
+Similar to Mindwell, wICE uses Slurm as the workload manager.
 A Slurm jobscript for wICE will typically look like this:
 
 ::
@@ -46,16 +45,33 @@ In case you are not yet familiar with Slurm and/or the wICE hardware, you can fi
 more information on the following pages:
 
 - :ref:`wICE hardware <wice hardware>`
-- :ref:`Slurm jobs (basics) <running jobs>`
+- Slurm jobs (basics): :ref:`running jobs` and :ref:`job_types`
 - :ref:`Slurm jobs (advanced) <job advanced>`
 - :ref:`Site-specific Slurm info <leuven_slurm_specifics>`
 
 For information about using and installing software on wICE (including Conda
 environments), see the :ref:`advanced guide for wICE<wice_t2_leuven_advanced>`.
 
-For information about compute credit accounts, see
+For information about compute credit accounts, see the
 :ref:`Leuven accounting <accounting_leuven>` and
 :ref:`KU Leuven credits <KU Leuven credits>` pages.
+
+.. note::
+
+   The examples given on this page only serve as illustrations.
+   We expect that you adapt the number of nodes, tasks, cores, memory,
+   walltime, ... depending on what your compute task requires.
+
+.. note::
+
+   If you do not provide a walltime for your job, then a default walltime will
+   be applied. This is 1 hour for all partitions, except for the ``*_debug``
+   partitions where it is 30 minutes.
+
+.. note::
+
+   If you do not specify the number of tasks and cores per task for your job,
+   then it will default to a single task running on a single core.
 
 
 .. _submit to wice compute node:
@@ -111,6 +127,9 @@ Users are allowed to request a maximum of 8 cores, one A100 GPU instance
    batch jobs since these will result in fewer idling resources
    compared to interactive jobs.
 
+.. note::
+
+   Jobs on the ```interactive``` partition do not consume any credits.
 
 .. _submit to wice big memory node:
 
@@ -126,9 +145,6 @@ default), you can submit a job as follows::
 
 There is also one IceLake node with even more memory (8 TiB RAM) in the
 ``hugemem`` partition (defaulting to ``--mem-per-cpu=111900M``).
-In contrast to :ref:`Superdome <superdome_quick_start>`, you do not need to
-request entire sockets and so the node is more similar to the other large
-memory nodes in this regard.
 
 
 .. _submit to wice GPU node:
@@ -141,29 +157,27 @@ The nodes with A100 GPUs are located in the ``gpu_a100`` partition (the
 node types, the GPU nodes can be shared by different jobs from different users
 but each job has exclusive access to its allocated cores and GPU(s).
 
-If you e.g. need one A100 GPU::
+If you e.g. need one A100 GPU and two CPU cores::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=1 --ntasks=18 --gpus-per-node=1 myjobscript.slurm
+            --nodes=1 --ntasks=2 --gpus-per-node=1 myjobscript.slurm
 
-We recommend to request 18 cores for every GPU, so an example for 3 GPUs
-would look like this::
-
-   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100 \
-            --nodes=1 --ntasks=54 --gpus-per-node=3 myjobscript.slurm
+You are free to request more GPU devices and/or CPU cores if needed,
+but take note of the :ref:`limits on CPU resources per allocated GPU
+<cpu_resource_limits_in_gpu_jobs>`.
 
 There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
 per node) which you can select via the ``gpu_h100`` partition, e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_h100 \
-            --nodes=1 --ntasks=16 --gpus-per-node=1 myjobscript.slurm
+            --nodes=1 --gpus-per-node=1 myjobscript.slurm
 
 For easier development and testing with a full GPU, also a ``gpu_a100_debug``
 partition is available which accepts jobs with walltimes up to 1 hour,
 e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100_debug \
-            --nodes=1 --ntasks=64 --gpus-per-node=1 --time=00:10:00 \
+            --nodes=1 --gpus-per-node=1 --time=00:10:00 \
             myjobscript.slurm
 
 The node in this partition is of the same type as those in the ``interactive``

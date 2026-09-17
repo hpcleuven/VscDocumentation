@@ -1,6 +1,0 @@
-Eerste aanpak
-
--  Titel Systems
--  Call-to-Action Label system name, Node Docu Target, Type
-   [label.cat.link]
--  Style->Container: block--related

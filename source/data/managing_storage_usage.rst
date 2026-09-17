@@ -50,7 +50,7 @@ available in the *Usage* section of the
 
 You will find the usage data for your :ref:`personal storage <data location>`
 space such as ``VSC_HOME``, ``VSC_DATA`` and ``VSC_SCRATCH`` as well as your
-:ref:`Virtual Organization <virtual_organization>` if you are in one.
+:ref:`Virtual Organization <vo>` if you are in one.
 
 Terminal in the cluster
 -----------------------

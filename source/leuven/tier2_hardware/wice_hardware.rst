@@ -3,10 +3,14 @@
 wICE hardware
 ===============
 
-wICE is KU Leuven/UHasselt's latest Tier-2 cluster.
-It has thin nodes, large memory nodes, interactive nodes and GPU nodes.
-This cluster is in production since February 2023
-and has been extended with additional compute nodes in early 2024.
+The KU Leuven / UHasselt Tier-2 cluster *wICE* has been in production
+since February 2023 and has been extended with additional compute nodes in
+early 2024. wICE contains thin nodes, large memory nodes and GPU nodes.
+
+.. toctree::
+   :hidden:
+
+   memory_bandwidth_and_latency_wice.rst
 
 
 Hardware details
@@ -19,7 +23,7 @@ Hardware details
     - 2 Intel Xeon Platinum 8360Y CPUs\@2.4 GHz (IceLake),
       36 cores each :raw-html:`<br />`
       (1 NUMA domain and 1 L3 cache per CPU)
-    - 256 GiB RAM
+    - 256 GiB RAM (:ref:`memory bandwidth and latency measurements <memory bandwidth and latency wice icelake>`)
     - default memory per core is 3400 MiB
     - 960 GB SSD local disk
     - partitions ``batch|batch_long|batch_icelake|batch_icelake_long``,
@@ -60,7 +64,7 @@ Hardware details
   - partition ``hugemem``,
     :ref:`submit options <submit to wice big memory node>`
 
-- 8 GPU nodes
+- 9 GPU nodes
 
   - 4 nodes with 16 A100 GPUs in total
 
@@ -74,7 +78,7 @@ Hardware details
     - partition ``gpu|gpu_a100``,
       :ref:`submit options <submit to wice GPU node>`
 
-  - 4 nodes with 16 H100 GPUs in total
+  - 5 nodes with 20 H100 GPUs in total
 
     - 2 AMD EPYC 9334 CPUs (Genoa),
       32 cores each :raw-html:`<br />`

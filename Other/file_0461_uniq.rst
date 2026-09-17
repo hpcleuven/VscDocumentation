@@ -1,1 +1,0 @@
-album Photo photo

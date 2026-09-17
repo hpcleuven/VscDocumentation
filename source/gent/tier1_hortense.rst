@@ -21,8 +21,8 @@ and maintained and supported by the HPC-UGent team.
 
 In 2023 a second phase was added, more than doubling the existing capacity of the system.
 
-End of 2025, the decommissioning process of cluster Hortense will start.
-This is in anticipation of the 4th VSC Tier-1 cluster that will become available at the VUB datacenter from end 2025.
+Mid 2026, the gradual decommissioning process of cluster Hortense started.
+This is in parallel with the advent of the 4th VSC Tier-1 cluster sofia that became available at the VUB datacenter.
 
 
 .. _hortense_hardware_details:
@@ -32,67 +32,29 @@ Hardware details
 
 Hortense consists of the following partitions:
 
-- ``dodrio/cpu_rome``: phase 1 main partition:
-   - 342 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
-       - 256 GiB RAM (~2GB/core), no swap
-       - 480 GB SSD local disk
-- ``dodrio/cpu_rome_512``: large-memory partition:
-   - 42 workernodes, each with:
-       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz (128 cores per node)
-       - 512 GiB RAM (~4GB/core), no swap
-       - 480 GB SSD local disk
-- ``dodrio/cpu_milan``: phase 2 main partition:
+- ``dodrio/cpu_milan_rhel9``: phase 2 main partition:
    - 384 workernodes, each with:
        - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
-       - 256 GiB RAM (~2GB/core), no swap
+       - 238 GiB usable RAM (~1.85GB/core), no swap
        - 480 GB SSD local disk
-- ``dodrio/cpu_milan_rhel9``: partition with RHEL9 operating system:
-   - 30 workernodes, each with:
-       - 2x 64-core AMD Epyc 7763 CPU 2.45 GHz ("Milan" microarchitecture, 128 cores per node)
-       - 256 GiB RAM (~2GB/core), no swap
-       - 480 GB SSD local disk
-       - Redhat Enterprise Linux 9.4
-- ``dodrio/gpu_rome_a100_40``: GPU partition:
-   - 20 workernodes, each with:
-       - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
-       - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
-       - 256 GiB RAM (~5GB/CPU core), no swap
-       - 480 GB SSD local disk
-- ``dodrio/gpu_rome_a100_80``: phase 2 GPU partition:
+- ``dodrio/gpu_rome_a100_80_rhel9``: phase 2 GPU partition:
    - 20 workernodes, each with:
        - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
        - 4x NVIDIA A100-SXM4 (80 GB GPU memory), NVLink3
-       - 512 GiB RAM (~10GB/CPU core), no swap
+       - 488 GiB usable RAM (~10GB/CPU core), no swap
        - 480 GB SSD local disk
-- ``dodrio/debug_rome``: interactive and debug partition:
-   - 3 workernodes, each with:
-       - 12-core AMD Epyc 7402 CPU 2.8 GHz (48 oversubscribed cores as seen by scheduler)
-       - 1 shared NVIDIA Quadro P1000 (4 GB GPU memory)
-       - 1 NVIDIA V100 (16 GB GPU memory)
-       - 256 GiB RAM (~5.2GB/oversubscribed core), no swap
-       - 100 GB SSD local disk
-- ``dodrio/debug_milan``: interactive and debug partition:
-   - 3 workernodes, each with:
+- ``dodrio/debug_milan_rhel9``: interactive and debug partition:
+   - 4 workernodes, each with:
        - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
        - 1 shared NVIDIA L4 (24 GB GPU memory)
        - 1 NVIDIA L4 (24 GB GPU memory)
-       - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
+       - 488 GiB usable RAM (~3.8GB/oversubscribed core), no swap
        - 100 GB SSD local disk
-- ``dodrio/debug_milan_rhel9``: interactive and debug partition with RHEL9 operating system:
-   - 1 workernode, with:
-       - 32-core AMD Epyc 7513 CPU 2.6 GHz (128 oversubscribed cores as seen by scheduler)
-       - 1 shared NVIDIA L4 (24 GB GPU memory)
-       - 1 NVIDIA L4 (24 GB GPU memory)
-       - 503 GiB RAM (~3.9GB/oversubscribed core), no swap
-       - 100 GB SSD local disk
-       - Redhat Enterprise Linux 9.4
-- ``dodrio/cpu_rome_all``: combination of ``cpu_rome`` and ``cpu_rome_512``
-- ``dodrio/gpu_rome_a100``: combination of ``gpu_rome_a100_40`` and ``gpu_rome_a100_80``
+- ``dodrio/gpu_rome_a100_rhel9``: same as ``gpu_rome_a100_80_rhel9`` (kept for historical reasons)
 
 Shared infrastructure:
 
-- *storage*: 5.4 PB shared scratch storage, based on `Lustre <https://www.lustre.org>`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
+- *storage*: 5.4 PB shared scratch storage, based on `Lustre`_ (see ``$VSC_SCRATCH_PROJECTS_BASE``);
 - *interconnect*: InfiniBand HDR-100 (~12.5GB/sec), 2:1 fat tree topology
 
   - for the GPU partition specifically: dual HDR Infiniband
@@ -111,7 +73,18 @@ Access policy
 
 **The Hortense VSC Tier-1 cluster can only be accessed by people with an active Tier-1 compute project.**
 
-See https://www.vscentrum.be/compute for more information on requesting access.
+Tier-1 compute project resources are always allocated for a given period.
+After this period expires, the users of this project lose access to all resources granted within that project.
+This includes storage in addition to compute resources (CPU and GPU).
+
+As soon as a project expires, project members:
+
+* will no longer be able to use any remaining CPU cycles, GPU cycles or credits
+* will no longer have access to the dedicated project folders
+* will lose access to the Tier-1 cluster, unless they have another active project
+
+See https://www.vscentrum.be/compute for more information on requesting access, rules and regulations.
+
 
 .. _hortense_login_nodes:
 
@@ -123,22 +96,31 @@ You can use SSH to connect to the login nodes of the Tier-1 Hortense cluster wit
 * from the public internet, use ``tier1.hpc.ugent.be``
 * from within the VSC network, use ``tier1.gent.vsc``
 
-More general information about SSH login is available at :ref:`access methods`.
+More general information about SSH login is available in the
+:ref:`terminal
+interface` section.
 
-There are 2 login nodes for Hortense: ``login55`` and ``login56``.
+There are 2 login nodes for Hortense: ``login57`` and ``login58``, both having Red Hat Enterprise Linux release 9.8 as operating system.
 When logging in using SSH, you will be assigned to either of these login nodes,
 based on the IP address of the host you are connecting from.
 
 If you need to access a *specific* login node (for example because you have a ``screen`` or ``tmux`` session
-running there), just run "``ssh login56``" to jump to ``login56`` if you were logged in to ``login55``,
-or use "``ssh login55``" to jump to ``login55`` from ``login56``.
+running there), just run "``ssh login58``" to jump to ``login58`` if you were logged in to ``login57``,
+or use "``ssh login57``" to jump to ``login57`` from ``login58``.
 
 .. note::
   The available resources on the Hortense login nodes are very limited:
-  there are only 8 cores and ~60GB of RAM memory available on each login node,
-  and these resources are shared by everyone that is logged in there.
+  there are only 8 cores and ~60GB of RAM memory available on each login node.
+
+  Since mid-september 2026, per-user resource limits are in place on the Hortense login nodes, 
+  which can be consulted by running the ``ulimit -a`` command.
+  Each user is limited to 2 GB of virtual memory, 496 running processes/threads, and 2 hours of CPU time per process.
+  Processes that exceed any of these limits may be terminated by the operating system or fail to start successfully.
 
   **Please only use the Hortense login nodes as an access portal!**
+
+  We also provide a debug/interactive partition, which is specifically intended for testing, 
+  debugging, and other interactive work that exceeds the login node limits (see also :ref:`hortense_interactive_debug`).
 
   For resource-intensive interactive tasks, like software compilation, testing software or job scripts, etc.,
   please use an interactive job, either via ``qsub -I`` (see also :ref:`hortense_resource_manager`)
@@ -178,20 +160,17 @@ The type of fingerprint that will be shown depends on the version and configurat
 Web portal
 **********
 
-To access Tier-1 Hortense you can also use the `Open On-Demand <https://openondemand.org>`_
-web portal https://tier1.hpc.ugent.be.
+To access Tier-1 Hortense you can also use the `Open On-Demand` web portal
+https://tier1.hpc.ugent.be.
 
 More information about the usage of the web portal is available in https://docs.hpc.ugent.be/web_portal/.
-
 
 .. note::
 
    If you are using the Hortense web portal from outside of the network of a Flemish university,
-   you will first need to open the `VSC firewall app <https://firewall.hpc.kuleuven.be>`_
-   and log in via the VSC account page.
+   you will first need to open the `VSC Firewall`_ web app and log in with your VSC account.
 
    Keep the browser tab with firewall app open as long as you want to use the web portal!
-
 
 .. _hortense_scratch_globus:
 
@@ -262,7 +241,7 @@ Do not hesitate to give your feedback on using the Resource Application via comp
 
 Practical usage:
 
-* Open a webbrowser to https://resapp.hpc.ugent.be (The app will redirect you via the VSC firewall application first, if needed.)
+* Open a webbrowser to https://resapp.hpc.ugent.be (The app will redirect you via the `VSC Firewall`_ application first, if needed.)
 * The Resource Application shows you all Tier1-Hortense projects that you are a member of.
 * By clicking on the dropdown arrow on the right in the initial Projects tab, you can consult the raw usage of one of your projects (in CPU hours and GPU hours).
 * You can also view Logs and get more fine-grained usage details.
@@ -270,6 +249,25 @@ Practical usage:
 
 The 20% cutoff is for academic non-starting grant projects only, referring to paragraph 9(4) of the 'Regulations Governing Applications For Use of the Flemish Tier-1 Supercomputing Platform' (see https://www.vscentrum.be/_files/ugd/5446c2_21daee40839244c5a099a6d6bffaedb5.pdf).
 This is 20% of the initial allocated compute time a project is at risk of losing, if that 20% has not yet been used during the first 3 months of the project.
+
+Workshops/trainings
+*******************
+
+It is possible to organize research-oriented workshops or trainings using Tier1 Hortense resources, but this is solely the responsibility of the organizers. Organizers should be very much aware that availability of Tier1 or support staff can never be guaranteed. Organizers should therefore always have a backup plan at hand, which should include accepting the possibility that the workshop has to be cancelled due to unavailability of Tier1. The VSC or its staff can never be held accountable in case of problems.
+
+Organizers should be moderator of an active Tier-1 compute project. This can be a starting grant or collaboration grant, but only if all participants of the workshop are academic users and no entrance fee is charged. If the workshop is open for industry participants or an entrance fee is charged, a paid-for compute project should be requested (see https://www.vscentrum.be/vsc4business). Do include a link to the public website with information about the workshop/training in your Tier-1 compute request.
+
+It remains the responsibility of the organizers:
+
+* to populate the active Tier-1 compute project with the vsc-ids of all participants
+* to make sure participants without a vsc-id request one well in time (at least 2 weeks before the start of the workshop)
+* to make sure that any required software is available and working as expected, tested at least 2 weeks before the start of the workshop
+* to prepare and have at hand a fallback solution or strategy, should the Tier-1 resources be unavailable.
+
+If the interactive partitions (debug) of Tier-1 are not sufficient, specific resource requests or reservations may be made. However, these should be clearly indicated up front in the project request. Additionally, for reservations the Tier1 support staff should be informed via compute@vscentrum.be at least 2 weeks before the workshop with the project group containing all vsc-ids that should be included in the reservation. Later additions will not be accepted.
+
+These requirements may be adjusted as needed in the future, please make sure you take into account the latest requirements when organising workshops or trainings.
+All communication regarding trainings or workshops should go via compute@vscentrum.be. 
 
 
 .. _hortense_system_specific_aspects:
@@ -328,6 +326,16 @@ Project scratch directories
 In this command, you should change '``your_project_name``' to the actual name of your project.
 
 
+**As soon as a project expires, project scratch directories will NO LONGER be accessible.**
+Please take this into account when planning your project execution.
+Plan ahead and offload your data well before your project expires.
+
+**Clean up and remove any remaining data in the project scratch folders before the project expires.**
+
+Remaining data in project scratch folders for projects that have expired are earmarked for deletion.
+The Tier1 operational team can delete this data without further notification.
+
+
 .. _hortense_scratch_storage_quota_usage:
 
 Scratch storage quota usage
@@ -343,7 +351,7 @@ Scratch storage quota usage
 Accessing data via ``/readonly``
 ********************************
 
-Due to the fairly aggressive page cache purging policy of the `Lustre <https://www.lustre.org>`_
+Due to the fairly aggressive page cache purging policy of the `Lustre`_
 storage software that is used for the Tier-1 Hortense scratch filesystem, you may need to make some changes
 to how you access data in your job scripts to avoid performance problems.
 
@@ -387,41 +395,31 @@ Trying to make any changes to files that are accessed via ``/readonly`` will res
 
 .. _hortense_interactive_debug:
 
-Interactive and debug partitions
-********************************
+Interactive and debug partition
+*******************************
 
-A number of (small) interactive and debug partitions are available: `debug_rome`, `debug_milan` and `debug_milan_rhel9`
-Purpose of these partitions is to quickly get access to a limited number of resources.
+A (small) interactive debug partitions is available: `debug_milan_rhel9`.
+The purpose of this partition is to quickly get access to a limited number of resources.
 
 The limitations are a maximum of 5 jobs (running and/or waiting) in queue, only up to 3 running jobs and all running jobs may only allocate
 a total of 8 CPU cores combined.
 The CPUs are oversubscribed by a factor 4, which may lead to slower than expected run times when the usage is high.
 
 
-Technical details of debug/interactive partitions
-+++++++++++++++++++++++++++++++++++++++++++++++++
+Technical details of debug/interactive partition
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-Partition `debug_rome` nodes have one NVIDIA V100 GPU that can be requested for exclusive access
-(as with the GPU partitions) and also one less powerful GPU (NVIDIA Quadro P1000)
-that is always available but shared across all jobs on that node.
-
-Partition `debug_milan` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
+The `debug_milan_rhel9` nodes have one NVIDIA L4 GPU that can be requested for exclusive access
 (as with the GPU partitions) and also one GPU NVIDIA L4 that is always available but shared across all jobs on that node.
 
 
-Using the debug/interactive partitions
-++++++++++++++++++++++++++++++++++++++
+Using the debug/interactive partition
++++++++++++++++++++++++++++++++++++++
 
-To make use of the partitions you can select the ``dodrio debug_rome``, ``dodrio debug_milan`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
-`Interactive Apps` forms on the webportal, or from the CLI
+To make use of the debug partition you can select the ``dodrio debug_milan_rhel9`` option in the `Cluster` field in the
+`Interactive Apps` forms on the web portal, or from the CLI
 
 .. code:: shell
-
-    module swap cluster/dodrio/debug_rome
-    qsub job_script.sh
-
-    module swap cluster/dodrio/debug_milan
-    qsub job_script.sh
 
     module swap cluster/dodrio/debug_milan_rhel9
     qsub job_script.sh
@@ -439,7 +437,7 @@ Software
 Operating system
 ****************
 
-Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 8 (RHEL8)* as operating system.
+Both login nodes and workernodes in Hortense use *Red Hat Enterprise Linux 9.8 (RHEL9.8)* as operating system.
 
 .. _hortense_resource_manager:
 
@@ -546,23 +544,25 @@ For example, to submit a GPU job:
 
 .. code:: shell
 
-    module swap cluster/dodrio/gpu_rome_a100
+    module swap cluster/dodrio/gpu_rome_a100_rhel9
     qsub job_script.sh
 
 A list of available partitions can be obtained using ``module avail cluster/dodrio``.
 
 To check the currently active partition, use ``module list cluster``.
 
+.. _tier1_request_gpus:
+
 Requesting GPU resources
 ++++++++++++++++++++++++
 
 Don't forget to actively request GPU resources in your jobs or from the commandline.
-Only loading the cluster/dodrio/gpu_rome_a100 module is not sufficient.
+Only loading the ``cluster/dodrio/gpu_rome_a100_rhel9`` module is not sufficient.
 By default you'll get 12 cores per requested GPU (an explicit ppn= statement is not required).
 
 .. code:: shell
 
-    module swap cluster/dodrio/gpu_rome_a100
+    module swap cluster/dodrio/gpu_rome_a100_rhel9
     qsub -l nodes=1:gpus=1
 
 (The above example is for a single-node job, 1 GPU, and will also give you 12 CPU cores.)
@@ -725,29 +725,20 @@ please contact `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
 Phase 2
 -------
 
-In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome`` partition,
-20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80`` partition,
-and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan``. The `debug_rome` partition was
-also made generally available.
+In May 2023 a second phase was installed, adding 48 more nodes to the ``cpu_rome_rhel9`` partition (previously ``cpu_rome``),
+20 extra GPU nodes with double the CPU and GPU memory in the new ``gpu_rome_a100_80_rhel9`` partition (previously ``gpu_rome_a100_80``,
+and 384 nodes using the newer AMD Milan CPUs called ``cpu_milan_rhel9`` (previously ``cpu_milan``).
 
 The Lustre based scratch storage was also also doubled in volume to a total of 5.4 PB
 while increasing the overal throughput as well.
 
 With the new GPU nodes, a renaming of the gpu node partitions occured. Users can most likely
-still use the same ``gpu_rome_a100`` partition that now includes all GPU nodes (and only select the
-``gpu_rome_a100_40`` or ``gpu_rome_a100_80`` for specific cases, e.g. when requiring the
-larger amount of GPU/CPU memory of the ``gpu_rome_a100_80`` nodes).
+still use the same ``gpu_rome_a100_rhel9`` partition that now includes all GPU nodes (and only select the
+``gpu_rome_a100_40_rhel9`` or ``gpu_rome_a100_80_rhel9`` for specific cases, e.g. when requiring the
+larger amount of GPU/CPU memory of the ``gpu_rome_a100_80_rhel9`` nodes).
 
-In the startup period, users are encouraged to try out the ``cpu_milan`` partition to compare performance
-and overal functioning with the ``cpu_rome`` partitions. No credits will be billed for the usage of the ``cpu_milan``
-partition during this period.
-
-Once in production (July 7th 2023, when the June 2023 cut-off becomes active),
-projects will be given access to either the ``cpu_rome`` partitions or the ``cpu_milan`` partition
-(with billing of used credits on both partitions).
-
-The support team will try to keep the list of available software modules the same on the ``cpu_rome`` and
-``cpu_milan`` partitions. If you notice modules are missing or not functioning properly,
+The support team will try to keep the list of available software modules the same on the ``cpu_rome_rhel9`` and
+``cpu_milan_rhel9`` partitions. If you notice modules are missing or not functioning properly,
 please contact the Tier-1 Hortense support team (see :ref:`hortense_help`).
 
 With both phases active, the cluster crossed the symbolic threshold of 100,000 cores.
@@ -759,49 +750,54 @@ to give you access to all the available resources.
 Gradual decommissioning
 -----------------------
 
-End 2025, the gradual decommissioning of Tier-1 Compute Hortense will be initiated.
-Around this time, the 4th VSC Tier-1 cluster will become available at the VUB datacenter.
+On 11 July 2026, the entire first phase of Tier1 Hortense was decommissioned.
+This phase was actually already end of life November 2025, but was kept online until the advent of the new VSC Tier-1 supercomputer sofia.
 
-The entire Rome partition is end of life November 2025, and will be shut down by end 2025.
-This implies that the partitions ``cpu_rome``, ``cpu_rome_all``, ``cpu_rome_512``, ``debug_rome`` will all disappear.
-Depending on VSC plans, the ``a100_40`` partition may also disappear. However, there currently is no confirmation regarding this.
+This implies that all partitions of this phase will disappear and will no longer be available:
+    - cpu_rome_rhel9
+    - cpu_rome_512_rhel9
+    - cpu_rome_all_rhel9
+    - gpu_rome_a100_40_rhel9
+
+Decommissioned partitions:
+
+- ``dodrio/cpu_rome_rhel9``: phase 1 main partition:
+   - 342 workernodes, each with:
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
+       - 238 GiB usable RAM (~1.85GB/core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/cpu_rome_512_rhel9``: large-memory partition:
+   - 42 workernodes, each with:
+       - 2x 64-core AMD Epyc 7H12 CPU 2.6 GHz ("Rome" microarchitecture, 128 cores per node)
+       - 488 GiB usable RAM (~3.8GB/core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/gpu_rome_a100_40_rhel9``: GPU partition:
+   - 20 workernodes, each with:
+       - 2x 24-core AMD Epyc 7402 CPU 2.8 GHz (48 cores per node)
+       - 4x NVIDIA A100-SXM4 (40 GB GPU memory), NVLink3
+       - 238 GiB usable RAM (~4.95GB/CPU core), no swap
+       - 480 GB SSD local disk
+- ``dodrio/cpu_rome_all_rhel9``: combination of ``cpu_rome_rhel9`` and ``cpu_rome_512_rhel9``
 
 
-Update to RHEL9 of Milan partitions
+Migration to RHEL9 operating system
 -----------------------------------
 
-To maintain operational safety, the operating system for the Milan CPU partition will be updated to a new major release.
-Red Hat Enterprise Linux version 9 (going up from 8) will be installed near the end of 2025.
-This implies that - end 2025 - your software and/or workflow will need to be compliant with this OS version.
-As of cutoff 2 in 2025, compatibility of your workflow/software with the new RHEL9 operating system will be a hard requirement.
+To maintain operational safety, the operating system of Hortense was gradually updated to **Red Hat Enterprise Linux version 9.6 (RHEL9)**
+(going up from RHEL8). 
 
-Please test your workflow and software as soon as possible and ensure that you are ready for this transition.
+In the course of 2025, all Rome and Milan nodes and all login nodes were migrated to RHEL9.
 
-To facilitate testing, we have made two small partitions to run your tests.
+During the maintenance of March 2026, all GPU nodes were migrated to RHEL9, making the transition of Hortense from RHEL8 to RHEL9 complete.
+Due to technical reasons, it was not possible to keep any RHEL8 GPU nodes in the system.
 
-- partition ``cpu_milan_rhel9``
-- partition ``debug_milan_rhel9``
+.. note::
 
-These partitions are SOLELY intended for testing your software/workflows.
-Do not run production jobs on these partitions.
+   Only software that was installed with a sufficiently recent compiler toolchain (at least ``2023a`` generation, based on GCC 12.3.0)
+   was re-installed when migrating from RHEL8 to RHEL9.
 
-To make use of these partitions you can select the ``dodrio cpu_milan_rhel9`` or ``dodrio debug_milan_rhel9`` options in the `Cluster` field in the
-`Interactive Apps` forms on the webportal, or from the CLI.
+   If you were still using older software modules, you will need to update your workflow and/or job scripts.
 
-.. code:: shell
-
-    module swap cluster/dodrio/cpu_milan_rhel9
-    qsub job_script.sh
-
-    module swap cluster/dodrio/debug_milan_rhel9
-    qsub job_script.sh
-
-
-Recent updates
---------------
-
-During the May 2023 maintenance, the OS and OFED infiniband stacks were updated to resp. RHEL 8.6
-and MLNX OFED 5.8. This change should be transparent to the users.
 
 Resources
 ---------
@@ -820,4 +816,3 @@ Getting help
 
 For questions and problems related to Tier-1 Hortense, please contact the central
 support address for Tier-1 compute: `compute@vscentrum.be <mailto:compute@vscentrum.be>`_.
-

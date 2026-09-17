@@ -1,4 +1,0 @@
-| The documentation page you visited applies to client systems with a
-  recent version of Microsoft Windows and a UNIX-compatibility layer. We
-  tested using the `freely available Cygwin
-  system <\%22https://www.cygwin.com/\%22>`__ maintained by Red Hat.
