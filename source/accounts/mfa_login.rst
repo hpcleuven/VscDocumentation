@@ -41,28 +41,6 @@ are made available to any other client program needing to use that same connecti
 Getting an SSH certificate involves MFA but this only needs to be performed
 once since a certificate can be used multiple times as long as it remains valid.
 
-Both certificates below are accepted on:
-
-.. grid:: 3
-    :gutter: 4
-
-    .. grid-item-card:: |KUL|
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Genius <genius hardware>`
-       * Tier-2 :ref:`wICE <wice hardware>`
-       * Tier-2 :ref:`Mindwell <mindwell hardware>`
-
-    .. grid-item-card:: |VUB|
-       :columns: 12 4 4 4
-
-       * Tier-2 :ref:`Anansi <Anansi cluster>`
-       * Tier-2 :ref:`Hydra <Hydra cluster>`
-
-       |sofia|
-
-       * Tier-1 :ref:`sofia <sofia cluster>`
-
 There are two ways to acquire such an SSH certificate:
 
 .. toctree::
@@ -88,6 +66,29 @@ There are two ways to acquire such an SSH certificate:
 
       Uses the ``step`` CLI. On Windows, only works from PowerShell or the
       Command Prompt, not from GUI clients such as PuTTY and MobaXterm.
+
+VSC clusters that accept these certificates:
+
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Genius <genius hardware>`
+       * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
+
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
+
+       |sofia|
+
+       * Tier-1 :ref:`sofia <sofia cluster>`
+
 
 Once you have a certificate loaded into your agent, it can be used as long
 as the agent remains alive and the certificate itself has not expired (they
