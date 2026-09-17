@@ -102,4 +102,4 @@ This is one of the two ways to obtain an SSH certificate described in
 
    This creates a private key and certificate in your ``~/.ssh`` folder.
    You will need to pass ``-i ~/.ssh/smallstep`` to ``ssh``, or configure it
-   in your :ref:`SSH config file <ssh_config>`, to use it.
+   in your :ref:`SSH config file <ssh_config>`, to use it. This key is also valid for 16 hours.
