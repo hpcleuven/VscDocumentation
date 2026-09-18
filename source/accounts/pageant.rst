@@ -120,7 +120,8 @@ authenticate you as a recognized user.
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Follow the steps in :ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`
+      Follow the steps to obtain a
+      :ref:`Firewall-based certificate <firewall-based-certificate>`
       to get an SSH certificate into your agent.
       At this point, a new certificate will be stored in Pageant that holds your
       identity for a limited period of time.
