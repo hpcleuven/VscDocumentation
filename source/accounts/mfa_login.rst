@@ -46,8 +46,8 @@ There are two ways to acquire such an SSH certificate:
 .. toctree::
    :hidden:
 
-   Smallstep certificate <mfa_login_smallstep>
    Firewall-based certificate <mfa_login_firewall>
+   Smallstep certificate <mfa_login_smallstep>
 
 .. grid:: 2
    :gutter: 4
