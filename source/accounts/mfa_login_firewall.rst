@@ -7,36 +7,38 @@ Firewall-based certificate
 This is one of the two ways to obtain an SSH certificate described in
 :ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`.
 
-* Start up your SSH agent
+* Start up your SSH agent.
 
-.. tab-set::
-   :sync-group: operating-system
+  .. tab-set::
+     :sync-group: operating-system
 
-   .. tab-item:: Windows
-      :sync: win
+     .. tab-item:: Windows
+        :sync: win
 
-      We recommend using the :ref:`Windows OpenSSH agent <ssh agent windows>`
-      for PowerShell or Command Prompt users, and :ref:`Pageant` otherwise.
+        We recommend using the
+        :ref:`Windows OpenSSH agent <ssh agent windows>` for PowerShell
+        or Command Prompt users, and :ref:`Pageant` otherwise.
 
-   .. tab-item:: macOS
-      :sync: mac
+     .. tab-item:: macOS
+        :sync: mac
 
-      Use the default :ref:`OpenSSH agent`.
+        Use the default :ref:`OpenSSH agent`.
 
-   .. tab-item:: Linux
-      :sync: lin
+     .. tab-item:: Linux
+        :sync: lin
 
-      Use the default :ref:`OpenSSH agent`.
+        Use the default :ref:`OpenSSH agent`.
 
-.. tab-set::
-   :sync-group: vsc-sites
+* Add the certificate to your agent: 
 
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+  .. tab-set::
+     :sync-group: vsc-sites
 
-      * Connect to either the cluster's login node or to ``firewall.vscentrum.be``
-        with your terminal application of choice and with agent forwarding enabled.
-        With e.g. OpenSSH you can do:
+     .. tab-item:: KU Leuven/UHasselt
+        :sync: kuluh
+
+        Connect to either the cluster's login node or to
+        ``firewall.vscentrum.be``. With e.g. OpenSSH you can do:
 
         .. code-block:: bash
 
@@ -44,20 +46,20 @@ This is one of the two ways to obtain an SSH certificate described in
            # or
            ssh -A vsc98765@firewall.vscentrum.be
 
-   .. tab-item:: Tier-1 sofia
-      :sync: sofia
+     .. tab-item:: Tier-1 sofia
+        :sync: sofia
 
-      * Connect to ``firewall.vscentrum.be`` with your terminal application of
-        choice and with agent forwarding enabled. With e.g. OpenSSH you can do:
+        Connect to ``firewall.vscentrum.be``. With e.g. OpenSSH you can
+        do:
 
         .. code-block:: bash
 
            ssh -A vsc98765@firewall.vscentrum.be
 
-PuTTY users can find the agent forwarding option under the
-'Connection -> SSH -> Auth' tab.
-OpenSSH users may also automatically
-enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
+  PuTTY users can find the agent forwarding option under the
+  'Connection -> SSH -> Auth' tab.
+  OpenSSH users may also automatically
+  enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
 
 * You will then be shown a URL which you will need to open in a browser:
 
