@@ -12,6 +12,7 @@ Clients
    clients/python_client
    clients/mango_portal
    clients/sftp_clients
+   clients/ownCloud
 
 
 
