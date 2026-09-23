@@ -9,7 +9,7 @@ nodes, nodes intended for interactive work and GPU nodes. The regular credit
 accounts can be used on all clusters, including Mindwell.
 
 Mindwell does not have separate login nodes and can be accessed from the
-:ref:`Genius login nodes <tier2_login_nodes>`.
+:ref:`wICE login nodes <tier2_login_nodes>`.
 
 .. _running jobs on mindwell:
 
@@ -24,7 +24,7 @@ In general, the maximum walltime for Mindwell jobs is 3 days (72 hours).
 Only jobs submitted to the ``*_long`` partitions are allowed to have
 walltimes up to 7 days (168 hours), as will be illustrated below.
 
-Similar to Genius and wICE, Mindwell uses Slurm as the workload manager.
+Similar to wICE, Mindwell uses Slurm as the workload manager.
 A Slurm jobscript for Mindwell will typically look like this:
 
 ::
