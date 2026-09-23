@@ -26,7 +26,7 @@ Once that succeeds, you will automatically login to the Open OnDemand homepage.
 
 .. _mfa-with-ssh-agent:
 
-Connecting with an SSH agent
+Obtaining an SSH certificate
 ----------------------------
 
 .. note::
@@ -40,6 +40,8 @@ Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
 are made available to any other client program needing to use that same connection.
 Getting an SSH certificate involves MFA but this only needs to be performed
 once since a certificate can be used multiple times as long as it remains valid.
+In some cases, agentless options are also possible, see the respective
+certificate method below.
 
 There are two ways to acquire such an SSH certificate:
 
@@ -106,35 +108,4 @@ SSH Client name                        Purpose              Operating System
 :ref:`MobaXterm <terminal mobaxterm>`  text-based terminal  Windows
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
-
-.. _mfa quick start:
-
-Connecting without an SSH agent
--------------------------------
-
-Most clients (such as PuTTY or MobaXterm) can also be made to work *without*
-an :ref:`ssh agent`. Keep in mind, however, that this approach tends to be
-less convenient since each new connection will require multi-factor
-authentication.
-
-Certain clients (such as :ref:`FileZilla <FileZilla>` or ``sshfs``)
-furthermore do not show you the firewall
-link needed for the MFA and hence can only function in combination with an SSH
-agent holding an SSH certificate.
-
-This being said, the agentless procedure runs as follows:
-
-* Connect to a :ref:`Tier-2 login node <tier2_login_nodes>`
-  using your chosen client application (e.g. MobaXterm).
-
-* The application is then supposed to show the link to complete the MFA procedure
-  (similar to the previous section).
-
-* After passing the MFA challenge, you should now be connected to a login node.
-  In plain SSH connections a successful login is rewarded with a welcome message:
-
-  .. _login_node:
-  .. figure:: mfa_login/login_node.PNG
-     :alt: login_node
-
 

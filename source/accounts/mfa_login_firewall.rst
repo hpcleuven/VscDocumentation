@@ -5,7 +5,7 @@ Firewall-based certificate
 ##########################
 
 This is one of the two ways to obtain an SSH certificate described in
-:ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`.
+:ref:`Obtaining an SSH certificate <mfa-with-ssh-agent>`.
 
 * Start up your SSH agent.
 
@@ -114,3 +114,34 @@ This is one of the two ways to obtain an SSH certificate described in
 * An SSH certificate will now be injected back into the agent.
 
 That's it! You can continue doing your HPC work as usual.
+
+.. _mfa quick start:
+
+Connecting without an SSH agent
+===============================
+
+|KUL|
+Most clients (such as PuTTY or MobaXterm) can also be made to work *without*
+an :ref:`ssh agent`. Keep in mind, however, that this approach tends to be
+less convenient since each new connection will require multi-factor
+authentication.
+
+Certain clients (such as :ref:`FileZilla <FileZilla>` or ``sshfs``)
+furthermore do not show you the firewall
+link needed for the MFA and hence can only function in combination with an SSH
+agent holding an SSH certificate.
+
+This being said, the agentless procedure runs as follows:
+
+* Connect to a :ref:`Tier-2 login node <tier2_login_nodes>`
+  using your chosen client application (e.g. MobaXterm).
+
+* The application is then supposed to show the link to complete the MFA procedure
+  (similar to the previous section).
+
+* After passing the MFA challenge, you should now be connected to a login node.
+  In plain SSH connections a successful login is rewarded with a welcome message:
+
+  .. _login_node:
+  .. figure:: mfa_login/login_node.PNG
+     :alt: login_node
