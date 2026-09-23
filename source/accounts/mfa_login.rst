@@ -15,14 +15,30 @@ VSC clusters:
 Login to Open OnDemand
 ----------------------
 
-|KULUH|
-Users from all VSC sites can access the Open OnDemand portal at KU Leuven site.
-For that, proceed to the :ref:`Open OnDemand portal <ood>`.
-If you are affiliated with KU Leuven, click on the KU Leuven logo.
-Otherwise, click on the VSC logo to choose your institute.
-You will be then forwarded to the Identity Provider (IdP) of your institute to
-complete the authentication procedure.
-Once that succeeds, you will automatically login to the Open OnDemand homepage.
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      Users from all VSC sites can access the Open OnDemand portal at KU
+      Leuven site. For that, proceed to the
+      :ref:`Open OnDemand portal <ood>`. If you are affiliated with KU
+      Leuven, click on the KU Leuven logo. Otherwise, click on the VSC
+      logo to choose your institute. You will then be forwarded to the
+      Identity Provider (IdP) of your institute to complete the
+      authentication procedure. Once that succeeds, you will
+      automatically log into the Open OnDemand homepage.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      Users from all VSC sites can access the VUB Open OnDemand portal.
+      For that, proceed to the :ref:`Open OnDemand portal <ood>`.
+      Select your institute from the dropdown menu. You will then be
+      forwarded to the Identity Provider (IdP) of your institute to
+      complete the authentication procedure. Once that succeeds, you
+      will automatically log into the Open OnDemand homepage.
 
 .. _mfa-with-ssh-agent:
 
@@ -40,8 +56,7 @@ Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
 are made available to any other client program needing to use that same connection.
 Getting an SSH certificate involves MFA but this only needs to be performed
 once since a certificate can be used multiple times as long as it remains valid.
-In some cases, agentless options are also possible, see the respective
-certificate method below.
+Agentless options are possible in some cases, see the certificate methods below.
 
 There are two ways to acquire such an SSH certificate:
 
