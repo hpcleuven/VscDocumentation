@@ -7,9 +7,8 @@ wICE quick start guide
 which entered production in 2022. Aside from regular CPU nodes, wICE also
 contains large memory nodes and GPU nodes.
 
-wICE does not have separate login nodes and can be accessed either from the
-:ref:`Genius login nodes <tier2_login_nodes>`, or from your web browser via the
-:ref:`Open OnDemand <ood>` service.
+wICE can be accessed either from the :ref:`wICE login nodes <tier2_login_nodes>`,
+or from your web browser via the :ref:`Open OnDemand <ood>` service.
 
 .. _running jobs on wice:
 
@@ -152,9 +151,25 @@ There is also one IceLake node with even more memory (8 TiB RAM) in the
 Submit to a GPU node
 ~~~~~~~~~~~~~~~~~~~~
 
-The nodes with A100 GPUs are located in the ``gpu_a100`` partition (the
-``gpu`` partition also covers the same nodes). As for the other
-node types, the GPU nodes can be shared by different jobs from different users
+The GPU nodes are accessible via the following partitions:
+
++----------------+----------+----------------------------------------+-------------+
+| Partition      | Walltime | Resources                              | CPU model   |
++================+==========+========================================+=============+
+| gpu_p100       | 3 days   | 13 nodes, 4x Nvidia P100 GPUs per node | Skylake     |
++----------------+----------+                                        |             |
+| gpu_p100_long  | 7 days   |                                        |             |
++----------------+----------+----------------------------------------+-------------+
+| gpu_v100       | 3 days   | 2 nodes, 8x Nvidia V100 GPUs per node  | Cascadelake |
++----------------+----------+                                        |             |
+| gpu_v100_long  | 7 days   |                                        |             |
++----------------+----------+----------------------------------------+-------------+
+| gpu_a100 / gpu | 3 days   | 4 nodes, 4x Nvidia A100 GPUs per node  | Icelake     |
++----------------+----------+----------------------------------------+-------------+
+| gpu_h100       | 3 days   | 5 nodes, 4x Nvidia H100 GPUs per node  | Genoa       |
++----------------+----------+----------------------------------------+-------------+
+
+The GPU nodes can be shared by different jobs from different users
 but each job has exclusive access to its allocated cores and GPU(s).
 
 If you e.g. need one A100 GPU and two CPU cores::
@@ -166,15 +181,9 @@ You are free to request more GPU devices and/or CPU cores if needed,
 but take note of the :ref:`limits on CPU resources per allocated GPU
 <cpu_resource_limits_in_gpu_jobs>`.
 
-There are also nodes with H100 GPUs and AMD Genoa CPUs (4 GPUs and 64 cores
-per node) which you can select via the ``gpu_h100`` partition, e.g.::
-
-   $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_h100 \
-            --nodes=1 --gpus-per-node=1 myjobscript.slurm
-
-For easier development and testing with a full GPU, also a ``gpu_a100_debug``
-partition is available which accepts jobs with walltimes up to 1 hour,
-e.g.::
+For easier development and testing with a full GPU, two debug partitions
+are available: ``gpu_a100_debug`` and  ``gpu_p100_debug``.
+Both partitions accept jobs with walltimes up to 1 hour, e.g.::
 
    $ sbatch --account=lp_myproject --clusters=wice --partition=gpu_a100_debug \
             --nodes=1 --gpus-per-node=1 --time=00:10:00 \
