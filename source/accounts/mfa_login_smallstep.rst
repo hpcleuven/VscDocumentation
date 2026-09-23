@@ -5,7 +5,7 @@ Smallstep certificate
 #####################
 
 This is one of the two ways to obtain an SSH certificate described in
-:ref:`Connecting with an SSH agent <mfa-with-ssh-agent>`.
+:ref:`Obtaining an SSH certificate <mfa-with-ssh-agent>`.
 
 .. note::
 
@@ -92,14 +92,16 @@ This is one of the two ways to obtain an SSH certificate described in
       Match User vsc98765
           ProxyCommand step ssh proxycommand %r %h %p --context VSC
 
-.. note::
+Obtaining a certificate without an agent
+========================================
 
-   Smallstep can also issue a certificate without using an agent:
+Smallstep can also issue a certificate without using an agent:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      step ssh certificate <email> ~/.ssh/smallstep --context VSC --no-agent
+   step ssh certificate <email> ~/.ssh/smallstep --context VSC --no-agent
 
-   This creates a private key and certificate in your ``~/.ssh`` folder.
-   You will need to pass ``-i ~/.ssh/smallstep`` to ``ssh``, or configure it
-   in your :ref:`SSH config file <ssh_config>`, to use it. This key is also valid for 16 hours.
+This creates a private key and certificate in your ``~/.ssh`` folder. You
+will need to pass ``-i ~/.ssh/smallstep`` to ``ssh``, or configure it in
+your :ref:`SSH config file <ssh_config>`, to use it. This key is also valid
+for 16 hours.

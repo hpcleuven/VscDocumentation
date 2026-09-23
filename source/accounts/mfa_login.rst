@@ -15,18 +15,34 @@ VSC clusters:
 Login to Open OnDemand
 ----------------------
 
-|KULUH|
-Users from all VSC sites can access the Open OnDemand portal at KU Leuven site.
-For that, proceed to the :ref:`Open OnDemand portal <ood>`.
-If you are affiliated with KU Leuven, click on the KU Leuven logo.
-Otherwise, click on the VSC logo to choose your institute.
-You will be then forwarded to the Identity Provider (IdP) of your institute to
-complete the authentication procedure.
-Once that succeeds, you will automatically login to the Open OnDemand homepage.
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      Users from all VSC sites can access the Open OnDemand portal at KU
+      Leuven site. For that, proceed to the
+      :ref:`Open OnDemand portal <ood>`. If you are affiliated with KU
+      Leuven, click on the KU Leuven logo. Otherwise, click on the VSC
+      logo to choose your institute. You will then be forwarded to the
+      Identity Provider (IdP) of your institute to complete the
+      authentication procedure. Once that succeeds, you will
+      automatically log into the Open OnDemand homepage.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      Users from all VSC sites can access the VUB Open OnDemand portal.
+      For that, proceed to the :ref:`Open OnDemand portal <ood>`.
+      Select your institute from the dropdown menu. You will then be
+      forwarded to the Identity Provider (IdP) of your institute to
+      complete the authentication procedure. Once that succeeds, you
+      will automatically log into the Open OnDemand homepage.
 
 .. _mfa-with-ssh-agent:
 
-Connecting with an SSH agent
+Obtaining an SSH certificate
 ----------------------------
 
 .. note::
@@ -40,6 +56,7 @@ Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
 are made available to any other client program needing to use that same connection.
 Getting an SSH certificate involves MFA but this only needs to be performed
 once since a certificate can be used multiple times as long as it remains valid.
+Agentless options are possible in some cases, see the certificate methods below.
 
 There are two ways to acquire such an SSH certificate:
 
@@ -106,35 +123,4 @@ SSH Client name                        Purpose              Operating System
 :ref:`MobaXterm <terminal mobaxterm>`  text-based terminal  Windows
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
-
-.. _mfa quick start:
-
-Connecting without an SSH agent
--------------------------------
-
-Most clients (such as PuTTY or MobaXterm) can also be made to work *without*
-an :ref:`ssh agent`. Keep in mind, however, that this approach tends to be
-less convenient since each new connection will require multi-factor
-authentication.
-
-Certain clients (such as :ref:`FileZilla <FileZilla>` or ``sshfs``)
-furthermore do not show you the firewall
-link needed for the MFA and hence can only function in combination with an SSH
-agent holding an SSH certificate.
-
-This being said, the agentless procedure runs as follows:
-
-* Connect to a :ref:`Tier-2 login node <tier2_login_nodes>`
-  using your chosen client application (e.g. MobaXterm).
-
-* The application is then supposed to show the link to complete the MFA procedure
-  (similar to the previous section).
-
-* After passing the MFA challenge, you should now be connected to a login node.
-  In plain SSH connections a successful login is rewarded with a welcome message:
-
-  .. _login_node:
-  .. figure:: mfa_login/login_node.PNG
-     :alt: login_node
-
 
