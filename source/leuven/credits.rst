@@ -97,7 +97,7 @@ Where
 
     The Tier-2 cluster has several types of compute nodes.
     Hence, different ``TRESBillingWeights`` apply to
-    different resources on different partitions of Genius, wICE and Mindwell.
+    different resources on different partitions of wICE and Mindwell.
     The difference in cost between different machines/processors reflects
     the performance difference between those types of nodes.
     For additional information, you may refer to the
@@ -134,18 +134,18 @@ not stop before reaching its time limit.
 Charge rates
 ------------
 
-The table below shows the charge rates for each CPU and GPU type on Genius
-and wICE. These values correspond to the number of Slurm credits needed
+The table below shows the charge rates for each CPU and GPU type and wICE
+and Mindwell. These values correspond to the number of Slurm credits needed
 to allocate one core or GPU during one minute.
 
 +---------+-----------------------+----------+------------------------+
 | Cluster | Resource              | Type     | ``TRESBillingWeights`` |
 +=========+=======================+==========+========================+
-| Genius  | P100                  | GPU      | 41.6667                |
+| wICE    | P100                  | GPU      | 41.6667                |
 +         +-----------------------+----------+------------------------+
 |         | V100                  | GPU      | 59.5833                |
-+---------+-----------------------+----------+------------------------+
-| wICE    | Icelake               | CPU core | 2.54630                |
++         |-----------------------+----------+------------------------+
+|         | Icelake               | CPU core | 2.54630                |
 +         +-----------------------+----------+------------------------+
 |         | Icelake (bigmem)      | CPU core | 4.39815                |
 +         +-----------------------+----------+------------------------+
