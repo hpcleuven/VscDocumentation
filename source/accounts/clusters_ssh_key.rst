@@ -20,6 +20,10 @@
        * Tier-2 :ref:`Hydra <Hydra cluster>`
        * Tier-2 :ref:`Anansi <Anansi cluster>`
 
-       |sofia|
+       .. div:: sd-mb-0
 
-       * Tier-1 :ref:`sofia <sofia cluster>`
+          |sofia|
+
+       .. div:: sd-mt-2
+
+          * Tier-1 :ref:`sofia <sofia cluster>`
