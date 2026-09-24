@@ -587,10 +587,26 @@ please refer to the :ref:`Python iRODS client <python-client>` documentation.
 Exporting Jupyter Notebooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. grid:: 3
+    :gutter: 4
+
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
+
+       * Tier-2 :ref:`wICE <wICE hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
+
 In addition to the native ``.ipynb`` format, Jupyter notebooks can be
-[exported to various other formats](https://jupyterlab.readthedocs.io/en/stable/user/export.html#exporting-notebooks).
-Directly exporting to PDF will however not work in this app.
-Instead, first export the notebook in ``LaTex`` format (to for example a ``notebook.tex``
-file) and then execute ``xelatex notebook.tex`` in a terminal, which will produce the
-corresponding PDF file. You may need to first load a ``texlive`` module in order to get
-hold of ``xelatex``.
+`exported to a variety of formats <https://jupyterlab.readthedocs.io/en/stable/user/export.html#exporting-notebooks>`_.
+
+Specifically, exporting to PDF format can be carried out in two steps.
+First, export the notebook to the native ``LaTex`` format, for example as ``notebook.tex``.
+Next, execute
+
+.. code-block:: bash
+
+   xelatex notebook.tex
+
+
+in a terminal, which will produce the corresponding PDF file.
+You may need to first load a ``texlive`` module in order to make ``xelatex`` available.
