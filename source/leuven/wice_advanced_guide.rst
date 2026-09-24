@@ -9,9 +9,9 @@ wICE advanced guide
 Compiling software
 ------------------
 
-Compared to the SkyLake and CascadeLake CPUs on Genius, the wICE nodes
-feature more recent CPU models such as Intel IceLake, Intel Sapphire Rapids
-and AMD Genoa. While architectural differences between SkyLake and CascadeLake
+The wICE nodes feature a range of CPU generations, from older SkyLake and
+CascadeLake models to more recent Intel IceLake, Intel Sapphire Rapids and AMD
+Genoa processors. While architectural differences between SkyLake and CascadeLake
 CPUs can be neglected, the differences with newer CPU models are more
 substantial. When it comes to GPUs there are also significant differences in
 the capabilities of P100, V100, A100 and H100 GPUs.
@@ -73,8 +73,7 @@ For software which also uses GPUs, this would be:
 
 Unless mentioned otherwise, the ``${VSC_ARCH_SUFFIX}`` corresponds to an
 empty string. You can check which CPU and GPU models are present in which
-partitions on the :ref:`genius hardware`, :ref:`wice hardware` and
-:ref:`mindwell hardware` pages.
+partitions on the :ref:`wice hardware` and :ref:`mindwell hardware` pages.
 
 Many dependencies you might need are centrally installed. The modules
 that are optimized for wICE are available when the appropriate
@@ -132,14 +131,14 @@ Memory hierarchy
 When running applications in parallel it is often a good idea to take the
 memory hierarchy into account (for example when pinning MPI processes
 in :ref:`hybrid MPI/OpenMP calculations <hybrid_mpi_openmp_programs>`).
-The Genius GPU nodes and wICE CPU nodes are the simpler ones
-with a single NUMA domain and L3 cache per CPU, with the usual core-private
-L1 and L2 caches. Other node types may feature more than one NUMA domain per
-CPU and (in the case of AMD CPUs) more than one L3 cache per CPU.
-The 48 cores in a Sapphire Rapids CPU, for example, share a large L3 cache
-but are organized in 4 groups of 12 cores, each group associated with one
-NUMA domain. For a complete overview, please consult the
-:ref:`genius hardware`, :ref:`wice hardware` and :ref:`mindwell hardware` pages.
+The wICE CPU nodes and the wICE GPU nodes equipped with NVIDIA P100 and V100
+GPUs have a relatively simple memory hierarchy, with a single NUMA domain and
+L3 cache per CPU, in addition to the usual core-private L1 and L2 caches.
+Other node types may feature more than one NUMA domain per CPU and
+(in the case of AMD CPUs) more than one L3 cache per CPU. The 48 cores in
+a Sapphire Rapids CPU, for example, share a large L3 cache but are organized
+in 4 groups of 12 cores, each group associated with one NUMA domain. For a
+complete overview, please consult the :ref:`wice hardware` and :ref:`mindwell hardware` pages.
 
 .. note::
 
