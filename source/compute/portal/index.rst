@@ -56,11 +56,15 @@ VSC clusters that support an Open OnDemand web portal:
        | Tier-2 :ref:`Anansi <Anansi cluster>`
        | Tier-2 :ref:`Hydra <Hydra cluster>`
 
-       |sofia|
+       .. div:: sd-mb-0
 
-       :fas:`circle-play` `sofia OnDemand`_
+          |sofia|
 
-       | Tier-1 :ref:`sofia <sofia cluster>`
+       .. div:: sd-mt-2
+
+          :fas:`circle-play` `sofia OnDemand`_
+
+          | Tier-1 :ref:`sofia <sofia cluster>`
 
 
 You can log in using the credentials of your home institution or your VSC

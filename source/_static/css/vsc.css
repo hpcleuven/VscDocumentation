@@ -80,6 +80,11 @@ nav.bd-links li > a:hover,
     text-decoration-skip-ink: auto;
 }
 
+/* draw line under main sections */
+.bd-content section > h2 {
+    border-bottom: dotted 1px var(--pst-color-text-muted);
+}
+
 /* fix styling of local icons to match other icons on navbar*/
 html[data-theme="light"] a.nav-link img.icon-link-image {
     filter: brightness(0) saturate(100%) invert(31%) sepia(45%) saturate(301%) hue-rotate(176deg) brightness(91%) contrast(85%);

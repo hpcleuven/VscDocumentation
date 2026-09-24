@@ -151,6 +151,7 @@ them.
    SSH Agent: Pageant <pageant>
    SSH Agent: MobaXterm <ssh_agent_mobaxterm>
    SSH Agent: OpenSSH <ssh_agent>
+   SSH Agent: Windows OpenSSH <ssh_agent_windows>
 
 .. grid:: 3
     :gutter: 4

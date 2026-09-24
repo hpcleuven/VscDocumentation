@@ -15,18 +15,34 @@ VSC clusters:
 Login to Open OnDemand
 ----------------------
 
-|KULUH|
-Users from all VSC sites can access the Open OnDemand portal at KU Leuven site.
-For that, proceed to the :ref:`Open OnDemand portal <ood>`.
-If you are affiliated with KU Leuven, click on the KU Leuven logo.
-Otherwise, click on the VSC logo to choose your institute.
-You will be then forwarded to the Identity Provider (IdP) of your institute to
-complete the authentication procedure.
-Once that succeeds, you will automatically login to the Open OnDemand homepage.
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      Users from all VSC sites can access the Open OnDemand portal at KU
+      Leuven site. For that, proceed to the
+      :ref:`Open OnDemand portal <ood>`. If you are affiliated with KU
+      Leuven, click on the KU Leuven logo. Otherwise, click on the VSC
+      logo to choose your institute. You will then be forwarded to the
+      Identity Provider (IdP) of your institute to complete the
+      authentication procedure. Once that succeeds, you will
+      automatically log into the Open OnDemand homepage.
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      Users from all VSC sites can access the VUB Open OnDemand portal.
+      For that, proceed to the :ref:`Open OnDemand portal <ood>`.
+      Select your institute from the dropdown menu. You will then be
+      forwarded to the Identity Provider (IdP) of your institute to
+      complete the authentication procedure. Once that succeeds, you
+      will automatically log into the Open OnDemand homepage.
 
 .. _mfa-with-ssh-agent:
 
-Connecting with an SSH agent
+Obtaining an SSH certificate
 ----------------------------
 
 .. note::
@@ -40,145 +56,71 @@ Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
 are made available to any other client program needing to use that same connection.
 Getting an SSH certificate involves MFA but this only needs to be performed
 once since a certificate can be used multiple times as long as it remains valid.
+Agentless options are possible in some cases, see the certificate methods below.
 
-You can acquire such an SSH certificate as follows:
+There are two ways to acquire such an SSH certificate:
 
-* Start up your SSH agent
-  
-  * Windows: we recommend to use :ref:`Pageant`
-  * macOS: use the default :ref:`OpenSSH agent`
-  * Linux: use the default :ref:`OpenSSH agent`
+.. toctree::
+   :hidden:
 
-.. tab-set::
-   :sync-group: vsc-sites
+   Firewall-based certificate <mfa_login_firewall>
+   Smallstep certificate <mfa_login_smallstep>
 
-   .. tab-item:: KU Leuven/UHasselt
-      :sync: kuluh
+.. grid:: 2
+   :gutter: 4
 
-      * Connect to either the cluster's login node or to ``firewall.vscentrum.be``
-        with your terminal application of choice and with agent forwarding enabled.
-        With e.g. OpenSSH you can do:
+   .. grid-item-card:: Firewall-based certificate
+      :columns: 12 12 6 6
+      :link: mfa_login_firewall
+      :link-type: doc
 
-        .. code-block:: bash
+      Works with any SSH client, including PuTTY and MobaXterm.
 
-           ssh -A vsc98765@login.hpc.kuleuven.be
-           # or
-           ssh -A vsc98765@firewall.vscentrum.be
+   .. grid-item-card:: Smallstep certificate
+      :columns: 12 12 6 6
+      :link: mfa_login_smallstep
+      :link-type: doc
 
-   .. tab-item:: Tier-1 sofia
-      :sync: sofia
+      Uses the ``step`` CLI. On Windows, only works from PowerShell or the
+      Command Prompt, not from GUI clients such as PuTTY and MobaXterm.
 
-      * Connect to ``firewall.vscentrum.be`` with your terminal application of
-        choice and with agent forwarding enabled. With e.g. OpenSSH you can do:
+VSC clusters that accept these certificates:
 
-        .. code-block:: bash
+.. grid:: 3
+    :gutter: 4
 
-           ssh -A vsc98765@firewall.vscentrum.be
+    .. grid-item-card:: |KUL|
+       :columns: 12 4 4 4
 
-PuTTY users can find the agent forwarding option under the
-'Connection -> SSH -> Auth' tab.
-OpenSSH users may also automatically
-enable agent forwarding in their :ref:`SSH config file <ssh_config>`.
+       * Tier-2 :ref:`Genius <genius hardware>`
+       * Tier-2 :ref:`wICE <wice hardware>`
+       * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
-* You will then be shown a URL which you will need to open in a browser:
+    .. grid-item-card:: |VUB|
+       :columns: 12 4 4 4
 
-  .. _firewall_link_mfa:
-  .. figure:: mfa_login/firewall_link_mfa.PNG
-     :alt: firewall_link_mfa
+       * Tier-2 :ref:`Anansi <Anansi cluster>`
+       * Tier-2 :ref:`Hydra <Hydra cluster>`
 
-  Note that when using PuTTY or MobaXterm, simply highlighting the link
-  with your mouse will copy the URL to your clipboard.
-  Avoid using 'CTRL-C', or it will send a ``SIGINT`` signal interrupting
-  your process instead of performing a copy operation.
+       |sofia|
 
-* From the drop-down menu, choose the institute you are affiliated with.
-  Below, we show an example of a KU Leuven user, but one has to pick the
-  institute he/she is affiliated with.
+       * Tier-1 :ref:`sofia <sofia cluster>`
 
-  .. figure:: mfa_login/vsc_firewall_institute.PNG
-     :alt: Choose your institute
 
-* You will be forwarded to the Identity Provider (IdP) of your institute,
-  and you need to login in a usual way using your registered credentials.
-
-  |kuluh| For KU Leuven users, the page looks like the following:
-
-  .. _idp_page:
-  .. figure:: mfa_login/idp_page.PNG
-     :alt: idp_page
-
-* |kuluh| If you are already connected to the internal network, then you will be only asked to
-  identify yourself with the MFA authenticator app on your personal phone:
-
-  .. _reauthenticate_phone:
-  .. figure:: mfa_login/reauthenticate_phone.PNG
-     :alt: reauthenticate_phone
-
-  This step may not be necessary when connecting from a white-listed IP address,
-  like the internal networks of the Flemish universities, using a static on-site
-  IP as well as the institutional VPN.
-  For example, if you have already logged upfront into your institution's network
-  then you might not be required to log in again depending on your browser
-  session settings (e.g., accepted cookies).
-
-* Once you are successfully authenticated, you end up on a page telling you that your VSC 
-  identity is confirmed.
-  If you have already performed the previous login in that browser session, you will 
-  immediately end up on this page:
-
-  .. _firewall_confirmed:
-  .. figure:: mfa_login/firewall_confirmed.PNG
-     :alt: firewall_confirmed
-
-* An SSH certificate will now be injected back into the agent.
-
-That's it! You can continue doing your HPC work as usual.
-
-The certificate can be used as long as the agent remains alive and the
-certificate itself has not expired (they have a lifetime of 16 hours).
-Do not forget to set up your client so that it contacts your SSH agent
-when opening new connections (thereby making use of the certificates).
-For a few common clients the corresponding documentation pages are listed
-below.
+Once you have a certificate loaded into your agent, it can be used as long
+as the agent remains alive and the certificate itself has not expired (they
+have a lifetime of 16 hours). Do not forget to set up your client so that
+it contacts your SSH agent when opening new connections (thereby making use
+of the certificates). For a few common clients the corresponding
+documentation pages are listed below.
 
 ====================================== ==================== =====================
 SSH Client name                        Purpose              Operating System
 ====================================== ==================== =====================
 :ref:`OpenSSH <OpenSSH access>`        text-based terminal  Linux, macOS
+:ref:`OpenSSH <windows_client>`        text-based terminal  Windows
 :ref:`PuTTY <terminal putty>`          text-based terminal  Windows
 :ref:`MobaXterm <terminal mobaxterm>`  text-based terminal  Windows
 :ref:`FileZilla <FileZilla>`           file transfer        Windows, Linux, macOS
 ====================================== ==================== =====================
-
-
-.. _mfa quick start:
-
-Connecting without an SSH agent
--------------------------------
-
-Most clients (such as PuTTY or MobaXterm) can also be made to work *without*
-an :ref:`ssh agent`. Keep in mind, however, that this approach tends to be
-less convenient since each new connection will require multi-factor
-authentication.
-
-Certain clients (such as :ref:`FileZilla <FileZilla>` or ``sshfs``)
-furthermore do not show you the firewall
-link needed for the MFA and hence can only function in combination with an SSH
-agent holding an SSH certificate.
-
-This being said, the agentless procedure runs as follows:
-
-* Connect to a :ref:`Tier-2 login node <tier2_login_nodes>`
-  using your chosen client application (e.g. MobaXterm).
-
-* The application is then supposed to show the link to complete the MFA procedure
-  (similar to the previous section).
-
-* After passing the MFA challenge, you should now be connected to a login node.
-  In plain SSH connections a successful login is rewarded with a welcome message:
-
-  .. _login_node:
-  .. figure:: mfa_login/login_node.PNG
-     :alt: login_node
-
 
