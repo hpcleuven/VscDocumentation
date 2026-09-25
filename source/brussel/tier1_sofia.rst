@@ -158,7 +158,8 @@ Web portal
 
 The Tier-1 cluster **sofia** has its own :ref:`OnDemand Web Portal<compute
 portal>`. Users with an active project on **sofia** can access it at `sofia
-OnDemand`_.
+OnDemand`_. The portal can be accessed from abroad without authorization on the
+VSC firewall.
 
 .. card::
    :width: 50%
@@ -180,7 +181,8 @@ Terminal interface
 ------------------
 
 You can use SSH to connect to the :ref:`terminal interface<terminal interface>`
-of the Tier-1 cluster **sofia** with your VSC account. 
+of the Tier-1 cluster **sofia** with your VSC account. **sofia** can be
+accessed via SSH from abroad without authorization on the VSC firewall.
 
 .. card::
    :width: 50%
