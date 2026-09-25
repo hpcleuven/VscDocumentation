@@ -52,7 +52,7 @@ involving intermediate files), it is recommended to use scratch storage.
 Compared to NFS, the GPFS and Lustre filesystems are better designed to handle
 intensive serial and parallel input/output (IO) operations.
 :ref:`wICE <wice hardware>` uses Lustre-based scratch storage, while
-:ref:`Mindwell <mindwell hardware>` comes with its own GPFS-based scratch
+:ref:`Mindwell <mindwell hardware>` comes with GPFS-based scratch
 storage.
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
