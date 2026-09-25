@@ -3,9 +3,10 @@ Genius
 
 .. note::
 
-   Genius is a KU Leuven/UHasselt Tier-2 cluster which is still in operation,
-   but most of its hardware has already been decommissioned. This page is only
-   for possible future reference.
+   The KU Leuven / UHasselt Tier-2 cluster *Genius* has been in production
+   from 2018 till end of September 2026, at which point the remaining GPU
+   resources were moved to :ref:`wICE <wICE hardware>`.
+   This page is only for possible future reference.
 
 .. toctree::
    :hidden:

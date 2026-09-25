@@ -25,7 +25,6 @@ VSC clusters that support an Open OnDemand web portal:
 
        :fas:`circle-play` `KU Leuven OnDemand`_
 
-       | Tier-2 :ref:`Genius <Genius hardware>`
        | Tier-2 :ref:`wICE <wICE hardware>`
        | Tier-2 :ref:`Mindwell <mindwell hardware>`
 

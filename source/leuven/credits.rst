@@ -97,7 +97,7 @@ Where
 
     The Tier-2 cluster has several types of compute nodes.
     Hence, different ``TRESBillingWeights`` apply to
-    different resources on different partitions of Genius, wICE and Mindwell.
+    different resources on different partitions of wICE and Mindwell.
     The difference in cost between different machines/processors reflects
     the performance difference between those types of nodes.
     For additional information, you may refer to the
@@ -134,43 +134,41 @@ not stop before reaching its time limit.
 Charge rates
 ------------
 
-The table below shows the charge rates for each CPU and GPU type on Genius
-and wICE. These values correspond to the number of Slurm credits needed
+The table below shows the charge rates for each CPU and GPU type on wICE
+and Mindwell. These values correspond to the number of Slurm credits needed
 to allocate one core or GPU during one minute.
 
-+---------+-----------------------+----------+------------------------+
-| Cluster | Resource              | Type     | ``TRESBillingWeights`` |
-+=========+=======================+==========+========================+
-| Genius  | P100                  | GPU      | 41.6667                |
-+         +-----------------------+----------+------------------------+
-|         | V100                  | GPU      | 59.5833                |
-+---------+-----------------------+----------+------------------------+
-| wICE    | Icelake               | CPU core | 2.54630                |
-+         +-----------------------+----------+------------------------+
-|         | Icelake (bigmem)      | CPU core | 4.39815                |
-+         +-----------------------+----------+------------------------+
-|         | Icelake (hugemem)     | CPU core | 4.39815                |
-+         +-----------------------+----------+------------------------+
-|         | Sapphire Rapids       | CPU core | 3.47222                |
-+         +-----------------------+----------+------------------------+
-|         | Zen4 Genoa            | CPU core | 3.47222                |
-+         +-----------------------+----------+------------------------+
-|         | A100                  | GPU      | 141.667                |
-+         +                       +----------+------------------------+
-|         |                       | CPU      | 2.546296296            |
-+         +-----------------------+----------+------------------------+
-|         | H100                  | GPU      | 569.444                |
-+         +                       +----------+------------------------+
-|         |                       | CPU      | 3.472222222            |
-+---------+-----------------------+----------+------------------------+
-| Mindwell| Graniterapids         | CPU core | 2.60416667             |
-+         +-----------------------+----------+------------------------+
-|         | Graniterapids (bigmem)| CPU core | 3.03819444             |
-+         +-----------------------+----------+------------------------+
-|         | B200                  | GPU      | 437.50                 |
-+         +                       +----------+------------------------+
-|         |                       | CPU      | 3.03819444             |
-+---------+-----------------------+----------+------------------------+
++----------+-------------------------+----------+------------------------+
+| Cluster  | Resource                | Type     | ``TRESBillingWeights`` |
++==========+=========================+==========+========================+
+| wICE     | Skylake                 | CPU core | 4.630                  |
++          +-------------------------+----------+------------------------+
+|          | Cascadelake             | CPU core | 4.630                  |
++          +-------------------------+----------+------------------------+
+|          | Icelake                 | CPU core | 2.546                  |
++          +-------------------------+----------+------------------------+
+|          | Icelake (bigmem)        | CPU core | 4.398                  |
++          +-------------------------+----------+------------------------+
+|          | Icelake (hugemem)       | CPU core | 18.519                 |
++          +-------------------------+----------+------------------------+
+|          | Sapphire Rapids         | CPU core | 3.472                  |
++          +-------------------------+----------+------------------------+
+|          | Zen4 Genoa              | CPU core | 3.472                  |
++          +-------------------------+----------+------------------------+
+|          | P100                    | GPU      | 41.667                 |
++          +-------------------------+----------+------------------------+
+|          | V100                    | GPU      | 59.583                 |
++          +-------------------------+----------+------------------------+
+|          | A100                    | GPU      | 141.667                |
++          +-------------------------+----------+------------------------+
+|          | H100                    | GPU      | 569.444                |
++----------+-------------------------+----------+------------------------+
+| Mindwell | Granite Rapids          | CPU core | 2.604                  |
++          +-------------------------+----------+------------------------+
+|          | Granite Rapids (bigmem) | CPU core | 3.038                  |
++          +-------------------------+----------+------------------------+
+|          | B200                    | GPU      | 437.500                |
++----------+-------------------------+----------+------------------------+
 
 
 .. _Geert Jan Bex: mailto:geertjan.bex@uhasselt.be
