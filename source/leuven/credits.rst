@@ -134,7 +134,7 @@ not stop before reaching its time limit.
 Charge rates
 ------------
 
-The table below shows the charge rates for each CPU and GPU type and wICE
+The table below shows the charge rates for each CPU and GPU type on wICE
 and Mindwell. These values correspond to the number of Slurm credits needed
 to allocate one core or GPU during one minute.
 
