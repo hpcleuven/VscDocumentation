@@ -104,7 +104,7 @@ Location Access Restrictions
    .. tab-item:: UGent
       :sync: ug
 
-      All VSC clusters are behind a firewall, which is configured by default to block all traffic from abroad.
+      All UGent clusters are behind a firewall, which is configured by default to block all traffic from abroad.
       If you want to access any VSC cluster from abroad, it is necessary that you first authorize your own connection on the `VSC Firewall`_.
       Once your connection is authorized, you can proceed as usual.
 
