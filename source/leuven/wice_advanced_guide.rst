@@ -174,7 +174,8 @@ supported). Various examples can be found in a `development branch
 Turbo frequency
 ---------------
 
-With wICE running on Rocky Linux 9, the CPU cores are no longer able to reach the maximal
-('turbo') frequency. Compared to wICE nodes running on Rocky 8 (which was the case before
-February 2026), you may therefore see somewhat lower performance if only a few cores are
-active while the other cores are idling. This issue is still being investigated.
+With wICE running on Rocky Linux 9, the Icelake and Sapphire Rapids CPU cores
+are no longer able to reach the maximal ('turbo') frequency. Compared to wICE
+nodes running on Rocky 8 (which was the case before February 2026), you may
+therefore see somewhat lower performance if only a few cores are active while
+the other cores are idling. This issue is still being investigated.
