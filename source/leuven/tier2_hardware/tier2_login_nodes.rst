@@ -21,5 +21,5 @@ Login infrastructure
    section on :ref:`access restrictions <location_access_restrictions>`
    before proceeding.
 
-You can access the KU Leuven Tier-2 either through ``login.hpc.kuleuven.be``. 
+You can access the KU Leuven Tier-2 through ``login.hpc.kuleuven.be``. 
 This will loadbalance your connection to one of the 4 wICE login nodes.
