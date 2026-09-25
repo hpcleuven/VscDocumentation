@@ -9,8 +9,7 @@
 
     .. grid-item-card:: |KUL| |UH|
        :columns: 6 6 3 3
-    
-       * :ref:`Genius <Genius hardware>`
+
        * :ref:`wICE <wICE hardware>`
        * :ref:`Mindwell <mindwell hardware>`
 
