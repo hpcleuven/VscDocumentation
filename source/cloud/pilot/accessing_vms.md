@@ -11,9 +11,6 @@ The SSH keys are injected **only** when the VM is created. Adding or removing a 
 :::
 
 ## Windows
-:::{note}
-WIP: Need RDP client recommendations with tunneling support
-:::
 UGent Firewall blocks RDP connections for security reasons. 
 You can however, connect to our Windows image with SSH. The [Tofu module](./opentofu.md) will give you the credentials.
 
