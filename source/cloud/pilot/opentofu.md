@@ -46,13 +46,13 @@ ssh -A vscxxxxx@login.hpc.ugent.be
 It is important to forward your ssh agent with `-A` when SSH-ing to the login node.
 :::
 
-You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.6/examples) as a starting point.
+You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples) as a starting point.
 Make sure to copy the `providers.tf` and the `main.tf` files into your project directory.
 On linux you can use this snippet:
 ```bash
 mkdir -p MyVSCCloudProject
-wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.6/examples/simple-server/main.tf
-wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.6/examples/simple-server/providers.tf
+wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/simple-server/main.tf
+wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/simple-server/providers.tf
 ```
 :::{tip}
 Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
@@ -67,7 +67,7 @@ If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure
 :::
 
 In the previous [section](#using-the-opentofu-module) we created a `MyVSCCloudProject` directory and copied some tofu files into it.
-Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.6/examples/simple-server) example's `main.tf`.
+Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples/simple-server) example's `main.tf`.
 
 This file contains the most basic configuration for a virtual machine.
 It consists of two **modules**. A module is convenient grouping of OpenTofu resources. 
@@ -83,7 +83,7 @@ Full router module documentation can be found [here](https://search.opentofu.org
 ```
 module "router" {
   source  = "hpcugent/opennebula/vsc//modules/router"
-  version = "0.0.6"
+  version = "0.0.9"
   # VM Which we can ssh to by default
   access_vm = module.SimpleVM.router_access
 }
@@ -131,10 +131,13 @@ Full module documentation can be found [here](https://search.opentofu.org/module
 ```
 module "SimpleVM" {
   source     = "hpcugent/opennebula/vsc"
-  version    = "0.0.6"
+  version    = "0.0.9"
   vm_name    = "SimpleExample"
   image_name = "Rocky 10"
   is_windows = false
+  cpu           = 4
+  memory        = 8 #Gib
+  rootdisk_size = 30
 }
 ```
 This code will create a virtual machine with the `Rocky 10` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/).
@@ -152,7 +155,7 @@ Setting `is_windows = true` will configure the VM slightly differently for Windo
 ```{warning}
 Be sure to match the version of the documentation/examples to the version of the module that you are using
 ```
-The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.6/examples) 
+The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples) 
 
 You can also find documentation on all of the variables on the [OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest)
 
