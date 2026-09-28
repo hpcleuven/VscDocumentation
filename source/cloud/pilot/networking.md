@@ -1,7 +1,6 @@
 # Networking
-Test
 Each project will get a private network that connects your virtual machines together.
-The gateway for this network will be a Virtual Router, which has a public IP address that is randomly assigned.
+The gateway for this network will be a Virtual Router, which has a public IP address that is randomly assigned upon deployment of the router.
 A project with VSC access enabled will also have a private network to connect the virtual machines to the VSC Virtual Router.
 
 Each project will need **exactly one** public router to access the internet.
