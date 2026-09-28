@@ -30,3 +30,5 @@ the documentation.
    opentofu
    custom_images
    shares
+   GPUs
+   advanced_usage
