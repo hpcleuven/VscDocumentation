@@ -9,7 +9,7 @@ As a user of the VSC cloud, you can upload and manage your own virtual
 machine images. For information about creating image files, see the
 [Opennebula Docs](https://docs.opennebula.io/7.2/product/virtual_machines_operation/virtual_machines/images/).
 
-You can upload your own image on the [Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
+You can upload your own image on the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
 You can also import images from the [Marketplace] (recommended).
 
 :::{warning}
@@ -20,7 +20,7 @@ Your custom image must include the opennebula [contextualization packages](https
 ## Uploading images
 
 ### Uploading
-1) Go to [Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
+1) Go to [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
 2) Fill in the name, description, **Turn off** "make persistant".
 3) Click "upload" and select the image file on your filesystem (you can also enter a direct download URL).
 4) Click "Next".

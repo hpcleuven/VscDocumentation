@@ -13,10 +13,10 @@ here](/accounts/vsc_account.rst).
 Once you have a VSC account, contact us via cloud@vscentrum.be if you want to start a new Opennebula
 project, or join an existing one.
 
-You can interact with the VSC Cloud using the Opennebula Dashboard, a web
+You can interact with the VSC Cloud using the VSC Cloud Dashboard, a web
 interface, or the "one" command line interface, which you can use
 from any system, and which is installed for you on the HPC-UGent Tier-2 login nodes
- at `login.hpc.ugent.be`. You can log in to the VSC Opennebula Dashboard using the VSC
+ at `login.hpc.ugent.be`. You can log in to the VSC Cloud Dashboard using the VSC
 accountpage, as illustrated in the next section. To get access from the
 command line interface, you'll need to obtain a login token,
 as explained in section [Login Token](#login-token).
@@ -27,8 +27,7 @@ themselves who gets access to their VM's, and how.
 
 ## Dashboard Login
 
-You can access the Opennebula web interface, or Dashboard, via
-[cloudpr4.ugent.be](https://cloudpr4.ugent.be).
+You can access the VSC Cloud Dashboard via [cloudpr4.ugent.be](https://cloudpr4.ugent.be).
 
 To log in, choose the (default) authentication method **VSC Accountpage**
 and click "Connect".
@@ -40,7 +39,7 @@ and click "Connect".
 From here on, follow the standard procedure to log in to your VSC
 account, using your home institution's single sign-on system.
 The following chapters explain how to accomplish basic tasks using the
-Dashboard.
+VSC Cloud Dashboard.
 
 ## Login Token
 
