@@ -288,6 +288,6 @@ Scalr is also compatible with OpenTofu, so their additional features can be used
 You can also use your own OpenTofu code to deploy your infrastructure.
 This task is out of the scope of this document, please refer to the official
 OpenTofu documentation to add you own changes
-<https://opentofu.org/docs/> or ask to VSC Cloud admins via email at
+<https://opentofu.org/docs/> or ask the VSC Cloud admins via email at
 <cloud@vscentrum.be>.
 
