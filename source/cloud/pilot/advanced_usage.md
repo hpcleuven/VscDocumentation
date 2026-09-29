@@ -13,6 +13,6 @@ A VM may not exceed:
 
 VMs that exceed this size **will** be shut down.
 
-### GPUs
-GPU VMs must use the provided templates (Such as `UserL40`).
+### Templates
+All VMs must use the provided templates. It is not possible to use custom OpenNebula templates. 
 
