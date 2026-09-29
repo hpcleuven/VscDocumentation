@@ -42,12 +42,10 @@ Cluster choice
 --------------
 Many Slurm commands (like `sbatch`, `srun`, `scontrol`, `squeue`, `scancel`,
 ...) accept a ``-M/--clusters`` option which selects one or more clusters.
-The default value depends on where the command is executed (``genius`` for the
-Genius compute nodes and login nodes, ``wice`` for the wICE compute nodes, and
-``mindwell`` for the Mindwell compute nodes).
-This means that if you are connected to a (Genius) login node, you will need
-to add ``-M wice`` in order to select wICE instead of Genius. Similarly for Mindwell,
-you need to specify ``-M mindwell``.
+The default value depends on where the command is executed (``wice`` for the
+login nodes and wICE compute nodes, and ``mindwell`` for the Mindwell compute nodes).
+This means that if you are connected to a login node, you will need
+to add ``-M mindwell`` in order to select Mindwell instead of wice.
 Also note that some of these commands (such as `squeue` and `sacct`) accept
 ``-M all`` which selects all available clusters.
 
@@ -285,11 +283,11 @@ per GPU is provided in the table below.
      -
      -
      - (MiB)
-   * - Genius
+   * - wICE
      - ``gpu_p100*``
      - 9
      - 45000
-   * - Genius
+   * - wICE
      - ``gpu_v100*``
      - 4
      - 84000
@@ -327,8 +325,7 @@ Such a job can be submitted as follows:
 In practice, 18 CPU cores and 126000 MiB CPU memory will be allocated per GPU,
 and no warning will be raised.
 
-For more examples of valid GPU jobs, have a look at the
-:ref:`Genius <genius_t2_leuven>`, :ref:`wICE <wice_t2_leuven>`
+For more examples of valid GPU jobs, have a look at the :ref:`wICE <wice_t2_leuven>`
 and :ref:`Mindwell <mindwell_quick_start>` quickstart guides.
 
 Aside from options such as ``--ntasks-per-node`` and ``--cpus-per-task``
@@ -347,4 +344,3 @@ compute nodes allocated to your job (for example to inspect its processes
 using GDB). In such cases we recommend to 'join' the job as follows::
 
    $ srun -M <cluster> --jobid=<jobid> --overlap --pty bash -l
-

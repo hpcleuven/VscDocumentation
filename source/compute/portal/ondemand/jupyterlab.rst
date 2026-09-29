@@ -457,7 +457,6 @@ VSC clusters that support the Bash kernel extension:
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
        * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
@@ -505,7 +504,6 @@ support this extension are:
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
        * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
@@ -535,7 +533,6 @@ this extension is supported are:
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
        * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
@@ -555,7 +552,6 @@ Python iRODS Client
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <Genius hardware>`
        * Tier-2 :ref:`wICE <wICE hardware>`
        * Tier-2 :ref:`Mindwell <mindwell hardware>`
 

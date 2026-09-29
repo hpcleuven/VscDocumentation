@@ -51,27 +51,27 @@ For workflows requiring frequent read or write operations (especially those
 involving intermediate files), it is recommended to use scratch storage.
 Compared to NFS, the GPFS and Lustre filesystems are better designed to handle
 intensive serial and parallel input/output (IO) operations.
-:ref:`Genius <genius hardware>` and :ref:`wICE <wice hardware>` share the same
-(Lustre based) scratch storage, while :ref:`Mindwell <mindwell hardware>` comes
-with its own (GPFS based) scratch storage:
+:ref:`wICE <wice hardware>` uses Lustre-based scratch storage, while
+:ref:`Mindwell <mindwell hardware>` comes with GPFS-based scratch
+storage.
 
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 | Variable              | Path                             | Type   | Access        |Backup | Default quota |
 +=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH``       | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | Genius, wICE  | No    | 500 GiB       |
+|``$VSC_SCRATCH``       | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | wICE          | No    | 500 GiB       |
 |                       |                                  +--------+---------------+-------+---------------+
 |                       |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
 +-----------------------+----------------------------------+--------+---------------+-------+---------------+
 
 On each node, the ``$VSC_SCRATCH`` environment variable will point to the
 scratch storage associated with the node (GPFS scratch on the Mindwell nodes,
-Lustre scratch on the nodes of Genius and wICE).
+Lustre scratch on the wICE nodes).
 
 .. warning::
 
    It is *crucial* that intensive IO operations in your compute jobs are done
    on the scratch storage associated with the cluster where the job is running.
-   In other words, compute jobs running on Genius and wICE have to use Lustre
+   In other words, compute jobs running on wICE have to use Lustre
    and jobs running on Mindwell have to use GPFS. Compute jobs that do not
    comply can be cancelled by the system administrators without prior notice.
    If you are looking for more information on this, please read the page on
@@ -90,8 +90,8 @@ Transferring data between Lustre and GPFS
 
 To facilitate data transfers between the Lustre and GPFS storage,
 Lustre is accessible from Mindwell and GPFS is accessible from wICE
-and from the (Genius) login nodes. Note that GPFS is not reachable
-from the Genius *compute* nodes.
+and from the (wICE) login nodes. Note that GPFS is not reachable
+from the wICE P100 and V100 nodes.
 
 Two more environment variables (``$VSC_SCRATCH_LUSTRE1`` and
 ``$VSC_SCRATCH_GPFS1``) have been defined for this purpose, so that you can
@@ -103,7 +103,7 @@ you could go about it as follows:
 
 .. code-block:: bash
 
-   # If initiating the transfer from Genius or wICE:
+   # If initiating the transfer from wICE:
    cp ${VSC_SCRATCH}/myfile ${VSC_SCRATCH_GPFS1}
 
    # If initiating the transfer from Mindwell:
@@ -114,7 +114,7 @@ through 'transfer' jobs submitted to, for example, the ``interactive``
 partition of :ref:`wICE <submit to wice interactive node>` or
 :ref:`Mindwell <submit to mindwell interactive node>`.
 Short transfers which don't take more than a couple of minutes can also
-be performed from a Genius login node. For more advanced examples, please read
+be performed from a wICE login node. For more advanced examples, please read
 the :ref:`recommendations for managing data on multiple filesystems <kuluh_pfs_practical>`.
 
 Globus endpoints have been defined on both Lustre and GPFS filesystems,
@@ -146,15 +146,15 @@ Node scratch
 If your jobs require temporary storage that does not need to be shared across
 compute nodes, you may also consider using the local node disks:
 
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-|Variable               | Path                             | Type   | Access        |Backup | Default quota |
-+=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH_NODE``  | ``/tmp``                         | ext4   | Genius        | No    | 200 GiB       |
-|                       |                                  |        +---------------+       +---------------+
-|                       |                                  |        | wICE          |       | 600 GiB       |
-|                       |                                  |        +---------------+       +---------------+
-|                       |                                  |        | Mindwell      |       | 600 GiB       |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
++-----------------------+----------------------------------+--------+------------------+-------+---------------+
+|Variable               | Path                             | Type   | Access           |Backup | Default quota |
++=======================+==================================+========+==================+=======+===============+
+|``$VSC_SCRATCH_NODE``  | ``/tmp``                         | ext4   | wICE P100 & V100 | No    | 200 GiB       |
+|                       |                                  |        +------------------+       +---------------+
+|                       |                                  |        | wICE             |       | 600 GiB       |
+|                       |                                  |        +------------------+       +---------------+
+|                       |                                  |        | Mindwell         |       | 600 GiB       |
++-----------------------+----------------------------------+--------+------------------+-------+---------------+
 
 Though limited in storage capacity, ``$VSC_SCRATCH_NODE`` has the advantage
 that no network traffic is involved. The contents of this temporary storage

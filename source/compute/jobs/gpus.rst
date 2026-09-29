@@ -11,8 +11,6 @@ consult the respective documentation sources:
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Genius: :ref:`Submit to a GPU node <submit_genius_gpu>`
-
       wICE: :ref:`Submit to a GPU node <submit to wice GPU node>`
 
       Mindwell: :ref:`Submit to a GPU node <submit to mindwell GPU node>`

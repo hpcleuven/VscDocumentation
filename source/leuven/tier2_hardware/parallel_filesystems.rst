@@ -70,7 +70,7 @@ Setup of parallel filesystems
 -----------------------------
 
 Since mid 2026, there are two parallel file systems in use on the KU Leuven/
-UHasselt Tier-2 clusters Mindwell and wICE (for Genius the wICE information applies):
+UHasselt Tier-2 clusters Mindwell and wICE:
 
 - The ``Lustre1`` file system
 

@@ -92,7 +92,6 @@ VSC clusters that accept these certificates:
     .. grid-item-card:: |KUL|
        :columns: 12 4 4 4
 
-       * Tier-2 :ref:`Genius <genius hardware>`
        * Tier-2 :ref:`wICE <wice hardware>`
        * Tier-2 :ref:`Mindwell <mindwell hardware>`
 
