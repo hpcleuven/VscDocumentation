@@ -92,7 +92,7 @@ This will provide network connectivity for all the VMs in your project.
 With the router, you can specify the **access VM**, being the VM exposed to the internet through SSH. It will also be the default target for [port forwarding rules](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/submodule/router/inputs#port_forwards)
 
 ```{note}
-There can only be **one** regular router per public ip, and one VSC router per VSC IP.
+There can only be **one** regular router per Opennebula group, except an optional VSC router.
 ```
 :::{danger}
 If your router is deleted (via `tofu destroy`, for example) your **public IP address** might change.
@@ -250,7 +250,7 @@ change in your infrastructure. If for some reason you lose these files, it will 
 
 ## Special considerations for multi-user workflows
 If multiple people need to interact with the project independently, there are some additional things to consider.
-Because only one router can exist per public/vsc IP, the management of the router instance needs to be centralized in some way.
+Because only one (or two, with VSC access) router can exist per project, the management of the router instance needs to be centralized in some way.
 
 ### Tofu state
 OpenTofu uses a [statefile](https://opentofu.org/docs/v1.12/language/state/) to keep track of which resources have been created and their properties. This way, if you add another port forwarding to your router, OpenTofu knows which router to change and what changes to apply. This has the downside that anyone that needs to change the port forwarding rules, needs to have access to the statefile. The statefile may also contain sensitive information (like a password, in the case of a Windows VM), so it is important to keep this file secret. 

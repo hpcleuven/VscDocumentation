@@ -3,7 +3,7 @@ Each project will get a private network that connects your virtual machines toge
 The gateway for this network will be a Virtual Router, which has a public IP address that is randomly assigned upon deployment of the router.
 A project with VSC access enabled will also have a private network to connect the virtual machines to the VSC Virtual Router.
 
-Each project will need **exactly one** public router per public IP to access the internet.
+Each project will need **exactly one** public router to access the internet.
 This router will be created for you if you use the [OpenTofu module](opentofu.md).
 Through this router you can set up port-forwarding rules to your VMs.
 
