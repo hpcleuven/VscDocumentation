@@ -82,11 +82,7 @@ See to the documentation about the :ref:`toolchains`.
 Debugging
 ---------
 
-For debugging, we recommend the Arm DDT debugger (formerly Allinea DDT,
-module allinea-ddt). The debugger and the profiler Arm MAP (formerly
-Allinea MAP) are now bundled nito ArmForge, which is available as a
-module on KU Leuven systems. Video tutorials are available on the
-Arm website: `ARM-DDT video`_.  (KU Leuven-only).
+For debugging, we recommend XXX
 
 When using the Intel toolchain, the `Intel oneAPI VTune Profiler`_ may also
 prove useful.
@@ -94,8 +90,7 @@ prove useful.
 Profiling
 ---------
 
-To profile MPI applications, one may use `Arm-MAP`_ (formerly Allinea
-MAP) or `Scalasca docs`_.  (KU Leuven-only)
+To profile MPI applications, one may use XXX
 
 Further information
 -------------------
