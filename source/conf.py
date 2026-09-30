@@ -391,13 +391,13 @@ rst_prolog += """
 .. _Apptainer Quick Start: https://apptainer.org/docs/user/main/quick_start.html
 .. _Apptainer Definition Files: https://apptainer.org/docs/user/main/definition_files.html
 .. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
-.. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
-.. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
 .. _atools documentation: https://atools.readthedocs.io/en/latest/
 .. _Bioconductor: https://bioconductor.org
 .. _CP2K: https://www.cp2k.org/
 .. _CPMD: http://www.cpmd.org/
 .. _CRAN: http://cran.r-project.org
+.. _Cube tutorial: https://pop-coe.eu/further-information/online-training/using-pop-tools-cube
+.. _CubeGUI: https://apps.fz-juelich.de/scalasca/releases/cube/4.8/docs/guide/html/userguide.html
 .. _CUDA: https://developer.nvidia.com/cuda-zone
 .. _cuDNN: https://developer.nvidia.com/cudnn
 .. _Cyberduck: https://cyberduck.io
@@ -457,6 +457,7 @@ rst_prolog += """
 .. _MPI Forum: https://www.mpi-forum.org/
 .. _MPI Documents: https://www.mpi-forum.org/docs/
 .. _MPICH: https://www.mpich.org/
+.. _mpidbg: https://github.com/robertu94/mpigdb/
 .. _MVAPICH: http://mvapich.cse.ohio-state.edu/
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
 .. _Netlib BLAS repository: http://www.netlib.org/blas/
@@ -479,6 +480,7 @@ rst_prolog += """
 .. _Open WebUI: https://openwebui.com
 .. _Paraview tutorial: https://vtk.org/Wiki/images/8/88/ParaViewTutorial38.pdf
 .. _Paraview website: https://www.paraview.org/
+.. _POP CoE: https://www.pop-coe.eu/
 .. _POSIX threads: https://en.wikipedia.org/wiki/POSIX_Threads
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _PRACE: https://prace-ri.eu/
@@ -490,7 +492,9 @@ rst_prolog += """
 .. _qsub documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm#topics/torque/commands/qsub.htm
 .. _RStudio documentation: https://docs.posit.co/ide/user/
 .. _ScaLAPACK user guide: http://netlib.org/scalapack/slug/
-.. _Scalasca docs: http://www.scalasca.org/software/scalasca-2.x/documentation.html
+.. _Scalasca: https://apps.fz-juelich.de/scalasca/releases/scalasca/latest/docs/manual/
+.. _Score-P: https://perftools.pages.jsc.fz-juelich.de/cicd/scorep/tags/latest/html/
+.. _Score-P + Scalasca tutorial: https://pop-coe.eu/further-information/online-training/using-pop-tools-score-p-scalasca
 .. _scp manual page: http://man.openbsd.org/scp
 .. _Secure Shell: https://en.wikipedia.org/wiki/Secure_Shell
 .. _sftp manual page: http://man.openbsd.org/sftp
@@ -502,6 +506,7 @@ rst_prolog += """
 .. _TensorBoard documentation: https://www.tensorflow.org/tensorboard/get_started
 .. _TensorFlow: https://www.tensorflow.org/
 .. _TigerVNC: https://tigervnc.org/
+.. _tmpi: https://github.com/Azrael3000/tmpi
 .. _Torque 6.0.1 documentation: http://docs.adaptivecomputing.com/torque/6-1-2/adminGuide/torque.htm
 .. _TurboVNC download page: https://github.com/TurboVNC/turbovnc/releases
 .. _TurboVNC: https://www.turbovnc.org/
