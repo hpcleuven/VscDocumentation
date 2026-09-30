@@ -55,17 +55,44 @@ intensive serial and parallel input/output (IO) operations.
 :ref:`Mindwell <mindwell hardware>` comes with GPFS-based scratch
 storage.
 
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-| Variable              | Path                             | Type   | Access        |Backup | Default quota |
-+=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH``       | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | wICE          | No    | 500 GiB       |
-|                       |                                  +--------+---------------+-------+---------------+
-|                       |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
+Types of scratch directories
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next to having two different types of scratch storage coupled to our clusters,
+you can also have two different types of directories on each of the
+scratch storages:
+
+- ``$VSC_SCRATCH``: this is your personal scratch storage, available to everyone by default.
+  It can be temporarily extended for free, but is subject to 
+  :ref:`automatic cleaning <scratch_cleanup>`.
+
+- project storage: this is a shared storage space, but is only available upon request.
+  Clean-up is the responsibility of the team members. Moderators of the associated group also
+  have :ref:`extended permissions <project_storage_acls>`. Note that project storage 
+  is a paid service.
+
+For extensions and new storage requests, please refer to the `KU Leuven service catalogue <https://icts.kuleuven.be/sc/english/research/HPC-storage>`_.
+
++------------------------+----------------------------------+--------+---------------+-------+---------------+
+| Variable               | Path                             | Type   | Access        |Backup | Default quota |
++========================+==================================+========+===============+=======+===============+
+|``$VSC_SCRATCH``        | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | wICE          | No    | 500 GiB       |
+|                        |                                  +--------+---------------+-------+---------------+
+|                        |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
++------------------------+----------------------------------+--------+---------------+-------+---------------+
+|``$VSC_PROJECT_LUSTRE1``| ``/lustre1/project``             | Lustre | wICE          | No    | NA            |
++------------------------+----------------------------------+--------+---------------+-------+---------------+
+|``$VSC_PROJECT_GPFS1``  | ``/gpfs1/project``               | GPFS   | Mindwell      | No    | NA            |
++------------------------+----------------------------------+--------+---------------+-------+---------------+
 
 On each node, the ``$VSC_SCRATCH`` environment variable will point to the
 scratch storage associated with the node (GPFS scratch on the Mindwell nodes,
 Lustre scratch on the wICE nodes).
+
+For both ``$VSC_PROJECT_XXXX`` directories, you will only be able to access the
+subdirectories you are part of. Request your team members to add you, or
+request a new project if needed.
+
 
 .. warning::
 
@@ -87,6 +114,11 @@ Lustre scratch on the wICE nodes).
 
 Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   You can use the methods below to transfer between GPFS and Lustre project
+   storage as well. Use the ``$VSC_PROJECT_XXXX`` variables instead.
 
 To facilitate data transfers between the Lustre and GPFS storage,
 Lustre is accessible from Mindwell and GPFS is accessible from wICE
@@ -122,8 +154,10 @@ so you can use the :ref:`globus platform` for these data transfers.
 For transferring large volumes of data (> 1 TB), however, we recommend using
 'transfer' jobs instead of Globus for performance reasons.
 
-Automatic scratch cleanup
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _scratch_cleanup:
+
+Automatic scratch cleanup (``$VSC_SCRATCH``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``$VSC_SCRATCH`` at KU Leuven is not for long term storage, as files not accessed
 for more than 30 days are automatically removed.
@@ -139,6 +173,53 @@ to be inactive and automatically removed. A similar thing happens when using
 the ``cp`` command (without ``-a`` argument) should be used to copy files to the
 scratch directory, followed by removing the sources (if needed) using  the ``rm``
 command upon a successful transfer.
+
+.. _project_storage_acls:
+
+Extended permissions for project storage moderators
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For project storage on either Lustre or GPFS, access will be controlled
+with a Linux group created on the VSC account page. This can be a new group, but you
+can use your group's credit account as well.
+
+The moderators of the project storage group will be automatically added to a
+``<groupname>_moderators`` group. We automatically apply extended permissions (ACLs) for this
+group. These permissions allow them to modify, delete and move all files and directories in
+this shared storage space. This way, your team has the tools to manage their project storage
+without the need to ask the HPC support team to change permissions and/or ownership of certain
+files and directories.
+
+If you are interested in the technical details, we implement the following ACLs:
+
+.. code:: bash
+   
+   # default ACLs
+   setfacl -m d:g:<moderator_group>:rwx <project_dir>
+
+   # ACLs on the top directory
+   setfacl -m g:<moderator_group>:rwx <project_dir>
+
+
+Note that the actual permissions of a file (or directory) may not be reflected by 
+``ls -l <file>``. Use ``getfacl <file>`` to get a detailed overview of all permissions.
+
+Some remarks:
+
+- Choose your moderators carefully! Since they can remove files and directories that do
+  not belong to them, it is best to choose people with at least some Linux experience.
+
+- The top directory of the project storage is writeable only by the moderators. They can create
+  subdirectories, which can then be used by their team members.
+
+- The ACLs are not 100% foolproof. Users can still modify the permissions on their own files and
+  directories. Depending on how they are changed, it could be that the moderators lose their elevated
+  access rights on these files or directories. In general, you should not create more restrictive
+  permissions.
+
+- The default ACLs are automatically inherited by files and directories that are created or copied
+  in the project storage. This also means that files or directories that are moved (``mv``) into the
+  project storage will not inherit the ACLs.
 
 Node scratch
 ------------
