@@ -51,8 +51,9 @@ Make sure to copy the `providers.tf` and the `main.tf` files into your project d
 On linux you can use this snippet:
 ```bash
 mkdir -p MyVSCCloudProject
-wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/simple-server/main.tf
-wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/simple-server/providers.tf
+cd MyVSCCloudProject
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.9/examples/simple-server/main.tf
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.9/examples/simple-server/providers.tf
 ```
 :::{tip}
 Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
