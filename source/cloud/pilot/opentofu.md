@@ -136,14 +136,14 @@ module "SimpleVM" {
   source     = "hpcugent/opennebula/vsc"
   version    = "0.0.9"
   vm_name    = "SimpleExample"
-  image_name = "Rocky 10"
+  image_name = "Rocky Linux 9"
   is_windows = false
   cpu           = 4
   memory        = 8 #Gib
   rootdisk_size = 30
 }
 ```
-This code will create a virtual machine with the `Rocky 10` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/).
+This code will create a virtual machine with the `Rocky Linux 9` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/).
 
 
 
