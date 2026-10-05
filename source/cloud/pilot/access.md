@@ -47,11 +47,11 @@ If you want to use the opennebula CLI (one), or interact with its API (with [Ope
 To obtain a login token, follow these steps:
 
 1) Log in on [cloudpr4.ugent.be](https://cloudpr4.ugent.be/)
-2) Click on your username in the top right corner
-3) Click "settings"
+2) Click on your username in the bottom lef corner
+3) Click "Profile Settings"
 4) In this new screen, click "Security".
 5) Scroll to the bottom, to the "Login Token" section.
 6) Fill in an expiration time in seconds, and select the group for which this token should apply
 7) Click "Get a new Token"
 
-The token will now appear on this page until it has expired.
+The token will now appear on this page until it has expired. Proceed with [instructions on where to store the token](./opentofu.md#create-credentials-for-opentofu).
