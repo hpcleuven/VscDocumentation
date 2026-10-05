@@ -172,7 +172,7 @@ If you haven't deployed anything yet, you must first initialize the modules.
 Move to your project directory first:
 
 ```shell
-cd ~/MyProject
+cd ~/MyVSCCloudProject
 ```
 Edit the file as necessary (change the VM name to something descriptive, for example.):
 ```shell
