@@ -65,6 +65,7 @@ If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure
 2) {bdg-primary}`Optional` Install Opennebula client:
     1) [Add the repository for your linux distro](https://docs.opennebula.io/7.2/software/installation_process/frontend_installation/opennebula_repository_configuration_ce/)
     2) Install `opennebula-tools` with your package manager
+    3) Set the environment variable `export ONE_XMLRPC="https://cloudpr4.ugent.be:2633/RPC2"` to point the Opennebula client to the VSC Cloud infrastructure
 :::
 
 In the previous [section](#using-the-opentofu-module) we created a `MyVSCCloudProject` directory and copied some tofu files into it.
