@@ -2,7 +2,7 @@
 OpenTofu <https://opentofu.org/> is an
 infrastructure as code tool (IaC). It is a fork of [Terraform](https://developer.hashicorp.com/terraform).
 Opentofu is currently one of the most popular infrastructure automation tools
-available. VSC Cloud provides an OpenTofu module to simplify VM provisioning: https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest.
+available. VSC Cloud provides an [OpenTofu module](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest) to simplify VM provisioning.
 
 
 ## Installing OpenTofu
@@ -57,6 +57,7 @@ wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/si
 :::{tip}
 Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
 :::
+
 ## Basic VM configuration
 :::{tip}
 If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure to:
