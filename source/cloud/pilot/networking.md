@@ -25,6 +25,6 @@ Your VMs will thus not be firewalled from each other, and you may have to config
 Of course, your VM is isolated from other projects and the internet, except for any port-forwarding you configure.
 
 For reference, here is some documentation for common firewall software:
-* [UFW] (Ubuntu and others) (https://ubuntu.com/server/docs/how-to/security/firewalls/)
-* [Firewalld] (Rocky) (https://docs.rockylinux.org/10/guides/security/firewalld-beginners/)
+* [UFW (Ubuntu and others)](https://ubuntu.com/server/docs/how-to/security/firewalls/)
+* [Firewalld (Rocky)](https://docs.rockylinux.org/10/guides/security/firewalld-beginners/)
 * [Windows firewall](https://support.microsoft.com/en-us/windows/security/windows-security/firewall-and-network-protection-in-the-windows-security-app)

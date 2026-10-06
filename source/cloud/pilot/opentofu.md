@@ -1,19 +1,21 @@
 # Creating VMs Using OpenTofu
+
 OpenTofu <https://opentofu.org/> is an
 infrastructure as code tool (IaC). It is a fork of [Terraform](https://developer.hashicorp.com/terraform).
 Opentofu is currently one of the most popular infrastructure automation tools
-available. VSC Cloud provides an OpenTofu module to simplify VM provisioning: https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest.
+available. VSC Cloud provides an [OpenTofu module](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest) to simplify VM provisioning.
 
 
 ## Installing OpenTofu
+
 The client is available for different Operating Systems like Windows, Linux
-or macOS (<https://opentofu.org/docs/intro/install/>)
-If you cannot install it, is also available from the HPC-UGent Tier-2 login nodes at `login.hpc.ugent.be`.
+or macOS (<https://opentofu.org/docs/intro/install/>).
+If you cannot install it locally, `tofu` is also available from the HPC-UGent Tier-2 login nodes at `login.hpc.ugent.be`.
 
 If you are using OpenTofu on your local machine, the [VSCode Extension](https://github.com/opentofu/vscode-opentofu) is also recommended.
 
-
 ## Create credentials for OpenTofu
+
 Tofu requires a username and a login token to authenticate to the Opennebula API. Obtaining a login token is explained in: [application credentials](access.md#login-token).
 After obtaining the token, place it in `~/.one/one_auth` on the HPC-UGent Tier-2 login node (`login.hpc.ugent.be`) or on your local machine if you have installed OpenTofu and/or the One CLI.
 The file should be in this format (replace `vscxxx` with your username and `token` with your login token):
@@ -35,8 +37,10 @@ You can easily access and edit the files on the login node by going to the [HPC-
 
 You can also access the a shell session on one of the login nodes in the HPC-UGent Tier-2 web portal (under `Clusters` dropdown).
 :::
+
 ## Using the OpenTofu module
-You can connect via SSH to a HPC-UGent login node `login.hpc.ugent.be` to use
+
+If you haven't installed OpenTofu locally, you can connect via SSH to a HPC-UGent login node `login.hpc.ugent.be` to use
 OpenTofu. Login to the login node with your VSC account first:
 
 ```shell
@@ -51,19 +55,23 @@ Make sure to copy the `providers.tf` and the `main.tf` files into your project d
 On linux you can use this snippet:
 ```bash
 mkdir -p MyVSCCloudProject
-wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/simple-server/main.tf
-wget https://github.com/hpcugent/terraform-vsc-opennebula/blob/0.0.9/examples/simple-server/providers.tf
+cd MyVSCCloudProject
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.9/examples/simple-server/main.tf
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.9/examples/simple-server/providers.tf
 ```
 :::{tip}
 Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
 :::
+
 ## Basic VM configuration
+
 :::{tip}
 If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure to:
 1) [Install OpenTofu](https://opentofu.org/docs/intro/install/)
 2) {bdg-primary}`Optional` Install Opennebula client:
     1) [Add the repository for your linux distro](https://docs.opennebula.io/7.2/software/installation_process/frontend_installation/opennebula_repository_configuration_ce/)
     2) Install `opennebula-tools` with your package manager
+    3) Set the environment variable `export ONE_XMLRPC="https://cloudpr4.ugent.be:2633/RPC2"` to point the Opennebula client to the VSC Cloud infrastructure
 :::
 
 In the previous [section](#using-the-opentofu-module) we created a `MyVSCCloudProject` directory and copied some tofu files into it.
@@ -74,9 +82,10 @@ It consists of two **modules**. A module is convenient grouping of OpenTofu reso
 A module has a **source** and a **version**. The source points to the [VSC module on the OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest).
 The version determines the version of the module you are using. You can view the documentation specific to the version you're using on the OpenTofu registry.
 
-
 We need three things for our basic setup:
+
 ### The Router
+
 ```{tip}
 Full router module documentation can be found [here](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/submodule/router)
 ```
@@ -98,7 +107,9 @@ There can only be **one** regular router per Opennebula group, except an optiona
 If your router is deleted (via `tofu destroy`, for example) your **public IP address** might change.
 Avoid deleting your router(s), as we cannot manually assign/restore a specific IP to your project.
 :::
+
 #### Port Forwarding
+
 You can open ports with the port-forwards block:
 ```
   port_forwards = {
@@ -124,7 +135,9 @@ By default these will target the `access_vm`, but you can override `internal_ip`
 ```{warning}
 Changing the port-forwarding rules will re-create the router VMs, so there may be a network interruption when the changes are applied.
 ```
+
 ### The VM
+
 ```{tip}
 Full module documentation can be found [here](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/)
 ```
@@ -133,32 +146,32 @@ module "SimpleVM" {
   source     = "hpcugent/opennebula/vsc"
   version    = "0.0.9"
   vm_name    = "SimpleExample"
-  image_name = "Rocky 10"
+  image_name = "Rocky Linux 9"
   is_windows = false
   cpu           = 4
   memory        = 8 #Gib
   rootdisk_size = 30
 }
 ```
-This code will create a virtual machine with the `Rocky 10` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/).
-
-
+This code will create a virtual machine with the `Rocky Linux 9` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command (if you installed the Opennebula client locally) or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/) if you're using the HPC-UGent Tier-2 login nodes.
 
 ## Advanced configuration
+
 ### Windows
+
 ```{tip}
 We strongly encourage you to consider linux-based alternatives. Our support for Windows is more limited.
 ```
 Setting `is_windows = true` will configure the VM slightly differently for Windows images.
 
 ### Full documentation
+
 ```{warning}
 Be sure to match the version of the documentation/examples to the version of the module that you are using
 ```
 The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples) 
 
 You can also find documentation on all of the variables on the [OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest)
-
 
 ## Deploying your VM
 
@@ -170,7 +183,7 @@ If you haven't deployed anything yet, you must first initialize the modules.
 Move to your project directory first:
 
 ```shell
-cd ~/MyProject
+cd ~/MyVSCCloudProject
 ```
 Edit the file as necessary (change the VM name to something descriptive, for example.):
 ```shell
@@ -179,8 +192,6 @@ nano main.tf
 ```{tip}
 You can also edit the files through the [HPC-UGent Tier-2 web portal](https://login.hpc.ugent.be/pun/sys/dashboard/files/)
 ```
-
-
 
 Now you can run
 ```shell
@@ -247,26 +258,32 @@ Opentofu generates several files in this directory to keep track of any
 change in your infrastructure. If for some reason you lose these files, it will be very difficult to import them into a new OpenTofu configuration.
 :::
 
-
 ## Special considerations for multi-user workflows
+
 If multiple people need to interact with the project independently, there are some additional things to consider.
 Because only one (or two, with VSC access) router can exist per project, the management of the router instance needs to be centralized in some way.
 
 ### Tofu state
+
 OpenTofu uses a [statefile](https://opentofu.org/docs/v1.12/language/state/) to keep track of which resources have been created and their properties. This way, if you add another port forwarding to your router, OpenTofu knows which router to change and what changes to apply. This has the downside that anyone that needs to change the port forwarding rules, needs to have access to the statefile. The statefile may also contain sensitive information (like a password, in the case of a Windows VM), so it is important to keep this file secret. 
 
 ### Suggested workflows
+
 #### One tofu project for all users
+
 In this workflow, you share the tofu code and the statefile. You could do this on a shared filesystem, for example, if you are careful to avoid collisions (working on the files at the same time).
 A safer way to do this is with a [Remote Backend](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) or [Cloud provider](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/), that stores your backend remotely in a way that ensures no conflicts occur. This is often paired with git, to track changes to the code. There is a list of Remote state providers further down this article.
 :::{note}
 We recommend keeping your OpenTofu code in Git, but **do not put the statefile in a public repository**.
 :::
+
 #### One "router manager"
+
 Alternatively, if you do not wish to use a remote state, you could have one person responsible for managing the router and the port-forwarding.
 In that case, the "router manager" creates an OpenTofu project with just the router defintion. Other users in the team can then create VMs in their own local OpenTofu projects. The "router manager" will then have to add any port-forwardings to the router project, using the private IP address of the VMs created by other users in the team. 
 
 ### Remote State Providers
+
 These online services offer [Remote state](https://opentofu.org/docs/v1.12/language/state/remote/) storage.
 At the time of writing they offer free tiers. This list is non-exhaustive.
 You can also use self-hosted options, s3, a postgres db etc. See the [OpenTofu Docs](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) for more information.
@@ -277,17 +294,23 @@ Some of these should be configured with the [Cloud block](https://opentofu.org/d
 :::
 
 #### [Gitlab](https://docs.gitlab.com/user/infrastructure/iac/terraform_state/)
+
 Gitlab offers free tofu state management with their repositories. There are also [CI/CD Components](https://gitlab.com/components/opentofu) if you want to integrate CI/CD into your workflow.
+
 #### [HCP Terraform / Terraform Cloud](https://app.terraform.io/)
+
 Hashicorp offers a free tier up to 500 managed resources, which should be enough for an average usecase. You can find the documentation on their pricing/limits [Here](https://developer.hashicorp.com/terraform/cloud-docs/overview).
 :::{warning}
 Terraform Cloud does not officially support OpenTofu, so we recommend only using it as a state provider and to not use any of their automation features (set execution mode to `remote`).
 :::
+
 #### [Scalr](https://scalr.com/)
+
 Scalr also offers a free tier, limited to 50 runs per month (which can be avoided by setting the run mode to local).
 Scalr is also compatible with OpenTofu, so their additional features can be used.
 
 ## Further customization
+
 You can also use your own OpenTofu code to deploy your infrastructure.
 This task is out of the scope of this document, please refer to the official
 OpenTofu documentation to add you own changes
