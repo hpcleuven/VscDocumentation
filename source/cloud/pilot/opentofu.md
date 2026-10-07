@@ -16,7 +16,7 @@ If you are using OpenTofu on your local machine, the [VSCode Extension](https://
 
 ## Create credentials for OpenTofu
 
-Tofu requires a username and a login token to authenticate to the Opennebula API. Obtaining a login token is explained in: [application credentials](access.md#login-token).
+Tofu requires a username and a login token to authenticate to the OpenNebula API. Obtaining a login token is explained in: [application credentials](access.md#login-token).
 After obtaining the token, place it in `~/.one/one_auth` on the HPC-UGent Tier-2 login node (`login.hpc.ugent.be`) or on your local machine if you have installed OpenTofu and/or the One CLI.
 The file should be in this format (replace `vscxxx` with your username and `token` with your login token):
 ```
@@ -68,7 +68,7 @@ Make sure you have created the *`~/.one/one_auth`* file. (see previous [section]
 :::{tip}
 If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure to:
 1) [Install OpenTofu](https://opentofu.org/docs/intro/install/)
-2) {bdg-primary}`Optional` Install Opennebula client:
+2) {bdg-primary}`Optional` Install OpenNebula client:
     1) [Add the repository for your linux distro](https://docs.opennebula.io/7.2/software/installation_process/frontend_installation/opennebula_repository_configuration_ce/)
     2) Install `opennebula-tools` with your package manager
     3) Set the environment variable `export ONE_XMLRPC="https://cloudpr4.ugent.be:2633/RPC2"` to point the Opennebula client to the VSC Cloud infrastructure
@@ -101,7 +101,7 @@ This will provide network connectivity for all the VMs in your project.
 With the router, you can specify the **access VM**, being the VM exposed to the internet through SSH. It will also be the default target for [port forwarding rules](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest/submodule/router/inputs#port_forwards)
 
 ```{note}
-There can only be **one** regular router per Opennebula group, except an optional VSC router.
+There can only be **one** regular router per OpenNebula group, except an optional VSC router.
 ```
 :::{danger}
 If your router is deleted (via `tofu destroy`, for example) your **public IP address** might change.
@@ -153,7 +153,7 @@ module "SimpleVM" {
   rootdisk_size = 30
 }
 ```
-This code will create a virtual machine with the `Rocky Linux 9` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command (if you installed the Opennebula client locally) or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/) if you're using the HPC-UGent Tier-2 login nodes.
+This code will create a virtual machine with the `Rocky Linux 9` OS image provided by VSC Cloud. You can see which other images are available either with the `oneimage list` command (if you installed the OpenNebula client locally) or in the [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/) if you're using the HPC-UGent Tier-2 login nodes.
 
 ## Advanced configuration
 
