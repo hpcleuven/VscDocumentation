@@ -131,8 +131,8 @@ Additional site-specific constraints are listed below.
       you only need to set up a suitable SSH tunnel with for example
       :ref:`OpenSSH <tunnel OpenSSH>` or :ref:`PuTTY <putty ssh tunnel>`.
 
-      Some applications may produce static HTML files instead (example:
-      LinaroForge). Other than simply transferring these files to your local
+      Some applications may produce static HTML files instead.
+      Other than simply transferring these files to your local
       device, you can also view these by starting a local HTTP server and
       applying the SSH tunnel approach described in the previous paragraph.
       An easy way to start such a server is the Python ``http`` module
