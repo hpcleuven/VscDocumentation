@@ -1,5 +1,7 @@
 # Accessing VMs
+
 ## SSH key pairs
+
 When a VM is instantiated, OpenNebula will inject any SSH keys associated with your user.
 These keys will be synced to your OpenNebula user from the [VSC account page](https://account.vscentrum.be).
 You may also add keys to OpenNebula manually in the [user settings](https://cloudpr4.ugent.be/fireedge/sunstone/settings) of the VSC Cloud Dashboard.
@@ -11,6 +13,7 @@ The SSH keys are injected **only** when the VM is created. Adding or removing a 
 :::
 
 ## Windows
+
 UGent Firewall blocks RDP connections for security reasons. 
 You can however, connect to our Windows image with SSH. The [Tofu module](./opentofu.md) will give you the credentials.
 

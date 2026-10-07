@@ -20,6 +20,7 @@ Your custom image must include the OpenNebula [contextualization packages](https
 ## Uploading images
 
 ### Uploading
+
 1) Go to [VSC Cloud Dashboard](https://cloudpr4.ugent.be/fireedge/sunstone/image/create).
 2) Fill in the name, description, **Turn off** "make persistant".
 3) Click "upload" and select the image file on your filesystem (you can also enter a direct download URL).
@@ -29,5 +30,6 @@ Your custom image must include the OpenNebula [contextualization packages](https
 7) Click "Finish".
 
 ### Setting permissions
+
 After uploading, you will see the images overview.
 By default an image can only be used by the user that created it. You can change this by clicking on the image and going to the "info" tab. You likely want to allow your group to "use" the image.
