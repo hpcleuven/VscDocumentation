@@ -29,6 +29,34 @@ This action does not remove any data from Tier-1 Data.
   Avoid modifying the same file simultaneously from different devices.
 
 
+Limitations
+-----------
+
+.. warning::
+    Syncing a very large number of files (e.g. one million) may impact your device performance.
+    Before configuring ownCloud, consider the amount of files in your Tier-1 Data project
+    and whether ownCloud provides effective interaction for the entire Tier-1 Data project.
+
+ownCloud does not support viewing or managing Tier-1 Data metadata or permissions.
+To use these core Tier-1 Data features, other clients are more suitable, e.g. :ref:`ManGO portal<mango-portal>`.
+
+For copying large datasets within Tier-1 Data, using a different client (like iron, iCommands, sftp or PRC)
+is more efficient and less resource-intensive than performing the operation through ownCloud.
+Note that copying data via ownCloud will trigger a download of the original data to the local device,
+and then an upload of the copied data, while both original and copy will be kept on device.
+Likewise, for uploading large datasets for the first time, other clients, such as Globus, are more suitable.
+
+In terms of filename length, limits of the operating system apply for files created via the file explorer or finder,
+(e.g. 260 characters in Windows).
+It is possible to sync and download Tier-1 Data data objects with longer names.
+However, it is best to avoid names that are too long. Refer to RDM guidance on naming practices,
+e.g. `at this page <https://www.kuleuven.be/rdm/en/guidance/data-standards/file-organisation#naming>`_.
+
+For macOS and Linux, the version of ownCloud we currently offer does not support virtual files.
+As a result, the ownCloud client attempts to download the entire file tree the user selected to synchronize to local storage on the user's device.
+Virtual file support for macOS and Linux is available as experimental feature in version 7.1.0. However, this version is not yet supported by our server implementation.
+
+
 Installation
 ------------
 
@@ -64,8 +92,8 @@ Note that if you configure more than one account, you are directed to this step 
 continue to the application". After you get a "Login Successful", you can close the browser window.
 
 3. At the ownCloud application, the message "You're all set!" is displayed.
-If you have one Tier-1 Data project with limited number of files (e.g. few thousands) and you wish to sync all files via ownCloud,
-click on "Finish". Alternatively, opt for additional configuration via the next steps.
+**If you have one Tier-1 Data project with limited number of files (e.g. few thousands) and you wish to sync all files via ownCloud,
+click on "Finish". Alternatively, opt for additional configuration via the next steps.**
 
 If you already clicked on "Finish" but prefer to carry on with additional configuration,
 remove the folder from the application by clicking on the three dots next to the folder in your account view,
@@ -89,6 +117,7 @@ Then, click on "Finish" to go to the next steps.
 5. Pick a local folder on your computer to sync.
 For the first time, this defaults to the ownCloud folder created under your user account, e.g. C:\\Users\\<account>\\ownCloud.
 For additional configured connections, a suffix (2), (3), etc is added by default.
+You may want to configure multiple ownCloud connections and group these into one overarching folder under C:\\Users\\<account>.
 To choose another name for the folder, first create an empty folder under your user account,
 then select the existing folder. Click "Finish".
 
@@ -132,33 +161,6 @@ We recommend keeping the setting "Start on Login" enabled.
 When logged out, an ownCloud notification pops up.
 Pop-up notifications are also enabled by default, via "Settings" and the checkbox "Show Desktop Notifications".
 The notifications are used for other announcements as well, such as new uploads from other users on shared collections.
-
-
-Limitations
------------
-
-ownCloud does not support viewing or managing Tier-1 Data metadata or permissions.
-To use these core Tier-1 Data features, other clients are more suitable, e.g. :ref:`ManGO portal<mango-portal>`.
-
-For copying large datasets within Tier-1 Data, using a different client (like iron, iCommands, sftp or PRC)
-is more efficient and less resource-intensive than performing the operation through ownCloud.
-Note that copying data via ownCloud will trigger a download of the original data to the local device,
-and then an upload of the copied data, while both original and copy will be kept on device.
-Likewise, for uploading large datasets for the first time, other clients, such as Globus, are more suitable.
-
-In terms of filename length, limits of the operating system apply for files created via the file explorer or finder,
-(e.g. 260 characters in Windows).
-It is possible to sync and download Tier-1 Data data objects with longer names.
-However, it is best to avoid names that are too long. Refer to RDM guidance on naming practices,
-e.g. `at this page <https://www.kuleuven.be/rdm/en/guidance/data-standards/file-organisation#naming>`_.
-
-Syncing a very large number of files (e.g. one million) may impact your device performance.
-Before configuring ownCloud, consider the amount of files in your Tier-1 Data project
-and whether ownCloud provides effective interaction for the entire Tier-1 Data project.
-
-For macOS and Linux, the version of ownCloud we currently offer does not support virtual files.
-As a result, the ownCloud client attempts to download the entire file tree the user selected to synchronize to local storage on the user's device.
-Virtual file support for macOS and Linux is available as experimental feature in version 7.1.0. However, this version is not yet supported by our server implementation.
 
 
 Troubleshooting
