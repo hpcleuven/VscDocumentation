@@ -20,7 +20,7 @@ the outside world.
 :::
 
 ## Firewall
-In the previous cloud, OpenStack offered security groups. These are not supported with our new networking model in Opennebula.
+In the previous cloud, OpenStack offered security groups. These are not supported with our new networking model in OpenNebula.
 Your VMs will thus not be firewalled from each other, and you may have to configure a firewall on OS level.
 Of course, your VM is isolated from other projects and the internet, except for any port-forwarding you configure.
 
