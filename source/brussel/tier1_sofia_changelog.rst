@@ -4,17 +4,24 @@
 Tier-1 sofia changelog
 ######################
 
-2026-09-16
+2026-10-01
 ----------
 * Roll-out of core system upgrades to all compute and login nodes. This
   update includes Linux kernel version 5.14.0-687.42.1.el9_8, GPFS storage
   driver version 5.2.3.9, DOCA-OFED network driver version 3.5.0 and NVIDIA GPU
   driver version 610.57.04.
 
+2026-09-16
+----------
+* IOMMU pass-through enabled on zen5-dense and zen5-himem nodes for improved
+  MPI performance.
+* Added specific QoS for zen5-vis to limit user allocation of resources on the
+  visualization nodes.
+
 2026-09-07
 ----------
 * Slurm updated to version 25.11.8.
-* Enabled GPU support for EESSI.
+* Enabled support for GDR Copy on all GPU nodes.
 
 2026-08-12
 ----------
