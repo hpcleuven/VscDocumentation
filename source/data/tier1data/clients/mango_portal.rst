@@ -68,8 +68,8 @@ for inspection and management of metadata and permissions respectively.
 Uploading and downloading data
 ******************************
 
-Uploading and downloading data
-==============================
+Uploading and downloading files
+================================
 
 Clicking on 'Upload files...' opens a white box, where you can put one or multiple files to be uploaded to the current collection:
 
@@ -107,8 +107,99 @@ The data objects will be downloaded together as a tar file.
 A tar file is similar to a Zip folder, and can be extracted with a program like `7-Zip <https://www.7-zip.org/>`_ on Windows, or with the command `tar -xf <filename>` on Linux.
 
 Uploads and downloads via the ManGO portal are limited to 5GB and 50GB per file respectively.
-While it is possible to upload/download multiple files at once, it isn't possible to upload a folder or download a collection as a whole at the moment. 
 If you want to transfer larger amounts of data via a graphical interface, you can use the :ref:`globus platform`.
+
+
+Uploading and downloading folders
+==================================
+
+
+It is possible to upload a folder and its contents, including sub-folders, from you local device to ManGO. To start the process, navigate to where you want to upload the folder and click on 'Upload folder...' button.
+
+.. image:: ../images/mango_portal/mango_portal_folder_upload.png
+  :width: 800
+  :alt: ManGO folder upload 
+
+This opens a pop-up that allows you to choose a folder and monitor the upload process. By clicking on 'Choose files' you can 
+choose a folder on your local device.
+
+.. image:: ../images/mango_portal/mango_portal_folder_upload_choose_files.png
+  :width: 800
+  :alt: ManGO folder upload choose file
+
+
+Navigate to the folder you want to upload and click on upload. The contents of the folder will be listed in the pop-up. 
+This also includes all the sub-folders of the folder you have selected. The structure of the folder will be replicated in ManGO. 
+Consider the following folder structure: 
+
+.. code-block::
+
+      example_folder
+      ├── sub_folder_1
+      │   ├── sub_folder_2
+      │   │   ├── file5.txt
+      │   │   └── file6.txt
+      │   ├── file3.txt
+      │   └── file4.txt
+      ├── file1.txt
+      └── file2.txt
+
+
+This will be displayed in the pop-up follows:
+
+
+.. code-block::
+
+      example_folder/file1.txt
+      example_folder/file2.txt
+      example_folder/sub_folder_1
+      example_folder/sub_folder_1/file3.txt
+      example_folder/sub_folder_1/file4.txt
+      example_folder/sub_folder_1/sub_folder_2/file5.txt
+      example_folder/sub_folder_1/sub_folder_2/file6.txt
+
+
+.. image:: ../images/mango_portal/mango_portal_folder_upload_overview.png
+  :width: 800
+  :alt: ManGO folder upload file overview
+
+You now have an overview of the files you want to upload. Before uploading you can inspect a number of parameters and make necessary changes:
+
+- The number of files is indicated at the top
+- You can remove individual files from the list by pressing the red trash-button next to the file. 
+- The sum of all the file sizes is indicated at the bottom of the pop-up 
+
+
+If you are satisfied with the selection click 'Upload files' to start the upload process. Remember that if you upload a path that already exists 
+this will overwrite, and effectively remove, the pre-existing file.  
+
+Before uploading please consider the following file size limitations:
+
+- Maximum size individual file: 500MB
+- Maximum size all files: 5GB
+
+Files that exceed 500MB will be automatically skipped. A list of the skipped files is provided at the top of the pop-up.  
+If you want to transfer larger amounts of data via a graphical interface, we recommend :ref:`globus platform`.
+
+For a large number of files and/or bigger files, the upload may take a while. Do not close the page in the meantime or the upload will be interrupted.
+
+.. image:: ../images/mango_portal/mango_portal_folder_upload_success.png
+  :width: 800
+  :alt: ManGO folder upload success
+
+If a file is uploaded successfully a green checkmark is shown, if something went wrong a red cross is shown. Once all the files have been uploaded successfully you can click on 
+the 'Close and Refresh page' button. The folder should now be visible. You can also use the 'X' button at the top of the page but then you still need to refresh the page manually before the uploaded folder is visible.
+
+Besides the file limits mentioned there are two general exceptions that should be taken into account when using the folder upload: 
+
+- Hidden files: hidden files will be uploaded as well. They will be listed in the pop-up. Files that are not listed in the pop-up are not uploaded.
+- Symbolic links (symlinks): symbolic links are not suitable for uploading. 
+
+
+Downloading a folder and it contents is for the moment not possible using the ManGO Portal. This is possible using other clients such as  :ref:`iron<iron-CLI>` or :ref:`icommands<icommands>`. 
+
+
+
 
 .. _edit-permissions:
 
