@@ -308,6 +308,8 @@ project via the `VSC hub <https://hub.vscentrum.be>`__.
 #. Click **Add** and select either **Member**, if the user has already
    logged in to the VSC hub before, or **Invite by email**, if the user has
    never logged in there yet.
+#. Once the new member is added, it may take up to an hour before their access
+   to **sofia** is finalized.
 
 .. warning::
 
@@ -452,6 +454,22 @@ directives in job scripts are ignored.
 
 Users must specify one of the available :ref:`partitions <sofia_hardware>` when submitting jobs.
 Loading a ``cluster`` module is not required.
+
+Zen5_vis partition
+------------------
+
+The ``zen5_vis`` partition is intended for visualisation, light interactive or debug work.
+Specifying a Slurm account is not needed for jobs on this partition.
+(The default account named ``vsc`` will be used.)
+
+Running jobs in this partition will **not** consume credits. Instead, special limits apply.
+A single user will be able to use **at most**:
+
+* 1 GPU and
+* 32 CPU cores
+
+across all their concurrent jobs on this partition. If a new job would exceed those limits,
+it is held in queue with reason ``QOSMaxCpuPerUserLimit`` or ``QOSMaxGRESPerUser``.
 
 .. _sofia_job_environment:
 
