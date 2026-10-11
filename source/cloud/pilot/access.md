@@ -158,7 +158,7 @@ VSC Cloud Dashboard.
 (login-token)=
 ### Login token
 
-If you want to use the OpenNebula CLI (one), or interact with its API (with [OpenTofu](./opentofu.md), for example) you need a "Login token".
+If you want to interact with the OpenNebula API (with [OpenTofu](./opentofu.md), for example), or if you want to use the OpenNebula CLI (one), you need a "Login token".
 To obtain a Login token, follow these steps:
 
 1) Log in on [cloudpr4.ugent.be](https://cloudpr4.ugent.be/)
