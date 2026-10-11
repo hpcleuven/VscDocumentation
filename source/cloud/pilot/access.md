@@ -110,7 +110,7 @@ Users who simply need access to an existing virtual machine do not need to inter
 
 The OpenTofu CLI can be installed locally (recommended) but is also available on the HPC-UGent Tier-2 login nodes at `login.hpc.ugent.be`. More details can be found in the [section on OpenTofu](opentofu.md).
 
-**Optional**: Advanced users can also interact directly with OpenNebula using the `one` command line interface (CLI), which needs to be installed locally. More information can be found in the section on [Creating VMs](opentofu.md#basic-vm-configuration).
+**Optional**: Advanced users can also interact directly with OpenNebula using the `one` command line interface (CLI), which needs to be installed locally. More information can be found in the sections on [Creating VMs](opentofu.md#basic-vm-configuration) and [Advanced usage](advanced_usage.md).
 
 ### Managing project membership
 
