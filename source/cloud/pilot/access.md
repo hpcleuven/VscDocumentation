@@ -8,13 +8,13 @@ In order to use the cloud services:
 
 - you need an active VSC account and
 - you must accept the invitation to the Tier-1 Cloud project in VSC hub and
-- your account must be a member of one or more OpenNebula groups
+- your account must be a member of one or more Tier-1 Cloud groups in VSC hub
 
 New users can obtain a VSC account by following [the procedure described
 here](/accounts/vsc_account.rst).
 
 Once you have a VSC account, contact us via <cloud@vscentrum.be> if you want to start a new
- OpenNebula project, or join an existing one.
+ Tier-1 Cloud project, or join an existing one.
 
 ## Components of the VSC Cloud
 
