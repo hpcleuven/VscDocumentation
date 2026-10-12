@@ -104,7 +104,7 @@ You can interact with the VSC Cloud in several ways:
 
 You can log in to the VSC hub, as well as the VSC Cloud Dashboard using your VSC account using your home institution’s single sign-on system.
 
-To access the OpenNebula CLI or to use OpenTofu, you will need a login token, as explained in the section on [login token](#login-token).
+To access the OpenNebula CLI or to use OpenTofu, you will need a login token, as explained in the section {ref}`opennebula-login-token`.
 Such a login token is only required for users who need to manage cloud resources. 
 Users who simply need access to an existing virtual machine do not need to interact with OpenNebula or OpenTofu themselves.
 
@@ -155,7 +155,7 @@ group in OpenNebula, will be able to log into the VSC Cloud Dashboard.
 The following chapters explain how to accomplish basic tasks using the
 VSC Cloud Dashboard.
 
-(login-token)=
+(opennebula-login-token)=
 ### Login token
 
 If you want to interact with the OpenNebula API (with [OpenTofu](./opentofu.md), for example), or if you want to use the OpenNebula CLI (one), you need a "Login token".

@@ -16,7 +16,7 @@ If you are using OpenTofu on your local machine, the [VSCode Extension](https://
 
 ## Create credentials for OpenTofu
 
-Tofu requires a username and a login token to authenticate to the OpenNebula API. Obtaining a login token is explained in: [application credentials](access.md#login-token).
+Tofu requires a username and a login token to authenticate to the OpenNebula API. Obtaining a login token is explained in {ref}`opennebula-login-token`.
 After obtaining the token, place it in `~/.one/one_auth` on the HPC-UGent Tier-2 login node (`login.hpc.ugent.be`) or on your local machine if you have installed OpenTofu and/or the One CLI.
 The file should be in this format (replace `vscxxx` with your username and `token` with your login token):
 ```
