@@ -456,7 +456,7 @@ Users must specify one of the available :ref:`partitions <sofia_hardware>` when 
 Loading a ``cluster`` module is not required.
 
 The ``zen5_vis`` partition
-------------------
+--------------------------
 
 The ``zen5_vis`` partition is intended for visualisation, light interactive or debug work.
 Specifying a Slurm account is not needed for jobs on this partition.
@@ -469,7 +469,8 @@ A single user will be able to use **at most**:
 * 32 CPU cores
 
 across all their concurrent jobs on this partition. If a new job would exceed those limits,
-it is held in queue with reason ``QOSMaxCpuPerUserLimit`` or ``QOSMaxGRESPerUser``.
+it is held in queue with reason ``QOSMaxCpuPerUserLimit`` or ``QOSMaxGRESPerUser``. Admins
+will intervene on any abuse of the ``zen5_vis`` partition.
 
 .. _sofia_job_environment:
 
