@@ -118,7 +118,7 @@ When you are added to a Tier-1 Cloud project, you will receive an automatically 
 from the VSC hub.
 
 :::{note}
-Invitation emails from the VSC hub originate from **eurocc@etais.ee**. If you do not see 
+Invitation emails from the VSC hub originate from **support@vscentrum.be**. If you do not see 
 the invitation, please check your spam folder.
 :::
 
