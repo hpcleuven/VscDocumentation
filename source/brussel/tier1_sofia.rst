@@ -455,7 +455,7 @@ directives in job scripts are ignored.
 Users must specify one of the available :ref:`partitions <sofia_hardware>` when submitting jobs.
 Loading a ``cluster`` module is not required.
 
-Zen5_vis partition
+The ``zen5_vis`` partition
 ------------------
 
 The ``zen5_vis`` partition is intended for visualisation, light interactive or debug work.
