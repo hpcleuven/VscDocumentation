@@ -32,14 +32,6 @@ on the VSC clusters.
    command results in ``ls: cannot access '/cvmfs/software.eessi.io': No such file or directory``,
    this means EESSI is not supported.
 
-.. tab-set::
-   :sync-group: vsc-sites
-
-   .. tab-item:: UAntwerpen
-      :sync: ua
-
-      EESSI is currently not (yet) available on the UAntwerpen clusters.
-
 Althought EESSI is typically installed on all nodes of participating VSC clusters,
 the modules for the software provided by EESSI are not available by default, and some commands need to be
 run to set up EESSI in your session. Also note that modules from EESSI are not
@@ -95,6 +87,12 @@ are executed.
          module load cluster/wice/batch
 
       or simply start a new session on the cluster.
+
+   .. tab-item:: UAntwerpen
+      :sync: ua
+
+      If for any reason you want to switch back to locally installed modules, 
+      simply start a new session on the cluster.
 
    .. tab-item:: UGent
       :sync: ug
