@@ -111,10 +111,10 @@ If you want to transfer larger amounts of data via a graphical interface, you ca
 
 
 Uploading and downloading folders
-==================================
+=================================
 
 
-It is possible to upload a folder and its contents, including sub-folders, from you local device to ManGO. To start the process, navigate to where you want to upload the folder and click on 'Upload folder...' button.
+It is possible to upload a folder and its contents, including sub-folders, from you local device to Tier-1 Data. To start the process, navigate to where you want to upload the folder and click on the 'Upload folder...' button.
 
 .. image:: ../images/mango_portal/mango_portal_folder_upload.png
   :width: 800
@@ -129,7 +129,7 @@ choose a folder on your local device.
 
 
 Navigate to the folder you want to upload and click on upload. The contents of the folder will be listed in the pop-up. 
-This also includes all the sub-folders of the folder you have selected. The structure of the folder will be replicated in ManGO. 
+This also includes all the sub-folders of the folder you have selected. The structure of the folder will be replicated in Tier-1 Data. 
 Consider the following folder structure: 
 
 .. code-block::
@@ -145,7 +145,7 @@ Consider the following folder structure:
       └── file2.txt
 
 
-This will be displayed in the pop-up follows:
+This will be displayed in the pop-up as follows:
 
 
 .. code-block::
