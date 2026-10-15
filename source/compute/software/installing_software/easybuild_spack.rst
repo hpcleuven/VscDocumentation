@@ -38,9 +38,14 @@ installing it yourself, you can make it available with:
 
 .. code-block:: bash
 
-   module load EasyBuild/5.2.1
+   module load EasyBuild
 
-It is recommended to use a recent EasyBuild version.
+.. note::
+
+   The version of the EasyBuild module is not specified, so the default version
+   is loaded which is normally a recent version that might include important
+   bug fixes. The EasyBuild module is considered an exception, for most other
+   modules we recommend to specify the version explicitly.
 
 If you prefer to install EasyBuild yourself, use:
 
