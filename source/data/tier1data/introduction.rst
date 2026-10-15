@@ -41,9 +41,8 @@ Tier-1 Data provides four core competencies:
    Tier-1 Data has a a Python API and a command-line interface, which can be integrated easily into your existing code and jobscripts.
    This way, you can easily integrate data movement and data management actions in your existing HPC workflow. 
 
-   Tier-1 Data's servers also have event triggers called Policy Enforcement Points (PEPs), which are triggered every time a certain type of action happens (e.g. a user uploads a file).
-   Administrators can define processes that run each time one of these PEPs is triggered. This allows us to work together with users and 
-   create powerful, automated workflows that help to save time and prevent human errors.
+   On the other hand, Tier-1 Data's administrators can also implement server-side automation to automatically trigger actions and workflows when specific events occur or at regular times.
+   This can help save time, improve consistency, and reduce human errors.  
 
 -  **Secure Collaboration**
 
