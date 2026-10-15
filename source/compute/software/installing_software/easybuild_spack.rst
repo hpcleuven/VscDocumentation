@@ -33,7 +33,7 @@ including the Tier-2 and Tier-1 clusters of the VSC, and various `EuroHPC JU <ht
 Installing EasyBuild
 ~~~~~~~~~~~~~~~~~~~~
 
-On VSC clusters, ``EasyBuild`` is available as a module so instead of
+On VSC clusters, ``EasyBuild`` is available as a module. Instead of
 installing it yourself, you can make it available with:
 
 .. code-block:: bash
@@ -42,10 +42,13 @@ installing it yourself, you can make it available with:
 
 .. note::
 
-   The version of the EasyBuild module is not specified, so the default version
-   is loaded which is normally a recent version that might include important
-   bug fixes. The EasyBuild module is considered an exception, for most other
-   modules we recommend to specify the version explicitly.
+   No EasyBuild version is specified here, so the default version is loaded.
+   This is normally a recent version that might include important bug fixes, so
+   using the default version is recommended in most cases. For existing
+   projects, however, you should continue using the same (major) version to
+   avoid backward-incompatible changes. EasyBuild is an exception to the
+   general recommendation for modules: for most other modules we recommend
+   specifying the version explicitly.
 
 If you prefer to install EasyBuild yourself, use:
 
