@@ -21,8 +21,9 @@ Login to Open OnDemand
    .. tab-item:: KU Leuven/UHasselt
       :sync: kuluh
 
-      Users from all VSC sites can access the Open OnDemand portal at KU
-      Leuven site. For that, proceed to the
+      Users from all VSC sites can access the Open OnDemand portal at the KU
+      Leuven site using multi-factor authentication (MFA), without requiring
+      any additional setup or special action. For that, proceed to the
       :ref:`Open OnDemand portal <ood>`. If you are affiliated with KU
       Leuven, click on the KU Leuven logo. Otherwise, click on the VSC
       logo to choose your institute. You will then be forwarded to the
@@ -33,7 +34,9 @@ Login to Open OnDemand
    .. tab-item:: VUB
       :sync: vub
 
-      Users from all VSC sites can access the VUB Open OnDemand portal.
+      Users from all VSC sites can access the VUB Open OnDemand portal
+      using multi-factor authentication (MFA), without requiring any
+      additional setup or special action.
       For that, proceed to the :ref:`Open OnDemand portal <ood>`.
       Select your institute from the dropdown menu. You will then be
       forwarded to the Identity Provider (IdP) of your institute to
@@ -45,18 +48,27 @@ Login to Open OnDemand
 Obtaining an SSH certificate
 ----------------------------
 
+An SSH certificate is a short-lived credential that allows SSH-based client
+tools, such as ``ssh``, ``scp``, ``sftp``, and tools that use SSH internally, to
+authenticate to the VSC HPC clusters. Obtaining an SSH certificate requires
+multi-factor authentication (MFA), but MFA is only required when the
+certificate is issued or renewed. While the certificate remains valid, it can
+be reused for multiple SSH connections without repeating the MFA procedure.
+SSH certificates replace the previously used long-lived public/private SSH key
+pairs as the credential used for authentication to the VSC HPC clusters.
+
+.. warning:: |VUB| We recommend that all users switch to SSH certificates from
+   now on. The current login method using private/public SSH key pairs will be
+   disabled on **1 March 2027**.  If you use special or automated workflows,
+   please test certificate-based access as soon as possible. If it does not
+   work for your use case, contact us at hpc@vub.be so we can help.
+
 .. note::
 
    Additional access restrictions (for instance when connecting from abroad
    or from a non-managed laptop) may apply, which require that you first
    authorize your connection on the `VSC Firewall`_. See
    :ref:`this page <location_access_restrictions>` for more information.
-
-Using an :ref:`ssh agent` allows to store so-called SSH certificates which then
-are made available to any other client program needing to use that same connection.
-Getting an SSH certificate involves MFA but this only needs to be performed
-once since a certificate can be used multiple times as long as it remains valid.
-Agentless options are possible in some cases, see the certificate methods below.
 
 There are two ways to acquire such an SSH certificate:
 
@@ -73,6 +85,7 @@ There are two ways to acquire such an SSH certificate:
       :columns: 12 12 6 6
       :link: mfa_login_firewall
       :link-type: doc
+      :class-card: border-info border-5
 
       Works with any SSH client, including PuTTY and MobaXterm.
 
@@ -80,6 +93,7 @@ There are two ways to acquire such an SSH certificate:
       :columns: 12 12 6 6
       :link: mfa_login_smallstep
       :link-type: doc
+      :class-card: border-info border-5
 
       Uses the ``step`` CLI. On Windows, only works from PowerShell or the
       Command Prompt, not from GUI clients such as PuTTY and MobaXterm.
@@ -105,8 +119,11 @@ VSC clusters that accept these certificates:
 
        * Tier-1 :ref:`sofia <sofia cluster>`
 
+An :ref:`ssh agent` can store the certificate and make it available to these
+client programs automatically. In some cases, agentless alternatives are also
+available; see the certificate-based methods below.
 
-Once you have a certificate loaded into your agent, it can be used as long
+Once you have a certificate loaded into your SSH agent, it can be used as long
 as the agent remains alive and the certificate itself has not expired (they
 have a lifetime of 16 hours). Do not forget to set up your client so that
 it contacts your SSH agent when opening new connections (thereby making use
