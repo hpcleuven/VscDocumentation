@@ -50,17 +50,20 @@ ssh -A vscxxxxx@login.hpc.ugent.be
 It is important to forward your ssh agent with `-A` when SSH-ing to the login node.
 :::
 
-You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples) as a starting point.
+You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.11/examples) as a starting point.
 Make sure to copy the `providers.tf` and the `main.tf` files into your project directory.
 On linux you can use this snippet:
 ```bash
 mkdir -p MyVSCCloudProject
 cd MyVSCCloudProject
-wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.9/examples/simple-server/main.tf
-wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.9/examples/simple-server/providers.tf
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.11/examples/simple-server/main.tf
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.11/examples/simple-server/providers.tf
 ```
 :::{tip}
 Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
+:::
+:::{warning}
+It is not possible to use a different `one_auth` filepath at the moment. If you need multiple credentials, we recommend using a symbolic link to switch between them.
 :::
 
 ## Basic VM configuration
@@ -75,7 +78,7 @@ If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure
 :::
 
 In the previous [section](#using-the-opentofu-module) we created a `MyVSCCloudProject` directory and copied some tofu files into it.
-Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples/simple-server) example's `main.tf`.
+Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.11/examples/simple-server) example's `main.tf`.
 
 This file contains the most basic configuration for a virtual machine.
 It consists of two **modules**. A module is convenient grouping of OpenTofu resources. 
@@ -92,7 +95,7 @@ Full router module documentation can be found [here](https://search.opentofu.org
 ```
 module "router" {
   source  = "hpcugent/opennebula/vsc//modules/router"
-  version = "0.0.9"
+  version = "0.0.11"
   # VM Which we can ssh to by default
   access_vm = module.SimpleVM.router_access
 }
@@ -144,7 +147,7 @@ Full module documentation can be found [here](https://search.opentofu.org/module
 ```
 module "SimpleVM" {
   source     = "hpcugent/opennebula/vsc"
-  version    = "0.0.9"
+  version    = "0.0.11"
   vm_name    = "SimpleExample"
   image_name = "Rocky Linux 9"
   is_windows = false
@@ -169,7 +172,7 @@ Setting `is_windows = true` will configure the VM slightly differently for Windo
 ```{warning}
 Be sure to match the version of the documentation/examples to the version of the module that you are using
 ```
-The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.9/examples) 
+The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.11/examples) 
 
 You can also find documentation on all of the variables on the [OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest)
 
@@ -289,9 +292,6 @@ At the time of writing they offer free tiers. This list is non-exhaustive.
 You can also use self-hosted options, s3, a postgres db etc. See the [OpenTofu Docs](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/) for more information.
 
 Some of these should be configured with the [Cloud block](https://opentofu.org/docs/v1.12/language/settings/tf-cloud/) and others with the [Backend block](https://opentofu.org/docs/v1.12/language/settings/backends/configuration/).
-:::{Note}
-(WIP) Of these I've only tested Gitlab so far.
-:::
 
 #### [Gitlab](https://docs.gitlab.com/user/infrastructure/iac/terraform_state/)
 
@@ -309,6 +309,71 @@ Terraform Cloud does not officially support OpenTofu, so we recommend only using
 Scalr also offers a free tier, limited to 50 runs per month (which can be avoided by setting the run mode to local).
 Scalr is also compatible with OpenTofu, so their additional features can be used.
 
+
+## Known Issues
+### Exceeding quota stops the VM
+Changing the VM RAM/CPU to a value that exceeds your quota will stop the VM.
+First, set the quota back to a value that will not exceed your quota.
+Then, it can be resumed by going to Instances > VMs > VM Actions > Resume. 
+### Changing the VM Image
+Changing the VM image on the fly may fail if you do not have spare quota (It needs to create a new VM before destroying the old one).
+Follow these steps:
+1) Comment out the VM definition and anywhere else where it is refrenced (Like `access_vm` in the router, and the `output` block).
+2) Run `tofu apply`
+3) Uncomment the previously commented-out sections
+4) Run `tofu apply` again
+This will destroy the VM and attached disks, but not the router, so your public IP will remain intact. 
+### Disks
+:::{warning}
+There are currently quite a few issues with disk management. We recommend not attaching any extra disks at this time.
+:::
+Due to missing functionality in the OpenTofu provider, the following actions are not supported and need manual action.
+#### Specifying the size of the root disk
+OpenTofu cannot resize the root disk. Tofu will warn you about this until it is resolved:
+```
+╷
+│ Warning: Check block assertion failed
+│ 
+│   on ../vsc-opennebula/disk_resize.tf line 3, in check "disk_resize":
+│    3:     condition     = opennebula_virtual_machine.main.disk[0].computed_size == local.rootdisk_size
+│     ├────────────────
+│     │ local.rootdisk_size is 40960
+│     │ opennebula_virtual_machine.main.disk[0].computed_size is 10240
+│     ├────────────────
+│     │ Diff: 
+│     │     10240 -> 40960
+│ 
+│ Disk 0 is 10240 MiB, expected 40960. Resize the disk via the dashboard or with: `onevm disk-resize 939 0 40960`
+```
+You can resolve this by either executing the opentofu command (locally, or on a VSC Login node) or in the VSC Cloud Dashboard.
+To resize it in the dashboard, navigate to Instances > VMs > (your VM) > Storage. Then, click the 3 dots next to the disk and click "resize". The resize option will take effect immediately.
+#### Specifying the size of extra "image" disks
+If you specify:
+```
+disks {
+  "imageDisk" = {
+    image_id = 0
+  }
+}
+```
+The disk will be the exact size of the image. To resize it, see the procedure above.
+#### Resizing extra disks
+You can choose the size of an extra disk when you first create the VM, but further resizing will be ignored. It can be resized manually with the same procedure that is used to resize the root disk.
+
+#### Adding/removing disks after creation
+Once the VM is created, disks that are removed from the tofu configuration will not be removed.
+Trying to detach it manually also fails. 
+Attached disks will similarly also be ignored, but they can be attached manually through the dashboard or the CLI.
+
+## Pitfalls
+### Start script
+The `start_script` variable allows you to specify a script that will run **every time** the VM boots:
+```
+start_script=file("./my_script.sh")
+```
+This is different from Openstack, where it would run only once. 
+It is advisable to implement a marker file that will prevent the script from running more than once.
+This script will _also_ run immediately when it is changed by OpenTofu. 
 ## Further customization
 
 You can also use your own OpenTofu code to deploy your infrastructure.
