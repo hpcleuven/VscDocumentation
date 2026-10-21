@@ -171,7 +171,7 @@ To obtain a Login token, follow these steps:
 
 :::{tip}
 We recommend an expiration time of `31557600` seconds, which is roughly a year.
-The maximum expiration time is `2147483647`. 
+The maximum expiration time is `2147483647` seconds. 
 :::
 
 The token will now appear on this page until it has expired. Proceed with [instructions on where to store the token](./opentofu.md#create-credentials-for-opentofu).

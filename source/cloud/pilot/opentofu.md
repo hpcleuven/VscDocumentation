@@ -312,15 +312,15 @@ Scalr is also compatible with OpenTofu, so their additional features can be used
 
 ## Known Issues
 ### Exceeding quota stops the VM
-Changing the VM RAM/CPU to a value that exceeds your quota will stop the VM.
-First, set the quota back to a value that will not exceed your quota.
-Then, it can be resumed by going to Instances > VMs > VM Actions > Resume. 
+Changing the VM RAM/CPU in `main.tf` to a value that exceeds your quota will result in an error after `tofu apply`. It will also stop the VM and set it to a POWEROFF state.
+If this happens, first set the quota for the VM in `main.tf` back to the original values.
+Then, resume the VM in the [VSC Cloud dashboard](https://cloudpr4.ugent.be/) by going to Instances > VMs > (your VM) > VM Actions > Resume.
 ### Changing the VM Image
 Changing the VM image on the fly may fail if you do not have spare quota (It needs to create a new VM before destroying the old one).
 Follow these steps:
-1) Comment out the VM definition and anywhere else where it is refrenced (Like `access_vm` in the router, and the `output` block).
+1) In `main.tf` comment out the `module` block with the VM definition and comment out any references to that VM in other `module` blocks (like `access_vm` in the router) and in the `output` block.
 2) Run `tofu apply`
-3) Uncomment the previously commented-out sections
+3) Uncomment the previously commented-out sections and update the image_name to change the VM image.
 4) Run `tofu apply` again
 This will destroy the VM and attached disks, but not the router, so your public IP will remain intact. 
 ### Disks
@@ -345,9 +345,10 @@ OpenTofu cannot resize the root disk. Tofu will warn you about this until it is 
 │ 
 │ Disk 0 is 10240 MiB, expected 40960. Resize the disk via the dashboard or with: `onevm disk-resize 939 0 40960`
 ```
-You can resolve this by either executing the opentofu command (locally, or on a VSC Login node) or in the VSC Cloud Dashboard.
-To resize it in the dashboard, navigate to Instances > VMs > (your VM) > Storage. Then, click the 3 dots next to the disk and click "resize". The resize option will take effect immediately.
+You can resolve this by either executing the suggested OpenNebula command (if you installed the OpenNebula client locally) or in the VSC Cloud Dashboard.
+To resize it in the VSC Cloud dashboard, navigate to Instances > VMs > (your VM) > Storage. Then, click the 3 dots next to the disk and click "resize". The resize option will take effect immediately.
 #### Specifying the size of extra "image" disks
+You can find an example of a VM with extra disks on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.11/examples/with-disks).
 If you specify:
 ```
 disks {
@@ -361,9 +362,9 @@ The disk will be the exact size of the image. To resize it, see the procedure ab
 You can choose the size of an extra disk when you first create the VM, but further resizing will be ignored. It can be resized manually with the same procedure that is used to resize the root disk.
 
 #### Adding/removing disks after creation
-Once the VM is created, disks that are removed from the tofu configuration will not be removed.
+Once the VM is created, disks that are removed from the tofu configuration (in `main.tf`) will not be removed by tofu after running `tofu apply`.
 Trying to detach it manually also fails. 
-Attached disks will similarly also be ignored, but they can be attached manually through the dashboard or the CLI.
+Attached disks will similarly also be ignored, but they can be attached manually through the VSC Cloud dashboard or the OpenNebula client.
 
 ## Pitfalls
 ### Start script
