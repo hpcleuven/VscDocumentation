@@ -4,12 +4,32 @@
 Tier-1 sofia changelog
 ######################
 
+2026-10-21
+----------
+* Roll-out of core system upgrades to all compute and login nodes. This
+  update includes Linux kernel version 5.14.0-687.58.1.el9_8.0.1.x86_64, GPFS
+  storage driver version 5.2.3.10, DOCA-OFED network driver version 3.5.0 and
+  NVIDIA GPU driver version 615.71.10.
+* Upgraded Open OnDemand on *portal.sofia.vub.be* to version 4.2.5
+* Enabled support for GPUs on EESSI software stack.
+
+2026-10-13
+----------
+* Started daily storage snapshots of user home directories under `/user/sofia`
+  and project folders under `/sofia/projects`. Snapshots are held for 7 days.
+* Installed `mysnapshots` tool on the login and compute nodes to check and
+  recover lost data.
+
 2026-10-01
 ----------
 * Roll-out of core system upgrades to all compute and login nodes. This
   update includes Linux kernel version 5.14.0-687.42.1.el9_8, GPFS storage
   driver version 5.2.3.9, DOCA-OFED network driver version 3.5.0 and NVIDIA GPU
   driver version 610.57.04.
+
+2026-09-29
+----------
+* Waldur site agent updated with *sofia-storage* plugin version 0.5.0
 
 2026-09-16
 ----------
