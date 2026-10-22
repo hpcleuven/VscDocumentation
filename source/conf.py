@@ -391,8 +391,6 @@ rst_prolog += """
 .. _Apptainer Quick Start: https://apptainer.org/docs/user/main/quick_start.html
 .. _Apptainer Definition Files: https://apptainer.org/docs/user/main/definition_files.html
 .. _Sylabs Remote Builder: https://cloud.sylabs.io/builder
-.. _ARM-DDT video: https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos
-.. _ARM-MAP: https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge/map
 .. _atools documentation: https://atools.readthedocs.io/en/latest/
 .. _Bioconductor: https://bioconductor.org
 .. _CP2K: https://www.cp2k.org/
