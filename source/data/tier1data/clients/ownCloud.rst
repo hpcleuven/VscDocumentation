@@ -3,21 +3,21 @@
 ownCloud desktop
 ================
 
-ownCloud is a desktop application that lets users sync virtual files instead of full ones,
-downloading a full file on-demand, uploading in the background when modified,
+ownCloud is a desktop application that lets users sync virtual files instead of actual ones,
+downloading them on-demand, uploading modified files in the background,
 and seamlessly releasing space from the device.
-ownCloud allows users to interact with Tier-1 Data via the file explorer or finder,
-and is most suitable for those looking for user experience similar to OneDrive.
+ownCloud allows users to interact with Tier-1 Data via the file explorer or finder on their personal device,
+and is most suitable for those looking for a user experience similar to OneDrive.
 
-Files are available when online, unless they are kept locally on the device,
-e.g. if they are first created on the local device or opened since the last free-up of space.
-Opening a file via the app is equal to downloading the file and the file takes up space on your disk.
-Modifying a file and then saving it or creating a new file will trigger an upload.
+Files are available when your device is online, unless they are kept locally on the device
+(for example, if they were first created on the device or opened since the last free-up of space).
+Opening a file via the app is equivalent to downloading it, and the file will take up space on your disk.
+Modifying and then saving a file, or creating a new one, will trigger an upload.
 
-The **status** of the file or folder is visualized with an icon under a dedicated "Status" column in the file explorer.
+The **status** of the file or folder is indicated by an icon in a dedicated "Status" column within the file explorer.
 Files can be either: only available in Tier-1 Data,
-only locally available when offline, in both locations,
-or pending sync when updates in Tier-1 Data are not yet completed.
+available locally while offline, present in both locations,
+or pending sync when updates in Tier-1 Data are not yet complete.
 
 It is possible to **free up space** using the ownCloud option at a file or (root) folder level.
 By selecting "free up space" for the configured ownCloud folder,
