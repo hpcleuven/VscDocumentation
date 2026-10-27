@@ -43,7 +43,7 @@ To use these core Tier-1 Data features, other clients are more suitable, e.g. :r
 For copying large datasets within Tier-1 Data, using a different client (like iron, iCommands, sftp or PRC)
 is more efficient and less resource-intensive than performing the operation through ownCloud.
 Note that copying data via ownCloud will trigger a download of the original data to the local device,
-and then an upload of the copied data, while both original and copy will be kept on device.
+and then an upload of the copied data, while both the original and the copy will be kept on your device.
 Likewise, for uploading large datasets for the first time, other clients, such as Globus, are more suitable.
 
 In terms of filename length, limits of the operating system apply for files created via the file explorer or finder,
@@ -53,7 +53,7 @@ However, it is best to avoid names that are too long. Refer to RDM guidance on n
 e.g. `at this page <https://www.kuleuven.be/rdm/en/guidance/data-standards/file-organisation#naming>`_.
 
 For macOS and Linux, the version of ownCloud we currently offer does not support virtual files.
-As a result, the ownCloud client attempts to download the entire file tree the user selected to synchronize to local storage on the user's device.
+As a result, ownCloud client attempts to download the entire file tree the user selected to synchronize to local storage on the user's device.
 Virtual file support for macOS and Linux is available as experimental feature in version 7.1.0. However, this version is not yet supported by our server implementation.
 
 
@@ -66,7 +66,7 @@ Search for the application, click on "Install" and follow the instructions.
 Users of **Mac**, **Linux**, and **non-KU Leuven devices**, can install the application via `the ownCloud page <https://download.owncloud.com/desktop/ownCloud/stable/6.0.3.18040/>`_ (version 6.0.3).
 Please note that the virtual files feature is not yet supported for macOS and Linux in the version we offer for Tier-1 Data.
 The latest ownCloud version (7.1.0) cannot be used.
-Users who have already installed version 7.1.0 may contact the support staff for help reverting to the recommended version.
+Users who have already installed version 7.1.0 may contact the support staff for help rolling back to the recommended version.
 
 Upon successful installation, open the ownCloud application and proceed with additional configuration.
 
@@ -82,7 +82,7 @@ ownCloud can be configured for the whole Tier-1 Data project or for specific col
 ownCloud allows the configuration of more than one accounts (e.g. one for a Tier-1 Data and one for ManGO)
 and multiple folders per account (e.g. sub-collections of a Tier-1 Data project).
 
-For the configuration of one account and one folder:
+For the configuration of one account and one connection:
 
 1. Open the ownCloud application. On the box to provide your server's address, enter the
 following URL: https://icts-p-coz-desktop-sync-reva-vsc.cloud.icts.kuleuven.be/. Click "Next".
@@ -125,7 +125,7 @@ then select the existing folder. Click "Finish".
 expand **home**, navigate to a Tier-1 Data Project and select the collection you want to sync.
 You may need to wait 1-2 seconds for the Tier-1 Data tree structure to load, then
 choose the Tier-1 Data sub-collection you want to sync via ownCloud by clicking on it.
-The chosen collection path, e.g. "/vsc/home/datateam_vsc" is displayed in the box below
+The selected collection path, e.g. "/vsc/home/datateam_vsc" is displayed in the box below
 the tree structure. Click "Next".
 
 .. image:: ../images/ownCloud/ownCloud_sync-subcollection.png
@@ -136,11 +136,12 @@ the tree structure. Click "Next".
 7. You can filter out Tier-1 Data sub-collections. To exclude specific remote collections from synchronization,
 first disable the "Use virtual files instead of downloading content immediately" option.
 Uncheck the Tier-1 Data sub-collections you do not wish to sync,
-then re-enable the "Use virtual files instead of downloading content immediately" setting.
+then re-enable the setting "Use virtual files instead of downloading content immediately".
 
 8. Make sure the setting to "Use virtual files instead of downloading content immediately" is enabled
 and click on "Add Sync connection". You are directed to your user account view, where you can follow the progress.
-When the progress bar disappears and the remote folder is marked with a tick, you are set.
+You may need to wait a few minutes for the sync to complete.
+Once the progress bar disappears and a checkmark appears next to the remote folder, you are all set.
 
 Under the account view in ownCloud, you now see a folder icon for each connection you created.
 The name of the local folder you selected is also displayed.
