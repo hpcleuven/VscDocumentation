@@ -30,7 +30,7 @@ There are two ways to create a guest collection:
 - In the file manager, click on the checkbox next to the folder you want to share, and click on 'share'.
 - On the left, click on the tab 'collections', search for your collection and click on it, and click on 'create a guest collection' under the subtab 'Collections'.
 
-With both methods, you will arrive at the page 'Create New Guest Collection'. 
+With both methods, you will arrive at the page 'Create New Guest Collection'.
 
 .. figure:: sharing/sharing.png
 
@@ -44,6 +44,13 @@ The page contains other settings and information, but these are optional.
 For UGent you should be able to create guest collections on $VSC_DATA/$VSC_DATA_VO and $VSC_SCRATCH/$VSC_SCRATCH_VO for subdirs of the GUESTSHARED directory.
 So you should make a directory called 'GUESTSHARED' in either $VSC_DATA/$VSC_DATA_VO or $VSC_SCRATCH/$VSC_SCRATCH_VO. (The topdirectory GUESTSHARED itself can not be shared) You can then make a subdirectory that can be shared
 
+.. note::
+
+   In some cases, you might first get the following error.
+
+   .. figure:: sharing/consent_required.png
+
+   Click on 'Continue' and consent to let the Globus Web App manage collections on the endpoint.
 
 
 Setting permissions
