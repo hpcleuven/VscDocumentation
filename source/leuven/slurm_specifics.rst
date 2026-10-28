@@ -58,15 +58,15 @@ mandatory when submitting jobs.
 CPU memory requirements
 -----------------------
 Each partition also defines a default amount of CPU memory that is provided
-per allocated core. For e.g. the wICE `batch_sapphirerapids` partition
+per allocated core. For e.g. the wICE ``batch_sapphirerapids`` partition
 this amounts to 2500 MB (equivalent to the ``--mem-per-cpu=2500M`` Slurm
-option). For all partitions except the `interactive` ones, this default amount
+option). For all partitions except the ``interactive`` ones, this default amount
 per core is furthermore equal to the *maximum* amount per core. You may
 therefore request more memory per core if needed, but it will cause additional
 cores to be allocated to your job. This is to ensure that memory is not
 oversubscribed.
 
-On the wICE `batch_sapphirerapids` partition, for example, you can get twice
+On the wICE ``batch_sapphirerapids`` partition, for example, you can get twice
 as much memory per core by specifying ``--mem-per-cpu=5000M`` but the job will
 then also require twice as many cores and cost twice as many credits.
 Note that in this example the same also applies if you would only specify
@@ -83,6 +83,17 @@ Finally, in case of doubt, see the :ref:`leuven_job_monitoring` paragraph for
 tips on how to check your past jobs, as well as the
 :ref:`sam-quote tool<leuven_job_cost_calculation>`.
 
+.. warning::
+
+   When explictly requesting memory with the options discussed above *and*
+   setting the ``--cpus-per-task`` option, Slurm will automatically set the
+   ``SLURM_CPUS_PER_TASK`` environment variable based on the requested memory
+   while setting ``SLURM_TRES_PER_TASK`` to the requested ``--cpus-per-task``
+   value. When both differ, ``srun`` and ``mpirun`` commands in the job will
+   fail. This can be considered a bug in Slurm, which in contrast to what is
+   mentioned in `this bug report <https://support.schedmd.com/show_bug.cgi?id=19335>`_
+   has not been solved yet. The solution is easy: when explicitly requesting
+   memory, do **not** use the ``--cpus-per-task`` option.
 
 .. _leuven_job_monitoring:
 
