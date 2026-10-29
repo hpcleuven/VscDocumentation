@@ -30,3 +30,20 @@ For reference, here is some documentation for common firewall software:
 * [UFW (Ubuntu and others)](https://ubuntu.com/server/docs/how-to/security/firewalls/)
 * [Firewalld (Rocky)](https://docs.rockylinux.org/10/guides/security/firewalld-beginners/)
 * [Windows firewall](https://support.microsoft.com/en-us/windows/security/windows-security/firewall-and-network-protection-in-the-windows-security-app)
+
+## VSC Network
+Projects that requested access to the VSC network require some additional configuration.
+You can find a complete example on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.11/examples/vsc-networking).
+
+You will need an additional router that connects to the VSC network. Modify the `main.tf` by adding an additional `module` block:
+```
+module "VSCrouter" {
+  source    = "hpcugent/opennebula/vsc//modules/router"
+  version   = "0.0.11"
+  vsc       = true                             # Connect to VSC Public net and VSC Internal net
+  access_vm = module.SimpleVSCVM.router_access # Optional, adds SSH forwarding automatically.
+}
+```
+Any VM that needs to reach the VSC Router also needs to set `vsc = true` in the `module` block with the VM definition.
+Unlike in Openstack, it is not possible to directly attach a VSC IP to a VM.
+VSC IPs do not have any restrictions on which ports can be opened.
