@@ -4,6 +4,16 @@
 Tier-1 sofia changelog
 ######################
 
+2026-10-28
+----------
+* Redundancy tests carried out on power and network systems.
+* Upgraded the firmware of *zen4_h200* compute nodes.
+
+2026-10-27
+----------
+* Enabled module browser in *portal.sofia.vub.be*
+* Installed software toolchain *foss/2026.1*
+
 2026-10-21
 ----------
 * Roll-out of core system upgrades to all compute and login nodes. This
@@ -12,6 +22,10 @@ Tier-1 sofia changelog
   NVIDIA GPU driver version 615.71.10.
 * Upgraded Open OnDemand on *portal.sofia.vub.be* to version 4.2.5
 * Enabled support for GPUs on EESSI software stack.
+
+2026-10-20
+----------
+* Replaced broken memory DIMM on node hc011.
 
 2026-10-13
 ----------
