@@ -87,7 +87,7 @@ Other VSC users should contact the `KU Leuven HPC servicedesk <mailto:hpcinfo@ku
    If you are looking for more information on this, please read the page on
    :ref:`parallel filesystems <kuluh_parallel_filesystems>`. If you need to transfer
    files between the two parallel filesystems, refer to the chapter about
-   :ref:`transferring data between Lustre and GPFS<_leuven_lustre_gpfs_transfer>`.
+   :ref:`transferring data between Lustre and GPFS <leuven_lustre_gpfs_transfer>`.
 
 
 .. _leuven_scratch:
