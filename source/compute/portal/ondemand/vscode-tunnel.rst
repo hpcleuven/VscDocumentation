@@ -84,3 +84,28 @@ To connect to the VS Code tunnel, follow these steps:
 Usage
 -----
 Usage of the VS Code Tunnel app is very similar to the :ref:`vscode_server` app.
+
+Ollama
+------
+
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      Under 'Advanced Options', you can tick the 'Also serve Ollama in a
+      private network namespace' checkbox to also run an `Ollama
+      <https://ollama.com>`_ server alongside the tunnel, isolated in its own
+      network namespace. This requires a GPU, so make sure to request one (or
+      a fraction of one) in the resources form.
+
+      By default, Ollama loads its models from ``/databases/ollama``. You can
+      use a different directory by setting the ``OLLAMA_MODELS`` environment
+      variable in the 'Pre-run Scriptlet' of the resources form, e.g.
+      ``export OLLAMA_MODELS=$VSC_SCRATCH/ollama``.
+
+      To use this Ollama server from your local VS Code, you will need to
+      install the Ollama extension, published by Ollama, in your *locally
+      installed* VS Code. Follow the instructions from the
+      `Ollama docs <https://docs.ollama.com/integrations/vscode>`_.
