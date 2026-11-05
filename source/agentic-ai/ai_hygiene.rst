@@ -94,7 +94,7 @@ Public AI tools
 The `components of AI tools <ai_components>`_ are developed and maintained independent from one another, and are
 are made publically available in an ever-growing ecosystem.
 Normally, each of these components are hosted by well-recognized hubs; for instance, many LLMs
-are hosted by `huggingface`_ or `Ollama`_ and similar platforms.
+are hosted by `huggingface`_ or `ollama`_ and similar platforms.
 If even one of the `components of your AI toolkit <ai_components>`_ is compromised or contains
 vulnerabilities, it can have serious security implications for the system where the AI tools 
 are deployed.

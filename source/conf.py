@@ -387,7 +387,7 @@ rst_prolog += """
 rst_prolog += """
 .. _KU Leuven GenAI Charter: https://www.kuleuven.be/genai
 .. _huggingface: https://huggingface.co
-.. _Ollama: https://ollama.com/
+.. _ollama: https://ollama.com
 """
 # Other links
 rst_prolog += """
@@ -469,7 +469,6 @@ rst_prolog += """
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
-.. _ollama: https://ollama.com
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
