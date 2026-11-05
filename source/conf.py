@@ -383,6 +383,12 @@ rst_prolog += """
 .. _docs.globus.org: https://docs.globus.org
 .. _www.globus.org: https://www.globus.org
 """
+# Links to universities Agentic AI policies
+rst_prolog += """
+.. _KU Leuven GenAI Charter: https://www.kuleuven.be/genai
+.. _huggingface: https://huggingface.co
+.. _Ollama: https://ollama.com/
+"""
 # Other links
 rst_prolog += """
 .. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
