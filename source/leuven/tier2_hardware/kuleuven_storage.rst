@@ -7,15 +7,17 @@ KU Leuven storage
 Storage on the clusters hosted at KU Leuven is organized
 :ref:`in a similar way as on other VSC clusters <data location>`.
 Currently, we use an NFS filesystem for home and data complemented with
-Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch storage.
+Lustre and IBM Storage Scale (GPFS) parallel filesystems for scratch
+and project storage.
 
 .. note::
 
    We use environment variables to point at your different storage locations, as
-   demonstrated in the tables below. These paths are constructed based on the 5 digits
-   in your VSC ID, which are represented by "x" characters below. As mentioned in
-   :ref:`data location`, you should always (try to)
-   use the environment variables rather than the paths shown in the tables.
+   demonstrated in the home, data and paralell scratch storage tables below. These 
+   paths are constructed based on the 5 digits in your VSC ID, which are 
+   represented by "x" characters below. As mentioned in :ref:`data location`,
+   you should always (try to) use the environment variables rather than the paths
+   shown in the tables.
 
 VSC home and data storage
 -------------------------
@@ -42,51 +44,208 @@ Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
   determined by the policy of the user's home institute. Note that you can
   check the institute of your VSC account on the `VSC account page`_.
 
+
+Parallel storage
+----------------
+
+For workflows requiring frequent read or write operations (especially those
+involving intermediate files), it is recommended to use one of the parallel file
+systems. Compared to NFS, the GPFS and Lustre filesystems are better designed
+to handle intensive serial and parallel input/output (IO) operations.
+:ref:`wICE <wice hardware>` uses Lustre-based parallel storage, while
+:ref:`Mindwell <mindwell hardware>` comes with GPFS-based parallel
+storage.
+
+We offer two types of storage solutions on our parallel file systems, catered
+to different use-cases:
+
++----------------+---------------------------------------------------+----------------------------------------------------+
+| Characteristic | :ref:`Parallel scratch storage <leuven_scratch>`  | :ref:`Project storage <project_storage>`           |
++================+===================================================+====================================================+
+| Scope          | Personal storage                                  | Shared storage for group members                   |
++----------------+---------------------------------------------------+----------------------------------------------------+
+| Availability   | By default on wICE and Mindwell                   | Upon request                                       |
++----------------+---------------------------------------------------+----------------------------------------------------+
+| Price          | Free default storage + free (temporary) increases | Paid, charged based on monthly peak usage          |
++----------------+---------------------------------------------------+----------------------------------------------------+
+| Cleaning       | :ref:`automatically cleaned up <scratch_cleanup>` | Cleaning by team members.                          |
+|                |                                                   | :ref:`Extended permissions <project_storage_acls>` |
+|                |                                                   | for team moderators for easier cleaning            |
++----------------+---------------------------------------------------+----------------------------------------------------+
+
+For more details, take a look at the chapters below. For extensions and new storage requests,
+KU Leuven users can refer to the `KU Leuven service catalogue <https://icts.kuleuven.be/sc/english/research/HPC-storage>`_.
+Other VSC users should contact the `KU Leuven HPC servicedesk <mailto:hpcinfo@kuleuven.be>`_ directly.
+
+.. warning::
+
+   It is *crucial* that intensive IO operations in your compute jobs are done
+   on the parallel storage associated with the cluster where the job is running.
+   In other words, compute jobs running on wICE have to use Lustre
+   and jobs running on Mindwell have to use GPFS. Compute jobs that do not
+   comply can be cancelled by the system administrators without prior notice.
+   If you are looking for more information on this, please read the page on
+   :ref:`parallel filesystems <kuluh_parallel_filesystems>`. If you need to transfer
+   files between the two parallel filesystems, refer to the chapter about
+   :ref:`transferring data between Lustre and GPFS <leuven_lustre_gpfs_transfer>`.
+
+
 .. _leuven_scratch:
 
 Parallel scratch storage
 ------------------------
 
-For workflows requiring frequent read or write operations (especially those
-involving intermediate files), it is recommended to use scratch storage.
-Compared to NFS, the GPFS and Lustre filesystems are better designed to handle
-intensive serial and parallel input/output (IO) operations.
-:ref:`wICE <wice hardware>` uses Lustre-based scratch storage, while
-:ref:`Mindwell <mindwell hardware>` comes with GPFS-based scratch
-storage.
+Every user working on either of the KU Leuven Tier 2 clusters, will receive two personal
+scratch directories, one for each of the systems. For KU Leuven and UHasselt users, these
+are created automatically upon the account creation. Other VSC users should contact
+the `KU Leuven HPC servicedesk <mailto:hpcinfo@kuleuven.be>`_ to request the creation of these directories.
 
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
-| Variable              | Path                             | Type   | Access        |Backup | Default quota |
-+=======================+==================================+========+===============+=======+===============+
-|``$VSC_SCRATCH``       | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | wICE          | No    | 500 GiB       |
-|                       |                                  +--------+---------------+-------+---------------+
-|                       |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
-+-----------------------+----------------------------------+--------+---------------+-------+---------------+
+For all VSC users, this storage is completely free of charge, and storage quota can be
+temporarily increased if needed. Note that this might be subject to availibility of free storage on either
+of the filesystems. Do take into account that that this storage is :ref:`automatically cleaned up <scratch_cleanup>`.
+
+Typically, this storage is referred to with its main Linux variable name, i.e. ``$VSC_SCRATCH``. In
+the following table, you find an overview of some important features:
+
++------------------------+----------------------------------+--------+---------------+-------+---------------+
+| Variable               | Path                             | Type   | Access        |Backup | Default quota |
++========================+==================================+========+===============+=======+===============+
+|``$VSC_SCRATCH``        | ``/scratch/leuven/xxx/vscxxxxx`` | Lustre | wICE          | No    | 500 GiB       |
+|                        |                                  +--------+---------------+-------+---------------+
+|                        |                                  | GPFS   | Mindwell      | No    | 500 GiB       |
++------------------------+----------------------------------+--------+---------------+-------+---------------+
 
 On each node, the ``$VSC_SCRATCH`` environment variable will point to the
 scratch storage associated with the node (GPFS scratch on the Mindwell nodes,
 Lustre scratch on the wICE nodes).
 
-.. warning::
+You can use the storage-specific ``$VSC_SCRATCH_LUSTRE1`` and ``$VSC_SCRATCH_GPFS1`` variables in case
+you need to :ref:`transfer data between Lustre and GPFS <leuven_lustre_gpfs_transfer>`.
 
-   It is *crucial* that intensive IO operations in your compute jobs are done
-   on the scratch storage associated with the cluster where the job is running.
-   In other words, compute jobs running on wICE have to use Lustre
-   and jobs running on Mindwell have to use GPFS. Compute jobs that do not
-   comply can be cancelled by the system administrators without prior notice.
-   If you are looking for more information on this, please read the page on
-   :ref:`parallel filesystems <kuluh_parallel_filesystems>`
+.. _scratch_cleanup:
 
-.. note::
+Automatic scratch cleanup
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   VSC accounts whose home institute is not Leuven / Hasselt need to
-   `contact the servicedesk <mailto:hpcinfo@kuleuven.be>`_
-   to receive scratch storage, as it is not set up by default.
+``$VSC_SCRATCH`` at KU Leuven is not for long term storage, as files not accessed
+for more than 30 days are automatically removed.
+The reasoning behind this is that as long as you are actively using a file
+(so accessing it), the file will not be removed. This means that you should
+actively move or copy important files to :ref:`external storage <external_storage>`.
+
+The data removal policy can however cause confusion when files are initially transferred
+to a scratch directory. If you use for instance the ``mv`` command, the file
+is not actually accessed. As a result, if the last access timestamp of the
+original file is a long time in the past, the file on scratch will be considered
+to be inactive and automatically removed. A similar thing happens when using
+``rsync`` with the option to preserve timestamps. To avoid this problem,
+the ``cp`` command (without ``-a`` argument) should be used to copy files to the
+scratch directory, followed by removing the sources (if needed) using the ``rm``
+command upon a successful transfer.
+
+.. _project_storage:
+
+Project storage
+---------------
+
+If you need to share data among team members on the KU Leuven clusters, you can
+request a project storage. A request is always cluster-specific, so while your team can
+have project storage on both Mindwell and wICE, this will require two separate requests.
+
+Approval of a request for new or additional project storage may depend on
+available space on the requested filesystem. Approval of a request for additional project
+storage space might also depend on the amount of inactive data present in your project
+storage. For that reason, we recommend strongly that you
+:ref:`keep track of the data in your project storage <data_tracking>`.
+
+As a team, you are free to organize this storage as you see fit, but we do
+have some :ref:`recommendations regarding storage structure <storage_structure>`.
+
+While this type of shared storage is now called 'project storage' on both file systems,
+you might still be used to the old name for the project storage on wICE, namely 'staging storage'.
+This is still reflected in the name and the paths of the directories:
+
++----------+--------------------------------+--------------------------------+--------+--------+-----------------------+
+| Cluster  | Canonical path                 | User-facing path               | Type   | Backup | Default quota         |
++==========+================================+================================+========+========+=======================+
+| wICE     | ``/lustre1/project/stg_xxxxx`` | ``/staging1/leuven/stg_xxxxx`` | Lustre | No     | NA, only upon request |
++----------+--------------------------------+--------------------------------+--------+--------+-----------------------+
+| Mindwell | ``/gpfs1/project/prj_xxxxx``   | ``/project1/leuven/prj_xxxxx`` | GPFS   | No     | NA, only upon request |
++----------+--------------------------------+--------------------------------+--------+--------+-----------------------+
+
+With ``xxxxx`` a number ranging from ``00001`` to ``99999``. This will automatically be assigned to your storage after
+your request has been granted.
+
+Two VSC environment variables are also available for the project storage paths, namely ``$VSC_PROJECT_LUSTRE1`` and
+``$VSC_PROJECT_GPFS1``. These point to ``/lustre1/project`` and ``/gpfs1/project`` respectively.
+
+Different from your parallel scratch storage, no automatic cleaning is done on project storage.
+You might have to worry less about files disappearing, but note that this storage does not
+have a backup! Be sure to always back up important files to :ref:`external storage <external_storage>`.
+This also means that your team is responsible for the cleaning of the storage. Since it often happens
+that data from previous team members is still present in the storage, we have implemented 
+:ref:`extended permissions for team moderators <project_storage_acls>` on all Mindwell project storage
+directories, as well as all new wICE project storage directories. If you still have a wICE project
+storage directory without these extra permissions, you can request them through our servicedesk.
+
+
+.. _project_storage_acls:
+
+Extended permissions for project storage moderators
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For project storage on either Lustre or GPFS, access will be controlled
+with a Linux group created on the VSC account page. This can be a new group, but you
+can use your group's credit account as well.
+
+The moderators of the project storage group will be automatically added to a
+``<groupname>_moderators`` group. We automatically apply extended permissions (ACLs) for this
+group. These permissions allow them to modify, delete and move all files and directories in
+this shared storage space. This way, your team has the tools to manage their project storage
+without the need to ask the HPC support team to change permissions and/or ownership of certain
+files and directories.
+
+If you are interested in the technical details, we implement the following ACLs:
+
+.. code:: bash
+
+   # default ACLs
+   setfacl -m d:g:<moderator_group>:rwx <project_dir>
+
+   # ACLs on the top directory
+   setfacl -m g:<moderator_group>:rwx <project_dir>
+
+
+Note that the actual permissions of a file (or directory) may not be reflected by
+``ls -l <file>``. Use ``getfacl <file>`` to get a detailed overview of all permissions.
+
+Some remarks:
+
+- Choose your moderators carefully! Since they can remove files and directories that do
+  not belong to them, it is best to choose people with at least some Linux experience.
+
+- The top directory of the project storage is writeable only by the moderators. They can create
+  subdirectories, which can then be used by their team members.
+
+- The ACLs are not 100% foolproof. Users can still modify the permissions on their own files and
+  directories. Depending on how they are changed, it could be that the moderators lose their elevated
+  access rights on these files or directories. In general, users should avoid commands that remove group
+  permissions, e.g. ``chmod g-rwx <file>``.
+
+- The default ACLs are automatically inherited by files and directories that are created or copied
+  in the project storage. This also means that files or directories that are moved (``mv``) into the
+  project storage will not inherit the ACLs.
+
 
 .. _leuven_lustre_gpfs_transfer:
 
 Transferring data between Lustre and GPFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   You can use the methods below to transfer between GPFS and Lustre project
+   storage as well. Use the ``$VSC_PROJECT_XXXX`` variables instead.
 
 To facilitate data transfers between the Lustre and GPFS storage,
 Lustre is accessible from Mindwell and GPFS is accessible from wICE
@@ -121,24 +280,6 @@ Globus endpoints have been defined on both Lustre and GPFS filesystems,
 so you can use the :ref:`globus platform` for these data transfers.
 For transferring large volumes of data (> 1 TB), however, we recommend using
 'transfer' jobs instead of Globus for performance reasons.
-
-Automatic scratch cleanup
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``$VSC_SCRATCH`` at KU Leuven is not for long term storage, as files not accessed
-for more than 30 days are automatically removed.
-The reasoning behind this is that as long as you are actively using a file
-(so accessing it), the file will not be removed.
-
-This policy can however cause confusion when files are initially transferred
-to a scratch directory. If you use for instance the ``mv`` command, the file
-is not actually accessed. As a result, if the last access timestamp of the
-original file is a long time in the past, the file on scratch will be considered
-to be inactive and automatically removed. A similar thing happens when using
-``rsync`` with the option to preserve timestamps. To avoid this problem,
-the ``cp`` command (without ``-a`` argument) should be used to copy files to the
-scratch directory, followed by removing the sources (if needed) using  the ``rm``
-command upon a successful transfer.
 
 Node scratch
 ------------
