@@ -58,6 +58,17 @@ Software
    compute/software/developing_software/parallel_software
 
 
+Agentic AI and HPC
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   agentic-ai/ai_hpc
+   agentic-ai/ai_charters
+   agentic-ai/ai_tools
+   agentic-ai/ai_hygiene
+
 Tutorials and additional resources
 ----------------------------------
 

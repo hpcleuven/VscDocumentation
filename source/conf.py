@@ -383,6 +383,12 @@ rst_prolog += """
 .. _docs.globus.org: https://docs.globus.org
 .. _www.globus.org: https://www.globus.org
 """
+# Links to universities Agentic AI policies
+rst_prolog += """
+.. _KU Leuven GenAI Charter: https://www.kuleuven.be/genai
+.. _huggingface: https://huggingface.co
+.. _ollama: https://ollama.com
+"""
 # Other links
 rst_prolog += """
 .. _Adaptive Computing documentation: https://support.adaptivecomputing.com/hpc-cloud-support-portal/
@@ -463,7 +469,6 @@ rst_prolog += """
 .. _Netlib LAPACK repository: http://www.netlib.org/lapack/
 .. _Netlib ScaLAPACK repository: http://www.netlib.org/scalapack/
 .. _noVNC: https://novnc.com/
-.. _ollama: https://ollama.com
 .. _oneAPI Threading Building Blocks: https://uxlfoundation.github.io/oneTBB/
 .. _Open MPI Documentation: https://www.open-mpi.org/doc
 .. _Open MPI Explorations in Process Affinity: https://www.slideshare.net/jsquyres/open-mpi-explorations-in-process-affinity-eurompi13-presentation
