@@ -75,8 +75,8 @@ As a good practice,
   If you use IDEs, make sure to configure them to inquire your explicit confirmation
   before executing any commands suggested by the AI agent.
 
-  You can opt for harnessing your AI agents through 'SKILL' files or MCP
-  (Model Control Protocol) servers.
+  You must opt for harnessing your AI agents through ``SKILL.md`` or ``AGENTS.md``
+  files or MCP (Model Control Protocol) servers.
   But, AI agents may still overstep the harnesses by attempting to execute commands
   beyond the granted permissions.
 
