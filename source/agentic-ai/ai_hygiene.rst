@@ -27,7 +27,9 @@ Confidentiality and AI
 ----------------------
 
 A user may need to process sensitive or confidential information, such as non-anonymized
-patient data, financial records, and alike.
+patient data, financial records, patented designs and alike.
+In all respects, your intellectual property (which also belongs to your funding institution/agency)
+must be protected by all means, preventing any unauthorized access or leakage through AI tools.
 The first step in such scenarios is to anonymize or pseudonymize the sensitive data in
 an environment which is isolated from any AI tool.
 
