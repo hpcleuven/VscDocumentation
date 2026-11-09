@@ -8,8 +8,8 @@ Components of AI tools
 
 Broadly speaking, AI tools consist of three key components, the large language
 model (LLM), the AI agent, and the harnessing framework.
-Nowadays, the integration of these components with various end-user tools
-is ever-growing. This empowers users to leverage AI capabilities seamlessly
+Nowadays, the ever-growing integration of these components with various end-user tools
+empowers users to leverage AI capabilities seamlessly
 within their HPC environments. AI tools can be deployed either locally on the
 user's machine or remotely on the VSC cloud and/or compute environments.
 

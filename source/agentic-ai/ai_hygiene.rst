@@ -11,14 +11,12 @@ To ensure a safe and responsible use of AI tools, it is important that the user
 keeps control over specific aspects. Concretely speaking,
 
 * you need to comply with the `institutional AI policies <ai_charters>`_,
-* you are expected to beware of `AI security aspects <security_and_ai>` and practice 
-  safe AI usage,
+* you are expected to beware of AI security aspects and practice safe AI usage,
 * you need to stay as a `human in the loop <human_in_the_loop>`_ to surveil every step
-  that AI tools plans to take
-* from the publically available AI components, you use only trusted ones
+  that AI tools plan to take
+* you only use trusted AI components from public sources
 
-Below, we address each of these aspects in detail to help boosting your productivity while
-suppressing potential risks associated with AI usage.
+Below, we elaborate further on some of these aspects.
 
 
 .. _confidentiality_and_ai:
@@ -36,11 +34,16 @@ an environment which is isolated from any AI tool.
 To treat sensitive data with AI tools, it is crucial to ensure that the AI tools comply
 with data protection and privacy regulations of your host institution and/or research
 department.
-In other terms, users have to ensure that their sensitive data - in any form - is not
-transferred to unauthorized parties or external systems such as cloud services.
-In this regard, using free/trial versions of unlicensed AI tools should be strictly prohibited.
-Even licensed AI tools should be carefully evaluated for their terms and conditions of data
-handling before using them with sensitive data.
+In other terms, users have to ensure that their sensitive data and source code - in any form -
+is not transferred to unauthorized parties or external systems such as cloud services.
+In this regard, 
+
+.. warning::
+
+    Using free/trial versions of unlicensed AI tools on VSC systems is strictly prohibited.
+
+    Even licensed AI tools should be carefully evaluated for their terms and conditions of
+    data handling before using them with sensitive data.
 
 
 .. _human_in_the_loop:
@@ -52,7 +55,7 @@ AI agents shine when it comes to autonomy.
 Concretely, AI agents are capable of executing any command they come up with in a given context.
 But, imagine that such a command would be to delete or overwrite sensitive files without the
 user's explicit consent; depending on the backup/recovery mechanism of the host filesystem,
-such changes maybe irrecoverable.
+such changes maybe irreversible.
 
 However, when a human is in the loop, the execution of risky commands will be performed after an
 explicit consent from the end user.
@@ -62,12 +65,16 @@ execution of the risky command by the AI agent.
 As an another example, an AI coding assistant can draft a reasonable piece of code based on
 the user's prompt.
 The agent may assume he can write temporary files under ``/tmp``.
-However, the ``/tmp`` on most VSC systems are intentionally made small, leading to the crash
-of the code or even the slave compute node at runtime.
+However, the quota of ``/tmp`` directory on most VSC systems is limited by intention, 
+leading to the crash of the code or even the slave compute node at runtime.
 Given the shared user policy of compute nodes, such a flaw can also break other concurrently-running
 processes on the same node from other VSC users.
 With a human in the loop, the end user spots potential issues and instructs the AI agent to
 make use of the user's storage, instead.
+
+[For Reviewers] Does ``/tmp`` on all clusters compute nodes point at ``$VSC_SCRATCH_NODE``?
+In Leuven it does, but not sure about other sites.
+If the ``/tmp`` is a bad example, I will take it out.
 
 As a good practice,
 
@@ -76,7 +83,7 @@ As a good practice,
   before executing any commands suggested by the AI agent.
 
   You must opt for harnessing your AI agents through ``SKILL.md`` or ``AGENTS.md``
-  files or MCP (Model Control Protocol) servers.
+  files and/or MCP (Model Control Protocol) servers.
   But, AI agents may still overstep the harnesses by attempting to execute commands
   beyond the granted permissions.
 
@@ -93,17 +100,21 @@ As a good practice,
 Public AI tools
 ---------------
 
-The `components of AI tools <ai_components>`_ are developed and maintained independent from one another, and are
-are made publically available in an ever-growing ecosystem.
+The `components of AI tools <ai_components>`_ are developed and maintained independent from one another,
+and are made publically available in an ever-growing ecosystem.
 Normally, each of these components are hosted by well-recognized hubs; for instance, many LLMs
 are hosted by `huggingface`_ or `ollama`_ and similar platforms.
 If even one of the `components of your AI toolkit <ai_components>`_ is compromised or contains
-vulnerabilities, it can have serious security implications for the system where the AI tools 
+vulnerabilities, it can have serious security implications for the system on which the AI tools 
 are deployed.
 
-Therefore, VSC users are strongly advised to carefully assess and verify the security and
-integrity of each component before integrating them into their AI toolkit.
-That implies pulling each component of their AI toolkit from trusted sources.
+.. warning::
+
+    VSC users are strongly advised to carefully assess and verify the security and
+    integrity of each component before integrating them into their AI toolkiti.
+    That implies pulling each component of their AI toolkit from trusted sources.
+
+
 Furthermore, the user should fully surveil the behavior and interactions of each component
 with the system where they are deployed.
 Additionally, one needs to stay updated with the latest security advisories and patches

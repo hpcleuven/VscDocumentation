@@ -6,7 +6,7 @@ User Accountability
 We identify every individual VSC user and the AI agent(s) operated by him/her
 on the HPC systems as a single entity tied to a single VSC account.
 
-.. note::
+.. attention::
 
    Every VSC user remains at all times accountable for compliance with the Generative AI
    charter of their local home institution and the Generative AI charter of the host
@@ -18,11 +18,11 @@ on the HPC systems as a single entity tied to a single VSC account.
 
 Concretely speaking,
 
-#. you are responsible for all actions performed under your VSC account, including
-actions initiated or recommended by AI tools.
-#. you need to maintain sufficient awareness and control of AI-assisted activity to
-ensure compliance with HPC policies and to prevent adverse impacts to VSC HPC systems,
-other users, or research data
+- you are responsible for all actions performed under your VSC account, including
+  actions initiated or recommended by AI tools.
+- you need to maintain sufficient awareness and control of AI-assisted activity to
+  ensure compliance with HPC policies and to prevent adverse impacts to VSC HPC systems,
+  other users, or research data.
 
 
 Institutional AI Charters
