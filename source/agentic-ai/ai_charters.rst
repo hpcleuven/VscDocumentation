@@ -1,5 +1,21 @@
 .. _ai_charters:
 
+User Accountability
+===================
+
+We identify every individual VSC user and the AI agent(s) operated by him/her
+on the HPC systems as users tied to a single VSC account.
+
+.. note::
+
+   VSC users remain at all times accountable for compliance with the Generative AI
+   charter of their local home institution and the Generative AI charter of the host
+   VSC site whose infrastructure they use.
+
+   For instance, a VSC user affiliated with UGent who uses AI tools on the VUB infrastructure
+   adheres to the Generative AI charter of UGent as well as the Generative AI charter of VUB.
+
+
 Institutional AI Charters
 =========================
 
