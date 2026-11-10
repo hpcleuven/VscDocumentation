@@ -166,8 +166,9 @@ To obtain a Login token, follow these steps:
 3) Click "Profile Settings"
 4) In this new screen, click "Security".
 5) Scroll to the bottom, to the "Login Token" section.
-6) Fill in an expiration time in seconds, and select the group for which this token should apply
-7) Click "Get a new Token"
+6) Select the group that this token is for. Any created resources will be created inside that group.
+7) Fill in an expiration time in seconds, and select the group for which this token should apply
+8) Click "Get a new Token"
 
 :::{tip}
 We recommend an expiration time of `31557600` seconds, which is roughly a year.
