@@ -428,6 +428,18 @@ Users can access their ``$VSC_HOME`` and ``$VSC_DATA`` storages with
 :ref:`Globus <sofia_globus>` and transfer any needed data from there to their
 project directory in the scratch storage of **sofia**.
 
+Data recovery
+-------------
+
+The scratch storage of **sofia** has a *snapshot* system to protect against
+accidental data loss. Every day we take a snapshot of all data in home
+directories and project folders and keep it for 7 days. This means that you can
+recover any file or folder in your account (even if it has been deleted) to its
+previous state as far as one week ago.
+
+Check :ref:`data_recovery` for detailed instructions on how to use the
+command ``mysnapshots`` to recover lost files on **sofia**.
+
 Node-local scratch
 ------------------
 
