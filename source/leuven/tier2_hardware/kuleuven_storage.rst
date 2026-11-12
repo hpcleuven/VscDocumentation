@@ -35,7 +35,7 @@ of files that are not accessed at high frequency by compute jobs.
 Note that for ``$VSC_HOME`` and ``$VSC_DATA``:
 
 - data is protected by snapshots, which means it is possible to
-  :ref:`recover data <restoring_snapshot>` that was accidentally deleted
+  :ref:`recover data <data_recovery>` that was accidentally deleted
   or modified,
 
 - quota for VSC accounts that do *not* have Leuven / Hasselt as home institute are

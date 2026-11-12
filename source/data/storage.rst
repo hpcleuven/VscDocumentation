@@ -16,4 +16,5 @@ manage your data in them.
    managing_storage_usage
    request_more_storage
    data_management_guidelines
+   hpc_data_recovery
 
