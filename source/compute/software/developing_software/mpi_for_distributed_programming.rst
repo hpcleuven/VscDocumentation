@@ -82,14 +82,17 @@ See to the documentation about the :ref:`toolchains`.
 Debugging
 ---------
 
-For debugging OpenMPI applications, we recommend to use `tmpi`_ or `mpidbg`_.
-If required, these can be installed as a module for the desired toolchain by
-your local support team.
+For debugging OpenMPI applications, we recommend to use `tmpi`_ or `mpigdb`_.
+To check if these are already available for the toolchain version you are
+using, execute ``module av tmpi`` or ``module av mpigdb``. If required,
+additional modules for other toolchains can be installed by your local support
+team.
 
 Profiling
 ---------
 
-To profile MPI applications the following combination of tools can be used:
+To profile MPI applications (using either OpenMPI or IntelMPI) the following
+combination of tools can be used:
 
 - `Score-P`_ for instrumenting code and profiling/tracing execution
 - `Scalasca`_ for analysing and modelling performance

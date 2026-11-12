@@ -457,7 +457,7 @@ rst_prolog += """
 .. _MPI Forum: https://www.mpi-forum.org/
 .. _MPI Documents: https://www.mpi-forum.org/docs/
 .. _MPICH: https://www.mpich.org/
-.. _mpidbg: https://github.com/robertu94/mpigdb/
+.. _mpigdb: https://github.com/robertu94/mpigdb/
 .. _MVAPICH: http://mvapich.cse.ohio-state.edu/
 .. _NAMD: http://www.ks.uiuc.edu/Research/namd/
 .. _Netlib BLAS repository: http://www.netlib.org/blas/
