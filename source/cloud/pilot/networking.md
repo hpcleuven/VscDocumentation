@@ -33,13 +33,13 @@ For reference, here is some documentation for common firewall software:
 
 ## VSC Network
 Projects that requested access to the VSC network require some additional configuration.
-You can find a complete example on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.11/examples/vsc-networking).
+You can find a complete example on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.12/examples/vsc-networking).
 
 You will need an additional router that connects to the VSC network. Modify the `main.tf` by adding an additional `module` block:
 ```
 module "VSCrouter" {
   source    = "hpcugent/opennebula/vsc//modules/router"
-  version   = "0.0.11"
+  version   = "0.0.12"
   vsc       = true                             # Connect to VSC Public net and VSC Internal net
   access_vm = module.SimpleVSCVM.router_access # Optional, adds SSH forwarding automatically.
 }
