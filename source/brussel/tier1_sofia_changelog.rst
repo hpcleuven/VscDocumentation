@@ -4,6 +4,13 @@
 Tier-1 sofia changelog
 ######################
 
+2026-11-06
+----------
+* Roll-out of core system upgrades to all compute and login nodes. This
+  update includes Linux kernel version 5.14.0-687.65.1.el9_8.x86_64, GPFS
+  storage driver version 5.2.3.10, DOCA-OFED network driver version 3.5.0 and
+  NVIDIA GPU driver version 620.70.06.
+
 2026-10-28
 ----------
 * Redundancy tests carried out on power and network systems.
