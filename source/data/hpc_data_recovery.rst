@@ -4,6 +4,10 @@
 HPC Data Recovery
 ##################
 
+The following VSC compute clusters keep regular data *snapshots* on their shared storage systems.
+This can include the storage of ``VSC_HOME``, ``VSC_DATA`` and ``VSC_SCRATCH`` in your
+account, as well as project folders or :ref:`Virtual Organizations <vo>`.
+
 .. grid:: 3
     :gutter: 4
 
@@ -19,10 +23,6 @@ HPC Data Recovery
        * Tier-2 :ref:`Anansi <Anansi cluster>`
        * Tier-2 :ref:`Hydra <Hydra cluster>`
        * Tier-1 :ref:`sofia <sofia cluster>`
-
-Some VSC compute clusters keep regular data *snapshots* on their shared storage systems. This
-can include the storage of ``VSC_HOME``, ``VSC_DATA`` and ``VSC_SCRATCH`` in your
-account as well as project folders or :ref:`Virtual Organizations <vo>`.
 
 .. seealso::
    The documentation on :ref:`storage hardware` has a detailed description of each
