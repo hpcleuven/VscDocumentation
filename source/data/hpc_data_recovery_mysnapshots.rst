@@ -1,7 +1,7 @@
 The command tool **mysnapshots** provides a simple interface to restore a file
 or directory from a snapshots.
 
-First of all you have to change directory ``cd`` to the directory that
+First, change your current directory (with ``cd``) to the directory that
 contained (or still contains) the file/directory to be restored. If that parent
 directory does not exist anymore, you can jump up to the last parent directory that still
 exists. In the worse case where a lot of data is lost, this location might be
