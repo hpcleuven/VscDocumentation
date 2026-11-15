@@ -37,9 +37,8 @@ files/directories are available in a specific snapshot, we can execute
    Inventory of $VSC_SCRATCH/labo at 2025-05-09T13:02:02:
    job.sh      results_dir   old_data
 
-In this case **mysnapshots** shows that for the snapshot *2025-05-09T13:02:02*
-there are three entries available. The entries *job.sh* and *results_dir* are
-already present in the current directory, while the entry *old_data* is not.
+In the example above, **mysnapshots** shows three files/directories in the snapshot *2025-05-09T13:02:02*. Of these, *job.sh* and *results_dir* are
+still present in the current directory, whereas *old_data* is no longer present.
 
 You can restore any of these entries to their previous state at
 *2025-05-09T13:02:02* by calling **mysnapshots** with the timestamps of the
