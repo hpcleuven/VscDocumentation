@@ -99,7 +99,8 @@ likely to recover that data in the same state it was lost the sooner you act.
            - Storage locations
          * - Less than 7 days
            - Daily
-           - ``HOME``, ``VSC_SCRATCH``, ``VSC_SCRATCH_PROJECTS_BASE``
+           - | ``HOME``, ``VSC_SCRATCH``,
+             | ``VSC_SCRATCH_PROJECTS_BASE``
 
 
 .. _restoring_snapshot:
