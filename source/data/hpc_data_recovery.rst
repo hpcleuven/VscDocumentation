@@ -22,7 +22,7 @@ HPC Data Recovery
 
 Some VSC compute clusters keep regular data *snapshots* on their shared storage systems. This
 can include the storage of ``VSC_HOME``, ``VSC_DATA`` and ``VSC_SCRATCH`` in your
-account as well as project folders or ref:`Virtual Organizations <vo>`.
+account as well as project folders or :ref:`Virtual Organizations <vo>`.
 
 .. seealso::
    The documentation on :ref:`storage hardware` has a detailed description of each
