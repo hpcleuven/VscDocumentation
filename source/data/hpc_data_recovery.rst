@@ -114,7 +114,7 @@ version just by copying the file from one of the snapshots to its desired
 location.
 
 Some sites might provide specific tools to carry out the restoration of files
-from snapshots. Please see the instructions below that correspond to your
+from snapshots. Please follow the instructions below that correspond to your
 cluster of choice.
 
 .. tab-set::
