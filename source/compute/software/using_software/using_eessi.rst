@@ -27,10 +27,9 @@ on the VSC clusters.
 
 .. note::
 
-   You can check if EESSI is supported by executing ``ls /cvmfs/software.eessi.io``
-   and verify it prints some files and directories. If on the other hand the
-   command results in ``ls: cannot access '/cvmfs/software.eessi.io': No such file or directory``,
-   this means EESSI is not supported.
+   To check whether EESSI is available on a cluster, run ``ls /cvmfs/software.eessi.io``.
+   If this lists files and directories, EESSI is supported. If it returns
+   ``No such file or directory``, EESSI is not available on that cluster.
 
 EESSI setup
 -----------
@@ -105,7 +104,12 @@ from EESSI are not compatible with locally installed modules.
 
 These setup commands need to be executed in each session where you want to use
 EESSI. Note that you can search for other EESSI versions by running
-``module avail EESSI``. After loading an EESSI module, you can use the
+``module avail EESSI``.
+
+Using EESSI modules
+-------------------
+
+After loading an EESSI module, you can use the
 ``module`` commands as described in the section on
 :ref:`module system basics <module_system_basics>`, but now those commands will interact
 with the EESSI software stack instead of locally installed modules. For example:
@@ -120,6 +124,9 @@ As can be seen, the path above the listed module indicates this module indeed
 comes from EESSI. Also note how EESSI automatically figured out the most
 appropriate module based on the architecture of the node where these commands
 are executed.
+
+Switching back to local modules
+-------------------------------
 
 .. tab-set::
    :sync-group: vsc-sites
@@ -173,7 +180,8 @@ are executed.
       simply run ``module purge``.
 
 
-Additional links:
+Additional links
+----------------
 
 - Overview of available software: https://eessi.io/docs/available_software/
 - Overview of systems where EESSI is available: https://eessi.io/docs/systems/
