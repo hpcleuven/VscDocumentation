@@ -31,13 +31,16 @@ on the VSC clusters.
    If this lists files and directories, EESSI is supported. If it returns
    ``No such file or directory``, EESSI is not available on that cluster.
 
+.. _eessi-setup:
+
 EESSI setup
 -----------
 
 Although EESSI is typically installed on all nodes of participating VSC clusters,
 the software modules provided by EESSI are not available by default, and some
 commands need to be run to set up EESSI in your session. Also note that modules
-from EESSI are not compatible with locally installed modules.
+from EESSI cannot be combined with locally installed modules, so they must not be
+loaded at the same time.
 
 .. tab-set::
    :sync-group: vsc-sites
@@ -102,9 +105,12 @@ from EESSI are not compatible with locally installed modules.
          module load EESSI/2025.06
 
 
-These setup commands need to be executed in each session where you want to use
-EESSI. Note that you can search for other EESSI versions by running
+These setup commands need to be executed in each session or job script where
+you want to use EESSI. The version ``EESSI/2025.06`` used here is only an
+example: you can search for other EESSI versions by running
 ``module avail EESSI``.
+
+.. _eessi-using-modules:
 
 Using EESSI modules
 -------------------
@@ -116,7 +122,7 @@ with the EESSI software stack instead of locally installed modules. For example:
 
 .. code-block:: shell
 
-   $ module av GROMACS
+   $ module avail GROMACS
    -- /cvmfs/software.eessi.io/versions/2025.06/software/linux/x86_64/intel/skylake_avx512/modules/all --
       GROMACS/2025.2-foss-2025a
 
@@ -124,6 +130,8 @@ As can be seen, the path above the listed module indicates this module indeed
 comes from EESSI. Also note how EESSI automatically figured out the most
 appropriate module based on the architecture of the node where these commands
 are executed.
+
+.. _eessi-switch-back:
 
 Switching back to local modules
 -------------------------------
@@ -152,7 +160,7 @@ Switching back to local modules
    .. tab-item:: UAntwerpen
       :sync: ua
 
-      If for any reason you want to switch back to locally installed modules, 
+      If for any reason you want to switch back to locally installed modules,
       simply start a new session on the cluster.
 
    .. tab-item:: UGent
@@ -180,14 +188,15 @@ Switching back to local modules
       simply run ``module purge``.
 
 
+.. _eessi-additional-links:
+
 Additional links
 ----------------
 
-- Overview of available software: https://eessi.io/docs/available_software/
-- Overview of systems where EESSI is available: https://eessi.io/docs/systems/
-- Adding software to EESSI: https://eessi.io/docs/adding_software/overview/
-- Building software on top of EESSI: https://www.eessi.io/docs/using_eessi/building_on_eessi/
-- Using EESSI in CI environments like GitHub Actions: https://eessi.io/docs/using_eessi/eessi_in_ci/
-- Recording of "Introduction to EESSI" talk (FOSDEM 2026, recorded 1 Feb 2026): https://www.youtube.com/watch?v=1AZZqhvQIgo
-- EESSI trainings & events: https://www.eessi.io/docs/training-events/
-- EESSI "Happy Hour" weekly community online meetings: https://eessi.io/docs/training-events/happy-hours-sessions/
+- `Overview of systems where EESSI is available <https://www.eessi.io/docs/systems/>`_
+- `Adding software to EESSI <https://www.eessi.io/docs/adding_software/overview/>`_
+- `Building software on top of EESSI <https://www.eessi.io/docs/using_eessi/building_on_eessi/>`_
+- `Using EESSI in CI environments like GitHub Actions <https://www.eessi.io/docs/using_eessi/eessi_in_ci/>`_
+- `Recording of "Introduction to EESSI" talk (FOSDEM 2026, recorded 1 Feb 2026) <https://www.youtube.com/watch?v=1AZZqhvQIgo>`_
+- `EESSI trainings & events <https://www.eessi.io/docs/training-events/>`_
+- `EESSI "Happy Hour" weekly community online meetings <https://www.eessi.io/docs/training-events/happy-hours-sessions/>`_
