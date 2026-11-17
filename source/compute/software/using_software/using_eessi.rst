@@ -32,26 +32,80 @@ on the VSC clusters.
    command results in ``ls: cannot access '/cvmfs/software.eessi.io': No such file or directory``,
    this means EESSI is not supported.
 
-Althought EESSI is typically installed on all nodes of participating VSC clusters,
-the modules for the software provided by EESSI are not available by default, and some commands need to be
-run to set up EESSI in your session. Also note that modules from EESSI are not
-compatible with locally installed modules, so the recommended commands to set
-up EESSI first make the locally installed modules unavailable:
+EESSI setup
+-----------
 
-.. code-block:: shell
+Although EESSI is typically installed on all nodes of participating VSC clusters,
+the software modules provided by EESSI are not available by default, and some
+commands need to be run to set up EESSI in your session. Also note that modules
+from EESSI are not compatible with locally installed modules.
 
-   # Force unload any cluster module
-   module --force purge
-   # Make EESSI available as a module
-   unset MODULEPATH
-   module use /cvmfs/software.eessi.io/init/modules/
-   # Load an EESSI module
-   module load EESSI/2025.06
+.. tab-set::
+   :sync-group: vsc-sites
+
+   .. tab-item:: KU Leuven/UHasselt
+      :sync: kuluh
+
+      The recommended commands to set up EESSI first make the locally installed
+      modules unavailable:
+
+      .. code-block:: shell
+
+         # Force unload any cluster module
+         module --force purge
+         # Make EESSI available as a module
+         unset MODULEPATH
+         module use /cvmfs/software.eessi.io/init/modules/
+         # Load an EESSI module
+         module load EESSI/2025.06
+
+   .. tab-item:: UAntwerpen
+      :sync: ua
+
+      The recommended commands to set up EESSI first make the locally installed
+      modules unavailable:
+
+      .. code-block:: shell
+
+         # Force unload any cluster module
+         module --force purge
+         # Make EESSI available as a module
+         unset MODULEPATH
+         module use /cvmfs/software.eessi.io/init/modules/
+         # Load an EESSI module
+         module load EESSI/2025.06
+
+   .. tab-item:: UGent
+      :sync: ug
+
+      The recommended commands to set up EESSI first make the locally installed
+      modules unavailable:
+
+      .. code-block:: shell
+
+         # Force unload any cluster module
+         module --force purge
+         # Make EESSI available as a module
+         unset MODULEPATH
+         module use /cvmfs/software.eessi.io/init/modules/
+         # Load an EESSI module
+         module load EESSI/2025.06
+
+   .. tab-item:: VUB
+      :sync: vub
+
+      Loading an EESSI module automatically makes the locally installed modules
+      unavailable:
+
+      .. code-block:: shell
+
+         # Load an EESSI module
+         module load EESSI/2025.06
 
 
 These setup commands need to be executed in each session where you want to use
 EESSI. Note that you can search for other EESSI versions by running
-``module avail EESSI``. After loading the EESSI module, you can use the
+``module avail EESSI``. After loading an EESSI module, you can use the
 ``module`` commands as described in the section on
 :ref:`module system basics <module_system_basics>`, but now those commands will interact
 with the EESSI software stack instead of locally installed modules. For example:
@@ -62,7 +116,7 @@ with the EESSI software stack instead of locally installed modules. For example:
    -- /cvmfs/software.eessi.io/versions/2025.06/software/linux/x86_64/intel/skylake_avx512/modules/all --
       GROMACS/2025.2-foss-2025a
 
-As you can see, the path above the listed module indicates this module indeed
+As can be seen, the path above the listed module indicates this module indeed
 comes from EESSI. Also note how EESSI automatically figured out the most
 appropriate module based on the architecture of the node where these commands
 are executed.
@@ -115,8 +169,8 @@ are executed.
    .. tab-item:: VUB
       :sync: vub
 
-      If for any reason you want to switch back to locally installed modules, 
-      simply start a new session on the cluster.
+      To switch back to locally installed modules,
+      simply run ``module purge``.
 
 
 Additional links:
