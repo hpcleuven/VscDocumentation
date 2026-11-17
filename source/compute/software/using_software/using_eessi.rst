@@ -126,10 +126,9 @@ with the EESSI software stack instead of locally installed modules. For example:
    -- /cvmfs/software.eessi.io/versions/2025.06/software/linux/x86_64/intel/skylake_avx512/modules/all --
       GROMACS/2025.2-foss-2025a
 
-As can be seen, the path above the listed module indicates this module indeed
-comes from EESSI. Also note how EESSI automatically figured out the most
-appropriate module based on the architecture of the node where these commands
-are executed.
+The path above the listed module indicates this module indeed comes from EESSI.
+Also note how EESSI automatically figured out the most appropriate module based
+on the architecture of the node where these commands are executed.
 
 .. _eessi-switch-back:
 
