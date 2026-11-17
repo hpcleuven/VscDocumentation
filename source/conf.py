@@ -296,6 +296,7 @@ rst_prolog = """
 .. |br| raw:: html
 
    <br />
+.. role:: strikethrough
 """
 # Badges
 rst_prolog += """

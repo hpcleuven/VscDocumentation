@@ -93,9 +93,14 @@ Applying for your VSC account
 
       * Non-PhD students of VUB may get access subject to the specific
         conditions detailed below. Their VSC account must be requested by their
-        Professor or Promoter by filling out
+        Professor or Promoter :strikethrough:`by filling out`
         `VUB's VSC account request form <https://hpc.vub.be/welcomemail/vsc_account_request_form>`_.
-        Note that this form is not accessible to students.
+        :strikethrough:`Note that this form is not accessible to students.`
+
+        .. warning::
+           The VSC account request form is temporarily unavailable due to the migration of our backend
+           system. Professors or Promoters should send an e-mail to hpc@vub.be with the mailing address(es)
+           of the student(s) after which the support staff will manually create the accounts.
 
         * Courses: All students can use the HPC cluster if required for
           practical courses.
