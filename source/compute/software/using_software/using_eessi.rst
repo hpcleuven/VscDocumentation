@@ -122,7 +122,7 @@ with the EESSI software stack instead of locally installed modules. For example:
 
 .. code-block:: shell
 
-   $ module avail GROMACS
+   module avail GROMACS
    -- /cvmfs/software.eessi.io/versions/2025.06/software/linux/x86_64/intel/skylake_avx512/modules/all --
       GROMACS/2025.2-foss-2025a
 
