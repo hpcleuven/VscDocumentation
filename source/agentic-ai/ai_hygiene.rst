@@ -60,7 +60,7 @@ Human in the loop
 
 AI agents shine when it comes to autonomy.
 Concretely, AI agents are capable of executing any command they come up with in a given context.
-But, imagine that such a command would be to delete or overwrite sensitive files without the
+But, imagine that such a command would be to delete or overwrite important files without the
 user's explicit consent; depending on the backup/recovery mechanism of the host filesystem,
 such changes maybe irreversible.
 
@@ -90,7 +90,7 @@ As a good practice,
   before executing any commands suggested by the AI agent.
 
   You must opt for harnessing your AI agents through ``SKILL.md`` or ``AGENTS.md``
-  files and/or MCP (Model Control Protocol) servers.
+  files and/or MCP (Model Context Protocol) servers.
   But, AI agents may still overstep the harnesses by attempting to execute commands
   beyond the granted permissions.
 
