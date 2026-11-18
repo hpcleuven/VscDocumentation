@@ -71,6 +71,10 @@ html .sd-btn:hover {
     text-decoration: none;
 }
 
+.strikethrough {
+    text-decoration: line-through;
+}
+
 a:hover,
 a.nav-link:hover,
 .toc-entry a.nav-link:hover,
