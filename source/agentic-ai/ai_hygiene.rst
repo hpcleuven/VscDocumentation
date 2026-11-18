@@ -45,6 +45,13 @@ In this regard,
     Even licensed AI tools should be carefully evaluated for their terms and conditions of
     data handling before using them with sensitive data.
 
+    Similarly, using open-source AI tools which do not guarantee data protection is strictly
+    prohibited.
+
+
+Please bear in mind that the confidentiality measures are in favor of protecting users' intellectual
+properties.
+
 
 .. _human_in_the_loop:
 
