@@ -99,7 +99,7 @@ Applying for your VSC account
 
         .. warning::
            The VSC account request form is temporarily unavailable due to the migration of our backend
-           system. Professors or Promoters should send an e-mail to hpc@vub.be with the mailing address(es)
+           system. Professors or Promoters should send an e-mail to hpc@vub.be with the VUB mail address(es)
            of the student(s) after which the support staff will manually create the accounts.
 
         * Courses: All students can use the HPC cluster if required for
