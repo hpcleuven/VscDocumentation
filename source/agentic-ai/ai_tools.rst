@@ -15,7 +15,8 @@ user's machine or remotely on the VSC cloud and/or compute environments.
 
 [For the REVIEWERS] Do I need to touch upon the three AI components mentioned above?
 
-In the context of HPC, using AI tools can be coarsely categorized into two main types:
+In the context of using AI tools on HPC ecosystem, this documentation is focused on
+two main types of AI usage:
 
 * coding assistants, and 
 * agentic AI

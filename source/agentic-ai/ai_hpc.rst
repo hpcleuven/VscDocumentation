@@ -14,6 +14,14 @@ practices for the use of agentic AI, autonomous workflows, coding assistants, la
 models (LLMs), and traditional machine-learning applications on the VSC HPC and cloud systems.
 
 
+Users responsibilities
+======================
+
+VSC users who utilize AI tools of any form on the VSC cloud, data and compute platforms
+are obliged to understand the AI guidelines (in the next sections) and comply with them
+at all times.
+
+
 Scope
 =====
 
