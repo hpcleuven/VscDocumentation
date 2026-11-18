@@ -16,7 +16,7 @@ on the HPC systems as a single entity tied to a single VSC account.
    adheres to the Generative AI charter of UGent as well as the Generative AI charter of VUB.
 
 
-Concretely speaking,
+This means,
 
 - you are responsible for all actions performed under your VSC account, including
   actions initiated or recommended by AI tools.

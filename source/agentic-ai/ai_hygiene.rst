@@ -26,14 +26,14 @@ Confidentiality and AI
 
 A user may need to process sensitive or confidential information, such as non-anonymized
 patient data, financial records, patented designs and alike.
-In all respects, your intellectual property (which also belongs to your funding institution/agency)
-must be protected by all means, preventing any unauthorized access or leakage through AI tools.
+In all respects, your intellectual property must be protected by all means, preventing
+any unauthorized access or leakage through AI tools.
 The first step in such scenarios is to anonymize or pseudonymize the sensitive data in
 an environment which is isolated from any AI tool.
 
-To treat sensitive data with AI tools, it is crucial to ensure that the AI tools comply
-with data protection and privacy regulations of your host institution and/or research
-department.
+As a next step in handling sensitive data with AI tools, it is crucial to ensure that
+the AI tools comply with data protection and privacy regulations of your host institution
+and/or research department.
 In other terms, users have to ensure that their sensitive data and source code - in any form -
 is not transferred to unauthorized parties or external systems such as cloud services.
 In this regard, 
@@ -49,7 +49,7 @@ In this regard,
     prohibited.
 
 
-Please bear in mind that the confidentiality measures are in favor of protecting users' intellectual
+Please bear in mind that these confidentiality measures are in favor of protecting users' intellectual
 properties.
 
 
@@ -85,7 +85,8 @@ If the ``/tmp`` is a bad example, I will take it out.
 
 As a good practice,
 
-* do not permit the AI agent to autonomously execute any command without your explicit consent.
+* Using fully autonomous AI agents without human oversight is strongly discouraged.
+  Hence, make sure that you review and approve every command that the AI agent intends to execute.
   If you use IDEs, make sure to configure them to inquire your explicit confirmation
   before executing any commands suggested by the AI agent.
 
