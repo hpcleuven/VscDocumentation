@@ -66,16 +66,12 @@ clusters.
 
    mfa_login   
 
-.. _access_restrictions:
+.. _location_access_restrictions:
 
-Access Restrictions
-===================
-
-Depending on your institution and location, additional network access
-restrictions may apply when connecting to VSC clusters.
+.. include:: location_access_restrictions.rst
 
 .. toctree::
-   :maxdepth: 3
+   :hidden:
 
    location_access_restrictions
 

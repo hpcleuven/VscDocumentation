@@ -1,6 +1,9 @@
 Location Access Restrictions
 ============================
 
+Depending on your institution and location, additional network access
+restrictions may apply when connecting to VSC clusters.
+
 .. tab-set::
    :sync-group: vsc-sites
 
