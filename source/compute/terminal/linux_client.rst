@@ -18,9 +18,16 @@ superuser (*root*) permissions.
 Getting ready to login
 ======================
 
-Before you can log in with SSH to a VSC cluster, you need to generate a pair of
-SSH keys and upload them to your VSC account. You can create your keys in Linux
-with `OpenSSH`_, please check our documentation on :ref:`generating keys linux`.
+Before you can log in to a VSC cluster using SSH, you need to
+check which authentication method the cluster supports.
+
+For clusters that support :ref:`mfa_login`, SSH keys are not required.
+
+For clusters that do not support MFA, you need to generate an SSH key pair and
+upload the public key to your VSC account on your your `VSC Account - Edit
+Account`_ page before logging in. You can generate SSH keys on Linux using
+`OpenSSH`_. See :ref:`generating keys linux` for instructions.
+
 
 Connecting to the cluster
 =========================

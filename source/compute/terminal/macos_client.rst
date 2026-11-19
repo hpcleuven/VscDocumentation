@@ -16,9 +16,15 @@ also applies to macOS as it based on the same `GNU`_ operating system as Linux.
 Getting ready to login
 ======================
 
-Before you can log in with SSH to a VSC cluster, you need to generate a pair of
-SSH keys and upload them to your VSC account. You can create your keys in macOS
-with `OpenSSH`_, please check our documentation on :ref:`generating keys macos`.
+Before you can log in to a VSC cluster using SSH, you need to
+check which authentication method the cluster supports.
+
+For clusters that support :ref:`mfa_login`, SSH keys are not required.
+
+For clusters that do not support MFA, you need to generate an SSH key pair and
+upload your public key to your VSC account on your your `VSC Account - Edit
+Account`_ page before logging in.  You can generate SSH keys on macOS
+with `OpenSSH`_. See :ref:`generating keys macos` for instructions.
 
 Connecting to the cluster
 =========================
