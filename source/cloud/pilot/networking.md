@@ -39,7 +39,7 @@ You will need an additional router that connects to the VSC network. Modify the 
 ```
 module "VSCrouter" {
   source    = "hpcugent/opennebula/vsc//modules/router"
-  version   = "0.0.12"
+  version   = "0.0.13"
   vsc       = true                             # Connect to VSC Public net and VSC Internal net
   access_vm = module.SimpleVSCVM.router_access # Optional, adds SSH forwarding automatically.
 }

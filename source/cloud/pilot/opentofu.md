@@ -50,14 +50,14 @@ ssh -A vscxxxxx@login.hpc.ugent.be
 It is important to forward your ssh agent with `-A` when SSH-ing to the login node.
 :::
 
-You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.12/examples) as a starting point.
+You can use the [examples on Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.13/examples) as a starting point.
 Make sure to copy the `providers.tf` and the `main.tf` files into your project directory.
 On linux you can use this snippet:
 ```bash
 mkdir -p MyVSCCloudProject
 cd MyVSCCloudProject
-wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.12/examples/simple-server/main.tf
-wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.12/examples/simple-server/providers.tf
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.13/examples/simple-server/main.tf
+wget https://raw.githubusercontent.com/hpcugent/terraform-vsc-opennebula/0.0.13/examples/simple-server/providers.tf
 ```
 :::{tip}
 Make sure you have created the *`~/.one/one_auth`* file. (see previous [section](#create-credentials-for-opentofu)).
@@ -78,7 +78,7 @@ If you are **not** using the HPC-UGent Tier-2 login nodes, you need to make sure
 :::
 
 In the previous [section](#using-the-opentofu-module) we created a `MyVSCCloudProject` directory and copied some tofu files into it.
-Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.12/examples/simple-server) example's `main.tf`.
+Let's take a look at the [Simple Server](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.13/examples/simple-server) example's `main.tf`.
 
 This file contains the most basic configuration for a virtual machine.
 It consists of two **modules**. A module is convenient grouping of OpenTofu resources. 
@@ -95,7 +95,7 @@ Full router module documentation can be found [here](https://search.opentofu.org
 ```
 module "router" {
   source  = "hpcugent/opennebula/vsc//modules/router"
-  version = "0.0.12"
+  version = "0.0.13"
   # VM Which we can ssh to by default
   access_vm = module.SimpleVM.router_access
 }
@@ -147,7 +147,7 @@ Full module documentation can be found [here](https://search.opentofu.org/module
 ```
 module "SimpleVM" {
   source     = "hpcugent/opennebula/vsc"
-  version    = "0.0.12"
+  version    = "0.0.13"
   vm_name    = "SimpleExample"
   image_name = "Rocky Linux 9"
   is_windows = false
@@ -176,7 +176,7 @@ See [Accessing VMs](./accessing_vms.md) for information on how to connect to Win
 ```{warning}
 Be sure to match the version of the documentation/examples to the version of the module that you are using
 ```
-The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.12/examples) 
+The module has some examples which can be found on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.13/examples) 
 
 You can also find documentation on all of the variables on the [OpenTofu Registry](https://search.opentofu.org/module/hpcugent/opennebula/vsc/latest)
 
@@ -350,7 +350,7 @@ OpenTofu cannot resize the root disk. Tofu will warn you about this until it is 
 You can resolve this by either executing the suggested OpenNebula command (if you installed the OpenNebula client locally) or in the VSC Cloud Dashboard.
 To resize it in the VSC Cloud dashboard, navigate to Instances > VMs > (your VM) > Storage. Then, click the 3 dots next to the disk and click "resize". The resize option will take effect immediately.
 #### Specifying the size of extra "image" disks
-You can find an example of a VM with extra disks on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.12/examples/with-disks).
+You can find an example of a VM with extra disks on [Github](https://github.com/hpcugent/terraform-vsc-opennebula/tree/0.0.13/examples/with-disks).
 If you specify:
 ```
 disks {
