@@ -7,10 +7,15 @@
 Getting ready to login
 ======================
 
-Before you can log in with SSH to a VSC cluster, you need to generate a pair of
-SSH keys and upload them to your VSC account. There are multiple ways to create
-your keys in Windows, please check our documentation on
-:ref:`generating keys windows`.
+Before you can log in to a VSC cluster using SSH, you need to
+check which authentication method the cluster supports.
+
+For clusters that support :ref:`mfa_login`, SSH keys are not required.
+
+For clusters that do not support MFA, you need to generate an SSH key pair and
+upload the public key to your VSC account on your your `VSC Account - Edit
+Account`_ page before logging in.  There are multiple ways to generate SSH keys
+in Windows. See :ref:`generating keys windows` for instructions.
 
 Connecting to the cluster
 =========================
