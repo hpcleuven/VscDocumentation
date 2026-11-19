@@ -1,5 +1,5 @@
 The command tool **mysnapshots** provides a simple interface to restore a file
-or directory from a snapshots.
+or directory from a snapshot.
 
 First, change your current directory (with ``cd``) to the directory that
 contained (or still contains) the file/directory to be restored. If that parent
