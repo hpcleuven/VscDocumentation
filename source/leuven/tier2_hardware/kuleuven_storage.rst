@@ -116,7 +116,7 @@ to move out your critical result files from your scratch storage to other perman
 
 The environment variable ``$VSC_SCRATCH`` points at your local scratch storage which depends on your
 choice of cluster. On the login nodes and on the wICE compute nodes, ``$VSC_SCRATCH`` points to the
-Lustre filesystem and on the Mindwell compute nodes it points to the GPFS file system. In the 
+Lustre filesystem and on the Mindwell compute nodes it points to the GPFS filesystem. In the 
 following table, you find an overview of some important features:
 
 +------------------------+----------------------------------+--------+----------+----------------------------+--------+---------------+
