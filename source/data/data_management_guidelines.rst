@@ -53,6 +53,8 @@ Note that project storage (even in the absence of automatic cleanup) should not 
 
 Also keep in mind that project storage is a paid service (charged based on peak usage per month) while temporarily increasing your scratch quotum can be done for free. If you only need more workspace for your own calculations, it may therefore be more advantageous to ask for a higher scratch quotum than to make more use of project storage. In general, we recommend to only use project storage if strictly required and to use scratch storage whenever possible. For all storage related requests, see also the `HPC Service Catalog <https://icts.kuleuven.be/sc/onderzoeksgegevens/english-version/HPC-storage>`_.
 
+.. _external_storage:
+
 External storage
 ----------------
 As a general rule, data should be removed from HPC storage once it is no longer needed in further computations or postprocessing. Usually at least part of this data needs to be preserved for e.g. possible future reanalysis, sharing with other researchers, publication, et cetera. Such data then first needs to be copied to external storage (a process typically referred to as 'outflow'). Carefully consider your choice of external storage, in particular when it comes to (long-term) data safety, pricing, and how well it can be reached from within the HPC environment. Your options may include:
@@ -88,6 +90,8 @@ We recommend to gather your research team to draw the outlines of the DMP. Espec
 - at least some of the researchers using the HPC: they understand the day-to-day needs on the cluster
 - data support staff: for their technical expertise
 
+
+.. _storage_structure:
 
 Structuring your files and directories
 ======================================
@@ -151,6 +155,8 @@ There are multiple ways in which you can transfer data to or from HPC storage:
 - iCommands/Python iRODS client/ManGO Portal: tools allowing data transfers to and from an iRODS-managed platform (i.e. ManGO and Tier-1 Data). For more information, please see the :ref:`corresponding research data page <clients>`.
 - Classic command-line tools (such as ``rsync`` and ``sftp``) and various GUI applications (see also the :ref:`data transfer page <data transfer>`).
 
+
+.. _data_tracking:
 
 Keeping track of your data
 ==========================
