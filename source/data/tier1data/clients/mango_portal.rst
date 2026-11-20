@@ -38,8 +38,17 @@ Clicking on the name of a subcollection shows you its contents under the "Conten
 If you click on a data object instead, you go to its page, which does not have such a "Content" tab.
 
 Above the name of the current collection or data object, a breadcrumb menu allows you to go back to a collection on top of it. 
-Next to the name, clicking on the pencil icon allows you to rename the active collection or data object.
+Next to the name, depending on your permissions, clicking on the pencil icon allows you to rename the active collection or data object.
+Further to the right, you can find one or two more icons.
+For data objects, a download icon allows you to download the object.
+For both data objects and collections, a chain icon provides a PURL (Persistent URL) that you can use to link to the item from outside the ManGO Portal.
+This URL is persistent, meaning that it will always point to the same item, even if it is moved or renamed.
+It will still fail if the item is deleted.
 
+.. image:: ../images/mango_portal/mango_portal_name-pencil-download-link.png
+  :alt: Name of a data object with links to the right of it.
+
+  
 The page of a collection also includes buttons to create a new collection and upload files,
 which are only available if you have the right :ref:`permissions<collaboration>`.
 Also depending on your permissions you may see a dropdown menu of bulk actions, allowing you to move, copy or delete one or more
