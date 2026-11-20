@@ -221,7 +221,7 @@ permissions and/or ownership of certain files and directories.
 
 The moderator group is automatically created whenever a new project storage is created, and is
 always named ``<groupname>_moderators``, with ``<groupname>`` being the name of the VSC group
-asociated with the project storage. The moderator group always contains all moderators of the
+associated with the project storage. The moderator group always contains all moderators of the
 ``<groupname>`` group. You can add or remove moderators through the 'Edit Group' page on the VSC
 account page (reserved for current moderators of the group however). 
 
