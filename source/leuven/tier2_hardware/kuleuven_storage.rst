@@ -59,7 +59,7 @@ Our Tier-2 clusters come with different parallel filesystems:
 
 - :ref:`wICE <wice hardware>`: Lustre-based parallel storage
 
-- :ref:`Mindwell <mindwell hardware>`: with GPFS-based parallel storage.
+- :ref:`Mindwell <mindwell hardware>`: GPFS-based parallel storage.
 
 We offer two types of storage solutions on our parallel file systems, catered
 to different use-cases:
@@ -103,7 +103,7 @@ Other VSC users should contact the `KU Leuven HPC servicedesk <https://www.vscen
 Parallel scratch storage
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Every user working on either of the KU Leuven Tier 2 clusters, has two personal
+Every user working on either of the KU Leuven Tier 2 clusters has two personal
 scratch directories, one on wICE and one on Mindwell. For VSC accounts associated with
 KU Leuven or UHasselt, these are created automatically upon the account creation.
 Other VSC users should request this explicitly.
@@ -254,7 +254,7 @@ Some remarks:
   project storage will not inherit the ACLs.
 
 - To support your team in maintaining your project storage, we also developed the
-  `duduckdb tool <https://github.com/hpcleuven/duduckdb>`_. This tools allows you to retrieve
+  `duduckdb tool <https://github.com/hpcleuven/duduckdb>`_. This tool allows you to retrieve
   overviews of storage and inode usage within your project storage.
 
 
