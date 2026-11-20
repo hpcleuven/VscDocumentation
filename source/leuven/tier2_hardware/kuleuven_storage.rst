@@ -110,7 +110,7 @@ Other VSC users should request this explicitly.
 
 Using scratch storage is free of charge for all VSC users, and the storage quota can
 be temporarily increased upon user's request. Note that this might be subject to
-availibility of free storage on either of the filesystems. Beware that your scratch storage
+availability of free storage on either of the filesystems. Beware that your scratch storage
 is subject to our :ref:`automatic clean up policy <scratch_cleanup>`. Hence, we propose
 to move out your critical result files from your scratch storage to other permanent storage solutions.
 
