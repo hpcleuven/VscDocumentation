@@ -40,6 +40,11 @@ Uploading/downloading files via HTTPS
 
 The Globus web interface allows you to upload and download data from your local pc to a collection over HTTPS.
 
+.. warning::
+   It is only possible to download individual files over HTTPS and this method is subject to file size limits.
+   By default files up to 1 GB in size are supported. If you need to download (nested) folders or perform larger
+   transfers, we suggest using :ref:`globus-local-endpoints`.
+
 To upload a collection, click on the 'Upload' icon:
 
 .. figure:: using_globus_via_web/https_1.png
@@ -54,11 +59,6 @@ To download a file over HTTPS, hover over its name. You should see a checkbox ap
 
 In the menu on the right, you should see the icon 'Download' lighting up. 
 When you click this, the file will be downloaded to the 'Downloads' folder on your PC.
-
-.. note::
-
-   It is only possible to download individual files over HTTPS.  
-   If you need to download (nested) folders to your PC, we suggest looking at :ref:`globus-local-endpoints`.
 
 
 Transferring files between collections
