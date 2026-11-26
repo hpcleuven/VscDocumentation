@@ -4,6 +4,10 @@
 Tier-1 sofia changelog
 ######################
 
+2026-11-26
+----------
+* Memory reserved for OS on compute nodes increased from 8GB to 20GB.
+
 2026-11-06
 ----------
 * Roll-out of core system upgrades to all compute and login nodes. This
