@@ -6,7 +6,7 @@ Tier-1 sofia changelog
 
 2026-11-26
 ----------
-* Memory reserved for OS on compute nodes increased from 8GB to 20GB.
+* Memory reserved for OS on compute nodes increased from 8GB to 20GB, causing a slight decrease of the available memory per CPU core on jobs.
 
 2026-11-06
 ----------
