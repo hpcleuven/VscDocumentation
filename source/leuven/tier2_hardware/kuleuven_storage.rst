@@ -16,8 +16,8 @@ and project storage.
    scratch storage locations, as shown in the tables below. These 
    paths are constructed based on the 5 digits in your VSC ID, which are 
    represented by ``x`` characters below. As mentioned in :ref:`data location`,
-   you should always (try to) use the environment variables rather than the paths
-   shown in the tables.
+   Using the environment variables offers added values such as portability 
+   among users and avoiding typo's when dealing with long paths.
 
 VSC home and data storage
 -------------------------
